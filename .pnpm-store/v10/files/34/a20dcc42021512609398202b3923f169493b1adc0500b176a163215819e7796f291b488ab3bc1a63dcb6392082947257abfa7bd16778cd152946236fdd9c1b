@@ -1,0 +1,73 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .sticky-widget {
+	overflow: hidden;
+	border-bottom: 1px solid var(--vscode-editorStickyScroll-border);
+	width: 100%;
+	box-shadow: var(--vscode-editorStickyScroll-shadow) 0 4px 2px -2px;
+	z-index: 4;
+	right: initial !important;
+	margin-left: '0px';
+}
+
+.monaco-editor .sticky-widget .sticky-widget-line-numbers {
+	float: left;
+	background-color: var(--vscode-editorStickyScrollGutter-background);
+}
+
+.monaco-editor .sticky-widget.peek .sticky-widget-line-numbers {
+	background-color: var(--vscode-peekViewEditorStickyScrollGutter-background);
+}
+
+.monaco-editor .sticky-widget .sticky-widget-lines-scrollable {
+	display: inline-block;
+	position: absolute;
+	overflow: hidden;
+	width: var(--vscode-editorStickyScroll-scrollableWidth);
+	background-color: var(--vscode-editorStickyScroll-background);
+}
+
+.monaco-editor .sticky-widget.peek .sticky-widget-lines-scrollable {
+	background-color: var(--vscode-peekViewEditorStickyScroll-background);
+}
+
+.monaco-editor .sticky-widget .sticky-widget-lines {
+	position: absolute;
+	background-color: inherit;
+}
+
+.monaco-editor .sticky-widget .sticky-line-number,
+.monaco-editor .sticky-widget .sticky-line-content {
+	color: var(--vscode-editorLineNumber-foreground);
+	white-space: nowrap;
+	display: inline-block;
+	position: absolute;
+	background-color: inherit;
+}
+
+.monaco-editor .sticky-widget .sticky-line-number .codicon-folding-expanded,
+.monaco-editor .sticky-widget .sticky-line-number .codicon-folding-collapsed {
+	float: right;
+	transition: var(--vscode-editorStickyScroll-foldingOpacityTransition);
+	position: absolute;
+	margin-left: 2px;
+}
+
+.monaco-editor .sticky-widget .sticky-line-content {
+	width: var(--vscode-editorStickyScroll-scrollableWidth);
+	background-color: inherit;
+	white-space: nowrap;
+}
+
+.monaco-editor .sticky-widget .sticky-line-number-inner {
+	display: inline-block;
+	text-align: right;
+}
+
+.monaco-editor .sticky-widget .sticky-line-content:hover {
+	background-color: var(--vscode-editorStickyScrollHover-background);
+	cursor: pointer;
+}

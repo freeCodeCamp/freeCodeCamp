@@ -1,0 +1,14 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TEnum, type TEnumValue } from '../../types/enum.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TLiteral } from '../../types/literal.mjs';
+import { type TNull } from '../../types/null.mjs';
+import { type TNever } from '../../types/never.mjs';
+type TFromEnumValue<Value extends TEnumValue, Result extends TSchema = Value extends string | number ? TLiteral<Value> : Value extends null ? TNull : TNever> = Result;
+export type TEnumValuesToVariants<Values extends TEnumValue[], Result extends TSchema[] = []> = (Values extends [infer Left extends TEnumValue, ...infer Right extends TEnumValue[]] ? TEnumValuesToVariants<Right, [...Result, TFromEnumValue<Left>]> : Result);
+export declare function EnumValuesToVariants<Values extends TEnumValue[]>(values: [...Values]): TEnumValuesToVariants<Values>;
+export type TEnumValuesToUnion<Values extends TEnumValue[], Variants extends TSchema[] = TEnumValuesToVariants<Values>, Results extends TSchema = TUnion<Variants>> = Results;
+export declare function EnumValuesToUnion<Values extends TEnumValue[]>(values: [...Values]): TEnumValuesToUnion<Values>;
+export type TEnumToUnion<Type extends TEnum, Result extends TSchema = TEnumValuesToUnion<Type['enum']>> = Result;
+export declare function EnumToUnion<Type extends TEnum>(type: Type): TEnumToUnion<Type>;
+export {};

@@ -1,0 +1,13 @@
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+'use strict'; // setimmediate adds setImmediate to the global. We want to make sure we export
+// the actual function.
+
+require("setimmediate");
+
+module.exports = global.setImmediate;

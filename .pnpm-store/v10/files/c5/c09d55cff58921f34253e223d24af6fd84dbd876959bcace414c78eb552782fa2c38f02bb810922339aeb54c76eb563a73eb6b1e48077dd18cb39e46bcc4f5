@@ -1,0 +1,13 @@
+import type { ErrorNoParams, Vocabulary } from "../../types";
+import { AdditionalItemsError } from "./additionalItems";
+import { ItemsError } from "./items2020";
+import { ContainsError } from "./contains";
+import { DependenciesError } from "./dependencies";
+import { PropertyNamesError } from "./propertyNames";
+import { AdditionalPropertiesError } from "./additionalProperties";
+import { NotKeywordError } from "./not";
+import { AnyOfError } from "./anyOf";
+import { OneOfError } from "./oneOf";
+import { IfKeywordError } from "./if";
+export default function getApplicator(draft2020?: boolean): Vocabulary;
+export type ApplicatorKeywordError = ErrorNoParams<"false schema"> | AdditionalItemsError | ItemsError | ContainsError | AdditionalPropertiesError | DependenciesError | IfKeywordError | AnyOfError | OneOfError | NotKeywordError | PropertyNamesError;

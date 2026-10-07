@@ -1,0 +1,16 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"func-name-matching": 0,
+	},
+
+	"overrides": [
+		{
+			"files": "test-core-js.js",
+			"extends": "@ljharb/eslint-config/tests",
+		},
+	],
+}

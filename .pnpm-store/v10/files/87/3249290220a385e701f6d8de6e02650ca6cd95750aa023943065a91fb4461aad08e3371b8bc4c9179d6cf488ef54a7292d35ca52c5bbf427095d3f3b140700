@@ -1,0 +1,9 @@
+{
+  "exclude": [
+    "test/**"
+  ],
+  "reporter": [
+    "html",
+    "text"
+  ]
+}

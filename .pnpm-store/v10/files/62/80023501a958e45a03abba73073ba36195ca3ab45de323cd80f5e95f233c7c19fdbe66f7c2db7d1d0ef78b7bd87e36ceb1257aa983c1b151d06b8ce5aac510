@@ -1,0 +1,10 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TLiteral, type TLiteralValue } from '../../types/literal.mjs';
+import { type TTemplateLiteral } from '../../types/template_literal.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TMappingType, type TMappingFunc } from './mapping.mjs';
+import { type TFromLiteral } from './from_literal.mjs';
+import { type TFromTemplateLiteral } from './from_template_literal.mjs';
+import { type TFromUnion } from './from_union.mjs';
+export type TFromType<Mapping extends TMappingType, Type extends TSchema> = (Type extends TLiteral<infer Value extends TLiteralValue> ? TFromLiteral<Mapping, Value> : Type extends TTemplateLiteral<infer Pattern extends string> ? TFromTemplateLiteral<Mapping, Pattern> : Type extends TUnion<infer Types extends TSchema[]> ? TFromUnion<Mapping, Types> : Type);
+export declare function FromType(mapping: TMappingFunc, type: TSchema): TSchema;

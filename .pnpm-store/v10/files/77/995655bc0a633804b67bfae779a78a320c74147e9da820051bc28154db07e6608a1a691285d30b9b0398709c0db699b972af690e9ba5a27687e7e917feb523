@@ -1,0 +1,54 @@
+{
+  "name": "utility-types",
+  "version": "3.11.0",
+  "description": "Utility Types Collection for TypeScript",
+  "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io)",
+  "repository": "https://github.com/piotrwitek/utility-types",
+  "homepage": "https://github.com/piotrwitek/utility-types",
+  "license": "MIT",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">= 4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prettier:fix && npm run lint && npm run tsc && npm run test:update"
+    }
+  },
+  "scripts": {
+    "ci-check": "npm run prettier && npm run lint && npm run tsc && npm run test",
+    "reinstall": "rm -rf node_modules/ dist/ && npm install",
+    "prettier": "prettier --list-different 'src/**/*.ts' || (echo '\nPlease fix code formatting by running:\nnpm run prettier:fix\n'; exit 1)",
+    "prettier:fix": "prettier --write src/**/*.ts",
+    "lint": "tslint --project ./tsconfig.json",
+    "tsc": "tsc -p . --noEmit",
+    "tsc:watch": "tsc -p . --noEmit -w",
+    "test": "jest --config jest.config.json && dts-jest-remap ./src/*.spec.ts --rename {{basename}}.snap.{{extname}} --check",
+    "test:update": "jest --config jest.config.json --no-cache -u && dts-jest-remap ./src/*.spec.ts --rename {{basename}}.snap.{{extname}}",
+    "test:watch": "jest --config jest.config.json --watch",
+    "prebuild": "rm -rf dist/",
+    "build": "tsc -p ./tsconfig.build.json --outDir dist/",
+    "prepublishOnly": "npm run reinstall && npm run ci-check && npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "24.0.22",
+    "dts-jest": "23.0.0",
+    "husky": "3.0.9",
+    "jest": "24.9.0",
+    "prettier": "1.19.0",
+    "ts-jest": "24.1.0",
+    "tslint": "5.20.1",
+    "typescript": "3.7.2"
+  },
+  "keywords": [
+    "typescript",
+    "utility",
+    "types",
+    "static-typing",
+    "mapped-types",
+    "flow",
+    "flow-typed"
+  ]
+}

@@ -1,0 +1,77 @@
+# No semicolons
+
+x
+if (a) {
+  var b = c
+  d
+} else
+  e
+
+==>
+
+Script(
+  ExpressionStatement(VariableName),
+  IfStatement(if,ParenthesizedExpression(VariableName),Block(
+     VariableDeclaration(var,VariableDefinition,Equals,VariableName),
+     ExpressionStatement(VariableName)),
+   else,ExpressionStatement(VariableName)))
+
+# Continued expressions on new line
+
+x
++ 2
+foo
+(bar)
+
+==>
+
+Script(
+  ExpressionStatement(BinaryExpression(VariableName,ArithOp,Number)),
+  ExpressionStatement(CallExpression(VariableName,ArgList(VariableName))))
+
+# Doesn't parse postfix ops on a new line
+
+x
+++y
+
+==>
+
+Script(
+  ExpressionStatement(VariableName),
+  ExpressionStatement(UnaryExpression(ArithOp,VariableName)))
+
+# Eagerly cut return/break/continue
+
+return 2
+return
+2
+continue foo
+continue
+foo
+break bar
+break
+bar
+
+==>
+
+Script(
+  ReturnStatement(return,Number),
+  ReturnStatement(return),
+  ExpressionStatement(Number),
+  ContinueStatement(continue,Label),
+  ContinueStatement(continue),
+  ExpressionStatement(VariableName),
+  BreakStatement(break,Label),
+  BreakStatement(break),
+  ExpressionStatement(VariableName))
+
+# Cut return regardless of whitespace
+
+{ return }
+
+return // foo
+;
+
+==>
+
+Script(Block(ReturnStatement(return)),ReturnStatement(return,LineComment))

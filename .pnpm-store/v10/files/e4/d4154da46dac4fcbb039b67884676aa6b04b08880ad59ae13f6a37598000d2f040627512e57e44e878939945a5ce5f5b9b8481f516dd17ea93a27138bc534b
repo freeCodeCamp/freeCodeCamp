@@ -1,0 +1,56 @@
+{
+  "name": "jsesc",
+  "version": "3.1.0",
+  "description": "Given some data, jsesc returns the shortest possible stringified & ASCII-safe representation of that data.",
+  "homepage": "https://mths.be/jsesc",
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "jsesc.js",
+  "bin": "bin/jsesc",
+  "man": "man/jsesc.1",
+  "keywords": [
+    "buffer",
+    "escape",
+    "javascript",
+    "json",
+    "map",
+    "set",
+    "string",
+    "stringify",
+    "tool"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathiasbynens/jsesc.git"
+  },
+  "bugs": "https://github.com/mathiasbynens/jsesc/issues",
+  "files": [
+    "LICENSE-MIT.txt",
+    "jsesc.js",
+    "bin/",
+    "man/"
+  ],
+  "scripts": {
+    "build": "grunt template",
+    "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+    "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+    "test": "mocha tests"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.6",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^1.3.2",
+    "grunt-template": "^0.2.3",
+    "istanbul": "^0.4.2",
+    "mocha": "^5.2.0",
+    "regenerate": "^1.3.0",
+    "requirejs": "^2.1.22",
+    "unicode-13.0.0": "0.8.0"
+  }
+}

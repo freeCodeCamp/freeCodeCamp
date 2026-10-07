@@ -1,0 +1,1 @@
+{"version":3,"file":"build-source-map-tree.d.ts","sourceRoot":"","sources":["../src/build-source-map-tree.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAW,SAAS,IAAI,aAAa,EAAE,MAAM,mBAAmB,CAAC;AAC7E,OAAO,KAAK,EAAE,cAAc,EAAE,eAAe,EAAiB,MAAM,SAAS,CAAC;AAO9E;;;;;;;;;;GAUG;AACH,MAAM,CAAC,OAAO,UAAU,kBAAkB,CACxC,KAAK,EAAE,cAAc,GAAG,cAAc,EAAE,EACxC,MAAM,EAAE,eAAe,GACtB,aAAa,CAkBf"}

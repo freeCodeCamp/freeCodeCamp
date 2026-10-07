@@ -1,0 +1,1 @@
+{"version":3,"file":"offline-audio-context.d.ts","sourceRoot":"","sources":["../../../src/interfaces/offline-audio-context.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,sBAAsB,CAAC;AACzD,OAAO,EAAE,0BAA0B,EAAE,MAAM,gCAAgC,CAAC;AAE5E,MAAM,WAAW,oBAAqB,SAAQ,iBAAiB,CAAC,oBAAoB,CAAC,EAAE,0BAA0B;CAEhH"}

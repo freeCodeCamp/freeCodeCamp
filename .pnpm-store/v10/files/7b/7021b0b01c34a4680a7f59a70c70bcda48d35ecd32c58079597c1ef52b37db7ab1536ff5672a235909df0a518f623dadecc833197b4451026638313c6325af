@@ -1,0 +1,80 @@
+{
+  "name": "file-entry-cache",
+  "version": "6.0.1",
+  "description": "Super simple cache for file metadata, useful for process that work o a given series of files and that only need to repeat the job on the changed ones since the previous run of the process",
+  "repository": "royriojas/file-entry-cache",
+  "license": "MIT",
+  "author": {
+    "name": "Roy Riojas",
+    "url": "http://royriojas.com"
+  },
+  "main": "cache.js",
+  "files": [
+    "cache.js"
+  ],
+  "engines": {
+    "node": "^10.12.0 || >=12.0.0"
+  },
+  "scripts": {
+    "eslint": "eslint --cache --cache-location=node_modules/.cache/ 'cache.js' 'test/**/*.js' 'perf.js'",
+    "autofix": "npm run eslint -- --fix",
+    "install-hooks": "prepush install && changelogx install-hook && precommit install",
+    "changelog": "changelogx -f markdown -o ./changelog.md",
+    "do-changelog": "npm run changelog && git add ./changelog.md && git commit -m 'DOC: Generate changelog' --no-verify",
+    "pre-v": "npm run test",
+    "post-v": "npm run do-changelog && git push --no-verify && git push --tags --no-verify",
+    "bump-major": "npm run pre-v && npm version major -m 'BLD: Release v%s' && npm run post-v",
+    "bump-minor": "npm run pre-v && npm version minor -m 'BLD: Release v%s' && npm run post-v",
+    "bump-patch": "npm run pre-v && npm version patch -m 'BLD: Release v%s' && npm run post-v",
+    "test": "npm run eslint --silent && mocha -R spec test/specs",
+    "perf": "node perf.js",
+    "cover": "istanbul cover test/runner.js html text-summary",
+    "watch": "watch-run -i -p 'test/specs/**/*.js' istanbul cover test/runner.js html text-summary"
+  },
+  "prepush": [
+    "npm run eslint --silent"
+  ],
+  "precommit": [
+    "npm run eslint --silent"
+  ],
+  "keywords": [
+    "file cache",
+    "task cache files",
+    "file cache",
+    "key par",
+    "key value",
+    "cache"
+  ],
+  "changelogx": {
+    "ignoreRegExp": [
+      "BLD: Release",
+      "DOC: Generate Changelog",
+      "Generated Changelog"
+    ],
+    "issueIDRegExp": "#(\\d+)",
+    "commitURL": "https://github.com/royriojas/file-entry-cache/commit/{0}",
+    "authorURL": "https://github.com/{0}",
+    "issueIDURL": "https://github.com/royriojas/file-entry-cache/issues/{0}",
+    "projectName": "file-entry-cache"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "changelogx": "^5.0.6",
+    "del": "^6.0.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "glob-expand": "^0.2.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^8.2.1",
+    "precommit": "^1.2.2",
+    "prepush": "^3.1.11",
+    "prettier": "^2.1.2",
+    "watch-run": "^1.2.5",
+    "write": "^2.0.0"
+  },
+  "dependencies": {
+    "flat-cache": "^3.0.4"
+  }
+}

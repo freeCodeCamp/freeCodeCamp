@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0-next.29",
+  "name": "@polka/url",
+  "repository": "lukeed/polka",
+  "description": "Super fast, memoized `req.url` parser",
+  "module": "build.mjs",
+  "types": "index.d.ts",
+  "main": "build.js",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./build.mjs",
+      "require": "./build.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "build.*",
+    "index.d.*"
+  ],
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke@lukeed.com",
+    "url": "https://lukeed.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

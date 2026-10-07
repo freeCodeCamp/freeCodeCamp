@@ -1,0 +1,70 @@
+{
+  "name": "eslint-visitor-keys",
+  "version": "4.2.1",
+  "description": "Constants and utilities about visitor keys to traverse AST.",
+  "type": "module",
+  "main": "dist/eslint-visitor-keys.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": [
+      {
+        "import": "./lib/index.js",
+        "require": "./dist/eslint-visitor-keys.cjs"
+      },
+      "./dist/eslint-visitor-keys.cjs"
+    ],
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/index.d.ts",
+    "dist/visitor-keys.d.ts",
+    "dist/eslint-visitor-keys.cjs",
+    "dist/eslint-visitor-keys.d.cts",
+    "lib"
+  ],
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "devDependencies": {
+    "@types/estree": "^0.0.51",
+    "@types/estree-jsx": "^0.0.1",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint-release": "^3.2.0",
+    "esquery": "^1.4.0",
+    "json-diff": "^0.7.3",
+    "opener": "^1.5.2",
+    "rollup": "^4.22.4",
+    "rollup-plugin-dts": "^6.1.1",
+    "tsd": "^0.31.2",
+    "typescript": "^5.6.2"
+  },
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:types",
+    "build:cjs": "rollup -c",
+    "build:debug": "npm run build:cjs -- -m && npm run build:types",
+    "build:types": "tsc -v && tsc",
+    "release:generate:latest": "eslint-generate-release",
+    "release:generate:alpha": "eslint-generate-prerelease alpha",
+    "release:generate:beta": "eslint-generate-prerelease beta",
+    "release:generate:rc": "eslint-generate-prerelease rc",
+    "release:publish": "eslint-publish-release",
+    "test": "mocha tests/lib/**/*.cjs && c8 mocha tests/lib/**/*.js && npm run test:types",
+    "test:open-coverage": "c8 report --reporter lcov && opener coverage/lcov-report/index.html",
+    "test:types": "tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eslint/js.git",
+    "directory": "packages/eslint-visitor-keys"
+  },
+  "funding": "https://opencollective.com/eslint",
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Toru Nagashima (https://github.com/mysticatea)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eslint/js/issues"
+  },
+  "homepage": "https://github.com/eslint/js/blob/main/packages/eslint-visitor-keys/README.md"
+}

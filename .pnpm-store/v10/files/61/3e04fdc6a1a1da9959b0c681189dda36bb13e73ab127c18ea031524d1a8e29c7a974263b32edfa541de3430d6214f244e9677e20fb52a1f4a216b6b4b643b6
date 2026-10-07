@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/PartitionedSemaphore.js",
+  "module": "../dist/esm/PartitionedSemaphore.js",
+  "types": "../dist/dts/PartitionedSemaphore.d.ts"
+}

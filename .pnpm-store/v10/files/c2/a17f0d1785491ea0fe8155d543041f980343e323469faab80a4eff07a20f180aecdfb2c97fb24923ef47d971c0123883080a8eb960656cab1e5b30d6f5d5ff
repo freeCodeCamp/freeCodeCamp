@@ -1,0 +1,65 @@
+{
+  "definitions": {
+    "HandlerFunction": {
+      "description": "Function that executes for every progress step.",
+      "instanceof": "Function",
+      "tsType": "import('../../lib/ProgressPlugin').HandlerFn"
+    },
+    "ProgressPluginOptions": {
+      "description": "Options object for the ProgressPlugin.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "activeModules": {
+          "description": "Show active modules count and one active module in progress message.",
+          "type": "boolean"
+        },
+        "dependencies": {
+          "description": "Show dependencies count in progress message.",
+          "type": "boolean"
+        },
+        "dependenciesCount": {
+          "description": "Minimum dependencies count to start with. For better progress calculation. Default: 10000.",
+          "type": "number"
+        },
+        "entries": {
+          "description": "Show entries count in progress message.",
+          "type": "boolean"
+        },
+        "handler": {
+          "description": "Function that executes for every progress step.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/HandlerFunction"
+            }
+          ]
+        },
+        "modules": {
+          "description": "Show modules count in progress message.",
+          "type": "boolean"
+        },
+        "modulesCount": {
+          "description": "Minimum modules count to start with. For better progress calculation. Default: 5000.",
+          "type": "number"
+        },
+        "percentBy": {
+          "description": "Collect percent algorithm. By default it calculates by a median from modules, entries and dependencies percent.",
+          "enum": ["entries", "modules", "dependencies", null]
+        },
+        "profile": {
+          "description": "Collect profile data for progress steps. Default: false.",
+          "enum": [true, false, null]
+        }
+      }
+    }
+  },
+  "title": "ProgressPluginArgument",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/ProgressPluginOptions"
+    },
+    {
+      "$ref": "#/definitions/HandlerFunction"
+    }
+  ]
+}

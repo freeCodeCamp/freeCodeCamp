@@ -1,0 +1,138 @@
+{
+  "name": "node-fetch-native",
+  "version": "1.6.7",
+  "description": "better fetch for Node.js. Works on any JavaScript runtime!",
+  "repository": "unjs/node-fetch-native",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "browser": "./dist/native.mjs",
+      "bun": "./dist/native.mjs",
+      "deno": "./dist/native.mjs",
+      "edge-light": "./dist/native.mjs",
+      "edge-routine": "./dist/native.mjs",
+      "lagon": "./dist/native.mjs",
+      "netlify": "./dist/native.mjs",
+      "react-native": "./dist/native.mjs",
+      "wintercg": "./dist/native.mjs",
+      "worker": "./dist/native.mjs",
+      "workerd": "./dist/native.mjs",
+      "node": {
+        "import": {
+          "types": "./lib/index.d.mts",
+          "default": "./dist/index.mjs"
+        },
+        "require": {
+          "types": "./lib/index.d.cts",
+          "default": "./lib/index.cjs"
+        }
+      },
+      "types": "./lib/index.d.mts",
+      "import": "./dist/native.mjs",
+      "require": "./dist/native.cjs",
+      "default": "./dist/native.mjs"
+    },
+    "./polyfill": {
+      "node": {
+        "import": {
+          "types": "./lib/polyfill.d.mts",
+          "default": "./dist/polyfill.mjs"
+        },
+        "require": {
+          "types": "./lib/polyfill.d.cts",
+          "default": "./dist/polyfill.cjs"
+        }
+      },
+      "types": "./lib/polyfill.d.mts",
+      "import": "./lib/empty.mjs",
+      "require": "./lib/empty.cjs",
+      "default": "./lib/empty.mjs"
+    },
+    "./node": {
+      "import": {
+        "types": "./lib/index.d.mts",
+        "default": "./dist/node.mjs"
+      },
+      "require": {
+        "types": "./lib/index.d.cts",
+        "default": "./dist/node.cjs"
+      }
+    },
+    "./native": {
+      "import": {
+        "types": "./lib/index.d.mts",
+        "default": "./dist/native.mjs"
+      },
+      "require": {
+        "types": "./lib/index.d.cts",
+        "default": "./lib/native.cjs"
+      }
+    },
+    "./src/index.js": {
+      "import": {
+        "types": "./lib/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./lib/index.d.cts",
+        "default": "./lib/index.cjs"
+      }
+    },
+    "./proxy": {
+      "node": {
+        "types": "./lib/proxy.d.ts",
+        "default": "./dist/proxy.cjs"
+      },
+      "default": {
+        "import": {
+          "types": "./lib/proxy.d.ts",
+          "default": "./dist/proxy-stub.mjs"
+        },
+        "require": {
+          "types": "./lib/proxy.d.ts",
+          "default": "./dist/proxy-stub.cjs"
+        }
+      }
+    }
+  },
+  "main": "./lib/index.cjs",
+  "module": "./dist/index.mjs",
+  "react-native": "./dist/native.mjs",
+  "types": "./lib/index.d.mts",
+  "files": [
+    "dist",
+    "lib",
+    "index.d.ts",
+    "node.d.ts",
+    "polyfill.d.ts",
+    "proxy.d.ts"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "lint": "eslint . && prettier -c src test lib",
+    "lint:fix": "eslint --fix . && prettier -w src test lib",
+    "prepack": "unbuild",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "pnpm lint && pnpm build && vitest run --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "abort-controller": "^3.0.0",
+    "agent-base": "^7.1.4",
+    "changelogen": "^0.6.2",
+    "eslint": "^9.32.0",
+    "eslint-config-unjs": "^0.5.0",
+    "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.6",
+    "node-fetch": "^3.3.2",
+    "prettier": "^3.6.2",
+    "proxy-agent": "^6.5.0",
+    "typescript": "^5.9.2",
+    "unbuild": "^3.6.0",
+    "undici": "^6.21.3",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.14.0"
+}

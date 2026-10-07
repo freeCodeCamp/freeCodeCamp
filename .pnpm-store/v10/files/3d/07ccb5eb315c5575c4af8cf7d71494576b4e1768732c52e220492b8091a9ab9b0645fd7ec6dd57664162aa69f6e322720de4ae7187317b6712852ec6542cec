@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>🚨 Build Error</title>
+    <style>
+      html {
+        color-scheme: dark light;
+        background-color: #282c33;
+      }
+      
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .title-heading {
+        font-size: 2rem;
+        background-color: #fe0140;
+        color: #ffffff;
+        margin: 0 0 20px 0;
+        padding: 10px;
+      }
+
+      .error-message {
+        font-size: 1.2rem;
+        color: salmon;
+        margin: 10px;
+        font-family: Menlo, Consolas, monospace;
+        white-space: pre;
+      }
+
+      .error-hints-container {
+        margin: 5px 0 20px 0;
+        list-style: none;
+        padding: 0;
+      }
+
+      .error-hints-container li:before {
+        content: '💡 ';
+      }
+
+      .error-hint {
+        color: #5e8af7;
+        font-size: 0.8rem;
+        padding: 0 0 0 5px;
+        font-family: Menlo, Consolas, monospace;
+      }
+
+      .error-stack-trace {
+        padding: 20px 10px;
+        background-color: #282c33;
+        color: #c5ccdb;
+        font-family: Menlo, Consolas, monospace;
+        font-size: 0.8rem;
+        white-space: pre;
+      }
+
+      .documentation {
+        padding: 0 5px;
+        font-family: Menlo, Consolas, monospace;
+        font-size: 0.8rem;
+      }
+
+      .documentation a {
+        color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title-heading">🚨 Parcel encountered errors</h1>
+    <% errors.forEach(function(error){ %>
+    <h2 class="error-message"><%- error.message %></h2>
+
+    <div class="error-stack-trace"><% if (error.frames?.length) { %><% error.frames.forEach(function(frame){ %><a href="/__parcel_launch_editor?file=<%- encodeURIComponent(frame.location) %>" style="text-decoration: underline; color: #888" onclick="fetch(this.href); return false"><%- frame.location %></a>
+<%- frame.code %><% }); %><% } else { %><%- error.stack %><% } %></div>
+    <ul class="error-hints-container">
+      <% error.hints.forEach(function(hint){ %>
+      <li class="error-hint"><%- hint %></li>
+      <% }); %>
+    </ul>
+    <% if (error.documentation) { %>
+    <div class="documentation">📝 <a href="<%- error.documentation %>" target="_blank">Learn more</a></div>
+    <% } %>
+    <% }); %>
+    <% if (hmrOptions) { %>
+    <script>
+      // Reload the page when an HMR update occurs.
+      var protocol =
+        (location.protocol == 'https:' &&
+          !/localhost|127.0.0.1|0.0.0.0/.test(hostname))
+          ? 'wss'
+          : 'ws';
+      var hostname = <%- JSON.stringify(hmrOptions.host || null) %> || location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost';
+      var port = <%- JSON.stringify(hmrOptions.port || null) %> || location.port;
+      var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/');
+
+      var receivedInitialMessage = false;
+      ws.onmessage = (e) => {
+        let data = JSON.parse(e.data);
+
+        // The HMR server sends the pending error immediately on connect. Ignore this.
+        if (data.type == 'error' && !receivedInitialMessage) {
+          receivedInitialMessage = true;
+          return;
+        }
+
+        location.reload();
+      };
+    </script>
+    <% } %>
+  </body>
+</html>

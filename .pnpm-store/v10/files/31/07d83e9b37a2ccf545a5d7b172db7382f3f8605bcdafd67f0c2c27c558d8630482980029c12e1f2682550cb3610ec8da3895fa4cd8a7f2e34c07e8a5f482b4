@@ -1,0 +1,66 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "name": {
+      "description": "The filename template for the target file(s) (https://github.com/webpack-contrib/file-loader#name).",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "outputPath": {
+      "description": "A filesystem path where the target file(s) will be placed (https://github.com/webpack-contrib/file-loader#outputpath).",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "publicPath": {
+      "description": "A custom public path for the target file(s) (https://github.com/webpack-contrib/file-loader#publicpath).",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "postTransformPublicPath": {
+      "description": "A custom transformation function for post-processing the publicPath (https://github.com/webpack-contrib/file-loader#posttransformpublicpath).",
+      "instanceof": "Function"
+    },
+    "context": {
+      "description": "A custom file context (https://github.com/webpack-contrib/file-loader#context).",
+      "type": "string"
+    },
+    "emitFile": {
+      "description": "Enables/Disables emit files (https://github.com/webpack-contrib/file-loader#emitfile).",
+      "type": "boolean"
+    },
+    "regExp": {
+      "description": "A Regular Expression to one or many parts of the target file path. The capture groups can be reused in the name property using [N] placeholder (https://github.com/webpack-contrib/file-loader#regexp).",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "RegExp"
+        }
+      ]
+    },
+    "esModule": {
+      "description": "By default, file-loader generates JS modules that use the ES modules syntax.",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

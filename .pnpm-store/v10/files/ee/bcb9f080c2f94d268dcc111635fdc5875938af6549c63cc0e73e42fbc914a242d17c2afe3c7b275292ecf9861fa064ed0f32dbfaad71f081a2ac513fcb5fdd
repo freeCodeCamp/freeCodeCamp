@@ -1,0 +1,4 @@
+import { CodeNode } from "./class/node";
+import { options } from "./option-types";
+export declare const compile: (cst: CodeNode, options?: Partial<options>) => string;
+//# sourceMappingURL=compile.d.ts.map

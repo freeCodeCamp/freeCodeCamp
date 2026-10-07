@@ -1,0 +1,50 @@
+# `MD031` - Fenced code blocks should be surrounded by blank lines
+
+Tags: `blank_lines`, `code`
+
+Aliases: `blanks-around-fences`
+
+Parameters:
+
+- `list_items`: Include list items (`boolean`, default `true`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when fenced code blocks are either not preceded or not
+followed by a blank line:
+
+````markdown
+Some text
+```
+Code block
+```
+
+```
+Another code block
+```
+Some more text
+````
+
+To fix this, ensure that all fenced code blocks have a blank line both before
+and after (except where the block is at the beginning or end of the document):
+
+````markdown
+Some text
+
+```
+Code block
+```
+
+```
+Another code block
+```
+
+Some more text
+````
+
+Set the `list_items` parameter to `false` to disable this rule for list items.
+Disabling this behavior for lists can be useful if it is necessary to create a
+[tight](https://spec.commonmark.org/0.29/#tight) list containing a code fence.
+
+Rationale: Aside from aesthetic reasons, some parsers, including kramdown, will
+not parse fenced code blocks that don't have blank lines before and after them.

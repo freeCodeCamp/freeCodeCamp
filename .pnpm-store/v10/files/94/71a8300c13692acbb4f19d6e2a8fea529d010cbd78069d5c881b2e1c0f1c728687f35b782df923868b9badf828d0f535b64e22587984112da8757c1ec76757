@@ -1,0 +1,59 @@
+{
+  "name": "@eslint/object-schema",
+  "version": "2.1.7",
+  "description": "An object schema merger/validator",
+  "type": "module",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "exports": {
+    "require": {
+      "types": "./dist/cjs/index.d.cts",
+      "default": "./dist/cjs/index.cjs"
+    },
+    "import": {
+      "types": "./dist/esm/index.d.ts",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build:dedupe-types": "node ../../tools/dedupe-types.js dist/cjs/index.cjs dist/esm/index.js",
+    "build:cts": "node ../../tools/build-cts.js dist/esm/index.d.ts dist/cjs/index.d.cts",
+    "build": "rollup -c && npm run build:dedupe-types && tsc -p tsconfig.esm.json && npm run build:cts",
+    "test": "mocha \"tests/**/*.test.js\"",
+    "test:coverage": "c8 npm test",
+    "test:jsr": "npx jsr@latest publish --dry-run",
+    "test:types": "tsc -p tests/types/tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eslint/rewrite.git",
+    "directory": "packages/object-schema"
+  },
+  "keywords": [
+    "object",
+    "validation",
+    "schema",
+    "merge"
+  ],
+  "author": "Nicholas C. Zakas",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eslint/rewrite/issues"
+  },
+  "homepage": "https://github.com/eslint/rewrite/tree/main/packages/object-schema#readme",
+  "devDependencies": {
+    "rollup-plugin-copy": "^3.5.0"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  }
+}

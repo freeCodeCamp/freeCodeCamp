@@ -1,0 +1,46 @@
+{
+  "name": "ecdsa-sig-formatter",
+  "version": "1.0.11",
+  "description": "Translate ECDSA signatures between ASN.1/DER and JOSE-style concatenation",
+  "main": "src/ecdsa-sig-formatter.js",
+  "scripts": {
+    "check-style": "eslint .",
+    "pretest": "npm run check-style",
+    "test": "istanbul cover --root src _mocha -- spec",
+    "report-cov": "cat ./coverage/lcov.info | coveralls"
+  },
+  "typings": "./src/ecdsa-sig-formatter.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Brightspace/node-ecdsa-sig-formatter.git"
+  },
+  "keywords": [
+    "ecdsa",
+    "der",
+    "asn.1",
+    "jwt",
+    "jwa",
+    "jsonwebtoken",
+    "jose"
+  ],
+  "author": "D2L Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Brightspace/node-ecdsa-sig-formatter/issues"
+  },
+  "homepage": "https://github.com/Brightspace/node-ecdsa-sig-formatter#readme",
+  "dependencies": {
+    "safe-buffer": "^5.0.1"
+  },
+  "devDependencies": {
+    "bench": "^0.3.6",
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
+    "eslint": "^2.12.0",
+    "eslint-config-brightspace": "^0.2.1",
+    "istanbul": "^0.4.3",
+    "jwk-to-pem": "^1.2.5",
+    "mocha": "^2.5.3",
+    "native-crypto": "^1.7.0"
+  }
+}

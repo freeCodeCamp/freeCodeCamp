@@ -1,0 +1,53 @@
+{
+  "name": "@vitest/runner",
+  "type": "module",
+  "version": "4.1.5",
+  "description": "Vitest test runner",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://vitest.dev/api/advanced/runner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/runner"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "keywords": [
+    "vitest",
+    "test",
+    "test-runner"
+  ],
+  "sideEffects": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "default": "./dist/utils.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "dependencies": {
+    "pathe": "^2.0.3",
+    "@vitest/utils": "4.1.5"
+  },
+  "scripts": {
+    "build": "premove dist && rollup -c",
+    "dev": "rollup -c --watch"
+  }
+}

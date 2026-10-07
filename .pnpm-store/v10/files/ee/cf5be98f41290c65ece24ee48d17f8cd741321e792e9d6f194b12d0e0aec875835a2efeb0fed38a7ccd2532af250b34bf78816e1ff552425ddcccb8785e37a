@@ -1,0 +1,8 @@
+{
+  "main": "dist/index.cjs",
+  "targets": {
+    "main": {
+      "outputFormat": "esmodule"
+    }
+  }
+}

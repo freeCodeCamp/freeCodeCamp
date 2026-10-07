@@ -1,0 +1,44 @@
+{
+  "name": "mrmime",
+  "version": "2.0.1",
+  "repository": "lukeed/mrmime",
+  "description": "A tiny (2.8kB) and fast utility for getting a MIME type from an extension or filename",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.d.ts",
+    "index.mjs",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "tsm bin/index.ts",
+    "test": "uvu -r tsm test"
+  },
+  "keywords": [
+    "mime",
+    "extension",
+    "mimetype"
+  ],
+  "devDependencies": {
+    "tsm": "2.3.0",
+    "uvu": "0.5.2"
+  }
+}

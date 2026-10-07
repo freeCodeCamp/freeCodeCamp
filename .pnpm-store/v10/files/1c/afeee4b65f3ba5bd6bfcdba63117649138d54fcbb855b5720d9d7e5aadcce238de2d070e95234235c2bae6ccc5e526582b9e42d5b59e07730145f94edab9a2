@@ -1,0 +1,1 @@
+{"version":3,"file":"IdWrapper.js","sourceRoot":"","sources":["../../src/utils/IdWrapper.ts"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;GAeG;AAEH;;GAEG;AACH,MAAM,OAAO,SAAS;IACpB,MAAM,CAAC,QAAQ,GAAG,CAAC,CAAC;IACX,GAAG,CAAS;IAErB;QACE,IAAI,CAAC,GAAG,GAAG,EAAE,SAAS,CAAC,QAAQ,CAAC;IAClC,CAAC;IAED,IAAI,EAAE;QACJ,OAAO,IAAI,CAAC,GAAG,CAAC;IAClB,CAAC"}

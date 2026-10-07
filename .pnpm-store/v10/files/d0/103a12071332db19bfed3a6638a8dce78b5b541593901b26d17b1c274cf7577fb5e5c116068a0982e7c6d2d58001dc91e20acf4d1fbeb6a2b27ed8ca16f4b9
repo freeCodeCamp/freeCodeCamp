@@ -1,0 +1,6 @@
+import { TDeleteUnrenderedAudioWorkletNodeFunction } from './delete-unrendered-audio-worklet-node-function';
+import { TGetUnrenderedAudioWorkletNodesFunction } from './get-unrendered-audio-worklet-nodes-function';
+
+export type TDeleteUnrenderedAudioWorkletNodeFactory = (
+    getUnrenderedAudioWorkletNodes: TGetUnrenderedAudioWorkletNodesFunction
+) => TDeleteUnrenderedAudioWorkletNodeFunction;

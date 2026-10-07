@@ -1,0 +1,196 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+domain Security
+
+  # An internal certificate ID value.
+  type CertificateId extends integer
+
+  # A description of mixed content (HTTP resources on HTTPS pages), as defined by
+  # https://www.w3.org/TR/mixed-content/#categories
+  type MixedContentType extends string
+    enum
+      blockable
+      optionally-blockable
+      none
+
+  # The security level of a page or resource.
+  type SecurityState extends string
+    enum
+      unknown
+      neutral
+      insecure
+      secure
+      info
+      insecure-broken
+
+  # Details about the security state of the page certificate.
+  experimental type CertificateSecurityState extends object
+    properties
+      # Protocol name (e.g. "TLS 1.2" or "QUIC").
+      string protocol
+      # Key Exchange used by the connection, or the empty string if not applicable.
+      string keyExchange
+      # (EC)DH group used by the connection, if applicable.
+      optional string keyExchangeGroup
+      # Cipher name.
+      string cipher
+      # TLS MAC. Note that AEAD ciphers do not have separate MACs.
+      optional string mac
+      # Page certificate.
+      array of string certificate
+      # Certificate subject name.
+      string subjectName
+      # Name of the issuing CA.
+      string issuer
+      # Certificate valid from date.
+      Network.TimeSinceEpoch validFrom
+      # Certificate valid to (expiration) date
+      Network.TimeSinceEpoch validTo
+      # The highest priority network error code, if the certificate has an error.
+      optional string certificateNetworkError
+      # True if the certificate uses a weak signature algorithm.
+      boolean certificateHasWeakSignature
+      # True if the certificate has a SHA1 signature in the chain.
+      boolean certificateHasSha1Signature
+      # True if modern SSL
+      boolean modernSSL
+      # True if the connection is using an obsolete SSL protocol.
+      boolean obsoleteSslProtocol
+      # True if the connection is using an obsolete SSL key exchange.
+      boolean obsoleteSslKeyExchange
+      # True if the connection is using an obsolete SSL cipher.
+      boolean obsoleteSslCipher
+      # True if the connection is using an obsolete SSL signature.
+      boolean obsoleteSslSignature
+
+  experimental type SafetyTipStatus extends string
+    enum
+      badReputation
+      lookalike
+
+  experimental type SafetyTipInfo extends object
+    properties
+      # Describes whether the page triggers any safety tips or reputation warnings. Default is unknown.
+      SafetyTipStatus safetyTipStatus
+      # The URL the safety tip suggested ("Did you mean?"). Only filled in for lookalike matches.
+      optional string safeUrl
+
+  # Security state information about the page.
+  experimental type VisibleSecurityState extends object
+    properties
+      # The security level of the page.
+      SecurityState securityState
+      # Security state details about the page certificate.
+      optional CertificateSecurityState certificateSecurityState
+      # The type of Safety Tip triggered on the page. Note that this field will be set even if the Safety Tip UI was not actually shown.
+      optional SafetyTipInfo safetyTipInfo
+      # Array of security state issues ids.
+      array of string securityStateIssueIds
+
+  # An explanation of an factor contributing to the security state.
+  type SecurityStateExplanation extends object
+    properties
+      # Security state representing the severity of the factor being explained.
+      SecurityState securityState
+      # Title describing the type of factor.
+      string title
+      # Short phrase describing the type of factor.
+      string summary
+      # Full text explanation of the factor.
+      string description
+      # The type of mixed content described by the explanation.
+      MixedContentType mixedContentType
+      # Page certificate.
+      array of string certificate
+      # Recommendations to fix any issues.
+      optional array of string recommendations
+
+  # Information about insecure content on the page.
+  deprecated type InsecureContentStatus extends object
+    properties
+      # Always false.
+      boolean ranMixedContent
+      # Always false.
+      boolean displayedMixedContent
+      # Always false.
+      boolean containedMixedForm
+      # Always false.
+      boolean ranContentWithCertErrors
+      # Always false.
+      boolean displayedContentWithCertErrors
+      # Always set to unknown.
+      SecurityState ranInsecureContentStyle
+      # Always set to unknown.
+      SecurityState displayedInsecureContentStyle
+
+  # The action to take when a certificate error occurs. continue will continue processing the
+  # request and cancel will cancel the request.
+  type CertificateErrorAction extends string
+    enum
+      continue
+      cancel
+
+  # Disables tracking security state changes.
+  command disable
+
+  # Enables tracking security state changes.
+  command enable
+
+  # Enable/disable whether all certificate errors should be ignored.
+  command setIgnoreCertificateErrors
+    parameters
+      # If true, all certificate errors will be ignored.
+      boolean ignore
+
+  # Handles a certificate error that fired a certificateError event.
+  deprecated command handleCertificateError
+    parameters
+      # The ID of the event.
+      integer eventId
+      # The action to take on the certificate error.
+      CertificateErrorAction action
+
+  # Enable/disable overriding certificate errors. If enabled, all certificate error events need to
+  # be handled by the DevTools client and should be answered with `handleCertificateError` commands.
+  deprecated command setOverrideCertificateErrors
+    parameters
+      # If true, certificate errors will be overridden.
+      boolean override
+
+  # There is a certificate error. If overriding certificate errors is enabled, then it should be
+  # handled with the `handleCertificateError` command. Note: this event does not fire if the
+  # certificate error has been allowed internally. Only one client per target should override
+  # certificate errors at the same time.
+  deprecated event certificateError
+    parameters
+      # The ID of the event.
+      integer eventId
+      # The type of the error.
+      string errorType
+      # The url that was requested.
+      string requestURL
+
+  # The security state of the page changed.
+  experimental event visibleSecurityStateChanged
+    parameters
+      # Security state information about the page.
+      VisibleSecurityState visibleSecurityState
+
+  # The security state of the page changed. No longer being sent.
+  deprecated event securityStateChanged
+    parameters
+      # Security state.
+      SecurityState securityState
+      # True if the page was loaded over cryptographic transport such as HTTPS.
+      deprecated boolean schemeIsCryptographic
+      # Previously a list of explanations for the security state. Now always
+      # empty.
+      deprecated array of SecurityStateExplanation explanations
+      # Information about insecure content on the page.
+      deprecated InsecureContentStatus insecureContentStatus
+      # Overrides user-visible description of the state. Always omitted.
+      deprecated optional string summary

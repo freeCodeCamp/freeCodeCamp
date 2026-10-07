@@ -1,0 +1,79 @@
+# Self-closing element {"dialect": "jsx"}
+
+<img/>
+
+==>
+
+Script(ExpressionStatement(JSXElement(JSXSelfClosingTag(JSXStartTag,JSXBuiltin(JSXIdentifier),JSXSelfCloseEndTag))))
+
+# Regular element {"dialect": "jsx"}
+
+<Foo>bar</Foo>
+
+==>
+
+Script(ExpressionStatement(JSXElement(
+  JSXOpenTag(JSXStartTag, JSXIdentifier, JSXEndTag),
+  JSXText,
+  JSXCloseTag(JSXStartCloseTag, JSXIdentifier, JSXEndTag))))
+
+# Fragment {"dialect": "jsx"}
+
+<>bar</>
+
+==>
+
+Script(ExpressionStatement(JSXElement(
+  JSXFragmentTag(JSXStartTag, JSXEndTag),
+  JSXText,
+  JSXCloseTag(JSXStartCloseTag, JSXEndTag))))
+
+# Namespaced name {"dialect": "jsx"}
+
+<blah-namespace:img/>
+
+==>
+
+Script(ExpressionStatement(JSXElement(
+  JSXSelfClosingTag(JSXStartTag,JSXNamespacedName(JSXIdentifier, JSXIdentifier),JSXSelfCloseEndTag))))
+
+# Member name {"dialect": "jsx"}
+
+<pkg.Component/>
+
+==>
+
+Script(ExpressionStatement(JSXElement(
+  JSXSelfClosingTag(JSXStartTag,JSXMemberExpression(JSXIdentifier, JSXIdentifier),JSXSelfCloseEndTag))))
+
+# Nested tags {"dialect": "jsx"}
+
+<a><b.C>text</b.C>{x} {...y}</a>
+
+==>
+
+Script(ExpressionStatement(JSXElement(
+  JSXOpenTag(JSXStartTag, JSXBuiltin(JSXIdentifier), JSXEndTag),
+  JSXElement(
+    JSXOpenTag(JSXStartTag, JSXMemberExpression(JSXIdentifier, JSXIdentifier), JSXEndTag),
+    JSXText,
+    JSXCloseTag(JSXStartCloseTag, JSXMemberExpression(JSXIdentifier, JSXIdentifier), JSXEndTag)),
+  JSXEscape(VariableName),
+  JSXText,
+  JSXEscape(Spread, VariableName),
+  JSXCloseTag(JSXStartCloseTag, JSXBuiltin(JSXIdentifier), JSXEndTag))))
+
+# Attributes {"dialect": "jsx"}
+
+<Foo a="1" b {...attrs} c={c}></Foo>
+
+==>
+
+Script(ExpressionStatement(JSXElement(
+  JSXOpenTag(JSXStartTag, JSXIdentifier,
+    JSXAttribute(JSXIdentifier, Equals, JSXAttributeValue),
+    JSXAttribute(JSXIdentifier),
+    JSXSpreadAttribute(Spread, VariableName),
+    JSXAttribute(JSXIdentifier, Equals, JSXEscape(VariableName)),
+  JSXEndTag),
+  JSXCloseTag(JSXStartCloseTag, JSXIdentifier, JSXEndTag))))

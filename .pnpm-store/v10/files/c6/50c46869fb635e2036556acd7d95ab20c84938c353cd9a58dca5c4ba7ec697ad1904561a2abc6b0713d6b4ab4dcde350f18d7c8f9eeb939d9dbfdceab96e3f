@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "context": {
+      "description": "A string indicating the root of your files.",
+      "type": "string"
+    },
+    "emitError": {
+      "description": "The errors found will always be emitted, to disable set to `false`.",
+      "type": "boolean"
+    },
+    "emitWarning": {
+      "description": "The warnings found will always be emitted, to disable set to `false`.",
+      "type": "boolean"
+    },
+    "eslintPath": {
+      "description": "Path to `eslint` instance that will be used for linting. If the `eslintPath` is a folder like a official eslint, or specify a `formatter` option. now you dont have to install `eslint`.",
+      "type": "string"
+    },
+    "exclude": {
+      "description": "Specify the files and/or directories to exclude. Must be relative to `options.context`.",
+      "anyOf": [{ "type": "string" }, { "type": "array" }]
+    },
+    "failOnError": {
+      "description": "Will cause the module build to fail if there are any errors, to disable set to `false`.",
+      "type": "boolean"
+    },
+    "failOnWarning": {
+      "description": "Will cause the module build to fail if there are any warnings, if set to `true`.",
+      "type": "boolean"
+    },
+    "files": {
+      "description": "Specify the files and/or directories to traverse. Must be relative to `options.context`.",
+      "anyOf": [{ "type": "string" }, { "type": "array" }]
+    },
+    "extensions": {
+      "description": "Specify extensions that should be checked.",
+      "anyOf": [{ "type": "string" }, { "type": "array" }]
+    },
+    "fix": {
+      "description": "Will enable ESLint autofix feature",
+      "type": "boolean"
+    },
+    "formatter": {
+      "description": "Accepts a function that will have one argument: an array of eslint messages (object). The function must return the output as a string.",
+      "anyOf": [{ "type": "string" }, { "instanceof": "Function" }]
+    },
+    "lintDirtyModulesOnly": {
+      "description": "Lint only changed files, skip lint on start.",
+      "type": "boolean"
+    },
+    "quiet": {
+      "description": "Will process and report errors only and ignore warnings, if set to `true`.",
+      "type": "boolean"
+    },
+    "outputReport": {
+      "description": "Write the output of the errors to a file, for example a checkstyle xml file for use for reporting on Jenkins CI",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "filePath": {
+              "description": "The `filePath` is relative to the webpack config: output.path",
+              "anyOf": [{ "type": "string" }]
+            },
+            "formatter": {
+              "description": "You can pass in a different formatter for the output file, if none is passed in the default/configured formatter will be used",
+              "anyOf": [{ "type": "string" }, { "instanceof": "Function" }]
+            }
+          }
+        }
+      ]
+    },
+    "threads": {
+      "description": "Default is false. Set to true for an auto-selected pool size based on number of cpus. Set to a number greater than 1 to set an explicit pool size. Set to false, 1, or less to disable and only run in main process.",
+      "anyOf": [{ "type": "number" }, { "type": "boolean" }]
+    }
+  }
+}

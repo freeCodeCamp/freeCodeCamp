@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/insertAfter",
+  "private": true,
+  "main": "../cjs/insertAfter.js",
+  "module": "../esm/insertAfter.js",
+  "types": "../esm/insertAfter.d.ts"
+}

@@ -1,0 +1,413 @@
+/**
+ * Chat status:
+ * - `submitted`: The message has been sent to the API and we're awaiting the start of the response stream.
+ * - `streaming`: The response is actively streaming in from the API, receiving chunks of data.
+ * - `ready`: The full response has been received and processed; a new user message can be submitted.
+ * - `error`: An error occurred during the API request, preventing successful completion.
+ */
+export type ChatStatus = 'submitted' | 'streaming' | 'ready' | 'error';
+export type UIDataTypes = Record<string, unknown>;
+export type UITool = {
+    input: unknown;
+    output: unknown | undefined;
+};
+export type UITools = Record<string, UITool>;
+export type ProviderMetadata = Record<string, Record<string, unknown>>;
+type ValueOf<T> = T[keyof T];
+type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
+export type TextUIPart = {
+    type: 'text';
+    text: string;
+    state?: 'streaming' | 'done';
+    providerMetadata?: ProviderMetadata;
+};
+export type ReasoningUIPart = {
+    type: 'reasoning';
+    text: string;
+    state?: 'streaming' | 'done';
+    providerMetadata?: ProviderMetadata;
+};
+export type SourceUrlUIPart = {
+    type: 'source-url';
+    sourceId: string;
+    url: string;
+    title?: string;
+    providerMetadata?: ProviderMetadata;
+};
+export type SourceDocumentUIPart = {
+    type: 'source-document';
+    sourceId: string;
+    mediaType: string;
+    title: string;
+    filename?: string;
+    providerMetadata?: ProviderMetadata;
+};
+export type FileUIPart = {
+    type: 'file';
+    mediaType: string;
+    filename?: string;
+    url: string;
+    providerMetadata?: ProviderMetadata;
+};
+export type StepStartUIPart = {
+    type: 'step-start';
+};
+export type DataUIPart<DATA_TYPES extends UIDataTypes> = ValueOf<{
+    [NAME in keyof DATA_TYPES & string]: {
+        type: `data-${NAME}`;
+        id?: string;
+        data: DATA_TYPES[NAME];
+    };
+}>;
+export type ToolUIPart<TOOLS extends UITools = UITools> = ValueOf<{
+    [NAME in keyof TOOLS & string]: {
+        type: `tool-${NAME}`;
+        toolCallId: string;
+    } & ({
+        state: 'input-streaming';
+        input: DeepPartial<TOOLS[NAME]['input']> | undefined;
+        rawInput?: string;
+        providerExecuted?: boolean;
+        output?: never;
+        errorText?: never;
+    } | {
+        state: 'input-available';
+        input: TOOLS[NAME]['input'];
+        providerExecuted?: boolean;
+        output?: never;
+        errorText?: never;
+        callProviderMetadata?: ProviderMetadata;
+    } | {
+        state: 'output-available';
+        input: TOOLS[NAME]['input'];
+        output: TOOLS[NAME]['output'];
+        errorText?: never;
+        providerExecuted?: boolean;
+        callProviderMetadata?: ProviderMetadata;
+        preliminary?: boolean;
+    } | {
+        state: 'output-error';
+        input: TOOLS[NAME]['input'] | undefined;
+        rawInput?: unknown;
+        output?: never;
+        errorText: string;
+        providerExecuted?: boolean;
+        callProviderMetadata?: ProviderMetadata;
+    });
+}>;
+export type DynamicToolUIPart = {
+    type: 'dynamic-tool';
+    toolName: string;
+    toolCallId: string;
+} & ({
+    state: 'input-streaming';
+    input: unknown | undefined;
+    rawInput?: string;
+    output?: never;
+    errorText?: never;
+} | {
+    state: 'input-available';
+    input: unknown;
+    output?: never;
+    errorText?: never;
+    callProviderMetadata?: ProviderMetadata;
+} | {
+    state: 'output-available';
+    input: unknown;
+    output: unknown;
+    errorText?: never;
+    callProviderMetadata?: ProviderMetadata;
+    preliminary?: boolean;
+} | {
+    state: 'output-error';
+    input: unknown;
+    output?: never;
+    errorText: string;
+    callProviderMetadata?: ProviderMetadata;
+});
+export type UIMessagePart<DATA_TYPES extends UIDataTypes = UIDataTypes, TOOLS extends UITools = UITools> = TextUIPart | ReasoningUIPart | ToolUIPart<TOOLS> | DynamicToolUIPart | SourceUrlUIPart | SourceDocumentUIPart | FileUIPart | DataUIPart<DATA_TYPES> | StepStartUIPart;
+export interface UIMessage<METADATA = unknown, DATA_PARTS extends UIDataTypes = UIDataTypes, TOOLS extends UITools = UITools> {
+    id: string;
+    role: 'system' | 'user' | 'assistant';
+    metadata?: METADATA;
+    parts: Array<UIMessagePart<DATA_PARTS, TOOLS>>;
+}
+export type InferUIMessageMetadata<T extends UIMessage> = T extends UIMessage<infer METADATA> ? METADATA : unknown;
+export type InferUIMessageData<T extends UIMessage> = T extends UIMessage<unknown, infer DATA_TYPES> ? DATA_TYPES : UIDataTypes;
+export type InferUIMessageTools<T extends UIMessage> = T extends UIMessage<unknown, any, infer TOOLS> ? TOOLS : UITools;
+export type InferUIMessageToolCall<UI_MESSAGE extends UIMessage> = ValueOf<{
+    [NAME in keyof InferUIMessageTools<UI_MESSAGE>]: {
+        toolName: NAME & string;
+        toolCallId: string;
+        input: InferUIMessageTools<UI_MESSAGE>[NAME] extends {
+            input: infer INPUT;
+        } ? INPUT : never;
+        dynamic?: false;
+    };
+}> | {
+    toolName: string;
+    toolCallId: string;
+    input: unknown;
+    dynamic: true;
+};
+type DataUIMessageChunk<DATA_TYPES extends UIDataTypes> = ValueOf<{
+    [NAME in keyof DATA_TYPES & string]: {
+        type: `data-${NAME}`;
+        id?: string;
+        data: DATA_TYPES[NAME];
+        transient?: boolean;
+    };
+}>;
+type ToolUIMessageChunk<TOOLS extends UITools> = ValueOf<{
+    [NAME in keyof TOOLS & string]: {
+        type: 'tool-input-available';
+        toolName: NAME;
+        toolCallId: string;
+        input: TOOLS[NAME]['input'];
+        callProviderMetadata?: ProviderMetadata;
+        providerExecuted?: boolean;
+    };
+}> | ValueOf<{
+    [NAME in keyof TOOLS & string]: {
+        type: 'tool-input-start';
+        toolName: NAME;
+        toolCallId: string;
+        input?: DeepPartial<TOOLS[NAME]['input']>;
+        providerExecuted?: boolean;
+    };
+}> | ValueOf<{
+    [NAME in keyof TOOLS & string]: {
+        type: 'tool-input-delta';
+        toolName: NAME;
+        toolCallId: string;
+        inputTextDelta: string;
+    };
+}> | ValueOf<{
+    [NAME in keyof TOOLS & string]: {
+        type: 'tool-output-available';
+        toolName: NAME;
+        toolCallId: string;
+        output: TOOLS[NAME]['output'];
+        callProviderMetadata?: ProviderMetadata;
+        preliminary?: boolean;
+    };
+}> | ValueOf<{
+    [NAME in keyof TOOLS & string]: {
+        type: 'tool-error';
+        toolName: NAME;
+        toolCallId: string;
+        errorText: string;
+        input?: TOOLS[NAME]['input'];
+        callProviderMetadata?: ProviderMetadata;
+    };
+}> | {
+    type: 'tool-input-available';
+    toolName: string;
+    toolCallId: string;
+    input: unknown;
+    callProviderMetadata?: ProviderMetadata;
+    providerExecuted?: boolean;
+    dynamic: true;
+} | {
+    type: 'tool-input-start';
+    toolName: string;
+    toolCallId: string;
+    input?: unknown;
+    providerExecuted?: boolean;
+    dynamic: true;
+} | {
+    type: 'tool-input-delta';
+    toolName: string;
+    toolCallId: string;
+    inputTextDelta: string;
+    dynamic: true;
+} | {
+    type: 'tool-output-available';
+    toolName: string;
+    toolCallId: string;
+    output: unknown;
+    callProviderMetadata?: ProviderMetadata;
+    preliminary?: boolean;
+    dynamic: true;
+} | {
+    type: 'tool-error';
+    toolName: string;
+    toolCallId: string;
+    errorText: string;
+    input?: unknown;
+    callProviderMetadata?: ProviderMetadata;
+    dynamic: true;
+};
+export type UIMessageChunk<METADATA = unknown, DATA_TYPES extends UIDataTypes = UIDataTypes, TOOLS extends UITools = UITools> = {
+    type: 'text-start';
+    id: string;
+    providerMetadata?: ProviderMetadata;
+} | {
+    type: 'text-delta';
+    delta: string;
+    id: string;
+    providerMetadata?: ProviderMetadata;
+} | {
+    type: 'text-end';
+    id: string;
+    providerMetadata?: ProviderMetadata;
+} | {
+    type: 'reasoning-start';
+    id: string;
+    providerMetadata?: ProviderMetadata;
+} | {
+    type: 'reasoning-delta';
+    id: string;
+    delta: string;
+    providerMetadata?: ProviderMetadata;
+} | {
+    type: 'reasoning-end';
+    id: string;
+    providerMetadata?: ProviderMetadata;
+} | {
+    type: 'error';
+    errorText: string;
+} | ToolUIMessageChunk<TOOLS> | {
+    type: 'source-url';
+    sourceId: string;
+    url: string;
+    title?: string;
+} | {
+    type: 'source-document';
+    sourceId: string;
+    mediaType: string;
+    title: string;
+    filename?: string;
+    providerMetadata?: ProviderMetadata;
+} | {
+    type: 'file';
+    url: string;
+    mediaType: string;
+} | DataUIMessageChunk<DATA_TYPES> | {
+    type: 'start-step';
+} | {
+    type: 'finish-step';
+} | {
+    type: 'start';
+    messageId?: string;
+    messageMetadata?: METADATA;
+} | {
+    type: 'finish';
+    messageMetadata?: METADATA;
+} | {
+    type: 'abort';
+} | {
+    type: 'message-metadata';
+    messageMetadata: METADATA;
+};
+export type InferUIMessageChunk<T extends UIMessage> = UIMessageChunk<InferUIMessageMetadata<T>, InferUIMessageData<T>, InferUIMessageTools<T>>;
+export interface ChatState<UI_MESSAGE extends UIMessage> {
+    status: ChatStatus;
+    error: Error | undefined;
+    messages: UI_MESSAGE[];
+    pushMessage: (message: UI_MESSAGE) => void;
+    popMessage: () => void;
+    replaceMessage: (index: number, message: UI_MESSAGE) => void;
+    snapshot: <T>(thing: T) => T;
+}
+export type ChatRequestOptions = {
+    headers?: Record<string, string> | Headers;
+    body?: object;
+    metadata?: unknown;
+};
+export interface ChatTransport<UI_MESSAGE extends UIMessage> {
+    sendMessages: (options: {
+        chatId: string;
+        messages: UI_MESSAGE[];
+        abortSignal: AbortSignal;
+        requestMetadata?: unknown;
+        trigger: 'submit-message' | 'regenerate-message';
+        messageId?: string;
+    } & ChatRequestOptions) => Promise<ReadableStream<InferUIMessageChunk<UI_MESSAGE>>>;
+    reconnectToStream: (options: {
+        chatId: string;
+    } & ChatRequestOptions) => Promise<ReadableStream<InferUIMessageChunk<UI_MESSAGE>> | null>;
+}
+export type PrepareSendMessagesRequest<UI_MESSAGE extends UIMessage> = (options: {
+    id: string;
+    messages: UI_MESSAGE[];
+    requestMetadata: unknown;
+    body: Record<string, unknown> | undefined;
+    credentials: RequestCredentials | undefined;
+    headers: HeadersInit | undefined;
+    api: string;
+} & {
+    trigger: 'submit-message' | 'regenerate-message';
+    messageId: string | undefined;
+}) => {
+    body: object;
+    headers?: HeadersInit;
+    credentials?: RequestCredentials;
+    api?: string;
+} | PromiseLike<{
+    body: object;
+    headers?: HeadersInit;
+    credentials?: RequestCredentials;
+    api?: string;
+}>;
+export type PrepareReconnectToStreamRequest = (options: {
+    id: string;
+    requestMetadata: unknown;
+    body: Record<string, unknown> | undefined;
+    credentials: RequestCredentials | undefined;
+    headers: HeadersInit | undefined;
+    api: string;
+}) => {
+    headers?: HeadersInit;
+    credentials?: RequestCredentials;
+    api?: string;
+} | PromiseLike<{
+    headers?: HeadersInit;
+    credentials?: RequestCredentials;
+    api?: string;
+}>;
+export type Resolvable<T> = T | (() => T) | (() => Promise<T>);
+export type FetchFunction = typeof fetch;
+export type HttpChatTransportInitOptions<UI_MESSAGE extends UIMessage> = {
+    api?: string;
+    credentials?: Resolvable<RequestCredentials>;
+    headers?: Resolvable<Record<string, string> | Headers>;
+    body?: Resolvable<object>;
+    fetch?: FetchFunction;
+    prepareSendMessagesRequest?: PrepareSendMessagesRequest<UI_MESSAGE>;
+    prepareReconnectToStreamRequest?: PrepareReconnectToStreamRequest;
+};
+export type IdGenerator = () => string;
+export type ChatOnErrorCallback = (error: Error) => void;
+export type ChatOnToolCallCallback<UI_MESSAGE extends UIMessage = UIMessage> = (options: {
+    toolCall: InferUIMessageToolCall<UI_MESSAGE>;
+}) => void | PromiseLike<void>;
+export type ChatOnFinishCallback<UI_MESSAGE extends UIMessage> = (options: {
+    message: UI_MESSAGE;
+    messages: UI_MESSAGE[];
+    isAbort: boolean;
+    isDisconnect: boolean;
+    isError: boolean;
+}) => void;
+export type ChatOnDataCallback<UI_MESSAGE extends UIMessage> = (dataPart: DataUIPart<InferUIMessageData<UI_MESSAGE>>) => void;
+export interface ChatInit<UI_MESSAGE extends UIMessage> {
+    id?: string;
+    messages?: UI_MESSAGE[];
+    generateId?: IdGenerator;
+    transport?: ChatTransport<UI_MESSAGE>;
+    onError?: ChatOnErrorCallback;
+    onToolCall?: ChatOnToolCallCallback<UI_MESSAGE>;
+    onFinish?: ChatOnFinishCallback<UI_MESSAGE>;
+    onData?: ChatOnDataCallback<UI_MESSAGE>;
+    sendAutomaticallyWhen?: (options: {
+        messages: UI_MESSAGE[];
+    }) => boolean | PromiseLike<boolean>;
+    shouldRepairToolInput?: (toolName: string) => boolean;
+}
+export type CreateUIMessage<UI_MESSAGE extends UIMessage> = Omit<UI_MESSAGE, 'id' | 'role'> & {
+    id?: UI_MESSAGE['id'];
+    role?: UI_MESSAGE['role'];
+};
+export {};

@@ -1,0 +1,36 @@
+{
+  "name": "@babel/plugin-transform-function-name",
+  "version": "7.23.3",
+  "description": "Apply ES2015 function.name semantics to all functions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-function-name"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-transform-function-name",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/helper-compilation-targets": "^7.22.15",
+    "@babel/helper-function-name": "^7.23.0",
+    "@babel/helper-plugin-utils": "^7.22.5"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/helper-plugin-test-runner": "^7.22.5"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

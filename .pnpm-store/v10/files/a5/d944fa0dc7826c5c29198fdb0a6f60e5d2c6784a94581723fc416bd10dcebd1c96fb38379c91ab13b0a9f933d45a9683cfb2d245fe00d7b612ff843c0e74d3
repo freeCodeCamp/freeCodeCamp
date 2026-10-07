@@ -1,0 +1,61 @@
+name: Benchmarks
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+        - 'docs/**'
+        - '*.md'
+  pull_request:
+    paths-ignore:
+        - 'docs/**'
+        - '*.md'
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark_current:
+    name: benchmark current
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5.0.0
+        with:
+          ref: ${{ github.base_ref }}
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install Modules
+        run: npm i --ignore-scripts
+      - name: Run Benchmark
+        run: npm run bench | tee current.txt
+      - name: Upload Current Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: current
+          path: current.txt
+
+  benchmark_branch:
+    name: benchmark branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5.0.0
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install Modules
+        run: npm i --ignore-scripts
+      - name: Run Benchmark
+        run: npm run bench | tee branch.txt
+      - name: Upload Branch Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: branch
+          path: branch.txt

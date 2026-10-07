@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Schema.js",
+  "module": "../dist/esm/Schema.js",
+  "types": "../dist/dts/Schema.d.ts"
+}

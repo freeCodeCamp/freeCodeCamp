@@ -1,0 +1,28 @@
+@import "ball-scale";
+
+.ball-scale-random {
+  width: 37px;
+  height: 40px;
+
+  > div {
+    @include balls();
+    @include global-animation();
+    
+    position: absolute;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    animation: ball-scale 1s 0s ease-in-out infinite;
+
+    &:nth-child(1) {
+      margin-left: -7px;
+      animation: ball-scale 1s 0.2s ease-in-out infinite;
+    }
+
+    &:nth-child(3) {
+      margin-left: -2px;
+      margin-top: 9px;
+      animation: ball-scale 1s 0.5s ease-in-out infinite;
+    }
+  }
+}

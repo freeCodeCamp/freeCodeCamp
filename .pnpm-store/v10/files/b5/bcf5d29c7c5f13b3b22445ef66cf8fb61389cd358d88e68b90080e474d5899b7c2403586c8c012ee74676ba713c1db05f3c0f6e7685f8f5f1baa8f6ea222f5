@@ -1,0 +1,42 @@
+{
+  "name": "bezier-easing",
+  "version": "2.1.0",
+  "description": "BezierEasing provides Cubic Bezier Curve easing which generalizes easing functions exactly like in CSS Transitions.",
+  "keywords": [
+    "cubic-bezier",
+    "bezier",
+    "easing",
+    "interpolation",
+    "animation",
+    "timing",
+    "timing-function"
+  ],
+  "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha",
+    "benchmark": "node benchmark.js",
+    "visual": "budo visual-demo.js",
+    "prepublish": "rm -rf dist && mkdir -p dist && npm run build-dev && npm run build-prod",
+    "build-dev": "browserify --standalone BezierEasing src/index.js > dist/bezier-easing.js",
+    "build-prod": "browserify --standalone BezierEasing src/index.js | uglifyjs -cm > dist/bezier-easing.min.js"
+  },
+  "devDependencies": {
+    "assert": "^1.3.0",
+    "benchmark": "^2.1.0",
+    "browserify": "^16.2.2",
+    "budo": "^11.2.2",
+    "mocha": "^5.2.0",
+    "uglify-js": "^3.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gre/bezier-easing.git"
+  }
+}

@@ -1,0 +1,39 @@
+{
+    "name": "memorystream",
+    "description": "This is lightweight memory stream module for node.js.",
+    "version": "0.3.1",
+    "keywords": [
+        "memory",
+        "test",
+        "stream",
+        "tools",
+        "streams",
+        "buffer"
+    ],
+    "scripts": {
+        "test": "grunt"
+    },
+    "devDependencies" : {
+        "expect.js" : "~0.2.0",
+        "mocha" : "~1.20.0",
+        "grunt": "~0.4",
+        "grunt-cli": "~0.1.13",
+        "grunt-mocha-test" : "~0.12.2",
+        "grunt-contrib-jshint" : "~0.10.0",
+        "q": "~1.0.1"
+    },
+    "author": "Dmitry Nizovtsev (https://github.com/JSBizon)",
+    "contributors": [
+        { "name": "Dmitry Nizovtsev", "email": "dmitryp3@gmail.com" }
+    ],
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/JSBizon/node-memorystream.git"
+    },
+    "homepage": "https://github.com/JSBizon/node-memorystream",
+    "engines": { "node": ">= 0.10.0" },
+    "licenses": [ {
+        "type": "MIT",
+        "url" : "http://github.com/JSBizon/node-memorystream/raw/master/LICENSE"
+    } ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "citty",
+  "version": "0.1.6",
+  "description": "Elegant CLI Builder",
+  "repository": "unjs/citty",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest dev",
+    "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs . && prettier -c src test",
+    "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix && prettier -c src test -w",
+    "prepack": "pnpm run build",
+    "play": "jiti ./playground/cli.ts",
+    "release": "pnpm test && changelogen --release --push && npm publish",
+    "test": "pnpm lint && vitest run --coverage"
+  },
+  "dependencies": {
+    "consola": "^3.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@vitest/coverage-v8": "^1.2.2",
+    "changelogen": "^0.5.5",
+    "eslint": "^8.56.0",
+    "eslint-config-unjs": "^0.2.1",
+    "jiti": "^1.21.0",
+    "prettier": "^3.2.5",
+    "scule": "^1.3.0",
+    "typescript": "^5.3.3",
+    "unbuild": "^2.0.0",
+    "vitest": "^1.2.2"
+  },
+  "packageManager": "pnpm@8.15.1"
+}

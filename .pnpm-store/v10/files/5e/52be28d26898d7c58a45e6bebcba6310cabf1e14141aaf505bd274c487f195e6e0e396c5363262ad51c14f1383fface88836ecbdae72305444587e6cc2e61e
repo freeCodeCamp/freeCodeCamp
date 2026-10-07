@@ -1,0 +1,62 @@
+{
+  "name": "@smithy/abort-controller",
+  "version": "2.2.0",
+  "description": "A simple abort controller library",
+  "main": "./dist-cjs/index.js",
+  "module": "./dist-es/index.js",
+  "types": "./dist-types/index.d.ts",
+  "scripts": {
+    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types && yarn build:types:downlevel'",
+    "build:cjs": "node ../../scripts/inline abort-controller",
+    "build:es": "yarn g:tsc -p tsconfig.es.json",
+    "build:types": "yarn g:tsc -p tsconfig.types.json",
+    "build:types:downlevel": "downlevel-dts dist-types dist-types/ts3.4",
+    "stage-release": "rimraf ./.release && yarn pack && mkdir ./.release && tar zxvf ./package.tgz --directory ./.release && rm ./package.tgz",
+    "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo || exit 0",
+    "lint": "eslint -c ../../.eslintrc.js \"src/**/*.ts\"",
+    "format": "prettier --config ../../prettier.config.js --ignore-path ../.prettierignore --write \"**/*.{ts,md,json}\"",
+    "extract:docs": "api-extractor run --local",
+    "test": "yarn g:jest"
+  },
+  "author": {
+    "name": "AWS SDK for JavaScript Team",
+    "url": "https://aws.amazon.com/javascript/"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@smithy/types": "^2.12.0",
+    "tslib": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "typesVersions": {
+    "<4.0": {
+      "dist-types/*": [
+        "dist-types/ts3.4/*"
+      ]
+    }
+  },
+  "files": [
+    "dist-*/**"
+  ],
+  "homepage": "https://github.com/awslabs/smithy-typescript/tree/main/packages/abort-controller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awslabs/smithy-typescript.git",
+    "directory": "packages/abort-controller"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "1.0.1",
+    "concurrently": "7.0.0",
+    "downlevel-dts": "0.10.1",
+    "rimraf": "3.0.2",
+    "typedoc": "0.23.23"
+  },
+  "typedoc": {
+    "entryPoint": "src/index.ts"
+  },
+  "publishConfig": {
+    "directory": ".release/package"
+  }
+}

@@ -1,0 +1,2 @@
+import { type ComponentProps } from "react";
+export declare const FormControlStatic: ({ className, children, ...props }: ComponentProps<"p">) => JSX.Element;

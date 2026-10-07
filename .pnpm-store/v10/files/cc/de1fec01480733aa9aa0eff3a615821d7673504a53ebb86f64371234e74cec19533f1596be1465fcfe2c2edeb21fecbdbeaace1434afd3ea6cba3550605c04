@@ -1,0 +1,276 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "createChatMessagesComponent", {
+    enumerable: true,
+    get: function() {
+        return createChatMessagesComponent;
+    }
+});
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_spread_props = require("@swc/helpers/_/_object_spread_props");
+var _object_without_properties = require("@swc/helpers/_/_object_without_properties");
+var _to_consumable_array = require("@swc/helpers/_/_to_consumable_array");
+var _lib = require("../../lib");
+var _chat = require("../../lib/utils/chat");
+var _Button = require("../Button");
+var _ChatMessage = require("./ChatMessage");
+var _ChatMessageError = require("./ChatMessageError");
+var _ChatMessageLoader = require("./ChatMessageLoader");
+var _icons = require("./icons");
+var copyToClipboard = function copyToClipboard(message) {
+    navigator.clipboard.writeText((0, _chat.getTextContent)(message));
+};
+function createDefaultMessageComponent(param) {
+    var createElement = param.createElement, Fragment = param.Fragment;
+    var ChatMessage = (0, _ChatMessage.createChatMessageComponent)({
+        createElement: createElement,
+        Fragment: Fragment
+    });
+    return function DefaultMessage(param) {
+        var message = param.message, status = param.status, userMessageProps = param.userMessageProps, assistantMessageProps = param.assistantMessageProps, tools = param.tools, indexUiState = param.indexUiState, setIndexUiState = param.setIndexUiState, onReload = param.onReload, onClose = param.onClose, onFeedback = param.onFeedback, feedbackState = param.feedbackState, actionsComponent = param.actionsComponent, classNames = param.classNames, messageTranslations = param.messageTranslations, translations = param.translations, suggestionsElement = param.suggestionsElement;
+        var defaultAssistantActions = _to_consumable_array._((0, _chat.hasTextContent)(message) ? [
+            {
+                title: translations.copyToClipboardLabel,
+                icon: function icon() {
+                    return /*#__PURE__*/ createElement(_icons.CopyIcon, {
+                        createElement: createElement
+                    });
+                },
+                onClick: copyToClipboard
+            }
+        ] : []).concat([
+            {
+                title: translations.regenerateLabel,
+                icon: function icon() {
+                    return /*#__PURE__*/ createElement(_icons.ReloadIcon, {
+                        createElement: createElement
+                    });
+                },
+                onClick: function onClick(m) {
+                    return onReload(m.id);
+                }
+            }
+        ]);
+        var messageFeedback = feedbackState === null || feedbackState === void 0 ? void 0 : feedbackState[message.id];
+        var hasVoted = messageFeedback !== undefined;
+        if (onFeedback) {
+            var isSending = messageFeedback === 'sending';
+            if (isSending) {
+                defaultAssistantActions.push({
+                    title: translations.sendingFeedbackLabel,
+                    icon: function icon() {
+                        return /*#__PURE__*/ createElement("span", {
+                            className: "ais-ChatMessage-feedbackSpinner"
+                        }, /*#__PURE__*/ createElement(_icons.LoadingSpinnerIcon, {
+                            createElement: createElement
+                        }));
+                    },
+                    disabled: true
+                });
+            } else if (hasVoted) {
+                defaultAssistantActions.push({
+                    title: translations.feedbackThankYouText,
+                    icon: function icon() {
+                        return /*#__PURE__*/ createElement("span", {
+                            className: "ais-ChatMessage-feedbackCheck"
+                        }, /*#__PURE__*/ createElement(_icons.CheckIcon, {
+                            createElement: createElement
+                        }), /*#__PURE__*/ createElement("span", {
+                            className: "ais-ChatMessage-feedbackText"
+                        }, translations.feedbackThankYouText));
+                    },
+                    disabled: true
+                });
+            } else {
+                defaultAssistantActions.push({
+                    title: translations.thumbsUpLabel,
+                    icon: function icon() {
+                        return /*#__PURE__*/ createElement(_icons.ThumbsUpIcon, {
+                            createElement: createElement
+                        });
+                    },
+                    onClick: function onClick(m) {
+                        return onFeedback(m.id, 1);
+                    }
+                }, {
+                    title: translations.thumbsDownLabel,
+                    icon: function icon() {
+                        return /*#__PURE__*/ createElement(_icons.ThumbsDownIcon, {
+                            createElement: createElement
+                        });
+                    },
+                    onClick: function onClick(m) {
+                        return onFeedback(m.id, 0);
+                    }
+                });
+            }
+        }
+        var messageProps = message.role === 'user' ? userMessageProps : assistantMessageProps;
+        var defaultActions = message.role === 'user' ? undefined : defaultAssistantActions;
+        return /*#__PURE__*/ createElement(ChatMessage, _object_spread._({
+            side: message.role === 'user' ? 'right' : 'left',
+            variant: message.role === 'user' ? 'neutral' : 'subtle',
+            message: message,
+            status: status,
+            tools: tools,
+            indexUiState: indexUiState,
+            setIndexUiState: setIndexUiState,
+            onClose: onClose,
+            actions: defaultActions,
+            actionsComponent: actionsComponent,
+            "data-role": message.role,
+            classNames: classNames,
+            translations: messageTranslations,
+            suggestionsElement: suggestionsElement
+        }, messageProps));
+    };
+}
+function createChatMessagesComponent(param) {
+    var createElement = param.createElement, Fragment = param.Fragment;
+    var Button = (0, _Button.createButtonComponent)({
+        createElement: createElement
+    });
+    var DefaultMessageComponent = createDefaultMessageComponent({
+        createElement: createElement,
+        Fragment: Fragment
+    });
+    var DefaultLoaderComponent = (0, _ChatMessageLoader.createChatMessageLoaderComponent)({
+        createElement: createElement
+    });
+    var DefaultErrorComponent = (0, _ChatMessageError.createChatMessageErrorComponent)({
+        createElement: createElement
+    });
+    return function ChatMessages(userProps) {
+        var _lastMessage_parts;
+        var _userProps_classNames = userProps.classNames, classNames = _userProps_classNames === void 0 ? {} : _userProps_classNames, _userProps_messageClassNames = userProps.messageClassNames, messageClassNames = _userProps_messageClassNames === void 0 ? {} : _userProps_messageClassNames, messageTranslations = userProps.messageTranslations, _userProps_messages = userProps.messages, messages = _userProps_messages === void 0 ? [] : _userProps_messages, MessageComponent = userProps.messageComponent, LoaderComponent = userProps.loaderComponent, ErrorComponent = userProps.errorComponent, EmptyComponent = userProps.emptyComponent, ActionsComponent = userProps.actionsComponent, tools = userProps.tools, indexUiState = userProps.indexUiState, setIndexUiState = userProps.setIndexUiState, _userProps_status = userProps.status, status = _userProps_status === void 0 ? 'ready' : _userProps_status, _userProps_hideScrollToBottom = userProps.hideScrollToBottom, hideScrollToBottom = _userProps_hideScrollToBottom === void 0 ? false : _userProps_hideScrollToBottom, onReload = userProps.onReload, onClose = userProps.onClose, sendMessage = userProps.sendMessage, setInput = userProps.setInput, userTranslations = userProps.translations, userMessageProps = userProps.userMessageProps, assistantMessageProps = userProps.assistantMessageProps, _userProps_isClearing = userProps.isClearing, isClearing = _userProps_isClearing === void 0 ? false : _userProps_isClearing, onClearTransitionEnd = userProps.onClearTransitionEnd, isScrollAtBottom = userProps.isScrollAtBottom, scrollRef = userProps.scrollRef, contentRef = userProps.contentRef, onScrollToBottom = userProps.onScrollToBottom, suggestionsElement = userProps.suggestionsElement, onFeedback = userProps.onFeedback, feedbackState = userProps.feedbackState, props = _object_without_properties._(userProps, [
+            "classNames",
+            "messageClassNames",
+            "messageTranslations",
+            "messages",
+            "messageComponent",
+            "loaderComponent",
+            "errorComponent",
+            "emptyComponent",
+            "actionsComponent",
+            "tools",
+            "indexUiState",
+            "setIndexUiState",
+            "status",
+            "hideScrollToBottom",
+            "onReload",
+            "onClose",
+            "sendMessage",
+            "setInput",
+            "translations",
+            "userMessageProps",
+            "assistantMessageProps",
+            "isClearing",
+            "onClearTransitionEnd",
+            "isScrollAtBottom",
+            "scrollRef",
+            "contentRef",
+            "onScrollToBottom",
+            "suggestionsElement",
+            "onFeedback",
+            "feedbackState"
+        ]);
+        var translations = _object_spread._({
+            scrollToBottomLabel: 'Scroll to bottom',
+            copyToClipboardLabel: 'Copy to clipboard',
+            regenerateLabel: 'Regenerate',
+            thumbsUpLabel: 'Like',
+            thumbsDownLabel: 'Dislike',
+            feedbackThankYouText: 'Thanks for your feedback!',
+            sendingFeedbackLabel: 'Sending feedback...'
+        }, userTranslations);
+        var cssClasses = {
+            root: (0, _lib.cx)('ais-ChatMessages', classNames.root),
+            scroll: (0, _lib.cx)('ais-ChatMessages-scroll ais-Scrollbar', classNames.scroll),
+            content: (0, _lib.cx)('ais-ChatMessages-content', classNames.content),
+            scrollToBottom: (0, _lib.cx)('ais-ChatMessages-scrollToBottom', classNames.scrollToBottom),
+            scrollToBottomHidden: (0, _lib.cx)('ais-ChatMessages-scrollToBottom--hidden', classNames.scrollToBottomHidden)
+        };
+        var lastMessage = messages[messages.length - 1];
+        var lastPart = lastMessage === null || lastMessage === void 0 ? void 0 : (_lastMessage_parts = lastMessage.parts) === null || _lastMessage_parts === void 0 ? void 0 : _lastMessage_parts[lastMessage.parts.length - 1];
+        var showLoader = getShowLoader(status, lastPart, tools);
+        var showEmpty = messages.length === 0 && !showLoader && !isClearing && status !== 'error';
+        var DefaultMessage = MessageComponent || DefaultMessageComponent;
+        var DefaultLoader = LoaderComponent || DefaultLoaderComponent;
+        var DefaultError = ErrorComponent || DefaultErrorComponent;
+        return /*#__PURE__*/ createElement("div", _object_spread_props._(_object_spread._({}, props), {
+            className: (0, _lib.cx)(cssClasses.root, props.className),
+            role: "log",
+            "aria-live": "polite"
+        }), /*#__PURE__*/ createElement("div", {
+            className: (0, _lib.cx)(cssClasses.scroll),
+            ref: scrollRef
+        }, /*#__PURE__*/ createElement("div", {
+            className: (0, _lib.cx)(cssClasses.content, isClearing && 'ais-ChatMessages-content--clearing'),
+            ref: contentRef,
+            onTransitionEnd: function onTransitionEnd(e) {
+                if (e.target === e.currentTarget && e.propertyName === 'opacity' && isClearing) {
+                    onClearTransitionEnd === null || onClearTransitionEnd === void 0 ? void 0 : onClearTransitionEnd();
+                }
+            }
+        }, showEmpty && EmptyComponent && /*#__PURE__*/ createElement(EmptyComponent, {
+            sendMessage: sendMessage,
+            setInput: setInput,
+            status: status,
+            onClose: onClose
+        }), messages.map(function(message, index) {
+            return /*#__PURE__*/ createElement(DefaultMessage, {
+                key: message.id,
+                message: message,
+                status: status,
+                userMessageProps: userMessageProps,
+                assistantMessageProps: assistantMessageProps,
+                tools: tools,
+                indexUiState: indexUiState,
+                setIndexUiState: setIndexUiState,
+                onReload: onReload,
+                onFeedback: onFeedback,
+                feedbackState: feedbackState,
+                actionsComponent: ActionsComponent,
+                onClose: onClose,
+                translations: translations,
+                classNames: messageClassNames,
+                messageTranslations: messageTranslations,
+                suggestionsElement: status === 'ready' && message.role === 'assistant' && index === messages.length - 1 ? suggestionsElement : undefined
+            });
+        }), showLoader && /*#__PURE__*/ createElement(DefaultLoader, {
+            translations: {
+                loaderText: translations.loaderText
+            }
+        }), status === 'error' && /*#__PURE__*/ createElement(DefaultError, {
+            onReload: onReload
+        }))), /*#__PURE__*/ createElement(Button, {
+            variant: "outline",
+            size: "sm",
+            iconOnly: true,
+            className: (0, _lib.cx)(cssClasses.scrollToBottom, (hideScrollToBottom || isScrollAtBottom) && cssClasses.scrollToBottomHidden),
+            onClick: onScrollToBottom,
+            "aria-label": translations.scrollToBottomLabel,
+            tabIndex: isScrollAtBottom ? -1 : 0
+        }, /*#__PURE__*/ createElement(_icons.ChevronDownIcon, {
+            createElement: createElement
+        })));
+    };
+}
+var getShowLoader = function getShowLoader(status, lastPart, tools) {
+    if (status !== 'submitted' && status !== 'streaming') return false;
+    if (status === 'submitted') return true;
+    if (!lastPart) return true;
+    if ((0, _chat.isPartText)(lastPart)) return false;
+    if ((0, _chat.isPartTool)(lastPart)) {
+        if (lastPart.state === 'output-available') return false;
+        if (lastPart.state === 'input-streaming') {
+            var tool = (0, _chat.findTool)(lastPart.type, tools);
+            return !(tool === null || tool === void 0 ? void 0 : tool.streamInput);
+        }
+        return true;
+    }
+    return true;
+};

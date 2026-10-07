@@ -1,0 +1,76 @@
+{
+	"name": "@sindresorhus/is",
+	"version": "5.6.0",
+	"description": "Type check values",
+	"license": "MIT",
+	"repository": "sindresorhus/is",
+	"funding": "https://github.com/sindresorhus/is?sponsor=1",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"engines": {
+		"node": ">=14.16"
+	},
+	"scripts": {
+		"build": "del dist && tsc",
+		"test": "tsc --noEmit && xo && ava",
+		"prepare": "npm run build"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"type",
+		"types",
+		"is",
+		"check",
+		"checking",
+		"validate",
+		"validation",
+		"utility",
+		"util",
+		"typeof",
+		"instanceof",
+		"object",
+		"assert",
+		"assertion",
+		"test",
+		"kind",
+		"primitive",
+		"verify",
+		"compare",
+		"typescript",
+		"typeguards",
+		"types"
+	],
+	"devDependencies": {
+		"@sindresorhus/tsconfig": "^3.0.1",
+		"@types/jsdom": "^21.1.1",
+		"@types/node": "^20.2.5",
+		"@types/zen-observable": "^0.8.3",
+		"ava": "^5.3.0",
+		"del-cli": "^5.0.0",
+		"jsdom": "^20.0.1",
+		"rxjs": "^7.8.1",
+		"tempy": "^3.0.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.4",
+		"xo": "^0.54.2",
+		"zen-observable": "^0.10.0",
+		"expect-type": "^0.16.0"
+	},
+	"sideEffects": false,
+	"ava": {
+		"extensions": {
+			"ts": "module"
+		},
+		"nodeArguments": [
+			"--loader=ts-node/esm"
+		]
+	}
+}

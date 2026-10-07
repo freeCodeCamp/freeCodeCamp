@@ -1,0 +1,22 @@
+{
+  "name": "@algolia/cache-in-memory",
+  "version": "4.27.0",
+  "private": false,
+  "description": "Promise-based cache library using memory.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-javascript.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "dist/cache-in-memory.esm.js",
+  "types": "dist/cache-in-memory.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "dependencies": {
+    "@algolia/cache-common": "4.27.0"
+  }
+}

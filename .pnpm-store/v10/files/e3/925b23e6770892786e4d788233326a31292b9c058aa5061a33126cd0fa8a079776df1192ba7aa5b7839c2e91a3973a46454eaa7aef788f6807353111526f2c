@@ -1,0 +1,34 @@
+{
+  "name": "acorn",
+  "description": "ECMAScript parser",
+  "homepage": "https://github.com/acornjs/acorn",
+  "main": "dist/acorn.js",
+  "module": "dist/acorn.mjs",
+  "version": "6.4.2",
+  "engines": {"node": ">=0.4.0"},
+  "maintainers": [
+    {
+      "name": "Marijn Haverbeke",
+      "email": "marijnh@gmail.com",
+      "web": "https://marijnhaverbeke.nl"
+    },
+    {
+      "name": "Ingvar Stepanyan",
+      "email": "me@rreverser.com",
+      "web": "https://rreverser.com/"
+    },
+    {
+      "name": "Adrian Heine",
+      "web": "http://adrianheine.de"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acornjs/acorn.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prepare": "cd ..; npm run build:main && npm run build:bin"
+  },
+  "bin": {"acorn": "./bin/acorn"}
+}

@@ -1,0 +1,71 @@
+{
+  "name": "gatsby-plugin-pnpm-gatsby-5",
+  "version": "1.2.11",
+  "description": "Easily add pnpm support to your Gatsby project",
+  "main": "index.js",
+  "types": "./dist/gatsby-node.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Js-Brecht/gatsby-plugin-pnpm"
+  },
+  "homepage": "https://github.com/Js-Brecht/gatsby-plugin-pnpm",
+  "keywords": [
+    "gatsby-plugin",
+    "gatsby",
+    "pnpm",
+    "webpack"
+  ],
+  "author": "Jeremy Albright",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Js-Brecht/gatsby-plugin-pnpm/issues"
+  },
+  "files": [
+    "dist",
+    "gatsby-node.js",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "purge": "rimraf node_modules && npm run clean",
+    "clean": "rimraf ./dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "build:watch": "run-s \"build -- -w\"",
+    "prepublishOnly": "run-s clean build",
+    "test": "run-s test:root test:silo",
+    "test:root": "jest --config ./jest.config.js --verbose",
+    "test:silo": "cd tests/silo; jest --config ./jest.config.js --verbose",
+    "test:coverage": "jest --config ./jest.config.js --coverage",
+    "test:coverage-all": "run-s test test:coverage"
+  },
+  "peerDependencies": {
+    "gatsby": "~2.x.x || ~3.x.x || ~4.x.x || ~5.x.x"
+  },
+  "devDependencies": {
+    "@jtechsvcs/eslint-config-typescript": "^2.0.3",
+    "@types/jest": "^25.1.2",
+    "@types/lodash.get": "^4.4.6",
+    "@types/lodash.uniq": "^4.5.6",
+    "@types/node": "^12.12.26",
+    "@types/webpack": "^4.41.5",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "@typescript-eslint/typescript-estree": "^2.19.0",
+    "coveralls": "^3.0.9",
+    "eslint": "^6.8.0",
+    "gatsby": "^2.19.12",
+    "jest": "^25.1.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.1",
+    "ts-jest": "^25.2.0",
+    "type-fest": "^0.10.0",
+    "typedoc": "^0.15.8",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2",
+    "lodash.uniq": "^4.5.0"
+  }
+}

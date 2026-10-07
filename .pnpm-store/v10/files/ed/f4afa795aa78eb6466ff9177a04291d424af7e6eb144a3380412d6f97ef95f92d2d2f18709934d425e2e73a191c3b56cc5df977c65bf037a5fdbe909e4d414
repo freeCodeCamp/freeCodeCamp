@@ -1,0 +1,78 @@
+{
+  "author": {
+    "email": "gajus@gajus.com",
+    "name": "Gajus Kuizinas",
+    "url": "http://gajus.com"
+  },
+  "dependencies": {
+    "ajv": "^8.0.1",
+    "lodash.truncate": "^4.4.2",
+    "slice-ansi": "^4.0.0",
+    "string-width": "^4.2.3",
+    "strip-ansi": "^6.0.1"
+  },
+  "description": "Formats data into a string table.",
+  "devDependencies": {
+    "@types/chai": "^4.2.16",
+    "@types/lodash.mapvalues": "^4.6.6",
+    "@types/lodash.truncate": "^4.4.6",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^14.14.37",
+    "@types/sinon": "^10.0.0",
+    "@types/slice-ansi": "^4.0.0",
+    "ajv-cli": "^5.0.0",
+    "ajv-keywords": "^5.0.0",
+    "chai": "^4.2.0",
+    "chalk": "^4.1.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-canonical": "^25.0.0",
+    "gitdown": "^3.1.4",
+    "husky": "^4.3.6",
+    "js-beautify": "^1.14.0",
+    "lodash.mapvalues": "^4.6.0",
+    "mkdirp": "^1.0.4",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "semantic-release": "^17.3.1",
+    "sinon": "^12.0.1",
+    "ts-node": "^9.1.1",
+    "typescript": "4.5.2"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "npm run create-readme && git add README.md && git commit -m 'docs: generate docs' --no-verify",
+      "pre-commit": "npm run build && npm run lint && npm run test"
+    }
+  },
+  "keywords": [
+    "ascii",
+    "text",
+    "table",
+    "align",
+    "ansi"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "./dist/src/index.js",
+  "files": [
+    "dist/src/"
+  ],
+  "name": "table",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajus/table"
+  },
+  "scripts": {
+    "prebuild": "rm -fr ./src/generated && mkdirp ./src/generated",
+    "build": "npm run create-validators && tsc",
+    "create-readme": "gitdown ./.README/README.md --output-file ./README.md",
+    "create-validators": "ajv compile --all-errors --inline-refs=false -s src/schemas/config -s src/schemas/streamConfig -r src/schemas/shared -c ajv-keywords/dist/keywords/typeof -o | js-beautify > ./src/generated/validators.js",
+    "lint": "eslint ./src ./test",
+    "test": "nyc mocha && nyc check-coverage --lines 95"
+  },
+  "sideEffects": false,
+  "version": "6.9.0"
+}

@@ -1,0 +1,49 @@
+{
+  "Commands:": "आदेश:",
+  "Options:": "विकल्प:",
+  "Examples:": "उदाहरण:",
+  "boolean": "सत्यता",
+  "count": "संख्या",
+  "string": "वर्णों का तार ",
+  "number": "अंक",
+  "array": "सरणी",
+  "required": "आवश्यक",
+  "default": "डिफॉल्ट",
+  "default:": "डिफॉल्ट:",
+  "choices:": "विकल्प:",
+  "aliases:": "उपनाम:",
+  "generated-value": "उत्पन्न-मूल्य",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "पर्याप्त गैर-विकल्प तर्क प्राप्त नहीं: %s प्राप्त, कम से कम %s की आवश्यकता है",
+    "other": "पर्याप्त गैर-विकल्प तर्क प्राप्त नहीं: %s प्राप्त, कम से कम %s की आवश्यकता है"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "बहुत सारे गैर-विकल्प तर्क: %s प्राप्त, अधिकतम %s मान्य",
+    "other": "बहुत सारे गैर-विकल्प तर्क: %s प्राप्त, अधिकतम %s मान्य"
+  },
+  "Missing argument value: %s": {
+    "one": "कुछ तर्को के मूल्य गुम हैं: %s",
+    "other": "कुछ तर्को के मूल्य गुम हैं: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "आवश्यक तर्क गुम हैं: %s",
+    "other": "आवश्यक तर्क गुम हैं: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "अज्ञात तर्क प्राप्त: %s",
+    "other": "अज्ञात तर्क प्राप्त: %s"
+  },
+  "Invalid values:": "अमान्य मूल्य:",
+  "Argument: %s, Given: %s, Choices: %s": "तर्क: %s, प्राप्त: %s, विकल्प: %s",
+  "Argument check failed: %s": "तर्क जांच विफल: %s",
+  "Implications failed:": "दिए गए तर्क के लिए अतिरिक्त तर्क की अपेक्षा है:",
+  "Not enough arguments following: %s": "निम्नलिखित के बाद पर्याप्त तर्क नहीं प्राप्त: %s",
+  "Invalid JSON config file: %s": "अमान्य JSON config फाइल: %s",
+  "Path to JSON config file": "JSON config फाइल का पथ",
+  "Show help": "सहायता दिखाएँ",
+  "Show version number": "Version संख्या दिखाएँ",
+  "Did you mean %s?": "क्या आपका मतलब है %s?",
+  "Arguments %s and %s are mutually exclusive" : "तर्क %s और %s परस्पर अनन्य हैं",
+  "Positionals:": "स्थानीय:",
+  "command": "आदेश"
+}

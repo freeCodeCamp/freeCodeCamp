@@ -1,0 +1,70 @@
+import { Node, SyntaxKind } from "typescript";
+type TypeProp = {
+    name: string;
+    type?: string;
+    isOptional?: boolean;
+};
+type ParseContext = "source" | "method" | "constructor" | "parameter" | "typeParameter" | "propertyDeclaration" | "typeReference" | "expression";
+declare class Explorer {
+    private tree;
+    private context;
+    constructor(tree?: Node | string, context?: ParseContext);
+    isEmpty(): boolean;
+    toString(): string;
+    matches(other: string | Explorer): boolean;
+    getAll(kind: SyntaxKind): Explorer[];
+    get variables(): {
+        [key: string]: Explorer;
+    };
+    get value(): Explorer;
+    get annotation(): Explorer;
+    isUnionOf(types: string[]): boolean;
+    hasAnnotation(annotation: string): boolean;
+    get functions(): {
+        [key: string]: Explorer;
+    };
+    get allFunctions(): {
+        [key: string]: Explorer;
+    };
+    hasReturnAnnotation(annotation: string): boolean;
+    get parameters(): Explorer[];
+    get typeParameters(): Explorer[];
+    get typeArguments(): Explorer[];
+    hasReturn(value: string): boolean;
+    get types(): {
+        [key: string]: Explorer;
+    };
+    get interfaces(): {
+        [key: string]: Explorer;
+    };
+    get classes(): {
+        [key: string]: Explorer;
+    };
+    get methods(): {
+        [key: string]: Explorer;
+    };
+    get classConstructor(): Explorer | null;
+    get classProps(): {
+        [key: string]: Explorer;
+    };
+    get constructorProps(): {
+        [key: string]: Explorer;
+    };
+    get typeProps(): {
+        [key: string]: Explorer;
+    };
+    get objectProps(): {
+        [key: string]: Explorer;
+    };
+    hasTypeProps(props: TypeProp | TypeProp[]): boolean;
+    hasCast(expectedType?: string): boolean;
+    doesExtend(basesToCheck: string | string[]): boolean;
+    doesImplement(basesToCheck: string | string[]): boolean;
+    isPrivate(): boolean;
+    isProtected(): boolean;
+    isPublic(): boolean;
+    isReadOnly(): boolean;
+    hasNonNullAssertion(): boolean;
+}
+export { Explorer };
+//# sourceMappingURL=explorer.d.ts.map

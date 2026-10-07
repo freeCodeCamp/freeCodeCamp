@@ -1,0 +1,114 @@
+{
+  "name": "redux-actions",
+  "version": "2.6.5",
+  "description": "Flux Standard Action utlities for Redux",
+  "main": "lib/index.js",
+  "unpkg": "dist/redux-actions.js",
+  "module": "es/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,md}\"",
+    "format:check": "prettier --list-different \"**/*.{js,md}\"",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --out-dir es",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:umd": "rollup -c && es-check es5 dist/redux-actions.min.js",
+    "build": "run-s clean && run-p build:**",
+    "clean": "rimraf coverage dist es lib",
+    "lint": "xo",
+    "prepublishOnly": "run-s build",
+    "test": "jest"
+  },
+  "files": [
+    "es",
+    "lib",
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "flux",
+    "redux",
+    "fsa",
+    "actions"
+  ],
+  "author": "Andrew Clark <acdlite@me.com>",
+  "bugs": {
+    "url": "https://github.com/redux-utilities/redux-actions/issues"
+  },
+  "homepage": "https://github.com/redux-utilities/redux-actions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redux-utilities/redux-actions.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "cross-env": "^5.2.0",
+    "es-check": "^4.0.0",
+    "eslint": "^5.7.0",
+    "eslint-config-jest-files": "^0.1.3",
+    "eslint-config-unicorn-camelcase": "^0.1.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "flux-standard-action": "^2.0.3",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.3.0",
+    "npm-run-all": "^4.1.3",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-terser": "^3.0.0",
+    "xo": "^0.23.0"
+  },
+  "dependencies": {
+    "invariant": "^2.2.4",
+    "just-curry-it": "^3.1.0",
+    "loose-envify": "^1.4.0",
+    "reduce-reducers": "^0.4.3",
+    "to-camel-case": "^1.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "unicorn-camelcase",
+      "jest-files"
+    ],
+    "ignores": [
+      "rollup.config.js"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
+  "jest": {
+    "collectCoverage": true
+  },
+  "lint-staged": {
+    "*.{js,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

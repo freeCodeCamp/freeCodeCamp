@@ -1,0 +1,3 @@
+declare const MAX_SAFE_INTEGER: 9007199254740991;
+
+export = MAX_SAFE_INTEGER;

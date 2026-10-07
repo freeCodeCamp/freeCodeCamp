@@ -1,0 +1,51 @@
+{
+  "name": "postcss-modules-extract-imports",
+  "version": "3.0.0",
+  "description": "A CSS Modules transform to extract local aliases for inline imports",
+  "main": "src/index.js",
+  "engines": {
+    "node": "^10 || ^12 || >= 14"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "prettier": "prettier -l --ignore-path .gitignore . \"!test/test-cases\"",
+    "eslint": "eslint --ignore-path .gitignore .",
+    "lint": "yarn eslint && yarn prettier",
+    "test:only": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --collectCoverageFrom=\"src/**/*\"",
+    "pretest": "yarn lint",
+    "test": "yarn test:coverage",
+    "prepublishOnly": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/css-modules/postcss-modules-extract-imports.git"
+  },
+  "keywords": [
+    "css-modules",
+    "postcss",
+    "plugin"
+  ],
+  "author": "Glen Maddern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/css-modules/postcss-modules-extract-imports/issues"
+  },
+  "homepage": "https://github.com/css-modules/postcss-modules-extract-imports",
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "husky": "^4.3.0",
+    "jest": "^26.5.2",
+    "lint-staged": "^10.4.0",
+    "postcss": "^8.1.1",
+    "prettier": "^2.1.2"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.0"
+  }
+}

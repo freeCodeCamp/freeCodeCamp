@@ -1,0 +1,1 @@
+{"version":3,"file":"exponential-ramp-to-value-automation-event.d.ts","sourceRoot":"","sources":["../../../src/interfaces/exponential-ramp-to-value-automation-event.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,sCAAsC;IACnD,QAAQ,CAAC,OAAO,EAAE,MAAM,CAAC;IAEzB,QAAQ,CAAC,IAAI,EAAE,wBAAwB,CAAC;IAExC,QAAQ,CAAC,KAAK,EAAE,MAAM,CAAC;CAC1B"}

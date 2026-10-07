@@ -1,0 +1,87 @@
+{
+  "name": "@inquirer/type",
+  "version": "4.0.5",
+  "description": "Inquirer core TS types",
+  "keywords": [
+    "answer",
+    "answers",
+    "ask",
+    "base",
+    "cli",
+    "command",
+    "command-line",
+    "confirm",
+    "enquirer",
+    "generate",
+    "generator",
+    "hyper",
+    "input",
+    "inquire",
+    "inquirer",
+    "interface",
+    "iterm",
+    "javascript",
+    "menu",
+    "node",
+    "nodejs",
+    "prompt",
+    "promptly",
+    "prompts",
+    "question",
+    "readline",
+    "scaffold",
+    "scaffolder",
+    "scaffolding",
+    "stdin",
+    "stdout",
+    "terminal",
+    "tty",
+    "types",
+    "typescript",
+    "ui",
+    "yeoman",
+    "yo",
+    "zsh"
+  ],
+  "license": "MIT",
+  "author": "Simon Boudrias <admin@simonboudrias.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SBoudrias/Inquirer.js.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  },
+  "peerDependencies": {
+    "@types/node": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "gitHead": "e68fe01d65359e083581c48c4a18cd8f97d88842"
+}

@@ -1,0 +1,100 @@
+{
+  "name": "@typescript-eslint/types",
+  "version": "8.59.1",
+  "description": "Types for the TypeScript-ESTree AST spec",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/types"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "homepage": "https://typescript-eslint.io",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "typescript",
+    "estree"
+  ],
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^10.0.0",
+    "rimraf": "^5.0.10",
+    "tsx": "^4.7.2",
+    "typescript": ">=4.8.4 <6.1.0",
+    "vitest": "^4.0.18"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "nx": {
+    "name": "types",
+    "implicitDependencies": [
+      "ast-spec"
+    ],
+    "includedScripts": [
+      "clean"
+    ],
+    "targets": {
+      "build": {
+        "dependsOn": [
+          "copy-ast-spec"
+        ],
+        "inputs": [
+          "{projectRoot}/src/generated/**/*"
+        ]
+      },
+      "copy-ast-spec": {
+        "cache": false,
+        "command": "tsx tools/copy-ast-spec.mts",
+        "dependsOn": [
+          "ast-spec:build"
+        ],
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "outputs": [
+          "{projectRoot}/src/generated"
+        ]
+      },
+      "lint": {
+        "command": "eslint",
+        "dependsOn": [
+          "typescript-eslint:build",
+          "eslint-plugin-internal:build"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "build": "pnpm exec nx build",
+    "clean": "rimraf dist/ src/generated/ coverage/",
+    "copy-ast-spec": "tsx ./tools/copy-ast-spec.mts",
+    "format": "pnpm -w run format",
+    "generate-lib": "pnpm -w exec nx run scope-manager:generate-lib",
+    "lint": "pnpm -w exec nx lint",
+    "test": "pnpm -w exec nx test",
+    "typecheck": "pnpm -w exec nx typecheck"
+  }
+}

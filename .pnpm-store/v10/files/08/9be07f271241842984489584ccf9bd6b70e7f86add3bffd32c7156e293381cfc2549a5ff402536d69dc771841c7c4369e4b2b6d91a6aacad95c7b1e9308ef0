@@ -1,0 +1,40 @@
+{
+  "name": "babel-plugin-prismjs",
+  "version": "2.1.0",
+  "description": "A babel plugin to use PrismJS with standard bundlers.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rm -rf lib && babel src --out-dir lib",
+    "debug": "mocha --inspect-brk --require @babel/register",
+    "debug:watch": "mocha --watch --inspect-brk --require @babel/register",
+    "fix": "eslint --fix ./src ./test",
+    "lint": "eslint ./src ./test",
+    "prepack": "npm run build",
+    "test": "mocha --require @babel/register",
+    "watch": "mocha --watch --require @babel/register"
+  },
+  "peerDependencies": {
+    "prismjs": "^1.18.0"
+  },
+  "keywords": [
+    "prismjs",
+    "syntax-highlighting",
+    "babel-plugin"
+  ],
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": "James DiGioia <jamesorodig@gmail.com> (http://jamesdigioia.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-valtech": "^1.1.0",
+    "mocha": "^6.2.0",
+    "prismjs": "^1.0.0"
+  }
+}

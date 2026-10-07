@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/scrollParent",
+  "private": true,
+  "main": "../cjs/scrollParent.js",
+  "module": "../esm/scrollParent.js",
+  "types": "../esm/scrollParent.d.ts"
+}

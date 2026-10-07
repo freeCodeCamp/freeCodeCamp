@@ -1,0 +1,210 @@
+{
+  "name": "colord",
+  "version": "2.9.3",
+  "description": "👑 A tiny yet powerful tool for high-performance color manipulations and conversions",
+  "keywords": [
+    "color",
+    "parser",
+    "convert",
+    "tiny",
+    "hex",
+    "rgb",
+    "hsl",
+    "hsv",
+    "hwb",
+    "lab",
+    "lch",
+    "xyz",
+    "css",
+    "color-names",
+    "a11y",
+    "cmyk",
+    "mix",
+    "minify",
+    "harmonies"
+  ],
+  "repository": "omgovich/colord",
+  "author": "Vlad Shilov <omgovich@ya.ru>",
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.mjs"
+    },
+    "./plugins/a11y": {
+      "types": "./plugins/a11y.d.ts",
+      "import": "./plugins/a11y.mjs",
+      "require": "./plugins/a11y.js",
+      "default": "./plugins/a11y.mjs"
+    },
+    "./plugins/cmyk": {
+      "types": "./plugins/cmyk.d.ts",
+      "import": "./plugins/cmyk.mjs",
+      "require": "./plugins/cmyk.js",
+      "default": "./plugins/cmyk.mjs"
+    },
+    "./plugins/harmonies": {
+      "types": "./plugins/harmonies.d.ts",
+      "import": "./plugins/harmonies.mjs",
+      "require": "./plugins/harmonies.js",
+      "default": "./plugins/harmonies.mjs"
+    },
+    "./plugins/hwb": {
+      "types": "./plugins/hwb.d.ts",
+      "import": "./plugins/hwb.mjs",
+      "require": "./plugins/hwb.js",
+      "default": "./plugins/hwb.mjs"
+    },
+    "./plugins/lab": {
+      "types": "./plugins/lab.d.ts",
+      "import": "./plugins/lab.mjs",
+      "require": "./plugins/lab.js",
+      "default": "./plugins/lab.mjs"
+    },
+    "./plugins/lch": {
+      "types": "./plugins/lch.d.ts",
+      "import": "./plugins/lch.mjs",
+      "require": "./plugins/lch.js",
+      "default": "./plugins/lch.mjs"
+    },
+    "./plugins/minify": {
+      "types": "./plugins/minify.d.ts",
+      "import": "./plugins/minify.mjs",
+      "require": "./plugins/minify.js",
+      "default": "./plugins/minify.mjs"
+    },
+    "./plugins/mix": {
+      "types": "./plugins/mix.d.ts",
+      "import": "./plugins/mix.mjs",
+      "require": "./plugins/mix.js",
+      "default": "./plugins/mix.mjs"
+    },
+    "./plugins/names": {
+      "types": "./plugins/names.d.ts",
+      "import": "./plugins/names.mjs",
+      "require": "./plugins/names.js",
+      "default": "./plugins/names.mjs"
+    },
+    "./plugins/xyz": {
+      "types": "./plugins/xyz.d.ts",
+      "import": "./plugins/xyz.mjs",
+      "require": "./plugins/xyz.js",
+      "default": "./plugins/xyz.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "*.{js,mjs,ts,map}",
+    "plugins/*.{js,mjs,ts,map}"
+  ],
+  "types": "index.d.ts",
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "size": "npm run build && size-limit",
+    "check-types": "tsc --noEmit true",
+    "test": "jest tests --coverage",
+    "benchmark": "tsc --outDir bench --skipLibCheck --esModuleInterop ./tests/benchmark.ts && node ./bench/tests/benchmark.js && rm -rf ./bench",
+    "build": "rm -rf ./dist/* && rollup --config",
+    "release": "npm run build && cp *.json dist && cp *.md dist && npm publish dist",
+    "check-release": "npm run release -- --dry-run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.10.1",
+    "@types/jest": "^26.0.22",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "ac-colors": "^1.4.2",
+    "benny": "^3.6.15",
+    "chroma-js": "^2.1.1",
+    "color": "^3.1.3",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "glob": "^7.1.6",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.0",
+    "rollup": "^2.43.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "size-limit": "^4.10.1",
+    "tinycolor2": "^1.4.2",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.3"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    }
+  },
+  "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "prettier/@typescript-eslint"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.mjs",
+      "import": "{ colord }",
+      "limit": "2 KB"
+    },
+    {
+      "path": "dist/plugins/a11y.mjs",
+      "limit": "0.5 KB"
+    },
+    {
+      "path": "dist/plugins/cmyk.mjs",
+      "limit": "1 KB"
+    },
+    {
+      "path": "dist/plugins/harmonies.mjs",
+      "limit": "0.5 KB"
+    },
+    {
+      "path": "dist/plugins/hwb.mjs",
+      "limit": "1 KB"
+    },
+    {
+      "path": "dist/plugins/lab.mjs",
+      "limit": "1.5 KB"
+    },
+    {
+      "path": "dist/plugins/lch.mjs",
+      "limit": "1.5 KB"
+    },
+    {
+      "path": "dist/plugins/minify.mjs",
+      "limit": "0.6 KB"
+    },
+    {
+      "path": "dist/plugins/mix.mjs",
+      "limit": "1 KB"
+    },
+    {
+      "path": "dist/plugins/names.mjs",
+      "limit": "1.5 KB"
+    },
+    {
+      "path": "dist/plugins/xyz.mjs",
+      "limit": "1 KB"
+    }
+  ]
+}

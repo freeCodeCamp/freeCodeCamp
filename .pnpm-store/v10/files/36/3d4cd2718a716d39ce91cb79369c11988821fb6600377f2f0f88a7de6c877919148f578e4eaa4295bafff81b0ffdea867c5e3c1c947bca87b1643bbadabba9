@@ -1,0 +1,8 @@
+comment: |
+  Hello! Thank you for contributing!
+  It appears that you have changed the code, but the tests that verify your change are missing. Could you please add them?
+fileExtensions:
+  - '.ts'
+  - '.js'
+
+testDir: 'test'

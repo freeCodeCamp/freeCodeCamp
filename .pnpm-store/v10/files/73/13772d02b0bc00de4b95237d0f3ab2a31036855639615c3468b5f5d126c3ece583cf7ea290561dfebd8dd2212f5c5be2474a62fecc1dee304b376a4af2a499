@@ -1,0 +1,53 @@
+{
+  "name": "ajv-keywords",
+  "version": "3.5.2",
+  "description": "Custom JSON-Schema keywords for Ajv validator",
+  "main": "index.js",
+  "typings": "ajv-keywords.d.ts",
+  "scripts": {
+    "build": "node node_modules/ajv/scripts/compile-dots.js node_modules/ajv/lib keywords",
+    "prepublish": "npm run build",
+    "test": "npm run build && npm run eslint && npm run test-cov",
+    "eslint": "eslint index.js keywords/*.js spec",
+    "test-spec": "mocha spec/*.spec.js -R spec",
+    "test-cov": "istanbul cover -x 'spec/**' node_modules/mocha/bin/_mocha -- spec/*.spec.js -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epoberezkin/ajv-keywords.git"
+  },
+  "keywords": [
+    "JSON-Schema",
+    "ajv",
+    "keywords"
+  ],
+  "files": [
+    "index.js",
+    "ajv-keywords.d.ts",
+    "keywords"
+  ],
+  "author": "Evgeny Poberezkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/epoberezkin/ajv-keywords/issues"
+  },
+  "homepage": "https://github.com/epoberezkin/ajv-keywords#readme",
+  "peerDependencies": {
+    "ajv": "^6.9.1"
+  },
+  "devDependencies": {
+    "ajv": "^6.9.1",
+    "ajv-pack": "^0.3.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "dot": "^1.1.1",
+    "eslint": "^7.2.0",
+    "glob": "^7.1.3",
+    "istanbul": "^0.4.3",
+    "js-beautify": "^1.8.9",
+    "json-schema-test": "^2.0.0",
+    "mocha": "^8.0.1",
+    "pre-commit": "^1.1.3",
+    "uuid": "^8.1.0"
+  }
+}

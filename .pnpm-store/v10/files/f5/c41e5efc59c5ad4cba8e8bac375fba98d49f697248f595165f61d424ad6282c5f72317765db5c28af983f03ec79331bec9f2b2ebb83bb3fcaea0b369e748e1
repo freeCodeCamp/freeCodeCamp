@@ -1,0 +1,39 @@
+{
+  "name": "@expo/devcert",
+  "version": "1.2.1",
+  "description": "Generate trusted local SSL/TLS certificates for local SSL development",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Ha.\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expo/devcert.git"
+  },
+  "keywords": [
+    "ssl",
+    "certificate",
+    "openssl",
+    "trust"
+  ],
+  "author": "Dave Wasmer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/expo/devcert/issues"
+  },
+  "homepage": "https://github.com/expo/devcert#readme",
+  "devDependencies": {
+    "@types/debug": "^0.0.30",
+    "@types/node": "^20.12.7",
+    "standard-version": "^8.0.1",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@expo/sudo-prompt": "^9.3.1",
+    "debug": "^3.1.0"
+  }
+}

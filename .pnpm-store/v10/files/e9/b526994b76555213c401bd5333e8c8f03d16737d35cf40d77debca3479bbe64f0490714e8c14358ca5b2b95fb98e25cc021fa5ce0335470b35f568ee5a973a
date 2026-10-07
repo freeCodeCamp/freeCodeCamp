@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/attribute",
+  "private": true,
+  "main": "../cjs/attribute.js",
+  "module": "../esm/attribute.js",
+  "types": "../esm/attribute.d.ts"
+}

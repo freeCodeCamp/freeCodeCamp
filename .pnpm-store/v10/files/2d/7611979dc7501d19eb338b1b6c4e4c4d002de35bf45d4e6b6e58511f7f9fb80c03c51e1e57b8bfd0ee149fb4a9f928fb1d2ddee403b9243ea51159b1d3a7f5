@@ -1,0 +1,1 @@
+Platform specific binary for msgpackr-extract on linux OS with x64 architecture

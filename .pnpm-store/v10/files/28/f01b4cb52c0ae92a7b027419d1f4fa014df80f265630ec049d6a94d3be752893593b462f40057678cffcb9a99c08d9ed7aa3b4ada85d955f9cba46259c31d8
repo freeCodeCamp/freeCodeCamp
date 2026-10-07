@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-node-options.d.ts","sourceRoot":"","sources":["../../../src/interfaces/audio-node-options.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,sBAAsB,EAAE,MAAM,UAAU,CAAC;AAErE,MAAM,WAAW,iBAAiB;IAC9B,YAAY,EAAE,MAAM,CAAC;IAErB,gBAAgB,EAAE,iBAAiB,CAAC;IAEpC,qBAAqB,EAAE,sBAAsB,CAAC;CACjD"}

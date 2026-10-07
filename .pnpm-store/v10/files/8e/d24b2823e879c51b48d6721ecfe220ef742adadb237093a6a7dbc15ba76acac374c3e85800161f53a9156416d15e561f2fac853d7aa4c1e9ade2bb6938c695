@@ -1,0 +1,85 @@
+{
+  "name": "@typescript-eslint/typescript-estree",
+  "version": "5.62.0",
+  "description": "A parser that converts TypeScript source code into an ESTree compatible form",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "_ts3.4",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/typescript-estree"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "license": "BSD-2-Clause",
+  "keywords": [
+    "ast",
+    "estree",
+    "ecmascript",
+    "javascript",
+    "typescript",
+    "parser",
+    "syntax"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "postbuild": "downlevel-dts dist _ts3.4/dist",
+    "clean": "tsc -b tsconfig.build.json --clean",
+    "postclean": "rimraf dist && rimraf _ts3.4 && rimraf coverage",
+    "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
+    "lint": "nx lint",
+    "test": "jest --coverage --runInBand --verbose",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@typescript-eslint/types": "5.62.0",
+    "@typescript-eslint/visitor-keys": "5.62.0",
+    "debug": "^4.3.4",
+    "globby": "^11.1.0",
+    "is-glob": "^4.0.3",
+    "semver": "^7.3.7",
+    "tsutils": "^3.21.0"
+  },
+  "devDependencies": {
+    "@babel/code-frame": "*",
+    "@babel/parser": "*",
+    "@types/babel__code-frame": "*",
+    "@types/debug": "*",
+    "@types/glob": "*",
+    "@types/is-glob": "*",
+    "@types/semver": "*",
+    "@types/tmp": "*",
+    "glob": "*",
+    "jest-specific-snapshot": "*",
+    "make-dir": "*",
+    "tmp": "*",
+    "typescript": "*"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "typesVersions": {
+    "<3.8": {
+      "*": [
+        "_ts3.4/*"
+      ]
+    }
+  },
+  "gitHead": "cba0d113bba1bbcee69149c954dc6bd4c658c714"
+}

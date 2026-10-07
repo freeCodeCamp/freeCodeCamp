@@ -1,0 +1,42 @@
+{
+  "name": "natural-compare-lite",
+  "version": "1.4.0",
+  "stability": 3,
+  "author": "Lauri Rooden (https://github.com/litejs/natural-compare-lite)",
+  "license": "MIT",
+  "description": "Compare strings containing a mix of letters and numbers in the way a human being would in sort order.",
+  "keywords": [
+    "string",
+    "natural",
+    "order",
+    "sort",
+    "natsort",
+    "natcmp",
+    "compare",
+    "alphanum",
+    "litejs"
+  ],
+  "main": "index.js",
+  "readmeFilename": "README.md",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "build": "node node_modules/buildman/index.js --all",
+    "test": "node tests/index.js"
+  },
+  "repository": "git://github.com/litejs/natural-compare-lite.git",
+  "bugs": {
+    "url": "https://github.com/litejs/natural-compare-lite/issues"
+  },
+  "devDependencies": {
+    "buildman": "*",
+    "testman": "*"
+  },
+  "buildman": {
+    "dist/index-min.js": {
+      "banner": "/*! litejs.com/MIT-LICENSE.txt */",
+      "input": "index.js"
+    }
+  }
+}

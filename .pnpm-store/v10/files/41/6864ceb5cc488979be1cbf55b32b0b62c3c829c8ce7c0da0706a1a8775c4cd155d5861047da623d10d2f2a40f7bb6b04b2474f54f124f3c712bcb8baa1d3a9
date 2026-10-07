@@ -1,0 +1,88 @@
+import React from 'react';
+import { useAutocomplete } from 'react-instantsearch-core';
+import type { PlainSearchParameters } from 'algoliasearch-helper';
+import type { AutocompleteIndexClassNames, AutocompleteIndexConfig, AutocompleteClassNames, AutocompleteIndexProps } from 'instantsearch-ui-components';
+import type { BaseHit, IndexUiState } from 'instantsearch.js';
+import type { TransformItemsIndicesConfig } from 'instantsearch.js/es/connectors/autocomplete/connectAutocomplete';
+import type { ComponentProps } from 'react';
+type AutocompleteSearchParameters = Omit<PlainSearchParameters, 'index'> & {
+    hitsPerPage?: number;
+};
+type IndexConfig<TItem extends BaseHit> = AutocompleteIndexConfig<TItem> & {
+    headerComponent?: AutocompleteIndexProps<TItem>['HeaderComponent'];
+    itemComponent: AutocompleteIndexProps<TItem>['ItemComponent'];
+    noResultsComponent?: AutocompleteIndexProps<TItem>['NoResultsComponent'];
+    searchParameters?: AutocompleteSearchParameters;
+    classNames?: Partial<AutocompleteIndexClassNames>;
+};
+type PanelElements = Partial<Record<string, React.JSX.Element>>;
+type AutocompleteTranslations = {
+    detachedCancelButtonText: string;
+    detachedSearchButtonTitle: string;
+    detachedClearButtonTitle: string;
+};
+export type AutocompleteProps<TItem extends BaseHit> = ComponentProps<'div'> & {
+    indices?: Array<IndexConfig<TItem>>;
+    showQuerySuggestions?: Partial<Pick<IndexConfig<{
+        query: string;
+    }>, 'indexName' | 'getURL' | 'headerComponent' | 'itemComponent' | 'classNames' | 'searchParameters'>>;
+    showPromptSuggestions?: Partial<Pick<IndexConfig<{
+        query: string;
+        label?: string;
+    }>, 'indexName' | 'getURL' | 'headerComponent' | 'itemComponent' | 'classNames' | 'searchParameters'>>;
+    showRecent?: boolean | {
+        /**
+         * Storage key to use in the local storage.
+         */
+        storageKey?: string;
+        /**
+         * Component to use for the header, before the list of items.
+         */
+        headerComponent?: AutocompleteIndexProps<{
+            query: string;
+        }>['HeaderComponent'];
+        /**
+         * Component to use for each recent search item.
+         */
+        itemComponent?: AutocompleteIndexProps<{
+            query: string;
+        }>['ItemComponent'] & {
+            onRemoveRecentSearch: () => void;
+        };
+        classNames?: Partial<AutocompleteIndexClassNames>;
+    };
+    getSearchPageURL?: (nextUiState: IndexUiState) => string;
+    onSelect?: AutocompleteIndexConfig<TItem>['onSelect'];
+    transformItems?: (indices: TransformItemsIndicesConfig[]) => TransformItemsIndicesConfig[];
+    panelComponent?: (props: {
+        elements: PanelElements;
+        indices: ReturnType<typeof useAutocomplete>['indices'];
+    }) => React.JSX.Element;
+    searchParameters?: AutocompleteSearchParameters;
+    classNames?: Partial<AutocompleteClassNames>;
+    placeholder?: string;
+    /**
+     * Whether the input should be focused and the panel open initially.
+     */
+    autoFocus?: boolean;
+    /**
+     * Media query to enable detached (mobile) mode.
+     * When the media query matches, the autocomplete switches to a full-screen overlay.
+     * Set to empty string to disable detached mode.
+     * When omitted, defaults to `--ais-autocomplete-detached-media-query`.
+     * @default "(max-width: 680px)"
+     */
+    detachedMediaQuery?: string;
+    /**
+     * Translations for the Autocomplete widget.
+     */
+    translations?: Partial<AutocompleteTranslations>;
+    /**
+     * When true, renders an AI mode button inside the search input
+     * that opens the Chat widget and sends the current query.
+     * Requires a Chat widget on the same index.
+     */
+    aiMode?: boolean;
+};
+export declare function EXPERIMENTAL_Autocomplete<TItem extends BaseHit = BaseHit>({ indices, showQuerySuggestions, showPromptSuggestions, showRecent, searchParameters: userSearchParameters, detachedMediaQuery, translations: userTranslations, ...props }: AutocompleteProps<TItem>): React.JSX.Element;
+export {};

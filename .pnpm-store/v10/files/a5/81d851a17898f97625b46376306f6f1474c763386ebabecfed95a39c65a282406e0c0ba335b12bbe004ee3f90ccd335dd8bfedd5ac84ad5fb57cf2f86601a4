@@ -1,0 +1,25 @@
+{
+  "name": "@babel/helper-function-name",
+  "version": "7.23.0",
+  "description": "Helper function to change the property 'name' of every function",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-function-name"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-helper-function-name",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/template": "^7.22.15",
+    "@babel/types": "^7.23.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

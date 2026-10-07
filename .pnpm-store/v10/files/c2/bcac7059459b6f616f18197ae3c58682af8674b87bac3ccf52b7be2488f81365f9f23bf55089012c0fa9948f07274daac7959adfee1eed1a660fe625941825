@@ -1,0 +1,199 @@
+"use strict";
+
+var generateStartVar = function generateStartVar(t, id) {
+  return t.variableDeclaration("var", [t.variableDeclarator(id, t.callExpression(t.memberExpression(t.identifier("Date"), t.identifier("now")), []))]);
+};
+
+var generateCounter = function generateCounter(t, id) {
+  return t.variableDeclaration("var", [t.variableDeclarator(id, t.numericLiteral(1))]);
+};
+
+var generateDateComparison = function generateDateComparison() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      t = _ref.t,
+      id = _ref.id,
+      line = _ref.line,
+      ch = _ref.ch,
+      timeout = _ref.timeout,
+      extra = _ref.extra,
+      isLoop = _ref.isLoop;
+
+  return t.ifStatement(generateTimeoutElapsed({
+    t: t,
+    id: id,
+    timeout: timeout
+  }), extra ? generateExtra({
+    t: t,
+    extra: extra,
+    line: line,
+    ch: ch,
+    isLoop: isLoop
+  }) : isLoop ? t.breakStatement() : t.returnStatement());
+};
+
+var generateTimeoutElapsed = function generateTimeoutElapsed() {
+  var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      t = _ref2.t,
+      id = _ref2.id,
+      timeout = _ref2.timeout;
+
+  return t.binaryExpression(">", t.binaryExpression("-", t.callExpression(t.memberExpression(t.identifier("Date"), t.identifier("now")), []), id), t.numericLiteral(timeout));
+};
+
+var generateExtra = function generateExtra() {
+  var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      t = _ref3.t,
+      extra = _ref3.extra,
+      line = _ref3.line,
+      ch = _ref3.ch,
+      isLoop = _ref3.isLoop;
+
+  return t.blockStatement([t.expressionStatement(t.callExpression(extra, [t.numericLiteral(line), t.numericLiteral(ch)])), isLoop ? t.breakStatement() : t.returnStatement()]);
+};
+
+var generateInside = function generateInside() {
+  var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      t = _ref4.t,
+      id = _ref4.id,
+      counterId = _ref4.counterId,
+      line = _ref4.line,
+      ch = _ref4.ch,
+      timeout = _ref4.timeout,
+      extra = _ref4.extra,
+      iterations = _ref4.iterations,
+      isLoop = _ref4.isLoop;
+
+  return iterations ? t.ifStatement(t.logicalExpression("&&", t.binaryExpression("===", t.binaryExpression("%", t.updateExpression("++", counterId), t.numericLiteral(iterations)), t.numericLiteral(0)), generateTimeoutElapsed({
+    t: t,
+    id: id,
+    timeout: timeout
+  })), extra ? generateExtra({
+    t: t,
+    extra: extra,
+    line: line,
+    ch: ch,
+    isLoop: isLoop
+  }) : t.breakStatement()) : generateDateComparison({
+    t: t,
+    id: id,
+    line: line,
+    ch: ch,
+    timeout: timeout,
+    extra: extra,
+    isLoop: isLoop
+  });
+};
+
+var protect = function protect(t, timeout, extra, iterations) {
+  return function (path) {
+    var _body$container, _body$container2, _body$container2$decl, _body$container2$decl2, _body$container2$decl3;
+
+    if (!path.node.loc) {
+      // I don't really know _how_ we get into this state
+      // but https://jsbin.com/mipesawapi/1/ triggers it
+      // and the node, I'm guessing after translation,
+      // doesn't have a line in the code, so this blows up.
+      return;
+    }
+
+    var isLoop = t.isWhileStatement(path) || t.isForStatement(path) || t.isDoWhileStatement(path);
+    var id = path.scope.generateUidIdentifier("LP");
+    var counterId = path.scope.generateUidIdentifier("LPC");
+    var counterVar = generateCounter(t, counterId);
+    var startVar = generateStartVar(t, id);
+    var inside = generateInside({
+      t: t,
+      id: id,
+      counterId: counterId,
+      line: path.node.loc.start.line,
+      ch: path.node.loc.start.column,
+      timeout: timeout,
+      extra: extra,
+      iterations: iterations,
+      isLoop: isLoop
+    });
+    var body = path.get("body"); // For Loop Protection
+
+    if (isLoop) {
+      if (!t.isBlockStatement(body)) {
+        body.replaceWith(t.blockStatement([body.node]));
+      }
+
+      path.insertBefore(counterVar);
+      path.insertBefore(startVar);
+      body.unshiftContainer("body", inside);
+    } // For Variable Declarations
+    else if ((body === null || body === void 0 ? void 0 : (_body$container = body.container) === null || _body$container === void 0 ? void 0 : _body$container.type) === "VariableDeclaration" && (body === null || body === void 0 ? void 0 : (_body$container2 = body.container) === null || _body$container2 === void 0 ? void 0 : (_body$container2$decl = _body$container2.declarations) === null || _body$container2$decl === void 0 ? void 0 : (_body$container2$decl2 = _body$container2$decl[0]) === null || _body$container2$decl2 === void 0 ? void 0 : (_body$container2$decl3 = _body$container2$decl2.init) === null || _body$container2$decl3 === void 0 ? void 0 : _body$container2$decl3.type) === "ArrowFunctionExpression") {
+        var _body$container3, _body$container3$decl, _body$container3$decl2, _body$container3$decl3, _body$container3$decl4;
+
+        path.insertBefore(counterVar);
+        path.insertBefore(startVar);
+        var ele = body === null || body === void 0 ? void 0 : (_body$container3 = body.container) === null || _body$container3 === void 0 ? void 0 : (_body$container3$decl = _body$container3.declarations) === null || _body$container3$decl === void 0 ? void 0 : (_body$container3$decl2 = _body$container3$decl[0]) === null || _body$container3$decl2 === void 0 ? void 0 : (_body$container3$decl3 = _body$container3$decl2.init) === null || _body$container3$decl3 === void 0 ? void 0 : (_body$container3$decl4 = _body$container3$decl3.body) === null || _body$container3$decl4 === void 0 ? void 0 : _body$container3$decl4.body;
+
+        if (ele !== null && ele !== void 0 && ele.length) {
+          ele.unshift(inside);
+        }
+      } // For Class Declarations
+      else if (t.isClassBody(body)) {
+          var _body$node, _body$node$body, _body$node$body$find, _body$node$body$find$;
+
+          path.insertBefore(counterVar);
+          path.insertBefore(startVar);
+
+          var _ele = body === null || body === void 0 ? void 0 : (_body$node = body.node) === null || _body$node === void 0 ? void 0 : (_body$node$body = _body$node.body) === null || _body$node$body === void 0 ? void 0 : (_body$node$body$find = _body$node$body.find(function (node) {
+            var _node$key;
+
+            return (node === null || node === void 0 ? void 0 : (_node$key = node.key) === null || _node$key === void 0 ? void 0 : _node$key.name) === "render";
+          })) === null || _body$node$body$find === void 0 ? void 0 : (_body$node$body$find$ = _body$node$body$find.body) === null || _body$node$body$find$ === void 0 ? void 0 : _body$node$body$find$.body;
+
+          if (_ele !== null && _ele !== void 0 && _ele.length) {
+            _ele.unshift(inside);
+          }
+        }
+  };
+};
+
+module.exports = function () {
+  var timeout = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;
+  var extra = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  var iterations = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  var anonRegex = /^function\s*\(/;
+
+  if (typeof extra === "string") {
+    var string = extra;
+    extra = "() => console.error(\"".concat(string.replace(/"/g, '\\"'), "\")");
+  } else if (extra !== null) {
+    extra = extra.toString();
+
+    if (extra.match(anonRegex)) {
+      // fix anonymous functions as they'll cause
+      // the callback transform to blow up
+      extra = extra.replace(anonRegex, "function callback(");
+    }
+  }
+
+  return function (_ref5) {
+    var t = _ref5.types,
+        transform = _ref5.transform;
+    var node = extra ? transform(extra, {
+      ast: true
+    }).ast.program.body[0] : null;
+    var callback = null;
+
+    if (t.isExpressionStatement(node)) {
+      callback = node.expression;
+    } else if (t.isFunctionDeclaration(node)) {
+      callback = t.functionExpression(null, node.params, node.body);
+    }
+
+    return {
+      visitor: {
+        WhileStatement: protect(t, timeout, callback, iterations),
+        ForStatement: protect(t, timeout, callback, iterations),
+        DoWhileStatement: protect(t, timeout, callback, iterations),
+        ClassDeclaration: protect(t, timeout, callback, iterations),
+        VariableDeclaration: protect(t, timeout, callback, iterations)
+      }
+    };
+  };
+};

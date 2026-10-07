@@ -1,0 +1,56 @@
+{
+  "name": "algoliasearch-helper",
+  "version": "3.28.2",
+  "description": "Helper for implementing advanced search features with algolia",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "homepage": "https://community.algolia.com/algoliasearch-helper-js/",
+  "scripts": {
+    "build": "rm -rf dist && BABEL_ENV=rollup rollup --config rollup.config.mjs",
+    "lint": "oxlint .",
+    "doc": "node documentation-src/metalsmith.js",
+    "test": "../../scripts/retry.sh 3 'scripts/test.sh'",
+    "test:v4": "../../scripts/retry.sh 3 'scripts/test.sh'",
+    "test:unit": "jest",
+    "test:watch": "jest --watch",
+    "test:v3": "yarn run test",
+    "version": "./scripts/update-version.js",
+    "prepare": "patch-package"
+  },
+  "author": {
+    "name": "Algolia Inc.",
+    "url": "https://www.algolia.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algolia/instantsearch/tree/master/packages/algoliasearch-helper"
+  },
+  "files": [
+    "dist",
+    "src",
+    "index.js",
+    "index.d.ts",
+    "types/algoliasearch.d.ts",
+    "types/algoliasearch.js"
+  ],
+  "devDependencies": {
+    "@metalsmith/sass": "1.4.0",
+    "handlebars": "4.1.0",
+    "jest-watch-typeahead": "0.3.0",
+    "jsdoc-to-markdown": "8.0.0",
+    "metalsmith": "2.5.1",
+    "metalsmith-in-place": "1.4.4",
+    "metalsmith-layouts": "1.8.1",
+    "metalsmith-markdown": "1.3.0",
+    "metalsmith-metallic": "1.0.0",
+    "pug": "2.0.3"
+  },
+  "dependencies": {
+    "@algolia/events": "^4.0.1"
+  },
+  "peerDependencies": {
+    "algoliasearch": ">= 3.1 < 6"
+  },
+  "gitHead": "0e8b659cc3a4dec1bc1c36fc4c01ecd09d46617c"
+}

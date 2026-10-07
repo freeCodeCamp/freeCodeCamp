@@ -1,0 +1,129 @@
+{
+  "name": "ansi-colors",
+  "description": "Easily add ANSI colors to your text and symbols in the terminal. A faster drop-in replacement for chalk, kleur and turbocolor (without the dependencies and rendering bugs).",
+  "version": "4.1.3",
+  "homepage": "https://github.com/doowb/ansi-colors",
+  "author": "Brian Woodward (https://github.com/doowb)",
+  "contributors": [
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Jason Schilling (https://sourecode.de)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Jordan (https://github.com/Silic0nS0ldier)"
+  ],
+  "repository": "doowb/ansi-colors",
+  "bugs": {
+    "url": "https://github.com/doowb/ansi-colors/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "symbols.js",
+    "types/index.d.ts"
+  ],
+  "main": "index.js",
+  "types": "./types/index.d.ts",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "decache": "^4.5.1",
+    "gulp-format-md": "^2.0.0",
+    "justified": "^1.0.1",
+    "mocha": "^6.1.4",
+    "text-table": "^0.2.0"
+  },
+  "keywords": [
+    "256",
+    "ansi",
+    "bgblack",
+    "bgBlack",
+    "bgblue",
+    "bgBlue",
+    "bgcyan",
+    "bgCyan",
+    "bggreen",
+    "bgGreen",
+    "bgmagenta",
+    "bgMagenta",
+    "bgred",
+    "bgRed",
+    "bgwhite",
+    "bgWhite",
+    "bgyellow",
+    "bgYellow",
+    "black",
+    "blue",
+    "bold",
+    "cli",
+    "clorox",
+    "color",
+    "colors",
+    "colour",
+    "command line",
+    "command-line",
+    "console",
+    "cyan",
+    "dim",
+    "formatting",
+    "gray",
+    "green",
+    "grey",
+    "hidden",
+    "inverse",
+    "italic",
+    "kleur",
+    "log",
+    "logging",
+    "magenta",
+    "red",
+    "reset",
+    "rgb",
+    "shell",
+    "str",
+    "strikethrough",
+    "string",
+    "style",
+    "styles",
+    "terminal",
+    "text",
+    "tty",
+    "underline",
+    "white",
+    "xterm",
+    "yellow"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "data": {
+      "author": {
+        "linkedin": "woodwardbrian",
+        "twitter": "doowb"
+      }
+    },
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": [
+        "ansi-wrap",
+        "strip-color"
+      ]
+    },
+    "reflinks": [
+      "chalk",
+      "colorette",
+      "colors",
+      "kleur"
+    ]
+  }
+}

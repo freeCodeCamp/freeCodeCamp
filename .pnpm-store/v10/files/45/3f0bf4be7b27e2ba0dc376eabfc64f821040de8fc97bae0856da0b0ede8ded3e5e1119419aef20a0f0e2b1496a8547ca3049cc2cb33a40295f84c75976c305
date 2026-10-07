@@ -1,0 +1,101 @@
+{
+  "name": "@growthbook/growthbook",
+  "version": "1.6.5",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./plugins": {
+      "import": {
+        "types": "./dist/plugins/index.d.ts",
+        "default": "./dist/esm/plugins/index.mjs"
+      },
+      "require": {
+        "types": "./dist/plugins/index.d.ts",
+        "default": "./dist/cjs/plugins/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "plugins",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/growthbook/growthbook",
+    "directory": "packages/sdk-js"
+  },
+  "scripts": {
+    "build:clean": "rimraf dist",
+    "build:esm": "cross-env BABEL_ENV=esmUnbundled babel src --extensions '.ts' --out-dir 'dist/esm' --out-file-extension .mjs --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --extensions '.ts' --out-dir 'dist/cjs' --source-maps",
+    "build:bundles": "rollup -c",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "pnpm build:clean && npm-run-all --parallel build:types build:esm build:cjs build:bundles",
+    "test": "jest",
+    "clean": "rimraf node_modules",
+    "type-safe-tests": "node scripts/type-safe-tests.js",
+    "type-check": "tsc --pretty --noEmit",
+    "size": "gzip-size ./dist/bundles/index.min.js --include-original",
+    "bump-version": "node scripts/bump-version.js"
+  },
+  "author": "Jeremy Dorn",
+  "dependencies": {
+    "dom-mutator": "^0.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-replace": "^6.0.3",
+    "@types/jest": "^27.0.1",
+    "@types/js-cookie": "^3.0.5",
+    "@types/lodash": "^4.14.169",
+    "@types/node": "^22.8.6",
+    "babel-plugin-minify-replace": "^0.5.0",
+    "babel-plugin-replace-import-extension": "^1.1.5",
+    "cross-env": "^7.0.3",
+    "gzip-size-cli": "^5.0.0",
+    "ioredis": "^5.3.2",
+    "ioredis-mock": "^8.9.0",
+    "jest": "^27.1.1",
+    "jest-localstorage-mock": "^2.4.26",
+    "js-cookie": "^3.0.5",
+    "json-stringify-pretty-compact": "^3.0.0",
+    "lodash": "4.17.21",
+    "mocksse": "^1.0.4",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^4.52.5",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^27.0.5",
+    "typescript": "5.7.3"
+  },
+  "browserslist": [
+    "defaults",
+    ">0.35%",
+    "not IE 11",
+    "maintained node versions"
+  ]
+}

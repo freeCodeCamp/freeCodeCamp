@@ -1,0 +1,34 @@
+{
+    "name": "resolve-alpn",
+    "version": "1.2.1",
+    "description": "Detects the ALPN protocol",
+    "main": "index.js",
+    "scripts": {
+        "test": "xo && nyc --reporter=lcovonly --reporter=text --reporter=html ava"
+    },
+    "files": [
+        "index.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/szmarczak/resolve-alpn.git"
+    },
+    "keywords": [
+        "alpn",
+        "tls",
+        "socket",
+        "http2"
+    ],
+    "author": "Szymon Marczak",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/szmarczak/resolve-alpn/issues"
+    },
+    "homepage": "https://github.com/szmarczak/resolve-alpn#readme",
+    "devDependencies": {
+        "ava": "^3.15.0",
+        "nyc": "^15.1.0",
+        "pem": "1.14.3",
+        "xo": "^0.38.2"
+    }
+}

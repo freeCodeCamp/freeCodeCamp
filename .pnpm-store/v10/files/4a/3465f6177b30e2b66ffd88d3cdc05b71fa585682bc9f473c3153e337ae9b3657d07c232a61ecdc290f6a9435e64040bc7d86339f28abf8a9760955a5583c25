@@ -1,0 +1,75 @@
+{
+  "name": "underscore.string",
+  "version": "3.3.6",
+  "description": "String manipulation extensions for Underscore.js javascript library.",
+  "homepage": "http://epeli.github.com/underscore.string/",
+  "contributors": [
+    "Esa-Matti Suuronen <esa-matti@suuronen.org> (http://esa-matti.suuronen.org/)",
+    "Edward Tsech <edtsech@gmail.com>",
+    "Pavel Pravosud <pavel@pravosud.com> (<https://github.com/rwz>)",
+    "Sasha Koss <kossnocorp@gmail.com> (http://koss.nocorp.me/)",
+    "Vladimir Dronnikov <dronnikov@gmail.com>",
+    "Pete Kruckenberg (<https://github.com/kruckenb>)",
+    "Paul Chavard <paul@chavard.net> (<http://tchak.net>)",
+    "Ed Finkler <coj@funkatron.com> (<http://funkatron.com>)",
+    "Christoph Hermann <schtoeffel@gmail.com> (<https://github.com/stoeffel>)"
+  ],
+  "keywords": [
+    "underscore",
+    "string"
+  ],
+  "main": "./index.js",
+  "directories": {
+    "lib": "./"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epeli/underscore.string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/epeli/underscore.string/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "npm run test:lint && npm run test:unit && npm run coverage",
+    "test:unit": "mocha --ui=qunit tests",
+    "test:lint": "eslint -c .eslintrc .",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha  -- --report=lcov --ui=qunit tests",
+    "build": "npm run build:clean && npm run build:bundle && npm run build:min",
+    "build:clean": "rm -rf dist",
+    "build:bundle": "mkdir dist && browserify index.js -o dist/underscore.string.js -p browserify-header -s s",
+    "build:min": "uglifyjs dist/underscore.string.js -o dist/underscore.string.min.js --comments",
+    "release": "npm test && npm run release:version && npm run build && npm run release:push",
+    "release:version": "node scripts/bump-version.js",
+    "release:push": "node scripts/push-tags.js"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "browserify-header": "^0.9.4",
+    "eslint": "^5.6.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "replace": "^1.0.0",
+    "uglifyjs": "^2.4.11",
+    "underscore": "^1.9.1"
+  },
+  "jshintConfig": {
+    "node": true,
+    "browser": true,
+    "qunit": true,
+    "globals": {
+      "s": true
+    }
+  },
+  "dependencies": {
+    "sprintf-js": "^1.1.1",
+    "util-deprecate": "^1.0.2"
+  },
+  "volta": {
+    "node": "16.13.2"
+  }
+}

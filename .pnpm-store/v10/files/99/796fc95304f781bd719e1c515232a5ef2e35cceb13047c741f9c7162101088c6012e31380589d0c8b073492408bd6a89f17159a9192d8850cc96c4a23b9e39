@@ -1,0 +1,24 @@
+{
+  "main": "dist/main/index.js",
+  "module": "dist/module/index.js",
+  "browser": "dist/browser/index.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "targets": {
+    "module": {
+      "engines": {
+        "browsers": ["last 1 version"]
+      },
+      "sourceMap": {
+        "inlineSources": true
+      }
+    },
+    "browser": {
+      "engines": {
+        "browsers": ["last 1 version"]
+      },
+      "publicUrl": "/assets"
+    }
+  }
+}

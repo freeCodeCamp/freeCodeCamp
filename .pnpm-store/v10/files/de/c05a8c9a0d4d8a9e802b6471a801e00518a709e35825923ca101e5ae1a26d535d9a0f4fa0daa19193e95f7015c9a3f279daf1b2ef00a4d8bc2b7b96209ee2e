@@ -1,0 +1,307 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "vscode-css-customdata",
+  "version": 1.1,
+  "title": "VS Code CSS Custom Data format",
+  "description": "Format for loading Custom Data in VS Code's CSS support",
+  "type": "object",
+  "required": ["version"],
+  "definitions": {
+    "references": {
+      "type": "object",
+      "required": ["name", "url"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the reference."
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL of the reference.",
+          "pattern": "https?:\/\/",
+          "patternErrorMessage": "URL should start with http:// or https://"
+        }
+      }
+    },
+    "markupDescription": {
+      "type": "object",
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "description": "Whether `description.value` should be rendered as plaintext or markdown",
+          "enum": ["plaintext", "markdown"]
+        },
+        "value": {
+          "type": "string",
+          "description": "Description shown in completion and hover"
+        }
+      }
+    },
+    "descriptor": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the descriptor."
+        },
+        "description": {
+          "description": "Description of at descriptor shown in completion and hover",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            { "$ref": "#/definitions/markupDescription" }
+          ]
+        },
+        "status": {
+          "$ref": "#/properties/properties/items/properties/status"
+        },
+        "browsers": {
+          "$ref": "#/properties/properties/items/properties/browsers"
+        },
+        "references": {
+          "type": "array",
+          "description": "A list of references for the descriptor shown in completion and hover",
+          "items": {
+            "$ref": "#/definitions/references"
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "version": {
+      "const": 1.1,
+      "description": "The custom data version",
+      "type": "number"
+    },
+    "properties": {
+      "description": "Custom CSS properties",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "defaultSnippets": [
+          {
+            "body": {
+              "name": "$1",
+              "description": ""
+            }
+          }
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of property"
+          },
+          "description": {
+            "description": "Description of property shown in completion and hover",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              { "$ref": "#/definitions/markupDescription" }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "description": "Browser status",
+            "enum": ["standard", "experimental", "nonstandard", "obsolete"]
+          },
+          "browsers": {
+            "type": "array",
+            "description": "Supported browsers",
+            "items": {
+              "type": "string",
+              "pattern": "(E|FFA|FF|SM|S|CA|C|IE|O)([\\d|\\.]+)?",
+              "patternErrorMessage": "Browser item must follow the format of `${browser}${version}`. `browser` is one of:\n- E: Edge\n- FF: Firefox\n- FM: Firefox Android\n- S: Safari\n- SM: Safari on iOS\n- C: Chrome\n- CM: Chrome on Android\n- IE: Internet Explorer\n- O: Opera"
+            }
+          },
+          "baseline": {
+            "type": "object",
+            "description": "Baseline information for the feature",
+            "properties": {
+              "status": {
+                "type": "string",
+                "description": "Baseline status",
+                "enum": ["high", "low", "false"]
+              },
+              "baseline_low_date": {
+                "type": "string",
+                "description": "Date when the feature became newly supported in all major browsers",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "patternErrorMessage": "Date must be in the format of `YYYY-MM-DD`"
+              },
+              "baseline_high_date": {
+                "type": "string",
+                "description": "Date when the feature became widely supported in all major browsers",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "patternErrorMessage": "Date must be in the format of `YYYY-MM-DD`"
+              }
+            }
+          },
+          "references": {
+            "type": "array",
+            "description": "A list of references for the property shown in completion and hover",
+            "items": {
+              "$ref": "#/definitions/references"
+            }
+          },
+          "relevance": {
+            "type": "number",
+            "description": "A number in the range [0, 100] used for sorting. Bigger number means more relevant and will be sorted first. Entries that do not specify a relevance will get 50 as default value.",
+            "minimum": 0,
+            "exclusiveMaximum": 100
+          }
+        }
+      }
+    },
+    "atDirectives": {
+      "description": "Custom CSS at directives",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "defaultSnippets": [
+          {
+            "body": {
+              "name": "@$1",
+              "description": ""
+            }
+          }
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of at directive",
+            "pattern": "^@.+",
+            "patternErrorMessage": "Pseudo class must start with `@`"
+          },
+          "description": {
+            "description": "Description of at directive shown in completion and hover",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              { "$ref": "#/definitions/markupDescription" }
+            ]
+          },
+          "status": {
+            "$ref": "#/properties/properties/items/properties/status"
+          },
+          "browsers": {
+            "$ref": "#/properties/properties/items/properties/browsers"
+          },
+          "references": {
+            "type": "array",
+            "description": "A list of references for the at-directive shown in completion and hover",
+            "items": {
+              "$ref": "#/definitions/references"
+            }
+          },
+          "descriptors": {
+            "type": "array",
+            "description": "A list of descriptors for the at-directive, for example prefers-reduced-motion for @media",
+            "items": {
+              "$ref": "#/definitions/descriptor"
+            }
+          }
+        }
+      }
+    },
+    "pseudoClasses": {
+      "description": "Custom CSS pseudo classes",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "defaultSnippets": [
+          {
+            "body": {
+              "name": ":$1",
+              "description": ""
+            }
+          }
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of pseudo class",
+            "pattern": "^:.+",
+            "patternErrorMessage": "Pseudo class must start with `:`"
+          },
+          "description": {
+            "description": "Description of pseudo class shown in completion and hover",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              { "$ref": "#/definitions/markupDescription" }
+            ]
+          },
+          "status": {
+            "$ref": "#/properties/properties/items/properties/status"
+          },
+          "browsers": {
+            "$ref": "#/properties/properties/items/properties/browsers"
+          },
+          "references": {
+            "type": "array",
+            "description": "A list of references for the pseudo-class shown in completion and hover",
+            "items": {
+              "$ref": "#/definitions/references"
+            }
+          }
+        }
+      }
+    },
+    "pseudoElements": {
+      "description": "Custom CSS pseudo elements",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "defaultSnippets": [
+          {
+            "body": {
+              "name": "::$1",
+              "description": ""
+            }
+          }
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of pseudo element",
+            "pattern": "^::.+",
+            "patternErrorMessage": "Pseudo class must start with `::`"
+          },
+          "description": {
+            "description": "Description of pseudo element shown in completion and hover",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              { "$ref": "#/definitions/markupDescription" }
+            ]
+          },
+          "status": {
+            "$ref": "#/properties/properties/items/properties/status"
+          },
+          "browsers": {
+            "$ref": "#/properties/properties/items/properties/browsers"
+          },
+          "references": {
+            "type": "array",
+            "description": "A list of references for the pseudo-element shown in completion and hover",
+            "items": {
+              "$ref": "#/definitions/references"
+            }
+          }
+        }
+      }
+    }
+  }
+}

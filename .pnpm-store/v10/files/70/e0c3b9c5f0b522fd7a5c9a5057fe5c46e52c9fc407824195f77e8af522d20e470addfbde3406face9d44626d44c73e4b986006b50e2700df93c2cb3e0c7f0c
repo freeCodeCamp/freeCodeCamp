@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MergeDecision.js",
+  "module": "../dist/esm/MergeDecision.js",
+  "types": "../dist/dts/MergeDecision.d.ts"
+}

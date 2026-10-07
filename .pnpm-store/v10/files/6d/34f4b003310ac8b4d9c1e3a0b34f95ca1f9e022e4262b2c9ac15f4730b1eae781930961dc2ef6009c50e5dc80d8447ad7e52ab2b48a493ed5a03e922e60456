@@ -1,0 +1,1 @@
+{"version":3,"file":"create-content-digest-browser-shim.js","names":["exports","createContentDigest"],"sources":["../create-content-digest-browser-shim.js"],"sourcesContent":["exports.createContentDigest = () => ``\n"],"mappings":";;AAAAA,OAAO,CAACC,mBAAmB,GAAG,MAAO,EAAC"}

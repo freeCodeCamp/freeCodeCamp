@@ -1,0 +1,29 @@
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @providesModule countDistinct
+ * @flow
+ */
+'use strict';
+
+var emptyFunction = require("./emptyFunction");
+/**
+ * Returns the count of distinct elements selected from an array.
+ */
+
+
+function countDistinct<T1, T2>(iter: Iterable<T1>, selector: (item: T1) => T2): number {
+  selector = selector || emptyFunction.thatReturnsArgument;
+  var set = new Set();
+
+  for (var val of iter) {
+    set.add(selector(val));
+  }
+
+  return set.size;
+}
+
+module.exports = countDistinct;

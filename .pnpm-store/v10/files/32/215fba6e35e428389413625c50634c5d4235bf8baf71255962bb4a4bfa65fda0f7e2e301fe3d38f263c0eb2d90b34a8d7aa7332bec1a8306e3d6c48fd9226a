@@ -1,0 +1,33 @@
+{
+  "name": "typescript-compare",
+  "version": "0.0.2",
+  "description": "TypeScript generics to compare types",
+  "main": "index.js",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "test": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodemodules/typescript-compare.git"
+  },
+  "keywords": [
+    "compare",
+    "generic",
+    "typescript",
+    "types"
+  ],
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksxnodemodules/typescript-compare/issues"
+  },
+  "homepage": "https://github.com/ksxnodemodules/typescript-compare#readme",
+  "dependencies": {
+    "typescript-logic": "^0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.3",
+    "static-type-assert": "2.0.0"
+  }
+}

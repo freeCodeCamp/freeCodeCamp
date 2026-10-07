@@ -1,0 +1,1 @@
+module.exports = require( './svg-tags.json' );

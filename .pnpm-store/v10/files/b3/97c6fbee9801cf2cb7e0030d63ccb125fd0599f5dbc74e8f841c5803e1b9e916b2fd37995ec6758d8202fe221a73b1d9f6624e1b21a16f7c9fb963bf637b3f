@@ -1,0 +1,54 @@
+{
+	"name": "strip-ansi",
+	"version": "5.2.0",
+	"description": "Strip ANSI escape codes from a string",
+	"license": "MIT",
+	"repository": "chalk/strip-ansi",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd-check"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"strip",
+		"trim",
+		"remove",
+		"ansi",
+		"styles",
+		"color",
+		"colour",
+		"colors",
+		"terminal",
+		"console",
+		"string",
+		"tty",
+		"escape",
+		"formatting",
+		"rgb",
+		"256",
+		"shell",
+		"xterm",
+		"log",
+		"logging",
+		"command-line",
+		"text"
+	],
+	"dependencies": {
+		"ansi-regex": "^4.1.0"
+	},
+	"devDependencies": {
+		"ava": "^1.3.1",
+		"tsd-check": "^0.5.0",
+		"xo": "^0.24.0"
+	}
+}

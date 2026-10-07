@@ -1,0 +1,581 @@
+{
+  "@charset": {
+    "syntax": "@charset \"<charset>\";",
+    "groups": [
+      "CSS Syntax"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@charset"
+  },
+  "@counter-style": {
+    "syntax": "@counter-style <counter-style-name> {\n  [ system: <counter-system>; ] ||\n  [ symbols: <counter-symbols>; ] ||\n  [ additive-symbols: <additive-symbols>; ] ||\n  [ negative: <negative-symbol>; ] ||\n  [ prefix: <prefix>; ] ||\n  [ suffix: <suffix>; ] ||\n  [ range: <range>; ] ||\n  [ pad: <padding>; ] ||\n  [ speak-as: <speak-as>; ] ||\n  [ fallback: <counter-style-name>; ]\n}",
+    "interfaces": [
+      "CSSCounterStyleRule"
+    ],
+    "groups": [
+      "CSS Counter Styles"
+    ],
+    "descriptors": {
+      "additive-symbols": {
+        "syntax": "[ <integer [0,∞]> && <symbol> ]#",
+        "media": "all",
+        "initial": "n/a (required)",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/additive-symbols"
+      },
+      "fallback": {
+        "syntax": "<counter-style-name>",
+        "media": "all",
+        "initial": "decimal",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/fallback"
+      },
+      "negative": {
+        "syntax": "<symbol> <symbol>?",
+        "media": "all",
+        "initial": "\"-\" hyphen-minus",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/negative"
+      },
+      "pad": {
+        "syntax": "<integer [0,∞]> && <symbol>",
+        "media": "all",
+        "initial": "0 \"\"",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/pad"
+      },
+      "prefix": {
+        "syntax": "<symbol>",
+        "media": "all",
+        "initial": "\"\"",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/prefix"
+      },
+      "range": {
+        "syntax": "[ [ <integer> | infinite ]{2} ]# | auto",
+        "media": "all",
+        "initial": "auto",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/range"
+      },
+      "speak-as": {
+        "syntax": "auto | bullets | numbers | words | spell-out | <counter-style-name>",
+        "media": "all",
+        "initial": "auto",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/speak-as"
+      },
+      "suffix": {
+        "syntax": "<symbol>",
+        "media": "all",
+        "initial": "\". \"",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/suffix"
+      },
+      "symbols": {
+        "syntax": "<symbol>+",
+        "media": "all",
+        "initial": "n/a (required)",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/symbols"
+      },
+      "system": {
+        "syntax": "cyclic | numeric | alphabetic | symbolic | additive | [ fixed <integer>? ] | [ extends <counter-style-name> ]",
+        "media": "all",
+        "initial": "symbolic",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style/system"
+      }
+    },
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@counter-style"
+  },
+  "@container": {
+    "syntax": "@container <container-condition># {\n  <block-contents>\n}",
+    "interfaces": [
+      "CSSContainerRule"
+    ],
+    "groups": [
+      "CSS Conditional Rules"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@container"
+  },
+  "@document": {
+    "syntax": "@document [ <url> | url-prefix(<string>) | domain(<string>) | media-document(<string>) | regexp(<string>) ]# {\n  <group-rule-body>\n}",
+    "interfaces": [
+      "CSSDocumentRule"
+    ],
+    "groups": [
+      "CSS Conditional Rules"
+    ],
+    "status": "nonstandard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@document"
+  },
+  "@font-face": {
+    "syntax": "@font-face {\n  [ font-family: <family-name>; ] ||\n  [ src: <src>; ] ||\n  [ unicode-range: <unicode-range>; ] ||\n  [ font-variant: <font-variant>; ] ||\n  [ font-feature-settings: <font-feature-settings>; ] ||\n  [ font-variation-settings: <font-variation-settings>; ] ||\n  [ font-stretch: <font-stretch>; ] ||\n  [ font-weight: <font-weight>; ] ||\n  [ font-style: <font-style>; ] ||\n  [ size-adjust: <size-adjust>; ] ||\n  [ ascent-override: <ascent-override>; ] ||\n  [ descent-override: <descent-override>; ] ||\n  [ line-gap-override: <line-gap-override>; ]\n}",
+    "interfaces": [
+      "CSSFontFaceRule"
+    ],
+    "groups": [
+      "CSS Fonts"
+    ],
+    "descriptors": {
+      "ascent-override": {
+        "syntax": "normal | <percentage>",
+        "media": "all",
+        "initial": "normal",
+        "percentages": "asSpecified",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/ascent-override"
+      },
+      "descent-override": {
+        "syntax": "normal | <percentage>",
+        "media": "all",
+        "initial": "normal",
+        "percentages": "asSpecified",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/descent-override"
+      },
+      "font-display": {
+        "syntax": "auto | block | swap | fallback | optional",
+        "media": "visual",
+        "percentages": "no",
+        "initial": "auto",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display"
+      },
+      "font-family": {
+        "syntax": "<family-name>",
+        "media": "all",
+        "initial": "n/a (required)",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-family"
+      },
+      "font-feature-settings": {
+        "syntax": "normal | <feature-tag-value>#",
+        "media": "all",
+        "initial": "normal",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-feature-settings"
+      },
+      "font-stretch": {
+        "syntax": "<font-stretch-absolute>{1,2}",
+        "media": "all",
+        "initial": "normal",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "obsolete",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-stretch"
+      },
+      "font-style": {
+        "syntax": "normal | italic | oblique <angle>{0,2}",
+        "media": "all",
+        "initial": "normal",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-style"
+      },
+      "font-variation-settings": {
+        "syntax": "normal | [ <string> <number> ]#",
+        "media": "all",
+        "initial": "normal",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-variation-settings"
+      },
+      "font-weight": {
+        "syntax": "<font-weight-absolute>{1,2}",
+        "media": "all",
+        "initial": "normal",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-weight"
+      },
+      "line-gap-override": {
+        "syntax": "normal | <percentage>",
+        "media": "all",
+        "initial": "normal",
+        "percentages": "asSpecified",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/line-gap-override"
+      },
+      "size-adjust": {
+        "syntax": "<percentage>",
+        "media": "all",
+        "initial": "100%",
+        "percentages": "asSpecified",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/size-adjust"
+      },
+      "src": {
+        "syntax": "[ <url> [ format( <string># ) ]? | local( <family-name> ) ]#",
+        "media": "all",
+        "initial": "n/a (required)",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/src"
+      },
+      "unicode-range": {
+        "syntax": "<unicode-range-token>#",
+        "media": "all",
+        "initial": "U+0-10FFFF",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/unicode-range"
+      }
+    },
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face"
+  },
+  "@font-feature-values": {
+    "syntax": "@font-feature-values <family-name># {\n  <feature-value-block-list>\n}",
+    "interfaces": [
+      "CSSFontFeatureValuesRule"
+    ],
+    "groups": [
+      "CSS Fonts"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-feature-values"
+  },
+  "@font-palette-values": {
+    "syntax": "@font-palette-values <dashed-ident> {\n  <declaration-list>\n}",
+    "interfaces": [
+      "CSSFontPaletteValuesRule"
+    ],
+    "groups": [
+      "CSS Fonts"
+    ],
+    "descriptors": {
+      "base-palette": {
+        "syntax": "light | dark | <integer [0,∞]>",
+        "media": "all",
+        "initial": "n/a (required)",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-palette-values/base-palette"
+      },
+      "font-family": {
+        "syntax": "<family-name>#",
+        "media": "all",
+        "initial": "n/a (required)",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-palette-values/font-family"
+      },
+      "override-colors": {
+        "syntax": "[ <integer [0,∞]> <color> ]#",
+        "media": "all",
+        "initial": "n/a (required)",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-palette-values/override-colors"
+      }
+    },
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-palette-values"
+  },
+  "@import": {
+    "syntax": "@import [ <string> | <url> ]\n        [ layer | layer(<layer-name>) ]?\n        [ supports( [ <supports-condition> | <declaration> ] ) ]?\n        <media-query-list>? ;",
+    "interfaces": [
+      "CSSImportRule"
+    ],
+    "groups": [
+      "CSS Cascading and Inheritance"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@import"
+  },
+  "@keyframes": {
+    "syntax": "@keyframes <keyframes-name> {\n  <qualified-rule-list>\n}",
+    "interfaces": [
+      "CSSKeyframeRule",
+      "CSSKeyframesRule"
+    ],
+    "groups": [
+      "CSS Animations"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@keyframes"
+  },
+  "@layer": {
+    "syntax": "@layer [ <layer-name># | <layer-name>?  {\n  <stylesheet>\n} ]",
+    "interfaces": [
+      "CSSLayerBlockRule",
+      "CSSLayerStatementRule"
+    ],
+    "groups": [
+      "CSS Cascading and Inheritance"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@layer"
+  },
+  "@media": {
+    "syntax": "@media <media-query-list> {\n  <group-rule-body>\n}",
+    "interfaces": [
+      "CSSMediaRule"
+    ],
+    "groups": [
+      "CSS Conditional Rules",
+      "Media Queries"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media"
+  },
+  "@namespace": {
+    "syntax": "@namespace <namespace-prefix>? [ <string> | <url> ];",
+    "interfaces": [
+      "CSSNamespaceRule"
+    ],
+    "groups": [
+      "CSS Namespaces"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@namespace"
+  },
+  "@page": {
+    "syntax": "@page <page-selector-list> {\n  <page-body>\n}",
+    "interfaces": [
+      "CSSPageRule"
+    ],
+    "groups": [
+      "CSS Paged Media"
+    ],
+    "descriptors": {
+      "bleed": {
+        "syntax": "auto | <length>",
+        "media": [
+          "visual",
+          "paged"
+        ],
+        "initial": "auto",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard"
+      },
+      "marks": {
+        "syntax": "none | [ crop || cross ]",
+        "media": [
+          "visual",
+          "paged"
+        ],
+        "initial": "none",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard"
+      },
+      "page-orientation": {
+        "syntax": "upright | rotate-left | rotate-right",
+        "media": [
+          "visual",
+          "paged"
+        ],
+        "initial": "upright",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@page/page-orientation"
+      },
+      "size": {
+        "syntax": "<length [0,∞]>{1,2} | auto | [ <page-size> || [ portrait | landscape ] ]",
+        "media": [
+          "visual",
+          "paged"
+        ],
+        "initial": "auto",
+        "percentages": "no",
+        "computed": "asSpecifiedRelativeToAbsoluteLengths",
+        "order": "orderOfAppearance",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@page/size"
+      }
+    },
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@page"
+  },
+  "@position-try": {
+    "syntax": "@position-try <dashed-ident> {\n  <declaration-list>\n}",
+    "interfaces": [
+      "CSSPositionTryRule"
+    ],
+    "groups": [
+      "CSS Anchor Positioning"
+    ],
+    "status": "experimental",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@position-try"
+  },
+  "@property": {
+    "syntax": "@property <custom-property-name> {\n  <declaration-list>\n}",
+    "interfaces": [
+      "CSSPropertyRule"
+    ],
+    "groups": [
+      "CSS Houdini"
+    ],
+    "descriptors": {
+      "inherits": {
+        "syntax": "true | false",
+        "media": "all",
+        "percentages": "no",
+        "initial": "auto",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@property/inherits"
+      },
+      "initial-value": {
+        "syntax": "<declaration-value>?",
+        "media": "all",
+        "initial": "n/a (required)",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@property/initial-value"
+      },
+      "syntax": {
+        "syntax": "<string>",
+        "media": "all",
+        "percentages": "no",
+        "initial": "n/a (required)",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@property/syntax"
+      }
+    },
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@property"
+  },
+  "@scope": {
+    "syntax": "@scope [(<scope-start>)]? [to (<scope-end>)]? {\n  <rule-list>\n}",
+    "interfaces": [
+      "CSSScopeRule"
+    ],
+    "groups": [
+      "CSS Conditional Rules"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@scope"
+  },
+  "@starting-style": {
+    "syntax": "@starting-style {\n  <declaration-list> | <group-rule-body>\n}",
+    "interfaces": [
+      "CSSStartingStyleRule"
+    ],
+    "groups": [
+      "CSS Transitions"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@starting-style"
+  },
+  "@supports": {
+    "syntax": "@supports <supports-condition> {\n  <group-rule-body>\n}",
+    "interfaces": [
+      "CSSSupportsRule"
+    ],
+    "groups": [
+      "CSS Conditional Rules"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@supports"
+  },
+  "@view-transition": {
+    "syntax": "@view-transition {\n  <declaration-list>\n}",
+    "interfaces": [
+      "CSSViewTransitionRule"
+    ],
+    "groups": [
+      "CSS View Transitions"
+    ],
+    "descriptors": {
+      "navigation": {
+        "syntax": "auto | none",
+        "media": "all",
+        "initial": "none",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard"
+      },
+      "types": {
+        "syntax": "none | <custom-ident>+",
+        "media": "all",
+        "initial": "none",
+        "percentages": "no",
+        "computed": "asSpecified",
+        "order": "uniqueOrder",
+        "status": "standard"
+      }
+    },
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@view-transition"
+  }
+}

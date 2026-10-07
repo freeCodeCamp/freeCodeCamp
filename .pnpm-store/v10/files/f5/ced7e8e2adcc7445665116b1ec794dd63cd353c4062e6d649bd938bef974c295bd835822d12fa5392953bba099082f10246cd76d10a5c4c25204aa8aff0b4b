@@ -1,0 +1,106 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-inputbox {
+	position: relative;
+	display: block;
+	padding: 0;
+	box-sizing:	border-box;
+	border-radius: 2px;
+
+	/* Customizable */
+	font-size: inherit;
+}
+
+.monaco-inputbox > .ibwrapper > .input,
+.monaco-inputbox > .ibwrapper > .mirror {
+
+	/* Customizable */
+	padding: 4px 6px;
+}
+
+.monaco-inputbox > .ibwrapper {
+	position: relative;
+	width: 100%;
+}
+
+.monaco-inputbox > .ibwrapper > .input {
+	display: inline-block;
+	box-sizing:	border-box;
+	width: 100%;
+	height: 100%;
+	line-height: inherit;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	resize: none;
+	color: inherit;
+}
+
+.monaco-inputbox > .ibwrapper > input {
+	text-overflow: ellipsis;
+}
+
+.monaco-inputbox > .ibwrapper > textarea.input {
+	display: block;
+	scrollbar-width: none; /* Firefox: hide scrollbars */
+	outline: none;
+}
+
+.monaco-inputbox > .ibwrapper > textarea.input::-webkit-scrollbar {
+	display: none; /* Chrome + Safari: hide scrollbar */
+}
+
+.monaco-inputbox > .ibwrapper > textarea.input.empty {
+	white-space: nowrap;
+}
+
+.monaco-inputbox > .ibwrapper > .mirror {
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	white-space: pre-wrap;
+	visibility: hidden;
+	word-wrap: break-word;
+}
+
+/* Context view */
+
+.monaco-inputbox-container {
+	text-align: right;
+}
+
+.monaco-inputbox-container .monaco-inputbox-message {
+	display: inline-block;
+	overflow: hidden;
+	text-align: left;
+	width: 100%;
+	box-sizing:	border-box;
+	padding: 0.4em;
+	font-size: 12px;
+	line-height: 17px;
+	margin-top: -1px;
+	word-wrap: break-word;
+}
+
+/* Action bar support */
+.monaco-inputbox .monaco-action-bar {
+	position: absolute;
+	right: 2px;
+	top: 4px;
+}
+
+.monaco-inputbox .monaco-action-bar .action-item {
+	margin-left: 2px;
+}
+
+.monaco-inputbox .monaco-action-bar .action-item .codicon {
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+}

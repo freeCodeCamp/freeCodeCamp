@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_wrap_async_generator.cjs",
+    "module": "../../esm/_wrap_async_generator.js"
+}

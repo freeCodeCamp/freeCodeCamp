@@ -1,0 +1,20 @@
+# Note: paths should be absolute, unless they point to programs in your $PATH.
+
+##### Standard programs #####
+GREP=grep
+PERL=perl
+PYTHON=python3
+SED=sed
+WHICH=which
+KPSEWHICH=kpsewhich
+
+##### Font tools #####
+# Most of the tools below are standard and should be available from your package manager.
+FONTFORGE=fontforge
+MFTRACE=mftrace
+TTX=ttx
+TTFAUTOHINT=ttfautohint
+
+##### TeXLive Encoding
+TETEXENCODING=/usr/share/texlive/texmf-texlive/fonts/enc/dvips/tetex/
+BASEENCODING=/usr/share/texlive/texmf-texlive/fonts/enc/dvips/base/

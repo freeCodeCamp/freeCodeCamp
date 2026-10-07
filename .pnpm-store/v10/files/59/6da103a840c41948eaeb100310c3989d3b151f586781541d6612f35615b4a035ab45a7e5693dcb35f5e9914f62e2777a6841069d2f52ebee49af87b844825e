@@ -1,0 +1,17 @@
+import { assert as chaiAssert } from "chai";
+import * as curriculumHelpers from "../../helpers/lib";
+import type { TestEvaluator, Fail, InitEvent, TestEvent, CodeEvent, InitWorkerOptions } from "../../shared/src/interfaces/test-evaluator";
+import { ProxyConsole } from "../../shared/src/proxy-console";
+declare global {
+    var assert: typeof chaiAssert;
+    var __helpers: typeof curriculumHelpers;
+}
+export declare class JavascriptTestEvaluator implements TestEvaluator {
+    #private;
+    constructor(proxyConsole?: ProxyConsole);
+    init(opts: InitWorkerOptions): void;
+    runTest(test: string): Promise<import("../../shared/src/interfaces/test-evaluator").Pass | Fail>;
+    runCode(code: string): Promise<void>;
+    handleMessage(e: TestEvent | InitEvent<InitWorkerOptions> | CodeEvent): Promise<void>;
+}
+//# sourceMappingURL=javascript-test-evaluator.d.ts.map

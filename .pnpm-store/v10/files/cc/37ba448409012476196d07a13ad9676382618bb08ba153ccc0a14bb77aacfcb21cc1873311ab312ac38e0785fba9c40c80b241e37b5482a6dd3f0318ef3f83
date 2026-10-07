@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/weeksToDays/index.js",
+  "typings": "../typings.d.ts"
+}

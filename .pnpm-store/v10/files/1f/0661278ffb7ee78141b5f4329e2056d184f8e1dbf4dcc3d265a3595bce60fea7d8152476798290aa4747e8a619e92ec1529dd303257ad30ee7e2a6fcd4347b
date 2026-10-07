@@ -1,0 +1,8 @@
+/**
+ * @param {JSXElement} node
+ * @returns {ElementAdapter}
+ */
+export function createElementAdapter(node: JSXElement): ElementAdapter;
+import type { JSXElement } from "../../types";
+import type { ElementAdapter } from "@html-eslint/core";
+//# sourceMappingURL=factory.d.ts.map

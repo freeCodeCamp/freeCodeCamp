@@ -1,0 +1,58 @@
+{
+  "name": "doctrine",
+  "description": "JSDoc parser",
+  "homepage": "https://github.com/eslint/doctrine",
+  "main": "lib/doctrine.js",
+  "version": "3.0.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "maintainers": [
+    {
+      "name": "Nicholas C. Zakas",
+      "email": "nicholas+npm@nczconsulting.com",
+      "web": "https://www.nczonline.net"
+    },
+    {
+      "name": "Yusuke Suzuki",
+      "email": "utatane.tea@gmail.com",
+      "web": "https://github.com/Constellation"
+    }
+  ],
+  "repository": "eslint/doctrine",
+  "devDependencies": {
+    "coveralls": "^3.0.1",
+    "dateformat": "^1.0.11",
+    "eslint": "^1.10.3",
+    "eslint-release": "^1.0.0",
+    "linefix": "^0.1.1",
+    "mocha": "^3.4.2",
+    "npm-license": "^0.3.1",
+    "nyc": "^10.3.2",
+    "semver": "^5.0.3",
+    "shelljs": "^0.5.3",
+    "shelljs-nodecli": "^0.1.1",
+    "should": "^5.0.1"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "nyc mocha",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint lib/",
+    "generate-release": "eslint-generate-release",
+    "generate-alpharelease": "eslint-generate-prerelease alpha",
+    "generate-betarelease": "eslint-generate-prerelease beta",
+    "generate-rcrelease": "eslint-generate-prerelease rc",
+    "publish-release": "eslint-publish-release"
+  },
+  "dependencies": {
+    "esutils": "^2.0.2"
+  }
+}

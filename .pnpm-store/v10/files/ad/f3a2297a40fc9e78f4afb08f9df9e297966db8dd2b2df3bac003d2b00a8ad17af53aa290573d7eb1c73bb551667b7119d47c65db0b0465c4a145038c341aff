@@ -1,0 +1,10 @@
+import { type TUnreachable } from '../../../system/unreachable/index.mjs';
+import { type TSchema } from '../../types/index.mjs';
+import { type TUnionToTuple } from '../helpers/index.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TLiteral, type TLiteralValue } from '../../types/literal.mjs';
+import { type TEvaluateUnionFast } from '../evaluate/evaluate.mjs';
+type TFromPropertyKeys<Keys extends PropertyKey[], Result extends TSchema[] = []> = (Keys extends [infer Left extends PropertyKey, ...infer Right extends PropertyKey[]] ? Left extends TLiteralValue ? TFromPropertyKeys<Right, [...Result, TLiteral<Left>]> : TUnreachable : Result);
+export type TFromObject<Properties extends TProperties, PropertyKeys extends PropertyKey[] = TUnionToTuple<keyof Properties>, Variants extends TSchema[] = TFromPropertyKeys<PropertyKeys>, Result extends TSchema = TEvaluateUnionFast<Variants>> = Result;
+export declare function FromObject<Properties extends TProperties>(properties: Properties): TFromObject<Properties>;
+export {};

@@ -1,0 +1,51 @@
+{
+	"name": "is-inside-container",
+	"version": "1.0.0",
+	"description": "Check if the process is running inside a container (Docker/Podman)",
+	"license": "MIT",
+	"repository": "sindresorhus/is-inside-container",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"bin": "./cli.js",
+	"engines": {
+		"node": ">=14.16"
+	},
+	"scripts": {
+		"test": "xo && NODE_OPTIONS='--loader=esmock --no-warnings' ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"cli.js"
+	],
+	"keywords": [
+		"detect",
+		"inside",
+		"container",
+		"docker",
+		"dockerized",
+		"podman",
+		"is",
+		"env",
+		"environment",
+		"process"
+	],
+	"dependencies": {
+		"is-docker": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "^5.2.0",
+		"esmock": "^2.1.0",
+		"tsd": "^0.25.0",
+		"xo": "^0.53.1"
+	}
+}

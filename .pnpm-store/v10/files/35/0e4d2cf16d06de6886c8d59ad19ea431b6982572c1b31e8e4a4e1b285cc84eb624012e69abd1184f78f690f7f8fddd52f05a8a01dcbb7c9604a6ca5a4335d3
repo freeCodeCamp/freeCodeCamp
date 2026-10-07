@@ -1,0 +1,10 @@
+// deno-fmt-ignore-file
+import { Hashing } from '../../system/hashing/index.mjs';
+/**
+ * Computes a unique 64-bit hash of the specified value and returns the hex string representation. This
+ * function internally uses a non-cryptographic FNV1A64 algorithm for hashing. Hashing is implemented
+ * via structural traversal of the value.
+ */
+export function Hash(value) {
+    return Hashing.Hash(value);
+}

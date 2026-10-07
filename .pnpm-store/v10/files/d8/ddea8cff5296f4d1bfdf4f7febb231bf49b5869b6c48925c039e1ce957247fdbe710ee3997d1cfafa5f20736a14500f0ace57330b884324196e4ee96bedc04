@@ -1,0 +1,36 @@
+{
+    "name": "@types/statuses",
+    "version": "2.0.6",
+    "description": "TypeScript definitions for statuses",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/statuses",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Tanguy Krotoff",
+            "githubUsername": "tkrotoff",
+            "url": "https://github.com/tkrotoff"
+        },
+        {
+            "name": "BendingBender",
+            "githubUsername": "BendingBender",
+            "url": "https://github.com/BendingBender"
+        },
+        {
+            "name": "Sebastian Beltran",
+            "githubUsername": "bjohansebas",
+            "url": "https://github.com/bjohansebas"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/statuses"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {},
+    "typesPublisherContentHash": "afcdc0087e4ec2b0b72590176e614e7aaec60d6866b188121bb6e3f6eb2cdd55",
+    "typeScriptVersion": "5.1"
+}

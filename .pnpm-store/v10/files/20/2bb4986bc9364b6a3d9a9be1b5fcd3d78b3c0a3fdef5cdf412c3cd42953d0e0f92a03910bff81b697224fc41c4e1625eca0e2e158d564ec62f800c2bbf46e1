@@ -1,0 +1,57 @@
+{
+  "name": "require-in-the-middle",
+  "version": "8.0.1",
+  "description": "Module to hook into the Node.js require function",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "debug": "^4.3.5",
+    "module-details-from-path": "^1.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "ipp-printer": "^1.0.0",
+    "patterns": "^1.0.3",
+    "roundround": "^0.2.0",
+    "semver": "^6.3.0",
+    "standard": "^14.3.1",
+    "tape": "^4.11.0"
+  },
+  "scripts": {
+    "test": "npm run test:lint && npm run test:tape && npm run test:babel",
+    "test:lint": "standard",
+    "test:tape": "tape test/*.js",
+    "test:babel": "node test/babel/babel-register.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodejs/require-in-the-middle.git"
+  },
+  "keywords": [
+    "require",
+    "hook",
+    "shim",
+    "shimmer",
+    "shimming",
+    "patch",
+    "monkey",
+    "monkeypatch",
+    "module",
+    "load"
+  ],
+  "files": [
+    "types"
+  ],
+  "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodejs/require-in-the-middle/issues"
+  },
+  "homepage": "https://github.com/nodejs/require-in-the-middle#readme",
+  "engines": {
+    "node": ">=9.3.0 || >=8.10.0 <9.0.0"
+  }
+}

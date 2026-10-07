@@ -1,0 +1,40 @@
+# `MD026` - Trailing punctuation in heading
+
+Tags: `headings`
+
+Aliases: `no-trailing-punctuation`
+
+Parameters:
+
+- `punctuation`: Punctuation characters (`string`, default `.,;:!。，；：！`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered on any heading that has one of the specified normal or
+full-width punctuation characters as the last character in the line:
+
+```markdown
+# This is a heading.
+```
+
+To fix this, remove the trailing punctuation:
+
+```markdown
+# This is a heading
+```
+
+Note: The `punctuation` parameter can be used to specify what characters count
+as punctuation at the end of a heading. For example, you can change it to
+`".,;:"` to allow headings that end with an exclamation point. `?` is
+allowed by default because of how common it is in headings of FAQ-style
+documents. Setting the `punctuation` parameter to `""` allows all characters -
+and is equivalent to disabling the rule.
+
+Note: The trailing semicolon of [HTML entity references][html-entity-references]
+like `&copy;`, `&#169;`, and `&#x000A9;` is ignored by this rule.
+
+Rationale: Headings are not meant to be full sentences. More information:
+[Punctuation at the end of headers][end-punctuation].
+
+[end-punctuation]: https://cirosantilli.com/markdown-style-guide#punctuation-at-the-end-of-headers
+[html-entity-references]: https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references

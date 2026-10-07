@@ -1,0 +1,84 @@
+{
+  "name": "@fastify/ajv-compiler",
+  "version": "4.0.5",
+  "description": "Build and manage the AJV instances for the fastify framework",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "unit": "c8 --100 node --test",
+    "test": "npm run unit && npm run test:typescript",
+    "test:typescript": "tsd",
+    "ajv:compile": "ajv compile -s test/source.json -o test/validate_schema.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/ajv-compiler.git"
+  },
+  "keywords": [
+    "ajv",
+    "validator",
+    "schema",
+    "compiler",
+    "fastify"
+  ],
+  "author": "Manuel Spigolon <behemoth89@gmail.com> (https://github.com/Eomm)",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "James Sumners",
+      "url": "https://james.sumners.info"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/ajv-compiler/issues"
+  },
+  "homepage": "https://github.com/fastify/ajv-compiler#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "ajv-cli": "^5.0.0",
+    "ajv-errors": "^3.0.0",
+    "ajv-i18n": "^4.2.0",
+    "ajv-merge-patch": "^5.0.1",
+    "c8": "^10.1.3",
+    "cronometro": "^5.3.0",
+    "eslint": "^9.17.0",
+    "fastify": "^5.0.0",
+    "neostandard": "^0.12.0",
+    "require-from-string": "^2.0.2",
+    "sanitize-filename": "^1.6.3",
+    "tsd": "^0.33.0"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^3.0.1",
+    "fast-uri": "^3.0.0"
+  }
+}

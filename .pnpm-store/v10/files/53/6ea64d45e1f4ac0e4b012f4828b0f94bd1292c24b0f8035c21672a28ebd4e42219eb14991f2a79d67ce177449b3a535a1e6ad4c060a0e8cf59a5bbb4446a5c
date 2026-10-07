@@ -1,0 +1,55 @@
+/**
+ *
+ * All animations must live in their own file
+ * in the animations directory and be included
+ * here.
+ *
+ */
+
+/**
+ * Styles shared by multiple animations
+ */
+@import 'variables';
+@import 'mixins';
+
+/**
+ * Dots
+ */
+@import 'animations/ball-pulse';
+@import 'animations/ball-pulse-sync';
+@import 'animations/ball-scale';
+@import 'animations/ball-scale-random';
+@import 'animations/ball-rotate';
+@import 'animations/ball-clip-rotate';
+@import 'animations/ball-clip-rotate-pulse';
+@import 'animations/ball-clip-rotate-multiple';
+@import 'animations/ball-scale-ripple';
+@import 'animations/ball-scale-ripple-multiple';
+@import 'animations/ball-beat';
+@import 'animations/ball-scale-multiple';
+@import 'animations/ball-triangle-trace';
+@import 'animations/ball-pulse-rise';
+@import 'animations/ball-grid-beat';
+@import 'animations/ball-grid-pulse';
+@import 'animations/ball-spin-fade-loader';
+@import 'animations/ball-spin-loader';
+@import 'animations/ball-zig-zag';
+@import 'animations/ball-zig-zag-deflect';
+
+/**
+ * Lines
+ */
+@import 'animations/line-scale';
+@import 'animations/line-scale-random';
+@import 'animations/line-scale-pulse-out';
+@import 'animations/line-scale-pulse-out-rapid';
+@import 'animations/line-spin-fade-loader';
+
+/**
+ * Misc
+ */
+@import 'animations/triangle-skew-spin';
+@import 'animations/square-spin';
+@import 'animations/pacman';
+@import 'animations/cube-transition';
+@import 'animations/semi-circle-spin';

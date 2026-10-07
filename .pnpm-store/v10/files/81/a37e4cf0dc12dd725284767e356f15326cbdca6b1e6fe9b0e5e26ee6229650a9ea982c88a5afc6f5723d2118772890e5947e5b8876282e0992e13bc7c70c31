@@ -1,0 +1,82 @@
+{
+  "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+  "name": "form-data",
+  "description": "A library to create readable \"multipart/form-data\" streams. Can be used to submit forms and file uploads to other web applications.",
+  "version": "3.0.4",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/form-data/form-data.git"
+  },
+  "main": "./lib/form_data",
+  "browser": "./lib/browser",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "pretest": "npm run lint",
+    "pretests-only": "rimraf coverage test/tmp",
+    "tests-only": "istanbul cover test/run.js",
+    "posttests-only": "istanbul report lcov text",
+    "test": "npm run tests-only",
+    "posttest": "npx npm@'>=10.2' audit --production",
+    "lint": "eslint --ext=js,mjs .",
+    "report": "istanbul report lcov text",
+    "ci-lint": "is-node-modern 8 && npm run lint || is-node-not-modern 8",
+    "ci-test": "npm run tests-only && npm run browser && npm run report",
+    "predebug": "rimraf coverage test/tmp",
+    "debug": "verbose=1 ./test/run.js",
+    "browser": "browserify -t browserify-istanbul test/run-browser.js | obake --coverage",
+    "check": "istanbul check-coverage coverage/coverage*.json",
+    "files": "pkgfiles --sort=name",
+    "get-version": "node -e \"console.log(require('./package.json').version)\"",
+    "update-readme": "sed -i.bak 's/\\/master\\.svg/\\/v'$(npm --silent run get-version)'.svg/g' README.md",
+    "postupdate-readme": "mv README.md.bak READ.ME.md.bak",
+    "restore-readme": "mv READ.ME.md.bak README.md",
+    "prepublish": "not-in-publish || npm run prepublishOnly",
+    "prepack": "npm run update-readme",
+    "postpack": "npm run restore-readme",
+    "version": "auto-changelog && git add CHANGELOG.md",
+    "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "dependencies": {
+    "asynckit": "^0.4.0",
+    "combined-stream": "^1.0.8",
+    "es-set-tostringtag": "^2.1.0",
+    "hasown": "^2.0.2",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@ljharb/eslint-config": "^21.2.0",
+    "auto-changelog": "^2.5.0",
+    "browserify": "^13.3.0",
+    "browserify-istanbul": "^2.0.0",
+    "coveralls": "^3.1.1",
+    "cross-spawn": "^6.0.6",
+    "eslint": "=8.8.0",
+    "fake": "^0.2.2",
+    "far": "^0.0.7",
+    "formidable": "^1.2.6",
+    "in-publish": "^2.0.1",
+    "is-node-modern": "^1.0.0",
+    "istanbul": "^0.4.5",
+    "obake": "^0.1.2",
+    "pkgfiles": "^2.3.2",
+    "pre-commit": "^1.2.2",
+    "predict-v8-randomness": "^1.0.35",
+    "puppeteer": "^1.20.0",
+    "request": "~2.87.0",
+    "rimraf": "^2.7.1",
+    "semver": "^6.3.1",
+    "tape": "^5.9.0"
+  },
+  "license": "MIT",
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "keepachangelog",
+    "unreleased": false,
+    "commitLimit": false,
+    "backfillLimit": false,
+    "hideCredit": true
+  }
+}

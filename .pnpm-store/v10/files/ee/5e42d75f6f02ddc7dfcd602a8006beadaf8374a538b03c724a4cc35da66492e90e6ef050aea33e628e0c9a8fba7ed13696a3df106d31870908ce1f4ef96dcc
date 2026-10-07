@@ -1,0 +1,1 @@
+{"version":3,"file":"prefixItems.js","sourceRoot":"","sources":["../../../lib/vocabularies/applicator/prefixItems.ts"],"names":[],"mappings":";;AACA,mCAAqC;AAErC,MAAM,GAAG,GAA0B;IACjC,OAAO,EAAE,aAAa;IACtB,IAAI,EAAE,OAAO;IACb,UAAU,EAAE,CAAC,OAAO,CAAC;IACrB,MAAM,EAAE,aAAa;IACrB,IAAI,EAAE,CAAC,GAAG,EAAE,EAAE,CAAC,IAAA,qBAAa,EAAC,GAAG,EAAE,OAAO,CAAC;CAC3C,CAAA;AAED,kBAAe,GAAG,CAAA"}

@@ -1,0 +1,1 @@
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("react"),require("htm")):"function"==typeof define&&define.amd?define(["exports","react","htm"],t):t(e.htmReact={},e.react,e.htm)}(this,function(e,t,n){var r=(n=n&&n.hasOwnProperty("default")?n.default:n).bind(t.createElement);e.html=r});

@@ -1,0 +1,19 @@
+{
+  "name": "@algolia/logger-common",
+  "version": "4.27.0",
+  "private": false,
+  "description": "Common interfaces for promise-based log libraries",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-js.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "dist/logger-common.esm.js",
+  "types": "dist/logger-common.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ]
+}

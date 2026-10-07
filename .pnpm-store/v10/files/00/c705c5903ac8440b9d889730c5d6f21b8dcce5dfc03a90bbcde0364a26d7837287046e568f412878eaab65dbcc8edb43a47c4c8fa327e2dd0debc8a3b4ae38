@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_set_prototype_of.cjs",
+    "module": "../../esm/_set_prototype_of.js"
+}

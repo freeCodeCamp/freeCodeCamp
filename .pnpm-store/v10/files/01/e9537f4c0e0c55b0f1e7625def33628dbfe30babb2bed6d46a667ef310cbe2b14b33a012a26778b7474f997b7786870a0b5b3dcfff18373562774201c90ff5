@@ -1,0 +1,48 @@
+{
+  "name": "registry-auth-token",
+  "version": "5.1.1",
+  "description": "Get the auth token set for an npm registry (if any)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require test/global-hooks.js",
+    "posttest": "standard",
+    "coverage": "istanbul cover _mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rexxars/registry-auth-token.git"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "npm",
+    "conf",
+    "config",
+    "npmconf",
+    "registry",
+    "auth",
+    "token",
+    "authtoken"
+  ],
+  "author": "Espen Hovlandsdal <espen@hovlandsdal.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rexxars/registry-auth-token/issues"
+  },
+  "homepage": "https://github.com/rexxars/registry-auth-token#readme",
+  "dependencies": {
+    "@pnpm/npm-conf": "^3.0.2"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.2",
+    "mocha": "^10.0.0",
+    "require-uncached": "^1.0.2",
+    "standard": "^12.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "coverage/**"
+    ]
+  }
+}

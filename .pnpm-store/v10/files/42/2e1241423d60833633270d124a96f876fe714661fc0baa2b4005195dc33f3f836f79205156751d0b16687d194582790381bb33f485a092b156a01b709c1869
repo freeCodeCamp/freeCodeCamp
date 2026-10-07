@@ -1,0 +1,77 @@
+{
+  "name": "@fastify/csrf-protection",
+  "version": "7.1.0",
+  "description": "A plugin for adding CSRF protection to Fastify.",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run test:unit",
+    "test:unit": "c8 --100 node --test",
+    "test:typescript": "tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-csrf.git"
+  },
+  "author": "Tarang11",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Tomas Della Vedova",
+      "url": "http://delved.org"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-csrf/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-csrf#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "dependencies": {
+    "@fastify/csrf": "^8.0.0",
+    "@fastify/error": "^4.0.0",
+    "fastify-plugin": "^5.0.0"
+  },
+  "devDependencies": {
+    "@fastify/cookie": "^11.0.1",
+    "@fastify/pre-commit": "^2.1.0",
+    "@fastify/secure-session": "^8.0.0",
+    "@fastify/session": "^11.0.0",
+    "@types/node": "^22.0.0",
+    "c8": "^10.1.3",
+    "eslint": "^9.17.0",
+    "fastify": "^5.0.0",
+    "neostandard": "^0.12.0",
+    "proxyquire": "^2.1.3",
+    "sinon": "^19.0.2",
+    "tsd": "^0.31.0"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
+}

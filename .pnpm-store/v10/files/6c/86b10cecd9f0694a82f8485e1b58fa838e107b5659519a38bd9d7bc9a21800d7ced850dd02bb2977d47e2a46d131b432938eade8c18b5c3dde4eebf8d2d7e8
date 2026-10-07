@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/formatDistanceStrict/index.js",
+  "typings": "../typings.d.ts"
+}

@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": ["../global.d.ts", "./**/*.ts"],
+  "exclude": ["./**/*.test.ts"]
+}

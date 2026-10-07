@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/endOfTomorrow/index.js",
+  "typings": "../typings.d.ts"
+}

@@ -1,0 +1,47 @@
+@import '../variables';
+@import '../mixins';
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+ }
+}
+
+.ball-rotate {
+  position: relative;
+
+  > div {
+    @include balls();
+    @include global-animation();
+
+    position: relative;
+
+    &:first-child {
+      animation: rotate 1s 0s cubic-bezier(.7,-.13,.22,.86) infinite;
+    }
+
+    &:before, &:after {
+      @include balls();
+
+      content: "";
+      position: absolute;
+      opacity: 0.8;
+    }
+
+    &:before {
+      top: 0px;
+      left: -28px;
+    }
+
+    &:after {
+      top: 0px;
+      left: 25px;
+    }
+  }
+}

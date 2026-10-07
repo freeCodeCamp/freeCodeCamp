@@ -1,0 +1,52 @@
+{
+    "Commands:": "Buyruqlar:",
+    "Options:": "Imkoniyatlar:",
+    "Examples:": "Misollar:",
+    "boolean": "boolean",
+    "count": "sanoq",
+    "string": "satr",
+    "number": "raqam",
+    "array": "massiv",
+    "required": "majburiy",
+    "default": "boshlang'ich",
+    "default:": "boshlang'ich:",
+    "choices:": "tanlovlar:",
+    "aliases:": "taxalluslar:",
+    "generated-value": "yaratilgan-qiymat",
+    "Not enough non-option arguments: got %s, need at least %s": {
+      "one": "No-imkoniyat argumentlar yetarli emas: berilgan %s, minimum %s",
+      "other": "No-imkoniyat argumentlar yetarli emas: berilgan %s, minimum %s"
+    },
+    "Too many non-option arguments: got %s, maximum of %s": {
+      "one": "No-imkoniyat argumentlar juda ko'p: berilgan %s, maksimum %s",
+      "other": "No-imkoniyat argumentlar juda ko'p: got %s, maksimum %s"
+    },
+    "Missing argument value: %s": {
+      "one": "Argument qiymati berilmagan: %s",
+      "other": "Argument qiymatlari berilmagan: %s"
+    },
+    "Missing required argument: %s": {
+      "one": "Majburiy argument berilmagan: %s",
+      "other": "Majburiy argumentlar berilmagan: %s"
+    },
+    "Unknown argument: %s": {
+      "one": "Noma'lum argument berilmagan: %s",
+      "other": "Noma'lum argumentlar berilmagan: %s"
+    },
+    "Invalid values:": "Nosoz qiymatlar:",
+    "Argument: %s, Given: %s, Choices: %s": "Argument: %s, Berilgan: %s, Tanlovlar: %s",
+    "Argument check failed: %s": "Muvaffaqiyatsiz argument tekshiruvi: %s",
+    "Implications failed:": "Bog'liq argumentlar berilmagan:",
+    "Not enough arguments following: %s": "Quyidagi argumentlar yetarli emas: %s",
+    "Invalid JSON config file: %s": "Nosoz JSON konfiguratsiya fayli: %s",
+    "Path to JSON config file": "JSON konfiguratsiya fayli joylashuvi",
+    "Show help": "Yordam ko'rsatish",
+    "Show version number": "Versiyani ko'rsatish",
+    "Did you mean %s?": "%s ni nazarda tutyapsizmi?",
+    "Arguments %s and %s are mutually exclusive" : "%s va %s argumentlari alohida",
+    "Positionals:": "Positsionallar:",
+    "command": "buyruq",
+    "deprecated": "eskirgan",
+    "deprecated: %s": "eskirgan: %s"
+  }
+  

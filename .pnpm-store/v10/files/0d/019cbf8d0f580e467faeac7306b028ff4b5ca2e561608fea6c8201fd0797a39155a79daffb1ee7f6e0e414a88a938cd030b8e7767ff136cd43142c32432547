@@ -1,0 +1,14 @@
+import { type TSchema, type TSchemaOptions } from '../../types/schema.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TNull } from '../../types/null.mjs';
+import { type TUndefined } from '../../types/undefined.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TExcludeAction } from '../exclude/instantiate.mjs';
+import { type TNonNullableDeferred } from '../../action/non_nullable.mjs';
+import { type TState, type TInstantiateType, type TCanInstantiate } from '../instantiate.mjs';
+type TNonNullableOperation<Type extends TSchema, Excluded extends TSchema = TUnion<[TNull, TUndefined]>> = TExcludeAction<Type, Excluded>;
+export type TNonNullableAction<Type extends TSchema, Result extends TSchema = TCanInstantiate<[Type]> extends true ? TNonNullableOperation<Type> : TNonNullableDeferred<Type>> = Result;
+export declare function NonNullableAction<Type extends TSchema>(type: Type, options: TSchemaOptions): TNonNullableAction<Type>;
+export type TNonNullableInstantiate<Context extends TProperties, State extends TState, Type extends TSchema, InstantiatedType extends TSchema = TInstantiateType<Context, State, Type>> = TNonNullableAction<InstantiatedType>;
+export declare function NonNullableInstantiate<Context extends TProperties, State extends TState, Type extends TSchema>(context: Context, state: State, type: Type, options: TSchemaOptions): TNonNullableInstantiate<Context, State, Type>;
+export {};

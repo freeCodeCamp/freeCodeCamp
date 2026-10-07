@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Cache.js",
+  "module": "../dist/esm/Cache.js",
+  "types": "../dist/dts/Cache.d.ts"
+}

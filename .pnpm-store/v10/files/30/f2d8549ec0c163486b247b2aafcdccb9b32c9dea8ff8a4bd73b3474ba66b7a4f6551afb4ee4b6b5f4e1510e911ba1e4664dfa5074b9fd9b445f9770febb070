@@ -1,0 +1,1 @@
+{"version":3,"file":"constants.js","sources":["../../../../src/integrations/http/constants.ts"],"sourcesContent":["export const INSTRUMENTATION_NAME = '@sentry/instrumentation-http';\n"],"names":[],"mappings":";;AAAO,MAAM,oBAAA,GAAuB;;;;"}

@@ -1,0 +1,26 @@
+For recent changelog see CHANGELOG.md
+
+-----
+
+
+v0.1.2  --  2017.04.03
+* `throttle` util
+
+v0.1.1  --  2017.03.15
+* Workaround IE8 resolution issue
+* Support any callable objects as callbacks
+* Improve documentation
+* Fix spelling of LICENSE
+* Configure lint scripts
+* Update dependencies
+
+v0.1.0  --  2014.04.27
+First production ready version
+- Depend strictly on npm hosted package versions
+- Full documentation
+- Add `once` (moved from next-tick project)
+- Make timeout value optional in delay
+- Rename MAX_VALUE into MAX_TIMEOUT
+
+v0.0.0  --  2013.08.27
+Initial (dev) version

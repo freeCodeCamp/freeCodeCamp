@@ -1,0 +1,41 @@
+{
+  "name": "hexoid",
+  "version": "1.0.0",
+  "repository": "lukeed/hexoid",
+  "description": "A tiny (190B) and extremely fast utility to generate random IDs of fixed length",
+  "unpkg": "dist/index.min.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "hexoid.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "build": "bundt",
+    "pretest": "npm run build",
+    "test": "tape -r esm test/*.js | tap-spec"
+  },
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "keywords": [
+    "id",
+    "uid",
+    "uuid",
+    "random",
+    "generate"
+  ],
+  "devDependencies": {
+    "bundt": "1.0.0",
+    "esm": "3.2.25",
+    "tap-spec": "5.0.0",
+    "tape": "4.9.1"
+  }
+}

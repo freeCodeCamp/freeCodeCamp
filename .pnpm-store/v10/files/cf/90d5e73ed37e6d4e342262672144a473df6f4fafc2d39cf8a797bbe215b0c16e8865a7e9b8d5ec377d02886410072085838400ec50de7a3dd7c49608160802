@@ -1,0 +1,34 @@
+@import '../variables';
+@import '../mixins';
+
+$size: 35px;
+$pos: 30%;
+
+@keyframes spin-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+ }
+}
+
+.semi-circle-spin {
+  position: relative;
+  width: $size;
+  height: $size;
+  overflow: hidden;
+
+  > div {
+    position: absolute;
+    border-width: 0px;
+    border-radius: 100%;
+    animation: spin-rotate 0.6s 0s infinite linear;
+    background-image: linear-gradient(transparent 0%, transparent (100% - $pos), $primary-color $pos, $primary-color 100%);
+    width: 100%;
+    height: 100%;
+  }
+}

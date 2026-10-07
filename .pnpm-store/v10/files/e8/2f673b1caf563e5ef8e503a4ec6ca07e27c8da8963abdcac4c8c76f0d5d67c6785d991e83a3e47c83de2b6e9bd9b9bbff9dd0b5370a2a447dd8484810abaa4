@@ -1,0 +1,30 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .zone-widget .codicon.codicon-error,
+.markers-panel .marker-icon.error, .markers-panel .marker-icon .codicon.codicon-error,
+.text-search-provider-messages .providerMessage .codicon.codicon-error,
+.extensions-viewlet > .extensions .codicon.codicon-error,
+.extension-editor .codicon.codicon-error,
+.chat-attached-context-attachment .codicon.codicon-error {
+	color: var(--vscode-problemsErrorIcon-foreground);
+}
+
+.monaco-editor .zone-widget .codicon.codicon-warning,
+.markers-panel .marker-icon.warning, .markers-panel .marker-icon .codicon.codicon-warning,
+.text-search-provider-messages .providerMessage .codicon.codicon-warning,
+.extensions-viewlet > .extensions .codicon.codicon-warning,
+.extension-editor .codicon.codicon-warning,
+.preferences-editor .codicon.codicon-warning {
+	color: var(--vscode-problemsWarningIcon-foreground);
+}
+
+.monaco-editor .zone-widget .codicon.codicon-info,
+.markers-panel .marker-icon.info, .markers-panel .marker-icon .codicon.codicon-info,
+.text-search-provider-messages .providerMessage .codicon.codicon-info,
+.extensions-viewlet > .extensions .codicon.codicon-info,
+.extension-editor .codicon.codicon-info {
+	color: var(--vscode-problemsInfoIcon-foreground);
+}

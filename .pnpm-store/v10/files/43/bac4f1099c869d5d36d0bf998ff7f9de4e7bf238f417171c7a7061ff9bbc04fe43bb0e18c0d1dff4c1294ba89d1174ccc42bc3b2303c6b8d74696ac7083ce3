@@ -1,0 +1,82 @@
+{
+  "name": "toad-cache",
+  "description": "LRU and FIFO caches for Client or Server",
+  "version": "3.7.0",
+  "homepage": "https://github.com/kibertoad/toad-cache",
+  "author": "Igor Savin <kibertoad@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kibertoad/toad-cache.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kibertoad/toad-cache/issues"
+  },
+  "files": [
+    "dist",
+    "*.d.ts",
+    "*.d.cts"
+  ],
+  "license": "MIT",
+  "source": "index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./toad-cache.d.ts",
+        "default": "./dist/toad-cache.mjs"
+      },
+      "require": {
+        "types": "./toad-cache.d.cts",
+        "default": "./dist/toad-cache.cjs"
+      }
+    }
+  },
+  "main": "dist/toad-cache.cjs",
+  "types": "./toad-cache.d.ts",
+  "type": "module",
+  "sourceType": "module",
+  "engines": {
+    "node": ">=12"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "build": "del-cli dist && del-cli coverage && npm run rollup",
+    "benchmark": "npm run build && node benchmark.js",
+    "changelog": "auto-changelog -p",
+    "lint": "eslint *.js src/*.js test/*.js",
+    "lint:fix": "eslint --fix *.js src/*.js test/*.js && prettier --write \"{src,test}/**/*.js\" benchmark.js",
+    "rollup": "rollup --config",
+    "test": "vitest",
+    "test:coverage": "npm run rollup && npm run test -- --coverage",
+    "test:ci": "npm run lint && npm run test:coverage && npm run test:typescript",
+    "test:typescript": "tsd",
+    "types:generate": "npx -p typescript tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir .",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "auto-changelog": "^2.4.0",
+    "del-cli": "^5.1.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "precise": "^4.0.0",
+    "rollup": "^4.6.0",
+    "vitest": "^1.1.3",
+    "tsd": "^0.30.0",
+    "typescript": "^5.3.2"
+  },
+  "keywords": [
+    "LRU",
+    "FIFO",
+    "cache",
+    "client",
+    "server",
+    "least",
+    "recently",
+    "used",
+    "first",
+    "browser"
+  ]
+}

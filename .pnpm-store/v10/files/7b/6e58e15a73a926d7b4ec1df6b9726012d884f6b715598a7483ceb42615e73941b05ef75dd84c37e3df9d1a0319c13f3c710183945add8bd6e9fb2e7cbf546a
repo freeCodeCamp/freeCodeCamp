@@ -1,0 +1,20 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-toolbar {
+	height: 100%;
+}
+
+.monaco-toolbar .toolbar-toggle-more {
+	display: inline-block;
+	padding: 0;
+}
+
+.monaco-toolbar.responsive {
+	.monaco-action-bar > .actions-container > .action-item {
+		flex-shrink: 1;
+		min-width: 20px;
+	}
+}

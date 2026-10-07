@@ -1,0 +1,1 @@
+{"version":3,"file":"webSocket.js","sources":["../../../../src/internal/observable/dom/webSocket.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAA0B,MAAM,oBAAoB,CAAC;AAyJ9E,MAAM,UAAU,SAAS,CAAI,iBAAqD;IAChF,OAAO,IAAI,gBAAgB,CAAI,iBAAiB,CAAC,CAAC;AACpD,CAAC"}

@@ -1,0 +1,128 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# DOM debugging allows setting breakpoints on particular DOM operations and events. JavaScript
+# execution will stop on these operations as if there was a regular breakpoint set.
+domain DOMDebugger
+  depends on DOM
+  depends on Runtime
+
+  # DOM breakpoint type.
+  type DOMBreakpointType extends string
+    enum
+      subtree-modified
+      attribute-modified
+      node-removed
+
+  # CSP Violation type.
+  experimental type CSPViolationType extends string
+    enum
+      trustedtype-sink-violation
+      trustedtype-policy-violation
+
+  # Object event listener.
+  type EventListener extends object
+    properties
+      # `EventListener`'s type.
+      string type
+      # `EventListener`'s useCapture.
+      boolean useCapture
+      # `EventListener`'s passive flag.
+      boolean passive
+      # `EventListener`'s once flag.
+      boolean once
+      # Script id of the handler code.
+      Runtime.ScriptId scriptId
+      # Line number in the script (0-based).
+      integer lineNumber
+      # Column number in the script (0-based).
+      integer columnNumber
+      # Event handler function value.
+      optional Runtime.RemoteObject handler
+      # Event original handler function value.
+      optional Runtime.RemoteObject originalHandler
+      # Node the listener is added to (if any).
+      optional DOM.BackendNodeId backendNodeId
+
+  # Returns event listeners of the given object.
+  command getEventListeners
+    parameters
+      # Identifier of the object to return listeners for.
+      Runtime.RemoteObjectId objectId
+      # The maximum depth at which Node children should be retrieved, defaults to 1. Use -1 for the
+      # entire subtree or provide an integer larger than 0.
+      optional integer depth
+      # Whether or not iframes and shadow roots should be traversed when returning the subtree
+      # (default is false). Reports listeners for all contexts if pierce is enabled.
+      optional boolean pierce
+    returns
+      # Array of relevant listeners.
+      array of EventListener listeners
+
+  # Removes DOM breakpoint that was set using `setDOMBreakpoint`.
+  command removeDOMBreakpoint
+    parameters
+      # Identifier of the node to remove breakpoint from.
+      DOM.NodeId nodeId
+      # Type of the breakpoint to remove.
+      DOMBreakpointType type
+
+  # Removes breakpoint on particular DOM event.
+  command removeEventListenerBreakpoint
+    parameters
+      # Event name.
+      string eventName
+      # EventTarget interface name.
+      experimental optional string targetName
+
+  # Removes breakpoint on particular native event.
+  experimental deprecated command removeInstrumentationBreakpoint
+    redirect EventBreakpoints
+    parameters
+      # Instrumentation name to stop on.
+      string eventName
+
+  # Removes breakpoint from XMLHttpRequest.
+  command removeXHRBreakpoint
+    parameters
+      # Resource URL substring.
+      string url
+
+  # Sets breakpoint on particular CSP violations.
+  experimental command setBreakOnCSPViolation
+    parameters
+      # CSP Violations to stop upon.
+      array of CSPViolationType violationTypes
+
+  # Sets breakpoint on particular operation with DOM.
+  command setDOMBreakpoint
+    parameters
+      # Identifier of the node to set breakpoint on.
+      DOM.NodeId nodeId
+      # Type of the operation to stop upon.
+      DOMBreakpointType type
+
+  # Sets breakpoint on particular DOM event.
+  command setEventListenerBreakpoint
+    parameters
+      # DOM Event name to stop on (any DOM event will do).
+      string eventName
+      # EventTarget interface name to stop on. If equal to `"*"` or not provided, will stop on any
+      # EventTarget.
+      experimental optional string targetName
+
+  # Sets breakpoint on particular native event.
+  experimental deprecated command setInstrumentationBreakpoint
+    redirect EventBreakpoints
+    parameters
+      # Instrumentation name to stop on.
+      string eventName
+
+  # Sets breakpoint on XMLHttpRequest.
+  command setXHRBreakpoint
+    parameters
+      # Resource URL substring. All XHRs having this substring in the URL will get stopped upon.
+      string url

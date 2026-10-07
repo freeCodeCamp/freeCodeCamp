@@ -1,0 +1,98 @@
+{
+  "name": "formidable",
+  "version": "2.1.2",
+  "license": "MIT",
+  "description": "A node.js module for parsing form data, especially file uploads.",
+  "homepage": "https://github.com/node-formidable/formidable",
+  "funding": "https://ko-fi.com/tunnckoCore/commissions",
+  "repository": "node-formidable/formidable",
+  "main": "./src/index.js",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "v2-latest"
+  },
+  "scripts": {
+    "bench": "node benchmark",
+    "fmt": "yarn run fmt:prepare '**/*'",
+    "fmt:prepare": "prettier --write",
+    "lint": "yarn run lint:prepare .",
+    "lint:prepare": "eslint --cache --fix --quiet --format codeframe",
+    "reinstall": "del-cli ./node_modules ./yarn.lock",
+    "postreinstall": "yarn setup",
+    "setup": "yarn",
+    "pretest": "del-cli ./test/tmp && make-dir ./test/tmp",
+    "test": "jest --coverage",
+    "pretest:ci": "yarn run pretest",
+    "test:ci": "nyc jest --coverage",
+    "test:jest": "jest --coverage"
+  },
+  "dependencies": {
+    "dezalgo": "^1.0.4",
+    "hexoid": "^1.0.0",
+    "once": "^1.4.0",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@tunnckocore/prettier-config": "1.3.8",
+    "del-cli": "3.0.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-prettier": "3.1.3",
+    "express": "4.17.1",
+    "husky": "4.2.5",
+    "jest": "25.4.0",
+    "koa": "2.11.0",
+    "lint-staged": "10.2.7",
+    "make-dir-cli": "2.0.0",
+    "nyc": "15.0.1",
+    "prettier": "2.0.5",
+    "prettier-plugin-pkgjson": "0.2.8",
+    "request": "2.88.2",
+    "supertest": "4.0.2"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "keywords": [
+    "multipart",
+    "form",
+    "data",
+    "querystring",
+    "www",
+    "json",
+    "ulpoad",
+    "file"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "git status --porcelain && yarn lint-staged",
+      "commit-msg": "yarn commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "!*.{js,jsx,ts,tsx}": [
+      "yarn run fmt:prepare"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "yarn run lint"
+    ]
+  },
+  "renovate": {
+    "extends": [
+      "@tunnckocore",
+      ":pinAllExceptPeerDependencies"
+    ]
+  }
+}

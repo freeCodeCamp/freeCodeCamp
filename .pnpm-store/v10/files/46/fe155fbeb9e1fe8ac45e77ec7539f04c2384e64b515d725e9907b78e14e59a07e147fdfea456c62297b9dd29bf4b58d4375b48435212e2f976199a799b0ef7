@@ -1,0 +1,87 @@
+{
+  "name": "peek-readable",
+  "version": "4.1.0",
+  "description": "Read and peek from a readable stream",
+  "author": {
+    "name": "Borewit",
+    "url": "https://github.com/Borewit"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Borewit"
+  },
+  "scripts": {
+    "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts test/**/*.js test/**/*.js.map coverage .nyc_output",
+    "build": "npm run clean && npm run compile",
+    "compile-src": "tsc -p lib",
+    "compile-test": "tsc -p test",
+    "compile": "npm run compile-src && yarn run compile-test",
+    "eslint": "eslint lib test --ext .ts --ignore-pattern *.d.ts",
+    "lint-md": "remark -u preset-lint-recommended .",
+    "lint": "npm run lint-md && npm run eslint",
+    "test": "mocha --require ts-node/register --require source-map-support/register --full-trace test/*.ts",
+    "test-coverage": "nyc npm run test",
+    "send-coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "start": "npm run compile && npm run lint && npm run cover-test"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borewit/peek-readable"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/Borewit/peek-readable/issues"
+  },
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "add": "^2.0.6",
+    "chai": "^4.3.6",
+    "coveralls": "^3.1.1",
+    "del-cli": "^4.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^37.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-unicorn": "^40.1.0",
+    "mocha": "^9.2.0",
+    "nyc": "^15.1.0",
+    "remark-cli": "^10.0.1",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  },
+  "keywords": [
+    "readable",
+    "buffer",
+    "stream",
+    "read"
+  ],
+  "nyc": {
+    "check-coverage": true,
+    "extension": [
+      ".ts"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "report-dir": "coverage"
+  }
+}

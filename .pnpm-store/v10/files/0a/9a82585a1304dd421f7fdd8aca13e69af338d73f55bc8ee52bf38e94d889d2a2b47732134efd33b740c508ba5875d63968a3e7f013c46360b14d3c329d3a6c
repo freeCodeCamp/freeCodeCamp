@@ -1,0 +1,82 @@
+{
+  "name": "@opentelemetry/semantic-conventions",
+  "version": "1.41.1",
+  "description": "OpenTelemetry semantic conventions",
+  "main": "build/src/index.js",
+  "module": "build/esm/index.js",
+  "esnext": "build/esnext/index.js",
+  "types": "build/src/index.d.ts",
+  "exports": {
+    ".": {
+      "esnext": "./build/esnext/index.js",
+      "module": "./build/esm/index.js",
+      "types": "./build/src/index.d.ts",
+      "default": "./build/src/index.js"
+    },
+    "./incubating": {
+      "esnext": "./build/esnext/index-incubating.js",
+      "module": "./build/esm/index-incubating.js",
+      "types": "./build/src/index-incubating.d.ts",
+      "default": "./build/src/index-incubating.js"
+    }
+  },
+  "repository": "open-telemetry/opentelemetry-js",
+  "scripts": {
+    "prepublishOnly": "npm run compile",
+    "compile": "tsc --build tsconfig.json tsconfig.esm.json tsconfig.esnext.json",
+    "clean": "tsc --build --clean tsconfig.json tsconfig.esm.json tsconfig.esnext.json",
+    "version": "node ../scripts/version-update.js",
+    "watch": "tsc --build --watch tsconfig.json tsconfig.esm.json tsconfig.esnext.json",
+    "prewatch": "npm run precompile",
+    "peer-api-check": "node ../scripts/peer-api-check.js",
+    "size-check": "npm run compile && mocha 'test/**/*.test.ts'",
+    "align-api-deps": "node ../scripts/align-api-deps.js"
+  },
+  "keywords": [
+    "opentelemetry",
+    "nodejs",
+    "tracing",
+    "attributes",
+    "semantic conventions"
+  ],
+  "author": "OpenTelemetry Authors",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "build/esm/**/*.js",
+    "build/esm/**/*.js.map",
+    "build/esm/**/*.d.ts",
+    "build/esnext/**/*.js",
+    "build/esnext/**/*.js.map",
+    "build/esnext/**/*.d.ts",
+    "build/src/**/*.js",
+    "build/src/**/*.js.map",
+    "build/src/**/*.d.ts",
+    "doc",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@size-limit/file": "^12.0.0",
+    "@size-limit/time": "^12.0.0",
+    "@size-limit/webpack": "^12.0.0",
+    "@types/mocha": "10.0.10",
+    "@types/node": "^14.18.63",
+    "@types/sinon": "17.0.4",
+    "mocha": "11.7.5",
+    "nock": "13.5.6",
+    "nyc": "17.1.0",
+    "sinon": "18.0.1",
+    "size-limit": "^12.0.0",
+    "ts-node": "10.9.2",
+    "typescript": "5.0.4"
+  },
+  "homepage": "https://github.com/open-telemetry/opentelemetry-js/tree/main/semantic-conventions",
+  "sideEffects": false,
+  "gitHead": "013c60085b84351a4c1e4e4f79e3dd67c56661cd"
+}

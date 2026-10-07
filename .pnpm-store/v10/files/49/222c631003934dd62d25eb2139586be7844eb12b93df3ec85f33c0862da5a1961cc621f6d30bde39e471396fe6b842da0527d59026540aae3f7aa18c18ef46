@@ -1,0 +1,89 @@
+{
+  "name": "nanoid",
+  "version": "3.3.12",
+  "description": "A tiny (116 bytes), secure URL-friendly unique string ID generator",
+  "keywords": [
+    "uuid",
+    "random",
+    "id",
+    "url"
+  ],
+  "engines": {
+    "node": "^10 || ^12 || ^13.7 || ^14 || >=15.0.1"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ai"
+    }
+  ],
+  "author": "Andrey Sitnik <andrey@sitnik.ru>",
+  "license": "MIT",
+  "repository": "ai/nanoid",
+  "browser": {
+    "./index.js": "./index.browser.js",
+    "./async/index.js": "./async/index.browser.js",
+    "./async/index.cjs": "./async/index.browser.cjs",
+    "./index.cjs": "./index.browser.cjs"
+  },
+  "react-native": "index.js",
+  "bin": "./bin/nanoid.cjs",
+  "sideEffects": false,
+  "types": "./index.d.ts",
+  "type": "module",
+  "main": "index.cjs",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "react-native": "./index.browser.js",
+      "browser": "./index.browser.js",
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./index.cjs"
+      },
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      },
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json",
+    "./async/package.json": "./async/package.json",
+    "./async": {
+      "browser": "./async/index.browser.js",
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./async/index.cjs"
+      },
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./async/index.js"
+      },
+      "default": "./async/index.js"
+    },
+    "./non-secure/package.json": "./non-secure/package.json",
+    "./non-secure": {
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./non-secure/index.cjs"
+      },
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./non-secure/index.js"
+      },
+      "default": "./non-secure/index.js"
+    },
+    "./url-alphabet/package.json": "./url-alphabet/package.json",
+    "./url-alphabet": {
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./url-alphabet/index.cjs"
+      },
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./url-alphabet/index.js"
+      },
+      "default": "./url-alphabet/index.js"
+    }
+  }
+}

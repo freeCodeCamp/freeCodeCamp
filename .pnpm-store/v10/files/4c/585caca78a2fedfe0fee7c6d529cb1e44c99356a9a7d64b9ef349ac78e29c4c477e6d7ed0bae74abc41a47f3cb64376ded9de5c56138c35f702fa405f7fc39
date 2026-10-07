@@ -1,0 +1,81 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-list {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.monaco-list.mouse-support {
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.monaco-list > .monaco-scrollable-element {
+	height: 100%;
+}
+
+.monaco-list-rows {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.monaco-list.horizontal-scrolling .monaco-list-rows {
+	width: auto;
+	min-width: 100%;
+}
+
+.monaco-list-row {
+	position: absolute;
+	box-sizing: border-box;
+	overflow: hidden;
+	width: 100%;
+}
+
+.monaco-list.mouse-support .monaco-list-row {
+	cursor: pointer;
+	touch-action: none;
+}
+
+/* Make sure the scrollbar renders above overlays (sticky scroll) */
+.monaco-list .monaco-scrollable-element > .scrollbar.vertical,
+.monaco-pane-view > .monaco-split-view2.vertical > .monaco-scrollable-element > .scrollbar.vertical {
+	z-index: 14;
+}
+
+/* for OS X ballistic scrolling */
+.monaco-list-row.scrolling {
+	display: none !important;
+}
+
+/* Focus */
+.monaco-list.element-focused,
+.monaco-list.selection-single,
+.monaco-list.selection-multiple {
+	outline: 0 !important;
+}
+
+/* Filter */
+
+.monaco-list-type-filter-message {
+	position: absolute;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	padding: 40px 1em 1em 1em;
+	text-align: center;
+	white-space: normal;
+	opacity: 0.7;
+	pointer-events: none;
+}
+
+.monaco-list-type-filter-message:empty {
+	display: none;
+}

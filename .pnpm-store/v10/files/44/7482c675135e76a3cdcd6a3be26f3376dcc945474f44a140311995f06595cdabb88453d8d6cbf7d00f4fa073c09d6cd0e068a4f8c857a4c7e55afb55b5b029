@@ -1,0 +1,39 @@
+{
+  "name": "fast-levenshtein",
+  "version": "2.0.6",
+  "description": "Efficient implementation of Levenshtein algorithm  with locale-specific collator support.",
+  "main": "levenshtein.js",
+  "files": [
+    "levenshtein.js"
+  ],
+  "scripts": {
+    "build": "grunt build",
+    "prepublish": "npm run build",
+    "benchmark": "grunt benchmark",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "~1.5.0",
+    "grunt": "~0.4.1",
+    "grunt-benchmark": "~0.2.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-mocha-test": "~0.2.2",
+    "grunt-npm-install": "~0.1.0",
+    "load-grunt-tasks": "~0.6.0",
+    "lodash": "^4.0.1",
+    "mocha": "~1.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiddentao/fast-levenshtein.git"
+  },
+  "keywords": [
+    "levenshtein",
+    "distance",
+    "string"
+  ],
+  "author": "Ramesh Nair <ram@hiddentao.com> (http://www.hiddentao.com/)",
+  "license": "MIT"
+}

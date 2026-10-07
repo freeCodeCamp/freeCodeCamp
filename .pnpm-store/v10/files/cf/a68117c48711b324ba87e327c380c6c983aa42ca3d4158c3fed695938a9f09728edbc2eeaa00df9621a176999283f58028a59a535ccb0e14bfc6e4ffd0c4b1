@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/width",
+  "private": true,
+  "main": "../cjs/width.js",
+  "module": "../esm/width.js",
+  "types": "../esm/width.d.ts"
+}

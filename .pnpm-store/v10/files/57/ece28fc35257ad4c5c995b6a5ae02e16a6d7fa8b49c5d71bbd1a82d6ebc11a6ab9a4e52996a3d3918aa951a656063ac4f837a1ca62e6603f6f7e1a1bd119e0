@@ -1,0 +1,70 @@
+{
+  "name": "saxes",
+  "description": "An evented streaming XML parser in JavaScript",
+  "author": "Louis-Dominique Dubeau <ldd@lddubeau.com>",
+  "version": "5.0.1",
+  "main": "saxes.js",
+  "types": "saxes.d.ts",
+  "license": "ISC",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "copy": "cp -p README.md build/dist && sed -e'/\"private\": true/d' package.json > build/dist/package.json",
+    "build": "npm run tsc && npm run copy",
+    "test": "npm run build && mocha --delay",
+    "lint": "eslint --ignore-path .gitignore '**/*.ts' '**/*.js'",
+    "lint-fix": "npm run lint -- --fix",
+    "posttest": "npm run lint",
+    "typedoc": "typedoc --tsconfig tsconfig.json --name saxes --out build/docs/ --listInvalidSymbolLinks --excludePrivate --excludeNotExported",
+    "build-docs": "npm run typedoc",
+    "gh-pages": "npm run build-docs && mkdir -p build && (cd build; rm -rf gh-pages; git clone .. --branch gh-pages gh-pages) && mkdir -p build/gh-pages/latest && find build/gh-pages/latest -type f -delete && cp -rp build/docs/* build/gh-pages/latest && find build/gh-pages -type d -empty -delete",
+    "self:publish": "cd build/dist && npm_config_tag=`simple-dist-tag` npm publish",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "postversion": "npm run test && npm run self:publish",
+    "postpublish": "git push origin --follow-tags"
+  },
+  "repository": "https://github.com/lddubeau/saxes.git",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-angular": "^8.3.4",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "@xml-conformance-suite/js": "^2.0.0",
+    "@xml-conformance-suite/mocha": "^2.0.0",
+    "@xml-conformance-suite/test-data": "^2.0.0",
+    "chai": "^4.2.0",
+    "conventional-changelog-cli": "^2.0.31",
+    "eslint": "^6.8.0",
+    "eslint-config-lddubeau-base": "^5.2.0",
+    "eslint-config-lddubeau-ts": "^1.1.7",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prefer-arrow": "^1.2.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "husky": "^4.2.5",
+    "mocha": "^7.1.1",
+    "renovate-config-lddubeau": "^1.0.0",
+    "simple-dist-tag": "^1.0.2",
+    "ts-node": "^8.8.2",
+    "tsd": "^0.11.0",
+    "tslint": "^6.1.1",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "typedoc": "^0.17.4",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "xmlchars": "^2.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

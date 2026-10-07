@@ -1,0 +1,15 @@
+sudo: false
+language: node_js
+matrix:
+  include:
+    - node_js: '7'
+      env: TEST_SUITE=test
+    - node_js: '6'
+      env: TEST_SUITE=test
+    - node_js: '5'
+      env: TEST_SUITE=test
+    - node_js: '4'
+      env: TEST_SUITE=test
+    - node_js: '4'
+      env: TEST_SUITE=phantom
+script: "npm run-script $TEST_SUITE"

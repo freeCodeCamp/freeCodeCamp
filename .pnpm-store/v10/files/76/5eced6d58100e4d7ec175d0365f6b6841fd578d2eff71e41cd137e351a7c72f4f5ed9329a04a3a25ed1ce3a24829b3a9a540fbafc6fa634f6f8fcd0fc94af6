@@ -1,0 +1,38 @@
+{
+	"name": "estree-walker",
+	"description": "Traverse an ESTree-compliant AST",
+	"version": "3.0.3",
+	"private": false,
+	"author": "Rich Harris",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Rich-Harris/estree-walker"
+	},
+	"type": "module",
+	"module": "./src/index.js",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"types": "./types/index.d.ts",
+			"import": "./src/index.js"
+		}
+	},
+	"types": "types/index.d.ts",
+	"scripts": {
+		"prepublishOnly": "tsc && npm test",
+		"test": "uvu test"
+	},
+	"dependencies": {
+		"@types/estree": "^1.0.0"
+	},
+	"devDependencies": {
+		"typescript": "^4.9.0",
+		"uvu": "^0.5.1"
+	},
+	"files": [
+		"src",
+		"types",
+		"README.md"
+	]
+}

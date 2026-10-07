@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_class_static_private_field_update.js")

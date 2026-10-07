@@ -1,0 +1,21 @@
+import { TAddSilentConnectionFunction } from './add-silent-connection-function';
+import { TCacheTestResultFunction } from './cache-test-result-function';
+import { TNativeAudioBufferSourceNodeFactory } from './native-audio-buffer-source-node-factory';
+import { TNativeContext } from './native-context';
+import { TWrapAudioBufferSourceNodeStartMethodOffsetClampingFunction } from './wrap-audio-buffer-source-node-start-method-offset-clamping-function';
+import { TWrapAudioBufferSourceNodeStopMethodNullifiedBufferFunction } from './wrap-audio-buffer-source-node-stop-method-nullified-buffer-function';
+import { TWrapAudioScheduledSourceNodeStopMethodConsecutiveCallsFunction } from './wrap-audio-scheduled-source-node-stop-method-consecutive-calls-function';
+
+export type TNativeAudioBufferSourceNodeFactoryFactory = (
+    addSilentConnection: TAddSilentConnectionFunction,
+    cacheTestResult: TCacheTestResultFunction,
+    testAudioBufferSourceNodeStartMethodConsecutiveCallsSupport: (nativeContext: TNativeContext) => boolean,
+    testAudioBufferSourceNodeStartMethodOffsetClampingSupport: (nativeContext: TNativeContext) => boolean,
+    testAudioBufferSourceNodeStopMethodNullifiedBufferSupport: (nativeContext: TNativeContext) => boolean,
+    testAudioScheduledSourceNodeStartMethodNegativeParametersSupport: (nativeContext: TNativeContext) => boolean,
+    testAudioScheduledSourceNodeStopMethodConsecutiveCallsSupport: (nativeContext: TNativeContext) => boolean,
+    testAudioScheduledSourceNodeStopMethodNegativeParametersSupport: (nativeContext: TNativeContext) => boolean,
+    wrapAudioBufferSourceNodeStartMethodOffsetClampling: TWrapAudioBufferSourceNodeStartMethodOffsetClampingFunction,
+    wrapAudioBufferSourceNodeStopMethodNullifiedBuffer: TWrapAudioBufferSourceNodeStopMethodNullifiedBufferFunction,
+    wrapAudioScheduledSourceNodeStopMethodConsecutiveCalls: TWrapAudioScheduledSourceNodeStopMethodConsecutiveCallsFunction
+) => TNativeAudioBufferSourceNodeFactory;

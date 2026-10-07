@@ -1,0 +1,117 @@
+# `MD051` - Link fragments should be valid
+
+Tags: `links`
+
+Aliases: `link-fragments`
+
+Parameters:
+
+- `ignore_case`: Ignore case of fragments (`boolean`, default `false`)
+- `ignored_pattern`: Pattern for ignoring additional fragments (`string`,
+  default ``)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when a link fragment does not match any of the fragments
+that are automatically generated for headings in a document:
+
+```markdown
+# Heading Name
+
+[Link](#fragment)
+```
+
+To fix this issue, change the link fragment to reference an existing heading's
+generated name (see below):
+
+```markdown
+# Heading Name
+
+[Link](#heading-name)
+```
+
+For consistency, this rule requires fragments to exactly match the [GitHub
+heading algorithm][github-heading-algorithm] which converts letters to
+lowercase. Therefore, the following example is reported as a violation:
+
+```markdown
+# Heading Name
+
+[Link](#Heading-Name)
+```
+
+To ignore case when comparing fragments with heading names, the `ignore_case`
+parameter can be set to `true`. In this configuration, the previous example is
+not reported as a violation.
+
+Alternatively, some platforms allow the syntax `{#named-anchor}` to be used
+within a heading to provide a specific name (consisting of only lower-case
+letters, numbers, `-`, and `_`):
+
+```markdown
+# Heading Name {#custom-name}
+
+[Link](#custom-name)
+```
+
+Alternatively, any HTML tag with an `id` attribute or an `a` tag with a `name`
+attribute can be used to define a fragment:
+
+```markdown
+<a id="bookmark"></a>
+
+[Link](#bookmark)
+```
+
+An `a` tag can be useful in scenarios where a heading is not appropriate or for
+control over the text of the fragment identifier.
+
+[HTML links to `#top` scroll to the top of a document][html-top-fragment]. This
+rule allows that syntax (using lower-case for consistency):
+
+```markdown
+[Link](#top)
+```
+
+This rule also recognizes the custom fragment syntax used by GitHub to highlight
+[specific content in a document][github-linking-to-content].
+
+For example, this link to line 20:
+
+```markdown
+[Link](#L20)
+```
+
+And this link to content starting within line 19 running into line 21:
+
+```markdown
+[Link](#L19C5-L21C11)
+```
+
+Some Markdown generators dynamically create and insert headings when building
+documents, for example by combining a fixed prefix like `figure-` and an
+incrementing numeric counter. To ignore such generated fragments, set the
+`ignored_pattern` [regular expression][RegEx] parameter to a pattern that
+matches (e.g., `^figure-`).
+
+Rationale: [GitHub section links][github-section-links] are created
+automatically for every heading when Markdown content is displayed on GitHub.
+This makes it easy to link directly to different sections within a document.
+However, section links change if headings are renamed or removed. This rule
+helps identify broken section links within a document.
+
+Note: Section links are **not** part of the CommonMark specification; this rule
+enforces the [GitHub heading algorithm][github-heading-algorithm]:
+
+1. Convert text to lowercase
+2. Remove punctuation characters
+3. Convert spaces to dashes
+4. Append an incrementing integer (as needed for uniqueness)
+5. [URI-encode][encodeURIComponent] the result
+
+[encodeURIComponent]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+[github-section-links]: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links
+[github-heading-algorithm]: https://github.com/gjtorikian/html-pipeline/blob/f13a1534cb650ba17af400d1acd3a22c28004c09/lib/html/pipeline/toc_filter.rb
+[github-linking-to-content]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet#linking-to-markdown
+[html-top-fragment]: https://html.spec.whatwg.org/multipage/browsing-the-web.html#scrolling-to-a-fragment
+[RegEx]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions

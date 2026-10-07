@@ -1,0 +1,90 @@
+{
+  "name": "mdast-util-gfm-autolink-literal",
+  "version": "0.1.3",
+  "description": "mdast extension to parse and serialize GFM autolink literals",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "util",
+    "utility",
+    "markdown",
+    "markup",
+    "autolink",
+    "auto",
+    "link",
+    "literal",
+    "url",
+    "raw",
+    "gfm"
+  ],
+  "repository": "syntax-tree/mdast-util-gfm-autolink-literal",
+  "bugs": "https://github.com/syntax-tree/mdast-util-gfm-autolink-literal/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "from-markdown.js",
+    "index.js",
+    "to-markdown.js"
+  ],
+  "dependencies": {
+    "ccount": "^1.0.0",
+    "mdast-util-find-and-replace": "^1.1.0",
+    "micromark": "^2.11.3"
+  },
+  "devDependencies": {
+    "hast-util-to-html": "^7.0.0",
+    "mdast-util-from-markdown": "^0.8.5",
+    "mdast-util-to-hast": "^10.0.0",
+    "mdast-util-to-markdown": "^0.6.0",
+    "micromark-extension-gfm-autolink-literal": "^0.5.6",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "xo": "^0.37.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test": "npm run format && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "max-params": "off",
+      "no-self-compare": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-optional-catch-binding": "off"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

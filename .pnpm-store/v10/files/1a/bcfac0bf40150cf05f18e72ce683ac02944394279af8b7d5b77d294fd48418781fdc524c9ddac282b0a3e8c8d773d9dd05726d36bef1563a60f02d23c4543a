@@ -1,0 +1,74 @@
+{
+  "name": "@redux-saga/delay-p",
+  "version": "1.3.1",
+  "description": "Promisified setTimeout",
+  "main": "dist/redux-saga-delay-p.cjs.js",
+  "module": "dist/redux-saga-delay-p.esm.js",
+  "types": "./dist/redux-saga-delay-p.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/redux-saga-delay-p.cjs.mjs",
+        "default": "./dist/redux-saga-delay-p.cjs.js"
+      },
+      "development": {
+        "module": "./dist/redux-saga-delay-p.development.esm.js",
+        "import": "./dist/redux-saga-delay-p.development.cjs.mjs",
+        "default": "./dist/redux-saga-delay-p.development.cjs.js"
+      },
+      "module": "./dist/redux-saga-delay-p.esm.js",
+      "import": "./dist/redux-saga-delay-p.cjs.mjs",
+      "default": "./dist/redux-saga-delay-p.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "imports": {
+    "#is-development": {
+      "development": "./src/resolved-conditions/development.js",
+      "default": "./src/resolved-conditions/production.js"
+    }
+  },
+  "scripts": {},
+  "repository": "https://github.com/redux-saga/redux-saga/tree/main/packages/delay-p",
+  "keywords": [
+    "promise",
+    "resolve",
+    "delay",
+    "defer",
+    "wait",
+    "stall",
+    "timeout",
+    "settimeout",
+    "event",
+    "loop",
+    "next",
+    "tick",
+    "delay",
+    "async",
+    "await",
+    "promises",
+    "bluebird"
+  ],
+  "author": "Yassine ELOUAFI <yelouafi@gmail.com>",
+  "contributors": [
+    "Mateusz Burzyński <mateuszburzynski@gmail.com> (https://github.com/Andarist)",
+    "Mikhail Shustov <restrry@gmail.com> (https://github.com/restrry)",
+    "Shi Feichao <842351815@qq.com> (https://github.com/shinima)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redux-saga/redux-saga/issues"
+  },
+  "homepage": "https://redux-saga.js.org/",
+  "dependencies": {
+    "@redux-saga/symbols": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "babel-plugin-annotate-pure-calls": "^0.4.0"
+  }
+}

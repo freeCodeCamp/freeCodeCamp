@@ -1,0 +1,82 @@
+{
+	"name": "globby",
+	"version": "11.1.0",
+	"description": "User-friendly glob matching",
+	"license": "MIT",
+	"repository": "sindresorhus/globby",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"email": "sindresorhus@gmail.com",
+		"name": "Sindre Sorhus",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"bench": "npm update glob-stream fast-glob && matcha bench.js",
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"gitignore.js",
+		"stream-utils.js"
+	],
+	"keywords": [
+		"all",
+		"array",
+		"directories",
+		"expand",
+		"files",
+		"filesystem",
+		"filter",
+		"find",
+		"fnmatch",
+		"folders",
+		"fs",
+		"glob",
+		"globbing",
+		"globs",
+		"gulpfriendly",
+		"match",
+		"matcher",
+		"minimatch",
+		"multi",
+		"multiple",
+		"paths",
+		"pattern",
+		"patterns",
+		"traverse",
+		"util",
+		"utility",
+		"wildcard",
+		"wildcards",
+		"promise",
+		"gitignore",
+		"git"
+	],
+	"dependencies": {
+		"array-union": "^2.1.0",
+		"dir-glob": "^3.0.1",
+		"fast-glob": "^3.2.9",
+		"ignore": "^5.2.0",
+		"merge2": "^1.4.1",
+		"slash": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "^3.13.0",
+		"get-stream": "^6.0.0",
+		"glob-stream": "^6.1.0",
+		"globby": "sindresorhus/globby#main",
+		"matcha": "^0.7.0",
+		"rimraf": "^3.0.2",
+		"tsd": "^0.13.1",
+		"xo": "^0.33.1"
+	},
+	"xo": {
+		"ignores": [
+			"fixtures"
+		]
+	}
+}

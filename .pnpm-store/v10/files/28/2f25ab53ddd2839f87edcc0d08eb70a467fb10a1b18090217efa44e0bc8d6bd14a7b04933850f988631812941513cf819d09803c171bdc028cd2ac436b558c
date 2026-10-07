@@ -1,0 +1,6 @@
+parserOptions:
+  ecmaVersion: 6
+globals:
+  beforeEach: false
+  describe: false
+  it: false

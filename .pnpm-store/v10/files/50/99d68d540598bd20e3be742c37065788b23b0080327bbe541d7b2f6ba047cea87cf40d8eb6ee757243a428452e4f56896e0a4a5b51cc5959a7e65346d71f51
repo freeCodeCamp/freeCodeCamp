@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_class_apply_descriptor_destructure.js")

@@ -1,0 +1,1 @@
+{"version":3,"file":"fromPromise.js","sources":["../../src/internal/observable/fromPromise.ts"],"names":[],"mappings":";;AAAA,4CAA2C;AAE3C,iEAAgE;AAChE,gEAA+D;AAE/D,SAAgB,WAAW,CAAI,KAAqB,EAAE,SAAyB;IAC7E,IAAI,CAAC,SAAS,EAAE;QACd,OAAO,IAAI,uBAAU,CAAI,uCAAkB,CAAC,KAAK,CAAC,CAAC,CAAC;KACrD;SAAM;QACL,OAAO,iCAAe,CAAC,KAAK,EAAE,SAAS,CAAC,CAAC;KAC1C;AACH,CAAC;AAND,kCAMC"}

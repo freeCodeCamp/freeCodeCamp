@@ -1,0 +1,29 @@
+{
+  "name": "hogan.js"
+  , "description": "A mustache compiler."
+  , "version": "3.0.2"
+  , "keywords": ["mustache", "template"]
+  , "main": "./lib/hogan.js"
+  , "homepage": "http://twitter.github.com/hogan.js/"
+  , "author": "Twitter Inc."
+  , "repository": {
+    "type": "git"
+    , "url": "https://github.com/twitter/hogan.js.git"
+  }
+  , "licenses": [
+    { "type": "Apache-2.0"
+      , "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ]
+  , "dependencies" : {
+      "nopt" : "1.0.10"
+    , "mkdirp": "0.3.0"
+    }
+  , "devDependencies": {
+      "uglify-js": "2.x"
+    , "jsdom": "0.3.4"
+    , "step": "0.0.5"
+    , "rimraf": "2.0.1"
+  }
+  , "bin" : { "hulk" : "./bin/hulk" }
+}

@@ -1,0 +1,97 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _default;
+    }
+});
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_spread_props = require("@swc/helpers/_/_object_spread_props");
+var _utils = require("../../lib/utils");
+var _escapehtml = require("../../lib/utils/escape-html");
+var withUsage = (0, _utils.createDocumentationMessageGenerator)({
+    name: 'trending-facets',
+    connector: true
+});
+var _default = function connectTrendingFacets(renderFn) {
+    var unmountFn = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : _utils.noop;
+    (0, _utils.checkRendering)(renderFn, withUsage());
+    return function(widgetParams) {
+        var _ref = widgetParams || {}, facetName = _ref.facetName, limit = _ref.limit, threshold = _ref.threshold, fallbackParameters = _ref.fallbackParameters, queryParameters = _ref.queryParameters, _ref_escapeHTML = _ref.// @MAJOR: this can default to false
+        escapeHTML, escapeHTML = _ref_escapeHTML === void 0 ? true : _ref_escapeHTML, _ref_transformItems = _ref.transformItems, transformItems = _ref_transformItems === void 0 ? function(items) {
+            return items;
+        } : _ref_transformItems;
+        if (!facetName) {
+            throw new Error(withUsage('The `facetName` option is required.'));
+        }
+        return {
+            dependsOn: 'recommend',
+            $$type: 'ais.trendingFacets',
+            init: function init(initOptions) {
+                renderFn(_object_spread_props._(_object_spread._({}, this.getWidgetRenderState(initOptions)), {
+                    instantSearchInstance: initOptions.instantSearchInstance
+                }), true);
+            },
+            render: function render(renderOptions) {
+                var renderState = this.getWidgetRenderState(renderOptions);
+                renderFn(_object_spread_props._(_object_spread._({}, renderState), {
+                    instantSearchInstance: renderOptions.instantSearchInstance
+                }), false);
+            },
+            getRenderState: function getRenderState(renderState) {
+                return renderState;
+            },
+            getWidgetRenderState: function getWidgetRenderState(param) {
+                var results = param.results; param.helper; param.instantSearchInstance;
+                if (results === null || results === undefined) {
+                    return {
+                        items: [],
+                        widgetParams: widgetParams
+                    };
+                }
+                var items = (results.hits || []).map(function(hit) {
+                    return {
+                        facetName: hit.facetName,
+                        facetValue: hit.facetValue,
+                        _score: hit._score
+                    };
+                });
+                if (escapeHTML) {
+                    items = items.map(function(item) {
+                        return _object_spread_props._(_object_spread._({}, item), {
+                            facetValue: (0, _escapehtml.escape)(item.facetValue)
+                        });
+                    });
+                }
+                items = transformItems(items, {
+                    results: results
+                });
+                return {
+                    items: items,
+                    widgetParams: widgetParams
+                };
+            },
+            dispose: function dispose(param) {
+                var recommendState = param.recommendState;
+                unmountFn();
+                return recommendState.removeParams(this.$$id);
+            },
+            getWidgetParameters: function getWidgetParameters(state) {
+                // v4 TrendingFacetsQuery doesn't include queryParameters or
+                // fallbackParameters, but the v5 API and the helper support them.
+                return state.removeParams(this.$$id).addTrendingFacets({
+                    facetName: facetName,
+                    maxRecommendations: limit,
+                    threshold: threshold,
+                    fallbackParameters: fallbackParameters ? _object_spread._({}, fallbackParameters, escapeHTML ? _utils.TAG_PLACEHOLDER : {}) : undefined,
+                    queryParameters: _object_spread._({}, queryParameters, escapeHTML ? _utils.TAG_PLACEHOLDER : {}),
+                    $$id: this.$$id
+                });
+            }
+        };
+    };
+};

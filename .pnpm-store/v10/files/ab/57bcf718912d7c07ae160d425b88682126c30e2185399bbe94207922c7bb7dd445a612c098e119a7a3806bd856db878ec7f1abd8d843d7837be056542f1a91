@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" sizes="48x48">
+    <link rel="icon" href="./favicon.svg" sizes="any" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const setting = localStorage.getItem("vueuse-color-scheme") || "auto";
+        if (setting === "dark" || (prefersDark && setting !== "light"))
+          document.documentElement.classList.toggle("dark", true);
+      })();
+    </script>
+    <!-- !LOAD_METADATA! -->
+    <script type="module" src="./assets/index-D_ryMEPs.js"></script>
+    <link rel="stylesheet" href="./assets/index-X8b7Z_4p.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

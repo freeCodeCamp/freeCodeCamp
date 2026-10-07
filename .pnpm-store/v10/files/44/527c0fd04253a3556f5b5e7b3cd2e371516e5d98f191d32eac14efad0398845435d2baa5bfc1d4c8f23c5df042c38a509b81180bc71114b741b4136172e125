@@ -1,0 +1,70 @@
+{
+	"name": "supports-preserve-symlinks-flag",
+	"version": "1.0.0",
+	"description": "Determine if the current node version supports the `--preserve-symlinks` flag.",
+	"main": "./index.js",
+	"browser": "./browser.js",
+	"exports": {
+		".": [
+			{
+				"browser": "./browser.js",
+				"default": "./index.js"
+			},
+			"./index.js"
+		],
+		"./package.json": "./package.json"
+	},
+	"sideEffects": false,
+	"scripts": {
+		"prepublishOnly": "safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly",
+		"lint": "eslint --ext=js,mjs .",
+		"pretest": "npm run lint",
+		"tests-only": "nyc tape 'test/**/*.js'",
+		"test": "npm run tests-only",
+		"posttest": "aud --production",
+		"version": "auto-changelog && git add CHANGELOG.md",
+		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inspect-js/node-supports-preserve-symlinks-flag.git"
+	},
+	"keywords": [
+		"node",
+		"flag",
+		"symlink",
+		"symlinks",
+		"preserve-symlinks"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"funding": {
+		"url": "https://github.com/sponsors/ljharb"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inspect-js/node-supports-preserve-symlinks-flag/issues"
+	},
+	"homepage": "https://github.com/inspect-js/node-supports-preserve-symlinks-flag#readme",
+	"devDependencies": {
+		"@ljharb/eslint-config": "^20.1.0",
+		"aud": "^1.1.5",
+		"auto-changelog": "^2.3.0",
+		"eslint": "^8.6.0",
+		"nyc": "^10.3.2",
+		"safe-publish-latest": "^2.0.0",
+		"semver": "^6.3.0",
+		"tape": "^5.4.0"
+	},
+	"engines": {
+		"node": ">= 0.4"
+	},
+	"auto-changelog": {
+		"output": "CHANGELOG.md",
+		"template": "keepachangelog",
+		"unreleased": false,
+		"commitLimit": false,
+		"backfillLimit": false,
+		"hideCredit": true
+	}
+}

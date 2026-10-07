@@ -1,0 +1,38 @@
+{
+	"name": "escape-string-regexp",
+	"version": "4.0.0",
+	"description": "Escape RegExp special characters",
+	"license": "MIT",
+	"repository": "sindresorhus/escape-string-regexp",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"escape",
+		"regex",
+		"regexp",
+		"regular",
+		"expression",
+		"string",
+		"special",
+		"characters"
+	],
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"tsd": "^0.11.0",
+		"xo": "^0.28.3"
+	}
+}

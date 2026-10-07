@@ -1,0 +1,84 @@
+{
+  "name": "qrcode.react",
+  "version": "3.2.0",
+  "description": "React component to generate QR codes",
+  "keywords": [
+    "react",
+    "react-component",
+    "qrcode"
+  ],
+  "homepage": "http://zpao.github.io/qrcode.react",
+  "main": "./lib/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/esm/index.js"
+      },
+      "require": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "yarn run build:code && yarn run build:examples",
+    "build:code": "tsup src/index.tsx -d lib --format esm,cjs --dts --legacy-output --target=es2017 --platform=browser",
+    "build:examples": "tsup examples/demo.tsx -d examples --format iife --env.NODE_ENV production --minify --target=es2017 --legacy-output",
+    "lint": "eslint .",
+    "pretty": "prettier --write '{*,.*}.{mjs,js,json}' '**/*.{js,json}'",
+    "prepack": "make clean && make all && yarn run typecheck",
+    "prepublish-docs": "make clean && make all",
+    "publish-docs": "gh-pages --dist=examples --src='{index.html,iife/demo.js}'",
+    "test": "jest",
+    "typecheck": "tsc --noEmit"
+  },
+  "author": "Paul O’Shannessy <paul@oshannessy.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zpao/qrcode.react.git"
+  },
+  "license": "ISC",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^28.1.3",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.3",
+    "@types/react-test-renderer": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "babel-jest": "^28.0.3",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "gh-pages": "^4.0.0",
+    "jest": "^28.0.3",
+    "prettier": "^2.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-test-renderer": "^18.0.0",
+    "tsup": "5.12.6",
+    "typescript": "^4.5.4"
+  },
+  "jest": {
+    "transform": {
+      "\\.[jt]sx?$": "babel-jest"
+    }
+  }
+}

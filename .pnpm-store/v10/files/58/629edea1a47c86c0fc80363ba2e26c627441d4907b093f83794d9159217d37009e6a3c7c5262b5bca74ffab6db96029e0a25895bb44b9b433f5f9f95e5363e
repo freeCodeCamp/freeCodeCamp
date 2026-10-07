@@ -1,0 +1,29 @@
+{
+    "name": "@types/parse5",
+    "version": "5.0.3",
+    "description": "TypeScript definitions for parse5",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Ivan Nikulin",
+            "url": "https://github.com/inikulin",
+            "githubUsername": "inikulin"
+        },
+        {
+            "name": "ExE Boss",
+            "url": "https://github.com/ExE-Boss",
+            "githubUsername": "ExE-Boss"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/parse5"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "c008c5f4d7bb5f52d9fff6caef66399c1389fc27c66811a26a35981e3f4455cf",
+    "typeScriptVersion": "2.9"
+}

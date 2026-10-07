@@ -1,0 +1,34 @@
+{
+  "name": "trouter",
+  "version": "2.0.1",
+  "description": "🐟 A fast, small-but-mighty, familiar ~fish~ router",
+  "repository": "lukeed/trouter",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "lukeed.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "bench": "node bench",
+    "test": "tape test/*.js | tap-spec"
+  },
+  "keywords": [
+    "route",
+    "router",
+    "routing"
+  ],
+  "dependencies": {
+    "matchit": "^1.0.0"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  }
+}

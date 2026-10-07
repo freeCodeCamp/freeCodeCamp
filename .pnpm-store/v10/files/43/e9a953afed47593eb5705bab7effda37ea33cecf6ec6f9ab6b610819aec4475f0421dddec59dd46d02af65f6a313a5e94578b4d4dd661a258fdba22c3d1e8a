@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/triggerEvent",
+  "private": true,
+  "main": "../cjs/triggerEvent.js",
+  "module": "../esm/triggerEvent.js",
+  "types": "../esm/triggerEvent.d.ts"
+}

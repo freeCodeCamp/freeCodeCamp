@@ -1,0 +1,227 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain allows configuring virtual Bluetooth devices to test
+# the web-bluetooth API.
+experimental domain BluetoothEmulation
+  # Indicates the various states of Central.
+  type CentralState extends string
+    enum
+      absent
+      powered-off
+      powered-on
+
+  # Indicates the various types of GATT event.
+  type GATTOperationType extends string
+    enum
+      connection
+      discovery
+
+  # Indicates the various types of characteristic write.
+  type CharacteristicWriteType extends string
+    enum
+      write-default-deprecated
+      write-with-response
+      write-without-response
+
+  # Indicates the various types of characteristic operation.
+  type CharacteristicOperationType extends string
+    enum
+      read
+      write
+      subscribe-to-notifications
+      unsubscribe-from-notifications
+
+  # Indicates the various types of descriptor operation.
+  type DescriptorOperationType extends string
+    enum
+      read
+      write
+
+  # Stores the manufacturer data
+  type ManufacturerData extends object
+    properties
+      # Company identifier
+      # https://bitbucket.org/bluetooth-SIG/public/src/main/assigned_numbers/company_identifiers/company_identifiers.yaml
+      # https://usb.org/developers
+      integer key
+      # Manufacturer-specific data
+      binary data
+
+  # Stores the byte data of the advertisement packet sent by a Bluetooth device.
+  type ScanRecord extends object
+    properties
+      optional string name
+      optional array of string uuids
+      # Stores the external appearance description of the device.
+      optional integer appearance
+      # Stores the transmission power of a broadcasting device.
+      optional integer txPower
+      # Key is the company identifier and the value is an array of bytes of
+      # manufacturer specific data.
+      optional array of ManufacturerData manufacturerData
+
+  # Stores the advertisement packet information that is sent by a Bluetooth device.
+  type ScanEntry extends object
+    properties
+      string deviceAddress
+      integer rssi
+      ScanRecord scanRecord
+
+  # Describes the properties of a characteristic. This follows Bluetooth Core
+  # Specification BT 4.2 Vol 3 Part G 3.3.1. Characteristic Properties.
+  type CharacteristicProperties extends object
+    properties
+      optional boolean broadcast
+      optional boolean read
+      optional boolean writeWithoutResponse
+      optional boolean write
+      optional boolean notify
+      optional boolean indicate
+      optional boolean authenticatedSignedWrites
+      optional boolean extendedProperties
+
+  # Enable the BluetoothEmulation domain.
+  command enable
+    parameters
+      # State of the simulated central.
+      CentralState state
+      # If the simulated central supports low-energy.
+      boolean leSupported
+
+  # Set the state of the simulated central.
+  command setSimulatedCentralState
+    parameters
+      # State of the simulated central.
+      CentralState state
+
+  # Disable the BluetoothEmulation domain.
+  command disable
+
+  # Simulates a peripheral with |address|, |name| and |knownServiceUuids|
+  # that has already been connected to the system.
+  command simulatePreconnectedPeripheral
+    parameters
+      string address
+      string name
+      array of ManufacturerData manufacturerData
+      array of string knownServiceUuids
+
+  # Simulates an advertisement packet described in |entry| being received by
+  # the central.
+  command simulateAdvertisement
+    parameters
+      ScanEntry entry
+
+  # Simulates the response code from the peripheral with |address| for a
+  # GATT operation of |type|. The |code| value follows the HCI Error Codes from
+  # Bluetooth Core Specification Vol 2 Part D 1.3 List Of Error Codes.
+  command simulateGATTOperationResponse
+    parameters
+      string address
+      GATTOperationType type
+      integer code
+
+  # Simulates the response from the characteristic with |characteristicId| for a
+  # characteristic operation of |type|. The |code| value follows the Error
+  # Codes from Bluetooth Core Specification Vol 3 Part F 3.4.1.1 Error Response.
+  # The |data| is expected to exist when simulating a successful read operation
+  # response.
+  command simulateCharacteristicOperationResponse
+    parameters
+      string characteristicId
+      CharacteristicOperationType type
+      integer code
+      optional binary data
+
+  # Simulates the response from the descriptor with |descriptorId| for a
+  # descriptor operation of |type|. The |code| value follows the Error
+  # Codes from Bluetooth Core Specification Vol 3 Part F 3.4.1.1 Error Response.
+  # The |data| is expected to exist when simulating a successful read operation
+  # response.
+  command simulateDescriptorOperationResponse
+    parameters
+      string descriptorId
+      DescriptorOperationType type
+      integer code
+      optional binary data
+
+  # Adds a service with |serviceUuid| to the peripheral with |address|.
+  command addService
+    parameters
+      string address
+      string serviceUuid
+    returns
+      # An identifier that uniquely represents this service.
+      string serviceId
+
+  # Removes the service respresented by |serviceId| from the simulated central.
+  command removeService
+    parameters
+      string serviceId
+
+  # Adds a characteristic with |characteristicUuid| and |properties| to the
+  # service represented by |serviceId|.
+  command addCharacteristic
+    parameters
+      string serviceId
+      string characteristicUuid
+      CharacteristicProperties properties
+    returns
+      # An identifier that uniquely represents this characteristic.
+      string characteristicId
+
+  # Removes the characteristic respresented by |characteristicId| from the
+  # simulated central.
+  command removeCharacteristic
+    parameters
+      string characteristicId
+
+  # Adds a descriptor with |descriptorUuid| to the characteristic respresented
+  # by |characteristicId|.
+  command addDescriptor
+    parameters
+      string characteristicId
+      string descriptorUuid
+    returns
+      # An identifier that uniquely represents this descriptor.
+      string descriptorId
+
+  # Removes the descriptor with |descriptorId| from the simulated central.
+  command removeDescriptor
+    parameters
+      string descriptorId
+
+  # Simulates a GATT disconnection from the peripheral with |address|.
+  command simulateGATTDisconnection
+    parameters
+      string address
+
+  # Event for when a GATT operation of |type| to the peripheral with |address|
+  # happened.
+  event gattOperationReceived
+    parameters
+      string address
+      GATTOperationType type
+
+  # Event for when a characteristic operation of |type| to the characteristic
+  # respresented by |characteristicId| happened. |data| and |writeType| is
+  # expected to exist when |type| is write.
+  event characteristicOperationReceived
+    parameters
+      string characteristicId
+      CharacteristicOperationType type
+      optional binary data
+      optional CharacteristicWriteType writeType
+
+  # Event for when a descriptor operation of |type| to the descriptor
+  # respresented by |descriptorId| happened. |data| is expected to exist when
+  # |type| is write.
+  event descriptorOperationReceived
+    parameters
+      string descriptorId
+      DescriptorOperationType type
+      optional binary data

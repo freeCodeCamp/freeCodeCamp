@@ -1,0 +1,37 @@
+{
+  "name": "@babel/plugin-transform-private-property-in-object",
+  "version": "7.23.4",
+  "description": "This plugin transforms checks for a private property in an object",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-private-property-in-object"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-transform-private-property-in-object",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/helper-annotate-as-pure": "^7.22.5",
+    "@babel/helper-create-class-features-plugin": "^7.22.15",
+    "@babel/helper-plugin-utils": "^7.22.5",
+    "@babel/plugin-syntax-private-property-in-object": "^7.14.5"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/helper-plugin-test-runner": "^7.22.5"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "raw-body",
+  "description": "Get and validate the raw body of a readable stream.",
+  "version": "3.0.2",
+  "author": "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
+  "contributors": [
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Raynos <raynos2@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": "stream-utils/raw-body",
+  "dependencies": {
+    "bytes": "~3.1.2",
+    "http-errors": "~2.0.1",
+    "iconv-lite": "~0.7.0",
+    "unpipe": "~1.0.0"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.1.0",
+    "@stylistic/eslint-plugin-js": "^4.1.0",
+    "bluebird": "3.7.2",
+    "eslint": "^9.0.0",
+    "mocha": "10.7.0",
+    "neostandard": "^0.12.0", 
+    "nyc": "17.0.0",
+    "readable-stream": "2.3.7",
+    "safe-buffer": "5.2.1"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.d.ts",
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "mocha --trace-deprecation --reporter spec --check-leaks test/",
+    "test:ci": "nyc --reporter=lcovonly --reporter=text npm test",
+    "test:cov": "nyc --reporter=html --reporter=text npm test",
+    "version": "node scripts/version-history.js && git add HISTORY.md"
+  }
+}

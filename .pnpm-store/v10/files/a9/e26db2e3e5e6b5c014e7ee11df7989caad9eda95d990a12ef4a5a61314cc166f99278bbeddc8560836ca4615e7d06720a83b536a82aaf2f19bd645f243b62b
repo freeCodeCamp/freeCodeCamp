@@ -1,0 +1,16 @@
+import { type TProperties } from '../../types/properties.mjs';
+import { type TSchema } from '../../types/schema.mjs';
+import { type TNumber } from '../../types/number.mjs';
+import { type TNever } from '../../types/never.mjs';
+import { type TPropertyKeys } from '../../types/properties.mjs';
+import { type TEvaluateUnion } from '../evaluate/evaluate.mjs';
+import { type TToIndexableKeys } from '../indexable/to_indexable_keys.mjs';
+import { type TExpandThis } from '../this/expand_this.mjs';
+type TIndexProperty<Properties extends TProperties, Key extends string, CanonicalKey extends string = keyof Properties extends string | number ? `${keyof Properties}` : never, SelectedType extends TSchema = Key extends CanonicalKey ? Properties[Key] : TNever, Result extends TSchema = TExpandThis<Properties, SelectedType>> = Result;
+type TIndexProperties<Properties extends TProperties, Keys extends string[], Result extends TSchema[] = []> = (Keys extends [infer Left extends string, ...infer Right extends string[]] ? TIndexProperties<Properties, Right, [...Result, TIndexProperty<Properties, Left>]> : Result);
+type TFromIndexer<Properties extends TProperties, Indexer extends TSchema, Keys extends string[] = TToIndexableKeys<Indexer>, Variants extends TSchema[] = TIndexProperties<Properties, Keys>, Result extends TSchema = TEvaluateUnion<Variants>> = Result;
+type TNumericKeys<Keys extends string[], Result extends string[] = []> = (Keys extends [infer Left extends string, ...infer Right extends string[]] ? Left extends `${infer _ extends number}` ? TNumericKeys<Right, [...Result, Left]> : TNumericKeys<Right, Result> : Result);
+type TFromIndexerNumber<Properties extends TProperties, Keys extends string[] = TPropertyKeys<Properties>, NumericKeys extends string[] = TNumericKeys<Keys>, Variants extends TSchema[] = TIndexProperties<Properties, NumericKeys>, Result extends TSchema = TEvaluateUnion<Variants>> = Result;
+export type TFromObject<Properties extends TProperties, Indexer extends TSchema, Result extends TSchema = Indexer extends TNumber ? TFromIndexerNumber<Properties> : TFromIndexer<Properties, Indexer>> = Result;
+export declare function FromObject<Properties extends TProperties, Indexer extends TSchema>(properties: Properties, indexer: Indexer): TFromObject<Properties, Indexer>;
+export {};

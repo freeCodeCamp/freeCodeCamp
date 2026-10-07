@@ -1,0 +1,104 @@
+{
+  "name": "msgpackr",
+  "author": "Kris Zyp",
+  "version": "1.11.8",
+  "description": "Ultra-fast MessagePack implementation with extensions for records and structured cloning",
+  "license": "MIT",
+  "types": "./index.d.ts",
+  "main": "./dist/node.cjs",
+  "module": "./index.js",
+  "react-native": "./index.js",
+  "keywords": [
+    "MessagePack",
+    "msgpack",
+    "performance",
+    "structured",
+    "clone"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kriszyp/msgpackr"
+  },
+  "scripts": {
+    "benchmark": "node ./tests/benchmark.cjs",
+    "build": "rollup -c && cpy index.d.ts . --rename=index.d.cts && cpy pack.d.ts . --rename=pack.d.cts && cpy unpack.d.ts . --rename=unpack.d.cts",
+    "dry-run": "npm publish --dry-run",
+    "prepare": "npm run build",
+    "test": "mocha tests/test**.*js -u tdd --experimental-json-modules"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": {
+        "require": "./index.d.cts",
+        "import": "./index.d.ts"
+      },
+      "browser": "./index.js",
+      "node": {
+        "require": "./dist/node.cjs",
+        "import": "./node-index.js"
+      },
+      "bun": {
+        "require": "./dist/node.cjs",
+        "import": "./node-index.js"
+      },
+      "default": "./index.js"
+    },
+    "./pack": {
+      "types": {
+        "require": "./pack.d.cts",
+        "import": "./pack.d.ts"
+      },
+      "browser": "./pack.js",
+      "node": {
+        "import": "./index.js",
+        "require": "./dist/node.cjs"
+      },
+      "bun": {
+        "import": "./index.js",
+        "require": "./dist/node.cjs"
+      },
+      "default": "./pack.js"
+    },
+    "./unpack": {
+      "types": {
+        "require": "./unpack.d.cts",
+        "import": "./unpack.d.ts"
+      },
+      "browser": "./unpack.js",
+      "node": {
+        "import": "./index.js",
+        "require": "./dist/node.cjs"
+      },
+      "bun": {
+        "import": "./index.js",
+        "require": "./dist/node.cjs"
+      },
+      "default": "./unpack.js"
+    },
+    "./unpack-no-eval": "./dist/unpack-no-eval.cjs",
+    "./index-no-eval": "./dist/index-no-eval.cjs"
+  },
+  "files": [
+    "/dist",
+    "*.md",
+    "/*.js",
+    "/*.ts",
+    "/*.cts"
+  ],
+  "optionalDependencies": {
+    "msgpackr-extract": "^3.0.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^5.0.1",
+    "@rollup/plugin-replace": "^5.0.1",
+    "@types/node": "latest",
+    "async": "^3",
+    "chai": "^4.3.4",
+    "cpy-cli": "^4.1.0",
+    "esm": "^3.2.25",
+    "mocha": "^10.1.0",
+    "rollup": "^3.2.5",
+    "@rollup/plugin-terser": "^0.1.0"
+  }
+}

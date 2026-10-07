@@ -1,0 +1,43 @@
+{
+  "name": "@parcel/hash",
+  "version": "2.8.3",
+  "license": "MIT",
+  "main": "index.js",
+  "browser": "browser.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "files": [
+    "browser.js",
+    "index.js",
+    "index.js.flow",
+    "*.node"
+  ],
+  "napi": {
+    "name": "parcel-hash"
+  },
+  "scripts": {
+    "build": "napi build --platform",
+    "build-release": "napi build --platform --release"
+  },
+  "dependencies": {
+    "detect-libc": "^1.0.3",
+    "xxhash-wasm": "^0.4.2"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^2.6.2",
+    "tiny-benchy": "^1.0.2"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

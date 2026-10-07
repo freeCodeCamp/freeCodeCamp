@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/startOfISOWeek/index.js",
+  "typings": "../typings.d.ts"
+}

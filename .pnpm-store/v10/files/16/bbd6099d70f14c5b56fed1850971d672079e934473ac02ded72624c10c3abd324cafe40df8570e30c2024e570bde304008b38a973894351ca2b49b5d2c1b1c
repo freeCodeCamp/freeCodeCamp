@@ -1,0 +1,1 @@
+{"version":3,"file":"is-native-audio-param.js","sourceRoot":"","sources":["../../../src/factories/is-native-audio-param.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,wBAAwB,GAA+B,CAAC,MAAM,EAAE,EAAE;IAC3E,OAAO,CAAC,QAAQ,EAAiC,EAAE;QAC/C,OAAO,MAAM,KAAK,IAAI,IAAI,OAAO,MAAM,CAAC,UAAU,KAAK,UAAU,IAAI,QAAQ,YAAY,MAAM,CAAC,UAAU,CAAC;IAC/G,CAAC,CAAC;AACN,CAAC,CAAC"}

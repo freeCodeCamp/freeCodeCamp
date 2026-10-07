@@ -1,0 +1,91 @@
+{
+  "name": "remark-footnotes",
+  "version": "3.0.0",
+  "description": "remark plugin to add support for pandoc footnotes",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "plugin",
+    "mdast",
+    "markdown",
+    "footnote",
+    "note",
+    "definition",
+    "pandoc"
+  ],
+  "repository": "remarkjs/remark-footnotes",
+  "bugs": "https://github.com/remarkjs/remark-footnotes/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "types": "types/index.d.ts",
+  "files": [
+    "types/index.d.ts",
+    "index.js"
+  ],
+  "dependencies": {
+    "mdast-util-footnote": "^0.1.0",
+    "micromark-extension-footnote": "^0.3.0"
+  },
+  "devDependencies": {
+    "dtslint": "^4.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "rehype-format": "^3.0.0",
+    "rehype-stringify": "^8.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-parse": "^9.0.0-alpha.1",
+    "remark-preset-wooorm": "^7.0.0",
+    "remark-rehype": "^8.0.0",
+    "remark-stringify": "^9.0.0-alpha.1",
+    "tape": "^5.0.0",
+    "to-vfile": "^6.0.0",
+    "unified": "^9.0.0",
+    "unist-builder": "^2.0.0",
+    "unist-util-remove-position": "^3.0.0",
+    "xo": "^0.33.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . --write && xo --fix",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-optional-catch-binding": "off",
+      "complexity": "off",
+      "no-self-compare": "off",
+      "no-lonely-if": "off"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+
+const ATTR_DB_CONNECTION_STRING = "db.connection_string";
+const ATTR_DB_NAME = "db.name";
+const ATTR_DB_STATEMENT = "db.statement";
+const ATTR_DB_SYSTEM = "db.system";
+const ATTR_DB_USER = "db.user";
+const ATTR_NET_PEER_NAME = "net.peer.name";
+const ATTR_NET_PEER_PORT = "net.peer.port";
+const DB_SYSTEM_VALUE_MYSQL = "mysql";
+const METRIC_DB_CLIENT_CONNECTIONS_USAGE = "db.client.connections.usage";
+
+exports.ATTR_DB_CONNECTION_STRING = ATTR_DB_CONNECTION_STRING;
+exports.ATTR_DB_NAME = ATTR_DB_NAME;
+exports.ATTR_DB_STATEMENT = ATTR_DB_STATEMENT;
+exports.ATTR_DB_SYSTEM = ATTR_DB_SYSTEM;
+exports.ATTR_DB_USER = ATTR_DB_USER;
+exports.ATTR_NET_PEER_NAME = ATTR_NET_PEER_NAME;
+exports.ATTR_NET_PEER_PORT = ATTR_NET_PEER_PORT;
+exports.DB_SYSTEM_VALUE_MYSQL = DB_SYSTEM_VALUE_MYSQL;
+exports.METRIC_DB_CLIENT_CONNECTIONS_USAGE = METRIC_DB_CLIENT_CONNECTIONS_USAGE;
+//# sourceMappingURL=semconv.js.map

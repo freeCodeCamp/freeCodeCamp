@@ -1,0 +1,94 @@
+{
+  "name": "reselect",
+  "version": "4.1.8",
+  "description": "Selectors for Redux.",
+  "main": "./lib/index.js",
+  "jsnext:main": "./es/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "unpkg": "./dist/reselect.js",
+  "typesVersions": {
+    "<4.2": {
+      "*": [
+        "./src/legacyTypes/ts4.1/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "src",
+    "dist",
+    "es"
+  ],
+  "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/reduxjs/reselect/issues"
+  },
+  "scripts": {
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src/*.ts --ignore src/types.ts --extensions .ts --out-dir lib ",
+    "build:es": "babel src/*.ts --ignore src/types.ts --extensions .ts --out-dir es && cp src/versionedTypes/package.dist.json es/versionedTypes/package.json",
+    "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/reselect.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/reselect.min.js",
+    "build:types": "tsc",
+    "build": "rimraf dist lib es && yarn build:types && yarn build:commonjs && yarn build:es && yarn build:umd && yarn build:umd:min",
+    "clean": "rimraf lib dist es coverage",
+    "api-types": "api-extractor run --local",
+    "format": "prettier --write \"{src,test}/**/*.{js,ts}\" \"docs/**/*.md\"",
+    "lint": "eslint src test",
+    "prepack": "yarn build",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "test:typescript": "tsc --noEmit -p typescript_test/tsconfig.json"
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "authors": [
+    "Lee Bannard",
+    "Robert Binna",
+    "Martijn Faassen",
+    "Philip Spitzlinger"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reduxjs/reselect.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@babel/register": "^7.15.3",
+    "@reduxjs/toolkit": "^1.9.3",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@types/jest": "^27.0.2",
+    "@types/lodash": "^4.14.175",
+    "@typescript-eslint/eslint-plugin": "5.1.0",
+    "@typescript-eslint/eslint-plugin-tslint": "5.1.0",
+    "@typescript-eslint/parser": "5.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.0.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-typescript": "0.14.0",
+    "jest": "^27.3.1",
+    "lodash.memoize": "^4.1.2",
+    "memoize-one": "^6.0.0",
+    "micro-memoize": "^4.0.9",
+    "mkdirp": "^1.0.4",
+    "ncp": "^2.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.7.1",
+    "react-redux": "^7.2.6",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.58.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslint": "6.1.3",
+    "typescript": "^4.9",
+    "vitest": "^0.29.8"
+  }
+}

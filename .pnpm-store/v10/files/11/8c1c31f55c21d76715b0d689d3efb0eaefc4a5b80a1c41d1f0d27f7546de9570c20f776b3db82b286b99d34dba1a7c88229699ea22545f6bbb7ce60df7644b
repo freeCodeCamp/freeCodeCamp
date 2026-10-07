@@ -1,0 +1,1 @@
+{"version":3,"file":"gain-node-constructor.d.ts","sourceRoot":"","sources":["../../../src/types/gain-node-constructor.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,YAAY,EAAE,MAAM,eAAe,CAAC;AACxD,OAAO,EAAE,QAAQ,EAAE,MAAM,WAAW,CAAC;AAErC,MAAM,MAAM,oBAAoB,GAAG,KAAK,CAAC,SAAS,QAAQ,EAAE,OAAO,EAAE,CAAC,EAAE,OAAO,CAAC,EAAE,OAAO,CAAC,YAAY,CAAC,KAAK,SAAS,CAAC,CAAC,CAAC,CAAC"}

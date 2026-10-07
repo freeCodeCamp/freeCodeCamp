@@ -1,0 +1,98 @@
+{
+	"name": "eslint-plugin-testing-library",
+	"version": "7.16.2",
+	"description": "ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library",
+	"keywords": [
+		"eslint",
+		"eslintplugin",
+		"eslint-plugin",
+		"lint",
+		"testing-library",
+		"testing"
+	],
+	"homepage": "https://github.com/testing-library/eslint-plugin-testing-library",
+	"bugs": "testing-library/eslint-plugin-testing-library/issues",
+	"repository": "testing-library/eslint-plugin-testing-library",
+	"license": "MIT",
+	"author": "Mario Beltrán (https://belco.dev)",
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "tsdown --format esm --format cjs",
+		"bundle-check": "pnpm run build && publint",
+		"generate-all": "pnpm run \"/^generate:.*/\"",
+		"generate:configs": "jiti tools/generate-configs",
+		"generate:docs": "pnpm run build && pnpm run eslint-doc-generator",
+		"validate-gen-all": "pnpm run \"/^validate-gen:.*/\"",
+		"validate-gen:configs": "pnpm run generate:configs && git diff --exit-code src/configs",
+		"validate-gen:docs": "pnpm run build && pnpm run eslint-doc-generator --check",
+		"format": "pnpm run prettier-base --write",
+		"format:check": "pnpm run prettier-base --check",
+		"lint": "eslint --max-warnings 0 .",
+		"lint:fix": "pnpm run lint --fix",
+		"prepare": "husky || true",
+		"prettier-base": "prettier . --ignore-unknown --cache --log-level warn",
+		"eslint-doc-generator": "eslint-doc-generator",
+		"eslint-remote-tester": "eslint-remote-tester --config eslint-remote-tester.config.ts",
+		"semantic-release": "semantic-release",
+		"test": "vitest run",
+		"test:ci": "vitest run --coverage",
+		"test:ui": "vitest --ui",
+		"test:watch": "vitest",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@typescript-eslint/scope-manager": "^8.56.0",
+		"@typescript-eslint/utils": "^8.56.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "20.5.0",
+		"@commitlint/config-conventional": "20.5.0",
+		"@eslint/eslintrc": "3.3.5",
+		"@eslint/js": "9.35.0",
+		"@types/node": "22.19.15",
+		"@typescript-eslint/rule-tester": "^8.56.0",
+		"@vitest/coverage-v8": "3.2.4",
+		"@vitest/eslint-plugin": "1.6.12",
+		"@vitest/ui": "3.2.4",
+		"eslint": "9.35.0",
+		"eslint-config-prettier": "10.1.8",
+		"eslint-doc-generator": "3.3.1",
+		"eslint-import-resolver-typescript": "4.4.4",
+		"eslint-plugin-import-x": "4.16.2",
+		"eslint-plugin-n": "17.24.0",
+		"eslint-plugin-promise": "7.2.1",
+		"eslint-remote-tester": "4.0.4",
+		"eslint-remote-tester-repositories": "2.0.2",
+		"globals": "17.4.0",
+		"husky": "9.1.7",
+		"jiti": "2.6.1",
+		"lint-staged": "16.4.0",
+		"prettier": "3.8.1",
+		"publint": "0.3.18",
+		"semantic-release": "25.0.3",
+		"tsdown": "0.21.4",
+		"typescript": "5.9.3",
+		"typescript-eslint": "^8.56.0",
+		"vitest": "3.2.4"
+	},
+	"peerDependencies": {
+		"eslint": "^8.57.0 || ^9.0.0 || ^10.0.0"
+	},
+	"engines": {
+		"node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+	},
+	"packageManager": "pnpm@10.30.2"
+}

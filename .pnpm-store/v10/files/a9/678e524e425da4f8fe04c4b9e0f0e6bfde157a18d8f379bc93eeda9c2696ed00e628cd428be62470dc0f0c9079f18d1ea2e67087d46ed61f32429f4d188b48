@@ -1,0 +1,87 @@
+{
+  "name": "parse-english",
+  "version": "4.2.0",
+  "description": "English natural language parser",
+  "license": "MIT",
+  "keywords": [
+    "nlcst",
+    "english",
+    "natural",
+    "language",
+    "parser"
+  ],
+  "repository": "wooorm/parse-english",
+  "bugs": "https://github.com/wooorm/parse-english/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "nlcst-to-string": "^2.0.0",
+    "parse-latin": "^4.0.0",
+    "unist-util-modify-children": "^2.0.0",
+    "unist-util-visit-children": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "is-hidden": "^1.0.0",
+    "negate": "^1.0.0",
+    "nlcst-test": "^2.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0-alpha.1",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unist-util-remove-position": "^3.0.0",
+    "vfile": "^4.0.0",
+    "xo": "^0.33.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . -s ParseEnglish -o parse-english.js",
+    "build-mangle": "browserify . -s ParseEnglish -p tinyify -o parse-english.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-reflect-apply": "off",
+      "max-depth": "off",
+      "complexity": "off"
+    },
+    "ignores": [
+      "parse-english.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

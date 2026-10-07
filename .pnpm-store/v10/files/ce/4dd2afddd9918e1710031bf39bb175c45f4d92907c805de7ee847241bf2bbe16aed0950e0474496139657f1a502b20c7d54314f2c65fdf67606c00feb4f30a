@@ -1,0 +1,8 @@
+{
+  "presets": ["env"],
+  "plugins": [
+    ["transform-replace-object-assign", { "moduleSpecifier": "object.assign" }],
+    "transform-object-rest-spread",
+    // "@babel/plugin-proposal-nullish-coalescing-operator", // TODO: update to babel 7
+  ],
+}

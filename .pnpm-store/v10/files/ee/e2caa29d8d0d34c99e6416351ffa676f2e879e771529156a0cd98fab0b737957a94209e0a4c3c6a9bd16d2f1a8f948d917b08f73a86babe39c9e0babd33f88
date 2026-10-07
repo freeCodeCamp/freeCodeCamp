@@ -1,0 +1,68 @@
+{
+  "name": "baseline-browser-mapping",
+  "main": "./dist/index.cjs",
+  "version": "2.10.18",
+  "description": "A library for obtaining browser versions with their maximum supported Baseline feature set and Widely Available status.",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./legacy": {
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "jsdelivr": "./dist/index.js",
+  "files": [
+    "dist/*",
+    "!dist/scripts/*",
+    "LICENSE.txt",
+    "README.md"
+  ],
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "bin": {
+    "baseline-browser-mapping": "dist/cli.cjs"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "fix-cli-permissions": "output=$(npx baseline-browser-mapping 2>&1); path=$(printf '%s\n' \"$output\" | sed -n 's/^.*: \\(.*\\): Permission denied$/\\1/p; t; s/^\\(.*\\): Permission denied$/\\1/p'); if [ -n \"$path\" ]; then echo \"Permission denied for: $path\"; echo \"Removing $path ...\"; rm -rf \"$path\"; else echo \"$output\"; fi",
+    "test:format": "npx prettier --check .",
+    "test:lint": "npx eslint .",
+    "test:legacy-test": "node spec/legacy-tests/legacy-test.cjs; node dist/cli.cjs",
+    "test:jasmine": "npx jasmine",
+    "test:jasmine-browser": "npx jasmine-browser-runner runSpecs --config ./spec/support/jasmine-browser.js",
+    "test": "npm run build && npm run fix-cli-permissions && npm run test:format && npm run test:lint && npm run test:jasmine && npm run test:jasmine-browser",
+    "build": "rm -rf dist; npx prettier . --write; rollup -c; rm -rf ./dist/scripts/expose-data.d.ts ./dist/cli.d.ts",
+    "refresh-downstream": "npx tsx scripts/refresh-downstream.ts",
+    "refresh-static": "npx tsx scripts/refresh-static.ts",
+    "update-data-file": "npx tsx scripts/update-data-file.ts; npx prettier ./src/data/data.js --write",
+    "update-data-dependencies": "npm i @mdn/browser-compat-data@latest web-features@latest -D",
+    "check-data-changes": "git diff --name-only | grep -q '^src/data/data.js$' && echo 'changes-available=TRUE' || echo 'changes-available=FALSE'"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@mdn/browser-compat-data": "^7.3.11",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-typescript": "^12.1.3",
+    "@types/node": "^22.15.17",
+    "eslint-plugin-new-with-error": "^5.0.0",
+    "jasmine": "^5.8.0",
+    "jasmine-browser-runner": "^3.0.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "prettier": "^3.5.3",
+    "rollup": "^4.44.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.35.0",
+    "web-features": "^3.23.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-platform-dx/baseline-browser-mapping.git"
+  }
+}

@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_ts_add_disposable_resource.cjs",
+    "module": "../../esm/_ts_add_disposable_resource.js"
+}

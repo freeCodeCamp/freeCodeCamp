@@ -1,0 +1,28 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"ignorePatterns": ["dist/"],
+
+	"rules": {
+		"eqeqeq": [2, "allow-null"],
+		"id-length": [2, { "min": 1, "max": 30 }],
+		"max-statements": [2, 33],
+		"max-statements-per-line": [2, { "max": 2 }],
+		"no-magic-numbers": [1, { "ignore": [0] }],
+		"no-restricted-syntax": [2, "BreakStatement", "ContinueStatement", "DebuggerStatement", "LabeledStatement", "WithStatement"],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"no-invalid-this": 1,
+				"max-lines-per-function": 0,
+				"max-statements-per-line": [2, { "max": 3 }],
+				"no-magic-numbers": 0,
+			},
+		},
+	],
+}

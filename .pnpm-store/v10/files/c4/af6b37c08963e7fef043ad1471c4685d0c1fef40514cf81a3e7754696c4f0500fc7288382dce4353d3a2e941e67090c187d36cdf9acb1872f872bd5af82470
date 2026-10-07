@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Resource.js",
+  "module": "../dist/esm/Resource.js",
+  "types": "../dist/dts/Resource.d.ts"
+}

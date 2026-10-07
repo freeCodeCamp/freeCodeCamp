@@ -1,0 +1,42 @@
+{
+  "name": "@babel/plugin-proposal-decorators",
+  "version": "7.29.0",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Compile class and object decorators to ES5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-proposal-decorators"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-proposal-decorators",
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "decorators"
+  ],
+  "dependencies": {
+    "@babel/helper-create-class-features-plugin": "^7.28.6",
+    "@babel/helper-plugin-utils": "^7.28.6",
+    "@babel/plugin-syntax-decorators": "^7.28.6"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/helper-plugin-test-runner": "^7.27.1",
+    "@babel/traverse": "^7.29.0",
+    "array.prototype.concat": "^1.0.2",
+    "babel-plugin-polyfill-es-shims": "^0.10.9",
+    "object.getownpropertydescriptors": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

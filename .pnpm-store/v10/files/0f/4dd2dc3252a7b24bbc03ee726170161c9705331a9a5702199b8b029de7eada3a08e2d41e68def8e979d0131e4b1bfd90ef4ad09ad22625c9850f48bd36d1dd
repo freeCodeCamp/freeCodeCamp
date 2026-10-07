@@ -1,0 +1,42 @@
+{
+    "name": "@types/react-spinkit",
+    "version": "3.0.10",
+    "description": "TypeScript definitions for react-spinkit",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-spinkit",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Qubo",
+            "githubUsername": "tkqubo",
+            "url": "https://github.com/tkqubo"
+        },
+        {
+            "name": "Mleko",
+            "githubUsername": "mleko",
+            "url": "https://github.com/mleko"
+        },
+        {
+            "name": "Tom Crockett",
+            "githubUsername": "pelotom",
+            "url": "https://github.com/pelotom"
+        },
+        {
+            "name": "zzanol",
+            "githubUsername": "zzanol",
+            "url": "https://github.com/zzanol"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-spinkit"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/react": "*"
+    },
+    "typesPublisherContentHash": "f2d56490c6bc992ee4ce4fc5862114223017453e466e601d9c3bb7c7da04e6a3",
+    "typeScriptVersion": "4.5"
+}

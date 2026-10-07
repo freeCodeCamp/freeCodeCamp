@@ -1,0 +1,99 @@
+{
+  "name": "@vitest/eslint-plugin",
+  "version": "1.6.16",
+  "license": "MIT",
+  "description": "ESLint plugin for Vitest",
+  "repository": "vitest-dev/eslint-plugin-vitest",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "eslint plugin",
+    "vitest",
+    "vitest eslint plugin"
+  ],
+  "author": "Verite Mugabo <https://veritemugabo.com/>",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.mts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@typescript-eslint/scope-manager": "^8.58.0",
+    "@typescript-eslint/utils": "^8.58.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^25.2.3",
+    "@typescript-eslint/parser": "^8.58.0",
+    "@typescript-eslint/rule-tester": "^8.58.0",
+    "bumpp": "^10.4.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^10.0.0",
+    "eslint-config-flat-gitignore": "^2.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-doc-generator": "^3.0.2",
+    "eslint-plugin-eslint-plugin": "^7.3.1",
+    "eslint-remote-tester": "^4.0.4",
+    "eslint-remote-tester-repositories": "^2.0.2",
+    "jiti": "^2.6.1",
+    "prettier": "^3.8.1",
+    "tsdown": "^0.20.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.58.0",
+    "vitest": "^4.0.18"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "*",
+    "eslint": ">=8.57.0",
+    "typescript": ">=5.0.0",
+    "vitest": "*"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "vitest": {
+      "optional": true
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "endOfLine": "auto"
+  },
+  "scripts": {
+    "build": "tsdown --format esm --format cjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "concurrently --prefixColors auto \"pnpm:lint:*\"",
+    "lint:eslint-docs": "pnpm build && eslint-doc-generator --check",
+    "lint:js": "eslint",
+    "release": "bumpp && pnpm build && pnpm publish",
+    "format": "prettier --check .",
+    "test": "vitest",
+    "update:chains": "node scripts/chain-permutations.ts",
+    "update:rules": "node scripts/export-rules.ts",
+    "update:eslint-docs": "pnpm build && eslint-doc-generator"
+  }
+}

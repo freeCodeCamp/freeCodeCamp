@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "lib",
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
+    "lib": ["scripthost", "esnext"],
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["types/*"]
+    }
+  },
+  "exclude": ["lib"]
+}

@@ -1,0 +1,53 @@
+# `MD005` - Inconsistent indentation for list items at the same level
+
+Tags: `bullet`, `indentation`, `ul`
+
+Aliases: `list-indent`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when list items are parsed as being at the same level,
+but don't have the same indentation:
+
+```markdown
+* Item 1
+  * Nested Item 1
+  * Nested Item 2
+   * A misaligned item
+```
+
+Usually, this rule will be triggered because of a typo. Correct the indentation
+for the list to fix it:
+
+```markdown
+* Item 1
+  * Nested Item 1
+  * Nested Item 2
+  * Nested Item 3
+```
+
+Sequentially-ordered list markers are usually left-aligned such that all items
+have the same starting column:
+
+```markdown
+...
+8. Item
+9. Item
+10. Item
+11. Item
+...
+```
+
+This rule also supports right-alignment of list markers such that all items have
+the same ending column:
+
+```markdown
+...
+ 8. Item
+ 9. Item
+10. Item
+11. Item
+...
+```
+
+Rationale: Violations of this rule can lead to improperly rendered content.

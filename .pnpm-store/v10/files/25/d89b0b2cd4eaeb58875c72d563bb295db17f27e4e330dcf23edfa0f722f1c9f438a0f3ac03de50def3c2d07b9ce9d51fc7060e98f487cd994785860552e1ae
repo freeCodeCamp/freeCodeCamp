@@ -1,0 +1,10 @@
+{
+  "name": "bin",
+  "private": true,
+  "version": "1.0.0",
+  "main": "terser",
+  "type": "commonjs",
+  "author": "",
+  "license": "BSD-2-Clause",
+  "description": "A package to hold the Terser bin bundle as commonjs while keeping the rest of it ESM."
+}

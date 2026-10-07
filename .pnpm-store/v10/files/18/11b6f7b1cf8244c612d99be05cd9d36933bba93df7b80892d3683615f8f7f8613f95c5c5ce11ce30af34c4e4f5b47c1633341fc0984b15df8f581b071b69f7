@@ -1,0 +1,21 @@
+"use strict";
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+function xhrSimpleDataSerializer(data) {
+  var uri = [];
+  var key;
+
+  for (key in data) {
+    uri.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+  }
+
+  return uri.join('&');
+}
+
+module.exports = xhrSimpleDataSerializer;

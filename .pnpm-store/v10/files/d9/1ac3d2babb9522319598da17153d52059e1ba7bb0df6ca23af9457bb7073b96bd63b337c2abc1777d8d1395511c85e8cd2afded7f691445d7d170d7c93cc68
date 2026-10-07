@@ -1,0 +1,1 @@
+{"version":3,"file":"switchAll.js","sources":["../../src/internal/operators/switchAll.ts"],"names":[],"mappings":";;AACA,yCAAwC;AACxC,6CAA4C;AA4D5C,SAAgB,SAAS;IACvB,OAAO,qBAAS,CAAC,mBAAQ,CAAC,CAAC;AAC7B,CAAC;AAFD,8BAEC"}

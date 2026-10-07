@@ -1,0 +1,85 @@
+{
+  "name": "unist-util-remove-position",
+  "version": "3.0.0",
+  "description": "unist utility to remove positions from a tree",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "remove",
+    "position",
+    "location",
+    "clean",
+    "force"
+  ],
+  "repository": "syntax-tree/unist-util-remove-position",
+  "bugs": "https://github.com/syntax-tree/unist-util-remove-position/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Merlijn Vos <merlijn@soverin.net>"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "unist-util-visit": "^2.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "dtslint": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^12.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^2.0.0",
+    "unist-builder": "^2.0.0",
+    "xo": "^0.32.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . --write && xo --fix",
+    "build-bundle": "browserify . -s unistUtilRemovePosition > unist-util-remove-position.js",
+    "build-mangle": "browserify . -s unistUtilRemovePosition -p tinyify > unist-util-remove-position.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-types": "dtslint types",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignores": [
+      "types/"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

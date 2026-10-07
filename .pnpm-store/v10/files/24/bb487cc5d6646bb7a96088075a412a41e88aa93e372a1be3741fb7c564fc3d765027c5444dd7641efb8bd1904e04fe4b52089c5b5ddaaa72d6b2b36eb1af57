@@ -1,0 +1,65 @@
+{
+  "name": "is-buffer",
+  "description": "Determine if an object is a Buffer",
+  "version": "2.0.5",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/is-buffer/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "airtap": "^3.0.0",
+    "standard": "*",
+    "tape": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "keywords": [
+    "arraybuffer",
+    "browser",
+    "browser buffer",
+    "browserify",
+    "buffer",
+    "buffers",
+    "core buffer",
+    "dataview",
+    "float32array",
+    "float64array",
+    "int16array",
+    "int32array",
+    "type",
+    "typed array",
+    "uint32array"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/is-buffer.git"
+  },
+  "scripts": {
+    "test": "standard && npm run test-node && npm run test-browser",
+    "test-browser": "airtap -- test/*.js",
+    "test-browser-local": "airtap --local -- test/*.js",
+    "test-node": "tape test/*.js"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/feross"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/feross"
+    },
+    {
+      "type": "consulting",
+      "url": "https://feross.org/support"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+*.js text eol=lf
+*.txt text eol=lf
+*.html text eol=lf
+*.htm text eol=lf
+*.ics -text
+*.bin -text

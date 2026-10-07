@@ -1,0 +1,37 @@
+# `MD037` - Spaces inside emphasis markers
+
+Tags: `emphasis`, `whitespace`
+
+Aliases: `no-space-in-emphasis`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when emphasis markers (bold, italic) are used, but they
+have spaces between the markers and the text:
+
+```markdown
+Here is some ** bold ** text.
+
+Here is some * italic * text.
+
+Here is some more __ bold __ text.
+
+Here is some more _ italic _ text.
+```
+
+To fix this, remove the spaces around the emphasis markers:
+
+```markdown
+Here is some **bold** text.
+
+Here is some *italic* text.
+
+Here is some more __bold__ text.
+
+Here is some more _italic_ text.
+```
+
+Rationale: Emphasis is only parsed as such when the asterisks/underscores
+aren't surrounded by spaces. This rule attempts to detect where
+they were surrounded by spaces, but it appears that emphasized text was
+intended by the author.

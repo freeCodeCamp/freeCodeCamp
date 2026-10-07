@@ -1,0 +1,86 @@
+{
+    "name": "@types/validator",
+    "version": "13.15.10",
+    "description": "TypeScript definitions for validator",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/validator",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "tgfjt",
+            "githubUsername": "tgfjt",
+            "url": "https://github.com/tgfjt"
+        },
+        {
+            "name": "Ilya Mochalov",
+            "githubUsername": "chrootsu",
+            "url": "https://github.com/chrootsu"
+        },
+        {
+            "name": "Ayman Nedjmeddine",
+            "githubUsername": "IOAyman",
+            "url": "https://github.com/IOAyman"
+        },
+        {
+            "name": "Louay Alakkad",
+            "githubUsername": "louy",
+            "url": "https://github.com/louy"
+        },
+        {
+            "name": "Bonggyun Lee",
+            "githubUsername": "deptno",
+            "url": "https://github.com/deptno"
+        },
+        {
+            "name": "Naoto Yokoyama",
+            "githubUsername": "builtinnya",
+            "url": "https://github.com/builtinnya"
+        },
+        {
+            "name": "Philipp Katz",
+            "githubUsername": "qqilihq",
+            "url": "https://github.com/qqilihq"
+        },
+        {
+            "name": "Jace Warren",
+            "githubUsername": "keatz55",
+            "url": "https://github.com/keatz55"
+        },
+        {
+            "name": "Vlad Poluch",
+            "githubUsername": "vlapo",
+            "url": "https://github.com/vlapo"
+        },
+        {
+            "name": "Piotr Błażejewicz",
+            "githubUsername": "peterblazejewicz",
+            "url": "https://github.com/peterblazejewicz"
+        },
+        {
+            "name": "Matteo Nista",
+            "githubUsername": "Mattewn99",
+            "url": "https://github.com/Mattewn99"
+        },
+        {
+            "name": "Daniel Freire",
+            "githubUsername": "dcfreire",
+            "url": "https://github.com/dcfreire"
+        },
+        {
+            "name": "Rik Smale",
+            "githubUsername": "WikiRik",
+            "url": "https://github.com/WikiRik"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/validator"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {},
+    "typesPublisherContentHash": "5f7b50fa2d47d206fa5f2c3d027a72996c5b3919a0774e1b2e9ac453b1a36cd1",
+    "typeScriptVersion": "5.2"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/collectElements",
+  "private": true,
+  "main": "../cjs/collectElements.js",
+  "module": "../esm/collectElements.js",
+  "types": "../esm/collectElements.d.ts"
+}

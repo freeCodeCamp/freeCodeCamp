@@ -1,0 +1,6 @@
+{
+  "name": "react-transition-group/config",
+  "private": true,
+  "main": "../cjs/config.js",
+  "module": "../esm/config.js"
+}

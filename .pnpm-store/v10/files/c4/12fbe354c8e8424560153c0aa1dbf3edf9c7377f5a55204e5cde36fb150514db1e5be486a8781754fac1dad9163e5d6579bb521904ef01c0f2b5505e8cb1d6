@@ -1,0 +1,77 @@
+{
+  "name": "shallow-equal",
+  "version": "1.2.1",
+  "description": "Minimalistic shallow equality check for arrays/objects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moroshko/shallow-equal.git"
+  },
+  "author": "Misha Moroshko <michael.moroshko@gmail.com>",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "nyc --require esm mocha 'src/*.test.js'",
+    "build:objects": "rm -rf objects && rollup -f cjs -i src/objects.js -o objects/index.js",
+    "build:arrays": "rm -rf arrays && rollup -f cjs -i src/arrays.js -o arrays/index.js",
+    "build:cjs": "rollup -f cjs -i src/index.js -o dist/index.cjs.js",
+    "build:esm": "rollup -f esm -i src/index.js -o dist/index.esm.js",
+    "prebuild": "npm run lint && npm test",
+    "build": "npm run build:objects && npm run build:arrays && rm -rf dist && npm run build:cjs && npm run build:esm",
+    "preversion": "npm run prebuild",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-mocha": "^6.2.2",
+    "esm": "^3.2.25",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "rollup": "^1.27.8"
+  },
+  "files": [
+    "dist",
+    "arrays",
+    "objects"
+  ],
+  "keywords": [
+    "shallow",
+    "equality",
+    "compare",
+    "comparison",
+    "shallowequal",
+    "shallow-equal",
+    "shallowequals",
+    "shallow-equals",
+    "isshallowequal",
+    "is-shallow-equal",
+    "equal",
+    "equals",
+    "isequal",
+    "is-equal",
+    "object",
+    "array",
+    "check",
+    "test"
+  ],
+  "nyc": {
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": [
+      "src/*.js"
+    ],
+    "exclude": [
+      "src/*.test.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "check-coverage": true
+  },
+  "license": "MIT"
+}

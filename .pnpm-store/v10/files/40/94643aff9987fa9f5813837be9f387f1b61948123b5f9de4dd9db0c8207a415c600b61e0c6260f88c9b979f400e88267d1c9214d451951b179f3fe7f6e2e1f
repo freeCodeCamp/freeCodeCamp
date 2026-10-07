@@ -1,0 +1,1 @@
+{"version":3,"file":"QueueScheduler.js","sources":["../../src/internal/scheduler/QueueScheduler.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;AAAA,mDAAkD;AAElD;IAAoC,kCAAc;IAAlD;;IACA,CAAC;IAAD,qBAAC;AAAD,CAAC,AADD,CAAoC,+BAAc,GACjD;AADY,wCAAc"}

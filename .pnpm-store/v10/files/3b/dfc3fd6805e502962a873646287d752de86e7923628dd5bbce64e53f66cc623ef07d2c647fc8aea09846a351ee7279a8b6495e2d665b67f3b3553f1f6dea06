@@ -1,0 +1,25 @@
+{
+  "name": "dotenv-cli",
+  "description": "A global executable to run applications with the ENV variables loaded by dotenv",
+  "version": "7.4.4",
+  "author": "entropitor",
+  "bin": {
+    "dotenv": "./cli.js"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.6",
+    "dotenv": "^16.3.0",
+    "dotenv-expand": "^10.0.0",
+    "minimist": "^1.2.6"
+  },
+  "devDependencies": {
+    "standard": "^16.0.4"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "entropitor/dotenv-cli",
+  "scripts": {
+    "lint": "standard"
+  },
+  "resolutions": {}
+}

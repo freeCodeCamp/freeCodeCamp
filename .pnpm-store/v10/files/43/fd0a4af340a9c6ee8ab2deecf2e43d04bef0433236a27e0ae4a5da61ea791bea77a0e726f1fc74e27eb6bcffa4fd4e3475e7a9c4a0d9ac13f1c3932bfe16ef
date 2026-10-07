@@ -1,0 +1,51 @@
+{
+  "Commands:": "Příkazy:",
+  "Options:": "Možnosti:",
+  "Examples:": "Příklady:",
+  "boolean": "logická hodnota",
+  "count": "počet",
+  "string": "řetězec",
+  "number": "číslo",
+  "array": "pole",
+  "required": "povinné",
+  "default": "výchozí",
+  "default:": "výchozí:",
+  "choices:": "volby:",
+  "aliases:": "aliasy:",
+  "generated-value": "generovaná-hodnota",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Nedostatek argumentů: zadáno %s, je potřeba alespoň %s",
+    "other": "Nedostatek argumentů: zadáno %s, je potřeba alespoň %s"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "Příliš mnoho argumentů: zadáno %s, maximálně %s",
+    "other": "Příliš mnoho argumentů: zadáno %s, maximálně %s"
+  },
+  "Missing argument value: %s": {
+    "one": "Chybí hodnota argumentu: %s",
+    "other": "Chybí hodnoty argumentů: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Chybí požadovaný argument: %s",
+    "other": "Chybí požadované argumenty: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Neznámý argument: %s",
+    "other": "Neznámé argumenty: %s"
+  },
+  "Invalid values:": "Neplatné hodnoty:",
+  "Argument: %s, Given: %s, Choices: %s": "Argument: %s, Zadáno: %s, Možnosti: %s",
+  "Argument check failed: %s": "Kontrola argumentů se nezdařila: %s",
+  "Implications failed:": "Chybí závislé argumenty:",
+  "Not enough arguments following: %s": "Následuje nedostatek argumentů: %s",
+  "Invalid JSON config file: %s": "Neplatný konfigurační soubor JSON: %s",
+  "Path to JSON config file": "Cesta ke konfiguračnímu souboru JSON",
+  "Show help": "Zobrazit nápovědu",
+  "Show version number": "Zobrazit číslo verze",
+  "Did you mean %s?": "Měl jste na mysli %s?",
+  "Arguments %s and %s are mutually exclusive" : "Argumenty %s a %s se vzájemně vylučují",
+  "Positionals:": "Poziční:",
+  "command": "příkaz",
+  "deprecated": "zastaralé",
+  "deprecated: %s": "zastaralé: %s"
+}

@@ -1,0 +1,78 @@
+{
+    "name": "nth-check",
+    "version": "2.1.1",
+    "description": "Parses and compiles CSS nth-checks to highly optimized functions.",
+    "author": "Felix Boehm <me@feedic.com>",
+    "license": "BSD-2-Clause",
+    "sideEffects": false,
+    "funding": {
+        "url": "https://github.com/fb55/nth-check?sponsor=1"
+    },
+    "directories": {
+        "lib": "lib/"
+    },
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "module": "lib/esm/index.js",
+    "exports": {
+        "require": "./lib/index.js",
+        "import": "./lib/esm/index.js"
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "npm run test:jest && npm run lint",
+        "test:jest": "jest",
+        "lint": "npm run lint:es && npm run lint:prettier",
+        "lint:es": "eslint .",
+        "lint:prettier": "npm run prettier -- --check",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run prettier -- --write",
+        "prettier": "prettier '**/*.{ts,md,json,yml}'",
+        "build": "npm run build:cjs && npm run build:esm",
+        "build:cjs": "tsc --sourceRoot https://raw.githubusercontent.com/fb55/nth-check/$(git rev-parse HEAD)/src/",
+        "build:esm": "npm run build:cjs -- --module esnext --target es2019 --outDir lib/esm && echo '{\"type\":\"module\"}' > lib/esm/package.json",
+        "prepare": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fb55/nth-check"
+    },
+    "keywords": [
+        "nth-child",
+        "nth",
+        "css"
+    ],
+    "bugs": {
+        "url": "https://github.com/fb55/nth-check/issues"
+    },
+    "homepage": "https://github.com/fb55/nth-check",
+    "dependencies": {
+        "boolbase": "^1.0.0"
+    },
+    "devDependencies": {
+        "@types/boolbase": "^1.0.1",
+        "@types/jest": "^27.5.0",
+        "@types/node": "^17.0.35",
+        "@typescript-eslint/eslint-plugin": "^5.25.0",
+        "@typescript-eslint/parser": "^5.25.0",
+        "eslint": "^8.15.0",
+        "eslint-config-prettier": "^8.5.0",
+        "jest": "^27.5.1",
+        "prettier": "^2.6.2",
+        "ts-jest": "^27.1.4",
+        "typescript": "^4.6.4"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "moduleNameMapper": {
+            "^(.*)\\.js$": "$1"
+        }
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}

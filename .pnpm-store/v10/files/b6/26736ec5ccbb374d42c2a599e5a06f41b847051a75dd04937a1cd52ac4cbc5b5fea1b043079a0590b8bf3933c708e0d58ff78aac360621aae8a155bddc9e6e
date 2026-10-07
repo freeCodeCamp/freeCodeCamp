@@ -1,0 +1,50 @@
+{
+  "name": "micromark-util-decode-numeric-character-reference",
+  "version": "2.0.0",
+  "description": "micromark utility to decode numeric character references",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "util",
+    "utility",
+    "decode",
+    "numeric",
+    "number",
+    "character",
+    "reference"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-decode-numeric-character-reference",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dev/",
+    "index.d.ts",
+    "index.js"
+  ],
+  "exports": {
+    "development": "./dev/index.js",
+    "default": "./index.js"
+  },
+  "dependencies": {
+    "micromark-util-symbol": "^2.0.0"
+  },
+  "scripts": {
+    "build": "micromark-build"
+  },
+  "xo": false
+}

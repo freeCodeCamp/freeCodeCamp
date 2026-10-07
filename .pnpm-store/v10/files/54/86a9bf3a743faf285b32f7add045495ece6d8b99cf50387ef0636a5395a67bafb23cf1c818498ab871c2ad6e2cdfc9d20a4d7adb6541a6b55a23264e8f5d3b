@@ -1,0 +1,78 @@
+{
+  "name": "es6-promise",
+  "description": "A lightweight library that provides tools for organizing asynchronous code",
+  "version": "4.2.8",
+  "author": "Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)",
+  "browser": {
+    "vertx": false
+  },
+  "bugs": {
+    "url": "https://github.com/stefanpenner/es6-promise/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-es2015-computed-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-constants": "^6.1.4",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-es2015-parameters": "^6.24.1",
+    "babel-plugin-transform-es2015-shorthand-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-es2015-template-literals": "^6.22.0",
+    "babel6-plugin-strip-class-callcheck": "^6.0.0",
+    "broccoli-babel-transpiler": "^6.0.0",
+    "broccoli-concat": "^3.1.0",
+    "broccoli-merge-trees": "^2.0.0",
+    "broccoli-rollup": "^2.0.0",
+    "broccoli-stew": "^1.5.0",
+    "broccoli-uglify-js": "^0.2.0",
+    "broccoli-watchify": "^1.0.1",
+    "ember-cli": "2.18.0-beta.2",
+    "ember-cli-dependency-checker": "^2.1.0",
+    "git-repo-version": "1.0.1",
+    "json3": "^3.3.2",
+    "mocha": "^4.0.1",
+    "promises-aplus-tests-phantom": "^2.1.0-revise"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es6-promise.d.ts",
+    "auto.js",
+    "!dist/test"
+  ],
+  "homepage": "https://github.com/stefanpenner/es6-promise",
+  "jsdelivr": "dist/es6-promise.auto.min.js",
+  "keywords": [
+    "futures",
+    "polyfill",
+    "promise",
+    "promises"
+  ],
+  "license": "MIT",
+  "main": "dist/es6-promise.js",
+  "namespace": "es6-promise",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stefanpenner/es6-promise.git"
+  },
+  "scripts": {
+    "build": "ember build --environment production",
+    "prepublishOnly": "ember build --environment production",
+    "start": "ember s",
+    "test": "ember test",
+    "test:browser": "ember test --launch PhantomJS",
+    "test:node": "ember test --launch Mocha",
+    "test:server": "ember test --server"
+  },
+  "spm": {
+    "main": "dist/es6-promise.js"
+  },
+  "typings": "es6-promise.d.ts",
+  "unpkg": "dist/es6-promise.auto.min.js"
+}

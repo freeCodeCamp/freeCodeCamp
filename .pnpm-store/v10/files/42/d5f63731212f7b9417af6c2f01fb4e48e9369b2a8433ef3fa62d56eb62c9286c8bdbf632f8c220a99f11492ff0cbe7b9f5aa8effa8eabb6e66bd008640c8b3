@@ -1,0 +1,73 @@
+{
+  "name": "vfile-message",
+  "version": "1.1.1",
+  "description": "Create a virtual message",
+  "license": "MIT",
+  "keywords": [
+    "vfile",
+    "virtual",
+    "message"
+  ],
+  "repository": "vfile/vfile-message",
+  "bugs": "https://github.com/vfile/vfile-message/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "unist-util-stringify-position": "^1.1.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "nyc": "^13.0.0",
+    "prettier": "^1.12.1",
+    "remark-cli": "^6.0.0",
+    "remark-preset-wooorm": "^4.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.4.3",
+    "xo": "^0.23.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "build-bundle": "browserify . -s vfileMessage > vfile-message.js",
+    "build-mangle": "browserify . -s vfileMessage -p tinyify > vfile-message.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "no-var": "off",
+      "prefer-arrow-callback": "off",
+      "object-shorthand": "off"
+    },
+    "ignores": [
+      "vfile-message.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

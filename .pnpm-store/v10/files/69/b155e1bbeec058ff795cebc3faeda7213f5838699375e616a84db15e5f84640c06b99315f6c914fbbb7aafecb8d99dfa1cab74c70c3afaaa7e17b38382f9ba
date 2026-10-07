@@ -1,0 +1,1 @@
+{"version":3,"names":["_identity","x"],"sources":["../../src/helpers/identity.ts"],"sourcesContent":["/* @minVersion 7.17.0 */\n\nexport default function _identity<T>(x: T) {\n  return x;\n}\n"],"mappings":";;;;;;AAEe,SAASA,SAASA,CAAIC,CAAI,EAAE;EACzC,OAAOA,CAAC;AACV","ignoreList":[]}

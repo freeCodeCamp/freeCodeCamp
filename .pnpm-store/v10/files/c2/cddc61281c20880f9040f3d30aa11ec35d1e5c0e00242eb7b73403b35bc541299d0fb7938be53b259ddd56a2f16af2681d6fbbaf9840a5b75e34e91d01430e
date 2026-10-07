@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/ScheduleDecision.js",
+  "module": "../dist/esm/ScheduleDecision.js",
+  "types": "../dist/dts/ScheduleDecision.d.ts"
+}

@@ -1,0 +1,163 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PullFromUpstream = exports.PullFromChild = exports.OP_PULL_FROM_UPSTREAM = exports.OP_PULL_FROM_CHILD = exports.OP_EMIT = exports.OP_DRAIN_CHILD_EXECUTORS = exports.Emit = exports.DrainChildExecutors = void 0;
+var Effect = _interopRequireWildcard(require("../../Effect.js"));
+var Exit = _interopRequireWildcard(require("../../Exit.js"));
+var _Function = require("../../Function.js");
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function (e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (const t in e) "default" !== t && {}.hasOwnProperty.call(e, t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, t)) && (i.get || i.set) ? o(f, t, i) : f[t] = e[t]); return f; })(e, t); }
+/** @internal */
+const OP_PULL_FROM_CHILD = exports.OP_PULL_FROM_CHILD = "PullFromChild";
+/** @internal */
+const OP_PULL_FROM_UPSTREAM = exports.OP_PULL_FROM_UPSTREAM = "PullFromUpstream";
+/** @internal */
+const OP_DRAIN_CHILD_EXECUTORS = exports.OP_DRAIN_CHILD_EXECUTORS = "DrainChildExecutors";
+/** @internal */
+const OP_EMIT = exports.OP_EMIT = "Emit";
+/**
+ * Execute the `childExecutor` and on each emitted value, decide what to do by
+ * `onEmit`.
+ *
+ * @internal
+ */
+class PullFromChild {
+  childExecutor;
+  parentSubexecutor;
+  onEmit;
+  _tag = OP_PULL_FROM_CHILD;
+  constructor(childExecutor, parentSubexecutor, onEmit) {
+    this.childExecutor = childExecutor;
+    this.parentSubexecutor = parentSubexecutor;
+    this.onEmit = onEmit;
+  }
+  close(exit) {
+    const fin1 = this.childExecutor.close(exit);
+    const fin2 = this.parentSubexecutor.close(exit);
+    if (fin1 !== undefined && fin2 !== undefined) {
+      return Effect.zipWith(Effect.exit(fin1), Effect.exit(fin2), (exit1, exit2) => (0, _Function.pipe)(exit1, Exit.zipRight(exit2)));
+    } else if (fin1 !== undefined) {
+      return fin1;
+    } else if (fin2 !== undefined) {
+      return fin2;
+    } else {
+      return undefined;
+    }
+  }
+  enqueuePullFromChild(_child) {
+    return this;
+  }
+}
+/**
+ * Execute `upstreamExecutor` and for each emitted element, spawn a child
+ * channel and continue with processing it by `PullFromChild`.
+ *
+ * @internal
+ */
+exports.PullFromChild = PullFromChild;
+class PullFromUpstream {
+  upstreamExecutor;
+  createChild;
+  lastDone;
+  activeChildExecutors;
+  combineChildResults;
+  combineWithChildResult;
+  onPull;
+  onEmit;
+  _tag = OP_PULL_FROM_UPSTREAM;
+  constructor(upstreamExecutor, createChild, lastDone, activeChildExecutors, combineChildResults, combineWithChildResult, onPull, onEmit) {
+    this.upstreamExecutor = upstreamExecutor;
+    this.createChild = createChild;
+    this.lastDone = lastDone;
+    this.activeChildExecutors = activeChildExecutors;
+    this.combineChildResults = combineChildResults;
+    this.combineWithChildResult = combineWithChildResult;
+    this.onPull = onPull;
+    this.onEmit = onEmit;
+  }
+  close(exit) {
+    const fin1 = this.upstreamExecutor.close(exit);
+    const fins = [...this.activeChildExecutors.map(child => child !== undefined ? child.childExecutor.close(exit) : undefined), fin1];
+    const result = fins.reduce((acc, next) => {
+      if (acc !== undefined && next !== undefined) {
+        return Effect.zipWith(acc, Effect.exit(next), (exit1, exit2) => Exit.zipRight(exit1, exit2));
+      } else if (acc !== undefined) {
+        return acc;
+      } else if (next !== undefined) {
+        return Effect.exit(next);
+      } else {
+        return undefined;
+      }
+    }, undefined);
+    return result === undefined ? result : result;
+  }
+  enqueuePullFromChild(child) {
+    return new PullFromUpstream(this.upstreamExecutor, this.createChild, this.lastDone, [...this.activeChildExecutors, child], this.combineChildResults, this.combineWithChildResult, this.onPull, this.onEmit);
+  }
+}
+/**
+ * Transformed from `PullFromUpstream` when upstream has finished but there
+ * are still active child executors.
+ *
+ * @internal
+ */
+exports.PullFromUpstream = PullFromUpstream;
+class DrainChildExecutors {
+  upstreamExecutor;
+  lastDone;
+  activeChildExecutors;
+  upstreamDone;
+  combineChildResults;
+  combineWithChildResult;
+  onPull;
+  _tag = OP_DRAIN_CHILD_EXECUTORS;
+  constructor(upstreamExecutor, lastDone, activeChildExecutors, upstreamDone, combineChildResults, combineWithChildResult, onPull) {
+    this.upstreamExecutor = upstreamExecutor;
+    this.lastDone = lastDone;
+    this.activeChildExecutors = activeChildExecutors;
+    this.upstreamDone = upstreamDone;
+    this.combineChildResults = combineChildResults;
+    this.combineWithChildResult = combineWithChildResult;
+    this.onPull = onPull;
+  }
+  close(exit) {
+    const fin1 = this.upstreamExecutor.close(exit);
+    const fins = [...this.activeChildExecutors.map(child => child !== undefined ? child.childExecutor.close(exit) : undefined), fin1];
+    const result = fins.reduce((acc, next) => {
+      if (acc !== undefined && next !== undefined) {
+        return Effect.zipWith(acc, Effect.exit(next), (exit1, exit2) => Exit.zipRight(exit1, exit2));
+      } else if (acc !== undefined) {
+        return acc;
+      } else if (next !== undefined) {
+        return Effect.exit(next);
+      } else {
+        return undefined;
+      }
+    }, undefined);
+    return result === undefined ? result : result;
+  }
+  enqueuePullFromChild(child) {
+    return new DrainChildExecutors(this.upstreamExecutor, this.lastDone, [...this.activeChildExecutors, child], this.upstreamDone, this.combineChildResults, this.combineWithChildResult, this.onPull);
+  }
+}
+/** @internal */
+exports.DrainChildExecutors = DrainChildExecutors;
+class Emit {
+  value;
+  next;
+  _tag = OP_EMIT;
+  constructor(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+  close(exit) {
+    const result = this.next.close(exit);
+    return result === undefined ? result : result;
+  }
+  enqueuePullFromChild(_child) {
+    return this;
+  }
+}
+exports.Emit = Emit;
+//# sourceMappingURL=subexecutor.js.map

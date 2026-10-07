@@ -1,0 +1,1 @@
+import{useState as s}from"react";import{useIsoMorphicEffect as f}from'./use-iso-morphic-effect.js';import{useLatestValue as m}from'./use-latest-value.js';function i(e,o){let[u,t]=s(e),r=m(e);return f(()=>t(r.current),[r,t,...o]),u}export{i as useComputed};

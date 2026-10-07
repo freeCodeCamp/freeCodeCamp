@@ -1,0 +1,48 @@
+{
+  "name": "cjs-module-lexer",
+  "version": "2.2.0",
+  "description": "Lexes CommonJS modules, returning their named exports metadata",
+  "main": "lexer.js",
+  "exports": {
+    "import": {
+      "types": "./lexer.d.mts",
+      "default": "./dist/lexer.mjs"
+    },
+    "default": "./lexer.js"
+  },
+  "types": "lexer.d.ts",
+  "scripts": {
+    "test-js": "cross-env NODE_OPTIONS=--disallow-code-generation-from-strings mocha -b -u tdd test/*.js",
+    "test-wasm": "cross-env WASM=1 NODE_OPTIONS=--disallow-code-generation-from-strings mocha -b -u tdd test/*.js",
+    "test-wasm-sync": "cross-env WASM_SYNC=1 NODE_OPTIONS=--disallow-code-generation-from-strings mocha -b -u tdd test/*.js",
+    "test": "npm run test-wasm && npm run test-wasm-sync && npm run test-js",
+    "bench": "node --expose-gc bench/index.mjs",
+    "build": "node build.js ; babel dist/lexer.mjs -o dist/lexer.js ; terser dist/lexer.js -o dist/lexer.js",
+    "build-wasm": "make lib/lexer.wasm ; node build.js",
+    "prepublishOnly": "make && npm run build",
+    "footprint": "npm run build && cat dist/lexer.js | gzip -9f | wc -c"
+  },
+  "author": "Guy Bedford",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "cross-env": "^7.0.3",
+    "kleur": "^2.0.2",
+    "mocha": "^9.1.3",
+    "terser": "^4.1.4"
+  },
+  "files": [
+    "dist",
+    "lexer.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodejs/cjs-module-lexer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nodejs/cjs-module-lexer/issues"
+  },
+  "homepage": "https://github.com/nodejs/cjs-module-lexer#readme"
+}

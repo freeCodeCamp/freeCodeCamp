@@ -1,0 +1,39 @@
+{
+  "name": "y18n",
+  "version": "4.0.3",
+  "description": "the bare-bones internationalization library used by yargs",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "standard",
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yargs/y18n.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "yargs"
+  ],
+  "author": "Ben Coe <ben@npmjs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yargs/y18n/issues"
+  },
+  "homepage": "https://github.com/yargs/y18n",
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "coveralls": "^3.0.0",
+    "mocha": "^4.0.1",
+    "nyc": "^11.0.1",
+    "rimraf": "^2.5.0",
+    "standard": "^10.0.0-beta.0",
+    "standard-version": "^4.2.0"
+  }
+}

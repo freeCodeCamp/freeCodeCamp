@@ -1,0 +1,31 @@
+{
+  "name": "@lezer/highlight",
+  "version": "1.2.1",
+  "description": "Highlighting system for Lezer parse trees",
+  "main": "dist/index.cjs",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
+  "license": "MIT",
+  "devDependencies": {
+    "@marijn/buildtool": "0.1.3",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@lezer/common": "^1.0.0"
+  },
+  "files": ["dist"],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/lezer-parser/highlight.git"
+  },
+  "scripts": {
+    "watch": "node build.js --watch",
+    "prepare": "node build.js"
+  }
+}

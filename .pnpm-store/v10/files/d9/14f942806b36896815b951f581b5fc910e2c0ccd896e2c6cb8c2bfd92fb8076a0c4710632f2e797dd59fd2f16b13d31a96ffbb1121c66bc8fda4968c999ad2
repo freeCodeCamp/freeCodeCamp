@@ -1,0 +1,46 @@
+{
+	"name": "@sindresorhus/transliterate",
+	"version": "0.1.2",
+	"description": "Convert Unicode characters to Latin characters using transliteration",
+	"license": "MIT",
+	"repository": "sindresorhus/transliterate",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"replacements.js"
+	],
+	"keywords": [
+		"transliterate",
+		"transliteration",
+		"string",
+		"deburr",
+		"unicode",
+		"ascii",
+		"text",
+		"latin",
+		"latinize",
+		"convert",
+		"replace"
+	],
+	"dependencies": {
+		"escape-string-regexp": "^2.0.0",
+		"lodash.deburr": "^4.1.0"
+	},
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"tsd": "^0.11.0",
+		"xo": "^0.26.1"
+	}
+}

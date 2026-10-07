@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Duration.js",
+  "module": "../dist/esm/Duration.js",
+  "types": "../dist/dts/Duration.d.ts"
+}

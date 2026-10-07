@@ -1,0 +1,28 @@
+For recent changelog see CHANGELOG.md
+
+-----
+
+v1.0.0  --  2016.06.09
+* In case MutationObserver based solution ensure all callbacks are propagated
+  even if any on the way crashes (fixes #3)
+* Support older engines (as IE8) which see typeof setTimeout as 'object'
+* Fix spelling of LICENSE
+* Configure lint scripts
+
+v0.2.2  --  2014.04.18
+- Do not rely on es5-ext's valid-callable. Replace it with simple internal function
+- In MutationObserver fallback rely on text node instead of attribute and assure
+  mutation event is invoked by real change of data
+
+v0.2.1  --  2014.02.24
+- Fix case in import path
+
+v0.2.0  --  2014.02.24
+- Assure microtask resultion if MutationObserver is available (thanks @Raynos) #1
+- Unify validation of callback. TypeError is throw for any non callable input
+- Move main module from `lib` to root directory
+- Improve documentation
+- Remove Makefile (it's environment agnostic pacakge)
+
+v0.1.0  --  2012.08.29
+Initial

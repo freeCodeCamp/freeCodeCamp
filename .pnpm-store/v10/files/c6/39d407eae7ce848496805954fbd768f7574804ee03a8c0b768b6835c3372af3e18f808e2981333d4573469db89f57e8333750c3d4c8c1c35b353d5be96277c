@@ -1,0 +1,1 @@
+{"version":3,"file":"misc.js","sourceRoot":"","sources":["../../src/ast-utils/misc.ts"],"names":[],"mappings":";;;AAEA,MAAM,iBAAiB,GAAG,yBAAyB,CAAC;AAYxB,8CAAiB;AAV7C;;GAEG;AACH,SAAS,iBAAiB,CACxB,IAAoC,EACpC,KAAqC;IAErC,OAAO,IAAI,CAAC,GAAG,CAAC,GAAG,CAAC,IAAI,KAAK,KAAK,CAAC,GAAG,CAAC,KAAK,CAAC,IAAI,CAAC;AACpD,CAAC;AAEQ,8CAAiB"}

@@ -1,0 +1,41 @@
+{
+  "name": "postcss-unique-selectors",
+  "version": "5.1.1",
+  "description": "Ensure CSS selectors are unique.",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "LICENSE-MIT",
+    "src",
+    "types"
+  ],
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cssnano/cssnano",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "cssnano/cssnano",
+  "dependencies": {
+    "postcss-selector-parser": "^6.0.5"
+  },
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# [postcss][postcss]-unique-selectors\n\n> Ensure CSS selectors are unique.\n\n## Install\n\nWith [npm](https://npmjs.org/package/postcss-unique-selectors) do:\n\n```\nnpm install postcss-unique-selectors --save\n```\n\n## Example\n\nSelectors are sorted naturally, and deduplicated:\n\n### Input\n\n```css\nh1,h3,h2,h1 {\n    color: red\n}\n```\n\n### Output\n\n```css\nh1,h2,h3 {\n    color: red\n}\n```\n\n## Usage\n\nSee the [PostCSS documentation](https://github.com/postcss/postcss#usage) for\nexamples for your environment.\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n\n## License\n\nMIT © [Ben Briggs](http://beneb.info)\n\n[postcss]: https://github.com/postcss/postcss\n"
+}

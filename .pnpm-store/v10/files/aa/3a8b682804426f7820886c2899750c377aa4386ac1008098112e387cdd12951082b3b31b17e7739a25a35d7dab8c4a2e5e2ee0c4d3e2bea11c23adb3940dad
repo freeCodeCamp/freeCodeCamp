@@ -1,0 +1,62 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# A domain for interacting with Cast, Presentation API, and Remote Playback API
+# functionalities.
+experimental domain Cast
+
+  type Sink extends object
+    properties
+      string name
+      string id
+      # Text describing the current session. Present only if there is an active
+      # session on the sink.
+      optional string session
+
+  # Starts observing for sinks that can be used for tab mirroring, and if set,
+  # sinks compatible with |presentationUrl| as well. When sinks are found, a
+  # |sinksUpdated| event is fired.
+  # Also starts observing for issue messages. When an issue is added or removed,
+  # an |issueUpdated| event is fired.
+  command enable
+    parameters
+      optional string presentationUrl
+
+  # Stops observing for sinks and issues.
+  command disable
+
+  # Sets a sink to be used when the web page requests the browser to choose a
+  # sink via Presentation API, Remote Playback API, or Cast SDK.
+  command setSinkToUse
+    parameters
+      string sinkName
+
+  # Starts mirroring the desktop to the sink.
+  command startDesktopMirroring
+    parameters
+      string sinkName
+
+  # Starts mirroring the tab to the sink.
+  command startTabMirroring
+    parameters
+      string sinkName
+
+  # Stops the active Cast session on the sink.
+  command stopCasting
+    parameters
+      string sinkName
+
+  # This is fired whenever the list of available sinks changes. A sink is a
+  # device or a software surface that you can cast to.
+  event sinksUpdated
+    parameters
+      array of Sink sinks
+
+  # This is fired whenever the outstanding issue/error message changes.
+  # |issueMessage| is empty if there is no issue.
+  event issueUpdated
+    parameters
+      string issueMessage

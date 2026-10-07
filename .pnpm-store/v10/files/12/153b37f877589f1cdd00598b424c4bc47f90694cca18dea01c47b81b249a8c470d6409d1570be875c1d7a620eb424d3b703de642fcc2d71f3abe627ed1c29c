@@ -1,0 +1,182 @@
+%% filename: xbbold.mf
+%% version: 2.2
+%% date: 1995/01/04
+%%
+%% (katex-fonts) The line 69 is modified to prevent overflow
+%%
+%% American Mathematical Society
+%% Technical Support
+%% Publications Technical Group
+%% 201 Charles Street
+%% Providence, RI 02904
+%% USA
+%% tel: (401) 455-4080
+%%      (800) 321-4267 (USA and Canada only)
+%% fax: (401) 331-3842
+%% email: tech-support@ams.org
+%%
+%% Copyright 1995, 2009 American Mathematical Society.
+%%
+%% This Font Software is licensed under the SIL Open Font License,
+%% Version 1.1.  This license is in the accompanying file OFL.txt, and
+%% is also available with a FAQ at: http://scripts.sil.org/OFL.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Changes of minimal parameters in outlined characters for version 2.1
+% done by Stefan Lindner, 18-April-1991
+
+input xbbase;
+%%mode_setup; %called by amsyb.mf; two calls confuse Metafont. NGB 15-OCT-1991
+
+%%%%designsize:= font_size;                 %  was 10pt#;
+width#:=     designsize;                 %  was 10pt#;
+unit#:=      width#/18;
+u#:=         width#/54;
+smallu#:=    width#/162;
+ascender#:=  37/3*unit#;
+cap#:=       37/3*unit#;
+number#:=    36/3*unit#;
+xheight#:=   25/3*unit#;
+descender#:= 12/4*unit#;
+define_whole_vertical_pixels
+  (width,unit,u,smallu,ascender,cap,number,xheight,descender);
+wpix(1.90u) (linethickness);
+wpix(0.65u) (Sover_bot);
+wpix(1.00u) (Aapex,Napex,Vapex,Wapex,Cover,Gover,Oover,Sover_top,Uover);
+wpix(9.00u) (Uthin_bracket);
+wpix(8.00u) (Kthin_diag_bracket,Xthin_diag_bracket,Ythin_diag_bracket);
+wpix(7.00u) (k_thin_diag);
+wpix(6.00u) (c_thin_stem_bracket);
+wpix(5.00u) (c_thick_stem_bracket,c_inner_bracket,lc_thick_stem_bracket);
+wpix(4.00u) (c_round_bracket);
+adjpix(1.35u) (serif_thickness);
+adjpix(1.30u) (Emid_tip,inbeak);
+adjpix(1.50u) (Atip,Btopthin,Bmidthin,Ebot_tip,Ltip,Mapex,
+               Ntip,Ttip,Vtip,Wtip,Ztip,outbeak);
+adjpix(1.65u) (Bbotthin,Gbotthin,Stopthin);
+adjpix(1.75u) (Dtopthin,Ebotarm,Lthin,Tthin);
+adjpix(1.80u) (Abar,Ctopthin,Dbotthin,Gtopthin,Jbotthin,Pmidarm,Sbotthin);
+adjpix(1.90u) (Emidarm,Etoparm,Othin,Pthin,Rthin,Ydiag,Zthin);
+adjpix(2.00u) (kthin,Mthin_diag,Wleftthin);
+adjpix(2.10u) (Ctip);
+adjpix(2.25u) (Athin,Kthin,Mthin_vert,Nthin,Uthin,Vthin,Wrightthin,Xthin);
+adjpix(2.50u) (Hbar);
+adjpix(2.60u) (Cbotthin);
+
+
+%%%% Begin of changes for version 2.1
+%(katex-fonts) Originally was pixels_per_inch*designsize < 1500:
+if pixels_per_inch < 1500/designsize:
+   if pixels_per_inch*designsize < 1000:
+      if pixels_per_inch*designsize < 800:
+         if pixels_per_inch*designsize < 700:
+            minadjpix(0)(8.80u) (stem);
+            minadjpix(0)(6.80u) (kdiag);
+            minadjpix(0)(7.40u) (kstem);
+            minadjpix(0)(7.80u) (Jbulb,Mdiag);
+            minadjpix(0)(8.20u) (Kdiag);
+            minadjpix(0)(8.30u) (Gstem,Mstem);
+            minadjpix(0)(8.60u) (Lstem,Ustem,Ythick_diag);
+            minadjpix(0)(8.50u) (Bstem,Estem,Fstem,Ndiag,Rdiag,Xdiag,Zdiag);
+            minadjpix(0)(8.90u) (Btopcurve);
+            minadjpix(1)(9.30u) (Bbotcurve,Pcurve,Rcurve);
+            minadjpix(1)(9.50u) (Ccurve,Dcurve,Gcurve,Ocurve);
+         else:
+            minadjpix(1)(8.80u) (stem);
+            minadjpix(1)(6.80u) (kdiag);
+            minadjpix(1)(7.40u) (kstem);
+            minadjpix(1)(7.80u) (Jbulb,Mdiag);
+            minadjpix(1)(8.20u) (Kdiag);
+            minadjpix(1)(8.30u) (Gstem,Mstem);
+            minadjpix(1)(8.60u) (Lstem,Ustem,Ythick_diag);
+            minadjpix(1)(8.50u) (Bstem,Estem,Fstem,Ndiag,Rdiag,Xdiag,Zdiag);
+            minadjpix(1)(8.90u) (Btopcurve);
+            minadjpix(2)(9.30u) (Bbotcurve,Pcurve,Rcurve);
+            minadjpix(2)(9.50u) (Ccurve,Dcurve,Gcurve,Ocurve);
+         fi
+      else:
+         adjpix(3.0u) (Mapex);
+         minadjpix(1)(8.80u) (stem);
+         minadjpix(2)(6.80u) (kdiag);
+         minadjpix(2)(7.40u) (kstem);
+         minadjpix(2)(7.80u) (Jbulb);
+         minadjpix(1)(6.00u) (Mdiag);
+         minadjpix(2)(8.20u) (Kdiag);
+         minadjpix(2)(8.30u) (Gstem)
+         minadjpix(2)(8.30u) (Mstem);
+         minadjpix(2)(8.60u) (Lstem,Ustem,Ythick_diag);
+         minadjpix(2)(8.50u) (Bstem,Ndiag,Rdiag,Xdiag,Zdiag);
+         minadjpix(1)(8.50u) (Estem, Fstem);
+         minadjpix(2)(8.90u) (Btopcurve);
+         minadjpix(3)(9.30u) (Bbotcurve,Pcurve,Rcurve);
+         minadjpix(3)(9.50u) (Ccurve,Dcurve,Gcurve,Ocurve);
+      fi
+   else:
+      adjpix(3.0u) (Mapex);
+      minadjpix(2)(8.80u) (stem);
+      minadjpix(3)(6.80u) (kdiag);
+      minadjpix(3)(7.40u) (kstem);
+      minadjpix(3)(7.80u) (Jbulb);
+      minadjpix(1)(5.00u) (Mdiag);
+      minadjpix(3)(8.20u) (Kdiag);
+      minadjpix(3)(8.30u) (Gstem);
+      minadjpix(2)(8.30u) (Mstem);
+      minadjpix(3)(8.60u) (Lstem,Ustem,Ythick_diag);
+      minadjpix(3)(8.50u) (Estem,Fstem,Ndiag,Rdiag,Xdiag,Zdiag);
+      minadjpix(2)(8.50u) (Bstem);
+      minadjpix(3)(8.90u) (Btopcurve);
+      minadjpix(3)(9.30u) (Bbotcurve,Pcurve,Rcurve);
+      minadjpix(3)(9.50u) (Ccurve,Dcurve,Gcurve,Ocurve)
+   fi
+else:
+   minadjpix(4)(8.80u) (stem);
+   minadjpix(4)(6.80u) (kdiag);
+   minadjpix(4)(7.40u) (kstem);
+   minadjpix(4)(7.80u) (Jbulb,Mdiag);
+   minadjpix(4)(8.20u) (Kdiag);
+   minadjpix(4)(8.30u) (Gstem,Mstem);
+   minadjpix(4)(8.60u) (Lstem,Ustem,Ythick_diag);
+   minadjpix(4)(8.50u) (Bstem,Estem,Fstem,Ndiag,Rdiag,Xdiag,Zdiag);
+   minadjpix(4)(8.90u) (Btopcurve);
+   minadjpix(5)(9.30u) (Bbotcurve,Pcurve,Rcurve);
+   minadjpix(5)(9.50u) (Ccurve,Dcurve,Gcurve,Ocurve)
+fi;
+%%%% end of changes for version 2.1
+
+boolean lowres; lowres:=width<50;
+highres_lowres(pullin)    (.85)(1);  % Emidarm
+highres_lowres(pulleven)  (1)(1.3);  % Etoparm,Tarms,Zarms
+highres_lowres(pullout)   (1.1)(1);  % Ebotarm,Lbotarm
+highres_lowres(bracket0)  (.0)(0);   % Ntopleft
+highres_lowres(bracket3)  (.3)(0);   % Nthinstems
+highres_lowres(bracket01) (.0)(.1);  % Uthin
+highres_lowres(bracket32) (.3)(.2);  % Vstems
+highres_lowres(bracket4)  (.4)(0);   % P-all,R-all,I-all,F-all
+highres_lowres(bracket42) (.4)(.2);  % Xdiag
+
+bool(ctrls):=false;
+entasis:=inlimit(0)(0,1);
+serif_constant_amt:=0pt;
+join_radius:=1;
+bool(softpath):=true;
+
+c_thick_stem_bracket:=min(.5cap-eps,c_thick_stem_bracket);
+rulepen:=pensquare scaled 1;
+extra_beginchar:=extra_beginchar&"save t,p,ref; path p[],p[]',p[]'',ref[];";
+extra_beginchar:=extra_beginchar&"pickup pencircle scaled linethickness;";
+
+for x:="R":
+ wanted[byte x]:=true; endfor                    % test these characters
+ let iff=always_iff;                             % tests all chars in the file
+
+font_normal_space .3width#;         % TeX fontdimen 2 normal word space
+font_normal_stretch .15width#;      % TeX fontdimen 3 interword stretch
+font_normal_shrink .1width#;        % TeX fontdimen 4 interword shrink
+font_x_height xheight#;             % Tex fontdinem 5 for accents
+font_quad width#;                   % TeX fontdimen 6 quad width
+font_extra_space .1width#;          % TeX fontdimen 7 extra space(period)
+
+
+input xbcaps
+bye                                 % changed from "end" 26 Aug 93; bnb

@@ -1,0 +1,29 @@
+{
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "name": "chownr",
+  "description": "like `chown -R`",
+  "version": "1.1.4",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/chownr.git"
+  },
+  "main": "chownr.js",
+  "files": [
+    "chownr.js"
+  ],
+  "devDependencies": {
+    "mkdirp": "0.3",
+    "rimraf": "^2.7.1",
+    "tap": "^14.10.6"
+  },
+  "tap": {
+    "check-coverage": true
+  },
+  "scripts": {
+    "test": "tap",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags"
+  },
+  "license": "ISC"
+}

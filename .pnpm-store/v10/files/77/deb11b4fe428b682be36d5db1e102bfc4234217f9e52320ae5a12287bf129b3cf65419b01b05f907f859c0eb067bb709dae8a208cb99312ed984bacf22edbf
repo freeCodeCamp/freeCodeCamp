@@ -1,0 +1,1 @@
+{"version":3,"file":"native-panner-node-faker.d.ts","sourceRoot":"","sources":["../../../src/interfaces/native-panner-node-faker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,iBAAiB,EAAE,MAAM,UAAU,CAAC;AAG/D,MAAM,WAAW,sBAAuB,SAAQ,iBAAiB;IAC7D,UAAU,EAAE,SAAS,CAAC;IAEtB,MAAM,EAAE,gBAAgB,EAAE,CAAC;CAC9B"}

@@ -1,0 +1,9 @@
+/**
+ * @param {JSXAttribute | JSXSpreadAttribute} node
+ * @returns {AttributeAdapter}
+ */
+export function createAttributeAdapter(node: JSXAttribute | JSXSpreadAttribute): AttributeAdapter;
+import type { JSXAttribute } from "../../types";
+import type { JSXSpreadAttribute } from "../../types";
+import type { AttributeAdapter } from "@html-eslint/core";
+//# sourceMappingURL=factory.d.ts.map

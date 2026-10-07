@@ -1,0 +1,26 @@
+{
+  "name": "cookiejar",
+  "version": "2.1.4",
+  "author": {
+    "name": "bradleymeck"
+  },
+  "main": "cookiejar.js",
+  "description": "simple persistent cookiejar system",
+  "files": [
+    "cookiejar.js"
+  ],
+  "license": "MIT",
+  "jshintConfig": {
+    "node": true
+  },
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmeck/node-cookiejar.git"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.4"
+  }
+}

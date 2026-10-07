@@ -1,0 +1,50 @@
+sudo: false
+language: node_js
+before_install:
+  - npm install -g npm@2
+  - test $NPM_LEGACY && npm install -g npm@latest-3 || npm install npm -g
+notifications:
+  email: false
+matrix:
+  fast_finish: true
+  include:
+  - node_js: '0.8'
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: '0.10'
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: '0.11'
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: '0.12'
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: 1
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: 2
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: 3
+    env:
+      - TASK=test
+      - NPM_LEGACY=true
+  - node_js: 4
+    env: TASK=test
+  - node_js: 5
+    env: TASK=test
+  - node_js: 6
+    env: TASK=test
+  - node_js: 7
+    env: TASK=test
+  - node_js: 8
+    env: TASK=test
+  - node_js: 9
+    env: TASK=test

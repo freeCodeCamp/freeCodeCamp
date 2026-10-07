@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "isolatedModules": true
+    },
+    "extends": "tsconfig-holy-grail/src/tsconfig-universal"
+}

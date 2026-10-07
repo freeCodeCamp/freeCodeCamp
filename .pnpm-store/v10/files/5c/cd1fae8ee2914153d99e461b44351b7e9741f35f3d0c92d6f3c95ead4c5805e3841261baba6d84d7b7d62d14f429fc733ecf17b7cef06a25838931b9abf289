@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Everett';
+  src: url('TWKEverett-Medium-web.woff2') format('woff2'),
+    url('TWKEverett-Medium-web.woff') format('woff'),
+    url('TWKEverett-Medium-web.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+}
+@font-face {
+  font-family: 'Everett';
+  src: url('TWKEverett-Regular-web.woff2') format('woff2'),
+    url('TWKEverett-Regular-web.woff') format('woff'),
+    url('TWKEverett-Regular-web.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+}
+@font-face {
+  font-family: 'Everett';
+  src: url('TWKEverett-Light-web.woff2') format('woff2'),
+    url('TWKEverett-Light-web.woff') format('woff'),
+    url('TWKEverett-Light-web.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/List.js",
+  "module": "../dist/esm/List.js",
+  "types": "../dist/dts/List.d.ts"
+}

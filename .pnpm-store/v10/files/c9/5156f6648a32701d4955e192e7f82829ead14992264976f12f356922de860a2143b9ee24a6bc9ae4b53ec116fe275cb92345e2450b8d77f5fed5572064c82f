@@ -1,0 +1,63 @@
+{
+  "name": "react-server-dom-webpack",
+  "description": "React Server Components bindings for DOM using Webpack. This is intended to be integrated into meta-frameworks. It is not intended to be imported directly.",
+  "version": "0.0.0-experimental-c8b778b7f-20220825",
+  "keywords": [
+    "react"
+  ],
+  "homepage": "https://reactjs.org/",
+  "bugs": "https://github.com/facebook/react/issues",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "plugin.js",
+    "writer.js",
+    "writer.browser.server.js",
+    "writer.node.server.js",
+    "node-register.js",
+    "cjs/",
+    "umd/",
+    "esm/"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./plugin": "./plugin.js",
+    "./writer": {
+      "react-server": {
+        "node": "./writer.node.server.js",
+        "browser": "./writer.browser.server.js"
+      },
+      "default": "./writer.js"
+    },
+    "./writer.node.server": "./writer.node.server.js",
+    "./writer.browser.server": "./writer.browser.server.js",
+    "./node-loader": "./esm/react-server-dom-webpack-node-loader.js",
+    "./node-register": "./node-register.js",
+    "./package.json": "./package.json"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/react.git",
+    "directory": "packages/react-server-dom-webpack"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "peerDependencies": {
+    "react": "0.0.0-experimental-c8b778b7f-20220825",
+    "webpack": "^5.59.0"
+  },
+  "dependencies": {
+    "acorn": "^6.2.1",
+    "neo-async": "^2.6.1",
+    "loose-envify": "^1.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
+  }
+}

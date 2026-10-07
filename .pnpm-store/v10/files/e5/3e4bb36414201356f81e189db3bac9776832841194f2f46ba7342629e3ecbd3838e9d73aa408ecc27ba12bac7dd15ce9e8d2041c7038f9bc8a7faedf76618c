@@ -1,0 +1,42 @@
+{
+  "name": "lz-string",
+  "version": "1.5.0",
+  "license": "MIT",
+  "filename": "lz-string.js",
+  "description": "LZ-based compression algorithm",
+  "homepage": "http://pieroxy.net/blog/pages/lz-string/index.html",
+  "keywords": [
+    "lz",
+    "compression",
+    "string"
+  ],
+  "main": "libs/lz-string.js",
+  "typings": "typings/lz-string.d.ts",
+  "bin": {
+    "lz-string": "bin/bin.js"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pieroxy/lz-string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pieroxy/lz-string/issues"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "author": "pieroxy <pieroxy@pieroxy.net>",
+  "autoupdate": {
+    "source": "git",
+    "target": "git://github.com/pieroxy/lz-string.git",
+    "basePath": "libs/",
+    "files": [
+      "lz-string.js",
+      "lz-string.min.js",
+      "base64-string.js"
+    ]
+  }
+}

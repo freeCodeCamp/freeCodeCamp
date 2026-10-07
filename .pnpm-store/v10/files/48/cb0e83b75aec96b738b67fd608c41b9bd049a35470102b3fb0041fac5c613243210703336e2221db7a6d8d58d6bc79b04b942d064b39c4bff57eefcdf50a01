@@ -1,0 +1,12 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"overrides": [
+		{
+			"files": "test-corejs.js",
+			"extends": "@ljharb/eslint-config/tests",
+		},
+	],
+}

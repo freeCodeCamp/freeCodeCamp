@@ -1,0 +1,2 @@
+import { ColProps } from "./types";
+export declare const Col: ({ className, children, xs, sm, md, lg, xsOffset, smOffset, mdOffset, lgOffset, ...props }: ColProps) => JSX.Element;

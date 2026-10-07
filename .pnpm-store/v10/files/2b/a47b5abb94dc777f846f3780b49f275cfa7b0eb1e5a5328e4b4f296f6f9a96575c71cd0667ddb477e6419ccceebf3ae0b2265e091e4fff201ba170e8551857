@@ -1,0 +1,73 @@
+/* sample-bdb.txt - BerkeleyDB toy/sample
+ *
+ * Do a line-by-line comparison of this and sample-mdb.txt
+ */
+/*
+ * Copyright 2012-2020 Howard Chu, Symas Corp.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted only as authorized by the OpenLDAP
+ * Public License.
+ *
+ * A copy of this license is available in the file LICENSE in the
+ * top-level directory of the distribution or, alternatively, at
+ * <http://www.OpenLDAP.org/license.html>.
+ */
+#include <stdio.h>
+#include <string.h>
+#include <db.h>
+
+int main(int argc,char * argv[])
+{
+	int rc;
+	DB_ENV *env;
+	DB *dbi;
+	DBT key, data;
+	DB_TXN *txn;
+	DBC *cursor;
+	char sval[32], kval[32];
+
+	/* Note: Most error checking omitted for simplicity */
+
+#define FLAGS (DB_INIT_LOCK|DB_INIT_LOG|DB_INIT_TXN|DB_INIT_MPOOL|DB_CREATE|DB_THREAD)
+	rc = db_env_create(&env, 0);
+	rc = env->open(env, "./testdb", FLAGS, 0664);
+	rc = db_create(&dbi, env, 0);
+	rc = env->txn_begin(env, NULL, &txn, 0);
+	rc = dbi->open(dbi, txn, "test.bdb", NULL, DB_BTREE, DB_CREATE, 0664);
+
+	memset(&key, 0, sizeof(DBT));
+	memset(&data, 0, sizeof(DBT));
+	key.size = sizeof(int);
+	key.data = sval;
+	data.size = sizeof(sval);
+	data.data = sval;
+
+	sprintf(sval, "%03x %d foo bar", 32, 3141592);
+	rc = dbi->put(dbi, txn, &key, &data, 0);
+	rc = txn->commit(txn, 0);
+	if (rc) {
+		fprintf(stderr, "txn->commit: (%d) %s\n", rc, db_strerror(rc));
+		goto leave;
+	}
+	rc = env->txn_begin(env, NULL, &txn, 0);
+	rc = dbi->cursor(dbi, txn, &cursor, 0);
+	key.flags = DB_DBT_USERMEM;
+	key.data = kval;
+	key.ulen = sizeof(kval);
+	data.flags = DB_DBT_USERMEM;
+	data.data = sval;
+	data.ulen = sizeof(sval);
+	while ((rc = cursor->c_get(cursor, &key, &data, DB_NEXT)) == 0) {
+		printf("key: %p %.*s, data: %p %.*s\n",
+			key.data,  (int) key.size,  (char *) key.data,
+			data.data, (int) data.size, (char *) data.data);
+	}
+	rc = cursor->c_close(cursor);
+	rc = txn->abort(txn);
+leave:
+	rc = dbi->close(dbi, 0);
+	rc = env->close(env, 0);
+	return rc;
+}

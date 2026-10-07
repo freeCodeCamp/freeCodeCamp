@@ -1,0 +1,11 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"complexity": [2, 11],
+		"max-statements": [2, 15],
+		"new-cap": [2, { "capIsNewExceptions": ["IsCallable"] }],
+	},
+}

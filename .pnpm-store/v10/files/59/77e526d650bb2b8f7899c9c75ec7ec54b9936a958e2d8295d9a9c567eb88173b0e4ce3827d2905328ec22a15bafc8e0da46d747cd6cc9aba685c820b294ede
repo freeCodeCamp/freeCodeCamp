@@ -1,0 +1,49 @@
+# `MD025` - Multiple top-level headings in the same document
+
+Tags: `headings`
+
+Aliases: `single-h1`, `single-title`
+
+Parameters:
+
+- `front_matter_title`: RegExp for matching title in front matter (`string`,
+  default `^\s*title\s*[:=]`)
+- `level`: Heading level (`integer`, default `1`)
+
+This rule is triggered when a top-level heading is in use (the first line of
+the file is an h1 heading), and more than one h1 heading is in use in the
+document:
+
+```markdown
+# Top level heading
+
+# Another top-level heading
+```
+
+To fix, structure your document so there is a single h1 heading that is
+the title for the document. Subsequent headings must be
+lower-level headings (h2, h3, etc.):
+
+```markdown
+# Title
+
+## Heading
+
+## Another heading
+```
+
+Note: The `level` parameter can be used to change the top-level (ex: to h2) in
+cases where an h1 is added externally.
+
+If [YAML](https://en.wikipedia.org/wiki/YAML) front matter is present and
+contains a `title` property (commonly used with blog posts), this rule treats
+that as a top level heading and will report a violation for any subsequent
+top-level headings. To use a different property name in the front matter,
+specify the text of a regular expression via the `front_matter_title` parameter.
+To disable the use of front matter by this rule, specify `""` for
+`front_matter_title`.
+
+Rationale: A top-level heading is an h1 on the first line of the file, and
+serves as the title for the document. If this convention is in use, then there
+can not be more than one title for the document, and the entire document should
+be contained within this heading.

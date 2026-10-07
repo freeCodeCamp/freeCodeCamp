@@ -1,0 +1,1 @@
+{"version":3,"file":"TextQueryHandler.js","sourceRoot":"","sources":["../../../src/common/TextQueryHandler.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,EAAC,YAAY,EAAwB,MAAM,mBAAmB,CAAC;AAEtE;;GAEG;AACH,MAAM,OAAO,gBAAiB,SAAQ,YAAY;IAChD,MAAM,CAAU,gBAAgB,GAAqB,CACnD,OAAO,EACP,QAAQ,EACR,EAAC,oBAAoB,EAAC,EACtB,EAAE;QACF,OAAO,oBAAoB,CAAC,OAAO,EAAE,QAAQ,CAAC,CAAC;IACjD,CAAC,CAAC"}

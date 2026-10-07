@@ -1,0 +1,81 @@
+.TH MDB_DUMP 1 "2017/07/31" "LMDB 0.9.70"
+.\" Copyright 2014-2020 Howard Chu, Symas Corp. All Rights Reserved.
+.\" Copying restrictions apply.  See COPYRIGHT/LICENSE.
+.SH NAME
+mdb_dump \- LMDB environment export tool
+.SH SYNOPSIS
+.B mdb_dump
+[\c
+.BR \-V ]
+[\c
+.BI \-f \ file\fR]
+[\c
+.BR \-l ]
+[\c
+.BR \-n ]
+[\c
+.BR \-v ]
+[\c
+.BR \-p ]
+[\c
+.BR \-a \ |
+.BI \-s \ subdb\fR]
+.BR \ envpath
+.SH DESCRIPTION
+The
+.B mdb_dump
+utility reads a database and writes its contents to the
+standard output using a portable flat-text format
+understood by the
+.BR mdb_load (1)
+utility.
+.SH OPTIONS
+.TP
+.BR \-V
+Write the library version number to the standard output, and exit.
+.TP
+.BR \-f \ file
+Write to the specified file instead of to the standard output.
+.TP
+.BR \-l
+List the databases stored in the environment. Just the
+names will be listed, no data will be output.
+.TP
+.BR \-n
+Dump an LMDB database which does not use subdirectories.
+.TP
+.BR \-v
+Use the previous environment state instead of the latest state.
+This may be useful if the latest state has been corrupted.
+.TP
+.BR \-p
+If characters in either the key or data items are printing characters (as
+defined by isprint(3)), output them directly. This option permits users to
+use standard text editors and tools to modify the contents of databases.
+
+Note: different systems may have different notions about what characters
+are considered printing characters, and databases dumped in this manner may
+be less portable to external systems. 
+.TP
+.BR \-a
+Dump all of the subdatabases in the environment.
+.TP
+.BR \-s \ subdb
+Dump a specific subdatabase. If no database is specified, only the main database is dumped.
+.SH DIAGNOSTICS
+Exit status is zero if no errors occur.
+Errors result in a non-zero exit status and
+a diagnostic message being written to standard error.
+
+Dumping and reloading databases that use user-defined comparison functions
+will result in new databases that use the default comparison functions.
+\fBIn this case it is quite likely that the reloaded database will be
+damaged beyond repair permitting neither record storage nor retrieval.\fP
+
+The only available workaround is to modify the source for the
+.BR mdb_load (1)
+utility to load the database using the correct comparison functions.
+.SH "SEE ALSO"
+.BR mdb_load (1)
+.SH AUTHOR
+Howard Chu of Symas Corporation <http://www.symas.com>

@@ -1,0 +1,119 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* -------------------- IE10 remove auto clear button -------------------- */
+
+::-ms-clear {
+	display: none;
+}
+
+/* All widgets */
+/* I am not a big fan of this rule */
+.monaco-editor .editor-widget input {
+	color: inherit;
+}
+
+/* -------------------- Editor -------------------- */
+
+.monaco-editor {
+	position: relative;
+	overflow: visible;
+	-webkit-text-size-adjust: 100%;
+	color: var(--vscode-editor-foreground);
+	background-color: var(--vscode-editor-background);
+	overflow-wrap: initial;
+}
+.monaco-editor-background {
+	background-color: var(--vscode-editor-background);
+}
+.monaco-editor .rangeHighlight {
+	background-color: var(--vscode-editor-rangeHighlightBackground);
+	box-sizing: border-box;
+	border: 1px solid var(--vscode-editor-rangeHighlightBorder);
+}
+.monaco-editor.hc-black .rangeHighlight, .monaco-editor.hc-light .rangeHighlight {
+	border-style: dotted;
+}
+.monaco-editor .symbolHighlight {
+	background-color: var(--vscode-editor-symbolHighlightBackground);
+	box-sizing: border-box;
+	border: 1px solid var(--vscode-editor-symbolHighlightBorder);
+}
+.monaco-editor.hc-black .symbolHighlight, .monaco-editor.hc-light .symbolHighlight {
+	border-style: dotted;
+}
+
+.monaco-editor .editorCanvas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	pointer-events: none;
+}
+
+/* -------------------- Misc -------------------- */
+
+.monaco-editor .overflow-guard {
+	position: relative;
+	overflow: hidden;
+}
+
+.monaco-editor .view-overlays {
+	position: absolute;
+	top: 0;
+}
+
+.monaco-editor .view-overlays > div, .monaco-editor .margin-view-overlays > div {
+	position: absolute;
+	width: 100%;
+}
+
+/*
+.monaco-editor .auto-closed-character {
+	opacity: 0.3;
+}
+*/
+
+
+.monaco-editor .squiggly-error {
+	border-bottom: 4px double var(--vscode-editorError-border);
+}
+.monaco-editor .squiggly-error::before {
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background: var(--vscode-editorError-background);
+}
+.monaco-editor .squiggly-warning {
+	border-bottom: 4px double var(--vscode-editorWarning-border);
+}
+.monaco-editor .squiggly-warning::before {
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background: var(--vscode-editorWarning-background);
+}
+.monaco-editor .squiggly-info {
+	border-bottom: 4px double var(--vscode-editorInfo-border);
+}
+.monaco-editor .squiggly-info::before {
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background: var(--vscode-editorInfo-background);
+}
+.monaco-editor .squiggly-hint {
+	border-bottom: 2px dotted var(--vscode-editorHint-border);
+}
+.monaco-editor.showUnused .squiggly-unnecessary {
+	border-bottom: 2px dashed var(--vscode-editorUnnecessaryCode-border);
+}
+.monaco-editor.showDeprecated .squiggly-inline-deprecated {
+	text-decoration: line-through;
+	text-decoration-color: var(--vscode-editor-foreground, inherit);
+}

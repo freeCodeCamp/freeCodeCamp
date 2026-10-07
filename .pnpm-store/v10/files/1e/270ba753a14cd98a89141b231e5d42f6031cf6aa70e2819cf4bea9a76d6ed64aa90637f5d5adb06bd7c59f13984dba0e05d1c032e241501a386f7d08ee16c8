@@ -1,0 +1,30 @@
+{
+    "name": "@types/http-errors",
+    "version": "2.0.2",
+    "description": "TypeScript definitions for http-errors",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/http-errors",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Tanguy Krotoff",
+            "url": "https://github.com/tkrotoff",
+            "githubUsername": "tkrotoff"
+        },
+        {
+            "name": "BendingBender",
+            "url": "https://github.com/BendingBender",
+            "githubUsername": "BendingBender"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/http-errors"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "27b9b10313e931475831cb9345e8556d2255a79e8f74c65d03d53196e734e182",
+    "typeScriptVersion": "4.5"
+}

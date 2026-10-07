@@ -1,0 +1,53 @@
+{
+  "name": "cssnano",
+  "version": "5.1.15",
+  "description": "A modular minifier, built on top of the PostCSS ecosystem.",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/cssnano"
+  },
+  "keywords": [
+    "css",
+    "compress",
+    "minify",
+    "optimise",
+    "optimisation",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "lilconfig": "^2.0.3",
+    "yaml": "^1.10.2",
+    "cssnano-preset-default": "^5.2.14"
+  },
+  "homepage": "https://github.com/cssnano/cssnano",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "cssnano/cssnano",
+  "files": [
+    "src",
+    "LICENSE-MIT",
+    "types"
+  ],
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.2.15",
+    "cssnano-preset-lite": "^2.1.3",
+    "cssnano-preset-advanced": "^5.3.10"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  }
+}

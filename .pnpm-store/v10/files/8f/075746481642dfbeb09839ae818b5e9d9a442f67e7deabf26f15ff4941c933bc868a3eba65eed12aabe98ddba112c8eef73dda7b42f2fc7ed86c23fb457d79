@@ -1,0 +1,18 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TBigInt } from '../../types/bigint.mjs';
+import { type TString } from '../../types/string.mjs';
+import { type TNumber } from '../../types/number.mjs';
+import { type TInteger } from '../../types/integer.mjs';
+import { type TLiteral, type TLiteralValue } from '../../types/literal.mjs';
+import { type TParsePatternIntoTypes } from '../patterns/pattern.mjs';
+type TFromLiteral<Template extends string, Value extends TLiteralValue> = `${Template}${Value}`;
+type TFromBigInt<Template extends string> = `${Template}${bigint}`;
+type TFromString<Template extends string> = `${Template}${string}`;
+type TFromNumber<Template extends string> = `${Template}${number}`;
+type TFromInteger<Template extends string> = `${Template}${number}`;
+type TFromUnion<Template extends string, Types extends TSchema[], Result extends string = never> = (Types extends [infer Left extends TSchema, ...infer Right extends TSchema[]] ? TFromUnion<Template, Right, Result | TFromType<'', Left>> : `${Template}${Result}`);
+type TFromType<Template extends string, Type extends TSchema, Result extends string = (Type extends TUnion<infer Types extends TSchema[]> ? TFromUnion<Template, Types> : Type extends TLiteral<infer Value extends TLiteralValue> ? TFromLiteral<Template, Value> : Type extends TBigInt ? TFromBigInt<Template> : Type extends TString ? TFromString<Template> : Type extends TNumber ? TFromNumber<Template> : Type extends TInteger ? TFromInteger<Template> : never)> = Result;
+type TFromSpan<Template extends string, Types extends TSchema[]> = (Types extends [infer Left extends TSchema, ...infer Right extends TSchema[]] ? TFromSpan<TFromType<Template, Left>, Right> : Template);
+export type TTemplateLiteralStatic<Pattern extends string, Types extends TSchema[] = TParsePatternIntoTypes<Pattern>> = TFromSpan<'', Types>;
+export {};

@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_is_native_reflect_construct.cjs",
+    "module": "../../esm/_is_native_reflect_construct.js"
+}

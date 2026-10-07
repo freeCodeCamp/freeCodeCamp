@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/isMonday/index.js",
+  "typings": "../../typings.d.ts"
+}

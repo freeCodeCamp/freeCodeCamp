@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/ExecutionPlan.js",
+  "module": "../dist/esm/ExecutionPlan.js",
+  "types": "../dist/dts/ExecutionPlan.d.ts"
+}

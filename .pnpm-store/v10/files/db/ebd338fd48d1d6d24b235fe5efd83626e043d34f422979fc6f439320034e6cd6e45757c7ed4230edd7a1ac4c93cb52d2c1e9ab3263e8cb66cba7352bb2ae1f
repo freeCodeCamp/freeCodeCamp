@@ -1,0 +1,75 @@
+{
+  "name": "interpret",
+  "version": "2.2.0",
+  "description": "A dictionary of file extensions and associated module loaders.",
+  "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
+  "contributors": [
+    "Blaine Bublitz <blaine.bublitz@gmail.com>",
+    "Tyler Kellen <tyler@sleekcode.net> (http://goingslowly.com/)"
+  ],
+  "repository": "gulpjs/interpret",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "main": "index.js",
+  "files": [
+    "LICENSE",
+    "index.js",
+    "mjs-stub.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "rm -rf tmp/ && npm run lint",
+    "test": "mocha --async-only",
+    "cover": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "coveralls": "nyc --reporter=text-lcov npm test | coveralls"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coveralls": "github:phated/node-coveralls#2.x",
+    "eslint": "^2.13.0",
+    "eslint-config-gulp": "^3.0.1",
+    "expect": "^1.20.2",
+    "mocha": "^3.5.3",
+    "nyc": "^10.3.2",
+    "parse-node-version": "^1.0.0",
+    "rechoir": "^0.7.0",
+    "shelljs": "0.7.5",
+    "trash-cli": "^3.0.0"
+  },
+  "keywords": [
+    "cirru-script",
+    "cjsx",
+    "co",
+    "coco",
+    "coffee",
+    "coffee-script",
+    "coffee.md",
+    "coffeescript",
+    "csv",
+    "earlgrey",
+    "es",
+    "es6",
+    "iced",
+    "iced.md",
+    "iced-coffee-script",
+    "ini",
+    "js",
+    "json",
+    "json5",
+    "jsx",
+    "react",
+    "litcoffee",
+    "liticed",
+    "ls",
+    "livescript",
+    "toml",
+    "ts",
+    "typescript",
+    "wisp",
+    "xml",
+    "yaml",
+    "yml"
+  ]
+}

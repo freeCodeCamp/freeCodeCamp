@@ -1,0 +1,33 @@
+# `MD023` - Headings must start at the beginning of the line
+
+Tags: `headings`, `spaces`
+
+Aliases: `heading-start-left`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when a heading is indented by one or more spaces:
+
+```markdown
+Some text
+
+  # Indented heading
+```
+
+To fix this, ensure that all headings start at the beginning of the line:
+
+```markdown
+Some text
+
+# Heading
+```
+
+Note that scenarios like block quotes "indent" the start of the line, so the
+following is also correct:
+
+```markdown
+> # Heading in Block Quote
+```
+
+Rationale: Headings that don't start at the beginning of the line will not be
+parsed as headings, and will instead appear as regular text.

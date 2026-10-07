@@ -1,0 +1,35 @@
+# packages/playwright/lib/common/index.js
+# total: 111.2 KB
+
+## Inlined (20)
+  11.6 KB  packages/playwright/src/common/config.ts
+  13.7 KB  packages/playwright/src/common/configLoader.ts
+   2.1 KB  packages/playwright/src/common/esmLoaderHost.ts
+  10.9 KB  packages/playwright/src/common/fixtures.ts
+   0.8 KB  packages/playwright/src/common/index.ts
+   1.3 KB  packages/playwright/src/common/ipc.ts
+   2.1 KB  packages/playwright/src/common/poolBuilder.ts
+   3.7 KB  packages/playwright/src/common/process.ts
+   4.7 KB  packages/playwright/src/common/suiteUtils.ts
+   7.9 KB  packages/playwright/src/common/test.ts
+   2.1 KB  packages/playwright/src/common/testLoader.ts
+  12.5 KB  packages/playwright/src/common/testType.ts
+   1.2 KB  packages/playwright/src/common/validators.ts
+   1.3 KB  packages/playwright/src/isomorphic/teleReceiver.ts
+   9.6 KB  packages/playwright/src/transform/compilationCache.ts
+   1.1 KB  packages/playwright/src/transform/pirates.ts
+   1.1 KB  packages/playwright/src/transform/portTransport.ts
+  10.2 KB  packages/playwright/src/transform/transform.ts
+   2.9 KB  packages/playwright/src/transform/tsconfig-loader.ts
+   7.5 KB  packages/playwright/src/util.ts
+
+## External (9)
+  ../globals
+  ../matchers/expect
+  ../package
+  ../transform/esmLoader.js
+  playwright
+  playwright-core/lib/bootstrap
+  playwright-core/lib/coreBundle
+  playwright-core/lib/utilsBundle
+  playwright-core/package.json

@@ -1,0 +1,103 @@
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault").default;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _index = _interopRequireDefault(require("../../../_lib/buildLocalizeFn/index.js"));
+var eraValues = {
+  narrow: ['av. J.-C', 'ap. J.-C'],
+  abbreviated: ['av. J.-C', 'ap. J.-C'],
+  wide: ['avant Jésus-Christ', 'après Jésus-Christ']
+};
+var quarterValues = {
+  narrow: ['T1', 'T2', 'T3', 'T4'],
+  abbreviated: ['1er trim.', '2ème trim.', '3ème trim.', '4ème trim.'],
+  wide: ['1er trimestre', '2ème trimestre', '3ème trimestre', '4ème trimestre']
+};
+var monthValues = {
+  narrow: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+  abbreviated: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
+  wide: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+};
+var dayValues = {
+  narrow: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+  short: ['di', 'lu', 'ma', 'me', 'je', 've', 'sa'],
+  abbreviated: ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'],
+  wide: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi']
+};
+var dayPeriodValues = {
+  narrow: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'minuit',
+    noon: 'midi',
+    morning: 'mat.',
+    afternoon: 'ap.m.',
+    evening: 'soir',
+    night: 'mat.'
+  },
+  abbreviated: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'minuit',
+    noon: 'midi',
+    morning: 'matin',
+    afternoon: 'après-midi',
+    evening: 'soir',
+    night: 'matin'
+  },
+  wide: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'minuit',
+    noon: 'midi',
+    morning: 'du matin',
+    afternoon: 'de l’après-midi',
+    evening: 'du soir',
+    night: 'du matin'
+  }
+};
+var ordinalNumber = function ordinalNumber(dirtyNumber, options) {
+  var number = Number(dirtyNumber);
+  var unit = options === null || options === void 0 ? void 0 : options.unit;
+  if (number === 0) return '0';
+  var feminineUnits = ['year', 'week', 'hour', 'minute', 'second'];
+  var suffix;
+  if (number === 1) {
+    suffix = unit && feminineUnits.includes(unit) ? 'ère' : 'er';
+  } else {
+    suffix = 'ème';
+  }
+  return number + suffix;
+};
+var localize = {
+  ordinalNumber: ordinalNumber,
+  era: (0, _index.default)({
+    values: eraValues,
+    defaultWidth: 'wide'
+  }),
+  quarter: (0, _index.default)({
+    values: quarterValues,
+    defaultWidth: 'wide',
+    argumentCallback: function argumentCallback(quarter) {
+      return quarter - 1;
+    }
+  }),
+  month: (0, _index.default)({
+    values: monthValues,
+    defaultWidth: 'wide'
+  }),
+  day: (0, _index.default)({
+    values: dayValues,
+    defaultWidth: 'wide'
+  }),
+  dayPeriod: (0, _index.default)({
+    values: dayPeriodValues,
+    defaultWidth: 'wide'
+  })
+};
+var _default = localize;
+exports.default = _default;
+module.exports = exports.default;

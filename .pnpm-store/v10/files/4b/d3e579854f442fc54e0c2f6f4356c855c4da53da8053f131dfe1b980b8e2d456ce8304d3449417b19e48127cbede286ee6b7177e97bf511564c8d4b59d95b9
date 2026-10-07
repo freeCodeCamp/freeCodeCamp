@@ -1,0 +1,1 @@
+{"version":3,"file":"ConnectionTransport.d.ts","sourceRoot":"","sources":["../../../src/common/ConnectionTransport.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;GAEG;AACH,MAAM,WAAW,mBAAmB;IAClC,IAAI,CAAC,OAAO,EAAE,MAAM,GAAG,IAAI,CAAC;IAC5B,KAAK,IAAI,IAAI,CAAC;IACd,SAAS,CAAC,EAAE,CAAC,OAAO,EAAE,MAAM,KAAK,IAAI,CAAC;IACtC,OAAO,CAAC,EAAE,MAAM,IAAI,CAAC;CACtB"}

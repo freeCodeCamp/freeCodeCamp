@@ -1,0 +1,36 @@
+{
+  "name": "postcss-safe-parser",
+  "version": "7.0.1",
+  "description": "Fault-tolerant CSS parser for PostCSS",
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-syntax",
+    "parser",
+    "fault tolerant"
+  ],
+  "author": "Andrey Sitnik <andrey@sitnik.ru>",
+  "license": "MIT",
+  "repository": "postcss/postcss-safe-parser",
+  "engines": {
+    "node": ">=18.0"
+  },
+  "main": "lib/safe-parse",
+  "funding": [
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/postcss/"
+    },
+    {
+      "type": "tidelift",
+      "url": "https://tidelift.com/funding/github/npm/postcss-safe-parser"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ai"
+    }
+  ],
+  "peerDependencies": {
+    "postcss": "^8.4.31"
+  }
+}

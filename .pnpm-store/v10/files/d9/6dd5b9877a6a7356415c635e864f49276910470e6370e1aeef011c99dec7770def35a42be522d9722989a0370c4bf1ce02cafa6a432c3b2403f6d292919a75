@@ -1,0 +1,18 @@
+sudo: false
+language: node_js
+matrix:
+  include:
+      env: TEST_SUITE=browser BROWSER_NAME=ie BROWSER_VERSION="10..latest"
+    - node_js: '4'
+      env: TEST_SUITE=browser BROWSER_NAME=chrome BROWSER_VERSION="-2..beta"
+    - node_js: '4'
+      env: TEST_SUITE=browser BROWSER_NAME=firefox BROWSER_VERSION="-2..latest"
+    - node_js: '4'
+      env: TEST_SUITE=browser BROWSER_NAME=safari BROWSER_VERSION="7..latest"
+    - node_js: '4'
+      env: TEST_SUITE=browser BROWSER_NAME=android BROWSER_VERSION="5.0..latest"
+script: "npm run-script $TEST_SUITE"
+env:
+  global:
+  - secure: YHNUDQmx/WiW3gmDcRCfb6KLDeio7Mr5tqPY2kHPdZlBSytsQjNk75ytM4U6Cu8Uk8iEIoj/aFlxiVMpJNA8J4QSUyW/YkbVaIz0+1oywoV0Ht8aRBfZ1jvXfX6789+1Q9c4xaMkYYbJpXSh9JcirsiwmqWd4+IDd7hcESodsDQ=
+  - secure: Nhj5yejKZxUbtHGZta+GjYWqXGaOZB7ainTkOuGcpXM+OwwjeDpYlTBrwS90Q7hqens7KXVzQM09aDbadpsDCsOo1nyaEigMtomAorZ1UC1CpEoVz1ZuikF9bEhb+/7M9pzuL1fX+Ke9Dx4mPPeb8sf/2SrAu1RqXkSwZV/duAc=

@@ -1,0 +1,42 @@
+{
+  "name": "abab",
+  "version": "2.0.6",
+  "description": "WHATWG spec-compliant implementations of window.atob and window.btoa.",
+  "main": "index.js",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "lib/"
+  ],
+  "scripts": {
+    "mocha": "mocha test/node",
+    "karma": "karma start",
+    "test": "npm run lint && npm run mocha && npm run karma",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsdom/abab.git"
+  },
+  "keywords": [
+    "atob",
+    "btoa",
+    "browser"
+  ],
+  "author": "Jeff Carpenter <gcarpenterv@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/jsdom/abab/issues"
+  },
+  "homepage": "https://github.com/jsdom/abab#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "karma": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-webpack": "^3.0.0",
+    "mocha": "^5.1.0",
+    "webpack": "^4.5.0"
+  }
+}

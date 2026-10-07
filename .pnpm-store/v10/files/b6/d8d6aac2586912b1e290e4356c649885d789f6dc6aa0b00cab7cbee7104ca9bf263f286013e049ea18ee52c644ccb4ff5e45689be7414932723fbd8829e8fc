@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - node
+  - lts/*
+script:
+  - npm run lint
+  # test-coverage will also run the tests, but does not print helpful output upon test failure.
+  # So we also run the tests separately.
+  - npm run test
+  - npm run test-coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage

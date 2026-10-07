@@ -1,0 +1,6 @@
+{
+  "version":3,
+  "sources":["./referenced.js"],
+  "names":["hello","l","o","console","log"],
+  "mappings":"AAAA,SAASA,QACP,IAAIC,EAAI,QACNC,EAAI,QACNC,QAAQC,IAAIH,EAAI,IAAMC,EAAI,KAE5BF"
+}

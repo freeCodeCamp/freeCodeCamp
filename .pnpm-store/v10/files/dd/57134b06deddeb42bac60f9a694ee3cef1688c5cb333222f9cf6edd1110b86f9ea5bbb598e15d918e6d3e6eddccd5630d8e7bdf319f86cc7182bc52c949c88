@@ -1,0 +1,10 @@
+/**
+ * @param {Literal | TemplateLiteral | JSXExpressionContainer} node
+ * @returns {AttributeValueAdapter}
+ */
+export function createAttributeValueAdapter(node: Literal | TemplateLiteral | JSXExpressionContainer): AttributeValueAdapter;
+import type { Literal } from "../../types";
+import type { TemplateLiteral } from "../../types";
+import type { JSXExpressionContainer } from "../../types";
+import type { AttributeValueAdapter } from "@html-eslint/core";
+//# sourceMappingURL=factory.d.ts.map

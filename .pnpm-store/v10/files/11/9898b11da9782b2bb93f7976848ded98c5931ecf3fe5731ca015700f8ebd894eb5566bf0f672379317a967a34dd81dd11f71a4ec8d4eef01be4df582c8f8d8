@@ -1,0 +1,24 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"func-style": "off",
+		"multiline-comment-style": "off",
+		"sort-keys": "off",
+	},
+
+	"ignorePatterns": [
+		"example/bundle.js",
+	],
+
+	"overrides": [
+		{
+			"files": "example/**",
+			"rules": {
+				"no-console": "off",
+			},
+		},
+	],
+}

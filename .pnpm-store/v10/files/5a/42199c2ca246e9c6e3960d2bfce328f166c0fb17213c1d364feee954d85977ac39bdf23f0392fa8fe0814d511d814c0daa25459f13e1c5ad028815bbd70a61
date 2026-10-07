@@ -1,0 +1,49 @@
+{
+  "name": "@babel/plugin-syntax-unicode-sets-regex",
+  "version": "7.18.6",
+  "description": "Parse regular expressions' unicodeSets (v) flag.",
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-syntax-unicode-sets-regex",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin",
+    "regex",
+    "regexp",
+    "unicode",
+    "sets",
+    "properties",
+    "property",
+    "string",
+    "strings",
+    "regular expressions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-syntax-unicode-sets-regex"
+  },
+  "bugs": "https://github.com/babel/babel/issues",
+  "dependencies": {
+    "@babel/helper-create-regexp-features-plugin": "^7.18.6",
+    "@babel/helper-plugin-utils": "^7.18.6"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/helper-plugin-test-runner": "^7.18.6"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

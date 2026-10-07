@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Streamable.js",
+  "module": "../dist/esm/Streamable.js",
+  "types": "../dist/dts/Streamable.d.ts"
+}

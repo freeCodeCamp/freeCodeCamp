@@ -1,0 +1,20 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain DeviceOrientation
+
+  # Clears the overridden Device Orientation.
+  command clearDeviceOrientationOverride
+
+  # Overrides the Device Orientation.
+  command setDeviceOrientationOverride
+    parameters
+      # Mock alpha
+      number alpha
+      # Mock beta
+      number beta
+      # Mock gamma
+      number gamma

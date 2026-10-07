@@ -1,0 +1,75 @@
+{
+  "name": "@typescript-eslint/parser",
+  "version": "5.62.0",
+  "description": "An ESLint custom parser which leverages TypeScript ESTree",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "_ts3.4",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/parser"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "license": "BSD-2-Clause",
+  "keywords": [
+    "ast",
+    "ecmascript",
+    "javascript",
+    "typescript",
+    "parser",
+    "syntax",
+    "eslint"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "postbuild": "downlevel-dts dist _ts3.4/dist",
+    "clean": "tsc -b tsconfig.build.json --clean",
+    "postclean": "rimraf dist && rimraf _ts3.4 && rimraf coverage",
+    "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
+    "lint": "nx lint",
+    "test": "jest --coverage",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/scope-manager": "5.62.0",
+    "@typescript-eslint/types": "5.62.0",
+    "@typescript-eslint/typescript-estree": "5.62.0",
+    "debug": "^4.3.4"
+  },
+  "devDependencies": {
+    "@types/glob": "*",
+    "glob": "*",
+    "typescript": "*"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "typesVersions": {
+    "<3.8": {
+      "*": [
+        "_ts3.4/*"
+      ]
+    }
+  },
+  "gitHead": "cba0d113bba1bbcee69149c954dc6bd4c658c714"
+}

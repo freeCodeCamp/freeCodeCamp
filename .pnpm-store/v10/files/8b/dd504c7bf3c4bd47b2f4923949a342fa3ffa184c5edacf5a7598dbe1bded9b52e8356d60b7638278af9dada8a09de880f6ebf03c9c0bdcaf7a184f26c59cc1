@@ -1,0 +1,77 @@
+{
+  "name": "mdast-builder",
+  "description": "Composable functions to easily build mdast structures",
+  "keywords": [
+    "mdast"
+  ],
+  "version": "1.1.1",
+  "license": "BSD-2-Clause",
+  "scripts": {
+    "pretest": "tsc",
+    "prepare": "tsc",
+    "build": "tsc -b .",
+    "build:watch": "yarn build -- --watch",
+    "test": "nyc mocha",
+    "test:watch": "mocha --watch",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mike-north/mdast-builder"
+  },
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "devDependencies": {
+    "@commitlint/cli": "8.0.0",
+    "@commitlint/config-conventional": "8.0.0",
+    "@commitlint/travis-cli": "8.0.0",
+    "@mike-north/js-lib-renovate-config": "1.3.1",
+    "@mike-north/js-lib-semantic-release-config": "1.0.1",
+    "@types/chai": "4.1.7",
+    "@types/mocha": "5.2.7",
+    "chai": "4.2.0",
+    "husky": "1.3.1",
+    "mocha": "6.0.2",
+    "mocha-typescript": "1.1.17",
+    "nyc": "13.3.0",
+    "remark-stringify": "6.0.4",
+    "source-map-support": "0.5.11",
+    "ts-node": "8.1.1",
+    "typescript": "3.3.3333",
+    "unified": "7.1.0"
+  },
+  "dependencies": {
+    "@types/unist": "^2.0.3"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "./node_modules/.bin/commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "release": {
+    "extends": "@mike-north/js-lib-semantic-release-config"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80,
+    "statements": 80,
+    "functions": 80,
+    "branches": 80,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "test/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "all": true
+  }
+}

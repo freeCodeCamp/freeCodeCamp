@@ -1,0 +1,65 @@
+{
+  "name": "eslint-import-resolver-typescript",
+  "version": "3.10.1",
+  "type": "module",
+  "description": "This plugin adds `TypeScript` support to `eslint-plugin-import`",
+  "repository": "https://github.com/import-js/eslint-import-resolver-typescript",
+  "author": "Alex Gorbatchev <alex.gorbatchev@gmail.com>",
+  "contributors": [
+    "JounQin <admin@1stg.me> (https://www.1stG.me)"
+  ],
+  "funding": "https://opencollective.com/eslint-import-resolver-typescript",
+  "license": "ISC",
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "main": "lib/index.cjs",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "es2020": "./lib/index.es2020.mjs",
+      "fesm2020": "./lib/index.es2020.mjs",
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "es2020": "lib/index.es2020.mjs",
+  "fesm2020": "lib/index.es2020.mjs",
+  "files": [
+    "lib",
+    "shim.d.ts",
+    "!**/*.tsbuildinfo"
+  ],
+  "keywords": [
+    "typescript",
+    "eslint",
+    "import",
+    "resolver",
+    "plugin"
+  ],
+  "peerDependencies": {
+    "eslint": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-import-x": "*"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-import": {
+      "optional": true
+    },
+    "eslint-plugin-import-x": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@nolyfill/is-core-module": "1.0.39",
+    "debug": "^4.4.0",
+    "get-tsconfig": "^4.10.0",
+    "is-bun-module": "^2.0.0",
+    "stable-hash": "^0.0.5",
+    "tinyglobby": "^0.2.13",
+    "unrs-resolver": "^1.6.2"
+  }
+}

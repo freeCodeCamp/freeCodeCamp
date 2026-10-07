@@ -1,0 +1,27 @@
+# `MD018` - No space after hash on atx style heading
+
+Tags: `atx`, `headings`, `spaces`
+
+Aliases: `no-missing-space-atx`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when spaces are missing after the hash characters
+in an atx style heading:
+
+```markdown
+#Heading 1
+
+##Heading 2
+```
+
+To fix this, separate the heading text from the hash character by a single
+space:
+
+```markdown
+# Heading 1
+
+## Heading 2
+```
+
+Rationale: Violations of this rule can lead to improperly rendered content.

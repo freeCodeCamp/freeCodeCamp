@@ -1,0 +1,1 @@
+{"version":3,"file":"calculateCellHeight.js","sourceRoot":"","sources":["../../src/calculateCellHeight.ts"],"names":[],"mappings":";;;AAAA,yCAEoB;AAEpB;;GAEG;AACI,MAAM,mBAAmB,GAAG,CAAC,KAAa,EAAE,WAAmB,EAAE,WAAW,GAAG,KAAK,EAAU,EAAE;IACrG,OAAO,IAAA,mBAAQ,EAAC,KAAK,EAAE,WAAW,EAAE,WAAW,CAAC,CAAC,MAAM,CAAC;AAC1D,CAAC,CAAC;AAFW,QAAA,mBAAmB,uBAE9B"}

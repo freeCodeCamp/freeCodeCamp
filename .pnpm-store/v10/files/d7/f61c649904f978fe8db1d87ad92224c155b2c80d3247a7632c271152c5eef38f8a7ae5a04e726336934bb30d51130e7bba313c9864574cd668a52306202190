@@ -1,0 +1,54 @@
+{
+  "name": "postcss-modules-scope",
+  "version": "3.0.0",
+  "description": "A CSS Modules transform to extract export statements from local-scope classes",
+  "main": "src/index.js",
+  "engines": {
+    "node": "^10 || ^12 || >= 14"
+  },
+  "scripts": {
+    "prettier": "prettier -l --ignore-path .gitignore . \"!test/test-cases\"",
+    "eslint": "eslint --ignore-path .gitignore .",
+    "lint": "yarn eslint && yarn prettier",
+    "test:only": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --collectCoverageFrom=\"src/**/*\"",
+    "pretest": "yarn lint",
+    "test": "yarn test:coverage",
+    "prepublishOnly": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/css-modules/postcss-modules-scope.git"
+  },
+  "keywords": [
+    "css-modules",
+    "postcss",
+    "plugin"
+  ],
+  "files": [
+    "src"
+  ],
+  "author": "Glen Maddern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/css-modules/postcss-modules-scope/issues"
+  },
+  "homepage": "https://github.com/css-modules/postcss-modules-scope",
+  "dependencies": {
+    "postcss-selector-parser": "^6.0.4"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.12.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "postcss": "^8.1.0",
+    "prettier": "^2.1.2"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.0"
+  }
+}

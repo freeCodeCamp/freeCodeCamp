@@ -1,0 +1,4 @@
+class InlineCompletionsAccessibleView {
+}
+
+export { InlineCompletionsAccessibleView };

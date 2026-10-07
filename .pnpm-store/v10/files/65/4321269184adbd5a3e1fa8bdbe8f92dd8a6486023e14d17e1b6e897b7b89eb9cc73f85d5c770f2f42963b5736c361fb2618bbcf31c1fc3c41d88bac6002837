@@ -1,0 +1,36 @@
+# `MD049` - Emphasis style
+
+Tags: `emphasis`
+
+Aliases: `emphasis-style`
+
+Parameters:
+
+- `style`: Emphasis style (`string`, default `consistent`, values `asterisk` /
+  `consistent` / `underscore`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when the symbols used in the document for emphasis do not
+match the configured emphasis style:
+
+```markdown
+*Text*
+_Text_
+```
+
+To fix this issue, use the configured emphasis style throughout the document:
+
+```markdown
+*Text*
+*Text*
+```
+
+The configured emphasis style can be a specific symbol to use (`asterisk`,
+`underscore`) or can require all emphasis matches the first emphasis
+(`consistent`).
+
+Note: Emphasis within a word is restricted to `asterisk` in order to avoid
+unwanted emphasis for words containing internal underscores like_this_one.
+
+Rationale: Consistent formatting makes it easier to understand a document.

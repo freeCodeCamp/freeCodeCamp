@@ -1,0 +1,1 @@
+[{"/Users/joshduff/code/deepmerge/test/custom-is-mergeable-object.js":"1"},{"size":1990,"mtime":1679007485753,"results":"2","hashOfConfig":"3"},{"filePath":"4","messages":"5","suppressedMessages":"6","errorCount":0,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"ktjd5k","/Users/joshduff/code/deepmerge/test/custom-is-mergeable-object.js",[],[]]

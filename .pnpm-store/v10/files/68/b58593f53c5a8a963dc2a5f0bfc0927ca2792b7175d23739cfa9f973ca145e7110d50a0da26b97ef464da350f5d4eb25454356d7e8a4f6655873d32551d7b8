@@ -1,0 +1,813 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.makeStringConstraints = exports.makeNumberConstraints = exports.makeLazy = exports.makeDateConstraints = exports.makeBigIntConstraints = exports.makeArrayConstraints = exports.make = exports.getDescription = void 0;
+var Arr = _interopRequireWildcard(require("./Array.js"));
+var FastCheck = _interopRequireWildcard(require("./FastCheck.js"));
+var _GlobalValue = require("./GlobalValue.js");
+var errors_ = _interopRequireWildcard(require("./internal/schema/errors.js"));
+var schemaId_ = _interopRequireWildcard(require("./internal/schema/schemaId.js"));
+var util_ = _interopRequireWildcard(require("./internal/schema/util.js"));
+var Option = _interopRequireWildcard(require("./Option.js"));
+var Predicate = _interopRequireWildcard(require("./Predicate.js"));
+var SchemaAST = _interopRequireWildcard(require("./SchemaAST.js"));
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function (e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (const t in e) "default" !== t && {}.hasOwnProperty.call(e, t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, t)) && (i.get || i.set) ? o(f, t, i) : f[t] = e[t]); return f; })(e, t); }
+/**
+ * @since 3.10.0
+ */
+
+/**
+ * Returns a LazyArbitrary for the `A` type of the provided schema.
+ *
+ * @category arbitrary
+ * @since 3.10.0
+ */
+const makeLazy = schema => {
+  const description = getDescription(schema.ast, []);
+  return go(description, {
+    maxDepth: 2
+  });
+};
+/**
+ * Returns a fast-check Arbitrary for the `A` type of the provided schema.
+ *
+ * @category arbitrary
+ * @since 3.10.0
+ */
+exports.makeLazy = makeLazy;
+const make = schema => makeLazy(schema)(FastCheck);
+/** @internal */
+exports.make = make;
+const makeStringConstraints = options => {
+  const out = {
+    _tag: "StringConstraints",
+    constraints: {}
+  };
+  if (Predicate.isNumber(options.minLength)) {
+    out.constraints.minLength = options.minLength;
+  }
+  if (Predicate.isNumber(options.maxLength)) {
+    out.constraints.maxLength = options.maxLength;
+  }
+  if (Predicate.isString(options.pattern)) {
+    out.pattern = options.pattern;
+  }
+  return out;
+};
+/** @internal */
+exports.makeStringConstraints = makeStringConstraints;
+const makeNumberConstraints = options => {
+  const out = {
+    _tag: "NumberConstraints",
+    constraints: {},
+    isInteger: options.isInteger ?? false
+  };
+  if (Predicate.isNumber(options.min)) {
+    out.constraints.min = Math.fround(options.min);
+  }
+  if (Predicate.isBoolean(options.minExcluded)) {
+    out.constraints.minExcluded = options.minExcluded;
+  }
+  if (Predicate.isNumber(options.max)) {
+    out.constraints.max = Math.fround(options.max);
+  }
+  if (Predicate.isBoolean(options.maxExcluded)) {
+    out.constraints.maxExcluded = options.maxExcluded;
+  }
+  if (Predicate.isBoolean(options.noNaN)) {
+    out.constraints.noNaN = options.noNaN;
+  }
+  if (Predicate.isBoolean(options.noDefaultInfinity)) {
+    out.constraints.noDefaultInfinity = options.noDefaultInfinity;
+  }
+  return out;
+};
+/** @internal */
+exports.makeNumberConstraints = makeNumberConstraints;
+const makeBigIntConstraints = options => {
+  const out = {
+    _tag: "BigIntConstraints",
+    constraints: {}
+  };
+  if (Predicate.isBigInt(options.min)) {
+    out.constraints.min = options.min;
+  }
+  if (Predicate.isBigInt(options.max)) {
+    out.constraints.max = options.max;
+  }
+  return out;
+};
+/** @internal */
+exports.makeBigIntConstraints = makeBigIntConstraints;
+const makeArrayConstraints = options => {
+  const out = {
+    _tag: "ArrayConstraints",
+    constraints: {}
+  };
+  if (Predicate.isNumber(options.minLength)) {
+    out.constraints.minLength = options.minLength;
+  }
+  if (Predicate.isNumber(options.maxLength)) {
+    out.constraints.maxLength = options.maxLength;
+  }
+  return out;
+};
+/** @internal */
+exports.makeArrayConstraints = makeArrayConstraints;
+const makeDateConstraints = options => {
+  const out = {
+    _tag: "DateConstraints",
+    constraints: {}
+  };
+  if (Predicate.isDate(options.min)) {
+    out.constraints.min = options.min;
+  }
+  if (Predicate.isDate(options.max)) {
+    out.constraints.max = options.max;
+  }
+  if (Predicate.isBoolean(options.noInvalidDate)) {
+    out.constraints.noInvalidDate = options.noInvalidDate;
+  }
+  return out;
+};
+exports.makeDateConstraints = makeDateConstraints;
+const getArbitraryAnnotation = /*#__PURE__*/SchemaAST.getAnnotation(SchemaAST.ArbitraryAnnotationId);
+const getASTConstraints = ast => {
+  const TypeAnnotationId = ast.annotations[SchemaAST.SchemaIdAnnotationId];
+  if (Predicate.isPropertyKey(TypeAnnotationId)) {
+    const out = ast.annotations[TypeAnnotationId];
+    if (Predicate.isReadonlyRecord(out)) {
+      return out;
+    }
+  }
+};
+const idMemoMap = /*#__PURE__*/(0, _GlobalValue.globalValue)(/*#__PURE__*/Symbol.for("effect/Arbitrary/IdMemoMap"), () => new Map());
+let counter = 0;
+function wrapGetDescription(f, g) {
+  return (ast, path) => f(ast, g(ast, path));
+}
+function parseMeta(ast) {
+  const jsonSchema = SchemaAST.getJSONSchemaAnnotation(ast).pipe(Option.filter(Predicate.isReadonlyRecord), Option.getOrUndefined);
+  const schemaId = Option.getOrElse(SchemaAST.getSchemaIdAnnotation(ast), () => undefined);
+  const schemaParams = Option.fromNullable(schemaId).pipe(Option.map(id => ast.annotations[id]), Option.filter(Predicate.isReadonlyRecord), Option.getOrUndefined);
+  return [schemaId, {
+    ...schemaParams,
+    ...jsonSchema
+  }];
+}
+/** @internal */
+const getDescription = exports.getDescription = /*#__PURE__*/wrapGetDescription((ast, description) => {
+  const annotation = getArbitraryAnnotation(ast);
+  if (Option.isSome(annotation)) {
+    return {
+      ...description,
+      annotations: [...description.annotations, annotation.value]
+    };
+  }
+  return description;
+}, (ast, path) => {
+  const [schemaId, meta] = parseMeta(ast);
+  switch (ast._tag) {
+    case "Refinement":
+      {
+        const from = getDescription(ast.from, path);
+        switch (from._tag) {
+          case "StringKeyword":
+            return {
+              ...from,
+              constraints: [...from.constraints, makeStringConstraints(meta)],
+              refinements: [...from.refinements, ast]
+            };
+          case "NumberKeyword":
+            {
+              const c = schemaId === schemaId_.NonNaNSchemaId ? makeNumberConstraints({
+                noNaN: true
+              }) : schemaId === schemaId_.FiniteSchemaId || schemaId === schemaId_.JsonNumberSchemaId ? makeNumberConstraints({
+                noDefaultInfinity: true,
+                noNaN: true
+              }) : makeNumberConstraints({
+                isInteger: "type" in meta && meta.type === "integer",
+                noNaN: undefined,
+                noDefaultInfinity: undefined,
+                min: meta.exclusiveMinimum ?? meta.minimum,
+                minExcluded: "exclusiveMinimum" in meta ? true : undefined,
+                max: meta.exclusiveMaximum ?? meta.maximum,
+                maxExcluded: "exclusiveMaximum" in meta ? true : undefined
+              });
+              return {
+                ...from,
+                constraints: [...from.constraints, c],
+                refinements: [...from.refinements, ast]
+              };
+            }
+          case "BigIntKeyword":
+            {
+              const c = getASTConstraints(ast);
+              return {
+                ...from,
+                constraints: c !== undefined ? [...from.constraints, makeBigIntConstraints(c)] : from.constraints,
+                refinements: [...from.refinements, ast]
+              };
+            }
+          case "TupleType":
+            return {
+              ...from,
+              constraints: [...from.constraints, makeArrayConstraints({
+                minLength: meta.minItems,
+                maxLength: meta.maxItems
+              })],
+              refinements: [...from.refinements, ast]
+            };
+          case "DateFromSelf":
+            return {
+              ...from,
+              constraints: [...from.constraints, makeDateConstraints(meta)],
+              refinements: [...from.refinements, ast]
+            };
+          default:
+            return {
+              ...from,
+              refinements: [...from.refinements, ast]
+            };
+        }
+      }
+    case "Declaration":
+      {
+        if (schemaId === schemaId_.DateFromSelfSchemaId) {
+          return {
+            _tag: "DateFromSelf",
+            constraints: [makeDateConstraints(meta)],
+            path,
+            refinements: [],
+            annotations: []
+          };
+        }
+        return {
+          _tag: "Declaration",
+          typeParameters: ast.typeParameters.map(ast => getDescription(ast, path)),
+          path,
+          refinements: [],
+          annotations: [],
+          ast
+        };
+      }
+    case "Literal":
+      {
+        return {
+          _tag: "Literal",
+          literal: ast.literal,
+          path,
+          refinements: [],
+          annotations: []
+        };
+      }
+    case "UniqueSymbol":
+      {
+        return {
+          _tag: "UniqueSymbol",
+          symbol: ast.symbol,
+          path,
+          refinements: [],
+          annotations: []
+        };
+      }
+    case "Enums":
+      {
+        return {
+          _tag: "Enums",
+          enums: ast.enums,
+          path,
+          refinements: [],
+          annotations: [],
+          ast
+        };
+      }
+    case "TemplateLiteral":
+      {
+        return {
+          _tag: "TemplateLiteral",
+          head: ast.head,
+          spans: ast.spans.map(span => ({
+            description: getDescription(span.type, path),
+            literal: span.literal
+          })),
+          path,
+          refinements: [],
+          annotations: []
+        };
+      }
+    case "StringKeyword":
+      return {
+        _tag: "StringKeyword",
+        constraints: [],
+        path,
+        refinements: [],
+        annotations: []
+      };
+    case "NumberKeyword":
+      return {
+        _tag: "NumberKeyword",
+        constraints: [],
+        path,
+        refinements: [],
+        annotations: []
+      };
+    case "BigIntKeyword":
+      return {
+        _tag: "BigIntKeyword",
+        constraints: [],
+        path,
+        refinements: [],
+        annotations: []
+      };
+    case "TupleType":
+      return {
+        _tag: "TupleType",
+        constraints: [],
+        elements: ast.elements.map((element, i) => ({
+          isOptional: element.isOptional,
+          description: getDescription(element.type, [...path, i])
+        })),
+        rest: ast.rest.map((element, i) => getDescription(element.type, [...path, i])),
+        path,
+        refinements: [],
+        annotations: []
+      };
+    case "TypeLiteral":
+      return {
+        _tag: "TypeLiteral",
+        propertySignatures: ast.propertySignatures.map(ps => ({
+          isOptional: ps.isOptional,
+          name: ps.name,
+          value: getDescription(ps.type, [...path, ps.name])
+        })),
+        indexSignatures: ast.indexSignatures.map(is => ({
+          parameter: getDescription(is.parameter, path),
+          value: getDescription(is.type, path)
+        })),
+        path,
+        refinements: [],
+        annotations: []
+      };
+    case "Union":
+      return {
+        _tag: "Union",
+        members: ast.types.map((member, i) => getDescription(member, [...path, i])),
+        path,
+        refinements: [],
+        annotations: []
+      };
+    case "Suspend":
+      {
+        const memoId = idMemoMap.get(ast);
+        if (memoId !== undefined) {
+          return {
+            _tag: "Ref",
+            id: memoId,
+            ast,
+            path,
+            refinements: [],
+            annotations: []
+          };
+        }
+        counter++;
+        const id = `__id-${counter}__`;
+        idMemoMap.set(ast, id);
+        return {
+          _tag: "Suspend",
+          id,
+          ast,
+          description: () => getDescription(ast.f(), path),
+          path,
+          refinements: [],
+          annotations: []
+        };
+      }
+    case "Transformation":
+      return getDescription(ast.to, path);
+    case "NeverKeyword":
+      return {
+        _tag: "NeverKeyword",
+        path,
+        refinements: [],
+        annotations: [],
+        ast
+      };
+    default:
+      {
+        return {
+          _tag: "Keyword",
+          value: ast._tag,
+          path,
+          refinements: [],
+          annotations: []
+        };
+      }
+  }
+});
+function getMax(n1, n2) {
+  return n1 === undefined ? n2 : n2 === undefined ? n1 : n1 <= n2 ? n2 : n1;
+}
+function getMin(n1, n2) {
+  return n1 === undefined ? n2 : n2 === undefined ? n1 : n1 <= n2 ? n1 : n2;
+}
+const getOr = (a, b) => {
+  return a === undefined ? b : b === undefined ? a : a || b;
+};
+function mergePattern(pattern1, pattern2) {
+  if (pattern1 === undefined) {
+    return pattern2;
+  }
+  if (pattern2 === undefined) {
+    return pattern1;
+  }
+  return `(?:${pattern1})|(?:${pattern2})`;
+}
+function mergeStringConstraints(c1, c2) {
+  return makeStringConstraints({
+    minLength: getMax(c1.constraints.minLength, c2.constraints.minLength),
+    maxLength: getMin(c1.constraints.maxLength, c2.constraints.maxLength),
+    pattern: mergePattern(c1.pattern, c2.pattern)
+  });
+}
+function buildStringConstraints(description) {
+  return description.constraints.length === 0 ? undefined : description.constraints.reduce(mergeStringConstraints);
+}
+function mergeNumberConstraints(c1, c2) {
+  return makeNumberConstraints({
+    isInteger: c1.isInteger || c2.isInteger,
+    min: getMax(c1.constraints.min, c2.constraints.min),
+    minExcluded: getOr(c1.constraints.minExcluded, c2.constraints.minExcluded),
+    max: getMin(c1.constraints.max, c2.constraints.max),
+    maxExcluded: getOr(c1.constraints.maxExcluded, c2.constraints.maxExcluded),
+    noNaN: getOr(c1.constraints.noNaN, c2.constraints.noNaN),
+    noDefaultInfinity: getOr(c1.constraints.noDefaultInfinity, c2.constraints.noDefaultInfinity)
+  });
+}
+function buildNumberConstraints(description) {
+  return description.constraints.length === 0 ? undefined : description.constraints.reduce(mergeNumberConstraints);
+}
+function mergeBigIntConstraints(c1, c2) {
+  return makeBigIntConstraints({
+    min: getMax(c1.constraints.min, c2.constraints.min),
+    max: getMin(c1.constraints.max, c2.constraints.max)
+  });
+}
+function buildBigIntConstraints(description) {
+  return description.constraints.length === 0 ? undefined : description.constraints.reduce(mergeBigIntConstraints);
+}
+function mergeDateConstraints(c1, c2) {
+  return makeDateConstraints({
+    min: getMax(c1.constraints.min, c2.constraints.min),
+    max: getMin(c1.constraints.max, c2.constraints.max),
+    noInvalidDate: getOr(c1.constraints.noInvalidDate, c2.constraints.noInvalidDate)
+  });
+}
+function buildDateConstraints(description) {
+  return description.constraints.length === 0 ? undefined : description.constraints.reduce(mergeDateConstraints);
+}
+const constArrayConstraints = /*#__PURE__*/makeArrayConstraints({});
+function mergeArrayConstraints(c1, c2) {
+  return makeArrayConstraints({
+    minLength: getMax(c1.constraints.minLength, c2.constraints.minLength),
+    maxLength: getMin(c1.constraints.maxLength, c2.constraints.maxLength)
+  });
+}
+function buildArrayConstraints(description) {
+  return description.constraints.length === 0 ? undefined : description.constraints.reduce(mergeArrayConstraints);
+}
+const arbitraryMemoMap = /*#__PURE__*/(0, _GlobalValue.globalValue)(/*#__PURE__*/Symbol.for("effect/Arbitrary/arbitraryMemoMap"), () => new WeakMap());
+function applyFilters(filters, arb) {
+  return fc => filters.reduce((arb, filter) => arb.filter(filter), arb(fc));
+}
+function absurd(message) {
+  return () => {
+    throw new Error(message);
+  };
+}
+function getContextConstraints(description) {
+  switch (description._tag) {
+    case "StringKeyword":
+      return buildStringConstraints(description);
+    case "NumberKeyword":
+      return buildNumberConstraints(description);
+    case "BigIntKeyword":
+      return buildBigIntConstraints(description);
+    case "DateFromSelf":
+      return buildDateConstraints(description);
+    case "TupleType":
+      return buildArrayConstraints(description);
+  }
+}
+function wrapGo(f, g) {
+  return (description, ctx) => f(description, ctx, g(description, ctx));
+}
+const go = /*#__PURE__*/wrapGo((description, ctx, lazyArb) => {
+  const annotation = description.annotations[description.annotations.length - 1];
+  // error handling
+  if (annotation === undefined) {
+    switch (description._tag) {
+      case "Declaration":
+      case "NeverKeyword":
+        throw new Error(errors_.getArbitraryMissingAnnotationErrorMessage(description.path, description.ast));
+      case "Enums":
+        if (description.enums.length === 0) {
+          throw new Error(errors_.getArbitraryEmptyEnumErrorMessage(description.path));
+        }
+    }
+  }
+  const filters = description.refinements.map(ast => a => Option.isNone(ast.filter(a, SchemaAST.defaultParseOption, ast)));
+  if (annotation === undefined) {
+    return applyFilters(filters, lazyArb);
+  }
+  const constraints = getContextConstraints(description);
+  if (constraints !== undefined) {
+    ctx = {
+      ...ctx,
+      constraints
+    };
+  }
+  if (description._tag === "Declaration") {
+    return applyFilters(filters, annotation(...description.typeParameters.map(p => go(p, ctx)), ctx));
+  }
+  if (description.refinements.length > 0) {
+    // TODO(4.0): remove the `lazyArb` parameter
+    return applyFilters(filters, annotation(lazyArb, ctx));
+  }
+  return annotation(ctx);
+}, (description, ctx) => {
+  switch (description._tag) {
+    case "DateFromSelf":
+      {
+        const constraints = buildDateConstraints(description);
+        return fc => fc.date(constraints?.constraints);
+      }
+    case "Declaration":
+    case "NeverKeyword":
+      return absurd(`BUG: cannot generate an arbitrary for ${description._tag}`);
+    case "Literal":
+      return fc => fc.constant(description.literal);
+    case "UniqueSymbol":
+      return fc => fc.constant(description.symbol);
+    case "Keyword":
+      {
+        switch (description.value) {
+          case "UndefinedKeyword":
+            return fc => fc.constant(undefined);
+          case "VoidKeyword":
+          case "UnknownKeyword":
+          case "AnyKeyword":
+            return fc => fc.anything();
+          case "BooleanKeyword":
+            return fc => fc.boolean();
+          case "SymbolKeyword":
+            return fc => fc.string().map(s => Symbol.for(s));
+          case "ObjectKeyword":
+            return fc => fc.oneof(fc.object(), fc.array(fc.anything()));
+        }
+      }
+    case "Enums":
+      return fc => fc.oneof(...description.enums.map(([_, value]) => fc.constant(value)));
+    case "TemplateLiteral":
+      {
+        return fc => {
+          const string = fc.string({
+            maxLength: 5
+          });
+          const number = fc.float({
+            noDefaultInfinity: true,
+            noNaN: true
+          });
+          const getTemplateLiteralArb = description => {
+            const components = description.head !== "" ? [fc.constant(description.head)] : [];
+            const getTemplateLiteralSpanTypeArb = description => {
+              switch (description._tag) {
+                case "StringKeyword":
+                  return string;
+                case "NumberKeyword":
+                  return number;
+                case "Literal":
+                  return fc.constant(String(description.literal));
+                case "Union":
+                  return fc.oneof(...description.members.map(getTemplateLiteralSpanTypeArb));
+                case "TemplateLiteral":
+                  return getTemplateLiteralArb(description);
+                default:
+                  return fc.constant("");
+              }
+            };
+            description.spans.forEach(span => {
+              components.push(getTemplateLiteralSpanTypeArb(span.description));
+              if (span.literal !== "") {
+                components.push(fc.constant(span.literal));
+              }
+            });
+            return fc.tuple(...components).map(spans => spans.join(""));
+          };
+          return getTemplateLiteralArb(description);
+        };
+      }
+    case "StringKeyword":
+      {
+        const constraints = buildStringConstraints(description);
+        const pattern = constraints?.pattern;
+        return pattern !== undefined ? fc => fc.stringMatching(new RegExp(pattern)) : fc => fc.string(constraints?.constraints);
+      }
+    case "NumberKeyword":
+      {
+        const constraints = buildNumberConstraints(description);
+        return constraints?.isInteger ? fc => fc.integer(constraints.constraints) : fc => fc.float(constraints?.constraints);
+      }
+    case "BigIntKeyword":
+      {
+        const constraints = buildBigIntConstraints(description);
+        return fc => fc.bigInt(constraints?.constraints ?? {});
+      }
+    case "TupleType":
+      {
+        const elements = [];
+        let hasOptionals = false;
+        for (const element of description.elements) {
+          elements.push(go(element.description, ctx));
+          if (element.isOptional) {
+            hasOptionals = true;
+          }
+        }
+        const rest = description.rest.map(d => go(d, ctx));
+        return fc => {
+          // ---------------------------------------------
+          // handle elements
+          // ---------------------------------------------
+          let output = fc.tuple(...elements.map(arb => arb(fc)));
+          if (hasOptionals) {
+            const indexes = fc.tuple(...description.elements.map(element => element.isOptional ? fc.boolean() : fc.constant(true)));
+            output = output.chain(tuple => indexes.map(booleans => {
+              for (const [i, b] of booleans.reverse().entries()) {
+                if (!b) {
+                  tuple.splice(booleans.length - i, 1);
+                }
+              }
+              return tuple;
+            }));
+          }
+          // ---------------------------------------------
+          // handle rest element
+          // ---------------------------------------------
+          if (Arr.isNonEmptyReadonlyArray(rest)) {
+            const constraints = buildArrayConstraints(description) ?? constArrayConstraints;
+            const [head, ...tail] = rest;
+            const item = head(fc);
+            output = output.chain(as => {
+              const len = as.length;
+              // We must adjust the constraints for the rest element
+              // because the elements might have generated some values
+              const restArrayConstraints = subtractElementsLength(constraints.constraints, len);
+              if (restArrayConstraints.maxLength === 0) {
+                return fc.constant(as);
+              }
+              /*
+                         `getSuspendedArray` is used to generate less values in
+              the context of a recursive schema. Without it, the following schema
+              would generate an big amount of values possibly leading to a stack
+              overflow:
+                         ```ts
+              type A = ReadonlyArray<A | null>
+                         const schema = S.Array(
+                S.NullOr(S.suspend((): S.Schema<A> => schema))
+              )
+              ```
+                       */
+              const arr = ctx.depthIdentifier !== undefined ? getSuspendedArray(fc, ctx.depthIdentifier, ctx.maxDepth, item, restArrayConstraints) : fc.array(item, restArrayConstraints);
+              if (len === 0) {
+                return arr;
+              }
+              return arr.map(rest => [...as, ...rest]);
+            });
+            // ---------------------------------------------
+            // handle post rest elements
+            // ---------------------------------------------
+            for (let j = 0; j < tail.length; j++) {
+              output = output.chain(as => tail[j](fc).map(a => [...as, a]));
+            }
+          }
+          return output;
+        };
+      }
+    case "TypeLiteral":
+      {
+        const propertySignatures = [];
+        const requiredKeys = [];
+        for (const ps of description.propertySignatures) {
+          if (!ps.isOptional) {
+            requiredKeys.push(ps.name);
+          }
+          propertySignatures.push(go(ps.value, ctx));
+        }
+        const indexSignatures = description.indexSignatures.map(is => [go(is.parameter, ctx), go(is.value, ctx)]);
+        return fc => {
+          const pps = {};
+          for (let i = 0; i < propertySignatures.length; i++) {
+            const ps = description.propertySignatures[i];
+            pps[ps.name] = propertySignatures[i](fc);
+          }
+          let output = fc.record(pps, {
+            requiredKeys
+          });
+          // ---------------------------------------------
+          // handle index signatures
+          // ---------------------------------------------
+          for (let i = 0; i < indexSignatures.length; i++) {
+            const key = indexSignatures[i][0](fc);
+            const value = indexSignatures[i][1](fc);
+            output = output.chain(o => {
+              const item = fc.tuple(key, value);
+              /*
+                         `getSuspendedArray` is used to generate less key/value pairs in
+              the context of a recursive schema. Without it, the following schema
+              would generate an big amount of values possibly leading to a stack
+              overflow:
+                         ```ts
+              type A = { [_: string]: A }
+                         const schema = S.Record({ key: S.String, value: S.suspend((): S.Schema<A> => schema) })
+              ```
+                       */
+              const arr = ctx.depthIdentifier !== undefined ? getSuspendedArray(fc, ctx.depthIdentifier, ctx.maxDepth, item, {
+                maxLength: 2
+              }) : fc.array(item);
+              return arr.map(tuples => ({
+                ...Object.fromEntries(tuples),
+                ...o
+              }));
+            });
+          }
+          return output;
+        };
+      }
+    case "Union":
+      {
+        const members = description.members.map(member => go(member, ctx));
+        return fc => fc.oneof(...members.map(arb => arb(fc)));
+      }
+    case "Suspend":
+      {
+        const memo = arbitraryMemoMap.get(description.ast);
+        if (memo) {
+          return memo;
+        }
+        if (ctx.depthIdentifier === undefined) {
+          ctx = {
+            ...ctx,
+            depthIdentifier: description.id
+          };
+        }
+        const get = util_.memoizeThunk(() => {
+          return go(description.description(), ctx);
+        });
+        const out = fc => fc.constant(null).chain(() => get()(fc));
+        arbitraryMemoMap.set(description.ast, out);
+        return out;
+      }
+    case "Ref":
+      {
+        const memo = arbitraryMemoMap.get(description.ast);
+        if (memo) {
+          return memo;
+        }
+        throw new Error(`BUG: Ref ${JSON.stringify(description.id)} not found`);
+      }
+  }
+});
+function subtractElementsLength(constraints, len) {
+  if (len === 0 || constraints.minLength === undefined && constraints.maxLength === undefined) {
+    return constraints;
+  }
+  const out = {
+    ...constraints
+  };
+  if (out.minLength !== undefined) {
+    out.minLength = Math.max(out.minLength - len, 0);
+  }
+  if (out.maxLength !== undefined) {
+    out.maxLength = Math.max(out.maxLength - len, 0);
+  }
+  return out;
+}
+const getSuspendedArray = (fc, depthIdentifier, maxDepth, item, constraints) => {
+  // In the context of a recursive schema, we don't want a `maxLength` greater than 2.
+  // The only exception is when `minLength` is also set, in which case we set
+  // `maxLength` to the minimum value, which is `minLength`.
+  const maxLengthLimit = Math.max(2, constraints.minLength ?? 0);
+  if (constraints.maxLength !== undefined && constraints.maxLength > maxLengthLimit) {
+    constraints = {
+      ...constraints,
+      maxLength: maxLengthLimit
+    };
+  }
+  return fc.oneof({
+    maxDepth,
+    depthIdentifier
+  }, fc.constant([]), fc.array(item, constraints));
+};
+//# sourceMappingURL=Arbitrary.js.map

@@ -1,0 +1,45 @@
+{
+  "name": "gatsby-plugin-postcss",
+  "description": "Gatsby plugin to handle PostCSS",
+  "version": "6.16.0",
+  "author": "Marat Dreizin <marat.dreizin@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.20.13",
+    "postcss-loader": "^7.3.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "babel-preset-gatsby-package": "^3.16.0",
+    "cross-env": "^7.0.3"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-postcss#readme",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "postcss"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "peerDependencies": {
+    "gatsby": "^5.0.0-next",
+    "postcss": "^8.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-plugin-postcss"
+  },
+  "scripts": {
+    "build": "babel src --out-dir . --ignore \"**/__tests__\"",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir . --ignore \"**/__tests__\""
+  },
+  "engines": {
+    "node": ">=18.0.0 <26"
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

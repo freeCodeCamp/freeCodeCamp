@@ -1,0 +1,74 @@
+{
+  "name": "klona",
+  "version": "2.0.6",
+  "repository": "lukeed/klona",
+  "description": "A tiny (240B to 501B) and fast utility to \"deep clone\" Objects, Arrays, Dates, RegExps, and more!",
+  "module": "dist/index.mjs",
+  "unpkg": "dist/index.min.js",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "files": [
+    "*.d.ts",
+    "dist",
+    "full",
+    "json",
+    "lite"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./json": {
+      "types": "./index.d.ts",
+      "import": "./json/index.mjs",
+      "require": "./json/index.js"
+    },
+    "./lite": {
+      "types": "./index.d.ts",
+      "import": "./lite/index.mjs",
+      "require": "./lite/index.js"
+    },
+    "./full": {
+      "types": "./index.d.ts",
+      "import": "./full/index.mjs",
+      "require": "./full/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "modes": {
+    "json": "src/json.js",
+    "lite": "src/lite.js",
+    "default": "src/index.js",
+    "full": "src/full.js"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "scripts": {
+    "build": "bundt",
+    "pretest": "npm run build",
+    "postbuild": "echo \"lite full json\" | xargs -n1 cp -v index.d.ts",
+    "test": "uvu -r esm test -i suites"
+  },
+  "keywords": [
+    "clone",
+    "copy",
+    "deep",
+    "extend",
+    "recursive",
+    "object"
+  ],
+  "devDependencies": {
+    "bundt": "1.0.2",
+    "esm": "3.2.25",
+    "uvu": "0.5.2"
+  }
+}

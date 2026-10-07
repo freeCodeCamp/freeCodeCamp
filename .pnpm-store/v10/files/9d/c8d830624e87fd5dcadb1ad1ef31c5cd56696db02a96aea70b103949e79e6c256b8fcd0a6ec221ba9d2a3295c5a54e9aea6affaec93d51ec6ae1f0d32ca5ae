@@ -1,0 +1,154 @@
+{
+	"name": "got",
+	"version": "12.6.1",
+	"description": "Human-friendly and powerful HTTP request library for Node.js",
+	"license": "MIT",
+	"repository": "sindresorhus/got",
+	"funding": "https://github.com/sindresorhus/got?sponsor=1",
+	"type": "module",
+	"exports": "./dist/source/index.js",
+	"types": "./dist/source/index.d.ts",
+	"engines": {
+		"node": ">=14.16"
+	},
+	"scripts": {
+		"test": "xo && tsc --noEmit && ava",
+		"release": "np",
+		"build": "del-cli dist && tsc",
+		"prepare": "npm run build"
+	},
+	"files": [
+		"dist/source"
+	],
+	"keywords": [
+		"http",
+		"https",
+		"http2",
+		"get",
+		"got",
+		"url",
+		"uri",
+		"request",
+		"simple",
+		"curl",
+		"wget",
+		"fetch",
+		"net",
+		"network",
+		"gzip",
+		"brotli",
+		"requests",
+		"human-friendly",
+		"axios",
+		"superagent",
+		"node-fetch",
+		"ky"
+	],
+	"dependencies": {
+		"@sindresorhus/is": "^5.2.0",
+		"@szmarczak/http-timer": "^5.0.1",
+		"cacheable-lookup": "^7.0.0",
+		"cacheable-request": "^10.2.8",
+		"decompress-response": "^6.0.0",
+		"form-data-encoder": "^2.1.2",
+		"get-stream": "^6.0.1",
+		"http2-wrapper": "^2.1.10",
+		"lowercase-keys": "^3.0.0",
+		"p-cancelable": "^3.0.0",
+		"responselike": "^3.0.0"
+	},
+	"devDependencies": {
+		"@hapi/bourne": "^3.0.0",
+		"@sindresorhus/tsconfig": "^3.0.1",
+		"@sinonjs/fake-timers": "^10.0.2",
+		"@types/benchmark": "^2.1.2",
+		"@types/express": "^4.17.17",
+		"@types/node": "^18.14.5",
+		"@types/pem": "^1.9.6",
+		"@types/pify": "^5.0.1",
+		"@types/readable-stream": "^2.3.13",
+		"@types/request": "^2.48.8",
+		"@types/sinon": "^10.0.11",
+		"@types/sinonjs__fake-timers": "^8.1.1",
+		"@types/tough-cookie": "^4.0.1",
+		"ava": "^5.2.0",
+		"axios": "^0.27.2",
+		"benchmark": "^2.1.4",
+		"bluebird": "^3.7.2",
+		"body-parser": "^1.20.2",
+		"create-cert": "^1.0.6",
+		"create-test-server": "^3.0.1",
+		"del-cli": "^5.0.0",
+		"delay": "^5.0.0",
+		"express": "^4.17.3",
+		"form-data": "^4.0.0",
+		"formdata-node": "^5.0.0",
+		"nock": "^13.3.0",
+		"node-fetch": "^3.2.3",
+		"np": "^7.6.0",
+		"nyc": "^15.1.0",
+		"p-event": "^5.0.1",
+		"pem": "^1.14.6",
+		"pify": "^6.0.0",
+		"readable-stream": "^4.2.0",
+		"request": "^2.88.2",
+		"sinon": "^15.0.1",
+		"slow-stream": "0.0.4",
+		"tempy": "^3.0.0",
+		"then-busboy": "^5.2.1",
+		"tough-cookie": "4.1.2",
+		"ts-node": "^10.8.2",
+		"type-fest": "^3.6.1",
+		"typescript": "~4.9.5",
+		"xo": "^0.53.1"
+	},
+	"sideEffects": false,
+	"ava": {
+		"files": [
+			"test/*"
+		],
+		"timeout": "1m",
+		"extensions": {
+			"ts": "module"
+		},
+		"nodeArguments": [
+			"--loader=ts-node/esm"
+		]
+	},
+	"nyc": {
+		"reporter": [
+			"text",
+			"html",
+			"lcov"
+		],
+		"extension": [
+			".ts"
+		],
+		"exclude": [
+			"**/test/**"
+		]
+	},
+	"xo": {
+		"ignores": [
+			"documentation/examples/*"
+		],
+		"rules": {
+			"@typescript-eslint/no-empty-function": "off",
+			"n/no-deprecated-api": "off",
+			"n/prefer-global/url": "off",
+			"n/prefer-global/url-search-params": "off",
+			"@typescript-eslint/no-implicit-any-catch": "off",
+			"unicorn/prefer-node-protocol": "off",
+			"ava/assertion-arguments": "off",
+			"@typescript-eslint/no-unsafe-member-access": "off",
+			"@typescript-eslint/no-unsafe-return": "off",
+			"@typescript-eslint/no-unsafe-assignment": "off",
+			"@typescript-eslint/no-unsafe-call": "off",
+			"@typescript-eslint/await-thenable": "off",
+			"@typescript-eslint/no-redundant-type-constituents": "off",
+			"no-lone-blocks": "off",
+			"unicorn/no-await-expression-member": "off"
+		}
+	},
+	"runkitExampleFilename": "./documentation/examples/runkit-example.js"
+}

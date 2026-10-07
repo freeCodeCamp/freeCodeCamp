@@ -1,0 +1,40 @@
+{
+  "name": "pino-abstract-transport",
+  "version": "2.0.0",
+  "description": "Write Pino transports easily",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "test": "standard | snazzy && tap test/*.test.js  && tsd",
+    "test-ci": "standard | snazzy && tap test/*.test.js --coverage-report=lcovonly && tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinojs/pino-abstract-transport.git"
+  },
+  "keywords": [
+    "pino",
+    "transport"
+  ],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinojs/pino-abstract-transport/issues"
+  },
+  "homepage": "https://github.com/pinojs/pino-abstract-transport#readme",
+  "dependencies": {
+    "split2": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.0",
+    "husky": "^9.0.6",
+    "snazzy": "^9.0.0",
+    "standard": "^17.0.0",
+    "tap": "^16.0.0",
+    "thread-stream": "^2.6.0",
+    "tsd": "^0.31.0"
+  },
+  "tsd": {
+    "directory": "./test/types"
+  }
+}

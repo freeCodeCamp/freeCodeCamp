@@ -1,0 +1,11 @@
+import { type TProperties } from '../types/properties.mjs';
+import { type TSchema } from '../types/schema.mjs';
+import { type TUnion } from '../types/union.mjs';
+import { type TExtendsLeft } from './extends_left.mjs';
+import * as Result from './result.mjs';
+import { type TInferable, type TTryInferable, type TInferUnionResult } from './inference.mjs';
+type TExtendsUnionSome<Inferred extends TProperties, Type extends TSchema, UnionTypes extends TSchema[]> = (UnionTypes extends [infer Head extends TSchema, ...infer Tail extends TSchema[]] ? TExtendsLeft<Inferred, Type, Head> extends Result.TExtendsTrueLike<infer Inferred extends TProperties> ? Result.TExtendsTrue<Inferred> : TExtendsUnionSome<Inferred, Type, Tail> : Result.TExtendsFalse);
+type TExtendsUnionLeft<Inferred extends TProperties, Left extends TSchema[], Right extends TSchema[]> = (Left extends [infer Head extends TSchema, ...infer Tail extends TSchema[]] ? TExtendsUnionSome<Inferred, Head, Right> extends Result.TExtendsTrueLike<infer Inferred extends TProperties> ? TExtendsUnionLeft<Inferred, Tail, Right> : Result.TExtendsFalse : Result.TExtendsTrue<Inferred>);
+export type TExtendsUnion<Inferred extends TProperties, Left extends TSchema[], Right extends TSchema, Inferrable extends TInferable | undefined = TTryInferable<Right>> = (Inferrable extends TInferable<infer Name extends string, infer Type extends TSchema> ? TInferUnionResult<Inferred, Name, Left, Type> : Right extends TUnion<infer Types extends TSchema[]> ? TExtendsUnionLeft<Inferred, Left, Types> : TExtendsUnionLeft<Inferred, Left, [Right]>);
+export declare function ExtendsUnion<Inferred extends TProperties, Left extends TSchema[], Right extends TSchema>(inferred: Inferred, left: [...Left], right: Right): TExtendsUnion<Inferred, Left, Right>;
+export {};

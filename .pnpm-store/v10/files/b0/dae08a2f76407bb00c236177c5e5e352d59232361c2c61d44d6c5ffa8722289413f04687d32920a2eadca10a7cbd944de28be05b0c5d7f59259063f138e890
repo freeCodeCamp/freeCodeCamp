@@ -1,0 +1,67 @@
+{
+  "name": "magic-string",
+  "version": "0.30.21",
+  "type": "commonjs",
+  "description": "Modify strings, generate sourcemaps",
+  "keywords": [
+    "string",
+    "string manipulation",
+    "sourcemap",
+    "templating",
+    "transpilation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rich-Harris/magic-string.git"
+  },
+  "license": "MIT",
+  "author": "Rich Harris",
+  "main": "./dist/magic-string.cjs.js",
+  "module": "./dist/magic-string.es.mjs",
+  "sideEffects": false,
+  "jsnext:main": "./dist/magic-string.es.mjs",
+  "types": "./dist/magic-string.cjs.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/magic-string.es.mjs",
+      "require": "./dist/magic-string.cjs.js"
+    }
+  },
+  "files": [
+    "dist/*",
+    "index.d.ts",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-replace": "^6.0.2",
+    "benchmark": "^2.1.4",
+    "bumpp": "^10.3.1",
+    "conventional-changelog-cli": "^5.0.0",
+    "eslint": "^9.38.0",
+    "prettier": "^3.6.2",
+    "publint": "^0.3.15",
+    "rollup": "^4.52.5",
+    "source-map-js": "^1.2.1",
+    "source-map-support": "^0.5.21",
+    "vitest": "^4.0.2"
+  },
+  "dependencies": {
+    "@jridgewell/sourcemap-codec": "^1.5.5"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "format": "prettier --single-quote --print-width 100 --use-tabs --write .",
+    "lint": "eslint src test && publint",
+    "lint:fix": "eslint src test --fix",
+    "release": "bumpp -x \"pnpm run changelog\" --all",
+    "pretest": "pnpm run build",
+    "test": "vitest run",
+    "test:dev": "vitest",
+    "bench": "pnpm run build && node benchmark/index.mjs",
+    "watch": "rollup -cw"
+  }
+}

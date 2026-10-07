@@ -1,0 +1,50 @@
+{
+  "name": "webpack-sources",
+  "version": "1.4.3",
+  "description": "Source code handling classes for webpack",
+  "main": "./lib/index.js",
+  "scripts": {
+    "pretest": "npm run lint && npm run beautify-lint",
+    "test": "mocha --full-trace --check-leaks",
+    "travis": "npm run cover -- --report lcovonly",
+    "lint": "eslint lib test",
+    "beautify-lint": "beautify-lint lib/**.js test/**.js",
+    "beautify": "beautify-rewrite lib/**.js test/**.js",
+    "precover": "npm run lint && npm run beautify-lint",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+    "publish-patch": "npm test && npm version patch && git push && git push --tags && npm publish"
+  },
+  "dependencies": {
+    "source-list-map": "^2.0.0",
+    "source-map": "~0.6.1"
+  },
+  "devDependencies": {
+    "beautify-lint": "^1.0.3",
+    "codecov.io": "^0.1.6",
+    "coveralls": "^2.11.6",
+    "eslint": "^4.18.2",
+    "eslint-plugin-nodeca": "^1.0.3",
+    "istanbul": "^0.4.1",
+    "js-beautify": "^1.5.10",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1",
+    "sourcemap-validator": "^1.1.0"
+  },
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/webpack-sources.git"
+  },
+  "keywords": [
+    "webpack",
+    "source-map"
+  ],
+  "author": "Tobias Koppers @sokra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webpack/webpack-sources/issues"
+  },
+  "homepage": "https://github.com/webpack/webpack-sources#readme"
+}

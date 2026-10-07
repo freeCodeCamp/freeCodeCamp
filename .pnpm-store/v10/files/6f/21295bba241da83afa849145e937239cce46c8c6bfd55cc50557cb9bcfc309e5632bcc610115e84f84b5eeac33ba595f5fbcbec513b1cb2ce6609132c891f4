@@ -1,0 +1,118 @@
+{
+    "name": "entities",
+    "version": "6.0.1",
+    "description": "Encode & decode XML and HTML entities with ease & speed",
+    "keywords": [
+        "html entities",
+        "entity decoder",
+        "entity encoding",
+        "html decoding",
+        "html encoding",
+        "xml decoding",
+        "xml encoding"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/fb55/entities.git"
+    },
+    "funding": "https://github.com/fb55/entities?sponsor=1",
+    "license": "BSD-2-Clause",
+    "author": "Felix Boehm <me@feedic.com>",
+    "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/esm/index.d.ts",
+                "default": "./dist/esm/index.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/index.d.ts",
+                "default": "./dist/commonjs/index.js"
+            }
+        },
+        "./decode": {
+            "import": {
+                "types": "./dist/esm/decode.d.ts",
+                "default": "./dist/esm/decode.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/decode.d.ts",
+                "default": "./dist/commonjs/decode.js"
+            }
+        },
+        "./escape": {
+            "import": {
+                "types": "./dist/esm/escape.d.ts",
+                "default": "./dist/esm/escape.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/escape.d.ts",
+                "default": "./dist/commonjs/escape.js"
+            }
+        }
+    },
+    "main": "./dist/commonjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/commonjs/index.d.ts",
+    "files": [
+        "decode.js",
+        "decode.d.ts",
+        "escape.js",
+        "escape.d.ts",
+        "dist",
+        "src"
+    ],
+    "scripts": {
+        "build:docs": "typedoc --hideGenerator src/index.ts",
+        "build:encode-trie": "node --import=tsx scripts/write-encode-map.ts",
+        "build:trie": "node --import=tsx scripts/write-decode-map.ts",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run prettier -- --write",
+        "lint": "npm run lint:es && npm run lint:ts && npm run lint:prettier",
+        "lint:es": "eslint . --ignore-path .gitignore",
+        "lint:prettier": "npm run prettier -- --check",
+        "lint:ts": "tsc --noEmit",
+        "prepublishOnly": "tshy",
+        "prettier": "prettier '**/*.{ts,md,json,yml}'",
+        "test": "npm run test:vi && npm run lint",
+        "test:vi": "vitest run"
+    },
+    "prettier": {
+        "proseWrap": "always",
+        "tabWidth": 4
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.30",
+        "@typescript-eslint/eslint-plugin": "^8.33.1",
+        "@typescript-eslint/parser": "^8.33.1",
+        "@vitest/coverage-v8": "^2.1.8",
+        "eslint": "^8.57.1",
+        "eslint-config-prettier": "^10.1.5",
+        "eslint-plugin-n": "^17.19.0",
+        "eslint-plugin-unicorn": "^56.0.1",
+        "prettier": "^3.5.3",
+        "tshy": "^3.0.2",
+        "tsx": "^4.19.4",
+        "typedoc": "^0.28.5",
+        "typescript": "^5.8.3",
+        "vitest": "^2.0.2"
+    },
+    "engines": {
+        "node": ">=0.12"
+    },
+    "tshy": {
+        "exclude": [
+            "**/*.spec.ts",
+            "**/__fixtures__/*",
+            "**/__tests__/*",
+            "**/__snapshots__/*"
+        ],
+        "exports": {
+            ".": "./src/index.ts",
+            "./decode": "./src/decode.ts",
+            "./escape": "./src/escape.ts"
+        }
+    }
+}

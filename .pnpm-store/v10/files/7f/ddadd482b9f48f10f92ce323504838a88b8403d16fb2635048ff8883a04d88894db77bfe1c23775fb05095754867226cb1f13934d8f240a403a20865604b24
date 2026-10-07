@@ -1,0 +1,21 @@
+{
+  "title": "LimitChunkCountPluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "chunkOverhead": {
+      "description": "Constant overhead for a chunk.",
+      "type": "number"
+    },
+    "entryChunkMultiplicator": {
+      "description": "Multiplicator for initial chunks.",
+      "type": "number"
+    },
+    "maxChunks": {
+      "description": "Limit the maximum number of chunks using a value greater greater than or equal to 1.",
+      "type": "number",
+      "minimum": 1
+    }
+  },
+  "required": ["maxChunks"]
+}

@@ -1,0 +1,43 @@
+{
+	"name": "quick-lru",
+	"version": "5.1.1",
+	"description": "Simple “Least Recently Used” (LRU) cache",
+	"license": "MIT",
+	"repository": "sindresorhus/quick-lru",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && nyc ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"lru",
+		"quick",
+		"cache",
+		"caching",
+		"least",
+		"recently",
+		"used",
+		"fast",
+		"map",
+		"hash",
+		"buffer"
+	],
+	"devDependencies": {
+		"ava": "^2.0.0",
+		"coveralls": "^3.0.3",
+		"nyc": "^15.0.0",
+		"tsd": "^0.11.0",
+		"xo": "^0.26.0"
+	}
+}

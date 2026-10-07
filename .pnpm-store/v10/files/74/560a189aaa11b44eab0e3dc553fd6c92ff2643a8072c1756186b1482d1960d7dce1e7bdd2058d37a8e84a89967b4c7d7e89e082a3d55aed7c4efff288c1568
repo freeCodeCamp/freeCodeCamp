@@ -1,0 +1,1 @@
+{"version":3,"file":"getTypeArguments.js","sourceRoot":"","sources":["../src/getTypeArguments.ts"],"names":[],"mappings":";;;AAEA,SAAgB,gBAAgB,CAC9B,IAAsB,EACtB,OAAuB;;IAEvB,2CAA2C;IAC3C,IAAI,OAAO,CAAC,gBAAgB,EAAE;QAC5B,OAAO,OAAO,CAAC,gBAAgB,CAAC,IAAI,CAAC,CAAC;KACvC;IAED,OAAO,MAAA,IAAI,CAAC,aAAa,mCAAI,EAAE,CAAC;AAClC,CAAC;AAVD,4CAUC"}

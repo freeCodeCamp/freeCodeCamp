@@ -1,0 +1,50 @@
+{
+  "name": "@aws-sdk/util-utf8-browser",
+  "version": "3.259.0",
+  "description": "A browser UTF-8 string <-> UInt8Array converter",
+  "main": "./dist-cjs/index.js",
+  "module": "./dist-es/index.js",
+  "scripts": {
+    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types'",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build:include:deps": "lerna run --scope $npm_package_name --include-dependencies build",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "downlevel-dts dist-types dist-types/ts3.4",
+    "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo",
+    "test": "jest"
+  },
+  "author": {
+    "name": "AWS SDK for JavaScript Team",
+    "url": "https://aws.amazon.com/javascript/"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "types": "./dist-types/index.d.ts",
+  "typesVersions": {
+    "<4.0": {
+      "dist-types/*": [
+        "dist-types/ts3.4/*"
+      ]
+    }
+  },
+  "files": [
+    "dist-*"
+  ],
+  "homepage": "https://github.com/aws/aws-sdk-js-v3/tree/main/packages/util-utf8-browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aws/aws-sdk-js-v3.git",
+    "directory": "packages/util-utf8-browser"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "1.0.1",
+    "concurrently": "7.0.0",
+    "downlevel-dts": "0.10.1",
+    "rimraf": "3.0.2",
+    "typedoc": "0.19.2",
+    "typescript": "~4.6.2"
+  }
+}

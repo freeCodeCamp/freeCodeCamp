@@ -1,0 +1,78 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .suggest-preview-additional-widget {
+	white-space: nowrap;
+}
+
+.monaco-editor .suggest-preview-additional-widget .content-spacer {
+	color: transparent;
+	white-space: pre;
+}
+
+.monaco-editor .suggest-preview-additional-widget .button {
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: underline;
+	text-underline-position: under;
+}
+
+.monaco-editor .ghost-text-hidden {
+	opacity: 0;
+	font-size: 0;
+}
+
+.monaco-editor .ghost-text-decoration,
+.monaco-editor .suggest-preview-text .ghost-text {
+	font-style: italic;
+}
+
+.monaco-editor .suggest-preview-text.clickable .view-line {
+	z-index: 1;
+}
+
+.monaco-editor .ghost-text-decoration.clickable,
+.monaco-editor .ghost-text-decoration-preview.clickable,
+.monaco-editor .suggest-preview-text.clickable .ghost-text {
+	cursor: pointer;
+}
+
+.monaco-editor .inline-completion-text-to-replace {
+	text-decoration: underline;
+	text-underline-position: under;
+}
+
+.monaco-editor .ghost-text-decoration,
+.monaco-editor .ghost-text-decoration-preview,
+.monaco-editor .suggest-preview-text .ghost-text {
+	&.syntax-highlighted {
+		opacity: 0.7;
+	}
+	&:not(.syntax-highlighted) {
+		color: var(--vscode-editorGhostText-foreground);
+	}
+	background-color: var(--vscode-editorGhostText-background);
+	border: 1px solid var(--vscode-editorGhostText-border);
+}
+
+.monaco-editor .ghost-text-decoration.warning,
+.monaco-editor .ghost-text-decoration-preview.warning,
+.monaco-editor .suggest-preview-text .ghost-text.warning {
+	background: var(--monaco-editor-warning-decoration) repeat-x bottom left;
+	border-bottom: 4px double var(--vscode-editorWarning-border);
+}
+
+.ghost-text-view-warning-widget-icon {
+	.codicon {
+		color: var(--vscode-editorWarning-foreground) !important;
+	}
+}
+
+.monaco-editor {
+	.edits-fadeout-decoration {
+		opacity: var(--animation-opacity, 1);
+		background-color: var(--vscode-inlineEdit-modifiedChangedTextBackground);
+	}
+}

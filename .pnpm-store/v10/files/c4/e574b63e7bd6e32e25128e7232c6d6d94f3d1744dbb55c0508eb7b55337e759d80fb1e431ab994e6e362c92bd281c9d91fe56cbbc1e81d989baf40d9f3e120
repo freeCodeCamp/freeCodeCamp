@@ -1,0 +1,55 @@
+{
+  "name": "queue-microtask",
+  "description": "fast, tiny `queueMicrotask` shim for modern engines",
+  "version": "1.2.3",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/queue-microtask/issues"
+  },
+  "devDependencies": {
+    "standard": "*",
+    "tape": "^5.2.2"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/feross"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/feross"
+    },
+    {
+      "type": "consulting",
+      "url": "https://feross.org/support"
+    }
+  ],
+  "homepage": "https://github.com/feross/queue-microtask",
+  "keywords": [
+    "asap",
+    "immediate",
+    "micro task",
+    "microtask",
+    "nextTick",
+    "process.nextTick",
+    "queue micro task",
+    "queue microtask",
+    "queue-microtask",
+    "queueMicrotask",
+    "setImmediate",
+    "task"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/queue-microtask.git"
+  },
+  "scripts": {
+    "test": "standard && tape test/*.js"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "cacheDirectory": {
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": false
+    },
+    "cacheIdentifier": {
+      "type": "string"
+    },
+    "cacheCompression": {
+      "type": "boolean",
+      "default": true
+    },
+    "customize": {
+      "type": "string",
+      "default": null
+    }
+  },
+  "additionalProperties": true
+}

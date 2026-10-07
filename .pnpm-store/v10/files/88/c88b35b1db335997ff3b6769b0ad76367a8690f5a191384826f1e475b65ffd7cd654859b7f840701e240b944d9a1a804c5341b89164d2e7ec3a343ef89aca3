@@ -1,0 +1,1 @@
+{"version":3,"file":"native-analyser-node-factory.d.ts","sourceRoot":"","sources":["../../../src/types/native-analyser-node-factory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,MAAM,eAAe,CAAC;AACjD,OAAO,EAAE,mBAAmB,EAAE,MAAM,wBAAwB,CAAC;AAC7D,OAAO,EAAE,cAAc,EAAE,MAAM,kBAAkB,CAAC;AAElD,MAAM,MAAM,0BAA0B,GAAG,CAAC,aAAa,EAAE,cAAc,EAAE,OAAO,EAAE,gBAAgB,KAAK,mBAAmB,CAAC"}

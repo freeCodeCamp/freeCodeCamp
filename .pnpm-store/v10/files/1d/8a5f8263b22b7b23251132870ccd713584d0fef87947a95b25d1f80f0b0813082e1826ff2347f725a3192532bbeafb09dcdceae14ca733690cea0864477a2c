@@ -1,0 +1,80 @@
+{
+  "name": "flat-cache",
+  "version": "6.1.22",
+  "description": "A simple key/value storage using files to persist the data",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredwray/cacheable.git",
+    "directory": "packages/flat-cache"
+  },
+  "author": "Jared Wray <me@jaredwray.com>",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "cache",
+    "caching",
+    "cacheable",
+    "flat-cache",
+    "flat",
+    "file",
+    "file-cache",
+    "file-caching",
+    "file-based-cache",
+    "file-persist",
+    "file-persistence",
+    "file-storage",
+    "file-system",
+    "file-management",
+    "filesystem-cache",
+    "disk-cache",
+    "cache-persistence",
+    "cache-persist",
+    "persistent-cache",
+    "persistent-storage",
+    "cache-to-file",
+    "cache-on-disk",
+    "cache-file",
+    "cache-expiration",
+    "cache-lifetime",
+    "data-persistence",
+    "data-storage",
+    "local-storage",
+    "file-system-cache"
+  ],
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "flatted": "^3.4.2",
+    "hookified": "^1.15.0",
+    "cacheable": "^2.3.4"
+  },
+  "files": [
+    "dist",
+    "license"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && tsup src/index.ts --format cjs,esm --dts --clean",
+    "lint": "biome check --write --error-on-warnings",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:ci": "biome check --error-on-warnings && vitest run --coverage",
+    "clean": "rimraf ./dist ./coverage ./node_modules"
+  }
+}

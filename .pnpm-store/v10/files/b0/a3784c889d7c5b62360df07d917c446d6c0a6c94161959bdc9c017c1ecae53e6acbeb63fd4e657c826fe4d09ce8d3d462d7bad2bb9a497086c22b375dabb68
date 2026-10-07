@@ -1,0 +1,19 @@
+{
+  "name": "@algolia/cache-common",
+  "version": "4.27.0",
+  "private": false,
+  "description": "Common interfaces for promise-based caching libraries",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-js.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "dist/cache-common.esm.js",
+  "types": "dist/cache-common.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ]
+}

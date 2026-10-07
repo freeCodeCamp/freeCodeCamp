@@ -1,0 +1,42 @@
+{
+  "name": "strip-json-comments",
+  "version": "2.0.1",
+  "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+  "license": "MIT",
+  "repository": "sindresorhus/strip-json-comments",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "json",
+    "strip",
+    "remove",
+    "delete",
+    "trim",
+    "comments",
+    "multiline",
+    "parse",
+    "config",
+    "configuration",
+    "conf",
+    "settings",
+    "util",
+    "env",
+    "environment"
+  ],
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  }
+}

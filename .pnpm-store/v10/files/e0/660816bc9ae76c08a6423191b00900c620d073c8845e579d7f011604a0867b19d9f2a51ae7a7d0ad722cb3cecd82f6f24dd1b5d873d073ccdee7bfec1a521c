@@ -1,0 +1,8 @@
+/**
+ * JavaScript code that provides the puppeteer utilities. See the
+ * [README](https://github.com/puppeteer/puppeteer/blob/main/src/injected/README.md)
+ * for injection for more information.
+ *
+ * @internal
+ */
+export const source = SOURCE_CODE;

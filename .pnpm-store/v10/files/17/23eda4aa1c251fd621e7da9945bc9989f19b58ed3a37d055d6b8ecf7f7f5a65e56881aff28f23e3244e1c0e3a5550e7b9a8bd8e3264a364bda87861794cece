@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/HKT.js",
+  "module": "../dist/esm/HKT.js",
+  "types": "../dist/dts/HKT.d.ts"
+}

@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/fromUnixTime/index.js",
+  "typings": "../../typings.d.ts"
+}

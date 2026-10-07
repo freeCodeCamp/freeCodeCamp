@@ -1,0 +1,23 @@
+// higher precedence = higher importance
+export enum Precedence {
+  ALL,
+  PARAMETER_LIST,
+  OBJECT,
+  KEY_VALUE,
+  UNION,
+  INTERSECTION,
+  PREFIX,
+  INFIX,
+  TUPLE,
+  SYMBOL,
+  OPTIONAL,
+  NULLABLE,
+  KEY_OF_TYPE_OF,
+  FUNCTION,
+  ARROW,
+  ARRAY_BRACKETS,
+  GENERIC,
+  NAME_PATH,
+  PARENTHESIS,
+  SPECIAL_TYPES
+}

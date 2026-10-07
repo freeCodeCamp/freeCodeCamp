@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/startOfDecade/index.js",
+  "typings": "../typings.d.ts"
+}

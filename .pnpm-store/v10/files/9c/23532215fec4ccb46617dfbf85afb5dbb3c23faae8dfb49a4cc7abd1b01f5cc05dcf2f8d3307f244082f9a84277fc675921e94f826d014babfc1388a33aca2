@@ -1,0 +1,59 @@
+{
+	"name": "clipboardy",
+	"version": "4.0.0",
+	"description": "Access the system clipboard (copy/paste)",
+	"license": "MIT",
+	"repository": "sindresorhus/clipboardy",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"node": "./index.js",
+		"default": "./browser.js"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"sideEffects": false,
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"browser.js",
+		"lib",
+		"fallbacks"
+	],
+	"keywords": [
+		"clipboard",
+		"copy",
+		"paste",
+		"copy-paste",
+		"pasteboard",
+		"read",
+		"write",
+		"pbcopy",
+		"clip",
+		"xclip",
+		"xsel"
+	],
+	"dependencies": {
+		"execa": "^8.0.1",
+		"is-wsl": "^3.1.0",
+		"is64bit": "^2.0.0"
+	},
+	"devDependencies": {
+		"ava": "^5.3.1",
+		"tsd": "^0.29.0",
+		"xo": "^0.56.0"
+	},
+	"ava": {
+		"serial": true
+	}
+}

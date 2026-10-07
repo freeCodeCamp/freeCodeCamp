@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Pool.js",
+  "module": "../dist/esm/Pool.js",
+  "types": "../dist/dts/Pool.d.ts"
+}

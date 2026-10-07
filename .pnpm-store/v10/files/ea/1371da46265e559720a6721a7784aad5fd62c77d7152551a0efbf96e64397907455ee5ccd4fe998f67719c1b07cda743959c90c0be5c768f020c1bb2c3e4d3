@@ -1,0 +1,85 @@
+{
+  "name": "pure-rand",
+  "version": "6.1.0",
+  "description": " Pure random number generator written in TypeScript",
+  "type": "commonjs",
+  "main": "lib/pure-rand.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "require": {
+        "types": "./lib/types/pure-rand.d.ts",
+        "default": "./lib/pure-rand.js"
+      },
+      "import": {
+        "types": "./lib/esm/types/pure-rand.d.ts",
+        "default": "./lib/esm/pure-rand.js"
+      }
+    }
+  },
+  "module": "lib/esm/pure-rand.js",
+  "types": "lib/types/pure-rand.d.ts",
+  "files": [
+    "lib"
+  ],
+  "sideEffects": false,
+  "packageManager": "yarn@4.1.1",
+  "scripts": {
+    "format:check": "prettier --list-different .",
+    "format": "prettier --write .",
+    "build": "tsc && tsc -p ./tsconfig.declaration.json",
+    "build:esm": "tsc --module es2015 --outDir lib/esm --moduleResolution node && tsc -p ./tsconfig.declaration.json --outDir lib/esm/types && cp package.esm-template.json lib/esm/package.json",
+    "build:prod": "yarn build && yarn build:esm && node postbuild/main.cjs",
+    "build:prod-ci": "cross-env EXPECT_GITHUB_SHA=true yarn build:prod",
+    "test": "jest --config jest.config.js --coverage",
+    "build:bench:old": "tsc --outDir lib-reference/",
+    "build:bench:new": "tsc --outDir lib-test/",
+    "bench": "node perf/benchmark.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dubzzz/pure-rand.git"
+  },
+  "author": "Nicolas DUBIEN <github@dubien.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dubzzz/pure-rand/issues"
+  },
+  "homepage": "https://github.com/dubzzz/pure-rand#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.30",
+    "cross-env": "^7.0.3",
+    "fast-check": "^3.16.0",
+    "jest": "^29.7.0",
+    "prettier": "3.2.5",
+    "replace-in-file": "^7.1.0",
+    "source-map-support": "^0.5.21",
+    "tinybench": "^2.6.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "keywords": [
+    "seed",
+    "random",
+    "prng",
+    "generator",
+    "pure",
+    "rand",
+    "mersenne",
+    "random number generator",
+    "fastest",
+    "fast"
+  ],
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://github.com/sponsors/dubzzz"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fast-check"
+    }
+  ]
+}

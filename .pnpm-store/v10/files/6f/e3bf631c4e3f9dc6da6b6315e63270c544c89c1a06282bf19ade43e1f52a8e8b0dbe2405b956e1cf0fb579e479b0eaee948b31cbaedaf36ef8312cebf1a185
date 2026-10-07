@@ -1,0 +1,48 @@
+{
+  "name": "isarray",
+  "description": "Array#isArray for older browsers",
+  "version": "2.0.5",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/isarray.git"
+  },
+  "homepage": "https://github.com/juliangruber/isarray",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~2.13.4"
+  },
+  "keywords": [
+    "browser",
+    "isarray",
+    "array"
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "license": "MIT",
+  "testling": {
+    "files": "test.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/17..latest",
+      "firefox/nightly",
+      "chrome/22..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  },
+  "scripts": {
+    "test": "tape test.js"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "name": "@babel/core",
+  "version": "7.28.5",
+  "description": "Babel compiler core.",
+  "main": "./lib/index.js",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-core"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-core",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20core%22+is%3Aopen",
+  "keywords": [
+    "6to5",
+    "babel",
+    "classes",
+    "const",
+    "es6",
+    "harmony",
+    "let",
+    "modules",
+    "transpile",
+    "transpiler",
+    "var",
+    "babel-core",
+    "compiler"
+  ],
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/babel"
+  },
+  "browser": {
+    "./lib/config/files/index.js": "./lib/config/files/index-browser.js",
+    "./lib/config/resolve-targets.js": "./lib/config/resolve-targets-browser.js",
+    "./lib/transform-file.js": "./lib/transform-file-browser.js",
+    "./src/config/files/index.ts": "./src/config/files/index-browser.ts",
+    "./src/config/resolve-targets.ts": "./src/config/resolve-targets-browser.ts",
+    "./src/transform-file.ts": "./src/transform-file-browser.ts"
+  },
+  "dependencies": {
+    "@babel/code-frame": "^7.27.1",
+    "@babel/generator": "^7.28.5",
+    "@babel/helper-compilation-targets": "^7.27.2",
+    "@babel/helper-module-transforms": "^7.28.3",
+    "@babel/helpers": "^7.28.4",
+    "@babel/parser": "^7.28.5",
+    "@babel/template": "^7.27.2",
+    "@babel/traverse": "^7.28.5",
+    "@babel/types": "^7.28.5",
+    "@jridgewell/remapping": "^2.3.5",
+    "convert-source-map": "^2.0.0",
+    "debug": "^4.1.0",
+    "gensync": "^1.0.0-beta.2",
+    "json5": "^2.2.3",
+    "semver": "^6.3.1"
+  },
+  "devDependencies": {
+    "@babel/helper-transform-fixture-test-runner": "^7.28.5",
+    "@babel/plugin-syntax-flow": "^7.27.1",
+    "@babel/plugin-transform-flow-strip-types": "^7.27.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.27.1",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@jridgewell/trace-mapping": "^0.3.28",
+    "@types/convert-source-map": "^2.0.0",
+    "@types/debug": "^4.1.0",
+    "@types/resolve": "^1.3.2",
+    "@types/semver": "^5.4.0",
+    "rimraf": "^3.0.0",
+    "ts-node": "^11.0.0-beta.1",
+    "tsx": "^4.20.3"
+  },
+  "type": "commonjs"
+}

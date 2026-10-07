@@ -1,0 +1,70 @@
+@import '../variables';
+@import '../mixins';
+
+$amount: 30px;
+
+@keyframes ball-zig-deflect {
+  17% {
+    transform: translate(-$amount/2, -$amount);
+  }
+  34% {
+    transform: translate($amount/2, -$amount);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  67% {
+    transform: translate($amount/2, -$amount);
+  }
+  84% {
+    transform: translate(-$amount/2, -$amount);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes ball-zag-deflect {
+  17% {
+    transform: translate($amount/2, $amount);
+  }
+  34% {
+    transform: translate(-$amount/2, $amount);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  67% {
+    transform: translate(-$amount/2, $amount);
+  }
+  84% {
+    transform: translate($amount/2, $amount);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.ball-zig-zag-deflect {
+  position: relative;
+  transform: translate(-$amount / 2, -$amount / 2);
+
+  > div {
+    @include balls();
+    @include global-animation();
+
+    position: absolute;
+    margin-left: $amount / 2;
+    top: 4px;
+    left: -7px;
+
+    &:first-child {
+      animation: ball-zig-deflect 1.5s 0s infinite linear;
+    }
+
+    &:last-child {
+      animation: ball-zag-deflect 1.5s 0s infinite linear;
+    }
+  }
+}
+

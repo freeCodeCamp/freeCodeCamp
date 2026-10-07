@@ -1,0 +1,40 @@
+{
+  "name": "@babel/plugin-transform-typescript",
+  "version": "7.23.3",
+  "description": "Transform TypeScript into ES.next",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-typescript"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin",
+    "typescript"
+  ],
+  "dependencies": {
+    "@babel/helper-annotate-as-pure": "^7.22.5",
+    "@babel/helper-create-class-features-plugin": "^7.22.15",
+    "@babel/helper-plugin-utils": "^7.22.5",
+    "@babel/plugin-syntax-typescript": "^7.23.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/helper-plugin-test-runner": "^7.22.5",
+    "@babel/traverse": "^7.23.3",
+    "@babel/types": "^7.23.3"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-transform-typescript",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

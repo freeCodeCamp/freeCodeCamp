@@ -1,0 +1,105 @@
+{
+	"name": "meow",
+	"version": "13.2.0",
+	"description": "CLI app helper",
+	"license": "MIT",
+	"repository": "sindresorhus/meow",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./build/index.d.ts",
+		"default": "./build/index.js"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"prepare": "npm run build",
+		"build": "rollup --config",
+		"test": "xo && npm run build && ava && tsd --typings build/index.d.ts"
+	},
+	"files": [
+		"build"
+	],
+	"keywords": [
+		"cli",
+		"bin",
+		"util",
+		"utility",
+		"helper",
+		"argv",
+		"command",
+		"line",
+		"meow",
+		"cat",
+		"kitten",
+		"parser",
+		"option",
+		"flags",
+		"input",
+		"cmd",
+		"console"
+	],
+	"_actualDependencies": [
+		"@types/minimist",
+		"camelcase-keys",
+		"decamelize",
+		"decamelize-keys",
+		"minimist-options",
+		"normalize-package-data",
+		"read-package-up",
+		"redent",
+		"trim-newlines",
+		"type-fest",
+		"yargs-parser"
+	],
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-json": "^6.1.0",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@types/minimist": "^1.2.5",
+		"ava": "^6.0.1",
+		"camelcase-keys": "^9.1.2",
+		"common-tags": "^2.0.0-alpha.1",
+		"decamelize": "^6.0.0",
+		"decamelize-keys": "^2.0.1",
+		"delete_comments": "^0.0.2",
+		"execa": "^8.0.1",
+		"globby": "^14.0.0",
+		"indent-string": "^5.0.0",
+		"minimist-options": "4.1.0",
+		"normalize-package-data": "^6.0.0",
+		"read-package-up": "^11.0.0",
+		"read-pkg": "^9.0.1",
+		"redent": "^4.0.0",
+		"rollup": "^4.9.2",
+		"rollup-plugin-dts": "^6.1.0",
+		"rollup-plugin-license": "^3.2.0",
+		"trim-newlines": "^5.0.0",
+		"tsd": "^0.30.3",
+		"type-fest": "^4.9.0",
+		"typescript": "^5.3.3",
+		"xo": "^0.56.0",
+		"yargs-parser": "^21.1.1"
+	},
+	"xo": {
+		"rules": {
+			"unicorn/no-process-exit": "off",
+			"unicorn/error-message": "off"
+		},
+		"ignores": [
+			"build"
+		]
+	},
+	"ava": {
+		"files": [
+			"test/*"
+		]
+	}
+}

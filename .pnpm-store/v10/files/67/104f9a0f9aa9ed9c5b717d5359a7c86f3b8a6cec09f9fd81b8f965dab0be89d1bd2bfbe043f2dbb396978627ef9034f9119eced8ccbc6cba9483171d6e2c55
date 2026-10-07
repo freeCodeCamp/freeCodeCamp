@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/STM.js",
+  "module": "../dist/esm/STM.js",
+  "types": "../dist/dts/STM.d.ts"
+}

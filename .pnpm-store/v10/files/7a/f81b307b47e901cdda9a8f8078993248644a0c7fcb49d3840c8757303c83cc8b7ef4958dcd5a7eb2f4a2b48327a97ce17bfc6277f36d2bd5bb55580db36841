@@ -1,0 +1,245 @@
+{{# def.definitions }}
+{{# def.errors }}
+{{# def.setupKeyword }}
+{{# def.setupNextLevel }}
+
+
+{{## def.validateAdditional:
+  {{ /* additionalProperties is schema */
+    $it.schema = $aProperties;
+    $it.schemaPath = it.schemaPath + '.additionalProperties';
+    $it.errSchemaPath = it.errSchemaPath + '/additionalProperties';
+    $it.errorPath = it.opts._errorDataPathProperty
+                    ? it.errorPath
+                    : it.util.getPathExpr(it.errorPath, $key, it.opts.jsonPointers);
+    var $passData = $data + '[' + $key + ']';
+    $it.dataPathArr[$dataNxt] = $key;
+  }}
+
+  {{# def.generateSubschemaCode }}
+  {{# def.optimizeValidate }}
+#}}
+
+
+{{
+  var $key = 'key' + $lvl
+    , $idx = 'idx' + $lvl
+    , $dataNxt = $it.dataLevel = it.dataLevel + 1
+    , $nextData = 'data' + $dataNxt
+    , $dataProperties = 'dataProperties' + $lvl;
+
+  var $schemaKeys = Object.keys($schema || {}).filter(notProto)
+    , $pProperties = it.schema.patternProperties || {}
+    , $pPropertyKeys = Object.keys($pProperties).filter(notProto)
+    , $aProperties = it.schema.additionalProperties
+    , $someProperties = $schemaKeys.length || $pPropertyKeys.length
+    , $noAdditional = $aProperties === false
+    , $additionalIsSchema = typeof $aProperties == 'object'
+                              && Object.keys($aProperties).length
+    , $removeAdditional = it.opts.removeAdditional
+    , $checkAdditional = $noAdditional || $additionalIsSchema || $removeAdditional
+    , $ownProperties = it.opts.ownProperties
+    , $currentBaseId = it.baseId;
+
+  var $required = it.schema.required;
+  if ($required && !(it.opts.$data && $required.$data) && $required.length < it.opts.loopRequired) {
+    var $requiredHash = it.util.toHash($required);
+  }
+
+  function notProto(p) { return p !== '__proto__'; }
+}}
+
+
+var {{=$errs}} = errors;
+var {{=$nextValid}} = true;
+{{? $ownProperties }}
+  var {{=$dataProperties}} = undefined;
+{{?}}
+
+{{? $checkAdditional }}
+  {{# def.iterateProperties }}
+    {{? $someProperties }}
+      var isAdditional{{=$lvl}} = !(false
+        {{? $schemaKeys.length }}
+          {{? $schemaKeys.length > 8 }}
+            || validate.schema{{=$schemaPath}}.hasOwnProperty({{=$key}})
+          {{??}}
+            {{~ $schemaKeys:$propertyKey }}
+              || {{=$key}} == {{= it.util.toQuotedString($propertyKey) }}
+            {{~}}
+          {{?}}
+        {{?}}
+        {{? $pPropertyKeys.length }}
+          {{~ $pPropertyKeys:$pProperty:$i }}
+            || {{= it.usePattern($pProperty) }}.test({{=$key}})
+          {{~}}
+        {{?}}
+      );
+
+      if (isAdditional{{=$lvl}}) {
+    {{?}}
+    {{? $removeAdditional == 'all' }}
+      delete {{=$data}}[{{=$key}}];
+    {{??}}
+      {{
+        var $currentErrorPath = it.errorPath;
+        var $additionalProperty = '\' + ' + $key + ' + \'';
+        if (it.opts._errorDataPathProperty) {
+          it.errorPath = it.util.getPathExpr(it.errorPath, $key, it.opts.jsonPointers);
+        }
+      }}
+      {{? $noAdditional }}
+        {{? $removeAdditional }}
+          delete {{=$data}}[{{=$key}}];
+        {{??}}
+          {{=$nextValid}} = false;
+          {{
+            var $currErrSchemaPath = $errSchemaPath;
+            $errSchemaPath = it.errSchemaPath + '/additionalProperties';
+          }}
+          {{# def.error:'additionalProperties' }}
+          {{ $errSchemaPath = $currErrSchemaPath; }}
+          {{? $breakOnError }} break; {{?}}
+        {{?}}
+      {{?? $additionalIsSchema }}
+        {{? $removeAdditional == 'failing' }}
+          var {{=$errs}} = errors;
+          {{# def.setCompositeRule }}
+
+          {{# def.validateAdditional }}
+
+          if (!{{=$nextValid}}) {
+            errors = {{=$errs}};
+            if (validate.errors !== null) {
+              if (errors) validate.errors.length = errors;
+              else validate.errors = null;
+            }
+            delete {{=$data}}[{{=$key}}];
+          }
+
+          {{# def.resetCompositeRule }}
+        {{??}}
+          {{# def.validateAdditional }}
+          {{? $breakOnError }} if (!{{=$nextValid}}) break; {{?}}
+        {{?}}
+      {{?}}
+      {{ it.errorPath = $currentErrorPath; }}
+    {{?}}
+    {{? $someProperties }}
+      }
+    {{?}}
+  }
+
+  {{# def.ifResultValid }}
+{{?}}
+
+{{ var $useDefaults = it.opts.useDefaults && !it.compositeRule; }}
+
+{{? $schemaKeys.length }}
+  {{~ $schemaKeys:$propertyKey }}
+    {{ var $sch = $schema[$propertyKey]; }}
+
+    {{? {{# def.nonEmptySchema:$sch}} }}
+      {{
+        var $prop = it.util.getProperty($propertyKey)
+          , $passData = $data + $prop
+          , $hasDefault = $useDefaults && $sch.default !== undefined;
+        $it.schema = $sch;
+        $it.schemaPath = $schemaPath + $prop;
+        $it.errSchemaPath = $errSchemaPath + '/' + it.util.escapeFragment($propertyKey);
+        $it.errorPath = it.util.getPath(it.errorPath, $propertyKey, it.opts.jsonPointers);
+        $it.dataPathArr[$dataNxt] = it.util.toQuotedString($propertyKey);
+      }}
+
+      {{# def.generateSubschemaCode }}
+
+      {{? {{# def.willOptimize }} }}
+        {{
+          $code = {{# def._optimizeValidate }};
+          var $useData = $passData;
+        }}
+      {{??}}
+        {{ var $useData = $nextData; }}
+        var {{=$nextData}} = {{=$passData}};
+      {{?}}
+
+      {{? $hasDefault }}
+        {{= $code }}
+      {{??}}
+        {{? $requiredHash && $requiredHash[$propertyKey] }}
+          if ({{# def.noPropertyInData }}) {
+            {{=$nextValid}} = false;
+            {{
+              var $currentErrorPath = it.errorPath
+                , $currErrSchemaPath = $errSchemaPath
+                , $missingProperty = it.util.escapeQuotes($propertyKey);
+              if (it.opts._errorDataPathProperty) {
+                it.errorPath = it.util.getPath($currentErrorPath, $propertyKey, it.opts.jsonPointers);
+              }
+              $errSchemaPath = it.errSchemaPath + '/required';
+            }}
+            {{# def.error:'required' }}
+            {{ $errSchemaPath = $currErrSchemaPath; }}
+            {{ it.errorPath = $currentErrorPath; }}
+          } else {
+        {{??}}
+          {{? $breakOnError }}
+            if ({{# def.noPropertyInData }}) {
+              {{=$nextValid}} = true;
+            } else {
+          {{??}}
+            if ({{=$useData}} !== undefined
+              {{? $ownProperties }}
+                && {{# def.isOwnProperty }}
+              {{?}}
+            ) {
+          {{?}}
+        {{?}}
+
+          {{= $code }}
+        }
+      {{?}}  {{ /* $hasDefault */ }}
+    {{?}} {{ /* def.nonEmptySchema */ }}
+
+    {{# def.ifResultValid }}
+  {{~}}
+{{?}}
+
+{{? $pPropertyKeys.length }}
+  {{~ $pPropertyKeys:$pProperty }}
+    {{ var $sch = $pProperties[$pProperty]; }}
+
+    {{? {{# def.nonEmptySchema:$sch}} }}
+      {{
+        $it.schema = $sch;
+        $it.schemaPath = it.schemaPath + '.patternProperties' + it.util.getProperty($pProperty);
+        $it.errSchemaPath = it.errSchemaPath + '/patternProperties/'
+                                             + it.util.escapeFragment($pProperty);
+      }}
+
+      {{# def.iterateProperties }}
+        if ({{= it.usePattern($pProperty) }}.test({{=$key}})) {
+          {{
+            $it.errorPath = it.util.getPathExpr(it.errorPath, $key, it.opts.jsonPointers);
+            var $passData = $data + '[' + $key + ']';
+            $it.dataPathArr[$dataNxt] = $key;
+          }}
+
+          {{# def.generateSubschemaCode }}
+          {{# def.optimizeValidate }}
+
+          {{? $breakOnError }} if (!{{=$nextValid}}) break; {{?}}
+        }
+        {{? $breakOnError }} else {{=$nextValid}} = true; {{?}}
+      }
+
+      {{# def.ifResultValid }}
+    {{?}} {{ /* def.nonEmptySchema */ }}
+  {{~}}
+{{?}}
+
+
+{{? $breakOnError }}
+  {{= $closingBraces }}
+  if ({{=$errs}} == errors) {
+{{?}}

@@ -1,0 +1,10 @@
+{
+  "diff": true,
+  "extension": ["js", "cjs", "mjs"],
+  "package": "./package.json",
+  "reporter": "spec",
+  "slow": 75,
+  "timeout": 2000,
+  "ui": "bdd",
+  "watch-ignore": ["node_modules", ".git"]
+}

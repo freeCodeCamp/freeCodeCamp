@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/siblings",
+  "private": true,
+  "main": "../cjs/siblings.js",
+  "module": "../esm/siblings.js",
+  "types": "../esm/siblings.d.ts"
+}

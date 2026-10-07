@@ -1,0 +1,84 @@
+{
+  "name": "remark-retext",
+  "version": "4.0.0",
+  "description": "remark plugin to transform to retext",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "retext",
+    "plugin",
+    "mdast",
+    "markdown",
+    "nlcst",
+    "natural language",
+    "prose"
+  ],
+  "repository": "remarkjs/remark-retext",
+  "bugs": "https://github.com/remarkjs/remark-retext/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "mdast-util-to-nlcst": "^4.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-parse": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "remark-stringify": "^7.0.0",
+    "retext-english": "^3.0.0",
+    "retext-stringify": "^2.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "unified": "^8.0.0",
+    "xo": "^0.28.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify . -s remarkRetext > remark-retext.js",
+    "build-mangle": "browserify . -s remarkRetext -p tinyify > remark-retext.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignores": [
+      "remark-retext.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

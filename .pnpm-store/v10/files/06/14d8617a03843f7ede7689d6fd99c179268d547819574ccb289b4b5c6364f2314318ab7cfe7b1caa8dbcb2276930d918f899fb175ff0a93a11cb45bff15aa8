@@ -1,0 +1,96 @@
+{
+  "name": "envinfo",
+  "version": "7.10.0",
+  "description": "Info about your dev environment for debugging purposes",
+  "repository": "https://github.com/tabrindle/envinfo",
+  "author": "tabrindle@gmail.com",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/envinfo.js",
+  "bin": {
+    "envinfo": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "build": "webpack --progress",
+    "check:format": "prettier -l src/**/*.js --verbose",
+    "compress": "gzexe envinfo-* && upx envinfo-win.exe",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "postcompress": "tar -czvf envinfo-linux.tar.gz envinfo-linux && tar -czvf envinfo-macos.tar.gz envinfo-macos && zip -r -X envinfo-win.zip envinfo-win.exe",
+    "executable": "pkg package.json",
+    "format": "prettier --write src/**/*.js",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix",
+    "preversion": "npm run test && webpack && git add .",
+    "postversion": "npm run executable && npm run compress && npm run release",
+    "release": "github-release upload --owner=tabrindle --repo=envinfo --tag=${npm_package_version} 'envinfo-linux.tar.gz' 'envinfo-macos.tar.gz' 'envinfo-win.zip'",
+    "start": "node -r esm src/cli.js",
+    "test": "jest --env=node && eslint src && prettier -l src/**/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && npm run lint"
+    }
+  },
+  "keywords": [
+    "development",
+    "env",
+    "environment",
+    "info",
+    "issues",
+    "reporting",
+    "diagnostics"
+  ],
+  "pkg": {
+    "scripts": "dist/*.js",
+    "targets": [
+      "linux",
+      "macos",
+      "win"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "all-contributors-cli": "^4.11.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "23.6.0",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "esm": "^3.2.22",
+    "github-release-cli": "^0.4.1",
+    "glob": "^7.1.6",
+    "husky": "^4.2.5",
+    "jest": "^22.4.3",
+    "minimist": "^1.2.5",
+    "os-name": "^3.1.0",
+    "pkg": "^4.5.1",
+    "prettier": "^1.19.1",
+    "prettier-eslint-cli": "^4.1.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.1.2",
+    "which": "^1.2.14",
+    "yamlify-object": "^0.5.1"
+  },
+  "resolutions": {
+    "lodash": "4.17.15"
+  }
+}

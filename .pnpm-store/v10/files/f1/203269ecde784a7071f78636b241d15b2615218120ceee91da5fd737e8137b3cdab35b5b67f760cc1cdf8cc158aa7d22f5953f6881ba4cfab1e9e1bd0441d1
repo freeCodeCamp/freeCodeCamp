@@ -1,0 +1,14 @@
+{
+    "name": "@types/vfile-message",
+    "version": "2.0.0",
+    "typings": null,
+    "description": "Stub TypeScript definitions entry for vfile-message, which provides its own types definitions",
+    "main": "",
+    "scripts": {},
+    "author": "",
+    "repository": "https://github.com/vfile/vfile-message#readme",
+    "license": "MIT",
+    "dependencies": {
+        "vfile-message": "*"
+    }
+}

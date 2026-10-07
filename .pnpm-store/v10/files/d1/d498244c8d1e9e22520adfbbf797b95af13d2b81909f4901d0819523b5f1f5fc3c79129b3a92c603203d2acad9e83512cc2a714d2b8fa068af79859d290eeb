@@ -1,0 +1,60 @@
+{
+	"name": "punycode",
+	"version": "1.4.1",
+	"description": "A robust Punycode converter that fully complies to RFC 3492 and RFC 5891, and works on nearly all JavaScript platforms.",
+	"homepage": "https://mths.be/punycode",
+	"main": "punycode.js",
+	"keywords": [
+		"punycode",
+		"unicode",
+		"idn",
+		"idna",
+		"dns",
+		"url",
+		"domain"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "https://mathiasbynens.be/"
+	},
+	"contributors": [
+		{
+			"name": "Mathias Bynens",
+			"url": "https://mathiasbynens.be/"
+		},
+		{
+			"name": "John-David Dalton",
+			"url": "http://allyoucanleet.com/"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bestiejs/punycode.js.git"
+	},
+	"bugs": "https://github.com/bestiejs/punycode.js/issues",
+	"files": [
+		"LICENSE-MIT.txt",
+		"punycode.js"
+	],
+	"scripts": {
+		"test": "node tests/tests.js"
+	},
+	"devDependencies": {
+		"coveralls": "^2.11.4",
+		"grunt": "^0.4.5",
+		"grunt-contrib-uglify": "^0.11.0",
+		"grunt-shell": "^1.1.2",
+		"istanbul": "^0.4.1",
+		"qunit-extras": "^1.4.4",
+		"qunitjs": "~1.11.0",
+		"requirejs": "^2.1.22"
+	},
+	"jspm": {
+		"map": {
+			"./punycode.js": {
+				"node": "@node/punycode"
+			}
+		}
+	}
+}

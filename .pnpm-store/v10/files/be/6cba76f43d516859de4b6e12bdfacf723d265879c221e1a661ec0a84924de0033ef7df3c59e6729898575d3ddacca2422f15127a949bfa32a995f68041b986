@@ -1,0 +1,47 @@
+import type { AnySchema } from "../../types";
+import type { SchemaObjCxt } from "..";
+import { Code, Name } from "../codegen";
+import { Type } from "../util";
+import type { JSONType } from "../rules";
+export interface SubschemaContext {
+    schema: AnySchema;
+    schemaPath: Code;
+    errSchemaPath: string;
+    topSchemaRef?: Code;
+    errorPath?: Code;
+    dataLevel?: number;
+    dataTypes?: JSONType[];
+    data?: Name;
+    parentData?: Name;
+    parentDataProperty?: Code | number;
+    dataNames?: Name[];
+    dataPathArr?: (Code | number)[];
+    propertyName?: Name;
+    jtdDiscriminator?: string;
+    jtdMetadata?: boolean;
+    compositeRule?: true;
+    createErrors?: boolean;
+    allErrors?: boolean;
+}
+export type SubschemaArgs = Partial<{
+    keyword: string;
+    schemaProp: string | number;
+    schema: AnySchema;
+    schemaPath: Code;
+    errSchemaPath: string;
+    topSchemaRef: Code;
+    data: Name | Code;
+    dataProp: Code | string | number;
+    dataTypes: JSONType[];
+    definedProperties: Set<string>;
+    propertyName: Name;
+    dataPropType: Type;
+    jtdDiscriminator: string;
+    jtdMetadata: boolean;
+    compositeRule: true;
+    createErrors: boolean;
+    allErrors: boolean;
+}>;
+export declare function getSubschema(it: SchemaObjCxt, { keyword, schemaProp, schema, schemaPath, errSchemaPath, topSchemaRef }: SubschemaArgs): SubschemaContext;
+export declare function extendSubschemaData(subschema: SubschemaContext, it: SchemaObjCxt, { dataProp, dataPropType: dpType, data, dataTypes, propertyName }: SubschemaArgs): void;
+export declare function extendSubschemaMode(subschema: SubschemaContext, { jtdDiscriminator, jtdMetadata, compositeRule, createErrors, allErrors }: SubschemaArgs): void;

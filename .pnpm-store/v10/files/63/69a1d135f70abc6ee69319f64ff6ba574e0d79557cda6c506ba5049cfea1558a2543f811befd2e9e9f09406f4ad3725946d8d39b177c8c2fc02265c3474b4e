@@ -1,0 +1,71 @@
+@-webkit-keyframes sk-fade-in {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@-moz-keyframes sk-fade-in {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@-ms-keyframes sk-fade-in {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes sk-fade-in {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.sk-fade-in {
+  -webkit-animation: sk-fade-in 2s;
+  -moz-animation: sk-fade-in 2s;
+  -o-animation: sk-fade-in 2s;
+  -ms-animation: sk-fade-in 2s;
+  animation: sk-fade-in 2s;
+}
+
+.sk-fade-in-half-second {
+  -webkit-animation: sk-fade-in 1s;
+  -moz-animation: sk-fade-in 1s;
+  -o-animation: sk-fade-in 1s;
+  -ms-animation: sk-fade-in 1s;
+  animation: sk-fade-in 1s;
+}
+
+.sk-fade-in-quarter-second {
+  -webkit-animation: sk-fade-in 0.5s;
+  -moz-animation: sk-fade-in 0.5s;
+  -o-animation: sk-fade-in 0.5s;
+  -ms-animation: sk-fade-in 0.5s;
+  animation: sk-fade-in 0.5s;
+}

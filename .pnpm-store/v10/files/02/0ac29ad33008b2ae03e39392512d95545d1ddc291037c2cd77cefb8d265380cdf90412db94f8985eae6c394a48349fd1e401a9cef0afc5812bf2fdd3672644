@@ -1,0 +1,56 @@
+{
+	"name": "decompress-response",
+	"version": "6.0.0",
+	"description": "Decompress a HTTP response if needed",
+	"license": "MIT",
+	"repository": "sindresorhus/decompress-response",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"decompress",
+		"response",
+		"http",
+		"https",
+		"zlib",
+		"gzip",
+		"zip",
+		"deflate",
+		"unzip",
+		"ungzip",
+		"incoming",
+		"message",
+		"stream",
+		"compressed",
+		"brotli"
+	],
+	"dependencies": {
+		"mimic-response": "^3.1.0"
+	},
+	"devDependencies": {
+		"@types/node": "^14.0.1",
+		"ava": "^2.2.0",
+		"get-stream": "^5.0.0",
+		"pify": "^5.0.0",
+		"tsd": "^0.11.0",
+		"xo": "^0.30.0"
+	},
+	"xo": {
+		"rules": {
+			"@typescript-eslint/prefer-readonly-parameter-types": "off"
+		}
+	}
+}

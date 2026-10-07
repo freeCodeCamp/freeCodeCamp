@@ -1,0 +1,1 @@
+{"version":3,"file":"MappedTypeScope.js","sourceRoot":"","sources":["../../src/scope/MappedTypeScope.ts"],"names":[],"mappings":";;;AAIA,2CAAwC;AACxC,2CAAwC;AAExC,MAAM,eAAgB,SAAQ,qBAI7B;IACC,YACE,YAA0B,EAC1B,UAAoC,EACpC,KAA+B;QAE/B,KAAK,CAAC,YAAY,EAAE,qBAAS,CAAC,UAAU,EAAE,UAAU,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IACtE,CAAC;CACF;AAEQ,0CAAe"}

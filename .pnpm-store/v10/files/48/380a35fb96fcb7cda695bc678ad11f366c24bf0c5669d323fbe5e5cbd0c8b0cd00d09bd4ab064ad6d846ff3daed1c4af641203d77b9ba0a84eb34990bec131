@@ -1,0 +1,60 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+version
+  major 1
+  minor 3
+
+include domains/Accessibility.pdl
+include domains/Animation.pdl
+include domains/Audits.pdl
+include domains/Autofill.pdl
+include domains/BackgroundService.pdl
+include domains/BluetoothEmulation.pdl
+include domains/Browser.pdl
+include domains/CSS.pdl
+include domains/CacheStorage.pdl
+include domains/Cast.pdl
+include domains/CrashReportContext.pdl
+include domains/DOM.pdl
+include domains/DOMDebugger.pdl
+include domains/DOMSnapshot.pdl
+include domains/DOMStorage.pdl
+include domains/DeviceAccess.pdl
+include domains/DeviceOrientation.pdl
+include domains/Emulation.pdl
+include domains/EventBreakpoints.pdl
+include domains/Extensions.pdl
+include domains/FedCm.pdl
+include domains/Fetch.pdl
+include domains/FileSystem.pdl
+include domains/HeadlessExperimental.pdl
+include domains/IO.pdl
+include domains/IndexedDB.pdl
+include domains/Input.pdl
+include domains/Inspector.pdl
+include domains/LayerTree.pdl
+include domains/Log.pdl
+include domains/Media.pdl
+include domains/Memory.pdl
+include domains/Network.pdl
+include domains/Overlay.pdl
+include domains/PWA.pdl
+include domains/Page.pdl
+include domains/Performance.pdl
+include domains/PerformanceTimeline.pdl
+include domains/Preload.pdl
+include domains/Security.pdl
+include domains/ServiceWorker.pdl
+include domains/SmartCardEmulation.pdl
+include domains/Storage.pdl
+include domains/SystemInfo.pdl
+include domains/Target.pdl
+include domains/Tethering.pdl
+include domains/Tracing.pdl
+include domains/WebAudio.pdl
+include domains/WebAuthn.pdl
+include domains/WebMCP.pdl

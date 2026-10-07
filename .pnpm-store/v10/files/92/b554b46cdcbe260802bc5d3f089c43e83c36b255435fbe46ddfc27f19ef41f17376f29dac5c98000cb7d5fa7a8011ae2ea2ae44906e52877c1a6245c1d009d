@@ -1,0 +1,50 @@
+{
+	"name": "cli-spinners",
+	"version": "2.9.1",
+	"description": "Spinners for use in the terminal",
+	"license": "MIT",
+	"repository": "sindresorhus/cli-spinners",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd",
+		"asciicast": "asciinema rec --command='node example-all.js' --title='cli-spinner' --quiet"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"spinners.json"
+	],
+	"keywords": [
+		"cli",
+		"spinner",
+		"spinners",
+		"terminal",
+		"term",
+		"console",
+		"ascii",
+		"unicode",
+		"loading",
+		"indicator",
+		"progress",
+		"busy",
+		"wait",
+		"idle",
+		"json"
+	],
+	"devDependencies": {
+		"@types/node": "^17.0.41",
+		"ava": "^1.4.1",
+		"log-update": "^3.2.0",
+		"string-length": "^4.0.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

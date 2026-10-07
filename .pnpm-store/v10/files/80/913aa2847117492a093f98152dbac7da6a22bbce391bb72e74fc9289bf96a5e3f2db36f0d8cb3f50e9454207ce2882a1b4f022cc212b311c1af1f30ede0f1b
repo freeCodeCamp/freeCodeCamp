@@ -1,0 +1,1 @@
+{"version":3,"file":"animationFrame.js","sources":["../../../src/internal/scheduler/animationFrame.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,oBAAoB,EAAE,MAAM,wBAAwB,CAAC;AAC9D,OAAO,EAAE,uBAAuB,EAAE,MAAM,2BAA2B,CAAC;AAiCpE,MAAM,CAAC,MAAM,uBAAuB,GAAG,IAAI,uBAAuB,CAAC,oBAAoB,CAAC,CAAC;AAKzF,MAAM,CAAC,MAAM,cAAc,GAAG,uBAAuB,CAAC"}

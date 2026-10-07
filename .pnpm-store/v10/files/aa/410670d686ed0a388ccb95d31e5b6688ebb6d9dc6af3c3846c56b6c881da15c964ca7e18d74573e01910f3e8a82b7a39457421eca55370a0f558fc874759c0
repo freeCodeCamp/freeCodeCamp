@@ -1,0 +1,111 @@
+{
+  "definitions": {
+    "BannerFunction": {
+      "description": "The banner as function, it will be wrapped in a comment.",
+      "instanceof": "Function",
+      "tsType": "(data: { hash?: string, chunk: import('../../lib/Chunk'), filename: string }) => string"
+    },
+    "Rule": {
+      "description": "Filtering rule as regex or string.",
+      "anyOf": [
+        {
+          "instanceof": "RegExp",
+          "tsType": "RegExp"
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "Rules": {
+      "description": "Filtering rules.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "description": "A rule condition.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/Rule"
+              }
+            ]
+          }
+        },
+        {
+          "$ref": "#/definitions/Rule"
+        }
+      ]
+    }
+  },
+  "title": "BannerPluginArgument",
+  "anyOf": [
+    {
+      "description": "The banner as string, it will be wrapped in a comment.",
+      "type": "string",
+      "minLength": 1
+    },
+    {
+      "title": "BannerPluginOptions",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "banner": {
+          "description": "Specifies the banner.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/definitions/BannerFunction"
+            }
+          ]
+        },
+        "entryOnly": {
+          "description": "If true, the banner will only be added to the entry chunks.",
+          "type": "boolean"
+        },
+        "exclude": {
+          "description": "Exclude all modules matching any of these conditions.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/Rules"
+            }
+          ]
+        },
+        "footer": {
+          "description": "If true, banner will be placed at the end of the output.",
+          "type": "boolean"
+        },
+        "include": {
+          "description": "Include all modules matching any of these conditions.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/Rules"
+            }
+          ]
+        },
+        "raw": {
+          "description": "If true, banner will not be wrapped in a comment.",
+          "type": "boolean"
+        },
+        "stage": {
+          "description": "Specifies the stage when add a banner.",
+          "type": "number"
+        },
+        "test": {
+          "description": "Include all modules that pass test assertion.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/Rules"
+            }
+          ]
+        }
+      },
+      "required": ["banner"]
+    },
+    {
+      "$ref": "#/definitions/BannerFunction"
+    }
+  ]
+}

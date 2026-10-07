@@ -1,0 +1,5 @@
+{
+  "name": "source-pnpm",
+  "main": "dist.js",
+  "source": "source.js"
+}

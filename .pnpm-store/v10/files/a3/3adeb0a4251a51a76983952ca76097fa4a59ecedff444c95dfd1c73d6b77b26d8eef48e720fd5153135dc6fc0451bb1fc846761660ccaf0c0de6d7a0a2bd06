@@ -1,0 +1,29 @@
+{
+  "name": "@pkgr/core",
+  "version": "0.1.2",
+  "type": "module",
+  "description": "Shared core module for `@pkgr` packages or any package else",
+  "repository": "https://github.com/un-ts/pkgr.git",
+  "homepage": "https://github.com/un-ts/pkgr/blob/master/packages/core",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "funding": "https://opencollective.com/unts",
+  "license": "MIT",
+  "engines": {
+    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+  },
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.js",
+  "exports": {
+    "types": "./lib/index.d.ts",
+    "import": "./lib/index.js",
+    "require": "./lib/index.cjs"
+  },
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}

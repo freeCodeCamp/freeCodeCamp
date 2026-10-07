@@ -1,0 +1,1 @@
+{"version":3,"file":"TypeScope.js","sourceRoot":"","sources":["../../src/scope/TypeScope.ts"],"names":[],"mappings":";;;AAIA,2CAAwC;AACxC,2CAAwC;AAExC,MAAM,SAAU,SAAQ,qBAIvB;IACC,YACE,YAA0B,EAC1B,UAA8B,EAC9B,KAAyB;QAEzB,KAAK,CAAC,YAAY,EAAE,qBAAS,CAAC,IAAI,EAAE,UAAU,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IAChE,CAAC;CACF;AAEQ,8BAAS"}

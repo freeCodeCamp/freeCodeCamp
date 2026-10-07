@@ -1,0 +1,52 @@
+{
+  "name": "@parcel/node-resolver-core",
+  "version": "2.8.3",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/NodeResolver.js",
+  "source": "src/NodeResolver.js",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "dependencies": {
+    "@parcel/diagnostic": "2.8.3",
+    "@parcel/utils": "2.8.3",
+    "nullthrows": "^1.1.1",
+    "semver": "^5.7.1"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^5.5.0",
+    "console-browserify": "^1.2.0",
+    "constants-browserify": "^1.0.0",
+    "crypto-browserify": "^3.12.0",
+    "domain-browser": "^3.5.0",
+    "events": "^3.1.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.0",
+    "process": "^0.11.10",
+    "punycode": "^1.4.1",
+    "querystring-es3": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.1.0",
+    "string_decoder": "^1.3.0",
+    "timers-browserify": "^2.0.11",
+    "tty-browserify": "^0.0.1",
+    "url": "^0.11.0",
+    "util": "^0.12.3",
+    "vm-browserify": "^1.1.2"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

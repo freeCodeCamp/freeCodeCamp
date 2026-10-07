@@ -1,0 +1,1 @@
+{"version":3,"file":"addOriginToSpan.d.ts","sourceRoot":"","sources":["../../../src/utils/addOriginToSpan.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,oBAAoB,CAAC;AAC/C,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAG/C,sCAAsC;AACtC,wBAAgB,eAAe,CAAC,IAAI,EAAE,IAAI,EAAE,MAAM,EAAE,UAAU,GAAG,IAAI,CAEpE"}

@@ -1,0 +1,30 @@
+{
+  "name": "webidl-conversions",
+  "version": "5.0.0",
+  "description": "Implements the WebIDL algorithms for converting to and from JavaScript values",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha test/*.js",
+    "coverage": "nyc mocha test/*.js"
+  },
+  "repository": "jsdom/webidl-conversions",
+  "keywords": [
+    "webidl",
+    "web",
+    "types"
+  ],
+  "files": [
+    "lib/"
+  ],
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}

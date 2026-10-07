@@ -1,0 +1,679 @@
+{
+  "global": "Usage: playwright-cli <command> [args] [options]\nUsage: playwright-cli -s=<session> <command> [args] [options]\n\nCore:\n  open [url]                  open the browser\n  attach [name]               attach to a running playwright browser\n  close                       close the browser\n  detach                      detach from an attached browser\n  goto <url>                  navigate to a url\n  type <text>                 type text into editable element\n  click <target> [button]     perform click on a web page\n  dblclick <target> [button]  perform double click on a web page\n  fill <target> <text>        fill text into editable element\n  drag <startTarget> <endTarget> perform drag and drop between two elements\n  drop <target>               drop files or data onto an element\n  hover <target>              hover over element on page\n  select <target> <val>       select an option in a dropdown\n  upload <file>               upload one or multiple files\n  check <target>              check a checkbox or radio button\n  uncheck <target>            uncheck a checkbox or radio button\n  snapshot [target]           capture page snapshot to obtain element ref\n  eval <func> [target]        evaluate javascript expression on page or element\n  dialog-accept [prompt]      accept a dialog\n  dialog-dismiss              dismiss a dialog\n  resize <w> <h>              resize the browser window\n  delete-data                 delete session data\n\nNavigation:\n  go-back                     go back to the previous page\n  go-forward                  go forward to the next page\n  reload                      reload the current page\n\nKeyboard:\n  press <key>                 press a key on the keyboard, `a`, `arrowleft`\n  keydown <key>               press a key down on the keyboard\n  keyup <key>                 press a key up on the keyboard\n\nMouse:\n  mousemove <x> <y>           move mouse to a given position\n  mousedown [button]          press mouse down\n  mouseup [button]            press mouse up\n  mousewheel <dx> <dy>        scroll mouse wheel\n\nSave as:\n  screenshot [target]         screenshot of the current page or element\n  pdf                         save page as pdf\n\nTabs:\n  tab-list                    list all tabs\n  tab-new [url]               create a new tab\n  tab-close [index]           close a browser tab\n  tab-select <index>          select a browser tab\n\nStorage:\n  state-load <filename>       loads browser storage (authentication) state from a file\n  state-save [filename]       saves the current storage (authentication) state to a file\n  cookie-list                 list all cookies (optionally filtered by domain/path)\n  cookie-get <name>           get a specific cookie by name\n  cookie-set <name> <value>   set a cookie with optional flags\n  cookie-delete <name>        delete a specific cookie\n  cookie-clear                clear all cookies\n  localstorage-list           list all localstorage key-value pairs\n  localstorage-get <key>      get a localstorage item by key\n  localstorage-set <key> <value> set a localstorage item\n  localstorage-delete <key>   delete a localstorage item\n  localstorage-clear          clear all localstorage\n  sessionstorage-list         list all sessionstorage key-value pairs\n  sessionstorage-get <key>    get a sessionstorage item by key\n  sessionstorage-set <key> <value> set a sessionstorage item\n  sessionstorage-delete <key> delete a sessionstorage item\n  sessionstorage-clear        clear all sessionstorage\n\nNetwork:\n  requests                    list all network requests since loading the page. each request is numbered for use with the `request` command.\n  request <index>             show full details (headers, body, response) of a single network request by its number from the `requests` command.\n  request-headers <index>     print only the request headers for a single network request by its number from the `requests` command.\n  request-body <index>        print only the request body for a single network request by its number from the `requests` command.\n  response-headers <index>    print only the response headers for a single network request by its number from the `requests` command.\n  response-body <index>       print the response body for a single network request by its number from the `requests` command. textual bodies are inlined; binary bodies are saved to a file and the path is printed.\n  route <pattern>             mock network requests matching a url pattern\n  route-list                  list all active network routes\n  unroute [pattern]           remove routes matching a pattern (or all routes)\n  network-state-set <state>   set the browser network state to online or offline\n\nDevTools:\n  console [min-level]         list console messages\n  run-code [code]             run playwright code snippet\n  tracing-start               start trace recording\n  tracing-stop                stop trace recording\n  video-start [filename]      start video recording\n  video-stop                  stop video recording\n  video-chapter <title>       add a chapter marker to the video recording\n  show                        show playwright dashboard\n  pause-at <location>         run the test up to a specific location and pause there\n  resume                      resume the test execution\n  step-over                   step over the next call in the test\n  generate-locator <target>   generate a playwright locator for the given element\n  highlight [target]          show (or with --hide, remove) a highlight overlay for an element; `--hide` without a target hides all page highlights.\n\nInstall:\n  install                     initialize workspace\n  install-browser [browser]   install browser\n\nBrowser sessions:\n  list                        list browser sessions\n  close-all                   close all browser sessions\n  kill-all                    forcefully kill all browser sessions (for stale/zombie processes)\n\nGlobal options:\n  --help [command]            print help\n  --json                      output response as JSON\n  --raw                       output only the result value, without status and code\n  --version                   print version",
+  "commands": {
+    "open": {
+      "help": "playwright-cli open [url]\n\nOpen the browser\n\nArguments:\n  [url]                       the url to navigate to\nOptions:\n  --browser                   browser or chrome channel to use, possible values: chrome, firefox, webkit, msedge.\n  --config                    path to the configuration file, defaults to .playwright/cli.config.json\n  --headed                    run browser in headed mode\n  --persistent                use persistent browser profile\n  --profile                   path to a persistent user data directory.",
+      "flags": {
+        "browser": "string",
+        "config": "string",
+        "headed": "boolean",
+        "persistent": "boolean",
+        "profile": "string"
+      },
+      "args": [
+        "url"
+      ]
+    },
+    "attach": {
+      "help": "playwright-cli attach [name]\n\nAttach to a running Playwright browser\n\nArguments:\n  [name]                      bound browser name to attach to\nOptions:\n  --cdp                       connect to an existing browser via cdp endpoint url.\n  --endpoint                  playwright browser server endpoint to attach to.\n  --extension                 connect to browser extension, optionally specify browser name (e.g. --extension=chrome)\n  --config                    path to the configuration file, defaults to .playwright/cli.config.json\n  --session                   session name (defaults to bound browser name or \"default\")",
+      "flags": {
+        "cdp": "string",
+        "endpoint": "string",
+        "extension": "string",
+        "config": "string",
+        "session": "string"
+      },
+      "args": [
+        "name"
+      ]
+    },
+    "close": {
+      "help": "playwright-cli close \n\nClose the browser\n",
+      "flags": {},
+      "args": []
+    },
+    "detach": {
+      "help": "playwright-cli detach \n\nDetach from an attached browser\n",
+      "flags": {},
+      "args": []
+    },
+    "goto": {
+      "help": "playwright-cli goto <url>\n\nNavigate to a URL\n\nArguments:\n  <url>                       the url to navigate to",
+      "flags": {},
+      "args": [
+        "url"
+      ]
+    },
+    "type": {
+      "help": "playwright-cli type <text>\n\nType text into editable element\n\nArguments:\n  <text>                      text to type into the element\nOptions:\n  --submit                    whether to submit entered text (press enter after)",
+      "flags": {
+        "submit": "boolean"
+      },
+      "args": [
+        "text"
+      ]
+    },
+    "click": {
+      "help": "playwright-cli click <target> [button]\n\nPerform click on a web page\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector\n  [button]                    button to click, defaults to left\nOptions:\n  --modifiers                 modifier keys to press",
+      "flags": {
+        "modifiers": "string"
+      },
+      "args": [
+        "target",
+        "button"
+      ]
+    },
+    "dblclick": {
+      "help": "playwright-cli dblclick <target> [button]\n\nPerform double click on a web page\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector\n  [button]                    button to click, defaults to left\nOptions:\n  --modifiers                 modifier keys to press",
+      "flags": {
+        "modifiers": "string"
+      },
+      "args": [
+        "target",
+        "button"
+      ]
+    },
+    "fill": {
+      "help": "playwright-cli fill <target> <text>\n\nFill text into editable element\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector\n  <text>                      text to fill into the element\nOptions:\n  --submit                    whether to submit entered text (press enter after)",
+      "flags": {
+        "submit": "boolean"
+      },
+      "args": [
+        "target",
+        "text"
+      ]
+    },
+    "drag": {
+      "help": "playwright-cli drag <startTarget> <endTarget>\n\nPerform drag and drop between two elements\n\nArguments:\n  <startTarget>               exact source element reference from the page snapshot, or a unique element selector\n  <endTarget>                 exact target element reference from the page snapshot, or a unique element selector",
+      "flags": {},
+      "args": [
+        "startTarget",
+        "endTarget"
+      ]
+    },
+    "drop": {
+      "help": "playwright-cli drop <target>\n\nDrop files or data onto an element\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector\nOptions:\n  --path                      absolute path to a file to drop onto the element (repeatable)\n  --data                      data to drop in \"mime/type=value\" format, e.g. --data \"text/plain=hello\" (repeatable)",
+      "flags": {
+        "path": "string",
+        "data": "string"
+      },
+      "args": [
+        "target"
+      ]
+    },
+    "hover": {
+      "help": "playwright-cli hover <target>\n\nHover over element on page\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector",
+      "flags": {},
+      "args": [
+        "target"
+      ]
+    },
+    "select": {
+      "help": "playwright-cli select <target> <val>\n\nSelect an option in a dropdown\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector\n  <val>                       value to select in the dropdown",
+      "flags": {},
+      "args": [
+        "target",
+        "val"
+      ]
+    },
+    "upload": {
+      "help": "playwright-cli upload <file>\n\nUpload one or multiple files\n\nArguments:\n  <file>                      the absolute paths to the files to upload",
+      "flags": {},
+      "args": [
+        "file"
+      ]
+    },
+    "check": {
+      "help": "playwright-cli check <target>\n\nCheck a checkbox or radio button\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector",
+      "flags": {},
+      "args": [
+        "target"
+      ]
+    },
+    "uncheck": {
+      "help": "playwright-cli uncheck <target>\n\nUncheck a checkbox or radio button\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector",
+      "flags": {},
+      "args": [
+        "target"
+      ]
+    },
+    "snapshot": {
+      "help": "playwright-cli snapshot [target]\n\nCapture page snapshot to obtain element ref\n\nArguments:\n  [target]                    element reference from the previous page snapshot, or a unique element selector for the root element to capture a partial snapshot instead of the whole page\nOptions:\n  --filename                  save snapshot to markdown file instead of returning it in the response.\n  --depth                     limit snapshot depth, unlimited by default.\n  --boxes                     include each element's bounding box as [box=x,y,width,height] in the snapshot. coordinates are viewport-relative, in css pixels (element.getboundingclientrect).",
+      "flags": {
+        "filename": "string",
+        "depth": "string",
+        "boxes": "boolean"
+      },
+      "args": [
+        "target"
+      ]
+    },
+    "eval": {
+      "help": "playwright-cli eval <func> [target]\n\nEvaluate JavaScript expression on page or element\n\nArguments:\n  <func>                      () => { /* code */ } or (element) => { /* code */ } when element is provided\n  [target]                    exact target element reference from the page snapshot, or a unique element selector\nOptions:\n  --filename                  save evaluation result to a file instead of returning it in the response.",
+      "flags": {
+        "filename": "string"
+      },
+      "args": [
+        "func",
+        "target"
+      ]
+    },
+    "console": {
+      "help": "playwright-cli console [min-level]\n\nList console messages\n\nArguments:\n  [min-level]                 level of the console messages to return. each level includes the messages of more severe levels. defaults to \"info\".\nOptions:\n  --clear                     whether to clear the console list",
+      "flags": {
+        "clear": "boolean"
+      },
+      "args": [
+        "min-level"
+      ]
+    },
+    "dialog-accept": {
+      "help": "playwright-cli dialog-accept [prompt]\n\nAccept a dialog\n\nArguments:\n  [prompt]                    the text of the prompt in case of a prompt dialog.",
+      "flags": {},
+      "args": [
+        "prompt"
+      ]
+    },
+    "dialog-dismiss": {
+      "help": "playwright-cli dialog-dismiss \n\nDismiss a dialog\n",
+      "flags": {},
+      "args": []
+    },
+    "resize": {
+      "help": "playwright-cli resize <w> <h>\n\nResize the browser window\n\nArguments:\n  <w>                         width of the browser window\n  <h>                         height of the browser window",
+      "flags": {},
+      "args": [
+        "w",
+        "h"
+      ]
+    },
+    "run-code": {
+      "help": "playwright-cli run-code [code]\n\nRun Playwright code snippet\n\nArguments:\n  [code]                      a javascript function containing playwright code to execute. it will be invoked with a single argument, page, which you can use for any page interaction.\nOptions:\n  --filename                  load code from the specified file.",
+      "flags": {
+        "filename": "string"
+      },
+      "args": [
+        "code"
+      ]
+    },
+    "delete-data": {
+      "help": "playwright-cli delete-data \n\nDelete session data\n",
+      "flags": {},
+      "args": []
+    },
+    "go-back": {
+      "help": "playwright-cli go-back \n\nGo back to the previous page\n",
+      "flags": {},
+      "args": []
+    },
+    "go-forward": {
+      "help": "playwright-cli go-forward \n\nGo forward to the next page\n",
+      "flags": {},
+      "args": []
+    },
+    "reload": {
+      "help": "playwright-cli reload \n\nReload the current page\n",
+      "flags": {},
+      "args": []
+    },
+    "press": {
+      "help": "playwright-cli press <key>\n\nPress a key on the keyboard, `a`, `ArrowLeft`\n\nArguments:\n  <key>                       name of the key to press or a character to generate, such as `arrowleft` or `a`",
+      "flags": {},
+      "args": [
+        "key"
+      ]
+    },
+    "keydown": {
+      "help": "playwright-cli keydown <key>\n\nPress a key down on the keyboard\n\nArguments:\n  <key>                       name of the key to press or a character to generate, such as `arrowleft` or `a`",
+      "flags": {},
+      "args": [
+        "key"
+      ]
+    },
+    "keyup": {
+      "help": "playwright-cli keyup <key>\n\nPress a key up on the keyboard\n\nArguments:\n  <key>                       name of the key to press or a character to generate, such as `arrowleft` or `a`",
+      "flags": {},
+      "args": [
+        "key"
+      ]
+    },
+    "mousemove": {
+      "help": "playwright-cli mousemove <x> <y>\n\nMove mouse to a given position\n\nArguments:\n  <x>                         x coordinate\n  <y>                         y coordinate",
+      "flags": {},
+      "args": [
+        "x",
+        "y"
+      ]
+    },
+    "mousedown": {
+      "help": "playwright-cli mousedown [button]\n\nPress mouse down\n\nArguments:\n  [button]                    button to press, defaults to left",
+      "flags": {},
+      "args": [
+        "button"
+      ]
+    },
+    "mouseup": {
+      "help": "playwright-cli mouseup [button]\n\nPress mouse up\n\nArguments:\n  [button]                    button to press, defaults to left",
+      "flags": {},
+      "args": [
+        "button"
+      ]
+    },
+    "mousewheel": {
+      "help": "playwright-cli mousewheel <dx> <dy>\n\nScroll mouse wheel\n\nArguments:\n  <dx>                        x delta\n  <dy>                        y delta",
+      "flags": {},
+      "args": [
+        "dx",
+        "dy"
+      ]
+    },
+    "screenshot": {
+      "help": "playwright-cli screenshot [target]\n\nscreenshot of the current page or element\n\nArguments:\n  [target]                    exact target element reference from the page snapshot, or a unique element selector\nOptions:\n  --filename                  file name to save the screenshot to. defaults to `page-{timestamp}.{png|jpeg}` if not specified.\n  --full-page                 when true, takes a screenshot of the full scrollable page, instead of the currently visible viewport.",
+      "flags": {
+        "filename": "string",
+        "full-page": "boolean"
+      },
+      "args": [
+        "target"
+      ]
+    },
+    "pdf": {
+      "help": "playwright-cli pdf \n\nSave page as PDF\n\nOptions:\n  --filename                  file name to save the pdf to. defaults to `page-{timestamp}.pdf` if not specified.",
+      "flags": {
+        "filename": "string"
+      },
+      "args": []
+    },
+    "tab-list": {
+      "help": "playwright-cli tab-list \n\nList all tabs\n",
+      "flags": {},
+      "args": []
+    },
+    "tab-new": {
+      "help": "playwright-cli tab-new [url]\n\nCreate a new tab\n\nArguments:\n  [url]                       the url to navigate to in the new tab. if omitted, the new tab will be blank.",
+      "flags": {},
+      "args": [
+        "url"
+      ]
+    },
+    "tab-close": {
+      "help": "playwright-cli tab-close [index]\n\nClose a browser tab\n\nArguments:\n  [index]                     tab index. if omitted, current tab is closed.",
+      "flags": {},
+      "args": [
+        "index"
+      ]
+    },
+    "tab-select": {
+      "help": "playwright-cli tab-select <index>\n\nSelect a browser tab\n\nArguments:\n  <index>                     tab index",
+      "flags": {},
+      "args": [
+        "index"
+      ]
+    },
+    "state-load": {
+      "help": "playwright-cli state-load <filename>\n\nLoads browser storage (authentication) state from a file\n\nArguments:\n  <filename>                  file name to load the storage state from.",
+      "flags": {},
+      "args": [
+        "filename"
+      ]
+    },
+    "state-save": {
+      "help": "playwright-cli state-save [filename]\n\nSaves the current storage (authentication) state to a file\n\nArguments:\n  [filename]                  file name to save the storage state to.",
+      "flags": {},
+      "args": [
+        "filename"
+      ]
+    },
+    "cookie-list": {
+      "help": "playwright-cli cookie-list \n\nList all cookies (optionally filtered by domain/path)\n\nOptions:\n  --domain                    filter cookies by domain\n  --path                      filter cookies by path",
+      "flags": {
+        "domain": "string",
+        "path": "string"
+      },
+      "args": [],
+      "raw": true
+    },
+    "cookie-get": {
+      "help": "playwright-cli cookie-get <name>\n\nGet a specific cookie by name\n\nArguments:\n  <name>                      cookie name",
+      "flags": {},
+      "args": [
+        "name"
+      ],
+      "raw": true
+    },
+    "cookie-set": {
+      "help": "playwright-cli cookie-set <name> <value>\n\nSet a cookie with optional flags\n\nArguments:\n  <name>                      cookie name\n  <value>                     cookie value\nOptions:\n  --domain                    cookie domain\n  --path                      cookie path\n  --expires                   cookie expiration as unix timestamp\n  --httpOnly                  whether the cookie is http only\n  --secure                    whether the cookie is secure\n  --sameSite                  cookie samesite attribute",
+      "flags": {
+        "domain": "string",
+        "path": "string",
+        "expires": "string",
+        "httpOnly": "boolean",
+        "secure": "boolean",
+        "sameSite": "string"
+      },
+      "args": [
+        "name",
+        "value"
+      ]
+    },
+    "cookie-delete": {
+      "help": "playwright-cli cookie-delete <name>\n\nDelete a specific cookie\n\nArguments:\n  <name>                      cookie name",
+      "flags": {},
+      "args": [
+        "name"
+      ]
+    },
+    "cookie-clear": {
+      "help": "playwright-cli cookie-clear \n\nClear all cookies\n",
+      "flags": {},
+      "args": []
+    },
+    "localstorage-list": {
+      "help": "playwright-cli localstorage-list \n\nList all localStorage key-value pairs\n",
+      "flags": {},
+      "args": [],
+      "raw": true
+    },
+    "localstorage-get": {
+      "help": "playwright-cli localstorage-get <key>\n\nGet a localStorage item by key\n\nArguments:\n  <key>                       key to get",
+      "flags": {},
+      "args": [
+        "key"
+      ],
+      "raw": true
+    },
+    "localstorage-set": {
+      "help": "playwright-cli localstorage-set <key> <value>\n\nSet a localStorage item\n\nArguments:\n  <key>                       key to set\n  <value>                     value to set",
+      "flags": {},
+      "args": [
+        "key",
+        "value"
+      ]
+    },
+    "localstorage-delete": {
+      "help": "playwright-cli localstorage-delete <key>\n\nDelete a localStorage item\n\nArguments:\n  <key>                       key to delete",
+      "flags": {},
+      "args": [
+        "key"
+      ]
+    },
+    "localstorage-clear": {
+      "help": "playwright-cli localstorage-clear \n\nClear all localStorage\n",
+      "flags": {},
+      "args": []
+    },
+    "sessionstorage-list": {
+      "help": "playwright-cli sessionstorage-list \n\nList all sessionStorage key-value pairs\n",
+      "flags": {},
+      "args": [],
+      "raw": true
+    },
+    "sessionstorage-get": {
+      "help": "playwright-cli sessionstorage-get <key>\n\nGet a sessionStorage item by key\n\nArguments:\n  <key>                       key to get",
+      "flags": {},
+      "args": [
+        "key"
+      ],
+      "raw": true
+    },
+    "sessionstorage-set": {
+      "help": "playwright-cli sessionstorage-set <key> <value>\n\nSet a sessionStorage item\n\nArguments:\n  <key>                       key to set\n  <value>                     value to set",
+      "flags": {},
+      "args": [
+        "key",
+        "value"
+      ]
+    },
+    "sessionstorage-delete": {
+      "help": "playwright-cli sessionstorage-delete <key>\n\nDelete a sessionStorage item\n\nArguments:\n  <key>                       key to delete",
+      "flags": {},
+      "args": [
+        "key"
+      ]
+    },
+    "sessionstorage-clear": {
+      "help": "playwright-cli sessionstorage-clear \n\nClear all sessionStorage\n",
+      "flags": {},
+      "args": []
+    },
+    "requests": {
+      "help": "playwright-cli requests \n\nList all network requests since loading the page. Each request is numbered for use with the `request` command.\n\nOptions:\n  --static                    whether to include successful static resources like images, fonts, scripts, etc. defaults to false.\n  --filter                    only return requests whose url matches this regexp (e.g. \"/api/.*user\").\n  --clear                     whether to clear the network list",
+      "flags": {
+        "static": "boolean",
+        "filter": "string",
+        "clear": "boolean"
+      },
+      "args": []
+    },
+    "request": {
+      "help": "playwright-cli request <index>\n\nShow full details (headers, body, response) of a single network request by its number from the `requests` command.\n\nArguments:\n  <index>                     1-based number of the request as listed by `requests`\nOptions:\n  --filename                  filename to save the result to. if not provided, output is returned as text.",
+      "flags": {
+        "filename": "string"
+      },
+      "args": [
+        "index"
+      ]
+    },
+    "request-headers": {
+      "help": "playwright-cli request-headers <index>\n\nPrint only the request headers for a single network request by its number from the `requests` command.\n\nArguments:\n  <index>                     1-based number of the request as listed by `requests`\nOptions:\n  --filename                  filename to save the result to. if not provided, output is returned as text.",
+      "flags": {
+        "filename": "string"
+      },
+      "args": [
+        "index"
+      ],
+      "raw": true
+    },
+    "request-body": {
+      "help": "playwright-cli request-body <index>\n\nPrint only the request body for a single network request by its number from the `requests` command.\n\nArguments:\n  <index>                     1-based number of the request as listed by `requests`\nOptions:\n  --filename                  filename to save the result to. if not provided, output is returned as text.",
+      "flags": {
+        "filename": "string"
+      },
+      "args": [
+        "index"
+      ],
+      "raw": true
+    },
+    "response-headers": {
+      "help": "playwright-cli response-headers <index>\n\nPrint only the response headers for a single network request by its number from the `requests` command.\n\nArguments:\n  <index>                     1-based number of the request as listed by `requests`\nOptions:\n  --filename                  filename to save the result to. if not provided, output is returned as text.",
+      "flags": {
+        "filename": "string"
+      },
+      "args": [
+        "index"
+      ],
+      "raw": true
+    },
+    "response-body": {
+      "help": "playwright-cli response-body <index>\n\nPrint the response body for a single network request by its number from the `requests` command. Textual bodies are inlined; binary bodies are saved to a file and the path is printed.\n\nArguments:\n  <index>                     1-based number of the request as listed by `requests`\nOptions:\n  --filename                  filename to save the result to. if not provided, output is returned as text.",
+      "flags": {
+        "filename": "string"
+      },
+      "args": [
+        "index"
+      ],
+      "raw": true
+    },
+    "route": {
+      "help": "playwright-cli route <pattern>\n\nMock network requests matching a URL pattern\n\nArguments:\n  <pattern>                   url pattern to match (e.g., \"**/api/users\")\nOptions:\n  --status                    http status code (default: 200)\n  --body                      response body (text or json string)\n  --content-type              content-type header\n  --header                    header to add in \"name: value\" format (repeatable)\n  --remove-header             comma-separated header names to remove",
+      "flags": {
+        "status": "string",
+        "body": "string",
+        "content-type": "string",
+        "header": "string",
+        "remove-header": "string"
+      },
+      "args": [
+        "pattern"
+      ]
+    },
+    "route-list": {
+      "help": "playwright-cli route-list \n\nList all active network routes\n",
+      "flags": {},
+      "args": [],
+      "raw": true
+    },
+    "unroute": {
+      "help": "playwright-cli unroute [pattern]\n\nRemove routes matching a pattern (or all routes)\n\nArguments:\n  [pattern]                   url pattern to unroute (omit to remove all)",
+      "flags": {},
+      "args": [
+        "pattern"
+      ]
+    },
+    "network-state-set": {
+      "help": "playwright-cli network-state-set <state>\n\nSet the browser network state to online or offline\n\nArguments:\n  <state>                     set to \"offline\" to simulate offline mode, \"online\" to restore network connectivity",
+      "flags": {},
+      "args": [
+        "state"
+      ]
+    },
+    "config-print": {
+      "help": "playwright-cli config-print \n\nPrint the final resolved config after merging CLI options, environment variables and config file.\n",
+      "flags": {},
+      "args": []
+    },
+    "install": {
+      "help": "playwright-cli install \n\nInitialize workspace\n\nOptions:\n  --skills                    install skills, possible values: claude (default), agents.",
+      "flags": {
+        "skills": "string"
+      },
+      "args": []
+    },
+    "install-browser": {
+      "help": "playwright-cli install-browser [browser]\n\nInstall browser\n\nArguments:\n  [browser]                   browser to install\nOptions:\n  --with-deps                 install system dependencies for browsers\n  --dry-run                   do not execute installation, only print information\n  --list                      prints list of browsers from all playwright installations\n  --force                     force reinstall of already installed browsers\n  --only-shell                only install headless shell when installing chromium\n  --no-shell                  do not install chromium headless shell",
+      "flags": {
+        "with-deps": "boolean",
+        "dry-run": "boolean",
+        "list": "boolean",
+        "force": "boolean",
+        "only-shell": "boolean",
+        "no-shell": "boolean"
+      },
+      "args": [
+        "browser"
+      ]
+    },
+    "tracing-start": {
+      "help": "playwright-cli tracing-start \n\nStart trace recording\n",
+      "flags": {},
+      "args": []
+    },
+    "tracing-stop": {
+      "help": "playwright-cli tracing-stop \n\nStop trace recording\n",
+      "flags": {},
+      "args": []
+    },
+    "video-start": {
+      "help": "playwright-cli video-start [filename]\n\nStart video recording\n\nArguments:\n  [filename]                  filename to save the video.\nOptions:\n  --size                      video frame size, e.g. \"800x600\". if not specified, the size of the recorded video will fit 800x800.",
+      "flags": {
+        "size": "string"
+      },
+      "args": [
+        "filename"
+      ]
+    },
+    "video-stop": {
+      "help": "playwright-cli video-stop \n\nStop video recording\n",
+      "flags": {},
+      "args": []
+    },
+    "video-chapter": {
+      "help": "playwright-cli video-chapter <title>\n\nAdd a chapter marker to the video recording\n\nArguments:\n  <title>                     chapter title.\nOptions:\n  --description               chapter description.\n  --duration                  duration in milliseconds to show the chapter card.",
+      "flags": {
+        "description": "string",
+        "duration": "string"
+      },
+      "args": [
+        "title"
+      ]
+    },
+    "show": {
+      "help": "playwright-cli show \n\nShow Playwright Dashboard\n\nOptions:\n  --port                      start as a blocking http server on this port (use 0 for a random port)\n  --host                      host to bind to when using --port (defaults to localhost)\n  --annotate                  switch the dashboard into annotation mode.\n  --kill                      kill the dashboard daemon.",
+      "flags": {
+        "port": "string",
+        "host": "string",
+        "annotate": "boolean",
+        "kill": "boolean"
+      },
+      "args": [],
+      "raw": true
+    },
+    "pause-at": {
+      "help": "playwright-cli pause-at <location>\n\nRun the test up to a specific location and pause there\n\nArguments:\n  <location>                  location to pause at. format is <file>:<line>, e.g. \"example.spec.ts:42\".",
+      "flags": {},
+      "args": [
+        "location"
+      ]
+    },
+    "resume": {
+      "help": "playwright-cli resume \n\nResume the test execution\n",
+      "flags": {},
+      "args": []
+    },
+    "step-over": {
+      "help": "playwright-cli step-over \n\nStep over the next call in the test\n",
+      "flags": {},
+      "args": []
+    },
+    "generate-locator": {
+      "help": "playwright-cli generate-locator <target>\n\nGenerate a Playwright locator for the given element\n\nArguments:\n  <target>                    exact target element reference from the page snapshot, or a unique element selector",
+      "flags": {},
+      "args": [
+        "target"
+      ]
+    },
+    "highlight": {
+      "help": "playwright-cli highlight [target]\n\nShow (or with --hide, remove) a highlight overlay for an element; `--hide` without a target hides all page highlights.\n\nArguments:\n  [target]                    exact target element reference from the page snapshot, or a unique element selector\nOptions:\n  --hide                      hide a previously added highlight for this element, or all page highlights when no element is given\n  --style                     additional inline css applied to the highlight overlay, e.g. \"outline: 2px dashed red\"",
+      "flags": {
+        "hide": "boolean",
+        "style": "string"
+      },
+      "args": [
+        "target"
+      ]
+    },
+    "list": {
+      "help": "playwright-cli list \n\nList browser sessions\n\nOptions:\n  --all                       list all browser sessions across all workspaces",
+      "flags": {
+        "all": "boolean"
+      },
+      "args": []
+    },
+    "close-all": {
+      "help": "playwright-cli close-all \n\nClose all browser sessions\n",
+      "flags": {},
+      "args": []
+    },
+    "kill-all": {
+      "help": "playwright-cli kill-all \n\nForcefully kill all browser sessions (for stale/zombie processes)\n",
+      "flags": {},
+      "args": []
+    },
+    "tray": {
+      "help": "playwright-cli tray \n\nRun tray\n",
+      "flags": {},
+      "args": []
+    }
+  },
+  "booleanOptions": [
+    "headed",
+    "persistent",
+    "submit",
+    "boxes",
+    "clear",
+    "full-page",
+    "httpOnly",
+    "secure",
+    "static",
+    "with-deps",
+    "dry-run",
+    "list",
+    "force",
+    "only-shell",
+    "no-shell",
+    "annotate",
+    "kill",
+    "hide",
+    "all"
+  ]
+}

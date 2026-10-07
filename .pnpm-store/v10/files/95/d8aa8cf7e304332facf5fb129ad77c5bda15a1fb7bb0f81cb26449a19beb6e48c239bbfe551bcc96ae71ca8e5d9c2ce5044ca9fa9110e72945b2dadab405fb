@@ -1,0 +1,62 @@
+{
+  "name": "redux-thunk",
+  "version": "3.1.0",
+  "license": "MIT",
+  "description": "Thunk middleware for Redux.",
+  "repository": "github:reduxjs/redux-thunk",
+  "bugs": "https://github.com/reduxjs/redux-thunk/issues",
+  "homepage": "https://github.com/reduxjs/redux-thunk",
+  "keywords": [
+    "redux",
+    "thunk",
+    "middleware",
+    "redux-middleware",
+    "flux"
+  ],
+  "author": "Dan Abramov <dan.abramov@me.com>",
+  "main": "dist/cjs/redux-thunk.cjs",
+  "module": "dist/redux-thunk.legacy-esm.js",
+  "types": "dist/redux-thunk.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/redux-thunk.d.ts",
+      "import": "./dist/redux-thunk.mjs",
+      "default": "./dist/cjs/redux-thunk.cjs"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src",
+    "extend-redux.d.ts"
+  ],
+  "scripts": {
+    "clean": "rimraf lib dist es",
+    "prepublishOnly": "yarn clean && yarn lint && yarn test && yarn build",
+    "format": "prettier --write \"{src,test,typescript_test}/**/*.{js,ts}\"",
+    "format:check": "prettier --check \"{src,test,typescript_test}/**/*.{js,ts}\"",
+    "lint": "eslint \"{src,test,typescript_test}/**/*.{js,ts}\"",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "test:typescript": "tsc --noEmit -p typescript_test/tsconfig.json",
+    "build": "tsup",
+    "prepack": "yarn build"
+  },
+  "peerDependencies": {
+    "redux": "^5.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.1",
+    "redux": "^5",
+    "rimraf": "^3.0.2",
+    "tsup": "7.0.0",
+    "typescript": "^5.0",
+    "vitest": "^0.32.0"
+  }
+}

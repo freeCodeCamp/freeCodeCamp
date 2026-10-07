@@ -1,0 +1,329 @@
+import { s as __toESM, t as __commonJSMin } from "./chunk.js";
+import { readFileSync } from "node:fs";
+import path, { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import readline from "node:readline";
+
+//#region ../../node_modules/.pnpm/picocolors@1.1.1/node_modules/picocolors/picocolors.js
+var require_picocolors = /* @__PURE__ */ __commonJSMin(((exports, module) => {
+	let p = process || {}, argv = p.argv || [], env = p.env || {};
+	let isColorSupported = !(!!env.NO_COLOR || argv.includes("--no-color")) && (!!env.FORCE_COLOR || argv.includes("--color") || p.platform === "win32" || (p.stdout || {}).isTTY && env.TERM !== "dumb" || !!env.CI);
+	let formatter = (open, close, replace = open) => (input) => {
+		let string = "" + input, index = string.indexOf(close, open.length);
+		return ~index ? open + replaceClose(string, close, replace, index) + close : open + string + close;
+	};
+	let replaceClose = (string, close, replace, index) => {
+		let result = "", cursor = 0;
+		do {
+			result += string.substring(cursor, index) + replace;
+			cursor = index + close.length;
+			index = string.indexOf(close, cursor);
+		} while (~index);
+		return result + string.substring(cursor);
+	};
+	let createColors = (enabled = isColorSupported) => {
+		let f = enabled ? formatter : () => String;
+		return {
+			isColorSupported: enabled,
+			reset: f("\x1B[0m", "\x1B[0m"),
+			bold: f("\x1B[1m", "\x1B[22m", "\x1B[22m\x1B[1m"),
+			dim: f("\x1B[2m", "\x1B[22m", "\x1B[22m\x1B[2m"),
+			italic: f("\x1B[3m", "\x1B[23m"),
+			underline: f("\x1B[4m", "\x1B[24m"),
+			inverse: f("\x1B[7m", "\x1B[27m"),
+			hidden: f("\x1B[8m", "\x1B[28m"),
+			strikethrough: f("\x1B[9m", "\x1B[29m"),
+			black: f("\x1B[30m", "\x1B[39m"),
+			red: f("\x1B[31m", "\x1B[39m"),
+			green: f("\x1B[32m", "\x1B[39m"),
+			yellow: f("\x1B[33m", "\x1B[39m"),
+			blue: f("\x1B[34m", "\x1B[39m"),
+			magenta: f("\x1B[35m", "\x1B[39m"),
+			cyan: f("\x1B[36m", "\x1B[39m"),
+			white: f("\x1B[37m", "\x1B[39m"),
+			gray: f("\x1B[90m", "\x1B[39m"),
+			bgBlack: f("\x1B[40m", "\x1B[49m"),
+			bgRed: f("\x1B[41m", "\x1B[49m"),
+			bgGreen: f("\x1B[42m", "\x1B[49m"),
+			bgYellow: f("\x1B[43m", "\x1B[49m"),
+			bgBlue: f("\x1B[44m", "\x1B[49m"),
+			bgMagenta: f("\x1B[45m", "\x1B[49m"),
+			bgCyan: f("\x1B[46m", "\x1B[49m"),
+			bgWhite: f("\x1B[47m", "\x1B[49m"),
+			blackBright: f("\x1B[90m", "\x1B[39m"),
+			redBright: f("\x1B[91m", "\x1B[39m"),
+			greenBright: f("\x1B[92m", "\x1B[39m"),
+			yellowBright: f("\x1B[93m", "\x1B[39m"),
+			blueBright: f("\x1B[94m", "\x1B[39m"),
+			magentaBright: f("\x1B[95m", "\x1B[39m"),
+			cyanBright: f("\x1B[96m", "\x1B[39m"),
+			whiteBright: f("\x1B[97m", "\x1B[39m"),
+			bgBlackBright: f("\x1B[100m", "\x1B[49m"),
+			bgRedBright: f("\x1B[101m", "\x1B[49m"),
+			bgGreenBright: f("\x1B[102m", "\x1B[49m"),
+			bgYellowBright: f("\x1B[103m", "\x1B[49m"),
+			bgBlueBright: f("\x1B[104m", "\x1B[49m"),
+			bgMagentaBright: f("\x1B[105m", "\x1B[49m"),
+			bgCyanBright: f("\x1B[106m", "\x1B[49m"),
+			bgWhiteBright: f("\x1B[107m", "\x1B[49m")
+		};
+	};
+	module.exports = createColors();
+	module.exports.createColors = createColors;
+}));
+
+//#endregion
+//#region src/node/constants.ts
+const { version } = JSON.parse(readFileSync(new URL("../../package.json", new URL("../../../src/node/constants.ts", import.meta.url))).toString());
+const ROLLUP_HOOKS = [
+	"options",
+	"buildStart",
+	"buildEnd",
+	"renderStart",
+	"renderError",
+	"renderChunk",
+	"writeBundle",
+	"generateBundle",
+	"banner",
+	"footer",
+	"augmentChunkHash",
+	"outputOptions",
+	"renderDynamicImport",
+	"resolveFileUrl",
+	"resolveImportMeta",
+	"intro",
+	"outro",
+	"closeBundle",
+	"closeWatcher",
+	"load",
+	"moduleParsed",
+	"watchChange",
+	"resolveDynamicImport",
+	"resolveId",
+	"shouldTransformCachedModule",
+	"transform",
+	"onLog"
+];
+const VERSION = version;
+const DEFAULT_MAIN_FIELDS = [
+	"browser",
+	"module",
+	"jsnext:main",
+	"jsnext"
+];
+const DEFAULT_CLIENT_MAIN_FIELDS = Object.freeze(DEFAULT_MAIN_FIELDS);
+const DEFAULT_SERVER_MAIN_FIELDS = Object.freeze(DEFAULT_MAIN_FIELDS.filter((f) => f !== "browser"));
+/**
+* A special condition that would be replaced with production or development
+* depending on NODE_ENV env variable
+*/
+const DEV_PROD_CONDITION = `development|production`;
+const DEFAULT_CONDITIONS = [
+	"module",
+	"browser",
+	"node",
+	DEV_PROD_CONDITION
+];
+const DEFAULT_CLIENT_CONDITIONS = Object.freeze(DEFAULT_CONDITIONS.filter((c) => c !== "node"));
+const DEFAULT_SERVER_CONDITIONS = Object.freeze(DEFAULT_CONDITIONS.filter((c) => c !== "browser"));
+const DEFAULT_EXTERNAL_CONDITIONS = Object.freeze(["node", "module-sync"]);
+const DEFAULT_EXTENSIONS = [
+	".mjs",
+	".js",
+	".mts",
+	".ts",
+	".jsx",
+	".tsx",
+	".json"
+];
+/**
+* The browser versions that are included in the Baseline Widely Available on 2025-05-01.
+*
+* This value would be bumped on each major release of Vite.
+*
+* The value is generated by `pnpm generate-target` script.
+*/
+const ESBUILD_BASELINE_WIDELY_AVAILABLE_TARGET = [
+	"chrome107",
+	"edge107",
+	"firefox104",
+	"safari16"
+];
+const DEFAULT_CONFIG_FILES = [
+	"vite.config.js",
+	"vite.config.mjs",
+	"vite.config.ts",
+	"vite.config.cjs",
+	"vite.config.mts",
+	"vite.config.cts"
+];
+const JS_TYPES_RE = /\.(?:j|t)sx?$|\.mjs$/;
+const CSS_LANGS_RE = /\.(css|less|sass|scss|styl|stylus|pcss|postcss|sss)(?:$|\?)/;
+const OPTIMIZABLE_ENTRY_RE = /\.[cm]?[jt]s$/;
+const SPECIAL_QUERY_RE = /[?&](?:worker|sharedworker|raw|url)\b/;
+/**
+* Prefix for resolved fs paths, since windows paths may not be valid as URLs.
+*/
+const FS_PREFIX = `/@fs/`;
+const CLIENT_PUBLIC_PATH = `/@vite/client`;
+const ENV_PUBLIC_PATH = `/@vite/env`;
+const VITE_PACKAGE_DIR = resolve(fileURLToPath(new URL("../../../src/node/constants.ts", import.meta.url)), "../../..");
+const CLIENT_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/client.mjs");
+const ENV_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/env.mjs");
+const CLIENT_DIR = path.dirname(CLIENT_ENTRY);
+const KNOWN_ASSET_TYPES = [
+	"apng",
+	"bmp",
+	"png",
+	"jpe?g",
+	"jfif",
+	"pjpeg",
+	"pjp",
+	"gif",
+	"svg",
+	"ico",
+	"webp",
+	"avif",
+	"cur",
+	"jxl",
+	"mp4",
+	"webm",
+	"ogg",
+	"mp3",
+	"wav",
+	"flac",
+	"aac",
+	"opus",
+	"mov",
+	"m4a",
+	"vtt",
+	"woff2?",
+	"eot",
+	"ttf",
+	"otf",
+	"webmanifest",
+	"pdf",
+	"txt"
+];
+const DEFAULT_ASSETS_RE = new RegExp(`\\.(` + KNOWN_ASSET_TYPES.join("|") + `)(\\?.*)?$`, "i");
+const DEP_VERSION_RE = /[?&](v=[\w.-]+)\b/;
+const loopbackHosts = new Set([
+	"localhost",
+	"127.0.0.1",
+	"::1",
+	"0000:0000:0000:0000:0000:0000:0000:0001"
+]);
+const wildcardHosts = new Set([
+	"0.0.0.0",
+	"::",
+	"0000:0000:0000:0000:0000:0000:0000:0000"
+]);
+const DEFAULT_DEV_PORT = 5173;
+const DEFAULT_PREVIEW_PORT = 4173;
+const DEFAULT_ASSETS_INLINE_LIMIT = 4096;
+const defaultAllowedOrigins = /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/;
+const METADATA_FILENAME = "_metadata.json";
+const ERR_OPTIMIZE_DEPS_PROCESSING_ERROR = "ERR_OPTIMIZE_DEPS_PROCESSING_ERROR";
+const ERR_FILE_NOT_FOUND_IN_OPTIMIZED_DEP_DIR = "ERR_FILE_NOT_FOUND_IN_OPTIMIZED_DEP_DIR";
+
+//#endregion
+//#region src/node/logger.ts
+var import_picocolors = /* @__PURE__ */ __toESM(require_picocolors(), 1);
+const LogLevels = {
+	silent: 0,
+	error: 1,
+	warn: 2,
+	info: 3
+};
+let lastType;
+let lastMsg;
+let sameCount = 0;
+function clearScreen() {
+	const repeatCount = process.stdout.rows - 2;
+	const blank = repeatCount > 0 ? "\n".repeat(repeatCount) : "";
+	console.log(blank);
+	readline.cursorTo(process.stdout, 0, 0);
+	readline.clearScreenDown(process.stdout);
+}
+let timeFormatter;
+function getTimeFormatter() {
+	timeFormatter ??= new Intl.DateTimeFormat(void 0, {
+		hour: "numeric",
+		minute: "numeric",
+		second: "numeric"
+	});
+	return timeFormatter;
+}
+function createLogger(level = "info", options = {}) {
+	if (options.customLogger) return options.customLogger;
+	const loggedErrors = /* @__PURE__ */ new WeakSet();
+	const { prefix = "[vite]", allowClearScreen = true, console: console$1 = globalThis.console } = options;
+	const thresh = LogLevels[level];
+	const canClearScreen = allowClearScreen && process.stdout.isTTY && !process.env.CI;
+	const clear = canClearScreen ? clearScreen : () => {};
+	function format(type, msg, options$1 = {}) {
+		if (options$1.timestamp) {
+			let tag = "";
+			if (type === "info") tag = import_picocolors.default.cyan(import_picocolors.default.bold(prefix));
+			else if (type === "warn") tag = import_picocolors.default.yellow(import_picocolors.default.bold(prefix));
+			else tag = import_picocolors.default.red(import_picocolors.default.bold(prefix));
+			const environment = options$1.environment ? options$1.environment + " " : "";
+			return `${import_picocolors.default.dim(getTimeFormatter().format(/* @__PURE__ */ new Date()))} ${tag} ${environment}${msg}`;
+		} else return msg;
+	}
+	function output(type, msg, options$1 = {}) {
+		if (thresh >= LogLevels[type]) {
+			const method = type === "info" ? "log" : type;
+			if (options$1.error) loggedErrors.add(options$1.error);
+			if (canClearScreen) if (type === lastType && msg === lastMsg) {
+				sameCount++;
+				clear();
+				console$1[method](format(type, msg, options$1), import_picocolors.default.yellow(`(x${sameCount + 1})`));
+			} else {
+				sameCount = 0;
+				lastMsg = msg;
+				lastType = type;
+				if (options$1.clear) clear();
+				console$1[method](format(type, msg, options$1));
+			}
+			else console$1[method](format(type, msg, options$1));
+		}
+	}
+	const warnedMessages = /* @__PURE__ */ new Set();
+	const logger = {
+		hasWarned: false,
+		info(msg, opts) {
+			output("info", msg, opts);
+		},
+		warn(msg, opts) {
+			logger.hasWarned = true;
+			output("warn", msg, opts);
+		},
+		warnOnce(msg, opts) {
+			if (warnedMessages.has(msg)) return;
+			logger.hasWarned = true;
+			output("warn", msg, opts);
+			warnedMessages.add(msg);
+		},
+		error(msg, opts) {
+			logger.hasWarned = true;
+			output("error", msg, opts);
+		},
+		clearScreen(type) {
+			if (thresh >= LogLevels[type]) clear();
+		},
+		hasErrorLogged(error) {
+			return loggedErrors.has(error);
+		}
+	};
+	return logger;
+}
+function printServerUrls(urls, optionsHost, info) {
+	const colorUrl = (url) => import_picocolors.default.cyan(url.replace(/:(\d+)\//, (_, port) => `:${import_picocolors.default.bold(port)}/`));
+	for (const url of urls.local) info(`  ${import_picocolors.default.green("➜")}  ${import_picocolors.default.bold("Local")}:   ${colorUrl(url)}`);
+	for (const url of urls.network) info(`  ${import_picocolors.default.green("➜")}  ${import_picocolors.default.bold("Network")}: ${colorUrl(url)}`);
+	if (urls.network.length === 0 && optionsHost === void 0) info(import_picocolors.default.dim(`  ${import_picocolors.default.green("➜")}  ${import_picocolors.default.bold("Network")}: use `) + import_picocolors.default.bold("--host") + import_picocolors.default.dim(" to expose"));
+}
+
+//#endregion
+export { OPTIMIZABLE_ENTRY_RE as A, ERR_FILE_NOT_FOUND_IN_OPTIMIZED_DEP_DIR as C, JS_TYPES_RE as D, FS_PREFIX as E, defaultAllowedOrigins as F, loopbackHosts as I, wildcardHosts as L, SPECIAL_QUERY_RE as M, VERSION as N, KNOWN_ASSET_TYPES as O, VITE_PACKAGE_DIR as P, require_picocolors as R, ENV_PUBLIC_PATH as S, ESBUILD_BASELINE_WIDELY_AVAILABLE_TARGET as T, DEFAULT_SERVER_CONDITIONS as _, CLIENT_ENTRY as a, DEV_PROD_CONDITION as b, DEFAULT_ASSETS_INLINE_LIMIT as c, DEFAULT_CLIENT_MAIN_FIELDS as d, DEFAULT_CONFIG_FILES as f, DEFAULT_PREVIEW_PORT as g, DEFAULT_EXTERNAL_CONDITIONS as h, CLIENT_DIR as i, ROLLUP_HOOKS as j, METADATA_FILENAME as k, DEFAULT_ASSETS_RE as l, DEFAULT_EXTENSIONS as m, createLogger as n, CLIENT_PUBLIC_PATH as o, DEFAULT_DEV_PORT as p, printServerUrls as r, CSS_LANGS_RE as s, LogLevels as t, DEFAULT_CLIENT_CONDITIONS as u, DEFAULT_SERVER_MAIN_FIELDS as v, ERR_OPTIMIZE_DEPS_PROCESSING_ERROR as w, ENV_ENTRY as x, DEP_VERSION_RE as y };

@@ -1,0 +1,25 @@
+{
+  "name": "lru-queue",
+  "version": "0.1.0",
+  "description": "LRU Queue",
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/medikoo/lru-queue.git"
+  },
+  "keywords": [
+    "lru",
+    "cache",
+    "queue"
+  ],
+  "dependencies": {
+    "es5-ext": "~0.10.2"
+  },
+  "devDependencies": {
+    "tad": "~0.1.21"
+  },
+  "scripts": {
+    "test": "node node_modules/tad/bin/tad"
+  },
+  "license": "MIT"
+}

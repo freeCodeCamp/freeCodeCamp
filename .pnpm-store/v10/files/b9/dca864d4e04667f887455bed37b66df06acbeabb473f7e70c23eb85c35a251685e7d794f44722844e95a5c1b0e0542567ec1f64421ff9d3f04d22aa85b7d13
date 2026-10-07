@@ -1,0 +1,18 @@
+import * as ts from 'typescript';
+export declare function isConditionalType(type: ts.Type): type is ts.ConditionalType;
+export declare function isEnumType(type: ts.Type): type is ts.EnumType;
+export declare function isGenericType(type: ts.Type): type is ts.GenericType;
+export declare function isIndexedAccessType(type: ts.Type): type is ts.IndexedAccessType;
+export declare function isIndexedAccessype(type: ts.Type): type is ts.IndexType;
+export declare function isInstantiableType(type: ts.Type): type is ts.InstantiableType;
+export declare function isInterfaceType(type: ts.Type): type is ts.InterfaceType;
+export declare function isIntersectionType(type: ts.Type): type is ts.IntersectionType;
+export declare function isLiteralType(type: ts.Type): type is ts.LiteralType;
+export declare function isObjectType(type: ts.Type): type is ts.ObjectType;
+export declare function isSubstitutionType(type: ts.Type): type is ts.SubstitutionType;
+export declare function isTypeParameter(type: ts.Type): type is ts.TypeParameter;
+export declare function isTypeReference(type: ts.Type): type is ts.TypeReference;
+export declare function isTypeVariable(type: ts.Type): type is ts.TypeParameter | ts.IndexedAccessType;
+export declare function isUnionOrIntersectionType(type: ts.Type): type is ts.UnionOrIntersectionType;
+export declare function isUnionType(type: ts.Type): type is ts.UnionType;
+export declare function isUniqueESSymbolType(type: ts.Type): type is ts.UniqueESSymbolType;

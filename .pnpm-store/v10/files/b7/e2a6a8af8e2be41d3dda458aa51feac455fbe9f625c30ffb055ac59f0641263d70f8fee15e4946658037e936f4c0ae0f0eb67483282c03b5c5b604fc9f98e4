@@ -1,0 +1,61 @@
+{
+  "name": "human-signals",
+  "version": "5.0.0",
+  "type": "module",
+  "exports": {
+    "types": "./build/src/main.d.ts",
+    "default": "./build/src/main.js"
+  },
+  "main": "./build/src/main.js",
+  "types": "./build/src/main.d.ts",
+  "files": [
+    "build/src/**/*.{js,json,d.ts}",
+    "!build/src/**/*.test.js",
+    "!build/src/{helpers,fixtures}"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "test": "gulp test"
+  },
+  "description": "Human-friendly process signals",
+  "keywords": [
+    "signal",
+    "signals",
+    "handlers",
+    "error-handling",
+    "interrupts",
+    "sigterm",
+    "sigint",
+    "irq",
+    "process",
+    "exit",
+    "exit-code",
+    "status",
+    "operating-system",
+    "es6",
+    "javascript",
+    "typescript",
+    "linux",
+    "macos",
+    "windows",
+    "nodejs"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://www.github.com/ehmicky/human-signals",
+  "repository": "ehmicky/human-signals",
+  "bugs": {
+    "url": "https://github.com/ehmicky/human-signals/issues"
+  },
+  "author": "ehmicky <ehmicky@gmail.com> (https://github.com/ehmicky)",
+  "directories": {
+    "lib": "src"
+  },
+  "devDependencies": {
+    "@ehmicky/dev-tasks": "^2.0.80",
+    "ajv": "^8.12.0",
+    "test-each": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=16.17.0"
+  }
+}

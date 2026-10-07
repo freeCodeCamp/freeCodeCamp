@@ -1,0 +1,21 @@
+sudo: false
+
+language: node_js
+
+os:
+  - linux
+  - osx
+  - windows
+
+arch: amd64
+
+node_js:
+  - 14
+  - 13
+  - 12
+  - 11
+  - 10
+
+script:
+  - npm test
+  - npm run test:coveralls

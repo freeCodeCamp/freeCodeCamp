@@ -1,0 +1,45 @@
+{
+  "name": "react-devtools-inline",
+  "version": "4.4.0",
+  "description": "Embed react-devtools within a website",
+  "license": "MIT",
+  "main": "./dist/backend.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/react.git",
+    "directory": "packages/react-devtools-inline"
+  },
+  "files": [
+    "dist",
+    "backend.js",
+    "build-info.json",
+    "frontend.js"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "prepublish": "yarn run build",
+    "start": "cross-env NODE_ENV=development webpack --config webpack.config.js --watch"
+  },
+  "dependencies": {
+    "es6-symbol": "^3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.1.6",
+    "@babel/plugin-transform-react-jsx-source": "^7.2.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.4",
+    "cross-env": "^3.1.4",
+    "css-loader": "^1.0.1",
+    "raw-loader": "^3.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.3.1"
+  }
+}

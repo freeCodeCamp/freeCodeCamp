@@ -1,0 +1,51 @@
+{
+	"name": "boxen",
+	"version": "5.1.2",
+	"description": "Create boxes in the terminal",
+	"license": "MIT",
+	"repository": "sindresorhus/boxen",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && nyc ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"cli",
+		"box",
+		"boxes",
+		"terminal",
+		"term",
+		"console",
+		"ascii",
+		"unicode",
+		"border",
+		"text"
+	],
+	"dependencies": {
+		"ansi-align": "^3.0.0",
+		"camelcase": "^6.2.0",
+		"chalk": "^4.1.0",
+		"cli-boxes": "^2.2.1",
+		"string-width": "^4.2.2",
+		"type-fest": "^0.20.2",
+		"widest-line": "^3.1.0",
+		"wrap-ansi": "^7.0.0"
+	},
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"nyc": "^15.1.0",
+		"tsd": "^0.14.0",
+		"xo": "^0.36.1"
+	}
+}

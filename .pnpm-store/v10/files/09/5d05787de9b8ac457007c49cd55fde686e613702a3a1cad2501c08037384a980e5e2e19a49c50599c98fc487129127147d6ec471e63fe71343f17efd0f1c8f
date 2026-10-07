@@ -1,0 +1,14 @@
+{
+    "$schema": "https://plugins.dprint.dev/dprint/dprint-plugin-typescript/latest/schema.json",
+    "typescript": {
+        "indentWidth": 4,
+        "lineWidth": 120,
+        "useBraces": "always",
+        "trailingCommas": "onlyMultiLine",
+        "binaryExpression.linePerExpression": true,
+        "memberExpression.linePerExpression": true
+    },
+    "includes": ["*.js"],
+    "excludes": ["**/node_modules"],
+    "plugins": ["https://plugins.dprint.dev/typescript-0.84.0.wasm"]
+}

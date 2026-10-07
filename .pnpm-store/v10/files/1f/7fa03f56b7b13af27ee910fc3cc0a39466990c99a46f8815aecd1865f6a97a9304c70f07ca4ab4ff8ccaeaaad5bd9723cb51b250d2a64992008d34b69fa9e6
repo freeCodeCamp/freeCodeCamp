@@ -1,0 +1,98 @@
+{
+  "name": "@sentry/core",
+  "version": "10.55.0",
+  "description": "Base implementation for all Sentry JavaScript SDKs",
+  "repository": "git://github.com/getsentry/sentry-javascript.git",
+  "homepage": "https://github.com/getsentry/sentry-javascript/tree/master/packages/core",
+  "author": "Sentry",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "/build",
+    "browser.js",
+    "browser.d.ts",
+    "server.js",
+    "server.d.ts"
+  ],
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/types/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./server": {
+      "import": {
+        "types": "./build/types/server.d.ts",
+        "default": "./build/esm/server.js"
+      },
+      "require": {
+        "types": "./build/types/server.d.ts",
+        "default": "./build/cjs/server.js"
+      }
+    },
+    "./browser": {
+      "import": {
+        "types": "./build/types/browser.d.ts",
+        "default": "./build/esm/browser.js"
+      },
+      "require": {
+        "types": "./build/types/browser.d.ts",
+        "default": "./build/cjs/browser.js"
+      }
+    },
+    ".": {
+      "import": {
+        "types": "./build/types/index.d.ts",
+        "default": "./build/esm/index.js"
+      },
+      "require": {
+        "types": "./build/types/index.d.ts",
+        "default": "./build/cjs/index.js"
+      }
+    }
+  },
+  "typesVersions": {
+    "<5.0": {
+      "build/types/index.d.ts": [
+        "build/types-ts3.8/index.d.ts"
+      ],
+      "browser": [
+        "build/types-ts3.8/browser.d.ts"
+      ],
+      "server": [
+        "build/types-ts3.8/server.d.ts"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "run-p build:transpile build:types",
+    "build:dev": "yarn build",
+    "build:transpile": "rollup -c rollup.npm.config.mjs",
+    "build:types": "run-s build:types:core build:types:downlevel",
+    "build:types:core": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "yarn downlevel-dts build/types build/types-ts3.8 --to ts3.8",
+    "build:watch": "run-p build:transpile:watch",
+    "build:dev:watch": "yarn build:watch",
+    "build:transpile:watch": "rollup -c rollup.npm.config.mjs --watch",
+    "build:tarball": "npm pack",
+    "circularDepCheck": "madge --circular src/index.ts",
+    "clean": "rimraf build coverage sentry-core-*.tgz",
+    "lint:fix": "OXLINT_TSGOLINT_DANGEROUSLY_SUPPRESS_PROGRAM_DIAGNOSTICS=true oxlint . --fix --type-aware",
+    "lint": "OXLINT_TSGOLINT_DANGEROUSLY_SUPPRESS_PROGRAM_DIAGNOSTICS=true oxlint . --type-aware",
+    "lint:es-compatibility": "es-check es2020 ./build/cjs/*.js && es-check es2020 ./build/esm/*.js --module",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "yalc:publish": "yalc publish --push --sig"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "zod": "^3.24.1"
+  }
+}

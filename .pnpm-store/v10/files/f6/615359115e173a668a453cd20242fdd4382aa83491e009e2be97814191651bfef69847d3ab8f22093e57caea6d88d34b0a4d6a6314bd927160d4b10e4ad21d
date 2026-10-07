@@ -1,0 +1,43 @@
+{
+  "name": "postcss-minify-gradients",
+  "version": "5.1.1",
+  "description": "Minify gradient parameters with PostCSS.",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "LICENSE-MIT",
+    "src",
+    "types"
+  ],
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cssnano/cssnano",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "cssnano/cssnano",
+  "dependencies": {
+    "colord": "^2.9.1",
+    "cssnano-utils": "^3.1.0",
+    "postcss-value-parser": "^4.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# [postcss][postcss]-minify-gradients\n\n> Minify gradient parameters with PostCSS.\n\n## Install\n\nWith [npm](https://npmjs.org/package/postcss-minify-gradients) do:\n\n```\nnpm install postcss-minify-gradients\n```\n\n\n## Example\n\nWhere possible, this module will minify gradient parameters. It can convert\nlinear gradient directional syntax to angles, remove the unnecessary `0%` and\n`100%` start and end values, and minimise color stops that use the same length\nvalues (the browser will adjust the value automatically).\n\n### Input\n\n```css\nh1 {\n    background: linear-gradient(to bottom, #ffe500 0%, #ffe500 50%, #121 50%, #121 100%)\n}\n```\n\n### Output\n\n```css\nh1 {\n    background: linear-gradient(180deg, #ffe500, #ffe500 50%, #121 0, #121)\n}\n```\n\n\n## Usage\n\nSee the [PostCSS documentation](https://github.com/postcss/postcss#usage) for\nexamples for your environment.\n\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n\n\n## License\n\nMIT © [Ben Briggs](http://beneb.info)\n\n[postcss]: https://github.com/postcss/postcss\n"
+}

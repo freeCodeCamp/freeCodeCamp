@@ -1,0 +1,6 @@
+{
+  "name": "react-transition-group/TransitionGroup",
+  "private": true,
+  "main": "../cjs/TransitionGroup.js",
+  "module": "../esm/TransitionGroup.js"
+}

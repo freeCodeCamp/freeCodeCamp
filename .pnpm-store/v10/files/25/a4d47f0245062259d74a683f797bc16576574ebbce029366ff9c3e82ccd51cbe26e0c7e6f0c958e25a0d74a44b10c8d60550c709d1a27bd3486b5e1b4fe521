@@ -1,0 +1,102 @@
+{
+  "name": "property-information",
+  "version": "5.6.0",
+  "description": "Information for HTML properties",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "property",
+    "attribute",
+    "information",
+    "info"
+  ],
+  "repository": "wooorm/property-information",
+  "bugs": "https://github.com/wooorm/property-information/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Dustin Deus <deusdustin@gmail.com> (http://starptech.de)",
+    "Andrew Burgess <andrew@andrewburgess.io>"
+  ],
+  "files": [
+    "index.js",
+    "hast-to-react.json",
+    "html.js",
+    "svg.js",
+    "normalize.js",
+    "find.js",
+    "lib/"
+  ],
+  "dependencies": {
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "alpha-sort": "^3.0.0",
+    "arr-union": "^3.0.0",
+    "bail": "^1.0.0",
+    "browserify": "^17.0.0",
+    "concat-stream": "^2.0.0",
+    "html-element-attributes": "^2.0.0",
+    "html-event-attributes": "^1.0.0",
+    "mdast-zone": "^4.0.0",
+    "nyc": "^15.0.0",
+    "object.values": "^1.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0-alpha.1",
+    "remark-preset-wooorm": "^8.0.0",
+    "svg-element-attributes": "^1.0.0",
+    "svg-event-attributes": "^1.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unist-builder": "^2.0.0",
+    "xo": "^0.33.0"
+  },
+  "scripts": {
+    "generate": "node script/generate-react && node script/generate-exceptions",
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify index.js -s propertyInformation > property-information.js",
+    "build-mangle": "browserify index.js -s propertyInformation -p tinyify > property-information.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run generate && npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/no-fn-reference-in-iterator": "off",
+      "unicorn/prefer-exponentiation-operator": "off",
+      "unicorn/prefer-includes": "off",
+      "guard-for-in": "off",
+      "prefer-exponentiation-operator": "off"
+    },
+    "ignore": [
+      "property-information.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "./script/list",
+      "preset-wooorm"
+    ]
+  }
+}

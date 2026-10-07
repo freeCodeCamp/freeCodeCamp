@@ -1,0 +1,789 @@
+{
+  "lang": "eu",
+  "rules": {
+    "accesskeys": {
+      "description": "Accesskey atributurako balio bakoitza bakarra dela bermatzen du",
+      "help": "Accesskey atributuaren balioak bakarra izan behar du"
+    },
+    "area-alt": {
+      "description": "Irudi-mapetako <area> elementuek ordezko testua dutela bermatzen du",
+      "help": "<area> elementu aktiboek ordezko testua izan behar dute"
+    },
+    "aria-allowed-attr": {
+      "description": "ARIA atributuak elementu baten rolerako baimenduta daudela bermatzen du",
+      "help": "Elementuek atributu ARIA baimenduak baino ez dituzte erabili behar"
+    },
+    "aria-allowed-role": {
+      "description": "rol atributuak elementuarentzat balio egokia duela bermatzen du",
+      "help": "ARIA role egokia izan behar da elementuarentzat"
+    },
+    "aria-hidden-body": {
+      "description": "Bermatzen du aria-hidden = 'true' ez dagoela dokumentuaren 'body'an.",
+      "help": "aria-hidden = 'true' ez da dokumentuaren 'body'an egon behar"
+    },
+    "aria-hidden-focus": {
+      "description": "Bermatzen du 'aria-hidden' elementuek ez dutela fokua onartzen duen elementurik",
+      "help": "'ARIA hidden' elementuek ez dute fokua onartzen duen elementurik izan behar"
+    },
+    "aria-input-field-name": {
+      "description": "Bermatzen du 'ARIA input field' bakoitzak izen irisgarria duela",
+      "help": "'ARIA input fields' ek izen erabilerraza dute"
+    },
+    "aria-required-attr": {
+      "description": "Bermatzen du 'ARIA role' duten elementuek eskatzen diren atributu guztiak dituztela",
+      "help": "Eskatzen diren ARIA atributuak eman behar dira"
+    },
+    "aria-required-children": {
+      "description": "Bermatzen du 'ARIA role' bat duten eta 'child rol' bat behar duten elementuek",
+      "help": "Zenbait 'ARIA rolak' seme jakin batzuk izan behar dituzte"
+    },
+    "aria-required-parent": {
+      "description": "Bermatzen du 'ARIA role' bat duten eta 'parent rol'ak eskatzen dituzten elementuak haietan jasota daudela",
+      "help": "Zenbait 'ARIA rol' aita jakin batzuengan eduki behar dira"
+    },
+    "aria-roles": {
+      "description": "Role atributua duten elementu guztiek balio balioduna erabiltzen dutela bermatzen du",
+      "help": "Erabilitako 'ARIA rol'ek baliozko balioetarako baldintzak bete behar dituzte"
+    },
+    "aria-toggle-field-name": {
+      "description": "Bermatzen du 'ARIA toggle field' bakoitzak izen irisgarria duela",
+      "help": "'ARIA toggle fields'ek izen erabilerraza dute"
+    },
+    "aria-valid-attr-value": {
+      "description": "Atributu ARIA guztiek balio baliodunak dituztela bermatzen du",
+      "help": "ARIA Atributuek baliozko balioetarako baldintzak bete behar dituzte"
+    },
+    "aria-valid-attr": {
+      "description": "aria-z hasten diren atributuak baliozko atributu ARIA direla bermatzen du",
+      "help": "ARIA atributuek izen baliodunen baldintzak bete behar dituzte"
+    },
+    "audio-caption": {
+      "description": "<audio> elementuek azpitituluak dituztela bermatzen du",
+      "help": "<audio> elementuek azpititulu-pista bat izan behar dute"
+    },
+    "autocomplete-valid": {
+      "description": "autocomplete atributua formulario-eremurako zuzena eta egokia dela bermatzea",
+      "help": "autocomplete atributua behar bezala erabili behar da"
+    },
+    "avoid-inline-spacing": {
+      "description": "style atributuen bidez ezarritako testu-tartea estilo-orri pertsonalizatuekin doitu daitekeela bermatzea",
+      "help": "'inline' testu-tartea doitu egin behar da, estilo-orri pertsonalizatuen bidez."
+    },
+    "blink": {
+      "description": "Bermatzen du ez direla <blink> elementuak erabiltzen",
+      "help": "<blink> elementuak zaharkituta daude eta ez dira erabili behar"
+    },
+    "button-name": {
+      "description": "Botoiek testu bereizgarria dutela bermatzen du",
+      "help": "Botoiek testu bereizgarria izan behar dute"
+    },
+    "bypass": {
+      "description": "Orrialde bakoitzak gutxienez bitarteko bat duela bermatzen du, erabiltzaile batek nabigazioa gainditu eta edukira zuzenean pasatzeko aukera izan dezan",
+      "help": "Orriek bloke errepikatuak saltatzeko baliabideak izan behar dituzte"
+    },
+    "color-contrast": {
+      "description": "Lehen planoko eta hondoko koloreen arteko kontrasteak WCAG 2 AA kontrasterako ratioaren mugak betetzen dituela bermatzen du.",
+      "help": "Elementuek kolore-kontraste nahikoa izan behar dute"
+    },
+    "color-contrast-enhanced": {
+      "description": "Lehen planoko eta hondoko koloreen arteko kontrasteak WCAG 2 AAA kontrasterako ratioaren mugak betetzen dituela bermatzen du.",
+      "help": "Elementuek kolore-kontraste nahikoa izan behar dute"
+    },
+    "css-orientation-lock": {
+      "description": "Bermatzen du edukia ez dagoela blokeatuta pantailako orientazio espezifiko batean, eta edukia maneiagarria dela pantailako edozein orientabidetan.",
+      "help": "'CSS Media query'ak ez dira erabiltzen pantailaren orientazioa blokeatzeko "
+    },
+    "definition-list": {
+      "description": "<dl> elementuak behar bezala egituratuta daudela bermatzen du",
+      "help": "<dl> elementuek zuzenean eduki behar dituzte <dt> eta <dd> multzoak , behar bezala ordenatuta , edo <script> edo <tenplate> elementuak"
+    },
+    "dlitem": {
+      "description": "Bermatzen du <dt> eta <dd> elementuak <dl> batean daudela.",
+      "help": "<dt> eta <dd> elementuek < dl> batean egon behar dute"
+    },
+    "document-title": {
+      "description": "HTML dokumentu bakoitzak <title> hutsik ez duen elementu bat duela bermatzen du",
+      "help": "Dokumentuek <title> elementuak izan behar dituzte nabigazioan laguntzeko"
+    },
+    "duplicate-id-active": {
+      "description": "Elementu aktiboen id atributurako balio bakoitza bakarra dela bermatzen du",
+      "help": "Elementu aktiboen 'ID'ak bakarrak izan behar dira"
+    },
+    "duplicate-id-aria": {
+      "description": "ARIAn eta 'label'etan erabilitako id atributuaren balio bakoitza bakarra dela bermatzen du",
+      "help": "ARIA eta labelet-an erabiltzen diren 'ID'ak bakarrak izan behar dira"
+    },
+    "duplicate-id": {
+      "description": "id atributurako balio bakoitza bakarra dela bermatzen du",
+      "help": "id atributuaren balioak bakarra izan behar du"
+    },
+    "empty-heading": {
+      "description": "Goiburuek testu bereizgarria dutela bermatzen du",
+      "help": "Goiburuak ez dira hutsik egon behar"
+    },
+    "focus-order-semantics": {
+      "description": "Foku ordenako elementuek rol egokia dutela bermatzen du",
+      "help": "Foku ordenako elementuek rol egokia behar dute eduki interaktiborako"
+    },
+    "form-field-multiple-labels": {
+      "description": "Formulario-eremuak label elementu ugari ez dituela bermatzen du",
+      "help": "Formulario-eremuak ez du label elementu ugari izan behar"
+    },
+    "frame-tested": {
+      "description": "Bermatzen du <iframe> eta <frame> elementuek axe-core scripta dutela",
+      "help": "Markoak axe-core bidez probatu behar dira"
+    },
+    "frame-title-unique": {
+      "description": "Bermatzen du <iframe> eta <frame> elementuek izenburu bakarreko atributua dutela",
+      "help": "Markoek title atributu bakarra izan behar dute"
+    },
+    "frame-title": {
+      "description": "Bermatzen du <iframe> eta <frame> elementuek hutsik ez dagoen izenburuaren atributua dutela",
+      "help": "Markoek title atributua izan behar dute"
+    },
+    "heading-order": {
+      "description": "Goiburuen ordena semantikoki zuzena dela bermatzen du",
+      "help": "Goiburuen maila soilik 1 gehitu beharko litzateke"
+    },
+    "hidden-content": {
+      "description": "Erabiltzaileei ezkutuko edukiari buruzko informazioa ematen die.",
+      "help": "Orriaren ezkutuko edukia ezin da aztertu"
+    },
+    "html-has-lang": {
+      "description": "HTML dokumentu bakoitzak lang atributu bat duela bermatzen du",
+      "help": "<html> elementuak lang atributua izan behar du"
+    },
+    "html-lang-valid": {
+      "description": "Bermatzen du <html> elementuaren lang atributuak balio balioduna duela",
+      "help": "<html> elementuak balio balioduna izan behar du lang atributurako"
+    },
+    "html-xml-lang-mismatch": {
+      "description": "Lang zein xml:lang atributuak dituzten HTML elementuetan  orrialdearen oinarrizko hizkuntzan komunztadura dagoela bermatzea",
+      "help": "lang eta xml:lang duten HTML elementuek oinarrizko hizkuntza bera izan behar dute"
+    },
+    "image-alt": {
+      "description": "Bermatzen du <img> elementuek ordezko testua edo none edo presentation rola dutela",
+      "help": "Irudiek ordezko testua izan behar dute"
+    },
+    "image-redundant-alt": {
+      "description": "Bermatzen du irudiaren alternatiba ez dela testu gisa errepikatuko",
+      "help": "Irudien testu alternatiboa ez da testu gisa errepikatu behar"
+    },
+    "input-button-name": {
+      "description": "'input button'ek testu bereizgarria dutela bermatzea",
+      "help": "'input button'ek testu bereizgarria izan behar dute"
+    },
+    "input-image-alt": {
+      "description": "Bermatzen du <input type =\"image\" > elementuek ordezko testua dutela",
+      "help": "'image buttons'ek testu alternatiboa izan behar dute"
+    },
+    "label-content-name-mismatch": {
+      "description": "Bere edukiaren bidez etiketatutako elementuetan, bere testu ikusgarriak bere izen irisgarriaren parte izan behar duela bermatzen du.",
+      "help": "Elementuek beren testua ikusgai izan behar dute, beren izenaren zati irisgarri gisa."
+    },
+    "label-title-only": {
+      "description": "Bermatzen du inprimakiko elementu bakoitza ez dagoela etiketatuta title edo aria-describedby atributuen bidez soilik.",
+      "help": "Formularioko elementuek etiketa bat izan behar dute ikusgai"
+    },
+    "label": {
+      "description": "Formularioko elementu bakoitzak etiketa bat duela bermatzen du",
+      "help": "Formularioko elementuek etiketak izan behar dituzte"
+    },
+    "landmark-banner-is-top-level": {
+      "description": "Banner erreferentzia-puntua goiko mailan dagoela bermatzen du",
+      "help": "Banner erreferentzia-puntuak ez du beste erreferentzia-puntu batean egon behar"
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "Erreferentzia-puntu osagarria edo asidea goiko mailan dagoela bermatzen du ",
+      "help": "aside-k ez du beste erreferentzia-puntu batean egon behar"
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "contentinfo erreferentzia-puntua goiko mailan dagoela bermatzen du",
+      "help": "contentinfo erreferentzia-puntuak ez du beste erreferentzia-puntu batean egon behar"
+    },
+    "landmark-main-is-top-level": {
+      "description": "Main erreferentzia puntua goi mailan dagoela bermatzen du",
+      "help": "main erreferentzia-puntuak ez du beste erreferentzia-puntu batean egon behar"
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "Dokumentuak, gehienez ere, banner erreferentzia-puntu bat duela bermatzen du",
+      "help": "Dokumentuak ezin du banner erreferentzia-puntu bat baino gehiago izan"
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "Dokumentuak, gehienez ere, contentinfo erreferentzia-puntu bat duela bermatzen du",
+      "help": "Dokumentuak ez du izan behar contentinfo erreferentzia-puntu bat baino gehiago"
+    },
+    "landmark-one-main": {
+      "description": "Bermatzen du dokumentuak main erreferentzia-puntu bakarra duela, eta orrialdean sartutako esparru bakoitzak, gehienez ere, main erreferentzia-puntu bat duela.",
+      "help": "Dokumentuak main erreferentzia-puntu bat izan behar du"
+    },
+    "landmark-unique": {
+      "help": "Erreferentziazko puntuak bakarrak direla bermatzen du",
+      "description": "Erreferentzia-puntuek role edo role/label/title konbinazio bakarra izan behar dute (hau da, izen irisgarri bakarra)"
+    },
+    "link-in-text-block": {
+      "description": "Estekak kolorearen menpe egon gabe bereiz daitezke",
+      "help": "Estekak ondoko testutik bereizi behar dira, kolorearen menpe ez dagoen bitarteko batez."
+    },
+    "link-name": {
+      "description": "Estekek testu bereizgarria dutela bermatzen du",
+      "help": "Estekek testu bereizgarria izan behar dute"
+    },
+    "list": {
+      "description": "Zerrendak behar bezala egituratuta daudela bermatzen du",
+      "help": "<ul> eta <ol> zuzenean <li>, < script> edo < template> elementuak izan behar dituzte"
+    },
+    "listitem": {
+      "description": "<li> elementuak semantikoki erabiltzen direla bermatzen du",
+      "help": "< li> elementuek < ul> edo < ol> batean egon behar dute"
+    },
+    "marquee": {
+      "description": "Bermatzen du ez dela elementurik erabiltzen <marquee>",
+      "help": "<marquee> elementuak zaharkituta daude eta ez dira erabili behar"
+    },
+    "meta-refresh": {
+      "description": "Bermatzen du ez dela erabiltzen <meta http-equiv =\"refresh\" >",
+      "help": "Programatutako freskagarriak ez du egon behar"
+    },
+    "meta-viewport-large": {
+      "description": "Bermatzea <meta name =\"viewport\" > maila esanguratsuan zabal daitekeela",
+      "help": "Erabiltzaileek zooma egiteko eta testua %500era arte zabaltzeko aukera izan behar dute"
+    },
+    "meta-viewport": {
+      "description": "Bermatzen du <meta name =\"viewport\" > ez duela eragozten testua zabaltzea eta zooma egitea",
+      "help": "Zooma eta handitzea ez dira eragotzi behar"
+    },
+    "object-alt": {
+      "description": "Bermatzen du <object> elementuek ordezko testua dutela",
+      "help": "<object> elementuek testu alternatiboa izan behar dute"
+    },
+    "p-as-heading": {
+      "description": "p elementuak goiburuak diseinatzeko erabiltzen ez direla bermatzea",
+      "help": "Ez da letra lodiz, letra etzanez edo letra-iturri tamainaz idatzitako testurik erabiltzen p elementuei goiburu-estiloa emateko."
+    },
+    "page-has-heading-one": {
+      "description": "Orrialdeak, edo gutxienez bere esparruetako batek, 1. mailako goiburu bat duela bermatzea",
+      "help": "Orrialdeak 1. mailako goiburu bat izan behar du"
+    },
+    "region": {
+      "description": "Orrialdeko eduki guztia erreferentzia-puntuetan sartuta dagoela bermatzen du.",
+      "help": "Orrialdeko eduki guztiak erreferentzia-puntuetan sartuta egon behar du"
+    },
+    "role-img-alt": {
+      "description": "Elementuek [role = 'img'] testu alternatiboa dutela bermatzen du",
+      "help": "[role = 'img'] elementuek testu alternatibo bat dute"
+    },
+    "scope-attr-valid": {
+      "description": "scope atributua tauletan behar bezala erabiltzen dela bermatzen du",
+      "help": "Scope atributua behar bezala erabili beharko litzateke"
+    },
+    "scrollable-region-focusable": {
+      "description": "Bertikalki mugi daitekeen edukia duten elementuak ('scroll' formatuan) teklatuaren bidez eskuratu ahal izango lirateke.",
+      "help": "Joan-etorri bertikaleko eremuak ('scroll') teklatu bidezko sarbidea duela ziurtatzea"
+    },
+    "server-side-image-map": {
+      "description": "Zerbitzariaren aldeko irudi-maparik ez dela erabiltzen bermatzen du.",
+      "help": "Ez dira erabili behar zerbitzariaren aldeko irudi-mapak"
+    },
+    "skip-link": {
+      "description": "Salto-esteka guztiek ('skip') fokua onartzen duen helmuga dutela bermatzea",
+      "help": "Jauziko loturaren ('skip') helmugak egon beharko luke eta fokua onartu"
+    },
+    "tabindex": {
+      "description": "tabindex atributuaren balioak 0 baino handiagoak ez direla bermatzen du",
+      "help": "Elementuek ez lukete 0 baino tabindex handiagoa izan behar"
+    },
+    "table-duplicate-name": {
+      "description": "Taulek summary eta caption bera ez dutela bermatzea",
+      "help": "<caption> elementuak ez luke summary atributuaren testu bera izan behar"
+    },
+    "table-fake-caption": {
+      "description": "Titulua duten taulek <caption> elementua erabiltzen dutela bermatzea.",
+      "help": "Datuen edo goiburuen gelaxkak ez lirateke erabili behar datu-taula bati izenburua emateko."
+    },
+    "td-has-header": {
+      "description": "Taula handi batean hutsik ez dagoen datu-gelaxka bakoitzak taula-goiburu bat edo gehiago dituela bermatzea",
+      "help": "3 bider 3 baino taula handiagoko td elementu ez huts guztiek lotutako taula-goiburu bat izan behar dute"
+    },
+    "td-headers-attr": {
+      "description": "Taula bateko goiburuak erabiltzen dituen gelaxka bakoitzak taula horretako beste gelaxka bati erreferentzia egiten diola bermatzea",
+      "help": "headers atributua erabiltzen duten elementu table baten gelaxka guztiek taula bereko beste gelaxka batzuei bakarrik egin behar diete erreferentzia"
+    },
+    "th-has-data-cells": {
+      "description": "Datu-taula bateko taula-goiburu bakoitzak datu-gelaxkak aipatzen dituela bermatzea",
+      "help": "th eta 'role = columnheader/rowheader 'duten elementu guztiek deskribatzen duten datu-gelaxkak izan behar dituzte:"
+    },
+    "valid-lang": {
+      "description": "lang atributuek balio baliodunak dituztela bermatzen du",
+      "help": "lang atributuak balio balioduna izan behar du"
+    },
+    "video-caption": {
+      "description": "Bermatzen du <video> elementuek azpitituluak dituztela",
+      "help": "<bideo> elementuek azpitituluak izan behar dituzte"
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "Ez dira 'abstract rolak' erabiltzen",
+      "fail": "'abstract rolak 'ezin dira zuzenean erabili"
+    },
+    "aria-allowed-attr": {
+      "pass": "ARIA atributuak behar bezala erabiltzen dira zehaztutako rolerako",
+      "fail": {
+        "singular": "ARIAn, atributuak ez daude baimenduta : ${data.values}",
+        "plural": "ARIAn, atributua ez dago baimenduta : ${data.values}"
+      }
+    },
+    "aria-allowed-role": {
+      "pass": "ARIA rola baimenduta dago emandako elementurako",
+      "fail": {
+        "singular": "ARIAn, rolak ${data.values} -ak ez daude baimenduta emandako elementurako",
+        "plural": "ARIAn, rola ${data.values} -a ez dago baimenduta emandako elementurako"
+      },
+      "incomplete": {
+        "singular": "AREAN, rolak kendu behar dira ${data.values} elementua ikusgai egiten denean, zeren elementurako  ez daude baimenduta",
+        "plural": "AREAN, rola kendu behar da ${data.values} elementua ikusgai egiten denean, zeren elementurako  ez dago baimenduta"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "Ez dago dokumentuko 'body'ean agertzen den aria-hidden atributurik",
+      "fail": "aria-hidden = true ez da dokumentuaren 'body'ean egon behar"
+    },
+    "aria-errormessage": {
+      "pass": "Teknika onartu bat erabiltzen du aria-errormessagerako",
+      "fail": {
+        "singular": "aria-errormessagen, bailioaes  ${data.values}`, mezua iragartzeko teknika bat erabili behar da (adibidez: aria-live, aria-describedby, role = alert, etab.).",
+        "plural": "aria-errormessagen, bailioa  ${data.values}`, mezua iragartzeko teknika bat erabili behar da (adibidez: aria-live, aria-describedby, role = alert, etab.)."
+      }
+    },
+    "has-widget-role": {
+      "pass": "Elementuak widget rola du.",
+      "fail": "Elementuak ez du widget rolik."
+    },
+    "invalidrole": {
+      "pass": "ARIA rola baliozkoa da",
+      "fail": "Rolak baliozko ARIA rola izan behar du"
+    },
+    "no-implicit-explicit-label": {
+      "pass": "Ez dago desadostasunik <label> baten eta izen irisgarriaren artean",
+      "incomplete": "Egiaztatu < label> zenbakiak ez duela zertan ARIAren ${data} parte izan eremuaren izenerako"
+    },
+    "aria-required-attr": {
+      "pass": "ARIA atributu guztiak daude",
+      "fail": {
+        "singular": "Eskatutako atributuak ez daude: ${data.values}",
+        "plural": "Eskatutako atributua ez dago: ${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": {
+        "default": "Eskatutako ARIA semeak bertan daude"
+      },
+      "fail": {
+        "singular": "Esktatutako ARIARren semeak ez daude : ${data.values}",
+        "plural": "Esktatutako ARIARren semeaez dago : ${data.values}"
+      },
+      "incomplete": {
+        "singular": "ARIA rola semeentzako: ${data.values}",
+        "plural": "ARIA rola semearentzako: ${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "ARIAn eskatzen den aitaren rola bertan dago",
+      "fail": {
+        "singular": "ARIAn eskatutako aitentzako rola  ez dago: ${data.values}",
+        "plural": "ARIAn eskatutako aitarentzako rola ez dago: ${data.values}"
+      }
+    },
+    "aria-unsupported-attr": {
+      "pass": "ARIA atributua onartuta dago",
+      "fail": "ARIA atributua ez dago oso onartuta pantaila-irakurgailuetan eta laguntza-teknologietan:  ${data.values}"
+    },
+    "unsupportedrole": {
+      "pass": "ARIA rola onartuta dago",
+      "fail": "Erabilitako rola ez dago oso onartuta pantaila-irakurgailuetan eta laguntza-teknologietan:  ${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "ARIA atributuen balioak baliozkoak dira",
+      "fail": {
+        "singular": "Balioak ez dira baliozkoak ARIA atributorako: ${data.values}",
+        "plural": "Balioa ez da baliozkoa ARIA atributorako: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "Elementuen atributua  ARIA ID ez dago orrian: ${data.values}",
+        "plural": "Elementuaren atributua  ARIA ID ez dago orrian: ${data.values}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": {
+        "singular": "Baliozko ARIA atributuen izenak",
+        "plural": "Baliozko ARIA atributuen izena"
+      },
+      "fail": {
+        "singular": "Baliogabeko ARIA atributuen izenak:  ${data.values}",
+        "plural": "Baliogabeko ARIA atributuen izenak:  ${data.values}"
+      }
+    },
+    "valid-scrollable-semantics": {
+      "pass": "Elementuak semantika balioduna du foku-ordenan dagoen elementu batentzat.",
+      "fail": "Elementuak foku-ordenan dagoen elementu batentzat baliozkoa ez den semantika bat du.."
+    },
+    "color-contrast": {
+      "pass": "Elementuak ${data.contrastRatio}-ko kolore-kontraste nahikoa du",
+      "fail": "Elementuaren ${data.contrastRatio}-ko kolore-kontrastea ez da nahikoa (ehen planoaren kolorea: ${data.fgColor}, hondoaren kolorea: ${data.bgColor}, letra-iturriaren tamaina: ${data.fontSize}, letra-iturriaren lodiera: ${data.fontWeight}). Espero den kontraste-ratioa: ${data.expectedContrastRatio}",
+      "incomplete": {
+        "bgImage": "Elementuaren hondoko kolorea ezin izan da zehaztu, hondoko irudi batengatik",
+        "bgGradient": "Elementuaren hondoko kolorea ezin izan da zehaztu hondoko degradatu baten ondorioz",
+        "imgNode": "Elementuaren hondoaren kolorea ezin izan da zehaztu, elementuak irudi-nodo bat duelako.",
+        "bgOverlap": "Hondoko kolorea ezin izan da zehaztu, gainjarritako beste elementu bat duelako",
+        "fgAlpha": "Hondoko kolorea ezin izan da zehaztu alfa gardentasun baten ondorioz",
+        "elmPartiallyObscured": "Hondoaren kolorea ezin izan da zehaztu, beste elementu batek partzialki ezkutatzen duelako",
+        "elmPartiallyObscuring": "Elementuaren hondoaren kolorea ezin izan da zehaztu, beste elementu batzuei partzialki gainjartzen baitzaie.",
+        "outsideViewport": "Elementuaren hondoko kolorea ezin izan da zehaztu, leiho grafikotik kanpo dagoelako ('viewport')",
+        "equalRatio": "Elementuak 1:1 kontraste-ratioa du hondoarekin",
+        "shortTextContent": "Elementuaren edukia laburregia da testu-edukia bera den zehazteko",
+        "default": "Ezinezkoa da kontraste-ratioa zehaztea"
+      }
+    },
+    "color-contrast-enhanced": {
+      "pass": "Elementuak ${data.contrastRatio}-ko kolore-kontraste nahikoa du",
+      "fail": "Elementuaren ${data.contrastRatio}-ko kolore-kontrastea ez da nahikoa (ehen planoaren kolorea: ${data.fgColor}, hondoaren kolorea: ${data.bgColor}, letra-iturriaren tamaina: ${data.fontSize}, letra-iturriaren lodiera: ${data.fontWeight}). Espero den kontraste-ratioa: ${data.expectedContrastRatio}",
+      "incomplete": {
+        "bgImage": "Elementuaren hondoko kolorea ezin izan da zehaztu, hondoko irudi batengatik",
+        "bgGradient": "Elementuaren hondoko kolorea ezin izan da zehaztu hondoko degradatu baten ondorioz",
+        "imgNode": "Elementuaren hondoaren kolorea ezin izan da zehaztu, elementuak irudi-nodo bat duelako.",
+        "bgOverlap": "Hondoko kolorea ezin izan da zehaztu, gainjarritako beste elementu bat duelako",
+        "fgAlpha": "Hondoko kolorea ezin izan da zehaztu alfa gardentasun baten ondorioz",
+        "elmPartiallyObscured": "Hondoaren kolorea ezin izan da zehaztu, beste elementu batek partzialki ezkutatzen duelako",
+        "elmPartiallyObscuring": "Elementuaren hondoaren kolorea ezin izan da zehaztu, beste elementu batzuei partzialki gainjartzen baitzaie.",
+        "outsideViewport": "Elementuaren hondoko kolorea ezin izan da zehaztu, leiho grafikotik kanpo dagoelako ('viewport')",
+        "equalRatio": "Elementuak 1:1 kontraste-ratioa du hondoarekin",
+        "shortTextContent": "Elementuaren edukia laburregia da testu-edukia bera den zehazteko",
+        "default": "Ezinezkoa da kontraste-ratioa zehaztea"
+      }
+    },
+    "link-in-text-block": {
+      "pass": "Estekak ondoko testuarekiko bereiz daitezke, koloretik kanpo",
+      "fail": "Alboko testuarekiko loturak koloretik kanpo bereizi behar dira",
+      "incomplete": {
+        "bgContrast": "Ezin izan da elementuaren kontraste-ratioa zehaztu. Hover/focus estilo desberdina dagoen egiaztatzea",
+        "bgImage": "Elementuaren kontraste-ratioa ezin izan da zehaztu, hondoko irudi batengatik",
+        "bgGradient": "Elementuaren kontraste-ratioa ezin izan da zehaztu hondoko degradatu baten ondorioz",
+        "imgNode": "Elementuaren kontraste-ratioa ezin izan da zehaztu, elementuak irudi-nodo bat duelako.",
+        "bgOverlap": "Elementuaren kontraste-ratioa ezin izan da zehaztu elementuen gainjartzeagatik",
+        "default": "Ezinezkoa da kontraste-ratioa zehaztea"
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "autocompleteren balioa elementu egoki batean dago",
+      "fail": "autocompleteren balioa ez da egokia input mota horretarako"
+    },
+    "autocomplete-valid": {
+      "pass": "autocompleteren atributua behar bezala formateatuta dago",
+      "fail": "autocompleteren atributua gaizki formateatuta dago"
+    },
+    "accesskeys": {
+      "pass": "Accesskey atributuaren balioa bakarra da",
+      "fail": "Dokumentuak elementu ugari ditu accesskey berarekin"
+    },
+    "focusable-content": {
+      "pass": "Elementuak fokua onartzen duten elementuak ditu",
+      "fail": "Elementuak fokua onartzen duen edukia izan beharko luke"
+    },
+    "focusable-disabled": {
+      "pass": "Elementuaren barruan ez dago fokua onartzen duen elementurik",
+      "fail": "Fokuak onartzen duen edukia desaktibatu edo ezabatu egin beharko litzateke"
+    },
+    "focusable-element": {
+      "pass": "Elementuak fokua onartzen du",
+      "fail": "Elementuak fokua onartu beharko luke"
+    },
+    "focusable-no-name": {
+      "pass": "Elementua ez dago tabulazio-ordenan edo testu irisgarria du",
+      "fail": "Elementua tabulazio-ordenan dago eta ez du testu eskuragarririk"
+    },
+    "focusable-not-tabbable": {
+      "pass": "Elementuaren barruan ez dago fokua onartzen duen elementurik",
+      "fail": "Fokuak onartzen duen edukiak tabindex = '-1' izan beharko luke edo DOMetik ezabatu beharko litzateke"
+    },
+    "landmark-is-top-level": {
+      "pass": "${data.role} erreferentzia-puntua goiko mailan dago",
+      "fail": "${data.role} erreferentzia-puntua beste erreferentzia-puntu batean dago."
+    },
+    "page-has-heading-one": {
+      "pass": "Orrialdeak 1. mailako goiburu bat du, gutxienez.",
+      "fail": "Orrialdeak 1. mailako goiburu bat izan behar du"
+    },
+    "page-has-main": {
+      "pass": "Dokumentuak gutxienez main erreferentzia-puntu bat du",
+      "fail": "Dokumentuak ez du main erreferentzia-punturik"
+    },
+    "page-no-duplicate-banner": {
+      "pass": "Dokumentuak banner erreferentzia-puntu bat baino ez du",
+      "fail": "Dokumentuak banner erreferentzia-puntu bat baino gehiago du"
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "Dokumentuak contentinfo erreferentzia-puntu bat baino ez du",
+      "fail": "Dokumentuak contentinfo erreferentzia-puntu bat baino gehiago du"
+    },
+    "page-no-duplicate-main": {
+      "pass": "Dokumentuak ez du main erreferentzia-puntu bat baino gehiago",
+      "fail": "Dokumentuak main erreferentzia-puntu bat baino gehiago du"
+    },
+    "tabindex": {
+      "pass": "Elementuak ez du 0 baino tabindex handiagoa",
+      "fail": "Elementuak 0 baino tabindex handiagoa du"
+    },
+    "alt-space-value": {
+      "pass": "Elementuak balio balioduna du alt atributurako",
+      "fail": "Elementuak espazio-karaktere bat soilik duen alt atributua du, pantaila-irakurgailu guztiek alde batera uzten ez dutena."
+    },
+    "duplicate-img-label": {
+      "pass": "Elementuak ez du bikoizten < img>-ren testu alternatiboan dagoen testua.",
+      "fail": "Elementuak <img> elementu bat dauka, lehendik dagoen testua bikoizten duen testu alternatiboarekin"
+    },
+    "explicit-label": {
+      "pass": "Formularioko elementuak <label> dauka ",
+      "fail": "Formularioko elementuak ez dauka <label> "
+    },
+    "help-same-as-label": {
+      "pass": "Laguntza-testuak (title o aria-describedby) ez du label testua bikoizten",
+      "fail": "Laguntza-testuak (title o aria-describedby) label testuaren bera da"
+    },
+    "hidden-explicit-label": {
+      "pass": "Formularioko elementuak badu <label> ageriko bat",
+      "fail": "Formularioko elementuak <label> esplizitu ezkutua dauka"
+    },
+    "implicit-label": {
+      "pass": "Formularioko elementuak <label> inplizitua du ('bilduta')",
+      "fail": "Formularioko elementuak ez dauka <label> inplizitu bat ('bilduta')"
+    },
+    "label-content-name-mismatch": {
+      "pass": "Elementuak testu ikusgarri bat dauka, bere izen irisgarriaren zati gisa.",
+      "fail": "Elementuko testua ez dago sartuta izen irisgarrian"
+    },
+    "multiple-label": {
+      "pass": "Formulario-eremuak ez du label elementu askorik",
+      "fail": "Label elementu asko ez dira asko onartzen laguntza-teknologietan"
+    },
+    "title-only": {
+      "pass": "Formularioko elementuak ez du soilik title atributua erabiltzen bere etiketarako",
+      "fail": "Formularioko elementu baten etiketa sortzeko baino ez da erabili title"
+    },
+    "landmark-is-unique": {
+      "pass": "Erreferentzia-puntuek role edo role/label/title konbinazio bakarra izan behar dute (hau da, izen irisgarri bakarra)",
+      "fail": "Erreferentzia-puntuak aria-label, aria-labelledby edo title bakarra izan behar du, erreferentzia-puntuak bereizgarriak izan daitezen."
+    },
+    "has-lang": {
+      "pass": "<html> elementuak lang atributua du",
+      "fail": "<html> elementuak ez du lang atributurik"
+    },
+    "valid-lang": {
+      "pass": "lang atributuaren balioa hizkuntza baliodunen zerrendan sartuta dago",
+      "fail": "lang atributuaren balioa ez dago hizkuntza baliodunen zerrendan"
+    },
+    "xml-lang-mismatch": {
+      "pass": "lang eta xml: lang atributuek oinarrizko hizkuntza bera dute",
+      "fail": "lang eta xml: lang atributuek ez dute oinarrizko hizkuntza bera"
+    },
+    "dlitem": {
+      "pass": "Deskribapen-zerrendako elementuak <dl> aita elementua du",
+      "fail": "Deskribapen-zerrendako elementuak ez dauka <dl> aita elementurik"
+    },
+    "listitem": {
+      "pass": "Zerrendaren elementuak < ul>, < ol> edo role=\"list\" duen elementu bat du",
+      "fail": "Zerrendaren elementuak ez du <ul>, <ol> o role=\"list\" elementu aitarik "
+    },
+    "only-dlitems": {
+      "pass": "Zerrendaren elementuak zuzeneko semeak baino ez ditu, <dt> edo <dd> elementuen barruan baimenduta daudenak.",
+      "fail": "Zerrendaren elementuak zuzeneko semeak ditu, <dt> edo <dd> elementuen barruan baimenduta ez daudenak"
+    },
+    "only-listitems": {
+      "pass": "Zerrendako elementuak zuzeneko seme-alabak baino ez ditu, <li> elementuen barruan baimenduta daudenak.",
+      "fail": "Zerrendako elementuak zuzeneko seme-alabak ditu, <li> elementuen barruan baimenduta ez daudenak"
+    },
+    "structured-dlitems": {
+      "pass": "Hutsik ez dagoenean, elementuak <dt> eta < dd> ditu.",
+      "fail": "Hutsik ez dagoenean, elementuak ez du gutxienez <dt> elementurik, eta ondoren, gutxienez <dd> elementurik."
+    },
+    "caption": {
+      "pass": "Multimedia-elementuak azpititulu-pista bat du",
+      "incomplete": "Elementurako azpitituluak daudela egiaztatu"
+    },
+    "frame-tested": {
+      "pass": "Sartutako markoa axe-core bidez probatu da",
+      "fail": "Sartutako markoa ezin izan da probatu axe-core bidez",
+      "incomplete": "Sartutako markoa axe-core bidez probatu behar da oraindik"
+    },
+    "css-orientation-lock": {
+      "pass": "Pantaila maneiagarria da eta ez dago orientazio-blokeorik",
+      "fail": "CSSak orientazioa blokeatzen du, eta pantaila ezin da orientatu.",
+      "incomplete": "Ezin da zehaztu CSS orientazio-blokeorik dagoen"
+    },
+    "meta-viewport-large": {
+      "pass": "<meta> etiketak ez du zum esanguratsurik eragozten gailu mugikorretan",
+      "fail": "<meta> etiketak gailu mugikorretan mugatzen du zooma"
+    },
+    "meta-viewport": {
+      "pass": "<meta> etiketak ez du zoom eragozten gailu mugikorretan",
+      "fail": "${data} < meta> etiketan, gailu mugikorretan zoom-a eragozten du"
+    },
+    "header-present": {
+      "pass": "Orriak 'header' bat dauka",
+      "fail": "Orriak ez dauka 'header' bat"
+    },
+    "heading-order": {
+      "pass": "Goiburuen hurrenkera zuzena da",
+      "fail": "Goiburuen hurrenkera ez da zuzena"
+    },
+    "internal-link-present": {
+      "pass": "Aurkitutako jauzi esteka ('skip') baliozkoa da",
+      "fail": "Ez dira aurkitu jauzi esteka ('skip') baliozkorik"
+    },
+    "landmark": {
+      "pass": "Orrialdeak herrialde bat du erreferentzia-puntu",
+      "fail": "Orrialdeak ez du herrialde erreferentzia-punturik"
+    },
+    "meta-refresh": {
+      "pass": "<meta> etiketak ez du orria freskatzen",
+      "fail": "<meta> etiketak orria freskatzen du"
+    },
+    "p-as-heading": {
+      "pass": "<p> elementuak ez dira goiburu gisa diseinatus",
+      "fail": "Goiburuko elementuak erabili beharko lirateke <p> estiloko elementuak erabili beharrean"
+    },
+    "region": {
+      "pass": "Orriaren eduki guztia erreferentzia-puntuetan sartuta dago.",
+      "fail": "Erreferentzia-puntuetan sartu gabeko edukia du orriak"
+    },
+    "skip-link": {
+      "pass": "Badago jauziko loturaren helmuga ('skip')",
+      "incomplete": "Jauzi-loturaren ('skip') helmuga agerian geratu beharko litzateke aktibazioan ",
+      "fail": "Ez dago helmugarik jauziko estekarako ('skip')"
+    },
+    "unique-frame-title": {
+      "pass": "Elementuaren title atributua bakarra da",
+      "fail": "Elementuaren title atributua ez da bakarra"
+    },
+    "duplicate-id-active": {
+      "pass": "Dokumentuak ez dauka id atributu bera partekatzen duen elementu aktiborik",
+      "fail": "Dokumentuak elementu aktiboak ditu, id atributu berarekin: ${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "Dokumentuak ez dauka id atributu bera partekatzen duen Aari edo etiketekin lotutako elementurik",
+      "fail": "Dokumentuak hainbat elementu ditu, id atributu bereko aria batekin lotuta: ${data}"
+    },
+    "duplicate-id": {
+      "pass": "Dokumentuak ez dauka id atributu bera partekatzen duen elementu estatikorik",
+      "fail": "Dokumentuak hainbat elementu estatiko ditu, id atributu berarekin"
+    },
+    "aria-label": {
+      "pass": "aria-label atributua existitzen da eta ez dago hutsik",
+      "fail": "aria-label atributua ez da existitzen edo hutsik dago"
+    },
+    "aria-labelledby": {
+      "pass": "aria-labelledby atributua existitzen da eta pantaila-irakurgailuetarako ikus daitezkeen elementuei egiten die erreferentzia",
+      "fail": "aria-labelledby atributua ez da existitzen, existitzen ez diren elementuei egiten die erreferentzia edo elementu hutsei egiten die erreferentzia"
+    },
+    "avoid-inline-spacing": {
+      "pass": "Ez da testu-tarteari eragiten dion '!important' estilorik zehaztu.",
+      "fail": {
+        "singular": "Ezabatu '!important' inline styleetatik ${data.values}, nabigatzaile gehienetan ez delako onartzen baliogabetzea.",
+        "plural": "Ezabatu '!important' inline styletik ${data.values}, nabigatzaile gehienetan ez delako onartzen baliogabetzea."
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "Elementuak pantaila-irakurgailuek ikusteko moduko barne-testua du.",
+      "fail": "Elementuak ez du pantaila-irakurgailuek ikusteko moduko barne-testurik"
+    },
+    "doc-has-title": {
+      "pass": "Dokumentuak badu elementu bat <title> ez hutsik",
+      "fail": "Dokumentuak ez dauka <title> elementurik hutsik"
+    },
+    "exists": {
+      "pass": "Elementua ez da existitzen",
+      "fail": "Elementua existitzen da"
+    },
+    "has-alt": {
+      "pass": "Elementuak alt atributua du",
+      "fail": "Elementuak ez dauka alt atributurik"
+    },
+    "has-visible-text": {
+      "pass": "Elementuak pantaila-irakurgailuetarako testua du ikusgai",
+      "fail": "Elementuak ez du pantaila-irakurgailuetarako testu ikusgarririk"
+    },
+    "is-on-screen": {
+      "pass": "Elementua ez da ikusten",
+      "fail": "Elementua ikusten da"
+    },
+    "non-empty-alt": {
+      "pass": "Elementuak alt atributua du, eta ez dago hutsik",
+      "fail": "Elementuak ez du alt atributurik edo alt atributua hutsik dago"
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": ", eta ez du  balio-atributurik",
+        "has-label": "elementuak hutsik ez dagoen balio-atributua du  balio-atributurik"
+      },
+      "fail": "Elementuak balio-atributua du, eta balio-atributua hutsik dago"
+    },
+    "non-empty-title": {
+      "pass": "Elementuak title atributua du",
+      "fail": "Elementuak ez du title atributurik edo title atributua hutsik dago"
+    },
+    "non-empty-value": {
+      "pass": "Elementuak hutsik ez dagoen balio-atributua du",
+      "fail": "Elementuak ez dauka balio-atributurik edo balio-atributua hutsik dago"
+    },
+    "role-none": {
+      "pass": "Elementuaren semantika lehenetsia role =\"none\" bidez deuseztatu da.",
+      "fail": "Elementuaren semantika lehenetsia ez da baliogabetu role bidez =\"none\""
+    },
+    "role-presentation": {
+      "pass": "Elementuaren semantika lehenetsia role =\"presentation\" bidez deuseztatu da.",
+      "fail": "Elementuaren semantika lehenetsia ez da ezeztatu role =\"presentation\" bidez"
+    },
+    "caption-faked": {
+      "pass": "Taula baten lehen lerroa ez da izenburu gisa erabiltzen ('caption')",
+      "fail": "Taularen lehen ilarak izenburu bat izan beharko luke ('caption'), taula-gelaxka baten ordez"
+    },
+    "html5-scope": {
+      "pass": "Scope atributua taulako goiburuen elementuetan bakarrik erabiltzen da (<th>)",
+      "fail": "HTML5en, scope atributuak taula-goiburuen elementuetan bakarrik erabil daitezke (<th>) "
+    },
+    "same-caption-summary": {
+      "pass": "Summary eta <caption> atributuaren edukia ez dago bikoiztuta",
+      "fail": "Summary atributuaren eta <caption> elementuaren edukia berdinak dira"
+    },
+    "scope-value": {
+      "pass": "Scope atributua ondo erabiltzen da",
+      "fail": "Scope atributuaren balioa 'row' edo 'col' bakarrik izan daiteke"
+    },
+    "td-has-header": {
+      "pass": "Hutsik ez dauden datu-gelaxka guztiek taula-goiburuak dituzte",
+      "fail": "Hutsik ez dauden datu-gelaxka batzuek ez dute taula-goibururik"
+    },
+    "td-headers-attr": {
+      "pass": "Headers atributua taulako beste gelaxka batzuei erreferentzia egiteko baino ez da erabiltzen",
+      "fail": "Headers atributua ez da soilik erabiltzen taulako beste gelaxka batzuei erreferentzia egiteko"
+    },
+    "th-has-data-cells": {
+      "pass": "Taulako goiburuen gelaxka guztiak datu-gelaxkak dira.",
+      "fail": "Taulako goiburuen gelaxka guztiak ez dira datu-gelaxkak.",
+      "incomplete": "Taulako datu-gelaxkak ez daude edo hutsik daude"
+    },
+    "hidden-content": {
+      "pass": "Orriaren eduki osoa aztertu da.",
+      "fail": "Arazoak egon ziren orrialde honen edukia aztertzean.",
+      "incomplete": "Orrian ezkutuko edukia dago, baina ez da aztertu. Eduki horren bistaratzea aktibatu beharko duzu, aztertzeko."
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "Gorabehera hauetako edozein zuzentzea::{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "Gorabehera hauek zuzentzea (guztiak):{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  }
+}

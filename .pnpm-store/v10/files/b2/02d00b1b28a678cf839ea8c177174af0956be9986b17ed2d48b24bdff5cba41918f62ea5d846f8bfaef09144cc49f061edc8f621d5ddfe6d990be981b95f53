@@ -1,0 +1,55 @@
+{
+  "name": "undici-types",
+  "version": "7.16.0",
+  "description": "A stand-alone types package for Undici",
+  "homepage": "https://undici.nodejs.org",
+  "bugs": {
+    "url": "https://github.com/nodejs/undici/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodejs/undici.git"
+  },
+  "license": "MIT",
+  "types": "index.d.ts",
+  "files": [
+    "*.d.ts"
+  ],
+  "contributors": [
+    {
+      "name": "Daniele Belardi",
+      "url": "https://github.com/dnlup",
+      "author": true
+    },
+    {
+      "name": "Ethan Arrowood",
+      "url": "https://github.com/ethan-arrowood",
+      "author": true
+    },
+    {
+      "name": "Matteo Collina",
+      "url": "https://github.com/mcollina",
+      "author": true
+    },
+    {
+      "name": "Matthew Aitken",
+      "url": "https://github.com/KhafraDev",
+      "author": true
+    },
+    {
+      "name": "Robert Nagy",
+      "url": "https://github.com/ronag",
+      "author": true
+    },
+    {
+      "name": "Szymon Marczak",
+      "url": "https://github.com/szmarczak",
+      "author": true
+    },
+    {
+      "name": "Tomas Della Vedova",
+      "url": "https://github.com/delvedor",
+      "author": true
+    }
+  ]
+}

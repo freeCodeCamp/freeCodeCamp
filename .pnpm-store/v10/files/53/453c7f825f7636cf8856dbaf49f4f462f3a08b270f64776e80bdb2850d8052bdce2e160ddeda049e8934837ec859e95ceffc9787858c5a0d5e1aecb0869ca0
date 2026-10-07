@@ -1,0 +1,83 @@
+{
+  "name": "eslint-module-utils",
+  "version": "2.12.1",
+  "description": "Core utilities to support eslint-plugin-import and other module-related plugins.",
+  "engines": {
+    "node": ">=4"
+  },
+  "main": false,
+  "exports": {
+    "./contextCompat": "./contextCompat.js",
+    "./ModuleCache": "./ModuleCache.js",
+    "./ModuleCache.js": "./ModuleCache.js",
+    "./declaredScope": "./declaredScope.js",
+    "./declaredScope.js": "./declaredScope.js",
+    "./hash": "./hash.js",
+    "./hash.js": "./hash.js",
+    "./ignore": "./ignore.js",
+    "./ignore.js": "./ignore.js",
+    "./module-require": "./module-require.js",
+    "./module-require.js": "./module-require.js",
+    "./moduleVisitor": "./moduleVisitor.js",
+    "./moduleVisitor.js": "./moduleVisitor.js",
+    "./parse": "./parse.js",
+    "./parse.js": "./parse.js",
+    "./pkgDir": "./pkgDir.js",
+    "./pkgDir.js": "./pkgDir.js",
+    "./pkgUp": "./pkgUp.js",
+    "./pkgUp.js": "./pkgUp.js",
+    "./readPkgUp": "./readPkgUp.js",
+    "./readPkgUp.js": "./readPkgUp.js",
+    "./resolve": "./resolve.js",
+    "./resolve.js": "./resolve.js",
+    "./unambiguous": "./unambiguous.js",
+    "./unambiguous.js": "./unambiguous.js",
+    "./visit": "./visit.js",
+    "./visit.js": "./visit.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "prepublishOnly": "cp ../{LICENSE,.npmrc} ./",
+    "tsc": "tsc -p .",
+    "posttsc": "attw -P .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/import-js/eslint-plugin-import.git",
+    "directory": "utils"
+  },
+  "keywords": [
+    "eslint-plugin-import",
+    "eslint",
+    "modules",
+    "esmodules"
+  ],
+  "author": "Ben Mosher <me@benmosher.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/import-js/eslint-plugin-import/issues"
+  },
+  "homepage": "https://github.com/import-js/eslint-plugin-import#readme",
+  "dependencies": {
+    "debug": "^3.2.7"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@ljharb/tsconfig": "^0.3.2",
+    "@types/debug": "^4.1.12",
+    "@types/eslint": "^8.56.3",
+    "@types/node": "^20.19.1",
+    "typescript": "next"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "ignore": [
+      ".attw.json"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"native-context.d.ts","sourceRoot":"","sources":["../../../src/types/native-context.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,mBAAmB,EAAE,MAAM,wBAAwB,CAAC;AAC7D,OAAO,EAAE,0BAA0B,EAAE,MAAM,gCAAgC,CAAC;AAE5E,MAAM,MAAM,cAAc,GAAG,mBAAmB,GAAG,0BAA0B,CAAC"}

@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_set.cjs",
+    "module": "../../esm/_set.js"
+}

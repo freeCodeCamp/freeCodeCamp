@@ -1,0 +1,42 @@
+{
+  "name": "timers-ext",
+  "version": "0.1.7",
+  "description": "Timers extensions",
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/medikoo/timers-ext.git"
+  },
+  "keywords": [
+    "timeout",
+    "delay",
+    "interval",
+    "time",
+    "timer",
+    "timers"
+  ],
+  "dependencies": {
+    "es5-ext": "~0.10.46",
+    "next-tick": "1"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-medikoo-es5": "^1.7.2",
+    "tad": "^0.2.8"
+  },
+  "eslintConfig": {
+    "extends": "medikoo-es5",
+    "root": true,
+    "globals": {
+      "clearInterval": true,
+      "clearTimeout": true,
+      "setInterval": true,
+      "setTimeout": true
+    }
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path=.gitignore .",
+    "test": "node node_modules/tad/bin/tad"
+  },
+  "license": "ISC"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "babel-plugin-polyfill-corejs2",
+  "version": "0.4.8",
+  "description": "A Babel plugin to inject imports to core-js@2 polyfills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel-polyfills.git",
+    "directory": "packages/babel-plugin-polyfill-corejs2"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": [
+      {
+        "import": "./esm/index.mjs",
+        "default": "./lib/index.js"
+      },
+      "./lib/index.js"
+    ],
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/compat-data": "^7.22.6",
+    "@babel/helper-define-polyfill-provider": "^0.5.0",
+    "semver": "^6.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.6",
+    "@babel/helper-plugin-test-runner": "^7.22.5",
+    "@babel/plugin-transform-for-of": "^7.22.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.4.0 || ^8.0.0-0 <8.0.0"
+  },
+  "gitHead": "9738ea2a12643376a52c9be30c20ac19426a88cb"
+}

@@ -1,0 +1,112 @@
+{
+  "name": "mdast-util-toc",
+  "version": "5.1.0",
+  "description": "mdast utility to generate a table of contents from a tree",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "util",
+    "utility",
+    "markdown",
+    "table",
+    "contents",
+    "toc"
+  ],
+  "repository": "syntax-tree/mdast-util-toc",
+  "bugs": "https://github.com/syntax-tree/mdast-util-toc/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Jonathan Haines <jonno.haines@gmail.com> (https://barrythepenguin.github.io)"
+  ],
+  "types": "types/index.d.ts",
+  "files": [
+    "types/index.d.ts",
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "@types/mdast": "^3.0.3",
+    "@types/unist": "^2.0.3",
+    "extend": "^3.0.2",
+    "github-slugger": "^1.2.1",
+    "mdast-util-to-string": "^2.0.0",
+    "unist-util-is": "^4.0.0",
+    "unist-util-visit": "^2.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^13.0.0",
+    "remark-attr": "^0.11.0",
+    "remark-cli": "^9.0.0",
+    "remark-footnotes": "^3.0.0",
+    "remark-gfm": "^1.0.0",
+    "remark-parse": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "remark-usage": "^9.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "typescript": "^4.0.0",
+    "unified": "^9.0.0",
+    "unist-builder": "^2.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . -s mdastUtilTOC > mdast-util-toc.js",
+    "build-mangle": "browserify . -s mdastUtilTOC -p tinyify > mdast-util-toc.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "max-params": "off",
+      "no-multi-assign": "off",
+      "unicorn/explicit-length-check": "off",
+      "unicorn/prefer-optional-catch-binding": "off"
+    },
+    "ignores": [
+      "types/",
+      "mdast-util-toc.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm",
+      [
+        "remark-usage",
+        {
+          "heading": "use"
+        }
+      ]
+    ]
+  }
+}

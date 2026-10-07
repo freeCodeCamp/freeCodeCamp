@@ -1,0 +1,7 @@
+{
+  "name": "parcel-transformer-bad-engines",
+  "version": "1.0.0",
+  "engines": {
+    "parcel": "5.x"
+  }
+}

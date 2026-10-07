@@ -1,0 +1,3 @@
+import { type TLiteralValue } from '../../types/literal.mjs';
+export type TConvertToIntegerKey<Value extends TLiteralValue, Normal extends string = `${Value}`, Result extends TLiteralValue = (Normal extends ` ${infer _ extends number}` ? Normal : Normal extends `${infer _ extends number} ` ? Normal : Normal extends `0${infer _ extends number}` ? Normal : Normal extends `-${infer _ extends number}` ? Normal : Normal extends `${infer Value extends number}` ? Value : Value)> = Result;
+export declare function ConvertToIntegerKey<Value extends TLiteralValue>(value: Value): TConvertToIntegerKey<Value>;

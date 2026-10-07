@@ -1,0 +1,1 @@
+{"version":3,"file":"wave-shaper-node.d.ts","sourceRoot":"","sources":["../../../src/interfaces/wave-shaper-node.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,eAAe,EAAE,MAAM,UAAU,CAAC;AACrD,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAE1C,MAAM,WAAW,eAAe,CAAC,CAAC,SAAS,QAAQ,CAAE,SAAQ,UAAU,CAAC,CAAC,CAAC;IACtE,KAAK,EAAE,IAAI,GAAG,YAAY,CAAC;IAE3B,UAAU,EAAE,eAAe,CAAC;CAC/B"}

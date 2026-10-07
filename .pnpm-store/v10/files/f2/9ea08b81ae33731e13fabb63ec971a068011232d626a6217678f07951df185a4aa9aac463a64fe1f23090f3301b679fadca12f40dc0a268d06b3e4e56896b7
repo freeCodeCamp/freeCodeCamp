@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/HashRing.js",
+  "module": "../dist/esm/HashRing.js",
+  "types": "../dist/dts/HashRing.d.ts"
+}

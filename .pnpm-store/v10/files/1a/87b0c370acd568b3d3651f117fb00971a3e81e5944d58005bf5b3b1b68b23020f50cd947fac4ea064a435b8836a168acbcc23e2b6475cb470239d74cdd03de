@@ -1,0 +1,85 @@
+{
+  "name": "confbox",
+  "version": "0.2.2",
+  "description": "Compact YAML, TOML, JSONC, JSON5 and INI parser and serializer",
+  "keywords": [
+    "yaml",
+    "toml",
+    "jsonc",
+    "json5",
+    "unjs",
+    "config",
+    "ini"
+  ],
+  "repository": "unjs/confbox",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./json5": {
+      "types": "./dist/json5.d.mts",
+      "default": "./dist/json5.mjs"
+    },
+    "./jsonc": {
+      "types": "./dist/jsonc.d.mts",
+      "default": "./dist/jsonc.mjs"
+    },
+    "./toml": {
+      "types": "./dist/toml.d.mts",
+      "default": "./dist/toml.mjs"
+    },
+    "./yaml": {
+      "types": "./dist/yaml.d.mts",
+      "default": "./dist/yaml.mjs"
+    },
+    "./ini": {
+      "types": "./dist/ini.d.mts",
+      "default": "./dist/ini.mjs"
+    }
+  },
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest dev --coverage",
+    "bench": "pnpm build && node test/bench.mjs",
+    "lint": "eslint && prettier -c src test",
+    "lint:fix": "eslint --fix && prettier -c src test -w",
+    "prepack": "pnpm build",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+    "test:types": "tsc --noEmit --skipLibCheck"
+  },
+  "devDependencies": {
+    "@types/ini": "^4.1.1",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.14.0",
+    "@vitest/coverage-v8": "^3.1.1",
+    "automd": "^0.4.0",
+    "changelogen": "^0.6.1",
+    "detect-indent": "^7.0.1",
+    "eslint": "^9.23.0",
+    "eslint-config-unjs": "^0.4.2",
+    "ini": "^5.0.0",
+    "jiti": "^2.4.2",
+    "js-toml": "^1.0.1",
+    "js-yaml": "^4.1.0",
+    "json5": "^2.2.3",
+    "jsonc-parser": "^3.3.1",
+    "mitata": "^1.0.34",
+    "prettier": "^3.5.3",
+    "smol-toml": "^1.3.1",
+    "toml": "^3.0.0",
+    "typescript": "^5.8.2",
+    "unbuild": "^3.5.0",
+    "vitest": "^3.1.1",
+    "yaml": "^2.7.1"
+  },
+  "packageManager": "pnpm@10.7.1"
+}

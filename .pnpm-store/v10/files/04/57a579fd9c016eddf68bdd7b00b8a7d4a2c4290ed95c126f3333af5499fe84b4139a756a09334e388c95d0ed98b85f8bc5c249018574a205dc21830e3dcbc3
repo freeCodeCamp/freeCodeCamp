@@ -1,0 +1,9 @@
+{
+  "badges": {
+    "nodeico": true,
+    "bithound": false,
+    "stability": "stable"
+  },
+
+  "license": {}
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"feedback.d.ts","sourceRoot":"","sources":["../../src/feedback.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,eAAe,CAAC;AAC/C,OAAO,KAAK,EAAiB,kBAAkB,EAAE,MAAM,kBAAkB,CAAC;AAE1E;;GAEG;AACH,wBAAgB,eAAe,CAC7B,MAAM,EAAE,kBAAkB,EAC1B,IAAI,GAAE,SAAS,GAAG;IAAE,aAAa,CAAC,EAAE,OAAO,CAAA;CAAO,EAClD,KAAK,0BAAoB,GACxB,MAAM,CA4BR"}

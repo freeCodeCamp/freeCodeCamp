@@ -1,0 +1,21 @@
+{
+    "name": "path-is-inside",
+    "description": "Tests whether one path is inside another path",
+    "keywords": ["path", "directory", "folder", "inside", "relative"],
+    "version": "1.0.2",
+    "author": "Domenic Denicola <d@domenic.me> (https://domenic.me)",
+    "license": "(WTFPL OR MIT)",
+    "repository": "domenic/path-is-inside",
+    "main": "lib/path-is-inside.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "test": "mocha",
+        "lint": "jshint lib"
+    },
+    "devDependencies": {
+        "jshint": "~2.3.0",
+        "mocha": "~1.15.1"
+    }
+}

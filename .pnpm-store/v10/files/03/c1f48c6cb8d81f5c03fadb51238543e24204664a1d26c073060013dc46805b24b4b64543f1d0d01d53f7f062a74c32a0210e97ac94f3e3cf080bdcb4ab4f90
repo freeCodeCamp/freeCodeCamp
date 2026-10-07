@@ -1,0 +1,89 @@
+{
+  "name": "@fastify/static",
+  "version": "9.1.3",
+  "description": "Plugin for serving static files as fast as possible.",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "coverage": "c8 --reporter html borp --coverage --check-coverage --lines 100",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:typescript": "tsd",
+    "test:unit": "borp -C --check-coverage --lines 100",
+    "example": "node example/server.js",
+    "example:benchmark": "node example/server-benchmark.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-static.git"
+  },
+  "keywords": [
+    "fastify",
+    "static"
+  ],
+  "author": "Tommaso Allevi - @allevo",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Manuel Spigolon",
+      "email": "behemoth89@gmail.com"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-static/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-static",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "dependencies": {
+    "@fastify/accept-negotiator": "^2.0.0",
+    "@fastify/send": "^4.0.0",
+    "content-disposition": "^1.0.1",
+    "fastify-plugin": "^5.0.0",
+    "fastq": "^1.17.1",
+    "glob": "^13.0.0"
+  },
+  "devDependencies": {
+    "@fastify/compress": "^8.0.0",
+    "@types/node": "^25.0.3",
+    "autocannon": "^8.0.0",
+    "borp": "^1.0.0",
+    "c8": "^11.0.0",
+    "concat-stream": "^2.0.0",
+    "eslint": "^9.17.0",
+    "fastify": "^5.1.0",
+    "neostandard": "^0.12.0",
+    "pino": "^10.0.0",
+    "proxyquire": "^2.1.3",
+    "tsd": "^0.33.0"
+  },
+  "tsd": {
+    "directory": "test/types"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

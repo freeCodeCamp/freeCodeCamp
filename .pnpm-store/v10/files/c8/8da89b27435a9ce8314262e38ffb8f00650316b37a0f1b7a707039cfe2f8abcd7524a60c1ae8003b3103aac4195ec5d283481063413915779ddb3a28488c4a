@@ -1,0 +1,204 @@
+# Function calls
+
+a {
+  color: rgba(0, 255, 0, 0.5);
+}
+
+==>
+
+StyleSheet(
+  RuleSet(TagSelector(TagName),Block(
+    Declaration(PropertyName,CallExpression(Callee,ArgList(NumberLiteral,NumberLiteral,NumberLiteral,NumberLiteral))))))
+
+# Calls where each argument has multiple values
+
+div {
+  background: repeating-linear-gradient(red, orange 50px);
+  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%)
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,CallExpression(Callee,ArgList(ValueName,ValueName,NumberLiteral(Unit)))),
+  Declaration(PropertyName,CallExpression(Callee,ArgList(
+    NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit),
+    NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit),
+    NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit),
+    NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit)))))))
+
+# Color literals
+
+a {
+  b: #fafd04;
+  c: #fafd0401;
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,ColorLiteral),
+  Declaration(PropertyName,ColorLiteral))))
+
+# Numbers
+
+a {
+  b: 0.5%;
+  c: 5em;
+  margin: 10E3px;
+  margin: -456.8px;
+  margin: -0.0px;
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,NumberLiteral(Unit)),
+  Declaration(PropertyName,NumberLiteral(Unit)),
+  Declaration(PropertyName,NumberLiteral(Unit)),
+  Declaration(PropertyName,NumberLiteral(Unit)),
+  Declaration(PropertyName,NumberLiteral(Unit)))))
+
+# Binary arithmetic operators
+
+a {
+  width: calc(100% - 80px);
+  aspect-ratio: 1/2;
+  font-size: calc(10px + (56 - 10) * ((100vw - 320px) / (1920 - 320)));
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,CallExpression(Callee,ArgList(BinaryExpression(NumberLiteral(Unit),BinOp,NumberLiteral(Unit))))),
+  Declaration(PropertyName,BinaryExpression(NumberLiteral,BinOp,NumberLiteral)),
+  Declaration(PropertyName,CallExpression(Callee,ArgList(
+    BinaryExpression(BinaryExpression(NumberLiteral(Unit),BinOp,ParenthesizedValue(
+      BinaryExpression(NumberLiteral,BinOp,NumberLiteral))),BinOp,ParenthesizedValue(
+      BinaryExpression(ParenthesizedValue(BinaryExpression(NumberLiteral(Unit),BinOp,NumberLiteral(Unit))),BinOp,
+      ParenthesizedValue(BinaryExpression(NumberLiteral,BinOp,NumberLiteral)))))))))))
+
+# Strings
+
+a {
+  b: '';
+  c: '\'hi\'';
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(Declaration(PropertyName,StringLiteral),Declaration(PropertyName,StringLiteral))))
+
+# URLs
+
+a {
+  b: url(http://something-else?foo=bar);
+  c: url();
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,CallLiteral(CallTag,ParenthesizedContent)),
+  Declaration(PropertyName,CallLiteral(CallTag)))))
+
+# Important declarations
+
+a {
+  b: c !important;
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(Declaration(PropertyName,ValueName,Important))))
+
+# Comments right after numbers
+
+a {
+	shape-outside: circle(20em/*=*/at 50% 50%);
+	shape-outside: inset(1em, 1em, 1em, 1em);
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,CallExpression(Callee,ArgList(NumberLiteral(Unit),Comment,ValueName,NumberLiteral(Unit),NumberLiteral(Unit)))),
+  Declaration(PropertyName,CallExpression(Callee,ArgList(NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit),NumberLiteral(Unit)))))))
+
+# Unfinished rule
+
+a { foo: 2
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(Declaration(PropertyName,NumberLiteral),⚠)))
+
+# Variable names
+
+foo {
+  --my-variable: white;
+  color: var(--my-variable);
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(VariableName,ValueName),
+  Declaration(PropertyName,CallExpression(Callee,ArgList(VariableName))))))
+
+# Trailing comma
+
+div { color: var(--c,) }
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,CallExpression(Callee,ArgList(VariableName))))))
+
+# Space before colon
+
+div {
+  color : red;
+  .x :active {
+    color : blue;
+  }
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,ValueName),
+  RuleSet(DescendantSelector(ClassSelector(ClassName),PseudoClassSelector(PseudoClassName)),Block(
+    Declaration(PropertyName,ValueName))))))
+
+# Empty value
+
+p {
+  --var-name: ;
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(Declaration(VariableName))))
+
+# Bracketed values
+
+div {
+  --myvar: [ some: value; ]
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(VariableName,BracketedValue("[", ValueName, ":", ValueName, ";", "]")))))
+
+# Call to variables
+
+.foo {
+  box-shadow: --shadow(blue);
+}
+
+==>
+
+StyleSheet(RuleSet(ClassSelector(ClassName),Block(
+  Declaration(PropertyName,CallExpression(VariableName,ArgList(ValueName))))))

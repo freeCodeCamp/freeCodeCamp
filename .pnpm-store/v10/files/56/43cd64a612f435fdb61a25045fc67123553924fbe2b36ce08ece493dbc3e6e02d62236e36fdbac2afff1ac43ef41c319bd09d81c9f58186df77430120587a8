@@ -1,0 +1,22 @@
+# See https://github.com/DavidAnson/markdownlint-cli2
+config:
+  # Disable all rules by default.
+  default: false
+
+  # Enforce line length.
+  MD013:
+    line_length: 80
+    code_block_line_length: 120
+    headings: false
+    tables: false
+    strict: false
+    stern: false
+
+globs:
+  - '**/*.md'
+
+ignores:
+  - 'node_modules/**'
+  - 'test/**/*.md'
+
+noProgress: true

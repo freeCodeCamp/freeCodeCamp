@@ -1,0 +1,111 @@
+{
+  "name": "@inquirer/editor",
+  "version": "4.2.23",
+  "description": "Inquirer multiline editor prompt",
+  "keywords": [
+    "answer",
+    "answers",
+    "ask",
+    "base",
+    "cli",
+    "command",
+    "command-line",
+    "confirm",
+    "enquirer",
+    "generate",
+    "generator",
+    "hyper",
+    "input",
+    "inquire",
+    "inquirer",
+    "interface",
+    "iterm",
+    "javascript",
+    "menu",
+    "node",
+    "nodejs",
+    "prompt",
+    "promptly",
+    "prompts",
+    "question",
+    "readline",
+    "scaffold",
+    "scaffolder",
+    "scaffolding",
+    "stdin",
+    "stdout",
+    "terminal",
+    "tty",
+    "ui",
+    "yeoman",
+    "yo",
+    "zsh"
+  ],
+  "homepage": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/editor/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SBoudrias/Inquirer.js.git"
+  },
+  "license": "MIT",
+  "author": "Simon Boudrias <admin@simonboudrias.com>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    }
+  },
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "attw": "attw --pack",
+    "tsc": "tshy"
+  },
+  "dependencies": {
+    "@inquirer/core": "^10.3.2",
+    "@inquirer/external-editor": "^1.0.3",
+    "@inquirer/type": "^3.0.10"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@inquirer/testing": "^2.1.53",
+    "@repo/tsconfig": "0.0.0",
+    "tshy": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "tshy": {
+    "exclude": [
+      "src/**/*.test.ts"
+    ],
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts"
+    }
+  },
+  "peerDependencies": {
+    "@types/node": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
+  },
+  "gitHead": "4731a373881368e2f701c41adc67bc83244bf89f"
+}

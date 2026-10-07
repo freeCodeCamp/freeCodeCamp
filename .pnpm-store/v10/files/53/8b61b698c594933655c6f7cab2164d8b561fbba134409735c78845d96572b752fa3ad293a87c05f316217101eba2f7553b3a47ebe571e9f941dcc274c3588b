@@ -1,0 +1,46 @@
+{
+  "name": "hosted-git-info",
+  "version": "3.0.8",
+  "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/hosted-git-info.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "bitbucket",
+    "gitlab"
+  ],
+  "author": "Rebecca Turner <me@re-becca.org> (http://re-becca.org)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npm/hosted-git-info/issues"
+  },
+  "homepage": "https://github.com/npm/hosted-git-info",
+  "scripts": {
+    "prerelease": "npm t",
+    "postrelease": "npm publish && git push --follow-tags",
+    "posttest": "standard",
+    "release": "standard-version -s",
+    "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+    "test": "tap -J --100 --no-esm test/*.js"
+  },
+  "dependencies": {
+    "lru-cache": "^6.0.0"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1",
+    "standard-version": "^4.4.0",
+    "tap": "^12.7.0"
+  },
+  "files": [
+    "index.js",
+    "git-host.js",
+    "git-host-info.js"
+  ],
+  "engines": {
+    "node": ">=10"
+  }
+}

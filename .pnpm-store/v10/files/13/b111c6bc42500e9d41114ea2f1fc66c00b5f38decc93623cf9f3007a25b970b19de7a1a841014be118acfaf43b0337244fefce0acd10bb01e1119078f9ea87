@@ -1,0 +1,68 @@
+{
+  "name": "webpack-cli",
+  "version": "4.10.0",
+  "description": "CLI for webpack & friends",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webpack/webpack-cli.git"
+  },
+  "homepage": "https://github.com/webpack/webpack-cli/tree/master/packages/webpack-cli",
+  "bugs": "https://github.com/webpack/webpack-cli/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/webpack"
+  },
+  "bin": {
+    "webpack-cli": "./bin/cli.js"
+  },
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "keywords": [
+    "webpack",
+    "cli",
+    "scaffolding",
+    "module",
+    "bundler",
+    "web"
+  ],
+  "files": [
+    "bin",
+    "lib",
+    "!**/*__tests__"
+  ],
+  "dependencies": {
+    "@discoveryjs/json-ext": "^0.5.0",
+    "@webpack-cli/configtest": "^1.2.0",
+    "@webpack-cli/info": "^1.5.0",
+    "@webpack-cli/serve": "^1.7.0",
+    "colorette": "^2.0.14",
+    "commander": "^7.0.0",
+    "cross-spawn": "^7.0.3",
+    "fastest-levenshtein": "^1.0.12",
+    "import-local": "^3.0.2",
+    "interpret": "^2.2.0",
+    "rechoir": "^0.7.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "peerDependencies": {
+    "webpack": "4.x.x || 5.x.x"
+  },
+  "peerDependenciesMeta": {
+    "@webpack-cli/generators": {
+      "optional": true
+    },
+    "@webpack-cli/migrate": {
+      "optional": true
+    },
+    "webpack-bundle-analyzer": {
+      "optional": true
+    },
+    "webpack-dev-server": {
+      "optional": true
+    }
+  },
+  "gitHead": "20882d463450d010bb76e0824fe555e9785e9561"
+}

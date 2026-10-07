@@ -1,0 +1,296 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain Preload
+  # Unique id
+  type RuleSetId extends string
+
+  # Corresponds to SpeculationRuleSet
+  type RuleSet extends object
+    properties
+      RuleSetId id
+      # Identifies a document which the rule set is associated with.
+      Network.LoaderId loaderId
+      # Source text of JSON representing the rule set. If it comes from
+      # `<script>` tag, it is the textContent of the node. Note that it is
+      # a JSON for valid case.
+      #
+      # See also:
+      # - https://wicg.github.io/nav-speculation/speculation-rules.html
+      # - https://github.com/WICG/nav-speculation/blob/main/triggers.md
+      string sourceText
+      # A speculation rule set is either added through an inline
+      # `<script>` tag or through an external resource via the
+      # 'Speculation-Rules' HTTP header. For the first case, we include
+      # the BackendNodeId of the relevant `<script>` tag. For the second
+      # case, we include the external URL where the rule set was loaded
+      # from, and also RequestId if Network domain is enabled.
+      #
+      # See also:
+      # - https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-script
+      # - https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-header
+      optional DOM.BackendNodeId backendNodeId
+      optional string url
+      optional Network.RequestId requestId
+      # Error information
+      # `errorMessage` is null iff `errorType` is null.
+      optional RuleSetErrorType errorType
+      # TODO(https://crbug.com/1425354): Replace this property with structured error.
+      deprecated optional string errorMessage
+      # For more details, see:
+      # https://github.com/WICG/nav-speculation/blob/main/speculation-rules-tags.md
+      optional string tag
+
+  type RuleSetErrorType extends string
+    enum
+      SourceIsNotJsonObject
+      InvalidRulesSkipped
+      InvalidRulesetLevelTag
+
+  # The type of preloading attempted. It corresponds to
+  # mojom::SpeculationAction (although PrefetchWithSubresources is omitted as it
+  # isn't being used by clients).
+  type SpeculationAction extends string
+    enum
+      Prefetch
+      Prerender
+      PrerenderUntilScript
+
+  # Corresponds to mojom::SpeculationTargetHint.
+  # See https://github.com/WICG/nav-speculation/blob/main/triggers.md#window-name-targeting-hints
+  type SpeculationTargetHint extends string
+    enum
+      Blank
+      Self
+
+  # A key that identifies a preloading attempt.
+  #
+  # The url used is the url specified by the trigger (i.e. the initial URL), and
+  # not the final url that is navigated to. For example, prerendering allows
+  # same-origin main frame navigations during the attempt, but the attempt is
+  # still keyed with the initial URL.
+  type PreloadingAttemptKey extends object
+    properties
+      Network.LoaderId loaderId
+      SpeculationAction action
+      string url
+      optional boolean formSubmission
+      optional SpeculationTargetHint targetHint
+
+  # Lists sources for a preloading attempt, specifically the ids of rule sets
+  # that had a speculation rule that triggered the attempt, and the
+  # BackendNodeIds of <a href> or <area href> elements that triggered the
+  # attempt (in the case of attempts triggered by a document rule). It is
+  # possible for multiple rule sets and links to trigger a single attempt.
+  type PreloadingAttemptSource extends object
+    properties
+      PreloadingAttemptKey key
+      array of RuleSetId ruleSetIds
+      array of DOM.BackendNodeId nodeIds
+
+  # Chrome manages different types of preloads together using a
+  # concept of preloading pipeline. For example, if a site uses a
+  # SpeculationRules for prerender, Chrome first starts a prefetch and
+  # then upgrades it to prerender.
+  #
+  # CDP events for them are emitted separately but they share
+  # `PreloadPipelineId`.
+  type PreloadPipelineId extends string
+
+  command enable
+
+  command disable
+
+  # Upsert. Currently, it is only emitted when a rule set added.
+  event ruleSetUpdated
+    parameters
+      RuleSet ruleSet
+
+  event ruleSetRemoved
+    parameters
+      RuleSetId id
+
+  # List of FinalStatus reasons for Prerender2.
+  type PrerenderFinalStatus extends string
+    enum
+      Activated
+      Destroyed
+      LowEndDevice
+      InvalidSchemeRedirect
+      InvalidSchemeNavigation
+      NavigationRequestBlockedByCsp
+      MojoBinderPolicy
+      RendererProcessCrashed
+      RendererProcessKilled
+      Download
+      TriggerDestroyed
+      NavigationNotCommitted
+      NavigationBadHttpStatus
+      ClientCertRequested
+      NavigationRequestNetworkError
+      CancelAllHostsForTesting
+      DidFailLoad
+      Stop
+      SslCertificateError
+      LoginAuthRequested
+      UaChangeRequiresReload
+      BlockedByClient
+      AudioOutputDeviceRequested
+      MixedContent
+      TriggerBackgrounded
+      MemoryLimitExceeded
+      DataSaverEnabled
+      TriggerUrlHasEffectiveUrl
+      ActivatedBeforeStarted
+      InactivePageRestriction
+      StartFailed
+      TimeoutBackgrounded
+      CrossSiteRedirectInInitialNavigation
+      CrossSiteNavigationInInitialNavigation
+      SameSiteCrossOriginRedirectNotOptInInInitialNavigation
+      SameSiteCrossOriginNavigationNotOptInInInitialNavigation
+      ActivationNavigationParameterMismatch
+      ActivatedInBackground
+      EmbedderHostDisallowed
+      ActivationNavigationDestroyedBeforeSuccess
+      TabClosedByUserGesture
+      TabClosedWithoutUserGesture
+      PrimaryMainFrameRendererProcessCrashed
+      PrimaryMainFrameRendererProcessKilled
+      ActivationFramePolicyNotCompatible
+      PreloadingDisabled
+      BatterySaverEnabled
+      ActivatedDuringMainFrameNavigation
+      PreloadingUnsupportedByWebContents
+      CrossSiteRedirectInMainFrameNavigation
+      CrossSiteNavigationInMainFrameNavigation
+      SameSiteCrossOriginRedirectNotOptInInMainFrameNavigation
+      SameSiteCrossOriginNavigationNotOptInInMainFrameNavigation
+      MemoryPressureOnTrigger
+      MemoryPressureAfterTriggered
+      PrerenderingDisabledByDevTools
+      SpeculationRuleRemoved
+      ActivatedWithAuxiliaryBrowsingContexts
+      MaxNumOfRunningEagerPrerendersExceeded
+      MaxNumOfRunningNonEagerPrerendersExceeded
+      MaxNumOfRunningEmbedderPrerendersExceeded
+      PrerenderingUrlHasEffectiveUrl
+      RedirectedPrerenderingUrlHasEffectiveUrl
+      ActivationUrlHasEffectiveUrl
+      JavaScriptInterfaceAdded
+      JavaScriptInterfaceRemoved
+      AllPrerenderingCanceled
+      WindowClosed
+      SlowNetwork
+      OtherPrerenderedPageActivated
+      V8OptimizerDisabled
+      PrerenderFailedDuringPrefetch
+      BrowsingDataRemoved
+      PrerenderHostReused
+      FormSubmitWhenPrerendering
+
+  # Fired when a preload enabled state is updated.
+  event preloadEnabledStateUpdated
+    parameters
+      boolean disabledByPreference
+      boolean disabledByDataSaver
+      boolean disabledByBatterySaver
+      boolean disabledByHoldbackPrefetchSpeculationRules
+      boolean disabledByHoldbackPrerenderSpeculationRules
+
+  # Preloading status values, see also PreloadingTriggeringOutcome. This
+  # status is shared by prefetchStatusUpdated and prerenderStatusUpdated.
+  type PreloadingStatus extends string
+    enum
+      Pending
+      Running
+      Ready
+      Success
+      Failure
+      # PreloadingTriggeringOutcome which not used by prefetch nor prerender.
+      NotSupported
+
+  # TODO(https://crbug.com/1384419): revisit the list of PrefetchStatus and
+  # filter out the ones that aren't necessary to the developers.
+  type PrefetchStatus extends string
+    enum
+      # Prefetch is not disabled by PrefetchHeldback.
+      PrefetchAllowed
+      PrefetchFailedIneligibleRedirect
+      PrefetchFailedInvalidRedirect
+      PrefetchFailedMIMENotSupported
+      PrefetchFailedNetError
+      PrefetchFailedNon2XX
+      PrefetchEvictedAfterBrowsingDataRemoved
+      PrefetchEvictedAfterCandidateRemoved
+      PrefetchEvictedForNewerPrefetch
+      PrefetchHeldback
+      # A previous prefetch to the origin got a HTTP 503 response with an
+      # Retry-After header that has no elapsed yet.
+      PrefetchIneligibleRetryAfter
+      PrefetchIsPrivacyDecoy
+      PrefetchIsStale
+      PrefetchNotEligibleBrowserContextOffTheRecord
+      PrefetchNotEligibleDataSaverEnabled
+      PrefetchNotEligibleExistingProxy
+      PrefetchNotEligibleHostIsNonUnique
+      PrefetchNotEligibleNonDefaultStoragePartition
+      PrefetchNotEligibleSameSiteCrossOriginPrefetchRequiredProxy
+      PrefetchNotEligibleSchemeIsNotHttps
+      PrefetchNotEligibleUserHasCookies
+      PrefetchNotEligibleUserHasServiceWorker
+      PrefetchNotEligibleUserHasServiceWorkerNoFetchHandler
+      PrefetchNotEligibleRedirectFromServiceWorker
+      PrefetchNotEligibleRedirectToServiceWorker
+      PrefetchNotEligibleBatterySaverEnabled
+      PrefetchNotEligiblePreloadingDisabled
+      PrefetchNotFinishedInTime
+      PrefetchNotStarted
+      PrefetchNotUsedCookiesChanged
+      PrefetchProxyNotAvailable
+      # The response of the prefetch is used for the next navigation. This is
+      # the final successful state.
+      PrefetchResponseUsed
+      # The prefetch finished successfully but was never used.
+      PrefetchSuccessfulButNotUsed
+      PrefetchNotUsedProbeFailed
+
+  # Fired when a prefetch attempt is updated.
+  event prefetchStatusUpdated
+    parameters
+      PreloadingAttemptKey key
+      PreloadPipelineId pipelineId
+      # The frame id of the frame initiating prefetch.
+      Page.FrameId initiatingFrameId
+      string prefetchUrl
+      PreloadingStatus status
+      PrefetchStatus prefetchStatus
+      Network.RequestId requestId
+
+  # Information of headers to be displayed when the header mismatch occurred.
+  type PrerenderMismatchedHeaders extends object
+    properties
+      string headerName
+      optional string initialValue
+      optional string activationValue
+
+  # Fired when a prerender attempt is updated.
+  event prerenderStatusUpdated
+    parameters
+      PreloadingAttemptKey key
+      PreloadPipelineId pipelineId
+      PreloadingStatus status
+      optional PrerenderFinalStatus prerenderStatus
+      # This is used to give users more information about the name of Mojo interface
+      # that is incompatible with prerender and has caused the cancellation of the attempt.
+      optional string disallowedMojoInterface
+      optional array of PrerenderMismatchedHeaders mismatchedHeaders
+
+  # Send a list of sources for all preloading attempts in a document.
+  event preloadingAttemptSourcesUpdated
+    parameters
+      Network.LoaderId loaderId
+      array of PreloadingAttemptSource preloadingAttemptSources

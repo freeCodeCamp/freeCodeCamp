@@ -1,0 +1,58 @@
+{
+  "name": "tar-stream",
+  "version": "2.2.0",
+  "description": "tar-stream is a streaming tar parser and generator and nothing else. It is streams2 and operates purely using streams which means you can easily extract/parse tarballs without ever hitting the file system.",
+  "author": "Mathias Buus <mathiasbuus@gmail.com>",
+  "dependencies": {
+    "bl": "^4.0.3",
+    "end-of-stream": "^1.4.1",
+    "fs-constants": "^1.0.0",
+    "inherits": "^2.0.3",
+    "readable-stream": "^3.1.1"
+  },
+  "devDependencies": {
+    "concat-stream": "^2.0.0",
+    "standard": "^12.0.1",
+    "tape": "^4.9.2"
+  },
+  "scripts": {
+    "test": "standard && tape test/extract.js test/pack.js",
+    "test-all": "standard && tape test/*.js"
+  },
+  "keywords": [
+    "tar",
+    "tarball",
+    "parse",
+    "parser",
+    "generate",
+    "generator",
+    "stream",
+    "stream2",
+    "streams",
+    "streams2",
+    "streaming",
+    "pack",
+    "extract",
+    "modify"
+  ],
+  "bugs": {
+    "url": "https://github.com/mafintosh/tar-stream/issues"
+  },
+  "homepage": "https://github.com/mafintosh/tar-stream",
+  "main": "index.js",
+  "files": [
+    "*.js",
+    "LICENSE"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafintosh/tar-stream.git"
+  },
+  "engines": {
+    "node": ">=6"
+  }
+}

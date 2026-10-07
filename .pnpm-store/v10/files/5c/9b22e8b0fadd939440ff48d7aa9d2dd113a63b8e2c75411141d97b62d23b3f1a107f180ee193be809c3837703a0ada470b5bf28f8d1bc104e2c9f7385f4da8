@@ -1,0 +1,36 @@
+{
+  "name": "@eslint/js",
+  "version": "9.39.4",
+  "description": "ESLint JavaScript language implementation",
+  "funding": "https://eslint.org/donate",
+  "main": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "test:types": "tsc -p tests/types/tsconfig.json"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "src",
+    "types"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eslint/eslint.git",
+    "directory": "packages/js"
+  },
+  "homepage": "https://eslint.org",
+  "bugs": "https://github.com/eslint/eslint/issues/",
+  "keywords": [
+    "javascript",
+    "eslint-plugin",
+    "eslint"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  }
+}

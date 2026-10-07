@@ -1,0 +1,104 @@
+{
+    "author": "Christoph Guttandin",
+    "bugs": {
+        "url": "https://github.com/chrisguttandin/standardized-audio-context/issues"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "contributors": [
+        {
+            "email": "kpd400@gmail.com",
+            "name": "Kyle Dunn"
+        },
+        {
+            "email": "info@collab.nl",
+            "name": "Thijs Triemstra"
+        }
+    ],
+    "dependencies": {
+        "@babel/runtime": "^7.25.6",
+        "automation-events": "^7.0.9",
+        "tslib": "^2.7.0"
+    },
+    "description": "A cross-browser wrapper for the Web Audio API which aims to closely follow the standard.",
+    "devDependencies": {
+        "@babel/cli": "^7.25.6",
+        "@babel/core": "^7.25.2",
+        "@babel/plugin-external-helpers": "^7.24.7",
+        "@babel/plugin-transform-runtime": "^7.25.4",
+        "@babel/preset-env": "^7.25.4",
+        "@babel/register": "^7.24.6",
+        "@commitlint/cli": "^19.4.1",
+        "@commitlint/config-angular": "^19.4.1",
+        "@rollup/plugin-babel": "^6.0.4",
+        "chai": "^4.3.10",
+        "commitizen": "^4.3.0",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.57.0",
+        "eslint-config-holy-grail": "^59.0.15",
+        "grunt": "^1.6.1",
+        "grunt-cli": "^1.5.0",
+        "grunt-sh": "^0.2.1",
+        "husky": "^8.0.3",
+        "karma": "^6.4.4",
+        "karma-browserstack-launcher": "^1.6.0",
+        "karma-chrome-launcher": "^3.2.0",
+        "karma-firefox-launcher": "^2.1.3",
+        "karma-mocha": "^2.0.1",
+        "karma-sinon-chai": "^2.0.2",
+        "karma-webkit-launcher": "^2.6.0",
+        "karma-webpack": "^5.0.1",
+        "lint-staged": "^15.2.9",
+        "load-grunt-config": "^4.0.1",
+        "memory-fs": "^0.5.0",
+        "mocha": "^10.7.3",
+        "prettier": "^3.3.3",
+        "puppeteer": "^23.2.1",
+        "rimraf": "^6.0.1",
+        "rollup": "^4.21.2",
+        "sinon": "^17.0.2",
+        "sinon-chai": "^3.7.0",
+        "ts-loader": "^9.5.1",
+        "tsconfig-holy-grail": "^15.0.1",
+        "tslint": "^6.1.3",
+        "tslint-config-holy-grail": "^56.0.3",
+        "typescript": "^5.5.4",
+        "webpack": "^5.94.0"
+    },
+    "files": [
+        "build/es2019/",
+        "build/es5/",
+        "src/"
+    ],
+    "homepage": "https://github.com/chrisguttandin/standardized-audio-context",
+    "keywords": [
+        "AudioWorklet",
+        "Polyfill",
+        "Web Audio API",
+        "audio",
+        "browser"
+    ],
+    "license": "MIT",
+    "main": "build/es5/bundle.js",
+    "module": "build/es2019/module.js",
+    "name": "standardized-audio-context",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chrisguttandin/standardized-audio-context.git"
+    },
+    "scripts": {
+        "build": "rimraf build/* && tsc --project src/tsconfig.json && rollup --config config/rollup/bundle.mjs && babel ./build/es2019 --config-file ./config/babel/build.json --out-dir ./build/node",
+        "lint": "npm run lint:config && npm run lint:src && npm run lint:test",
+        "lint:config": "eslint --config config/eslint/config.json --ext .js --report-unused-disable-directives config/",
+        "lint:src": "tslint --config config/tslint/src.json --project src/tsconfig.json src/*.ts src/**/*.ts",
+        "lint:test": "eslint --config config/eslint/test.json --ext .js --report-unused-disable-directives test/",
+        "prepare": "husky install",
+        "prepublishOnly": "npm run build",
+        "test": "grunt lint && grunt test"
+    },
+    "types": "build/es2019/module.d.ts",
+    "version": "25.3.77"
+}

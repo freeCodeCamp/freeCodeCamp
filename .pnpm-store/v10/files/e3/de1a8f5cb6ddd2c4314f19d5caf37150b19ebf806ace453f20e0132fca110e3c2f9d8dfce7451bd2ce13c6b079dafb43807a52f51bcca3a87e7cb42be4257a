@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Predicate.js",
+  "module": "../dist/esm/Predicate.js",
+  "types": "../dist/dts/Predicate.d.ts"
+}

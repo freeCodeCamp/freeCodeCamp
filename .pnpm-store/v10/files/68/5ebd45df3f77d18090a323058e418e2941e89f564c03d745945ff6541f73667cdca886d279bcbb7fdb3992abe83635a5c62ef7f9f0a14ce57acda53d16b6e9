@@ -1,0 +1,21 @@
+{
+  "name": "@lmdb/lmdb-linux-x64",
+  "version": "2.5.2",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "license": "MIT",
+  "author": "Kris Zyp",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DoctorEvidence/lmdb-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DoctorEvidence/lmdb-js/issues"
+  },
+  "homepage": "https://github.com/DoctorEvidence/lmdb-js#readme",
+  "description": "Platform specific binary for lmdb on linux OS with x64 architecture"
+}

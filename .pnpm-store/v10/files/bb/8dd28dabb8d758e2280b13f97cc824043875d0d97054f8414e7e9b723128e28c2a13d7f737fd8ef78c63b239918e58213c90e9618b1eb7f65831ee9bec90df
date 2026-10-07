@@ -1,0 +1,48 @@
+{
+  "Commands:": "Komutlar:",
+  "Options:": "Seçenekler:",
+  "Examples:": "Örnekler:",
+  "boolean": "boolean",
+  "count": "sayı",
+  "string": "string",
+  "number": "numara",
+  "array": "array",
+  "required": "zorunlu",
+  "default": "varsayılan",
+  "default:": "varsayılan:",
+  "choices:": "seçimler:",
+  "aliases:": "takma adlar:",
+  "generated-value": "oluşturulan-değer",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Seçenek dışı argümanlar yetersiz: %s bulundu, %s gerekli",
+    "other": "Seçenek dışı argümanlar yetersiz: %s bulundu, %s gerekli"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "Seçenek dışı argümanlar gereğinden fazla: %s bulundu, azami %s",
+    "other": "Seçenek dışı argümanlar gereğinden fazla: %s bulundu, azami %s"
+  },
+  "Missing argument value: %s": {
+    "one": "Eksik argüman değeri: %s",
+    "other": "Eksik argüman değerleri: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Eksik zorunlu argüman: %s",
+    "other": "Eksik zorunlu argümanlar: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Bilinmeyen argüman: %s",
+    "other": "Bilinmeyen argümanlar: %s"
+  },
+  "Invalid values:": "Geçersiz değerler:",
+  "Argument: %s, Given: %s, Choices: %s": "Argüman: %s, Verilen: %s, Seçimler: %s",
+  "Argument check failed: %s": "Argüman kontrolü başarısız oldu: %s",
+  "Implications failed:": "Sonuçlar başarısız oldu:",
+  "Not enough arguments following: %s": "%s için yeterli argüman bulunamadı",
+  "Invalid JSON config file: %s": "Geçersiz JSON yapılandırma dosyası: %s",
+  "Path to JSON config file": "JSON yapılandırma dosya konumu",
+  "Show help": "Yardım detaylarını göster",
+  "Show version number": "Versiyon detaylarını göster",
+  "Did you mean %s?": "Bunu mu demek istediniz: %s?",
+  "Positionals:": "Sıralılar:",
+  "command": "komut"
+}

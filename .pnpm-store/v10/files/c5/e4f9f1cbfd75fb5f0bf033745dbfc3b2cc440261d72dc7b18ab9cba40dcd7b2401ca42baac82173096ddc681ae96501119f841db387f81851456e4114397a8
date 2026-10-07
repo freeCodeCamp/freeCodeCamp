@@ -1,0 +1,25 @@
+{
+    "name": "@types/react-gtm-module",
+    "version": "2.0.4",
+    "description": "TypeScript definitions for react-gtm-module",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-gtm-module",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Marc Veens",
+            "githubUsername": "marcveens",
+            "url": "https://github.com/marcveens"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-gtm-module"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "cb6a4e26ef75142f54a3950c4294fa3824997a6aae3f880ec554f284cb76b1be",
+    "typeScriptVersion": "4.8"
+}

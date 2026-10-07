@@ -1,0 +1,122 @@
+{
+  "name": "yargs",
+  "version": "16.2.0",
+  "description": "yargs the modern, pirate-themed, successor to optimist.",
+  "main": "./index.cjs",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": [
+      {
+        "import": "./index.mjs",
+        "require": "./index.cjs"
+      },
+      "./index.cjs"
+    ],
+    "./helpers": {
+      "import": "./helpers/helpers.mjs",
+      "require": "./helpers/index.js"
+    },
+    "./yargs": [
+      {
+        "require": "./yargs"
+      },
+      "./yargs"
+    ]
+  },
+  "type": "module",
+  "module": "./index.mjs",
+  "contributors": [
+    {
+      "name": "Yargs Contributors",
+      "url": "https://github.com/yargs/yargs/graphs/contributors"
+    }
+  ],
+  "files": [
+    "browser.mjs",
+    "index.cjs",
+    "helpers/*.js",
+    "helpers/*",
+    "index.mjs",
+    "yargs",
+    "build",
+    "locales",
+    "LICENSE",
+    "lib/platform-shims/*.mjs",
+    "!*.d.ts"
+  ],
+  "dependencies": {
+    "cliui": "^7.0.2",
+    "escalade": "^3.1.1",
+    "get-caller-file": "^2.0.5",
+    "require-directory": "^2.1.1",
+    "string-width": "^4.2.0",
+    "y18n": "^5.0.5",
+    "yargs-parser": "^20.2.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^14.11.2",
+    "@wessberg/rollup-plugin-ts": "^1.3.2",
+    "c8": "^7.0.0",
+    "chai": "^4.2.0",
+    "chalk": "^4.0.0",
+    "coveralls": "^3.0.9",
+    "cpr": "^3.0.1",
+    "cross-env": "^7.0.2",
+    "cross-spawn": "^7.0.0",
+    "gts": "^3.0.0",
+    "hashish": "0.0.4",
+    "mocha": "^8.0.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.23.0",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "standardx": "^5.0.0",
+    "typescript": "^4.0.2",
+    "which": "^2.0.0",
+    "yargs-test-extends": "^1.0.1"
+  },
+  "scripts": {
+    "fix": "gts fix && npm run fix:js",
+    "fix:js": "standardx --fix '**/*.mjs' && standardx --fix '**/*.cjs' && standardx --fix './*.mjs' && standardx --fix './*.cjs'",
+    "posttest": "npm run check",
+    "test": "c8 mocha ./test/*.cjs --require ./test/before.cjs --timeout=12000 --check-leaks",
+    "test:esm": "c8 mocha ./test/esm/*.mjs --check-leaks",
+    "coverage": "c8 report --check-coverage",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile -- -p tsconfig.test.json && cross-env NODE_ENV=test npm run build:cjs",
+    "compile": "rimraf build && tsc",
+    "postcompile": "npm run build:cjs",
+    "build:cjs": "rollup -c rollup.config.cjs",
+    "postbuild:cjs": "rimraf ./build/index.cjs.d.ts",
+    "check": "gts lint && npm run check:js",
+    "check:js": "standardx '**/*.mjs' && standardx '**/*.cjs' && standardx './*.mjs' && standardx './*.cjs'",
+    "clean": "gts clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yargs/yargs.git"
+  },
+  "homepage": "https://yargs.js.org/",
+  "standardx": {
+    "ignore": [
+      "build",
+      "helpers",
+      "**/example/**",
+      "**/platform-shims/esm.mjs"
+    ]
+  },
+  "keywords": [
+    "argument",
+    "args",
+    "option",
+    "parser",
+    "parsing",
+    "cli",
+    "command"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  }
+}

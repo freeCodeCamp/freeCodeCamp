@@ -1,0 +1,1 @@
+{"version":3,"file":"is-native-offline-audio-context.js","sourceRoot":"","sources":["../../../src/factories/is-native-offline-audio-context.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,iCAAiC,GAAwC,CAAC,oCAAoC,EAAE,EAAE;IAC3H,OAAO,CAAC,QAAQ,EAA0C,EAAE;QACxD,OAAO,oCAAoC,KAAK,IAAI,IAAI,QAAQ,YAAY,oCAAoC,CAAC;IACrH,CAAC,CAAC;AACN,CAAC,CAAC"}

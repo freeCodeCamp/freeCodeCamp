@@ -1,0 +1,1 @@
+{"version":3,"file":"timedEvent.d.ts","sourceRoot":"","sources":["../../../src/types/timedEvent.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,cAAc,EAAE,aAAa,EAAE,MAAM,QAAQ,CAAC;AAE5D,MAAM,WAAW,UAAU;IACzB,IAAI,EAAE,MAAM,CAAC;IACb,IAAI,EAAE,aAAa,CAAC;IACpB,UAAU,CAAC,EAAE,cAAc,CAAC;CAC7B"}

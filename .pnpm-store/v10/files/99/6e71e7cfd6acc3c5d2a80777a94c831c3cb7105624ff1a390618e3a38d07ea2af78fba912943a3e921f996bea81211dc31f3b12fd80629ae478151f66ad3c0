@@ -1,0 +1,57 @@
+{
+  "name": "write-file-atomic",
+  "version": "5.0.1",
+  "description": "Write files in an atomic fashion w/configurable ownership",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "tap",
+    "posttest": "npm run lint",
+    "lint": "eslint \"**/*.js\"",
+    "postlint": "template-oss-check",
+    "lintfix": "npm run lint -- --fix",
+    "snap": "tap",
+    "template-oss-apply": "template-oss-apply --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/write-file-atomic.git"
+  },
+  "keywords": [
+    "writeFile",
+    "atomic"
+  ],
+  "author": "GitHub Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npm/write-file-atomic/issues"
+  },
+  "homepage": "https://github.com/npm/write-file-atomic",
+  "dependencies": {
+    "imurmurhash": "^0.1.4",
+    "signal-exit": "^4.0.1"
+  },
+  "devDependencies": {
+    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/template-oss": "4.14.1",
+    "tap": "^16.0.1"
+  },
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "engines": {
+    "node": "^14.17.0 || ^16.13.0 || >=18.0.0"
+  },
+  "templateOSS": {
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "windowsCI": false,
+    "version": "4.14.1",
+    "publish": "true"
+  },
+  "tap": {
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
+  }
+}

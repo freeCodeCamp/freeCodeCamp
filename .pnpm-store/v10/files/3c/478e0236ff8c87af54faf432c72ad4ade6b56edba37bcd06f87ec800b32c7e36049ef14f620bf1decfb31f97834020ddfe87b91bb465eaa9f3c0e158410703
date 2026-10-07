@@ -1,0 +1,37 @@
+{
+  "name": "regjsparser",
+  "version": "0.9.1",
+  "author": "'Julian Viereck' <julian.viereck@gmail.com>",
+  "license": "BSD-2-Clause",
+  "main": "./parser",
+  "types": "./parser.d.ts",
+  "bin": "bin/parser",
+  "homepage": "https://github.com/jviereck/regjsparser",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jviereck/regjsparser.git"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js --max-warnings 0 .",
+    "test": "run-p test:* && npm run lint",
+    "test:src": "node test/index.js",
+    "test:types": "tsc test/types.ts --noEmit"
+  },
+  "files": [
+    "bin/",
+    "LICENSE.BSD",
+    "parser.js",
+    "parser.d.ts",
+    "README.md"
+  ],
+  "dependencies": {
+    "jsesc": "~0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "npm-run-all": "^4.1.5",
+    "regenerate": "~1.0.1",
+    "typescript": "^4.5.2",
+    "unicode-11.0.0": "^0.7.8"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@babel/compat-data",
+  "version": "7.28.6",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "license": "MIT",
+  "description": "The compat-data to determine required Babel plugins",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-compat-data"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./plugins": "./plugins.js",
+    "./native-modules": "./native-modules.js",
+    "./corejs2-built-ins": "./corejs2-built-ins.js",
+    "./corejs3-shipped-proposals": "./corejs3-shipped-proposals.js",
+    "./overlapping-plugins": "./overlapping-plugins.js",
+    "./plugin-bugfixes": "./plugin-bugfixes.js"
+  },
+  "scripts": {
+    "build-data": "./scripts/download-compat-table.sh && node ./scripts/build-data.mjs && node ./scripts/build-modules-support.mjs && node ./scripts/build-bugfixes-targets.mjs"
+  },
+  "keywords": [
+    "babel",
+    "compat-table",
+    "compat-data"
+  ],
+  "devDependencies": {
+    "@mdn/browser-compat-data": "^6.0.8",
+    "core-js-compat": "^3.43.0",
+    "electron-to-chromium": "^1.5.140"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

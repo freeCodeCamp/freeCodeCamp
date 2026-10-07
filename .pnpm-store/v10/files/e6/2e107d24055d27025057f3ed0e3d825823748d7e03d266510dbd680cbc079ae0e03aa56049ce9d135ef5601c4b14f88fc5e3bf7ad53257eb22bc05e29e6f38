@@ -1,0 +1,51 @@
+{
+  "name": "better-opn",
+  "version": "2.1.1",
+  "description": "A better opn. Reuse the same tab on Chrome for 👨‍💻.",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ExiaSR/better-opn"
+  },
+  "author": "Michael Lin <linzichunzf@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "opn",
+    "open",
+    "opener",
+    "launch",
+    "browser"
+  ],
+  "engines": {
+    "node": ">8.0.0"
+  },
+  "files": [
+    "dist",
+    "openChrome.applescript",
+    "package.json",
+    "README.md",
+    "yarn.lock"
+  ],
+  "xo": {
+    "_nodeVersion": "falling back to --node-version cli argument since this is not working",
+    "nodeVersion": ">=10.0.0",
+    "space": 2,
+    "prettier": true,
+    "envs": ["node"]
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "_lint": "--node-version is a work around since we use v8 as target in babel anyway",
+    "lint": "xo src/ --fix --node-version \">=10.0.0\""
+  },
+  "dependencies": {
+    "open": "^7.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "xo": "^0.28.3"
+  }
+}

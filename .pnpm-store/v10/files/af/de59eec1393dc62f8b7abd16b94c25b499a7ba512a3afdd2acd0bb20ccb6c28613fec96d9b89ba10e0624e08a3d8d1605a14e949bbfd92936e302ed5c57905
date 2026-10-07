@@ -1,0 +1,23 @@
+{
+  "name": "stackback",
+  "version": "0.0.2",
+  "description": "return list of CallSite objects from a captured stacktrace",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --ui qunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shtylman/node-stackback.git"
+  },
+  "keywords": [
+    "stacktrace",
+    "trace",
+    "stack"
+  ],
+  "devDependencies": {
+    "mocha": "~1.6.0"
+  },
+  "author": "Roman Shtylman <shtylman@gmail.com>",
+  "license": "MIT"
+}

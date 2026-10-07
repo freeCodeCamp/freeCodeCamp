@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-worklet-processor.d.ts","sourceRoot":"","sources":["../../../src/interfaces/audio-worklet-processor.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,sBAAsB;IACnC,OAAO,CAAC,MAAM,EAAE,YAAY,EAAE,EAAE,EAAE,OAAO,EAAE,YAAY,EAAE,EAAE,EAAE,UAAU,EAAE;QAAE,CAAC,IAAI,EAAE,MAAM,GAAG,YAAY,CAAA;KAAE,GAAG,OAAO,CAAC;CACvH"}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Symbol.js",
+  "module": "../dist/esm/Symbol.js",
+  "types": "../dist/dts/Symbol.d.ts"
+}

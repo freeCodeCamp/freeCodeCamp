@@ -1,0 +1,57 @@
+{
+  "name": "multer",
+  "description": "Middleware for handling `multipart/form-data`.",
+  "version": "2.0.2",
+  "contributors": [
+    "Hage Yaapa <captain@hacksparrow.com> (http://www.hacksparrow.com)",
+    "Jaret Pfluger <https://github.com/jpfluger>",
+    "Linus Unnebäck <linus@folkdatorn.se>"
+  ],
+  "license": "MIT",
+  "repository": "expressjs/multer",
+  "keywords": [
+    "form",
+    "post",
+    "multipart",
+    "form-data",
+    "formdata",
+    "express",
+    "middleware"
+  ],
+  "dependencies": {
+    "append-field": "^1.0.0",
+    "busboy": "^1.6.0",
+    "concat-stream": "^2.0.0",
+    "mkdirp": "^0.5.6",
+    "object-assign": "^4.1.1",
+    "type-is": "^1.6.18",
+    "xtend": "^4.0.2"
+  },
+  "devDependencies": {
+    "deep-equal": "^2.0.3",
+    "express": "^4.21.2",
+    "form-data": "^4.0.2",
+    "fs-temp": "^1.2.1",
+    "mocha": "^11.5.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^2.4.1",
+    "standard": "^14.3.3",
+    "testdata-w3c-json-form": "^1.0.0"
+  },
+  "engines": {
+    "node": ">= 10.16.0"
+  },
+  "files": [
+    "LICENSE",
+    "index.js",
+    "storage/",
+    "lib/"
+  ],
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "mocha --reporter spec --exit --check-leaks test/",
+    "test-ci": "nyc --reporter=lcov --reporter=text npm test",
+    "test-cov": "nyc --reporter=html --reporter=text npm test"
+  }
+}

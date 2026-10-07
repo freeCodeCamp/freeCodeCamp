@@ -1,0 +1,27 @@
+{
+  "name": "rrweb-cssom",
+  "description": "CSS Object Model implementation and CSS parser",
+  "keywords": [
+    "CSS",
+    "CSSOM",
+    "parser",
+    "styleSheet"
+  ],
+  "version": "0.8.0",
+  "author": "Nikita Vasilyev <me@elv1s.ru>",
+  "repository": "rrweb-io/CSSOM",
+  "files": [
+    "lib/",
+    "build/"
+  ],
+  "main": "./lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.js",
+    "release": "npm run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1"
+  }
+}

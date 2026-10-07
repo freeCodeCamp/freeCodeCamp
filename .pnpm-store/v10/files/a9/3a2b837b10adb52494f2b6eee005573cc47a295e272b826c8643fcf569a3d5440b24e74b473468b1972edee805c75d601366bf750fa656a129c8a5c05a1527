@@ -1,0 +1,13 @@
+declare module "enzyme" {
+    interface ConfigureOptions {
+        adapter: object;
+    }
+    function configure(options: ConfigureOptions): void;
+}
+declare module "enzyme-adapter-react-16" {
+    class Adapter {
+        constructor();
+    }
+    export default Adapter;
+}
+//# sourceMappingURL=declarations.d.ts.map

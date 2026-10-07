@@ -1,0 +1,1 @@
+{"version":3,"file":"SwitchScope.js","sourceRoot":"","sources":["../../src/scope/SwitchScope.ts"],"names":[],"mappings":";;;AAIA,2CAAwC;AACxC,2CAAwC;AAExC,MAAM,WAAY,SAAQ,qBAIzB;IACC,YACE,YAA0B,EAC1B,UAAgC,EAChC,KAA2B;QAE3B,KAAK,CAAC,YAAY,EAAE,qBAAS,CAAC,MAAM,EAAE,UAAU,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IAClE,CAAC;CACF;AAEQ,kCAAW"}

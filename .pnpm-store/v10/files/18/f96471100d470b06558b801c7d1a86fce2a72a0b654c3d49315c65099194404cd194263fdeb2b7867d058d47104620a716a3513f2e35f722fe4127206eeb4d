@@ -1,0 +1,51 @@
+{
+  "name": "webpack-sources",
+  "version": "3.3.4",
+  "description": "Source code handling classes for webpack",
+  "keywords": ["webpack", "source-map"],
+  "homepage": "https://github.com/webpack/webpack-sources#readme",
+  "bugs": {
+    "url": "https://github.com/webpack/webpack-sources/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/webpack-sources.git"
+  },
+  "license": "MIT",
+  "author": "Tobias Koppers @sokra",
+  "main": "lib/index.js",
+  "types": "types.d.ts",
+  "files": ["lib/", "types.d.ts"],
+  "scripts": {
+    "lint": "npm run lint:code && npm run lint:types && npm run lint:types-test && npm run lint:special",
+    "lint:code": "eslint --cache .",
+    "lint:special": "node node_modules/tooling/inherit-types && node node_modules/tooling/format-file-header && node node_modules/tooling/generate-types",
+    "lint:types": "tsc",
+    "lint:types-test": "tsc -p tsconfig.types.test.json",
+    "fmt": "npm run fmt:base -- --loglevel warn --write",
+    "fmt:check": "npm run fmt:base -- --check",
+    "fmt:base": "prettier --cache --ignore-unknown .",
+    "fix": "npm run fix:code && npm run fix:special",
+    "fix:code": "npm run lint:code -- --fix",
+    "fix:special": "node node_modules/tooling/inherit-types --write && node node_modules/tooling/format-file-header --write && node node_modules/tooling/generate-types --write",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "cover": "jest --coverage"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.2",
+    "eslint": "^9.28.0",
+    "eslint-config-webpack": "^4.0.8",
+    "jest": "^27.5.1",
+    "prettier": "^3.5.3",
+    "prettier-2": "npm:prettier@^2",
+    "source-map": "^0.7.3",
+    "sourcemap-validator": "^2.1.0",
+    "tooling": "webpack/tooling#v1.24.4",
+    "typescript": "^5.3.3",
+    "webpack": "^5.99.9"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "eslint-utils",
+  "version": "2.1.0",
+  "description": "Utilities for ESLint plugins.",
+  "engines": {
+    "node": ">=6"
+  },
+  "sideEffects": false,
+  "main": "index",
+  "module": "index.mjs",
+  "files": [
+    "index.*"
+  ],
+  "dependencies": {
+    "eslint-visitor-keys": "^1.1.0"
+  },
+  "devDependencies": {
+    "@mysticatea/eslint-plugin": "^12.0.0",
+    "codecov": "^3.6.1",
+    "dot-prop": "^4.2.0",
+    "eslint": "^6.5.1",
+    "esm": "^3.2.25",
+    "espree": "^6.1.1",
+    "mocha": "^6.2.2",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^14.1.1",
+    "opener": "^1.5.1",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.25.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "semver": "^7.3.2",
+    "vuepress": "^1.2.0",
+    "warun": "^1.0.0"
+  },
+  "scripts": {
+    "prebuild": "npm run -s clean",
+    "build": "rollup -c",
+    "clean": "rimraf .nyc_output coverage index.*",
+    "codecov": "nyc report -r lcovonly && codecov",
+    "coverage": "opener ./coverage/lcov-report/index.html",
+    "docs:build": "vuepress build docs",
+    "docs:watch": "vuepress dev docs",
+    "lint": "eslint src test",
+    "test": "run-s lint build test:mocha",
+    "test:mocha": "nyc mocha --reporter dot \"test/*.js\"",
+    "preversion": "npm test && npm run -s build",
+    "postversion": "git push && git push --tags",
+    "prewatch": "npm run -s clean",
+    "watch": "warun \"{src,test}/**/*.js\" -- npm run -s test:mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysticatea/eslint-utils.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Toru Nagashima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mysticatea/eslint-utils/issues"
+  },
+  "homepage": "https://github.com/mysticatea/eslint-utils#readme",
+  "funding": "https://github.com/sponsors/mysticatea"
+}

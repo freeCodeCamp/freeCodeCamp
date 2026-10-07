@@ -1,0 +1,56 @@
+{
+  "name": "body-parser",
+  "description": "Node.js body parsing middleware",
+  "version": "1.20.1",
+  "contributors": [
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
+  ],
+  "license": "MIT",
+  "repository": "expressjs/body-parser",
+  "dependencies": {
+    "bytes": "3.1.2",
+    "content-type": "~1.0.4",
+    "debug": "2.6.9",
+    "depd": "2.0.0",
+    "destroy": "1.2.0",
+    "http-errors": "2.0.0",
+    "iconv-lite": "0.4.24",
+    "on-finished": "2.4.1",
+    "qs": "6.11.0",
+    "raw-body": "2.5.1",
+    "type-is": "~1.6.18",
+    "unpipe": "1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "8.24.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-markdown": "3.0.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "6.0.1",
+    "eslint-plugin-standard": "4.1.0",
+    "methods": "1.1.2",
+    "mocha": "10.0.0",
+    "nyc": "15.1.0",
+    "safe-buffer": "5.2.1",
+    "supertest": "6.3.0"
+  },
+  "files": [
+    "lib/",
+    "LICENSE",
+    "HISTORY.md",
+    "SECURITY.md",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.8",
+    "npm": "1.2.8000 || >= 1.4.16"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha --require test/support/env --reporter spec --check-leaks --bail test/",
+    "test-ci": "nyc --reporter=lcov --reporter=text npm test",
+    "test-cov": "nyc --reporter=html --reporter=text npm test"
+  }
+}

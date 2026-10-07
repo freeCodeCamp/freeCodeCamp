@@ -1,0 +1,37 @@
+{
+  "name": "micromark-util-encode",
+  "version": "2.0.0",
+  "description": "micromark utility to encode dangerous html characters",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "util",
+    "utility",
+    "html",
+    "encode"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-encode",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "exports": "./index.js",
+  "xo": false
+}

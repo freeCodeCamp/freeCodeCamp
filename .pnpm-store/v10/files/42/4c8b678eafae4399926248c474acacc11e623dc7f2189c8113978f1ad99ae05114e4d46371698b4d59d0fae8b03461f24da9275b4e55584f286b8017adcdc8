@@ -1,0 +1,17 @@
+{
+  "extension": [
+    ".js",
+    ".cjs",
+    ".mjs"
+  ],
+  "all": true,
+  "check-coverage": false,
+  "reporter": ["text-summary", "text", "html", "json", "lcov"],
+  "exclude": [
+    "coverage",
+    "example",
+    "test"
+  ],
+  "sourceMap": true,
+  "instrument": true
+}

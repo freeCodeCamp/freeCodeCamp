@@ -1,0 +1,15 @@
+{
+  "name": "@graphql-typed-document-node/core",
+  "version": "3.2.0",
+  "peerDependencies": {
+    "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+  },
+  "repository": "git@github.com:dotansimha/graphql-typed-document-node.git",
+  "author": "Dotan Simha <dotansimha@gmail.com>",
+  "license": "MIT",
+  "main": "",
+  "typings": "typings/index.d.ts",
+  "typescript": {
+    "definition": "typings/index.d.ts"
+  }
+}

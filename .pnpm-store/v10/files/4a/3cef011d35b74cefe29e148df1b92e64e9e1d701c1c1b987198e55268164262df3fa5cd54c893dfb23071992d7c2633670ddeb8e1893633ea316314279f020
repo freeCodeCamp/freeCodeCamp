@@ -1,0 +1,404 @@
+# Variable declaration
+
+var a = b
+  , c = d;
+const [x] = y = 3;
+
+==>
+
+Script(
+  VariableDeclaration(var,VariableDefinition,Equals,VariableName,VariableDefinition,Equals,VariableName),
+  VariableDeclaration(const,ArrayPattern(VariableDefinition),Equals,AssignmentExpression(VariableName,Equals,Number)))
+
+# Function declaration
+
+function a(a, b) { return 3; }
+function b({b}, c = d, e = f) {}
+
+==>
+
+Script(
+  FunctionDeclaration(function,VariableDefinition,ParamList(VariableDefinition,VariableDefinition),Block(ReturnStatement(return,Number))),
+  FunctionDeclaration(function,VariableDefinition,ParamList(
+    ObjectPattern(PatternProperty(PropertyName)),VariableDefinition,Equals,VariableName,VariableDefinition,Equals,VariableName),Block))
+
+# Async functions
+
+async function foo() {}
+
+class Foo { async bar() {} }
+
+async (a) => { return foo; };
+
+==>
+
+Script(
+  FunctionDeclaration(async,function,VariableDefinition,ParamList,Block),
+  ClassDeclaration(class,VariableDefinition,ClassBody(MethodDeclaration(async,PropertyDefinition,ParamList,Block))),
+  ExpressionStatement(ArrowFunction(async,ParamList(VariableDefinition),Arrow,Block(ReturnStatement(return,VariableName)))))
+
+# If statements
+
+if (x) log(y);
+
+if (a.b) {
+  d;
+}
+
+if (a) {
+  c;
+  d;
+} else {
+  e;
+}
+
+if (1) if (2) b; else c;
+
+==>
+
+Script(
+  IfStatement(if,ParenthesizedExpression(VariableName),ExpressionStatement(CallExpression(VariableName,ArgList(VariableName)))),
+  IfStatement(if,ParenthesizedExpression(MemberExpression(VariableName,PropertyName)),Block(ExpressionStatement(VariableName))),
+  IfStatement(if,ParenthesizedExpression(VariableName),Block(ExpressionStatement(VariableName),ExpressionStatement(VariableName)),
+    else,Block(ExpressionStatement(VariableName))),
+  IfStatement(if,ParenthesizedExpression(Number),IfStatement(if,ParenthesizedExpression(Number),ExpressionStatement(VariableName),
+    else,ExpressionStatement(VariableName))))
+
+# While loop
+
+while (1) debugger;
+while (2) {
+  a;
+  b;
+}
+
+==>
+
+Script(
+  WhileStatement(while,ParenthesizedExpression(Number),DebuggerStatement(debugger)),
+  WhileStatement(while,ParenthesizedExpression(Number),Block(ExpressionStatement(VariableName),ExpressionStatement(VariableName))))
+
+# Labels
+
+foo: 1;
+foo: while(2) break foo;
+
+==>
+
+Script(
+  LabeledStatement(Label,ExpressionStatement(Number)),
+  LabeledStatement(Label,WhileStatement(while,ParenthesizedExpression(Number),BreakStatement(break,Label))))
+
+# Try
+
+try { throw new Error; } catch {}
+try { 1; } catch (x) { 2; } finally { 3; }
+
+==>
+
+Script(
+  TryStatement(try,Block(ThrowStatement(throw,NewExpression(new,VariableName))),CatchClause(catch,Block)),
+  TryStatement(try,Block(ExpressionStatement(Number)),
+    CatchClause(catch,VariableDefinition,Block(ExpressionStatement(Number))),
+    FinallyClause(finally,Block(ExpressionStatement(Number)))))
+
+# Switch
+
+switch (x) {
+  case 1:
+    return true;
+  case 2:
+  case 50 * 3:
+    console.log("ok");
+  default:
+    return false;
+}
+
+==>
+
+Script(SwitchStatement(switch,ParenthesizedExpression(VariableName),SwitchBody(
+  CaseLabel(case,Number),
+  ReturnStatement(return,BooleanLiteral),
+  CaseLabel(case,Number),
+  CaseLabel(case,BinaryExpression(Number,ArithOp,Number)),
+  ExpressionStatement(CallExpression(MemberExpression(VariableName,PropertyName),ArgList(String))),
+  DefaultLabel(default),
+  ReturnStatement(return,BooleanLiteral))))
+
+# For
+
+for (let x = 1; x < 10; x++) {}
+for (const y of z) {}
+for (var m in n) {}
+for (q in r) {}
+for (var a, b; c; d) continue;
+for (i = 0, init(); i < 10; i++) {}
+for (;;) {}
+for (const {thing} in things) thing;
+for await (let x of stream) {}
+
+==>
+
+Script(
+  ForStatement(for,ForSpec(VariableDeclaration(let,VariableDefinition,Equals,Number),
+    BinaryExpression(VariableName,CompareOp,Number),PostfixExpression(VariableName,ArithOp)),Block),
+  ForStatement(for,ForOfSpec(const,VariableDefinition,of,VariableName),Block),
+  ForStatement(for,ForInSpec(var,VariableDefinition,in,VariableName),Block),
+  ForStatement(for,ForInSpec(VariableName,in,VariableName),Block),
+  ForStatement(for,ForSpec(VariableDeclaration(var,VariableDefinition,VariableDefinition),VariableName,VariableName),ContinueStatement(continue)),
+  ForStatement(for,ForSpec(SequenceExpression(AssignmentExpression(VariableName,Equals,Number),
+    CallExpression(VariableName,ArgList)),BinaryExpression(VariableName,CompareOp,Number),PostfixExpression(VariableName,ArithOp)),Block),
+  ForStatement(for,ForSpec,Block),
+  ForStatement(for,ForInSpec(const,ObjectPattern(PatternProperty(PropertyName)),in,VariableName),ExpressionStatement(VariableName)),
+  ForStatement(for,await,ForOfSpec(let,VariableDefinition,of,VariableName),Block))
+
+# Labeled statements
+
+theLoop: for (;;) {
+  if (a) {
+    break theLoop;
+  }
+}
+
+==>
+
+Script(LabeledStatement(Label,ForStatement(for,ForSpec,Block(
+  IfStatement(if,ParenthesizedExpression(VariableName),Block(BreakStatement(break,Label)))))))
+
+# Classes
+
+class Foo {
+  static one(a) { return a; };
+  two(b) { return b; }
+  finally() {}
+}
+
+class Foo extends require('another-class') {
+  constructor() { super(); }
+  bar() { super.a(); }
+  prop;
+  etc = 20;
+  static { f() }
+}
+
+==>
+
+Script(
+  ClassDeclaration(class,VariableDefinition,ClassBody(
+    MethodDeclaration(static,PropertyDefinition,ParamList(VariableDefinition),Block(ReturnStatement(return,VariableName))),
+    MethodDeclaration(PropertyDefinition,ParamList(VariableDefinition),Block(ReturnStatement(return,VariableName))),
+    MethodDeclaration(PropertyDefinition,ParamList,Block))),
+  ClassDeclaration(class,VariableDefinition,extends,CallExpression(VariableName,ArgList(String)),ClassBody(
+    MethodDeclaration(PropertyDefinition,ParamList,Block(ExpressionStatement(CallExpression(super,ArgList)))),
+    MethodDeclaration(PropertyDefinition,ParamList,Block(ExpressionStatement(CallExpression(MemberExpression(super,PropertyName),ArgList)))),
+    PropertyDeclaration(PropertyDefinition),
+    PropertyDeclaration(PropertyDefinition,Equals,Number),
+    StaticBlock(static, Block(ExpressionStatement(CallExpression(VariableName,ArgList)))))))
+
+# Private properties
+
+class Foo {
+  #bar() { this.#a() + this?.#prop == #prop in this; }
+  #prop;
+  #etc = 20;
+}
+
+==>
+
+Script(ClassDeclaration(class,VariableDefinition,ClassBody(
+  MethodDeclaration(PrivatePropertyDefinition,ParamList,Block(
+    ExpressionStatement(BinaryExpression(
+       BinaryExpression(
+         CallExpression(MemberExpression(this,PrivatePropertyName),ArgList),
+         ArithOp,
+         MemberExpression(this,PrivatePropertyName)),
+       CompareOp,
+       BinaryExpression(PrivatePropertyName, in, this))))),
+  PropertyDeclaration(PrivatePropertyDefinition),
+  PropertyDeclaration(PrivatePropertyDefinition,Equals,Number))))
+
+# Computed properties
+
+class Foo {
+  [x] = 44;
+  [Symbol.iterator]() {}
+}
+
+==>
+
+Script(ClassDeclaration(class,VariableDefinition,ClassBody(
+  PropertyDeclaration(VariableName,Equals,Number),
+  MethodDeclaration(MemberExpression(VariableName,PropertyName),ParamList,Block))))
+
+# Imports
+
+import defaultMember from "module-name";
+import * as name from "module-name";
+import { member } from "module-name";
+import { member1, member2 as alias2 } from "module-name";
+import defaultMember, { member1, member2 as alias2, } from "module-name";
+import "module-name";
+import defer x from "y";
+import defer from "y";
+
+==>
+
+Script(
+  ImportDeclaration(import,VariableDefinition,from,String),
+  ImportDeclaration(import,Star,as,VariableDefinition,from,String),
+  ImportDeclaration(import,ImportGroup(VariableDefinition),from,String),
+  ImportDeclaration(import,ImportGroup(VariableDefinition,VariableName,as,VariableDefinition),from,String),
+  ImportDeclaration(import,VariableDefinition,ImportGroup(VariableDefinition,VariableName,as,VariableDefinition),from,String),
+  ImportDeclaration(import,String),
+  ImportDeclaration(import,defer,VariableDefinition,from,String),
+  ImportDeclaration(import,VariableDefinition,from,String))
+
+# Exports
+
+export { name1, name2, name3 as x, nameN };
+export let a, b = 2;
+export default 2 + 2;
+export default function() { }
+export default async function name1() { }
+export { name1 as default, } from "foo";
+export * from 'foo';
+
+==>
+
+Script(
+  ExportDeclaration(export,ExportGroup(VariableName,VariableName,VariableName,as,VariableName,VariableName)),
+  ExportDeclaration(export,VariableDeclaration(let,VariableDefinition,VariableDefinition,Equals,Number)),
+  ExportDeclaration(export,default,BinaryExpression(Number,ArithOp,Number)),
+  ExportDeclaration(export,default,FunctionDeclaration(function,ParamList,Block)),
+  ExportDeclaration(export,default,FunctionDeclaration(async,function,VariableDefinition,ParamList,Block)),
+  ExportDeclaration(export,ExportGroup(VariableName,as,VariableName),from,String),
+  ExportDeclaration(export,Star,from,String))
+
+# Empty statements
+
+if (true) { ; };;;
+
+==>
+
+Script(IfStatement(if,ParenthesizedExpression(BooleanLiteral),Block))
+
+# Comments
+
+/* a */
+one;
+
+/* b **/
+two;
+
+/* c ***/
+three;
+
+/* d
+
+***/
+four;
+
+y // comment
+  * z;
+
+==>
+
+Script(
+  BlockComment,
+  ExpressionStatement(VariableName),
+  BlockComment,
+  ExpressionStatement(VariableName),
+  BlockComment,
+  ExpressionStatement(VariableName),
+  BlockComment,
+  ExpressionStatement(VariableName),
+  ExpressionStatement(BinaryExpression(VariableName,LineComment,ArithOp,VariableName)))
+
+# Recover from invalid char
+
+const {foobar} = {};
+
+==>
+
+Script(VariableDeclaration(
+  const,
+  ObjectPattern("{",PatternProperty(PropertyName,⚠),"}"),
+  Equals,
+  ObjectExpression))
+
+# Sync back to statement
+
+function f() {
+  log(a b --c)
+}
+function g() {}
+
+==>
+
+Script(
+  FunctionDeclaration(function,VariableDefinition,ParamList,Block(ExpressionStatement(CallExpression(VariableName,ArgList(...))))),
+  FunctionDeclaration(function,VariableDefinition,ParamList,Block))
+
+# Destructuring
+
+({x} = y);
+[u, v] = w;
+let [a,, b = 0] = c;
+let {x, y: z = 1} = d;
+let {[f]: m} = e;
+
+==>
+
+Script(
+  ExpressionStatement(ParenthesizedExpression(AssignmentExpression(
+    ObjectPattern(PatternProperty(PropertyName)),Equals,VariableName))),
+  ExpressionStatement(AssignmentExpression(ArrayPattern(VariableDefinition,VariableDefinition),Equals,VariableName)),
+  VariableDeclaration(let,ArrayPattern(VariableDefinition,VariableDefinition,Equals,Number),Equals,VariableName),
+  VariableDeclaration(let,ObjectPattern(
+    PatternProperty(PropertyName),
+    PatternProperty(PropertyName,VariableDefinition,Equals,Number)
+  ),Equals,VariableName),
+  VariableDeclaration(let,ObjectPattern(PatternProperty(VariableName,VariableDefinition)),Equals,VariableName))
+
+# Generators
+
+function* foo() { yield 1 }
+
+class B {
+  *method() {}
+}
+
+({*x() {}})
+
+==>
+
+Script(
+  FunctionDeclaration(function,Star,VariableDefinition,ParamList,Block(
+    ExpressionStatement(YieldExpression(yield,Number)))),
+  ClassDeclaration(class,VariableDefinition,ClassBody(
+    MethodDeclaration(Star,PropertyDefinition,ParamList,Block))),
+  ExpressionStatement(ParenthesizedExpression(ObjectExpression(Property(Star,PropertyDefinition,ParamList,Block)))))
+
+# Hashbang
+
+#!/bin/env node
+foo()
+
+==>
+
+Script(Hashbang,ExpressionStatement(CallExpression(VariableName,ArgList)))
+
+# new.target
+
+function MyObj() {
+  if (!new.target) {
+    throw new Error('Must construct MyObj with new');
+  }
+}
+
+==>
+
+Script(
+  FunctionDeclaration(function,VariableDefinition,ParamList,Block(
+    IfStatement(if,ParenthesizedExpression(UnaryExpression(LogicOp,NewTarget(new,PropertyName))), Block(
+      ThrowStatement(throw,NewExpression(new,VariableName,ArgList(String))))))))

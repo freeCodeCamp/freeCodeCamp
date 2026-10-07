@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/ownerDocument",
+  "private": true,
+  "main": "../cjs/ownerDocument.js",
+  "module": "../esm/ownerDocument.js",
+  "types": "../esm/ownerDocument.d.ts"
+}

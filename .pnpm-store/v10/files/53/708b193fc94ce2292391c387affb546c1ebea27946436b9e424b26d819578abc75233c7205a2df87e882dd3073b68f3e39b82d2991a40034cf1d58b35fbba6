@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TMap.js",
+  "module": "../dist/esm/TMap.js",
+  "types": "../dist/dts/TMap.d.ts"
+}

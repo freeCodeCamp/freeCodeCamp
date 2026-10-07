@@ -1,0 +1,121 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain ServiceWorker
+  depends on Target
+
+  type RegistrationID extends string
+
+  # ServiceWorker registration.
+  type ServiceWorkerRegistration extends object
+    properties
+      RegistrationID registrationId
+      string scopeURL
+      boolean isDeleted
+
+  type ServiceWorkerVersionRunningStatus extends string
+    enum
+      stopped
+      starting
+      running
+      stopping
+
+  type ServiceWorkerVersionStatus extends string
+    enum
+      new
+      installing
+      installed
+      activating
+      activated
+      redundant
+
+  # ServiceWorker version.
+  type ServiceWorkerVersion extends object
+    properties
+      string versionId
+      RegistrationID registrationId
+      string scriptURL
+      ServiceWorkerVersionRunningStatus runningStatus
+      ServiceWorkerVersionStatus status
+      # The Last-Modified header value of the main script.
+      optional number scriptLastModified
+      # The time at which the response headers of the main script were received from the server.
+      # For cached script it is the last time the cache entry was validated.
+      optional number scriptResponseTime
+      optional array of Target.TargetID controlledClients
+      optional Target.TargetID targetId
+      optional string routerRules
+
+  # ServiceWorker error message.
+  type ServiceWorkerErrorMessage extends object
+    properties
+      string errorMessage
+      RegistrationID registrationId
+      string versionId
+      string sourceURL
+      integer lineNumber
+      integer columnNumber
+
+  command deliverPushMessage
+    parameters
+      string origin
+      RegistrationID registrationId
+      string data
+
+  command disable
+
+  command dispatchSyncEvent
+    parameters
+      string origin
+      RegistrationID registrationId
+      string tag
+      boolean lastChance
+
+  command dispatchPeriodicSyncEvent
+    parameters
+      string origin
+      RegistrationID registrationId
+      string tag
+
+  command enable
+
+  command setForceUpdateOnPageLoad
+    parameters
+      boolean forceUpdateOnPageLoad
+
+  command skipWaiting
+    parameters
+      string scopeURL
+
+  command startWorker
+    parameters
+      string scopeURL
+
+  command stopAllWorkers
+
+  command stopWorker
+    parameters
+      string versionId
+
+  command unregister
+    parameters
+      string scopeURL
+
+  command updateRegistration
+    parameters
+      string scopeURL
+
+  event workerErrorReported
+    parameters
+      ServiceWorkerErrorMessage errorMessage
+
+  event workerRegistrationUpdated
+    parameters
+      array of ServiceWorkerRegistration registrations
+
+  event workerVersionUpdated
+    parameters
+      array of ServiceWorkerVersion versions

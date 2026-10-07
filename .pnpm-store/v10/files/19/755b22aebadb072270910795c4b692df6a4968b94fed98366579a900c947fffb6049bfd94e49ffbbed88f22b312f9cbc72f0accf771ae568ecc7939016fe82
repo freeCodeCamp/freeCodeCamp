@@ -1,0 +1,30 @@
+# `MD011` - Reversed link syntax
+
+Tags: `links`
+
+Aliases: `no-reversed-links`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when text that appears to be a link is encountered, but
+where the syntax appears to have been reversed (the `[]` and `()` are
+reversed):
+
+```markdown
+(Incorrect link syntax)[https://www.example.com/]
+```
+
+To fix this, swap the `[]` and `()` around:
+
+```markdown
+[Correct link syntax](https://www.example.com/)
+```
+
+Note: [Markdown Extra](https://en.wikipedia.org/wiki/Markdown_Extra)-style
+footnotes do not trigger this rule:
+
+```markdown
+For (example)[^1]
+```
+
+Rationale: Reversed links are not rendered as usable links.

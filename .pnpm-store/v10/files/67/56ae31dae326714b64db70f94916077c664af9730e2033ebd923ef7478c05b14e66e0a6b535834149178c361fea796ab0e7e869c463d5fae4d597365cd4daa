@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/hyphenate",
+  "private": true,
+  "main": "../cjs/hyphenate.js",
+  "module": "../esm/hyphenate.js",
+  "types": "../esm/hyphenate.d.ts"
+}

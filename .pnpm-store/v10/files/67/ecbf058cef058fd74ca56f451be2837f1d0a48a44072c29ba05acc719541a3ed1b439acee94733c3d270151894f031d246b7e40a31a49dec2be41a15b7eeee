@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_new_arrow_check.cjs",
+    "module": "../../esm/_new_arrow_check.js"
+}

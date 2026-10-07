@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/LogSpan.js",
+  "module": "../dist/esm/LogSpan.js",
+  "types": "../dist/dts/LogSpan.d.ts"
+}

@@ -1,0 +1,87 @@
+{
+  "name": "mdast-util-definitions",
+  "version": "3.0.1",
+  "description": "mdast utility to find definition nodes in a tree",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "util",
+    "utility",
+    "markdown",
+    "tree",
+    "node",
+    "definition",
+    "find",
+    "cache"
+  ],
+  "repository": "syntax-tree/mdast-util-definitions",
+  "bugs": "https://github.com/syntax-tree/mdast-util-definitions/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "types": "types/index.d.ts",
+  "files": [
+    "types",
+    "index.js"
+  ],
+  "dependencies": {
+    "unist-util-visit": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/mdast": "^3.0.0",
+    "browserify": "^16.0.0",
+    "dtslint": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.5",
+    "remark": "^12.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.30.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write . && xo --fix --ignore types",
+    "build-bundle": "browserify . -s mdastUtilDefinitions > mdast-util-definitions.js",
+    "build-mangle": "browserify . -s mdastUtilDefinitions -p tinyify > mdast-util-definitions.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignore": [
+      "types",
+      "mdast-util-definitions.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

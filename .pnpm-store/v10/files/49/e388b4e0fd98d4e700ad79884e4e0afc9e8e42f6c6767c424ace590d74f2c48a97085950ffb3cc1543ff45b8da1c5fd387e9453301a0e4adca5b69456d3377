@@ -1,0 +1,37 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-keybinding {
+	display: flex;
+	align-items: center;
+	line-height: 10px;
+}
+
+.monaco-keybinding > .monaco-keybinding-key {
+	display: inline-block;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	vertical-align: middle;
+	font-size: 11px;
+	padding: 3px 5px;
+	margin: 0 2px;
+}
+
+.monaco-keybinding > .monaco-keybinding-key:first-child {
+	margin-left: 0;
+}
+
+.monaco-keybinding > .monaco-keybinding-key:last-child {
+	margin-right: 0;
+}
+
+.monaco-keybinding > .monaco-keybinding-key-separator {
+	display: inline-block;
+}
+
+.monaco-keybinding > .monaco-keybinding-key-chord-separator {
+	width: 6px;
+}

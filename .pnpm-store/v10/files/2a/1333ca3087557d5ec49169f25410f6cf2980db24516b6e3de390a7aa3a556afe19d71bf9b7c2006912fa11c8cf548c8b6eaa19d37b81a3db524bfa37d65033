@@ -1,0 +1,12 @@
+import { type ComponentProps } from "react";
+type AlertVariant = "success" | "info" | "warning" | "danger";
+export type AlertProps = ComponentProps<"div"> & {
+    variant: AlertVariant;
+};
+/**
+ * `Alert` is used to communicate high-priority or time-sensitive information.
+ * `Alert` is not dismissable.
+ * Use `Callout` instead of `Alert` if you want to communicate information specific to a page.
+ */
+export declare const Alert: ({ children, className, variant, ...props }: AlertProps) => JSX.Element;
+export {};

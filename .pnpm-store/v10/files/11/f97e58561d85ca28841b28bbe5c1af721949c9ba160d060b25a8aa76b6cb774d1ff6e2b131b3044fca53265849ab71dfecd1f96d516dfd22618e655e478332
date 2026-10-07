@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/platform/index.ts"],"names":[],"mappings":";AAAA;;;GAGG;;;AAEH,+BAAwD;AAA/C,2GAAA,mBAAmB,OAAA;AAAE,iGAAA,SAAS,OAAA","sourcesContent":["/*\n * Copyright The OpenTelemetry Authors\n * SPDX-License-Identifier: Apache-2.0\n */\n\nexport { InstrumentationBase, normalize } from './node';\n"]}

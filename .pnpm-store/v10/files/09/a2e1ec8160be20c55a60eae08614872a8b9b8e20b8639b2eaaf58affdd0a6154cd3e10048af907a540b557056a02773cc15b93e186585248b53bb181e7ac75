@@ -1,0 +1,35 @@
+{
+  "name": "@babel/plugin-proposal-nullish-coalescing-operator",
+  "version": "7.18.6",
+  "description": "Remove nullish coalescing operator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-proposal-nullish-coalescing-operator"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-proposal-nullish-coalescing-operator",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.18.6",
+    "@babel/plugin-syntax-nullish-coalescing-operator": "^7.8.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/helper-plugin-test-runner": "^7.18.6"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

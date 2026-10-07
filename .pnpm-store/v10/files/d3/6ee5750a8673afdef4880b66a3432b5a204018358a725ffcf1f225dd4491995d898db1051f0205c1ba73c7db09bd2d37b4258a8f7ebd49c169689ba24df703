@@ -1,0 +1,49 @@
+{
+  "name": "babel-plugin-polyfill-corejs3",
+  "version": "0.8.7",
+  "description": "A Babel plugin to inject imports to core-js@3 polyfills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel-polyfills.git",
+    "directory": "packages/babel-plugin-polyfill-corejs3"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": [
+      {
+        "import": "./esm/index.mjs",
+        "default": "./lib/index.js"
+      },
+      "./lib/index.js"
+    ],
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/helper-define-polyfill-provider": "^0.4.4",
+    "core-js-compat": "^3.33.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.6",
+    "@babel/helper-plugin-test-runner": "^7.22.5",
+    "@babel/plugin-proposal-decorators": "^7.22.15",
+    "@babel/plugin-transform-class-properties": "^7.22.5",
+    "@babel/plugin-transform-classes": "^7.22.6",
+    "@babel/plugin-transform-for-of": "^7.22.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@babel/plugin-transform-spread": "^7.22.5",
+    "core-js": "^3.33.1",
+    "core-js-pure": "^3.33.1"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.4.0 || ^8.0.0-0 <8.0.0"
+  },
+  "gitHead": "984c56c59568283889c3f0f89e58d370e4fd10f8"
+}

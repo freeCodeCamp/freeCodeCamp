@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Encoding.js",
+  "module": "../dist/esm/Encoding.js",
+  "types": "../dist/dts/Encoding.d.ts"
+}

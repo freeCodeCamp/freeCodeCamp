@@ -1,0 +1,27 @@
+{
+  "name": "@parcel/logger",
+  "version": "2.8.3",
+  "description": "Blazing fast, zero configuration web application bundler",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/Logger.js",
+  "source": "src/Logger.js",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "dependencies": {
+    "@parcel/diagnostic": "2.8.3",
+    "@parcel/events": "2.8.3"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

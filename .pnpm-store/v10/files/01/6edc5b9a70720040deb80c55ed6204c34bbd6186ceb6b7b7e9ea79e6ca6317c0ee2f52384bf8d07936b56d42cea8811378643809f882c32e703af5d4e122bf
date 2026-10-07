@@ -1,0 +1,26 @@
+{
+  "name": "w3c-hr-time",
+  "version": "1.0.2",
+  "description": "An implementation of the W3C High Resolution Time Level 2 specification.",
+  "main": "index.js",
+  "repository": "https://github.com/jsdom/w3c-hr-time",
+  "author": "Timothy Gu <timothygu99@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "browser-process-hrtime": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-plugin-jest": "^21.5.0",
+    "jest": "^24.1.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "files": [
+    "lib",
+    "index.js"
+  ]
+}

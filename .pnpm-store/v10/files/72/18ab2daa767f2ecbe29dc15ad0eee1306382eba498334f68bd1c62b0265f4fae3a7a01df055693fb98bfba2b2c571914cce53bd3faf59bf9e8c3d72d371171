@@ -1,0 +1,1 @@
+{"version":3,"names":["_helperCompilationTargets","require"],"sources":["../src/targets-parser.ts"],"sourcesContent":["// TODO: Remove in Babel 8\n\nexport {\n  default,\n  isBrowsersQueryValid,\n} from \"@babel/helper-compilation-targets\";\n"],"mappings":";;;;;;;;;;;;;;;;;AAEA,IAAAA,yBAAA,GAAAC,OAAA"}

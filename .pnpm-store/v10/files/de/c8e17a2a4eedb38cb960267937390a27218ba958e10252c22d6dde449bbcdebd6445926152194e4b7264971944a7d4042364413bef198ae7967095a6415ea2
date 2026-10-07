@@ -1,0 +1,26 @@
+{
+  "name": "browserify-cipher",
+  "version": "1.0.1",
+  "description": "ciphers for the browser",
+  "main": "index.js",
+  "dependencies": {
+    "browserify-aes": "^1.0.4",
+    "browserify-des": "^1.0.0",
+    "evp_bytestokey": "^1.0.0"
+  },
+  "browser": "browser.js",
+  "devDependencies": {
+    "standard": "^10.0.2",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.0"
+  },
+  "scripts": {
+    "test": "standard && node test.js | tspec"
+  },
+  "author": "Calvin Metcalf <calvin.metcalf@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:crypto-browserify/browserify-cipher.git"
+  }
+}

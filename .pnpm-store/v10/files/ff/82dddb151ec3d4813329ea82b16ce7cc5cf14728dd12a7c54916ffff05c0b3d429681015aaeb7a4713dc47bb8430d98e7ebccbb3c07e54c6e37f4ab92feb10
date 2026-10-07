@@ -1,0 +1,13 @@
+{
+  "files": ["src/hfs-types.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "dist",
+    "target": "ES2022",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext"
+  }
+}

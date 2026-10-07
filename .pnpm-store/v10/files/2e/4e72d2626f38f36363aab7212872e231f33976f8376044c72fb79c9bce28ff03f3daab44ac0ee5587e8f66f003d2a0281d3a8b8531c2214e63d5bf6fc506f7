@@ -1,0 +1,61 @@
+{
+  "name": "bare-events",
+  "version": "2.8.2",
+  "description": "Event emitters for JavaScript",
+  "exports": {
+    "./package": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./global": {
+      "types": "./global.d.ts",
+      "default": "./global.js"
+    },
+    "./web": {
+      "types": "./web.d.ts",
+      "default": "./web.js"
+    },
+    "./errors": "./lib/errors.js"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "global.js",
+    "global.d.ts",
+    "web.js",
+    "web.d.ts",
+    "lib"
+  ],
+  "scripts": {
+    "test": "npm run lint && npm run test:bare && npm run test:node",
+    "test:bare": "bare test.js",
+    "test:node": "node test.js",
+    "lint": "prettier . --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/bare-events.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/bare-events/issues"
+  },
+  "homepage": "https://github.com/holepunchto/bare-events#readme",
+  "devDependencies": {
+    "bare-abort-controller": "^1.0.0",
+    "brittle": "^3.3.2",
+    "prettier": "^3.4.2",
+    "prettier-config-holepunch": "^2.0.0",
+    "uncaughts": "^1.1.1"
+  },
+  "peerDependencies": {
+    "bare-abort-controller": "*"
+  },
+  "peerDependenciesMeta": {
+    "bare-abort-controller": {
+      "optional": true
+    }
+  }
+}

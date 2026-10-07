@@ -1,0 +1,46 @@
+{
+  "name": "@vitest/spy",
+  "type": "module",
+  "version": "4.1.5",
+  "description": "Lightweight Jest compatible spy implementation",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://vitest.dev/api/mock",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/spy"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "keywords": [
+    "vitest",
+    "test",
+    "mock",
+    "spy",
+    "intercept"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./optional-types.js": {
+      "types": "./optional-types.d.ts"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "optional-types.d.ts"
+  ],
+  "scripts": {
+    "build": "premove dist && rollup -c",
+    "dev": "rollup -c --watch"
+  }
+}

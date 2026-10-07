@@ -1,0 +1,55 @@
+{
+  "name": "@html-eslint/eslint-plugin-react",
+  "version": "0.60.0",
+  "type": "commonjs",
+  "description": "ESLint plugin for HTML with React support",
+  "author": {
+    "name": "yeonjuan",
+    "url": "https://github.com/yeonjuan"
+  },
+  "homepage": "https://github.com/yeonjuan/html-eslint#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeonjuan/html-eslint.git"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "ts": "tsc --noEmit",
+    "lint": "eslint .",
+    "build": "rimraf types && tsc --project tsconfig.build.json"
+  },
+  "bugs": {
+    "url": "https://github.com/yeonjuan/html-eslint/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "html",
+    "react",
+    "lint"
+  ],
+  "dependencies": {
+    "@html-eslint/core": "^0.60.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0 || ^10.0.0-0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/types": "^8.56.0"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "gitHead": "64d9d73aa7130ce5d3530add8fe06bcc9e4cf3de"
+}

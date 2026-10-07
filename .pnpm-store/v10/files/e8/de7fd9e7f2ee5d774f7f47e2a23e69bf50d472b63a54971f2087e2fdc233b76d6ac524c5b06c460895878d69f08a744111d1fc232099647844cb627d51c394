@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MetricKey.js",
+  "module": "../dist/esm/MetricKey.js",
+  "types": "../dist/dts/MetricKey.d.ts"
+}

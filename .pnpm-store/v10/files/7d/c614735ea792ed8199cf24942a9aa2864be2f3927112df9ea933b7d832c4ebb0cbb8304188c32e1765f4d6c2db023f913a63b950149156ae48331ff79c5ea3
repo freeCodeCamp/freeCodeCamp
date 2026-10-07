@@ -1,0 +1,29 @@
+{
+  "author": {
+    "email": "gajus@gajus.com",
+    "name": "Gajus Kuizinas",
+    "url": "http://gajus.com"
+  },
+  "dependencies": {},
+  "description": "Event manager.",
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "gitdown": "^2.5.2",
+    "mocha": "^2.1.0"
+  },
+  "keywords": [
+    "events"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "src/sister.js",
+  "name": "sister",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajus/sister"
+  },
+  "scripts": {
+    "generate-readme": "gitdown ./.README/README.md --output-file ./README.md",
+    "test": "mocha"
+  },
+  "version": "3.0.2"
+}

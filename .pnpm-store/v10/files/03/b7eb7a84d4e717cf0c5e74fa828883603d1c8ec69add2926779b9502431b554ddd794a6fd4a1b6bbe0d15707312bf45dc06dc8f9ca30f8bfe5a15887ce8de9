@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_super_prop_base.cjs",
+    "module": "../../esm/_super_prop_base.js"
+}

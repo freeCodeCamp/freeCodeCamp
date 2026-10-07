@@ -1,0 +1,69 @@
+{
+  "name": "react-measure",
+  "version": "2.5.2",
+  "description": "Compute measurements of React components.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest --env=jsdom",
+    "test:ci": "cross-env CI=1 jest --env=jsdom",
+    "prettier": "prettier --write 'src/**/*.{js,json,css}'",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/souporserious/react-measure"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "measure",
+    "measurements",
+    "dimensions",
+    "element-queries",
+    "container-queries",
+    "size"
+  ],
+  "author": "Travis Arnold <travis@souporserious.com> (http://souporserious.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/souporserious/react-measure/issues"
+  },
+  "homepage": "https://github.com/souporserious/react-measure",
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ]
+  },
+  "peerDependencies": {
+    "react": ">0.13.0",
+    "react-dom": ">0.13.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.2.0",
+    "get-node-dimensions": "^1.2.1",
+    "prop-types": "^15.6.2",
+    "resize-observer-polyfill": "^1.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "cross-env": "^5.2.0",
+    "jest": "^24.0.0",
+    "prettier": "^1.16.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "rollup": "^0.67.4",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0"
+  }
+}

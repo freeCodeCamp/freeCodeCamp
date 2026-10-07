@@ -1,0 +1,5 @@
+{
+  "name": "source-not-symlinked",
+  "main": "dist.js",
+  "source": "source.js"
+}

@@ -1,0 +1,34 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"camelcase": "off",
+		"func-style": "off",
+		"id-length": "off",
+		"max-lines-per-function": "off",
+		"multiline-comment-style": "off",
+		"no-negated-condition": "off",
+		"no-param-reassign": "warn",
+		"sort-keys": "off",
+	},
+
+	"overrides": [
+		{
+			"files": "./asn1.js",
+			"rules": {
+				"no-underscore-dangle": "off",
+			}
+		},
+		{
+			"files": [
+				"./asn1.js",
+				"./certificate.js",
+			],
+			"rules": {
+				"no-invalid-this": "off",
+			}
+		},
+	]
+}

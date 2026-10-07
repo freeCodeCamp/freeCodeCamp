@@ -1,0 +1,12 @@
+import type { ComponentProps, Renderer } from '../..';
+export type AutocompleteSearchProps = {
+    inputProps: ComponentProps<'input'>;
+    onClear: () => void;
+    query: string;
+    isSearchStalled: boolean;
+    onCancel?: () => void;
+    isDetached?: boolean;
+    submitTitle?: string;
+    onAiModeClick?: () => void;
+};
+export declare function createAutocompleteSearchComponent({ createElement }: Renderer): (userProps: AutocompleteSearchProps) => JSX.Element;

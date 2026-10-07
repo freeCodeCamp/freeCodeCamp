@@ -1,0 +1,8 @@
+{
+  "branch": "pull/21051",
+  "buildNumber": "287151",
+  "checksum": "94f5c65",
+  "commit": "12adaffef",
+  "environment": "ci",
+  "reactVersion": "17.0.0-12adaffef"
+}

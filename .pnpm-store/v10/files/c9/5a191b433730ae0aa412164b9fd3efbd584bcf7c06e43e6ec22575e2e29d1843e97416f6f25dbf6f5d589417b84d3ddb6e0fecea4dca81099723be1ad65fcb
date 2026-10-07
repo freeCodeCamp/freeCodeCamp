@@ -1,0 +1,84 @@
+{
+  "name": "remark-directive",
+  "version": "1.0.1",
+  "description": "remark plugin to support directives",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "plugin",
+    "mdast",
+    "markdown",
+    "generic",
+    "directive",
+    "container"
+  ],
+  "repository": "remarkjs/remark-directive",
+  "bugs": "https://github.com/remarkjs/remark-directive/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "types": "types/index.d.ts",
+  "files": [
+    "types/index.d.ts",
+    "index.js"
+  ],
+  "dependencies": {
+    "mdast-util-directive": "^1.0.0",
+    "micromark-extension-directive": "^1.0.0"
+  },
+  "devDependencies": {
+    "dtslint": "^4.0.0",
+    "is-hidden": "^1.0.0",
+    "not": "^0.1.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^13.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "to-vfile": "^6.0.0",
+    "unified": "^9.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo --ignore-pattern test/ && prettier . -w --loglevel warn && xo --fix",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/no-fn-reference-in-iterator": "off",
+      "unicorn/prefer-optional-catch-binding": "off"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--To run this example from a clone of the repository, run `yarn start`
+    in the root KaTeX directory and then visit with your web browser:
+    http://localhost:7936/contrib/copy-tex/index.html
+  -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Copy-tex test</title>
+    <script src="/katex.js" type="text/javascript"></script>
+    <script src="/contrib/auto-render.js" type="text/javascript"></script>
+    <script src="/contrib/copy-tex.js" type="text/javascript"></script>
+    <style type="text/css">
+      body {
+          margin: 0px;
+          padding: 0px;
+          font-size: 36px;
+      }
+
+      #test > .blue {
+          color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Copy-tex test</h1>
+    <h2>Try copy/pasting some of the text below!</h2>
+    <p>
+    Here is some \(\KaTeX\) math: $$ x^2+y^2=z^2 $$
+    The variables are \(x\), \(y\), and \(z\),
+    which are all in \(\mathbb{R}^+\).
+    Q.E.D.
+    </p>
+    <script>
+      renderMathInElement(document.body);
+    </script>
+  </body>
+</html>

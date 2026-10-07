@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Page not found</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .error-title {
+        color: #282c33;
+        font-size: 3rem;
+        padding: 25px;
+        padding-bottom: 10px;
+        margin: 0;
+      }
+
+      .short-desc {
+        color: #282c33;
+        font-size: 2rem;
+        padding: 0 25px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="error-title">404</h1>
+    <h2 class="short-desc">Page not found.</h2>
+  </body>
+</html>

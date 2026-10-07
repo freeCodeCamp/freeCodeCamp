@@ -1,0 +1,58 @@
+{
+    "name": "@types/body-parser",
+    "version": "1.19.3",
+    "description": "TypeScript definitions for body-parser",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/body-parser",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Santi Albo",
+            "url": "https://github.com/santialbo",
+            "githubUsername": "santialbo"
+        },
+        {
+            "name": "Vilic Vane",
+            "url": "https://github.com/vilic",
+            "githubUsername": "vilic"
+        },
+        {
+            "name": "Jonathan Häberle",
+            "url": "https://github.com/dreampulse",
+            "githubUsername": "dreampulse"
+        },
+        {
+            "name": "Gevik Babakhani",
+            "url": "https://github.com/blendsdk",
+            "githubUsername": "blendsdk"
+        },
+        {
+            "name": "Tomasz Łaziuk",
+            "url": "https://github.com/tlaziuk",
+            "githubUsername": "tlaziuk"
+        },
+        {
+            "name": "Jason Walton",
+            "url": "https://github.com/jwalton",
+            "githubUsername": "jwalton"
+        },
+        {
+            "name": "Piotr Błażejewicz",
+            "url": "https://github.com/peterblazejewicz",
+            "githubUsername": "peterblazejewicz"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/body-parser"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/connect": "*",
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "cedd53aab61f577f8f08f95fe8c5383d15a86b804a57641c40f76cc286c94abd",
+    "typeScriptVersion": "4.5"
+}

@@ -1,0 +1,3 @@
+{
+  "extends": "eslint-config-egg"
+}

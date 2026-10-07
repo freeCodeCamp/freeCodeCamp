@@ -1,0 +1,27 @@
+import type { ObjectTypeDefinitionNode, InputObjectTypeDefinitionNode, EnumTypeDefinitionNode, InterfaceTypeDefinitionNode, ScalarTypeDefinitionNode, UnionTypeDefinitionNode, FieldDefinitionNode, InputValueDefinitionNode, EnumValueDefinitionNode, StringValueNode, NamedTypeNode, TypeNode, ValueNode, NameNode } from '../graphql';
+import type { ObjectTypeComposer } from '../ObjectTypeComposer';
+import type { InputTypeComposer } from '../InputTypeComposer';
+import type { EnumTypeComposer } from '../EnumTypeComposer';
+import type { InterfaceTypeComposer, InterfaceTypeComposerThunked } from '../InterfaceTypeComposer';
+import type { ScalarTypeComposer } from '../ScalarTypeComposer';
+import type { UnionTypeComposer } from '../UnionTypeComposer';
+import type { SchemaComposer } from '../SchemaComposer';
+import type { AnyTypeComposer } from './typeHelpers';
+import type { Directive } from './definitions';
+export declare function getObjectTypeDefinitionNode(tc: ObjectTypeComposer<any, any>): ObjectTypeDefinitionNode;
+export declare function getInputObjectTypeDefinitionNode(tc: InputTypeComposer<any>): InputObjectTypeDefinitionNode;
+export declare function getEnumTypeDefinitionNode(tc: EnumTypeComposer<any>): EnumTypeDefinitionNode;
+export declare function getInterfaceTypeDefinitionNode(tc: InterfaceTypeComposer<any, any>): InterfaceTypeDefinitionNode;
+export declare function getScalarTypeDefinitionNode(tc: ScalarTypeComposer<any>): ScalarTypeDefinitionNode;
+export declare function getUnionTypeDefinitionNode(tc: UnionTypeComposer<any, any>): UnionTypeDefinitionNode;
+export declare function getDescriptionNode(value?: string | null): StringValueNode | undefined;
+export declare function getDirectiveNodes(values: Directive[], sc: SchemaComposer<any>): ReadonlyArray<any> | undefined;
+export declare function getInterfaceNodes(ifaces: InterfaceTypeComposerThunked<any, any>[]): ReadonlyArray<NamedTypeNode>;
+export declare function getTypeNode(atc: AnyTypeComposer<any>): TypeNode | undefined;
+export declare function getArgumentsDefinitionNodes(tc: ObjectTypeComposer<any, any> | InterfaceTypeComposer<any, any>, fieldName: string): ReadonlyArray<InputValueDefinitionNode> | undefined;
+export declare function getFieldDefinitionNodes(tc: ObjectTypeComposer<any, any> | InterfaceTypeComposer<any, any>): ReadonlyArray<FieldDefinitionNode> | undefined;
+export declare function getInputValueDefinitionNodes(tc: InputTypeComposer<any>): ReadonlyArray<InputValueDefinitionNode> | undefined;
+export declare function getNameNode(value: string): NameNode;
+export declare function getEnumValueDefinitionNodes(tc: EnumTypeComposer<any>): ReadonlyArray<EnumValueDefinitionNode> | undefined;
+export declare function parseValueNode(ast: ValueNode, variables?: Record<string, any>, typeName?: string): unknown;
+//# sourceMappingURL=definitionNode.d.ts.map

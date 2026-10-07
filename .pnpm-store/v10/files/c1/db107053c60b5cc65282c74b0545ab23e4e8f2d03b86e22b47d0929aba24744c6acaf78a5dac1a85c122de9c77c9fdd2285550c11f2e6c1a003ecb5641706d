@@ -1,0 +1,43 @@
+{
+  "name": "stable-hash",
+  "version": "0.0.5",
+  "description": "Stable JS value hash.",
+  "repository": "https://github.com/shuding/stable-hash",
+  "author": "Shu Ding",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build:mjs": "esbuild src/index.ts --minify --target=es6 --outdir=dist --out-extension:.js=.mjs",
+    "build:cjs": "esbuild src/index.ts --minify --target=es6 --outdir=dist --format=cjs",
+    "build:types": "tsc --emitDeclarationOnly --declaration -p tsconfig.build.json",
+    "build": "pnpm build:mjs && pnpm build:cjs && pnpm build:types",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.3",
+    "base64-url": "^2.3.3",
+    "esbuild": "^0.12.28",
+    "flattie": "^1.1.0",
+    "hash-obj": "^4.0.0",
+    "jest": "^28.1.1",
+    "json-stringify-deterministic": "^1.0.7",
+    "nanobench": "^2.1.1",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4"
+  },
+  "prettier": {
+    "semi": false
+  }
+}

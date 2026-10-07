@@ -1,0 +1,7 @@
+nodeLinker: pnp
+pnpMode: loose
+pnpEnableEsmLoader: false
+packageExtensions:
+  debug@*:
+    dependencies:
+      supports-color: '*'

@@ -1,0 +1,8 @@
+{
+  "name": "side-effects-false-glob",
+  "sideEffects": [
+    "a/*.js",
+    "./sub/*.js",
+    "*.json"
+  ]
+}

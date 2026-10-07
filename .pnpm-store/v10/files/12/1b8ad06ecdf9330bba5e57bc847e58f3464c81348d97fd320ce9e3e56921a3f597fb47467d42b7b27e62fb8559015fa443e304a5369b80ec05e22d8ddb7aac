@@ -1,0 +1,54 @@
+{
+  "name": "stream-browserify",
+  "version": "3.0.0",
+  "description": "the stream module from node core for browsers",
+  "main": "index.js",
+  "dependencies": {
+    "inherits": "~2.0.4",
+    "readable-stream": "^3.5.0"
+  },
+  "devDependencies": {
+    "airtap": "^1.0.2",
+    "safe-buffer": "^5.1.2",
+    "tape": "^4.13.0",
+    "through": "^2.3.8"
+  },
+  "scripts": {
+    "test": "node test",
+    "test:browsers": "airtap -- test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/browserify/stream-browserify.git"
+  },
+  "homepage": "https://github.com/browserify/stream-browserify",
+  "keywords": [
+    "stream",
+    "browser",
+    "browserify"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT",
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/3.5",
+      "firefox/10",
+      "firefox/nightly",
+      "chrome/10",
+      "chrome/latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  }
+}

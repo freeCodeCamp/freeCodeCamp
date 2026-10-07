@@ -1,0 +1,63 @@
+{
+  "name": "tsutils",
+  "version": "3.21.0",
+  "description": "utilities for working with typescript's AST",
+  "scripts": {
+    "precompile": "rimraf \"{,util,typeguard,test{,/rules}/*.{js,d.ts,js.map}\"",
+    "compile": "ttsc -p .",
+    "lint:tslint": "wotan -m @fimbul/valtyr",
+    "lint:wotan": "wotan",
+    "lint": "run-p lint:*",
+    "test": "mocha test/*Tests.js && tslint --test 'test/rules/**/tslint.json'",
+    "verify": "run-s compile lint coverage",
+    "prepublishOnly": "run-s verify",
+    "coverage": "nyc run-s test",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "github-release": "node ./scripts/github-release.js",
+    "postpublish": "git push origin master --tags && run-s github-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajafff/tsutils"
+  },
+  "keywords": [
+    "typescript",
+    "ts",
+    "ast",
+    "typeguard",
+    "utils",
+    "helper",
+    "node"
+  ],
+  "author": "Klaus Meinhardt",
+  "license": "MIT",
+  "devDependencies": {
+    "@fimbul/mithotyn": "^0.21.0",
+    "@fimbul/valtyr": "^0.22.0",
+    "@fimbul/wotan": "^0.22.0",
+    "@types/chai": "^4.0.10",
+    "@types/mocha": "^5.0.0",
+    "@types/node": "^11.13.0",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "github-release-from-changelog": "^1.3.0",
+    "mocha": "^6.0.2",
+    "npm-run-all": "^4.1.2",
+    "nyc": "^13.3.0",
+    "rimraf": "^3.0.2",
+    "ts-transform-const-enum": "^0.0.1",
+    "tslint": "^5.8.0",
+    "tslint-consistent-codestyle": "^1.11.0",
+    "ttypescript": "^1.5.5",
+    "typescript": "4.2.0-dev.20201230"
+  },
+  "peerDependencies": {
+    "typescript": ">=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta"
+  },
+  "dependencies": {
+    "tslib": "^1.8.1"
+  },
+  "engines": {
+    "node": ">= 6"
+  }
+}

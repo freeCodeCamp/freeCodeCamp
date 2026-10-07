@@ -1,0 +1,35 @@
+{
+  "name": "postcss-normalize-charset",
+  "version": "5.1.0",
+  "description": "Add necessary or remove extra charset with PostCSS",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "charset"
+  ],
+  "author": "Bogdan Chadkin <trysound@yandex.ru>",
+  "files": [
+    "src",
+    "LICENSE",
+    "types"
+  ],
+  "license": "MIT",
+  "repository": "cssnano/cssnano",
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "homepage": "https://github.com/cssnano/cssnano",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# postcss-normalize-charset\n\nAdd necessary or remove extra charset with PostCSS\n\n```css\na{\n  content: \"©\";\n}\n```\n\n```css\n@charset \"utf-8\";\na{\n  content: \"©\";\n}\n```\n\n## API\n\n### normalizeCharset([options])\n\n#### options\n\n##### add\n\nType: `boolean`  \nDefault: `true`\n\nPass `false` to stop the module from adding a `@charset` declaration if it was\nmissing from the file (and the file contained non-ascii characters).\n\n## Usage\n\nSee the [PostCSS documentation](https://github.com/postcss/postcss#usage) for\nexamples for your environment.\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n\n## License\n\nMIT © [Bogdan Chadkin](mailto:trysound@yandex.ru)\n"
+}

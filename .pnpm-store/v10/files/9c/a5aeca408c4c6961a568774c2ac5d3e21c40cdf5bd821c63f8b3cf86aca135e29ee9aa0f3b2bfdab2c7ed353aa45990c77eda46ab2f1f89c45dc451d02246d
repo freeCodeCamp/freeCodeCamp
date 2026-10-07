@@ -1,0 +1,95 @@
+{
+    "$id": "config.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "border": {
+            "$ref": "shared.json#/definitions/borders"
+        },
+        "header": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "alignment": {
+                    "$ref": "shared.json#/definitions/alignment"
+                },
+                "wrapWord": {
+                    "type": "boolean"
+                },
+                "truncate": {
+                    "type": "integer"
+                },
+                "paddingLeft": {
+                    "type": "integer"
+                },
+                "paddingRight": {
+                    "type": "integer"
+                }
+            },
+            "required": ["content"],
+            "additionalProperties": false
+        },
+        "columns": {
+            "$ref": "shared.json#/definitions/columns"
+        },
+        "columnDefault": {
+            "$ref": "shared.json#/definitions/column"
+        },
+        "drawVerticalLine": {
+            "typeof": "function"
+        },
+        "drawHorizontalLine": {
+            "typeof": "function"
+        },
+        "singleLine": {
+            "typeof": "boolean"
+        },
+        "spanningCells": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "col": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "row": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "colSpan": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "rowSpan": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "alignment": {
+                        "$ref": "shared.json#/definitions/alignment"
+                    },
+                    "verticalAlignment": {
+                        "$ref": "shared.json#/definitions/verticalAlignment"
+                    },
+                    "wrapWord": {
+                        "type": "boolean"
+                    },
+                    "truncate": {
+                        "type": "integer"
+                    },
+                    "paddingLeft": {
+                        "type": "integer"
+                    },
+                    "paddingRight": {
+                        "type": "integer"
+                    }
+                },
+                "required": ["row", "col"],
+                "additionalProperties": false
+            }
+        }
+    },
+    "additionalProperties": false
+}

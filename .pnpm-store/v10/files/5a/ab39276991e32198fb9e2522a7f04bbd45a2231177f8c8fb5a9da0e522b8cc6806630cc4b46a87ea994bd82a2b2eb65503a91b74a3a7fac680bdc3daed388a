@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Pipeable.js",
+  "module": "../dist/esm/Pipeable.js",
+  "types": "../dist/dts/Pipeable.d.ts"
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"copy-to-channel.d.ts","sourceRoot":"","sources":["../../../src/helpers/copy-to-channel.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,kBAAkB,EAAE,MAAM,UAAU,CAAC;AAE9C,eAAO,MAAM,aAAa,gBACT,kBAAkB,UACvB;IAAE,CAAC,GAAG,EAAE,MAAM,GAAG,YAAY,CAAA;CAAE,OAClC,MAAM,iBACI,MAAM,gBACP,MAAM,KACrB,IAcF,CAAC"}

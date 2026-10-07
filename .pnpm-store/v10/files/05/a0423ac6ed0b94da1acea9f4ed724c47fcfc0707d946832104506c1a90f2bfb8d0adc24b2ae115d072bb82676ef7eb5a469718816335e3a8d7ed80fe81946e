@@ -1,0 +1,26 @@
+{
+  "name": "typed-query-selector",
+  "description": "Better typed `querySelector` and `querySelectorAll`.",
+  "author": "Pig Fang <g-plane@hotmail.com>",
+  "repository": "g-plane/typed-query-selector",
+  "version": "2.12.2",
+  "license": "MIT",
+  "files": [
+    "*.d.ts"
+  ],
+  "main": "shim.d.ts",
+  "types": "shim.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "test": "tsc -p . && tsgo -p .",
+    "fmt": "prettier --write *.ts",
+    "fmt:check": "prettier --check *.ts"
+  },
+  "devDependencies": {
+    "@gplane/tsconfig": "^6.3.0",
+    "@type-challenges/utils": "^0.1.1",
+    "@typescript/native-preview": "7.0.0-dev.20260423.1",
+    "prettier": "~3.0.3",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/HashMap.js",
+  "module": "../dist/esm/HashMap.js",
+  "types": "../dist/dts/HashMap.d.ts"
+}

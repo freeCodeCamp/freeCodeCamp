@@ -1,0 +1,10 @@
+{
+  "name": "bundle-optimisations",
+  "version": "1.0.0",
+  "description": "Internal plugin to add a bundle optimisation aliases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}

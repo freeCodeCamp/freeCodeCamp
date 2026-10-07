@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MergeStrategy.js",
+  "module": "../dist/esm/MergeStrategy.js",
+  "types": "../dist/dts/MergeStrategy.d.ts"
+}

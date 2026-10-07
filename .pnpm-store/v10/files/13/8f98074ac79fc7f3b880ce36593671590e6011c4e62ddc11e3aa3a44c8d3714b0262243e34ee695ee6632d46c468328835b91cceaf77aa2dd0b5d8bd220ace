@@ -1,0 +1,107 @@
+{
+  "name": "react-hotkeys",
+  "version": "2.0.0",
+  "description": "A declarative library for handling hotkeys and focus within a React application",
+  "main": "index",
+  "module": "index.es",
+  "directories": {
+    "example": "examples",
+    "src": "src",
+    "src/vendor": "src/vendor",
+    "test": "test"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "10.0.1",
+    "babel-plugin-transform-node-env-inline": "^0.4.3",
+    "babel-preset-minify": "^0.5.0",
+    "chai": "^4.1.2",
+    "chai-enzyme": "^1.0.0-beta.0",
+    "cheerio": "^1.0.0-0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "5.12.0",
+    "eslint-config-react-app": "^3.0.6",
+    "eslint-plugin-flowtype": "^3.2.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.1.0",
+    "estraverse": "^4.2.0",
+    "jsdom": "^13.1.0",
+    "jsdom-global": "^3.0.2",
+    "lodash.random": "^3.2.0",
+    "mocha": "^5.2.0",
+    "prompt": "^1.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.7.0",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-license": "^0.7.0",
+    "rollup-plugin-strip": "^1.2.0",
+    "rollup-plugin-uglify": "^6.0.0",
+    "simulant": "^0.2.2",
+    "sinon": "^7.2.2",
+    "sinon-chai": "^3.0.0",
+    "style-loader": "^0.23.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
+  "files": [
+    "cjs",
+    "umd",
+    "es",
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "index.js",
+    "index.es.js",
+    "index.d.ts"
+  ],
+  "peerDependencies": {
+    "react": ">= 0.14.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "tests": "mocha",
+    "watch-tests": "mocha --watch",
+    "prepublish": "npm run build-cjs && npm run build-es && npm run build-umd",
+    "build-cjs": "rm -rf cjs && npm run build-development && npm run build-production",
+    "build-es": "rm -rf es && npm run build-es-development && npm run build-es-production",
+    "build-umd": "rm -rf umd && npm run build-umd-development && npm run build-umd-production",
+    "build-development": "cross-env BABEL_ENV=development NODE_ENV=development babel src -d cjs",
+    "build-es-development": "cross-env BABEL_ENV=es-development NODE_ENV=development babel src -d es",
+    "build-umd-development": "cross-env BABEL_ENV=umd-development NODE_ENV=development rollup --format umd --name ReactHotkeys -c --file umd/react-hotkeys.js",
+    "build-production": "cross-env BABEL_ENV=production NODE_ENV=production rollup --format cjs -c --file cjs/react-hotkeys.production.min.js",
+    "build-es-production": "cross-env BABEL_ENV=es-production NODE_ENV=production rollup --format es -c --file es/react-hotkeys.production.min.js",
+    "build-umd-production": "cross-env BABEL_ENV=production NODE_ENV=production rollup --format umd --name ReactHotkeys -c --file umd/react-hotkeys.min.js"
+  },
+  "author": "Aleck Greenham",
+  "contributors": [
+    "Chris Pearce <hello@chrispearce.me> (chrispearce.co)"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "react-component",
+    "hotkeys",
+    "focus",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greena13/react-hotkeys.git"
+  },
+  "homepage": "https://github.com/greena13/react-hotkeys",
+  "bugs": {
+    "url": "https://github.com/greena13/react-hotkeys/issues"
+  },
+  "globalExport": "ReactHotkeys",
+  "typings": "./index.d.ts"
+}

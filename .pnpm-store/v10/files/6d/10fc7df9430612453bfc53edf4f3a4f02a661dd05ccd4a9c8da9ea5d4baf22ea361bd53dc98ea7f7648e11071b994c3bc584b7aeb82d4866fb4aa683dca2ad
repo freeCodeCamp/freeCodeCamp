@@ -1,0 +1,19 @@
+{
+  "main": "dist/main/index.js",
+  "module": "dist/module/index.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "targets": {
+    "module": {
+      "includeNodeModules": "react",
+      "outputFormat": "esmodule",
+      "publicURL": "dist",
+      "engines": {
+        "browsers": [
+          "Chrome 70"
+        ]
+      }
+    }
+  }
+}

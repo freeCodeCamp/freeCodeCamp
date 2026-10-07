@@ -1,0 +1,1 @@
+{"version":3,"file":"native-audio-worklet-node-faker.d.ts","sourceRoot":"","sources":["../../../src/interfaces/native-audio-worklet-node-faker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,uBAAuB,EAAE,MAAM,UAAU,CAAC;AAGrE,MAAM,WAAW,4BAA6B,SAAQ,uBAAuB;IACzE,UAAU,EAAE,MAAM,CAAC;IAEnB,MAAM,EAAE,gBAAgB,EAAE,CAAC;CAC9B"}

@@ -1,0 +1,176 @@
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @providesModule UnicodeCJK
+ * @typechecks
+ */
+
+/**
+ * Unicode algorithms for CJK (Chinese, Japanese, Korean) writing systems.
+ *
+ * Utilities for Hanzi/Kanji/Hanja logographs and Kanas (Katakana and Hiragana)
+ * syllables.
+ *
+ * For Korean Hangul see module `UnicodeHangulKorean`.
+ */
+'use strict';
+/**
+ * Latin
+ *
+ * NOTE: The code assumes these sets include only BMP characters.
+ */
+
+const R_LATIN_ASCII = 'a-zA-Z';
+const R_LATIN_FULLWIDTH = '\uFF21-\uFF3A\uFF41-\uFF5A';
+const R_LATIN = R_LATIN_ASCII + R_LATIN_FULLWIDTH;
+/**
+ * Hiragana & Katakana
+ *
+ * NOTE: Some ranges include non-BMP characters. We do not support those ranges
+ * for now.
+ */
+
+const R_HIRAGANA = '\u3040-\u309F';
+const R_KATAKANA = '\u30A0-\u30FF';
+const R_KATAKANA_PHONETIC = '\u31F0-\u31FF';
+const R_KATAKANA_HALFWIDTH = '\uFF65-\uFF9F'; // var R_KANA_SUPPLEMENT     = '\U0001B000-\U0001B0FF';
+
+const R_KATAKANA_ALL = R_KATAKANA + R_KATAKANA_PHONETIC + R_KATAKANA_HALFWIDTH;
+const R_KANA = R_HIRAGANA + R_KATAKANA_ALL;
+const I_HIRAGANA = [0x3040, 0x309F];
+const I_KATAKANA = [0x30A0, 0x30FF];
+const I_HIRAGANA_TO_KATAKANA = I_KATAKANA[0] - I_HIRAGANA[0];
+/**
+ * Hanzi/Kanji/Hanja
+ *
+ * NOTE: Some ranges include non-BMP characters. We do not support those ranges
+ * for now.
+ */
+
+const R_IDEO_MAIN = '\u4E00-\u9FCF';
+const R_IDEO_EXT_A = '\u3400-\u4DBF'; // var R_IDEO_EXT_B = '\U00020000-\U0002A6DF';
+// var R_IDEO_EXT_C = '\U0002A700-\U0002B73F';
+// var R_IDEO_EXT_D = '\U0002B740-\U0002B81F';
+
+const R_IDEO = R_IDEO_MAIN + R_IDEO_EXT_A;
+/**
+ * Hangul
+ */
+// var R_HANGUL_JAMO           = '\u1100-\u11FF';
+// var R_HANGUL_JAMO_EXT_A     = '\uA960-\uA97F';
+// var R_HANGUL_JAMO_EXT_B     = '\uD7B0-\uD7FF';
+// var R_HANGUL_COMPATIBILITY  = '\u3130-\u318F';
+// var R_HANGUL_COMP_HALFWIDTH = '\uFFA0-\uFFDF';
+
+const R_HANGUL_SYLLABLES = '\uAC00-\uD7AF';
+/**
+ * Globals
+ */
+
+const R_IDEO_OR_SYLL = R_IDEO + R_KANA + R_HANGUL_SYLLABLES;
+let REGEX_IDEO = null;
+let REGEX_KANA = null;
+let REGEX_IDEO_OR_SYLL = null;
+let REGEX_IS_KANA_WITH_TRAILING_LATIN = null;
+/**
+ * Whether the string includes any Katakana or Hiragana characters.
+ *
+ * @param {string} str
+ * @return {boolean}
+ */
+
+function hasKana(str) {
+  REGEX_KANA = REGEX_KANA || new RegExp('[' + R_KANA + ']');
+  return REGEX_KANA.test(str);
+}
+/**
+ * Whether the string includes any CJK Ideograph characters.
+ *
+ * @param {string} str
+ * @return {boolean}
+ */
+
+
+function hasIdeograph(str) {
+  REGEX_IDEO = REGEX_IDEO || new RegExp('[' + R_IDEO + ']');
+  return REGEX_IDEO.test(str);
+}
+/**
+ * Whether the string includes any CJK Ideograph or Syllable characters.
+ *
+ * @param {string} str
+ * @return {boolean}
+ */
+
+
+function hasIdeoOrSyll(str) {
+  REGEX_IDEO_OR_SYLL = REGEX_IDEO_OR_SYLL || new RegExp('[' + R_IDEO_OR_SYLL + ']');
+  return REGEX_IDEO_OR_SYLL.test(str);
+}
+/**
+ * @param {string} chr
+ * @output {string}
+ */
+
+
+function charCodeToKatakana(chr) {
+  const charCode = chr.charCodeAt(0);
+  return String.fromCharCode(charCode < I_HIRAGANA[0] || charCode > I_HIRAGANA[1] ? charCode : charCode + I_HIRAGANA_TO_KATAKANA);
+}
+/**
+ * Replace any Hiragana character with the matching Katakana
+ *
+ * @param {string} str
+ * @output {string}
+ */
+
+
+function hiraganaToKatakana(str) {
+  if (!hasKana(str)) {
+    return str;
+  }
+
+  return str.split('').map(charCodeToKatakana).join('');
+}
+/**
+ * Whether the string is exactly a sequence of Kana characters followed by one
+ * Latin character.
+ *
+ * @param {string} str
+ * @output {string}
+ */
+
+
+function isKanaWithTrailingLatin(str) {
+  REGEX_IS_KANA_WITH_TRAILING_LATIN = REGEX_IS_KANA_WITH_TRAILING_LATIN || new RegExp('^' + '[' + R_KANA + ']+' + '[' + R_LATIN + ']' + '$');
+  return REGEX_IS_KANA_WITH_TRAILING_LATIN.test(str);
+}
+/**
+ * Drops the trailing Latin character from a string that is exactly a sequence
+ * of Kana characters followed by one Latin character.
+ *
+ * @param {string} str
+ * @output {string}
+ */
+
+
+function kanaRemoveTrailingLatin(str) {
+  if (isKanaWithTrailingLatin(str)) {
+    return str.substr(0, str.length - 1);
+  }
+
+  return str;
+}
+
+const UnicodeCJK = {
+  hasKana: hasKana,
+  hasIdeograph: hasIdeograph,
+  hasIdeoOrSyll: hasIdeoOrSyll,
+  hiraganaToKatakana: hiraganaToKatakana,
+  isKanaWithTrailingLatin: isKanaWithTrailingLatin,
+  kanaRemoveTrailingLatin: kanaRemoveTrailingLatin
+};
+module.exports = UnicodeCJK;

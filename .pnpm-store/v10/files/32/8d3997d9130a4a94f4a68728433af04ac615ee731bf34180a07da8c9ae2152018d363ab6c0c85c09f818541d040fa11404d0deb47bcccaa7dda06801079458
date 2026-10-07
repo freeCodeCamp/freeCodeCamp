@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Hogan.js</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<header class="hogan-hero">
+		<div class="stripes"></div>
+		<div class="noise"></div>
+		<div class="container">
+			<h1>Hogan.js</h1>
+			<h3>JavaScript templating from Twitter.</h3>
+			<a href="https://github.com/twitter/hogan.js" class="download button">View on Github</a>
+		</div>
+	</header>
+		<div class="primary container">
+
+		<!--  Layout 1  -->
+		<div class="five columns">
+			<h4>Getting started</h4>
+			<p>
+				Hogan.js is a 2.5k JS templating engine developed at Twitter. Use it as a part of your asset packager to compile templates ahead of time or include it in your browser to handle dynamic templates.
+			</p>
+			<p>
+				If you're developing with Node.js, just use NPM to add the Hogan package.
+			</p>
+			<pre><code>$ npm install hogan.js</code></pre>
+			<p>
+				Alternatively, drop hogan.js in your browser by adding the following script.
+			</p>
+			<pre><code>&lt;script src="http://twitter.github.com/hogan.js/builds/3.0.0/hogan-3.0.0.js"&gt;&lt;/script&gt;</code></pre>
+
+		</div>
+		<div class="ten columns offset-by-one">
+			<script src="https://gist.github.com/1484613.js"> </script>
+		</div>
+		<div class="hogan-divider">
+			<div class="hogan-icon"></div>
+		</div>
+
+		<!--  Layout 2  -->
+		<div class="five columns">
+			<h4>Templates</h4>
+			<p>
+				Hogan.js was developed against the mustache test suite, so everything that holds true for templates as specified <a href="//mustache.github.com/mustache.5.html">here</a>, is also the case for hogan.js.
+			</p>
+			<p>
+				That means you get variables, sections, lambdas, partials, filters, and everything else you've come to expect from mustache templating - only much, much faster.
+			</p>
+		</div>
+		<div class="ten columns offset-by-one">
+			<script src="https://gist.github.com/1484342.js"></script>
+		</div>
+		<div class="hogan-divider">
+			<div class="hogan-icon"></div>
+		</div>
+
+		<!--  Layout 3  -->
+		<div class="five columns">
+			<h4>Compiling</h4>
+			<p>
+				Use <code>hogan.compile()</code> to precompile your templates into vanilla JS.
+			</p>
+			<p>
+				It's best to serve your templates precompiled whenever you can (rather than the raw templates), as parsing is the most time consuming operation.
+			</p>
+			<p>
+			</p>
+		</div>
+		<div class="ten columns offset-by-one">
+			<script src="https://gist.github.com/1484513.js"> </script>
+		</div>
+		<div class="hogan-divider">
+			<div class="hogan-icon"></div>
+		</div>
+
+		<!--  Layout 4  -->
+		<div class="five columns">
+			<h4 id='rendering'>Rendering</h4>
+			<p>
+				Once compiled, call the <code>render()</code> method with a context and optional partials object.
+			</p>
+			<p>
+				If supplying partials, you can compile them ahead of time, or pass string templates.</p>
+			<p>
+			</p>
+		</div>
+		<div class="ten columns offset-by-one">
+			<script src="https://gist.github.com/1575714.js"> </script>
+		</div>
+		<div class="hogan-divider">
+			<div class="hogan-icon"></div>
+		</div>
+
+
+		<!--  Layout 5  -->
+		<div class="five columns">
+			<h4 id='rendering'>Hulk</h4>
+			<p>
+				Hulk is Hogan's command line utility. Use it to easily compile your templates as js files.
+			</p>
+			<p>
+				Hulk supports the <code>*</code> wilcard (even on windows) and allows you to target specific file extensions as well.</p>
+			<p>
+			</p>
+		</div>
+
+		<div class="ten columns offset-by-one">
+			<script src="https://gist.github.com/2322961.js"> </script>
+		</div>
+
+		<div class="sixteen columns hogan-footer">
+			<span class="copyright">
+				Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/sayrer" target="_blank">@sayrer</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+          Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+			</span>
+			<span class="colophon">
+				<a href="#">Back to top</a>
+			</span>
+		</div>
+
+	</div><!-- container -->
+
+
+<!-- End Document
+================================================== -->
+</body>
+</html>

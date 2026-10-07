@@ -1,0 +1,42 @@
+{
+	"name": "gzip-size",
+	"version": "6.0.0",
+	"description": "Get the gzipped size of a string or buffer",
+	"license": "MIT",
+	"repository": "sindresorhus/gzip-size",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"app",
+		"tool",
+		"zlib",
+		"gzip",
+		"compressed",
+		"size",
+		"string",
+		"buffer"
+	],
+	"dependencies": {
+		"duplexer": "^0.1.2"
+	},
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"p-event": "^4.2.0",
+		"tsd": "^0.13.1",
+		"xo": "^0.34.2"
+	}
+}

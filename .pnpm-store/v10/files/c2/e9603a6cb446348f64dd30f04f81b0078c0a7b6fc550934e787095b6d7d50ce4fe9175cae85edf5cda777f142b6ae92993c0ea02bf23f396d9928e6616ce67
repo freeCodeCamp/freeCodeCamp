@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MetricLabel.js",
+  "module": "../dist/esm/MetricLabel.js",
+  "types": "../dist/dts/MetricLabel.d.ts"
+}

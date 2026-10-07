@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../lib/vocabularies/format/index.ts"],"names":[],"mappings":";;AACA,qCAAoC;AAEpC,MAAM,MAAM,GAAe,CAAC,gBAAa,CAAC,CAAA;AAE1C,kBAAe,MAAM,CAAA"}

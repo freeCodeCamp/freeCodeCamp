@@ -1,0 +1,9 @@
+#my-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 28px;
+  margin-top: -14px;
+  margin-left: -100px;
+}

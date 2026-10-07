@@ -1,0 +1,104 @@
+{
+  "name": "@babel/preset-modules",
+  "version": "0.1.6-no-external-plugins",
+  "description": "A Babel preset that targets modern browsers by fixing engine bugs.",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently -r 'npm:watch:* -s'",
+    "build": "babel src -d lib --ignore '**/*.test.js'",
+    "test": "eslint src test && jest --colors",
+    "test:browser": "cd test/browser && karmatic --no-coverage --browsers chrome:headless,sauce-chrome-61,sauce-firefox-60,sauce-safari-10,sauce-safari-11,sauce-edge-16,sauce-edge-17 '**/*.js'",
+    "test:local": "cd test/browser && karmatic --no-coverage '**/*.js'",
+    "test:safari": "npm run test:local -- --browsers sauce-safari-10",
+    "test:edge": "npm run test:local -- --browsers sauce-edge-16",
+    "watch:test": "jest --watch",
+    "watch:build": "npm run -s build -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/preset-modules.git"
+  },
+  "keywords": [
+    "babel",
+    "preset",
+    "preset-env",
+    "modern",
+    "modules",
+    "ES Modules",
+    "module/nomodule"
+  ],
+  "files": [
+    "src",
+    "lib"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "eslint --format=codeframe"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": [
+      "src",
+      "test"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "developit",
+    "rules": {
+      "no-console": 0,
+      "new-cap": 0
+    }
+  },
+  "eslintIgnore": [
+    "test/fixtures/**/*",
+    "test/integration/**/*"
+  ],
+  "authors": [
+    "Jason Miller <jason@developit.ca>"
+  ],
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0 || ^8.0.0-0 <8.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/helper-fixtures": "^7.6.3",
+    "@babel/helper-plugin-test-runner": "^7.14.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "@babel/plugin-transform-react-jsx": "^7.7.0",
+    "@babel/preset-env": "^7.9.6",
+    "acorn-jsx": "^5.0.1",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "chalk": "^2.4.2",
+    "concurrently": "^4.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-babel": "^9.0.0",
+    "eslint-plugin-flowtype": "3",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "gzip-size": "^5.1.1",
+    "if-env": "^1.0.4",
+    "jest": "^24.8.0",
+    "karmatic": "^1.4.0",
+    "prettier": "^1.19.1",
+    "pretty-bytes": "^5.2.0",
+    "rollup": "^1.16.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "terser": "^4.0.2",
+    "webpack": "^4.35.0"
+  },
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/types": "^7.4.4",
+    "esutils": "^2.0.2"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "name": "micromark",
+  "version": "2.11.4",
+  "description": "small commonmark compliant markdown parser with positional info and concrete tokens",
+  "license": "MIT",
+  "keywords": [
+    "commonmark",
+    "compiler",
+    "gfm",
+    "html",
+    "lexer",
+    "markdown",
+    "markup",
+    "md",
+    "unified",
+    "parse",
+    "parser",
+    "plugin",
+    "process",
+    "remark",
+    "render",
+    "renderer",
+    "token",
+    "tokenizer"
+  ],
+  "repository": "micromark/micromark",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Bogdan Chadkin <trysound@yandex.ru>",
+    "Christian Murphy <christian.murphy.42@gmail.com>",
+    "Marouane Fazouane <fazouanem3@gmail.com>",
+    "John Otander <johnotander@gmail.com> (https://johno.com)",
+    "Stephan Schneider <stephanschndr@gmail.com>",
+    "Victor Felder <victor@draft.li> (https://draft.li)",
+    "Mudit Ameta <zeusdeux@gmail.com> (https://mudit.xyz)",
+    "Merlijn Vos <merlijn@soverin.net>"
+  ],
+  "files": [
+    "dist/",
+    "lib/",
+    "buffer.d.ts",
+    "buffer.js",
+    "buffer.mjs",
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "stream.d.ts",
+    "stream.js",
+    "stream.mjs"
+  ],
+  "main": "./index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "debug": "^4.0.0",
+    "parse-entities": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@rollup/plugin-babel": "^5.0.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@types/events": "^3.0.0",
+    "@unicode/unicode-13.0.0": "^1.0.0",
+    "babel-plugin-inline-constants": "^1.0.0",
+    "babel-plugin-unassert": "^3.0.0",
+    "babel-plugin-undebug": "^1.0.0",
+    "c8": "^7.0.0",
+    "character-entities": "^1.0.0",
+    "commonmark.json": "^0.29.0",
+    "concat-stream": "^2.0.0",
+    "cross-env": "^7.0.0",
+    "dtslint": "^4.0.0",
+    "eslint-plugin-es": "^4.0.0",
+    "eslint-plugin-security": "^1.0.0",
+    "esm": "^3.0.0",
+    "glob": "^7.0.0",
+    "gzip-size-cli": "^4.0.0",
+    "jsfuzz": "1.0.14",
+    "ms": "^2.0.0",
+    "patch-package": "^6.0.0",
+    "prettier": "^2.0.0",
+    "regenerate": "^1.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "resolve-from": "^5.0.0",
+    "rollup": "^2.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "tape": "^5.0.0",
+    "xo": "^0.37.0"
+  },
+  "scripts": {
+    "generate-lib-types": "node --experimental-modules script/generate-constant-typings.mjs",
+    "generate-lib-expressions": "node --experimental-modules script/generate-expressions.mjs",
+    "generate-lib-cjs": "rollup -c --silent",
+    "generate-lib": "npm run generate-lib-types && npm run generate-lib-expressions && npm run generate-lib-cjs",
+    "generate-dist-types": "node --experimental-modules script/copy-dict.mjs",
+    "generate-dist-js": "cross-env BUILD=dist rollup -c --silent",
+    "generate-dist": "npm run generate-dist-types && npm run generate-dist-js",
+    "generate-size": "cross-env BUILD=size rollup -c --silent && gzip-size micromark.min.js && gzip-size --raw micromark.min.js",
+    "generate": "npm run generate-lib && npm run generate-dist && npm run generate-size",
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "pretest-fuzz": "patch-package --patch-dir script/patches && node script/generate-fixtures.mjs",
+    "test-fuzz": "cross-env NODE_OPTIONS=\"-r esm\" timeout 15m jsfuzz test/fuzz.js test/fixtures",
+    "test-api": "node --experimental-modules test/index.mjs",
+    "test-coverage": "c8 --check-coverage --lines 100 --functions 100 --branches 100 --reporter lcov node --experimental-modules test/index.mjs",
+    "test-types": "dtslint .",
+    "test": "npm run generate && npm run format && npm run test-coverage && npm run test-types"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "esnext": false,
+    "extensions": [
+      "mjs"
+    ],
+    "prettier": true,
+    "envs": [
+      "shared-node-browser"
+    ],
+    "rules": {
+      "import/extensions": [
+        "error",
+        "always"
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "lib/**/*.{js,mjs}"
+        ],
+        "plugin": [
+          "es"
+        ],
+        "extends": [
+          "plugin:es/no-new-in-es2015",
+          "plugin:security/recommended"
+        ],
+        "rules": {
+          "complexity": "off",
+          "es/no-array-from": "off",
+          "es/no-object-assign": "off",
+          "es/no-modules": "off",
+          "import/no-mutable-exports": "off",
+          "import/no-anonymous-default-export": "off",
+          "guard-for-in": "off",
+          "max-depth": "off",
+          "no-multi-assign": "off",
+          "no-unmodified-loop-condition": "off",
+          "security/detect-object-injection": "off",
+          "unicorn/explicit-length-check": "off",
+          "unicorn/prefer-includes": "off",
+          "unicorn/prefer-number-properties": "off"
+        }
+      },
+      {
+        "files": [
+          "**/*.d.ts"
+        ],
+        "rules": {
+          "import/extensions": [
+            "error",
+            "never"
+          ]
+        }
+      },
+      {
+        "files": [
+          "test/**/*.{js,mjs}"
+        ],
+        "rules": {
+          "import/no-unassigned-import": "off"
+        }
+      }
+    ],
+    "ignores": [
+      "dist/",
+      "lib/**/*.js",
+      "micromark.test.ts"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm",
+      [
+        "lint-no-html",
+        false
+      ]
+    ]
+  }
+}

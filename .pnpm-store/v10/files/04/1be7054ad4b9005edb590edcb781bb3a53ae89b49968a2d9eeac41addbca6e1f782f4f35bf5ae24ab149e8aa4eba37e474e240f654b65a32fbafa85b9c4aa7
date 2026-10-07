@@ -1,0 +1,35 @@
+{
+  "name": "loaders.css",
+  "version": "0.1.2",
+  "description": "Loading animations in pure css",
+  "main": "loaders.css",
+  "style": "loaders.css",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ConnorAtherton/loaders.css.git"
+  },
+  "keywords": [
+    "css",
+    "loaders",
+    "animation",
+    "animate"
+  ],
+  "author": "Connor Atherton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ConnorAtherton/loaders.css/issues"
+  },
+  "homepage": "https://github.com/ConnorAtherton/loaders.css",
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-jade": "^0.10.0",
+    "gulp-plumber": "1.0.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-util": "^3.0.3",
+    "scss-lint": "0.0.0"
+  }
+}

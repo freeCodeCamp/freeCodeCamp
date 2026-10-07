@@ -1,0 +1,43 @@
+{
+  "name": "weak-lru-cache",
+  "author": "Kris Zyp",
+  "version": "1.2.2",
+  "description": "An LRU cache of weak references",
+  "license": "MIT",
+  "types": "./index.d.ts",
+  "keywords": [
+    "cache",
+    "weak",
+    "references",
+    "LRU",
+    "LRFU"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kriszyp/weak-lru-cache"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./index.js"
+    },
+    "./index.js": {
+      "require": "./dist/index.cjs",
+      "import": "./index.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "rollup -c",
+    "test": "./node_modules/.bin/mocha tests/test*.js -u tdd"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "chai": "^4",
+    "mocha": "^8",
+    "rollup": "^1.20.3"
+  }
+}

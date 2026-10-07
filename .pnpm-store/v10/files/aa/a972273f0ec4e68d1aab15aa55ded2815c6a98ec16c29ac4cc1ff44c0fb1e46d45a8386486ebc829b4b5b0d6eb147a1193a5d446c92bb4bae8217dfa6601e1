@@ -1,0 +1,44 @@
+{
+	"name": "is-docker",
+	"version": "3.0.0",
+	"description": "Check if the process is running inside a Docker container",
+	"license": "MIT",
+	"repository": "sindresorhus/is-docker",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"bin": "./cli.js",
+	"engines": {
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"cli.js"
+	],
+	"keywords": [
+		"detect",
+		"docker",
+		"dockerized",
+		"container",
+		"inside",
+		"is",
+		"env",
+		"environment",
+		"process"
+	],
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"sinon": "^11.1.2",
+		"tsd": "^0.17.0",
+		"xo": "^0.44.0"
+	}
+}

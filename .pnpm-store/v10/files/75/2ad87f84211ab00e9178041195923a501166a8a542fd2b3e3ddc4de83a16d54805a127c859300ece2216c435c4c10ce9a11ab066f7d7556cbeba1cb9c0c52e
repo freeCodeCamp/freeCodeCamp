@@ -1,0 +1,225 @@
+{
+  "name": "fastify",
+  "version": "5.8.5",
+  "description": "Fast and low overhead web framework, for Node.js",
+  "main": "fastify.js",
+  "type": "commonjs",
+  "types": "fastify.d.ts",
+  "scripts": {
+    "bench": "branchcmp -r 2 -g -s \"npm run benchmark\"",
+    "benchmark": "concurrently -k -s first \"node ./examples/benchmark/simple.js\" \"autocannon -c 100 -d 30 -p 10 localhost:3000/\"",
+    "benchmark:parser": "concurrently -k -s first \"node ./examples/benchmark/parser.js\" \"autocannon -c 100 -d 30 -p 10 -i ./examples/benchmark/body.json -H \"content-type:application/jsoff\" -m POST localhost:3000/\"",
+    "benchmark:parser:error": "concurrently -k -s first \"node ./examples/benchmark/parser.js\" \"autocannon -c 100 -d 30 -p 10 -i ./examples/benchmark/body.json -H \"content-type:application/jsoff\" -H \"content-length:123\" -m POST localhost:3000/\"",
+    "build:validation": "node build/build-error-serializer.js && node build/build-validation.js",
+    "build:sync-version": "node build/sync-version.js",
+    "coverage": "c8 --reporter html borp --reporter=@jsumners/line-reporter",
+    "coverage:ci-check-coverage": "borp --reporter=@jsumners/line-reporter --coverage --check-coverage --lines 100",
+    "lint": "npm run lint:eslint",
+    "lint:fix": "eslint --fix",
+    "lint:markdown": "markdownlint-cli2",
+    "lint:eslint": "eslint",
+    "prepublishOnly": "cross-env PREPUBLISH=true borp --reporter=@jsumners/line-reporter && npm run test:validator:integrity && npm run build:sync-version",
+    "test": "npm run lint && npm run unit && npm run test:typescript",
+    "test:ci": "npm run unit && npm run test:typescript",
+    "test:report": "npm run lint && npm run unit:report && npm run test:typescript",
+    "test:validator:integrity": "npm run build:validation && git diff --quiet --ignore-all-space --ignore-blank-lines --ignore-cr-at-eol lib/error-serializer.js && git diff --quiet --ignore-all-space --ignore-blank-lines --ignore-cr-at-eol lib/config-validator.js",
+    "test:typescript": "tsc test/types/import.ts --target es2022 --moduleResolution node16 --module node16 --noEmit && tsd",
+    "test:watch": "npm run unit -- --watch --coverage-report=none --reporter=terse",
+    "unit": "borp",
+    "unit:report": "c8 --reporter html borp --reporter=@jsumners/line-reporter",
+    "citgm": "borp --reporter=@jsumners/line-reporter --coverage --check-coverage --concurrency=1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify.git"
+  },
+  "keywords": [
+    "web",
+    "framework",
+    "json",
+    "schema",
+    "open",
+    "api"
+  ],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "contributors": [
+    {
+      "name": "Tomas Della Vedova",
+      "url": "http://delved.org",
+      "author": true
+    },
+    {
+      "name": "Tommaso Allevi",
+      "email": "tomallevi@gmail.com"
+    },
+    {
+      "name": "Ethan Arrowood",
+      "url": "https://github.com/Ethan-Arrowood",
+      "email": "ethan.arrowood@gmail.com"
+    },
+    {
+      "name": "Dustin Deus",
+      "url": "http://starptech.de",
+      "email": "deusdustin@gmail.com"
+    },
+    {
+      "name": "Ayoub El Khattabi",
+      "url": "https://github.com/AyoubElk",
+      "email": "elkhattabi.ayoub@gmail.com"
+    },
+    {
+      "name": "Rafael Gonzaga",
+      "email": "rafael.nunu@hotmail.com",
+      "url": "https://github.com/rafaelgss"
+    },
+    {
+      "name": "Trivikram Kamat",
+      "url": "http://trivikr.github.io",
+      "email": "trivikr.dev@gmail.com"
+    },
+    {
+      "name": "Luciano Mammino",
+      "url": "https://loige.co"
+    },
+    {
+      "name": "Cemre Mengu",
+      "email": "cemremengu@gmail.com"
+    },
+    {
+      "name": "Evan Shortiss",
+      "email": "evanshortiss@gmail.com"
+    },
+    {
+      "name": "Maksim Sinik",
+      "url": "https://maksim.dev"
+    },
+    {
+      "name": "Manuel Spigolon",
+      "email": "behemoth89@gmail.com"
+    },
+    {
+      "name": "James Sumners",
+      "url": "https://james.sumners.info"
+    },
+    {
+      "name": "Denis Fäcke",
+      "url": "https://github.com/SerayaEryn"
+    },
+    {
+      "name": "Igor Savin",
+      "email": "kibertoad@gmail.com",
+      "url": "https://github.com/kibertoad"
+    },
+    {
+      "name": "Vincent Le Goff",
+      "email": "vince.legoff@gmail.com",
+      "url": "https://github.com/zekth"
+    },
+    {
+      "name": "Luis Orbaiceta",
+      "email": "luisorbaiceta@gmail.com",
+      "url": "https://luisorbaiceta.com"
+    },
+    {
+      "name": "Carlos Fuentes",
+      "email": "me@metcoder.dev",
+      "url": "https://metcoder.dev"
+    },
+    {
+      "name": "Gürgün Dayıoğlu",
+      "email": "hey@gurgun.day",
+      "url": "https://heyhey.to/G"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    },
+    {
+      "name": "KaKa Ng",
+      "email": "kaka@kakang.dev",
+      "url": "https://github.com/climba03003"
+    },
+    {
+      "name": "Jean Michelet",
+      "email": "jean.antoine.michelet@gmail.com",
+      "url": "https://github.com/jean-michelet"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify/issues"
+  },
+  "homepage": "https://fastify.dev/",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "@jsumners/line-reporter": "^1.0.1",
+    "@sinonjs/fake-timers": "^11.2.2",
+    "@stylistic/eslint-plugin": "^5.1.0",
+    "@stylistic/eslint-plugin-js": "^4.1.0",
+    "@types/node": "^25.0.3",
+    "ajv": "^8.12.0",
+    "ajv-errors": "^3.0.0",
+    "ajv-formats": "^3.0.1",
+    "ajv-i18n": "^4.2.0",
+    "ajv-merge-patch": "^5.0.1",
+    "autocannon": "^8.0.0",
+    "borp": "^1.0.0",
+    "branch-comparer": "^1.1.0",
+    "concurrently": "^9.1.2",
+    "cross-env": "^10.0.0",
+    "eslint": "^9.0.0",
+    "fast-json-body": "^1.1.0",
+    "fastify-plugin": "^5.0.0",
+    "fluent-json-schema": "^6.0.0",
+    "h2url": "^0.2.0",
+    "http-errors": "^2.0.0",
+    "joi": "^18.0.1",
+    "json-schema-to-ts": "^3.0.1",
+    "JSONStream": "^1.3.5",
+    "markdownlint-cli2": "^0.22.0",
+    "neostandard": "^0.12.0",
+    "node-forge": "^1.3.1",
+    "proxyquire": "^2.1.3",
+    "split2": "^4.2.0",
+    "tsd": "^0.33.0",
+    "typebox": "^1.0.81",
+    "typescript": "~6.0.2",
+    "undici": "^7.11.0",
+    "vary": "^1.1.2",
+    "yup": "^1.4.0"
+  },
+  "dependencies": {
+    "@fastify/ajv-compiler": "^4.0.5",
+    "@fastify/error": "^4.0.0",
+    "@fastify/fast-json-stringify-compiler": "^5.0.0",
+    "@fastify/proxy-addr": "^5.0.0",
+    "abstract-logging": "^2.0.1",
+    "avvio": "^9.0.0",
+    "fast-json-stringify": "^6.0.0",
+    "find-my-way": "^9.0.0",
+    "light-my-request": "^6.0.0",
+    "pino": "^9.14.0 || ^10.1.0",
+    "process-warning": "^5.0.0",
+    "rfdc": "^1.3.1",
+    "secure-json-parse": "^4.0.0",
+    "semver": "^7.6.0",
+    "toad-cache": "^3.7.0"
+  },
+  "tsd": {
+    "directory": "test/types"
+  }
+}

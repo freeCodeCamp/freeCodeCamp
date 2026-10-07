@@ -1,0 +1,219 @@
+{
+  "name": "chromium-bidi",
+  "version": "16.0.1",
+  "description": "An implementation of the WebDriver BiDi protocol for Chromium implemented as a JavaScript layer translating between BiDi and CDP, running inside a Chrome tab.",
+  "engines": {
+    "node": ">=20.19.0 <22.0.0 || >=22.12.0"
+  },
+  "scripts": {
+    "build": "wireit",
+    "clean": "node tools/clean.mjs",
+    "e2e:headful": "HEADLESS=false npm run e2e --",
+    "e2e:headless": "npm run e2e:new-headless --",
+    "e2e:new-headless": "HEADLESS=new npm run e2e --",
+    "e2e:old-headless": "HEADLESS=old npm run e2e --",
+    "e2e": "wireit",
+    "flake8": "flake8 examples/ tests/",
+    "format": "npm run pre-commit --",
+    "format:eslint": "eslint --cache --fix .",
+    "format:prettier": "prettier --cache --write .",
+    "pre-commit": "pre-commit run --hook-stage manual --all-files",
+    "prepare": "wireit",
+    "rollup": "wireit",
+    "server": "wireit",
+    "test": "wireit",
+    "tsc": "wireit",
+    "unit": "wireit",
+    "wpt": "wireit",
+    "wpt:all": "wireit",
+    "yapf": "yapf -i --parallel --recursive --exclude=wpt examples/ tests/"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "rollup",
+        "tsc"
+      ]
+    },
+    "e2e": {
+      "command": "tools/run-e2e.mjs",
+      "files": [
+        "tools/run-e2e.mjs ",
+        "pytest.ini",
+        "tests/**/*.py"
+      ],
+      "dependencies": [
+        "build"
+      ]
+    },
+    "prepare": {
+      "dependencies": [
+        "build"
+      ]
+    },
+    "rollup": {
+      "command": "rollup -c",
+      "dependencies": [
+        "tsc"
+      ],
+      "files": [
+        "lib/bidiMapper/",
+        "rollup.config.mjs"
+      ],
+      "output": [
+        "lib/iife/mapperTab.js"
+      ]
+    },
+    "server": {
+      "command": "tools/run-bidi-server.mjs",
+      "files": [
+        "tools/run-bidi-server.mjs"
+      ],
+      "service": {
+        "readyWhen": {
+          "lineMatches": "(BiDi server|ChromeDriver) was started successfully"
+        }
+      },
+      "dependencies": [
+        "rollup"
+      ]
+    },
+    "test": {
+      "dependencies": [
+        "unit",
+        "e2e",
+        "wpt"
+      ]
+    },
+    "tsc": {
+      "command": "tsc --build src/tsconfig.json --pretty",
+      "clean": "if-file-deleted",
+      "files": [
+        "tsconfig.base.json",
+        "src/**/tsconfig*.json",
+        "src/**/*.ts"
+      ],
+      "output": [
+        "lib/**"
+      ]
+    },
+    "unit": {
+      "command": "mocha",
+      "dependencies": [
+        "tsc"
+      ]
+    },
+    "wpt": {
+      "command": "tools/run-wpt.mjs",
+      "files": [
+        "tools/run-wpt.mjs",
+        "wpt/tools/webdriver/**/*.py",
+        "wpt/webdriver/tests/**/*.py",
+        "wpt-metadata/**/*.ini"
+      ],
+      "dependencies": [
+        "rollup"
+      ]
+    },
+    "wpt:all": {
+      "command": "tools/run-wpt-all.mjs",
+      "files": [
+        "tools/run-wpt.mjs",
+        "tools/run-wpt-all.mjs",
+        "wpt/tools/webdriver/**/*.py",
+        "wpt/webdriver/tests/**/*.py",
+        "wpt-metadata/**/*.ini"
+      ],
+      "dependencies": [
+        "rollup"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "!lib/**/*.spec.*",
+    "!*.tsbuildinfo",
+    ".browser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoogleChromeLabs/chromium-bidi.git"
+  },
+  "author": "The Chromium Authors",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "devtools-protocol": "*"
+  },
+  "devDependencies": {
+    "@actions/core": "3.0.0",
+    "@eslint/js": "10.0.1",
+    "@puppeteer/browsers": "2.13.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/wasm-node": "4.59.0",
+    "@types/chai": "4.3.17",
+    "@types/chai-as-promised": "7.1.8",
+    "@types/debug": "4.1.12",
+    "@types/mocha": "10.0.10",
+    "@types/node": "20.19.35",
+    "@types/sinon": "21.0.0",
+    "@types/websocket": "1.0.10",
+    "@types/ws": "8.18.1",
+    "@types/yargs": "17.0.35",
+    "chai": "4.5.0",
+    "chai-as-promised": "7.1.2",
+    "debug": "4.4.3",
+    "devtools-protocol": "0.0.1624250",
+    "eslint": "10.0.2",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-import-resolver-typescript": "4.4.4",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-mocha": "11.2.0",
+    "eslint-plugin-prettier": "5.5.5",
+    "eslint-plugin-promise": "7.2.1",
+    "globals": "17.3.0",
+    "mocha": "11.7.5",
+    "package-directory": "8.2.0",
+    "prettier": "3.8.1",
+    "rimraf": "6.1.3",
+    "rollup": "4.59.0",
+    "rollup-plugin-cleanup": "3.2.1",
+    "rollup-plugin-license": "3.7.0",
+    "selenium-webdriver": "4.41.0",
+    "semver": "7.7.4",
+    "sinon": "21.0.1",
+    "source-map-support": "0.5.21",
+    "tslib": "2.8.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.56.1",
+    "webdriverio": "9.24.0",
+    "websocket": "1.0.35",
+    "wireit": "0.14.12",
+    "yargs": "18.0.0"
+  },
+  "overrides": {
+    "eslint-plugin-import": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-promise": {
+      "eslint": "$eslint"
+    },
+    "typescript-eslint": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/parser": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/utils": {
+      "eslint": "$eslint"
+    }
+  },
+  "dependencies": {
+    "mitt": "^3.0.1",
+    "zod": "^3.24.1"
+  }
+}

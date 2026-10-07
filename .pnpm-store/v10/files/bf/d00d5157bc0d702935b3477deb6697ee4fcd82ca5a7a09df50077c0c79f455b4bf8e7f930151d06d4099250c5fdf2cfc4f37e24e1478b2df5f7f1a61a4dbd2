@@ -1,0 +1,103 @@
+{
+  "name": "fdir",
+  "version": "6.5.0",
+  "description": "The fastest directory crawler & globbing alternative to glob, fast-glob, & tiny-glob. Crawls 1m files in < 1s",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
+  "type": "module",
+  "scripts": {
+    "prepublishOnly": "npm run test && npm run build",
+    "build": "tsdown",
+    "format": "prettier --write src __tests__ benchmarks",
+    "test": "vitest run __tests__/",
+    "test:coverage": "vitest run --coverage __tests__/",
+    "test:watch": "vitest __tests__/",
+    "bench": "ts-node benchmarks/benchmark.js",
+    "bench:glob": "ts-node benchmarks/glob-benchmark.ts",
+    "bench:fdir": "ts-node benchmarks/fdir-benchmark.ts",
+    "release": "./scripts/release.sh"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecodrr/fdir.git"
+  },
+  "keywords": [
+    "util",
+    "os",
+    "sys",
+    "fs",
+    "walk",
+    "crawler",
+    "directory",
+    "files",
+    "io",
+    "tiny-glob",
+    "glob",
+    "fast-glob",
+    "speed",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "thecodrr <thecodrr@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thecodrr/fdir/issues"
+  },
+  "homepage": "https://github.com/thecodrr/fdir#readme",
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mock-fs": "^4.13.4",
+    "@types/node": "^20.9.4",
+    "@types/picomatch": "^4.0.0",
+    "@types/tap": "^15.0.11",
+    "@vitest/coverage-v8": "^0.34.6",
+    "all-files-in-tree": "^1.1.2",
+    "benny": "^3.7.1",
+    "csv-to-markdown-table": "^1.3.1",
+    "expect": "^29.7.0",
+    "fast-glob": "^3.3.2",
+    "fdir1": "npm:fdir@1.2.0",
+    "fdir2": "npm:fdir@2.1.0",
+    "fdir3": "npm:fdir@3.4.2",
+    "fdir4": "npm:fdir@4.1.0",
+    "fdir5": "npm:fdir@5.0.0",
+    "fs-readdir-recursive": "^1.1.0",
+    "get-all-files": "^4.1.0",
+    "glob": "^10.3.10",
+    "klaw-sync": "^6.0.0",
+    "mock-fs": "^5.2.0",
+    "picomatch": "^4.0.2",
+    "prettier": "^3.5.3",
+    "recur-readdir": "0.0.1",
+    "recursive-files": "^1.0.2",
+    "recursive-fs": "^2.1.0",
+    "recursive-readdir": "^2.2.3",
+    "rrdir": "^12.1.0",
+    "systeminformation": "^5.21.17",
+    "tiny-glob": "^0.2.9",
+    "ts-node": "^10.9.1",
+    "tsdown": "^0.12.5",
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6",
+    "walk-sync": "^3.0.0"
+  },
+  "peerDependencies": {
+    "picomatch": "^3 || ^4"
+  },
+  "peerDependenciesMeta": {
+    "picomatch": {
+      "optional": true
+    }
+  },
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  }
+}

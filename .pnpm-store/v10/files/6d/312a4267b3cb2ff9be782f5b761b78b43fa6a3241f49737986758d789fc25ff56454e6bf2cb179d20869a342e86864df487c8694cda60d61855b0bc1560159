@@ -1,0 +1,432 @@
+[
+  {
+    "runtime": "node",
+    "target": "11.0.0",
+    "lts": false,
+    "future": false,
+    "abi": "67"
+  },
+  {
+    "runtime": "node",
+    "target": "12.0.0",
+    "lts": [
+      "2019-10-21",
+      "2020-11-30"
+    ],
+    "future": false,
+    "abi": "72"
+  },
+  {
+    "runtime": "node",
+    "target": "13.0.0",
+    "lts": false,
+    "future": false,
+    "abi": "79"
+  },
+  {
+    "runtime": "node",
+    "target": "14.0.0",
+    "lts": [
+      "2020-10-27",
+      "2021-10-19"
+    ],
+    "future": false,
+    "abi": "83"
+  },
+  {
+    "runtime": "node",
+    "target": "15.0.0",
+    "lts": false,
+    "future": false,
+    "abi": "88"
+  },
+  {
+    "runtime": "node",
+    "target": "16.0.0",
+    "lts": [
+      "2021-10-26",
+      "2022-10-18"
+    ],
+    "future": false,
+    "abi": "93"
+  },
+  {
+    "runtime": "node",
+    "target": "17.0.0",
+    "lts": false,
+    "future": false,
+    "abi": "102"
+  },
+  {
+    "runtime": "node",
+    "target": "18.0.0",
+    "lts": [
+      "2022-10-25",
+      "2023-10-18"
+    ],
+    "future": false,
+    "abi": "108"
+  },
+  {
+    "runtime": "node",
+    "target": "19.0.0",
+    "lts": false,
+    "future": false,
+    "abi": "111"
+  },
+  {
+    "runtime": "node",
+    "target": "20.0.0",
+    "lts": [
+      "2023-10-24",
+      "2024-10-22"
+    ],
+    "future": false,
+    "abi": "115"
+  },
+  {
+    "runtime": "node",
+    "target": "21.0.0",
+    "lts": false,
+    "future": false,
+    "abi": "120"
+  },
+  {
+    "runtime": "node",
+    "target": "22.0.0",
+    "lts": [
+      "2024-10-29",
+      "2025-10-21"
+    ],
+    "future": false,
+    "abi": "127"
+  },
+  {
+    "runtime": "node",
+    "target": "23.0.0",
+    "lts": false,
+    "future": false,
+    "abi": "131"
+  },
+  {
+    "runtime": "node",
+    "target": "24.0.0",
+    "lts": [
+      "2025-10-28",
+      "2026-10-20"
+    ],
+    "future": false,
+    "abi": "137"
+  },
+  {
+    "runtime": "node",
+    "target": "25.0.0",
+    "lts": false,
+    "future": false,
+    "abi": "141"
+  },
+  {
+    "runtime": "node",
+    "target": "26.0.0",
+    "lts": [
+      "2026-10-28",
+      "2027-10-20"
+    ],
+    "future": true,
+    "abi": "144"
+  },
+  {
+    "abi": "70",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "5.0.0-beta.9"
+  },
+  {
+    "abi": "73",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "6.0.0-beta.1"
+  },
+  {
+    "abi": "75",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "7.0.0-beta.1"
+  },
+  {
+    "abi": "76",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "9.0.0-beta.1"
+  },
+  {
+    "abi": "76",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "8.0.0-beta.1"
+  },
+  {
+    "abi": "80",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "9.0.0-beta.2"
+  },
+  {
+    "abi": "82",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "11.0.0-beta.1"
+  },
+  {
+    "abi": "82",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "10.0.0-beta.1"
+  },
+  {
+    "abi": "85",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "11.0.0-beta.11"
+  },
+  {
+    "abi": "87",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "12.0.0-beta.1"
+  },
+  {
+    "abi": "89",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "15.0.0-alpha.1"
+  },
+  {
+    "abi": "89",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "14.0.0-beta.1"
+  },
+  {
+    "abi": "89",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "13.0.0-beta.2"
+  },
+  {
+    "abi": "97",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "14.0.2"
+  },
+  {
+    "abi": "98",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "15.0.0-beta.7"
+  },
+  {
+    "abi": "99",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "16.0.0-alpha.1"
+  },
+  {
+    "abi": "101",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "17.0.0-alpha.1"
+  },
+  {
+    "abi": "103",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "18.0.0-alpha.1"
+  },
+  {
+    "abi": "106",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "19.0.0-alpha.1"
+  },
+  {
+    "abi": "107",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "20.0.0-alpha.1"
+  },
+  {
+    "abi": "109",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "21.0.0-alpha.1"
+  },
+  {
+    "abi": "110",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "22.0.0-alpha.1"
+  },
+  {
+    "abi": "113",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "23.0.0-alpha.1"
+  },
+  {
+    "abi": "114",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "24.0.0-alpha.1"
+  },
+  {
+    "abi": "116",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "26.0.0-alpha.1"
+  },
+  {
+    "abi": "116",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "25.0.0-alpha.1"
+  },
+  {
+    "abi": "118",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "27.0.0-alpha.1"
+  },
+  {
+    "abi": "119",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "28.0.0-alpha.1"
+  },
+  {
+    "abi": "121",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "29.0.0-alpha.1"
+  },
+  {
+    "abi": "123",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "31.0.0-alpha.1"
+  },
+  {
+    "abi": "123",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "30.0.0-alpha.1"
+  },
+  {
+    "abi": "125",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "31.0.0-beta.7"
+  },
+  {
+    "abi": "128",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "32.0.0-alpha.1"
+  },
+  {
+    "abi": "130",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "33.0.0-alpha.1"
+  },
+  {
+    "abi": "132",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "34.0.0-alpha.1"
+  },
+  {
+    "abi": "133",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "35.0.0-alpha.1"
+  },
+  {
+    "abi": "135",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "36.0.0-alpha.1"
+  },
+  {
+    "abi": "136",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "37.0.0-alpha.1"
+  },
+  {
+    "abi": "139",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "38.0.0-alpha.1"
+  },
+  {
+    "abi": "140",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "39.0.0-alpha.1"
+  },
+  {
+    "abi": "143",
+    "future": false,
+    "lts": false,
+    "runtime": "electron",
+    "target": "40.0.0-alpha.2"
+  },
+  {
+    "abi": "145",
+    "future": true,
+    "lts": false,
+    "runtime": "electron",
+    "target": "41.0.0-alpha.1"
+  }
+]

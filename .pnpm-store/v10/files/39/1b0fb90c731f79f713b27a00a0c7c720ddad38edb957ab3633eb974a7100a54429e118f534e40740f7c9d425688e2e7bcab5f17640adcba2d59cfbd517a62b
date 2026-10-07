@@ -1,0 +1,686 @@
+# Minimal
+
+0
+
+==>
+
+Script(ExpressionStatement(Number))
+
+# Strings
+
+"A string with \"double\" and 'single' quotes";
+'A string with "double" and \'single\' quotes';
+'\\';
+"\\";
+
+'A string with new \
+line';
+
+==>
+
+Script(ExpressionStatement(String(Escape,Escape)),
+       ExpressionStatement(String(Escape,Escape)),
+       ExpressionStatement(String(Escape)),
+       ExpressionStatement(String(Escape)),
+       ExpressionStatement(String(Escape)))
+
+# Numbers
+
+101;
+3.14;
+3.14e+1;
+0x1ABCDEFabcdef;
+0o7632157312;
+0b1010101001;
+1e+3;
+
+==>
+
+Script(
+  ExpressionStatement(Number),
+  ExpressionStatement(Number),
+  ExpressionStatement(Number),
+  ExpressionStatement(Number),
+  ExpressionStatement(Number),
+  ExpressionStatement(Number),
+  ExpressionStatement(Number))
+
+# Identifiers
+
+theVar;
+theVar2;
+$_;
+é象𫝄;
+últimaVez;
+県;
+
+==>
+
+Script(
+  ExpressionStatement(VariableName),
+  ExpressionStatement(VariableName),
+  ExpressionStatement(VariableName),
+  ExpressionStatement(VariableName),
+  ExpressionStatement(VariableName),
+  ExpressionStatement(VariableName))
+
+# RegExps
+
+/one\\/;
+/one/g;
+/one/i;
+/one/gim;
+/on\/e/gim;
+/on[^/]afe/gim;
+/[\]/]/;
+
+==>
+
+Script(
+  ExpressionStatement(RegExp),
+  ExpressionStatement(RegExp),
+  ExpressionStatement(RegExp),
+  ExpressionStatement(RegExp),
+  ExpressionStatement(RegExp),
+  ExpressionStatement(RegExp),
+  ExpressionStatement(RegExp))
+
+# Arrays
+
+[];
+[ "item1" ];
+[ "item1", ];
+[ "item1", item2 ];
+[ , item2 ];
+[ item2 = 5 ];
+[ a, ...b, c ];
+
+==>
+
+Script(
+  ExpressionStatement(ArrayExpression),
+  ExpressionStatement(ArrayExpression(String)),
+  ExpressionStatement(ArrayExpression(String)),
+  ExpressionStatement(ArrayExpression(String,VariableName)),
+  ExpressionStatement(ArrayExpression(VariableName)),
+  ExpressionStatement(ArrayExpression(AssignmentExpression(VariableName,Equals,Number))),
+  ExpressionStatement(ArrayExpression(VariableName, Spread, VariableName, VariableName)))
+
+# Functions
+
+[
+  function() {},
+  function(arg1, ...arg2) {
+    arg2;
+  },
+  function stuff() {},
+  function trailing(a,) {},
+  function trailing(a,b,) {}
+]
+
+==>
+
+Script(ExpressionStatement(ArrayExpression(
+  FunctionExpression(function,ParamList,Block),
+  FunctionExpression(function,ParamList(VariableDefinition,Spread,VariableDefinition), Block(ExpressionStatement(VariableName))),
+  FunctionExpression(function,VariableDefinition,ParamList,Block),
+  FunctionExpression(function,VariableDefinition,ParamList(VariableDefinition), Block),
+  FunctionExpression(function,VariableDefinition,ParamList(VariableDefinition,VariableDefinition),Block))))
+
+# Arrow functions
+
+a => 1;
+() => 2;
+(d, e) => 3;
+(f, g,) => {
+  return h;
+};
+async () => 4;
+
+==>
+
+Script(
+  ExpressionStatement(ArrowFunction(ParamList(VariableDefinition),Arrow,Number)),
+  ExpressionStatement(ArrowFunction(ParamList,Arrow,Number)),
+  ExpressionStatement(ArrowFunction(ParamList(VariableDefinition,VariableDefinition),Arrow,Number)),
+  ExpressionStatement(ArrowFunction(ParamList(VariableDefinition,VariableDefinition),Arrow,Block(ReturnStatement(return,VariableName)))),
+  ExpressionStatement(ArrowFunction(async,ParamList,Arrow,Number)))
+
+# Arrow function followed by comma
+
+({
+  a: () => 1,
+  b: "x"
+})
+
+==>
+
+Script(ExpressionStatement(ParenthesizedExpression(ObjectExpression(
+  Property(PropertyDefinition,ArrowFunction(ParamList,Arrow,Number)),
+  Property(PropertyDefinition,String)))))
+
+# Long potential arrow function
+
+(assign = [to, from], from = assign[0], to = assign[1]);
+
+==>
+
+Script(ExpressionStatement(ParenthesizedExpression(SequenceExpression(
+  AssignmentExpression(VariableName,Equals,ArrayExpression(VariableName,VariableName)),
+  AssignmentExpression(VariableName,Equals,MemberExpression(VariableName,Number)),
+  AssignmentExpression(VariableName,Equals,MemberExpression(VariableName,Number))))))
+
+# Ternary operator
+
+condition ? case1 : case2;
+
+x.y = some.condition ? 2**x : 1 - 2;
+
+==>
+
+Script(
+  ExpressionStatement(ConditionalExpression(VariableName,LogicOp,VariableName,LogicOp,VariableName)),
+  ExpressionStatement(AssignmentExpression(
+    MemberExpression(VariableName,PropertyName),Equals,
+    ConditionalExpression(
+      MemberExpression(VariableName,PropertyName),LogicOp,
+      BinaryExpression(Number,ArithOp,VariableName),LogicOp,
+      BinaryExpression(Number,ArithOp,Number)))))
+
+# Type operators
+
+typeof x;
+x instanceof String;
+
+==>
+
+Script(ExpressionStatement(UnaryExpression(typeof,VariableName)),
+       ExpressionStatement(BinaryExpression(VariableName,instanceof,VariableName)))
+
+# Delete
+
+delete thing['prop'];
+true ? delete thing.prop : null;
+
+==>
+
+Script(
+  ExpressionStatement(UnaryExpression(delete,MemberExpression(VariableName,String))),
+  ExpressionStatement(ConditionalExpression(BooleanLiteral,LogicOp,
+    UnaryExpression(delete,MemberExpression(VariableName,PropertyName)),LogicOp,null)))
+
+# Void
+
+a = void b();
+
+==>
+
+Script(ExpressionStatement(AssignmentExpression(VariableName,Equals,UnaryExpression(void,CallExpression(VariableName,ArgList)))))
+
+# Augmented assignment
+
+s |= 1;
+t %= 2;
+w ^= 3;
+x += 4;
+y.z *= 5;
+z += 1;
+a >>= 1;
+b >>>= 1;
+c <<= 1;
+
+==>
+
+Script(
+  ExpressionStatement(AssignmentExpression(VariableName,UpdateOp,Number)),
+  ExpressionStatement(AssignmentExpression(VariableName,UpdateOp,Number)),
+  ExpressionStatement(AssignmentExpression(VariableName,UpdateOp,Number)),
+  ExpressionStatement(AssignmentExpression(VariableName,UpdateOp,Number)),
+  ExpressionStatement(AssignmentExpression(MemberExpression(VariableName,PropertyName),UpdateOp,Number)),
+  ExpressionStatement(AssignmentExpression(VariableName,UpdateOp,Number)),
+  ExpressionStatement(AssignmentExpression(VariableName,UpdateOp,Number)),
+  ExpressionStatement(AssignmentExpression(VariableName,UpdateOp,Number)),
+  ExpressionStatement(AssignmentExpression(VariableName,UpdateOp,Number)))
+
+# Operator precedence
+
+a <= b && c >= d;
+a.b = c ? d : e;
+a && b(c) && d;
+a && new b(c) && d;
+typeof a == b && c instanceof d;
+
+==>
+
+Script(
+  ExpressionStatement(BinaryExpression(BinaryExpression(VariableName,CompareOp,VariableName),LogicOp,
+    BinaryExpression(VariableName,CompareOp,VariableName))),
+  ExpressionStatement(AssignmentExpression(MemberExpression(VariableName,PropertyName),Equals,
+    ConditionalExpression(VariableName,LogicOp,VariableName,LogicOp,VariableName))),
+  ExpressionStatement(BinaryExpression(BinaryExpression(VariableName,LogicOp,CallExpression(VariableName,ArgList(VariableName))),LogicOp,
+    VariableName)),
+  ExpressionStatement(BinaryExpression(BinaryExpression(VariableName,LogicOp,NewExpression(new,VariableName,ArgList(VariableName))),LogicOp,
+    VariableName)),
+  ExpressionStatement(BinaryExpression(BinaryExpression(UnaryExpression(typeof,VariableName),CompareOp,VariableName),LogicOp,
+    BinaryExpression(VariableName,instanceof,VariableName))))
+
+# Rest args
+
+foo(...rest);
+
+==>
+
+Script(ExpressionStatement(CallExpression(VariableName,ArgList(Spread,VariableName))))
+
+# Forward slashes after parenthesized expressions
+
+(foo - bar) / baz;
+if (foo - bar) /baz/;
+(this.a() / this.b() - 1) / 2;
+
+==>
+
+Script(
+  ExpressionStatement(BinaryExpression(ParenthesizedExpression(BinaryExpression(VariableName,ArithOp,VariableName)),ArithOp,VariableName)),
+  IfStatement(if,ParenthesizedExpression(BinaryExpression(VariableName,ArithOp,VariableName)),
+    ExpressionStatement(RegExp)),
+  ExpressionStatement(BinaryExpression(ParenthesizedExpression(
+    BinaryExpression(
+      BinaryExpression(
+        CallExpression(MemberExpression(this,PropertyName),ArgList),ArithOp,
+        CallExpression(MemberExpression(this,PropertyName),ArgList)),ArithOp,Number)),ArithOp,Number)))
+
+# Yield expressions
+
+yield db.users.where('[endpoint+email]');
+yield* a;
+yield [22];
+
+==>
+
+Script(
+  ExpressionStatement(YieldExpression(yield,
+    CallExpression(MemberExpression(MemberExpression(VariableName,PropertyName),PropertyName),ArgList(String)))),
+  ExpressionStatement(YieldExpression(yield,Star,VariableName)),
+  ExpressionStatement(YieldExpression(yield,ArrayExpression(Number))))
+
+# Template strings
+
+`one line`;
+`multi
+  line`;
+
+`multi
+  ${2 + 2}
+  hello
+  ${1, 2}
+  line`;
+
+`$$$$`;
+`$`;
+`$$$$${ async }`;
+
+`\\\``;
+
+`one${`two${`three`}`}`;
+
+f`hi${there}`;
+
+==>
+
+Script(
+  ExpressionStatement(TemplateString),
+  ExpressionStatement(TemplateString),
+  ExpressionStatement(TemplateString(
+    Interpolation(InterpolationStart,BinaryExpression(Number,ArithOp,Number),InterpolationEnd),
+    Interpolation(InterpolationStart,SequenceExpression(Number,Number),InterpolationEnd))),
+  ExpressionStatement(TemplateString),
+  ExpressionStatement(TemplateString),
+  ExpressionStatement(TemplateString(Interpolation(InterpolationStart,VariableName,InterpolationEnd))),
+  ExpressionStatement(TemplateString(Escape,Escape)),
+  ExpressionStatement(TemplateString(Interpolation(InterpolationStart,TemplateString(
+    Interpolation(InterpolationStart,TemplateString,InterpolationEnd)),InterpolationEnd))),
+  ExpressionStatement(TaggedTemplateExpression(VariableName,TemplateString(
+    Interpolation(InterpolationStart,VariableName,InterpolationEnd)))))
+
+# Atoms
+
+this;
+null;
+undefined;
+true;
+false;
+
+==>
+
+Script(
+  ExpressionStatement(this),
+  ExpressionStatement(null),
+  ExpressionStatement(VariableName),
+  ExpressionStatement(BooleanLiteral),
+  ExpressionStatement(BooleanLiteral))
+
+# Objects
+
+foo({},
+    { a: "b" },
+    { c: "d", "e": f, 1: 2 },
+    {
+      g,
+      [methodName]() {}
+    },
+    {b, get},
+    {a,});
+
+==>
+
+Script(ExpressionStatement(CallExpression(VariableName,ArgList(
+  ObjectExpression,
+  ObjectExpression(Property(PropertyDefinition,String)),
+  ObjectExpression(Property(PropertyDefinition,String),Property(String,VariableName),Property(Number,Number)),
+  ObjectExpression(Property(PropertyDefinition),Property(VariableName,ParamList,Block)),
+  ObjectExpression(Property(PropertyDefinition),Property(PropertyDefinition)),
+  ObjectExpression(Property(PropertyDefinition))))))
+
+# Method definitions
+
+({
+  foo: true,
+
+  add(a, b) {
+    return a + b;
+  },
+
+  get bar() { return c; },
+
+  set bar(a) { c = a; },
+
+  *barGenerator() { yield c; },
+
+  get() { return 1; }
+});
+
+==>
+
+Script(ExpressionStatement(ParenthesizedExpression(ObjectExpression(
+  Property(PropertyDefinition,BooleanLiteral),
+  Property(PropertyDefinition,ParamList(VariableDefinition,VariableDefinition),
+    Block(ReturnStatement(return,BinaryExpression(VariableName,ArithOp,VariableName)))),
+  Property(get,PropertyDefinition,ParamList,Block(ReturnStatement(return,VariableName))),
+  Property(set,PropertyDefinition,ParamList(VariableDefinition),
+    Block(ExpressionStatement(AssignmentExpression(VariableName,Equals,VariableName)))),
+  Property(Star,PropertyDefinition,ParamList,Block(ExpressionStatement(YieldExpression(yield,VariableName)))),
+  Property(PropertyDefinition,ParamList,Block(ReturnStatement(return,Number)))))))
+
+# Keyword property names
+
+({
+  finally() {},
+  catch() {},
+  get: function () {},
+  set() {},
+  static: true,
+  async: true,
+});
+
+==>
+
+Script(ExpressionStatement(ParenthesizedExpression(ObjectExpression(
+  Property(PropertyDefinition,ParamList,Block),
+  Property(PropertyDefinition,ParamList,Block),
+  Property(PropertyDefinition,FunctionExpression(function,ParamList,Block)),
+  Property(PropertyDefinition,ParamList,Block),
+  Property(PropertyDefinition,BooleanLiteral),
+  Property(PropertyDefinition,BooleanLiteral)))))
+
+# Generator functions
+
+[
+  function *() {},
+  function *generateStuff(arg1, arg2) {
+    yield;
+    yield arg2;
+  }
+];
+
+==>
+
+Script(ExpressionStatement(ArrayExpression(
+  FunctionExpression(function,Star,ParamList,Block),
+  FunctionExpression(function,Star,VariableDefinition,ParamList(VariableDefinition,VariableDefinition),Block(
+    ExpressionStatement(VariableName),
+    ExpressionStatement(YieldExpression(yield,VariableName)))))))
+
+# Member expressions
+
+x.someProperty;
+x?.other;
+x[someVariable];
+f()["some-string"];
+return returned.promise().done(a).fail(b);
+
+==>
+
+Script(
+  ExpressionStatement(MemberExpression(VariableName,PropertyName)),
+  ExpressionStatement(MemberExpression(VariableName,PropertyName)),
+  ExpressionStatement(MemberExpression(VariableName,VariableName)),
+  ExpressionStatement(MemberExpression(CallExpression(VariableName,ArgList),String)),
+  ReturnStatement(return,CallExpression(MemberExpression(CallExpression(MemberExpression(CallExpression(
+    MemberExpression(VariableName,PropertyName),ArgList),PropertyName),ArgList(VariableName)),PropertyName),ArgList(VariableName))))
+
+# Callback chain
+
+return this.map(function (a) {
+  return a.b;
+})
+
+// a comment
+
+.filter(function (c) {
+  return 2;
+});
+
+==>
+
+Script(ReturnStatement(return,CallExpression(MemberExpression(CallExpression(MemberExpression(this,PropertyName),
+  ArgList(FunctionExpression(function,ParamList(VariableDefinition),Block(ReturnStatement(return,MemberExpression(VariableName,PropertyName)))))),
+  LineComment,PropertyName),ArgList(FunctionExpression(function,ParamList(VariableDefinition),Block(ReturnStatement(return,Number)))))))
+
+# Function calls
+
+x.someMethod(arg1, "arg2");
+(function(x, y) {
+
+}(a, b));
+f(new foo.bar(1), 2);
+
+==>
+
+Script(
+  ExpressionStatement(CallExpression(MemberExpression(VariableName,PropertyName),ArgList(VariableName,String))),
+  ExpressionStatement(ParenthesizedExpression(CallExpression(FunctionExpression(function,ParamList(VariableDefinition,VariableDefinition),Block),
+    ArgList(VariableName,VariableName)))),
+  ExpressionStatement(CallExpression(VariableName,ArgList(NewExpression(new,MemberExpression(VariableName,PropertyName),ArgList(Number)),Number))))
+
+# Constructor calls
+
+new foo(1);
+new module.Klass(1, "two");
+new Thing;
+
+==>
+
+Script(
+  ExpressionStatement(NewExpression(new,VariableName,ArgList(Number))),
+  ExpressionStatement(NewExpression(new,MemberExpression(VariableName,PropertyName),ArgList(Number,String))),
+  ExpressionStatement(NewExpression(new,VariableName)))
+
+# Await Expressions
+
+await asyncFunction();
+await asyncPromise;
+
+==>
+
+Script(
+  ExpressionStatement(AwaitExpression(await,CallExpression(VariableName,ArgList))),
+  ExpressionStatement(AwaitExpression(await,VariableName)))
+
+# Numeric operators
+
+i++;
+i--;
+i + j * 3 - j % 5;
+2 ** i * 3;
+2 * i ** 3;
++x;
+-x;
+
+==>
+
+Script(
+  ExpressionStatement(PostfixExpression(VariableName,ArithOp)),
+  ExpressionStatement(PostfixExpression(VariableName,ArithOp)),
+  ExpressionStatement(BinaryExpression(BinaryExpression(VariableName,ArithOp,BinaryExpression(VariableName,ArithOp,Number)),ArithOp,BinaryExpression(VariableName,ArithOp,Number))),
+  ExpressionStatement(BinaryExpression(BinaryExpression(Number,ArithOp,VariableName),ArithOp,Number)),
+  ExpressionStatement(BinaryExpression(Number,ArithOp,BinaryExpression(VariableName,ArithOp,Number))),
+  ExpressionStatement(UnaryExpression(ArithOp,VariableName)),
+  ExpressionStatement(UnaryExpression(ArithOp,VariableName)))
+
+# Boolean operators
+
+i || j;
+i && j;
+i ?? j;
+!a && !b || !c && !d;
+
+==>
+
+Script(
+  ExpressionStatement(BinaryExpression(VariableName,LogicOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,LogicOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,LogicOp,VariableName)),
+  ExpressionStatement(BinaryExpression(BinaryExpression(UnaryExpression(LogicOp,VariableName),LogicOp,
+    UnaryExpression(LogicOp,VariableName)),LogicOp,BinaryExpression(UnaryExpression(LogicOp,VariableName),LogicOp,
+      UnaryExpression(LogicOp,VariableName)))))
+
+# Bitwise operators
+
+i >> j;
+i >>> j;
+i << j;
+i & j;
+i | j;
+~i ^ ~j;
+
+==>
+
+Script(
+  ExpressionStatement(BinaryExpression(VariableName,BitOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,BitOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,BitOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,BitOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,BitOp,VariableName)),
+  ExpressionStatement(BinaryExpression(UnaryExpression(BitOp,VariableName),BitOp,UnaryExpression(BitOp,VariableName))))
+
+# Relational operators
+
+x < y;
+x <= y;
+x == y;
+x === y;
+x != y;
+x !== y;
+x > y;
+x >= y;
+
+==>
+
+Script(
+  ExpressionStatement(BinaryExpression(VariableName,CompareOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,CompareOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,CompareOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,CompareOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,CompareOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,CompareOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,CompareOp,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,CompareOp,VariableName)))
+
+# Word operators
+
+x in y;
+x instanceof y;
+!x instanceof y;
+
+==>
+
+Script(
+  ExpressionStatement(BinaryExpression(VariableName,in,VariableName)),
+  ExpressionStatement(BinaryExpression(VariableName,instanceof,VariableName)),
+  ExpressionStatement(BinaryExpression(UnaryExpression(LogicOp,VariableName),instanceof,VariableName)))
+
+# Assignments
+
+x = 0;
+x.y = 0;
+x["y"] = 0;
+async = 0;
+[a, b = 2] = foo;
+({a, b, ...d} = c);
+
+==>
+
+Script(
+  ExpressionStatement(AssignmentExpression(VariableName,Equals,Number)),
+  ExpressionStatement(AssignmentExpression(MemberExpression(VariableName,PropertyName),Equals,Number)),
+  ExpressionStatement(AssignmentExpression(MemberExpression(VariableName,String),Equals,Number)),
+  ExpressionStatement(AssignmentExpression(VariableName,Equals,Number)),
+  ExpressionStatement(AssignmentExpression(ArrayPattern(VariableDefinition,VariableDefinition,Equals,Number),Equals,VariableName)),
+  ExpressionStatement(ParenthesizedExpression(AssignmentExpression(ObjectPattern(
+    PatternProperty(PropertyName),PatternProperty(PropertyName),PatternProperty(Spread,VariableDefinition)),Equals,VariableName))))
+
+# Comma operator
+
+a = 1, b = 2;
+c = {d: (3, 4 + 5)};
+
+==>
+
+Script(
+  ExpressionStatement(SequenceExpression(AssignmentExpression(VariableName,Equals,Number),AssignmentExpression(VariableName,Equals,Number))),
+  ExpressionStatement(AssignmentExpression(VariableName,Equals,ObjectExpression(
+    Property(PropertyDefinition,ParenthesizedExpression(SequenceExpression(Number,BinaryExpression(Number,ArithOp,Number))))))))
+
+# Punctuation
+
+(foo(1, 2), bar);
+
+==>
+
+Script(ExpressionStatement(ParenthesizedExpression(
+  "(",SequenceExpression(CallExpression(VariableName,ArgList("(",Number,Number,")")),",",VariableName),")")))
+
+# Doesn't choke on unfinished ternary operator
+
+1?1
+
+==>
+
+Script(ExpressionStatement(ConditionalExpression(Number,LogicOp,Number,⚠)))
+
+# Can handle unterminated template literals
+
+`f
+
+==>
+
+Script(ExpressionStatement(TemplateString(⚠)))
+
+# Ternary with leading-dot number
+
+a?.2:.3
+
+==>
+
+Script(ExpressionStatement(ConditionalExpression(VariableName,LogicOp,Number,LogicOp,Number)))

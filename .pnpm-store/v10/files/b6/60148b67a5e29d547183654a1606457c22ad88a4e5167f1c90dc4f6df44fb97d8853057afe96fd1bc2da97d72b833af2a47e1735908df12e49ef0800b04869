@@ -1,0 +1,8 @@
+{
+  "assetsByChunkName": {
+    "main": [
+      "bundle.js",
+      "bundle.js.map"
+    ]
+  }
+}

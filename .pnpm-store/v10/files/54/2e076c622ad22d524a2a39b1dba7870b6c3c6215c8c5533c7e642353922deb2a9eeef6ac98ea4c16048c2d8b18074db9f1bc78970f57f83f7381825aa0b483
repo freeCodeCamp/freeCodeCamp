@@ -1,0 +1,1 @@
+{"version":3,"file":"version.js","sources":["../../../src/utils/version.ts"],"sourcesContent":["// This is a magic string replaced by rollup\ndeclare const __SENTRY_SDK_VERSION__: string;\n\nexport const SDK_VERSION = typeof __SENTRY_SDK_VERSION__ === 'string' ? __SENTRY_SDK_VERSION__ : '0.0.0-unknown.0';\n"],"names":[],"mappings":";;AAGO,MAAM,WAAA,GAA2D,SAAA;;;;"}

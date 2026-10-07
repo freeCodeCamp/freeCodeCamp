@@ -1,0 +1,150 @@
+# Universal selectors
+
+* {}
+div * {}
+
+==>
+
+StyleSheet(
+  RuleSet(UniversalSelector,Block),
+  RuleSet(DescendantSelector(TagSelector(TagName),UniversalSelector),Block))
+
+# Type selectors
+
+div, span {}
+h1, h2, h3, h4 {}
+
+==>
+
+StyleSheet(
+  RuleSet(TagSelector(TagName),TagSelector(TagName),Block),
+  RuleSet(TagSelector(TagName),TagSelector(TagName),TagSelector(TagName),TagSelector(TagName),Block))
+
+# Class selectors
+
+.class-a {}
+div.class-b, .class-c.class-d {}
+
+==>
+
+StyleSheet(
+  RuleSet(ClassSelector(ClassName),Block),
+  RuleSet(ClassSelector(TagSelector(TagName),ClassName),ClassSelector(ClassSelector(ClassName),ClassName),Block))
+
+# Id selectors
+
+#some-id, a#another-id {}
+
+==>
+
+StyleSheet(RuleSet(IdSelector(IdName),IdSelector(TagSelector(TagName),IdName),Block))
+
+# Attribute selectors
+
+[a] {}
+[b=c] {}
+[d~=e] {}
+a[b] {}
+
+==>
+
+StyleSheet(
+  RuleSet(AttributeSelector(AttributeName),Block),
+  RuleSet(AttributeSelector(AttributeName,MatchOp,ValueName),Block),
+  RuleSet(AttributeSelector(AttributeName,MatchOp,ValueName),Block),
+  RuleSet(AttributeSelector(TagSelector(TagName),AttributeName),Block))
+
+# Pseudo-class selectors
+
+a:hover {}
+:nth-child(2) {}
+
+==>
+
+StyleSheet(
+  RuleSet(PseudoClassSelector(TagSelector(TagName),":",PseudoClassName),Block),
+  RuleSet(PseudoClassSelector(":",PseudoClassName,ArgList(NumberLiteral)),Block))
+
+# Pseudo-element selectors
+
+a::first-line {}
+
+==>
+
+StyleSheet(RuleSet(PseudoClassSelector(TagSelector(TagName),"::",PseudoClassName),Block))
+
+# Child selectors
+
+a > b {}
+c > d > e {}
+
+==>
+
+StyleSheet(
+  RuleSet(ChildSelector(TagSelector(TagName),ChildOp,TagSelector(TagName)),Block),
+  RuleSet(ChildSelector(ChildSelector(TagSelector(TagName),ChildOp,TagSelector(TagName)),ChildOp,TagSelector(TagName)),Block))
+
+# Descendant selectors
+
+a b {}
+c d e {}
+
+==>
+
+StyleSheet(
+  RuleSet(DescendantSelector(TagSelector(TagName),TagSelector(TagName)),Block),
+  RuleSet(DescendantSelector(DescendantSelector(TagSelector(TagName),TagSelector(TagName)),TagSelector(TagName)),Block))
+
+# Nesting selectors
+
+a {
+  &.b {}
+  & c {}
+  c & {}
+  & > d {}
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  RuleSet(ClassSelector(NestingSelector,ClassName),Block),
+  RuleSet(DescendantSelector(NestingSelector,TagSelector(TagName)),Block),
+  RuleSet(DescendantSelector(TagSelector(TagName), NestingSelector),Block),
+  RuleSet(ChildSelector(NestingSelector,ChildOp,TagSelector(TagName)),Block))))
+
+# Relative selectors
+
+a {
+  p {}
+  > f {}
+  + g {}
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  RuleSet(TagSelector(TagName),Block),
+  RuleSet(ChildSelector(ChildOp,TagSelector(TagName)),Block),
+  RuleSet(SiblingSelector(SiblingOp,TagSelector(TagName)),Block))))
+
+# Sibling selectors
+
+a.b ~ c.d {}
+.e.f + .g.h {}
+
+==>
+
+StyleSheet(
+  RuleSet(SiblingSelector(ClassSelector(TagSelector(TagName),ClassName),SiblingOp,ClassSelector(TagSelector(TagName),ClassName)),Block),
+  RuleSet(SiblingSelector(ClassSelector(ClassSelector(ClassName),ClassName),SiblingOp,ClassSelector(ClassSelector(ClassName),ClassName)),Block))
+
+# The :not selector
+
+a:not(:hover) {}
+.b:not(c > .d) {}
+
+==>
+
+StyleSheet(
+  RuleSet(PseudoClassSelector(TagSelector(TagName),":",PseudoClassName,ArgList(PseudoClassSelector(":",PseudoClassName))),Block),
+  RuleSet(PseudoClassSelector(ClassSelector(ClassName),":",PseudoClassName,ArgList(ChildSelector(TagSelector(TagName),ChildOp,ClassSelector(ClassName)))),Block))

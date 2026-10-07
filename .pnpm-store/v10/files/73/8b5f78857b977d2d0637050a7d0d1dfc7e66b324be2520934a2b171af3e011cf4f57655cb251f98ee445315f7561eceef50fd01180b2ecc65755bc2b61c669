@@ -1,0 +1,22 @@
+{
+  "name": "node-releases",
+  "version": "2.0.37",
+  "description": "Node.js releases data",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chicoxyzzy/node-releases.git"
+  },
+  "keywords": [
+    "nodejs",
+    "releases"
+  ],
+  "author": "Sergey Rubanov <chi187@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "semver": "^7.3.5"
+  }
+}

@@ -1,0 +1,58 @@
+{
+    "name": "@types/debug",
+    "version": "4.1.13",
+    "description": "TypeScript definitions for debug",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/debug",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Seon-Wook Park",
+            "githubUsername": "swook",
+            "url": "https://github.com/swook"
+        },
+        {
+            "name": "Gal Talmor",
+            "githubUsername": "galtalmor",
+            "url": "https://github.com/galtalmor"
+        },
+        {
+            "name": "John McLaughlin",
+            "githubUsername": "zamb3zi",
+            "url": "https://github.com/zamb3zi"
+        },
+        {
+            "name": "Brasten Sager",
+            "githubUsername": "brasten",
+            "url": "https://github.com/brasten"
+        },
+        {
+            "name": "Nicolas Penin",
+            "githubUsername": "npenin",
+            "url": "https://github.com/npenin"
+        },
+        {
+            "name": "Kristian Brünn",
+            "githubUsername": "kristianmitk",
+            "url": "https://github.com/kristianmitk"
+        },
+        {
+            "name": "Caleb Gregory",
+            "githubUsername": "calebgregory",
+            "url": "https://github.com/calebgregory"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/debug"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/ms": "*"
+    },
+    "peerDependencies": {},
+    "typesPublisherContentHash": "1c506e100366b85350ff1c28c9cf4cc09e9a07275546bb050993c241c9821cd9",
+    "typeScriptVersion": "5.2"
+}

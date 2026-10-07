@@ -1,0 +1,20 @@
+{
+  "root": true,
+
+  "extends": "airbnb-base",
+
+  "parser": "@babel/eslint-parser",
+
+  "rules": {
+    "no-use-before-define": ["error", { "functions": false }],
+  },
+
+  "overrides": [
+    {
+      "files": "src/index.js",
+      "rules": {
+        "import/no-import-module-exports": 0,
+      },
+    },
+  ],
+}

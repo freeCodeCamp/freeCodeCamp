@@ -1,0 +1,28 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain Inspector
+
+  # Disables inspector domain notifications.
+  command disable
+
+  # Enables inspector domain notifications.
+  command enable
+
+  # Fired when remote debugging connection is about to be terminated. Contains detach reason.
+  event detached
+    parameters
+      # The reason why connection has been terminated.
+      string reason
+
+  # Fired when debugging target has crashed
+  event targetCrashed
+
+  # Fired when debugging target has reloaded after crash
+  event targetReloadedAfterCrash
+
+  # Fired on worker targets when main worker script and any imported scripts have been evaluated.
+  experimental event workerScriptLoaded

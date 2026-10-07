@@ -1,0 +1,61 @@
+{
+	"name": "string.prototype.includes",
+	"version": "2.0.1",
+	"description": "A robust & optimized `String.prototype.includes` polyfill, based on the ECMAScript 6 specification.",
+	"homepage": "https://mths.be/includes",
+	"main": "index.js",
+	"exports": {
+		".": "./index.js",
+		"./auto": "./auto.js",
+		"./polyfill": "./polyfill.js",
+		"./implementation": "./implementation.js",
+		"./shim": "./shim.js",
+		"./package.json": "./package.json"
+	},
+	"keywords": [
+		"string",
+		"includes",
+		"es6",
+		"ecmascript",
+		"polyfill"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "https://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/String.prototype.includes.git"
+	},
+	"bugs": "https://github.com/mathiasbynens/String.prototype.includes/issues",
+	"scripts": {
+		"lint": "eslint --ext=js,mjs .",
+		"postlint": "es-shim-api --bound",
+		"pretest": "npm run lint",
+		"test": "npm run tests-only",
+		"tests-only": "tape 'tests/*.js'",
+		"posttest": "npx npm@'>=10.2' audit --production",
+		"cover": "istanbul cover --report html --verbose --dir coverage tape 'tests/*.js'"
+	},
+	"dependencies": {
+		"call-bind": "^1.0.7",
+		"define-properties": "^1.2.1",
+		"es-abstract": "^1.23.3"
+	},
+	"devDependencies": {
+		"@es-shims/api": "^2.5.1",
+		"@ljharb/eslint-config": "^21.1.1",
+		"eslint": "=8.8.0",
+		"functions-have-names": "^1.2.3",
+		"istanbul": "^0.4.5",
+		"mock-property": "^1.1.0",
+		"tape": "^5.9.0"
+	},
+	"engines": {
+		"node": ">= 0.4"
+	},
+	"directories": {
+		"test": "tests"
+	}
+}

@@ -1,0 +1,20 @@
+{
+  "main": "dist/main/index.js",
+  "browserModern": "dist/browserModern/index.js",
+  "browserLegacy": "dist/browserLegacy/index.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "targets": {
+    "browserModern": {
+      "engines": {
+        "browsers": ["last 1 version"]
+      }
+    },
+    "browserLegacy": {
+      "engines": {
+        "browsers": ["ie11"]
+      }
+    }
+  }
+}

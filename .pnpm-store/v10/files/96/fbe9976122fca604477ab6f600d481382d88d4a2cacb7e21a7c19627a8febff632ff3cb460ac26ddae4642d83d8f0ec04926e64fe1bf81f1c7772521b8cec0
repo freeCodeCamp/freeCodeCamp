@@ -1,0 +1,31 @@
+{
+  "type": "module",
+  "main": "../lib/browser/index.js",
+  "module": "../lib/browser/index.mjs",
+  "types": "../lib/browser/index.d.ts",
+  "exports": {
+    ".": {
+      "module-sync": {
+        "types": "./../lib/browser/index.d.mts",
+        "default": "./../lib/browser/index.mjs"
+      },
+      "module": {
+        "types": "./../lib/browser/index.d.mts",
+        "default": "./../lib/browser/index.mjs"
+      },
+      "browser": {
+        "types": "./../lib/browser/index.d.mts",
+        "default": "./../lib/browser/index.mjs"
+      },
+      "import": {
+        "types": "./../lib/browser/index.d.mts",
+        "default": "./../lib/browser/index.mjs"
+      },
+      "default": {
+        "types": "./../lib/browser/index.d.ts",
+        "default": "./../lib/browser/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  }
+}

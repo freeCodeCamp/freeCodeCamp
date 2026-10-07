@@ -1,0 +1,11 @@
+{
+  "title": "OccurrenceChunkIdsPluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "prioritiseInitial": {
+      "description": "Prioritise initial size over total size.",
+      "type": "boolean"
+    }
+  }
+}

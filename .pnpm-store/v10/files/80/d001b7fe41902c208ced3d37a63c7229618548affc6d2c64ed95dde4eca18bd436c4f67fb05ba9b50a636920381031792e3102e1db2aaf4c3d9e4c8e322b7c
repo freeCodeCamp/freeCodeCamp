@@ -1,0 +1,41 @@
+{
+  "name": "postcss-minify-params",
+  "version": "5.1.4",
+  "description": "Minify at-rule params with PostCSS",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "minify",
+    "optimise",
+    "params"
+  ],
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "src",
+    "LICENSE",
+    "types"
+  ],
+  "author": "Bogdan Chadkin <trysound@yandex.ru>",
+  "license": "MIT",
+  "repository": "cssnano/cssnano",
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "homepage": "https://github.com/cssnano/cssnano",
+  "dependencies": {
+    "browserslist": "^4.21.4",
+    "cssnano-utils": "^3.1.0",
+    "postcss-value-parser": "^4.2.0"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@graphql-codegen/add",
+  "version": "3.2.3",
+  "description": "GraphQL Code Generator plugin for adding custom content to your output file",
+  "peerDependencies": {
+    "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "@graphql-codegen/plugin-helpers": "^3.1.1",
+    "tslib": "~2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotansimha/graphql-code-generator.git",
+    "directory": "packages/plugins/other/add"
+  },
+  "license": "MIT",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "typings": "typings/index.d.ts",
+  "typescript": {
+    "definition": "typings/index.d.ts"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./typings/index.d.cts",
+        "default": "./cjs/index.js"
+      },
+      "import": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "default": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  }
+}

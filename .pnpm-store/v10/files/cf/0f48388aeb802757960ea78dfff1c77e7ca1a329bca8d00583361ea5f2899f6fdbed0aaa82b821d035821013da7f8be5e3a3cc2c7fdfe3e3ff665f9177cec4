@@ -1,0 +1,75 @@
+{
+  "name": "cross-spawn",
+  "version": "6.0.6",
+  "description": "Cross platform child_process#spawn and child_process#spawnSync",
+  "keywords": [
+    "spawn",
+    "spawnSync",
+    "windows",
+    "cross-platform",
+    "path-ext",
+    "shebang",
+    "cmd",
+    "execute"
+  ],
+  "author": "André Cruz <andre@moxy.studio>",
+  "homepage": "https://github.com/moxystudio/node-cross-spawn",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:moxystudio/node-cross-spawn.git"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --env node --coverage",
+    "release": "standard-version",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "standard-version": {
+    "scripts": {
+      "posttag": "git push --follow-tags origin v6"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "nice-try": "^1.0.4",
+    "path-key": "^2.0.1",
+    "semver": "^5.5.0",
+    "shebang-command": "^1.2.0",
+    "which": "^1.2.9"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.0.0",
+    "@commitlint/config-conventional": "^6.0.2",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-preset-moxy": "^2.2.1",
+    "eslint": "^4.3.0",
+    "eslint-config-moxy": "^5.0.0",
+    "husky": "^0.14.3",
+    "jest": "^22.0.0",
+    "lint-staged": "^7.0.0",
+    "mkdirp": "^0.5.1",
+    "regenerator-runtime": "^0.11.1",
+    "rimraf": "^2.6.2",
+    "standard-version": "^4.2.0"
+  },
+  "engines": {
+    "node": ">=4.8"
+  }
+}

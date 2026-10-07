@@ -1,0 +1,45 @@
+{
+	"name": "mimic-fn",
+	"version": "4.0.0",
+	"description": "Make a function mimic another one",
+	"license": "MIT",
+	"repository": "sindresorhus/mimic-fn",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=12"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"function",
+		"mimic",
+		"imitate",
+		"rename",
+		"copy",
+		"inherit",
+		"properties",
+		"name",
+		"func",
+		"fn",
+		"set",
+		"infer",
+		"change"
+	],
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"tsd": "^0.14.0",
+		"xo": "^0.38.2"
+	}
+}

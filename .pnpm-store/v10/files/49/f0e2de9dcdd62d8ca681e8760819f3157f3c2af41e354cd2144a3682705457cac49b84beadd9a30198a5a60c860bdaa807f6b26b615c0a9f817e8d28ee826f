@@ -1,0 +1,91 @@
+{
+  "name": "regexpp",
+  "version": "3.2.0",
+  "description": "Regular expression parser for ECMAScript.",
+  "engines": {
+    "node": ">=8"
+  },
+  "main": "index",
+  "files": [
+    "index.*"
+  ],
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@mysticatea/eslint-plugin": "^11.0.0",
+    "@types/eslint": "^4.16.2",
+    "@types/jsdom": "^12.2.4",
+    "@types/mocha": "^5.2.2",
+    "@types/node": "^12.6.8",
+    "codecov": "^3.5.0",
+    "dts-bundle": "^0.7.3",
+    "eslint": "^6.1.0",
+    "jsdom": "^15.1.1",
+    "mocha": "^6.2.0",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^14.1.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^1.17.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "prebuild": "npm run -s clean",
+    "build": "run-s build:*",
+    "build:tsc": "tsc --module es2015",
+    "build:rollup": "rollup -c",
+    "build:dts": "dts-bundle --name regexpp --main .temp/index.d.ts --out ../index.d.ts",
+    "clean": "rimraf .temp index.*",
+    "codecov": "nyc report -r lcovonly && codecov -t ${CODECOV_TOKEN} --disable=gcov",
+    "lint": "eslint scripts src test --ext .ts",
+    "pretest": "run-s build lint",
+    "test": "nyc _mocha \"test/*.ts\" --reporter dot --timeout 10000",
+    "update:test": "ts-node scripts/update-fixtures.ts",
+    "update:unicode": "run-s update:unicode:*",
+    "update:unicode:ids": "ts-node scripts/update-unicode-ids.ts",
+    "update:unicode:props": "ts-node scripts/update-unicode-properties.ts",
+    "preversion": "npm test",
+    "version": "npm run -s build",
+    "postversion": "git push && git push --tags",
+    "prewatch": "npm run -s clean",
+    "watch": "_mocha \"test/*.ts\" --require ts-node/register --reporter dot --timeout 10000 --watch-extensions ts --watch --growl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysticatea/regexpp.git"
+  },
+  "keywords": [
+    "regexp",
+    "regular",
+    "expression",
+    "parser",
+    "validator",
+    "ast",
+    "abstract",
+    "syntax",
+    "tree",
+    "ecmascript",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018",
+    "es2019",
+    "es2020",
+    "annexB"
+  ],
+  "author": "Toru Nagashima (https://github.com/mysticatea)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mysticatea/regexpp/issues"
+  },
+  "homepage": "https://github.com/mysticatea/regexpp#readme",
+  "funding": "https://github.com/sponsors/mysticatea"
+}

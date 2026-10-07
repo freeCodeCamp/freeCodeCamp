@@ -1,0 +1,30 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"eqeqeq": [2, "allow-null"],
+		"func-name-matching": 0,
+		"func-style": 0,
+		"indent": [2, 4],
+		"max-nested-callbacks": [2, 3],
+		"max-params": [2, 3],
+		"max-statements": [2, 14],
+		"no-extra-parens": 0,
+		"no-invalid-this": 1,
+		"no-restricted-syntax": [2, "BreakStatement", "ContinueStatement", "DebuggerStatement", "LabeledStatement", "WithStatement"],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"array-bracket-newline": 0,
+				"array-element-newline": 0,
+				"max-statements-per-line": 0,
+				"no-magic-numbers": 0,
+			},
+		},
+	],
+}

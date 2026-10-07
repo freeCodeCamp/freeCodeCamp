@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_inherits_loose.cjs",
+    "module": "../../esm/_inherits_loose.js"
+}

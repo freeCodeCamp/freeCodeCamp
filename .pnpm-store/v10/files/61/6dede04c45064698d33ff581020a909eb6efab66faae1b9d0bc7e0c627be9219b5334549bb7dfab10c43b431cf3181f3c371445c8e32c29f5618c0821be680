@@ -1,0 +1,1 @@
+{"version":3,"file":"native-gain-node-factory.d.ts","sourceRoot":"","sources":["../../../src/types/native-gain-node-factory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,eAAe,CAAC;AAC7C,OAAO,EAAE,cAAc,EAAE,MAAM,kBAAkB,CAAC;AAClD,OAAO,EAAE,eAAe,EAAE,MAAM,oBAAoB,CAAC;AAErD,MAAM,MAAM,sBAAsB,GAAG,CAAC,aAAa,EAAE,cAAc,EAAE,OAAO,EAAE,YAAY,KAAK,eAAe,CAAC"}

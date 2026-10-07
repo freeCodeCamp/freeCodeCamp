@@ -1,0 +1,70 @@
+{
+  "type": "module",
+  "name": "form-data-encoder",
+  "version": "2.1.4",
+  "description": "Encode FormData content into the multipart/form-data format",
+  "repository": "octet-stream/form-data-encoder",
+  "sideEffects": false,
+  "engines": {
+    "node": ">= 14.17"
+  },
+  "keywords": [
+    "form-data",
+    "encoder",
+    "multipart",
+    "files-upload",
+    "async-iterator",
+    "spec-compatible",
+    "form"
+  ],
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "exports": {
+    "types": "./@type/index.d.ts",
+    "default": "./lib/index.js"
+  },
+  "types": "./@type/index.d.ts",
+  "scripts": {
+    "eslint": "eslint src/**/*.ts",
+    "staged": "lint-staged",
+    "coverage": "c8 npm test",
+    "ci": "c8 npm test && c8 report --reporter=json",
+    "build:types": "tsc --project tsconfig.d.ts.json",
+    "build": "tsc && npm run build:types",
+    "test": "ava --fail-fast",
+    "cleanup": "del-cli @type lib",
+    "prepare": "npm run cleanup && npm run build",
+    "_postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
+  },
+  "author": "Nick K.",
+  "license": "MIT",
+  "devDependencies": {
+    "@octetstream/eslint-config": "6.2.2",
+    "@types/mime-types": "2.1.1",
+    "@types/node": "18.11.9",
+    "@types/sinon": "^10.0.13",
+    "@typescript-eslint/eslint-plugin": "5.44.0",
+    "@typescript-eslint/parser": "5.44.0",
+    "ava": "5.1.0",
+    "c8": "7.12.0",
+    "del-cli": "5.0.0",
+    "eslint": "8.28.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-import-resolver-typescript": "3.5.2",
+    "eslint-plugin-ava": "13.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-react": "7.31.11",
+    "formdata-node": "5.0.0",
+    "husky": "8.0.2",
+    "lint-staged": "13.0.3",
+    "pinst": "3.0.0",
+    "sinon": "^14.0.2",
+    "ts-node": "10.9.1",
+    "ttypescript": "1.5.13",
+    "typescript": "4.9.3",
+    "web-streams-polyfill": "4.0.0-beta.3"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "tinybench",
+  "version": "2.9.0",
+  "type": "module",
+  "packageManager": "pnpm@8.4.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js",
+    "default": "./dist/index.js"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "repository": "tinylibs/tinybench",
+  "license": "MIT",
+  "keywords": [
+    "benchmark",
+    "tinylibs",
+    "tiny"
+  ],
+  "scripts": {
+    "publish": "npm run build && clean-publish"
+  }
+}

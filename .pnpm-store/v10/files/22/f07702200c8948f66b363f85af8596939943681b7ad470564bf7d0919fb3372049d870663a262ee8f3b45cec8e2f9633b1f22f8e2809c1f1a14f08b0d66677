@@ -1,0 +1,71 @@
+{
+  "name": "babel-plugin-dynamic-import-node",
+  "version": "2.3.3",
+  "description": "Babel plugin to transpile import() to a deferred require(), for node",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "prebuild": "npm run clean",
+    "build": "babel src --out-dir lib",
+    "pretest": "npm run lint",
+    "test": "npm run tests-only",
+    "tests-only": "tape --require airbnb-js-shims --require babel-register test",
+    "lint": "eslint .",
+    "prepublish": "not-in-publish || (safe-publish-latest && npm run build)",
+    "check-changelog": "expr $(git status --porcelain 2>/dev/null| grep \"^\\s*M.*CHANGELOG.md\" | wc -l) >/dev/null || (echo 'Please edit CHANGELOG.md' && exit 1)",
+    "check-only-changelog-changed": "(expr $(git status --porcelain 2>/dev/null| grep -v \"CHANGELOG.md\" | wc -l) >/dev/null && echo 'Only CHANGELOG.md may have uncommitted changes' && exit 1) || exit 0",
+    "version:major": "npm --no-git-tag-version version major",
+    "version:minor": "npm --no-git-tag-version version minor",
+    "version:patch": "npm --no-git-tag-version version patch",
+    "postversion": "git commit package.json CHANGELOG.md -m \"v$npm_package_version\" && npm run tag && git push && git push --tags",
+    "preversion": "npm run test && npm run check-changelog && npm run check-only-changelog-changed",
+    "tag": "git tag v$npm_package_version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airbnb/babel-plugin-dynamic-import-node.git"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "dynamic",
+    "import",
+    "node"
+  ],
+  "author": "Jordan Gensler <jordan.gensler@airbnb.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/airbnb/babel-plugin-dynamic-import-node/issues"
+  },
+  "homepage": "https://github.com/airbnb/babel-plugin-dynamic-import-node#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-external-helpers": "^7.8.3",
+    "@babel/plugin-transform-template-literals": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "airbnb-js-shims": "^2.2.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-template-literals": "^6.22.0",
+    "babel-plugin-transform-replace-object-assign": "^1.0.0",
+    "babel-preset-airbnb": "^2.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "in-publish": "^2.0.1",
+    "rimraf": "^2.7.1",
+    "safe-publish-latest": "^1.1.4",
+    "tape": "^5.0.0-next.5"
+  },
+  "dependencies": {
+    "object.assign": "^4.1.0"
+  }
+}

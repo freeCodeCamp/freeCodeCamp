@@ -1,0 +1,1 @@
+{"version":3,"file":"deferred.js","names":["OP_STATE_PENDING","exports","OP_STATE_DONE"],"sources":["../../../../src/internal/opCodes/deferred.ts"],"sourcesContent":[null],"mappings":";;;;;;AAAA;AACO,MAAMA,gBAAgB,GAAAC,OAAA,CAAAD,gBAAA,GAAG,SAAkB;AAKlD;AACO,MAAME,aAAa,GAAAD,OAAA,CAAAC,aAAA,GAAG,MAAe","ignoreList":[]}

@@ -1,0 +1,35 @@
+{
+    "name": "parse5",
+    "description": "HTML parser and serializer.",
+    "version": "6.0.1",
+    "author": "Ivan Nikulin <ifaaan@gmail.com> (https://github.com/inikulin)",
+    "contributors": "https://github.com/inikulin/parse5/graphs/contributors",
+    "homepage": "https://github.com/inikulin/parse5",
+    "keywords": [
+        "html",
+        "parser",
+        "html5",
+        "WHATWG",
+        "specification",
+        "fast",
+        "html parser",
+        "html5 parser",
+        "htmlparser",
+        "parse5",
+        "serializer",
+        "html serializer",
+        "htmlserializer",
+        "parse",
+        "serialize"
+    ],
+    "license": "MIT",
+    "main": "./lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/inikulin/parse5.git"
+    },
+    "files": [
+        "lib"
+    ],
+    "gitHead": "37227a3429584903cbd1799dade995266fc2dbe6"
+}

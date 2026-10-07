@@ -1,0 +1,34 @@
+{
+  "name": "void-elements",
+  "version": "3.1.0",
+  "description": "Array of \"void elements\" defined by the HTML specification.",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "node build.js > test/latest.js",
+    "test": "node test",
+    "update": "node build.js > index.js"
+  },
+  "keywords": [
+    "html",
+    "void",
+    "elements"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "repository": "pugjs/void-elements",
+  "author": "hemanth.hm",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jadejs/void-elements/issues"
+  },
+  "homepage": "https://github.com/jadejs/void-elements",
+  "devDependencies": {
+    "jsdom": "^9.9.1",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
+}

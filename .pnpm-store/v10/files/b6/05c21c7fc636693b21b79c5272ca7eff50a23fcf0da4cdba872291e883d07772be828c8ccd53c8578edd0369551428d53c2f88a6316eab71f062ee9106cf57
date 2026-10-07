@@ -1,0 +1,104 @@
+{
+  "name": "cac",
+  "version": "6.7.14",
+  "description": "Simple yet powerful framework for building command-line apps.",
+  "repository": {
+    "url": "egoist/cac",
+    "type": "git"
+  },
+  "main": "index-compat.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./index-compat.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "!**/__test__/**",
+    "/mod.js",
+    "/mod.ts",
+    "/deno",
+    "/index-compat.js"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "build:deno": "node -r sucrase/register scripts/build-deno.ts",
+    "build:node": "rollup -c",
+    "build": "yarn build:deno && yarn build:node",
+    "toc": "markdown-toc -i README.md",
+    "prepublishOnly": "npm run build && cp mod.js mod.mjs",
+    "docs:api": "typedoc --out api-doc --readme none --exclude \"**/__test__/**\" --theme minimal"
+  },
+  "author": "egoist <0x142857@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-syntax-typescript": "^7.12.1",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@types/fs-extra": "^9.0.5",
+    "@types/jest": "^26.0.19",
+    "@types/mri": "^1.1.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "esbuild": "^0.8.21",
+    "eslint-config-rem": "^3.0.0",
+    "execa": "^5.0.0",
+    "fs-extra": "^9.0.1",
+    "globby": "^11.0.1",
+    "husky": "^1.2.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^8.1.0",
+    "markdown-toc": "^1.2.0",
+    "mri": "^1.1.6",
+    "prettier": "^2.2.1",
+    "rollup": "^2.34.2",
+    "rollup-plugin-dts": "^2.0.1",
+    "rollup-plugin-esbuild": "^2.6.1",
+    "semantic-release": "^17.3.0",
+    "sucrase": "^3.16.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typedoc": "^0.19.2",
+    "typescript": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "release": {
+    "branch": "master"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,json,ts}": [
+        "prettier --write",
+        "git add"
+      ],
+      "*.md": [
+        "markdown-toc -i",
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "dist/**",
+      "mod.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm t && lint-staged"
+    }
+  }
+}

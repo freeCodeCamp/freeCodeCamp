@@ -1,0 +1,103 @@
+{
+	"name": "es6-symbol",
+	"version": "3.1.3",
+	"description": "ECMAScript 6 Symbol polyfill",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+	"keywords": [
+		"symbol",
+		"private",
+		"property",
+		"es6",
+		"ecmascript",
+		"harmony",
+		"ponyfill",
+		"polyfill"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/medikoo/es6-symbol.git"
+	},
+	"dependencies": {
+		"d": "^1.0.1",
+		"ext": "^1.1.2"
+	},
+	"devDependencies": {
+		"eslint": "^6.6.0",
+		"eslint-config-medikoo": "^2.6.0",
+		"git-list-updated": "^1.2.1",
+		"husky": "^3.0.9",
+		"lint-staged": "^9.4.2",
+		"prettier-elastic": "^1.18.2",
+		"tad": "^3.0.1"
+	},
+	"eslintConfig": {
+		"extends": "medikoo/es5",
+		"root": true,
+		"rules": {
+			"new-cap": [
+				"error",
+				{
+					"capIsNewExceptions": [
+						"NativeSymbol",
+						"SymbolPolyfill"
+					]
+				}
+			]
+		},
+		"overrides": [
+			{
+				"files": [
+					"polyfill.js"
+				],
+				"rules": {
+					"func-names": "off"
+				}
+			},
+			{
+				"files": [
+					"test/*.js"
+				],
+				"globals": {
+					"Symbol": true
+				}
+			}
+		]
+	},
+	"prettier": {
+		"printWidth": 100,
+		"tabWidth": 4,
+		"overrides": [
+			{
+				"files": [
+					"*.md"
+				],
+				"options": {
+					"tabWidth": 2
+				}
+			}
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint"
+		],
+		"*.{css,html,js,json,md,yaml,yml}": [
+			"prettier -c"
+		]
+	},
+	"scripts": {
+		"lint": "eslint --ignore-path=.gitignore .",
+		"lint:updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+		"prettier-check": "prettier -c --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
+		"prettier-check:updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
+		"prettify": "prettier --write --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
+		"prettify:updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier --write",
+		"test": "tad"
+	},
+	"license": "ISC"
+}

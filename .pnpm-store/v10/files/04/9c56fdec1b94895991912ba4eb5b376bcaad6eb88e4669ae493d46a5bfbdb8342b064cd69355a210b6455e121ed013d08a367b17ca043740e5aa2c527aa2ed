@@ -1,0 +1,149 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "url": {
+      "description": "Enables/Disables 'url'/'image-set' functions handling (https://github.com/webpack-contrib/css-loader#url).",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "import": {
+      "description": "Enables/Disables '@import' at-rules handling (https://github.com/webpack-contrib/css-loader#import).",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "modules": {
+      "description": "Enables/Disables CSS Modules and their configuration (https://github.com/webpack-contrib/css-loader#modules).",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": ["local", "global", "pure"]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "compileType": {
+              "description": "Controls the extent to which css-loader will process module code (https://github.com/webpack-contrib/css-loader#type)",
+              "enum": ["module", "icss"]
+            },
+            "auto": {
+              "description": "Allows auto enable CSS modules based on filename (https://github.com/webpack-contrib/css-loader#auto).",
+              "anyOf": [
+                {
+                  "instanceof": "RegExp"
+                },
+                {
+                  "instanceof": "Function"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            },
+            "mode": {
+              "description": "Setup `mode` option (https://github.com/webpack-contrib/css-loader#mode).",
+              "anyOf": [
+                {
+                  "enum": ["local", "global", "pure"]
+                },
+                {
+                  "instanceof": "Function"
+                }
+              ]
+            },
+            "localIdentName": {
+              "description": "Allows to configure the generated local ident name (https://github.com/webpack-contrib/css-loader#localidentname).",
+              "type": "string",
+              "minLength": 1
+            },
+            "localIdentContext": {
+              "description": "Allows to redefine basic loader context for local ident name (https://github.com/webpack-contrib/css-loader#localidentcontext).",
+              "type": "string",
+              "minLength": 1
+            },
+            "localIdentHashPrefix": {
+              "description": "Allows to add custom hash to generate more unique classes (https://github.com/webpack-contrib/css-loader#localidenthashprefix).",
+              "type": "string",
+              "minLength": 1
+            },
+            "localIdentRegExp": {
+              "description": "Allows to specify custom RegExp for local ident name (https://github.com/webpack-contrib/css-loader#localidentregexp).",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "instanceof": "RegExp"
+                }
+              ]
+            },
+            "getLocalIdent": {
+              "description": "Allows to specify a function to generate the classname (https://github.com/webpack-contrib/css-loader#getlocalident).",
+              "instanceof": "Function"
+            },
+            "namedExport": {
+              "description": "Enables/disables ES modules named export for locals (https://github.com/webpack-contrib/css-loader#namedexport).",
+              "type": "boolean"
+            },
+            "exportGlobals": {
+              "description": "Allows to export names from global class or id, so you can use that as local name (https://github.com/webpack-contrib/css-loader#exportglobals).",
+              "type": "boolean"
+            },
+            "exportLocalsConvention": {
+              "description": "Style of exported classnames (https://github.com/webpack-contrib/css-loader#localsconvention).",
+              "enum": [
+                "asIs",
+                "camelCase",
+                "camelCaseOnly",
+                "dashes",
+                "dashesOnly"
+              ]
+            },
+            "exportOnlyLocals": {
+              "description": "Export only locals (https://github.com/webpack-contrib/css-loader#exportonlylocals).",
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "sourceMap": {
+      "description": "Enables/Disables generation of source maps (https://github.com/webpack-contrib/css-loader#sourcemap).",
+      "type": "boolean"
+    },
+    "importLoaders": {
+      "description": "Enables/Disables or setups number of loaders applied before CSS loader (https://github.com/webpack-contrib/css-loader#importloaders).",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "esModule": {
+      "description": "Use the ES modules syntax (https://github.com/webpack-contrib/css-loader#esmodule).",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

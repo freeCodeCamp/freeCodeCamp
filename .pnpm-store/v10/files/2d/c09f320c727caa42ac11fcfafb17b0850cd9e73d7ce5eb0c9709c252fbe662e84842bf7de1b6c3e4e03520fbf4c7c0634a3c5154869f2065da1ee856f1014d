@@ -1,0 +1,106 @@
+{
+  "name": "@sentry/node",
+  "version": "10.55.0",
+  "description": "Sentry Node SDK using OpenTelemetry for performance instrumentation",
+  "repository": "git://github.com/getsentry/sentry-javascript.git",
+  "homepage": "https://github.com/getsentry/sentry-javascript/tree/master/packages/node",
+  "author": "Sentry",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "/build"
+  ],
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/types/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./build/types/index.d.ts",
+        "default": "./build/esm/index.js"
+      },
+      "require": {
+        "types": "./build/types/index.d.ts",
+        "default": "./build/cjs/index.js"
+      }
+    },
+    "./import": {
+      "import": {
+        "default": "./build/import-hook.mjs"
+      }
+    },
+    "./loader": {
+      "import": {
+        "default": "./build/loader-hook.mjs"
+      }
+    },
+    "./init": {
+      "import": {
+        "default": "./build/esm/init.js"
+      },
+      "require": {
+        "default": "./build/cjs/init.js"
+      }
+    },
+    "./preload": {
+      "import": {
+        "default": "./build/esm/preload.js"
+      },
+      "require": {
+        "default": "./build/cjs/preload.js"
+      }
+    }
+  },
+  "typesVersions": {
+    "<5.0": {
+      "build/types/index.d.ts": [
+        "build/types-ts3.8/index.d.ts"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/core": "^2.6.1",
+    "@opentelemetry/instrumentation": "^0.214.0",
+    "@opentelemetry/sdk-trace-base": "^2.6.1",
+    "@opentelemetry/semantic-conventions": "^1.40.0",
+    "@sentry/core": "10.55.0",
+    "@sentry/node-core": "10.55.0",
+    "@sentry/opentelemetry": "10.55.0",
+    "import-in-the-middle": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.1"
+  },
+  "scripts": {
+    "build": "run-p build:transpile build:types",
+    "build:dev": "yarn build",
+    "build:transpile": "rollup -c rollup.npm.config.mjs",
+    "build:types": "run-s build:types:core build:types:downlevel",
+    "build:types:core": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "yarn downlevel-dts build/types build/types-ts3.8 --to ts3.8",
+    "build:watch": "run-p build:transpile:watch",
+    "build:dev:watch": "yarn build:watch",
+    "build:transpile:watch": "rollup -c rollup.npm.config.mjs --watch",
+    "build:tarball": "npm pack",
+    "circularDepCheck": "madge --circular src/index.ts",
+    "clean": "rimraf build coverage sentry-node-*.tgz",
+    "lint:fix": "OXLINT_TSGOLINT_DANGEROUSLY_SUPPRESS_PROGRAM_DIAGNOSTICS=true oxlint . --fix --type-aware",
+    "lint": "OXLINT_TSGOLINT_DANGEROUSLY_SUPPRESS_PROGRAM_DIAGNOSTICS=true oxlint . --type-aware",
+    "lint:es-compatibility": "es-check es2022 ./build/cjs/*.js && es-check es2022 ./build/esm/*.js --module",
+    "test": "yarn test:unit",
+    "test:unit": "vitest run",
+    "test:watch": "vitest --watch",
+    "yalc:publish": "yalc publish --push --sig"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "sideEffects": false
+}

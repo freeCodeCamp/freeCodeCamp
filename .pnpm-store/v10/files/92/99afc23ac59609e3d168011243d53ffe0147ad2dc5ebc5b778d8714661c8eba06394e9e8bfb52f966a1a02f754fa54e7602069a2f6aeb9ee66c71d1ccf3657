@@ -1,0 +1,54 @@
+# `MD014` - Dollar signs used before commands without showing output
+
+Tags: `code`
+
+Aliases: `commands-show-output`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when there are code blocks showing shell commands to be
+typed, and *all* of the shell commands are preceded by dollar signs ($):
+
+<!-- markdownlint-disable commands-show-output -->
+
+```markdown
+$ ls
+$ cat foo
+$ less bar
+```
+
+<!-- markdownlint-restore -->
+
+The dollar signs are unnecessary in this situation, and should not be
+included:
+
+```markdown
+ls
+cat foo
+less bar
+```
+
+Showing output for commands preceded by dollar signs does not trigger this rule:
+
+```markdown
+$ ls
+foo bar
+$ cat foo
+Hello world
+$ cat bar
+baz
+```
+
+Because some commands do not produce output, it is not a violation if *some*
+commands do not have output:
+
+```markdown
+$ mkdir test
+mkdir: created directory 'test'
+$ ls test
+```
+
+Rationale: It is easier to copy/paste and less noisy if the dollar signs
+are omitted when they are not needed. See
+<https://cirosantilli.com/markdown-style-guide#dollar-signs-in-shell-code>
+for more information.

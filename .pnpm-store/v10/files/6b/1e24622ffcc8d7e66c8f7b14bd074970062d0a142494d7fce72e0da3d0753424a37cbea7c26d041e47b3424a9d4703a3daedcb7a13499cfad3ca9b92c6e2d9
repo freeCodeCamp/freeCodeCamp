@@ -1,0 +1,54 @@
+{
+	"name": "query-string",
+	"version": "7.1.3",
+	"description": "Parse and stringify URL query strings",
+	"license": "MIT",
+	"repository": "sindresorhus/query-string",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"benchmark": "node benchmark.js",
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"browser",
+		"querystring",
+		"query",
+		"string",
+		"qs",
+		"param",
+		"parameter",
+		"url",
+		"parse",
+		"stringify",
+		"encode",
+		"decode",
+		"searchparams",
+		"filter"
+	],
+	"dependencies": {
+		"decode-uri-component": "^0.2.2",
+		"filter-obj": "^1.1.0",
+		"split-on-first": "^1.0.0",
+		"strict-uri-encode": "^2.0.0"
+	},
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"benchmark": "^2.1.4",
+		"deep-equal": "^1.0.1",
+		"fast-check": "^1.5.0",
+		"tsd": "^0.7.3",
+		"xo": "^0.24.0"
+	}
+}

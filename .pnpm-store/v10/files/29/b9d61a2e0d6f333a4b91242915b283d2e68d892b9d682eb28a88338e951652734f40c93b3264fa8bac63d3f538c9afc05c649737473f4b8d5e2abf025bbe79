@@ -1,0 +1,41 @@
+@import '../variables';
+@import '../mixins';
+
+$amount: 50px;
+$size: 10px;
+
+@keyframes cube-transition {
+  25% {
+    transform: translateX($amount) scale(0.5) rotate(-90deg);
+  }
+  50% {
+    transform: translate($amount, $amount) rotate(-180deg);
+  }
+  75% {
+    transform: translateY($amount) scale(0.5) rotate(-270deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.cube-transition {
+  position: relative;
+  transform: translate(-$amount / 2, -$amount / 2);
+
+  > div {
+    @include global-animation();
+
+    width: $size;
+    height: $size;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background-color: $primary-color;
+    animation: cube-transition 1.6s 0s infinite ease-in-out;
+
+    &:last-child {
+      animation-delay: -0.8s
+    }
+  }
+}

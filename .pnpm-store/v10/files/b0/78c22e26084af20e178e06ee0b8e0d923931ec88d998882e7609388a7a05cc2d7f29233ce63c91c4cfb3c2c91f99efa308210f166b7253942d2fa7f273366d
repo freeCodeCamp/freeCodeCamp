@@ -1,0 +1,112 @@
+{
+  "name": "esprima",
+  "description": "ECMAScript parsing infrastructure for multipurpose analysis",
+  "homepage": "http://esprima.org",
+  "main": "dist/esprima.js",
+  "bin": {
+    "esparse": "./bin/esparse.js",
+    "esvalidate": "./bin/esvalidate.js"
+  },
+  "version": "4.0.1",
+  "files": [
+    "bin",
+    "dist/esprima.js"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "author": {
+    "name": "Ariya Hidayat",
+    "email": "ariya.hidayat@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "Ariya Hidayat",
+      "email": "ariya.hidayat@gmail.com",
+      "web": "http://ariya.ofilabs.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jquery/esprima.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jquery/esprima/issues"
+  },
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "codecov.io": "~0.1.6",
+    "escomplex-js": "1.2.0",
+    "everything.js": "~1.0.3",
+    "glob": "~7.1.0",
+    "istanbul": "~0.4.0",
+    "json-diff": "~0.3.1",
+    "karma": "~1.3.0",
+    "karma-chrome-launcher": "~2.0.0",
+    "karma-detect-browsers": "~2.2.3",
+    "karma-edge-launcher": "~0.2.0",
+    "karma-firefox-launcher": "~1.0.0",
+    "karma-ie-launcher": "~1.0.0",
+    "karma-mocha": "~1.3.0",
+    "karma-safari-launcher": "~1.0.0",
+    "karma-safaritechpreview-launcher": "~0.0.4",
+    "karma-sauce-launcher": "~1.1.0",
+    "lodash": "~3.10.1",
+    "mocha": "~3.2.0",
+    "node-tick-processor": "~0.0.2",
+    "regenerate": "~1.3.2",
+    "temp": "~0.8.3",
+    "tslint": "~5.1.0",
+    "typescript": "~2.3.2",
+    "typescript-formatter": "~5.1.3",
+    "unicode-8.0.0": "~0.7.0",
+    "webpack": "~1.14.0"
+  },
+  "keywords": [
+    "ast",
+    "ecmascript",
+    "esprima",
+    "javascript",
+    "parser",
+    "syntax"
+  ],
+  "scripts": {
+    "check-version": "node test/check-version.js",
+    "tslint": "tslint src/*.ts",
+    "code-style": "tsfmt --verify src/*.ts && tsfmt --verify test/*.js",
+    "format-code": "tsfmt -r src/*.ts && tsfmt -r test/*.js",
+    "complexity": "node test/check-complexity.js",
+    "static-analysis": "npm run check-version && npm run tslint && npm run code-style && npm run complexity",
+    "hostile-env-tests": "node test/hostile-environment-tests.js",
+    "unit-tests": "node test/unit-tests.js",
+    "api-tests": "mocha -R dot test/api-tests.js",
+    "grammar-tests": "node test/grammar-tests.js",
+    "regression-tests": "node test/regression-tests.js",
+    "all-tests": "npm run verify-line-ending && npm run generate-fixtures && npm run unit-tests && npm run api-tests && npm run grammar-tests && npm run regression-tests && npm run hostile-env-tests",
+    "verify-line-ending": "node test/verify-line-ending.js",
+    "generate-fixtures": "node tools/generate-fixtures.js",
+    "browser-tests": "npm run compile && npm run generate-fixtures && cd test && karma start --single-run",
+    "saucelabs-evergreen": "cd test && karma start saucelabs-evergreen.conf.js",
+    "saucelabs-safari": "cd test && karma start saucelabs-safari.conf.js",
+    "saucelabs-ie": "cd test && karma start saucelabs-ie.conf.js",
+    "saucelabs": "npm run saucelabs-evergreen && npm run saucelabs-ie && npm run saucelabs-safari",
+    "analyze-coverage": "istanbul cover test/unit-tests.js",
+    "check-coverage": "istanbul check-coverage --statement 100 --branch 100 --function 100",
+    "dynamic-analysis": "npm run analyze-coverage && npm run check-coverage",
+    "compile": "tsc -p src/ && webpack && node tools/fixupbundle.js",
+    "test": "npm run compile && npm run all-tests && npm run static-analysis && npm run dynamic-analysis",
+    "prepublish": "npm run compile",
+    "profile": "node --prof test/profile.js && mv isolate*.log v8.log && node-tick-processor",
+    "benchmark-parser": "node -expose_gc test/benchmark-parser.js",
+    "benchmark-tokenizer": "node --expose_gc test/benchmark-tokenizer.js",
+    "benchmark": "npm run benchmark-parser && npm run benchmark-tokenizer",
+    "codecov": "istanbul report cobertura && codecov < ./coverage/cobertura-coverage.xml",
+    "downstream": "node test/downstream.js",
+    "travis": "npm test",
+    "circleci": "npm test && npm run codecov && npm run downstream",
+    "appveyor": "npm run compile && npm run all-tests && npm run browser-tests",
+    "droneio": "npm run compile && npm run all-tests && npm run saucelabs",
+    "generate-regex": "node tools/generate-identifier-regex.js",
+    "generate-xhtml-entities": "node tools/generate-xhtml-entities.js"
+  }
+}

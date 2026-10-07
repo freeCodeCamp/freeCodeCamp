@@ -1,0 +1,22 @@
+{
+  "name": "load-script",
+  "description": "Dynamic script loading for browser",
+  "version": "1.0.0",
+  "keywords": [
+    "browser",
+    "script",
+    "load"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eldargab/load-script"
+  },
+  "scripts": {
+    "test": "zuul -- test/index.js",
+    "test-local": "zuul --local 9005 -- test/index.js"
+  },
+  "devDependencies": {
+    "zuul": "~2.1.0"
+  },
+  "license": "MIT"
+}

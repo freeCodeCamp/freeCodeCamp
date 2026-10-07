@@ -1,0 +1,38 @@
+{
+	"name": "is-interactive",
+	"version": "1.0.0",
+	"description": "Check if stdout or stderr is interactive",
+	"license": "MIT",
+	"repository": "sindresorhus/is-interactive",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"interactive",
+		"stdout",
+		"stderr",
+		"detect",
+		"is",
+		"terminal",
+		"shell",
+		"tty"
+	],
+	"devDependencies": {
+		"@types/node": "^12.0.12",
+		"ava": "^2.1.0",
+		"tsd": "^0.7.3",
+		"xo": "^0.24.0"
+	}
+}

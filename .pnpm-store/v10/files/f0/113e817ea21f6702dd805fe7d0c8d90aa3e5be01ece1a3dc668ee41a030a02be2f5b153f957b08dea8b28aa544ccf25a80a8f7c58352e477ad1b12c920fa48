@@ -1,0 +1,35 @@
+{
+  "transform-async-to-generator": [
+    "bugfix/transform-async-arrows-in-class"
+  ],
+  "transform-parameters": [
+    "bugfix/transform-edge-default-parameters",
+    "bugfix/transform-safari-id-destructuring-collision-in-function-expression"
+  ],
+  "transform-function-name": [
+    "bugfix/transform-edge-function-name"
+  ],
+  "transform-block-scoping": [
+    "bugfix/transform-safari-block-shadowing",
+    "bugfix/transform-safari-for-shadowing"
+  ],
+  "transform-template-literals": [
+    "bugfix/transform-tagged-template-caching"
+  ],
+  "transform-optional-chaining": [
+    "bugfix/transform-v8-spread-parameters-in-optional-chaining"
+  ],
+  "proposal-optional-chaining": [
+    "bugfix/transform-v8-spread-parameters-in-optional-chaining"
+  ],
+  "transform-class-properties": [
+    "bugfix/transform-v8-static-class-fields-redefine-readonly",
+    "bugfix/transform-firefox-class-in-computed-class-key",
+    "bugfix/transform-safari-class-field-initializer-scope"
+  ],
+  "proposal-class-properties": [
+    "bugfix/transform-v8-static-class-fields-redefine-readonly",
+    "bugfix/transform-firefox-class-in-computed-class-key",
+    "bugfix/transform-safari-class-field-initializer-scope"
+  ]
+}

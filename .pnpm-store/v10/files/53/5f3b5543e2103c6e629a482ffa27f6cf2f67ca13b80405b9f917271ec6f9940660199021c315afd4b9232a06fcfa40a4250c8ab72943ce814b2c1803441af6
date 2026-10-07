@@ -1,0 +1,10 @@
+declare namespace _exports {
+    export { Option };
+}
+declare const _exports: RuleModule<[Option]>;
+export = _exports;
+type Option = {
+    callees?: string[] | undefined;
+};
+import type { RuleModule } from "../types";
+//# sourceMappingURL=classname-spacing.d.ts.map

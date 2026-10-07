@@ -1,0 +1,60 @@
+import type { QuizQuestionAnswer, QuizQuestionProps } from "../quiz-question";
+export interface QuizProps<AnswerT extends number | string> {
+    questions: Question<AnswerT>[];
+    disabled?: boolean;
+    required?: boolean;
+}
+interface QuestionBase<AnswerT extends number | string> {
+    /**
+     * Question text, can be plain text or contain code.
+     * If the question text contains code, use the PrismFormatted component to ensure the code is rendered correctly.
+     */
+    question: QuizQuestionProps<AnswerT>["question"];
+    /**
+     * Answer options
+     */
+    answers: QuizQuestionAnswer<AnswerT>[];
+    /**
+     * Value of the correct answer
+     */
+    correctAnswer: AnswerT;
+    /**
+     * Change event handler, called when an answer is selected
+     */
+    onChange?: (selectedAnswer: AnswerT) => void;
+    /**
+     * Value of the selected answer
+     */
+    selectedAnswer?: AnswerT;
+}
+type QuestionWithoutAudio<AnswerT extends number | string> = QuestionBase<AnswerT> & {
+    audioUrl?: never;
+    audioAriaLabel?: never;
+    transcript?: never;
+    audioStartTime?: never;
+    audioFinishTime?: never;
+};
+type QuestionWithAudio<AnswerT extends number | string> = QuestionBase<AnswerT> & {
+    /**
+     * URL to an audio file for the question
+     */
+    audioUrl: string;
+    /**
+     * Accessible label for the audio element
+     */
+    audioAriaLabel: string;
+    /**
+     * Transcript text for the audio
+     */
+    transcript: string;
+    /**
+     * Start time in seconds for the audio segment
+     */
+    audioStartTime?: number;
+    /**
+     * Finish time in seconds for the audio segment
+     */
+    audioFinishTime?: number;
+};
+export type Question<AnswerT extends number | string> = QuestionWithoutAudio<AnswerT> | QuestionWithAudio<AnswerT>;
+export {};

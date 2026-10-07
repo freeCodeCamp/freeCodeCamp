@@ -1,0 +1,39 @@
+// @flow
+import * as React from "react";
+import type { FormApi, FormState, FormValuesShape } from "final-form";
+import type {
+  FieldProps,
+  FieldRenderProps,
+  FormProps,
+  FormSpyProps,
+  UseFieldConfig,
+  UseFormStateParams,
+} from "./types";
+
+export type {
+  FieldProps,
+  FieldRenderProps,
+  FormProps,
+  FormRenderProps,
+  FormSpyProps,
+  FormSpyRenderProps,
+} from "./types";
+
+declare export var Field: React.ComponentType<FieldProps>;
+declare export var Form: React.ComponentType<FormProps<Object>>;
+declare export var FormSpy: React.ComponentType<FormSpyProps<Object>>;
+declare export function useForm<FormValues: FormValuesShape>(
+  componentName?: string,
+): FormApi<FormValues>;
+declare export function useFormState<FormValues>(
+  params?: UseFormStateParams<FormValues>,
+): FormState<FormValues>;
+declare export var useField: (
+  name: string,
+  config?: UseFieldConfig,
+) => FieldRenderProps;
+declare export function withTypes<FormValues: FormValuesShape>(): {
+  Form: React.ComponentType<FormProps<FormValues>>,
+  FormSpy: React.ComponentType<FormSpyProps<FormValues>>,
+};
+declare export var version: string;

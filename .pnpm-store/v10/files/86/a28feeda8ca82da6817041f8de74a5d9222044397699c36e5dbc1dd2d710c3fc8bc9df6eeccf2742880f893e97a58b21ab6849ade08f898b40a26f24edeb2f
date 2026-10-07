@@ -1,0 +1,18 @@
+dist: xenial
+os: linux
+language: node_js
+node_js:
+  - 'stable'
+  - 'lts/*'
+  - '0.12'
+script:
+  - npm test
+  - if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_NODE_VERSION}" = "stable" ]; then npm run test:browsers; fi
+addons:
+  sauce_connect: true
+  hosts:
+    - airtap.local
+env:
+  global:
+  - secure: XcBiD8yReflut9q7leKsigDZ0mI3qTKH+QrNVY8DaqlomJOZw8aOrVuX9Jz12l86ZJ41nbxmKnRNkFzcVr9mbP9YaeTb3DpeOBWmvaoSfud9Wnc16VfXtc1FCcwDhSVcSiM3UtnrmFU5cH+Dw1LPh5PbfylYOS/nJxUvG0FFLqI=
+  - secure: jNWtEbqhUdQ0xXDHvCYfUbKYeJCi6a7B4LsrcxYCyWWn4NIgncE5x2YbB+FSUUFVYfz0dsn5RKP1oHB99f0laUEo18HBNkrAS/rtyOdVzcpJjbQ6kgSILGjnJD/Ty1B57Rcz3iyev5Y7bLZ6Y1FbDnk/i9/l0faOGz8vTC3Vdkc=

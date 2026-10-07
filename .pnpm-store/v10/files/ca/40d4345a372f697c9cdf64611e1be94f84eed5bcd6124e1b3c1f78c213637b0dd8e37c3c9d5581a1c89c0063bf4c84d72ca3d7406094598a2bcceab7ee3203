@@ -1,0 +1,102 @@
+{
+  "name": "memfs",
+  "version": "3.5.3",
+  "description": "In-memory file-system with Node's fs API.",
+  "keywords": [
+    "fs",
+    "filesystem",
+    "fs.js",
+    "memory-fs",
+    "memfs",
+    "file",
+    "file system",
+    "mount",
+    "memory",
+    "in-memory",
+    "virtual",
+    "test",
+    "testing",
+    "mock"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/streamich/memfs.git"
+  },
+  "license": "Unlicense",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -p . && cp src/getBigInt.js lib/",
+    "clean": "rimraf lib types",
+    "prettier": "prettier --ignore-path .gitignore --write \"src/**/*.{ts,js}\"",
+    "prettier:diff": "prettier -l \"src/**/*.{ts,js}\"",
+    "test": "jest --maxWorkers 2",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "tslint": "tslint \"src/**/*.ts\" -t verbose",
+    "typecheck": "tsc -p .",
+    "watch": "watch \"npm run build\" ./src"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "release": {
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "testEnvironment": "node",
+    "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "dependencies": {
+    "fs-monkey": "^1.0.4"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^9.0.1",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^10.17.60",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.3",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.1",
+    "tslint": "^5.20.1",
+    "tslint-config-common": "^1.6.0",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "name": "cosmiconfig",
+  "version": "7.1.0",
+  "description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "del-cli --dot=true \"./dist/**/*\"",
+    "build": "npm run clean && npm run build:compile && npm run build:types",
+    "build:compile": "cross-env NODE_ENV=production babel src -d dist --verbose --extensions .js,.ts --ignore \"**/**/*.test.js\",\"**/**/*.test.ts\" --source-maps",
+    "build:types": "cross-env NODE_ENV=production tsc --project tsconfig.types.json",
+    "dev": "npm run clean && npm run build:compile -- --watch",
+    "lint": "eslint --ext .js,.ts . && npm run lint:md",
+    "lint:fix": "eslint --ext .js,.ts . --fix",
+    "lint:md": "remark-preset-davidtheclark",
+    "format": "prettier \"**/*.{js,ts,json,yml,yaml}\" --write",
+    "format:md": "remark-preset-davidtheclark --format",
+    "format:check": "prettier \"**/*.{js,ts,json,yml,yaml}\" --check",
+    "typescript": "tsc",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "check:all": "npm run test && npm run typescript && npm run lint && npm run format:check",
+    "prepublishOnly": "npm run check:all && npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run typescript && npm run test",
+      "pre-push": "npm run check:all"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml}": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "remark-preset-davidtheclark",
+      "remark-preset-davidtheclark --format"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+  },
+  "keywords": [
+    "load",
+    "configuration",
+    "config"
+  ],
+  "author": "David Clark <david.dave.clark@gmail.com>",
+  "contributors": [
+    "Bogdan Chadkin <trysound@yandex.ru>",
+    "Suhas Karanth <sudo.suhas@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidtheclark/cosmiconfig/issues"
+  },
+  "homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+  "prettier": {
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 2
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}"
+    ],
+    "coverageReporters": [
+      "text",
+      "html",
+      "lcov"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "resetModules": true,
+    "resetMocks": true,
+    "restoreMocks": true
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "10"
+          }
+        }
+      ],
+      "@babel/preset-typescript"
+    ]
+  },
+  "dependencies": {
+    "@types/parse-json": "^4.0.0",
+    "import-fresh": "^3.2.1",
+    "parse-json": "^5.0.0",
+    "path-type": "^4.0.0",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.22",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "cross-env": "^7.0.2",
+    "del": "^5.1.0",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.4.0",
+    "eslint-config-davidtheclark-node": "^0.2.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "make-dir": "^3.1.0",
+    "parent-module": "^2.0.0",
+    "prettier": "^2.0.5",
+    "remark-preset-davidtheclark": "^0.12.0",
+    "typescript": "^3.9.6"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

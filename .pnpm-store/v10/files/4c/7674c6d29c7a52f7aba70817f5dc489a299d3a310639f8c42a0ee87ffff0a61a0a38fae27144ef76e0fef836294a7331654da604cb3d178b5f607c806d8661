@@ -1,0 +1,58 @@
+{
+   "name": "change-case-all",
+   "version": "1.0.14",
+   "description": "All change-case methods bundled in a single module",
+   "license": "MIT",
+   "main": "dist/index.js",
+   "types": "dist/index.d.ts",
+   "author": {
+      "name": "Jonas Gnioui",
+      "email": "btxtiger@icloud.com"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/btxtiger/change-case-all"
+   },
+   "scripts": {
+      "tsc": "tsc",
+      "compile": "npm run tsc",
+      "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json --color",
+      "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test"
+   },
+   "files": [
+      "dist",
+      "LICENSE"
+   ],
+   "keywords": [
+      "change-case",
+      "camel-case",
+      "pascal-case",
+      "change-case",
+      "snake-case",
+      "lowercase",
+      "uppercase",
+      "constant-case"
+   ],
+   "dependencies": {
+      "change-case": "^4.1.2",
+      "is-lower-case": "^2.0.2",
+      "is-upper-case": "^2.0.2",
+      "lower-case": "^2.0.2",
+      "lower-case-first": "^2.0.2",
+      "sponge-case": "^1.0.1",
+      "swap-case": "^2.0.2",
+      "title-case": "^3.0.3",
+      "upper-case": "^2.0.2",
+      "upper-case-first": "^2.0.2"
+   },
+   "devDependencies": {
+      "@types/jasmine": "^3.6.6",
+      "jasmine": "^3.6.4",
+      "jasmine-spec-reporter": "^6.0.0",
+      "npm": ">=6.14.6",
+      "nyc": "^15.1.0",
+      "prettier": "^2.2.1",
+      "ts-node": "^9.1.1",
+      "typescript": "^4.2.3"
+   }
+}

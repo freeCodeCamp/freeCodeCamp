@@ -1,0 +1,185 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: Object.getOwnPropertyDescriptor(all, name).get
+    });
+}
+_export(exports, {
+    get EXPERIMENTAL_answers () {
+        return EXPERIMENTAL_answers;
+    },
+    get EXPERIMENTAL_autocomplete () {
+        return _autocomplete.EXPERIMENTAL_autocomplete;
+    },
+    get EXPERIMENTAL_configureRelatedItems () {
+        return EXPERIMENTAL_configureRelatedItems;
+    },
+    get EXPERIMENTAL_dynamicWidgets () {
+        return EXPERIMENTAL_dynamicWidgets;
+    },
+    get analytics () {
+        return _analytics.default;
+    },
+    get breadcrumb () {
+        return _breadcrumb.default;
+    },
+    get chat () {
+        return _chat.default;
+    },
+    get clearRefinements () {
+        return _clearrefinements.default;
+    },
+    get configure () {
+        return _configure.default;
+    },
+    get currentRefinements () {
+        return _currentrefinements.default;
+    },
+    get dynamicWidgets () {
+        return _dynamicwidgets.default;
+    },
+    get filterSuggestions () {
+        return _filtersuggestions.default;
+    },
+    get frequentlyBoughtTogether () {
+        return _frequentlyboughttogether.default;
+    },
+    get geoSearch () {
+        return _geosearch.default;
+    },
+    get hierarchicalMenu () {
+        return _hierarchicalmenu.default;
+    },
+    get hits () {
+        return _hits.default;
+    },
+    get hitsPerPage () {
+        return _hitsperpage.default;
+    },
+    get index () {
+        return _index.default;
+    },
+    get infiniteHits () {
+        return _infinitehits.default;
+    },
+    get lookingSimilar () {
+        return _lookingsimilar.default;
+    },
+    get menu () {
+        return _menu.default;
+    },
+    get menuSelect () {
+        return _menuselect.default;
+    },
+    get numericMenu () {
+        return _numericmenu.default;
+    },
+    get pagination () {
+        return _pagination.default;
+    },
+    get panel () {
+        return _panel.default;
+    },
+    get places () {
+        return _places.default;
+    },
+    get poweredBy () {
+        return _poweredby.default;
+    },
+    get queryRuleContext () {
+        return _queryrulecontext.default;
+    },
+    get queryRuleCustomData () {
+        return _queryrulecustomdata.default;
+    },
+    get rangeInput () {
+        return _rangeinput.default;
+    },
+    get rangeSlider () {
+        return _rangeslider.default;
+    },
+    get ratingMenu () {
+        return _ratingmenu.default;
+    },
+    get refinementList () {
+        return _refinementlist.default;
+    },
+    get relatedProducts () {
+        return _relatedproducts.default;
+    },
+    get relevantSort () {
+        return _relevantsort.default;
+    },
+    get searchBox () {
+        return _searchbox.default;
+    },
+    get sortBy () {
+        return _sortby.default;
+    },
+    get stats () {
+        return _stats.default;
+    },
+    get toggleRefinement () {
+        return _togglerefinement.default;
+    },
+    get trendingFacets () {
+        return _trendingfacets.default;
+    },
+    get trendingItems () {
+        return _trendingitems.default;
+    },
+    get voiceSearch () {
+        return _voicesearch.default;
+    }
+});
+var _interop_require_default = require("@swc/helpers/_/_interop_require_default");
+var _utils = require("../lib/utils");
+var _answers = /*#__PURE__*/ _interop_require_default._(require("./answers/answers"));
+var _configurerelateditems = /*#__PURE__*/ _interop_require_default._(require("./configure-related-items/configure-related-items"));
+var _dynamicwidgets = /*#__PURE__*/ _interop_require_default._(require("./dynamic-widgets/dynamic-widgets"));
+var _analytics = /*#__PURE__*/ _interop_require_default._(require("./analytics/analytics"));
+var _autocomplete = require("./autocomplete/autocomplete");
+var _breadcrumb = /*#__PURE__*/ _interop_require_default._(require("./breadcrumb/breadcrumb"));
+var _clearrefinements = /*#__PURE__*/ _interop_require_default._(require("./clear-refinements/clear-refinements"));
+var _configure = /*#__PURE__*/ _interop_require_default._(require("./configure/configure"));
+var _currentrefinements = /*#__PURE__*/ _interop_require_default._(require("./current-refinements/current-refinements"));
+var _geosearch = /*#__PURE__*/ _interop_require_default._(require("./geo-search/geo-search"));
+var _hierarchicalmenu = /*#__PURE__*/ _interop_require_default._(require("./hierarchical-menu/hierarchical-menu"));
+var _hits = /*#__PURE__*/ _interop_require_default._(require("./hits/hits"));
+var _hitsperpage = /*#__PURE__*/ _interop_require_default._(require("./hits-per-page/hits-per-page"));
+var _index = /*#__PURE__*/ _interop_require_default._(require("./index/index"));
+var _infinitehits = /*#__PURE__*/ _interop_require_default._(require("./infinite-hits/infinite-hits"));
+var _menu = /*#__PURE__*/ _interop_require_default._(require("./menu/menu"));
+var _menuselect = /*#__PURE__*/ _interop_require_default._(require("./menu-select/menu-select"));
+var _numericmenu = /*#__PURE__*/ _interop_require_default._(require("./numeric-menu/numeric-menu"));
+var _pagination = /*#__PURE__*/ _interop_require_default._(require("./pagination/pagination"));
+var _panel = /*#__PURE__*/ _interop_require_default._(require("./panel/panel"));
+var _places = /*#__PURE__*/ _interop_require_default._(require("./places/places"));
+var _poweredby = /*#__PURE__*/ _interop_require_default._(require("./powered-by/powered-by"));
+var _queryrulecontext = /*#__PURE__*/ _interop_require_default._(require("./query-rule-context/query-rule-context"));
+var _queryrulecustomdata = /*#__PURE__*/ _interop_require_default._(require("./query-rule-custom-data/query-rule-custom-data"));
+var _relatedproducts = /*#__PURE__*/ _interop_require_default._(require("./related-products/related-products"));
+var _rangeinput = /*#__PURE__*/ _interop_require_default._(require("./range-input/range-input"));
+var _rangeslider = /*#__PURE__*/ _interop_require_default._(require("./range-slider/range-slider"));
+var _ratingmenu = /*#__PURE__*/ _interop_require_default._(require("./rating-menu/rating-menu"));
+var _refinementlist = /*#__PURE__*/ _interop_require_default._(require("./refinement-list/refinement-list"));
+var _relevantsort = /*#__PURE__*/ _interop_require_default._(require("./relevant-sort/relevant-sort"));
+var _searchbox = /*#__PURE__*/ _interop_require_default._(require("./search-box/search-box"));
+var _sortby = /*#__PURE__*/ _interop_require_default._(require("./sort-by/sort-by"));
+var _stats = /*#__PURE__*/ _interop_require_default._(require("./stats/stats"));
+var _togglerefinement = /*#__PURE__*/ _interop_require_default._(require("./toggle-refinement/toggle-refinement"));
+var _trendingfacets = /*#__PURE__*/ _interop_require_default._(require("./trending-facets/trending-facets"));
+var _trendingitems = /*#__PURE__*/ _interop_require_default._(require("./trending-items/trending-items"));
+var _voicesearch = /*#__PURE__*/ _interop_require_default._(require("./voice-search/voice-search"));
+var _frequentlyboughttogether = /*#__PURE__*/ _interop_require_default._(require("./frequently-bought-together/frequently-bought-together"));
+var _lookingsimilar = /*#__PURE__*/ _interop_require_default._(require("./looking-similar/looking-similar"));
+var _chat = /*#__PURE__*/ _interop_require_default._(require("./chat/chat"));
+var _filtersuggestions = /*#__PURE__*/ _interop_require_default._(require("./filter-suggestions/filter-suggestions"));
+var EXPERIMENTAL_answers = (0, _utils.deprecate)(_answers.default, 'answers is no longer supported');
+var EXPERIMENTAL_configureRelatedItems = (0, _utils.deprecate)(_configurerelateditems.default, 'EXPERIMENTAL_configureRelatedItems is deprecated and will be removed in a next minor version of InstantSearch. Please use relatedItems instead.');
+var EXPERIMENTAL_dynamicWidgets = (0, _utils.deprecate)(_dynamicwidgets.default, 'use dynamicWidgets');

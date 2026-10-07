@@ -1,0 +1,84 @@
+{
+  "name": "readable-web-to-node-stream",
+  "version": "3.0.2",
+  "description": "Converts a Web-API readable-stream into a Node readable-stream.",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts coverage",
+    "compile-lib": "tsc -p lib/tsconfig.json",
+    "compile-test": "tsc -p lib/tsconfig.spec.json",
+    "prepublishOnly": "yarn run build",
+    "build": "npm run compile-lib && npm run compile-test",
+    "tslint": "tslint 'lib/**/*.ts' --exclude 'lib/**/*.d.ts'",
+    "eslint": "eslint karma.conf.js",
+    "lint": "npm run tslint && npm run eslint",
+    "test": "karma start --single-run",
+    "karma": "karma start",
+    "karma-firefox": "karma start --browsers Firefox",
+    "karma-once": "karma start --browsers Chrome --single-run",
+    "travis-karma": "karma start --browsers Firefox --single-run --reporters coverage-istanbul,spec",
+    "browserstack": "karma start --browsers bs_win_chrome,bs_win_firefox,bs_osx_safari --single-run --reporters coverage-istanbul,spec",
+    "travis-karma-browserstack": "karma start --browsers bs_win_chrome,bs_win_firefox,bs_osx_safari --single-run --reporters coverage-istanbul,spec,BrowserStack",
+    "post-coveralls": "coveralls < coverage/lcov.info",
+    "post-codacy": " codacy-coverage < coverage/lcov.info"
+  },
+  "keywords": [
+    "stream.readable",
+    "web",
+    "node",
+    "browser",
+    "stream",
+    "covert",
+    "coverter",
+    "readable",
+    "readablestream"
+  ],
+  "repository": "https://github.com/Borewit/readable-web-to-node-stream.git",
+  "author": {
+    "name": "Borewit",
+    "url": "https://github.com/Borewit"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Borewit"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Borewit/readable-web-to-node-stream/issues"
+  },
+  "dependencies": {
+    "readable-stream": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.8.1",
+    "@types/node": "^16.3.1",
+    "@types/readable-stream": "^2.3.9",
+    "coveralls": "^3.1.0",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.18.0",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "jasmine-core": "^3.8.0",
+    "karma": "^6.3.4",
+    "karma-browserstack-launcher": "^1.6.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage-istanbul-reporter": "^3.0.3",
+    "karma-firefox-launcher": "^2.1.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-jasmine-html-reporter": "^1.7.0",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-webpack": "^5.0.0",
+    "music-metadata-browser": "^2.2.7",
+    "ts-loader": "^8.0.14",
+    "tslint": "^6.1.3",
+    "typescript": "^4.3.5",
+    "webpack": "^4.46.0"
+  }
+}

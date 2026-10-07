@@ -1,0 +1,24 @@
+{
+  "name": "@algolia/transporter",
+  "version": "4.27.0",
+  "private": false,
+  "description": "Promise-based transporter layer with embedded retry strategy.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-javascript.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "dist/transporter.esm.js",
+  "types": "dist/transporter.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "dependencies": {
+    "@algolia/cache-common": "4.27.0",
+    "@algolia/logger-common": "4.27.0",
+    "@algolia/requester-common": "4.27.0"
+  }
+}

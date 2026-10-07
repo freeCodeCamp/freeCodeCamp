@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_ts_generator.cjs",
+    "module": "../../esm/_ts_generator.js"
+}

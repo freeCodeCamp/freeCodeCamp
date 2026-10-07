@@ -1,0 +1,90 @@
+{
+  "name": "snake-case",
+  "version": "3.0.4",
+  "description": "Transform into a lower case string with underscores between words",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist.es2015/index.js",
+  "sideEffects": false,
+  "jsnext:main": "dist.es2015/index.js",
+  "files": [
+    "dist/",
+    "dist.es2015/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "tslint \"src/**/*\" --project tsconfig.json",
+    "build": "rimraf dist/ dist.es2015/ && tsc && tsc -P tsconfig.es2015.json",
+    "specs": "jest --coverage",
+    "test": "npm run build && npm run lint && npm run specs",
+    "size": "size-limit",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/change-case.git"
+  },
+  "keywords": [
+    "snake",
+    "case",
+    "underscore",
+    "lower",
+    "convert",
+    "transform",
+    "identifier",
+    "python"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/change-case/issues"
+  },
+  "homepage": "https://github.com/blakeembrey/change-case/tree/master/packages/snake-case#readme",
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "400 B"
+    }
+  ],
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "transform": {
+      "\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "dot-case": "^3.0.4",
+    "tslib": "^2.0.3"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^2.2.1",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "jest": "^24.9.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^4.1.2"
+  },
+  "gitHead": "76a21a7f6f2a226521ef6abd345ff309cbd01fb0"
+}

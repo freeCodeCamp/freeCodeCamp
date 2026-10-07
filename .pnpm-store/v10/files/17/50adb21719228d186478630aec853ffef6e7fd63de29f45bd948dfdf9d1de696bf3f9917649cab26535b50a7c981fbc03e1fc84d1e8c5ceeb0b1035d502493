@@ -1,0 +1,96 @@
+{
+  "name": "eslint-webpack-plugin",
+  "version": "2.7.0",
+  "description": "A ESLint plugin for webpack",
+  "license": "MIT",
+  "repository": "webpack-contrib/eslint-webpack-plugin",
+  "author": "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>",
+  "homepage": "https://github.com/webpack-contrib/eslint-webpack-plugin",
+  "bugs": "https://github.com/webpack-contrib/eslint-webpack-plugin/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/webpack"
+  },
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "scripts": {
+    "start": "npm run build -- -w",
+    "clean": "del-cli dist types",
+    "prebuild": "npm run clean",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir types && prettier \"types/**/*.ts\" --write",
+    "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+    "build": "npm-run-all -p \"build:**\"",
+    "commitlint": "commitlint --from=master",
+    "security": "npm audit",
+    "lint:prettier": "prettier -w --list-different .",
+    "lint:js": "eslint --cache .",
+    "lint:types": "tsc --pretty --noEmit",
+    "lint": "npm-run-all -l -p \"lint:**\"",
+    "test:only": "cross-env NODE_ENV=test jest --testTimeout=60000",
+    "test:watch": "npm run test:only -- --watch",
+    "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+    "pretest": "npm run lint",
+    "test": "npm run test:coverage",
+    "prepare": "npm run build",
+    "release": "standard-version"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "peerDependencies": {
+    "eslint": "^7.0.0 || ^8.0.0",
+    "webpack": "^4.0.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "@types/eslint": "^7.29.0",
+    "arrify": "^2.0.1",
+    "jest-worker": "^27.5.1",
+    "micromatch": "^4.0.5",
+    "normalize-path": "^3.0.0",
+    "schema-utils": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/fs-extra": "^9.0.13",
+    "@types/micromatch": "^4.0.2",
+    "@types/normalize-path": "^3.0.0",
+    "@types/webpack": "^5.28.0",
+    "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.5.1",
+    "chokidar": "^3.5.2",
+    "cross-env": "^7.0.3",
+    "del": "^6.0.0",
+    "del-cli": "^3.0.1",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "fs-extra": "^9.1.0",
+    "husky": "^6.0.0",
+    "jest": "^27.5.1",
+    "lint-staged": "^10.5.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.2",
+    "standard-version": "^9.3.2",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.0"
+  },
+  "keywords": [
+    "eslint",
+    "lint",
+    "linter",
+    "plugin",
+    "webpack"
+  ],
+  "jest": {
+    "testTimeout": 60000
+  }
+}

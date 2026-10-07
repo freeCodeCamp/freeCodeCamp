@@ -1,0 +1,90 @@
+{
+    "name": "entities",
+    "version": "4.5.0",
+    "description": "Encode & decode XML and HTML entities with ease & speed",
+    "author": "Felix Boehm <me@feedic.com>",
+    "funding": "https://github.com/fb55/entities?sponsor=1",
+    "sideEffects": false,
+    "keywords": [
+        "entity",
+        "decoding",
+        "encoding",
+        "html",
+        "xml",
+        "html entities"
+    ],
+    "directories": {
+        "lib": "lib/"
+    },
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "module": "lib/esm/index.js",
+    "exports": {
+        ".": {
+            "require": "./lib/index.js",
+            "import": "./lib/esm/index.js"
+        },
+        "./lib/decode.js": {
+            "require": "./lib/decode.js",
+            "import": "./lib/esm/decode.js"
+        },
+        "./lib/escape.js": {
+            "require": "./lib/escape.js",
+            "import": "./lib/esm/escape.js"
+        }
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "engines": {
+        "node": ">=0.12"
+    },
+    "devDependencies": {
+        "@types/jest": "^28.1.8",
+        "@types/node": "^18.15.11",
+        "@typescript-eslint/eslint-plugin": "^5.58.0",
+        "@typescript-eslint/parser": "^5.58.0",
+        "eslint": "^8.38.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-node": "^11.1.0",
+        "jest": "^28.1.3",
+        "prettier": "^2.8.7",
+        "ts-jest": "^28.0.8",
+        "typedoc": "^0.24.1",
+        "typescript": "^5.0.4"
+    },
+    "scripts": {
+        "test": "npm run test:jest && npm run lint",
+        "test:jest": "jest",
+        "lint": "npm run lint:es && npm run lint:prettier",
+        "lint:es": "eslint .",
+        "lint:prettier": "npm run prettier -- --check",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run prettier -- --write",
+        "prettier": "prettier '**/*.{ts,md,json,yml}'",
+        "build": "npm run build:cjs && npm run build:esm",
+        "build:cjs": "tsc --sourceRoot https://raw.githubusercontent.com/fb55/entities/$(git rev-parse HEAD)/src/",
+        "build:esm": "npm run build:cjs -- --module esnext --target es2019 --outDir lib/esm && echo '{\"type\":\"module\"}' > lib/esm/package.json",
+        "build:docs": "typedoc --hideGenerator src/index.ts",
+        "build:trie": "ts-node scripts/write-decode-map.ts",
+        "build:encode-trie": "ts-node scripts/write-encode-map.ts",
+        "prepare": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/fb55/entities.git"
+    },
+    "license": "BSD-2-Clause",
+    "jest": {
+        "preset": "ts-jest",
+        "coverageProvider": "v8",
+        "moduleNameMapper": {
+            "^(.*)\\.js$": "$1"
+        }
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "proseWrap": "always"
+    }
+}

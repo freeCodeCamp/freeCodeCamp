@@ -1,0 +1,62 @@
+{
+  "name": "babel-eslint",
+  "version": "10.1.0",
+  "description": "Custom parser for ESLint",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel-eslint.git"
+  },
+  "dependencies": {
+    "@babel/code-frame": "^7.0.0",
+    "@babel/parser": "^7.7.0",
+    "@babel/traverse": "^7.7.0",
+    "@babel/types": "^7.7.0",
+    "eslint-visitor-keys": "^1.0.0",
+    "resolve": "^1.12.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run test-only",
+    "test-only": "mocha && mocha --require test/fixtures/preprocess-to-patch.js",
+    "lint": "eslint lib test",
+    "fix": "eslint lib test --fix",
+    "precommit": "lint-staged",
+    "preversion": "npm test",
+    "changelog": "git log `git describe --tags --abbrev=0`..HEAD --pretty=format:' * %s (%an)' | grep -v 'Merge pull request'"
+  },
+  "author": "Sebastian McKenzie <sebmck@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6"
+  },
+  "bugs": {
+    "url": "https://github.com/babel/babel-eslint/issues"
+  },
+  "homepage": "https://github.com/babel/babel-eslint",
+  "peerDependencies": {
+    "eslint": ">= 4.12.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "dedent": "^0.7.0",
+    "eslint": "^5.6.0",
+    "eslint-config-babel": "^7.0.1",
+    "eslint-plugin-flowtype": "^2.30.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "espree": "^3.5.2",
+    "husky": "^1.0.0-rc.13",
+    "lint-staged": "^7.2.2",
+    "mocha": "^5.0.1",
+    "prettier": "^1.4.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --format=codeframe --fix",
+      "git add"
+    ]
+  }
+}

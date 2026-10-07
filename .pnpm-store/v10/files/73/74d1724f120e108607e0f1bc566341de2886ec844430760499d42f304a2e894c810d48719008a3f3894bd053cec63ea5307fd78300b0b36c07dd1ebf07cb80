@@ -1,0 +1,1 @@
+{"version":3,"file":"constants.js","sources":["../../../../src/tracing/langgraph/constants.ts"],"sourcesContent":["export const LANGGRAPH_INTEGRATION_NAME = 'LangGraph';\nexport const LANGGRAPH_ORIGIN = 'auto.ai.langgraph';\n"],"names":[],"mappings":"AAAO,MAAM,0BAAA,GAA6B;AACnC,MAAM,gBAAA,GAAmB;;;;"}

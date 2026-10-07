@@ -1,0 +1,31 @@
+{
+  "name": "asn1.js",
+  "version": "4.10.1",
+  "description": "ASN.1 encoder and decoder",
+  "main": "lib/asn1.js",
+  "scripts": {
+    "test": "mocha --reporter spec test/*-test.js && cd rfc/2560 && npm i && npm test && cd ../../rfc/5280 && npm i && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:indutny/asn1.js"
+  },
+  "keywords": [
+    "asn.1",
+    "der"
+  ],
+  "author": "Fedor Indutny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indutny/asn1.js/issues"
+  },
+  "homepage": "https://github.com/indutny/asn1.js",
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "bn.js": "^4.0.0",
+    "inherits": "^2.0.1",
+    "minimalistic-assert": "^1.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/camelizeStyle",
+  "private": true,
+  "main": "../cjs/camelizeStyle.js",
+  "module": "../esm/camelizeStyle.js",
+  "types": "../esm/camelizeStyle.d.ts"
+}

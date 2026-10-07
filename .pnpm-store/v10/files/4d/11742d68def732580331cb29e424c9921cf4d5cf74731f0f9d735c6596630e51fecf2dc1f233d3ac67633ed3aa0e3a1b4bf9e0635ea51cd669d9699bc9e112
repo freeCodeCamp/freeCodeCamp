@@ -1,0 +1,69 @@
+{
+  "name": "axobject-query",
+  "version": "4.1.0",
+  "description": "Programmatic access to information about the AXObject Model",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && babel src --out-dir lib",
+    "flow": "flow",
+    "lint": "eslint --ext=js,mjs .",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run lint:fix && npm run flow",
+    "test": "npm run tests-only",
+    "build:tests": "npm run build && rimraf __tests-built__ && BABEL_ENV=test babel __tests__ --out-dir __tests-built__",
+    "tests-built": "nyc tape '__tests-built__/**/*.js'",
+    "tests-only": "nyc tape -r @babel/register '__tests__/**/*.js'",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A11yance/axobject-query.git"
+  },
+  "keywords": [
+    "accessibility"
+  ],
+  "author": "Jesse Beach <splendidnoise@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/A11yance/axobject-query/issues"
+  },
+  "homepage": "https://github.com/A11yance/axobject-query#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.6",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-transform-react-jsx": "^7.24.7",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-flow": "^7.18.6",
+    "@babel/register": "^7.24.6",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "deep-equal-json": "^1.0.0",
+    "encoding": "^0.1.13",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "expect": "^29.2.1",
+    "flow-bin": "^0.190.1",
+    "flow-typed": "^3.8.0",
+    "mock-property": "^1.0.3",
+    "nyc": "^10.3.2",
+    "object-inspect": "^1.13.2",
+    "object.values": "^1.2.0",
+    "rimraf": "^3.0.2",
+    "tape": "^5.8.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all",
+    "ie 11"
+  ],
+  "engines": {
+    "node": ">= 0.4"
+  }
+}

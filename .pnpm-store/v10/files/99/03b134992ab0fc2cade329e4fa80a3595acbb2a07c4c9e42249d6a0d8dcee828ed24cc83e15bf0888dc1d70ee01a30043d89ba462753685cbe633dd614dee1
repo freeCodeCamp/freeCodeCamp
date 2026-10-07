@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MetricRegistry.js",
+  "module": "../dist/esm/MetricRegistry.js",
+  "types": "../dist/dts/MetricRegistry.d.ts"
+}

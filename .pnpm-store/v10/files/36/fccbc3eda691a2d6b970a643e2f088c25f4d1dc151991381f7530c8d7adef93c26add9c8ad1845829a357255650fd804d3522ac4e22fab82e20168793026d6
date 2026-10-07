@@ -1,0 +1,23 @@
+[
+  {
+    "a": "000f",
+    "b": "f0ff",
+    "expected": "f0f0"
+  },
+  {
+    "a": "000f0f",
+    "b": "f0ff",
+    "mutated": "f0f00f",
+    "expected": "f0f0"
+  },
+  {
+    "a": "000f",
+    "b": "f0ffff",
+    "expected": "f0f0"
+  },
+  {
+    "a": "000000",
+    "b": "000000",
+    "expected": "000000"
+  }
+]

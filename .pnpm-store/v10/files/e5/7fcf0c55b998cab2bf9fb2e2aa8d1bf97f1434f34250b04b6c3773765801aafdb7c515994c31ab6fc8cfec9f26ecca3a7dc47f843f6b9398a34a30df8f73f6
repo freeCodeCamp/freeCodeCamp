@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/ScheduleInterval.js",
+  "module": "../dist/esm/ScheduleInterval.js",
+  "types": "../dist/dts/ScheduleInterval.d.ts"
+}

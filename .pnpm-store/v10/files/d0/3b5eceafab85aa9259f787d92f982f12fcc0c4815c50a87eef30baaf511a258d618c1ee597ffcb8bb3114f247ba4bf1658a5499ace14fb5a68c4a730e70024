@@ -1,0 +1,90 @@
+{
+  "name": "memoize-one",
+  "version": "5.2.1",
+  "description": "A memoization library which only remembers the latest invocation",
+  "main": "dist/memoize-one.cjs.js",
+  "types": "dist/memoize-one.d.ts",
+  "module": "dist/memoize-one.esm.js",
+  "sideEffects": false,
+  "author": "Alex Reardon <alexreardon@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexreardon/memoize-one.git"
+  },
+  "files": [
+    "/dist",
+    "/src"
+  ],
+  "size-limit": [
+    {
+      "path": "dist/memoize-one.min.js",
+      "limit": "214B"
+    },
+    {
+      "path": "dist/memoize-one.js",
+      "limit": "216B"
+    },
+    {
+      "path": "dist/memoize-one.cjs.js",
+      "limit": "213B"
+    },
+    {
+      "path": "dist/memoize-one.esm.js",
+      "limit": "218B"
+    }
+  ],
+  "keywords": [
+    "memoize",
+    "memoization",
+    "cache",
+    "performance"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.10.2",
+    "@types/jest": "^26.0.22",
+    "@types/lodash.isequal": "^4.5.5",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "benchmark": "^2.1.4",
+    "cross-env": "^7.0.3",
+    "eslint": "7.24.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jest": "^24.3.5",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "lodash.isequal": "^4.5.0",
+    "prettier": "2.2.1",
+    "rimraf": "3.0.2",
+    "rollup": "^2.45.1",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "size-limit": "^4.10.2",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "config": {
+    "prettier_target": "src/**/*.{ts,js,jsx,md,json} test/**/*.{ts,js,jsx,md,json}"
+  },
+  "scripts": {
+    "validate": "yarn lint && yarn typecheck",
+    "test": "yarn jest",
+    "test:size": "yarn build && size-limit",
+    "typecheck": "yarn tsc --noEmit",
+    "prettier:check": "yarn prettier --debug-check $npm_package_config_prettier_target",
+    "prettier:write": "yarn prettier --write $npm_package_config_prettier_target",
+    "lint:eslint": "eslint $npm_package_config_prettier_target",
+    "lint": "yarn lint:eslint && yarn prettier:check",
+    "build": "yarn build:clean && yarn build:dist && yarn build:typescript && yarn build:flow",
+    "build:clean": "rimraf dist",
+    "build:dist": "rollup -c",
+    "build:typescript": "tsc ./src/memoize-one.ts --emitDeclarationOnly --declaration --outDir ./dist",
+    "build:flow": "cp src/memoize-one.js.flow dist/memoize-one.cjs.js.flow",
+    "perf": "ts-node ./benchmarks/shallow-equal.ts",
+    "prepublishOnly": "yarn build"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/childNodes",
+  "private": true,
+  "main": "../cjs/childNodes.js",
+  "module": "../esm/childNodes.js",
+  "types": "../esm/childNodes.d.ts"
+}

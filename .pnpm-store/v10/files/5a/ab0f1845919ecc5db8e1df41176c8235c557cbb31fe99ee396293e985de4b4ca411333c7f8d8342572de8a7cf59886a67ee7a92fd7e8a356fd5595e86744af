@@ -1,0 +1,6 @@
+export = plugin;
+/** @import {ESLint} from "eslint" */
+/** @type {ESLint.Plugin} */
+declare const plugin: ESLint.Plugin;
+import type { ESLint } from "eslint";
+//# sourceMappingURL=index.d.ts.map

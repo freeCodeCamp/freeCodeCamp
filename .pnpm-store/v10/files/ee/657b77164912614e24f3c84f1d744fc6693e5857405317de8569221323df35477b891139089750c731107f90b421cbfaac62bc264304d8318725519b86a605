@@ -1,0 +1,60 @@
+{
+  "name": "dotenv",
+  "version": "16.0.3",
+  "description": "Loads environment variables from .env file",
+  "main": "lib/main.js",
+  "types": "lib/main.d.ts",
+  "exports": {
+    ".": {
+      "require": "./lib/main.js",
+      "types": "./lib/main.d.ts",
+      "default": "./lib/main.js"
+    },
+    "./config": "./config.js",
+    "./config.js": "./config.js",
+    "./lib/env-options": "./lib/env-options.js",
+    "./lib/env-options.js": "./lib/env-options.js",
+    "./lib/cli-options": "./lib/cli-options.js",
+    "./lib/cli-options.js": "./lib/cli-options.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "dts-check": "tsc --project tests/types/tsconfig.json",
+    "lint": "standard",
+    "lint-readme": "standard-markdown",
+    "pretest": "npm run lint && npm run dts-check",
+    "test": "tap tests/*.js --100 -Rspec",
+    "prerelease": "npm test",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/motdotla/dotenv.git"
+  },
+  "keywords": [
+    "dotenv",
+    "env",
+    ".env",
+    "environment",
+    "variables",
+    "config",
+    "settings"
+  ],
+  "readmeFilename": "README.md",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@types/node": "^17.0.9",
+    "decache": "^4.6.1",
+    "dtslint": "^3.7.0",
+    "sinon": "^12.0.1",
+    "standard": "^16.0.4",
+    "standard-markdown": "^7.1.0",
+    "standard-version": "^9.3.2",
+    "tap": "^15.1.6",
+    "tar": "^6.1.11",
+    "typescript": "^4.5.4"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}

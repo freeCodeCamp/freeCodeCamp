@@ -1,0 +1,101 @@
+{
+	"name": "ts-api-utils",
+	"version": "2.5.0",
+	"description": "Utility functions for working with TypeScript's API. Successor to the wonderful tsutils. 🛠️️",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JoshuaKGoldberg/ts-api-utils"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "JoshuaKGoldberg",
+		"email": "npm@joshuakgoldberg.com"
+	},
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"types": {
+				"import": "./lib/index.d.ts",
+				"require": "./lib/index.d.cts"
+			},
+			"import": "./lib/index.js",
+			"require": "./lib/index.cjs"
+		}
+	},
+	"main": "./lib/index.js",
+	"files": [
+		"lib/"
+	],
+	"scripts": {
+		"build": "tsup src/index.ts && cp lib/index.d.ts lib/index.d.cts",
+		"docs": "typedoc",
+		"docs:serve": "npx --yes http-server docs/generated",
+		"format": "prettier \"**/*\" --ignore-unknown",
+		"lint": "eslint . --max-warnings 0",
+		"lint:docs": "typedoc --validation --treatValidationWarningsAsErrors",
+		"lint:knip": "knip",
+		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\" --rules sentences-per-line",
+		"lint:package": "publint --strict",
+		"lint:packages": "pnpm dedupe --check",
+		"lint:spelling": "cspell \"**\" \".github/**/*\"",
+		"prepare": "husky",
+		"should-semantic-release": "should-semantic-release --verbose",
+		"test": "vitest",
+		"tsc": "tsc"
+	},
+	"lint-staged": {
+		"*": "prettier --ignore-unknown --write"
+	},
+	"devDependencies": {
+		"@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
+		"@eslint/js": "^10.0.0",
+		"@phenomnomnominal/tsquery": "^6.1.3",
+		"@release-it/conventional-changelog": "^10.0.0",
+		"@types/eslint-plugin-markdown": "^2.0.2",
+		"@types/node": "^18.19.74",
+		"@typescript/vfs": "^1.6.0",
+		"@vitest/coverage-v8": "^3.0.0",
+		"@vitest/eslint-plugin": "^1.1.25",
+		"console-fail-test": "^0.6.0",
+		"cspell": "^9.0.0",
+		"eslint": "^10.0.0",
+		"eslint-plugin-jsdoc": "^62.0.0",
+		"eslint-plugin-jsonc": "^3.0.0",
+		"eslint-plugin-markdown": "^5.1.0",
+		"eslint-plugin-n": "^17.15.1",
+		"eslint-plugin-package-json": "^0.91.0",
+		"eslint-plugin-perfectionist": "^5.0.0",
+		"eslint-plugin-regexp": "^3.0.0",
+		"eslint-plugin-yml": "^3.0.0",
+		"husky": "^9.1.7",
+		"jsonc-eslint-parser": "^3.0.0",
+		"knip": "^5.46.0",
+		"lint-staged": "^16.0.0",
+		"markdownlint": "^0.40.0",
+		"markdownlint-cli": "^0.48.0",
+		"prettier": "^3.4.2",
+		"prettier-plugin-curly": "^0.4.0",
+		"prettier-plugin-packagejson": "^3.0.0",
+		"publint": "^0.3.17",
+		"release-it": "^19.0.0",
+		"sentences-per-line": "^0.3.0",
+		"should-semantic-release": "^0.3.0",
+		"tsup": "^8.3.6",
+		"typedoc": "^0.28.0",
+		"typedoc-plugin-coverage": "^4.0.0",
+		"typedoc-plugin-custom-validation": "^2.0.2",
+		"typedoc-plugin-konamimojisplosion": "^0.0.2",
+		"typedoc-plugin-mdn-links": "^5.0.0",
+		"typescript": "^5.7.3",
+		"typescript-eslint": "^8.22.0",
+		"vitest": "^3.0.0"
+	},
+	"peerDependencies": {
+		"typescript": ">=4.8.4"
+	},
+	"packageManager": "pnpm@10.32.1",
+	"engines": {
+		"node": ">=18.12"
+	}
+}

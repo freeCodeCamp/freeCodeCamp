@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<script src=bundle.js></script>
+<body>
+	<pre>
+		require('crypto').createHash('sha1').update('abc').digest('hex') == '<span id=ans></span>'
+	</pre>
+</body>
+<script>
+	document.getElementById('ans').innerHTML = require('crypto').createHash('sha1').update('abc').digest('hex')
+</script>
+</html>

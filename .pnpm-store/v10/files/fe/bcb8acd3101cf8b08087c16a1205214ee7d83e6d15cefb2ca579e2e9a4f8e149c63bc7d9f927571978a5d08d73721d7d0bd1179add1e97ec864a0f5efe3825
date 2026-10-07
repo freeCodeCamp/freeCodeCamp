@@ -1,0 +1,1 @@
+{"version":3,"file":"ajax.js","sources":["../../../../src/internal/observable/dom/ajax.ts"],"names":[],"mappings":"AAAA,OAAO,EAAG,cAAc,EAAuB,MAAM,kBAAkB,CAAC;AAiFxE,MAAM,CAAC,IAAM,IAAI,GAAuB,CAAC,cAAM,OAAA,cAAc,CAAC,MAAM,EAArB,CAAqB,CAAC,EAAE,CAAC"}

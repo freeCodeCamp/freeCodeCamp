@@ -1,0 +1,32 @@
+{
+  "name": "@lezer/lr",
+  "version": "1.4.2",
+  "description": "Incremental parser",
+  "main": "dist/index.cjs",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
+  "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/lezer-parser/lr.git"
+  },
+  "devDependencies": {
+    "@marijn/buildtool": "^0.1.5",
+    "@types/node": "^20.6.2"
+  },
+  "dependencies": {
+    "@lezer/common": "^1.0.0"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "test": "echo 'Tests are in @lezer/generator'",
+    "watch": "node build.js --watch",
+    "prepare": "node build.js; tsc src/constants.ts -d --outDir dist"
+  }
+}

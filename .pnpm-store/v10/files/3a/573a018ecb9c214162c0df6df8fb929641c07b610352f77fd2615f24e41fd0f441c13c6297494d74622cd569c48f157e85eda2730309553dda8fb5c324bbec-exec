@@ -1,0 +1,49 @@
+#! /usr/bin/perl
+
+#  Creates the metafont file needed for darker copies of the TeX fonts,
+#  and modifies mftrace to use it.
+#
+#  Usage:  ./makeBlacker blackness
+
+require "custom.cfg.pl";
+
+$blacker = shift;
+unless ($blacker) {
+  print stderr "Usage:  ./makeBlacker blackness\n";
+  exit;
+}
+
+sub editMftrace {
+  my $oldMFTRACE = $MFTRACE_PATH;
+  $MFTRACE = "./lib/mftrace-modified";
+  print "Editing mftrace\n";
+  open(MFT,$oldMFTRACE) || die "Can't read '$oldMFTRACE': $!\n";
+  my $MFT = join("",<MFT>);
+  close(MFT);
+  $MFT =~ s!r"mf '\\mode:=(?:[^;]*)(; [^"]*)"!r"""mf '\\smode:="lib/blacker.mf"$1"""!;
+  open(MFT,">$MFTRACE") || die "Can't write '$MFTRACE': $!\n";
+  print MFT $MFT;
+  close(MFT);
+  chmod 0755, $MFTRACE;
+}
+
+sub makeBlackerMF {
+  my $blacker = shift;
+  print "Using blacker = $blacker\n";
+  open(BLACKER,">lib/blacker.mf") || die "Can't write 'lib/blacker.mf': $!\n";
+  print BLACKER << "  END";
+    proofing:=0;
+    fontmaking:=1;
+    tracingtitles:=0;
+    pixels_per_inch:=1200;
+    blacker:=$blacker;
+    fillin:=0;
+    o_correction:=1;
+  END
+  close(BLACKER);
+}
+
+editMftrace();
+makeBlackerMF($blacker);
+
+1;

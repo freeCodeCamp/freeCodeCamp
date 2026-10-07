@@ -1,0 +1,46 @@
+/** @jsx createElement */
+import type { ComponentChildren, ComponentProps, MutableRef, Renderer } from '../../types';
+export type AutocompleteProps = Omit<ComponentProps<'div'>, 'children'> & {
+    children?: ComponentChildren;
+    classNames?: Partial<AutocompleteClassNames>;
+    rootRef?: MutableRef<HTMLDivElement | null>;
+};
+export type AutocompleteClassNames = {
+    /**
+     * Class names to apply to the root element
+     */
+    root: string | string[];
+    /**
+     * Class names to apply to the detached overlay backdrop
+     */
+    detachedOverlay: string | string[];
+    /**
+     * Class names to apply to the detached container
+     */
+    detachedContainer: string | string[];
+    /**
+     * Class names to apply to the detached form container
+     */
+    detachedFormContainer: string | string[];
+    /**
+     * Class names to apply to the detached search button
+     */
+    detachedSearchButton: string | string[];
+    /**
+     * Class names to apply to the detached search button icon
+     */
+    detachedSearchButtonIcon: string | string[];
+    /**
+     * Class names to apply to the detached search button placeholder
+     */
+    detachedSearchButtonPlaceholder: string | string[];
+    /**
+     * Class names to apply to the detached search button query
+     */
+    detachedSearchButtonQuery: string | string[];
+    /**
+     * Class names to apply to the detached search button clear button
+     */
+    detachedSearchButtonClear: string | string[];
+};
+export declare function createAutocompleteComponent({ createElement }: Renderer): (userProps: AutocompleteProps) => JSX.Element;

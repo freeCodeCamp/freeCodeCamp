@@ -1,0 +1,11 @@
+{
+  "version":"0.0.1",
+  "scripts": {
+    "bundle": "webpack",
+    "test": "npm run bundle && node bundler-test.js"
+  },
+  "devDependencies": {
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

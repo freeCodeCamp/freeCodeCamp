@@ -1,0 +1,1 @@
+{"version":3,"file":"jtd-schema.js","sourceRoot":"","sources":["../../lib/types/jtd-schema.ts"],"names":[],"mappings":""}

@@ -1,0 +1,43 @@
+name: Publish release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version number to tag and release'
+        required: true
+        type: string
+      prerelease:
+        description: 'Release as pre-release'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  release-npm:
+    runs-on: ubuntu-latest
+    environment: main
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install npm -g
+      - run: npm install
+      - name: Change version number and sync
+        run: |
+          node scripts/sync-version.mjs ${{ inputs.version }}
+      - name: GIT commit and push all changed files
+        run: |
+          git config --global user.name "mcollina"
+          git config --global user.email "hello@matteocollina.com"
+          git commit -n -a -m "Bumped v${{ inputs.version }}"
+          git push origin HEAD:${{ github.ref }}
+      - run: npm publish --access public --tag ${{ inputs.prerelease == true && 'next' || 'latest' }}
+      - name: 'Create release notes'
+        run: |
+          npx @matteo.collina/release-notes -a ${{ secrets.GITHUB_TOKEN }} -t v${{ inputs.version }} -r redact -o pinojs ${{ github.event.inputs.prerelease == 'true' && '-p' || '' }} -c ${{ github.ref }}

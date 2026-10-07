@@ -1,0 +1,40 @@
+{
+  "name": "postcss-minify-font-values",
+  "version": "5.1.0",
+  "description": "Minify font declarations with PostCSS",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "src",
+    "LICENSE",
+    "types"
+  ],
+  "author": "Bogdan Chadkin <trysound@yandex.ru>",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "font",
+    "font-family",
+    "font-weight",
+    "optimise",
+    "postcss-plugin"
+  ],
+  "dependencies": {
+    "postcss-value-parser": "^4.2.0"
+  },
+  "repository": "cssnano/cssnano",
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "homepage": "https://github.com/cssnano/cssnano",
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# postcss-minify-font-values [![Build Status][ci-img]][ci]\n\n> Minify font declarations with PostCSS.\n\nThis module will try to minimise the `font-family`, `font-weight` and `font` shorthand\nproperties; it can unquote font families where necessary, detect & remove\nduplicates, and cut short a declaration after it finds a keyword. For more\nexamples, see the [tests](test).\n\n```css\nh1 {\n  font:bold 2.2rem/.9 \"Open Sans Condensed\", sans-serif;\n}\n\np {\n  font-family: \"Helvetica Neue\", Arial, sans-serif, Helvetica;\n  font-weight: normal;\n}\n```\n\n```css\nh1 {\n  font:700 2.2rem/.9 Open Sans Condensed,sans-serif\n}\n\np {\n  font-family: Helvetica Neue,Arial,sans-serif;\n  font-weight: 400;\n}\n```\n\n## API\n\n### minifyFontValues([options])\n\n#### options\n\n##### removeAfterKeyword\n\nType: `boolean`\nDefault: `false`\n\nPass `true` to remove font families after the module encounters a font keyword,\nfor example `sans-serif`.\n\n##### removeDuplicates\n\nType: `boolean`\nDefault: `true`\n\nPass `false` to disable the module from removing duplicated font families.\n\n##### removeQuotes\n\nType: `boolean`\nDefault: `true`\n\nPass `false` to disable the module from removing quotes from font families.\nNote that oftentimes, this is a *safe optimisation* & is done safely. For more\ndetails, see [Mathias Bynens' article][mathias].\n\n## Usage\n\n```js\npostcss([ require('postcss-minify-font-values') ])\n```\n\nSee [PostCSS] docs for examples for your environment.\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n\n# License\n\nMIT © [Bogdan Chadkin](mailto:trysound@yandex.ru)\n\n[mathias]: https://mathiasbynens.be/notes/unquoted-font-family\n[PostCSS]: https://github.com/postcss/postcss\n[ci-img]:  https://travis-ci.org/cssnano/postcss-minify-font-values.svg\n[ci]:      https://travis-ci.org/cssnano/postcss-minify-font-values\n"
+}

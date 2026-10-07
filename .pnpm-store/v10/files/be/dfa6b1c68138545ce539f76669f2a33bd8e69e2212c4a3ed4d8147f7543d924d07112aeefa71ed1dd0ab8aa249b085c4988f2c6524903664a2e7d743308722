@@ -1,0 +1,1 @@
+{"version":3,"file":"dynamics-compressor-options.d.ts","sourceRoot":"","sources":["../../../src/interfaces/dynamics-compressor-options.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,sBAAsB,CAAC;AAEzD,MAAM,WAAW,0BAA2B,SAAQ,iBAAiB;IACjE,MAAM,EAAE,MAAM,CAAC;IAEf,IAAI,EAAE,MAAM,CAAC;IAEb,KAAK,EAAE,MAAM,CAAC;IAEd,OAAO,EAAE,MAAM,CAAC;IAEhB,SAAS,EAAE,MAAM,CAAC;CACrB"}

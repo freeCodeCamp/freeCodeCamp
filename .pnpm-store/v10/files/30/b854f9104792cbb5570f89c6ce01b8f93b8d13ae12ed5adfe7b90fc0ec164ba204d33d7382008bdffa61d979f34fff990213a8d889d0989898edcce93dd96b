@@ -1,0 +1,76 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"func-style": "off",
+		"no-magic-numbers": "off",
+	},
+
+	"overrides": [
+		{
+			"files": "bin.js",
+			"extends": "@ljharb/eslint-config/node/0.4",
+			"rules": {
+				"func-style": "off",
+			},
+		},
+		{
+			"files": [
+				"hash.js",
+				"sha.js",
+				"sha1.js",
+				"sha224.js",
+				"sha256.js",
+				"sha384.js",
+				"sha512.js",
+				"test/vectors.js",
+			],
+			"rules": {
+				"no-underscore-dangle": "off",
+			},
+		},
+		{
+			"files": [
+				"sha.js",
+				"sha1.js",
+				"sha224.js",
+			],
+			"rules": {
+				"max-params": "off",
+			},
+		},
+		{
+			"files": [
+				"sha256.js",
+				"sha512.js",
+			],
+			"rules": {
+				"max-statements": "off",
+			},
+		},
+		{
+			"files": [
+				"sha512.js",
+			],
+			"rules": {
+				"new-cap": "warn",
+				"max-lines": "off",
+				"max-lines-per-function": "off",
+			},
+		},
+		{
+			"files": "hash.js",
+			"globals": {
+				"Uint8Array": false,
+			},
+		},
+		{
+			"files": "test/test.js",
+			"globals": {
+				"Uint16Array": false,
+			},
+		},
+	],
+}

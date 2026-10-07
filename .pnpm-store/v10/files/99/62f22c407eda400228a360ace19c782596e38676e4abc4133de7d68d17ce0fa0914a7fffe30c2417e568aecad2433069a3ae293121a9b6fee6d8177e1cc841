@@ -1,0 +1,55 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+
+/* Default standalone editor fonts */
+.monaco-editor {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "HelveticaNeue-Light", system-ui, "Ubuntu", "Droid Sans", sans-serif;
+	--monaco-monospace-font: "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace;
+}
+
+.monaco-menu .monaco-action-bar.vertical .action-item .action-menu-item:focus .action-label {
+	stroke-width: 1.2px;
+}
+
+.monaco-editor.vs-dark .monaco-menu .monaco-action-bar.vertical .action-menu-item:focus .action-label,
+.monaco-editor.hc-black .monaco-menu .monaco-action-bar.vertical .action-menu-item:focus .action-label,
+.monaco-editor.hc-light .monaco-menu .monaco-action-bar.vertical .action-menu-item:focus .action-label {
+	stroke-width: 1.2px;
+}
+
+.monaco-hover p {
+	margin: 0;
+}
+
+/* See https://github.com/microsoft/monaco-editor/issues/2168#issuecomment-780078600 */
+.monaco-aria-container {
+	position: absolute !important;
+	top: 0; /* avoid being placed underneath a sibling element */
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+}
+
+.monaco-editor .synthetic-focus, .monaco-diff-editor .synthetic-focus,
+.monaco-editor [tabindex="0"]:focus, .monaco-diff-editor [tabindex="0"]:focus,
+.monaco-editor [tabindex="-1"]:focus, .monaco-diff-editor [tabindex="-1"]:focus,
+.monaco-editor button:focus, .monaco-diff-editor button:focus,
+.monaco-editor input[type=button]:focus, .monaco-diff-editor input[type=button]:focus,
+.monaco-editor input[type=checkbox]:focus, .monaco-diff-editor input[type=checkbox]:focus,
+.monaco-editor input[type=search]:focus, .monaco-diff-editor input[type=search]:focus,
+.monaco-editor input[type=text]:focus, .monaco-diff-editor input[type=text]:focus,
+.monaco-editor select:focus, .monaco-diff-editor select:focus,
+.monaco-editor textarea:focus, .monaco-diff-editor textarea:focus {
+	outline-width: 1px;
+	outline-style: solid;
+	outline-offset: -1px;
+	outline-color: var(--vscode-focusBorder);
+	opacity: 1
+}

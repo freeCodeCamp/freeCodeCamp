@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "airbnb",
+      {
+        "targets": {
+          "node": 4
+        },
+        "transformRuntime": false
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-flow-strip-types",
+    "add-module-exports"
+  ]
+}

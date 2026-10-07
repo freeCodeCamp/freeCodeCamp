@@ -1,0 +1,47 @@
+{
+    "name": "@types/reach__router",
+    "version": "1.3.15",
+    "description": "TypeScript definitions for @reach/router",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/reach__router",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "A.Mokhtar",
+            "githubUsername": "xMokAx",
+            "url": "https://github.com/xMokAx"
+        },
+        {
+            "name": "Awwit",
+            "githubUsername": "awwit",
+            "url": "https://github.com/awwit"
+        },
+        {
+            "name": "wroughtec",
+            "githubUsername": "wroughtec",
+            "url": "https://github.com/wroughtec"
+        },
+        {
+            "name": "O.Jackman",
+            "githubUsername": "chilledoj",
+            "url": "https://github.com/chilledoj"
+        },
+        {
+            "name": "Eyas",
+            "githubUsername": "Eyas",
+            "url": "https://github.com/Eyas"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/reach__router"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/react": "*"
+    },
+    "typesPublisherContentHash": "d0ab967541d1a52b49285d629e2fa2585212560ca5b85e8a9b005ca59c4817c9",
+    "typeScriptVersion": "4.6"
+}

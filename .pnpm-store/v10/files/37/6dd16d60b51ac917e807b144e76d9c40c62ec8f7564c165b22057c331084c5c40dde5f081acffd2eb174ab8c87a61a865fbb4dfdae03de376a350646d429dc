@@ -1,0 +1,90 @@
+"use strict";
+exports.differenceInBusinessDays = differenceInBusinessDays;
+var _index = require("./_lib/normalizeDates.cjs");
+var _index2 = require("./addDays.cjs");
+var _index3 = require("./differenceInCalendarDays.cjs");
+var _index4 = require("./isSameDay.cjs");
+var _index5 = require("./isValid.cjs");
+var _index6 = require("./isWeekend.cjs");
+
+/**
+ * The {@link differenceInBusinessDays} function options.
+ */
+
+/**
+ * @name differenceInBusinessDays
+ * @category Day Helpers
+ * @summary Get the number of business days between the given dates.
+ *
+ * @description
+ * Get the number of business day periods between the given dates.
+ * Business days being days that aren't in the weekend.
+ * Like `differenceInCalendarDays`, the function removes the times from
+ * the dates before calculating the difference.
+ *
+ * @param laterDate - The later date
+ * @param earlierDate - The earlier date
+ * @param options - An object with options
+ *
+ * @returns The number of business days
+ *
+ * @example
+ * // How many business days are between
+ * // 10 January 2014 and 20 July 2014?
+ * const result = differenceInBusinessDays(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 0, 10)
+ * )
+ * //=> 136
+ *
+ * // How many business days are between
+ * // 30 November 2021 and 1 November 2021?
+ * const result = differenceInBusinessDays(
+ *   new Date(2021, 10, 30),
+ *   new Date(2021, 10, 1)
+ * )
+ * //=> 21
+ *
+ * // How many business days are between
+ * // 1 November 2021 and 1 December 2021?
+ * const result = differenceInBusinessDays(
+ *   new Date(2021, 10, 1),
+ *   new Date(2021, 11, 1)
+ * )
+ * //=> -22
+ *
+ * // How many business days are between
+ * // 1 November 2021 and 1 November 2021 ?
+ * const result = differenceInBusinessDays(
+ *   new Date(2021, 10, 1),
+ *   new Date(2021, 10, 1)
+ * )
+ * //=> 0
+ */
+function differenceInBusinessDays(laterDate, earlierDate, options) {
+  const [laterDate_, earlierDate_] = (0, _index.normalizeDates)(
+    options?.in,
+    laterDate,
+    earlierDate,
+  );
+
+  if (!(0, _index5.isValid)(laterDate_) || !(0, _index5.isValid)(earlierDate_))
+    return NaN;
+
+  const diff = (0, _index3.differenceInCalendarDays)(laterDate_, earlierDate_);
+  const sign = diff < 0 ? -1 : 1;
+  const weeks = Math.trunc(diff / 7);
+
+  let result = weeks * 5;
+  let movingDate = (0, _index2.addDays)(earlierDate_, weeks * 7);
+
+  // the loop below will run at most 6 times to account for the remaining days that don't makeup a full week
+  while (!(0, _index4.isSameDay)(laterDate_, movingDate)) {
+    // sign is used to account for both negative and positive differences
+    result += (0, _index6.isWeekend)(movingDate, options) ? 0 : sign;
+    movingDate = (0, _index2.addDays)(movingDate, sign);
+  }
+
+  // Prevent negative zero
+  return result === 0 ? 0 : result;
+}

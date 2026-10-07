@@ -1,0 +1,62 @@
+{
+  "name": "react-speech-recognition",
+  "version": "4.0.1",
+  "description": "Speech recognition for your React app",
+  "keywords": [
+    "react",
+    "reactjs",
+    "speech",
+    "recognition"
+  ],
+  "homepage": "https://webspeechrecognition.com",
+  "repository": "github:JamesBrill/react-speech-recognition",
+  "license": "MIT",
+  "author": "James Brill <contact@jamesbrill.co.uk>",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bunchee",
+    "fix": "biome check --fix",
+    "lint": "biome check",
+    "prepack": "bunchee",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@testing-library/react-hooks": "3.7.0",
+    "@vitest/coverage-v8": "3.1.2",
+    "bunchee": "6.5.1",
+    "jsdom": "26.1.0",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-test-renderer": "16.14.0",
+    "typescript": "5.8.3",
+    "vitest": "3.1.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "packageManager": "yarn@4.9.1",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org"
+  }
+}

@@ -1,0 +1,74 @@
+{
+    "name": "htmlparser2",
+    "description": "Fast & forgiving HTML/XML parser",
+    "version": "6.1.0",
+    "author": "Felix Boehm <me@feedic.com>",
+    "funding": [
+        "https://github.com/fb55/htmlparser2?sponsor=1",
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/fb55"
+        }
+    ],
+    "license": "MIT",
+    "sideEffects": false,
+    "keywords": [
+        "html",
+        "parser",
+        "streams",
+        "xml",
+        "dom",
+        "rss",
+        "feed",
+        "atom"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/fb55/htmlparser2.git"
+    },
+    "directories": {
+        "lib": "lib/"
+    },
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "jest --coverage",
+        "lint": "npm run lint:es && npm run lint:prettier",
+        "lint:es": "eslint src",
+        "lint:prettier": "npm run format:prettier:raw -- --check",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run format:prettier:raw -- --write",
+        "format:prettier:raw": "prettier '**/*.{ts,md,json,yml}'",
+        "build": "tsc",
+        "prepare": "npm run build"
+    },
+    "dependencies": {
+        "domelementtype": "^2.0.1",
+        "domhandler": "^4.0.0",
+        "domutils": "^2.5.2",
+        "entities": "^2.0.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.0",
+        "@types/node": "^14.0.5",
+        "@typescript-eslint/eslint-plugin": "^4.9.1",
+        "@typescript-eslint/parser": "^4.9.1",
+        "eslint": "^7.15.0",
+        "eslint-config-prettier": "^8.1.0",
+        "jest": "^26.0.1",
+        "prettier": "^2.1.1",
+        "ts-jest": "^26.0.0",
+        "typescript": "^4.0.2"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node"
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}

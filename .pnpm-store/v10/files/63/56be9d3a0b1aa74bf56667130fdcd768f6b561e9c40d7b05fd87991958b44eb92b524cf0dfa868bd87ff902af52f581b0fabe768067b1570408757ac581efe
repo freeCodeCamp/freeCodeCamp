@@ -1,0 +1,214 @@
+# Empty stylesheets
+
+/* Just a comment */
+
+==>
+
+StyleSheet(Comment)
+
+# Import statements
+
+@import url("fineprint.css") print;
+@import url("bluish.css") speech;
+@import 'custom.css';
+@import url("chrome://communicator/skin/");
+@import "common.css" screen;
+@import "reset.css" layer(framework.component);
+@import "components.css" layer screen;
+
+==>
+
+StyleSheet(
+  ImportStatement(import,CallLiteral(CallTag,StringLiteral),KeywordQuery),
+  ImportStatement(import,CallLiteral(CallTag,StringLiteral),KeywordQuery),
+  ImportStatement(import,StringLiteral),
+  ImportStatement(import,CallLiteral(CallTag,StringLiteral)),
+  ImportStatement(import,StringLiteral,KeywordQuery),
+  ImportStatement(import,StringLiteral,Layer(layer,LayerName,LayerName)),
+  ImportStatement(import,StringLiteral,Layer(layer),KeywordQuery))
+
+# Namespace statements
+
+/* Default namespace */
+@namespace url(XML-namespace-URL);
+@namespace "XML-namespace-URL";
+@namespace url(http://www.w3.org/1999/xhtml);
+@namespace svg url(http://www.w3.org/2000/svg);
+
+/* Prefixed namespace */
+@namespace prefix url(XML-namespace-URL);
+@namespace prefix "XML-namespace-URL";
+
+==>
+
+StyleSheet(
+  Comment,
+  NamespaceStatement(namespace,CallLiteral(CallTag,ParenthesizedContent)),
+  NamespaceStatement(namespace,StringLiteral),
+  NamespaceStatement(namespace,CallLiteral(CallTag,ParenthesizedContent)),
+  NamespaceStatement(namespace,NamespaceName,CallLiteral(CallTag,ParenthesizedContent)),
+  Comment,
+  NamespaceStatement(namespace,NamespaceName,CallLiteral(CallTag,ParenthesizedContent)),
+  NamespaceStatement(namespace,NamespaceName,StringLiteral))
+
+# Keyframes statements
+
+@keyframes important1 {
+  from { margin-top: 50px; }
+  50%, 60%  { margin-top: 150px !important; } /* ignored */
+  to   { margin-top: 100px; }
+}
+
+==>
+
+StyleSheet(KeyframesStatement(keyframes,KeyframeName,KeyframeList(
+  KeyframeSelector(KeyframeRangeName),Block(Declaration(PropertyName,NumberLiteral(Unit))),
+  KeyframeSelector(NumberLiteral(Unit)),KeyframeSelector(NumberLiteral(Unit)),Block(
+    Declaration(PropertyName,NumberLiteral(Unit),Important)),
+  Comment,
+  KeyframeSelector(KeyframeRangeName),Block(Declaration(PropertyName,NumberLiteral(Unit))))))
+
+# Keyframes statements with range
+
+@keyframes anim-1 {
+  entry 0%  { margin-top: 50px; }
+  entry 100%  { margin-top: 50px; }
+  exit 0% { margin-top: 50px; }
+  exit 100% { margin-top: 50px; }
+}
+
+==>
+
+StyleSheet(KeyframesStatement(keyframes,KeyframeName,KeyframeList(
+  KeyframeSelector(KeyframeRangeName,NumberLiteral(Unit)),Block(Declaration(PropertyName,NumberLiteral(Unit))),
+  KeyframeSelector(KeyframeRangeName,NumberLiteral(Unit)),Block(Declaration(PropertyName,NumberLiteral(Unit))),
+  KeyframeSelector(KeyframeRangeName,NumberLiteral(Unit)),Block(Declaration(PropertyName,NumberLiteral(Unit))),
+  KeyframeSelector(KeyframeRangeName,NumberLiteral(Unit)),Block(Declaration(PropertyName,NumberLiteral(Unit))))))
+
+# Keyframes statements with range and multiple keyframe selectors
+
+@keyframes fade-in-out-animation {
+  entry 0%, exit 100% { opacity: 0 }
+  entry 100%, exit 0% { opacity: 1 }
+}
+
+==>
+
+StyleSheet(KeyframesStatement(keyframes,KeyframeName,KeyframeList(
+  KeyframeSelector(KeyframeRangeName,NumberLiteral(Unit)),KeyframeSelector(KeyframeRangeName,NumberLiteral(Unit)),Block(
+    Declaration(PropertyName,NumberLiteral)),
+  KeyframeSelector(KeyframeRangeName,NumberLiteral(Unit)),KeyframeSelector(KeyframeRangeName,NumberLiteral(Unit)),Block(
+    Declaration(PropertyName,NumberLiteral)))))
+
+# Media statements
+
+@media screen and (min-width: 30em) and (orientation: landscape) {}
+@media (min-height: 680px), screen and (orientation: portrait) {}
+@media not all and (monochrome) {}
+@media only screen {}
+@media (10em <= width < 30em) {}
+
+==>
+
+StyleSheet(
+  MediaStatement(media,BinaryQuery(BinaryQuery(KeywordQuery,LogicOp,FeatureQuery(FeatureName,NumberLiteral(Unit))),LogicOp,
+    FeatureQuery(FeatureName,ValueName)),Block),
+  MediaStatement(media,FeatureQuery(FeatureName,NumberLiteral(Unit)),BinaryQuery(KeywordQuery,LogicOp,FeatureQuery(FeatureName,ValueName)),Block),
+  MediaStatement(media,UnaryQuery(UnaryQueryOp,BinaryQuery(KeywordQuery,LogicOp,ParenthesizedQuery(KeywordQuery))),Block),
+  MediaStatement(media,UnaryQuery(UnaryQueryOp,KeywordQuery),Block),
+  MediaStatement(media,ComparisonQuery(NumberLiteral(Unit),CompareOp,FeatureName,CompareOp,NumberLiteral(Unit)),Block))
+
+# Supports statements
+
+@supports (animation-name: test) {
+  div { animation-name: test; }
+}
+@supports (transform-style: preserve) or (-moz-transform-style: preserve) {}
+@supports not ((text-align-last: justify) or (-moz-text-align-last: justify)) {}
+@supports not selector(:matches(a, b)) {}
+
+==>
+
+StyleSheet(
+  SupportsStatement(supports,FeatureQuery(FeatureName,ValueName),Block(RuleSet(TagSelector(TagName),Block(Declaration(PropertyName,ValueName))))),
+  SupportsStatement(supports,BinaryQuery(FeatureQuery(FeatureName,ValueName),LogicOp,FeatureQuery(FeatureName,ValueName)),Block),
+  SupportsStatement(supports,UnaryQuery(UnaryQueryOp,ParenthesizedQuery(
+    BinaryQuery(FeatureQuery(FeatureName,ValueName),LogicOp,FeatureQuery(FeatureName,ValueName)))),Block),
+  SupportsStatement(supports,UnaryQuery(UnaryQueryOp,SelectorQuery(selector,ParenthesizedSelector(PseudoClassSelector(PseudoClassName,ArgList(TagSelector(TagName),TagSelector(TagName)))))),Block))
+
+# Charset statements
+
+@charset "utf-8";
+
+==>
+
+StyleSheet(CharsetStatement(charset,StringLiteral))
+
+# Other at-statements
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/a") format("woff2"), url("/b/c") format("woff");
+}
+
+==>
+
+StyleSheet(AtRule(AtKeyword,Block(
+  Declaration(PropertyName,StringLiteral),
+  Declaration(PropertyName,CallLiteral(CallTag,StringLiteral),CallExpression(Callee,ArgList(StringLiteral)),
+    CallLiteral(CallTag,StringLiteral),CallExpression(Callee,ArgList(StringLiteral))))))
+
+# Unterminated Comment
+
+p {}
+/*
+div {}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block),Comment)
+
+# Escaped identifiers
+
+#foo\ bar {
+  --weird\\var: 5px;
+  width: var(--weird\\var);
+  c\6f lor: b\6c ue;
+}
+==>
+
+StyleSheet(RuleSet(IdSelector(IdName),Block(
+  Declaration(VariableName,NumberLiteral(Unit)),
+  Declaration(PropertyName,CallExpression(Callee,ArgList(VariableName))),
+  Declaration(PropertyName, ValueName))))
+
+# Scope
+
+@scope { .x {} }
+@scope (div) {}
+@scope (.a) to (.b) {}
+
+==>
+
+StyleSheet(
+  ScopeStatement(scope,Block(RuleSet(ClassSelector(ClassName),Block))),
+  ScopeStatement(scope,ParenthesizedSelector(TagSelector(TagName)),Block),
+  ScopeStatement(scope,ParenthesizedSelector(ClassSelector(ClassName)),to,ParenthesizedSelector(ClassSelector(ClassName)),Block))
+
+# If Expressions
+
+p {
+  background-color: if(
+    style(--color: white): black;
+    supports(foo: bar): red;
+    else: pink
+  );
+}
+
+==>
+
+StyleSheet(RuleSet(TagSelector(TagName),Block(
+  Declaration(PropertyName,IfExpression(if,ArgList(
+    IfBranch(CallQuery(QueryCallee,ArgList(FeatureName,ValueName)),ValueName),
+    IfBranch(CallQuery(QueryCallee,ArgList(FeatureName,ValueName)),ValueName),
+    IfBranch(KeywordQuery,ValueName)))))))

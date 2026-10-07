@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Channel.js",
+  "module": "../dist/esm/Channel.js",
+  "types": "../dist/dts/Channel.d.ts"
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../base-tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./js_out"
+  }
+}

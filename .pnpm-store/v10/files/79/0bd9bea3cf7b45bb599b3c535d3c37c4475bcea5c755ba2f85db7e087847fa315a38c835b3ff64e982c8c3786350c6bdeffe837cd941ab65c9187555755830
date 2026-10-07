@@ -1,0 +1,1 @@
+{"version":3,"file":"setupCheck.d.ts","sourceRoot":"","sources":["../../../src/utils/setupCheck.ts"],"names":[],"mappings":"AAAA,KAAK,oBAAoB,GAAG,qBAAqB,GAAG,sBAAsB,GAAG,kBAAkB,GAAG,eAAe,CAAC;AAIlH,gEAAgE;AAChE,wBAAgB,uBAAuB,IAAI,oBAAoB,EAAE,CAEhE;AAED,8CAA8C;AAC9C,wBAAgB,UAAU,CAAC,OAAO,EAAE,oBAAoB,GAAG,IAAI,CAE9D;AAED,+BAA+B;AAC/B,wBAAgB,4BAA4B,IAAI,IAAI,CAEnD"}

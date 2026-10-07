@@ -1,0 +1,152 @@
+{
+	"name": "ext",
+	"version": "1.7.0",
+	"description": "JavaScript utilities with respect to emerging standard",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+	"keywords": [
+		"ecmascript",
+		"es",
+		"es6",
+		"extensions",
+		"ext",
+		"addons",
+		"lodash",
+		"extras",
+		"harmony",
+		"javascript",
+		"polyfill",
+		"shim",
+		"util",
+		"utils",
+		"utilities"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/medikoo/es5-ext#ext"
+	},
+	"dependencies": {
+		"type": "^2.7.2"
+	},
+	"devDependencies": {
+		"chai": "^4.3.6",
+		"eslint": "^8.23.0",
+		"eslint-config-medikoo": "^4.1.2",
+		"git-list-updated": "^1.2.1",
+		"github-release-from-cc-changelog": "^2.3.0",
+		"husky": "^4.3.8",
+		"lint-staged": "^13.0.3",
+		"mocha": "^6.2.3",
+		"nyc": "^15.1.0",
+		"prettier-elastic": "^2.2.1",
+		"sinon": "^8.1.1",
+		"timers-ext": "^0.1.7"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint"
+		],
+		"*.{css,html,js,json,md,yaml,yml}": [
+			"prettier -c"
+		]
+	},
+	"eslintIgnore": [
+		"_es5-ext"
+	],
+	"eslintConfig": {
+		"extends": "medikoo/es3",
+		"root": true,
+		"overrides": [
+			{
+				"files": "global-this/implementation.js",
+				"globals": {
+					"__global__": true,
+					"self": true,
+					"window": true
+				},
+				"rules": {
+					"no-extend-native": "off",
+					"strict": "off"
+				}
+			},
+			{
+				"files": [
+					"global-this/is-implemented.js",
+					"global-this/index.js"
+				],
+				"globals": {
+					"globalThis": true
+				}
+			},
+			{
+				"files": "string_/camel-to-hyphen.js",
+				"rules": {
+					"id-length": "off"
+				}
+			},
+			{
+				"files": "test/**/*.js",
+				"env": {
+					"mocha": true
+				}
+			},
+			{
+				"files": [
+					"test/promise/limit.js",
+					"test/thenable_/finally.js"
+				],
+				"globals": {
+					"Promise": true
+				}
+			}
+		]
+	},
+	"prettier": {
+		"printWidth": 100,
+		"tabWidth": 4,
+		"overrides": [
+			{
+				"files": [
+					"*.md",
+					"*.yml"
+				],
+				"options": {
+					"tabWidth": 2
+				}
+			}
+		]
+	},
+	"mocha": {
+		"recursive": true
+	},
+	"nyc": {
+		"all": true,
+		"exclude": [
+			".github",
+			"_es5-ext",
+			"coverage/**",
+			"test/**",
+			"*.config.js"
+		],
+		"reporter": [
+			"lcov",
+			"html",
+			"text-summary"
+		]
+	},
+	"scripts": {
+		"coverage": "nyc npm test",
+		"lint": "eslint .",
+		"lint:updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+		"prettier-check": "prettier -c --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
+		"prettier-check:updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
+		"prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
+		"prettify:updated": "pipe-git-updated ---base=main -ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier --write",
+		"test": "mocha"
+	},
+	"license": "ISC"
+}

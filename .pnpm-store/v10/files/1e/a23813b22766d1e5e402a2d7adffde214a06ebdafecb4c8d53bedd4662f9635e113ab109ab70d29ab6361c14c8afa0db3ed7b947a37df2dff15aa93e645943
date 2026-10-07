@@ -1,0 +1,38 @@
+{
+  "name": "launder",
+  "version": "1.7.1",
+  "description": "A sanitize module for the people. Built for ApostropheCMS.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apostrophecms/apostrophe.git",
+    "directory": "packages/launder"
+  },
+  "homepage": "https://github.com/apostrophecms/apostrophe/tree/main/packages/launder#readme",
+  "keywords": [
+    "sanitize",
+    "launder"
+  ],
+  "author": "Apostrophe Technologies, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apostrophecms/launder/issues"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "mocha": "^11.7.5",
+    "eslint-config-apostrophe": "^6.0.2"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.7"
+  },
+  "apostropheTestConfig": {
+    "requiresMongo": false
+  },
+  "scripts": {
+    "lint": "pnpm run eslint",
+    "eslint": "eslint .",
+    "test": "pnpm run lint && pnpm run mocha",
+    "mocha": "mocha"
+  }
+}

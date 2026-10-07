@@ -1,0 +1,78 @@
+{
+  "name": "semver",
+  "version": "7.7.4",
+  "description": "The semantic version parser used by npm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap",
+    "snap": "tap",
+    "lint": "npm run eslint",
+    "postlint": "template-oss-check",
+    "lintfix": "npm run eslint -- --fix",
+    "posttest": "npm run lint",
+    "template-oss-apply": "template-oss-apply --force",
+    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
+  },
+  "devDependencies": {
+    "@npmcli/eslint-config": "^6.0.0",
+    "@npmcli/template-oss": "4.29.0",
+    "benchmark": "^2.1.4",
+    "tap": "^16.0.0"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/node-semver.git"
+  },
+  "bin": {
+    "semver": "bin/semver.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "classes/",
+    "functions/",
+    "internal/",
+    "ranges/",
+    "index.js",
+    "preload.js",
+    "range.bnf"
+  ],
+  "tap": {
+    "timeout": 30,
+    "coverage-map": "map.js",
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "author": "GitHub Inc.",
+  "templateOSS": {
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "4.29.0",
+    "engines": ">=10",
+    "distPaths": [
+      "classes/",
+      "functions/",
+      "internal/",
+      "ranges/",
+      "index.js",
+      "preload.js",
+      "range.bnf"
+    ],
+    "allowPaths": [
+      "/classes/",
+      "/functions/",
+      "/internal/",
+      "/ranges/",
+      "/index.js",
+      "/preload.js",
+      "/range.bnf",
+      "/benchmarks"
+    ],
+    "publish": "true"
+  }
+}

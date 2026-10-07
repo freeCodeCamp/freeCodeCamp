@@ -1,0 +1,11 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": 0,
+		"new-cap": [2, { "capIsNewExceptions": ["RequireObjectCoercible"] }],
+		"no-restricted-syntax": [2, "BreakStatement", "ContinueStatement", "DebuggerStatement", "LabeledStatement", "WithStatement"],
+	},
+}

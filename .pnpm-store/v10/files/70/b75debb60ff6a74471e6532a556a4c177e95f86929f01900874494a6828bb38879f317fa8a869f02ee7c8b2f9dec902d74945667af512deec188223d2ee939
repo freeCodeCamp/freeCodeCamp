@@ -1,0 +1,39 @@
+{
+  "name": "@babel/plugin-transform-async-generator-functions",
+  "version": "7.23.7",
+  "description": "Turn async generator functions into ES2015 generators",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-async-generator-functions"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-transform-async-generator-functions",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/helper-environment-visitor": "^7.22.20",
+    "@babel/helper-plugin-utils": "^7.22.5",
+    "@babel/helper-remap-async-to-generator": "^7.22.20",
+    "@babel/plugin-syntax-async-generators": "^7.8.4"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/helper-plugin-test-runner": "^7.22.5",
+    "babel-plugin-polyfill-corejs3": "^0.8.7",
+    "core-js-pure": "^3.30.2"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

@@ -1,0 +1,58 @@
+{
+  "name": "value-or-promise",
+  "version": "1.0.12",
+  "description": "A thenable to streamline a possibly sync / possibly async workflow.",
+  "main": "build/main/index.js",
+  "typings": "build/main/index.d.ts",
+  "module": "build/module/index.js",
+  "repository": "https://github.com/yaacovCR/value-or-promise",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "build": "run-p build:*",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.module.json",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier \"src/**/*.ts\" --write",
+    "fix:lint": "eslint src --ext .ts --fix",
+    "test": "run-s build test:*",
+    "test:lint": "eslint src --ext .ts",
+    "test:prettier": "prettier \"src/**/*.ts\" --list-different",
+    "test:mocha": "mocha --require ts-node/register \"src/**/*.spec.ts\"",
+    "watch:build": "tsc -p tsconfig.json -w",
+    "watch:test": "mocha --require ts-node/register --watch --watch-extensions ts --watch-files src \"src/**/*.spec.ts\" "
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-functional": "^4.4.1",
+    "eslint-plugin-import": "^2.26.0",
+    "expect": "^29.3.1",
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  },
+  "files": [
+    "build/main/**/*",
+    "build/module/**/*",
+    "!**/*.spec.*",
+    "!**/*.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "prettier": {
+    "singleQuote": true
+  }
+}

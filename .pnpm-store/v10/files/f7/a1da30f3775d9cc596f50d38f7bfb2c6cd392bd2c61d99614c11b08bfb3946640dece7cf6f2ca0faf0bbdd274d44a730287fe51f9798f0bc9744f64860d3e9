@@ -1,0 +1,21 @@
+# `MD039` - Spaces inside link text
+
+Tags: `links`, `whitespace`
+
+Aliases: `no-space-in-links`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered on links that have spaces surrounding the link text:
+
+```markdown
+[ a link ](https://www.example.com/)
+```
+
+To fix this, remove the spaces surrounding the link text:
+
+```markdown
+[a link](https://www.example.com/)
+```
+
+Rationale: Consistent formatting makes it easier to understand a document.

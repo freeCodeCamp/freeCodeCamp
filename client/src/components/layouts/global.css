@@ -506,7 +506,7 @@ code {
 }
 
 kbd {
-  background-color: var(--background-primary);
+  background-color: var(--background-tertiary);
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   padding: 2px;

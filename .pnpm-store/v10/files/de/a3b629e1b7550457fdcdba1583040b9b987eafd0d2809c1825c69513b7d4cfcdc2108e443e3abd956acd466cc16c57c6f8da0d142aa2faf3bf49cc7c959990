@@ -1,0 +1,4 @@
+#ignore all generated files from diff
+#also skip line ending check
+*.js -diff -text
+*.map -diff -text

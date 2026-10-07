@@ -1,0 +1,28 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .view-overlays .current-line {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.monaco-editor .margin-view-overlays .current-line {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.monaco-editor
+	.margin-view-overlays
+	.current-line.current-line-margin.current-line-margin-both {
+	border-right: 0;
+}

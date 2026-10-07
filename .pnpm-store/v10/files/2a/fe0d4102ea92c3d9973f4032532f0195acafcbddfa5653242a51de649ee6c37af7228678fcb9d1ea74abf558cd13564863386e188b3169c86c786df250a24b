@@ -1,0 +1,50 @@
+{
+  "name": "@gatsbyjs/webpack-hot-middleware",
+  "version": "2.25.3",
+  "description": "Webpack hot reloading you can attach to your own server",
+  "keywords": [
+    "webpack",
+    "hmr",
+    "hot",
+    "module",
+    "reloading",
+    "hot-reloading",
+    "middleware",
+    "express"
+  ],
+  "main": "middleware.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc npm run test",
+    "lint": "eslint . --max-warnings 0",
+    "prettier": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/webpack-hot-middleware.git"
+  },
+  "author": "Glen Mailer <glen@stainlessed.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "ansi-html-community": "0.0.8",
+    "html-entities": "^2.3.3",
+    "strip-ansi": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "sinon": "^9.2.4",
+    "supertest": "^6.1.3",
+    "webpack": "^4.20.2",
+    "webpack-dev-middleware": "^3.4.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "always"
+  }
+}

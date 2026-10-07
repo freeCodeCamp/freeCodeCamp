@@ -1,0 +1,75 @@
+{
+  "name": "trough",
+  "version": "1.0.5",
+  "description": "Middleware: a channel used to convey a liquid",
+  "license": "MIT",
+  "keywords": [
+    "middleware",
+    "ware"
+  ],
+  "repository": "wooorm/trough",
+  "bugs": "https://github.com/wooorm/trough/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js",
+    "wrap.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.25.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify index.js -s trough > trough.js",
+    "build-mangle": "browserify index.js -s trough -p tinyify > trough.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-reflect-apply": "off",
+      "unicorn/prefer-type-error": "off",
+      "guard-for-in": "off"
+    },
+    "ignores": [
+      "trough.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  }
+}

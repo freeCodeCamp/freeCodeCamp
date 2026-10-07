@@ -1,0 +1,59 @@
+{
+  "name": "@tanstack/react-virtual",
+  "author": "Tanner Linsley",
+  "version": "3.0.4",
+  "description": "Headless UI for virtualizing scrollable elements in React",
+  "license": "MIT",
+  "homepage": "https://github.com/tanstack/virtual#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanstack/virtual.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "react",
+    "vue",
+    "solid",
+    "virtual",
+    "virtual-core",
+    "datagrid"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/tannerlinsley"
+  },
+  "types": "build/lib/index.d.ts",
+  "main": "build/lib/index.js",
+  "module": "build/lib/index.esm.js",
+  "exports": {
+    ".": {
+      "types": "./build/lib/index.d.ts",
+      "import": "./build/lib/index.mjs",
+      "default": "./build/lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "build/lib/*",
+    "build/umd/*",
+    "src"
+  ],
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "dependencies": {
+    "@tanstack/virtual-core": "3.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  }
+}

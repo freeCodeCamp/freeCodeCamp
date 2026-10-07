@@ -1,0 +1,27 @@
+{
+  "name": "core-js-compat",
+  "version": "3.36.0",
+  "type": "commonjs",
+  "description": "core-js compat",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zloirock/core-js.git",
+    "directory": "packages/core-js-compat"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/core-js"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Denis Pushkarev",
+    "email": "zloirock@zloirock.ru",
+    "url": "http://zloirock.ru"
+  },
+  "sideEffects": false,
+  "main": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "browserslist": "^4.22.3"
+  }
+}

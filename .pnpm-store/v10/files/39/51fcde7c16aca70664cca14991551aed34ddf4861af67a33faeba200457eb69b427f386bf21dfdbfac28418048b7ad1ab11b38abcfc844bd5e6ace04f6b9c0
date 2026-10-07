@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/monthsToQuarters/index.js",
+  "typings": "../typings.d.ts"
+}

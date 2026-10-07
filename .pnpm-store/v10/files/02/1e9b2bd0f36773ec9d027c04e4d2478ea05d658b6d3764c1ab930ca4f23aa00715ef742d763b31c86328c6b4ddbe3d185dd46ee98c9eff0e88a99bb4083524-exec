@@ -1,0 +1,60 @@
+{
+  "name": "@hapi/hoek",
+  "description": "General purpose node utilities",
+  "version": "11.0.7",
+  "repository": "git://github.com/hapijs/hoek",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./applyToDefaults": "./lib/applyToDefaults.js",
+    "./assert": "./lib/assert.js",
+    "./assertError": "./lib/assertError.js",
+    "./bench": "./lib/bench.js",
+    "./block": "./lib/block.js",
+    "./clone": "./lib/clone.js",
+    "./contain": "./lib/contain.js",
+    "./deepEqual": "./lib/deepEqual.js",
+    "./escapeHeaderAttribute": "./lib/escapeHeaderAttribute.js",
+    "./escapeHtml": "./lib/escapeHtml.js",
+    "./escapeJson": "./lib/escapeJson.js",
+    "./escapeRegex": "./lib/escapeRegex.js",
+    "./flatten": "./lib/flatten.js",
+    "./ignore": "./lib/ignore.js",
+    "./intersect": "./lib/intersect.js",
+    "./isPromise": "./lib/isPromise.js",
+    "./merge": "./lib/merge.js",
+    "./once": "./lib/once.js",
+    "./reach": "./lib/reach.js",
+    "./reachTemplate": "./lib/reachTemplate.js",
+    "./stringify": "./lib/stringify.js",
+    "./wait": "./lib/wait.js"
+  },
+  "keywords": [
+    "utilities"
+  ],
+  "files": [
+    "lib"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "plugin:@hapi/module"
+    ]
+  },
+  "devDependencies": {
+    "@hapi/code": "^9.0.0",
+    "@hapi/eslint-plugin": "^6.0.0",
+    "@hapi/lab": "^25.0.1",
+    "@types/node": "^17.0.30",
+    "typescript": "~4.6.4"
+  },
+  "scripts": {
+    "test": "lab -a @hapi/code -t 100 -L -Y",
+    "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html"
+  },
+  "license": "BSD-3-Clause"
+}

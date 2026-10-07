@@ -1,0 +1,96 @@
+{
+  "name": "mdast-util-to-markdown",
+  "version": "0.6.5",
+  "description": "mdast utility to serialize markdown",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "util",
+    "utility",
+    "markdown",
+    "markup",
+    "serialize",
+    "stringify",
+    "compile",
+    "syntax",
+    "tree",
+    "ast"
+  ],
+  "repository": "syntax-tree/mdast-util-to-markdown",
+  "bugs": "https://github.com/syntax-tree/mdast-util-to-markdown/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js",
+    "lib/",
+    "types/index.d.ts"
+  ],
+  "types": "types",
+  "dependencies": {
+    "@types/unist": "^2.0.0",
+    "longest-streak": "^2.0.0",
+    "mdast-util-to-string": "^2.0.0",
+    "parse-entities": "^2.0.0",
+    "repeat-string": "^1.0.0",
+    "zwitch": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "mdast-util-from-markdown": "^0.8.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unist-util-remove-position": "^3.0.0",
+    "xo": "^0.37.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build": "browserify . -s mdastUtilToMarkdown -p tinyify > mdast-util-to-markdown.min.js",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "complexity": "off",
+      "unicorn/prefer-includes": "off"
+    },
+    "ignores": [
+      "types/"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

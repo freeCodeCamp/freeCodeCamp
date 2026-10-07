@@ -1,0 +1,24 @@
+{
+  "name": "joi-objectid",
+  "version": "3.0.1",
+  "description": "A MongoDB ObjectId validator for Joi",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -A"
+  },
+  "author": "Aaron Heckmann <aaron.heckmann+github@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@hapi/joi": "^16.0.1",
+    "mocha": "^6.2.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkg20001/joi-objectid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkg20001/joi-objectid/issues"
+  },
+  "homepage": "https://github.com/mkg20001/joi-objectid#readme"
+}

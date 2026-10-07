@@ -1,0 +1,26 @@
+{
+  "name": "@xterm/addon-fit",
+  "version": "0.11.0",
+  "author": {
+    "name": "The xterm.js authors",
+    "url": "https://xtermjs.org/"
+  },
+  "main": "lib/addon-fit.js",
+  "module": "lib/addon-fit.mjs",
+  "types": "typings/addon-fit.d.ts",
+  "repository": "https://github.com/xtermjs/xterm.js/tree/master/addons/addon-fit",
+  "license": "MIT",
+  "keywords": [
+    "terminal",
+    "xterm",
+    "xterm.js"
+  ],
+  "scripts": {
+    "build": "../../node_modules/.bin/tsc -p .",
+    "prepackage": "npm run build",
+    "package": "../../node_modules/.bin/webpack",
+    "prepublishOnly": "npm run package",
+    "start": "node ../../demo/start"
+  },
+  "commit": "f447274f430fd22513f6adbf9862d19524471c04"
+}

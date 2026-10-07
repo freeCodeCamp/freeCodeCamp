@@ -1,0 +1,73 @@
+{
+  "name": "unist-util-generated",
+  "version": "1.1.6",
+  "description": "unist utility to check if a node is generated",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "position",
+    "location",
+    "generated"
+  ],
+  "repository": "syntax-tree/unist-util-generated",
+  "bugs": "https://github.com/syntax-tree/unist-util-generated/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . -s unistUtilGenerated -o unist-util-generated.js",
+    "build-mangle": "browserify . -s unistUtilGenerated -o unist-util-generated.min.js -p tinyify",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignores": [
+      "unist-util-generated.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

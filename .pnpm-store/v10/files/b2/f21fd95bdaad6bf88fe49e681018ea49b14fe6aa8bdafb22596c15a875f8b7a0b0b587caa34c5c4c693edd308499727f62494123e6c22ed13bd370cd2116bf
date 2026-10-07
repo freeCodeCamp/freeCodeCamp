@@ -1,0 +1,312 @@
+{
+  "Object": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Function": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Number": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "parseFloat": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "parseInt": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Infinity": {
+    "writable": false,
+    "enumerable": false,
+    "configurable": false
+  },
+  "NaN": {
+    "writable": false,
+    "enumerable": false,
+    "configurable": false
+  },
+  "undefined": {
+    "writable": false,
+    "enumerable": false,
+    "configurable": false
+  },
+  "Boolean": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "String": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Symbol": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Date": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Promise": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "RegExp": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Error": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "AggregateError": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "EvalError": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "RangeError": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "ReferenceError": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "SyntaxError": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "TypeError": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "URIError": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "globalThis": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "JSON": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Math": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Intl": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "ArrayBuffer": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Atomics": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Uint8Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Int8Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Uint16Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Int16Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Uint32Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Int32Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Float32Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Float64Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Uint8ClampedArray": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "BigUint64Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "BigInt64Array": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "DataView": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Map": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "BigInt": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Set": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "WeakMap": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "WeakSet": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Proxy": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Reflect": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "FinalizationRegistry": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "WeakRef": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "decodeURI": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "decodeURIComponent": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "encodeURI": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "encodeURIComponent": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "escape": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "unescape": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "eval": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "isFinite": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "isNaN": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "Iterator": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "SharedArrayBuffer": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "WebAssembly": {
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  }
+}

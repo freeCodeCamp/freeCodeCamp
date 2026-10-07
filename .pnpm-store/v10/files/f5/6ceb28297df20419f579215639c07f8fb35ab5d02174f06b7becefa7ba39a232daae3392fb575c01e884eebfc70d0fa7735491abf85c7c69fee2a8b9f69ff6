@@ -1,0 +1,148 @@
+{
+  "author": {
+    "name": "Jeremy Stashewsky",
+    "email": "jstash@gmail.com",
+    "website": "https://github.com/stash"
+  },
+  "contributors": [
+    {
+      "name": "Ivan Nikulin",
+      "website": "https://github.com/inikulin"
+    },
+    {
+      "name": "Shivan Kaul Sahib",
+      "website": "https://github.com/ShivanKaul"
+    },
+    {
+      "name": "Clint Ruoho",
+      "website": "https://github.com/ruoho"
+    },
+    {
+      "name": "Ian Livingstone",
+      "website": "https://github.com/ianlivingstone"
+    },
+    {
+      "name": "Andrew Waterman",
+      "website": "https://github.com/awaterma"
+    },
+    {
+      "name": "Michael de Libero ",
+      "website": "https://github.com/medelibero-sfdc"
+    },
+    {
+      "name": "Jonathan Stewmon",
+      "website": "https://github.com/jstewmon"
+    },
+    {
+      "name": "Miguel Roncancio",
+      "website": "https://github.com/miggs125"
+    },
+    {
+      "name": "Sebastian Mayr",
+      "website": "https://github.com/Sebmaster"
+    },
+    {
+      "name": "Alexander Savin",
+      "website": "https://github.com/apsavin"
+    },
+    {
+      "name": "Lalit Kapoor",
+      "website": "https://github.com/lalitkapoor"
+    },
+    {
+      "name": "Sam Thompson",
+      "website": "https://github.com/sambthompson"
+    },
+    {
+      "name": "Colin Casey",
+      "website": "https://github.com/colincasey"
+    },
+    {
+      "name": "Will Harney",
+      "website": "https://github.com/wjhsf"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "name": "tough-cookie",
+  "description": "RFC6265 Cookies and Cookie Jar for node.js",
+  "keywords": [
+    "HTTP",
+    "cookie",
+    "cookies",
+    "set-cookie",
+    "cookiejar",
+    "jar",
+    "RFC6265",
+    "RFC2965"
+  ],
+  "version": "6.0.1",
+  "homepage": "https://github.com/salesforce/tough-cookie",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/salesforce/tough-cookie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/salesforce/tough-cookie/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup lib/cookie/index.ts --format cjs,esm --dts --clean --sourcemap",
+    "lint": "npm run _lint:check",
+    "prepack": "npm run build",
+    "prepare-pr": "npm run build && npm test -- run && npm run _api:update && npm run _docs:generate && npm run _format:fix && npm run _lint:fix && npm run _lint:types",
+    "test": "vitest",
+    "version": "npm run _version:generate && npm run prepare-pr && git add --renormalize .",
+    "_api:check": "api-extractor run --verbose",
+    "_api:update": "api-extractor run --verbose --local",
+    "_docs:generate": "api-documenter generate --input-folder ./tmp --output-folder ./api/docs",
+    "_format:check": "prettier . --check",
+    "_format:fix": "prettier . --write",
+    "_lint:check": "eslint .",
+    "_lint:fix": "eslint . --fix",
+    "_lint:types": "attw --pack .",
+    "_version:generate": "genversion --template version-template.ejs --force lib/version.ts"
+  },
+  "//": "We only support node LTS versions, but v16 still works. We won't block v16 until it becomes a burden.",
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@eslint/js": "^9.24.0",
+    "@microsoft/api-documenter": "^7.26.20",
+    "@microsoft/api-extractor": "^7.52.3",
+    "@types/node": "^20.19.6",
+    "@vitest/eslint-plugin": "^1.1.40",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-import-resolver-typescript": "^4.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "genversion": "^3.2.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "tsup": "^8.5.0",
+    "typescript": "5.5.3",
+    "typescript-eslint": "^8.46.3",
+    "vitest": "^4.0.7"
+  },
+  "dependencies": {
+    "tldts": "^7.0.5"
+  }
+}

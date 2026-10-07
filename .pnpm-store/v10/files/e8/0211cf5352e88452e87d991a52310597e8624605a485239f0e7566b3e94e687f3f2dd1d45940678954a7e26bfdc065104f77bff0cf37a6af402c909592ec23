@@ -1,0 +1,28 @@
+{
+    "name": "@types/react-speech-recognition",
+    "version": "3.9.6",
+    "description": "TypeScript definitions for react-speech-recognition",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-speech-recognition",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "OleksandrYehorov",
+            "githubUsername": "OleksandrYehorov",
+            "url": "https://github.com/OleksandrYehorov"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-speech-recognition"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/dom-speech-recognition": "*"
+    },
+    "peerDependencies": {},
+    "typesPublisherContentHash": "c4ca2596ee7362f9edb63017e7549e01c1c025a2dc36ce6dd71c176a594920fd",
+    "typeScriptVersion": "5.0"
+}

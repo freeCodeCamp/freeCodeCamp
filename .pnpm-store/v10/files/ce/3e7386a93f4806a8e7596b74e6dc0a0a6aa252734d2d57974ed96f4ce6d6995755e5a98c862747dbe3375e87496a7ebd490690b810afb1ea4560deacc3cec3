@@ -1,0 +1,107 @@
+{
+  "name": "@sentry/opentelemetry",
+  "version": "10.55.0",
+  "description": "Official Sentry utilities for OpenTelemetry",
+  "repository": "git://github.com/getsentry/sentry-javascript.git",
+  "homepage": "https://github.com/getsentry/sentry-javascript/tree/master/packages/opentelemetry",
+  "author": "Sentry",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "/build"
+  ],
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/types/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "node": {
+          "types": "./build/types/index.d.ts",
+          "default": "./build/esm/index.js"
+        },
+        "browser": {
+          "types": "./build/types/index.d.ts",
+          "default": "./build/esm/index.browser.js"
+        },
+        "types": "./build/types/index.d.ts",
+        "default": "./build/esm/index.js"
+      },
+      "require": {
+        "node": {
+          "types": "./build/types/index.d.ts",
+          "default": "./build/cjs/index.js"
+        },
+        "browser": {
+          "types": "./build/types/index.d.ts",
+          "default": "./build/cjs/index.browser.js"
+        },
+        "types": "./build/types/index.d.ts",
+        "default": "./build/cjs/index.js"
+      }
+    },
+    "./tracing-channel": {
+      "import": {
+        "types": "./build/types/tracingChannel.d.ts",
+        "default": "./build/esm/tracingChannel.js"
+      },
+      "require": {
+        "types": "./build/types/tracingChannel.d.ts",
+        "default": "./build/cjs/tracingChannel.js"
+      }
+    }
+  },
+  "typesVersions": {
+    "<5.0": {
+      "build/types/index.d.ts": [
+        "build/types-ts3.8/index.d.ts"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@sentry/core": "10.55.0"
+  },
+  "peerDependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/core": "^1.30.1 || ^2.1.0",
+    "@opentelemetry/sdk-trace-base": "^1.30.1 || ^2.1.0",
+    "@opentelemetry/semantic-conventions": "^1.39.0"
+  },
+  "devDependencies": {
+    "@opentelemetry/api": "^1.9.1",
+    "@opentelemetry/core": "^2.6.1",
+    "@opentelemetry/sdk-trace-base": "^2.6.1",
+    "@opentelemetry/semantic-conventions": "^1.40.0"
+  },
+  "scripts": {
+    "build": "run-p build:transpile build:types",
+    "build:dev": "yarn build",
+    "build:transpile": "rollup -c rollup.npm.config.mjs",
+    "build:types": "run-s build:types:core build:types:downlevel",
+    "build:types:core": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "yarn downlevel-dts build/types build/types-ts3.8 --to ts3.8",
+    "build:watch": "run-p build:transpile:watch",
+    "build:dev:watch": "yarn build:watch",
+    "build:transpile:watch": "rollup -c rollup.npm.config.mjs --watch",
+    "build:tarball": "npm pack",
+    "circularDepCheck": "madge --circular src/index.ts",
+    "clean": "rimraf build coverage sentry-opentelemetry-*.tgz",
+    "lint:fix": "OXLINT_TSGOLINT_DANGEROUSLY_SUPPRESS_PROGRAM_DIAGNOSTICS=true oxlint . --fix --type-aware",
+    "lint": "OXLINT_TSGOLINT_DANGEROUSLY_SUPPRESS_PROGRAM_DIAGNOSTICS=true oxlint . --type-aware",
+    "lint:es-compatibility": "es-check es2022 ./build/cjs/*.js && es-check es2022 ./build/esm/*.js --module",
+    "test": "yarn test:unit",
+    "test:unit": "vitest run",
+    "test:watch": "vitest --watch",
+    "yalc:publish": "yalc publish --push --sig"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "sideEffects": false
+}

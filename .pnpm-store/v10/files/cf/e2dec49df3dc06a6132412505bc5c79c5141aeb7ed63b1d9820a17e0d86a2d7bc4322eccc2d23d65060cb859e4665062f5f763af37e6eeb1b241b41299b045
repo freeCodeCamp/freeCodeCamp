@@ -1,0 +1,38 @@
+{
+	"name": "import-from",
+	"version": "4.0.0",
+	"description": "Import a module like with `require()` but from a given path",
+	"license": "MIT",
+	"repository": "sindresorhus/import-from",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=12.2"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"require",
+		"resolve",
+		"path",
+		"module",
+		"from",
+		"like",
+		"import",
+		"path"
+	],
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

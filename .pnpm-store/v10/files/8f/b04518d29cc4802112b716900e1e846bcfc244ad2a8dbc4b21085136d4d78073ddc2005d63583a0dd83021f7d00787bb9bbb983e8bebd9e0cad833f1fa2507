@@ -1,0 +1,522 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain provides various functionality related to drawing atop the inspected page.
+experimental domain Overlay
+  depends on DOM
+  depends on Page
+  depends on Runtime
+
+  # Configuration data for drawing the source order of an elements children.
+  type SourceOrderConfig extends object
+    properties
+      # the color to outline the given element in.
+      DOM.RGBA parentOutlineColor
+      # the color to outline the child elements in.
+      DOM.RGBA childOutlineColor
+
+  # Configuration data for the highlighting of Grid elements.
+  type GridHighlightConfig extends object
+    properties
+      # Whether the extension lines from grid cells to the rulers should be shown (default: false).
+      optional boolean showGridExtensionLines
+      # Show Positive line number labels (default: false).
+      optional boolean showPositiveLineNumbers
+      # Show Negative line number labels (default: false).
+      optional boolean showNegativeLineNumbers
+      # Show area name labels (default: false).
+      optional boolean showAreaNames
+      # Show line name labels (default: false).
+      optional boolean showLineNames
+      # Show track size labels (default: false).
+      optional boolean showTrackSizes
+      # The grid container border highlight color (default: transparent).
+      optional DOM.RGBA gridBorderColor
+      # The cell border color (default: transparent). Deprecated, please use rowLineColor and columnLineColor instead.
+      deprecated optional DOM.RGBA cellBorderColor
+      # The row line color (default: transparent).
+      optional DOM.RGBA rowLineColor
+      # The column line color (default: transparent).
+      optional DOM.RGBA columnLineColor
+      # Whether the grid border is dashed (default: false).
+      optional boolean gridBorderDash
+      # Whether the cell border is dashed (default: false). Deprecated, please us rowLineDash and columnLineDash instead.
+      deprecated optional boolean cellBorderDash
+      # Whether row lines are dashed (default: false).
+      optional boolean rowLineDash
+      # Whether column lines are dashed (default: false).
+      optional boolean columnLineDash
+      # The row gap highlight fill color (default: transparent).
+      optional DOM.RGBA rowGapColor
+      # The row gap hatching fill color (default: transparent).
+      optional DOM.RGBA rowHatchColor
+      # The column gap highlight fill color (default: transparent).
+      optional DOM.RGBA columnGapColor
+      # The column gap hatching fill color (default: transparent).
+      optional DOM.RGBA columnHatchColor
+      # The named grid areas border color (Default: transparent).
+      optional DOM.RGBA areaBorderColor
+      # The grid container background color (Default: transparent).
+      optional DOM.RGBA gridBackgroundColor
+
+  # Configuration data for the highlighting of Flex container elements.
+  type FlexContainerHighlightConfig extends object
+    properties
+      # The style of the container border
+      optional LineStyle containerBorder
+      # The style of the separator between lines
+      optional LineStyle lineSeparator
+      # The style of the separator between items
+      optional LineStyle itemSeparator
+      # Style of content-distribution space on the main axis (justify-content).
+      optional BoxStyle mainDistributedSpace
+      # Style of content-distribution space on the cross axis (align-content).
+      optional BoxStyle crossDistributedSpace
+      # Style of empty space caused by row gaps (gap/row-gap).
+      optional BoxStyle rowGapSpace
+      # Style of empty space caused by columns gaps (gap/column-gap).
+      optional BoxStyle columnGapSpace
+      # Style of the self-alignment line (align-items).
+      optional LineStyle crossAlignment
+
+  # Configuration data for the highlighting of Flex item elements.
+  type FlexItemHighlightConfig extends object
+    properties
+      # Style of the box representing the item's base size
+      optional BoxStyle baseSizeBox
+      # Style of the border around the box representing the item's base size
+      optional LineStyle baseSizeBorder
+      # Style of the arrow representing if the item grew or shrank
+      optional LineStyle flexibilityArrow
+
+  # Style information for drawing a line.
+  type LineStyle extends object
+    properties
+      # The color of the line (default: transparent)
+      optional DOM.RGBA color
+      # The line pattern (default: solid)
+      optional enum pattern
+        dashed
+        dotted
+
+  # Style information for drawing a box.
+  type BoxStyle extends object
+    properties
+      # The background color for the box (default: transparent)
+      optional DOM.RGBA fillColor
+      # The hatching color for the box (default: transparent)
+      optional DOM.RGBA hatchColor
+
+  type ContrastAlgorithm extends string
+    enum
+      aa
+      aaa
+      apca
+
+  # Configuration data for the highlighting of page elements.
+  type HighlightConfig extends object
+    properties
+      # Whether the node info tooltip should be shown (default: false).
+      optional boolean showInfo
+      # Whether the node styles in the tooltip (default: false).
+      optional boolean showStyles
+      # Whether the rulers should be shown (default: false).
+      optional boolean showRulers
+      # Whether the a11y info should be shown (default: true).
+      optional boolean showAccessibilityInfo
+      # Whether the extension lines from node to the rulers should be shown (default: false).
+      optional boolean showExtensionLines
+      # The content box highlight fill color (default: transparent).
+      optional DOM.RGBA contentColor
+      # The padding highlight fill color (default: transparent).
+      optional DOM.RGBA paddingColor
+      # The border highlight fill color (default: transparent).
+      optional DOM.RGBA borderColor
+      # The margin highlight fill color (default: transparent).
+      optional DOM.RGBA marginColor
+      # The event target element highlight fill color (default: transparent).
+      optional DOM.RGBA eventTargetColor
+      # The shape outside fill color (default: transparent).
+      optional DOM.RGBA shapeColor
+      # The shape margin fill color (default: transparent).
+      optional DOM.RGBA shapeMarginColor
+      # The grid layout color (default: transparent).
+      optional DOM.RGBA cssGridColor
+      # The color format used to format color styles (default: hex).
+      optional ColorFormat colorFormat
+      # The grid layout highlight configuration (default: all transparent).
+      optional GridHighlightConfig gridHighlightConfig
+      # The flex container highlight configuration (default: all transparent).
+      optional FlexContainerHighlightConfig flexContainerHighlightConfig
+      # The flex item highlight configuration (default: all transparent).
+      optional FlexItemHighlightConfig flexItemHighlightConfig
+      # The contrast algorithm to use for the contrast ratio (default: aa).
+      optional ContrastAlgorithm contrastAlgorithm
+      # The container query container highlight configuration (default: all transparent).
+      optional ContainerQueryContainerHighlightConfig containerQueryContainerHighlightConfig
+
+  type ColorFormat extends string
+    enum
+      rgb
+      hsl
+      hwb
+      hex
+
+  # Configurations for Persistent Grid Highlight
+  type GridNodeHighlightConfig extends object
+    properties
+      # A descriptor for the highlight appearance.
+      GridHighlightConfig gridHighlightConfig
+      # Identifier of the node to highlight.
+      DOM.NodeId nodeId
+
+  type FlexNodeHighlightConfig extends object
+    properties
+      # A descriptor for the highlight appearance of flex containers.
+      FlexContainerHighlightConfig flexContainerHighlightConfig
+      # Identifier of the node to highlight.
+      DOM.NodeId nodeId
+
+  type ScrollSnapContainerHighlightConfig extends object
+    properties
+      # The style of the snapport border (default: transparent)
+      optional LineStyle snapportBorder
+      # The style of the snap area border (default: transparent)
+      optional LineStyle snapAreaBorder
+      # The margin highlight fill color (default: transparent).
+      optional DOM.RGBA scrollMarginColor
+      # The padding highlight fill color (default: transparent).
+      optional DOM.RGBA scrollPaddingColor
+
+  type ScrollSnapHighlightConfig extends object
+    properties
+      # A descriptor for the highlight appearance of scroll snap containers.
+      ScrollSnapContainerHighlightConfig scrollSnapContainerHighlightConfig
+      # Identifier of the node to highlight.
+      DOM.NodeId nodeId
+
+  # Configuration for dual screen hinge
+  type HingeConfig extends object
+    properties
+      # A rectangle represent hinge
+      DOM.Rect rect
+      # The content box highlight fill color (default: a dark color).
+      optional DOM.RGBA contentColor
+      # The content box highlight outline color (default: transparent).
+      optional DOM.RGBA outlineColor
+
+  # Configuration for Window Controls Overlay
+  type WindowControlsOverlayConfig extends object
+    properties
+      # Whether the title bar CSS should be shown when emulating the Window Controls Overlay.
+      boolean showCSS
+      # Selected platforms to show the overlay.
+      string selectedPlatform
+      # The theme color defined in app manifest.
+      string themeColor
+
+  type ContainerQueryHighlightConfig extends object
+    properties
+      # A descriptor for the highlight appearance of container query containers.
+      ContainerQueryContainerHighlightConfig containerQueryContainerHighlightConfig
+      # Identifier of the container node to highlight.
+      DOM.NodeId nodeId
+
+  type ContainerQueryContainerHighlightConfig extends object
+    properties
+      # The style of the container border.
+      optional LineStyle containerBorder
+      # The style of the descendants' borders.
+      optional LineStyle descendantBorder
+
+  type IsolatedElementHighlightConfig extends object
+    properties
+      # A descriptor for the highlight appearance of an element in isolation mode.
+      IsolationModeHighlightConfig isolationModeHighlightConfig
+      # Identifier of the isolated element to highlight.
+      DOM.NodeId nodeId
+
+  type IsolationModeHighlightConfig extends object
+    properties
+      # The fill color of the resizers (default: transparent).
+      optional DOM.RGBA resizerColor
+      # The fill color for resizer handles (default: transparent).
+      optional DOM.RGBA resizerHandleColor
+      # The fill color for the mask covering non-isolated elements (default: transparent).
+      optional DOM.RGBA maskColor
+
+  type InspectMode extends string
+    enum
+      searchForNode
+      searchForUAShadowDOM
+      captureAreaScreenshot
+      none
+
+  type InspectedElementAnchorConfig extends object
+    properties
+      # Identifier of the node to highlight.
+      optional DOM.NodeId nodeId
+      # Identifier of the backend node to highlight.
+      optional DOM.BackendNodeId backendNodeId
+
+  # Disables domain notifications.
+  command disable
+
+  # Enables domain notifications.
+  command enable
+
+  # For testing.
+  command getHighlightObjectForTest
+    parameters
+      # Id of the node to get highlight object for.
+      DOM.NodeId nodeId
+      # Whether to include distance info.
+      optional boolean includeDistance
+      # Whether to include style info.
+      optional boolean includeStyle
+      # The color format to get config with (default: hex).
+      optional ColorFormat colorFormat
+      # Whether to show accessibility info (default: true).
+      optional boolean showAccessibilityInfo
+    returns
+      # Highlight data for the node.
+      object highlight
+
+  # For Persistent Grid testing.
+  command getGridHighlightObjectsForTest
+    parameters
+      # Ids of the node to get highlight object for.
+      array of DOM.NodeId nodeIds
+    returns
+      # Grid Highlight data for the node ids provided.
+      object highlights
+
+  # For Source Order Viewer testing.
+  command getSourceOrderHighlightObjectForTest
+    parameters
+      # Id of the node to highlight.
+      DOM.NodeId nodeId
+    returns
+      # Source order highlight data for the node id provided.
+      object highlight
+
+  # Hides any highlight.
+  command hideHighlight
+
+  # Highlights owner element of the frame with given id.
+  # Deprecated: Doesn't work reliably and cannot be fixed due to process
+  # separation (the owner node might be in a different process). Determine
+  # the owner node in the client and use highlightNode.
+  deprecated command highlightFrame
+    parameters
+      # Identifier of the frame to highlight.
+      Page.FrameId frameId
+      # The content box highlight fill color (default: transparent).
+      optional DOM.RGBA contentColor
+      # The content box highlight outline color (default: transparent).
+      optional DOM.RGBA contentOutlineColor
+
+  # Highlights DOM node with given id or with the given JavaScript object wrapper. Either nodeId or
+  # objectId must be specified.
+  command highlightNode
+    parameters
+      # A descriptor for the highlight appearance.
+      HighlightConfig highlightConfig
+      # Identifier of the node to highlight.
+      optional DOM.NodeId nodeId
+      # Identifier of the backend node to highlight.
+      optional DOM.BackendNodeId backendNodeId
+      # JavaScript object id of the node to be highlighted.
+      optional Runtime.RemoteObjectId objectId
+      # Selectors to highlight relevant nodes.
+      optional string selector
+
+  # Highlights given quad. Coordinates are absolute with respect to the main frame viewport.
+  command highlightQuad
+    parameters
+      # Quad to highlight
+      DOM.Quad quad
+      # The highlight fill color (default: transparent).
+      optional DOM.RGBA color
+      # The highlight outline color (default: transparent).
+      optional DOM.RGBA outlineColor
+
+  # Highlights given rectangle. Coordinates are absolute with respect to the main frame viewport.
+  # Issue: the method does not handle device pixel ratio (DPR) correctly.
+  # The coordinates currently have to be adjusted by the client
+  # if DPR is not 1 (see crbug.com/437807128).
+  command highlightRect
+    parameters
+      # X coordinate
+      integer x
+      # Y coordinate
+      integer y
+      # Rectangle width
+      integer width
+      # Rectangle height
+      integer height
+      # The highlight fill color (default: transparent).
+      optional DOM.RGBA color
+      # The highlight outline color (default: transparent).
+      optional DOM.RGBA outlineColor
+
+  # Highlights the source order of the children of the DOM node with given id or with the given
+  # JavaScript object wrapper. Either nodeId or objectId must be specified.
+  command highlightSourceOrder
+    parameters
+      # A descriptor for the appearance of the overlay drawing.
+      SourceOrderConfig sourceOrderConfig
+      # Identifier of the node to highlight.
+      optional DOM.NodeId nodeId
+      # Identifier of the backend node to highlight.
+      optional DOM.BackendNodeId backendNodeId
+      # JavaScript object id of the node to be highlighted.
+      optional Runtime.RemoteObjectId objectId
+
+  # Enters the 'inspect' mode. In this mode, elements that user is hovering over are highlighted.
+  # Backend then generates 'inspectNodeRequested' event upon element selection.
+  command setInspectMode
+    parameters
+      # Set an inspection mode.
+      InspectMode mode
+      # A descriptor for the highlight appearance of hovered-over nodes. May be omitted if `enabled
+      # == false`.
+      optional HighlightConfig highlightConfig
+
+  # Highlights owner element of all frames detected to be ads.
+  command setShowAdHighlights
+    parameters
+      # True for showing ad highlights
+      boolean show
+
+  command setPausedInDebuggerMessage
+    parameters
+      # The message to display, also triggers resume and step over controls.
+      optional string message
+
+  # Requests that backend shows debug borders on layers
+  command setShowDebugBorders
+    parameters
+      # True for showing debug borders
+      boolean show
+
+  # Requests that backend shows the FPS counter
+  command setShowFPSCounter
+    parameters
+      # True for showing the FPS counter
+      boolean show
+
+  # Highlight multiple elements with the CSS Grid overlay.
+  command setShowGridOverlays
+    parameters
+      # An array of node identifiers and descriptors for the highlight appearance.
+      array of GridNodeHighlightConfig gridNodeHighlightConfigs
+
+  command setShowFlexOverlays
+    parameters
+      # An array of node identifiers and descriptors for the highlight appearance.
+      array of FlexNodeHighlightConfig flexNodeHighlightConfigs
+
+  command setShowScrollSnapOverlays
+    parameters
+      # An array of node identifiers and descriptors for the highlight appearance.
+      array of ScrollSnapHighlightConfig scrollSnapHighlightConfigs
+
+  command setShowContainerQueryOverlays
+    parameters
+      # An array of node identifiers and descriptors for the highlight appearance.
+      array of ContainerQueryHighlightConfig containerQueryHighlightConfigs
+
+  command setShowInspectedElementAnchor
+    parameters
+      # Node identifier for which to show an anchor for.
+      InspectedElementAnchorConfig inspectedElementAnchorConfig
+
+  # Requests that backend shows paint rectangles
+  command setShowPaintRects
+    parameters
+      # True for showing paint rectangles
+      boolean result
+
+  # Requests that backend shows layout shift regions
+  command setShowLayoutShiftRegions
+    parameters
+      # True for showing layout shift regions
+      boolean result
+
+  # Requests that backend shows scroll bottleneck rects
+  command setShowScrollBottleneckRects
+    parameters
+      # True for showing scroll bottleneck rects
+      boolean show
+
+  # Deprecated, no longer has any effect.
+  deprecated command setShowHitTestBorders
+    parameters
+      # True for showing hit-test borders
+      boolean show
+
+  # Deprecated, no longer has any effect.
+  deprecated command setShowWebVitals
+    parameters
+      boolean show
+
+  # Paints viewport size upon main frame resize.
+  command setShowViewportSizeOnResize
+    parameters
+      # Whether to paint size or not.
+      boolean show
+
+  # Add a dual screen device hinge
+  command setShowHinge
+    parameters
+      # hinge data, null means hideHinge
+      optional HingeConfig hingeConfig
+
+  # Show elements in isolation mode with overlays.
+  command setShowIsolatedElements
+    parameters
+      # An array of node identifiers and descriptors for the highlight appearance.
+      array of IsolatedElementHighlightConfig isolatedElementHighlightConfigs
+
+  # Show Window Controls Overlay for PWA
+  command setShowWindowControlsOverlay
+    parameters
+      # Window Controls Overlay data, null means hide Window Controls Overlay
+      optional WindowControlsOverlayConfig windowControlsOverlayConfig
+
+  # Fired when the node should be inspected. This happens after call to `setInspectMode` or when
+  # user manually inspects an element.
+  event inspectNodeRequested
+    parameters
+      # Id of the node to inspect.
+      DOM.BackendNodeId backendNodeId
+
+  # Fired when the node should be highlighted. This happens after call to `setInspectMode`.
+  event nodeHighlightRequested
+    parameters
+      DOM.NodeId nodeId
+
+  # Fired when user asks to capture screenshot of some area on the page.
+  event screenshotRequested
+    parameters
+      # Viewport to capture, in device independent pixels (dip).
+      Page.Viewport viewport
+
+  # Fired when user asks to show the Inspect panel.
+  event inspectPanelShowRequested
+    parameters
+      # Id of the node to show in the panel.
+      DOM.BackendNodeId backendNodeId
+
+  # Fired when user asks to restore the Inspected Element floating window.
+  event inspectedElementWindowRestored
+    parameters
+      # Id of the node to restore the floating window for.
+      DOM.BackendNodeId backendNodeId
+
+  # Fired when user cancels the inspect mode.
+  event inspectModeCanceled

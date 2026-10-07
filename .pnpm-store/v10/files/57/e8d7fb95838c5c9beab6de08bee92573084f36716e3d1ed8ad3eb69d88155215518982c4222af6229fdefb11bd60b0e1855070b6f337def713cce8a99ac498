@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/id.tsx"],
+  "sourcesContent": ["import * as React from 'react';\nimport { useLayoutEffect } from '@radix-ui/react-use-layout-effect';\n\n// We spaces with `.trim().toString()` to prevent bundlers from trying to `import { useId } from 'react';`\nconst useReactId = (React as any)[' useId '.trim().toString()] || (() => undefined);\nlet count = 0;\n\nfunction useId(deterministicId?: string): string {\n  const [id, setId] = React.useState<string | undefined>(useReactId());\n  // React versions older than 18 will have client-side ids only.\n  useLayoutEffect(() => {\n    if (!deterministicId) setId((reactId) => reactId ?? String(count++));\n  }, [deterministicId]);\n  return deterministicId || (id ? `radix-${id}` : '');\n}\n\nexport { useId };\n"],
+  "mappings": ";AAAA,YAAY,WAAW;AACvB,SAAS,uBAAuB;AAGhC,IAAM,aAAc,MAAc,UAAU,KAAK,EAAE,SAAS,CAAC,MAAM,MAAM;AACzE,IAAI,QAAQ;AAEZ,SAAS,MAAM,iBAAkC;AAC/C,QAAM,CAAC,IAAI,KAAK,IAAU,eAA6B,WAAW,CAAC;AAEnE,kBAAgB,MAAM;AACpB,QAAI,CAAC,gBAAiB,OAAM,CAAC,YAAY,WAAW,OAAO,OAAO,CAAC;AAAA,EACrE,GAAG,CAAC,eAAe,CAAC;AACpB,SAAO,oBAAoB,KAAK,SAAS,EAAE,KAAK;AAClD;",
+  "names": []
+}

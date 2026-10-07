@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/startOfQuarter/index.js",
+  "typings": "../typings.d.ts"
+}

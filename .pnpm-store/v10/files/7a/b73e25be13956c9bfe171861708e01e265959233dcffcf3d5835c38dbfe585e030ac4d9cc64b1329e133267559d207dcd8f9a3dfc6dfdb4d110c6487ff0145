@@ -1,0 +1,11 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TEnum, type TEnumValue } from '../../types/enum.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TExtends, ExtendsResult } from '../../extends/index.mjs';
+import { type TEnumValuesToVariants } from '../enum/index.mjs';
+import { type TEvaluateUnion, type TFlatten } from '../evaluate/index.mjs';
+type TExcludeUnionLeft<Types extends TSchema[], Right extends TSchema, Result extends TSchema[] = []> = (Types extends [infer Head extends TSchema, ...infer Tail extends TSchema[]] ? TExcludeUnionLeft<Tail, Right, [...Result, ...TExcludeTypeLeft<Head, Right>]> : Result);
+type TExcludeTypeLeft<Left extends TSchema, Right extends TSchema, Check extends ExtendsResult.TResult = TExtends<{}, Left, Right>, Result extends TSchema[] = Check extends ExtendsResult.TExtendsTrueLike<infer _> ? [] : [Left]> = Result;
+export type TExcludeOperation<Left extends TSchema, Right extends TSchema, Remaining extends TSchema[] = (Left extends TEnum<infer Values extends TEnumValue[]> ? TExcludeUnionLeft<TEnumValuesToVariants<Values>, Right> : Left extends TUnion<infer Types extends TSchema[]> ? TExcludeUnionLeft<TFlatten<Types>, Right> : TExcludeTypeLeft<Left, Right>), Result extends TSchema = TEvaluateUnion<Remaining>> = Result;
+export declare function ExcludeOperation<Left extends TSchema, Right extends TSchema>(left: Left, right: Right): TExcludeOperation<Left, Right>;
+export {};

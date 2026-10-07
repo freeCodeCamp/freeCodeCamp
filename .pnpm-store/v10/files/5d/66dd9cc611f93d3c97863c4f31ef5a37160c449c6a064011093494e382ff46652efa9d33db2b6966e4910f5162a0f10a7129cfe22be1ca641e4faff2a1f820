@@ -1,0 +1,126 @@
+{
+  "name": "css-tree",
+  "version": "3.2.1",
+  "description": "A tool set for CSS: fast detailed parser (CSS → AST), walker (AST traversal), generator (AST → CSS) and lexer (validation and matching) based on specs and browser implementations",
+  "author": "Roman Dvornov <rdvornov@gmail.com> (https://github.com/lahmatiy)",
+  "license": "MIT",
+  "repository": "csstree/csstree",
+  "keywords": [
+    "css",
+    "ast",
+    "tokenizer",
+    "parser",
+    "walker",
+    "lexer",
+    "generator",
+    "utils",
+    "syntax",
+    "validation"
+  ],
+  "type": "module",
+  "module": "./lib/index.js",
+  "sideEffects": false,
+  "main": "./cjs/index.cjs",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./cjs/index.cjs"
+    },
+    "./dist/*": "./dist/*.js",
+    "./package.json": "./package.json",
+    "./tokenizer": {
+      "import": "./lib/tokenizer/index.js",
+      "require": "./cjs/tokenizer/index.cjs"
+    },
+    "./parser": {
+      "import": "./lib/parser/index.js",
+      "require": "./cjs/parser/index.cjs"
+    },
+    "./selector-parser": {
+      "import": "./lib/parser/parse-selector.js",
+      "require": "./cjs/parser/parse-selector.cjs"
+    },
+    "./generator": {
+      "import": "./lib/generator/index.js",
+      "require": "./cjs/generator/index.cjs"
+    },
+    "./walker": {
+      "import": "./lib/walker/index.js",
+      "require": "./cjs/walker/index.cjs"
+    },
+    "./convertor": {
+      "import": "./lib/convertor/index.js",
+      "require": "./cjs/convertor/index.cjs"
+    },
+    "./lexer": {
+      "import": "./lib/lexer/index.js",
+      "require": "./cjs/lexer/index.cjs"
+    },
+    "./definition-syntax": {
+      "import": "./lib/definition-syntax/index.js",
+      "require": "./cjs/definition-syntax/index.cjs"
+    },
+    "./definition-syntax-data": {
+      "import": "./lib/data.js",
+      "require": "./cjs/data.cjs"
+    },
+    "./definition-syntax-data-patch": {
+      "import": "./lib/data-patch.js",
+      "require": "./cjs/data-patch.cjs"
+    },
+    "./utils": {
+      "import": "./lib/utils/index.js",
+      "require": "./cjs/utils/index.cjs"
+    }
+  },
+  "browser": {
+    "./cjs/data.cjs": "./dist/data.cjs",
+    "./cjs/version.cjs": "./dist/version.cjs",
+    "./lib/data.js": "./dist/data.js",
+    "./lib/version.js": "./dist/version.js"
+  },
+  "unpkg": "dist/csstree.esm.js",
+  "jsdelivr": "dist/csstree.esm.js",
+  "scripts": {
+    "watch": "npm run build -- --watch",
+    "build": "npm run bundle && npm run esm-to-cjs --",
+    "build-and-test": "npm run build && npm run test:dist && npm run test:cjs",
+    "bundle": "node scripts/bundle",
+    "bundle-and-test": "npm run bundle && npm run test:dist",
+    "esm-to-cjs": "node scripts/esm-to-cjs.cjs",
+    "esm-to-cjs-and-test": "npm run esm-to-cjs && npm run test:cjs",
+    "lint": "eslint lib scripts && node scripts/review-syntax-patch --lint && node scripts/update-docs --lint",
+    "lint-and-test": "npm run lint && npm test",
+    "update:docs": "node scripts/update-docs",
+    "review:syntax-patch": "node scripts/review-syntax-patch",
+    "test": "mocha lib/__tests --require lib/__tests/helpers/setup.js --reporter progress",
+    "test:cjs": "mocha cjs/__tests --require lib/__tests/helpers/setup.js --reporter progress",
+    "test:dist": "mocha dist/__tests --reporter progress",
+    "coverage": "c8 --exclude lib/__tests --reporter=lcovonly npm test",
+    "prepublishOnly": "npm run lint-and-test && npm run build-and-test"
+  },
+  "dependencies": {
+    "mdn-data": "2.27.1",
+    "source-map-js": "^1.2.1"
+  },
+  "devDependencies": {
+    "c8": "^11.0.0",
+    "clap": "^2.0.1",
+    "esbuild": "^0.27.3",
+    "eslint": "^8.50.0",
+    "json-to-ast": "^2.1.0",
+    "mocha": "^9.2.2",
+    "rollup": "^2.80.0"
+  },
+  "engines": {
+    "node": "^10 || ^12.20.0 || ^14.13.0 || >=15.0.0"
+  },
+  "files": [
+    "data",
+    "dist",
+    "cjs",
+    "!cjs/__tests",
+    "lib",
+    "!lib/__tests"
+  ]
+}

@@ -1,0 +1,40 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.HELPER = exports.TAKE = exports.SET_CONTEXT = exports.SELECT = exports.RACE = exports.PUT = exports.NONE = exports.JOIN = exports.GET_CONTEXT = exports.FORK = exports.FLUSH = exports.CPS = exports.CANCELLED = exports.CANCEL = exports.CALL = exports.ALL = exports.ACTION_CHANNEL = void 0;
+const ACTION_CHANNEL = 'ACTION_CHANNEL';
+exports.ACTION_CHANNEL = ACTION_CHANNEL;
+const ALL = 'ALL';
+exports.ALL = ALL;
+const CALL = 'CALL';
+exports.CALL = CALL;
+const CANCEL = 'CANCEL';
+exports.CANCEL = CANCEL;
+const CANCELLED = 'CANCELLED';
+exports.CANCELLED = CANCELLED;
+const CPS = 'CPS';
+exports.CPS = CPS;
+const FLUSH = 'FLUSH';
+exports.FLUSH = FLUSH;
+const FORK = 'FORK';
+exports.FORK = FORK;
+const GET_CONTEXT = 'GET_CONTEXT';
+exports.GET_CONTEXT = GET_CONTEXT;
+const JOIN = 'JOIN';
+exports.JOIN = JOIN;
+const NONE = 'NONE';
+exports.NONE = NONE;
+const PUT = 'PUT';
+exports.PUT = PUT;
+const RACE = 'RACE';
+exports.RACE = RACE;
+const SELECT = 'SELECT';
+exports.SELECT = SELECT;
+const SET_CONTEXT = 'SET_CONTEXT';
+exports.SET_CONTEXT = SET_CONTEXT;
+const TAKE = 'TAKE';
+exports.TAKE = TAKE;
+const HELPER = '@@redux-saga/HELPER';
+exports.HELPER = HELPER;

@@ -1,0 +1,10 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .unicode-highlight {
+	border: 1px solid var(--vscode-editorUnicodeHighlight-border);
+	background-color: var(--vscode-editorUnicodeHighlight-background);
+	box-sizing: border-box;
+}

@@ -1,0 +1,55 @@
+{
+  "name": "canvas-confetti",
+  "version": "1.9.4",
+  "description": "performant confetti animation in the browser",
+  "main": "src/confetti.js",
+  "module": "dist/confetti.module.mjs",
+  "jsdelivr": "dist/confetti.browser.js",
+  "scripts": {
+    "build": "node build/build.js",
+    "browserify": "browserify --entry src/confetti.js --outfile temp/confetti.bundle.js --standalone confetti",
+    "minify": "terser --compress --mangle -o temp/confetti.min.js -- dist/confetti.browser.js",
+    "pretest": "npm run build -s && npm run browserify -s && npm run -s minify",
+    "test": "cd test && ava --verbose --serial",
+    "lint": "eslint src/**/*.js test/**/*.js build/**/*.js",
+    "dev": "node build/serve.js",
+    "devtest": "cross-env CONFETTI_SHOW=1 npm test",
+    "citest": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catdad/canvas-confetti.git"
+  },
+  "author": "Kiril Vatev <vatev.1@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catdad/canvas-confetti/issues"
+  },
+  "homepage": "https://github.com/catdad/canvas-confetti#readme",
+  "devDependencies": {
+    "ava": "2.4.0",
+    "babel-eslint": "^8.2.1",
+    "browserify": "^15.2.0",
+    "cross-env": "^5.1.3",
+    "eslint": "^8.57.1",
+    "eslint-plugin-ava": "^13.2.0",
+    "jimp": "^0.2.28",
+    "puppeteer": "^19.11.1",
+    "rootrequire": "^1.0.0",
+    "send": "^0.16.1",
+    "terser": "^3.14.1"
+  },
+  "keywords": [
+    "canvas",
+    "confetti",
+    "animation",
+    "burst",
+    "fireworks",
+    "snow",
+    "particles"
+  ],
+  "funding": {
+    "type": "donate",
+    "url": "https://www.paypal.me/kirilvatev"
+  }
+}

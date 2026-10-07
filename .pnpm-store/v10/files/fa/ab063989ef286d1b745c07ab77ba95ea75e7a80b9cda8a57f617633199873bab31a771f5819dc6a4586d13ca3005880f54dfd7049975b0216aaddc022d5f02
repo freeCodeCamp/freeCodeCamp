@@ -1,0 +1,95 @@
+{
+  "name": "engine.io-client",
+  "description": "Client for the realtime Engine",
+  "license": "MIT",
+  "version": "6.6.4",
+  "main": "./build/cjs/index.js",
+  "module": "./build/esm/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./dist/engine.io.esm.min.js": "./dist/engine.io.esm.min.js",
+    "./dist/engine.io.js": "./dist/engine.io.js",
+    "./dist/engine.io.min.js": "./dist/engine.io.min.js",
+    ".": {
+      "import": {
+        "types": "./build/esm/index.d.ts",
+        "node": "./build/esm-debug/index.js",
+        "default": "./build/esm/index.js"
+      },
+      "require": {
+        "types": "./build/cjs/index.d.ts",
+        "default": "./build/cjs/index.js"
+      }
+    },
+    "./debug": {
+      "import": {
+        "types": "./build/esm/index.d.ts",
+        "default": "./build/esm-debug/index.js"
+      },
+      "require": {
+        "types": "./build/cjs/index.d.ts",
+        "default": "./build/cjs/index.js"
+      }
+    }
+  },
+  "types": "build/esm/index.d.ts",
+  "contributors": [
+    {
+      "name": "Guillermo Rauch",
+      "email": "rauchg@gmail.com"
+    },
+    {
+      "name": "Vladimir Dronnikov",
+      "email": "dronnikov@gmail.com"
+    },
+    {
+      "name": "Christoph Dorn",
+      "web": "https://github.com/cadorn"
+    },
+    {
+      "name": "Mark Mokryn",
+      "email": "mokesmokes@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "@socket.io/component-emitter": "~3.1.0",
+    "debug": "~4.4.1",
+    "engine.io-parser": "~5.2.1",
+    "ws": "~8.18.3",
+    "xmlhttprequest-ssl": "~2.1.1"
+  },
+  "scripts": {
+    "compile": "rimraf ./build && tsc && tsc -p tsconfig.esm.json && ./postcompile.sh",
+    "test": "npm run format:check && npm run compile && if test \"$BROWSERS\" = \"1\" ; then npm run test:browser; else npm run test:node; fi",
+    "test:node": "mocha --bail --require test/support/hooks.js test/index.js test/webtransport.mjs",
+    "test:node-fetch": "USE_FETCH=1 npm run test:node",
+    "test:node-builtin-ws": "USE_BUILTIN_WS=1 npm run test:node",
+    "test:browser": "zuul test/index.js",
+    "build": "rimraf ./dist && rollup -c support/rollup.config.umd.js && rollup -c support/rollup.config.esm.js",
+    "bundle-size": "node support/bundle-size.js",
+    "format:check": "prettier --check 'lib/**/*.ts' 'test/**/*.js' 'test/webtransport.mjs' 'support/**/*.js'",
+    "format:fix": "prettier --write 'lib/**/*.ts' 'test/**/*.js' 'test/webtransport.mjs' 'support/**/*.js'",
+    "prepack": "npm run compile"
+  },
+  "browser": {
+    "./test/node.js": false,
+    "./build/esm/transports/polling-xhr.node.js": "./build/esm/transports/polling-xhr.js",
+    "./build/esm/transports/websocket.node.js": "./build/esm/transports/websocket.js",
+    "./build/esm/globals.node.js": "./build/esm/globals.js",
+    "./build/cjs/transports/polling-xhr.node.js": "./build/cjs/transports/polling-xhr.js",
+    "./build/cjs/transports/websocket.node.js": "./build/cjs/transports/websocket.js",
+    "./build/cjs/globals.node.js": "./build/cjs/globals.js"
+  },
+  "homepage": "https://github.com/socketio/socket.io/tree/main/packages/engine.io-client#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/socketio/socket.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/socketio/socket.io/issues"
+  },
+  "files": [
+    "build/",
+    "dist/"
+  ]
+}

@@ -1,0 +1,15 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TIntersect } from '../../types/intersect.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TLiteral, type TLiteralValue } from '../../types/literal.mjs';
+import { type TNumber } from '../../types/number.mjs';
+import { type TNever } from '../../types/never.mjs';
+import { type TExtends, ExtendsResult } from '../../extends/index.mjs';
+import { type TConvertToIntegerKey } from '../helpers/keys.mjs';
+type TNormalizeLiteral<Value extends TLiteralValue, Result extends TSchema = TLiteral<TConvertToIntegerKey<Value>>> = Result;
+type TNormalizeIndexerTypes<Types extends TSchema[], Result extends TSchema[] = []> = (Types extends [infer Left extends TSchema, ...infer Right extends TSchema[]] ? TNormalizeIndexerTypes<Right, [...Result, TNormalizeIndexer<Left>]> : Result);
+export type TNormalizeIndexer<Type extends TSchema, Result extends TSchema = (Type extends TIntersect<infer Types extends TSchema[]> ? TIntersect<TNormalizeIndexerTypes<Types>> : Type extends TUnion<infer Types extends TSchema[]> ? TUnion<TNormalizeIndexerTypes<Types>> : Type extends TLiteral<infer Value extends TLiteralValue> ? TNormalizeLiteral<Value> : Type)> = Result;
+export declare function NormalizeIndexer<Type extends TSchema>(type: Type): TNormalizeIndexer<Type>;
+export type TFromArray<Type extends TSchema, Indexer extends TSchema, NormalizedIndexer extends TSchema = TNormalizeIndexer<Indexer>, Check extends ExtendsResult.TResult = TExtends<{}, NormalizedIndexer, TNumber>, Result extends TSchema = (Check extends ExtendsResult.TExtendsTrueLike ? Type : Indexer extends TLiteral<infer _ extends 'length'> ? TNumber : TNever)> = Result;
+export declare function FromArray<Type extends TSchema, Indexer extends TSchema>(type: Type, indexer: Indexer): TFromArray<Type, Indexer>;
+export {};

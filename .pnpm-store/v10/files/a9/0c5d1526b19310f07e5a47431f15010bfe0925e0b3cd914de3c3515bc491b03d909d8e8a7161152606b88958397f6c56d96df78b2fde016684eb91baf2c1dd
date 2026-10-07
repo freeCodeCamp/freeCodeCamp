@@ -1,0 +1,94 @@
+{
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "bugs": "https://github.com/wooorm/import-meta-resolve/issues",
+  "maintainers": [
+    "JounQin <admin@1stg.me> (https://www.1stG.me)"
+  ],
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "description": "A fork of `import-meta-resolve` with commonjs + ESM support at the same time, AKA dual package.",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6",
+    "@types/node": "^24.0.0",
+    "@types/semver": "^7.0.0",
+    "c8": "^10.0.0",
+    "esbuild": "^0.25.9",
+    "f-ck": "^2.0.0",
+    "prettier": "^3.0.0",
+    "remark-cli": "^12.0.0",
+    "remark-preset-wooorm": "^11.0.0",
+    "semver": "^7.0.0",
+    "type-coverage": "^2.0.0",
+    "typescript": "^5.0.0",
+    "xo": "^1.0.0"
+  },
+  "files": [
+    "index.d.ts.map",
+    "index.d.ts",
+    "index.cjs",
+    "index.js",
+    "lib/"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/JounQin"
+  },
+  "keywords": [
+    "esm",
+    "module",
+    "node",
+    "resolve"
+  ],
+  "license": "MIT",
+  "main": "index.cjs",
+  "module": "index.js",
+  "exports": {
+    "types": "./index.d.ts",
+    "require": "./index.cjs",
+    "default": "./index.js"
+  },
+  "name": "@dual-bundle/import-meta-resolve",
+  "prettier": {
+    "bracketSpacing": false,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-wooorm",
+      [
+        "remark-lint-maximum-heading-length",
+        false
+      ],
+      [
+        "remark-lint-no-multiple-toplevel-headings",
+        false
+      ]
+    ]
+  },
+  "repository": "un-es/import-meta-resolve",
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build && type-coverage && esbuild --bundle --outfile=index.cjs --platform=node --format=cjs index.js",
+    "format": "remark --frail --quiet --output -- . && prettier --write --log-level warn -- . && xo --fix",
+    "generate": "node --conditions development script.js",
+    "prepack": "npm run generate && npm run build && npm run format",
+    "test-api": "node --experimental-import-meta-resolve test/baseline.js && node --experimental-import-meta-resolve test/baseline-async.js && node test/index.js",
+    "test-coverage": "c8 --branches 75 --functions 75 --lines 75 --statements 75 --reporter lcov -- npm run test-api",
+    "test": "npm run generate && npm run build && npm run format && npm run test-coverage"
+  },
+  "sideEffects": false,
+  "typeCoverage": {
+    "atLeast": 100,
+    "strict": true,
+    "ignoreFiles": [
+      "lib/errors.d.ts"
+    ]
+  },
+  "types": "index.d.ts",
+  "type": "module",
+  "version": "4.2.1"
+}

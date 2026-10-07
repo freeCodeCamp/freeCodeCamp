@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_ts_rewrite_relative_import_extension.cjs",
+    "module": "../../esm/_ts_rewrite_relative_import_extension.js"
+}

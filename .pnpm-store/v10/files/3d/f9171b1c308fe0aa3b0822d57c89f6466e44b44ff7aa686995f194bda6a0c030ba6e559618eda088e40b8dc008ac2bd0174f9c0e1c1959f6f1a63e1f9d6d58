@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_to_property_key.js")

@@ -1,0 +1,11 @@
+{
+  "main": "../../lib/node/presets/node.cjs",
+  "module": "../../lib/node/presets/node.mjs",
+  "browser": null,
+  "exports": {
+    ".": {
+      "import": "./../lib/node/presets/node.mjs",
+      "default": "./../lib/node/presets/node.cjs"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "section-matter",
+  "description": "Like front-matter, but supports multiple sections in a document.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jonschlinkert/section-matter",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/section-matter",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/section-matter/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "extend-shallow": "^2.0.1",
+    "kind-of": "^6.0.0"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "js-yaml": "^3.10.0",
+    "mocha": "^4.0.1"
+  },
+  "keywords": [
+    "matter",
+    "section"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "gray-matter",
+        "assemble",
+        "verb"
+      ]
+    },
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

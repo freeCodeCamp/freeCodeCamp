@@ -1,0 +1,453 @@
+import { _ as _$4 } from '@swc/helpers/esm/_define_property.js';
+import { _ as _$3 } from '@swc/helpers/esm/_object_spread.js';
+import { _ as _$2 } from '@swc/helpers/esm/_object_spread_props.js';
+import { _ } from '@swc/helpers/esm/_object_without_properties.js';
+import { _ as _$1 } from '@swc/helpers/esm/_sliced_to_array.js';
+import { _ as _$5 } from '@swc/helpers/esm/_to_consumable_array.js';
+import { SearchIndexToolType } from '../../lib/chat/index.js';
+import { flat } from '../../lib/utils/flat.js';
+import { getAppIdAndApiKey } from '../../lib/utils/getAppIdAndApiKey.js';
+import { DefaultChatTransport } from '../../lib/ai-lite/transport.js';
+import { getAlgoliaAgent } from '../../lib/utils/getAlgoliaAgent.js';
+import { Chat } from '../../lib/chat/chat.js';
+import { lastAssistantMessageIsCompleteWithToolCalls } from '../../lib/ai-lite/utils.js';
+import { sendChatMessageFeedback } from '../../lib/utils/sendChatMessageFeedback.js';
+import { clearRefinements } from '../../lib/utils/clearRefinements.js';
+import { uniq } from '../../lib/utils/uniq.js';
+import { getRefinements } from '../../lib/utils/getRefinements.js';
+import { createDocumentationMessageGenerator } from '../../lib/utils/documentation.js';
+import { checkRendering } from '../../lib/utils/checkRendering.js';
+import { createSendEventForHits } from '../../lib/utils/createSendEventForHits.js';
+import { noop } from '../../lib/utils/noop.js';
+
+var withUsage = createDocumentationMessageGenerator({
+    name: 'chat',
+    connector: true
+});
+function getAttributesToClear(param) {
+    var results = param.results, helper = param.helper;
+    return uniq(getRefinements(results, helper.state, true).map(function(refinement) {
+        return refinement.attribute;
+    }));
+}
+function updateStateFromSearchToolInput(params, helper) {
+    // clear all filters first
+    var attributesToClear = getAttributesToClear({
+        results: helper.lastResults,
+        helper: helper
+    });
+    helper.setState(clearRefinements({
+        helper: helper,
+        attributesToClear: attributesToClear
+    }));
+    if (params.facetFilters) {
+        var attributes = flat(params.facetFilters).map(function(filter) {
+            var _filter_split = _$1(filter.split(':'), 2), attribute = _filter_split[0], value = _filter_split[1];
+            return {
+                attribute: attribute,
+                value: value
+            };
+        });
+        attributes.forEach(function(param) {
+            var attribute = param.attribute, value = param.value;
+            if (!helper.state.isConjunctiveFacet(attribute) && !helper.state.isHierarchicalFacet(attribute) && !helper.state.isDisjunctiveFacet(attribute)) {
+                var s = helper.state.addDisjunctiveFacet(attribute);
+                helper.setState(s);
+                helper.toggleFacetRefinement(attribute, value);
+            } else {
+                var _helper_state_hierarchicalFacets_find;
+                var attr = ((_helper_state_hierarchicalFacets_find = helper.state.hierarchicalFacets.find(function(facet) {
+                    return facet.name === attribute;
+                })) === null || _helper_state_hierarchicalFacets_find === void 0 ? void 0 : _helper_state_hierarchicalFacets_find.name) || attribute;
+                helper.toggleFacetRefinement(attr, value);
+            }
+        });
+    }
+    if (params.query) {
+        helper.setQuery(params.query);
+    }
+    helper.search();
+    return helper.state;
+}
+var connectChat = (function connectChat(renderFn) {
+    var unmountFn = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : noop;
+    checkRendering(renderFn, withUsage());
+    return function(widgetParams) {
+        var _ref = widgetParams || {}, _ref_resume = _ref.resume, resume = _ref_resume === void 0 ? false : _ref_resume, _ref_tools = _ref.tools, tools = _ref_tools === void 0 ? {} : _ref_tools, _ref_type = _ref.type, type = _ref_type === void 0 ? 'chat' : _ref_type, context = _ref.context, initialUserMessage = _ref.initialUserMessage, options = _(_ref, [
+            "resume",
+            "tools",
+            "type",
+            "context",
+            "initialUserMessage"
+        ]);
+        var _chatInstance;
+        var input = '';
+        var open = false;
+        var isClearing = false;
+        var sendEvent;
+        var setInput;
+        var setOpen;
+        var focusInput;
+        var setIsClearing;
+        var setFeedbackState;
+        var agentId = 'agentId' in options ? options.agentId : undefined;
+        var feedbackState = {};
+        var _sendChatMessageFeedback;
+        var feedbackAbortController;
+        // Extract suggestions from the last assistant message's data-suggestions part
+        var getSuggestionsFromMessages = function getSuggestionsFromMessages(messages) {
+            // Find the last assistant message (iterate from end)
+            var lastAssistantMessage = _$5(messages).reverse().find(function(message) {
+                return message.role === 'assistant' && message.parts;
+            });
+            if (!(lastAssistantMessage === null || lastAssistantMessage === void 0 ? void 0 : lastAssistantMessage.parts)) {
+                return undefined;
+            }
+            // Find the data-suggestions part
+            var suggestionsPart = lastAssistantMessage.parts.find(function(part) {
+                var _part_data;
+                return 'type' in part && part.type === 'data-suggestions' && 'data' in part && Array.isArray((_part_data = part.data) === null || _part_data === void 0 ? void 0 : _part_data.suggestions);
+            });
+            return suggestionsPart === null || suggestionsPart === void 0 ? void 0 : suggestionsPart.data.suggestions;
+        };
+        var setMessages = function setMessages(messagesParam) {
+            if (typeof messagesParam === 'function') {
+                messagesParam = messagesParam(_chatInstance.messages);
+            }
+            _chatInstance.messages = messagesParam;
+        };
+        var clearMessages = function clearMessages() {
+            if (!_chatInstance.messages || _chatInstance.messages.length === 0) {
+                return;
+            }
+            var status = _chatInstance.status;
+            if (status === 'submitted' || status === 'streaming') {
+                _chatInstance.stop();
+            }
+            setIsClearing(true);
+        };
+        var onClearTransitionEnd = function onClearTransitionEnd() {
+            setMessages([]);
+            _chatInstance.clearError();
+            feedbackState = {};
+            setIsClearing(false);
+        };
+        var makeChatInstance = function makeChatInstance(instantSearchInstance) {
+            var transport;
+            var _getAppIdAndApiKey = _$1(getAppIdAndApiKey(instantSearchInstance.client), 2), appId = _getAppIdAndApiKey[0], apiKey = _getAppIdAndApiKey[1];
+            // Filter out custom data parts (like data-suggestions) that the backend doesn't accept
+            var filterDataParts = function filterDataParts(messages) {
+                return messages.map(function(message) {
+                    var _message_parts;
+                    return _$2(_$3({}, message), {
+                        parts: (_message_parts = message.parts) === null || _message_parts === void 0 ? void 0 : _message_parts.filter(function(part) {
+                            return !('type' in part && part.type.startsWith('data-'));
+                        })
+                    });
+                });
+            };
+            if ('transport' in options && options.transport) {
+                var originalPrepare = options.transport.prepareSendMessagesRequest;
+                transport = new DefaultChatTransport(_$2(_$3({}, options.transport), {
+                    prepareSendMessagesRequest: function prepareSendMessagesRequest(params) {
+                        // Call the original prepareSendMessagesRequest if it exists,
+                        // otherwise construct the default body
+                        var preparedOrPromise = originalPrepare ? originalPrepare(params) : {
+                            body: _$3({}, params)
+                        };
+                        // Then filter out data-* parts
+                        var applyFilter = function applyFilter(prepared) {
+                            return _$2(_$3({}, prepared), {
+                                body: _$2(_$3({}, prepared.body), {
+                                    messages: filterDataParts(prepared.body.messages)
+                                })
+                            });
+                        };
+                        // Handle both sync and async cases
+                        if (preparedOrPromise && 'then' in preparedOrPromise) {
+                            return preparedOrPromise.then(applyFilter);
+                        }
+                        return applyFilter(preparedOrPromise);
+                    }
+                }));
+            }
+            if ('agentId' in options && options.agentId) {
+                if (!appId || !apiKey) {
+                    throw new Error(withUsage('Could not extract Algolia credentials from the search client.'));
+                }
+                var baseApi = "https://".concat(appId, ".algolia.net/agent-studio/1/agents/").concat(agentId, "/completions?compatibilityMode=ai-sdk-5");
+                transport = new DefaultChatTransport({
+                    api: baseApi,
+                    headers: {
+                        'x-algolia-application-id': appId,
+                        'x-algolia-api-Key': apiKey,
+                        'x-algolia-agent': getAlgoliaAgent(instantSearchInstance.client)
+                    },
+                    prepareSendMessagesRequest: function prepareSendMessagesRequest(_0) {
+                        var messages = _0.messages, trigger = _0.trigger, rest = _(_0, [
+                            "messages",
+                            "trigger"
+                        ]);
+                        return {
+                            // Bypass cache when regenerating to ensure fresh responses
+                            api: trigger === 'regenerate-message' ? "".concat(baseApi, "&cache=false") : baseApi,
+                            body: _$2(_$3({}, rest), {
+                                messages: filterDataParts(messages)
+                            })
+                        };
+                    }
+                });
+            }
+            if (!transport) {
+                throw new Error(withUsage('You need to provide either an `agentId` or a `transport`.'));
+            }
+            if ('chat' in options) {
+                return options.chat;
+            }
+            return new Chat(_$2(_$3({}, options), {
+                transport: transport,
+                sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
+                shouldRepairToolInput: function shouldRepairToolInput(toolName) {
+                    var tool = tools[toolName];
+                    if (!tool && toolName.startsWith("".concat(SearchIndexToolType, "_"))) {
+                        tool = tools[SearchIndexToolType];
+                    }
+                    if (!tool) return true;
+                    return Boolean(tool.streamInput);
+                },
+                onToolCall: function onToolCall(param) {
+                    var toolCall = param.toolCall;
+                    var tool = tools[toolCall.toolName];
+                    // Compatibility shim with Algolia MCP Server search tool
+                    if (!tool && toolCall.toolName.startsWith("".concat(SearchIndexToolType, "_"))) {
+                        tool = tools[SearchIndexToolType];
+                    }
+                    if (!tool) {
+                        return _chatInstance.addToolResult({
+                            output: 'No tool implemented for "'.concat(toolCall.toolName, '".'),
+                            tool: toolCall.toolName,
+                            toolCallId: toolCall.toolCallId
+                        });
+                    }
+                    if (tool.onToolCall) {
+                        var addToolResult = function addToolResult(param) {
+                            var output = param.output;
+                            return _chatInstance.addToolResult({
+                                output: output,
+                                tool: toolCall.toolName,
+                                toolCallId: toolCall.toolCallId
+                            });
+                        };
+                        return tool.onToolCall(_$2(_$3({}, toolCall), {
+                            addToolResult: addToolResult
+                        }));
+                    }
+                    return Promise.resolve();
+                }
+            }));
+        };
+        return {
+            $$type: 'ais.chat',
+            init: function init(initOptions) {
+                var _this = this;
+                var instantSearchInstance = initOptions.instantSearchInstance;
+                _chatInstance = makeChatInstance(instantSearchInstance);
+                var render = function render() {
+                    renderFn(_$2(_$3({}, _this.getWidgetRenderState(initOptions)), {
+                        instantSearchInstance: initOptions.instantSearchInstance
+                    }), false);
+                };
+                setOpen = function setOpen(o) {
+                    open = o;
+                    render();
+                };
+                focusInput = function focusInput() {
+                    setOpen(true);
+                };
+                setInput = function setInput(i) {
+                    input = i;
+                    render();
+                };
+                setIsClearing = function setIsClearing(value) {
+                    isClearing = value;
+                    render();
+                };
+                setFeedbackState = function setFeedbackState(messageId, state) {
+                    feedbackState = _$2(_$3({}, feedbackState), _$4({}, messageId, state));
+                    render();
+                };
+                var feedback = 'feedback' in options ? options.feedback : undefined;
+                if (agentId && feedback) {
+                    var _getAppIdAndApiKey = _$1(getAppIdAndApiKey(initOptions.instantSearchInstance.client), 2), appId = _getAppIdAndApiKey[0], apiKey = _getAppIdAndApiKey[1];
+                    if (!appId || !apiKey) {
+                        throw new Error(withUsage('Could not extract Algolia credentials from the search client.'));
+                    }
+                    feedbackAbortController = new AbortController();
+                    _sendChatMessageFeedback = function _sendChatMessageFeedback(messageId, vote) {
+                        if (feedbackState[messageId] !== undefined) {
+                            return;
+                        }
+                        setFeedbackState(messageId, 'sending');
+                        sendChatMessageFeedback({
+                            agentId: agentId,
+                            vote: vote,
+                            messageId: messageId,
+                            appId: appId,
+                            apiKey: apiKey
+                        }).finally(function() {
+                            setFeedbackState(messageId, vote);
+                        });
+                    };
+                }
+                _chatInstance['~registerErrorCallback'](render);
+                _chatInstance['~registerMessagesCallback'](render);
+                _chatInstance['~registerStatusCallback'](render);
+                if (resume) {
+                    _chatInstance.resumeStream();
+                }
+                if (initialUserMessage && !resume && _chatInstance.messages.length === 0) {
+                    _chatInstance.sendMessage({
+                        text: initialUserMessage
+                    });
+                }
+                renderFn(_$2(_$3({}, this.getWidgetRenderState(initOptions)), {
+                    instantSearchInstance: instantSearchInstance
+                }), true);
+            },
+            render: function render(renderOptions) {
+                renderFn(_$2(_$3({}, this.getWidgetRenderState(renderOptions)), {
+                    instantSearchInstance: renderOptions.instantSearchInstance
+                }), false);
+            },
+            getRenderState: function getRenderState(renderState, renderOptions) {
+                return _$2(_$3({}, renderState), // Type is casted to 'chat' here, because in the IndexRenderState the key is always 'chat'
+                _$4({}, type, this.getWidgetRenderState(renderOptions)));
+            },
+            getWidgetRenderState: function getWidgetRenderState(renderOptions) {
+                var instantSearchInstance = renderOptions.instantSearchInstance, parent = renderOptions.parent, helper = renderOptions.helper;
+                if (!_chatInstance) {
+                    this.init(_$2(_$3({}, renderOptions), {
+                        uiState: {},
+                        results: undefined
+                    }));
+                }
+                if (!sendEvent) {
+                    sendEvent = createSendEventForHits({
+                        instantSearchInstance: renderOptions.instantSearchInstance,
+                        helper: renderOptions.helper,
+                        widgetType: this.$$type
+                    });
+                }
+                function applyFilters(params) {
+                    return updateStateFromSearchToolInput(params, helper);
+                }
+                var toolsWithAddToolResult = {};
+                Object.entries(tools).forEach(function(param) {
+                    var _param = _$1(param, 2), key = _param[0], tool = _param[1];
+                    var toolWithAddToolResult = _$2(_$3({}, tool), {
+                        addToolResult: _chatInstance.addToolResult,
+                        applyFilters: applyFilters,
+                        sendEvent: sendEvent
+                    });
+                    toolsWithAddToolResult[key] = toolWithAddToolResult;
+                });
+                var sendMessageWithContext = function sendMessageWithContext(message) {
+                    for(var _len = arguments.length, rest = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+                        rest[_key - 1] = arguments[_key];
+                    }
+                    var _chatInstance1;
+                    if (!context || !message) {
+                        var _chatInstance2;
+                        return (_chatInstance2 = _chatInstance).sendMessage.apply(_chatInstance2, [
+                            message
+                        ].concat(_$5(rest)));
+                    }
+                    var resolvedContext = typeof context === 'function' ? context() : context;
+                    var serializedContext;
+                    try {
+                        serializedContext = JSON.stringify(resolvedContext);
+                    } catch (unused) {
+                        var _chatInstance3;
+                        return (_chatInstance3 = _chatInstance).sendMessage.apply(_chatInstance3, [
+                            message
+                        ].concat(_$5(rest)));
+                    }
+                    var contextTextPart = {
+                        type: 'text',
+                        text: '<context>'.concat(serializedContext).concat('</context>')
+                    };
+                    if ('parts' in message && message.parts) {
+                        var _chatInstance4;
+                        return (_chatInstance4 = _chatInstance).sendMessage.apply(_chatInstance4, [
+                            _$2(_$3({}, message), {
+                                parts: [
+                                    contextTextPart
+                                ].concat(_$5(message.parts)),
+                                text: undefined,
+                                files: undefined
+                            })
+                        ].concat(_$5(rest)));
+                    }
+                    var textContent = 'text' in message && message.text ? message.text : '';
+                    return (_chatInstance1 = _chatInstance).sendMessage.apply(_chatInstance1, [
+                        {
+                            parts: [
+                                contextTextPart,
+                                {
+                                    type: 'text',
+                                    text: textContent
+                                }
+                            ],
+                            metadata: message.metadata,
+                            messageId: message.messageId,
+                            files: undefined,
+                            text: undefined
+                        }
+                    ].concat(_$5(rest)));
+                };
+                return {
+                    indexUiState: instantSearchInstance.getUiState()[parent.getIndexId()],
+                    input: input,
+                    open: open,
+                    sendEvent: sendEvent,
+                    setIndexUiState: parent.setIndexUiState.bind(parent),
+                    setInput: setInput,
+                    setOpen: setOpen,
+                    focusInput: focusInput,
+                    setMessages: setMessages,
+                    suggestions: getSuggestionsFromMessages(_chatInstance.messages),
+                    isClearing: isClearing,
+                    clearMessages: clearMessages,
+                    onClearTransitionEnd: onClearTransitionEnd,
+                    tools: toolsWithAddToolResult,
+                    sendChatMessageFeedback: _sendChatMessageFeedback,
+                    feedbackState: feedbackState,
+                    widgetParams: widgetParams,
+                    // Chat instance render state
+                    addToolResult: _chatInstance.addToolResult,
+                    clearError: _chatInstance.clearError,
+                    error: _chatInstance.error,
+                    id: _chatInstance.id,
+                    messages: _chatInstance.messages,
+                    regenerate: _chatInstance.regenerate,
+                    resumeStream: _chatInstance.resumeStream,
+                    sendMessage: sendMessageWithContext,
+                    status: _chatInstance.status,
+                    stop: _chatInstance.stop
+                };
+            },
+            dispose: function dispose() {
+                feedbackAbortController === null || feedbackAbortController === void 0 ? void 0 : feedbackAbortController.abort();
+                unmountFn();
+            },
+            shouldRender: function shouldRender() {
+                return true;
+            },
+            get chatInstance () {
+                return _chatInstance;
+            }
+        };
+    };
+});
+
+export { connectChat as default };

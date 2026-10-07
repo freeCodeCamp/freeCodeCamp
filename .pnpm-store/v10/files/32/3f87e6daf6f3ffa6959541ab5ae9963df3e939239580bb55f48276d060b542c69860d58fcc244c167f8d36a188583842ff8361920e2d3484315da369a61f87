@@ -1,0 +1,24 @@
+{
+  "name": "memory-pager",
+  "version": "1.5.0",
+  "description": "Access memory using small fixed sized buffers",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^9.0.0",
+    "tape": "^4.6.3"
+  },
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/memory-pager.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/memory-pager/issues"
+  },
+  "homepage": "https://github.com/mafintosh/memory-pager"
+}

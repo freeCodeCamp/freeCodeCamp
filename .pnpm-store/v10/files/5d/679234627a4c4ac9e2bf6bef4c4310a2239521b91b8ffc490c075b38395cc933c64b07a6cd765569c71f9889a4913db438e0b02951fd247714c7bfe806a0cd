@@ -1,0 +1,24 @@
+/** @implements {ElementAdapter} */
+export class JSXElementElementAdapter implements ElementAdapter {
+    /** @param {JSXElement} node */
+    constructor(node: JSXElement);
+    node: JSXElement;
+    /** @returns {string} */
+    getElementName(): string;
+    /** @returns {SourceLocation} */
+    getLocation(): SourceLocation;
+    /** @returns {Range} */
+    getRange(): Range;
+    /** @returns {AttributeAdapter[]} */
+    getAttributes(): AttributeAdapter[];
+    /** @returns {SourceLocation} */
+    getOpenStartLocation(): SourceLocation;
+    /** @returns {Range} */
+    getOpenStartRange(): Range;
+}
+import type { ElementAdapter } from "@html-eslint/core";
+import type { JSXElement } from "../../types";
+import type { SourceLocation } from "@html-eslint/types";
+import type { Range } from "@html-eslint/types";
+import type { AttributeAdapter } from "@html-eslint/core";
+//# sourceMappingURL=jsx-element.d.ts.map

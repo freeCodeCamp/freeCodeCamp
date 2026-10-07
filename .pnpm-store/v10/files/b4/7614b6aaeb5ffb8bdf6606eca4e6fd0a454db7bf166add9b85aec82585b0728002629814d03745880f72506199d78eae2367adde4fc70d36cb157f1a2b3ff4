@@ -1,0 +1,11 @@
+{
+  "main": "../lib/node/interceptors/ClientRequest/index.cjs",
+  "module": "../lib/node/interceptors/ClientRequest/index.mjs",
+  "browser": null,
+  "exports": {
+    ".": {
+      "import": "./../lib/node/interceptors/ClientRequest/index.mjs",
+      "default": "./../lib/node/interceptors/ClientRequest/index.cjs"
+    }
+  }
+}

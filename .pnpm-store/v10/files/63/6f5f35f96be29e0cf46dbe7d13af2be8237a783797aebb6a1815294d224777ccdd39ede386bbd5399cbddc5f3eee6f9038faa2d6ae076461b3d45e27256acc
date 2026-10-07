@@ -1,0 +1,45 @@
+# `MD036` - Emphasis used instead of a heading
+
+Tags: `emphasis`, `headings`
+
+Aliases: `no-emphasis-as-heading`
+
+Parameters:
+
+- `punctuation`: Punctuation characters (`string`, default `.,;:!?。，；：！？`)
+
+This check looks for instances where emphasized (i.e. bold or italic) text is
+used to separate sections, where a heading should be used instead:
+
+```markdown
+**My document**
+
+Lorem ipsum dolor sit amet...
+
+_Another section_
+
+Consectetur adipiscing elit, sed do eiusmod.
+```
+
+To fix this, use Markdown headings instead of emphasized text to denote
+sections:
+
+```markdown
+# My document
+
+Lorem ipsum dolor sit amet...
+
+## Another section
+
+Consectetur adipiscing elit, sed do eiusmod.
+```
+
+Note: This rule looks for single-line paragraphs that consist entirely
+of emphasized text. It won't fire on emphasis used within regular text,
+multi-line emphasized paragraphs, or paragraphs ending in punctuation
+(normal or full-width). Similarly to rule MD026, you can configure what
+characters are recognized as punctuation.
+
+Rationale: Using emphasis instead of a heading prevents tools from inferring
+the structure of a document. More information:
+<https://cirosantilli.com/markdown-style-guide#emphasis-vs-headers>.

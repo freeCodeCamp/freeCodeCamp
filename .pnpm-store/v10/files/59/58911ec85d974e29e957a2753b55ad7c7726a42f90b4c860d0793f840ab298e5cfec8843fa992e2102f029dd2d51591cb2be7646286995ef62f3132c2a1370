@@ -1,0 +1,32 @@
+# `MD027` - Multiple spaces after blockquote symbol
+
+Tags: `blockquote`, `indentation`, `whitespace`
+
+Aliases: `no-multiple-space-blockquote`
+
+Parameters:
+
+- `list_items`: Include list items (`boolean`, default `true`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when blockquotes have more than one space after the
+blockquote (`>`) symbol:
+
+```markdown
+>  This is a blockquote with bad indentation
+>  there should only be one.
+```
+
+To fix, remove any extraneous space:
+
+```markdown
+> This is a blockquote with correct
+> indentation.
+```
+
+Inferring intended list indentation within a blockquote can be challenging;
+setting the `list_items` parameter to `false` disables this rule for ordered
+and unordered list items.
+
+Rationale: Consistent formatting makes it easier to understand a document.

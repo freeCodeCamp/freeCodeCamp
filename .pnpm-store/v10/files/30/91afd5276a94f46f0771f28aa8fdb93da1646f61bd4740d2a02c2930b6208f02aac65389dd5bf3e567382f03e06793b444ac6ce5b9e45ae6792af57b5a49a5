@@ -1,0 +1,27 @@
+{
+  "name": "@babel/template",
+  "version": "7.28.6",
+  "description": "Generate an AST from a string template.",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-template",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20template%22+is%3Aopen",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-template"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/code-frame": "^7.28.6",
+    "@babel/parser": "^7.28.6",
+    "@babel/types": "^7.28.6"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

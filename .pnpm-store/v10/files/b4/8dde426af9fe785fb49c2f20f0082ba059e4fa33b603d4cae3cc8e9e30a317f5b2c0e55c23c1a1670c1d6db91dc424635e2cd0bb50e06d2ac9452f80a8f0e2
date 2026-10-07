@@ -1,0 +1,1 @@
+{"version":3,"file":"json-schema.d.ts","sourceRoot":"","sources":["../src/json-schema.ts"],"names":[],"mappings":"AAKA,OAAO,EACL,WAAW,EACX,eAAe,EACf,mBAAmB,EACnB,kBAAkB,EAClB,WAAW,EACX,qBAAqB,EACrB,eAAe,EACf,mBAAmB,EACnB,kBAAkB,EAClB,WAAW,EACX,gBAAgB,EAChB,qBAAqB,EACrB,eAAe,EACf,mBAAmB,EACnB,kBAAkB,EAClB,eAAe,EACf,gBAAgB,GACjB,MAAM,aAAa,CAAC"}

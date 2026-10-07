@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TSubscriptionRef.js",
+  "module": "../dist/esm/TSubscriptionRef.js",
+  "types": "../dist/dts/TSubscriptionRef.d.ts"
+}

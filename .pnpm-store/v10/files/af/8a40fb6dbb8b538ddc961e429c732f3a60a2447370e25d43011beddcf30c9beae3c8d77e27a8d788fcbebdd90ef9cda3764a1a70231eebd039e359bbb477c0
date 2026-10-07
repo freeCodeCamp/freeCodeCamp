@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "youtube-player": "^5.1.0"
+  }
+}

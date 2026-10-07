@@ -1,0 +1,39 @@
+{
+  "name": "content-disposition",
+  "description": "Create and parse Content-Disposition header",
+  "version": "0.5.2",
+  "contributors": [
+    "Douglas Christopher Wilson <doug@somethingdoug.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "content-disposition",
+    "http",
+    "rfc6266",
+    "res"
+  ],
+  "repository": "jshttp/content-disposition",
+  "devDependencies": {
+    "eslint": "3.11.1",
+    "eslint-config-standard": "6.2.1",
+    "eslint-plugin-promise": "3.3.0",
+    "eslint-plugin-standard": "2.0.1",
+    "istanbul": "0.4.5",
+    "mocha": "1.21.5"
+  },
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "README.md",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+  }
+}

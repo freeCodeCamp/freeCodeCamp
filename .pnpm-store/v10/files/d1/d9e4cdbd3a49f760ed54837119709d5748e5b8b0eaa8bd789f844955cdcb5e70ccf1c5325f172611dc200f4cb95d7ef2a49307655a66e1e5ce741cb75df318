@@ -1,0 +1,33 @@
+{
+  "name": "serve",
+  "version": "13.0.4",
+  "description": "Static file serving and directory listing",
+  "scripts": {
+    "test": ""
+  },
+  "files": [
+    "bin"
+  ],
+  "repository": "vercel/serve",
+  "bin": {
+    "serve": "./bin/serve.js"
+  },
+  "keywords": [
+    "vercel",
+    "serve",
+    "micro",
+    "http-server"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@zeit/schemas": "2.6.0",
+    "ajv": "6.12.6",
+    "arg": "2.0.0",
+    "boxen": "5.1.2",
+    "chalk": "2.4.1",
+    "clipboardy": "2.3.0",
+    "compression": "1.7.3",
+    "serve-handler": "6.1.3",
+    "update-check": "1.5.2"
+  }
+}

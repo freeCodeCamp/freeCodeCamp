@@ -1,0 +1,46 @@
+{
+  "name": "rc9",
+  "version": "2.1.2",
+  "description": "Read/Write config couldn't be easier!",
+  "repository": "unjs/rc9",
+  "license": "MIT",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest",
+    "lint": "eslint . && prettier -c src test",
+    "lint:fix": "eslint . --fix && prettier -w src test",
+    "release": "pnpm test && pnpm build && changelogen --release --push && npm publish",
+    "test": "pnpm lint && vitest run --coverage"
+  },
+  "dependencies": {
+    "defu": "^6.1.4",
+    "destr": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.6",
+    "@vitest/coverage-v8": "^1.4.0",
+    "automd": "^0.3.7",
+    "changelogen": "^0.5.5",
+    "eslint": "^9.0.0",
+    "eslint-config-unjs": "^0.3.0-rc.5",
+    "flat": "^6.0.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.4",
+    "unbuild": "^2.0.0",
+    "vitest": "^1.4.0"
+  },
+  "packageManager": "pnpm@8.15.6"
+}

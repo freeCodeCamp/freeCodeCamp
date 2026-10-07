@@ -1,0 +1,39 @@
+{
+  "name": "style-mod",
+  "version": "4.1.2",
+  "description": "A minimal CSS module shim",
+  "main": "dist/style-mod.cjs",
+  "type": "module",
+  "exports": {
+    "import": "./src/style-mod.js",
+    "require": "./dist/style-mod.cjs"
+  },
+  "module": "src/style-mod.js",
+  "types": "src/style-mod.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run build && mocha test/test-*.js",
+    "build": "mkdir -p dist; buble --no modules src/style-mod.js | sed -e 's/export var StyleModule/var StyleModule = exports.StyleModule/' > dist/style-mod.cjs",
+    "prepare": "npm run build && npm run build-readme",
+    "build-readme": "builddocs --name style-mod --main src/README.md --format markdown src/*.js > README.md"
+  },
+  "keywords": [
+    "css",
+    "module",
+    "styling"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marijnh/style-mod.git"
+  },
+  "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
+  "license": "MIT",
+  "devDependencies": {
+    "buble": "^0.20.0",
+    "builddocs": "^0.3.2",
+    "ist": "^1.1.1",
+    "mocha": "^7.2.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "node-gyp-build-optional-packages",
+  "version": "5.0.7",
+  "description": "Build tool and bindings loader for node-gyp that supports prebuilds",
+  "main": "index.js",
+  "devDependencies": {
+    "array-shuffle": "^1.0.1",
+    "standard": "^14.0.0",
+    "tape": "^5.0.0"
+  },
+  "scripts": {
+    "test": "standard && node test"
+  },
+  "bin": {
+    "node-gyp-build-optional-packages": "./bin.js",
+    "node-gyp-build-optional-packages-optional": "./optional.js",
+    "node-gyp-build-optional-packages-test": "./build-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prebuild/node-gyp-build.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prebuild/node-gyp-build/issues"
+  },
+  "homepage": "https://github.com/prebuild/node-gyp-build"
+}

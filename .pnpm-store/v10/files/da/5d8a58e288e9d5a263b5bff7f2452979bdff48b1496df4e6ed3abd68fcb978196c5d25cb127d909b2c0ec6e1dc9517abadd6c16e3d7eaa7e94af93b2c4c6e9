@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_initializer_define_property.cjs",
+    "module": "../../esm/_initializer_define_property.js"
+}

@@ -1,0 +1,72 @@
+# packages/playwright/lib/matchers/expect.js
+# total: 513.7 KB
+
+## Inlined (64)
+   7.9 KB  node_modules/@babel/code-frame/lib/index.js
+  12.6 KB  node_modules/@babel/helper-validator-identifier/lib/identifier.js
+   1.6 KB  node_modules/@babel/helper-validator-identifier/lib/index.js
+   1.7 KB  node_modules/@babel/helper-validator-identifier/lib/keyword.js
+  15.9 KB  node_modules/@jest/diff-sequences/build/index.js
+  24.9 KB  node_modules/@jest/expect-utils/build/index.js
+   0.8 KB  node_modules/@jest/expect-utils/build/index.mjs
+   1.8 KB  node_modules/@jest/get-type/build/index.js
+   4.8 KB  node_modules/ansi-styles/index.js
+   1.9 KB  node_modules/braces/index.js
+   1.7 KB  node_modules/braces/lib/compile.js
+   2.1 KB  node_modules/braces/lib/constants.js
+   3.1 KB  node_modules/braces/lib/expand.js
+   7.0 KB  node_modules/braces/lib/parse.js
+   0.9 KB  node_modules/braces/lib/stringify.js
+   2.4 KB  node_modules/braces/lib/utils.js
+   3.1 KB  node_modules/chalk/node_modules/supports-color/index.js
+   5.8 KB  node_modules/chalk/source/index.js
+   3.9 KB  node_modules/chalk/source/templates.js
+   1.3 KB  node_modules/chalk/source/util.js
+  18.7 KB  node_modules/color-convert/conversions.js
+   1.8 KB  node_modules/color-convert/index.js
+   2.1 KB  node_modules/color-convert/route.js
+   5.2 KB  node_modules/color-name/index.js
+   6.8 KB  node_modules/fill-range/index.js
+   0.4 KB  node_modules/has-flag/index.js
+   0.4 KB  node_modules/is-number/index.js
+  53.2 KB  node_modules/jest-diff/build/index.js
+  25.2 KB  node_modules/jest-matcher-utils/build/index.js
+   2.7 KB  node_modules/jest-matcher-utils/build/index.mjs
+  15.3 KB  node_modules/jest-message-util/build/index.js
+   0.5 KB  node_modules/jest-message-util/build/index.mjs
+   0.7 KB  node_modules/jest-message-util/node_modules/graceful-fs/clone.js
+  12.2 KB  node_modules/jest-message-util/node_modules/graceful-fs/graceful-fs.js
+   3.0 KB  node_modules/jest-message-util/node_modules/graceful-fs/legacy-streams.js
+   9.3 KB  node_modules/jest-message-util/node_modules/graceful-fs/polyfills.js
+   1.4 KB  node_modules/js-tokens/index.js
+   5.8 KB  node_modules/micromatch/index.js
+   0.2 KB  node_modules/micromatch/node_modules/picomatch/index.js
+   5.3 KB  node_modules/micromatch/node_modules/picomatch/lib/constants.js
+  33.9 KB  node_modules/micromatch/node_modules/picomatch/lib/parse.js
+   5.3 KB  node_modules/micromatch/node_modules/picomatch/lib/picomatch.js
+   9.6 KB  node_modules/micromatch/node_modules/picomatch/lib/scan.js
+   2.2 KB  node_modules/micromatch/node_modules/picomatch/lib/utils.js
+   3.1 KB  node_modules/picocolors/picocolors.js
+  42.7 KB  node_modules/pretty-format/build/index.js
+   4.4 KB  node_modules/pretty-format/node_modules/ansi-styles/index.js
+   7.7 KB  node_modules/pretty-format/node_modules/react-is/cjs/react-is.development.js
+   3.3 KB  node_modules/pretty-format/node_modules/react-is/cjs/react-is.production.min.js
+   0.3 KB  node_modules/pretty-format/node_modules/react-is/index.js
+   0.4 KB  node_modules/slash/index.js
+   7.6 KB  node_modules/stack-utils/index.js
+   0.4 KB  node_modules/stack-utils/node_modules/escape-string-regexp/index.js
+   6.8 KB  node_modules/to-regex-range/index.js
+  10.3 KB  packages/playwright/src/matchers/expect.ts
+  45.2 KB  packages/playwright/src/matchers/expectLibrary.ts
+   3.3 KB  packages/playwright/src/matchers/matcherHint.ts
+  16.0 KB  packages/playwright/src/matchers/matchers.ts
+   1.3 KB  packages/playwright/src/matchers/toBeTruthy.ts
+   2.1 KB  packages/playwright/src/matchers/toEqual.ts
+   2.4 KB  packages/playwright/src/matchers/toHaveURL.ts
+   5.6 KB  packages/playwright/src/matchers/toMatchAriaSnapshot.ts
+  15.1 KB  packages/playwright/src/matchers/toMatchSnapshot.ts
+   3.0 KB  packages/playwright/src/matchers/toMatchText.ts
+
+## External (2)
+  playwright-core/lib/coreBundle
+  playwright-core/lib/utilsBundle

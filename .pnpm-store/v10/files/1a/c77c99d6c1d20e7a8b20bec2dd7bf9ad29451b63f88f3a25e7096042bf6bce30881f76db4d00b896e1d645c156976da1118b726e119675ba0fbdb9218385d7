@@ -1,0 +1,15 @@
+sauce_connect: true
+loopback: airtap.local
+browsers:
+  - name: chrome
+    version: latest
+  - name: firefox
+    version: latest
+  - name: safari
+    version: 9..latest
+  - name: iphone
+    version: latest
+  - name: ie
+    version: 9..latest
+  - name: microsoftedge
+    version: 13..latest

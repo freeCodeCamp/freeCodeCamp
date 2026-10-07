@@ -1,0 +1,46 @@
+{
+  "name": "rechoir",
+  "version": "0.7.1",
+  "description": "Prepare a node environment to require files with different extensions.",
+  "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
+  "contributors": [
+    "Blaine Bublitz <blaine.bublitz@gmail.com>",
+    "Tyler Kellen <tyler@sleekcode.net> (http://goingslowly.com/)"
+  ],
+  "repository": "gulpjs/rechoir",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "main": "index.js",
+  "files": [
+    "LICENSE",
+    "index.js",
+    "lib/"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "rm -rf tmp/ && npm run lint",
+    "test": "mocha --async-only test test/lib",
+    "cover": "istanbul cover _mocha --report lcovonly test test/lib",
+    "coveralls": "npm run cover && istanbul-coveralls"
+  },
+  "dependencies": {
+    "resolve": "^1.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.13.0",
+    "eslint-config-gulp": "^3.0.1",
+    "expect": "^1.20.2",
+    "istanbul": "^0.4.3",
+    "istanbul-coveralls": "^1.0.3",
+    "mocha": "^3.5.3"
+  },
+  "keywords": [
+    "require",
+    "loader",
+    "extension",
+    "extensions",
+    "prepare"
+  ]
+}

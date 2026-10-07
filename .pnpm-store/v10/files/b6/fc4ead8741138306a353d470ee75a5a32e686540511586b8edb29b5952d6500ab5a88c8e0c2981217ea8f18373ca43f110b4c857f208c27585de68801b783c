@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview</title>
+
+    <style>
+      body {
+        display: flex;
+        margin: 10vw;
+      }
+
+      main {
+        margin: auto;
+        text-align: left;
+      }
+
+      h1,
+      p {
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 19px;
+        margin: auto;
+        color: #323232;
+      }
+
+      p a {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      h1 {
+        margin-top: 16px;
+        margin-bottom: 6px;
+      }
+
+      svg {
+        display: block;
+      }
+
+      button {
+        appearance: none;
+        border: 0;
+        background: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 12px 6px 6px;
+        height: 28px;
+        background: #efefef;
+        border-radius: 9999px;
+
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1;
+
+        margin: 48px 0 0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <!--
+    Hide the fallback content until we are sure it wasn't
+    a hard reload that has disabled the Service Worker.
+  -->
+  <body style="display: none">
+    <main>
+      <svg
+        width="49"
+        height="48"
+        viewBox="0 0 49 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="margin-left: -7px"
+      >
+        <circle
+          cx="24.5"
+          cy="24"
+          r="16"
+          stroke="#808080"
+          stroke-linecap="round"
+        />
+        <path d="M28.5 20L20.5 28" stroke="#808080" stroke-linecap="round" />
+        <path d="M20.5 20L28.5 28" stroke="#808080" stroke-linecap="round" />
+      </svg>
+
+      <h1>Could not connect to "<span id="url"></span>"</h1>
+
+      <p>
+        Unable to load this preview, make you have the relay running in
+        sandpack.
+      </p>
+
+      <button onClick="window.location.reload()">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.83325 7.99967C3.83325 5.69843 5.69853 3.83301 7.99934 3.83301C9.81246 3.83301 11.3563 4.99171 11.9285 6.61072C11.9396 6.64225 11.9536 6.67196 11.97 6.69967H8.80005C8.52391 6.69967 8.30005 6.92353 8.30005 7.19967C8.30005 7.47582 8.52391 7.69967 8.80005 7.69967H12.5667C12.8981 7.69967 13.1667 7.43104 13.1667 7.09967V3.33301C13.1667 3.05687 12.9429 2.83301 12.6667 2.83301C12.3906 2.83301 12.1667 3.05687 12.1667 3.33301V4.94584C11.2268 3.66498 9.7106 2.83301 7.99934 2.83301C5.14613 2.83301 2.83325 5.14626 2.83325 7.99967C2.83325 10.8531 5.14613 13.1663 7.99934 13.1663C9.91218 13.1663 11.5815 12.1264 12.474 10.5833C12.6123 10.3443 12.5306 10.0385 12.2915 9.90019C12.0525 9.76193 11.7466 9.84363 11.6084 10.0827C10.8873 11.3294 9.54072 12.1663 7.99934 12.1663C5.69853 12.1663 3.83325 10.3009 3.83325 7.99967Z"
+            fill="#808080"
+          />
+        </svg>
+
+        <span>Reload</span>
+      </button>
+    </main>
+  </body>
+  <noscript>
+    <h1>Could not connect to the server</h1>
+    <p>This requires JavaScript to run.</p>
+  </noscript>
+</html>

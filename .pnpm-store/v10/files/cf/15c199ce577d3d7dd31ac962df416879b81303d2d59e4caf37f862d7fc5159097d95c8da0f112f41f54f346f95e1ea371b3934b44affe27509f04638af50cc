@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TArray.js",
+  "module": "../dist/esm/TArray.js",
+  "types": "../dist/dts/TArray.d.ts"
+}

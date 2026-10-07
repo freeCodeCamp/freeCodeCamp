@@ -1,0 +1,46 @@
+{
+  "name": "dezalgo",
+  "version": "1.0.4",
+  "description": "Contain async insanity so that the dark pony lord doesn't eat souls",
+  "main": "dezalgo.js",
+  "files": [
+    "dezalgo.js"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "asap": "^2.0.0",
+    "wrappy": "1"
+  },
+  "devDependencies": {
+    "tap": "^12.4.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/dezalgo"
+  },
+  "keywords": [
+    "async",
+    "zalgo",
+    "the dark pony",
+    "he comes",
+    "asynchrony of all holy and good",
+    "To invoke the hive mind representing chaos",
+    "Invoking the feeling of chaos. /Without order",
+    "The Nezperdian Hive Mind of Chaos, (zalgo………………)",
+    "He who waits beyond the wall",
+    "ZALGO",
+    "HE COMES",
+    "there used to be some funky unicode keywords here, but it broke the npm website on chrome, so they were removed, sorry"
+  ],
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npm/dezalgo/issues"
+  },
+  "homepage": "https://github.com/npm/dezalgo"
+}

@@ -1,0 +1,1108 @@
+{
+  "lang": "it",
+  "rules": {
+    "accesskeys": {
+      "description": "Assicurati che ogni valore dell'attributo accesskey sia univoco",
+      "help": "Il valore dell'attributo accesskey deve essere univoco"
+    },
+    "area-alt": {
+      "description": "Assicurati che gli elementi <area> delle mappe immagine abbiano un testo alternativo",
+      "help": "Gli elementi <area> attivi devono avere un testo alternativo"
+    },
+    "aria-allowed-attr": {
+      "description": "Assicurati che il ruolo di un elemento supporti i suoi attributi ARIA",
+      "help": "Gli elementi devono utilizzare solo gli attributi ARIA supportati"
+    },
+    "aria-allowed-role": {
+      "description": "Assicurati che il valore dell'attributo role sia appropriato per l'elemento",
+      "help": "Il ruolo ARIA deve essere appropriato per l'elemento"
+    },
+    "aria-braille-equivalent": {
+      "description": "Assicurati che aria-braillelabel e aria-brailleroledescription abbiano un equivalente non braille",
+      "help": "Gli attributi aria-braille devono avere un equivalente non braille"
+    },
+    "aria-command-name": {
+      "description": "Assicurati che ogni bottone, link e menuitem gestito con ARIA abbia un nome accessibile",
+      "help": "I controlli gestiti con ARIA devono avere un nome accessibile"
+    },
+    "aria-conditional-attr": {
+      "description": "Assicurati che gli attributi ARIA vengano utilizzati come descritto nella specifica del ruolo dell'elemento",
+      "help": "Gli attributi ARIA devono essere utilizzati come specificato per il ruolo dell'elemento"
+    },
+    "aria-deprecated-role": {
+      "description": "Assicurati che gli elementi non utilizzino ruoli obsoleti",
+      "help": "I ruoli ARIA obsoleti non devono essere utilizzati"
+    },
+    "aria-dialog-name": {
+      "description": "Assicurati che ogni nodo dialog e alertdialog ARIA abbia un nome accessibile",
+      "help": "I nodi dialog e alertdialog ARIA devono avere un nome accessibile"
+    },
+    "aria-hidden-body": {
+      "description": "Assicurati che aria-hidden=\"true\" non sia presente sull'elemento body del documento",
+      "help": "aria-hidden=\"true\" non deve essere presente sull'elemento body del documento"
+    },
+    "aria-hidden-focus": {
+      "description": "Assicurati che gli elementi nascosti con aria-hidden non possano nè ricevere focus, nè contengano elementi che possono ricevere focus",
+      "help": "L'elemento nascosto con aria-hidden non deve ricevere focus, nè può contenere elementi che ricevono focus"
+    },
+    "aria-input-field-name": {
+      "description": "Assicurati che ogni input gestito con ARIA abbia un nome accessibile",
+      "help": "Gli input gestiti con ARIA devono avere un nome accessibile"
+    },
+    "aria-meter-name": {
+      "description": "Assicurati che ogni nodo meter gestito con ARIA abbia un nome accessibile",
+      "help": "I nodi meter gestiti con ARIA devono avere un nome accessibile"
+    },
+    "aria-progressbar-name": {
+      "description": "Assicurati che ogni nodo progessbar gestito con ARIA abbia un nome accessibile",
+      "help": "I nodi progressbar gestiti con ARIA devono avere un nome accessibile"
+    },
+    "aria-prohibited-attr": {
+      "description": "Assicurati che gli attributi ARIA non siano proibiti per il ruolo di un elemento",
+      "help": "Gli elementi devono utilizzare solo gli attributi ARIA consentiti"
+    },
+    "aria-required-attr": {
+      "description": "Assicurati che gli elementi con ruoli ARIA abbiano tutti gli attributi ARIA obbligatori",
+      "help": "Gli attributi ARIA obbligatori devono essere forniti"
+    },
+    "aria-required-children": {
+      "description": "Assicurati che gli elementi con un ruolo ARIA che richiede ruoli figlio contengano questi ultimi",
+      "help": "Alcuni ruoli ARIA devono contenere ruoli figlio specifici"
+    },
+    "aria-required-parent": {
+      "description": "Assicurati che gli elementi con un ruolo ARIA che richiede ruoli genitore siano contenuti da questi ultimi",
+      "help": "Alcuni ruoli ARIA devono essere contenuti da ruoli genitore specifici"
+    },
+    "aria-roledescription": {
+      "description": "Assicurati che aria-roledescription venga utilizzato solo su elementi con un ruolo implicito o esplicito",
+      "help": "aria-roledescription deve essere presente solo su elementi con un ruolo semantico"
+    },
+    "aria-roles": {
+      "description": "Assicurati che tutti gli elementi con un attributo role utilizzino un valore valido",
+      "help": "I ruoli ARIA utilizzati devono essere conformi ai valori validi"
+    },
+    "aria-text": {
+      "description": "Assicurati che role=\"text\" venga utilizzato su elementi i cui discendenti non ricevono focus",
+      "help": "\"role=text\" non deve avere discendenti che possono ricevere focus"
+    },
+    "aria-toggle-field-name": {
+      "description": "Assicurati che ogni bottone toggle gestito con aria ARIA abbia un nome accessibile",
+      "help": "I bottoni toggle gestiti con ARIA devono avere un nome accessibile"
+    },
+    "aria-tooltip-name": {
+      "description": "Assicurati che ogni nodo tooltip gestito con ARIA abbia un nome accessibile",
+      "help": "I nodi tooltip gestiti con ARIA devono avere un nome accessibile"
+    },
+    "aria-treeitem-name": {
+      "description": "Assicurati che ogni nodo treeitem gestito con ARIA abbia un nome accessibile",
+      "help": "I nodi treeitem gestiti con ARIA devono avere un nome accessibile"
+    },
+    "aria-valid-attr-value": {
+      "description": "Assicurati che tutti gli attributi ARIA abbiano valori validi",
+      "help": "Gli attributi ARIA devono essere conformi ai valori validi"
+    },
+    "aria-valid-attr": {
+      "description": "Assicurati che gli attributi che iniziano con aria- siano attributi ARIA validi",
+      "help": "Gli attributi ARIA devono essere conformi ai nomi validi"
+    },
+    "audio-caption": {
+      "description": "Assicurati che gli elementi <audio> abbiano didascalie",
+      "help": "Gli elementi <audio> devono avere una didascalia"
+    },
+    "autocomplete-valid": {
+      "description": "Assicurati che l'attributo autocomplete sia corretto e adatto al campo specifico",
+      "help": "L'attributo autocomplete deve essere utilizzato correttamente"
+    },
+    "avoid-inline-spacing": {
+      "description": "Assicurati che la spaziatura del testo impostata tramite attributi di stile possa essere regolata con fogli di stile personalizzati",
+      "help": "La spaziatura del testo inline deve poter essere regolata con fogli di stile personalizzati"
+    },
+    "blink": {
+      "description": "Assicurati che non vengano utilizzati elementi <blink>",
+      "help": "Gli elementi <blink> sono deprecati e non devono essere utilizzati"
+    },
+    "button-name": {
+      "description": "Assicurati che i pulsanti abbiano un testo distinguibile",
+      "help": "I pulsanti devono avere un testo distinguibile"
+    },
+    "bypass": {
+      "description": "Assicurati che ogni pagina abbia almeno un meccanismo per consentire all'utente di ignorare la navigazione e passare direttamente al contenuto",
+      "help": "La pagina deve avere un modo per ignorare i blocchi ripetuti"
+    },
+    "color-contrast-enhanced": {
+      "description": "Assicurati che il contrasto tra i colori in primo piano e di sfondo soddisfi le soglie di rapporto di contrasto avanzato WCAG 2 AAA",
+      "help": "Gli elementi devono soddisfare le soglie di rapporto di contrasto di colore avanzato"
+    },
+    "color-contrast": {
+      "description": "Assicurati che il contrasto tra i colori in primo piano e di sfondo soddisfi le soglie minime del rapporto di contrasto WCAG 2 AA",
+      "help": "Gli elementi devono soddisfare le soglie minime del rapporto di contrasto di colore"
+    },
+    "css-orientation-lock": {
+      "description": "Assicurati che il contenuto non sia bloccato in un'orientamento di visualizzazione specifico e che sia operabile in tutti gli orientamenti di visualizzazione",
+      "help": "Le Media queries CSS non devono bloccare l'orientamento di visualizzazione"
+    },
+    "definition-list": {
+      "description": "Assicurati che gli elementi <dl> siano strutturati correttamente",
+      "help": "Gli elementi <dl> devono contenere direttamente solo gruppi <dt> e <dd> ordinati correttamente, <script>, <template> o elementi <div>"
+    },
+    "dlitem": {
+      "description": "Assicurati che gli elementi <dt> e <dd> siano contenuti in un <dl>",
+      "help": "Gli elementi <dt> e <dd> devono essere contenuti in un <dl>"
+    },
+    "document-title": {
+      "description": "Assicurati che ogni documento HTML contenga un elemento <title> non vuoto",
+      "help": "I documenti devono avere un elemento <title> per aiutare nella navigazione"
+    },
+    "duplicate-id-active": {
+      "description": "Assicurati che ogni valore dell'attributo id degli elementi attivi sia univoco",
+      "help": "Gli ID degli elementi attivi devono essere univoci"
+    },
+    "duplicate-id-aria": {
+      "description": "Assicurati che ogni valore dell'attributo id utilizzato in ARIA e nelle etichette sia univoco",
+      "help": "Gli ID utilizzati in ARIA e nelle etichette devono essere univoci"
+    },
+    "duplicate-id": {
+      "description": "Assicurati che ogni valore dell'attributo id sia univoco",
+      "help": "Il valore dell'attributo id deve essere univoco"
+    },
+    "empty-heading": {
+      "description": "Assicurati che le intestazioni abbiano un testo distinguibile",
+      "help": "Le intestazioni non devono essere vuote"
+    },
+    "empty-table-header": {
+      "description": "Assicurati che le intestazioni di tabella abbiano un testo distinguibile",
+      "help": "Il testo dell'intestazione di tabella non deve essere vuoto"
+    },
+    "focus-order-semantics": {
+      "description": "Assicurati che gli elementi presenti nell'ordine di focus abbiano un ruolo appropriato per il contenuto interattivo",
+      "help": "Gli elementi presenti nell'ordine di focus devono avere un ruolo appropriato"
+    },
+    "form-field-multiple-labels": {
+      "description": "Assicurati che il campo non abbia elementi label multipli associati",
+      "help": "Il campo deve avere un solo elemento label associato"
+    },
+    "frame-focusable-content": {
+      "description": "Assicurati che gli elementi <frame> e <iframe> con contenuto che può ricevere focus non abbiano tabindex=-1",
+      "help": "I frames con contenuto che può ricecere focus non devono avere tabindex=-1"
+    },
+    "frame-tested": {
+      "description": "Assicurati che gli elementi <iframe> e <frame> contengano lo script axe-core",
+      "help": "I frames devono essere testate con axe-core"
+    },
+    "frame-title-unique": {
+      "description": "Assicurati che gli elementi <iframe> e <frame> contengano un attributo title univoco",
+      "help": "I frames devono avere un attributo title univoco"
+    },
+    "frame-title": {
+      "description": "Assicurati che gli elementi <iframe> e <frame> abbiano un nome accessibile",
+      "help": "I frames devono avere un nome accessibile"
+    },
+    "heading-order": {
+      "description": "Assicurati che l'ordine delle intestazioni sia semanticamente corretto",
+      "help": "I livelli delle intestazioni possono aumentare solo di uno"
+    },
+    "hidden-content": {
+      "description": "Informa gli utenti sul contenuto nascosto",
+      "help": "Il contenuto nascosto nella pagina deve essere analizzato"
+    },
+    "html-has-lang": {
+      "description": "Assicurati che ogni documento HTML abbia un attributo lang",
+      "help": "L'elemento <html> deve avere un attributo lang"
+    },
+    "html-lang-valid": {
+      "description": "Assicurati che l'attributo lang dell'elemento <html> abbia un valore valido",
+      "help": "L'attributo lang dell'elemento <html> deve avere un valore valido"
+    },
+    "html-xml-lang-mismatch": {
+      "description": "Assicurati che gli elementi HTML con entrambi gli attributi lang e xml:lang siano coerenti con la lingua di base della pagina",
+      "help": "Gli elementi con attributi lang e xml:lang devono avere la stessa lingua di base"
+    },
+    "identical-links-same-purpose": {
+      "description": "Assicurati che i collegamenti con lo stesso nome accessibile abbiano uno scopo simile",
+      "help": "I collegamenti con lo stesso nome devono avere uno scopo simile"
+    },
+    "image-alt": {
+      "description": "Assicurati che gli elementi <img> abbiano un testo alternativo o un ruolo none o presentation",
+      "help": "Le immagini devono avere un testo alternativo"
+    },
+    "image-redundant-alt": {
+      "description": "Assicurati che l'alternativa testuale delle immagini non venga ripetuta come testo",
+      "help": "Il testo alternativo delle immagini non deve essere ripetuto come testo"
+    },
+    "input-button-name": {
+      "description": "Assicurati che i pulsanti di input abbiano un testo distinguibile",
+      "help": "I pulsanti di input devono avere un testo distinguibile"
+    },
+    "input-image-alt": {
+      "description": "Assicurati che gli elementi <input type=\"image\"> abbiano un testo alternativo",
+      "help": "I pulsanti immagine devono avere un testo alternativo"
+    },
+    "label-content-name-mismatch": {
+      "description": "Assicurati che gli elementi etichettati tramite il loro contenuto abbiano il loro testo visibile come parte del loro nome accessibile",
+      "help": "Gli elementi devono avere il loro testo visibile come parte del loro nome accessibile"
+    },
+    "label-title-only": {
+      "description": "Assicurati che ogni elemento del modulo abbia un'etichetta visibile e non sia etichettato esclusivamente utilizzando etichette nascoste, o gli attributi title o aria-describedby",
+      "help": "Gli elementi del modulo devono avere un'etichetta visibile"
+    },
+    "label": {
+      "description": "Assicurati che ogni elemento del modulo abbia un'etichetta",
+      "help": "Gli elementi del modulo devono avere etichette"
+    },
+    "landmark-banner-is-top-level": {
+      "description": "Assicurati che il landmark banner sia a livello superiore",
+      "help": "Il landmark banner non deve essere contenuto in un altro landmark"
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "Assicurati che il landmark complementary o l'elemento aside sia a livello superiore",
+      "help": "L'elemento aside non deve essere contenuto in un altro landmark"
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "Assicurati che il landmark contentinfo sia a livello superiore",
+      "help": "Il landmark contentinfo non deve essere contenuto in un altro landmark"
+    },
+    "landmark-main-is-top-level": {
+      "description": "Assicurati che il landmark main sia a livello superiore",
+      "help": "Il landmark main non deve essere contenuto in un altro landmark"
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "Assicurati che il documento abbia al massimo un landmark banner",
+      "help": "Il documento non deve avere più di un landmark banner"
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "Assicurati che il documento abbia al massimo un landmark contentinfo",
+      "help": "Il documento non deve avere più di un landmark contentinfo"
+    },
+    "landmark-no-duplicate-main": {
+      "description": "Assicurati che il documento abbia al massimo un landmark main",
+      "help": "Il documento non deve avere più di un landmark main"
+    },
+    "landmark-one-main": {
+      "description": "Assicurati che il documento abbia un landmark main",
+      "help": "Il documento deve avere un landmark main"
+    },
+    "landmark-unique": {
+      "help": "Assicurati che i landmark siano univoci",
+      "description": "I landmark devono avere un ruolo univoco o una combinazione univoca di ruolo/etichetta/titolo (come ad esempio un nome accessibile univoco)"
+    },
+    "link-in-text-block": {
+      "description": "Assicurati che i collegamenti siano distinguibili dal testo circostante in un modo che non si basa sul colore",
+      "help": "I collegamenti devono essere distinguibili senza fare affidamento sul colore"
+    },
+    "link-name": {
+      "description": "Assicurati che i collegamenti abbiano un testo distinguibile",
+      "help": "I collegamenti devono avere un testo distinguibile"
+    },
+    "list": {
+      "description": "Assicurati che le liste siano strutturate correttamente",
+      "help": "<ul> e <ol> devono contenere direttamente solo elementi <li>, <script> o <template>"
+    },
+    "listitem": {
+      "description": "Assicurati che gli elementi <li> siano utilizzati semanticamente",
+      "help": "Gli elementi <li> devono essere contenuti in un <ul> o <ol>"
+    },
+    "marquee": {
+      "description": "Assicurati che gli elementi <marquee> non siano utilizzati",
+      "help": "Gli elementi <marquee> sono deprecati e non devono essere utilizzati"
+    },
+    "meta-refresh-no-exceptions": {
+      "description": "Assicurati che <meta http-equiv=\"refresh\"> non venga utilizzato per il refresh ritardato",
+      "help": "Il refresh ritardato non deve essere utilizzato"
+    },
+    "meta-refresh": {
+      "description": "Assicurati che <meta http-equiv=\"refresh\"> non venga utilizzato per il refresh ritardato",
+      "help": "Il refresh ritardato al di sotto delle 20 ore non deve essere utilizzato"
+    },
+    "meta-viewport-large": {
+      "description": "Assicurati che <meta name=\"viewport\"> possa scalare una quantità significativa",
+      "help": "Gli utenti devono essere in grado di ingrandire e scalare il testo fino al 500%"
+    },
+    "meta-viewport": {
+      "description": "Assicurati che <meta name=\"viewport\"> non disabiliti il ridimensionamento e lo zoom del testo",
+      "help": "Lo zoom e il ridimensionamento non devono essere disabilitati"
+    },
+    "nested-interactive": {
+      "description": "Assicurati che i controlli interattivi non siano annidati, poiché non vengono sempre annunciati dagli screen reader o possono causare problemi di focus per le tecnologie assistive",
+      "help": "I controlli interattivi non devono essere annidati"
+    },
+    "no-autoplay-audio": {
+      "description": "Assicurati che gli elementi <video> o <audio> non riproducano automaticamente l'audio per più di 3 secondi senza un meccanismo di controllo per arrestare o disattivare l'audio",
+      "help": "Gli elementi <video> o <audio> non devono essere riprodotti automaticamente"
+    },
+    "object-alt": {
+      "description": "Assicurati che gli elementi <object> abbiano un testo alternativo",
+      "help": "Gli elementi <object> devono avere un testo alternativo"
+    },
+    "p-as-heading": {
+      "description": "Assicurati che il grassetto, il corsivo e le dimensioni del font non vengano utilizzati per rappresentare elementi <p> come intestazione",
+      "help": "Gli elementi <p> personalizzati non devono essere utilizzati come intestazioni"
+    },
+    "page-has-heading-one": {
+      "description": "Assicurati che la pagina, o almeno uno dei suoi frame, contenga un'intestazione di livello uno",
+      "help": "La pagina dovrebbe contenere un'intestazione di livello uno"
+    },
+    "presentation-role-conflict": {
+      "description": "Gli elementi contrassegnati come presentazionali non devono avere attributi ARIA globali o tabindex per assicurare che tutti gli screen reader li ignorino",
+      "help": "Assicurati che gli elementi contrassegnati come presentazionali vengano ignorati in modo coerente"
+    },
+    "region": {
+      "description": "Assicurati che tutti i contenuti della pagina siano contenuti nei landmark",
+      "help": "Tutti i contenuti della pagina dovrebbero essere contenuti nei landmark"
+    },
+    "role-img-alt": {
+      "description": "Assicurati che gli elementi [role=\"img\"] abbiano un testo alternativo",
+      "help": "Gli elementi [role=\"img\"] devono avere un testo alternativo"
+    },
+    "scope-attr-valid": {
+      "description": "Assicurati che l'attributo scope venga utilizzato correttamente nelle tabelle",
+      "help": "L'attributo scope deve essere utilizzato correttamente"
+    },
+    "scrollable-region-focusable": {
+      "description": "Assicurati che gli elementi che hanno contenuti scorrevoli siano accessibili da tastiera",
+      "help": "La regione scrollabile deve avere accesso da tastiera"
+    },
+    "select-name": {
+      "description": "Assicurati che l'elemento select abbia un nome accessibile",
+      "help": "L'elemento select deve avere un nome accessibile"
+    },
+    "server-side-image-map": {
+      "description": "Assicurati che non vengano utilizzate mappe immagini lato server",
+      "help": "Le mappe immagini lato server non devono essere utilizzate"
+    },
+    "skip-link": {
+      "description": "Assicurati che tutti gli skip link puntino ad un elemento che può ricevere focus",
+      "help": "L'elemento a cui lo skip link punta deve esistere e deve poter ricevere focus"
+    },
+    "svg-img-alt": {
+      "description": "Assicurati che gli elementi <svg> con un ruolo img, graphics-document o graphics-symbol abbiano un testo accessibile",
+      "help": "Gli elementi <svg> con un ruolo img devono avere un testo alternativo"
+    },
+    "tabindex": {
+      "description": "Assicurati che i valori degli attributi tabindex non siano maggiori di 0",
+      "help": "Gli elementi non devono avere un tabindex maggiore di zero"
+    },
+    "table-duplicate-name": {
+      "description": "Assicurati che l'elemento <caption> non contenga lo stesso testo dell'attributo summary",
+      "help": "Il riepilogo e la didascalia di una tabella non devono essere uguali"
+    },
+    "table-fake-caption": {
+      "description": "Assicurati che le tabelle con una didascalia utilizzino l'elemento <caption>.",
+      "help": "Le celle di dati o di intestazione non devono essere utilizzate per fornire una didascalia a una tabella di dati."
+    },
+    "target-size": {
+      "description": "Assicurati che gli elementi che possono essere attivati tramite puntatore abbiano dimensioni e spaziature sufficienti",
+      "help": "Tutti gli elementi che possono essere attivati tramite puntatore devono avere una largezza di 24px, o lasciare spazio sufficiente"
+    },
+    "td-has-header": {
+      "description": "Assicurati che ogni cella di dati non vuota in una tabella più grande di 3x3 abbia una o più intestazioni di tabella",
+      "help": "Le celle <td> non vuote in una tabella di dimensioni considerevoli devono avere un'intestazione di tabella associata"
+    },
+    "td-headers-attr": {
+      "description": "Assicurati che ogni cella in una tabella che utilizza l'attributo headers si riferisca solo ad altre celle nella stessa tabella",
+      "help": "Le celle di tabella che utilizzano l'attributo headers devono riferirsi solo a celle nella stessa tabella"
+    },
+    "th-has-data-cells": {
+      "description": "Assicurati che gli elementi <th> e gli elementi con role=columnheader/rowheader descrivano le celle di dati corrispondenti",
+      "help": "Le intestazioni di tabella in una tabella di dati devono fare riferimento a celle di dati"
+    },
+    "valid-lang": {
+      "description": "Assicurati che gli attributi lang abbiano valori validi",
+      "help": "L'attributo lang deve avere un valore valido"
+    },
+    "video-caption": {
+      "description": "Assicurati che gli elementi <video> abbiano didascalie",
+      "help": "Gli elementi <video> devono avere didascalie"
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "I ruoli astratti non vengono utilizzati",
+      "fail": {
+        "singular": "Il ruolo astratto non può essere utilizzato direttamente: ${data.values}",
+        "plural": "I ruoli astratti non possono essere utilizzati direttamente: ${data.values}"
+      }
+    },
+    "aria-allowed-attr": {
+      "pass": "Gli attributi ARIA sono utilizzati correttamente per il ruolo definito",
+      "fail": {
+        "singular": "L'attributo ARIA non è consentito: ${data.values}",
+        "plural": "Gli attributi ARIA non sono consentiti: ${data.values}"
+      },
+      "incomplete": "Verifica che non ci siano problemi se l'attributo ARIA viene ignorato su questo elemento: ${data.values}"
+    },
+    "aria-allowed-role": {
+      "pass": "Il ruolo ARIA è consentito per l'elemento dato",
+      "fail": {
+        "singular": "Il ruolo ARIA ${data.values} non è consentito per l'elemento dato",
+        "plural": "I ruoli ARIA ${data.values} non sono consentiti per l'elemento dato"
+      },
+      "incomplete": {
+        "singular": "Il ruolo ARIA ${data.values} deve essere rimosso quando l'elemento viene reso visibile, poiché non è consentito per l'elemento",
+        "plural": "I ruoli ARIA ${data.values} devono essere rimossi quando l'elemento viene reso visibile, poiché non sono consentiti per l'elemento"
+      }
+    },
+    "aria-busy": {
+      "pass": "L'elemento ha un attributo aria-busy",
+      "fail": "L'elemento utilizza aria-busy=\"true\" mentre viene mostrato un caricamento"
+    },
+    "aria-conditional-attr": {
+      "pass": "L'attributo ARIA è consentito",
+      "fail": {
+        "checkbox": "Rimuovi aria-checked, o impostalo su \"${data.checkState}\" per farlo combaciare allo stato reale della casella di controllo",
+        "rowSingular": "Questo attributo è supportato con le righe treegrid, ma non ${data.ownerRole}: ${data.invalidAttrs}",
+        "rowPlural": "Questi attributi sono supportati con le righe treegrid, ma non ${data.ownerRole}: ${data.invalidAttrs}"
+      }
+    },
+    "aria-errormessage": {
+      "pass": "aria-errormessage esiste e fa riferimento ad elementi visibili agli screen reader che utilizzano una tecnica aria-errormessage supportata",
+      "fail": {
+        "singular": "Il valore aria-errormessage `${data.values}` deve utilizzare una tecnica per annunciare il messaggio (ad esempio, aria-live, aria-describedby, role=alert, ecc.)",
+        "plural": "I valori aria-errormessage `${data.values}` devono utilizzare una tecnica per annunciare il messaggio (ad esempio, aria-live, aria-describedby, role=alert, ecc.)",
+        "hidden": "Il valore aria-errormessage `${data.values}` non può fare riferimento a un elemento nascosto"
+      },
+      "incomplete": {
+        "singular": "assicurati che il valore aria-errormessage `${data.values}` faccia riferimento a un elemento esistente",
+        "plural": "assicurati che i valori aria-errormessage `${data.values}` facciano riferimento a elementi esistenti",
+        "idrefs": "non è possibile determinare se l'elemento aria-errormessage esiste nella pagina: ${data.values}"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "Non è presente l'attributo aria-hidden sull'elemento body del documento",
+      "fail": "aria-hidden=true non deve essere presente sull'elemento body del documento"
+    },
+    "aria-level": {
+      "pass": "I valori aria-level sono validi",
+      "incomplete": "I valori aria-level superiori a 6 non sono supportati in tutte le combinazioni di screenreader e browser"
+    },
+    "aria-prohibited-attr": {
+      "pass": "L'attributo ARIA è consentito",
+      "fail": {
+        "hasRolePlural": "Gli attributi ${data.prohibited} non possono essere utilizzati con il ruolo \"${data.role}\".",
+        "hasRoleSingular": "L'attributo ${data.prohibited} non può essere utilizzato con il ruolo \"${data.role}\".",
+        "noRolePlural": "Gli attributi ${data.prohibited} non possono essere utilizzati su un ${data.nodeName} senza un ruolo valido.",
+        "noRoleSingular": "L'attributo ${data.prohibited} non può essere utilizzato su un ${data.nodeName} senza un ruolo valido."
+      },
+      "incomplete": {
+        "hasRoleSingular": "L'attributo ${data.prohibited} non è ben supportato con il ruolo \"${data.role}\".",
+        "hasRolePlural": "Gli attributi ${data.prohibited} non sono ben supportati con il ruolo \"${data.role}\".",
+        "noRoleSingular": "L'attributo ${data.prohibited} non è ben supportato su un ${data.nodeName} senza un ruolo valido.",
+        "noRolePlural": "Gli attributi ${data.prohibited} non sono ben supportati su un ${data.nodeName} senza un ruolo valido."
+      }
+    },
+    "aria-required-attr": {
+      "pass": "Tutti gli attributi ARIA obbligatori sono presenti",
+      "fail": {
+        "singular": "L'attributo ARIA obbligatorio non è presente: ${data.values}",
+        "plural": "Gli attributi ARIA obbligatori non sono presenti: ${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": "I figli ARIA obbligatori sono presenti",
+      "fail": {
+        "singular": "Il ruolo ARIA obbligatorio per l'elemento figlio non è presente: ${data.values}",
+        "plural": "Il ruolo ARIA obbligatorio per gli elementi figli non è presente: ${data.values}",
+        "unallowed": "L'elemento ha figli che non sono consentiti: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "Ci si aspetta che venga aggiunto un figlio con un ruolo ARIA: ${data.values}",
+        "plural": "Ci si aspetta che vengano aggiunti i figli con un ruolo ARIA: ${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "Il ruolo ARIA obbligatorio per l'elemento genitore è presente",
+      "fail": {
+        "singular": "Il ruolo ARIA obbligatorio per l'elemento genitore non è presente: ${data.values}",
+        "plural": "I ruoli ARIA obbligatori per gli elementi genitori non sono presenti: ${data.values}"
+      }
+    },
+    "aria-roledescription": {
+      "pass": "aria-roledescription utilizzato su un ruolo semantico supportato",
+      "incomplete": "Verifica che aria-roledescription venga annunciato dagli screen reader supportati",
+      "fail": "Assegna all'elemento un ruolo che supporta aria-roledescription"
+    },
+    "aria-unsupported-attr": {
+      "pass": "L'attributo ARIA è supportato",
+      "fail": "L'attributo ARIA non è ampiamente supportato dagli screen reader e dalle tecnologie assistive: ${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "I valori degli attributi ARIA sono validi",
+      "fail": {
+        "singular": "Il valore dell'attributo ARIA non è valido: ${data.values}",
+        "plural": "I valori degli attributi ARIA non sono validi: ${data.values}"
+      },
+      "incomplete": {
+        "noId": "Nella pagina non esiste un elemento con ID corrispondente all'attributo ARIA: ${data.needsReview}",
+        "noIdShadow": "Nella pagina non esiste un elemento con ID corrispondente all'attributo ARIA o è un discendente di un diverso albero shadow DOM: ${data.needsReview}",
+        "ariaCurrent": "Il valore dell'attributo ARIA non è valido e verrà trattato come \"aria-current=true\": ${data.needsReview}",
+        "idrefs": "Non è possibile determinare se esiste un elemento con ID corrispondente all'attributo ARIA nella pagina: ${data.needsReview}",
+        "empty": "Il valore dell'attributo ARIA viene ignorato mentre è vuoto: ${data.needsReview}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": "Il nome dell'attributo ARIA è valido",
+      "fail": {
+        "singular": "Il nome dell'attributo ARIA non è valido: ${data.values}",
+        "plural": "I nomi degli attributi ARIA non sono validi: ${data.values}"
+      }
+    },
+    "braille-label-equivalent": {
+      "pass": "aria-braillelabel viene utilizzato su un elemento con testo accessibile",
+      "fail": "aria-braillelabel viene utilizzato su un elemento senza testo accessibile",
+      "incomplete": "Non è possibile calcolare il testo accessibile"
+    },
+    "braille-roledescription-equivalent": {
+      "pass": "aria-brailleroledescription viene utilizzato su un elemento con aria-roledescription",
+      "fail": {
+        "noRoleDescription": "aria-brailleroledescription viene utilizzato su un elemento senza aria-roledescription",
+        "emptyRoleDescription": "aria-brailleroledescription viene utilizzato su un elemento con aria-roledescription vuoto"
+      }
+    },
+    "deprecatedrole": {
+      "pass": "Il ruolo ARIA non è deprecato",
+      "fail": "Il ruolo utilizzato è deprecato: ${data}"
+    },
+    "fallbackrole": {
+      "pass": "Viene utilizzato un solo valore di ruolo",
+      "fail": "Utilizza un solo valore di ruolo, poiché i ruoli di fallback non sono supportati nei browser più vecchi",
+      "incomplete": "Utilizza solo il ruolo 'presentation' o 'none' poiché sono sinonimi."
+    },
+    "has-global-aria-attribute": {
+      "pass": {
+        "singular": "L'elemento ha un attributo ARIA globale: ${data.values}",
+        "plural": "L'elemento ha attributi ARIA globali: ${data.values}"
+      },
+      "fail": "L'elemento non ha un attributo ARIA globale"
+    },
+    "has-widget-role": {
+      "pass": "L'elemento ha un ruolo widget.",
+      "fail": "L'elemento non ha un ruolo widget."
+    },
+    "invalidrole": {
+      "pass": "Il ruolo ARIA è valido",
+      "fail": {
+        "singular": "Il ruolo deve essere uno dei ruoli ARIA validi: ${data.values}",
+        "plural": "I ruoli devono essere uno dei ruoli ARIA validi: ${data.values}"
+      }
+    },
+    "is-element-focusable": {
+      "pass": "L'elemento può ricevere focus.",
+      "fail": "L'elemento non può ricevere focus."
+    },
+    "no-implicit-explicit-label": {
+      "pass": "Non c'è incongruenza tra etichetta <label> e nome accessibile",
+      "incomplete": "Verifica che l'etichetta <label> non debba far parte del nome del campo ARIA ${data}"
+    },
+    "unsupportedrole": {
+      "pass": "Il ruolo ARIA è supportato",
+      "fail": "Il ruolo utilizzato non è ampiamente supportato dagli screen reader e dalle tecnologie assistive: ${data}"
+    },
+    "valid-scrollable-semantics": {
+      "pass": "L'elemento ha una semantica valida per un elemento presente nell'ordine di focus.",
+      "fail": "L'elemento ha una semantica non valida per un elemento presente nell'ordine di focus."
+    },
+    "color-contrast-enhanced": {
+      "pass": "L'elemento ha un contrasto di colore sufficiente di ${data.contrastRatio}",
+      "fail": {
+        "default": "L'elemento ha un contrasto di colore insufficiente di ${data.contrastRatio} (colore in primo piano: ${data.fgColor}, colore di sfondo: ${data.bgColor}, dimensione del font: ${data.fontSize}, peso del font: ${data.fontWeight}). Contrasto atteso di ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "L'elemento ha un contrasto di colore insufficiente di ${data.contrastRatio} tra il primo piano e il colore dell'ombra (colore in primo piano: ${data.fgColor}, colore dell'ombra del testo: ${data.shadowColor}, dimensione del font: ${data.fontSize}, peso del font: ${data.fontWeight}). Contrasto atteso di ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "L'elemento ha un contrasto di colore insufficiente di ${data.contrastRatio} tra il colore dell'ombra e il colore di sfondo (colore dell'ombra del testo: ${data.shadowColor}, colore di sfondo: ${data.bgColor}, dimensione del font: ${data.fontSize}, peso del font: ${data.fontWeight}). Contrasto atteso di ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "Impossibile determinare il rapporto di contrasto",
+        "bgImage": "Il colore di sfondo dell'elemento non può essere determinato a causa di un'immagine di sfondo",
+        "bgGradient": "Il colore di sfondo dell'elemento non può essere determinato a causa di un gradiente di sfondo",
+        "imgNode": "Il colore di sfondo dell'elemento non può essere determinato perché l'elemento contiene un nodo immagine",
+        "bgOverlap": "Il colore di sfondo dell'elemento non può essere determinato perché c'è un altro elemento sovrapposto",
+        "fgAlpha": "Il colore in primo piano dell'elemento non può essere determinato a causa della trasparenza alfa",
+        "elmPartiallyObscured": "Il colore di sfondo dell'elemento non può essere determinato perché è parzialmente oscurato da un altro elemento",
+        "elmPartiallyObscuring": "Il colore di sfondo dell'elemento non può essere determinato perché si sovrappone parzialmente ad altri elementi",
+        "outsideViewport": "Il colore di sfondo dell'elemento non può essere determinato perché è al di fuori della finestra di visualizzazione",
+        "equalRatio": "L'elemento ha un rapporto di contrasto di 1:1 con lo sfondo",
+        "shortTextContent": "Il contenuto dell'elemento è troppo breve per determinare se si tratta di un contenuto di testo effettivo",
+        "nonBmp": "Il contenuto dell'elemento contiene solo caratteri non di testo",
+        "pseudoContent": "Il colore di sfondo dell'elemento non può essere determinato a causa di uno pseudo-elemento"
+      }
+    },
+    "color-contrast": {
+      "pass": {
+        "default": "L'elemento ha un contrasto di colore sufficiente di ${data.contrastRatio}",
+        "hidden": "L'elemento è nascosto"
+      },
+      "fail": {
+        "default": "L'elemento ha un contrasto di colore insufficiente di ${data.contrastRatio} (colore in primo piano: ${data.fgColor}, colore di sfondo: ${data.bgColor}, dimensione del font: ${data.fontSize}, peso del font: ${data.fontWeight}). Contrasto atteso di ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "L'elemento ha un contrasto di colore insufficiente di ${data.contrastRatio} tra il primo piano e il colore dell'ombra (colore in primo piano: ${data.fgColor}, colore dell'ombra del testo: ${data.shadowColor}, dimensione del font: ${data.fontSize}, peso del font: ${data.fontWeight}). Contrasto atteso di ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "L'elemento ha un contrasto di colore insufficiente di ${data.contrastRatio} tra il colore dell'ombra e il colore di sfondo (colore dell'ombra del testo: ${data.shadowColor}, colore di sfondo: ${data.bgColor}, dimensione del font: ${data.fontSize}, peso del font: ${data.fontWeight}). Contrasto atteso di ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "Impossibile determinare il rapporto di contrasto",
+        "bgImage": "Il colore di sfondo dell'elemento non può essere determinato a causa di un'immagine di sfondo",
+        "bgGradient": "Il colore di sfondo dell'elemento non può essere determinato a causa di un gradiente di sfondo",
+        "imgNode": "Il colore di sfondo dell'elemento non può essere determinato perché l'elemento contiene un nodo immagine",
+        "bgOverlap": "Il colore di sfondo dell'elemento non può essere determinato perché c'è un altro elemento sovrapposto",
+        "complexTextShadows": "Il contrasto dell'elemento non può essere determinato perché utilizza ombre di testo complesse",
+        "fgAlpha": "Il colore in primo piano dell'elemento non può essere determinato a causa della trasparenza alfa",
+        "elmPartiallyObscured": "Il colore di sfondo dell'elemento non può essere determinato perché è parzialmente oscurato da un altro elemento",
+        "elmPartiallyObscuring": "Il colore di sfondo dell'elemento non può essere determinato perché si sovrappone parzialmente ad altri elementi",
+        "outsideViewport": "Il colore di sfondo dell'elemento non può essere determinato perché è al di fuori della finestra di visualizzazione",
+        "equalRatio": "L'elemento ha un rapporto di contrasto di 1:1 con lo sfondo",
+        "shortTextContent": "Il contenuto dell'elemento è troppo breve per determinare se si tratta di un contenuto di testo effettivo",
+        "nonBmp": "Il contenuto dell'elemento contiene solo caratteri non di testo",
+        "pseudoContent": "Il colore di sfondo dell'elemento non può essere determinato a causa di uno pseudo-elemento"
+      }
+    },
+    "link-in-text-block-style": {
+      "pass": "I collegamenti possono essere distinti dal testo circostante grazie ad uno stile visivo",
+      "incomplete": {
+        "default": "Verifica se il collegamento necessita di uno stile per distinguerlo dal testo circostante",
+        "pseudoContent": "Verifica se lo pseudo-stile del collegamento è sufficiente per distinguerlo dal testo circostante"
+      },
+      "fail": "Il collegamento non ha uno stile (come la sottolineatura) per distinguerlo dal testo circostante"
+    },
+    "link-in-text-block": {
+      "pass": "I collegamenti possono essere distinti dal testo circostante in qualche modo che non sia solo attraverso il colore",
+      "fail": {
+        "fgContrast": "Il collegamento ha un contrasto di colore insufficiente di ${data.contrastRatio}:1 con il testo circostante. (Contrasto minimo è ${data.requiredContrastRatio}:1, colore del testo del collegamento: ${data.nodeColor}, colore del testo circostante: ${data.parentColor})",
+        "bgContrast": "Lo sfondo del collegamento ha un contrasto di colore insufficiente di ${data.contrastRatio} (Contrasto minimo è ${data.requiredContrastRatio}:1, colore dello sfondo del collegamento: ${data.nodeBackgroundColor}, colore dello sfondo circostante: ${data.parentBackgroundColor})"
+      },
+      "incomplete": {
+        "default": "Il rapporto di contrasto dei colori in primo piano dell'elemento non può essere determinato",
+        "bgContrast": "Il rapporto di contrasto dello sfondo dell'elemento non può essere determinato",
+        "bgImage": "Il rapporto di contrasto dell'elemento non può essere determinato a causa di un'immagine di sfondo",
+        "bgGradient": "Il rapporto di contrasto dell'elemento non può essere determinato a causa di un gradiente di sfondo",
+        "imgNode": "Il rapporto di contrasto dell'elemento non può essere determinato perché l'elemento contiene un nodo immagine",
+        "bgOverlap": "Il rapporto di contrasto dell'elemento non può essere determinato a causa della sovrapposizione dell'elemento"
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "il valore di autocomplete è appropriato per questo elemento",
+      "fail": "il valore di autocomplete non è appropriato per questo tipo di input"
+    },
+    "autocomplete-valid": {
+      "pass": "l'attributo autocomplete è formattato correttamente",
+      "fail": "l'attributo autocomplete non è formattato correttamente"
+    },
+    "accesskeys": {
+      "pass": "Il valore dell'attributo accesskey è univoco",
+      "fail": "Il documento ha più elementi con lo stesso accesskey"
+    },
+    "focusable-content": {
+      "pass": "L'elemento contiene elementi che possono ricevere focus",
+      "fail": "L'elemento dovrebbe avere contenuto che può ricevere focus"
+    },
+    "focusable-disabled": {
+      "pass": "Non ci sono elementi che possono ricevere focus all'interno dell'elemento",
+      "incomplete": "Controlla se gli elementi che possono ricevere focus spostano immediatamente l'indicatore di focus",
+      "fail": "Il contenuto che può ricevere focus dovrebbe essere disabilitato o rimosso dal DOM"
+    },
+    "focusable-element": {
+      "pass": "L'elemento può ricevere focus",
+      "fail": "L'elemento dovrebbe poter ricevere focus"
+    },
+    "focusable-modal-open": {
+      "pass": "Non ci sono elementi che possono ricevere focus mentre è aperta una modale",
+      "incomplete": "Controlla che gli elementi che possono ricevere focus non siano tabbabili nello stato attuale"
+    },
+    "focusable-no-name": {
+      "pass": "L'elemento non è nell'ordine di tab o ha un testo accessibile",
+      "fail": "L'elemento è nell'ordine di tab e non ha un testo accessibile",
+      "incomplete": "Non è possibile determinare se l'elemento ha un nome accessibile"
+    },
+    "focusable-not-tabbable": {
+      "pass": "Non ci sono elementi che possono ricevere focus all'interno dell'elemento",
+      "incomplete": "Controlla se gli elementi che possono ricevere focus spostano immediatamente l'indicatore di focus",
+      "fail": "Il contenuto che può ricevere focus dovrebbe avere tabindex=\"-1\" o essere rimosso dal DOM"
+    },
+    "frame-focusable-content": {
+      "pass": "L'elemento non ha discendenti che possono ricevere focus",
+      "fail": "L'elemento ha discendenti che possono ricevere focus",
+      "incomplete": "Non è stato possibile determinare se l'elemento ha discendenti"
+    },
+    "landmark-is-top-level": {
+      "pass": "Il landmark ${data.role} è al livello superiore.",
+      "fail": "Il landmark ${data.role} è contenuto in un altro landmark."
+    },
+    "no-focusable-content": {
+      "pass": "L'elemento non ha discendenti che possono ricevere focus",
+      "fail": {
+        "default": "L'elemento ha discendenti che possono ricevere focus",
+        "notHidden": "L'utilizzo di un tabindex negativo su un elemento all'interno di un controllo interattivo non impedisce alle tecnologie assistive di spostare il focus sull'elemento (anche con aria-hidden=\"true\")"
+      },
+      "incomplete": "Non è stato possibile determinare se l'elemento ha discendenti"
+    },
+    "page-has-heading-one": {
+      "pass": "La pagina ha almeno un'intestazione di livello uno",
+      "fail": "La pagina deve avere un'intestazione di livello uno"
+    },
+    "page-has-main": {
+      "pass": "Il documento ha almeno un landmark main",
+      "fail": "Il documento non ha un landmark main"
+    },
+    "page-no-duplicate-banner": {
+      "pass": "Il documento non ha più di un landmark banner",
+      "fail": "Il documento ha più di un landmark banner"
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "Il documento non ha più di un landmark contentinfo",
+      "fail": "Il documento ha più di un landmark contentinfo"
+    },
+    "page-no-duplicate-main": {
+      "pass": "Il documento non ha più di un landmark main",
+      "fail": "Il documento ha più di un landmark main"
+    },
+    "tabindex": {
+      "pass": "L'elemento non ha un tabindex maggiore di 0",
+      "fail": "L'elemento ha un tabindex maggiore di 0"
+    },
+    "alt-space-value": {
+      "pass": "Il valore dell'attributo alt dell'elemento è valido",
+      "fail": "L'elemento ha un attributo alt che contiene solo uno spazio, che non viene ignorato da tutti gli screen reader"
+    },
+    "duplicate-img-label": {
+      "pass": "L'elemento non duplica il testo esistente nel testo alternativo dell'immagine",
+      "fail": "L'elemento contiene un elemento immagine con testo alternativo che duplica il testo esistente"
+    },
+    "explicit-label": {
+      "pass": "L'elemento del modulo ha un'etichetta esplicita <label>",
+      "fail": "L'elemento del modulo non ha un'etichetta esplicita <label>",
+      "incomplete": "Non è possibile determinare se l'elemento del modulo ha un'etichetta esplicita <label>"
+    },
+    "help-same-as-label": {
+      "pass": "Il testo di aiuto (title o aria-describedby) non duplica il testo dell'etichetta",
+      "fail": "Il testo di aiuto (title o aria-describedby) è lo stesso del testo dell'etichetta"
+    },
+    "hidden-explicit-label": {
+      "pass": "L'elemento del modulo ha un'etichetta esplicita <label> visibile",
+      "fail": "L'elemento del modulo ha un'etichetta esplicita <label> nascosta",
+      "incomplete": "Non è possibile determinare se l'elemento del modulo ha un'etichetta esplicita <label> nascosta"
+    },
+    "implicit-label": {
+      "pass": "L'elemento del modulo ha un'etichetta implicita (racchiusa) <label>",
+      "fail": "L'elemento del modulo non ha un'etichetta implicita (racchiusa) <label>",
+      "incomplete": "Non è possibile determinare se l'elemento del modulo ha un'etichetta implicita (racchiusa) <label>"
+    },
+    "label-content-name-mismatch": {
+      "pass": "L'elemento contiene del testo visibile come parte del suo nome accessibile",
+      "fail": "Il testo all'interno dell'elemento non è incluso nel nome accessibile"
+    },
+    "multiple-label": {
+      "pass": "Il campo del modulo non ha più elementi etichetta",
+      "incomplete": "L'utilizzo di più elementi etichetta non è ampiamente supportato dalle tecnologie assistive. Assicurati che la prima etichetta contenga tutte le informazioni necessarie."
+    },
+    "title-only": {
+      "pass": "L'elemento del modulo non utilizza solo l'attributo title per generare la sua etichetta",
+      "fail": "Solo il titolo viene utilizzato per generare l'etichetta dell'elemento del modulo"
+    },
+    "landmark-is-unique": {
+      "pass": "I landmark devono avere un ruolo univoco o una combinazione univoca di ruolo/etichetta/titolo (come ad esempio un nome accessibile univico)",
+      "fail": "Il landmark deve avere un aria-label, aria-labelledby o titolo univoco per rendere i landmark distinguibili"
+    },
+    "has-lang": {
+      "pass": "L'elemento <html> ha un attributo lang",
+      "fail": {
+        "noXHTML": "L'attributo xml:lang non è valido nelle pagine HTML, utilizza l'attributo lang.",
+        "noLang": "L'elemento <html> non ha un attributo lang"
+      }
+    },
+    "valid-lang": {
+      "pass": "Il valore dell'attributo lang è incluso nell'elenco delle lingue valide",
+      "fail": "Il valore dell'attributo lang non è incluso nell'elenco delle lingue valide"
+    },
+    "xml-lang-mismatch": {
+      "pass": "Gli attributi lang e xml:lang hanno la stessa lingua di base",
+      "fail": "Gli attributi lang e xml:lang non hanno la stessa lingua di base"
+    },
+    "dlitem": {
+      "pass": "L'elemento di descrizione della lista ha un elemento <dl> come genitore",
+      "fail": "L'elemento di descrizione della lista non ha un elemento <dl> come genitore"
+    },
+    "listitem": {
+      "pass": "L'elemento della lista ha un elemento <ul>, <ol> o role=\"list\" come genitore",
+      "fail": {
+        "default": "L'elemento della lista non ha come genitore un elemento <ul> o <ol>",
+        "roleNotValid": "L'elemento della lista non ha come genitore un elemento <ul>, <ol> o un elemento con role=\"list\""
+      }
+    },
+    "only-dlitems": {
+      "pass": "L'elemento dl contiene al suo interno solo figli diretti consentiti; <dt>, <dd>, o elementi <div>",
+      "fail": "L'elemento dl ha figli diretti che non sono consentiti: ${data.values}"
+    },
+    "only-listitems": {
+      "pass": "L'elemento della lista contiene al suo interno solo figli diretti consentiti",
+      "fail": "L'elemento della lista ha figli diretti che non sono consentiti: ${data.values}"
+    },
+    "structured-dlitems": {
+      "pass": "Quando non è vuoto, l'elemento ha sia elementi <dt> che <dd>",
+      "fail": "Quando non è vuoto, l'elemento non ha nemmeno un elemento <dt> seguito da almeno un elemento <dd>"
+    },
+    "caption": {
+      "pass": "L'elemento multimediale ha una didascalia",
+      "incomplete": "Controlla che le didascalie siano disponibili per l'elemento"
+    },
+    "frame-tested": {
+      "pass": "L'iframe è stato testato con axe-core",
+      "fail": "L'iframe non può essere testato con axe-core",
+      "incomplete": "L'iframe deve ancora essere testato con axe-core"
+    },
+    "no-autoplay-audio": {
+      "pass": "<video> o <audio> non riproduce audio per più della durata consentita o ha un meccanismo di controllo",
+      "fail": "<video> o <audio> riproduce audio per più della durata consentita e non ha un meccanismo di controllo",
+      "incomplete": "Controlla che il <video> o <audio> non riproduca audio per più della durata consentita o fornisca un meccanismo di controllo"
+    },
+    "css-orientation-lock": {
+      "pass": "Il display è utilizzabile e l'orientamento del dispositivo non viene bloccato",
+      "fail": "Il blocco dell'orientamento tramite CSS viene applicato e rende il display non utilizzabile",
+      "incomplete": "Il blocco dell'orientamento tramite CSS non può essere determinato"
+    },
+    "meta-viewport-large": {
+      "pass": "Il tag <meta> non impedisce lo zoom in modo significativo sui dispositivi mobili",
+      "fail": "Il tag <meta> limita lo zoom sui dispositivi mobili"
+    },
+    "meta-viewport": {
+      "pass": "Il tag <meta> non disabilita lo zoom sui dispositivi mobili",
+      "fail": "${data} sul tag <meta> disabilita lo zoom sui dispositivi mobili"
+    },
+    "target-offset": {
+      "pass": "L'elemento ha spazio sufficiente dai suoi vicini più prossimi. Lo spazio sicuro e cliccabile ha un diametro di ${data.closestOffset}px, che è superiore al requisito di ${data.minOffset}px.",
+      "fail": "L'elemento non ha spazio sufficiente rispetto ai suoi vicini più prossimi. Lo spazio sicuro e cliccabile ha un diametro di ${data.closestOffset}px, che è inferiore rispetto al requisito di ${data.minOffset}px.",
+      "incomplete": {
+        "default": "L'elemento con tabindex negativo non ha spazio sufficiente rispetto ai suoi vicini più prossimi. Lo spazio sicuro e cliccabile ha un diametro di ${data.closestOffset}px, che è inferiore rispetto al requisito di ${data.minOffset}px. Si tratta di un elemento che può essere attivato?",
+        "nonTabbableNeighbor": "L'elemento non ha spazio sufficiente rispetto ai suoi vicini più prossimi. Lo spazio sicuro e cliccabile ha un diametro di ${data.closestOffset}px, che è inferiore rispetto al requisito di ${data.minOffset}px. Il vicino più prossimo è un elemento che può essere attivato?"
+      }
+    },
+    "target-size": {
+      "pass": {
+        "default": "Il controllo ha dimensioni sufficienti (${data.width}px per ${data.height}px, dovrebbe essere almeno ${data.minSize}px per ${data.minSize}px)",
+        "obscured": "Il controllo viene ignorato perché è completamente oscurato e quindi non cliccabile"
+      },
+      "fail": {
+        "default": "L'elemento ha dimensioni insufficienti (${data.width}px per ${data.height}px, dovrebbe essere almeno ${data.minSize}px per ${data.minSize}px)",
+        "partiallyObscured": "L'elemento ha dimensioni insufficienti perché è parzialmente oscurato (lo spazio più piccolo è ${data.width}px per ${data.height}px, dovrebbe essere almeno ${data.minSize}px per ${data.minSize}px)"
+      },
+      "incomplete": {
+        "default": "L'elemento con tabindex negativo ha dimensioni insufficienti (${data.width}px per ${data.height}px, dovrebbe essere almeno ${data.minSize}px per ${data.minSize}px). Si tratta di un elemento che può essere attivato?",
+        "contentOverflow": "Le dimensioni dell'elemento non possono essere determinate con precisione a causa del contenuto in overflow",
+        "partiallyObscured": "L'elemento con tabindex negativo ha dimensioni insufficienti perché è parzialmente oscurato (lo spazio più piccolo è ${data.width}px per ${data.height}px, dovrebbe essere almeno ${data.minSize}px per ${data.minSize}px). Si tratta di un elemento che può essere attivato?",
+        "partiallyObscuredNonTabbable": "L'elemento ha dimensioni insufficienti perché è parzialmente oscurato da un vicino con tabindex negativo (lo spazio più piccolo è ${data.width}px per ${data.height}px, dovrebbe essere almeno ${data.minSize}px per ${data.minSize}px). Il vicino più prossimo è un elemento che può essere attivato?"
+      }
+    },
+    "header-present": {
+      "pass": "La pagina ha un'intestazione",
+      "fail": "La pagina non ha nemmeno un'intestazione"
+    },
+    "heading-order": {
+      "pass": "L'ordine delle intestazioni è valido",
+      "fail": "L'ordine delle intestazioni non è valido",
+      "incomplete": "Non è possibile determinare l'intestazione precedente"
+    },
+    "identical-links-same-purpose": {
+      "pass": "Non ci sono altri collegamenti con lo stesso nome, che puntano ad un URL diverso",
+      "incomplete": "Controlla che i collegamenti abbiano lo stesso scopo, o siano intenzionalmente ambigui."
+    },
+    "internal-link-present": {
+      "pass": "Trovato skip link valido",
+      "fail": "Non è stato trovato alcuno skip link valido"
+    },
+    "landmark": {
+      "pass": "La pagina ha una regione landmark",
+      "fail": "La pagina non ha una regione landmark"
+    },
+    "meta-refresh-no-exceptions": {
+      "pass": "Il tag <meta> non aggiorna immediatamente la pagina",
+      "fail": "Il tag <meta> forza il refresh temporizzato della pagina"
+    },
+    "meta-refresh": {
+      "pass": "Il tag <meta> non aggiorna immediatamente la pagina",
+      "fail": "Il tag <meta> forza il refresh temporizzato della pagina (al di sotto delle 20 ore)"
+    },
+    "p-as-heading": {
+      "pass": "Gli elementi <p> non sono disegnati come intestazioni",
+      "fail": "Al posto di elementi <p> disegnati come intestazioni, dovrebbero essere utilizzati elementi di intestazione",
+      "incomplete": "Non è possibile determinare se gli elementi <p> sono stati disegnati come intestazioni"
+    },
+    "region": {
+      "pass": "Tutto il contenuto della pagina è contenuto in landmark",
+      "fail": "Alcuni contenuti della pagina non sono contenuti in landmark"
+    },
+    "skip-link": {
+      "pass": "L'elemento a cui lo skip link punta esiste",
+      "incomplete": "L'elemento a cui lo skip link punta deve diventare visibile quando attivato",
+      "fail": "L'elemento a cui lo skip link punta non esiste"
+    },
+    "unique-frame-title": {
+      "pass": "L'attributo title dell'elemento è univoco",
+      "fail": "L'attributo title dell'elemento non è univoco"
+    },
+    "duplicate-id-active": {
+      "pass": "Il documento non ha elementi attivi che condividono lo stesso attributo id",
+      "fail": "Il documento ha elementi attivi con lo stesso attributo id: ${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "Il documento non ha elementi referenziati con ARIA o etichette che condividono lo stesso attributo id",
+      "fail": "Il documento ha più elementi referenziati con ARIA con lo stesso attributo id: ${data}"
+    },
+    "duplicate-id": {
+      "pass": "Il documento non ha elementi statici che condividono lo stesso attributo id",
+      "fail": "Il documento ha più elementi statici con lo stesso attributo id: ${data}"
+    },
+    "aria-label": {
+      "pass": "L'attributo aria-label esiste e non è vuoto",
+      "fail": "L'attributo aria-label non esiste o è vuoto"
+    },
+    "aria-labelledby": {
+      "pass": "L'attributo aria-labelledby esiste e fa riferimento ad elementi che sono visibili agli screen reader",
+      "fail": "L'attributo aria-labelledby non esiste, fa riferimento ad elementi che non esistono o fa riferimento ad elementi che sono vuoti",
+      "incomplete": "assicurati che aria-labelledby faccia riferimento a un elemento esistente"
+    },
+    "avoid-inline-spacing": {
+      "pass": "Non sono stati specificati stili inline con '!important' che influenzano lo spaziatura del testo",
+      "fail": {
+        "singular": "Rimuovi '!important' dallo stile inline ${data.values}, poiché la sovrascrittura di questo non è supportata dalla maggior parte dei browser",
+        "plural": "Rimuovi '!important' dagli stili inline ${data.values}, poiché la sovrascrittura di questo non è supportata dalla maggior parte dei browser"
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "L'elemento ha del testo interno che è visibile agli screen reader",
+      "fail": "L'elemento non ha del testo interno che è visibile agli screen reader",
+      "incomplete": "Non è possibile determinare se l'elemento ha figli"
+    },
+    "doc-has-title": {
+      "pass": "Il documento ha un elemento <title> non vuoto",
+      "fail": "Il documento non ha un elemento <title> non vuoto"
+    },
+    "exists": {
+      "pass": "L'elemento non esiste",
+      "incomplete": "L'elemento esiste"
+    },
+    "has-alt": {
+      "pass": "L'elemento ha un attributo alt",
+      "fail": "L'elemento non ha un attributo alt"
+    },
+    "has-visible-text": {
+      "pass": "L'elemento ha del testo che è visibile agli screen reader",
+      "fail": "L'elemento non ha del testo che è visibile agli screen reader",
+      "incomplete": "Non è possibile determinare se l'elemento ha figli"
+    },
+    "important-letter-spacing": {
+      "pass": "La spaziatura delle lettere nell'attributo style non è impostato su !important, o rispetta il requisito minimo",
+      "fail": "La spaziatura delle lettere nell'attributo style non deve utilizzare !important, o deve essere impostata a ${data.minValue}em (attuale ${data.value}em)"
+    },
+    "important-line-height": {
+      "pass": "l'interlinea nell'attributo style non è impostata su !important, o rispetta il requisito minimo",
+      "fail": "l'interlinea nell'attributo style non deve utilizzare !important, o deve essere impostata a ${data.minValue}em (attuale ${data.value}em)"
+    },
+    "important-word-spacing": {
+      "pass": "La spaziatura delle parole nell'attributo style non è impostata su !important, o rispetta il requisito minimo",
+      "fail": "La spaziatura delle parole nell'attributo style non deve utilizzare !important, o deve essere impostata a ${data.minValue}em (attuale ${data.value}em)"
+    },
+    "is-on-screen": {
+      "pass": "L'elemento non è visibile",
+      "fail": "L'elemento è visibile"
+    },
+    "non-empty-alt": {
+      "pass": "L'elemento ha un attributo alt non vuoto",
+      "fail": {
+        "noAttr": "L'elemento non ha un attributo alt",
+        "emptyAttr": "L'elemento ha un attributo alt vuoto"
+      }
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": "L'elemento non ha un attributo value",
+        "has-label": "L'elemento ha un attributo value non vuoto"
+      },
+      "fail": "L'elemento ha un attributo value e l'attributo value è vuoto"
+    },
+    "non-empty-placeholder": {
+      "pass": "L'elemento ha un attributo placeholder",
+      "fail": {
+        "noAttr": "L'elemento non ha un attributo placeholder",
+        "emptyAttr": "L'elemento ha un attributo placeholder vuoto"
+      }
+    },
+    "non-empty-title": {
+      "pass": "L'elemento ha un attributo title",
+      "fail": {
+        "noAttr": "L'elemento non ha un attributo title",
+        "emptyAttr": "L'elemento ha un attributo title vuoto"
+      }
+    },
+    "non-empty-value": {
+      "pass": "L'elemento ha un attributo value non vuoto",
+      "fail": {
+        "noAttr": "L'elemento non ha un attributo value",
+        "emptyAttr": "L'elemento ha un attributo value vuoto"
+      }
+    },
+    "presentational-role": {
+      "pass": "La semantica predefinita dell'elemento è stata sostituita da role=\"${data.role}\"",
+      "fail": {
+        "default": "La semantica predefinita dell'elemento non è stata sostituita da role=\"none\" o role=\"presentation\"",
+        "globalAria": "Il ruolo dell'elemento non è presentazionale perché ha un attributo ARIA globale",
+        "focusable": "Il ruolo dell'elemento non è presentazionale perché è focusabile",
+        "both": "Il ruolo dell'elemento non è presentazionale perché ha un attributo ARIA globale ed è focusabile",
+        "iframe": "L'utilizzo dell'attributo \"title\" su un elemento ${data.nodeName} con un ruolo presentazionale si comporta in modo inconsistente a seconda dello screen reader"
+      }
+    },
+    "role-none": {
+      "pass": "La semantica predefinita dell'elemento è stata sostituita da role=\"none\"",
+      "fail": "La semantica predefinita dell'elemento non è stata sostituita da role=\"none\""
+    },
+    "role-presentation": {
+      "pass": "La semantica predefinita dell'elemento è stata sostituita da role=\"presentation\"",
+      "fail": "La semantica predefinita dell'elemento non è stata sostituita da role=\"presentation\""
+    },
+    "svg-non-empty-title": {
+      "pass": "L'elemento ha un figlio che è un titolo",
+      "fail": {
+        "noTitle": "L'elemento non ha figli che sono titoli",
+        "emptyTitle": "Il titolo figlio dell'elemento è vuoto"
+      },
+      "incomplete": "Non è possibile determinare se l'elemento ha un figlio che è un titolo"
+    },
+    "caption-faked": {
+      "pass": "La prima riga di una tabella non viene utilizzata come didascalia",
+      "fail": "Il primo figlio della tabella dovrebbe essere una didascalia invece di una cella di tabella"
+    },
+    "html5-scope": {
+      "pass": "L'attributo scope viene utilizzato solo sugli elementi di intestazione della tabella (<th>)",
+      "fail": "In HTML 5, gli attributi scope possono essere utilizzati solo sugli elementi di intestazione della tabella (<th>)"
+    },
+    "same-caption-summary": {
+      "pass": "Il contenuto dell'attributo summary e dell'elemento <caption> non sono duplicati",
+      "fail": "Il contenuto dell'attributo summary e dell'elemento <caption> sono identici",
+      "incomplete": "Non è possibile determinare se l'elemento <table> ha una didascalia"
+    },
+    "scope-value": {
+      "pass": "L'attributo scope viene utilizzato correttamente",
+      "fail": "Il valore dell'attributo scope può essere solo 'row' o 'col'"
+    },
+    "td-has-header": {
+      "pass": "Tutte le celle di dati non vuote hanno intestazioni di tabella",
+      "fail": "Alcune celle di dati non vuote non hanno intestazioni di tabella"
+    },
+    "td-headers-attr": {
+      "pass": "L'attributo headers viene utilizzato esclusivamente per fare riferimento ad altre celle nella tabella",
+      "incomplete": "L'attributo headers è vuoto",
+      "fail": "L'attributo headers non viene utilizzato esclusivamente per fare riferimento ad altre celle nella tabella"
+    },
+    "th-has-data-cells": {
+      "pass": "Tutte le celle di intestazione della tabella fanno riferimento a celle di dati",
+      "fail": "Non tutte le celle di intestazione della tabella fanno riferimento a celle di dati",
+      "incomplete": "Le celle di dati della tabella sono vuote o mancanti"
+    },
+    "hidden-content": {
+      "pass": "Tutto il contenuto della pagina è stato analizzato.",
+      "fail": "Ci sono stati problemi nell'analizzare il contenuto di questa pagina.",
+      "incomplete": "C'è del contenuto nascosto nella pagina che non è stato analizzato. Dovrai attivare la visualizzazione di questo contenuto per poterlo analizzare."
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "Correggi uno dei seguenti:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "Correggi tutti i seguenti:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "axe non è stato in grado di determinare il motivo. È il momento di utilizzare l'element inspector!"
+}

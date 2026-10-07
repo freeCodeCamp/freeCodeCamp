@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/SingleProducerAsyncInput.js",
+  "module": "../dist/esm/SingleProducerAsyncInput.js",
+  "types": "../dist/dts/SingleProducerAsyncInput.d.ts"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "jwa",
+  "version": "2.0.1",
+  "description": "JWA implementation (supports all JWS algorithms)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "buffer-equal-constant-time": "^1.0.1",
+    "ecdsa-sig-formatter": "1.0.11",
+    "safe-buffer": "^5.0.1"
+  },
+  "devDependencies": {
+    "base64url": "^2.0.0",
+    "jwk-to-pem": "^2.0.1",
+    "semver": "4.3.6",
+    "tap": "6.2.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brianloveswords/node-jwa.git"
+  },
+  "keywords": [
+    "jwa",
+    "jws",
+    "jwt",
+    "rsa",
+    "ecdsa",
+    "hmac"
+  ],
+  "author": "Brian J. Brennan <brianloveswords@gmail.com>",
+  "license": "MIT"
+}

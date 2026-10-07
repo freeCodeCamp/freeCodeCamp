@@ -1,0 +1,115 @@
+{
+  "name": "vfile",
+  "version": "4.2.1",
+  "description": "Virtual file format for text processing",
+  "license": "MIT",
+  "keywords": [
+    "vfile",
+    "virtual",
+    "file",
+    "text",
+    "processing",
+    "message",
+    "warning",
+    "error",
+    "remark",
+    "retext",
+    "rehype"
+  ],
+  "repository": "vfile/vfile",
+  "bugs": "https://github.com/vfile/vfile/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Brendan Abbott <brendan.abbott@temando.com>",
+    "Denys Dovhan <email@denysdovhan.com>",
+    "Kyle Mathews <mathews.kyle@gmail.com>",
+    "Shinnosuke Watanabe <snnskwtnb@gmail.com>",
+    "Sindre Sorhus <sindresorhus@gmail.com>"
+  ],
+  "types": "types/index.d.ts",
+  "browser": {
+    "./lib/minpath.js": "./lib/minpath.browser.js",
+    "./lib/minproc.js": "./lib/minproc.browser.js"
+  },
+  "react-native": {
+    "./lib/minpath.js": "./lib/minpath.browser.js",
+    "./lib/minproc.js": "./lib/minproc.browser.js"
+  },
+  "files": [
+    "lib/",
+    "types/index.d.ts",
+    "index.js",
+    "core.js"
+  ],
+  "dependencies": {
+    "@types/unist": "^2.0.0",
+    "is-buffer": "^2.0.0",
+    "unist-util-stringify-position": "^2.0.0",
+    "vfile-message": "^2.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "xo": "^0.35.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . --write && xo --fix",
+    "build-bundle": "browserify . -s VFile -o vfile.js",
+    "build-mangle": "browserify . -s VFile -o vfile.min.js -p tinyify",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignores": [
+      "types",
+      "vfile.js"
+    ],
+    "rules": {
+      "unicorn/explicit-length-check": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-reflect-apply": "off",
+      "unicorn/prefer-number-properties": "off",
+      "max-depth": "off",
+      "complexity": "off"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm",
+      [
+        "lint-no-html",
+        false
+      ]
+    ]
+  }
+}

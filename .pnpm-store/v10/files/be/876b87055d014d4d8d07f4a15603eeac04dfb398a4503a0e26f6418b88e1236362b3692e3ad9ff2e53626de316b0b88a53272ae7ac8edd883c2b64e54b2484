@@ -1,0 +1,1 @@
+{"version":3,"file":"constants.js","names":["ROUTES_DIRECTORY"],"sources":["../src/constants.ts"],"sourcesContent":["export const ROUTES_DIRECTORY = `.cache/page-ssr/routes/`\n"],"mappings":";;;;AAAO,MAAMA,gBAAgB,GAAI,yBAAwB;AAAA"}

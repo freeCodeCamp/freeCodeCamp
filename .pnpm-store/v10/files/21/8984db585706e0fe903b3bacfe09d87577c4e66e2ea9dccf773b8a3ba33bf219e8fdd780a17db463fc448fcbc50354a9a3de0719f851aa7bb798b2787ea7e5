@@ -1,0 +1,48 @@
+{
+	"name": "import-fresh",
+	"version": "3.3.1",
+	"description": "Import a module while bypassing the cache",
+	"license": "MIT",
+	"repository": "sindresorhus/import-fresh",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd",
+		"heapdump": "node heapdump.js"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"require",
+		"cache",
+		"uncache",
+		"uncached",
+		"module",
+		"fresh",
+		"bypass"
+	],
+	"dependencies": {
+		"parent-module": "^1.0.0",
+		"resolve-from": "^4.0.0"
+	},
+	"devDependencies": {
+		"ava": "^1.0.1",
+		"heapdump": "^0.3.12",
+		"tsd": "^0.7.3",
+		"xo": "^0.23.0"
+	}
+}

@@ -1,0 +1,87 @@
+{
+  "name": "vfile-location",
+  "version": "3.2.0",
+  "description": "vfile utility to convert between positional (line and column-based) and offset (range-based) locations",
+  "license": "MIT",
+  "keywords": [
+    "vfile",
+    "vfile-util",
+    "util",
+    "utility",
+    "virtual",
+    "file",
+    "location",
+    "point",
+    "position",
+    "offset"
+  ],
+  "repository": "vfile/vfile-location",
+  "bugs": "https://github.com/vfile/vfile-location/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/unist": "^2.0.0",
+    "browserify": "^17.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "tsd": "^0.13.1",
+    "vfile": "^4.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . -s vfileLocation > vfile-location.js",
+    "build-mangle": "browserify . -s vfileLocation -p tinyify > vfile-location.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "tsd",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-number-properties": "off"
+    },
+    "ignores": [
+      "vfile-location.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

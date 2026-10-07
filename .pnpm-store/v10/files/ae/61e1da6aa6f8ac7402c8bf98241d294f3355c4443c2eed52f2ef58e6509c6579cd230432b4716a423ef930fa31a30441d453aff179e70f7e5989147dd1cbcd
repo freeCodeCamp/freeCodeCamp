@@ -1,0 +1,58 @@
+# `MD013` - Line length
+
+Tags: `line_length`
+
+Aliases: `line-length`
+
+Parameters:
+
+- `code_block_line_length`: Number of characters for code blocks (`integer`,
+  default `80`)
+- `code_blocks`: Include code blocks (`boolean`, default `true`)
+- `heading_line_length`: Number of characters for headings (`integer`, default
+  `80`)
+- `headings`: Include headings (`boolean`, default `true`)
+- `line_length`: Number of characters (`integer`, default `80`)
+- `stern`: Stern length checking (`boolean`, default `false`)
+- `strict`: Strict length checking (`boolean`, default `false`)
+- `tables`: Include tables (`boolean`, default `true`)
+
+This rule is triggered when there are lines that are longer than the
+configured `line_length` (default: 80 characters). To fix this, split the line
+up into multiple lines. To set a different maximum length for headings, use
+`heading_line_length`. To set a different maximum length for code blocks, use
+`code_block_line_length`
+
+This rule has an exception when there is no whitespace beyond the configured
+line length. This allows you to include items such as long URLs without being
+forced to break them in the middle. To disable this exception, set the `strict`
+parameter to `true` and an issue will be reported when any line is too long. To
+warn for lines that are too long and could be fixed but allow long lines
+without spaces, set the `stern` parameter to `true`.
+
+For example (assuming normal behavior):
+
+```markdown
+IF THIS LINE IS THE MAXIMUM LENGTH
+This line is okay because there are-no-spaces-beyond-that-length
+This line is a violation because there are spaces beyond that length
+This-line-is-okay-because-there-are-no-spaces-anywhere-within
+```
+
+In `strict` mode, the last three lines above are all violations. In `stern`
+mode, the middle two lines above are both violations, but the last is okay.
+
+You have the option to exclude this rule for code blocks, tables, or headings.
+To do so, set the `code_blocks`, `tables`, or `headings` parameter(s) to false.
+
+Code blocks are included in this rule by default since it is often a
+requirement for document readability, and tentatively compatible with code
+rules. Still, some languages do not lend themselves to short lines.
+
+Lines with link/image reference definitions and standalone lines (i.e., not part
+of a paragraph) with only a link/image (possibly using (strong) emphasis) are
+always exempted from this rule (even in `strict` mode) because there is often no
+way to split such lines without breaking the URL.
+
+Rationale: Extremely long lines can be difficult to work with in some editors.
+More information: <https://cirosantilli.com/markdown-style-guide#line-wrapping>.

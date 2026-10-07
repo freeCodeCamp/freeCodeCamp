@@ -1,0 +1,44 @@
+import type { InitWorkerOptions, InitTestFrameOptions, Pass, Fail } from "../../shared/src/interfaces/test-evaluator";
+interface Runner {
+    init(opts?: InitOptions, timeout?: number): Promise<void>;
+    runTest(test: string, timeout?: number): Promise<Pass | Fail>;
+    runAllTests(tests: string[], timeout?: number): Promise<(Pass | Fail)[]>;
+    dispose(): void;
+}
+type RunnerConfig = {
+    assetPath?: string;
+    script: string;
+    hooks?: {
+        beforeAll?: string;
+    };
+    loadEnzyme?: boolean;
+};
+type InitOptions = {
+    code?: {
+        contents?: string;
+        editableContents?: string;
+    };
+    hooks?: {
+        beforeAll?: string;
+        beforeEach?: string;
+        afterEach?: string;
+    };
+};
+export declare class DOMTestRunner implements Runner {
+    #private;
+    constructor(config: RunnerConfig);
+    init(opts: InitTestFrameOptions, timeout?: number): Promise<void>;
+    runTest(test: string): Promise<Pass | Fail>;
+    runAllTests(tests: string[]): Promise<(Pass | Fail)[]>;
+    dispose(): void;
+}
+export declare class WorkerTestRunner implements Runner {
+    #private;
+    constructor(config: RunnerConfig);
+    init(opts: InitWorkerOptions, timeout?: number): Promise<void>;
+    runTest(test: string, timeout?: number): Promise<Pass | Fail>;
+    runAllTests(tests: string[], timeout?: number): Promise<(Pass | Fail)[]>;
+    dispose(): void;
+}
+export {};
+//# sourceMappingURL=test-runner.d.ts.map

@@ -1,0 +1,8 @@
+import { createChatMessageLoaderComponent } from 'instantsearch-ui-components';
+import { createElement } from 'react';
+
+var ChatMessageLoader = createChatMessageLoaderComponent({
+    createElement: createElement
+});
+
+export { ChatMessageLoader };

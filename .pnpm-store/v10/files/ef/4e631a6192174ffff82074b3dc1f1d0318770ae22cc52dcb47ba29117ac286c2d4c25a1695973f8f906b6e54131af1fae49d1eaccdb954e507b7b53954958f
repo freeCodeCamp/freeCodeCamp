@@ -1,0 +1,50 @@
+{
+  "name": "acorn-loose",
+  "description": "Error-tolerant ECMAScript parser",
+  "homepage": "https://github.com/acornjs/acorn",
+  "main": "dist/acorn-loose.js",
+  "module": "dist/acorn-loose.mjs",
+  "types": "dist/acorn-loose.d.ts",
+  "exports": {
+    ".": [
+      {
+        "import": "./dist/acorn-loose.mjs",
+        "require": "./dist/acorn-loose.js",
+        "default": "./dist/acorn-loose.js"
+      },
+      "./dist/acorn-loose.js"
+    ],
+    "./package.json": "./package.json"
+  },
+  "version": "8.5.2",
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "dependencies": {
+    "acorn": "^8.15.0"
+  },
+  "maintainers": [
+    {
+      "name": "Marijn Haverbeke",
+      "email": "marijnh@gmail.com",
+      "web": "https://marijnhaverbeke.nl"
+    },
+    {
+      "name": "Ingvar Stepanyan",
+      "email": "me@rreverser.com",
+      "web": "https://rreverser.com/"
+    },
+    {
+      "name": "Adrian Heine",
+      "web": "http://adrianheine.de"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acornjs/acorn.git"
+  },
+  "scripts": {
+    "prepare": "cd ..; npm run build:loose"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,12 @@
+{
+  "main": "../lib/browser/interceptors/WebSocket/index.cjs",
+  "module": "../lib/browser/interceptors/WebSocket/index.mjs",
+  "browser": "../lib/browser/interceptors/WebSocket/index.mjs",
+  "exports": {
+    ".": {
+      "browser": "./../lib/browser/interceptors/WebSocket/index.mjs",
+      "import": "./../lib/browser/interceptors/WebSocket/index.mjs",
+      "default": "./../lib/browser/interceptors/WebSocket/index.cjs"
+    }
+  }
+}

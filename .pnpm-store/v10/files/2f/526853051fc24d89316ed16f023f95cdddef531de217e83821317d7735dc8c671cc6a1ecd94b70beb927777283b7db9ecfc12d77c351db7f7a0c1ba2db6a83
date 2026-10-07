@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MutableRef.js",
+  "module": "../dist/esm/MutableRef.js",
+  "types": "../dist/dts/MutableRef.d.ts"
+}

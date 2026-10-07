@@ -1,0 +1,45 @@
+{
+  "name": "reusify",
+  "version": "1.0.4",
+  "description": "Reuse objects and functions with style",
+  "main": "reusify.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "tape test.js | faucet",
+    "istanbul": "istanbul cover tape test.js",
+    "coverage": "npm run istanbul; cat coverage/lcov.info | coveralls"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcollina/reusify.git"
+  },
+  "keywords": [
+    "reuse",
+    "object",
+    "performance",
+    "function",
+    "fast"
+  ],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcollina/reusify/issues"
+  },
+  "homepage": "https://github.com/mcollina/reusify#readme",
+  "engines": {
+    "node": ">=0.10.0",
+    "iojs": ">=1.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.3",
+    "faucet": "0.0.1",
+    "istanbul": "^0.4.5",
+    "pre-commit": "^1.2.2",
+    "standard": "^10.0.3",
+    "tape": "^4.8.0"
+  }
+}

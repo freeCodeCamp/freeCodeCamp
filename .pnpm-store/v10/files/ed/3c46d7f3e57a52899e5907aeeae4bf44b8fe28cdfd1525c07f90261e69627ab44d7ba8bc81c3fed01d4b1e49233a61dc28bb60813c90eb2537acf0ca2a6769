@@ -1,0 +1,91 @@
+{
+  "name": "pidtree",
+  "version": "0.5.0",
+  "description": "Cross platform children list of a PID",
+  "license": "MIT",
+  "homepage": "http://github.com/simonepri/pidtree#readme",
+  "repository": "github:simonepri/pidtree",
+  "bugs": {
+    "url": "https://github.com/simonepri/pidtree/issues",
+    "email": "simonepri@outlook.com"
+  },
+  "author": "Simone Primarosa <simonepri@outlook.com> (https://github.com/simonepri)",
+  "contributors": [
+    "Simone Primarosa <simonepri@outlook.com> (https://github.com/simonepri)"
+  ],
+  "keywords": [
+    "ps-tree",
+    "ps",
+    "tree",
+    "ppid",
+    "pid",
+    "pidtree",
+    "pgrep",
+    "list",
+    "all",
+    "system",
+    "process",
+    "processes"
+  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "bin": {
+    "pidtree": "./bin/pidtree.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "index.js",
+    "index.d.ts"
+  ],
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "start": "node ./bin/pidtree.js",
+    "update": "npm-check -u",
+    "release": "np",
+    "lint": "xo",
+    "test": "nyc ava -m \"!*benchmark*\"",
+    "types": "tsd",
+    "bench": "ava -m \"*benchmark*\"",
+    "coverage": "codecov"
+  },
+  "devDependencies": {
+    "ava": "~0.25.0",
+    "codecov": "^3.6.5",
+    "mockery": "^2.1.0",
+    "np": "^2.20.1",
+    "npm-check": "^5.9.2",
+    "nyc": "^11.6.0",
+    "pify": "^3.0.0",
+    "string-to-stream": "^1.1.0",
+    "through": "^2.3.8",
+    "time-span": "^2.0.0",
+    "tree-kill": "^1.1.0",
+    "tsd": "^0.11.0",
+    "xo": "~0.20.3"
+  },
+  "ava": {
+    "verbose": true
+  },
+  "nyc": {
+    "reporter": [
+      "lcovonly",
+      "text"
+    ]
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "rules": {
+      "prefer-destructuring": 0,
+      "prefer-arrow-callback": 0,
+      "no-var": 0,
+      "object-shorthand": 0,
+      "unicorn/no-for-loop": 0,
+      "unicorn/prefer-string-slice": 0,
+      "unicorn/string-content": 0
+    }
+  }
+}

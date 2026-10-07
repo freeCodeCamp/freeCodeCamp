@@ -1,0 +1,57 @@
+{
+  "name": "thread-stream",
+  "version": "3.1.0",
+  "description": "A streaming way to send data to a Node.js Worker Thread",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "real-require": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.0",
+    "@types/tap": "^15.0.0",
+    "@yao-pkg/pkg": "^5.11.5",
+    "desm": "^1.3.0",
+    "fastbench": "^1.0.1",
+    "husky": "^9.0.6",
+    "pino-elasticsearch": "^8.0.0",
+    "sonic-boom": "^4.0.1",
+    "standard": "^17.0.0",
+    "tap": "^16.2.0",
+    "ts-node": "^10.8.0",
+    "typescript": "^5.3.2",
+    "why-is-node-running": "^2.2.2"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "standard && npm run build && npm run transpile && tap \"test/**/*.test.*js\" && tap --ts test/*.test.*ts",
+    "test:ci": "standard && npm run transpile && npm run test:ci:js && npm run test:ci:ts",
+    "test:ci:js": "tap --no-check-coverage --timeout=120 --coverage-report=lcovonly \"test/**/*.test.*js\"",
+    "test:ci:ts": "tap --ts --no-check-coverage --coverage-report=lcovonly \"test/**/*.test.*ts\"",
+    "test:yarn": "npm run transpile && tap \"test/**/*.test.js\" --no-check-coverage",
+    "transpile": "sh ./test/ts/transpile.sh",
+    "prepare": "husky install"
+  },
+  "standard": {
+    "ignore": [
+      "test/ts/**/*",
+      "test/syntax-error.mjs"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcollina/thread-stream.git"
+  },
+  "keywords": [
+    "worker",
+    "thread",
+    "threads",
+    "stream"
+  ],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcollina/thread-stream/issues"
+  },
+  "homepage": "https://github.com/mcollina/thread-stream#readme"
+}

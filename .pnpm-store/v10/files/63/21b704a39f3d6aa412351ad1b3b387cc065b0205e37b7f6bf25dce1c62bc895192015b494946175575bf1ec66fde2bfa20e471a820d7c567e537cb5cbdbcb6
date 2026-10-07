@@ -1,0 +1,1003 @@
+{
+  "lang": "ko",
+  "rules": {
+    "accesskeys": {
+      "description": "모든 accesskey 어트리뷰트 값이 고유한지 확인하세요.",
+      "help": "accesskey 어트리뷰트 값은 고유해야 합니다."
+    },
+    "area-alt": {
+      "description": "이미지 맵의 <area> 엘리먼트가 대체텍스트를 가지고 있는지 확인하세요.",
+      "help": "활성 <area> 엘리먼트는 반드시 대체텍스트를 가져야 합니다."
+    },
+    "aria-allowed-attr": {
+      "description": "ARIA 어트리뷰트가 엘리먼트의 역할(role)에 허용되었는지 확인하세요.",
+      "help": "엘리먼트는 반드시 허용된 ARIA 어트리뷰트만 사용해야 합니다."
+    },
+    "aria-allowed-role": {
+      "description": "역할(role) 어트리뷰트가 엘리먼트에 적절한 값을 가지고 있는지 확인하세요.",
+      "help": "ARIA 역할(role)은 엘리먼트에 적절해야 합니다."
+    },
+    "aria-command-name": {
+      "description": "모든 ARIA 버튼, 링크, 메뉴 아이템이 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "ARIA 명령 엘리먼트에는 반드시 접근 가능한 이름이 있어야 합니다."
+    },
+    "aria-dialog-name": {
+      "description": "모든 ARIA dialog와 alertdialog 노드가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "ARIA dialog와 alertdialog 노드는 접근 가능한 이름을 가져야 합니다."
+    },
+    "aria-hidden-body": {
+      "description": "문서 body에 aria-hidden='true'가 없게 하세요.",
+      "help": "aria-hidden='true'는 반드시 문서 body에 없어야 합니다."
+    },
+    "aria-hidden-focus": {
+      "description": "aria-hidden 엘리먼트가 초점을 얻을 수 있는(focusable) 엘리먼트를 포함하지 않도록 하세요.",
+      "help": "ARIA hidden 엘리먼트는 반드시 초점을 얻을 수 있는(focusable) 엘리먼트를 포함하지 않아야 합니다."
+    },
+    "aria-input-field-name": {
+      "description": "모든 ARIA 입력 필드가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "ARIA 입력 필드에는 반드시 접근 가능한 이름이 있어야 합니다."
+    },
+    "aria-meter-name": {
+      "description": "모든 ARIA meter 노드가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "ARIA meter 노드에는 반드시 접근 가능한 이름이 있어야 합니다."
+    },
+    "aria-progressbar-name": {
+      "description": "모든 ARIA progressbar 노드가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "ARIA progressbar 노드에는 반드시 접근 가능한 이름이 있어야 합니다."
+    },
+    "aria-required-attr": {
+      "description": "ARIA 역할(role)을 가진 엘리먼트가 필수 ARIA 어트리뷰트를 모두 가지고 있는지 확인하세요",
+      "help": "필수 ARIA 어트리뷰트는 반드시 제공되어야 합니다."
+    },
+    "aria-required-children": {
+      "description": "하위 역할(child role)이 필요한 ARIA 역할(role)을 가진 엘리먼트가 해당 역할(role)을 포함하고 있는지 확인하세요.",
+      "help": "일부 ARIA 역할(role)은 반드시 특정한 하위 항목들을 포함해야 합니다."
+    },
+    "aria-required-parent": {
+      "description": "상위 역할(parent role)이 필요한 ARIA 역할(role)을 가진 엘리먼트가 해당 역할(role)에 포함되어 있는지 확인하세요.",
+      "help": "일부 ARIA 역할(role)은 반드시 특정한 상위 항목들에 포함되어야 합니다."
+    },
+    "aria-roledescription": {
+      "description": "aria-roledescription이 암묵적 혹은 명시적 역할(role)을 가진 엘리먼트에만 사용되었는지 확인하세요.",
+      "help": "aria-roledescription은 의미론적 역할(role)을 가진 엘리먼트에 사용하세요."
+    },
+    "aria-roles": {
+      "description": "역할(role) 어트리뷰트를 가진 모든 엘리먼트가 유효한 값을 가지고 있는지 확인하세요.",
+      "help": "ARIA 역할(role)은 반드시 유효한 값을 준수해야 합니다."
+    },
+    "aria-text": {
+      "description": "\"role=text\"가 초점을 얻을 수 있는(focusable) 후손을 가지지 않는 엘리먼트에 사용되었는지 확인하세요.",
+      "help": "\"role=text\"는 초점을 얻을 수 있는(focusable) 후손을 가지지 않아야 합니다."
+    },
+    "aria-toggle-field-name": {
+      "description": "모든 ARIA toggle 필드가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "ARIA toggle 필드는 접근 가능한 이름을 가져야 합니다."
+    },
+    "aria-tooltip-name": {
+      "description": "모든 ARIA tooltip 노드가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "ARIA tooltip 노드는 반드시 접근 가능한 이름을 가져야 합니다."
+    },
+    "aria-treeitem-name": {
+      "description": "모든 ARIA treeitem 노드가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "ARIA treeitem 노드는 접근 가능한 이름을 가져야 합니다."
+    },
+    "aria-valid-attr-value": {
+      "description": "모든 ARIA 어트리뷰트가 유효한 값을 가지고 있는지 확인하세요.",
+      "help": "ARIA 어트리뷰트는 반드시 유효한 값을 준수해야 합니다."
+    },
+    "aria-valid-attr": {
+      "description": "aria- 로 시작하는 어트리뷰트가 유효한 ARIA 어트리뷰트인지 확인하세요.",
+      "help": "ARIA 어트리뷰트는 반드시 유효한 이름을 준수해야 합니다."
+    },
+    "audio-caption": {
+      "description": "<audio> 엘리먼트가 캡션(자막)을 가지고 있는지 확인하세요.",
+      "help": "<audio> 엘리먼트는 반드시 캡션(자막) 트랙을 가져야 합니다."
+    },
+    "autocomplete-valid": {
+      "description": "autocomplete 어트리뷰트가 올바르고 form 필드에 적합한지 확인하세요.",
+      "help": "autocomplete 어트리뷰트는 반드시 올바르게 사용되어야 합니다."
+    },
+    "avoid-inline-spacing": {
+      "description": "style 어트리뷰트를 통해 설정된 텍스트 간격이 사용자 정의 스타일시트를 통해 조정될 수 있는지 확인하세요.",
+      "help": "인라인 텍스트 간격은 반드시 사용자 정의 스타일시트로 조정 될 수 있어야 합니다."
+    },
+    "blink": {
+      "description": "<blink> 엘리먼트가 사용되지 않도록 하세요.",
+      "help": "<blink> 엘리먼트는 더 이상 사용되지 않으며 반드시 사용되지 않아야 합니다."
+    },
+    "button-name": {
+      "description": "버튼이 인식 가능한 텍스트를 가지고 있는지 확인하세요.",
+      "help": "버튼에 반드시 인식 가능한 텍스트가 있어야 합니다."
+    },
+    "bypass": {
+      "description": "각 페이지에 사용자가 내비게이션을 건너뛰고 콘텐츠로 바로 이동할 수 있는 최소 하나의 메커니즘이 있는지 확인하세요.",
+      "help": "페이지에는 반드시 반복 되는 블럭을 건너 뛸 수 있는 수단이 있어야 합니다."
+    },
+    "color-contrast-enhanced": {
+      "description": "전경색과 배경색 사이의 대비가 WCAG 2 AAA 명암비 기준치를 충족하는지 확인하세요.",
+      "help": "엘리먼트는 반드시 충분한 명도 대비를 가져야 합니다."
+    },
+    "color-contrast": {
+      "description": "전경색과 배경색 사이의 대비가 WCAG 2 AA 명암비 기준치를 충족하는지 확인하세요.",
+      "help": "엘리먼트는 반드시 충분한 명도 대비를 가져야 합니다."
+    },
+    "css-orientation-lock": {
+      "description": "콘텐츠가 특정 디스플레이 방향으로 고정되지 않고, 콘텐츠가 모든 디스플레이 방향에서 사용 가능한지 확인하세요.",
+      "help": "CSS 미디어쿼리가 디스플레이 방향을 고정하기 위해 사용되지 않아야 합니다."
+    },
+    "definition-list": {
+      "description": "<dl> 엘리먼트가 올바르게 구조화되어 있는지 확인하세요.",
+      "help": "<dl> 엘리먼트는 반드시 올바르게 정렬된 <dt>와 <dd> 그룹, <script>, <template>, <div> 엘리먼트만 바로 포함해야 합니다."
+    },
+    "dlitem": {
+      "description": "<dt>와 <dd> 엘리먼트가 <dl>에 포함되어 있는지 확인하세요.",
+      "help": "<dt>와 <dd> 엘리먼트는 반드시 <dl>에 포함되어야 합니다."
+    },
+    "document-title": {
+      "description": "각 HTML 문서가 비어 있지 않은 <title> 엘리먼트를 포함하고 있는지 확인하세요.",
+      "help": "탐색에 도움이 되도록 문서에는 반드시 <title>이 있어야 합니다."
+    },
+    "duplicate-id-active": {
+      "description": "활성 엘리먼트의 모든 id 어트리뷰트 값이 고유한지 확인하세요.",
+      "help": "활성 엘리먼트의 ID는 반드시 고유해야 합니다."
+    },
+    "duplicate-id-aria": {
+      "description": "ARIA 및 label에 사용된 모든 id 어트리뷰트 값이 고유한지 확인하세요.",
+      "help": "ARIA 및 label에 사용된 ID는 반드시 고유해야 합니다."
+    },
+    "duplicate-id": {
+      "description": "모든 id 어트리뷰트 값이 고유한지 확인하세요.",
+      "help": "id 어트리뷰트 값은 반드시 고유해야 합니다."
+    },
+    "empty-heading": {
+      "description": "제목이 인식 가능한 텍스트를 가지고 있는지 확인하세요.",
+      "help": "제목은 비어있지 않아야 합니다."
+    },
+    "empty-table-header": {
+      "description": "테이블 헤더가 인식 가능한 텍스트를 가지고 있는지 확인하세요.",
+      "help": "테이블 헤더 텍스트는 반드시 비어있지 않아야 합니다."
+    },
+    "focus-order-semantics": {
+      "description": "초점 순서(focus order)에 있는 엘리먼트가 적절한 역할(role)을 가지고 있는지 확인하세요.",
+      "help": "초점 순서(focus order)에 있는 엘리먼트는 대화형 콘텐츠(interactive contents)에 적합한 역할(role)이 필요합니다."
+    },
+    "form-field-multiple-labels": {
+      "description": "form 필드가 여러 개의 레이블 엘리먼트를 가지지 않도록 하세요.",
+      "help": "form 필드는 반드시 여러 개의 레이블 엘리먼트를 가지지 않아야 합니다."
+    },
+    "frame-focusable-content": {
+      "description": "초점을 얻을 수 있는(focusable) 콘텐츠를 가진 <frame>과 <iframe> 엘리먼트에 tabindex=-1이 없게 하세요.",
+      "help": "초점을 얻을 수 있는(focusable) 콘텐츠를 가진 프레임에는 반드시 tabindex=-1 이 없어야 합니다."
+    },
+    "frame-tested": {
+      "description": "<iframe>과 <frame> 엘리먼트가 axe-core 스크립트를 포함하고 있는지 확인하세요.",
+      "help": "프레임이 axe-core로 테스트되어야 합니다."
+    },
+    "frame-title-unique": {
+      "description": "<iframe>과 <frame> 엘리먼트가 고유한 title 어트리뷰트를 포함하고 있는지 확인하세요.",
+      "help": "프레임에는 고유한 title 어트리뷰트가 있어야 합니다."
+    },
+    "frame-title": {
+      "description": "<iframe>과 <frame> 엘리먼트가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "프레임에는 반드시 접근 가능한 이름이 있어야 합니다."
+    },
+    "heading-order": {
+      "description": "제목 순서가 의미론적으로 올바른지 확인하세요.",
+      "help": "제목 수준은 한 단계씩 증가해야만 합니다."
+    },
+    "hidden-content": {
+      "description": "숨겨진 콘텐츠에 대해 사용자에게 알리세요.",
+      "help": "페이지의 숨겨진 콘텐츠는 분석 될 수 없습니다."
+    },
+    "html-has-lang": {
+      "description": "모든 HTML 문서가 lang 어트리뷰트를 가지고 있는지 확인하세요.",
+      "help": "<html> 엘리먼트는 반드시 lang 어트리뷰트를 가져야 합니다."
+    },
+    "html-lang-valid": {
+      "description": "<html> 엘리먼트의 lang 어트리뷰트가 유효한 값을 가지고 있는지 확인하세요.",
+      "help": "<html> 엘리먼트는 반드시 lang 어트리뷰트에 유효한 값을 가져야 합니다."
+    },
+    "html-xml-lang-mismatch": {
+      "description": "유효한 lang과 xml:lang 어트리뷰트를 가진 HTML 엘리먼트가 페이지의 기본 언어와 일치하는지 확인하세요.",
+      "help": "lang과 xml:lang을 가진 HTML 엘리먼트는 반드시 동일한 기본 언어를 가져야 합니다."
+    },
+    "identical-links-same-purpose": {
+      "description": "동일한 접근 가능한 이름을 가지는 링크가 비슷한 용도로 제공되고 있는지 확인하세요.",
+      "help": "동일한 이름을 가진 링크는 비슷한 용도를 가집니다."
+    },
+    "image-alt": {
+      "description": "<img> 엘리먼트가 대체텍스트를 가지고 있거나 none 또는 presentation 역할(role)을 가지고 있는지 확인하세요.",
+      "help": "이미지는 반드시 대체텍스트를 가져야 합니다."
+    },
+    "image-redundant-alt": {
+      "description": "이미지 대체텍스트가 텍스트와 반복되지 않도록 하세요.",
+      "help": "이미지의 대체텍스트는 텍스트와 반복되지 않아야 합니다."
+    },
+    "input-button-name": {
+      "description": "입력 버튼이 인식 가능한 텍스트를 가지고 있는지 확인하세요.",
+      "help": "입력 버튼은 반드시 인식 가능한 텍스트를 가져야 합니다."
+    },
+    "input-image-alt": {
+      "description": "<input type=\"image\"> 엘리먼트가 대체텍스트를 가지고 있는지 확인하세요.",
+      "help": "이미지 버튼은 반드시 대체텍스트를 가져야 합니다."
+    },
+    "label-content-name-mismatch": {
+      "description": "콘텐츠로부터 레이블이 지정되는 엘리먼트가 접근 가능한 이름의 일부로 눈에 보이는 텍스트를 반드시 가지도록 하세요.",
+      "help": "엘리먼트는 반드시 접근 가능한 이름의 일부로 눈에 보이는 텍스트를 가져야 합니다."
+    },
+    "label-title-only": {
+      "description": "모든 form 엘리먼트가 title이나 aria-describedby 어트리뷰트를 단독으로 사용하여 레이블이 지정되지 않도록 하세요.",
+      "help": "form 엘리먼트는 눈에 보이는 레이블을 가져야 합니다."
+    },
+    "label": {
+      "description": "모든 form 엘리먼트가 레이블을 가지고 있는지 확인하세요.",
+      "help": "form 엘리먼트는 반드시 레이블을 가져야 합니다."
+    },
+    "landmark-banner-is-top-level": {
+      "description": "banner 랜드마크가 최상위 레벨에 있는지 확인하세요.",
+      "help": "banner 랜드마크는 다른 랜드마크 안에 포함되지 않아야 합니다."
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "complementary나 aside 랜드마크가 최상위 레벨에 있는지 확인하세요.",
+      "help": "aside는 다른 랜드마크 안에 포함되지 않아야 합니다."
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "contentinfo 랜드마크가 최상위 레벨에 있는지 확인하세요.",
+      "help": "contentinfo 랜드마크는 다른 랜드마크 안에 포함되지 않아야 합니다."
+    },
+    "landmark-main-is-top-level": {
+      "description": "main 랜드마크가 최상위 레벨에 있는지 확인하세요.",
+      "help": "main 랜드마크는 다른 랜드마크 안에 포함되지 않아야 합니다."
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "문서가 최대 하나의 banner 랜드마크를 가지고 있는지 확인하세요.",
+      "help": "문서는 하나를 초과하는 banner 랜드마크를 가지지 않아야 합니다."
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "문서가 최대 하나의 contentinfo 랜드마크를 가지고 있는지 확인하세요.",
+      "help": "문서는 하나를 초과하는 contentinfo 랜드마크를 가지지 않아야 합니다."
+    },
+    "landmark-no-duplicate-main": {
+      "description": "문서가 최대 하나의 main 랜드마크를 가지고 있는지 확인하세요.",
+      "help": "문서는 하나를 초과하는 main 랜드마크를 가지지 않아야 합니다."
+    },
+    "landmark-one-main": {
+      "description": "문서가 main 랜드마크를 가지고 있는지 확인하세요.",
+      "help": "문서는 하나의 main 랜드마크를 가져야 합니다."
+    },
+    "landmark-unique": {
+      "help": "랜드마크가 고유한지 확인하세요.",
+      "description": "랜드마크는 고유한 역할(role) 또는 역할(role)/레이블/제목 조합(즉, 접근 가능한 이름)을 가져야 합니다."
+    },
+    "link-in-text-block": {
+      "description": "링크가 색상에 의존하지 않고 구별 될 수 있어야 합니다.",
+      "help": "링크는 반드시 색상에 의존하지 않는 방식으로 주변 텍스트로부터 구별되어야 합니다."
+    },
+    "link-name": {
+      "description": "링크가 인식 가능한 텍스트를 가지고 있는지 확인하세요.",
+      "help": "링크는 반드시 인식 가능한 텍스트를 가져야 합니다."
+    },
+    "list": {
+      "description": "목록이 올바르게 구조화되어 있는지 확인하세요.",
+      "help": "<ul>과 <ol>은 반드시 <li>, <script> 또는 <template> 엘리먼트만을 바로 포함해야 합니다."
+    },
+    "listitem": {
+      "description": "<li> 엘리먼트가 의미론적으로 사용되었는지 확인하세요.",
+      "help": "<li> 엘리먼트는 반드시 <ul>이나 <ol>에 포함되어야 합니다."
+    },
+    "marquee": {
+      "description": "<marquee> 엘리먼트가 사용되지 않도록 하세요.",
+      "help": "<marquee> 엘리먼트는 더 이상 사용되지 않으며 반드시 사용되지 않아야 합니다."
+    },
+    "meta-refresh": {
+      "description": "<meta http-equiv=\"refresh\">가 사용되지 않도록 하세요.",
+      "help": "시간 제한 새로고침은 존재하지 않아야 합니다."
+    },
+    "meta-viewport-large": {
+      "description": "<meta name=\"viewport\">가 크기를 조정할 수 있는지 확인하세요.",
+      "help": "사용자는 텍스트를 최대 500%까지 확대/축소 또는 크기를 조정할 수 있어야 합니다."
+    },
+    "meta-viewport": {
+      "description": "<meta name=\"viewport\">가 텍스트 크기 조절 및 확대/축소를 비활성화되지 않게 하세요.",
+      "help": "확대/축소 및 크기 조정은 비활성화되지 않아야 합니다."
+    },
+    "nested-interactive": {
+      "description": "중첩된 대화형 컨트롤은 스크린리더에 의해 낭독되지 않습니다.",
+      "help": "대화형 컨트롤이 중첩되지 않게 하세요."
+    },
+    "no-autoplay-audio": {
+      "description": "<video>나 <audio> 엘리먼트가 중지 시키거나 오디오를 음소거하는 제어 메커니즘 없이 3초를 초과하여 오디오를 자동 재생하지 않게 하세요.",
+      "help": "<video>나 <audio> 엘리먼트는 오디오를 자동 재생하지 않아야 합니다."
+    },
+    "object-alt": {
+      "description": "<object> 엘리먼트가 대체텍스트를 가지고 있는지 확인하세요.",
+      "help": "<object> 엘리먼트는 반드시 대체텍스트를 가져야 합니다."
+    },
+    "p-as-heading": {
+      "description": "p 엘리먼트를 스타일링하여 제목으로 사용되지 않도록 하세요.",
+      "help": "굵은 텍스트, 기울임 꼴, 글꼴 크기를 p 엘리먼트를 제목으로 스타일링하는데 사용하지 않아야 합니다."
+    },
+    "page-has-heading-one": {
+      "description": "페이지 또는 프레임 중 최소 하나의 프레임이 1 레벨 제목을 포함하고 있는지 확인하세요.",
+      "help": "페이지는 1 레벨 제목을 포함해야 합니다."
+    },
+    "presentation-role-conflict": {
+      "description": "역할(role)이 none이거나 presentation이고 역할(role) 충돌 해결이 필요한 엘리먼트를 표시해 두세요.",
+      "help": "none이나 presentation 역할(role) 엘리먼트가 표시되어야 합니다."
+    },
+    "region": {
+      "description": "모든 페이지 콘텐츠가 랜드마크에 포함되어 있는지 확인하세요.",
+      "help": "모든 페이지 콘텐츠는 랜드마크에 포함되어야 합니다."
+    },
+    "role-img-alt": {
+      "description": "[role='img'] 엘리먼트가 대체텍스트를 가지고 있는지 확인하세요.",
+      "help": "[role='img'] 엘리먼트는 대체텍스트를 가저야 합니다."
+    },
+    "scope-attr-valid": {
+      "description": "scope 어트리뷰트가 테이블에 올바르게 사용되고 있는지 확인하세요.",
+      "help": "scope 어트리뷰트는 올바르게 사용되어야 합니다."
+    },
+    "scrollable-region-focusable": {
+      "description": "스크롤 가능한 콘텐츠를 가진 엘리먼트는 반드시 키보드로 접근 가능해야 합니다.",
+      "help": "스크롤 가능한 영역이 키보드 접근을 가져야 합니다."
+    },
+    "select-name": {
+      "description": "select 엘리먼트가 접근 가능한 이름을 가지고 있는지 확인하세요.",
+      "help": "select 엘리먼트는 반드시 접근 가능한 이름을 가져야 합니다."
+    },
+    "server-side-image-map": {
+      "description": "서버 사이드 이미지 맵이 사용되지 않도록 하세요.",
+      "help": "서버 사이드 이미지 맵은 반드시 사용되지 않아야 합니다."
+    },
+    "skip-link": {
+      "description": "모든 건너뛰기 링크가 초점을 얻을 수 있는(focusable) 대상을 가지는지 확인하세요.",
+      "help": "건너뛰기 링크 대상이 존재하고 초점을 얻을 수 있어야(focusable) 합니다."
+    },
+    "svg-img-alt": {
+      "description": "이미지, 그래픽 문서, 그래픽 심볼 역할(role)을 가진 svg 엘리먼트가 접근 가능한 텍스트를 가지고 있는지 확인하세요.",
+      "help": "img 역할(role)을 가진 svg 엘리먼트는 접근 가능한 텍스트를 가져야 합니다."
+    },
+    "tabindex": {
+      "description": "tabindex 어트리뷰트 값이 0보다 크지 않게 하세요.",
+      "help": "엘리먼트는 0보다 큰 tabindex를 가지지 않아야 합니다."
+    },
+    "table-duplicate-name": {
+      "description": "테이블이 동일한 summary와 caption을 가지지 않게 하세요.",
+      "help": "<caption> 엘리먼트는 summary 어트리뷰트와 동일한 텍스트를 포함하지 않아야 합니다."
+    },
+    "table-fake-caption": {
+      "description": "캡션이 있는 테이블이 <caption> 엘리먼트를 사용하고 있는지 확인하세요.",
+      "help": "데이터 테이블에 캡션을 제공하는데 데이터 셀이나 헤더 셀이 반드시 사용되지 않아야 합니다."
+    },
+    "td-has-header": {
+      "description": "큰 테이블의 비어 있지 않은 각 데이터 셀이 하나 또는 그 이상의 테이블 헤더를 가지고 있는지 확인하세요.",
+      "help": "3x3보다 큰 테이블에서 모든 비어있지 않은 td 엘리먼트는 반드시 연관된 테이블 헤더를 가져야 합니다."
+    },
+    "td-headers-attr": {
+      "description": "headers를 사용하는 테이블의 각 셀이 그 테이블의 다른 셀을 참조하고 있는지 확인하세요.",
+      "help": "headers 어트리뷰트를 사용하는 table 엘리먼트의 모든 셀은 반드시 그 동일한 테이블의 다른 셀만 참조해야 합니다."
+    },
+    "th-has-data-cells": {
+      "description": "데이터 테이블의 각 테이블 헤더가 데이터 셀을 참조하고 있는지 확인하세요.",
+      "help": "모든 th 엘리먼트와 role=columnheader/rowheader를 가진 엘리먼트는 반드시 그것들이 설명하는 데이터 셀을 가져야 합니다."
+    },
+    "valid-lang": {
+      "description": "lang 어트리뷰트가 유효한 값을 가지고 있는지 확인하세요.",
+      "help": "lang 어트리뷰트는 반드시 유효한 값을 가져야 합니다."
+    },
+    "video-caption": {
+      "description": "<video> 엘리먼트가 캡션(자막)을 가지고 있는지 확인하세요.",
+      "help": "<video> 엘리먼트는 반드시 캡션(자막)을 가져야 합니다."
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "abstract 역할(role)이 사용되지 않았습니다.",
+      "fail": {
+        "singular": "abstract 역할(role)은 직접 사용될 수 없습니다: ${data.values}",
+        "plural": "abstract 역할(role)들은 직접 사용될 수 없습니다: ${data.values}"
+      }
+    },
+    "aria-allowed-attr": {
+      "pass": "ARIA 어트리뷰트가 정의된 역할(role)에 대해 올바르게 사용되었습니다.",
+      "fail": {
+        "singular": "ARIA 어트리뷰트가 허용되지 않았습니다: ${data.values}",
+        "plural": "ARIA 어트리뷰트들이 허용되지 않았습니다: ${data.values}"
+      },
+      "incomplete": "이 엘리먼트에 ARIA 어트리뷰트가 무시되어도 문제가 없는지 확안하세요: ${data.values}"
+    },
+    "aria-allowed-role": {
+      "pass": "ARIA 역할(role)이 주어진 엘리먼트에 허용되었습니다.",
+      "fail": {
+        "singular": "ARIA 역할(role) ${data.values}이(가) 주어진 엘리먼트에 허용되지 않았습니다.",
+        "plural": "ARIA 역할(role)들 ${data.values}이(가) 주어진 엘리먼트에 허용되지 않았습니다."
+      },
+      "incomplete": {
+        "singular": "엘리먼트에 허용되지 않았기 때문에, 엘리먼트가 노출 될 때 ARIA 역할(role) ${data.values}이(가) 반드시 제거되어야 합니다.",
+        "plural": "엘리먼트에 허용되지 않았기 때문에, 엘리먼트가 노출 될 때 ARIA 역할(role)들 ${data.values}이(가) 반드시 제거되어야 합니다."
+      }
+    },
+    "aria-errormessage": {
+      "pass": "aria-errormessage가 존재하고, 지원된 aria-errormessage 기법을 사용하는 스크린리더에 노출되는 엘리먼트를 참조합니다.",
+      "fail": {
+        "singular": "aria-errormessage 값 `${data.values}`은(는) 반드시 메세지를 낭독하기 위한 기법을 (예를 들어, aria-live, aria-describedby, role=alert 등) 사용해야 합니다.",
+        "plural": "aria-errormessage 값들 `${data.values}`은(는) 반드시 메세지를 낭독하기 위한 기법을 (예를 들어, aria-live, aria-describedby, role=alert 등) 사용해야 합니다.",
+        "hidden": "aria-errormessage 값 `${data.values}`은(는) 숨겨진 엘리먼트를 참조할 수 없습니다."
+      },
+      "incomplete": {
+        "singular": "aria-errormessage 값 `${data.values}`이(가) 기존 엘리먼트를 참조하는지 확인하세요.",
+        "plural": "aria-errormessage 값들 `${data.values}`이(가) 기존 엘리먼트를 참조하는지 확인하세요.",
+        "idrefs": "aria-errormessage 엘리먼트가 페이지에 존재하는지 확인할 수 없습니다: ${data.values}"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "문서 body에 aria-hidden 어트리뷰트가 없습니다.",
+      "fail": "문서 body에 aria-hidden=true가 없어야 합니다."
+    },
+    "aria-level": {
+      "pass": "aria-level 값이 유효합니다.",
+      "incomplete": "6보다 큰 aria-level 값은 모든 스크린리더와 브라우저 조합에서 지원되지 않습니다."
+    },
+    "aria-prohibited-attr": {
+      "pass": "ARIA 어트리뷰트가 혀용되었습니다.",
+      "fail": {
+        "hasRolePlural": "${data.prohibited} 어트리뷰트는 \"${data.role}\" 역할(role)과 함께 사용될 수 없습니다.",
+        "hasRoleSingular": "${data.prohibited} 어트리뷰트는 \"${data.role}\" 역할(role)과 함께 사용될 수 없습니다.",
+        "noRolePlural": "${data.prohibited} 어트리뷰트는 유효하지 않은 역할(role)을 가진 ${data.nodeName}에 사용될 수 없습니다.",
+        "noRoleSingular": "${data.prohibited} 어트리뷰트는 유효하지 않은 역할(role)을 가진 ${data.nodeName}에 사용될 수 없습니다."
+      },
+      "incomplete": {
+        "hasRoleSingular": "${data.prohibited} 어트리뷰트는 \"${data.role}\" 역할(role)에서 제대로 지원되지 않습니다.",
+        "hasRolePlural": "${data.prohibited} 어트리뷰트는 \"${data.role}\" 역할(role)에서 제대로 지원되지 않습니다.",
+        "noRoleSingular": "${data.prohibited} 어트리뷰트는 유효한 역할(role) 어트리뷰트가 없는 ${data.nodeName}에서는 제대로 지원되지 않습니다.",
+        "noRolePlural": "${data.prohibited} 어트리뷰트는 유효한 역할(role) 어트리뷰트가 없는 ${data.nodeName}에서는 제대로 지원되지 않습니다."
+      }
+    },
+    "aria-required-attr": {
+      "pass": "모든 필수 ARIA 어트리뷰트가 존재합니다.",
+      "fail": {
+        "singular": "필수 ARIA 어트리뷰트가 없습니다: ${data.values}",
+        "plural": "필수 ARIA 어트리뷰트들이 없습니다: ${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": {
+        "default": "필수 ARIA 하위 항목들이 존재합니다."
+      },
+      "fail": {
+        "singular": "필수 ARIA 하위 역할(role)이 없습니다: ${data.values}",
+        "plural": "필수 ARIA 하위 역할(role)들이 없습니다: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "추가 될 예상 ARIA 하위 역할(role): ${data.values}",
+        "plural": "추가 될 예상 ARIA 하위 역할(role)들: ${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "필수 ARIA 상위 역할(role)이 존재합니다.",
+      "fail": {
+        "singular": "필수 ARIA 상위 역할(role)이 없습니다: ${data.values}",
+        "plural": "필수 ARIA 상위 역할(role)들이 없습니다: ${data.values}"
+      }
+    },
+    "aria-roledescription": {
+      "pass": "aria-roledescription이 지원되는 의미론적 역할(role)에 사용되었습니다.",
+      "incomplete": "지원되는 스크린리더에서 aria-roledescription이 낭독되는지 검사하세요.",
+      "fail": "엘리먼트에 aria-roledescription을 지원하는 역할(role)을 제공되지 않았습니다."
+    },
+    "aria-unsupported-attr": {
+      "pass": "ARIA 어트리뷰트가 지원됩니다.",
+      "fail": "ARIA 어트리뷰트가 스크린리더와 보조기술에서 널리 지원되지 않습니다: ${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "ARIA 어트리뷰트 값이 유효합니다.",
+      "fail": {
+        "singular": "유효하지 않은 ARIA 어트리뷰트 값: ${data.values}",
+        "plural": "유효하지 않은  ARIA 어트리뷰트 값들: ${data.values}"
+      },
+      "incomplete": {
+        "noId": "ARIA 어트리뷰트 엘리먼트 ID가 페이지에 없습니다: ${data.needsReview}",
+        "ariaCurrent": "ARIA 어트리뷰트 값이 유효하지 않으며 \"aria-current=true\"로 취급 될 것입니다: ${data.needsReview}",
+        "idrefs": "페이지에 ARIA 어트리뷰트 엘리먼트 ID가 존재하는지 확인할 수 없습니다: ${data.needsReview}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": "ARIA 어트리뷰트 이름이 유효합니다.",
+      "fail": {
+        "singular": "유효하지 않은 ARIA 어트리뷰트 이름: ${data.values}",
+        "plural": "유효하지 않은 ARIA 어트리뷰트 이름들: ${data.values}"
+      }
+    },
+    "deprecatedrole": {
+      "pass": "ARIA 역할(role)은 용도 폐기(deprecated) 되지 않았습니다.",
+      "fail": "사용된 역할(role)은 용도 폐기(deprecated) 되었습니다: ${data.values}"
+    },
+    "fallbackrole": {
+      "pass": "하나의 역할(role) 값만 사용되었습니다.",
+      "fail": "폴백 역할(role)들은 구형 브라우저들에서 지원되지 않으므로, 단 하나의 값만 사용해야 합니다.",
+      "incomplete": "'presentation'이나 'none' 역할(role)만 사용하세요, 둘은 동의어입니다."
+    },
+    "has-global-aria-attribute": {
+      "pass": {
+        "singular": "엘리먼트가 전역 ARIA 어트리뷰트를 가지고 있습니다: ${data.values}",
+        "plural": "엘리먼트가 전역 ARIA 어트리뷰트들을 가지고 있습니다: ${data.values}"
+      },
+      "fail": "엘리먼트가 전역 ARIA 어트리뷰트를 가지고 있지 않습니다."
+    },
+    "has-widget-role": {
+      "pass": "엘리먼트가 위젯 역할(role)을 가지고 있습니다.",
+      "fail": "엘리먼트가 위젯 역할(role)을 가지고 있지 않습니다."
+    },
+    "invalidrole": {
+      "pass": "ARIA 역할(role)이 유효합니다.",
+      "fail": {
+        "singular": "역할(role)은 반드시 유효한 ARIA 역할(role)들 중 하나여야 합니다: ${data.values}",
+        "plural": "역할(role)들은 반드시 유효한 ARIA 역할(role)들 중 하나여야 합니다: ${data.values}"
+      }
+    },
+    "is-element-focusable": {
+      "pass": "엘리먼트가 초점을 얻을 수 있습니다(focusable).",
+      "fail": "엘리먼트가 초점을 얻을 수 없습니다(not focusable)."
+    },
+    "no-implicit-explicit-label": {
+      "pass": "<label>과 접근 가능한 이름이 일치합니다.",
+      "incomplete": "<label>이 ARIA ${data} 필드의 이름의 일부일 필요가 없는지 확인하세요."
+    },
+    "unsupportedrole": {
+      "pass": "ARIA 역할(role)이 지원됩니다.",
+      "fail": "사용된 역할(role)이 스크린리더와 보조기술에서 널리 지원되지 않습니다: ${data.values}"
+    },
+    "valid-scrollable-semantics": {
+      "pass": "엘리먼트가 초점 순서(focus order)의 엘리먼트에 유효한 의미론을 가집니다.",
+      "fail": "엘리먼트가 초점 순서(focus order)의 엘리먼트에 유효하지 않은 의미론을 가집니다."
+    },
+    "color-contrast-enhanced": {
+      "pass": "엘리먼트가 ${data.contrastRatio}의 충분한 명도 대비를 가집니다.",
+      "fail": {
+        "default": "엘리먼트가 ${data.contrastRatio} (전경색: ${data.fgColor}, 배경색: ${data.bgColor}, 글꼴 크기: ${data.fontSize}, 글꼴 두께: ${data.fontWeight})의 불충분한 명도 대비를 가집니다. 기대 명암비: ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "엘리먼트가 전경색과 그림자 색상 (전경색: ${data.fgColor}, 텍스트 그림자 색상: ${data.shadowColor}, 글꼴 크기: ${data.fontSize}, 글꼴 두께: ${data.fontWeight}) 사이에 ${data.contrastRatio}의 불충분한 명도 대비를 가집니다. 기대 명암비: ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "엘리먼트가 그림자 색상과 배경색 (텍스트 그림자 색상: ${data.shadowColor}, 배경색: ${data.bgColor}, 글꼴 크기: ${data.fontSize}, 글꼴 두께: ${data.fontWeight}) 사이에 ${data.contrastRatio}의 불충분한 명도 대비를 가집니다. 기대 명암비: ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "명암비를 확인할 수 없습니다.",
+        "bgImage": "배경 이미지로 인해 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "bgGradient": "배경 그라데이션으로 인해 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "imgNode": "엘리먼트가 이미지 노드를 포함하기 때문에 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "bgOverlap": "다른 엘리먼트로 겹쳐 있기 때문에 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "fgAlpha": "알파 투명도 때문에 엘리먼트의 전경색이 확인될 수 없습니다.",
+        "elmPartiallyObscured": "다른 엘리먼트에 의해 부분적으로 가려 있기 때문에 배경색이 확인될 수 없습니다.",
+        "elmPartiallyObscuring": "다른 엘리먼트에 의해 부분적으로 겹쳐 있기 때문에 배경색이 확인될 수 없습니다.",
+        "outsideViewport": "엘리먼트가 뷰포트 밖에 있기 때문에 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "equalRatio": "엘리먼트가 배경색과 1:1의 명암비를 가집니다.",
+        "shortTextContent": "엘리먼트 콘텐츠가 너무 짧아 실제 텍스트 콘텐츠인지 확인될 수 없습니다.",
+        "nonBmp": "엘리먼트 콘텐츠가 비텍스트 문자만 포함합니다.",
+        "pseudoContent": "가상 엘리먼트로 인해 엘리먼트의 배경색이 확인될 수 없습니다."
+      }
+    },
+    "color-contrast": {
+      "pass": "엘리먼트가 ${data.contrastRatio}의 충분한 명도 대비를 가집니다.",
+      "fail": {
+        "default": "엘리먼트가 ${data.contrastRatio} (전경색: ${data.fgColor}, 배경색: ${data.bgColor}, 글꼴 크기: ${data.fontSize}, 글꼴 두께: ${data.fontWeight})의 불충분한 명도 대비를 가집니다. 기대 명암비: ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "엘리먼트가 전경색과 그림자 색상 (전경색: ${data.fgColor}, 텍스트 그림자 색상: ${data.shadowColor}, 글꼴 크기: ${data.fontSize}, 글꼴 두께: ${data.fontWeight}) 사이에 ${data.contrastRatio}의 불충분한 명도 대비를 가집니다. 기대 명암비: ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "엘리먼트가 그림자 색상과 배경색 (텍스트 그림자 색상: ${data.shadowColor}, 배경색: ${data.bgColor}, 글꼴 크기: ${data.fontSize}, 글꼴 두께: ${data.fontWeight}) 사이에 ${data.contrastRatio}의 불충분한 명도 대비를 가집니다. 기대 명암비: ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "명암비를 확인할 수 없습니다.",
+        "bgImage": "배경 이미지로 인해 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "bgGradient": "배경 그라데이션으로 인해 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "imgNode": "엘리먼트가 이미지 노드를 포함하기 때문에 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "bgOverlap": "다른 엘리먼트로 겹쳐 있기 때문에 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "fgAlpha": "알파 투명도 때문에 엘리먼트의 전경색이 확인될 수 없습니다.",
+        "elmPartiallyObscured": "다른 엘리먼트에 의해 부분적으로 가려 있기 때문에 배경색이 확인될 수 없습니다.",
+        "elmPartiallyObscuring": "다른 엘리먼트에 의해 부분적으로 겹쳐 있기 때문에 배경색이 확인될 수 없습니다.",
+        "outsideViewport": "엘리먼트가 뷰포트 밖에 있기 때문에 엘리먼트의 배경색이 확인될 수 없습니다.",
+        "equalRatio": "엘리먼트가 배경색과 1:1의 명암비를 가집니다.",
+        "shortTextContent": "엘리먼트 콘텐츠가 너무 짧아 실제 텍스트 콘텐츠인지 확인될 수 없습니다.",
+        "nonBmp": "엘리먼트 콘텐츠가 비텍스트 문자만 포함합니다.",
+        "pseudoContent": "가상 엘리먼트로 인해 엘리먼트의 배경색이 확인될 수 없습니다."
+      }
+    },
+    "link-in-text-block": {
+      "pass": "링크가 색상 외 다른 방법으로 주변 텍스트와 구별 될 수 있습니다.",
+      "fail": "링크가 색상 외 다른 방법으로 주변 텍스트와 구별 될 필요가 있습니다.",
+      "incomplete": {
+        "default": "명암비를 확인할 수 없습니다.",
+        "bgContrast": "엘리먼트의 명암비가 확인될 수 없습니다. 뚜렷이 구별되는 hover/focus 스타일을 확인하세요.",
+        "bgImage": "'배경 이미지로 인해 엘리먼트의 명암비가 확인될 수 없습니다.",
+        "bgGradient": "배경 그라데이션으로 인해 엘리먼트의 명암비가 확인될 수 없습니다.",
+        "imgNode": "엘리먼트가 이미지 노드를 포함하기 때문에 엘리먼트의 명암비가 확인될 수 없습니다.",
+        "bgOverlap": "엘리먼트 겹침으로 인해 엘리먼트의 명암비가 확인될 수 없습니다."
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "autocomplete 값이 적절한 엘리먼트에 있습니다.",
+      "fail": "autocomplete 값은 이 유형의 입력에는 적절하지 않습니다."
+    },
+    "autocomplete-valid": {
+      "pass": "autocomplete 어트리뷰트가 올바르게 구성되었습니다.",
+      "fail": "autocomplete 어트리뷰트가 올바르지 않게 구성되었습니다."
+    },
+    "accesskeys": {
+      "pass": "accesskey 어트리뷰트 값이 고유합니다.",
+      "fail": "문서에 동일한 accesskey를 가진 여러 엘리먼트가 있습니다."
+    },
+    "focusable-content": {
+      "pass": "엘리먼트가 초점을 얻을 수 있는(focusable) 엘리먼트를 포함합니다.",
+      "fail": "엘리먼트가 초점을 얻을 수 있는(focusable) 콘텐츠를 가져야 합니다."
+    },
+    "focusable-disabled": {
+      "pass": "엘리먼트 안에 초점을 얻을 수 있는(focusable) 엘리먼트가 없습니다.",
+      "fail": "초점을 얻을 수 있는(focusable) 콘텐츠는 비활성 되거나 DOM에서 제거되어야 합니다."
+    },
+    "focusable-element": {
+      "pass": "엘리먼트가 초점을 얻을 수 있습니다(focusable).",
+      "fail": "엘리먼트가 초점을 얻을 수 있어야(focusable) 합니다."
+    },
+    "focusable-modal-open": {
+      "pass": "modal이 열려 있는 동안 초점을 얻을 수 있는(focusable) 엘리먼트가 없습니다.",
+      "incomplete": "현재 상태에서 초점을 얻을 수 있는(focusable) 엘리먼트가 키보드로 초점을 얻을 수(tabbable) 없는지 확인하세요."
+    },
+    "focusable-no-name": {
+      "pass": "엘리먼트가 탭 순서(tab order)에 없거나 접근 가능한 텍스트를 가지고 있습니다.",
+      "fail": "엘리먼트가 탭 순서(tab order)에 있지만 접근 가능한 텍스트를 가지고 있지 않습니다.",
+      "incomplete": "엘리먼트가 접근 가능한 이름을 가지고 있는지 확인할 수 없습니다."
+    },
+    "focusable-not-tabbable": {
+      "pass": "엘리먼트 안에 초점을 얻을 수 있는(focusable) 엘리먼트가 없습니다.",
+      "fail": "초점을 얻을 수 있는(focusable) 콘텐츠는 tabindex='-1'을 가지거나 DOM에서 제거되어야 합니다."
+    },
+    "frame-focusable-content": {
+      "pass": "엘리먼트에 초점을 얻을 수 있는(focusable) 후손 항목이 없습니다.",
+      "fail": "엘리먼트에 초점을 얻을 수 있는(focusable) 후손 항목이 있습니다.",
+      "incomplete": "엘리먼트에 후손 항목이 있는지 확인할 수 없습니다."
+    },
+    "landmark-is-top-level": {
+      "pass": "${data.role} 랜드마크가 최상위에 있습니다.",
+      "fail": "${data.role} 랜드마크가 다른 랜드마크에 포함되어 있습니다."
+    },
+    "no-focusable-content": {
+      "pass": "엘리먼트에 초점을 얻을 수 있는(focusable) 후손 항목이 없습니다.",
+      "fail": {
+        "default": "엘리먼트에 초점을 얻을 수 있는(focusable) 후손 항목이 있습니다.",
+        "notHidden": "대화형 컨트롤 내부의 엘리먼트에 음수 tabindex를 사용하는 것은 ('aria-hidden=true'인 경우에도) 보조기술에서 엘리먼트가 초점을 얻는 것을 막지 않습니다."
+      },
+      "incomplete": "엘리먼트에 후손 항목이 있는지 확인할 수 없습니다."
+    },
+    "page-has-heading-one": {
+      "pass": "페이지가 최소 한 개의 1 레벨 제목을 가지고 있습니다.",
+      "fail": "페이지가 반드시 1 레벨 제목을 가져야 합니다."
+    },
+    "page-has-main": {
+      "pass": "문서에 최소 하나의 main 랜드마크가 있습니다.",
+      "fail": "문서에 main 랜드마크가 없습니다."
+    },
+    "page-no-duplicate-banner": {
+      "pass": "문서가 banner 랜드마크를 하나를 초과하여 가지고 있지 않습니다.",
+      "fail": "문서가 banner 랜드마크를 하나를 초과하여 가지고 있습니다."
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "문서가 contentinfo 랜드마크를 하나를 초과하여 가지고 있지 않습니다.",
+      "fail": "문서가 contentinfo 랜드마크를 하나를 초과하여 가지고 있습니다."
+    },
+    "page-no-duplicate-main": {
+      "pass": "문서가 main 랜드마크를 하나를 초과하여 가지고 있지 않습니다.",
+      "fail": "문서가 main 랜드마크를 하나를 초과하여 가지고 있습니다."
+    },
+    "tabindex": {
+      "pass": "엘리먼트가 0보다 큰 tabindex를 가지고 있지 않습니다.",
+      "fail": "엘리먼트가 0보다 큰 tabindex를 가지고 있습니다."
+    },
+    "alt-space-value": {
+      "pass": "엘리먼트가 유효한 alt 어트리뷰트 값을 가지고 있습니다.",
+      "fail": "엘리먼트가 공백 문자만으로 구성 되는 alt 어트리뷰트를 가지고 있고, 이는 모든 스크린리더가 무시하지 않습니다."
+    },
+    "duplicate-img-label": {
+      "pass": "엘리먼트가 <img> alt 텍스트에 기존 텍스트를 중복하지 않습니다.",
+      "fail": "엘리먼트가 기존 텍스트와 중복되는 alt 텍스트를 가진 <img> 엘리먼트를 포함합니다."
+    },
+    "explicit-label": {
+      "pass": "form 엘리먼트가 명시적인 <label>을 가지고 있습니다.",
+      "fail": "form 엘리먼트에 명시적인 <label>이 없습니다.",
+      "incomplete": "form 엘리먼트가 명시적인 <label>을 가지고 있는지 확인할 수 없습니다."
+    },
+    "help-same-as-label": {
+      "pass": "도움말 텍스트(title이나 aria-describedby)가 레이블 텍스트를 중복하지 않습니다.",
+      "fail": "도움말 텍스트(title이나 aria-describedby)가 레이블 텍스트와 동일합니다."
+    },
+    "hidden-explicit-label": {
+      "pass": "form 엘리먼트가 눈에 보이는 명시적인 <label>을 가집니다.",
+      "fail": "form 엘리먼트가 숨겨진 명시적인 <label>을 가집니다.",
+      "incomplete": "form 엘리먼트가 숨겨진 명시적인 <label>을 가지는지 확인할 수 없습니다."
+    },
+    "implicit-label": {
+      "pass": "form 엘리먼트가 암묵적인(감싸는) <label>을 가집니다.",
+      "fail": "form 엘리먼트에 암묵적인(감싸는) <label>이 없습니다.",
+      "incomplete": "form 엘리먼트가 암묵적인(감싸는) <label>을 가지는지 확인할 수 없습니다."
+    },
+    "label-content-name-mismatch": {
+      "pass": "엘리먼트가 접근 가능한 이름의 일부로 눈에 보이는 텍스트를 포함하고 있습니다.",
+      "fail": "엘리먼트 내부 텍스트가 접근 가능한 이름에 포함되어 있지 않습니다."
+    },
+    "multiple-label": {
+      "pass": "form 필드가 여러 레이블 엘리먼트를 가지고 있지 않습니다.",
+      "incomplete": "여러 레이블 엘리먼트는 보조기술에서 널리 지원되지 않습니다. 첫 번째 레이블이 모든 필요한 정보를 포함하는지 확인하세요."
+    },
+    "title-only": {
+      "pass": "form 엘리먼트가 레이블을 위해 title 어트리뷰트만 단독으로 사용하지 않습니다.",
+      "fail": "form 엘리먼트의 레이블을 생성하는데 title만 사용되었습니다."
+    },
+    "landmark-is-unique": {
+      "pass": "랜드마크는 반드시 고유한 역할(role)이나 role/label/title 조합(즉, 접근 가능한 이름)을 가져야 합니다.",
+      "fail": "랜드마크는 랜드마크를 구별할 수 있게 만들기 위해 반드시 고유한 aria-label, aria-labelledby 또는 title을 가져야 합니다."
+    },
+    "has-lang": {
+      "pass": "<html> 엘리먼트에 lang 어트리뷰트가 있습니다.",
+      "fail": {
+        "noXHTML": "xml:lang 어트리뷰트는 HTML 페이지에 유효하지 않습니다, lang 어트리뷰트를 사용하세요.",
+        "noLang": "<html> 어트리뷰트에 lang 어트리뷰트가 없습니다."
+      }
+    },
+    "valid-lang": {
+      "pass": "lang 어트리뷰트의 값이 유효한 언어 목록에 포함되어 있습니다.",
+      "fail": "lang 어트리뷰트의 값이 유효한 언어 목록에 포함되어 있지 않습니다."
+    },
+    "xml-lang-mismatch": {
+      "pass": "lang과 xml:lang 어트리뷰트가 동일한 기본 언어를 가지고 있습니다.",
+      "fail": "lang과 xml:lang 어트리뷰트가 동일한 기본 언어를 가지고 있지 않습니다."
+    },
+    "dlitem": {
+      "pass": "설명 목록 항목이 <dl> 상위 엘리먼트를 가지고 있습니다.",
+      "fail": "설명 목록 항목이 <dl> 상위 엘리먼트를 가지고 있지 않습니다."
+    },
+    "listitem": {
+      "pass": "목록 항목이 <ul>, <ol> 또는 role=\"list\" 상위 엘리먼트를 가지고 있습니다.",
+      "fail": {
+        "default": "목록 항목이 <ul>, <ol> 상위 엘리먼트를 가지고 있지 않습니다.",
+        "roleNotValid": "목록 항목이 역할(role)이 없는 <ul>, <ol> 상위 엘리먼트나 role=\"list\" 상위 엘리먼트를 가지고 있지 않습니다."
+      }
+    },
+    "only-dlitems": {
+      "pass": "목록 엘리먼트가 허용된 내부 <dt>나 <dd> 엘리먼트 직속 자식만 가지고 있습니다.",
+      "fail": "목록 엘리먼트가 허용된 내부 <dt>나 <dd> 엘리먼트가 아닌 직속 자식을 가지고 있습니다."
+    },
+    "only-listitems": {
+      "pass": "목록 엘리먼트가 허용된 내부 <li> 엘리먼트 직속 자식만 가지고 있습니다.",
+      "fail": {
+        "default": "목록 엘리먼트가 허용된 내부 <li> 엘리먼트가 아닌 직속 자식을 가지고 있습니다.",
+        "roleNotValid": "목록 엘리먼트가 허용되지 않은 역할(role)을 가진 직속 자식을 가지고 있습니다: ${data.roles}"
+      }
+    },
+    "structured-dlitems": {
+      "pass": "비어있지 않은 경우, 엘리먼트가 <dt>와 <dd> 엘리먼트를 모두 가지고 있습니다.",
+      "fail": "비어있지 않은 경우, 엘리먼트가 최소 하나의 <dd> 엘리먼트가 뒤따르는 최소 하나의 <dt> 엘리먼트를 가지고 있지 않습니다."
+    },
+    "caption": {
+      "pass": "멀티미디어 엘리먼트가 캡션(자막) 트랙을 가지고 있습니다.",
+      "incomplete": "엘리먼트에 캡션(자막)이 사용 가능한지 확인하세요."
+    },
+    "frame-tested": {
+      "pass": "iframe이 axe-core로 테스트 되었습니다.",
+      "fail": "iframe이 axe-core로 테스트 될 수 없습니다.",
+      "incomplete": "iframe은 아직 axe-core로 테스트 되지 않았습니다."
+    },
+    "no-autoplay-audio": {
+      "pass": "<video>나 <audio>가 허용된 지속 시간을 초과하여 오디오를 출력하지 않거나 제어 메커니즘을 가지고 있습니다.",
+      "fail": "<video>나 <audio>가 허용된 지속 시간을 초과하여 오디오를 출력하거나 제어 메커니즘을 가지고 있지 않습니다.",
+      "incomplete": "<video>나 <audio>가 허용된 지속 시간을 초과하여 오디오를 출력하지 않거나 제어 메커니즘을 제공하고 있는지 확인하세요."
+    },
+    "css-orientation-lock": {
+      "pass": "디스플레이를 조작할 수 있고, 방향 잠금이 존재하지 않습니다.",
+      "fail": "CSS 방향 잠금이 적용되어 있어, 디스플레이를 조작할 수 없습니다.",
+      "incomplete": "CSS 방향 잠금이 확인될 수 없습니다."
+    },
+    "meta-viewport-large": {
+      "pass": "<meta> 태그가 모바일 기기에서 확대/축소하는 것을 제한하지 않습니다.",
+      "fail": "<meta> 태그가 모바일 기기에서 확대/축소하는 것을 제한하고 있습니다."
+    },
+    "meta-viewport": {
+      "pass": "<meta> 태그가 모바일 기기에서 확대/축소하는 것을 비활성화하지 않았습니다.",
+      "fail": "모바일 기기에서 <meta> 태그의 ${data}이(가) 확대/축소를 할 수 없게 만듭니다."
+    },
+    "header-present": {
+      "pass": "페이지가 제목을 가지고 있습니다.",
+      "fail": "페이지에 제목이 없습니다."
+    },
+    "heading-order": {
+      "pass": "제목 순서가 유효합니다.",
+      "fail": "제목 순서가 잘못되었습니다.",
+      "incomplete": "이전 제목을 확인 할 수 없습니다."
+    },
+    "identical-links-same-purpose": {
+      "pass": "다른 URL로 이동하는 동일한 이름의 다른 링크가 없습니다.",
+      "incomplete": "링크가 동일한 용도를 가지고 있는지, 또는 의도적으로 모호하게 한 것인지 확인하세요."
+    },
+    "internal-link-present": {
+      "pass": "유효한 건너뛰기 링크가 발견되었습니다.",
+      "fail": "유효한 건너뛰기 링크를 찾을 수 없습니다."
+    },
+    "landmark": {
+      "pass": "페이지가 랜드마크 영역을 가지고 있습니다.",
+      "fail": "페이지에 랜드마크 영역이 없습니다."
+    },
+    "meta-refresh": {
+      "pass": "<meta> 태그가 페이지를 즉시 새로고침하지 않습니다.",
+      "fail": "<meta> 태그가 페이지의 시간 제한 새로고침을 강요합니다."
+    },
+    "p-as-heading": {
+      "pass": "<p> 엘리먼트가 제목으로 스타일되지 않았습니다.",
+      "fail": "스타일링된 p 엘리먼트는 제목 엘리먼트 대신 사용되지 않아야 합니다.",
+      "incomplete": "<p> 엘리먼트가 제목으로 스타일되었는지 확인할 수 없습니다."
+    },
+    "region": {
+      "pass": "모든 페이지 콘텐츠가 랜드마크에 포함되어 있습니다.",
+      "fail": "일부 페이지 콘텐츠가 랜드마크에 포함되어 있지 않습니다."
+    },
+    "skip-link": {
+      "pass": "건너뛰기 링크 대상이 존재합니다.",
+      "incomplete": "건너뛰기 링크 대상이 활성화 시 표시되어야 합니다.",
+      "fail": "건너뛰기 링크 대상이 없습니다."
+    },
+    "unique-frame-title": {
+      "pass": "엘리먼트의 title 어트리뷰트가 고유합니다.",
+      "fail": "엘리먼트의 title 어트리뷰트가 고유하지 않습니다."
+    },
+    "duplicate-id-active": {
+      "pass": "문서에 동일한 id 어트리뷰트를 공유하는 활성 엘리먼트가 없습니다.",
+      "fail": "문서에 동일한 id 어트리뷰트를 가진 활성 엘리먼트가 있습니다: ${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "문서에 동일한 id 어트리뷰트를 공유하는 ARIA로 참조된 엘리먼트 및 레이블이 없습니다.",
+      "fail": "문서에 동일한 id 어트리뷰트를 가진 ARIA로 참조된 여러 엘리먼트가 있습니다: ${data}"
+    },
+    "duplicate-id": {
+      "pass": "문서에 동일한 id 어트리뷰트를 공유하는 정적 엘리먼트가 없습니다.",
+      "fail": "문서에 동일한 id 어트리뷰트를 공유하는 여러 정적 엘리먼트가 있습니다: ${data}"
+    },
+    "aria-label": {
+      "pass": "aria-label 어트리뷰트가 존재하고 비어있지 않습니다.",
+      "fail": "aria-label 어트리뷰트가 없거나 비어있습니다."
+    },
+    "aria-labelledby": {
+      "pass": "aria-labelledby 어트리뷰트가 존재하고 스크린리더에 노출되는 엘리먼트를 참조하고 있습니다.",
+      "fail": "aria-labelledby 어트리뷰트가 없거나, 존재하지 않는 엘리먼트를 참조하고 있거나, 비어있는 엘리먼트를 참조하고 있습니다.",
+      "incomplete": "aria-labelledby가 존재하고 있는 엘리먼트를 참조하는지 확인하세요."
+    },
+    "avoid-inline-spacing": {
+      "pass": "텍스트 간격에 영향을 주는 '!important'를 가진 명시된 인라인 스타일이 없습니다.",
+      "fail": {
+        "singular": "인라인 스타일을 재정의 하는 것을 대부분의 브라우저가 지원하지 않으므로, 인라인 스타일 ${data.values}에서 '!important'를 제거하세요.",
+        "plural": "인라인 스타일들을 재정의 하는 것을 대부분의 브라우저가 지원하지 않으므로, 인라인 스타일들 ${data.values}에서 '!important'를 제거하세요."
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "엘리먼트가 스크린리더에 노출되는 내부 텍스트를 가지고 있습니다.",
+      "fail": "엘리먼트에 스크린리더에 노출되는 내부 텍스트가 없습니다.",
+      "incomplete": "엘리먼트가 하위 항목을 가지고 있는지 확인할 수 없습니다."
+    },
+    "doc-has-title": {
+      "pass": "문서가 비어있지 않은 <title> 엘리먼트를 가지고 있습니다.",
+      "fail": "문서에 비어있지 않은 <title> 엘리먼트가 없습니다."
+    },
+    "exists": {
+      "pass": "엘리먼트가 존재하지 않습니다.",
+      "incomplete": "엘리먼트가 존재합니다."
+    },
+    "has-alt": {
+      "pass": "엘리먼트가 alt 어트리뷰트를 가지고 있습니다.",
+      "fail": "엘리먼트에 alt 어트리뷰트가 없습니다."
+    },
+    "has-visible-text": {
+      "pass": "엘리먼트가 스크린리더에 노출되는 텍스트를 가지고 있습니다.",
+      "fail": "엘리먼트가 스크린리더에 노출되는 텍스트를 가지고 있지 않습니다.",
+      "incomplete": "엘리먼트가 하위 항목을 가지고 있는지 확인할 수 없습니다."
+    },
+    "is-on-screen": {
+      "pass": "엘리먼트가 보이지 않습니다.",
+      "fail": "엘리먼트가 노출되어 있습니다."
+    },
+    "non-empty-alt": {
+      "pass": "엘리먼트가 비어있지 않은 alt 어트리뷰트를 가지고 있습니다.",
+      "fail": {
+        "noAttr": "엘리먼트에 alt 어트리뷰트가 없습니다.",
+        "emptyAttr": "엘리먼트가 빈 alt 어트리뷰트를 가지고 있습니다."
+      }
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": "엘리먼트에 value 어트리뷰트가 없습니다.",
+        "has-label": "엘리먼트가 비어있지 않은 value 어트리뷰트를 가지고 있습니다."
+      },
+      "fail": "엘리먼트가 value 어트리뷰트를 가지고 있고 value 어트리뷰트가 비어있습니다."
+    },
+    "non-empty-placeholder": {
+      "pass": "엘리먼트가 placeholder 어트리뷰트를 가지고 있습니다.",
+      "fail": {
+        "noAttr": "엘리먼트에 placeholder 어트리뷰트가 없습니다.",
+        "emptyAttr": "엘리먼트가 빈 placeholder 어트리뷰트를 가지고 있습니다."
+      }
+    },
+    "non-empty-title": {
+      "pass": "엘리먼트가 title 어트리뷰트를 가지고 있습니다.",
+      "fail": {
+        "noAttr": "엘리먼트에 title 어트리뷰트가 없습니다.",
+        "emptyAttr": "엘리먼트가 빈 title 어트리뷰트를 가지고 있습니다."
+      }
+    },
+    "non-empty-value": {
+      "pass": "엘리먼트가 비어있지 않은 value 어트리뷰트를 가지고 있습니다.",
+      "fail": {
+        "noAttr": "엘리먼트에 value 어트리뷰트가 없습니다.",
+        "emptyAttr": "엘리먼트가 빈 value 어트리뷰트를 가지고 있습니다."
+      }
+    },
+    "presentational-role": {
+      "pass": "엘리먼트의 기본 의미론이 role=\"${data.role}\"(으)로 재정의되었습니다.",
+      "fail": {
+        "default": "엘리먼트의 기본 의미론이 role=\"none\"이나 role=\"presentation\"으로 재정의되지 않았습니다.",
+        "globalAria": "엘리먼트가 전역 ARIA 어트리뷰트를 가지고 있기 때문에 엘리먼트의 역할(role)이 표현적이지 않습니다.",
+        "focusable": "엘리먼트가 초점을 얻을 수 있기(focusable) 때문에 엘리먼트의 역할(role)은 표현적이지 않습니다.",
+        "both": "전역 ARIA 어트리뷰트를 가지고 있고 초점을 얻을 수 있기(focusable) 때문에 엘리먼트의 역할(role)은 표현적이지 않습니다."
+      }
+    },
+    "role-none": {
+      "pass": "엘리먼트의 기본 의미론이 role=\"none\"으로 재정의되었습니다.",
+      "fail": "엘리먼트의 기본 의미론이 role=\"none\"으로 재정의되지 않았습니다."
+    },
+    "role-presentation": {
+      "pass": "엘리먼트의 기본 의미론이 role=\"presentation\"으로 재정의되었습니다.",
+      "fail": "엘리먼트의 기본 의미론이 role=\"presentation\"으로 재정의되지 않았습니다."
+    },
+    "svg-non-empty-title": {
+      "pass": "엘리먼트가 title인 하위 항목을 가지고 있습니다.",
+      "fail": {
+        "noTitle": "엘리먼트에 title인 하위 항목이 없습니다.",
+        "emptyTitle": "엘리먼트 하위 title이 비어있습니다."
+      },
+      "incomplete": "엘리먼트가 title인 하위 항목을 가지고 있는지 확인할 수 없습니다."
+    },
+    "caption-faked": {
+      "pass": "테이블의 첫 번째 행이 캡션으로 사용되지 않았습니다.",
+      "fail": "테이블의 첫 번째 자식은 테이블 셀 대신 caption이어야 합니다."
+    },
+    "html5-scope": {
+      "pass": "scope 어트리뷰트가 테이블 헤더 엘리먼트(<th>)에만 사용되었습니다.",
+      "fail": "HTML 5에서, scope 어트리뷰트는 테이블 헤더 엘리먼트(<th>)에만 사용 될 수 있습니다."
+    },
+    "same-caption-summary": {
+      "pass": "summary 어트리뷰트의 내용과 <caption>이 중복되지 않습니다.",
+      "fail": "summary 어트리뷰트의 내용과 <caption> 엘리먼트가 동일합니다."
+    },
+    "scope-value": {
+      "pass": "scope 어트리뷰트가 올바르게 사용되었습니다.",
+      "fail": "어트리뷰트의 값은 오직 'row'나 'col'만 될 수 있습니다."
+    },
+    "td-has-header": {
+      "pass": "모든 비어있지 않은 데이터 셀이 테이블 헤더를 가지고 있습니다.",
+      "fail": "일부 비어있지 않은 데이터 셀이 테이블 헤더를 가지고 있지 않습니다."
+    },
+    "td-headers-attr": {
+      "pass": "headers 어트리뷰트는 오직 테이블의 다른 셀을 참조하는데에만 사용되고 있습니다.",
+      "incomplete": "headers 어트리뷰트가 비어있습니다.",
+      "fail": "headers 어트리뷰트가 오직 테이블의 다른 셀을 참조하는데에만 사용되지 않고 있습니다."
+    },
+    "th-has-data-cells": {
+      "pass": "모든 테이블 헤더 셀이 데이터 셀을 참조하고 있습니다.",
+      "fail": "모든 테이블 헤더 셀이 데이터 셀을 참조하고 있지 않습니다.",
+      "incomplete": "테이블 데이터 셀이 누락되었거나 비어있습니다."
+    },
+    "hidden-content": {
+      "pass": "페이지의 모든 콘텐츠가 분석 되었습니다.",
+      "fail": "이 페이지의 콘텐츠를 분석하는데 문제가 발생했습니다.",
+      "incomplete": "페이지에 분석될 수 없는 숨겨진 콘텐츠가 있습니다. 이 콘텐츠를 분석하려면 콘텐츠의 노출을 동작시킬 필요가 있습니다."
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "다음 중 하나를 해결하세요:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "다음 사항을 모두 해결하세요:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "axe가 원인을 제시할 수 없습니다. 엘리먼트 검사기를 열어 볼 시간입니다!"
+}

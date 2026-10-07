@@ -1,0 +1,69 @@
+.sk-circle {
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+
+.sk-circle > div {
+  background-color: initial;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sk-circle > div::before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  height: 20%;
+  background-color: currentColor;
+  border-radius: 100%;
+
+  -webkit-animation: sk-bouncedelay 1.2s infinite ease-in-out;
+  animation: sk-bouncedelay 1.2s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.sk-circle > div:nth-child(2)  { -webkit-transform: rotate(30deg);  transform: rotate(30deg)  }
+.sk-circle > div:nth-child(3)  { -webkit-transform: rotate(60deg);  transform: rotate(60deg)  }
+.sk-circle > div:nth-child(4)  { -webkit-transform: rotate(90deg);  transform: rotate(90deg)  }
+.sk-circle > div:nth-child(5)  { -webkit-transform: rotate(120deg); transform: rotate(120deg) }
+.sk-circle > div:nth-child(6)  { -webkit-transform: rotate(150deg); transform: rotate(150deg) }
+.sk-circle > div:nth-child(7)  { -webkit-transform: rotate(180deg); transform: rotate(180deg) }
+.sk-circle > div:nth-child(8)  { -webkit-transform: rotate(210deg); transform: rotate(210deg) }
+.sk-circle > div:nth-child(9)  { -webkit-transform: rotate(240deg); transform: rotate(240deg) }
+.sk-circle > div:nth-child(10) { -webkit-transform: rotate(270deg); transform: rotate(270deg) }
+.sk-circle > div:nth-child(11) { -webkit-transform: rotate(300deg); transform: rotate(300deg) }
+.sk-circle > div:nth-child(12) { -webkit-transform: rotate(330deg); transform: rotate(330deg) }
+
+.sk-circle > div:nth-child(2)::before  { -webkit-animation-delay: -1.1s; animation-delay: -1.1s }
+.sk-circle > div:nth-child(3)::before  { -webkit-animation-delay: -1.0s; animation-delay: -1.0s }
+.sk-circle > div:nth-child(4)::before  { -webkit-animation-delay: -0.9s; animation-delay: -0.9s }
+.sk-circle > div:nth-child(5)::before  { -webkit-animation-delay: -0.8s; animation-delay: -0.8s }
+.sk-circle > div:nth-child(6)::before  { -webkit-animation-delay: -0.7s; animation-delay: -0.7s }
+.sk-circle > div:nth-child(7)::before  { -webkit-animation-delay: -0.6s; animation-delay: -0.6s }
+.sk-circle > div:nth-child(8)::before  { -webkit-animation-delay: -0.5s; animation-delay: -0.5s }
+.sk-circle > div:nth-child(9)::before  { -webkit-animation-delay: -0.4s; animation-delay: -0.4s }
+.sk-circle > div:nth-child(10)::before { -webkit-animation-delay: -0.3s; animation-delay: -0.3s }
+.sk-circle > div:nth-child(11)::before { -webkit-animation-delay: -0.2s; animation-delay: -0.2s }
+.sk-circle > div:nth-child(12)::before { -webkit-animation-delay: -0.1s; animation-delay: -0.1s }
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0.0);
+    transform: scale(0.0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}

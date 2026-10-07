@@ -1,0 +1,40 @@
+{
+  "name": "@rolldown/binding-linux-x64-gnu",
+  "version": "1.0.0-rc.17",
+  "cpu": [
+    "x64"
+  ],
+  "main": "rolldown-binding.linux-x64-gnu.node",
+  "files": [
+    "rolldown-binding.linux-x64-gnu.node"
+  ],
+  "description": "Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API.",
+  "keywords": [
+    "bundler",
+    "esbuild",
+    "parcel",
+    "rolldown",
+    "rollup",
+    "webpack"
+  ],
+  "homepage": "https://rolldown.rs/",
+  "license": "MIT",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolldown/rolldown.git",
+    "directory": "packages/rolldown"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "os": [
+    "linux"
+  ],
+  "libc": [
+    "glibc"
+  ]
+}

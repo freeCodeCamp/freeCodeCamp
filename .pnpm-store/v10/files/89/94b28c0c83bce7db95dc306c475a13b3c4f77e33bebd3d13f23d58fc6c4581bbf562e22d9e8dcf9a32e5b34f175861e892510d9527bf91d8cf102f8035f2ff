@@ -1,0 +1,47 @@
+{
+  "name": "algoliasearch",
+  "version": "4.27.0",
+  "private": false,
+  "description": "A fully-featured and blazing-fast JavaScript API client to interact with Algolia API.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-javascript.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "jsdelivr": "./dist/algoliasearch.umd.js",
+  "unpkg": "./dist/algoliasearch.umd.js",
+  "browser": {
+    "./index.js": "./dist/algoliasearch.umd.js",
+    "./lite.js": "./dist/algoliasearch-lite.umd.js"
+  },
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts",
+    "lite.js",
+    "lite.d.ts"
+  ],
+  "scripts": {
+    "test:exports": "node --experimental-modules test/module/is-es-module.mjs && node test/module/is-cjs-module.cjs"
+  },
+  "dependencies": {
+    "@algolia/cache-browser-local-storage": "4.27.0",
+    "@algolia/cache-common": "4.27.0",
+    "@algolia/cache-in-memory": "4.27.0",
+    "@algolia/client-account": "4.27.0",
+    "@algolia/client-analytics": "4.27.0",
+    "@algolia/client-common": "4.27.0",
+    "@algolia/client-personalization": "4.27.0",
+    "@algolia/client-search": "4.27.0",
+    "@algolia/logger-common": "4.27.0",
+    "@algolia/logger-console": "4.27.0",
+    "@algolia/recommend": "4.27.0",
+    "@algolia/requester-browser-xhr": "4.27.0",
+    "@algolia/requester-common": "4.27.0",
+    "@algolia/requester-node-http": "4.27.0",
+    "@algolia/transporter": "4.27.0"
+  }
+}

@@ -1,0 +1,69 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-custom-toggle {
+	margin-left: 2px;
+	float: left;
+	cursor: pointer;
+	overflow: hidden;
+	width: 20px;
+	height: 20px;
+	border-radius: 3px;
+	border: 1px solid transparent;
+	padding: 1px;
+	box-sizing:	border-box;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.monaco-custom-toggle:hover {
+	background-color: var(--vscode-inputOption-hoverBackground);
+}
+
+.hc-black .monaco-custom-toggle:hover,
+.hc-light .monaco-custom-toggle:hover {
+	border: 1px dashed var(--vscode-focusBorder);
+}
+
+.hc-black .monaco-custom-toggle,
+.hc-light .monaco-custom-toggle {
+	background: none;
+}
+
+.hc-black .monaco-custom-toggle:hover,
+.hc-light .monaco-custom-toggle:hover {
+	background: none;
+}
+
+.monaco-custom-toggle.monaco-checkbox {
+	height: 18px;
+	width: 18px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	margin-right: 9px;
+	margin-left: 0px;
+	padding: 0px;
+	opacity: 1;
+	background-size: 16px !important;
+}
+
+.monaco-action-bar .checkbox-action-item {
+	display: flex;
+	align-items: center;
+	border-radius: 2px;
+	padding-right: 2px;
+}
+
+.monaco-action-bar .checkbox-action-item:hover {
+	background-color: var(--vscode-toolbar-hoverBackground);
+}
+
+.monaco-action-bar .checkbox-action-item > .monaco-custom-toggle.monaco-checkbox {
+	margin-right: 4px;
+}
+
+.monaco-action-bar .checkbox-action-item > .checkbox-label {
+	font-size: 12px;
+}

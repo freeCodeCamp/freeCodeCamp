@@ -1,0 +1,93 @@
+{
+  "name": "mdast-util-gfm",
+  "version": "0.1.2",
+  "description": "mdast extension to parse and serialize GFM (GitHub Flavored Markdown)",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "util",
+    "utility",
+    "markdown",
+    "markup",
+    "table",
+    "strikethrough",
+    "tasklist",
+    "autolink",
+    "tagfilter",
+    "github",
+    "gfm",
+    "gfm"
+  ],
+  "repository": "syntax-tree/mdast-util-gfm",
+  "bugs": "https://github.com/syntax-tree/mdast-util-gfm/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "from-markdown.js",
+    "index.js",
+    "to-markdown.js"
+  ],
+  "dependencies": {
+    "mdast-util-gfm-autolink-literal": "^0.1.0",
+    "mdast-util-gfm-strikethrough": "^0.2.0",
+    "mdast-util-gfm-table": "^0.1.0",
+    "mdast-util-gfm-task-list-item": "^0.1.0",
+    "mdast-util-to-markdown": "^0.6.1"
+  },
+  "devDependencies": {
+    "github-slugger": "^1.0.0",
+    "hast-util-to-html": "^7.0.0",
+    "mdast-util-from-markdown": "^0.8.0",
+    "mdast-util-to-hast": "^10.0.0",
+    "micromark-extension-gfm": "^0.3.0",
+    "node-fetch": "^2.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "xo": "^0.37.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "crawl": "node script/crawl-tests",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test": "npm run format && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "guard-for-in": "off",
+      "unicorn/prefer-optional-catch-binding": "off"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"extends": "@ljharb/tsconfig",
+	"exclude": [
+		"coverage",
+	],
+	"compilerOptions": {
+		"typeRoots": [
+			"types",
+		],
+	},
+}

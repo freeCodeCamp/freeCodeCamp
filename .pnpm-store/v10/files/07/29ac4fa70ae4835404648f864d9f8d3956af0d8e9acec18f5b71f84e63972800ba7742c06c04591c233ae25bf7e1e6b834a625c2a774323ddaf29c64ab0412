@@ -1,0 +1,65 @@
+{
+  "name": "safe-stable-stringify",
+  "version": "2.4.3",
+  "description": "Deterministic and safely JSON.stringify to quickly serialize JavaScript objects",
+  "exports": {
+    "require": "./index.js",
+    "import": "./esm/wrapper.js"
+  },
+  "keywords": [
+    "stable",
+    "stringify",
+    "JSON",
+    "JSON.stringify",
+    "safe",
+    "serialize",
+    "deterministic",
+    "circular",
+    "object",
+    "predicable",
+    "repeatable",
+    "fast",
+    "bigint"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tap test.js",
+    "tap": "tap test.js",
+    "tap:only": "tap test.js --watch --only",
+    "benchmark": "node benchmark.js",
+    "compare": "node compare.js",
+    "lint": "standard --fix",
+    "tsc": "tsc --project tsconfig.json"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "author": "Ruben Bridgewater",
+  "license": "MIT",
+  "typings": "index.d.ts",
+  "devDependencies": {
+    "@types/json-stable-stringify": "^1.0.34",
+    "@types/node": "^18.11.18",
+    "benchmark": "^2.1.4",
+    "clone": "^2.1.2",
+    "fast-json-stable-stringify": "^2.1.0",
+    "fast-safe-stringify": "^2.1.1",
+    "fast-stable-stringify": "^1.0.0",
+    "faster-stable-stringify": "^1.0.0",
+    "fastest-stable-stringify": "^2.0.2",
+    "json-stable-stringify": "^1.0.1",
+    "json-stringify-deterministic": "^1.0.7",
+    "json-stringify-safe": "^5.0.1",
+    "standard": "^16.0.4",
+    "tap": "^15.0.9",
+    "typescript": "^4.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BridgeAR/safe-stable-stringify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BridgeAR/safe-stable-stringify/issues"
+  },
+  "homepage": "https://github.com/BridgeAR/safe-stable-stringify#readme"
+}

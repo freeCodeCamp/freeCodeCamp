@@ -1,0 +1,421 @@
+import type { ComponentProps, SendEventForHits } from '../../types';
+import type { SearchParameters } from 'algoliasearch-helper';
+export type ChatStatus = 'ready' | 'submitted' | 'streaming' | 'error';
+export type ChatRole = 'data' | 'user' | 'assistant' | 'system';
+/**
+ * Provider metadata type for UI message parts.
+ */
+export type ProviderMetadata = Record<string, Record<string, unknown>>;
+/**
+ * A record of data types for data parts in UI messages.
+ */
+export type UIDataTypes = Record<string, unknown>;
+/**
+ * Tool input/output type definition.
+ */
+export type UITool = {
+    input: unknown;
+    output: unknown | undefined;
+};
+/**
+ * A record of UI tools.
+ */
+export type UITools = Record<string, UITool>;
+/**
+ * Helper type to get values of an object.
+ */
+type ValueOf<T> = T[keyof T];
+/**
+ * Deep partial type.
+ */
+type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
+/**
+ * A text part of a message.
+ */
+export type TextUIPart = {
+    type: 'text';
+    text: string;
+    state?: 'streaming' | 'done';
+    providerMetadata?: ProviderMetadata;
+};
+/**
+ * A reasoning part of a message.
+ */
+export type ReasoningUIPart = {
+    type: 'reasoning';
+    text: string;
+    state?: 'streaming' | 'done';
+    providerMetadata?: ProviderMetadata;
+};
+/**
+ * A source URL part of a message.
+ */
+export type SourceUrlUIPart = {
+    type: 'source-url';
+    sourceId: string;
+    url: string;
+    title?: string;
+    providerMetadata?: ProviderMetadata;
+};
+/**
+ * A document source part of a message.
+ */
+export type SourceDocumentUIPart = {
+    type: 'source-document';
+    sourceId: string;
+    mediaType: string;
+    title: string;
+    filename?: string;
+    providerMetadata?: ProviderMetadata;
+};
+/**
+ * A file part of a message.
+ */
+export type FileUIPart = {
+    type: 'file';
+    mediaType: string;
+    filename?: string;
+    url: string;
+    providerMetadata?: ProviderMetadata;
+};
+/**
+ * A step boundary part of a message.
+ */
+export type StepStartUIPart = {
+    type: 'step-start';
+};
+/**
+ * A data part of a message.
+ */
+export type DataUIPart<TDataTypes extends UIDataTypes> = ValueOf<{
+    [NAME in keyof TDataTypes & string]: {
+        type: `data-${NAME}`;
+        id?: string;
+        data: TDataTypes[NAME];
+    };
+}>;
+/**
+ * A tool invocation part of a message.
+ */
+export type ToolUIPart<TTools extends UITools = UITools> = ValueOf<{
+    [NAME in keyof TTools & string]: {
+        type: `tool-${NAME}`;
+        toolCallId: string;
+    } & ({
+        state: 'input-streaming';
+        input: DeepPartial<TTools[NAME]['input']> | undefined;
+        providerExecuted?: boolean;
+        output?: never;
+        errorText?: never;
+    } | {
+        state: 'input-available';
+        input: TTools[NAME]['input'];
+        providerExecuted?: boolean;
+        output?: never;
+        errorText?: never;
+        callProviderMetadata?: ProviderMetadata;
+    } | {
+        state: 'output-available';
+        input: TTools[NAME]['input'];
+        output: TTools[NAME]['output'];
+        errorText?: never;
+        providerExecuted?: boolean;
+        callProviderMetadata?: ProviderMetadata;
+        preliminary?: boolean;
+    } | {
+        state: 'output-error';
+        input: TTools[NAME]['input'] | undefined;
+        rawInput?: unknown;
+        output?: never;
+        errorText: string;
+        providerExecuted?: boolean;
+        callProviderMetadata?: ProviderMetadata;
+    });
+}>;
+/**
+ * A dynamic tool invocation part of a message.
+ */
+export type DynamicToolUIPart = {
+    type: 'dynamic-tool';
+    toolName: string;
+    toolCallId: string;
+} & ({
+    state: 'input-streaming';
+    input: unknown | undefined;
+    output?: never;
+    errorText?: never;
+} | {
+    state: 'input-available';
+    input: unknown;
+    output?: never;
+    errorText?: never;
+    callProviderMetadata?: ProviderMetadata;
+} | {
+    state: 'output-available';
+    input: unknown;
+    output: unknown;
+    errorText?: never;
+    callProviderMetadata?: ProviderMetadata;
+    preliminary?: boolean;
+} | {
+    state: 'output-error';
+    input: unknown;
+    output?: never;
+    errorText: string;
+    callProviderMetadata?: ProviderMetadata;
+});
+/**
+ * All possible message part types.
+ */
+export type UIMessagePart<TDataTypes extends UIDataTypes = UIDataTypes, TTools extends UITools = UITools> = TextUIPart | ReasoningUIPart | ToolUIPart<TTools> | DynamicToolUIPart | SourceUrlUIPart | SourceDocumentUIPart | FileUIPart | DataUIPart<TDataTypes> | StepStartUIPart;
+/**
+ * AI SDK UI Messages. They are used in the client and to communicate between the frontend and the API routes.
+ */
+export interface UIMessage<TMetadata = unknown, TDataParts extends UIDataTypes = UIDataTypes, TTools extends UITools = UITools> {
+    /** A unique identifier for the message. */
+    id: string;
+    /** The role of the message. */
+    role: 'system' | 'user' | 'assistant';
+    /** The metadata of the message. */
+    metadata?: TMetadata;
+    /** The parts of the message. Use this for rendering the message in the UI. */
+    parts: Array<UIMessagePart<TDataParts, TTools>>;
+}
+export type ChatMessageBase = UIMessage;
+export type ChatToolMessage = Extract<ChatMessageBase['parts'][number], {
+    type: `tool-${string}`;
+}>;
+export type ChatToolType = ChatToolMessage['type'];
+/**
+ * Infer metadata type from UIMessage.
+ */
+export type InferUIMessageMetadata<T extends UIMessage> = T extends UIMessage<infer TMetadata> ? TMetadata : unknown;
+/**
+ * Infer data types from UIMessage.
+ */
+export type InferUIMessageData<T extends UIMessage> = T extends UIMessage<unknown, infer TDataTypes> ? TDataTypes : UIDataTypes;
+/**
+ * Infer tools from UIMessage.
+ */
+export type InferUIMessageTools<T extends UIMessage> = T extends UIMessage<unknown, UIDataTypes, infer TTools> ? TTools : UITools;
+/**
+ * Chat state interface.
+ */
+export interface ChatState<TUIMessage extends UIMessage> {
+    status: ChatStatus;
+    error: Error | undefined;
+    messages: TUIMessage[];
+    pushMessage: (message: TUIMessage) => void;
+    popMessage: () => void;
+    replaceMessage: (index: number, message: TUIMessage) => void;
+    snapshot: <T>(thing: T) => T;
+}
+/**
+ * ID generator function type.
+ */
+export type IdGenerator = () => string;
+/**
+ * Callback function to be called when an error is encountered.
+ */
+export type ChatOnErrorCallback = (error: Error) => void;
+/**
+ * Infer tool call type from UIMessage.
+ */
+export type InferUIMessageToolCall<TUIMessage extends UIMessage> = ValueOf<{
+    [NAME in keyof InferUIMessageTools<TUIMessage>]: {
+        toolName: NAME & string;
+        toolCallId: string;
+        input: InferUIMessageTools<TUIMessage>[NAME] extends {
+            input: infer INPUT;
+        } ? INPUT : never;
+        dynamic?: false;
+    };
+}> | {
+    toolName: string;
+    toolCallId: string;
+    input: unknown;
+    dynamic: true;
+};
+/**
+ * Optional callback function that is invoked when a tool call is received.
+ */
+export type ChatOnToolCallCallback<TUIMessage extends UIMessage = UIMessage> = (options: {
+    toolCall: InferUIMessageToolCall<TUIMessage>;
+}) => void | PromiseLike<void>;
+/**
+ * Function that is called when the assistant response has finished streaming.
+ */
+export type ChatOnFinishCallback<TUIMessage extends UIMessage> = (options: {
+    message: TUIMessage;
+    messages: TUIMessage[];
+    isAbort: boolean;
+    isDisconnect: boolean;
+    isError: boolean;
+}) => void;
+/**
+ * Optional callback function that is called when a data part is received.
+ */
+export type ChatOnDataCallback<TUIMessage extends UIMessage> = (dataPart: DataUIPart<InferUIMessageData<TUIMessage>>) => void;
+/**
+ * Transport interface for sending and receiving chat messages.
+ */
+export interface ChatTransport<TUIMessage extends UIMessage> {
+    sendMessages: (options: {
+        chatId: string;
+        messages: TUIMessage[];
+        abortSignal: AbortSignal;
+        requestMetadata?: unknown;
+        trigger: 'submit-message' | 'regenerate-message';
+        messageId?: string;
+    }) => Promise<ReadableStream<unknown>>;
+    reconnectToStream: (options: {
+        chatId: string;
+    }) => Promise<ReadableStream<unknown> | null>;
+}
+/**
+ * Chat initialization options.
+ */
+export interface ChatInit<TUIMessage extends UIMessage> {
+    /** A unique identifier for the chat. If not provided, a random one will be generated. */
+    id?: string;
+    messages?: TUIMessage[];
+    /** A way to provide a function for generating message and chat IDs. */
+    generateId?: IdGenerator;
+    transport?: ChatTransport<TUIMessage>;
+    /** Callback function to be called when an error is encountered. */
+    onError?: ChatOnErrorCallback;
+    /** Optional callback function that is invoked when a tool call is received. */
+    onToolCall?: ChatOnToolCallCallback<TUIMessage>;
+    /** Function that is called when the assistant response has finished streaming. */
+    onFinish?: ChatOnFinishCallback<TUIMessage>;
+    /** Optional callback function that is called when a data part is received. */
+    onData?: ChatOnDataCallback<TUIMessage>;
+    /**
+     * When provided, this function will be called when the stream is finished or a tool call is added
+     * to determine if the current messages should be resubmitted.
+     */
+    sendAutomaticallyWhen?: (options: {
+        messages: TUIMessage[];
+    }) => boolean | PromiseLike<boolean>;
+}
+/**
+ * Abstract base class for chat implementations.
+ */
+export interface AbstractChat<TUIMessage extends UIMessage> {
+    readonly id: string;
+    readonly generateId: IdGenerator;
+    status: ChatStatus;
+    error: Error | undefined;
+    messages: TUIMessage[];
+    lastMessage: TUIMessage | undefined;
+    sendMessage: (message?: (Omit<TUIMessage, 'id' | 'role'> & {
+        id?: TUIMessage['id'];
+        role?: TUIMessage['role'];
+        text?: never;
+        files?: never;
+        messageId?: string;
+    }) | {
+        text: string;
+        files?: FileList | FileUIPart[];
+        metadata?: InferUIMessageMetadata<TUIMessage>;
+        parts?: never;
+        messageId?: string;
+    } | {
+        files: FileList | FileUIPart[];
+        metadata?: InferUIMessageMetadata<TUIMessage>;
+        parts?: never;
+        messageId?: string;
+    }, options?: {
+        headers?: Record<string, string> | Headers;
+        body?: object;
+    }) => Promise<void>;
+    regenerate: (options?: {
+        messageId?: string;
+    } & {
+        headers?: Record<string, string> | Headers;
+        body?: object;
+    }) => Promise<void>;
+    resumeStream: (options?: {
+        headers?: Record<string, string> | Headers;
+        body?: object;
+    }) => Promise<void>;
+    clearError: () => void;
+    addToolResult: <TTool extends keyof InferUIMessageTools<TUIMessage>>(params: {
+        tool: TTool;
+        toolCallId: string;
+        output: InferUIMessageTools<TUIMessage>[TTool]['output'];
+    }) => Promise<void>;
+    stop: () => Promise<void>;
+}
+export type AddToolResult = AbstractChat<UIMessage>['addToolResult'];
+export type AddToolResultWithOutput = (params: Pick<Parameters<AddToolResult>[0], 'output'>) => ReturnType<AddToolResult>;
+export type SearchToolInput = {
+    query: string;
+    number_of_results?: number;
+    facet_filters?: string[][];
+};
+export type ApplyFiltersParams = {
+    query?: string;
+    facetFilters?: string[][];
+};
+export type ChatLayoutOwnProps<TMessage extends ChatMessageBase = ChatMessageBase> = {
+    open: boolean;
+    maximized: boolean;
+    headerComponent: JSX.Element;
+    messagesComponent: JSX.Element;
+    promptComponent: JSX.Element;
+    toggleButtonComponent: JSX.Element;
+    classNames?: {
+        root?: string | string[];
+        container?: string | string[];
+    };
+    isClearing?: boolean;
+    clearMessages?: () => void;
+    onClearTransitionEnd?: () => void;
+    suggestions?: string[];
+    tools: ClientSideTools;
+} & Pick<ChatState<TMessage>, 'messages'> & Partial<Pick<ChatState<TMessage>, 'status'>> & Pick<AbstractChat<TMessage>, 'sendMessage' | 'regenerate' | 'stop' | 'error'> & ComponentProps<'div'>;
+export type ClientSideToolComponentProps = {
+    message: ChatToolMessage;
+    indexUiState: object;
+    setIndexUiState: (state: object) => void;
+    onClose: () => void;
+    addToolResult: AddToolResultWithOutput;
+    applyFilters: (params: ApplyFiltersParams) => SearchParameters;
+    sendEvent: SendEventForHits;
+};
+export type ClientSideToolComponent = (props: ClientSideToolComponentProps) => JSX.Element;
+export type ClientSideTool = {
+    layoutComponent?: ClientSideToolComponent;
+    streamInput?: boolean;
+    addToolResult: AddToolResult;
+    sendEvent?: SendEventForHits;
+    onToolCall?: (params: Parameters<NonNullable<ChatInit<UIMessage>['onToolCall']>>[0]['toolCall'] & {
+        addToolResult: AddToolResultWithOutput;
+    }) => void;
+    applyFilters: (params: ApplyFiltersParams) => SearchParameters;
+};
+export type ClientSideTools = Record<string, ClientSideTool>;
+export type UserClientSideTool = Omit<ClientSideTool, 'addToolResult' | 'applyFilters' | 'sendEvent'>;
+export type UserClientSideTools = Record<string, UserClientSideTool>;
+export type ChatEmptyProps = {
+    /**
+     * Function to send a message to the chat
+     */
+    sendMessage?: ChatLayoutOwnProps['sendMessage'];
+    /**
+     * Current chat status
+     */
+    status?: ChatStatus;
+    /**
+     * Callback to close the chat
+     */
+    onClose?: () => void;
+    /**
+     * Function to set the prompt input value
+     */
+    setInput?: (input: string) => void;
+};
+export {};

@@ -1,0 +1,31 @@
+name: Playwright Tests
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    timeout-minutes: 60
+
+    steps:
+    - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
+    - uses: actions/setup-node@v6
+      with:
+        check-latest: true
+        node-version: lts/*
+    - name: Install dependencies
+      run: npm i
+    - name: Install Playwright Browsers
+      run: npx playwright@1 install chromium --with-deps
+    - name: Run Playwright tests
+      run: npx playwright@1 test

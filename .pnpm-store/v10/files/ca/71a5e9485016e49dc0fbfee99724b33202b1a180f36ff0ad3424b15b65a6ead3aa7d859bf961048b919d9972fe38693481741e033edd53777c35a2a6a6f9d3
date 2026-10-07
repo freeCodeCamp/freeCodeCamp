@@ -1,0 +1,91 @@
+{
+  "name": "@gatsbyjs/reach-router",
+  "version": "1.3.9",
+  "description": "Next generation Routing for React.",
+  "main": "index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "index.js",
+    "umd",
+    "lib"
+  ],
+  "scripts": {
+    "build": "node build/build.js",
+    "watch": "watch -p \"src/**/*.js\" -c \"yarn build\"",
+    "test": "jest",
+    "clean": "rm -rf lib es umd index.js",
+    "precommit": "pretty-quick --staged",
+    "format": "prettier '**/*.js' --write",
+    "lint": "eslint src"
+  },
+  "jest": {
+    "globals": {
+      "__DEV__": true
+    },
+    "testRegex": ".+\\.test\\.js$",
+    "testURL": "http://localhost"
+  },
+  "peerDependencies": {
+    "react": "15.x || 16.x || 17.x || 18.x",
+    "react-dom": "15.x || 16.x || 17.x || 18.x"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.3.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.18.2",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "gzip-size": "^4.1.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "prettier": "^1.13.4",
+    "pretty-bytes": "^4.0.2",
+    "pretty-quick": "^1.6.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-test-renderer": "16.12",
+    "render-markdown-js": "^1.3.0",
+    "rollup": "^0.56.3",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "watch-cli": "^0.2.2"
+  },
+  "author": "Ryan Florence",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/reach-router.git"
+  },
+  "keywords": [
+    "react",
+    "react router"
+  ],
+  "prettier": {
+    "printWidth": 80
+  },
+  "dependencies": {
+    "invariant": "^2.2.3",
+    "prop-types": "^15.6.1",
+    "react-lifecycles-compat": "^3.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/reach-router/issues"
+  },
+  "homepage": "https://github.com/gatsbyjs/reach-router#readme"
+}

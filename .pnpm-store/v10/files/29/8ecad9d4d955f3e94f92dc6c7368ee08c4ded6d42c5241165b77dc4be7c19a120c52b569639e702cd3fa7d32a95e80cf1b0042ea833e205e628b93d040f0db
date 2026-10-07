@@ -1,0 +1,23 @@
+type CodeNodeArgs = {
+    type: string;
+    value?: string;
+    match?: RegExpExecArray;
+    newline?: string;
+    nodes?: CodeNode[];
+};
+export declare class CodeNode {
+    type: string;
+    value?: string;
+    match: RegExpExecArray | undefined;
+    newline: string;
+    constructor(node: CodeNodeArgs);
+    get protected(): boolean;
+}
+export declare class Block extends CodeNode {
+    nodes: CodeNode[];
+    constructor(node: CodeNodeArgs);
+    push(node: CodeNode): void;
+    get protected(): boolean;
+}
+export {};
+//# sourceMappingURL=node.d.ts.map

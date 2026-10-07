@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TPubSub.js",
+  "module": "../dist/esm/TPubSub.js",
+  "types": "../dist/dts/TPubSub.d.ts"
+}

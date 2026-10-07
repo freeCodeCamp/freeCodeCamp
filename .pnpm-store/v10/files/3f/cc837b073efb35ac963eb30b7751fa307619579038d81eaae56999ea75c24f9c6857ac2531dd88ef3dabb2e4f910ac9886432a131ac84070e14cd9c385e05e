@@ -1,0 +1,50 @@
+{
+  "name": "qified",
+  "version": "0.9.1",
+  "description": "Task and Message Queues with Multiple Providers",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "queue",
+    "task",
+    "message",
+    "provider",
+    "qified"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredwray/qified.git"
+  },
+  "author": "Jared Wray <me@jaredwray.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaredwray/qified/issues"
+  },
+  "homepage": "https://github.com/jaredwray/qified#readme",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "hookified": "^2.1.1"
+  },
+  "scripts": {
+    "lint": "biome check --write --error-on-warnings",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:ci": "biome check --error-on-warnings && vitest run --coverage",
+    "clean": "rimraf ./dist ./coverage ./site/dist",
+    "build": "tsdown src/index.ts --format esm --format cjs --dts",
+    "build:publish": "pnpm build && pnpm publish --access public --no-git-checks"
+  }
+}

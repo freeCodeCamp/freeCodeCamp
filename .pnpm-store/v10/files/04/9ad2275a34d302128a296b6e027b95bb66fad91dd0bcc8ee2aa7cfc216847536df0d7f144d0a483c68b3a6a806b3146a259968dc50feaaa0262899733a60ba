@@ -1,0 +1,156 @@
+{
+  "author": {
+    "email": "gajus@gajus.com",
+    "name": "Gajus Kuizinas",
+    "url": "http://gajus.com"
+  },
+  "dependencies": {
+    "@es-joy/jsdoccomment": "~0.46.0",
+    "are-docs-informative": "^0.0.2",
+    "comment-parser": "1.4.1",
+    "debug": "^4.3.5",
+    "escape-string-regexp": "^4.0.0",
+    "espree": "^10.1.0",
+    "esquery": "^1.6.0",
+    "parse-imports": "^2.1.1",
+    "semver": "^7.6.3",
+    "spdx-expression-parse": "^4.0.0",
+    "synckit": "^0.9.1"
+  },
+  "description": "JSDoc linting rules for ESLint.",
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.9",
+    "@babel/eslint-parser": "^7.24.8",
+    "@babel/node": "^7.24.8",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/plugin-transform-flow-strip-types": "^7.24.7",
+    "@babel/preset-env": "^7.24.8",
+    "@es-joy/escodegen": "^3.5.1",
+    "@es-joy/jsdoc-eslint-parser": "^0.21.1",
+    "@hkdobrev/run-if-changed": "^0.3.1",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/github": "^10.1.0",
+    "@semantic-release/npm": "^12.0.1",
+    "@types/chai": "^4.3.16",
+    "@types/debug": "^4.1.12",
+    "@types/eslint": "^8.56.10",
+    "@types/espree": "^10.1.0",
+    "@types/esquery": "^1.5.4",
+    "@types/estree": "^1.0.5",
+    "@types/json-schema": "^7.0.15",
+    "@types/lodash.defaultsdeep": "^4.6.9",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.11",
+    "@types/semver": "^7.5.8",
+    "@types/spdx-expression-parse": "^3.0.5",
+    "@typescript-eslint/types": "^7.16.1",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-istanbul": "^7.0.0",
+    "babel-plugin-transform-import-meta": "^2.2.1",
+    "c8": "^10.1.2",
+    "camelcase": "^8.0.0",
+    "chai": "^5.1.1",
+    "cross-env": "^7.0.3",
+    "decamelize": "^6.0.0",
+    "eslint": "9.7.0",
+    "eslint-config-canonical": "~43.0.14",
+    "gitdown": "^4.1.1",
+    "glob": "^10.4.2",
+    "globals": "^15.8.0",
+    "husky": "^9.1.1",
+    "jsdoc-type-pratt-parser": "^4.0.0",
+    "json-schema": "^0.4.0",
+    "lint-staged": "^15.2.7",
+    "lodash.defaultsdeep": "^4.6.1",
+    "mocha": "^10.6.0",
+    "open-editor": "^5.0.0",
+    "replace": "^1.2.2",
+    "rimraf": "^5.0.7",
+    "semantic-release": "^24.0.0",
+    "typescript": "5.5.x",
+    "typescript-eslint": "^8.0.0-alpha.34"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "eslint",
+    "plugin",
+    "jsdoc"
+  ],
+  "license": "BSD-3-Clause",
+  "lint-staged": {
+    ".eslintignore": [
+      "npm run lint-fix",
+      "git add ."
+    ],
+    "*.js": "npm run lint-arg -- --fix"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./src/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./getJsdocProcessorPlugin.js": {
+      "types": "./dist/getJsdocProcessorPlugin.d.ts",
+      "import": "./dist/getJsdocProcessorPlugin.cjs",
+      "require": "./src/getJsdocProcessorPlugin.js"
+    }
+  },
+  "name": "eslint-plugin-jsdoc",
+  "mocha": {
+    "reporter": "dot",
+    "recursive": true,
+    "timeout": 12000
+  },
+  "c8": {
+    "branches": 100,
+    "check-coverage": true,
+    "exclude": [
+      "src/rules/checkExamples.js"
+    ],
+    "functions": 100,
+    "include": [
+      "src/"
+    ],
+    "instrument": false,
+    "lines": 100,
+    "reporter": "text-summary",
+    "sourceMap": false,
+    "statements": 100
+  },
+  "peerDependencies": {
+    "eslint": "^7.0.0 || ^8.0.0 || ^9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajus/eslint-plugin-jsdoc"
+  },
+  "run-if-changed": {
+    "package-lock.json": "npm run install-offline"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "tsc-build": "tsc -p tsconfig-prod.json",
+    "build": "rimraf ./dist && cross-env NODE_ENV=production babel ./src --out-file-extension .cjs --out-dir ./dist --copy-files --source-maps --ignore ./src/bin/*.js --no-copy-ignored && replace 'require\\(\"\\.(.*?)\\.[^.]*?\"\\)' 'require(\".$1.cjs\")' 'dist' -r --include=\"*.cjs\" && cp src/import-worker.mjs dist/import-worker.mjs && pnpm tsc-build",
+    "check-docs": "babel-node ./src/bin/generateDocs.js --check",
+    "create-docs": "npm run create-options && babel-node ./src/bin/generateDocs.js",
+    "create-rule": "babel-node ./src/bin/generateRule.js",
+    "create-options": "node ./src/bin/generateOptions.mjs",
+    "install-offline": "pnpm install --prefer-offline --no-audit",
+    "lint": "npm run lint-arg -- .",
+    "lint-arg": "eslint",
+    "lint-fix": "npm run lint-arg -- --fix .",
+    "prepare": "husky",
+    "test-no-cov": "cross-env BABEL_ENV=test mocha",
+    "test": "c8 npm run test-no-cov",
+    "test-cov": "cross-env TIMING=1 c8 --reporter text npm run test-no-cov",
+    "test-index": "npm run test-no-cov -- test/rules/index.js"
+  },
+  "version": "48.11.0"
+}

@@ -1,0 +1,45 @@
+{
+	"name": "figures",
+	"version": "3.2.0",
+	"description": "Unicode symbols with Windows CMD fallbacks",
+	"license": "MIT",
+	"repository": "sindresorhus/figures",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd",
+		"make": "./makefile.js"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"unicode",
+		"cli",
+		"cmd",
+		"command-line",
+		"characters",
+		"symbol",
+		"symbols",
+		"figure",
+		"figures",
+		"fallback"
+	],
+	"dependencies": {
+		"escape-string-regexp": "^1.0.5"
+	},
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"markdown-table": "^1.1.2",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

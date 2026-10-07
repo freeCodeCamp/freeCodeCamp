@@ -1,0 +1,89 @@
+{
+  "name": "@parcel/source-map",
+  "version": "2.1.1",
+  "main": "./dist/node.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/source-map.git"
+  },
+  "scripts": {
+    "test": "mocha ./test/*.test.js",
+    "test:node": "cross-env BACKEND=node yarn test",
+    "test:wasm": "cross-env BACKEND=wasm yarn test",
+    "benchmark": "node ./bench/run",
+    "benchmark:node": "cross-env BACKEND=node yarn benchmark",
+    "benchmark:wasm": "cross-env BACKEND=wasm yarn benchmark",
+    "transpile": "babel ./src/*.js --out-dir ./dist && flow-copy-source -v src dist",
+    "build:clean": "cd ./parcel_sourcemap_node && rm -rf artifacts && mkdir artifacts",
+    "build:node": "yarn build:clean && node parcel_sourcemap_node/build.js",
+    "build:node-release": "yarn build:clean && node parcel_sourcemap_node/build.js --release",
+    "build:wasm-node": "wasm-pack build parcel_sourcemap_wasm --target nodejs --no-typescript --dev --out-dir dist-node",
+    "build:wasm-node-release": "wasm-pack build parcel_sourcemap_wasm --target nodejs --no-typescript --release --out-dir dist-node",
+    "build:wasm-web": "wasm-pack build parcel_sourcemap_wasm --no-typescript --target web --dev --out-dir dist-web",
+    "build:wasm-web-release": "wasm-pack build parcel_sourcemap_wasm --no-typescript --target web --release --out-dir dist-web",
+    "rebuild": "shx rm -rf build && yarn build:node",
+    "rebuild-all": "yarn transpile && yarn rebuild",
+    "prepublish": "npm run transpile",
+    "typecheck": "flow",
+    "format": "prettier --write \"./**/*.{js,md,mdx}\"",
+    "clean": "shx rm -rf dist build",
+    "tag-release": "node ./tag-release"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "files": [
+    "dist",
+    "index.d.ts",
+    "package.json",
+    "parcel_sourcemap_node/**/*",
+    "parcel_sourcemap_wasm/dist-node/**/*",
+    "parcel_sourcemap_wasm/dist-web/**/*",
+    "README.md",
+    "!.gitignore"
+  ],
+  "binary": {
+    "napi_versions": [
+      4
+    ]
+  },
+  "engines": {
+    "node": "^12.18.3 || >=14"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-flow": "^7.13.13",
+    "@babel/register": "^7.13.16",
+    "@napi-rs/cli": "^1.0.4",
+    "cross-env": "^7.0.3",
+    "flow-bin": "^0.151.0",
+    "flow-copy-source": "^2.0.9",
+    "fs-extra": "^10.0.0",
+    "globby": "^11.0.3",
+    "husky": "6.0.0",
+    "lint-staged": "^11.0.0",
+    "mocha": "^8.4.0",
+    "prettier": "^2.3.0",
+    "shx": "^0.3.3",
+    "source-map": "^0.7.3",
+    "tiny-benchy": "^2.1.0"
+  },
+  "dependencies": {
+    "detect-libc": "^1.0.3"
+  },
+  "browser": {
+    "./dist/node.js": "./dist/wasm.js",
+    "./dist/wasm-bindings.js": "./dist/wasm-bindings-web.js"
+  }
+}

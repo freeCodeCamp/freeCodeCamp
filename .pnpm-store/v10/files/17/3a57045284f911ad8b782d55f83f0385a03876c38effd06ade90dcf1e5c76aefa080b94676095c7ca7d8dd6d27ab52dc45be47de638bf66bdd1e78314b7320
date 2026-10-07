@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+/.idea
+/.vscode
+npm-debug.log
+/wallaby.js
+/node_modules
+/.travis.yml
+/.gitignore
+/.circle.yml
+/.circleci
+/.appveyor.yml

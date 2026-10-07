@@ -1,0 +1,54 @@
+{
+  "name": "graphemer",
+  "version": "1.4.0",
+  "description": "A JavaScript library that breaks strings into their individual user-perceived characters (including emojis!)",
+  "homepage": "https://github.com/flmnt/graphemer",
+  "author": "Matt Davies <matt@filament.so> (https://github.com/mattpauldavies)",
+  "contributors": [
+    "Orlin Georgiev (https://github.com/orling)",
+    "Huáng Jùnliàng (https://github.com/JLHwung)"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "utf-8",
+    "strings",
+    "emoji",
+    "split"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "tsc --project tsconfig.json",
+    "pretest": "npm run build",
+    "test": "ts-node node_modules/tape/bin/tape tests/**.ts",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flmnt/graphemer.git"
+  },
+  "bugs": "https://github.com/flmnt/graphemer/issues",
+  "devDependencies": {
+    "@types/tape": "^4.13.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1",
+    "tape": "^4.6.3",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,md,json}": "prettier --write"
+  }
+}

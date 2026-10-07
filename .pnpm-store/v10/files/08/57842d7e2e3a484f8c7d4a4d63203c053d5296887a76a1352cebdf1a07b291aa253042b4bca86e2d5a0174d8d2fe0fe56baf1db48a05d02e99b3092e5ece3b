@@ -1,0 +1,38 @@
+{
+  "name": "min-indent",
+  "version": "1.0.1",
+  "description": "Get the shortest leading whitespace from lines in a string",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "https://github.com/thejameskyle/min-indent",
+  "author": {
+    "name": "James Kyle",
+    "email": "me@thejameskyle.com",
+    "url": "thejameskyle.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "indent",
+    "indentation",
+    "normalize",
+    "whitespace",
+    "space",
+    "tab",
+    "string",
+    "str",
+    "min",
+    "minimum"
+  ],
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  }
+}

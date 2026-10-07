@@ -1,0 +1,44 @@
+{
+  "name": "perfect-debounce",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "unjs/perfect-debounce",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest dev",
+    "lint": "eslint --ext .ts,.js,.mjs,.cjs . && prettier --check src test",
+    "lint:fix": "eslint --ext .ts,.js,.mjs,.cjs . --fix && prettier -w src test",
+    "release": "pnpm test && pnpm build && changelogen --release --push && npm publish",
+    "test": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "@vitest/coverage-c8": "^0.31.0",
+    "changelogen": "^0.5.3",
+    "eslint": "^8.39.0",
+    "eslint-config-unjs": "^0.1.0",
+    "in-range": "^3.0.0",
+    "prettier": "^2.8.8",
+    "time-span": "^5.1.0",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.1",
+    "vitest": "^0.31.0"
+  },
+  "packageManager": "pnpm@8.4.0"
+}

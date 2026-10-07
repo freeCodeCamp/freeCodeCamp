@@ -1,0 +1,25 @@
+@import '../variables';
+@import '../mixins';
+
+@keyframes ball-scale {
+  0% {
+    transform: scale(0.0);
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+.ball-scale {
+
+  > div {
+    @include balls();
+    @include global-animation();
+
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    animation: ball-scale 1s 0s ease-in-out infinite;
+  }
+}

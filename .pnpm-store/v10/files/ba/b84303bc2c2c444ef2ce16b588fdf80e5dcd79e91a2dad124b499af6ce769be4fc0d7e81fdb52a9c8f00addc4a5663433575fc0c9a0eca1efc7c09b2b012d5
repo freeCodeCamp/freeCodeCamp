@@ -1,0 +1,133 @@
+{
+  "name": "jiti",
+  "version": "2.6.1",
+  "description": "Runtime typescript and ESM support for Node.js",
+  "repository": "unjs/jiti",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/jiti.d.mts",
+        "default": "./lib/jiti.mjs"
+      },
+      "require": {
+        "types": "./lib/jiti.d.cts",
+        "default": "./lib/jiti.cjs"
+      }
+    },
+    "./register": {
+      "types": "./lib/jiti-register.d.mts",
+      "import": "./lib/jiti-register.mjs"
+    },
+    "./native": {
+      "types": "./lib/jiti.d.mts",
+      "import": "./lib/jiti-native.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./lib/jiti.cjs",
+  "module": "./lib/jiti.mjs",
+  "types": "./lib/jiti.d.cts",
+  "typesVersions": {
+    "*": {
+      "register": [
+        "./lib/jiti-register.d.mts"
+      ],
+      "native": [
+        "./lib/jiti.d.mts"
+      ]
+    }
+  },
+  "bin": {
+    "jiti": "./lib/jiti-cli.mjs"
+  },
+  "files": [
+    "lib",
+    "dist",
+    "register.cjs"
+  ],
+  "scripts": {
+    "bench": "node test/bench.mjs && deno -A test/bench.mjs && bun --bun test/bench.mjs",
+    "build": "pnpm clean && pnpm rspack",
+    "clean": "rm -rf dist",
+    "dev": "pnpm clean && pnpm rspack --watch",
+    "jiti": "JITI_DEBUG=1 JITI_JSX=1 lib/jiti-cli.mjs",
+    "lint": "eslint . && prettier -c src lib test stubs",
+    "lint:fix": "eslint --fix . && prettier -w src lib test stubs",
+    "prepack": "pnpm build",
+    "release": "pnpm build && pnpm test && changelogen --release --push --publish",
+    "test": "pnpm lint && pnpm test:types && vitest run --coverage && pnpm test:node-register && pnpm test:bun && pnpm test:native",
+    "test:bun": "bun --bun test test/bun",
+    "test:native": "pnpm test:native:bun && pnpm test:native:node && pnpm test:native:deno",
+    "test:native:bun": "bun --bun test test/native/bun.test.ts",
+    "test:native:deno": "deno test -A --no-check test/native/deno.test.ts",
+    "test:native:node": "node --test --experimental-strip-types test/native/node.test.ts",
+    "test:node-register": "JITI_JSX=1 node --test test/node-register.test.mjs",
+    "test:types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/helper-module-imports": "^7.27.1",
+    "@babel/helper-module-transforms": "^7.28.3",
+    "@babel/helper-plugin-utils": "^7.27.1",
+    "@babel/helper-simple-access": "^7.27.1",
+    "@babel/plugin-proposal-decorators": "^7.28.0",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/plugin-syntax-import-assertions": "^7.27.1",
+    "@babel/plugin-syntax-jsx": "^7.27.1",
+    "@babel/plugin-transform-export-namespace-from": "^7.27.1",
+    "@babel/plugin-transform-react-jsx": "^7.27.1",
+    "@babel/plugin-transform-typescript": "^7.28.0",
+    "@babel/preset-typescript": "^7.27.1",
+    "@babel/template": "^7.27.2",
+    "@babel/traverse": "^7.28.4",
+    "@babel/types": "^7.28.4",
+    "@rspack/cli": "^1.5.8",
+    "@rspack/core": "^1.5.8",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__helper-module-imports": "^7.18.3",
+    "@types/babel__helper-plugin-utils": "^7.10.3",
+    "@types/babel__template": "^7.4.4",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/node": "^24.6.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "acorn": "^8.15.0",
+    "babel-plugin-parameter-decorator": "^1.0.16",
+    "changelogen": "^0.6.2",
+    "config": "^4.1.1",
+    "consola": "^3.4.2",
+    "defu": "^6.1.4",
+    "destr": "^2.0.5",
+    "escape-string-regexp": "^5.0.0",
+    "eslint": "^9.36.0",
+    "eslint-config-unjs": "^0.5.0",
+    "estree-walker": "^3.0.3",
+    "etag": "^1.8.1",
+    "fast-glob": "^3.3.3",
+    "is-installed-globally": "^1.0.0",
+    "mime": "^4.1.0",
+    "mlly": "^1.8.0",
+    "moment-timezone": "^0.6.0",
+    "nano-jsx": "^0.2.0",
+    "pathe": "^2.0.3",
+    "pkg-types": "^2.3.0",
+    "preact": "^10.27.2",
+    "preact-render-to-string": "^6.6.2",
+    "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "reflect-metadata": "^0.2.2",
+    "solid-js": "^1.9.9",
+    "std-env": "^3.9.0",
+    "terser-webpack-plugin": "^5.3.14",
+    "tinyexec": "^1.0.1",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4",
+    "vue": "^3.5.22",
+    "yoctocolors": "^2.1.2",
+    "zod": "^4.1.11"
+  },
+  "packageManager": "pnpm@10.17.1"
+}

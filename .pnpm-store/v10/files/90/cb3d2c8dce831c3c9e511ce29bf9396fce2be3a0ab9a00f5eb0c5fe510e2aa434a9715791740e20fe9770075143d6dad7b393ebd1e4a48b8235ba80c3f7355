@@ -1,0 +1,83 @@
+.TH MDB_STAT 1 "2017/07/31" "LMDB 0.9.90"
+.\" Copyright 2012-2021 Howard Chu, Symas Corp. All Rights Reserved.
+.\" Copying restrictions apply.  See COPYRIGHT/LICENSE.
+.SH NAME
+mdb_stat \- LMDB environment status tool
+.SH SYNOPSIS
+.B mdb_stat
+[\c
+.BR \-V ]
+[\c
+.BR \-e ]
+[\c
+.BR \-f [ f [ f ]]]
+[\c
+.BR \-n ]
+[\c
+.BR \-v ]
+[\c
+.BI \-m \ module
+[\c
+.BI \-w \ password\fR]]
+[\c
+.BR \-r [ r ]]
+[\c
+.BR \-a \ |
+.BI \-s \ subdb\fR]
+.BR \ envpath
+.SH DESCRIPTION
+The
+.B mdb_stat
+utility displays the status of an LMDB environment.
+.SH OPTIONS
+.TP
+.BR \-V
+Write the library version number to the standard output, and exit.
+.TP
+.BR \-e
+Display information about the database environment.
+.TP
+.BR \-f
+Display information about the environment freelist.
+If \fB\-ff\fP is given, summarize each freelist entry.
+If \fB\-fff\fP is given, display the full list of page IDs in the freelist.
+.TP
+.BR \-n
+Display the status of an LMDB database which does not use subdirectories.
+.TP
+.BR \-v
+Use the previous environment state instead of the latest state.
+This may be useful if the latest state has been corrupted.
+.TP
+.BI \-m \ module
+Load the specified dynamic module to utilize cryptographic functions.
+This is required to operate on environments that have been configured
+with page-level checksums or encryption.
+.TP
+.BI \-w \ password
+Specify the password for an encrypted environment. This is only
+used if a cryptography module has been loaded.
+.TP
+.BR \-r
+Display information about the environment reader table.
+Shows the process ID, thread ID, and transaction ID for each active
+reader slot. The process ID and transaction ID are in decimal, the
+thread ID is in hexadecimal. The transaction ID is displayed as "-"
+if the reader does not currently have a read transaction open.
+If \fB\-rr\fP is given, check for stale entries in the reader
+table and clear them. The reader table will be printed again
+after the check is performed.
+.TP
+.BR \-a
+Display the status of all of the subdatabases in the environment.
+.TP
+.BR \-s \ subdb
+Display the status of a specific subdatabase.
+.SH DIAGNOSTICS
+Exit status is zero if no errors occur.
+Errors result in a non-zero exit status and
+a diagnostic message being written to standard error.
+.SH "SEE ALSO"
+.BR mdb_copy (1)
+.SH AUTHOR
+Howard Chu of Symas Corporation <http://www.symas.com>

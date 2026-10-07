@@ -1,0 +1,165 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: Object.getOwnPropertyDescriptor(all, name).get
+    });
+}
+_export(exports, {
+    get EXPERIMENTAL_connectAnswers () {
+        return EXPERIMENTAL_connectAnswers;
+    },
+    get EXPERIMENTAL_connectConfigureRelatedItems () {
+        return EXPERIMENTAL_connectConfigureRelatedItems;
+    },
+    get EXPERIMENTAL_connectDynamicWidgets () {
+        return EXPERIMENTAL_connectDynamicWidgets;
+    },
+    get connectAutocomplete () {
+        return _connectAutocomplete.default;
+    },
+    get connectBreadcrumb () {
+        return _connectBreadcrumb.default;
+    },
+    get connectChat () {
+        return _connectChat.default;
+    },
+    get connectClearRefinements () {
+        return _connectClearRefinements.default;
+    },
+    get connectConfigure () {
+        return _connectConfigure.default;
+    },
+    get connectCurrentRefinements () {
+        return _connectCurrentRefinements.default;
+    },
+    get connectDynamicWidgets () {
+        return _connectDynamicWidgets.default;
+    },
+    get connectFilterSuggestions () {
+        return _connectFilterSuggestions.default;
+    },
+    get connectFrequentlyBoughtTogether () {
+        return _connectFrequentlyBoughtTogether.default;
+    },
+    get connectGeoSearch () {
+        return _connectGeoSearch.default;
+    },
+    get connectHierarchicalMenu () {
+        return _connectHierarchicalMenu.default;
+    },
+    get connectHits () {
+        return _connectHits.default;
+    },
+    get connectHitsPerPage () {
+        return _connectHitsPerPage.default;
+    },
+    get connectHitsWithInsights () {
+        return _connectHitsWithInsights.default;
+    },
+    get connectInfiniteHits () {
+        return _connectInfiniteHits.default;
+    },
+    get connectInfiniteHitsWithInsights () {
+        return _connectInfiniteHitsWithInsights.default;
+    },
+    get connectLookingSimilar () {
+        return _connectLookingSimilar.default;
+    },
+    get connectMenu () {
+        return _connectMenu.default;
+    },
+    get connectNumericMenu () {
+        return _connectNumericMenu.default;
+    },
+    get connectPagination () {
+        return _connectPagination.default;
+    },
+    get connectPoweredBy () {
+        return _connectPoweredBy.default;
+    },
+    get connectQueryRules () {
+        return _connectQueryRules.default;
+    },
+    get connectRange () {
+        return _connectRange.default;
+    },
+    get connectRatingMenu () {
+        return _connectRatingMenu.default;
+    },
+    get connectRefinementList () {
+        return _connectRefinementList.default;
+    },
+    get connectRelatedProducts () {
+        return _connectRelatedProducts.default;
+    },
+    get connectRelevantSort () {
+        return _connectRelevantSort.default;
+    },
+    get connectSearchBox () {
+        return _connectSearchBox.default;
+    },
+    get connectSortBy () {
+        return _connectSortBy.default;
+    },
+    get connectStats () {
+        return _connectStats.default;
+    },
+    get connectToggleRefinement () {
+        return _connectToggleRefinement.default;
+    },
+    get connectTrendingFacets () {
+        return _connectTrendingFacets.default;
+    },
+    get connectTrendingItems () {
+        return _connectTrendingItems.default;
+    },
+    get connectVoiceSearch () {
+        return _connectVoiceSearch.default;
+    }
+});
+var _interop_require_default = require("@swc/helpers/_/_interop_require_default");
+var _utils = require("../lib/utils");
+var _connectAnswers = /*#__PURE__*/ _interop_require_default._(require("./answers/connectAnswers"));
+var _connectConfigureRelatedItems = /*#__PURE__*/ _interop_require_default._(require("./configure-related-items/connectConfigureRelatedItems"));
+var _connectDynamicWidgets = /*#__PURE__*/ _interop_require_default._(require("./dynamic-widgets/connectDynamicWidgets"));
+var _connectClearRefinements = /*#__PURE__*/ _interop_require_default._(require("./clear-refinements/connectClearRefinements"));
+var _connectCurrentRefinements = /*#__PURE__*/ _interop_require_default._(require("./current-refinements/connectCurrentRefinements"));
+var _connectHierarchicalMenu = /*#__PURE__*/ _interop_require_default._(require("./hierarchical-menu/connectHierarchicalMenu"));
+var _connectHits = /*#__PURE__*/ _interop_require_default._(require("./hits/connectHits"));
+var _connectHitsWithInsights = /*#__PURE__*/ _interop_require_default._(require("./hits/connectHitsWithInsights"));
+var _connectHitsPerPage = /*#__PURE__*/ _interop_require_default._(require("./hits-per-page/connectHitsPerPage"));
+var _connectInfiniteHits = /*#__PURE__*/ _interop_require_default._(require("./infinite-hits/connectInfiniteHits"));
+var _connectInfiniteHitsWithInsights = /*#__PURE__*/ _interop_require_default._(require("./infinite-hits/connectInfiniteHitsWithInsights"));
+var _connectMenu = /*#__PURE__*/ _interop_require_default._(require("./menu/connectMenu"));
+var _connectNumericMenu = /*#__PURE__*/ _interop_require_default._(require("./numeric-menu/connectNumericMenu"));
+var _connectPagination = /*#__PURE__*/ _interop_require_default._(require("./pagination/connectPagination"));
+var _connectRange = /*#__PURE__*/ _interop_require_default._(require("./range/connectRange"));
+var _connectRefinementList = /*#__PURE__*/ _interop_require_default._(require("./refinement-list/connectRefinementList"));
+var _connectRelatedProducts = /*#__PURE__*/ _interop_require_default._(require("./related-products/connectRelatedProducts"));
+var _connectSearchBox = /*#__PURE__*/ _interop_require_default._(require("./search-box/connectSearchBox"));
+var _connectSortBy = /*#__PURE__*/ _interop_require_default._(require("./sort-by/connectSortBy"));
+var _connectRatingMenu = /*#__PURE__*/ _interop_require_default._(require("./rating-menu/connectRatingMenu"));
+var _connectStats = /*#__PURE__*/ _interop_require_default._(require("./stats/connectStats"));
+var _connectToggleRefinement = /*#__PURE__*/ _interop_require_default._(require("./toggle-refinement/connectToggleRefinement"));
+var _connectTrendingFacets = /*#__PURE__*/ _interop_require_default._(require("./trending-facets/connectTrendingFacets"));
+var _connectTrendingItems = /*#__PURE__*/ _interop_require_default._(require("./trending-items/connectTrendingItems"));
+var _connectBreadcrumb = /*#__PURE__*/ _interop_require_default._(require("./breadcrumb/connectBreadcrumb"));
+var _connectGeoSearch = /*#__PURE__*/ _interop_require_default._(require("./geo-search/connectGeoSearch"));
+var _connectPoweredBy = /*#__PURE__*/ _interop_require_default._(require("./powered-by/connectPoweredBy"));
+var _connectConfigure = /*#__PURE__*/ _interop_require_default._(require("./configure/connectConfigure"));
+var _connectAutocomplete = /*#__PURE__*/ _interop_require_default._(require("./autocomplete/connectAutocomplete"));
+var _connectQueryRules = /*#__PURE__*/ _interop_require_default._(require("./query-rules/connectQueryRules"));
+var _connectVoiceSearch = /*#__PURE__*/ _interop_require_default._(require("./voice-search/connectVoiceSearch"));
+var _connectRelevantSort = /*#__PURE__*/ _interop_require_default._(require("./relevant-sort/connectRelevantSort"));
+var _connectFrequentlyBoughtTogether = /*#__PURE__*/ _interop_require_default._(require("./frequently-bought-together/connectFrequentlyBoughtTogether"));
+var _connectLookingSimilar = /*#__PURE__*/ _interop_require_default._(require("./looking-similar/connectLookingSimilar"));
+var _connectChat = /*#__PURE__*/ _interop_require_default._(require("./chat/connectChat"));
+var _connectFilterSuggestions = /*#__PURE__*/ _interop_require_default._(require("./filter-suggestions/connectFilterSuggestions"));
+var EXPERIMENTAL_connectAnswers = (0, _utils.deprecate)(_connectAnswers.default, 'answers is no longer supported');
+var EXPERIMENTAL_connectConfigureRelatedItems = (0, _utils.deprecate)(_connectConfigureRelatedItems.default, 'EXPERIMENTAL_connectConfigureRelatedItems is deprecated and will be removed in a next minor version of InstantSearch. Please use connectRelatedItems instead.');
+var EXPERIMENTAL_connectDynamicWidgets = (0, _utils.deprecate)(_connectDynamicWidgets.default, 'use connectDynamicWidgets');

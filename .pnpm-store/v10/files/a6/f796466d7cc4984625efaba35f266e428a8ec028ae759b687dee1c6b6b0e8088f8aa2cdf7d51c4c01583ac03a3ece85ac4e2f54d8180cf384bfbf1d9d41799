@@ -1,0 +1,13 @@
+{
+	"name": "htm_preact",
+	"module": "index.module.js",
+	"main": "index.js",
+	"umd:main": "index.umd.js",
+	"unpkg": "standalone.js",
+	"scripts": {
+		"build": "npm run -s build:main && npm run -s build:standalone && npm run -s build:static",
+		"build:main": "microbundle index.mjs -o ../../../preact/index.js --external preact,htm --no-sourcemap --target web",
+		"build:static": "cp index.d.ts package.json ../../../preact/",
+		"build:standalone": "microbundle standalone.mjs -o ../../../preact/standalone.js -f es,umd --no-sourcemap --target web"
+	}
+}

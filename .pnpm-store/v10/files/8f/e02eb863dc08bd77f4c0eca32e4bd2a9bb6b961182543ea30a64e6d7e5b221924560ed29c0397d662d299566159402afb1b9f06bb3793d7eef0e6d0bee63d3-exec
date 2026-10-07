@@ -1,0 +1,206 @@
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block; }
+	body {
+		line-height: 1; }
+	ol, ul {
+		list-style: none; }
+	blockquote, q {
+		quotes: none; }
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none; }
+	table {
+		border-collapse: collapse;
+		border-spacing: 0; }
+
+
+/* #Basic Styles
+================================================== */
+	body {
+		background: #fff;
+		font: 14px/24px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #000;
+		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+		-webkit-text-size-adjust: 100%;
+ }
+ a {
+ 	color: #999113;
+ 	text-decoration: none;
+ }
+ a:hover {
+ 	color: #7b750e;
+ 	text-decoration: underline;
+ }
+
+
+/* #Typography
+================================================== */
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold; }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 { font-size: 75px; line-height: 80px; margin-bottom: 14px;}
+	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
+	h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
+	h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+	h5 { font-size: 17px; line-height: 24px; }
+	h6 { font-size: 14px; line-height: 21px; }
+	p  { margin-bottom: 22px; }
+
+
+/* #Main styles
+================================================== */
+
+/* Hogan Hero */
+.hogan-hero {
+	position: relative;
+	background: #333; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #333 0%, #000 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#333), color-stop(100%,#000)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #333 0%,#000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, #333 0%,#000 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, #333 0%,#000 100%); /* IE10+ */
+	background: radial-gradient(center, ellipse cover, #333 0%,#000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333', endColorstr='#000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.hogan-hero .container {
+	padding: 180px 0;
+}
+.hogan-hero h1 {
+	letter-spacing: -3px;
+	color: #fff;
+	position: relative;
+	margin-bottom: 5px;
+}
+.hogan-hero h3 {
+	max-width: 650px;
+	margin-bottom: 20px;
+	color: #fff;
+}
+.hogan-hero .noise,
+.hogan-hero .stripes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.hogan-hero .noise {
+	background: url(../images/noise.png) repeat;
+}
+.hogan-hero .stripes {
+	background: url(../images/stripes.png) repeat;
+}
+
+/* Primary content container 	*/
+.primary.container {
+	padding-top: 100px;
+}
+
+/*Hogan divider */
+.hogan-divider {
+	padding-top: 60px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 60px;
+	clear: both;
+	position: relative;
+}
+.hogan-icon {
+	width: 40px;
+	height: 30px;
+	position: absolute;
+	left: 50%;
+	top: 46px;
+	margin-left: -20px;
+	background: url('../images/small-hogan-icon.png') white no-repeat center center;
+}
+
+/* Button style */
+.button {
+  display: inline-block;
+  cursor: pointer;
+	background: #dfd52e;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	color: #000;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 0 34px;
+	line-height: 46px;
+	font-weight: bold;
+	-webkit-transition: background-color .3s ease-in-out;
+	   -moz-transition: background-color .3s ease-in-out;
+	     -o-transition: background-color .3s ease-in-out;
+	        transition: background-color .3s ease-in-out;
+
+}
+.button:hover {
+	text-decoration: inherit;
+	color: inherit;
+	background-color: #f5e810;
+}
+
+/* Hogan footer */
+.hogan-footer {
+	border-top: 1px solid #ddd;
+	margin-top: 60px;
+	padding: 20px 0 40px;
+	color: #999;
+	font-size: 12px;
+}
+.hogan-footer .copyright {
+	float: left;
+}
+.hogan-footer .colophon {
+	float: right;
+}
+
+pre, code {
+	background: #F8F8FF;
+	border: 1px solid #DDD;
+	padding: 5px 10px;
+	margin-bottom: 20px;
+	font-family: courier;
+	overflow: hidden;
+}
+
+pre code {
+	border: 0;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		.hogan-hero .container {
+			padding: 100px 0;
+		}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+

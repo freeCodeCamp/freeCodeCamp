@@ -1,0 +1,35 @@
+{
+  "name": "@hapi/boom",
+  "description": "HTTP-friendly error objects",
+  "version": "10.0.1",
+  "repository": "git://github.com/hapijs/boom",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "keywords": [
+    "error",
+    "http"
+  ],
+  "files": [
+    "lib"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "plugin:@hapi/module"
+    ]
+  },
+  "dependencies": {
+    "@hapi/hoek": "^11.0.2"
+  },
+  "devDependencies": {
+    "@hapi/code": "9.x.x",
+    "@hapi/eslint-plugin": "*",
+    "@hapi/lab": "^25.1.0",
+    "@types/node": "^17.0.31",
+    "typescript": "~4.6.4"
+  },
+  "scripts": {
+    "test": "lab -a @hapi/code -t 100 -L -Y",
+    "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html"
+  },
+  "license": "BSD-3-Clause"
+}

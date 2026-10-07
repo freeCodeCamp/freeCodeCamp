@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ -n $TRAVIS_TAG && $TRAVIS_JOB_NUMBER =~ ".3" ]]; then
+  echo "About to publish $TRAVIS_TAG to ajv-dist..."
+
+  git config user.email "$GIT_USER_EMAIL"
+  git config user.name "$GIT_USER_NAME"
+
+  git clone https://${GITHUB_TOKEN}@github.com/ajv-validator/ajv-dist.git ../ajv-dist
+
+  rm -rf ../ajv-dist/dist
+  mkdir ../ajv-dist/dist
+  cp ./dist/ajv.* ../ajv-dist/dist
+  cat bower.json | sed 's/"name": "ajv"/"name": "ajv-dist"/' > ../ajv-dist/bower.json
+  cd ../ajv-dist
+
+  if [[ `git status --porcelain` ]]; then
+    echo "Changes detected. Updating master branch..."
+    git add -A
+    git commit -m "updated by travis build #$TRAVIS_BUILD_NUMBER"
+    git push --quiet origin master > /dev/null 2>&1
+  fi
+
+  echo "Publishing tag..."
+
+  git tag $TRAVIS_TAG
+  git push --tags > /dev/null 2>&1
+
+  echo "Done"
+fi

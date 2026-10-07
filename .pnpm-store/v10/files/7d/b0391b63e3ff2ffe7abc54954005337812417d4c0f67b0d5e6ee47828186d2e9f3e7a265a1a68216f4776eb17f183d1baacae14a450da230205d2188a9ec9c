@@ -1,0 +1,1 @@
+{"version":3,"file":"TimeoutSettings.d.ts","sourceRoot":"","sources":["../../../src/common/TimeoutSettings.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAIH;;GAEG;AACH,qBAAa,eAAe;;;IAS1B,iBAAiB,CAAC,OAAO,EAAE,MAAM,GAAG,IAAI;IAIxC,2BAA2B,CAAC,OAAO,EAAE,MAAM,GAAG,IAAI;IAIlD,iBAAiB,IAAI,MAAM;IAU3B,OAAO,IAAI,MAAM;CAMlB"}

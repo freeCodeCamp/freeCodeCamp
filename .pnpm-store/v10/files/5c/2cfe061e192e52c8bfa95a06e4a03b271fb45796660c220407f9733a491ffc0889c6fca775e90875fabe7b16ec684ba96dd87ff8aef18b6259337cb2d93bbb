@@ -1,0 +1,1 @@
+{"version":3,"file":"fetch.js","names":["module","exports","global","fetch"],"sources":["../../../../src/internal-plugins/bundle-optimisations/polyfills/fetch.js"],"sourcesContent":["module.exports = global.fetch\n"],"mappings":";;AAAAA,MAAM,CAACC,OAAO,GAAGC,MAAM,CAACC,KAAK"}

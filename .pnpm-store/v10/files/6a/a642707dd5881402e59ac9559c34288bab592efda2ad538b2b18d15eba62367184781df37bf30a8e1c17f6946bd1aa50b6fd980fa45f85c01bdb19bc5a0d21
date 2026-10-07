@@ -1,0 +1,1 @@
+{"version":3,"file":"create-exponential-ramp-to-value-automation-event.js","sourceRoot":"","sources":["../../../src/functions/create-exponential-ramp-to-value-automation-event.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,2CAA2C,GAAG,CAAC,KAAa,EAAE,OAAe,EAA0C,EAAE;IAClI,OAAO,EAAE,OAAO,EAAE,IAAI,EAAE,wBAAwB,EAAE,KAAK,EAAE,CAAC;AAC9D,CAAC,CAAC"}

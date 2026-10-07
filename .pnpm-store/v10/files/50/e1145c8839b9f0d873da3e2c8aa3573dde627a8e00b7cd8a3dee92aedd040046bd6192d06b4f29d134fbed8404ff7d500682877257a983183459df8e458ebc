@@ -1,0 +1,1 @@
+{"version":3,"file":"normalize.js","sourceRoot":"","sources":["../../../../src/platform/node/normalize.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,OAAO,EAAE,SAAS,EAAE,MAAM,MAAM,CAAC","sourcesContent":["/*\n * Copyright The OpenTelemetry Authors\n * SPDX-License-Identifier: Apache-2.0\n */\n\nexport { normalize } from 'path';\n"]}

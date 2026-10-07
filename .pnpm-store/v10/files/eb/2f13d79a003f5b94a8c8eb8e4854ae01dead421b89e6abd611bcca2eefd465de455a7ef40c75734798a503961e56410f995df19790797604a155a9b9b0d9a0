@@ -1,0 +1,24 @@
+declare const sizes: {
+    readonly xxs: "h-[5px]";
+    readonly xs: "h-[10px]";
+    readonly s: "h-[20px]";
+    readonly m: "h-[30px]";
+    readonly l: "h-[60px]";
+    readonly xl: "h-[90px]";
+    readonly xxl: "h-[180px]";
+};
+interface SpacerProps {
+    /**
+     * Sizes:
+     * - xxs: 5px
+     * - xs: 10px
+     * - s: 20px
+     * - m: 30px
+     * - l: 60px
+     * - xl: 90px
+     * - xxl: 180px
+     */
+    size: keyof typeof sizes;
+}
+export declare const Spacer: ({ size }: SpacerProps) => JSX.Element;
+export {};

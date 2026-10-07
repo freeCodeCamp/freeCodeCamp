@@ -1,0 +1,41 @@
+{
+  "name": "renderkid",
+  "version": "2.0.7",
+  "description": "Stylish console.log for node",
+  "main": "lib/RenderKid.js",
+  "dependencies": {
+    "css-select": "^4.1.3",
+    "dom-converter": "^0.2.0",
+    "htmlparser2": "^6.1.0",
+    "lodash": "^4.17.21",
+    "strip-ansi": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "chai": "^4.3.4",
+    "chai-changes": "^1.3.6",
+    "chai-fuzzy": "^1.6.1",
+    "coffeescript": "^2.5.1",
+    "mocha": "^9.0.0",
+    "sinon": "^11.1.1",
+    "sinon-chai": "^3.7.0"
+  },
+  "scripts": {
+    "test": "mocha \"test/**/*.coffee\"",
+    "test:watch": "npm run test -- --watch",
+    "compile": "coffee --bare --transpile --output ./lib ./src",
+    "compile:watch": "coffee --watch --bare --transpile --output ./lib ./src",
+    "watch": "npm run compile:watch & npm run test:watch",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AriaMinaei/RenderKid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AriaMinaei/RenderKid/issues"
+  },
+  "author": "Aria Minaei",
+  "license": "MIT"
+}

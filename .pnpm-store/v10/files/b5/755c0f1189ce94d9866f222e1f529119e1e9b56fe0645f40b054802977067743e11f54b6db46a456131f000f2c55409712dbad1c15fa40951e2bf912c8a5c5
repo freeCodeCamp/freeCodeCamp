@@ -1,0 +1,41 @@
+{
+	"name": "is-unicode-supported",
+	"version": "0.1.0",
+	"description": "Detect whether the terminal supports Unicode",
+	"license": "MIT",
+	"repository": "sindresorhus/is-unicode-supported",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"terminal",
+		"unicode",
+		"detect",
+		"utf8",
+		"console",
+		"shell",
+		"support",
+		"supports",
+		"supported",
+		"check",
+		"detection"
+	],
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"tsd": "^0.14.0",
+		"xo": "^0.38.2"
+	}
+}

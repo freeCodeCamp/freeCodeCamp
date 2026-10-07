@@ -1,0 +1,40 @@
+{
+  "root": true,
+
+  "extends": "@ljharb",
+
+  "rules": {
+    "complexity": 0,
+    "eqeqeq": [2, "always", { "null": "ignore" }],
+    "func-style": [2, "declaration"],
+    "id-length": 0,
+    "indent": [2, 2],
+    "max-params": [2, 6],
+    "max-statements-per-line": [2, { "max": 2 }],
+    "new-cap": [2, { "capIsNewExceptions": ["GetIntrinsic"] }],
+    "no-magic-numbers": [2, { "ignore": [0, 1] }],
+  },
+
+  "globals": {
+    "Int8Array": false,
+    "Uint8Array": false,
+  },
+
+  "overrides": [
+    {
+      "files": "example/**",
+      "rules": {
+        "no-console": 0,
+        "no-magic-numbers": 0,
+      }
+    },
+    {
+      "files": "test/**",
+      "rules": {
+        "max-lines-per-function": 0,
+        "max-params": 0,
+        "no-magic-numbers": 0,
+      },
+    },
+  ],
+}

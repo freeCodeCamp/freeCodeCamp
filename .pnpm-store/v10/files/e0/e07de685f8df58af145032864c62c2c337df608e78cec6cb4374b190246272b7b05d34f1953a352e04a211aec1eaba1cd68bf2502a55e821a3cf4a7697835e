@@ -1,0 +1,1 @@
+{"version":3,"file":"isEmptyData.js","sourceRoot":"","sources":["../src/isEmptyData.ts"],"names":[],"mappings":";;;AAEA,SAAgB,WAAW,CAAC,IAAgB;IAC1C,IAAI,OAAO,IAAI,KAAK,QAAQ,EAAE;QAC5B,OAAO,IAAI,CAAC,MAAM,KAAK,CAAC,CAAC;KAC1B;IAED,OAAO,IAAI,CAAC,UAAU,KAAK,CAAC,CAAC;AAC/B,CAAC;AAND,kCAMC"}

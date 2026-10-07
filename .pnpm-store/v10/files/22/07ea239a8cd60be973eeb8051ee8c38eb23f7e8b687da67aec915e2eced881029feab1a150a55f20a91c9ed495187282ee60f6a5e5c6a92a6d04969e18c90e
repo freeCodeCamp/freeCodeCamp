@@ -1,0 +1,65 @@
+@import '../variables';
+@import '../mixins';
+
+$radius: 45px;
+
+@keyframes ball-spin-loader {
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin ball-spin-loader($n:8, $start:1) {
+  @for $i from $start through $n {
+    > span:nth-child(#{$i}) {
+      $iter: 360 / $n;
+      $quarter: ($radius / 2) + ($radius / 5.5);
+
+      @if $i == 1 {
+        top: $radius;
+        left: 0;
+      } @else if $i == 2 {
+        top: $quarter;
+        left: $quarter;
+      } @else if $i == 3 {
+        top: 0;
+        left: $radius;
+      } @else if $i == 4 {
+        top: -$quarter;
+        left: $quarter;
+      } @else if $i == 5 {
+        top: -$radius;
+        left: 0;
+      } @else if $i == 6 {
+        top: -$quarter;
+        left: -$quarter;
+      } @else if $i == 7 {
+        top: 0;
+        left: -$radius;
+      } @else if $i == 8 {
+        top: $quarter;
+        left: -$quarter;
+      }
+
+      animation: ball-spin-loader 2s ($i * 0.9s) infinite linear;
+    }
+  }
+}
+
+.ball-spin-loader {
+  @include ball-spin-loader();
+  position: relative;
+
+  > div {
+    @include global-animation();
+
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background: green;
+  }
+}

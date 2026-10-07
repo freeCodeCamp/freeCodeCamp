@@ -1,0 +1,56 @@
+{
+  "name": "fast-querystring",
+  "version": "1.1.2",
+  "description": "A fast alternative to legacy querystring module",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "format": "rome format . --write",
+    "format:ci": "rome ci .",
+    "test": "vitest",
+    "test:environment:edge": "vitest --environment=edge-runtime",
+    "test:environment:browser": "vitest --environment=jsdom",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "coverage": "vitest run --coverage",
+    "benchmark": "node benchmark/bench.js",
+    "benchmark:cmp-branch": "node benchmark/bench-cmp-branch.js",
+    "benchmark:parse": "node benchmark/parse.mjs",
+    "benchmark:stringify": "node benchmark/stringify.mjs",
+    "benchmark:import": "node benchmark/import.mjs"
+  },
+  "keywords": [
+    "querystring",
+    "qs",
+    "parser"
+  ],
+  "author": "Yagiz Nizipli <yagiz@nizipli.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@aws-sdk/querystring-builder": "^3.342.0",
+    "@aws-sdk/querystring-parser": "^3.342.0",
+    "@edge-runtime/vm": "^3.0.1",
+    "@types/node": "^20.2.5",
+    "@vitest/coverage-c8": "^0.31.4",
+    "benchmark": "^2.1.4",
+    "cli-select": "^1.1.2",
+    "cronometro": "^1.1.5",
+    "http-querystring-stringify": "^2.1.0",
+    "jsdom": "^22.1.0",
+    "qs": "^6.11.2",
+    "query-string": "^8.1.0",
+    "querystringify": "^2.2.0",
+    "querystringify-ts": "^0.1.5",
+    "querystringparser": "^0.1.1",
+    "rome": "12.1.3",
+    "simple-git": "^3.19.0",
+    "vitest": "^0.31.4"
+  },
+  "repository": {
+    "url": "git+https://github.com/anonrig/fast-querystring.git",
+    "type": "git"
+  },
+  "dependencies": {
+    "fast-decode-uri-component": "^1.0.1"
+  }
+}

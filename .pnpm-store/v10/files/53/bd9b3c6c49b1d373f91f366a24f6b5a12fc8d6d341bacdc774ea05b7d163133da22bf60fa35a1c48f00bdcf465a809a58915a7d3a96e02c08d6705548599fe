@@ -1,0 +1,34 @@
+{
+  "name": "unicode-canonical-property-names-ecmascript",
+  "version": "2.0.0",
+  "description": "The set of canonical Unicode property names supported in ECMAScript RegExp property escapes.",
+  "homepage": "https://github.com/mathiasbynens/unicode-canonical-property-names-ecmascript",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "LICENSE-MIT.txt",
+    "index.js"
+  ],
+  "keywords": [
+    "unicode",
+    "unicode properties"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathiasbynens/unicode-canonical-property-names-ecmascript.git"
+  },
+  "bugs": "https://github.com/mathiasbynens/unicode-canonical-property-names-ecmascript/issues",
+  "devDependencies": {
+    "ava": "*"
+  },
+  "scripts": {
+    "test": "ava tests/tests.js"
+  }
+}

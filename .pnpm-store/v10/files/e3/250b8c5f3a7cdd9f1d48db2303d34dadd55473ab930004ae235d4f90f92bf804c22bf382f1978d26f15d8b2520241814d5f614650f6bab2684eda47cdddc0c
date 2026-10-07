@@ -1,0 +1,86 @@
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @providesModule getMarkupWrap
+ */
+
+/*eslint-disable fb-www/unsafe-html */
+const ExecutionEnvironment = require("./ExecutionEnvironment");
+
+const invariant = require("./invariant");
+/**
+ * Dummy container used to detect which wraps are necessary.
+ */
+
+
+const dummyNode = ExecutionEnvironment.canUseDOM ? document.createElement('div') : null;
+/**
+ * Some browsers cannot use `innerHTML` to render certain elements standalone,
+ * so we wrap them, render the wrapped nodes, then extract the desired node.
+ *
+ * In IE8, certain elements cannot render alone, so wrap all elements ('*').
+ */
+
+const shouldWrap = {};
+const selectWrap = [1, '<select multiple="true">', '</select>'];
+const tableWrap = [1, '<table>', '</table>'];
+const trWrap = [3, '<table><tbody><tr>', '</tr></tbody></table>'];
+const svgWrap = [1, '<svg xmlns="http://www.w3.org/2000/svg">', '</svg>'];
+const markupWrap = {
+  '*': [1, '?<div>', '</div>'],
+  'area': [1, '<map>', '</map>'],
+  'col': [2, '<table><tbody></tbody><colgroup>', '</colgroup></table>'],
+  'legend': [1, '<fieldset>', '</fieldset>'],
+  'param': [1, '<object>', '</object>'],
+  'tr': [2, '<table><tbody>', '</tbody></table>'],
+  'optgroup': selectWrap,
+  'option': selectWrap,
+  'caption': tableWrap,
+  'colgroup': tableWrap,
+  'tbody': tableWrap,
+  'tfoot': tableWrap,
+  'thead': tableWrap,
+  'td': trWrap,
+  'th': trWrap
+}; // Initialize the SVG elements since we know they'll always need to be wrapped
+// consistently. If they are created inside a <div> they will be initialized in
+// the wrong namespace (and will not display).
+
+const svgElements = ['circle', 'clipPath', 'defs', 'ellipse', 'g', 'image', 'line', 'linearGradient', 'mask', 'path', 'pattern', 'polygon', 'polyline', 'radialGradient', 'rect', 'stop', 'text', 'tspan'];
+svgElements.forEach(nodeName => {
+  markupWrap[nodeName] = svgWrap;
+  shouldWrap[nodeName] = true;
+});
+/**
+ * Gets the markup wrap configuration for the supplied `nodeName`.
+ *
+ * NOTE: This lazily detects which wraps are necessary for the current browser.
+ *
+ * @param {string} nodeName Lowercase `nodeName`.
+ * @return {?array} Markup wrap configuration, if applicable.
+ */
+
+function getMarkupWrap(nodeName) {
+  invariant(!!dummyNode, 'Markup wrapping node not initialized');
+
+  if (!markupWrap.hasOwnProperty(nodeName)) {
+    nodeName = '*';
+  }
+
+  if (!shouldWrap.hasOwnProperty(nodeName)) {
+    if (nodeName === '*') {
+      dummyNode.innerHTML = '<link />';
+    } else {
+      dummyNode.innerHTML = '<' + nodeName + '></' + nodeName + '>';
+    }
+
+    shouldWrap[nodeName] = !dummyNode.firstChild;
+  }
+
+  return shouldWrap[nodeName] ? markupWrap[nodeName] : null;
+}
+
+module.exports = getMarkupWrap;

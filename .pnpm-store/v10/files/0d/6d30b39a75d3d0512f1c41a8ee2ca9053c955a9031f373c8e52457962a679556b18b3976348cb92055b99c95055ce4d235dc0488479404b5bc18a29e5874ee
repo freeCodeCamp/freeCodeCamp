@@ -1,0 +1,33 @@
+{
+  "name": "@aws-crypto/sha256-browser",
+  "version": "3.0.0",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "pretest": "tsc -p tsconfig.test.json",
+    "test": "mocha --require ts-node/register test/**/*test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aws/aws-sdk-js-crypto-helpers.git"
+  },
+  "author": {
+    "name": "AWS Crypto Tools Team",
+    "email": "aws-cryptools@amazon.com",
+    "url": "https://docs.aws.amazon.com/aws-crypto-tools/index.html?id=docs_gateway#lang/en_us"
+  },
+  "homepage": "https://github.com/aws/aws-sdk-js-crypto-helpers/tree/master/packages/sha256-browser",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@aws-crypto/ie11-detection": "^3.0.0",
+    "@aws-crypto/sha256-js": "^3.0.0",
+    "@aws-crypto/supports-web-crypto": "^3.0.0",
+    "@aws-crypto/util": "^3.0.0",
+    "@aws-sdk/types": "^3.222.0",
+    "@aws-sdk/util-locate-window": "^3.0.0",
+    "@aws-sdk/util-utf8-browser": "^3.0.0",
+    "tslib": "^1.11.1"
+  },
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "gitHead": "7f56cee8f62bd65cd397eeec29c3c997215bd80c"
+}

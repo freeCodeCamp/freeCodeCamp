@@ -1,0 +1,85 @@
+{
+  "name": "quansync",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Create sync/async APIs with usable logic",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "contributors": [
+    {
+      "name": "Kevin Deng",
+      "email": "sxzz@sxzz.moe"
+    }
+  ],
+  "license": "MIT",
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://github.com/sponsors/antfu"
+    },
+    {
+      "type": "individual",
+      "url": "https://github.com/sponsors/sxzz"
+    }
+  ],
+  "homepage": "https://github.com/quansync-dev/quansync#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quansync-dev/quansync.git"
+  },
+  "bugs": "https://github.com/quansync-dev/quansync/issues",
+  "keywords": [
+    "async",
+    "sync",
+    "generator"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.js",
+    "./macro": "./dist/macro.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*.d.mts",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.2.0",
+    "@types/node": "^24.10.1",
+    "@typescript/native-preview": "7.0.0-dev.20251202.1",
+    "bumpp": "^10.3.2",
+    "eslint": "^9.39.1",
+    "gensync": "1.0.0-beta.2",
+    "lint-staged": "^16.2.7",
+    "mitata": "^1.0.34",
+    "simple-git-hooks": "^2.13.1",
+    "tsdown": "^0.17.0-beta.5",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6",
+    "vitest": "^4.0.15"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown -w",
+    "lint": "eslint .",
+    "release": "bumpp",
+    "benchmark": "node scripts/benchmark.js",
+    "test": "vitest",
+    "typecheck": "tsgo --noEmit"
+  }
+}

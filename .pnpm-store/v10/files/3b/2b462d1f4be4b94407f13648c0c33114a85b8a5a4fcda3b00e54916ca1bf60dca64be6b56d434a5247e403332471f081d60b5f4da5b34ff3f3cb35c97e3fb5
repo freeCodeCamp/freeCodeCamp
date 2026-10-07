@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MetricPolling.js",
+  "module": "../dist/esm/MetricPolling.js",
+  "types": "../dist/dts/MetricPolling.d.ts"
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Iterable.js",
+  "module": "../dist/esm/Iterable.js",
+  "types": "../dist/dts/Iterable.d.ts"
+}

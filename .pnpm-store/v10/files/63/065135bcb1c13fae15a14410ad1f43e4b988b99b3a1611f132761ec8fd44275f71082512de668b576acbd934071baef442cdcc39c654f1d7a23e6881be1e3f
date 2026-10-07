@@ -1,0 +1,8 @@
+{
+  "test": "dist/index.mjs",
+  "targets": {
+    "test": {
+      "outputFormat": "commonjs"
+    }
+  }
+}

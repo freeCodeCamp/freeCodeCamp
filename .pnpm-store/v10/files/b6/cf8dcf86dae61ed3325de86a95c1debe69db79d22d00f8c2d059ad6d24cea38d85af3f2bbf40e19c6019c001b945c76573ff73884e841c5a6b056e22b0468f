@@ -1,0 +1,52 @@
+{
+  "name": "yaml-loader",
+  "version": "0.8.1",
+  "license": "MIT",
+  "description": "YAML loader for Webpack",
+  "keywords": [
+    "yaml",
+    "webpack",
+    "loader",
+    "json"
+  ],
+  "contributors": [
+    "Andrey Okonetchnikov <andrey@okonet.ru>",
+    "Eemeli Aro <eemeli@gmail.com>"
+  ],
+  "homepage": "https://github.com/eemeli/yaml-loader",
+  "bugs": {
+    "url": "https://github.com/eemeli/yaml-loader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eemeli/yaml-loader.git"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "prettier": "prettier --ignore-path .gitignore --write .",
+    "test": "jest --coverage"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "dependencies": {
+    "javascript-stringify": "^2.0.1",
+    "loader-utils": "^2.0.0",
+    "yaml": "^2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^28.0.0",
+    "memfs": "^3.4.13",
+    "prettier": "^2.1.1",
+    "unionfs": "^4.4.0",
+    "webpack": "^5.75.0"
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"KeyOperation.js","sourceRoot":"","sources":["../src/KeyOperation.ts"],"names":[],"mappings":""}

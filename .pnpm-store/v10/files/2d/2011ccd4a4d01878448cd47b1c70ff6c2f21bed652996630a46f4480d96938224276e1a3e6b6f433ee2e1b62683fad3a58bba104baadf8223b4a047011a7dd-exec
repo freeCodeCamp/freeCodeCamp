@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+"use strict";
+
+require("../tools/exit.cjs");
+
+try {
+    require("source-map-support").install();
+} catch (err) {}
+
+const fs = require("fs");
+const path = require("path");
+const program = require("commander");
+
+const packageJson = require("../package.json");
+const { _run_cli: run_cli } = require("..");
+
+run_cli({ program, packageJson, fs, path }).catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+});

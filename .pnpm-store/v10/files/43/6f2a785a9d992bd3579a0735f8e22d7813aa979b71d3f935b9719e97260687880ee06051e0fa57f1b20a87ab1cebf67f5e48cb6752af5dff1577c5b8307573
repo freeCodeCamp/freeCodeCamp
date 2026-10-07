@@ -1,0 +1,104 @@
+{
+  "name": "common-tags",
+  "description": "a few common utility template tags for ES2015",
+  "version": "1.8.2",
+  "author": "Declan de Wet <declandewet@me.com>",
+  "bugs": {
+    "url": "http://github.com/zspecza/common-tags/issues"
+  },
+  "contributors": [
+    "Declan de Wet (https://github.com/zspecza)",
+    "Jason Killian (https://github.com/JKillian)",
+    "Laurent Goudet (https://github.com/laurentgoudet)",
+    "Kamil Ogórek (https://github.com/kamilogorek)",
+    "Lucian Buzzo (https://github.com/LucianBuzzo)",
+    "Rafał Ruciński (https://github.com/fatfisz)"
+  ],
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-eslint": "8.2.3",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-export-extensions": "6.22.0",
+    "babel-preset-env": "1.7.0",
+    "babel-register": "6.26.0",
+    "codecov": "3.0.2",
+    "cross-env": "5.1.6",
+    "doctoc": "1.3.1",
+    "eslint": "4.19.1",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "jest": "23.0.0",
+    "micromatch": "3.1.10",
+    "prettier": "1.12.1",
+    "rimraf": "2.6.2",
+    "rollup": "0.59.3",
+    "rollup-plugin-babel": "3.0.4",
+    "rollup-plugin-node-resolve": "3.3.0",
+    "rollup-plugin-uglify": "4.0.0",
+    "when": "3.7.8"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "homepage": "https://github.com/zspecza/common-tags",
+  "keywords": [
+    "array",
+    "babel",
+    "es2015",
+    "es2015-tag",
+    "es6",
+    "es6-tag",
+    "heredoc",
+    "html",
+    "indent",
+    "indents",
+    "line",
+    "literal",
+    "multi",
+    "multiline",
+    "normalize",
+    "one",
+    "oneline",
+    "single",
+    "singleline",
+    "string",
+    "strings",
+    "strip",
+    "tag",
+    "tagged",
+    "template"
+  ],
+  "license": "MIT",
+  "main": "lib",
+  "jsnext:main": "es",
+  "module": "es",
+  "unpkg": "dist/common-tags.min.js",
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zspecza/common-tags"
+  },
+  "scripts": {
+    "clear": "rimraf lib && rimraf es",
+    "build": "npm run clear && npm run build:cjs && npm run build:es && npm run build:unpkg",
+    "build:cjs": "babel src -d lib --ignore *.test.js",
+    "build:es": "cross-env BABEL_ENV=es babel src -d es --ignore *.test.js",
+    "build:unpkg": "cross-env BABEL_ENV=es rollup --config",
+    "codecov": "codecov",
+    "doctoc": "doctoc readme.md --title \"## Table of Contents\"",
+    "lint": "eslint .*rc.js src/**/*.js --ignore-pattern '!.*rc.js'",
+    "lint:fix": "eslint --fix .*rc.js src/**/*.js --ignore-pattern '!.*rc.js'",
+    "prerelease": "npm run build",
+    "preversion": "npm run doctoc  && npm test",
+    "release": "npm publish",
+    "test": "npm run lint && jest"
+  }
+}

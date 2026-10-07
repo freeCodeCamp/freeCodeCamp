@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Chunk.js",
+  "module": "../dist/esm/Chunk.js",
+  "types": "../dist/dts/Chunk.d.ts"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "@html-eslint/core",
+  "version": "0.60.0",
+  "description": "Core HTML validation logic for html-eslint",
+  "author": {
+    "name": "yeonjuan",
+    "url": "https://github.com/yeonjuan"
+  },
+  "homepage": "https://github.com/yeonjuan/html-eslint#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeonjuan/html-eslint.git"
+  },
+  "scripts": {
+    "ts": "tsc --noEmit",
+    "lint": "eslint .",
+    "build": "tsup"
+  },
+  "bugs": {
+    "url": "https://github.com/yeonjuan/html-eslint/issues"
+  },
+  "keywords": [
+    "html",
+    "eslint",
+    "validation",
+    "core",
+    "lint"
+  ],
+  "dependencies": {
+    "@html-eslint/types": "^0.60.0",
+    "html-standard": "^0.0.13"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "gitHead": "64d9d73aa7130ce5d3530add8fe06bcc9e4cf3de"
+}

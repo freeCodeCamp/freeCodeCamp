@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_dispose.cjs",
+    "module": "../../esm/_dispose.js"
+}

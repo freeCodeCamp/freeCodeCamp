@@ -1,0 +1,59 @@
+# packages/playwright/lib/runner/index.js
+# total: 288.6 KB
+
+## Inlined (45)
+   1.3 KB  packages/playwright/src/isomorphic/events.ts
+   0.1 KB  packages/playwright/src/isomorphic/folders.ts
+   0.9 KB  packages/playwright/src/isomorphic/stringInternPool.ts
+  15.1 KB  packages/playwright/src/isomorphic/teleReceiver.ts
+   3.9 KB  packages/playwright/src/isomorphic/teleSuiteUpdater.ts
+   4.8 KB  packages/playwright/src/isomorphic/testServerConnection.ts
+   0.0 KB  packages/playwright/src/isomorphic/testTree.ts
+   5.0 KB  packages/playwright/src/plugins/gitCommitInfoPlugin.ts
+   8.6 KB  packages/playwright/src/plugins/webServerPlugin.ts
+  20.7 KB  packages/playwright/src/reporters/base.ts
+   4.0 KB  packages/playwright/src/reporters/blob.ts
+   2.3 KB  packages/playwright/src/reporters/dot.ts
+   0.1 KB  packages/playwright/src/reporters/empty.ts
+   3.5 KB  packages/playwright/src/reporters/github.ts
+  26.2 KB  packages/playwright/src/reporters/html.ts
+   3.1 KB  packages/playwright/src/reporters/internalReporter.ts
+   7.1 KB  packages/playwright/src/reporters/json.ts
+  10.3 KB  packages/playwright/src/reporters/junit.ts
+   3.8 KB  packages/playwright/src/reporters/line.ts
+   8.6 KB  packages/playwright/src/reporters/list.ts
+   1.4 KB  packages/playwright/src/reporters/listModeReporter.ts
+  18.5 KB  packages/playwright/src/reporters/merge.ts
+   2.5 KB  packages/playwright/src/reporters/multiplexer.ts
+   2.0 KB  packages/playwright/src/reporters/reporterV2.ts
+   8.7 KB  packages/playwright/src/reporters/teleEmitter.ts
+  19.0 KB  packages/playwright/src/runner/dispatcher.ts
+   1.5 KB  packages/playwright/src/runner/fsWatcher.ts
+   0.5 KB  packages/playwright/src/runner/index.ts
+   1.2 KB  packages/playwright/src/runner/lastRun.ts
+   1.6 KB  packages/playwright/src/runner/loaderHost.ts
+  12.5 KB  packages/playwright/src/runner/loadUtils.ts
+   5.8 KB  packages/playwright/src/runner/processHost.ts
+   7.8 KB  packages/playwright/src/runner/projectUtils.ts
+   5.5 KB  packages/playwright/src/runner/rebase.ts
+   3.5 KB  packages/playwright/src/runner/reporters.ts
+   1.6 KB  packages/playwright/src/runner/sigIntWatcher.ts
+   3.5 KB  packages/playwright/src/runner/taskRunner.ts
+  14.4 KB  packages/playwright/src/runner/tasks.ts
+   3.6 KB  packages/playwright/src/runner/testGroups.ts
+  13.9 KB  packages/playwright/src/runner/testRunner.ts
+   8.8 KB  packages/playwright/src/runner/testServer.ts
+   0.2 KB  packages/playwright/src/runner/uiModeReporter.ts
+   1.7 KB  packages/playwright/src/runner/vcs.ts
+  13.1 KB  packages/playwright/src/runner/watchMode.ts
+   2.1 KB  packages/playwright/src/runner/workerHost.ts
+
+## External (8)
+  ../common
+  ../loader/loaderProcessEntry.js
+  ../transform/babelBundle
+  ../util
+  ../worker/workerProcessEntry.js
+  playwright-core
+  playwright-core/lib/coreBundle
+  playwright-core/lib/utilsBundle

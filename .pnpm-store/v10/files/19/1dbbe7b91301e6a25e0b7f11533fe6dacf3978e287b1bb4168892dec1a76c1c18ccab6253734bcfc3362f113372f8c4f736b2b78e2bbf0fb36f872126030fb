@@ -1,0 +1,69 @@
+# Doesn't parse VB as JS
+
+<script type="text/visualbasic">let something = 20</script>
+
+==>
+
+Document(Element(OpenTag(StartTag,TagName,Attribute(AttributeName,Is,AttributeValue),EndTag),
+  ScriptText,
+CloseTag(StartCloseTag,TagName,EndTag)))
+
+# Does parse type-less script tags as JS
+
+<script>/foo/</script>
+
+==>
+
+Document(Element(OpenTag(StartTag,TagName,EndTag),
+  Script(ExpressionStatement(RegExp)),
+CloseTag(StartCloseTag,TagName,EndTag)))
+
+# Still doesn't end script tags on closing tags
+
+<script type=something></foo></script>
+
+==>
+
+Document(Element(OpenTag(StartTag,TagName,Attribute(AttributeName,Is,UnquotedAttributeValue),EndTag),
+  ScriptText,
+CloseTag(StartCloseTag,TagName,EndTag)))
+
+# Missing end tag
+
+<html><script>null
+
+==>
+
+Document(Element(OpenTag(StartTag,TagName,EndTag),
+  Element(OpenTag(StartTag,TagName,EndTag),
+    Script(ExpressionStatement(null)))))
+
+# JS with script type
+
+<script type="text/javascript">console.log(2)</script>
+
+==>
+
+Document(Element(OpenTag(StartTag,TagName,Attribute(AttributeName,Is,AttributeValue),EndTag),
+  Script(...),
+CloseTag(StartCloseTag,TagName,EndTag)))
+
+# JS with unquoted script type
+
+<script type=module>console.log(2)</script>
+
+==>
+
+Document(Element(OpenTag(StartTag,TagName,Attribute(AttributeName,Is,UnquotedAttributeValue),EndTag),
+  Script(...),
+CloseTag(StartCloseTag,TagName,EndTag)))
+
+# Error in JS
+
+<script>a b</script>
+
+==>
+
+Document(Element(OpenTag(StartTag,TagName,EndTag),
+  Script(...),
+CloseTag(StartCloseTag,TagName,EndTag)))

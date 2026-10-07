@@ -1,0 +1,34 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"new-cap": [2, {
+			"capIsNewExceptions": [
+				"ArraySpeciesCreate",
+				"Call",
+				"CreateDataPropertyOrThrow",
+				"FlattenIntoArray",
+				"Get",
+				"HasProperty",
+				"IsArray",
+				"IsCallable",
+				"Set",
+				"ToLength",
+				"ToObject",
+				"ToString",
+			]
+		}],
+		"no-magic-numbers": 0,
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"no-invalid-this": [1],
+			},
+		},
+	],
+}

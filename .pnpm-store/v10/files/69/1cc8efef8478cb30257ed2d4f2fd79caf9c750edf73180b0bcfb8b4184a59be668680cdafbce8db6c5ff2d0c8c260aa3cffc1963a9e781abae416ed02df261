@@ -1,0 +1,14 @@
+{
+  "typesVersions": {
+    ">=4.7": {
+      "index": [
+        "./ts47-mergeParameters.d.ts"
+      ]
+    },
+    "<4.7": {
+      "index": [
+        "./ts46-mergeParameters.d.ts"
+      ]
+    }
+  }
+}

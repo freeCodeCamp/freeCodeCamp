@@ -1,0 +1,34 @@
+{
+  "name": "underscore.string",
+  "version": "3.3.6",
+  "description": "String manipulation extensions for Underscore.js javascript library.",
+  "homepage": "http://epeli.github.com/underscore.string/",
+  "contributors": [
+    "Esa-Matti Suuronen <esa-matti@suuronen.org> (http://esa-matti.suuronen.org/)",
+    "Edward Tsech <edtsech@gmail.com>",
+    "Pavel Pravosud <pavel@pravosud.com> (<https://github.com/rwz>)",
+    "Sasha Koss <kossnocorp@gmail.com> (http://koss.nocorp.me/)",
+    "Vladimir Dronnikov <dronnikov@gmail.com>",
+    "Pete Kruckenberg (<https://github.com/kruckenb>)",
+    "Paul Chavard <paul@chavard.net> (<http://tchak.net>)",
+    "Ed Finkler <coj@funkatron.com> (<http://funkatron.com>)"
+  ],
+  "keywords": [
+    "underscore",
+    "string"
+  ],
+  "main": "./dist/underscore.string.js",
+  "ignore": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epeli/underscore.string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/epeli/underscore.string/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

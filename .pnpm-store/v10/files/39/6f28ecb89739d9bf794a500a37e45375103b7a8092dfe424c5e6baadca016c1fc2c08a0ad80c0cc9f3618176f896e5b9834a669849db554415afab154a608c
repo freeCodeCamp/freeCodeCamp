@@ -1,0 +1,5 @@
+{
+  "name": "package-module-fallback",
+  "main": "main.js",
+  "module": "module.js"
+}

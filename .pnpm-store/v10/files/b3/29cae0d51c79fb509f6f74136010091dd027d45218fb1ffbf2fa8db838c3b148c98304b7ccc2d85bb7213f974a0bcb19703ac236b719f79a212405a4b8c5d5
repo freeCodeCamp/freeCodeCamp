@@ -1,0 +1,43 @@
+{
+  "name": "@babel/plugin-transform-classes",
+  "version": "7.23.5",
+  "description": "Compile ES2015 classes to ES5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-classes"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-transform-classes",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/helper-annotate-as-pure": "^7.22.5",
+    "@babel/helper-compilation-targets": "^7.22.15",
+    "@babel/helper-environment-visitor": "^7.22.20",
+    "@babel/helper-function-name": "^7.23.0",
+    "@babel/helper-optimise-call-expression": "^7.22.5",
+    "@babel/helper-plugin-utils": "^7.22.5",
+    "@babel/helper-replace-supers": "^7.22.20",
+    "@babel/helper-split-export-declaration": "^7.22.6",
+    "globals": "^11.1.0"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.5",
+    "@babel/helper-plugin-test-runner": "^7.22.5",
+    "@babel/traverse": "^7.23.5"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

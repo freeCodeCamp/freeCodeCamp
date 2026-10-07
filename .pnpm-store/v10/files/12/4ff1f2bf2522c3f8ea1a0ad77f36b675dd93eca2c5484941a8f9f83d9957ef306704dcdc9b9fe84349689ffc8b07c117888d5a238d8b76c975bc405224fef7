@@ -1,0 +1,50 @@
+{
+  "name": "util",
+  "description": "Node.js's util module for all engines",
+  "version": "0.12.5",
+  "author": {
+    "name": "Joyent",
+    "url": "http://www.joyent.com"
+  },
+  "browser": {
+    "./support/isBuffer.js": "./support/isBufferBrowser.js"
+  },
+  "dependencies": {
+    "inherits": "^2.0.3",
+    "is-arguments": "^1.0.4",
+    "is-generator-function": "^1.0.7",
+    "is-typed-array": "^1.1.3",
+    "which-typed-array": "^1.1.2"
+  },
+  "devDependencies": {
+    "airtap": "~1.0.0",
+    "core-js": "^3.6.5",
+    "is-async-supported": "~1.2.0",
+    "object.assign": "~4.1.0",
+    "object.entries": "^1.1.0",
+    "run-series": "~1.1.4",
+    "safe-buffer": "^5.1.2",
+    "tape": "~4.9.0"
+  },
+  "files": [
+    "util.js",
+    "support"
+  ],
+  "homepage": "https://github.com/browserify/node-util",
+  "keywords": [
+    "util"
+  ],
+  "license": "MIT",
+  "main": "./util.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/browserify/node-util"
+  },
+  "scripts": {
+    "test": "node test/node/index.js",
+    "test:browsers": "airtap test/browser/index.js",
+    "test:browsers:with-polyfills": "airtap test/browser/with-polyfills.js",
+    "test:browsers:with-polyfills:local": "npm run test:browsers:with-polyfills -- --local",
+    "test:browsers:local": "npm run test:browsers -- --local"
+  }
+}

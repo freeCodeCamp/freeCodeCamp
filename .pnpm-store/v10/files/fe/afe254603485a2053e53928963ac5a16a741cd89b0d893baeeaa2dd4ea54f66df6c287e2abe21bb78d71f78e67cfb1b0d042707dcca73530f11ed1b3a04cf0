@@ -1,0 +1,1 @@
+{"version":3,"file":"create-set-target-automation-event.js","sourceRoot":"","sources":["../../../src/functions/create-set-target-automation-event.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,8BAA8B,GAAG,CAAC,MAAc,EAAE,SAAiB,EAAE,YAAoB,EAA6B,EAAE;IACjI,OAAO,EAAE,SAAS,EAAE,MAAM,EAAE,YAAY,EAAE,IAAI,EAAE,WAAW,EAAE,CAAC;AAClE,CAAC,CAAC"}

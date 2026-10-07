@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_is_native_function.js")

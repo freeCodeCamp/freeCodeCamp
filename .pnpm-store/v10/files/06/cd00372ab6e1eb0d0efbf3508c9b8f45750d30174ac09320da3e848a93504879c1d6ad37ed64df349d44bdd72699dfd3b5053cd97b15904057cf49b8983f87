@@ -1,0 +1,32 @@
+import { TSESTree } from '../../ts-estree';
+type IsSpecificTokenFunction<SpecificToken extends TSESTree.Token> = (token: TSESTree.Token) => token is SpecificToken;
+type IsNotSpecificTokenFunction<SpecificToken extends TSESTree.Token> = (token: TSESTree.Token) => token is Exclude<TSESTree.Token, SpecificToken>;
+type PunctuatorTokenWithValue<Value extends string> = TSESTree.PunctuatorToken & {
+    value: Value;
+};
+type IsPunctuatorTokenWithValueFunction<Value extends string> = IsSpecificTokenFunction<PunctuatorTokenWithValue<Value>>;
+type IsNotPunctuatorTokenWithValueFunction<Value extends string> = IsNotSpecificTokenFunction<PunctuatorTokenWithValue<Value>>;
+declare const isArrowToken: IsPunctuatorTokenWithValueFunction<"=>">;
+declare const isNotArrowToken: IsNotPunctuatorTokenWithValueFunction<"=>">;
+declare const isClosingBraceToken: IsPunctuatorTokenWithValueFunction<"}">;
+declare const isNotClosingBraceToken: IsNotPunctuatorTokenWithValueFunction<"}">;
+declare const isClosingBracketToken: IsPunctuatorTokenWithValueFunction<"]">;
+declare const isNotClosingBracketToken: IsNotPunctuatorTokenWithValueFunction<"]">;
+declare const isClosingParenToken: IsPunctuatorTokenWithValueFunction<")">;
+declare const isNotClosingParenToken: IsNotPunctuatorTokenWithValueFunction<")">;
+declare const isColonToken: IsPunctuatorTokenWithValueFunction<":">;
+declare const isNotColonToken: IsNotPunctuatorTokenWithValueFunction<":">;
+declare const isCommaToken: IsPunctuatorTokenWithValueFunction<",">;
+declare const isNotCommaToken: IsNotPunctuatorTokenWithValueFunction<",">;
+declare const isCommentToken: IsSpecificTokenFunction<TSESTree.Comment>;
+declare const isNotCommentToken: IsNotSpecificTokenFunction<TSESTree.Comment>;
+declare const isOpeningBraceToken: IsPunctuatorTokenWithValueFunction<"{">;
+declare const isNotOpeningBraceToken: IsNotPunctuatorTokenWithValueFunction<"{">;
+declare const isOpeningBracketToken: IsPunctuatorTokenWithValueFunction<"[">;
+declare const isNotOpeningBracketToken: IsNotPunctuatorTokenWithValueFunction<"[">;
+declare const isOpeningParenToken: IsPunctuatorTokenWithValueFunction<"(">;
+declare const isNotOpeningParenToken: IsNotPunctuatorTokenWithValueFunction<"(">;
+declare const isSemicolonToken: IsPunctuatorTokenWithValueFunction<";">;
+declare const isNotSemicolonToken: IsNotPunctuatorTokenWithValueFunction<";">;
+export { isArrowToken, isClosingBraceToken, isClosingBracketToken, isClosingParenToken, isColonToken, isCommaToken, isCommentToken, isNotArrowToken, isNotClosingBraceToken, isNotClosingBracketToken, isNotClosingParenToken, isNotColonToken, isNotCommaToken, isNotCommentToken, isNotOpeningBraceToken, isNotOpeningBracketToken, isNotOpeningParenToken, isNotSemicolonToken, isOpeningBraceToken, isOpeningBracketToken, isOpeningParenToken, isSemicolonToken, };
+//# sourceMappingURL=predicates.d.ts.map

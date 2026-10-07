@@ -1,0 +1,68 @@
+{
+  "author": {
+    "email": "gajus@gajus.com",
+    "name": "Gajus Kuizinas",
+    "url": "http://gajus.com"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "string-natural-compare": "^3.0.1"
+  },
+  "description": "Flowtype linting rules for ESLint.",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "ajv": "^6.12.2",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "chai": "^4.2.0",
+    "eclint": "^2.8.1",
+    "eslint": "^7.1.0",
+    "eslint-config-canonical": "^20.0.4",
+    "gitdown": "^3.1.3",
+    "glob": "^7.1.6",
+    "husky": "^4.2.5",
+    "jsonlint": "^1.6.3",
+    "mocha": "^7.2.0",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.0.8"
+  },
+  "engines": {
+    "node": "^10.12.0 || >=12.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run check-docs && npm run check-tests && npm run lint && npm run test && npm run build && npm run format-json && eclint fix ./src/**/* ./tests/**/*"
+    }
+  },
+  "keywords": [
+    "eslint",
+    "plugin",
+    "flowtype"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "./dist/index.js",
+  "name": "eslint-plugin-flowtype",
+  "peerDependencies": {
+    "eslint": "^7.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajus/eslint-plugin-flowtype"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && babel ./src --out-dir ./dist --copy-files",
+    "check-docs": "babel-node ./src/bin/checkDocs",
+    "check-tests": "babel-node ./src/bin/checkTests",
+    "create-readme": "gitdown ./.README/README.md --output-file ./README.md && npm run documentation-add-assertions",
+    "documentation-add-assertions": "babel-node ./src/bin/addAssertions",
+    "format-json": "jsonlint --sort-keys --in-place --indent \"  \" ./src/configs/recommended.json",
+    "lint": "eslint ./src ./tests",
+    "test": "mocha --require @babel/register ./tests/rules/index.js"
+  },
+  "version": "5.10.0"
+}

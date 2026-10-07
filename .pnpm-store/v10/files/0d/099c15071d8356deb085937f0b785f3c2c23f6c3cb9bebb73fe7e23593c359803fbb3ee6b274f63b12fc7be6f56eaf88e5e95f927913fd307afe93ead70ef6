@@ -1,0 +1,90 @@
+{
+  "name": "@inquirer/confirm",
+  "version": "6.0.12",
+  "description": "Inquirer confirm prompt",
+  "keywords": [
+    "answer",
+    "answers",
+    "ask",
+    "base",
+    "cli",
+    "command",
+    "command-line",
+    "confirm",
+    "enquirer",
+    "generate",
+    "generator",
+    "hyper",
+    "input",
+    "inquire",
+    "inquirer",
+    "interface",
+    "iterm",
+    "javascript",
+    "menu",
+    "node",
+    "nodejs",
+    "prompt",
+    "promptly",
+    "prompts",
+    "question",
+    "readline",
+    "scaffold",
+    "scaffolder",
+    "scaffolding",
+    "stdin",
+    "stdout",
+    "terminal",
+    "tty",
+    "ui",
+    "yeoman",
+    "yo",
+    "zsh"
+  ],
+  "homepage": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/confirm/README.md",
+  "license": "MIT",
+  "author": "Simon Boudrias <admin@simonboudrias.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SBoudrias/Inquirer.js.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@inquirer/core": "^11.1.9",
+    "@inquirer/type": "^4.0.5"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  },
+  "peerDependencies": {
+    "@types/node": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "gitHead": "35bda2afd31b4acca8f800259b9f7ca4e95a1d9d"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@algolia/events",
+  "version": "4.0.1",
+  "description": "Node's event emitter for all engines.",
+  "keywords": [
+    "events",
+    "eventEmitter",
+    "eventDispatcher",
+    "listeners"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/events.git",
+    "web": "https://github.com/algolia/events"
+  },
+  "bugs": {
+    "url": "http://github.com/algolia/events/issues/"
+  },
+  "files": [
+    "events.js",
+    "types/index.d.ts"
+  ],
+  "main": "./events.js",
+  "types": "types",
+  "devDependencies": {
+    "dtslint": "^4.2.1",
+    "tape": "^5.0.0",
+    "typescript": "^4.5.2"
+  },
+  "scripts": {
+    "lint:types": "dtslint types",
+    "test": "node tests/index.js"
+  },
+  "license": "MIT"
+}

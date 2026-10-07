@@ -1,0 +1,55 @@
+{
+  "name": "filesize",
+  "description": "JavaScript library to generate a human readable String describing the file size",
+  "version": "8.0.7",
+  "homepage": "https://filesizejs.com",
+  "author": "Jason Mulligan <jason.mulligan@avoidwork.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/avoidwork/filesize.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avoidwork/filesize.js/issues"
+  },
+  "files": [
+    "lib",
+    "*.d.ts"
+  ],
+  "license": "BSD-3-Clause",
+  "browser": "lib/filesize.min.js",
+  "main": "lib/filesize.js",
+  "module": "lib/filesize.esm.js",
+  "types": "filesize.d.ts",
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "changelog": "auto-changelog -p",
+    "test": "npm run build && npm run lint && npm run test:unit && npm run test:type",
+    "test:unit": "nodeunit test/filesize_test.js",
+    "test:type": "tsc -p test",
+    "lint": "eslint test/*.js src/*.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "auto-changelog": "^2.3.0",
+    "eslint": "^8.1.0",
+    "nodeunit-x": "^0.15.0",
+    "rollup": "^2.58.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^3.9.0"
+  },
+  "keywords": [
+    "file",
+    "filesize",
+    "size",
+    "readable",
+    "file system",
+    "bytes",
+    "diff"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+	"name": "husky",
+	"version": "9.1.7",
+	"type": "module",
+	"description": "Modern native Git hooks",
+	"keywords": [
+		"git",
+		"hooks",
+		"pre-commit"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/typicode/husky.git"
+	},
+	"funding": "https://github.com/sponsors/typicode",
+	"license": "MIT",
+	"author": "typicode",
+	"bin": {
+		"husky": "bin.js"
+	},
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=18"
+	}
+}

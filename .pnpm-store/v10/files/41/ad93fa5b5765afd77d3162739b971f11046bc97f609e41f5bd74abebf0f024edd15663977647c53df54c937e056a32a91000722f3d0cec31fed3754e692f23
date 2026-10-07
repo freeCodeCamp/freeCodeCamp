@@ -1,0 +1,71 @@
+{
+  "author": "Jake Luer <jake@alogicalparadox.com>",
+  "name": "chai",
+  "type": "module",
+  "description": "BDD/TDD assertion library for node.js and the browser. Test framework agnostic.",
+  "keywords": [
+    "test",
+    "assertion",
+    "assert",
+    "testing",
+    "chai"
+  ],
+  "files": [
+    "index.js",
+    "register-*.js"
+  ],
+  "homepage": "http://chaijs.com",
+  "license": "MIT",
+  "contributors": [
+    "Jake Luer <jake@alogicalparadox.com>",
+    "Domenic Denicola <domenic@domenicdenicola.com> (http://domenicdenicola.com)",
+    "Veselin Todorov <hi@vesln.com>",
+    "John Firebaugh <john.firebaugh@gmail.com>"
+  ],
+  "version": "6.2.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaijs/chai"
+  },
+  "bugs": {
+    "url": "https://github.com/chaijs/chai/issues"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "build": "esbuild --bundle --format=esm --target=es2021 --keep-names --legal-comments=none --outfile=index.js lib/chai.js",
+    "prebuild": "npm run clean",
+    "format": "prettier --write lib",
+    "pretest": "npm run lint",
+    "test": "npm run test-node && npm run test-chrome",
+    "test-node": "c8 --99 --check-coverage mocha --require ./test/bootstrap/index.js test/*.js",
+    "test-chrome": "web-test-runner --playwright",
+    "lint": "npm run lint:js && npm run lint:format",
+    "lint:js": "eslint lib/",
+    "lint:format": "prettier --check lib",
+    "lint:types": "tsc",
+    "clean": "rm -rf index.js coverage/"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@web/dev-server-rollup": "^0.6.1",
+    "@web/test-runner": "^0.20.0",
+    "@web/test-runner-playwright": "^0.11.0",
+    "assertion-error": "^2.0.1",
+    "c8": "^10.1.3",
+    "check-error": "^2.1.1",
+    "deep-eql": "^5.0.1",
+    "esbuild": "^0.27.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-jsdoc": "^61.0.0",
+    "globals": "^16.3.0",
+    "loupe": "^3.1.0",
+    "mocha": "^11.0.0",
+    "pathval": "^2.0.0",
+    "prettier": "^3.4.2",
+    "typescript": "~5.9.0"
+  }
+}

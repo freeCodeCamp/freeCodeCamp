@@ -1,0 +1,71 @@
+{
+	"name": "chalk",
+	"version": "2.4.2",
+	"description": "Terminal string styling done right",
+	"license": "MIT",
+	"repository": "chalk/chalk",
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && tsc --project types && flow --max-warnings=0 && nyc ava",
+		"bench": "matcha benchmark.js",
+		"coveralls": "nyc report --reporter=text-lcov | coveralls"
+	},
+	"files": [
+		"index.js",
+		"templates.js",
+		"types/index.d.ts",
+		"index.js.flow"
+	],
+	"keywords": [
+		"color",
+		"colour",
+		"colors",
+		"terminal",
+		"console",
+		"cli",
+		"string",
+		"str",
+		"ansi",
+		"style",
+		"styles",
+		"tty",
+		"formatting",
+		"rgb",
+		"256",
+		"shell",
+		"xterm",
+		"log",
+		"logging",
+		"command-line",
+		"text"
+	],
+	"dependencies": {
+		"ansi-styles": "^3.2.1",
+		"escape-string-regexp": "^1.0.5",
+		"supports-color": "^5.3.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"coveralls": "^3.0.0",
+		"execa": "^0.9.0",
+		"flow-bin": "^0.68.0",
+		"import-fresh": "^2.0.0",
+		"matcha": "^0.7.0",
+		"nyc": "^11.0.2",
+		"resolve-from": "^4.0.0",
+		"typescript": "^2.5.3",
+		"xo": "*"
+	},
+	"types": "types/index.d.ts",
+	"xo": {
+		"envs": [
+			"node",
+			"mocha"
+		],
+		"ignores": [
+			"test/_flow.js"
+		]
+	}
+}

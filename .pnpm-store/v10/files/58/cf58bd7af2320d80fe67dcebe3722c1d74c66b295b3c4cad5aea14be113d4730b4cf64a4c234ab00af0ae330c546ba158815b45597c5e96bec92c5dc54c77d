@@ -1,0 +1,50 @@
+'use strict';
+
+var composer = require('./compose/composer.js');
+var Document = require('./doc/Document.js');
+var Schema = require('./schema/Schema.js');
+var errors = require('./errors.js');
+var Alias = require('./nodes/Alias.js');
+var identity = require('./nodes/identity.js');
+var Pair = require('./nodes/Pair.js');
+var Scalar = require('./nodes/Scalar.js');
+var YAMLMap = require('./nodes/YAMLMap.js');
+var YAMLSeq = require('./nodes/YAMLSeq.js');
+var cst = require('./parse/cst.js');
+var lexer = require('./parse/lexer.js');
+var lineCounter = require('./parse/line-counter.js');
+var parser = require('./parse/parser.js');
+var publicApi = require('./public-api.js');
+var visit = require('./visit.js');
+
+
+
+exports.Composer = composer.Composer;
+exports.Document = Document.Document;
+exports.Schema = Schema.Schema;
+exports.YAMLError = errors.YAMLError;
+exports.YAMLParseError = errors.YAMLParseError;
+exports.YAMLWarning = errors.YAMLWarning;
+exports.Alias = Alias.Alias;
+exports.isAlias = identity.isAlias;
+exports.isCollection = identity.isCollection;
+exports.isDocument = identity.isDocument;
+exports.isMap = identity.isMap;
+exports.isNode = identity.isNode;
+exports.isPair = identity.isPair;
+exports.isScalar = identity.isScalar;
+exports.isSeq = identity.isSeq;
+exports.Pair = Pair.Pair;
+exports.Scalar = Scalar.Scalar;
+exports.YAMLMap = YAMLMap.YAMLMap;
+exports.YAMLSeq = YAMLSeq.YAMLSeq;
+exports.CST = cst;
+exports.Lexer = lexer.Lexer;
+exports.LineCounter = lineCounter.LineCounter;
+exports.Parser = parser.Parser;
+exports.parse = publicApi.parse;
+exports.parseAllDocuments = publicApi.parseAllDocuments;
+exports.parseDocument = publicApi.parseDocument;
+exports.stringify = publicApi.stringify;
+exports.visit = visit.visit;
+exports.visitAsync = visit.visitAsync;

@@ -1,0 +1,39 @@
+{
+  "name": "split2",
+  "version": "4.2.0",
+  "description": "split a Text Stream into a Line Stream, using Stream 3",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard --verbose",
+    "unit": "nyc --lines 100 --branches 100 --functions 100 --check-coverage --reporter=text tape test.js",
+    "coverage": "nyc --reporter=html --reporter=cobertura --reporter=text tape test/test.js",
+    "test:report": "npm run lint && npm run unit:report",
+    "test": "npm run lint && npm run unit",
+    "legacy": "tape test.js"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "website": "https://github.com/mcollina/split2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcollina/split2.git"
+  },
+  "bugs": {
+    "url": "http://github.com/mcollina/split2/issues"
+  },
+  "engines": {
+    "node": ">= 10.x"
+  },
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "binary-split": "^1.0.3",
+    "callback-stream": "^1.1.0",
+    "fastbench": "^1.0.0",
+    "nyc": "^15.0.1",
+    "pre-commit": "^1.1.2",
+    "standard": "^17.0.0",
+    "tape": "^5.0.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "source-list-map",
+  "version": "2.0.1",
+  "description": "Fast line to line SourceMap generator.",
+  "author": "Tobias Koppers @sokra",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webpack/source-list-map.git"
+  },
+  "keywords": [
+    "source-map"
+  ],
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webpack/source-list-map/issues"
+  },
+  "homepage": "https://github.com/webpack/source-list-map",
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "should": "^5.2.0"
+  }
+}

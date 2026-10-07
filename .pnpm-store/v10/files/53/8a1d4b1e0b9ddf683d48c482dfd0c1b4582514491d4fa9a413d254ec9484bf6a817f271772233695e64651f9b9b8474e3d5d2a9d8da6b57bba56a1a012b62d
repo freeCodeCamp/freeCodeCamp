@@ -1,0 +1,43 @@
+{
+  "name": "mime-types",
+  "description": "The ultimate javascript content-type utility.",
+  "version": "2.1.18",
+  "contributors": [
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Jeremiah Senkpiel <fishrock123@rocketmail.com> (https://searchbeam.jit.su)",
+    "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "mime",
+    "types"
+  ],
+  "repository": "jshttp/mime-types",
+  "dependencies": {
+    "mime-db": "~1.33.0"
+  },
+  "devDependencies": {
+    "eslint": "3.19.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "istanbul": "0.4.5",
+    "mocha": "1.21.5"
+  },
+  "files": [
+    "HISTORY.md",
+    "LICENSE",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha --reporter spec test/test.js",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot test/test.js",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot test/test.js"
+  }
+}

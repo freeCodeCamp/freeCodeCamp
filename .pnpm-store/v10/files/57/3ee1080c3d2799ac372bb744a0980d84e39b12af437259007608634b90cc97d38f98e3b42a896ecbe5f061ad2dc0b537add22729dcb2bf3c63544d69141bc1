@@ -1,0 +1,28 @@
+# `MD019` - Multiple spaces after hash on atx style heading
+
+Tags: `atx`, `headings`, `spaces`
+
+Aliases: `no-multiple-space-atx`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when more than one space is used to separate the
+heading text from the hash characters in an atx style heading:
+
+```markdown
+#  Heading 1
+
+##  Heading 2
+```
+
+To fix this, separate the heading text from the hash character by a single
+space:
+
+```markdown
+# Heading 1
+
+## Heading 2
+```
+
+Rationale: Extra space has no purpose and does not affect the rendering of
+content.

@@ -1,0 +1,71 @@
+{
+  "name": "is-windows",
+  "description": "Returns true if the platform is windows. UMD module, works with node.js, commonjs, browser, AMD, electron, etc.",
+  "version": "1.0.2",
+  "homepage": "https://github.com/jonschlinkert/is-windows",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Simen Bekkhus (https://github.com/SimenB)",
+    "刘祺 (gucong.co.cc)"
+  ],
+  "repository": "jonschlinkert/is-windows",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-windows/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^3.5.3"
+  },
+  "keywords": [
+    "check",
+    "cywin",
+    "is",
+    "is-windows",
+    "nix",
+    "operating system",
+    "os",
+    "platform",
+    "process",
+    "unix",
+    "win",
+    "win32",
+    "windows"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "is-absolute",
+        "is-glob",
+        "is-relative",
+        "isobject",
+        "window-size"
+      ]
+    },
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "verb"
+    ]
+  }
+}

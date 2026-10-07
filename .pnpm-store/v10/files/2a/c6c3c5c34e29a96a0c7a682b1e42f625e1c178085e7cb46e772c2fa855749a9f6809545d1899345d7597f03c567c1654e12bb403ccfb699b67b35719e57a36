@@ -1,0 +1,60 @@
+{
+  "name": "@aws-sdk/credential-provider-env",
+  "version": "3.521.0",
+  "description": "AWS credential provider that sources credentials from known environment variables",
+  "main": "./dist-cjs/index.js",
+  "module": "./dist-es/index.js",
+  "scripts": {
+    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types'",
+    "build:cjs": "node ../../scripts/compilation/inline credential-provider-env",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build:include:deps": "lerna run --scope $npm_package_name --include-dependencies build",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "downlevel-dts dist-types dist-types/ts3.4",
+    "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo",
+    "test": "jest"
+  },
+  "keywords": [
+    "aws",
+    "credentials"
+  ],
+  "author": {
+    "name": "AWS SDK for JavaScript Team",
+    "url": "https://aws.amazon.com/javascript/"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@aws-sdk/types": "3.521.0",
+    "@smithy/property-provider": "^2.1.1",
+    "@smithy/types": "^2.10.0",
+    "tslib": "^2.5.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "1.0.1",
+    "@types/node": "^14.14.31",
+    "concurrently": "7.0.0",
+    "downlevel-dts": "0.10.1",
+    "rimraf": "3.0.2",
+    "typescript": "~4.9.5"
+  },
+  "types": "./dist-types/index.d.ts",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "typesVersions": {
+    "<4.0": {
+      "dist-types/*": [
+        "dist-types/ts3.4/*"
+      ]
+    }
+  },
+  "files": [
+    "dist-*/**"
+  ],
+  "homepage": "https://github.com/aws/aws-sdk-js-v3/tree/main/packages/credential-provider-env",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aws/aws-sdk-js-v3.git",
+    "directory": "packages/credential-provider-env"
+  }
+}

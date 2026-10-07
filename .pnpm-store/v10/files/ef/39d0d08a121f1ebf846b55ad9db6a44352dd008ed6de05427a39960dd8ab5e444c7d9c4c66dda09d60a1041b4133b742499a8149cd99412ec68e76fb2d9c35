@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Pretty.js",
+  "module": "../dist/esm/Pretty.js",
+  "types": "../dist/dts/Pretty.d.ts"
+}

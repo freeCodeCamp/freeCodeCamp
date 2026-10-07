@@ -1,0 +1,76 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* Arrows */
+.monaco-scrollable-element > .scrollbar > .scra {
+	cursor: pointer;
+	font-size: 11px !important;
+}
+
+.monaco-scrollable-element > .visible {
+	opacity: 1;
+
+	/* Background rule added for IE9 - to allow clicks on dom node */
+	background:rgba(0,0,0,0);
+
+	transition: opacity 100ms linear;
+	/* In front of peek view */
+	z-index: 11;
+}
+.monaco-scrollable-element > .invisible {
+	opacity: 0;
+	pointer-events: none;
+}
+.monaco-scrollable-element > .invisible.fade {
+	transition: opacity 800ms linear;
+}
+
+/* Scrollable Content Inset Shadow */
+.monaco-scrollable-element > .shadow {
+	position: absolute;
+	display: none;
+}
+.monaco-scrollable-element > .shadow.top {
+	display: block;
+	top: 0;
+	left: 3px;
+	height: 3px;
+	width: 100%;
+	box-shadow: var(--vscode-scrollbar-shadow) 0 6px 6px -6px inset;
+}
+.monaco-scrollable-element > .shadow.left {
+	display: block;
+	top: 3px;
+	left: 0;
+	height: 100%;
+	width: 3px;
+	box-shadow: var(--vscode-scrollbar-shadow) 6px 0 6px -6px inset;
+}
+.monaco-scrollable-element > .shadow.top-left-corner {
+	display: block;
+	top: 0;
+	left: 0;
+	height: 3px;
+	width: 3px;
+}
+.monaco-scrollable-element > .shadow.top.left {
+	box-shadow: var(--vscode-scrollbar-shadow) 6px 0 6px -6px inset;
+}
+
+.monaco-scrollable-element > .scrollbar {
+	background: var(--vscode-scrollbar-background);
+}
+
+.monaco-scrollable-element > .scrollbar > .slider {
+	background: var(--vscode-scrollbarSlider-background);
+}
+
+.monaco-scrollable-element > .scrollbar > .slider:hover {
+	background: var(--vscode-scrollbarSlider-hoverBackground);
+}
+
+.monaco-scrollable-element > .scrollbar > .slider.active {
+	background: var(--vscode-scrollbarSlider-activeBackground);
+}

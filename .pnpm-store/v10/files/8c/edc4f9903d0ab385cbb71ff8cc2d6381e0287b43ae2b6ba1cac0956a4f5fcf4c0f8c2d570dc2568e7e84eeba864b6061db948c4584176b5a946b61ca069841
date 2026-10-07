@@ -1,0 +1,38 @@
+@import '../variables';
+@import '../mixins';
+
+@keyframes line-scale-party {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    $random: 0.5;
+    transform: scale($random);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin line-scale-party($n:4) {
+  @for $i from 1 through $n {
+    > div:nth-child(#{$i}) {
+      animation-delay: ((random(100) / 100) - 0.2) + s;
+      animation-duration: ((random(100) / 100) + 0.3) + s;
+    }
+  }
+}
+
+.line-scale-party {
+  @include line-scale-party();
+
+  > div {
+    @include lines();
+    @include global-animation();
+
+    display: inline-block;
+    animation-name: line-scale-party;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+  }
+}

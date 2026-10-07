@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Supervisor.js",
+  "module": "../dist/esm/Supervisor.js",
+  "types": "../dist/dts/Supervisor.d.ts"
+}

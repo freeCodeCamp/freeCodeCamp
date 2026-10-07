@@ -1,0 +1,8 @@
+import type { ModalProps, HeaderProps, BodyProps, FooterProps } from "./types";
+declare const Modal: {
+    ({ children, open, onClose, onKeyDown, size, variant, initialFocus, }: ModalProps): JSX.Element;
+    Header: ({ children, showCloseButton, closeButtonClassNames, borderless, }: HeaderProps) => JSX.Element;
+    Body: ({ children, alignment, borderless, className, }: BodyProps) => JSX.Element;
+    Footer: ({ children, alignment }: FooterProps) => JSX.Element;
+};
+export { Modal };

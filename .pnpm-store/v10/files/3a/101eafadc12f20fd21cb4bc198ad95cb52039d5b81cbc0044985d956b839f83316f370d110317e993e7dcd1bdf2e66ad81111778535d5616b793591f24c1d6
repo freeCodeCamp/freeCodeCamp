@@ -1,0 +1,73 @@
+{
+  "name": "loupe",
+  "version": "3.2.1",
+  "description": "Inspect utility for Node.js and browsers",
+  "homepage": "https://github.com/chaijs/loupe",
+  "license": "MIT",
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "contributors": [
+    "Keith Cirkel (https://github.com/keithamus)"
+  ],
+  "type": "module",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "browser": {
+    "./index.js": "./loupe.js",
+    "util": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaijs/loupe"
+  },
+  "files": [
+    "loupe.js",
+    "lib/*"
+  ],
+  "scripts": {
+    "bench": "node bench",
+    "lint": "eslint .",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "npm run test:node && npm run test:browser",
+    "pretest:browser": "npx playwright install-deps && npx playwright install && npm run build",
+    "test:browser": "wtr",
+    "pretest:node": "npm run build",
+    "test:node": "mocha",
+    "build": "npm run build:lib && npm run build:esm-bundle && npm run build:cjs-bundle",
+    "build:lib": "tsc",
+    "build:esm-bundle": "esbuild --bundle src/index.ts --outfile=loupe.js --format=esm",
+    "build:cjs-bundle": "esbuild --bundle src/index.ts --outfile=loupe.js --format=cjs",
+    "upload-coverage": "codecov"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid",
+    "bracketSpacing": true
+  },
+  "devDependencies": {
+    "@web/dev-server-esbuild": "^1.0.3",
+    "@web/test-runner": "^0.19.0",
+    "@web/test-runner-playwright": "^0.11.0",
+    "benchmark": "^2.1.4",
+    "chai": "^5.0.0-alpha.0",
+    "codecov": "^3.8.3",
+    "core-js": "^3.8.3",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.24.2",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-config-strict": "^14.0.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "husky": "^9.1.7",
+    "mocha": "^11.1.0",
+    "nyc": "^17.1.0",
+    "prettier": "^3.0.0",
+    "simple-assert": "^2.0.0",
+    "typescript": "^5.0.0-beta"
+  }
+}

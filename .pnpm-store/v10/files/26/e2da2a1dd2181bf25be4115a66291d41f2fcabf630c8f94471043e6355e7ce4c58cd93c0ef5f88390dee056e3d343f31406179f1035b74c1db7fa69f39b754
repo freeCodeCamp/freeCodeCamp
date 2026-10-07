@@ -1,0 +1,15 @@
+{
+  "name": "@i18next/i18next",
+  "version": "25.10.10",
+  "license": "MIT",
+  "exports": "./src/index.js",
+  "publish": {
+    "include": [
+      "src/*.js",
+      "index.d.ts",
+      "index.d.mts",
+      "typescript/*.d.ts",
+      "README.md"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+root = true
+
+[*]
+indent_style = tab;
+insert_final_newline = true;
+quote_type = auto;
+space_after_anonymous_functions = true;
+space_after_control_statements = true;
+spaces_around_operators = true;
+trim_trailing_whitespace = true;
+spaces_in_brackets = false;
+end_of_line = lf;
+
+[CHANGELOG.md]
+indent_style = space

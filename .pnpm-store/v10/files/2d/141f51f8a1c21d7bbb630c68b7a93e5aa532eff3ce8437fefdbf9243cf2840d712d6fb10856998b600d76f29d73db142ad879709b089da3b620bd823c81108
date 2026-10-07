@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TRandom.js",
+  "module": "../dist/esm/TRandom.js",
+  "types": "../dist/dts/TRandom.d.ts"
+}

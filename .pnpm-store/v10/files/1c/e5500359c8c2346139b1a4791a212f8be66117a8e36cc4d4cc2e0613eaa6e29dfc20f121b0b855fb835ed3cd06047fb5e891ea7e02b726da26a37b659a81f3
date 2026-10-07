@@ -1,0 +1,50 @@
+{
+  "name": "expect-type",
+  "version": "1.3.0",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "keywords": [
+    "typescript",
+    "type-check",
+    "assert",
+    "types",
+    "typings",
+    "test",
+    "testing"
+  ],
+  "homepage": "https://github.com/mmkal/expect-type#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmkal/expect-type.git"
+  },
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.17.3",
+    "@types/node": "^22.0.0",
+    "@typescript/native-preview": "7.0.0-dev.20250527.1",
+    "@vitest/ui": "^3.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-mmkal": "0.9.0",
+    "np": "^10.2.0",
+    "pkg-pr-new": "0.0.39",
+    "strip-ansi": "7.1.0",
+    "ts-morph": "23.0.0",
+    "typescript": "5.9.2",
+    "vitest": "^3.0.0"
+  },
+  "scripts": {
+    "eslint": "eslint --max-warnings 0",
+    "lint": "tsc && pnpm eslint .",
+    "type-check": "tsc",
+    "build": "tsc -p tsconfig.lib.json",
+    "arethetypeswrong": "attw --pack",
+    "test": "vitest run"
+  }
+}

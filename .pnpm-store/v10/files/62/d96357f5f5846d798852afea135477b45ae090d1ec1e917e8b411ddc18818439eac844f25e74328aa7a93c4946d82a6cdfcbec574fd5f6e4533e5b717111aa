@@ -1,0 +1,49 @@
+{
+  "name": "real-require",
+  "version": "0.2.0",
+  "description": "Keep require and import consistent after bundling or transpiling",
+  "author": "Paolo Insogna <shogun@cowtech.it>",
+  "homepage": "https://github.com/pinojs/real-require",
+  "contributors": [
+    {
+      "name": "Paolo Insogna",
+      "url": "https://github.com/ShogunPanda"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinojs/real-require.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pinojs/real-require/issues"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "format": "prettier -w src test",
+    "lint": "eslint src test",
+    "test": "c8 --reporter=text --reporter=html tap --reporter=spec --no-coverage test/*.test.js",
+    "test:watch": "tap --watch --reporter=spec --no-browser --coverage-report=text --coverage-report=html test/*.test.js",
+    "test:ci": "c8 --reporter=text --reporter=json --check-coverage --branches 90 --functions 90 --lines 90 --statements 90 tap --no-color --no-coverage test/*.test.js",
+    "ci": "npm run lint && npm run test:ci",
+    "prepublishOnly": "npm run ci",
+    "postpublish": "git push origin && git push origin -f --tags"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "c8": "^7.10.0",
+    "prettier": "^2.4.1",
+    "tap": "^16.0.0"
+  },
+  "engines": {
+    "node": ">= 12.13.0"
+  }
+}

@@ -1,0 +1,965 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain exposes DOM read/write operations. Each DOM Node is represented with its mirror object
+# that has an `id`. This `id` can be used to get additional information on the Node, resolve it into
+# the JavaScript object wrapper, etc. It is important that client receives DOM events only for the
+# nodes that are known to the client. Backend keeps track of the nodes that were sent to the client
+# and never sends the same node twice. It is client's responsibility to collect information about
+# the nodes that were sent to the client. Note that `iframe` owner elements will return
+# corresponding document elements as their child nodes.
+domain DOM
+  depends on Runtime
+  depends on Network
+
+  # Unique DOM node identifier.
+  type NodeId extends integer
+
+  # Unique DOM node identifier used to reference a node that may not have been pushed to the
+  # front-end.
+  type BackendNodeId extends integer
+
+  # Unique identifier for a CSS stylesheet.
+  type StyleSheetId extends string
+
+  # Backend node with a friendly name.
+  type BackendNode extends object
+    properties
+      # `Node`'s nodeType.
+      integer nodeType
+      # `Node`'s nodeName.
+      string nodeName
+      BackendNodeId backendNodeId
+
+  # Pseudo element type.
+  type PseudoType extends string
+    enum
+      first-line
+      first-letter
+      checkmark
+      before
+      after
+      expand-icon
+      picker-icon
+      interest-hint
+      marker
+      backdrop
+      column
+      selection
+      search-text
+      target-text
+      spelling-error
+      grammar-error
+      highlight
+      first-line-inherited
+      scroll-marker
+      scroll-marker-group
+      scroll-button
+      scrollbar
+      scrollbar-thumb
+      scrollbar-button
+      scrollbar-track
+      scrollbar-track-piece
+      scrollbar-corner
+      resizer
+      input-list-button
+      view-transition
+      view-transition-group
+      view-transition-image-pair
+      view-transition-group-children
+      view-transition-old
+      view-transition-new
+      placeholder
+      file-selector-button
+      details-content
+      picker
+      permission-icon
+      overscroll-area-parent
+
+  # Shadow root type.
+  type ShadowRootType extends string
+    enum
+      user-agent
+      open
+      closed
+
+  # Document compatibility mode.
+  type CompatibilityMode extends string
+    enum
+      QuirksMode
+      LimitedQuirksMode
+      NoQuirksMode
+
+  # ContainerSelector physical axes
+  type PhysicalAxes extends string
+    enum
+      Horizontal
+      Vertical
+      Both
+
+  # ContainerSelector logical axes
+  type LogicalAxes extends string
+    enum
+      Inline
+      Block
+      Both
+
+  # Physical scroll orientation
+  type ScrollOrientation extends string
+    enum
+      horizontal
+      vertical
+
+  # DOM interaction is implemented in terms of mirror objects that represent the actual DOM nodes.
+  # DOMNode is a base node mirror type.
+  type Node extends object
+    properties
+      # Node identifier that is passed into the rest of the DOM messages as the `nodeId`. Backend
+      # will only push node with given `id` once. It is aware of all requested nodes and will only
+      # fire DOM events for nodes known to the client.
+      NodeId nodeId
+      # The id of the parent node if any.
+      optional NodeId parentId
+      # The BackendNodeId for this node.
+      BackendNodeId backendNodeId
+      # `Node`'s nodeType.
+      integer nodeType
+      # `Node`'s nodeName.
+      string nodeName
+      # `Node`'s localName.
+      string localName
+      # `Node`'s nodeValue.
+      string nodeValue
+      # Child count for `Container` nodes.
+      optional integer childNodeCount
+      # Child nodes of this node when requested with children.
+      optional array of Node children
+      # Attributes of the `Element` node in the form of flat array `[name1, value1, name2, value2]`.
+      optional array of string attributes
+      # Document URL that `Document` or `FrameOwner` node points to.
+      optional string documentURL
+      # Base URL that `Document` or `FrameOwner` node uses for URL completion.
+      optional string baseURL
+      # `DocumentType`'s publicId.
+      optional string publicId
+      # `DocumentType`'s systemId.
+      optional string systemId
+      # `DocumentType`'s internalSubset.
+      optional string internalSubset
+      # `Document`'s XML version in case of XML documents.
+      optional string xmlVersion
+      # `Attr`'s name.
+      optional string name
+      # `Attr`'s value.
+      optional string value
+      # Pseudo element type for this node.
+      optional PseudoType pseudoType
+      # Pseudo element identifier for this node. Only present if there is a
+      # valid pseudoType.
+      optional string pseudoIdentifier
+      # Shadow root type.
+      optional ShadowRootType shadowRootType
+      # Frame ID for frame owner elements.
+      optional Page.FrameId frameId
+      # Content document for frame owner elements.
+      optional Node contentDocument
+      # Shadow root list for given element host.
+      optional array of Node shadowRoots
+      # Content document fragment for template elements.
+      optional Node templateContent
+      # Pseudo elements associated with this node.
+      optional array of Node pseudoElements
+      # Deprecated, as the HTML Imports API has been removed (crbug.com/937746).
+      # This property used to return the imported document for the HTMLImport links.
+      # The property is always undefined now.
+      deprecated optional Node importedDocument
+      # Distributed nodes for given insertion point.
+      optional array of BackendNode distributedNodes
+      # Whether the node is SVG.
+      optional boolean isSVG
+      optional CompatibilityMode compatibilityMode
+      optional BackendNode assignedSlot
+      experimental optional boolean isScrollable
+      experimental optional boolean affectedByStartingStyles
+      experimental optional array of StyleSheetId adoptedStyleSheets
+      experimental optional Network.AdProvenance adProvenance
+
+  # A structure to hold the top-level node of a detached tree and an array of its retained descendants.
+  type DetachedElementInfo extends object
+    properties
+      Node treeNode
+      array of NodeId retainedNodeIds
+
+  # A structure holding an RGBA color.
+  type RGBA extends object
+    properties
+      # The red component, in the [0-255] range.
+      integer r
+      # The green component, in the [0-255] range.
+      integer g
+      # The blue component, in the [0-255] range.
+      integer b
+      # The alpha component, in the [0-1] range (default: 1).
+      optional number a
+
+  # An array of quad vertices, x immediately followed by y for each point, points clock-wise.
+  type Quad extends array of number
+
+  # Box model.
+  type BoxModel extends object
+    properties
+      # Content box
+      Quad content
+      # Padding box
+      Quad padding
+      # Border box
+      Quad border
+      # Margin box
+      Quad margin
+      # Node width
+      integer width
+      # Node height
+      integer height
+      # Shape outside coordinates
+      optional ShapeOutsideInfo shapeOutside
+
+  # CSS Shape Outside details.
+  type ShapeOutsideInfo extends object
+    properties
+      # Shape bounds
+      Quad bounds
+      # Shape coordinate details
+      array of any shape
+      # Margin shape bounds
+      array of any marginShape
+
+  # Rectangle.
+  type Rect extends object
+    properties
+      # X coordinate
+      number x
+      # Y coordinate
+      number y
+      # Rectangle width
+      number width
+      # Rectangle height
+      number height
+
+  type CSSComputedStyleProperty extends object
+    properties
+      # Computed style property name.
+      string name
+      # Computed style property value.
+      string value
+
+  # Collects class names for the node with given id and all of it's child nodes.
+  experimental command collectClassNamesFromSubtree
+    parameters
+      # Id of the node to collect class names.
+      NodeId nodeId
+    returns
+      # Class name list.
+      array of string classNames
+
+  # Creates a deep copy of the specified node and places it into the target container before the
+  # given anchor.
+  experimental command copyTo
+    parameters
+      # Id of the node to copy.
+      NodeId nodeId
+      # Id of the element to drop the copy into.
+      NodeId targetNodeId
+      # Drop the copy before this node (if absent, the copy becomes the last child of
+      # `targetNodeId`).
+      optional NodeId insertBeforeNodeId
+    returns
+      # Id of the node clone.
+      NodeId nodeId
+
+  # Describes node given its id, does not require domain to be enabled. Does not start tracking any
+  # objects, can be used for automation.
+  command describeNode
+    parameters
+      # Identifier of the node.
+      optional NodeId nodeId
+      # Identifier of the backend node.
+      optional BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper.
+      optional Runtime.RemoteObjectId objectId
+      # The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the
+      # entire subtree or provide an integer larger than 0.
+      optional integer depth
+      # Whether or not iframes and shadow roots should be traversed when returning the subtree
+      # (default is false).
+      optional boolean pierce
+    returns
+      # Node description.
+      Node node
+
+  # Scrolls the specified rect of the given node into view if not already visible.
+  # Note: exactly one between nodeId, backendNodeId and objectId should be passed
+  # to identify the node.
+  command scrollIntoViewIfNeeded
+    parameters
+      # Identifier of the node.
+      optional NodeId nodeId
+      # Identifier of the backend node.
+      optional BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper.
+      optional Runtime.RemoteObjectId objectId
+      # The rect to be scrolled into view, relative to the node's border box, in CSS pixels.
+      # When omitted, center of the node will be used, similar to Element.scrollIntoView.
+      optional Rect rect
+
+  # Disables DOM agent for the given page.
+  command disable
+
+  # Discards search results from the session with the given id. `getSearchResults` should no longer
+  # be called for that search.
+  experimental command discardSearchResults
+    parameters
+      # Unique search session identifier.
+      string searchId
+
+  # Enables DOM agent for the given page.
+  command enable
+    parameters
+      # Whether to include whitespaces in the children array of returned Nodes.
+      experimental optional enum includeWhitespace
+        # Strip whitespaces from child arrays (default).
+        none
+        # Return all children including block-level whitespace nodes.
+        all
+
+  # Focuses the given element.
+  command focus
+    parameters
+      # Identifier of the node.
+      optional NodeId nodeId
+      # Identifier of the backend node.
+      optional BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper.
+      optional Runtime.RemoteObjectId objectId
+
+  # Returns attributes for the specified node.
+  command getAttributes
+    parameters
+      # Id of the node to retrieve attributes for.
+      NodeId nodeId
+    returns
+      # An interleaved array of node attribute names and values.
+      array of string attributes
+
+  # Returns boxes for the given node.
+  command getBoxModel
+    parameters
+      # Identifier of the node.
+      optional NodeId nodeId
+      # Identifier of the backend node.
+      optional BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper.
+      optional Runtime.RemoteObjectId objectId
+    returns
+      # Box model for the node.
+      BoxModel model
+
+  # Returns quads that describe node position on the page. This method
+  # might return multiple quads for inline nodes.
+  experimental command getContentQuads
+    parameters
+      # Identifier of the node.
+      optional NodeId nodeId
+      # Identifier of the backend node.
+      optional BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper.
+      optional Runtime.RemoteObjectId objectId
+    returns
+      # Quads that describe node layout relative to viewport.
+      array of Quad quads
+
+  # Returns the root DOM node (and optionally the subtree) to the caller.
+  # Implicitly enables the DOM domain events for the current target.
+  command getDocument
+    parameters
+      # The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the
+      # entire subtree or provide an integer larger than 0.
+      optional integer depth
+      # Whether or not iframes and shadow roots should be traversed when returning the subtree
+      # (default is false).
+      optional boolean pierce
+    returns
+      # Resulting node.
+      Node root
+
+  # Returns the root DOM node (and optionally the subtree) to the caller.
+  # Deprecated, as it is not designed to work well with the rest of the DOM agent.
+  # Use DOMSnapshot.captureSnapshot instead.
+  deprecated command getFlattenedDocument
+    parameters
+      # The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the
+      # entire subtree or provide an integer larger than 0.
+      optional integer depth
+      # Whether or not iframes and shadow roots should be traversed when returning the subtree
+      # (default is false).
+      optional boolean pierce
+    returns
+      # Resulting node.
+      array of Node nodes
+
+  # Finds nodes with a given computed style in a subtree.
+  experimental command getNodesForSubtreeByStyle
+    parameters
+      # Node ID pointing to the root of a subtree.
+      NodeId nodeId
+      # The style to filter nodes by (includes nodes if any of properties matches).
+      array of CSSComputedStyleProperty computedStyles
+      # Whether or not iframes and shadow roots in the same target should be traversed when returning the
+      # results (default is false).
+      optional boolean pierce
+    returns
+      # Resulting nodes.
+      array of NodeId nodeIds
+
+  # Returns node id at given location. Depending on whether DOM domain is enabled, nodeId is
+  # either returned or not.
+  command getNodeForLocation
+    parameters
+      # X coordinate.
+      integer x
+      # Y coordinate.
+      integer y
+      # False to skip to the nearest non-UA shadow root ancestor (default: false).
+      optional boolean includeUserAgentShadowDOM
+      # Whether to ignore pointer-events: none on elements and hit test them.
+      optional boolean ignorePointerEventsNone
+    returns
+      # Resulting node.
+      BackendNodeId backendNodeId
+      # Frame this node belongs to.
+      Page.FrameId frameId
+      # Id of the node at given coordinates, only when enabled and requested document.
+      optional NodeId nodeId
+
+  # Returns node's HTML markup.
+  command getOuterHTML
+    parameters
+      # Identifier of the node.
+      optional NodeId nodeId
+      # Identifier of the backend node.
+      optional BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper.
+      optional Runtime.RemoteObjectId objectId
+      # Include all shadow roots. Equals to false if not specified.
+      experimental optional boolean includeShadowDOM
+    returns
+      # Outer HTML markup.
+      string outerHTML
+
+  # Returns the id of the nearest ancestor that is a relayout boundary.
+  experimental command getRelayoutBoundary
+    parameters
+      # Id of the node.
+      NodeId nodeId
+    returns
+      # Relayout boundary node id for the given node.
+      NodeId nodeId
+
+  # Returns search results from given `fromIndex` to given `toIndex` from the search with the given
+  # identifier.
+  experimental command getSearchResults
+    parameters
+      # Unique search session identifier.
+      string searchId
+      # Start index of the search result to be returned.
+      integer fromIndex
+      # End index of the search result to be returned.
+      integer toIndex
+    returns
+      # Ids of the search result nodes.
+      array of NodeId nodeIds
+
+  # Hides any highlight.
+  command hideHighlight
+    # Use 'Overlay.hideHighlight' instead
+    redirect Overlay
+
+  # Highlights DOM node.
+  command highlightNode
+    # Use 'Overlay.highlightNode' instead
+    redirect Overlay
+
+  # Highlights given rectangle.
+  command highlightRect
+    # Use 'Overlay.highlightRect' instead
+    redirect Overlay
+
+  # Marks last undoable state.
+  experimental command markUndoableState
+
+  # Moves node into the new container, places it before the given anchor.
+  command moveTo
+    parameters
+      # Id of the node to move.
+      NodeId nodeId
+      # Id of the element to drop the moved node into.
+      NodeId targetNodeId
+      # Drop node before this one (if absent, the moved node becomes the last child of
+      # `targetNodeId`).
+      optional NodeId insertBeforeNodeId
+    returns
+      # New id of the moved node.
+      NodeId nodeId
+
+  # Searches for a given string in the DOM tree. Use `getSearchResults` to access search results or
+  # `cancelSearch` to end this search session.
+  experimental command performSearch
+    parameters
+      # Plain text or query selector or XPath search query.
+      string query
+      # True to search in user agent shadow DOM.
+      optional boolean includeUserAgentShadowDOM
+    returns
+      # Unique search session identifier.
+      string searchId
+      # Number of search results.
+      integer resultCount
+
+  # Requests that the node is sent to the caller given its path. // FIXME, use XPath
+  experimental command pushNodeByPathToFrontend
+    parameters
+      # Path to node in the proprietary format.
+      string path
+    returns
+      # Id of the node for given path.
+      NodeId nodeId
+
+  # Requests that a batch of nodes is sent to the caller given their backend node ids.
+  experimental command pushNodesByBackendIdsToFrontend
+    parameters
+      # The array of backend node ids.
+      array of BackendNodeId backendNodeIds
+    returns
+      # The array of ids of pushed nodes that correspond to the backend ids specified in
+      # backendNodeIds.
+      array of NodeId nodeIds
+
+  # Executes `querySelector` on a given node.
+  command querySelector
+    parameters
+      # Id of the node to query upon.
+      NodeId nodeId
+      # Selector string.
+      string selector
+    returns
+      # Query selector result.
+      NodeId nodeId
+
+  # Executes `querySelectorAll` on a given node.
+  command querySelectorAll
+    parameters
+      # Id of the node to query upon.
+      NodeId nodeId
+      # Selector string.
+      string selector
+    returns
+      # Query selector result.
+      array of NodeId nodeIds
+
+  # Returns NodeIds of current top layer elements.
+  # Top layer is rendered closest to the user within a viewport, therefore its elements always
+  # appear on top of all other content.
+  experimental command getTopLayerElements
+    returns
+      # NodeIds of top layer elements
+      array of NodeId nodeIds
+
+  # Returns the NodeId of the matched element according to certain relations.
+  experimental command getElementByRelation
+    parameters
+      # Id of the node from which to query the relation.
+      NodeId nodeId
+      # Type of relation to get.
+      enum relation
+        # Get the popover target for a given element. In this case, this given
+        # element can only be an HTMLFormControlElement (<input>, <button>).
+        PopoverTarget
+        # Get the interestfor target (the attribute used to be named
+        # `interesttarget`) for for a given element.
+        InterestTarget
+        # Get the commandfor target for a given element. In this case, this given
+        # element can only be an HTMLButtonElement.
+        CommandFor
+    returns
+      # NodeId of the element matching the queried relation.
+      NodeId nodeId
+
+  # Re-does the last undone action.
+  experimental command redo
+
+  # Removes attribute with given name from an element with given id.
+  command removeAttribute
+    parameters
+      # Id of the element to remove attribute from.
+      NodeId nodeId
+      # Name of the attribute to remove.
+      string name
+
+  # Removes node with given id.
+  command removeNode
+    parameters
+      # Id of the node to remove.
+      NodeId nodeId
+
+  # Requests that children of the node with given id are returned to the caller in form of
+  # `setChildNodes` events where not only immediate children are retrieved, but all children down to
+  # the specified depth.
+  command requestChildNodes
+    parameters
+      # Id of the node to get children for.
+      NodeId nodeId
+      # The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the
+      # entire subtree or provide an integer larger than 0.
+      optional integer depth
+      # Whether or not iframes and shadow roots should be traversed when returning the sub-tree
+      # (default is false).
+      optional boolean pierce
+
+  # Requests that the node is sent to the caller given the JavaScript node object reference. All
+  # nodes that form the path from the node to the root are also sent to the client as a series of
+  # `setChildNodes` notifications.
+  command requestNode
+    parameters
+      # JavaScript object id to convert into node.
+      Runtime.RemoteObjectId objectId
+    returns
+      # Node id for given object.
+      NodeId nodeId
+
+  # Resolves the JavaScript node object for a given NodeId or BackendNodeId.
+  command resolveNode
+    parameters
+      # Id of the node to resolve.
+      optional NodeId nodeId
+      # Backend identifier of the node to resolve.
+      optional DOM.BackendNodeId backendNodeId
+      # Symbolic group name that can be used to release multiple objects.
+      optional string objectGroup
+      # Execution context in which to resolve the node.
+      optional Runtime.ExecutionContextId executionContextId
+    returns
+      # JavaScript object wrapper for given node.
+      Runtime.RemoteObject object
+
+  # Sets attribute for an element with given id.
+  command setAttributeValue
+    parameters
+      # Id of the element to set attribute for.
+      NodeId nodeId
+      # Attribute name.
+      string name
+      # Attribute value.
+      string value
+
+  # Sets attributes on element with given id. This method is useful when user edits some existing
+  # attribute value and types in several attribute name/value pairs.
+  command setAttributesAsText
+    parameters
+      # Id of the element to set attributes for.
+      NodeId nodeId
+      # Text with a number of attributes. Will parse this text using HTML parser.
+      string text
+      # Attribute name to replace with new attributes derived from text in case text parsed
+      # successfully.
+      optional string name
+
+  # Sets files for the given file input element.
+  command setFileInputFiles
+    parameters
+      # Array of file paths to set.
+      array of string files
+      # Identifier of the node.
+      optional NodeId nodeId
+      # Identifier of the backend node.
+      optional BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper.
+      optional Runtime.RemoteObjectId objectId
+
+  # Sets if stack traces should be captured for Nodes. See `Node.getNodeStackTraces`. Default is disabled.
+  experimental command setNodeStackTracesEnabled
+    parameters
+      # Enable or disable.
+      boolean enable
+
+  # Gets stack traces associated with a Node. As of now, only provides stack trace for Node creation.
+  experimental command getNodeStackTraces
+    parameters
+      # Id of the node to get stack traces for.
+      NodeId nodeId
+    returns
+      # Creation stack trace, if available.
+      optional Runtime.StackTrace creation
+
+  # Returns file information for the given
+  # File wrapper.
+  experimental command getFileInfo
+    parameters
+      # JavaScript object id of the node wrapper.
+      Runtime.RemoteObjectId objectId
+    returns
+      string path
+
+  # Returns list of detached nodes
+  experimental command getDetachedDomNodes
+    returns
+      # The list of detached nodes
+      array of DetachedElementInfo detachedNodes
+
+  # Enables console to refer to the node with given id via $x (see Command Line API for more details
+  # $x functions).
+  experimental command setInspectedNode
+    parameters
+      # DOM node id to be accessible by means of $x command line API.
+      NodeId nodeId
+
+  # Sets node name for a node with given id.
+  command setNodeName
+    parameters
+      # Id of the node to set name for.
+      NodeId nodeId
+      # New node's name.
+      string name
+    returns
+      # New node's id.
+      NodeId nodeId
+
+  # Sets node value for a node with given id.
+  command setNodeValue
+    parameters
+      # Id of the node to set value for.
+      NodeId nodeId
+      # New node's value.
+      string value
+
+  # Sets node HTML markup, returns new node id.
+  command setOuterHTML
+    parameters
+      # Id of the node to set markup for.
+      NodeId nodeId
+      # Outer HTML markup to set.
+      string outerHTML
+
+  # Undoes the last performed action.
+  experimental command undo
+
+  # Returns iframe node that owns iframe with the given domain.
+  experimental command getFrameOwner
+    parameters
+      Page.FrameId frameId
+    returns
+      # Resulting node.
+      BackendNodeId backendNodeId
+      # Id of the node at given coordinates, only when enabled and requested document.
+      optional NodeId nodeId
+
+  # Returns the query container of the given node based on container query
+  # conditions: containerName, physical and logical axes, and whether it queries
+  # scroll-state or anchored elements. If no axes are provided and
+  # queriesScrollState is false, the style container is returned, which is the
+  # direct parent or the closest element with a matching container-name.
+  experimental command getContainerForNode
+    parameters
+      NodeId nodeId
+      optional string containerName
+      optional PhysicalAxes physicalAxes
+      optional LogicalAxes logicalAxes
+      optional boolean queriesScrollState
+      optional boolean queriesAnchored
+    returns
+      # The container node for the given node, or null if not found.
+      optional NodeId nodeId
+
+  # Returns the descendants of a container query container that have
+  # container queries against this container.
+  experimental command getQueryingDescendantsForContainer
+    parameters
+      # Id of the container node to find querying descendants from.
+      NodeId nodeId
+    returns
+      # Descendant nodes with container queries against the given container.
+      array of NodeId nodeIds
+
+  # Returns the target anchor element of the given anchor query according to
+  # https://www.w3.org/TR/css-anchor-position-1/#target.
+  experimental command getAnchorElement
+    parameters
+      # Id of the positioned element from which to find the anchor.
+      NodeId nodeId
+      # An optional anchor specifier, as defined in
+      # https://www.w3.org/TR/css-anchor-position-1/#anchor-specifier.
+      # If not provided, it will return the implicit anchor element for
+      # the given positioned element.
+      optional string anchorSpecifier
+    returns
+      # The anchor element of the given anchor query.
+      NodeId nodeId
+
+  # When enabling, this API force-opens the popover identified by nodeId
+  # and keeps it open until disabled.
+  experimental command forceShowPopover
+    parameters
+      # Id of the popover HTMLElement
+      NodeId nodeId
+      # If true, opens the popover and keeps it open. If false, closes the
+      # popover if it was previously force-opened.
+      boolean enable
+    returns
+      # List of popovers that were closed in order to respect popover stacking order.
+      array of NodeId nodeIds
+
+  # Fired when `Element`'s attribute is modified.
+  event attributeModified
+    parameters
+      # Id of the node that has changed.
+      NodeId nodeId
+      # Attribute name.
+      string name
+      # Attribute value.
+      string value
+
+  # Fired when `Element`'s adoptedStyleSheets are modified.
+  experimental event adoptedStyleSheetsModified
+    parameters
+      # Id of the node that has changed.
+      NodeId nodeId
+      # New adoptedStyleSheets array.
+      experimental array of StyleSheetId adoptedStyleSheets
+
+  # Fired when `Element`'s attribute is removed.
+  event attributeRemoved
+    parameters
+      # Id of the node that has changed.
+      NodeId nodeId
+      # A ttribute name.
+      string name
+
+  # Mirrors `DOMCharacterDataModified` event.
+  event characterDataModified
+    parameters
+      # Id of the node that has changed.
+      NodeId nodeId
+      # New text value.
+      string characterData
+
+  # Fired when `Container`'s child node count has changed.
+  event childNodeCountUpdated
+    parameters
+      # Id of the node that has changed.
+      NodeId nodeId
+      # New node count.
+      integer childNodeCount
+
+  # Mirrors `DOMNodeInserted` event.
+  event childNodeInserted
+    parameters
+      # Id of the node that has changed.
+      NodeId parentNodeId
+      # Id of the previous sibling.
+      NodeId previousNodeId
+      # Inserted node data.
+      Node node
+
+  # Mirrors `DOMNodeRemoved` event.
+  event childNodeRemoved
+    parameters
+      # Parent id.
+      NodeId parentNodeId
+      # Id of the node that has been removed.
+      NodeId nodeId
+
+  # Called when distribution is changed.
+  experimental event distributedNodesUpdated
+    parameters
+      # Insertion point where distributed nodes were updated.
+      NodeId insertionPointId
+      # Distributed nodes for given insertion point.
+      array of BackendNode distributedNodes
+
+  # Fired when `Document` has been totally updated. Node ids are no longer valid.
+  event documentUpdated
+
+  # Fired when `Element`'s inline style is modified via a CSS property modification.
+  experimental event inlineStyleInvalidated
+    parameters
+      # Ids of the nodes for which the inline styles have been invalidated.
+      array of NodeId nodeIds
+
+  # Called when a pseudo element is added to an element.
+  experimental event pseudoElementAdded
+    parameters
+      # Pseudo element's parent element id.
+      NodeId parentId
+      # The added pseudo element.
+      Node pseudoElement
+
+  # Called when top layer elements are changed.
+  experimental event topLayerElementsUpdated
+
+  # Fired when a node's scrollability state changes.
+  experimental event scrollableFlagUpdated
+    parameters
+      # The id of the node.
+      DOM.NodeId nodeId
+      # If the node is scrollable.
+      boolean isScrollable
+
+  # Fired when a node's ad related state changes.
+  experimental event adRelatedStateUpdated
+    parameters
+      # The id of the node.
+      DOM.NodeId nodeId
+      # The provenance of the ad related node, if it is ad related.
+      optional Network.AdProvenance adProvenance
+
+  # Fired when a node's starting styles changes.
+  experimental event affectedByStartingStylesFlagUpdated
+    parameters
+      # The id of the node.
+      DOM.NodeId nodeId
+      # If the node has starting styles.
+      boolean affectedByStartingStyles
+
+  # Called when a pseudo element is removed from an element.
+  experimental event pseudoElementRemoved
+    parameters
+      # Pseudo element's parent element id.
+      NodeId parentId
+      # The removed pseudo element id.
+      NodeId pseudoElementId
+
+  # Fired when backend wants to provide client with the missing DOM structure. This happens upon
+  # most of the calls requesting node ids.
+  event setChildNodes
+    parameters
+      # Parent node id to populate with children.
+      NodeId parentId
+      # Child nodes array.
+      array of Node nodes
+
+  # Called when shadow root is popped from the element.
+  experimental event shadowRootPopped
+    parameters
+      # Host element id.
+      NodeId hostId
+      # Shadow root id.
+      NodeId rootId
+
+  # Called when shadow root is pushed into the element.
+  experimental event shadowRootPushed
+    parameters
+      # Host element id.
+      NodeId hostId
+      # Shadow root.
+      Node root

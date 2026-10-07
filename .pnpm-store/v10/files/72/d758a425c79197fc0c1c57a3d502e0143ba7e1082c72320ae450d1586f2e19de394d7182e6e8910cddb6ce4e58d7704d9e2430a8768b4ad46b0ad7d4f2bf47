@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Unify.js",
+  "module": "../dist/esm/Unify.js",
+  "types": "../dist/dts/Unify.d.ts"
+}

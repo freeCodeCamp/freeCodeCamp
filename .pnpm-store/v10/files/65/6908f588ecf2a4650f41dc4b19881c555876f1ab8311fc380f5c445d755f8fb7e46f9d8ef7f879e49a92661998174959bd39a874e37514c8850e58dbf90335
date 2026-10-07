@@ -1,0 +1,49 @@
+{
+	"name": "string.prototype.repeat",
+	"version": "1.0.0",
+	"description": "A robust & optimized `String.prototype.repeat` polyfill, based on the ECMAScript 6 specification.",
+	"homepage": "https://mths.be/repeat",
+	"main": "index.js",
+	"exports": {
+		".": "./index.js",
+		"./auto": "./auto.js",
+		"./shim": "./shim.js",
+		"./getPolyfill": "./getPolyfill.js",
+		"./implementation": "./implementation.js",
+		"./package.json": "./package.json"
+	},
+	"keywords": [
+		"string",
+		"repeat",
+		"es6",
+		"ecmascript",
+		"polyfill"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "https://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/String.prototype.repeat.git"
+	},
+	"bugs": "https://github.com/mathiasbynens/String.prototype.repeat/issues",
+	"scripts": {
+		"pretest": "es-shim-api --bound",
+		"test": "npm run tests-only",
+		"tests-only": "tape 'tests/*.js'",
+		"cover": "istanbul cover --report html --verbose --dir coverage tape 'tests/*.js'"
+	},
+	"dependencies": {
+		"define-properties": "^1.1.3",
+		"es-abstract": "^1.17.5"
+	},
+	"devDependencies": {
+		"@es-shims/api": "^2.1.2",
+		"function-bind": "^1.1.1",
+		"functions-have-names": "^1.2.1",
+		"istanbul": "^0.4.5",
+		"tape": "^5.0.0"
+	}
+}

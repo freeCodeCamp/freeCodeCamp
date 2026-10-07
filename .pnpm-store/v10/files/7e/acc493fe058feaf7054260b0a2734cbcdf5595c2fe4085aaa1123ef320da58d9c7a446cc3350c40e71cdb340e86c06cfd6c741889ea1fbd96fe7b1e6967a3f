@@ -1,0 +1,16 @@
+{
+  "name": "underscore.string",
+  "repo": "epeli/underscore.string",
+  "description": "String manipulation extensions for Underscore.js javascript library",
+  "version": "3.3.6",
+  "keywords": [
+    "underscore",
+    "string"
+  ],
+  "dependencies": {},
+  "development": {},
+  "main": "index.js",
+  "scripts": [
+    "*.js"
+  ]
+}

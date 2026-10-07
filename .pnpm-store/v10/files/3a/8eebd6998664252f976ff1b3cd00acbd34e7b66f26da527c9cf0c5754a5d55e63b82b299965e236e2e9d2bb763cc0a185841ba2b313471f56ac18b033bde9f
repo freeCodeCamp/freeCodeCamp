@@ -1,0 +1,111 @@
+.TH "MARKED" "1" "August 2024" "13.0.3"
+.SH "NAME"
+\fBmarked\fR \- a javascript markdown parser
+.SH SYNOPSIS
+.P
+\fBmarked\fP [\fB\-o\fP <output file>] [\fB\-i\fP <input file>] [\fB\-s\fP <markdown string>] [\fB\-c\fP <config file>] [\fB\-\-help\fP] [\fB\-\-version\fP] [\fB\-\-tokens\fP] [\fB\-\-no\-clobber\fP] [\fB\-\-pedantic\fP] [\fB\-\-gfm\fP] [\fB\-\-breaks\fP] [\fB\-\-no\-etc\.\.\.\fP] [\fB\-\-silent\fP] [filename]
+.SH DESCRIPTION
+.P
+marked is a full\-featured javascript markdown parser, built for speed\.
+.br
+It also includes multiple GFM features\.
+.SH EXAMPLES
+.RS 2
+.nf
+cat in\.md | marked > out\.html
+.fi
+.RE
+.RS 2
+.nf
+echo "hello *world*" | marked
+.fi
+.RE
+.RS 2
+.nf
+marked \-o out\.html \-i in\.md \-\-gfm
+.fi
+.RE
+.RS 2
+.nf
+marked \-\-output="hello world\.html" \-i in\.md \-\-no\-breaks
+.fi
+.RE
+.SH OPTIONS
+
+.RS 1
+.IP \(bu 2
+\-o, \-\-output [output file]
+.br
+Specify file output\. If none is specified, write to stdout\.
+.IP \(bu 2
+\-i, \-\-input [input file]
+.br
+Specify file input, otherwise use last argument as input file\.
+.br
+If no input file is specified, read from stdin\.
+.IP \(bu 2
+\-s, \-\-string [markdown string]
+.br
+Specify string input instead of a file\.
+.IP \(bu 2
+\-c, \-\-config [config file]
+.br
+Specify config file to use instead of the default \fB~/\.marked\.json\fP or \fB~/\.marked\.js\fP or \fB~/\.marked/index\.js\fP\|\.
+.IP \(bu 2
+\-t, \-\-tokens
+.br
+Output a token list instead of html\.
+.IP \(bu 2
+\-n, \-\-no\-clobber
+.br
+Do not overwrite \fBoutput\fP if it exists\.
+.IP \(bu 2
+\-\-pedantic
+.br
+Conform to obscure parts of markdown\.pl as much as possible\.
+.br
+Don't fix original markdown bugs\.
+.IP \(bu 2
+\-\-gfm
+.br
+Enable github flavored markdown\.
+.IP \(bu 2
+\-\-breaks
+.br
+Enable GFM line breaks\. Only works with the gfm option\.
+.IP \(bu 2
+\-\-no\-breaks, \-no\-etc\.\.\.
+.br
+The inverse of any of the marked options above\.
+.IP \(bu 2
+\-\-silent
+.br
+Silence error output\.
+.IP \(bu 2
+\-h, \-\-help
+.br
+Display help information\.
+
+.RE
+.SH CONFIGURATION
+.P
+For configuring and running programmatically\.
+.P
+Example
+.RS 2
+.nf
+import { Marked } from 'marked';
+const marked = new Marked({ gfm: true });
+marked\.parse('*foo*');
+.fi
+.RE
+.SH BUGS
+.P
+Please report any bugs to https://github.com/markedjs/marked
+.SH LICENSE
+.P
+Copyright (c) 2011\-2014, Christopher Jeffrey (MIT License)\.
+.SH SEE ALSO
+.P
+markdown(1), nodejs(1)
+

@@ -1,0 +1,43 @@
+{
+  "name": "psl",
+  "version": "1.9.0",
+  "description": "Domain name parser based on the Public Suffix List",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lupomontero/psl.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha test/*.spec.js",
+    "test:browserstack": "node test/browserstack.js",
+    "watch": "mocha test --watch",
+    "prebuild": "./scripts/update-rules.js",
+    "build": "browserify ./index.js --standalone=psl > ./dist/psl.js",
+    "postbuild": "cat ./dist/psl.js | uglifyjs -c -m > ./dist/psl.min.js",
+    "commit-and-pr": "commit-and-pr",
+    "changelog": "git log $(git describe --tags --abbrev=0)..HEAD --oneline --format=\"%h %s (%an <%ae>)\""
+  },
+  "keywords": [
+    "publicsuffix",
+    "publicsuffixlist"
+  ],
+  "author": "Lupo Montero <lupomontero@gmail.com> (https://lupomontero.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "browserslist-browserstack": "^3.1.1",
+    "browserstack-local": "^1.5.1",
+    "chai": "^4.3.6",
+    "commit-and-pr": "^1.0.4",
+    "eslint": "^8.19.0",
+    "JSONStream": "^1.3.5",
+    "mocha": "^7.2.0",
+    "porch": "^2.0.0",
+    "request": "^2.88.2",
+    "selenium-webdriver": "^4.3.0",
+    "serve-handler": "^6.1.3",
+    "uglify-js": "^3.16.2",
+    "watchify": "^4.0.0"
+  }
+}

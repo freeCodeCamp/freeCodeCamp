@@ -1,0 +1,34 @@
+{
+  "name": "event-source-polyfill",
+  "version": "1.0.31",
+  "description": "A polyfill for http://www.w3.org/TR/eventsource/ ",
+  "main": "src/eventsource.js",
+  "scripts": {
+    "build": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Yaffle/EventSource.git"
+  },
+  "keywords": [
+    "sse",
+    "server sent events",
+    "eventsource",
+    "event-source",
+    "polyfill"
+  ],
+  "files": [
+    "src/*"
+  ],
+  "author": "Yaffle (https://github.com/Yaffle)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yaffle/EventSource/issues"
+  },
+  "homepage": "https://github.com/Yaffle/EventSource",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-uglify": "^5.0.1"
+  }
+}

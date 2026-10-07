@@ -1,0 +1,1 @@
+{"version":3,"file":"mock_context.d.ts","sourceRoot":"","sources":["../../src/mock_tracer/mock_context.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,WAAW,EAAC,MAAM,iBAAiB,CAAC;AAC5C,OAAO,QAAQ,MAAM,aAAa,CAAC;AAEnC;;;GAGG;AACH,qBAAa,WAAY,SAAQ,WAAW;IAMxC,OAAO,CAAC,KAAK,CAAW;gBAEZ,IAAI,EAAE,QAAQ;IAO1B,IAAI,IAAI,QAAQ;CAGnB;AAED,eAAe,WAAW,CAAC"}

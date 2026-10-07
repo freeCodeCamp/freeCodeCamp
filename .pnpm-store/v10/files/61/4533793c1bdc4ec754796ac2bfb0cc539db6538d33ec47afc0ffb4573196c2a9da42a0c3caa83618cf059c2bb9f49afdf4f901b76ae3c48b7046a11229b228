@@ -1,0 +1,87 @@
+{
+	"name": "is-generator-function",
+	"version": "1.0.10",
+	"description": "Determine if a function is a native generator function.",
+	"main": "index.js",
+	"scripts": {
+		"prepublishOnly": "safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly",
+		"pretest": "npm run lint",
+		"test": "npm run tests-only",
+		"tests-only": "nyc npm run test:all",
+		"test:all": "npm run test:index && npm run test:corejs && npm run test:uglified",
+		"test:harmony": "node  --es-staging --harmony test && node  --es-staging --harmony test/corejs && node --es-staging --harmony test/uglified",
+		"test:index": "node test",
+		"test:corejs": "node test/corejs",
+		"test:uglified": "node test/uglified",
+		"posttest": "aud --production",
+		"lint": "eslint .",
+		"version": "auto-changelog && git add CHANGELOG.md",
+		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/inspect-js/is-generator-function.git"
+	},
+	"keywords": [
+		"generator",
+		"generator function",
+		"es6",
+		"es2015",
+		"yield",
+		"function",
+		"function*"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"funding": {
+		"url": "https://github.com/sponsors/ljharb"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inspect-js/is-generator-function/issues"
+	},
+	"dependencies": {
+		"has-tostringtag": "^1.0.0"
+	},
+	"devDependencies": {
+		"@ljharb/eslint-config": "^17.6.0",
+		"aud": "^1.1.5",
+		"auto-changelog": "^2.3.0",
+		"core-js": "^2.6.5 || ^3.16.0",
+		"eslint": "^7.32.0",
+		"make-generator-function": "^2.0.0",
+		"nyc": "^10.3.2",
+		"safe-publish-latest": "^1.1.4",
+		"tape": "^5.3.0",
+		"uglify-register": "^1.0.1"
+	},
+	"testling": {
+		"files": "test/index.js",
+		"browsers": [
+			"iexplore/6.0..latest",
+			"firefox/3.0..6.0",
+			"firefox/15.0..latest",
+			"firefox/nightly",
+			"chrome/4.0..10.0",
+			"chrome/20.0..latest",
+			"chrome/canary",
+			"opera/10.0..latest",
+			"opera/next",
+			"safari/4.0..latest",
+			"ipad/6.0..latest",
+			"iphone/6.0..latest",
+			"android-browser/4.2"
+		]
+	},
+	"engines": {
+		"node": ">= 0.4"
+	},
+	"auto-changelog": {
+		"output": "CHANGELOG.md",
+		"template": "keepachangelog",
+		"unreleased": false,
+		"commitLimit": false,
+		"backfillLimit": false,
+		"hideCredit": true
+	}
+}

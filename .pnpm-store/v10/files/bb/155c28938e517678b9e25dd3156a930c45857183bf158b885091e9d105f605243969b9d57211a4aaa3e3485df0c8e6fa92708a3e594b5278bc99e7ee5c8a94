@@ -1,0 +1,143 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* stylelint-disable layer-checker */
+
+.monaco-hover.workbench-hover {
+	position: relative;
+	font-size: 13px;
+	line-height: 19px;
+	/* Must be higher than sash's z-index and terminal canvases */
+	z-index: 40;
+	overflow: hidden;
+	max-width: 700px;
+	background: var(--vscode-editorHoverWidget-background);
+	border: 1px solid var(--vscode-editorHoverWidget-border);
+	border-radius: 5px;
+	color: var(--vscode-editorHoverWidget-foreground);
+	box-shadow: 0 2px 8px var(--vscode-widget-shadow);
+}
+
+.monaco-hover.workbench-hover .monaco-action-bar .action-item .codicon {
+	/* Given our font-size, adjust action icons accordingly */
+	width: 13px;
+	height: 13px;
+}
+
+.monaco-hover.workbench-hover hr {
+	border-bottom: none;
+}
+
+.monaco-hover.workbench-hover.compact {
+	font-size: 12px;
+}
+
+.monaco-hover.workbench-hover.compact .monaco-action-bar .action-item .codicon {
+	/* Given our font-size, adjust action icons accordingly */
+	width: 12px;
+	height: 12px;
+}
+
+.monaco-hover.workbench-hover.compact .hover-contents {
+	padding: 2px 8px;
+}
+
+.workbench-hover-container.locked .monaco-hover.workbench-hover {
+	outline: 1px solid var(--vscode-editorHoverWidget-border);
+}
+.workbench-hover-container:focus-within.locked .monaco-hover.workbench-hover {
+	outline-color: var(--vscode-focusBorder);
+}
+
+.workbench-hover-pointer {
+	position: absolute;
+	/* Must be higher than workbench hover z-index */
+	z-index: 41;
+	pointer-events: none;
+}
+
+.workbench-hover-pointer:after {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	background-color: var(--vscode-editorHoverWidget-background);
+	border-right: 1px solid var(--vscode-editorHoverWidget-border);
+	border-bottom: 1px solid var(--vscode-editorHoverWidget-border);
+}
+.workbench-hover-container:not(:focus-within).locked .workbench-hover-pointer:after {
+	width: 4px;
+	height: 4px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+}
+.workbench-hover-container:focus-within .workbench-hover-pointer:after {
+	border-right: 1px solid var(--vscode-focusBorder);
+	border-bottom: 1px solid var(--vscode-focusBorder);
+}
+
+.workbench-hover-pointer.left   { left: -3px; }
+.workbench-hover-pointer.right  { right: 3px; }
+.workbench-hover-pointer.top    { top: -3px; }
+.workbench-hover-pointer.bottom { bottom: 3px; }
+
+.workbench-hover-pointer.left:after {
+	transform: rotate(135deg);
+}
+
+.workbench-hover-pointer.right:after {
+	transform: rotate(315deg);
+}
+
+.workbench-hover-pointer.top:after {
+	transform: rotate(225deg);
+}
+
+.workbench-hover-pointer.bottom:after {
+	transform: rotate(45deg);
+}
+
+.monaco-hover.workbench-hover a {
+	color: var(--vscode-textLink-foreground);
+}
+
+.monaco-hover.workbench-hover a:focus {
+	outline: 1px solid;
+	outline-offset: -1px;
+	text-decoration: underline;
+	outline-color: var(--vscode-focusBorder);
+}
+
+.monaco-hover.workbench-hover a.codicon:focus,
+.monaco-hover.workbench-hover a.monaco-button:focus {
+	text-decoration: none;
+}
+
+.monaco-hover.workbench-hover a:hover,
+.monaco-hover.workbench-hover a:active {
+	color: var(--vscode-textLink-activeForeground);
+}
+
+.monaco-hover.workbench-hover code {
+	background: var(--vscode-textCodeBlock-background);
+}
+
+.monaco-hover.workbench-hover .hover-row .actions {
+	background: var(--vscode-editorHoverWidget-statusBarBackground);
+}
+
+.monaco-hover.workbench-hover.right-aligned {
+	/* The context view service wraps strangely when it's right up against the edge without this */
+	left: 1px;
+}
+
+.monaco-hover.workbench-hover.right-aligned .hover-row.status-bar .actions {
+	flex-direction: row-reverse;
+}
+
+.monaco-hover.workbench-hover.right-aligned .hover-row.status-bar .actions .action-container {
+	margin-right: 0;
+	margin-left: 16px;
+}

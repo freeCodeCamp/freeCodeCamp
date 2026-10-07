@@ -1,0 +1,1 @@
+{"version":3,"file":"isInteropObservable.js","sources":["../../../src/internal/util/isInteropObservable.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,UAAU,IAAI,iBAAiB,EAAE,MAAM,sBAAsB,CAAC;AAGvE,MAAM,UAAU,mBAAmB,CAAC,KAAU;IAC5C,OAAO,KAAK,IAAI,OAAO,KAAK,CAAC,iBAAiB,CAAC,KAAK,UAAU,CAAC;AACjE,CAAC"}

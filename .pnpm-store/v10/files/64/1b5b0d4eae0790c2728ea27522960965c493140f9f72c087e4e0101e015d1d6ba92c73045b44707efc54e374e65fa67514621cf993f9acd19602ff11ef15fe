@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Array.js",
+  "module": "../dist/esm/Array.js",
+  "types": "../dist/dts/Array.d.ts"
+}

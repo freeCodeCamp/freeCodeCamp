@@ -1,0 +1,104 @@
+{
+  "name": "typescript-eslint",
+  "version": "8.70.1",
+  "description": "Tooling which enables you to use TypeScript with ESLint",
+  "files": [
+    "dist",
+    "!**/*.js.map",
+    "!**/*.tsbuildinfo"
+  ],
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/typescript-eslint"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "homepage": "https://typescript-eslint.io/packages/typescript-eslint",
+  "license": "MIT",
+  "keywords": [
+    "ast",
+    "ecmascript",
+    "javascript",
+    "typescript",
+    "parser",
+    "syntax",
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "8.70.1",
+    "@typescript-eslint/parser": "8.70.1",
+    "@typescript-eslint/typescript-estree": "8.70.1",
+    "@typescript-eslint/utils": "8.70.1"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+    "typescript": ">=4.8.4 <6.1.0"
+  },
+  "devDependencies": {
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^10.0.0",
+    "minimatch": "*",
+    "rimraf": "^5.0.10",
+    "typescript": ">=4.8.4 <6.1.0",
+    "vitest": "^4.0.18"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "nx": {
+    "name": "typescript-eslint",
+    "includedScripts": [
+      "clean"
+    ],
+    "targets": {
+      "lint": {
+        "command": "eslint"
+      },
+      "typecheck:tsgo": {},
+      "test": {
+        "dependsOn": [
+          "^build",
+          "typecheck"
+        ]
+      },
+      "attw-check": {
+        "cache": false,
+        "command": "pnpm pack --out attw-check.tgz && attw attw-check.tgz --profile node16 --ignore-rules cjs-only-exports-default",
+        "options": {
+          "cwd": "{projectRoot}"
+        },
+        "dependsOn": [
+          "build"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "build": "pnpm exec nx build",
+    "clean": "rimraf dist/ coverage/",
+    "format": "pnpm -w run format",
+    "lint": "pnpm -w exec nx lint",
+    "test": "pnpm -w exec nx test",
+    "typecheck": "pnpm -w exec nx typecheck",
+    "typecheck:tsgo": "pnpm -w exec nx typecheck:tsgo",
+    "attw-check": "pnpm -w exec nx attw-check"
+  }
+}

@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_wrap_native_super.cjs",
+    "module": "../../esm/_wrap_native_super.js"
+}

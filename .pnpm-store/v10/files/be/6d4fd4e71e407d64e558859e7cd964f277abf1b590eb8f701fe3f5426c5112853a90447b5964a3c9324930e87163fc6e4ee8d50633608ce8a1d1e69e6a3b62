@@ -1,0 +1,17 @@
+import React from 'react';
+import type { RefinementListProps as RefinementListUiComponentProps } from '../ui/RefinementList';
+import type { RefinementListWidgetParams } from 'instantsearch.js/es/widgets/refinement-list/refinement-list';
+import type { UseRefinementListProps } from 'react-instantsearch-core';
+type UiProps = Pick<RefinementListUiComponentProps, 'canRefine' | 'items' | 'onRefine' | 'query' | 'searchBox' | 'noResults' | 'canToggleShowMore' | 'onToggleShowMore' | 'isShowingMore' | 'translations'>;
+export type RefinementListProps = Omit<RefinementListUiComponentProps, keyof UiProps> & UseRefinementListProps & Pick<RefinementListWidgetParams, 'searchable' | 'searchablePlaceholder' | 'searchableSelectOnSubmit'> & {
+    translations?: Partial<UiProps['translations'] & {
+        submitButtonTitle: string;
+        resetButtonTitle: string;
+        /**
+         * What to display when there are no results.
+         */
+        noResultsText: string;
+    }>;
+};
+export declare function RefinementList({ searchable, searchablePlaceholder, searchableSelectOnSubmit, attribute, operator, limit, showMore, showMoreLimit, sortBy, escapeFacetValues, transformItems, translations, ...props }: RefinementListProps): React.JSX.Element;
+export {};

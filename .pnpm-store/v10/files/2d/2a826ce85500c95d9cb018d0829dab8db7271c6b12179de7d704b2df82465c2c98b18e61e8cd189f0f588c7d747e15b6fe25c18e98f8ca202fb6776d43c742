@@ -1,0 +1,56 @@
+{
+  "name": "file-entry-cache",
+  "version": "8.0.0",
+  "description": "Super simple cache for file metadata, useful for process that work o a given series of files and that only need to repeat the job on the changed ones since the previous run of the process",
+  "repository": "jaredwray/file-entry-cache",
+  "license": "MIT",
+  "author": {
+    "name": "Jared Wray",
+    "url": "https://jaredwray.com"
+  },
+  "main": "cache.js",
+  "files": [
+    "cache.js"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "eslint": "eslint --cache --cache-location=node_modules/.cache/ 'cache.js' 'test/**/*.js' 'perf.js'",
+    "autofix": "npm run eslint -- --fix",
+    "clean": "rimraf ./node_modules ./package-lock.json ./yarn.lock",
+    "test": "npm run eslint --silent && c8 mocha -R spec test/specs",
+    "test:ci": "npm run eslint --silent && c8 --reporter=lcov mocha -R spec test/specs",
+    "perf": "node perf.js"
+  },
+  "prepush": [
+    "npm run eslint --silent"
+  ],
+  "precommit": [
+    "npm run eslint --silent"
+  ],
+  "keywords": [
+    "file cache",
+    "task cache files",
+    "file cache",
+    "key par",
+    "key value",
+    "cache"
+  ],
+  "devDependencies": {
+    "c8": "^8.0.1",
+    "chai": "^4.3.10",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-mocha": "^10.2.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "glob-expand": "^0.2.1",
+    "mocha": "^10.2.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "write": "^2.0.0"
+  },
+  "dependencies": {
+    "flat-cache": "^4.0.0"
+  }
+}

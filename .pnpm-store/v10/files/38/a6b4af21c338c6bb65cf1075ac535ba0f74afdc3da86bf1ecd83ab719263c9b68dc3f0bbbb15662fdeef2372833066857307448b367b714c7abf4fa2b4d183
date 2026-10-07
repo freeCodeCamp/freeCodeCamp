@@ -1,0 +1,89 @@
+{
+  "name": "@fastify/swagger",
+  "version": "9.7.0",
+  "description": "Serve Swagger/OpenAPI documentation for Fastify, supporting dynamic generation",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "index.d.ts",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:typescript": "tsd",
+    "test:unit": "c8 --100 node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-swagger.git"
+  },
+  "keywords": [
+    "fastify",
+    "swagger",
+    "openapi",
+    "serve",
+    "generate",
+    "static"
+  ],
+  "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Manuel Spigolon",
+      "email": "behemoth89@gmail.com"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-swagger/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-swagger#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^12.0.0",
+    "@fastify/cookie": "^11.0.1",
+    "@types/node": "^25.0.3",
+    "c8": "^10.1.3",
+    "eslint": "^9.17.0",
+    "fastify": "^5.0.0",
+    "fluent-json-schema": "^6.0.0",
+    "joi": "^17.13.1",
+    "joi-to-json": "^5.0.0",
+    "neostandard": "^0.12.0",
+    "qs": "^6.12.1",
+    "tsd": "^0.33.0"
+  },
+  "dependencies": {
+    "fastify-plugin": "^5.0.0",
+    "json-schema-resolver": "^3.0.0",
+    "openapi-types": "^12.1.3",
+    "rfdc": "^1.3.1",
+    "yaml": "^2.4.2"
+  },
+  "tsd": {
+    "directory": "test-types"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"stack.js","names":["make","value","previous"],"sources":["../../../src/internal/stack.ts"],"sourcesContent":[null],"mappings":"AAMA,OAAO,MAAMA,IAAI,GAAGA,CAAIC,KAAQ,EAAEC,QAAmB,MAAgB;EACnED,KAAK;EACLC;CACD,CAAC","ignoreList":[]}

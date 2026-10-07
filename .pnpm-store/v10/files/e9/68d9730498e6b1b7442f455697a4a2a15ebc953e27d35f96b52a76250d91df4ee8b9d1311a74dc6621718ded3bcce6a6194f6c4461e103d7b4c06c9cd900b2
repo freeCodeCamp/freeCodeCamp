@@ -1,0 +1,1 @@
+{"version":3,"file":"esnext.promise.js","sourceRoot":"","sources":["../../src/lib/esnext.promise.ts"],"names":[],"mappings":";AAAA,wCAAwC;AACxC,gCAAgC;AAChC,mEAAmE;AACnE,uDAAuD;;;AAGvD,+CAAiD;AAEpC,QAAA,cAAc,GAAG;IAC5B,cAAc,EAAE,wBAAU;IAC1B,yBAAyB,EAAE,kBAAI;IAC/B,kBAAkB,EAAE,kBAAI;CACqB,CAAC"}

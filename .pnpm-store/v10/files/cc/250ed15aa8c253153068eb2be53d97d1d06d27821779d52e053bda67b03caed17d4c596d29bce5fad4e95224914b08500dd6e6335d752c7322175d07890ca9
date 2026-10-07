@@ -1,0 +1,45 @@
+{
+	"name": "emoji-regex",
+	"version": "10.6.0",
+	"description": "A regular expression to match all Emoji-only symbols as per the Unicode Standard.",
+	"homepage": "https://mths.be/emoji-regex",
+	"main": "index.js",
+	"module": "index.mjs",
+	"types": "index.d.ts",
+	"keywords": [
+		"unicode",
+		"regex",
+		"regexp",
+		"regular expressions",
+		"code points",
+		"symbols",
+		"characters",
+		"emoji"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "https://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/emoji-regex.git"
+	},
+	"bugs": "https://github.com/mathiasbynens/emoji-regex/issues",
+	"files": [
+		"LICENSE-MIT.txt",
+		"index.js",
+		"index.d.ts",
+		"index.mjs"
+	],
+	"scripts": {
+		"build": "node script/build.js",
+		"test": "mocha",
+		"test:watch": "npm run test -- --watch"
+	},
+	"devDependencies": {
+		"@unicode/unicode-17.0.0": "^1.6.10",
+		"emoji-test-regex-pattern": "^2.4.0",
+		"mocha": "^11.7.2"
+	}
+}

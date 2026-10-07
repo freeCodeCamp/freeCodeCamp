@@ -1,0 +1,51 @@
+{
+  "name": "avvio",
+  "version": "9.1.0",
+  "description": "Asynchronous bootstrapping of Node applications",
+  "main": "boot.js",
+  "type": "commonjs",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:unit": "tap",
+    "test:typescript": "tsc --project ./test/types/tsconfig.json"
+  },
+  "precommit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/avvio.git"
+  },
+  "keywords": [
+    "async",
+    "boot",
+    "delayed",
+    "open"
+  ],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "contributors": [
+    {
+      "name": "Tomas Della Vedova",
+      "url": "http://delved.org"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/avvio/issues"
+  },
+  "homepage": "https://github.com/fastify/avvio#readme",
+  "devDependencies": {
+    "@fastify/pre-commit": "^2.1.0",
+    "@types/node": "^22.0.0",
+    "standard": "^17.1.0",
+    "tap": "^18.7.1",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@fastify/error": "^4.0.0",
+    "fastq": "^1.17.1"
+  }
+}

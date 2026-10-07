@@ -1,0 +1,73 @@
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+
+Licensed under the W3C SOFTWARE AND DOCUMENT NOTICE AND LICENSE.
+
+ https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>IntersectionObserver Tests</title>
+
+  <!-- Dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.5.3/mocha.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.5.3/mocha.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/expect.js/0.2.0/expect.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/3.2.1/sinon.min.js"></script>
+
+  <!-- Polyfills for IE7-8 -->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es5,getComputedStyle"></script>
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <!-- Setup -->
+  <script>mocha.setup({ui:'bdd'});</script>
+
+  <!-- Uncomment this script to force the polyfill installation
+  <script>
+    delete window.IntersectionObserver;
+    delete window.IntersectionObserverEntry;
+  </script>
+  -->
+
+  <!-- Script under test -->
+  <script src="intersection-observer.js"></script>
+
+  <!-- Tests -->
+  <script src="intersection-observer-test.js"></script>
+
+  <!-- Reporting -->
+  <script>
+  var runner = mocha.run();
+  var failedTests = [];
+
+  runner.on('end', function(){
+    window.mochaResults = runner.stats;
+    window.mochaResults.reports = failedTests;
+  });
+
+  runner.on('fail', function(test, err){
+    var flattenTitles = function(test){
+      var titles = [];
+      while (test.parent.title){
+        titles.push(test.parent.title);
+        test = test.parent;
+      }
+      return titles.reverse();
+    };
+
+    failedTests.push({
+      name: test.title,
+      result: false,
+      message: err.message,
+      stack: err.stack,
+      titles: flattenTitles(test)
+    });
+  });
+  </script>
+</body>
+</html>

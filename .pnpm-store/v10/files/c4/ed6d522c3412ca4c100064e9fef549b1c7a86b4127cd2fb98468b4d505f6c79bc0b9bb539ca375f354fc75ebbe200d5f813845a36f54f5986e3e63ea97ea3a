@@ -1,0 +1,70 @@
+{
+  "name": "chokidar",
+  "description": "Minimal and efficient cross-platform file watching library",
+  "version": "3.6.0",
+  "homepage": "https://github.com/paulmillr/chokidar",
+  "author": "Paul Miller (https://paulmillr.com)",
+  "contributors": [
+    "Paul Miller (https://paulmillr.com)",
+    "Elan Shanker"
+  ],
+  "engines": {
+    "node": ">= 8.10.0"
+  },
+  "main": "index.js",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "anymatch": "~3.1.2",
+    "braces": "~3.0.2",
+    "glob-parent": "~5.1.2",
+    "is-binary-path": "~2.1.0",
+    "is-glob": "~4.0.1",
+    "normalize-path": "~3.0.0",
+    "readdirp": "~3.6.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "~2.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14",
+    "chai": "^4.3",
+    "dtslint": "^3.3.0",
+    "eslint": "^7.0.0",
+    "mocha": "^7.0.0",
+    "rimraf": "^3.0.0",
+    "sinon": "^9.0.1",
+    "sinon-chai": "^3.3.0",
+    "typescript": "^4.4.3",
+    "upath": "^1.2.0"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "types/index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulmillr/chokidar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulmillr/chokidar/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dtslint": "dtslint types",
+    "lint": "eslint --report-unused-disable-directives --ignore-path .gitignore .",
+    "build": "npm ls",
+    "mocha": "mocha --exit --timeout 90000",
+    "test": "npm run lint && npm run mocha"
+  },
+  "keywords": [
+    "fs",
+    "watch",
+    "watchFile",
+    "watcher",
+    "watching",
+    "file",
+    "fsevents"
+  ],
+  "funding": "https://paulmillr.com/funding/"
+}

@@ -1,0 +1,68 @@
+# {%= name %} {%= badge("fury") %}
+
+> {%= description %}
+
+{%= include("install-npm", {save: true}) %}
+
+## Usage
+
+```js
+var isValid = require('{%= name %}');
+
+/**
+ * Valid
+ */
+
+isValid('abc.js');
+//=> 'true'
+isValid('abc/def/ghi.js');
+//=> 'true'
+isValid('foo.js');
+//=> 'true'
+
+
+/**
+ * Invalid
+ */
+
+isValid();
+//=> 'valse'
+isValid(null);
+//=> 'valse'
+isValid('!foo.js');
+//=> 'false'
+isValid('*.js');
+//=> 'false'
+isValid('**/abc.js');
+//=> 'false'
+isValid('abc/*.js');
+//=> 'false'
+isValid('abc/(aaa|bbb).js');
+//=> 'false'
+isValid('abc/[a-z].js');
+//=> 'false'
+isValid('abc/{a,b}.js');
+//=> 'false'
+isValid('abc/?.js');
+//=> 'false'
+```
+
+## Related
+{%= related(['is-glob', 'is-invalid-path', 'is-valid-path', 'is-git-url', 'micromatch', 'parse-glob'], {remove: name}) %}
+
+## Run tests
+{%= include("tests") %}
+
+## Contributing
+{%= include("contributing") %}
+
+## Author
+{%= include("author") %}
+
+## License
+{%= copyright() %}
+{%= license() %}
+
+***
+
+{%= include("footer") %}

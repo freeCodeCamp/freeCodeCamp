@@ -1,0 +1,92 @@
+@import '../variables';
+@import '../mixins';
+@import '../functions';
+
+$size: 25px;
+
+@keyframes rotate_pacman_half_up  {
+    0% {
+         transform:rotate(270deg);
+    }
+    50% {
+         transform:rotate(360deg);
+    }
+    100% {
+         transform:rotate(270deg);
+    }
+}
+
+@keyframes rotate_pacman_half_down  {
+    0% {
+         transform:rotate(90deg);
+    }
+    50% {
+         transform:rotate(0deg);
+    }
+    100% {
+         transform:rotate(90deg);
+    }
+}
+
+@mixin pacman_design(){
+    width: 0px;
+    height: 0px;
+    border-right: $size solid transparent;
+    border-top: $size solid $primary-color;
+    border-left: $size solid $primary-color;
+    border-bottom: $size solid $primary-color;
+    border-radius: $size;
+}
+
+@keyframes pacman-balls {
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-4 * $size, -$size / 4);
+  }
+}
+
+@mixin ball-placement($n:3, $start:0) {
+  @for $i from $start through $n {
+    > div:nth-child(#{$i + 2}) {
+      animation: pacman-balls 1s delay(.33s, $n, $i) infinite linear;
+    }
+  }
+}
+
+.pacman {
+  @include ball-placement();
+
+  position: relative;
+
+  > div:first-of-type {
+    @include pacman_design();
+    animation: rotate_pacman_half_up 0.5s 0s infinite;
+    position: relative;
+    left: -30px;
+  }
+
+  > div:nth-child(2) {
+    @include pacman_design();
+    animation: rotate_pacman_half_down 0.5s 0s infinite;
+    margin-top: -2 * $size;
+    position: relative;
+    left: -30px;
+  }
+
+  > div:nth-child(3),
+  > div:nth-child(4),
+  > div:nth-child(5),
+  > div:nth-child(6) {
+    @include balls();
+
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    transform: translate(0, -$size / 4);
+    top: 25px;
+    left: 70px;
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "@headlessui/react",
+  "version": "1.7.19",
+  "description": "A set of completely unstyled, fully accessible UI components for React, designed to integrate beautifully with Tailwind CSS.",
+  "main": "dist/index.cjs",
+  "typings": "dist/index.d.ts",
+  "module": "dist/headlessui.esm.js",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "exports": {
+    "types": {
+      "import": "./dist/index.d.ts",
+      "require": "./dist/index.d.cts"
+    },
+    "import": "./dist/headlessui.esm.js",
+    "require": "./dist/index.cjs"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tailwindlabs/headlessui.git",
+    "directory": "packages/@headlessui-react"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "../../scripts/build.sh --external:react --external:react-dom",
+    "watch": "../../scripts/watch.sh --external:react --external:react-dom",
+    "test": "../../scripts/test.sh",
+    "lint": "../../scripts/lint.sh",
+    "lint-types": "yarn run attw -P",
+    "playground": "yarn workspace playground-react dev",
+    "clean": "rimraf ./dist"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17 || ^18",
+    "react-dom": "^16 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.0.0",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "esbuild": "^0.11.18",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "snapshot-diff": "^0.8.1"
+  },
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.0.0-beta.60",
+    "client-only": "^0.0.1"
+  }
+}

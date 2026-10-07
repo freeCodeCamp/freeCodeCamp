@@ -1,0 +1,30 @@
+{
+  "name": "platform",
+  "version": "1.3.6",
+  "description": "A platform detection library that works on nearly all JavaScript platforms.",
+  "license": "MIT",
+  "main": "platform.js",
+  "keywords": "environment, platform, ua, useragent",
+  "author": "Benjamin Tan <demoneaux@gmail.com>",
+  "contributors": [
+    "Benjamin Tan <demoneaux@gmail.com>",
+    "John-David Dalton <john.david.dalton@gmail.com>",
+    "Mathias Bynens <mathias@qiwi.be>"
+  ],
+  "repository": "bestiejs/platform.js",
+  "scripts": {
+    "doc": "docdown platform.js doc/README.md style=github title=\"Platform.js v${npm_package_version}\" toc=properties url=https://github.com/bestiejs/platform.js/blob/${npm_package_version}/platform.js",
+    "prepublishOnly": "node bump/bump.js ${npm_package_version}",
+    "test": "node test/test.js"
+  },
+  "devDependencies": {
+    "docdown": "^0.7.3",
+    "qunit-extras": "^1.5.0",
+    "qunitjs": "^1.23.1",
+    "replace": "^1.1.0",
+    "requirejs": "^2.3.6"
+  },
+  "files": [
+    "platform.js"
+  ]
+}

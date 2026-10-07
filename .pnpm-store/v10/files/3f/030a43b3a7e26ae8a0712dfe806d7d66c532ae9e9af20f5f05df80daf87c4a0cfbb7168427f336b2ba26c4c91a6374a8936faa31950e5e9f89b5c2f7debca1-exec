@@ -1,0 +1,31 @@
+{
+  "name": "@hapi/hoek",
+  "description": "General purpose node utilities",
+  "version": "9.3.0",
+  "repository": "git://github.com/hapijs/hoek",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "keywords": [
+    "utilities"
+  ],
+  "files": [
+    "lib"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "plugin:@hapi/module"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@hapi/code": "8.x.x",
+    "@hapi/eslint-plugin": "*",
+    "@hapi/lab": "^24.0.0",
+    "typescript": "~4.0.2"
+  },
+  "scripts": {
+    "test": "lab -a @hapi/code -t 100 -L -Y",
+    "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html"
+  },
+  "license": "BSD-3-Clause"
+}

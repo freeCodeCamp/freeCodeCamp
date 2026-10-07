@@ -1,0 +1,1 @@
+{"version":3,"file":"types.js","names":[],"sources":["../src/types.ts"],"sourcesContent":["export interface IMatch {\n  id: string\n  context: {\n    sourceMessage: string\n    [key: string]: unknown\n  }\n  error?: Error | undefined\n  [key: string]: unknown\n}\n"],"mappings":""}

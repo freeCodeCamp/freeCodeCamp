@@ -1,0 +1,196 @@
+export declare const Explorer: (code: string) => Promise<import("./class/explorer").Explorer>;
+declare global {
+    var IS_REACT_ACT_ENVIRONMENT: boolean;
+}
+/**
+ * The `RandomMocker` class provides functionality to mock and restore the global `Math.random` function.
+ * It replaces the default random number generator with a deterministic pseudo-random number generator.
+ */
+export declare class RandomMocker {
+    private random;
+    constructor();
+    private createRandom;
+    mock(): void;
+    restore(): void;
+}
+/** Calling spyOn creates a simple spy, inspired by Jest and Jasmine's spyOn functions.
+ * @param obj - The object to spy on
+ * @param method - The method to spy on
+ * @returns A spy function that can be used to track calls to the original method
+ */
+export declare function spyOn<Args extends unknown[], Return>(obj: Record<string, unknown>, method: string): {
+    restore: () => void;
+    calls: Args[];
+    returns: Return[];
+};
+type Spy = {
+    calls?: unknown[][];
+    returns?: unknown[];
+};
+/** Calling spyOnCallbacks helps with spying on methods that are called with
+ * callbacks. Instead of spying on the method itself, it spies on the callback
+ * functions that are passed to the method.
+ * @param obj - The object to spy on
+ * @param method - The method whose callbacks you want to spy on
+ * @returns A spy function that can be used to track calls to the callbacks
+ */
+export declare function spyOnCallbacks(obj: Record<string, (...args: unknown[]) => unknown>, method: string): {
+    (...maybeCallbacks: unknown[]): unknown;
+    callbackSpies: Spy[][];
+    restore(): void;
+};
+/**
+ * Removes every HTML-comment from the string that is provided
+ * @param {String} str a HTML-string where the comments need to be removed of
+ * @returns {String}
+ */
+export declare function removeHtmlComments(str: string): string;
+/**
+ * Removes every CSS-comment from the string that is provided
+ * @param {String} str a CSS-string where the comments need to be removed of
+ * @returns {String}
+ */
+export declare function removeCssComments(str: string): string;
+/**
+ * Removes every JS-comment from the string that is provided
+ * @param {String} codeStr a JS-string where the comments need to be removed of
+ * @returns {String}
+ */
+export declare function removeJSComments(codeStr: string): string;
+/**
+ * Removes every white-space from the string that is provided
+ * @param {String} str a String where the white spaces need to be removed of
+ * @returns {String}
+ */
+export declare function removeWhiteSpace(str: string): string;
+/**
+ * This function helps to escape RegEx patterns
+ * @param {String} exp
+ * @returns {String}
+ */
+export declare function escapeRegExp(exp: string): string;
+/**
+ * This helper checks if a function/method is called with no arguments
+ * @param {String} calledFuncName
+ * @param {String} callingCode
+ * @returns {Boolean}
+ */
+export declare function isCalledWithNoArgs(calledFuncName: string, callingCode: string): boolean;
+/**
+ * Concatenates multiple regexes or source strings into a single regex.
+ * @param regexes
+ * @returns
+ */
+export declare function concatRegex(...regexes: (string | RegExp)[]): RegExp;
+/**
+ * Generates a regex string to match a function expressions and declarations
+ * @param funcName - The name of the function to be matched
+ * @param paramList - Optional list of parameters to be matched
+ * @param options - Optional object determining whether to capture the match
+ * (defaults to non-capturing) and whether to include the body in the match (defaults
+ * to true)
+ */
+export declare function functionRegex(funcName: string | null, paramList?: string[] | null, options?: {
+    capture?: boolean;
+    includeBody?: boolean;
+}): RegExp;
+/**
+ * Creates regex matching regular expressions or source strings in any order.
+ * Both names and backreferences of the capturing named groups
+ * will be renamed, to avoid duplicated group names, and to allow
+ * backreferences to refer to correct group.
+ * @param {(string | RegExp)[]} regexes
+ * @param {Object} [options]
+ * @param {boolean} [options.capture=false] If `true`, returned regex will be capturing. Defaults to `false`.
+ * @param {string} [options.elementsSeparator=String.raw`\s*\|\|\s*`] Separator added between individual regexes within single permutation. Defaults to `\s*\|\|\s*`.
+ * @param {string} [options.permutationsSeparator='|'] Separator added between different permutations. Defaults to `|`.
+ * @returns {RegExp}
+ */
+export declare function permutateRegex(regexes: (string | RegExp)[], { capture, elementsSeparator, permutationsSeparator, }?: {
+    capture?: boolean;
+    elementsSeparator?: string;
+    permutationsSeparator?: string;
+}): RegExp;
+export interface ExtendedStyleRule extends CSSStyleRule {
+    isDeclaredAfter: (selector: string) => boolean;
+}
+interface ExtendedStyleDeclaration extends CSSStyleDeclaration {
+    getPropVal: (prop: string, strip?: boolean) => string;
+}
+export declare function prepTestComponent(component: unknown, props?: Record<string, unknown>): Promise<HTMLDivElement>;
+export declare const python: {
+    astHelpers: string;
+    getDef(code: string, functionName: string): {
+        def: string;
+        function_parameters: string;
+        function_body: string;
+        function_indentation: number;
+    } | null;
+    removeComments(code: string): string;
+    /**
+     * Gets a Python block of code matching the `blockPattern`
+     * @param code - Code string to search
+     * @param blockPattern - String or regular expression to match on the block condition
+     *
+     * **Note:** A string `blockPattern` will be escaped to prevent special characters from being treated as regular expression syntax.
+     */
+    getBlock(code: string, blockPattern: string | RegExp): {
+        block_body: string;
+        block_condition: string;
+        block_indentation: number;
+    } | null;
+};
+export declare class CSSHelp {
+    doc: Document;
+    constructor(doc: Document);
+    private _getStyleRules;
+    getStyleDeclarations(selector: string): CSSStyleDeclaration[];
+    getStyle(selector: string): ExtendedStyleDeclaration | null;
+    getStyleAny(selectors: string[]): ExtendedStyleDeclaration | null;
+    getStyleRule(selector: string): ExtendedStyleRule | null;
+    getCSSRules(element?: string): CSSRule[];
+    isPropertyUsed(property: string): boolean;
+    getRuleListsWithinMedia(mediaText: string): CSSStyleRule[];
+    getStyleSheet(): CSSStyleSheet | null;
+    styleSheetToCssRulesArray(styleSheet: ReturnType<CSSHelp["getStyleSheet"]>): CSSRule[];
+    selectorsFromSelector(selector: string): string[];
+}
+/**
+ * Extracts all function parameters and default values from a function
+ * @param functionObject A function in string form
+ * Note: All number parameters will returned as a string,
+ * @returns {{name:string,defaultValue: string | undefined}}
+ */
+export declare function getFunctionParams(code: string): {
+    name: string;
+    defaultValue: string | undefined;
+}[];
+/**
+ * Generates a regex to match a method call with a callback, assigned to a target variable.
+ * Supports arrow expression, arrow block, and function callbacks.
+ * @param options.target - The variable being assigned to (e.g. `"result"`)
+ * @param options.source - The object the method is called on (e.g. `"numbers"`)
+ * @param options.method - The method name (e.g. `"reduce"`)
+ * @param options.params - The callback parameter names (e.g. `["acc", "el"]`)
+ * @param options.returns - Optional: enforces a return expression in the callback body
+ */
+export declare function callbackCallRegex(options: {
+    target: string;
+    source: string;
+    method: string;
+    params: string[];
+    returns?: RegExp;
+}): RegExp;
+/**
+ * Retries a test function with a specified delay between attempts
+ * Useful for testing DOM elements that may not be immediately available
+ * @param test - Function that returns a truthy value when the condition is met
+ * @param message - Error message to throw if all retry attempts fail
+ * @param tries - Number of retry attempts (defaults to 20)
+ * @returns Promise that resolves when test passes or rejects with message
+ * @example
+ * await retryingTest(() => document.querySelector('img'), "'img' element not found");
+ */
+export declare function retryingTest(test: () => unknown, message: string, tries?: number): Promise<void>;
+export {};
+//# sourceMappingURL=index.d.ts.map

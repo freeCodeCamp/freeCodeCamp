@@ -1,0 +1,78 @@
+.Dd April 5, 2016
+.Dt he 1
+.Sh NAME
+.Nm he
+.Nd encode/decode HTML entities just like a browser would
+.Sh SYNOPSIS
+.Nm
+.Op Fl -escape Ar string
+.br
+.Op Fl -encode Ar string
+.br
+.Op Fl -encode Fl -use-named-refs Fl -everything Fl -allow-unsafe Ar string
+.br
+.Op Fl -decode Ar string
+.br
+.Op Fl -decode Fl -attribute Ar string
+.br
+.Op Fl -decode Fl -strict Ar string
+.br
+.Op Fl v | -version
+.br
+.Op Fl h | -help
+.Sh DESCRIPTION
+.Nm
+encodes/decodes HTML entities in strings just like a browser would.
+.Sh OPTIONS
+.Bl -ohang -offset
+.It Sy "--escape"
+Take a string of text and escape it for use in text contexts in XML or HTML documents. Only the following characters are escaped: `&`, `<`, `>`, `"`, and `'`.
+.It Sy "--encode"
+Take a string of text and encode any symbols that aren't printable ASCII symbols and that can be replaced with character references. For example, it would turn `©` into `&#xA9;`, but it wouldn't turn `+` into `&#x2B;` since there is no point in doing so. Additionally, it replaces any remaining non-ASCII symbols with a hexadecimal escape sequence (e.g. `&#x1D306;`). The return value of this function is always valid HTML.
+.It Sy "--encode --use-named-refs"
+Enable the use of named character references (like `&copy;`) in the output. If compatibility with older browsers is a concern, don't use this option.
+.It Sy "--encode --everything"
+Encode every symbol in the input string, even safe printable ASCII symbols.
+.It Sy "--encode --allow-unsafe"
+Encode non-ASCII characters only. This leaves unsafe HTML/XML symbols like `&`, `<`, `>`, `"`, and `'` intact.
+.It Sy "--encode --decimal"
+Use decimal digits rather than hexadecimal digits for encoded character references, e.g. output `&#169;` instead of `&#xA9;`.
+.It Sy "--decode"
+Takes a string of HTML and decode any named and numerical character references in it using the algorithm described in the HTML spec.
+.It Sy "--decode --attribute"
+Parse the input as if it was an HTML attribute value rather than a string in an HTML text content.
+.It Sy "--decode --strict"
+Throw an error if an invalid character reference is encountered.
+.It Sy "-v, --version"
+Print he's version.
+.It Sy "-h, --help"
+Show the help screen.
+.El
+.Sh EXIT STATUS
+The
+.Nm he
+utility exits with one of the following values:
+.Pp
+.Bl -tag -width flag -compact
+.It Li 0
+.Nm
+did what it was instructed to do successfully; either it encoded/decoded the input and printed the result, or it printed the version or usage message.
+.It Li 1
+.Nm
+encountered an error.
+.El
+.Sh EXAMPLES
+.Bl -ohang -offset
+.It Sy "he --escape '<script>alert(1)</script>'"
+Print an escaped version of the given string that is safe for use in HTML text contexts, escaping only `&`, `<`, `>`, `"`, and `'`.
+.It Sy "he --decode '&copy;&#x1D306;'"
+Print the decoded version of the given HTML string.
+.It Sy "echo\ '&copy;&#x1D306;'\ |\ he --decode"
+Print the decoded version of the HTML string that gets piped in.
+.El
+.Sh BUGS
+he's bug tracker is located at <https://github.com/mathiasbynens/he/issues>.
+.Sh AUTHOR
+Mathias Bynens <https://mathiasbynens.be/>
+.Sh WWW
+<https://mths.be/he>

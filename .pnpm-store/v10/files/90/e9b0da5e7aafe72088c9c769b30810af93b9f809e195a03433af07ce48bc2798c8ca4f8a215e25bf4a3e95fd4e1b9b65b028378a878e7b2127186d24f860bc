@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_assert_this_initialized.js")

@@ -1,0 +1,73 @@
+{
+  "ssr": {
+    "replaceRenderer": {},
+    "onRenderBody": {},
+    "onPreRenderHTML": {},
+    "wrapPageElement": {},
+    "wrapRootElement": {}
+  },
+  "browser": {
+    "onClientEntry": {},
+    "onInitialClientRender": {},
+    "onPreRouteUpdate": {},
+    "onRouteUpdateDelayed": {},
+    "onRouteUpdate": {},
+    "shouldUpdateScroll": {},
+    "registerServiceWorker": {},
+    "wrapPageElement": {},
+    "wrapRootElement": {},
+    "onPrefetchPathname": {},
+    "onPostPrefetchPathname": {},
+    "disableCorePrefetching": {},
+    "replaceHydrateFunction": {},
+    "onServiceWorkerInstalled": {},
+    "onServiceWorkerUpdateFound": {},
+    "onServiceWorkerUpdateReady": {},
+    "onServiceWorkerActive": {},
+    "onServiceWorkerRedundant": {},
+    "onCaughtError": {},
+    "onUncaughtError": {}
+  },
+  "node": {
+    "resolvableExtensions": {},
+    "createPages": {},
+    "createPagesStatefully": {},
+    "sourceNodes": {},
+    "onCreateNode": {},
+    "shouldOnCreateNode": {
+      "version": "5.0.0"
+    },
+    "onCreatePage": {},
+    "setFieldsOnGraphQLNodeType": {},
+    "createSchemaCustomization": {
+      "version": "2.12.0"
+    },
+    "createResolvers": {
+      "version": "2.2.0"
+    },
+    "preprocessSource": {},
+    "onCreateBabelConfig": {},
+    "onCreateWebpackConfig": {},
+    "onPreInit": {},
+    "onPluginInit": {
+      "version": "3.9.0"
+    },
+    "onPreBootstrap": {},
+    "onPostBootstrap": {},
+    "onPreBuild": {},
+    "onPostBuild": {},
+    "onPreExtractQueries": {},
+    "onCreateDevServer": {},
+    "pluginOptionsSchema": {
+      "version": "2.25.0"
+    }
+  },
+  "features": [
+    "image-cdn",
+    "graphql-typegen",
+    "content-file-path",
+    "slices",
+    "stateful-source-nodes",
+    "adapters"
+  ]
+}

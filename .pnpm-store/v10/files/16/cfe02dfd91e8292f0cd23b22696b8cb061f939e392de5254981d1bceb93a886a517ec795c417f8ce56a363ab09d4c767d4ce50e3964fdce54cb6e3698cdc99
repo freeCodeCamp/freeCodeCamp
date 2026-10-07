@@ -1,0 +1,125 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain CacheStorage
+  depends on Storage
+
+  # Unique identifier of the Cache object.
+  type CacheId extends string
+
+  # type of HTTP response cached
+  type CachedResponseType extends string
+    enum
+      basic
+      cors
+      default
+      error
+      opaqueResponse
+      opaqueRedirect
+
+  # Data entry.
+  type DataEntry extends object
+    properties
+      # Request URL.
+      string requestURL
+      # Request method.
+      string requestMethod
+      # Request headers
+      array of Header requestHeaders
+      # Number of seconds since epoch.
+      number responseTime
+      # HTTP response status code.
+      integer responseStatus
+      # HTTP response status text.
+      string responseStatusText
+      # HTTP response type
+      CachedResponseType responseType
+      # Response headers
+      array of Header responseHeaders
+
+  # Cache identifier.
+  type Cache extends object
+    properties
+      # An opaque unique id of the cache.
+      CacheId cacheId
+      # Security origin of the cache.
+      string securityOrigin
+      # Storage key of the cache.
+      string storageKey
+      # Storage bucket of the cache.
+      optional Storage.StorageBucket storageBucket
+      # The name of the cache.
+      string cacheName
+
+  type Header extends object
+    properties
+      string name
+      string value
+
+  # Cached response
+  type CachedResponse extends object
+    properties
+      # Entry content, base64-encoded.
+      binary body
+
+  # Deletes a cache.
+  command deleteCache
+    parameters
+      # Id of cache for deletion.
+      CacheId cacheId
+
+  # Deletes a cache entry.
+  command deleteEntry
+    parameters
+      # Id of cache where the entry will be deleted.
+      CacheId cacheId
+      # URL spec of the request.
+      string request
+
+  # Requests cache names.
+  command requestCacheNames
+    parameters
+      # At least and at most one of securityOrigin, storageKey, storageBucket must be specified.
+      # Security origin.
+      optional string securityOrigin
+      # Storage key.
+      optional string storageKey
+      # Storage bucket. If not specified, it uses the default bucket.
+      optional Storage.StorageBucket storageBucket
+    returns
+      # Caches for the security origin.
+      array of Cache caches
+
+  # Fetches cache entry.
+  command requestCachedResponse
+    parameters
+      # Id of cache that contains the entry.
+      CacheId cacheId
+      # URL spec of the request.
+      string requestURL
+      # headers of the request.
+      array of Header requestHeaders
+    returns
+      # Response read from the cache.
+      CachedResponse response
+
+  # Requests data from cache.
+  command requestEntries
+    parameters
+      # ID of cache to get entries from.
+      CacheId cacheId
+      # Number of records to skip.
+      optional integer skipCount
+      # Number of records to fetch.
+      optional integer pageSize
+      # If present, only return the entries containing this substring in the path
+      optional string pathFilter
+    returns
+      # Array of object store data entries.
+      array of DataEntry cacheDataEntries
+      # Count of returned entries from this storage. If pathFilter is empty, it
+      # is the count of all entries from this storage.
+      number returnCount

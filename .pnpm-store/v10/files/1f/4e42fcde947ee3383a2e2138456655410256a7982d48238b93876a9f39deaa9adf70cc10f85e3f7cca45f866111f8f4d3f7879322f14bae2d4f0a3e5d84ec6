@@ -1,0 +1,80 @@
+import React from 'react';
+export type IconProps = {
+    classNames: Partial<SearchBoxClassNames>;
+};
+export type SearchBoxClassNames = {
+    /**
+     * Class names to apply to the root element
+     */
+    root: string;
+    /**
+     * Class names to apply to the form element
+     */
+    form: string;
+    /**
+     * Class names to apply to the input element
+     */
+    input: string;
+    /**
+     * Class names to apply to the submit button
+     */
+    submit: string;
+    /**
+     * Class names to apply to the reset button
+     */
+    reset: string;
+    /**
+     * Class names to apply to the loading indicator element
+     */
+    loadingIndicator: string;
+    /**
+     * Class names to apply to the submit icon
+     */
+    submitIcon: string;
+    /**
+     * Class names to apply to the reset icon
+     */
+    resetIcon: string;
+    /**
+     * Class names to apply to the loading icon
+     */
+    loadingIcon: string;
+    /**
+     * Class names to apply to the AI mode button
+     */
+    aiModeButton: string;
+    /**
+     * Class names to apply to the AI mode icon
+     */
+    aiModeIcon: string;
+};
+export type SearchBoxTranslations = {
+    /**
+     * The alternative text of the submit button.
+     */
+    submitButtonTitle: string;
+    /**
+     * The alternative text of the reset button.
+     */
+    resetButtonTitle: string;
+    /**
+     * The alternative text of the AI mode button.
+     */
+    aiModeButtonTitle?: string;
+};
+export type SearchBoxProps = Omit<React.ComponentProps<'div'>, 'onSubmit' | 'onReset' | 'onChange'> & Pick<React.ComponentProps<'form'>, 'onSubmit'> & Required<Pick<React.ComponentProps<'form'>, 'onReset'>> & Pick<React.ComponentProps<'input'>, 'placeholder' | 'autoFocus'> & {
+    onChange?: (event: React.ChangeEvent<HTMLInputElement> | React.CompositionEvent<HTMLInputElement>) => void;
+    formRef?: React.RefObject<HTMLFormElement | null>;
+    inputRef: React.RefObject<HTMLInputElement | null>;
+    inputProps?: Omit<React.ComponentProps<'input'>, 'placeholder' | 'value' | 'onChange' | 'onCompositionEnd' | 'autoFocus'>;
+    isSearchStalled: boolean;
+    value: string;
+    resetIconComponent?: React.JSXElementConstructor<IconProps>;
+    submitIconComponent?: React.JSXElementConstructor<IconProps>;
+    loadingIconComponent?: React.JSXElementConstructor<IconProps>;
+    aiModeIconComponent?: React.JSXElementConstructor<IconProps>;
+    onAiModeClick?: () => void;
+    classNames?: Partial<SearchBoxClassNames>;
+    translations: SearchBoxTranslations;
+};
+export declare function SearchBox({ formRef, inputRef, inputProps, isSearchStalled, onChange, onReset, onSubmit, placeholder, value, autoFocus, resetIconComponent: ResetIcon, submitIconComponent: SubmitIcon, loadingIconComponent: LoadingIcon, aiModeIconComponent: AiModeIcon, onAiModeClick, classNames, translations, ...props }: SearchBoxProps): React.JSX.Element;

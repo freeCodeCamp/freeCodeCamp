@@ -1,0 +1,1 @@
+{"version":3,"file":"draft7.js","sourceRoot":"","sources":["../../lib/vocabularies/draft7.ts"],"names":[],"mappings":";;AACA,iCAAmC;AACnC,6CAA+C;AAC/C,6CAAkD;AAClD,qCAAuC;AACvC,yCAAgE;AAEhE,MAAM,kBAAkB,GAAiB;IACvC,cAAc;IACd,oBAAoB;IACpB,IAAA,oBAAuB,GAAE;IACzB,gBAAgB;IAChB,6BAAkB;IAClB,4BAAiB;CAClB,CAAA;AAED,kBAAe,kBAAkB,CAAA"}

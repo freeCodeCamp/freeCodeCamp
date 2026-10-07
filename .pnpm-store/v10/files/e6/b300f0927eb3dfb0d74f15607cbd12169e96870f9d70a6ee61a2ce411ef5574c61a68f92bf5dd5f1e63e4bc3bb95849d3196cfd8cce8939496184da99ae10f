@@ -1,0 +1,37 @@
+{
+  "name": "@open-draft/until",
+  "version": "2.1.0",
+  "description": "Gracefully handle a Promise using async/await.",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs",
+      "default": "./lib/index.mjs"
+    }
+  },
+  "repository": "open-draft/until",
+  "author": "Artem Zakharchenko <kettanaito@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "lib"
+  ],
+  "devDependencies": {
+    "@ossjs/release": "^0.5.1",
+    "@types/jest": "^26.0.22",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.4",
+    "tsup": "^6.2.3",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "start": "tsc -w",
+    "test": "jest",
+    "build": "tsup",
+    "release": "release publish"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "name": "token-types",
+  "version": "4.2.1",
+  "description": "Common token types for decoding and encoding numeric and string values",
+  "author": {
+    "name": "Borewit",
+    "url": "https://github.com/Borewit"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Borewit"
+  },
+  "scripts": {
+    "clean": "del-cli lib/**/*.js lib/***.js.map *.d.ts test/**/*.d.ts test/**/*.js test/**/*.js.map .nyc_output",
+    "build": "npm run compile",
+    "compile-src": "tsc --p lib",
+    "compile-test": "tsc --p test",
+    "compile": "npm run compile-src && npm run compile-test",
+    "lint-ts": "tslint lib/index.ts --exclude '*.d.ts' 'test/**/*.ts' --exclude 'test/**/*.d.ts'",
+    "lint-md": "remark -u preset-lint-recommended .",
+    "lint": "npm run lint-ts && npm run lint-md",
+    "test": "mocha --require ts-node/register --require source-map-support/register --full-trace --recursive test/test-*.ts",
+    "test-coverage": "nyc npm run test"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Borewit/token-types"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/index.d.ts"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/Borewit/token-types/issues"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^18.6.3",
+    "chai": "^4.3.6",
+    "coveralls": "^3.1.1",
+    "del-cli": "^5.0.0",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "remark-cli": "^11.0.0",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@tokenizer/token": "^0.3.0",
+    "ieee754": "^1.2.1"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-lint-recommended"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "test/**/*.ts",
+      "lib/**/*.*.js"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "report-dir": "coverage"
+  },
+  "keywords": [
+    "token",
+    "integer",
+    "unsigned",
+    "numeric",
+    "float",
+    "IEEE",
+    "754",
+    "strtok3"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "name": "hast-util-sanitize",
+  "version": "3.0.2",
+  "description": "hast utility to sanitize nodes",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "hast",
+    "hast-util",
+    "util",
+    "utility",
+    "html",
+    "clean",
+    "xss",
+    "safe",
+    "sanitize"
+  ],
+  "repository": "syntax-tree/hast-util-sanitize",
+  "bugs": "https://github.com/syntax-tree/hast-util-sanitize/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Jason Switzer <jswitzer@gmail.com>"
+  ],
+  "types": "types/index.d.ts",
+  "files": [
+    "types/index.d.ts",
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "deepmerge": "^4.0.0",
+    "dtslint": "^4.0.0",
+    "hast-util-to-html": "^7.0.0",
+    "hastscript": "^6.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unist-builder": "^2.0.0",
+    "xo": "^0.35.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . -s hastUtilSanitize -o hast-util-sanitize.js",
+    "build-mangle": "browserify . -s hastUtilSanitize -o hast-util-sanitize.min.js -p tinyify",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "eqeqeq": [
+        "error",
+        "always",
+        {
+          "null": "ignore"
+        }
+      ],
+      "guard-for-in": "off",
+      "no-eq-null": "off",
+      "no-negated-condition": "off",
+      "unicorn/explicit-length-check": "off",
+      "unicorn/prefer-includes": "off"
+    },
+    "ignores": [
+      "hast-util-sanitize.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

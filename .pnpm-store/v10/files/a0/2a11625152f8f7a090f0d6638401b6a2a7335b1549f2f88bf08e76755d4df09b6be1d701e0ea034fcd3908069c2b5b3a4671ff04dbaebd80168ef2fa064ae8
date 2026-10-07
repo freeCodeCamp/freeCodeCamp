@@ -1,0 +1,52 @@
+{
+  "name": "@vitest/expect",
+  "type": "module",
+  "version": "4.1.5",
+  "description": "Jest's expect matchers as a Chai plugin",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://vitest.dev/api/expect",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/expect"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "keywords": [
+    "vitest",
+    "test",
+    "chai",
+    "assertion"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@standard-schema/spec": "^1.1.0",
+    "@types/chai": "^5.2.2",
+    "chai": "^6.2.2",
+    "tinyrainbow": "^3.1.0",
+    "@vitest/spy": "4.1.5",
+    "@vitest/utils": "4.1.5"
+  },
+  "devDependencies": {
+    "@vitest/runner": "4.1.5"
+  },
+  "scripts": {
+    "build": "premove dist && rollup -c",
+    "dev": "rollup -c --watch"
+  }
+}

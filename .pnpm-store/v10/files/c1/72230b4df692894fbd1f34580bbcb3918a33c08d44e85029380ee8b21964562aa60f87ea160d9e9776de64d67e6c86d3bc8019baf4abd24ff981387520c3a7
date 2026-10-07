@@ -1,0 +1,17 @@
+sudo: false
+language: node_js
+before_install:
+  - "npm install npm -g"
+node_js:
+  - "4"
+  - "5"
+  - "6" 
+  - "7"
+env:
+  matrix:
+    - TEST_SUITE=unit
+matrix:
+  include:
+    - node_js: "7"
+      env: TEST_SUITE=standard
+script: npm run $TEST_SUITE

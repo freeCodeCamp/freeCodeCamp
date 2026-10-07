@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-context-options.d.ts","sourceRoot":"","sources":["../../../src/interfaces/audio-context-options.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,4BAA4B,EAAE,MAAM,UAAU,CAAC;AAExD,MAAM,WAAW,oBAAoB;IACjC,WAAW,CAAC,EAAE,MAAM,GAAG,4BAA4B,CAAC;IAEpD,UAAU,CAAC,EAAE,MAAM,CAAC;CACvB"}

@@ -1,0 +1,71 @@
+{
+  "name": "character-entities",
+  "version": "1.2.4",
+  "description": "HTML character entity information",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "entity",
+    "entities",
+    "character",
+    "reference",
+    "name",
+    "replacement"
+  ],
+  "repository": "wooorm/character-entities",
+  "bugs": "https://github.com/wooorm/character-entities/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "main": "index.json",
+  "files": [
+    "index.json"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bail": "^1.0.0",
+    "browserify": "^16.0.0",
+    "concat-stream": "^2.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.25.0"
+  },
+  "scripts": {
+    "generate": "node build",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify index.json -s characterEntities -o character-entities.js",
+    "build-mangle": "browserify index.json -s characterEntities -p tinyify -o character-entities.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "lint": "xo",
+    "test-api": "node test",
+    "test": "npm run generate && npm run format && npm run build && npm run test-api"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignores": [
+      "character-entities.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

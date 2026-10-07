@@ -1,0 +1,6 @@
+export declare const languages: Record<string, {
+    LINE_REGEX?: RegExp;
+    BLOCK_OPEN_REGEX?: RegExp;
+    BLOCK_CLOSE_REGEX?: RegExp;
+}>;
+//# sourceMappingURL=languages.d.ts.map

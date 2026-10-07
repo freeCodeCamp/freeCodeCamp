@@ -1,0 +1,81 @@
+{
+  "name": "cacheable",
+  "version": "2.3.4",
+  "description": "High Performance Layer 1 / Layer 2 Caching with Keyv Storage",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredwray/cacheable.git",
+    "directory": "packages/cacheable"
+  },
+  "author": "Jared Wray <me@jaredwray.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@keyv/redis": "^5.1.6",
+    "@keyv/valkey": "^1.0.11",
+    "@qified/redis": "^0.9.0",
+    "lru-cache": "^11.2.7",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "hookified": "^1.15.0",
+    "keyv": "^5.6.0",
+    "qified": "^0.9.0",
+    "@cacheable/utils": "^2.4.0",
+    "@cacheable/memory": "^2.0.8"
+  },
+  "keywords": [
+    "cacheable",
+    "high performance",
+    "layer 1 caching",
+    "layer 2 caching",
+    "distributed caching",
+    "Keyv storage engine",
+    "memory caching",
+    "LRU cache",
+    "expiration",
+    "CacheableMemory",
+    "offline support",
+    "distributed sync",
+    "secondary store",
+    "primary store",
+    "non-blocking operations",
+    "cache statistics",
+    "layered caching",
+    "fault tolerant",
+    "scalable cache",
+    "in-memory cache",
+    "distributed cache",
+    "lruSize",
+    "lru",
+    "multi-tier cache"
+  ],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && tsup src/index.ts --format cjs,esm --dts --clean",
+    "lint": "biome check --write --error-on-warnings",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:ci": "biome check --error-on-warnings && vitest run --coverage",
+    "clean": "rimraf ./dist ./coverage ./node_modules"
+  }
+}

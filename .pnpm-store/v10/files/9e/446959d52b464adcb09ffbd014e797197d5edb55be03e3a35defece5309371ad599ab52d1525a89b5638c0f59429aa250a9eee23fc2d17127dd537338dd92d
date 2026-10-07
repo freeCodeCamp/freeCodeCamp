@@ -1,0 +1,1 @@
+{"version":3,"file":"native-audio-context.d.ts","sourceRoot":"","sources":["../../../src/types/native-audio-context.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,sCAAsC,EAAE,MAAM,+CAA+C,CAAC;AAEvG,MAAM,MAAM,mBAAmB,GAAG,YAAY,GAAG;IAE7C,4BAA4B,CAAC,CAAC,gBAAgB,EAAE,gBAAgB,GAAG,sCAAsC,CAAC;CAC7G,CAAC"}

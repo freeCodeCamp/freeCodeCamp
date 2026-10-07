@@ -1,0 +1,25 @@
+{
+  "name": "@babel/helper-member-expression-to-functions",
+  "version": "7.28.5",
+  "description": "Helper function to replace certain member expressions with function calls",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-member-expression-to-functions"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-helper-member-expression-to-functions",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "dependencies": {
+    "@babel/traverse": "^7.28.5",
+    "@babel/types": "^7.28.5"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "b4a",
+  "version": "1.8.0",
+  "description": "Bridging the gap between buffers and typed arrays",
+  "exports": {
+    "./package": "./package.json",
+    ".": {
+      "react-native": "./react-native.js",
+      "browser": "./browser.js",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "browser.js",
+    "index.js",
+    "react-native.js",
+    "lib"
+  ],
+  "scripts": {
+    "test": "npm run lint && npm run test:bare && npm run test:node",
+    "test:bare": "bare test.mjs",
+    "test:node": "node test.mjs",
+    "lint": "prettier . --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/b4a.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/b4a/issues"
+  },
+  "homepage": "https://github.com/holepunchto/b4a#readme",
+  "devDependencies": {
+    "brittle": "^3.5.2",
+    "nanobench": "^3.0.0",
+    "prettier": "^3.6.2",
+    "prettier-config-holepunch": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react-native-b4a": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-native-b4a": {
+      "optional": true
+    }
+  }
+}

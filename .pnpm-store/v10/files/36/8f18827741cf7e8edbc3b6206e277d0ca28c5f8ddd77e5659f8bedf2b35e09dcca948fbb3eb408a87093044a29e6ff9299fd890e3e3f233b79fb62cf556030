@@ -1,0 +1,1 @@
+{"version":3,"file":"whatwg-fetch.js","names":["module","exports","fetch","global"],"sources":["../../../../src/internal-plugins/bundle-optimisations/polyfills/whatwg-fetch.js"],"sourcesContent":["module.exports = {\n  fetch: global.fetch,\n}\n"],"mappings":";;AAAAA,MAAM,CAACC,OAAO,GAAG;EACfC,KAAK,EAAEC,MAAM,CAACD;AAChB,CAAC"}

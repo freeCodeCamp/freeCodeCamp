@@ -1,0 +1,65 @@
+import { TContext, TDecodeErrorCallback, TDecodeSuccessCallback } from '../types';
+import { IAnalyserNode } from './analyser-node';
+import { IAudioBuffer } from './audio-buffer';
+import { IAudioBufferSourceNode } from './audio-buffer-source-node';
+import { IAudioNode } from './audio-node';
+import { IAudioWorklet } from './audio-worklet';
+import { IBiquadFilterNode } from './biquad-filter-node';
+import { IConstantSourceNode } from './constant-source-node';
+import { IConvolverNode } from './convolver-node';
+import { IDelayNode } from './delay-node';
+import { IDynamicsCompressorNode } from './dynamics-compressor-node';
+import { IGainNode } from './gain-node';
+import { IIIRFilterNode } from './iir-filter-node';
+import { IMinimalBaseAudioContext } from './minimal-base-audio-context';
+import { IOscillatorNode } from './oscillator-node';
+import { IPannerNode } from './panner-node';
+import { IPeriodicWave } from './periodic-wave';
+import { IPeriodicWaveConstraints } from './periodic-wave-constraints';
+import { IStereoPannerNode } from './stereo-panner-node';
+import { IWaveShaperNode } from './wave-shaper-node';
+
+export interface IBaseAudioContext<T extends TContext> extends IMinimalBaseAudioContext<T> {
+    // The audioWorklet property is only available in a SecureContext.
+    readonly audioWorklet?: IAudioWorklet;
+
+    createAnalyser(): IAnalyserNode<T>;
+
+    createBiquadFilter(): IBiquadFilterNode<T>;
+
+    createBuffer(numberOfChannels: number, length: number, sampleRate: number): IAudioBuffer;
+
+    createBufferSource(): IAudioBufferSourceNode<T>;
+
+    createChannelMerger(numberOfInputs?: number): IAudioNode<T>;
+
+    createChannelSplitter(numberOfOutputs?: number): IAudioNode<T>;
+
+    createConstantSource(): IConstantSourceNode<T>;
+
+    createConvolver(): IConvolverNode<T>;
+
+    createDelay(maxDelayTime?: number): IDelayNode<T>;
+
+    createDynamicsCompressor(): IDynamicsCompressorNode<T>;
+
+    createGain(): IGainNode<T>;
+
+    createIIRFilter(feedforward: Iterable<number>, feedback: Iterable<number>): IIIRFilterNode<T>;
+
+    createOscillator(): IOscillatorNode<T>;
+
+    createPanner(): IPannerNode<T>;
+
+    createPeriodicWave(real: Iterable<number>, imag: Iterable<number>, constraints?: Partial<IPeriodicWaveConstraints>): IPeriodicWave;
+
+    createStereoPanner(): IStereoPannerNode<T>;
+
+    createWaveShaper(): IWaveShaperNode<T>;
+
+    decodeAudioData(
+        audioData: ArrayBuffer,
+        successCallback?: TDecodeSuccessCallback,
+        errorCallback?: TDecodeErrorCallback
+    ): Promise<AudioBuffer>;
+}

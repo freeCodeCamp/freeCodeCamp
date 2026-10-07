@@ -1,0 +1,1 @@
+{"version":3,"file":"createParseSettings.d.ts","sourceRoot":"","sources":["../../src/parseSettings/createParseSettings.ts"],"names":[],"mappings":"AAGA,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AAMzD,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,SAAS,CAAC;AAWpD,wBAAgB,mBAAmB,CACjC,IAAI,EAAE,MAAM,EACZ,OAAO,GAAE,OAAO,CAAC,eAAe,CAAM,GACrC,oBAAoB,CAkGtB;AAED,wBAAgB,uBAAuB,IAAI,IAAI,CAE9C"}

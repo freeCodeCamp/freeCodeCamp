@@ -1,0 +1,1 @@
+{"version":3,"file":"linear-ramp-to-value-automation-event.d.ts","sourceRoot":"","sources":["../../../src/interfaces/linear-ramp-to-value-automation-event.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,iCAAiC;IAC9C,QAAQ,CAAC,OAAO,EAAE,MAAM,CAAC;IAEzB,QAAQ,CAAC,IAAI,EAAE,mBAAmB,CAAC;IAEnC,QAAQ,CAAC,KAAK,EAAE,MAAM,CAAC;CAC1B"}

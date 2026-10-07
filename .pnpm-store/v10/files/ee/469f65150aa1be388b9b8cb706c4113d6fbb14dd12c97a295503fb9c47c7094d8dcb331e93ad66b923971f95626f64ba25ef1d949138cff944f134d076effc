@@ -1,0 +1,74 @@
+{
+  "name": "bare-fs",
+  "version": "4.7.0",
+  "description": "Native file system operations for Bare",
+  "exports": {
+    "./package": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./promises": {
+      "types": "./promises.d.ts",
+      "default": "./promises.js"
+    },
+    "./constants": {
+      "types": "./lib/constants.d.ts",
+      "default": "./lib/constants.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "promises.js",
+    "promises.d.ts",
+    "binding.c",
+    "binding.js",
+    "CMakeLists.txt",
+    "lib",
+    "prebuilds"
+  ],
+  "addon": true,
+  "scripts": {
+    "format": "prettier --write . && lunte --fix",
+    "lint": "prettier --check . && lunte",
+    "test": "brittle-bare --coverage test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/bare-fs.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/bare-fs/issues"
+  },
+  "homepage": "https://github.com/holepunchto/bare-fs#readme",
+  "engines": {
+    "bare": ">=1.16.0"
+  },
+  "dependencies": {
+    "bare-events": "^2.5.4",
+    "bare-path": "^3.0.0",
+    "bare-stream": "^2.6.4",
+    "bare-url": "^2.2.2",
+    "fast-fifo": "^1.3.2"
+  },
+  "devDependencies": {
+    "bare-buffer": "^3.0.2",
+    "bare-crypto": "^1.11.2",
+    "brittle": "^3.1.1",
+    "cmake-bare": "^1.1.7",
+    "lunte": "^1.6.0",
+    "prettier": "^3.4.1",
+    "prettier-config-holepunch": "^2.0.0"
+  },
+  "peerDependencies": {
+    "bare-buffer": "*"
+  },
+  "peerDependenciesMeta": {
+    "bare-buffer": {
+      "optional": true
+    }
+  }
+}

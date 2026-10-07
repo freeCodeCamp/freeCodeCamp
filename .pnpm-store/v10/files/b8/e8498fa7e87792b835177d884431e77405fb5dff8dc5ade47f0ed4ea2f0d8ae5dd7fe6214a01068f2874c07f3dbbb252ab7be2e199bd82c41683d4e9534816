@@ -1,0 +1,52 @@
+.ball-triangle-path > div,
+.ball-scale-ripple-multiple > div,
+.ball-scale-ripple > div {
+  background-color: initial;
+  border-color: currentColor;
+}
+
+.ball-clip-rotate > div {
+  background-color: initial;
+  border-top-color: currentColor;
+  border-right-color: currentColor;
+  border-left-color: currentColor;
+}
+
+.ball-clip-rotate-pulse > div:first-child {
+  background-color: currentColor;
+}
+.ball-clip-rotate-pulse > div:last-child {
+  background-color: initial;
+  border-top-color: currentColor;
+  border-bottom-color: currentColor;
+}
+
+.ball-clip-rotate-multiple > div:first-child {
+  background-color: initial;
+  border-right-color: currentColor;
+  border-left-color: currentColor;
+}
+.ball-clip-rotate-multiple > div:last-child {
+  background-color: initial;
+  border-top-color: currentColor;
+  border-bottom-color: currentColor;
+}
+
+.triangle-skew-spin > div {
+  background-color: initial;
+  border-bottom-color: currentColor;
+}
+
+.pacman > div:nth-child(1),
+.pacman > div:nth-child(2) {
+  background-color: initial;
+  border-top-color: currentColor;
+  border-left-color: currentColor;
+  border-bottom-color: currentColor;
+}
+
+.pacman > div:nth-child(3),
+.pacman > div:nth-child(4),
+.pacman > div:nth-child(5) {
+  background-color: currentColor;
+}

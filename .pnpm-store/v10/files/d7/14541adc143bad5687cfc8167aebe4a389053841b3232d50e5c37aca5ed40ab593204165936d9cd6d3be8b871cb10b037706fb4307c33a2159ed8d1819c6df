@@ -1,0 +1,58 @@
+{
+  "name": "linkify-it",
+  "version": "5.0.0",
+  "description": "Links recognition library with FULL unicode support",
+  "keywords": [
+    "linkify",
+    "linkifier",
+    "autolink",
+    "autolinker"
+  ],
+  "repository": "markdown-it/linkify-it",
+  "main": "build/index.cjs.js",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "require": "./build/index.cjs.js",
+      "import": "./index.mjs"
+    },
+    "./*": {
+      "require": "./*",
+      "import": "./*"
+    }
+  },
+  "files": [
+    "index.mjs",
+    "lib/",
+    "build/"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && npm run build && c8 --exclude build --exclude test -r text -r html -r lcov mocha",
+    "demo": "npm run lint && node support/build_demo.mjs",
+    "doc": "node support/build_doc.mjs",
+    "build": "rollup -c support/rollup.config.mjs",
+    "gh-pages": "npm run demo && npm run doc && shx cp -R doc/ demo/ && gh-pages -d demo -f",
+    "prepublishOnly": "npm run lint && npm run build && npm run gh-pages"
+  },
+  "dependencies": {
+    "uc.micro": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "ansi": "^0.3.0",
+    "benchmark": "^2.1.0",
+    "c8": "^8.0.1",
+    "eslint": "^8.54.0",
+    "eslint-config-standard": "^17.1.0",
+    "gh-pages": "^6.1.0",
+    "mdurl": "^2.0.0",
+    "mocha": "^10.2.0",
+    "ndoc": "^6.0.0",
+    "rollup": "^4.6.1",
+    "shelljs": "^0.8.4",
+    "shx": "^0.3.2",
+    "tlds": "^1.166.0"
+  }
+}

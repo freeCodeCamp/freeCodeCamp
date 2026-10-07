@@ -1,0 +1,75 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* marker zone */
+
+.monaco-editor .peekview-widget .head .peekview-title .severity-icon {
+	display: inline-block;
+	vertical-align: text-top;
+	margin-right: 4px;
+}
+
+.monaco-editor .marker-widget {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.monaco-editor .marker-widget > .stale {
+	opacity: 0.6;
+	font-style: italic;
+}
+
+.monaco-editor .marker-widget .title {
+	display: inline-block;
+	padding-right: 5px;
+}
+
+.monaco-editor .marker-widget .descriptioncontainer {
+	position: absolute;
+	white-space: pre;
+	user-select: text;
+	-webkit-user-select: text;
+	padding: 8px 12px 0 20px;
+}
+
+.monaco-editor .marker-widget .descriptioncontainer .message {
+	display: flex;
+	flex-direction: column;
+}
+
+.monaco-editor .marker-widget .descriptioncontainer .message .details {
+	padding-left: 6px;
+}
+
+.monaco-editor .marker-widget .descriptioncontainer .message .source,
+.monaco-editor .marker-widget .descriptioncontainer .message span.code {
+	opacity: 0.6;
+}
+
+.monaco-editor .marker-widget .descriptioncontainer .message a.code-link {
+	opacity: 0.6;
+	color: inherit;
+}
+
+.monaco-editor .marker-widget .descriptioncontainer .message a.code-link:before {
+	content: '(';
+}
+
+.monaco-editor .marker-widget .descriptioncontainer .message a.code-link:after {
+	content: ')';
+}
+
+.monaco-editor .marker-widget .descriptioncontainer .message a.code-link > span {
+	text-decoration: underline;
+	/** Hack to force underline to show **/
+	border-bottom: 1px solid transparent;
+	text-underline-position: under;
+	color: var(--vscode-textLink-activeForeground);
+}
+
+.monaco-editor .marker-widget .descriptioncontainer .filename {
+	cursor: pointer;
+	color: var(--vscode-textLink-activeForeground);
+}

@@ -1,0 +1,37 @@
+{
+  "name": "globjoin",
+  "version": "0.1.4",
+  "description": "Join paths and globs.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amobiz/globjoin.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "array",
+    "glob",
+    "glob join",
+    "globbing",
+    "multiple",
+    "negative glob",
+    "path",
+    "path join",
+    "patterns",
+    "wildcard"
+  ],
+  "author": "Amobiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amobiz/globjoin/issues"
+  },
+  "homepage": "https://github.com/amobiz/globjoin",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "mocha-cases": "^0.1.4"
+  },
+  "dependencies": {
+  }
+}

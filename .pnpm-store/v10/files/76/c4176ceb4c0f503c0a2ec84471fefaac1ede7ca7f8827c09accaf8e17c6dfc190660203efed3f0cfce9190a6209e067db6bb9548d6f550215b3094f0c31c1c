@@ -1,0 +1,1 @@
+{"version":3,"file":"XPathQueryHandler.d.ts","sourceRoot":"","sources":["../../../src/common/XPathQueryHandler.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,EACL,YAAY,EACZ,KAAK,gBAAgB,EACrB,KAAK,aAAa,EACnB,MAAM,mBAAmB,CAAC;AAE3B;;GAEG;AACH,qBAAa,iBAAkB,SAAQ,YAAY;IACjD,OAAgB,gBAAgB,EAAE,gBAAgB,CAMhD;IAEF,OAAgB,aAAa,EAAE,aAAa,CAS1C;CACH"}

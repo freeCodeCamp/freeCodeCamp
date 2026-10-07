@@ -1,0 +1,61 @@
+{
+  "name": "@graphql-tools/graphql-tag-pluck",
+  "version": "7.5.2",
+  "description": "Pluck graphql-tag template literals",
+  "sideEffects": false,
+  "peerDependencies": {
+    "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.16.8",
+    "@babel/traverse": "^7.16.8",
+    "@babel/types": "^7.16.8",
+    "@babel/plugin-syntax-import-assertions": "^7.20.0",
+    "@graphql-tools/utils": "^9.2.1",
+    "tslib": "^2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ardatan/graphql-tools",
+    "directory": "packages/graphql-tag-pluck"
+  },
+  "license": "MIT",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "typings": "typings/index.d.ts",
+  "typescript": {
+    "definition": "typings/index.d.ts"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./typings/index.d.cts",
+        "default": "./cjs/index.js"
+      },
+      "import": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "default": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      }
+    },
+    "./*": {
+      "require": {
+        "types": "./typings/*.d.cts",
+        "default": "./cjs/*.js"
+      },
+      "import": {
+        "types": "./typings/*.d.ts",
+        "default": "./esm/*.js"
+      },
+      "default": {
+        "types": "./typings/*.d.ts",
+        "default": "./esm/*.js"
+      }
+    },
+    "./package.json": "./package.json"
+  }
+}

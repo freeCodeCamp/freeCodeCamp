@@ -1,0 +1,116 @@
+{{# def.definitions }}
+{{# def.errors }}
+{{# def.setupKeyword }}
+
+var {{=$valid}} = undefined;
+
+{{## def.skipFormatLimit:
+  {{=$valid}} = true;
+  {{ return out; }}
+#}}
+
+{{## def.compareFormat:
+  {{? $isData }}
+    if ({{=$schemaValue}} === undefined) {{=$valid}} = true;
+    else if (typeof {{=$schemaValue}} != 'string') {{=$valid}} = false;
+    else {
+    {{ $closingBraces += '}'; }}
+  {{?}}
+
+  {{? $isDataFormat }}
+    if (!{{=$compare}}) {{=$valid}} = true;
+    else {
+    {{ $closingBraces += '}'; }}
+  {{?}}
+
+  var {{=$result}} = {{=$compare}}({{=$data}}, {{# def.schemaValueQS }});
+
+  if ({{=$result}} === undefined) {{=$valid}} = false;
+#}}
+
+
+{{? it.opts.format === false }}{{# def.skipFormatLimit }}{{?}}
+
+{{
+  var $schemaFormat = it.schema.format
+    , $isDataFormat = it.opts.$data && $schemaFormat.$data
+    , $closingBraces = '';
+}}
+
+{{? $isDataFormat }}
+  {{
+    var $schemaValueFormat = it.util.getData($schemaFormat.$data, $dataLvl, it.dataPathArr)
+      , $format = 'format' + $lvl
+      , $compare = 'compare' + $lvl;
+  }}
+
+  var {{=$format}} = formats[{{=$schemaValueFormat}}]
+    , {{=$compare}} = {{=$format}} && {{=$format}}.compare;
+{{??}}
+  {{ var $format = it.formats[$schemaFormat]; }}
+  {{? !($format && $format.compare) }}
+    {{# def.skipFormatLimit }}
+  {{?}}
+  {{ var $compare = 'formats' + it.util.getProperty($schemaFormat) + '.compare'; }}
+{{?}}
+
+{{
+  var $isMax = $keyword == 'formatMaximum'
+    , $exclusiveKeyword = 'formatExclusive' + ($isMax ? 'Maximum' : 'Minimum')
+    , $schemaExcl = it.schema[$exclusiveKeyword]
+    , $isDataExcl = it.opts.$data && $schemaExcl && $schemaExcl.$data
+    , $op = $isMax ? '<' : '>'
+    , $result = 'result' + $lvl;
+}}
+
+{{# def.$data }}
+
+
+{{? $isDataExcl }}
+  {{
+    var $schemaValueExcl = it.util.getData($schemaExcl.$data, $dataLvl, it.dataPathArr)
+      , $exclusive = 'exclusive' + $lvl
+      , $opExpr = 'op' + $lvl
+      , $opStr = '\' + ' + $opExpr + ' + \'';
+  }}
+  var schemaExcl{{=$lvl}} = {{=$schemaValueExcl}};
+  {{ $schemaValueExcl = 'schemaExcl' + $lvl; }}
+
+  if (typeof {{=$schemaValueExcl}} != 'boolean' && {{=$schemaValueExcl}} !== undefined) {
+    {{=$valid}} = false;
+    {{ var $errorKeyword = $exclusiveKeyword; }}
+    {{# def.error:'_formatExclusiveLimit' }}
+  }
+
+  {{# def.elseIfValid }}
+
+  {{# def.compareFormat }}
+  var {{=$exclusive}} = {{=$schemaValueExcl}} === true;
+
+  if ({{=$valid}} === undefined) {
+    {{=$valid}} = {{=$exclusive}}
+                  ? {{=$result}} {{=$op}} 0
+                  : {{=$result}} {{=$op}}= 0;
+  }
+
+  if (!{{=$valid}}) var op{{=$lvl}} = {{=$exclusive}} ? '{{=$op}}' : '{{=$op}}=';
+{{??}}
+  {{
+    var $exclusive = $schemaExcl === true
+      , $opStr = $op;  /*used in error*/
+    if (!$exclusive) $opStr += '=';
+    var $opExpr = '\'' + $opStr + '\''; /*used in error*/
+  }}
+
+  {{# def.compareFormat }}
+
+  if ({{=$valid}} === undefined)
+    {{=$valid}} = {{=$result}} {{=$op}}{{?!$exclusive}}={{?}} 0;
+{{?}}
+
+{{= $closingBraces }}
+
+if (!{{=$valid}}) {
+  {{ var $errorKeyword = $keyword; }}
+  {{# def.error:'_formatLimit' }}
+}

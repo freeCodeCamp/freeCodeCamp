@@ -1,0 +1,62 @@
+{
+  "name": "@parcel/transformer-js",
+  "version": "2.8.3",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/JSTransformer.js",
+  "source": "src/JSTransformer.js",
+  "napi": {
+    "name": "parcel-swc"
+  },
+  "engines": {
+    "parcel": "^2.8.3",
+    "node": ">= 12.0.0"
+  },
+  "files": [
+    "lib",
+    "native-browser.js",
+    "native.js",
+    "src",
+    "*.node"
+  ],
+  "dependencies": {
+    "@parcel/diagnostic": "2.8.3",
+    "@parcel/plugin": "2.8.3",
+    "@parcel/source-map": "^2.1.1",
+    "@parcel/utils": "2.8.3",
+    "@parcel/workers": "2.8.3",
+    "@swc/helpers": "^0.4.12",
+    "browserslist": "^4.6.6",
+    "detect-libc": "^1.0.3",
+    "nullthrows": "^1.1.1",
+    "regenerator-runtime": "^0.13.7",
+    "semver": "^5.7.1"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^2.6.2"
+  },
+  "peerDependencies": {
+    "@parcel/core": "^2.8.3"
+  },
+  "scripts": {
+    "build": "napi build --platform --cargo-cwd napi",
+    "build-release": "napi build --platform --release --cargo-cwd napi",
+    "build:wasm-base": "wasm-pack build wasm --no-typescript --release",
+    "build:wasm-node": "yarn build:wasm-base --target nodejs --out-dir dist-node",
+    "build:wasm-web": "CARGO_PROFILE_RELEASE_LTO=true CARGO_PROFILE_RELEASE_PANIC=abort CARGO_PROFILE_RELEASE_OPT_LEVEL=z yarn build:wasm-base --target web --out-dir dist-web"
+  },
+  "browser": {
+    "./native.js": "./native-browser.js"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

@@ -1,0 +1,92 @@
+import { _ as _$1 } from '@swc/helpers/esm/_object_spread.js';
+import { _ } from '@swc/helpers/esm/_object_spread_props.js';
+import { escape } from '../../lib/utils/escape-html.js';
+import { createDocumentationMessageGenerator } from '../../lib/utils/documentation.js';
+import { checkRendering } from '../../lib/utils/checkRendering.js';
+import { TAG_PLACEHOLDER } from '../../lib/utils/escape-highlight.js';
+import { noop } from '../../lib/utils/noop.js';
+
+var withUsage = createDocumentationMessageGenerator({
+    name: 'trending-facets',
+    connector: true
+});
+var connectTrendingFacets = (function connectTrendingFacets(renderFn) {
+    var unmountFn = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : noop;
+    checkRendering(renderFn, withUsage());
+    return function(widgetParams) {
+        var _ref = widgetParams || {}, facetName = _ref.facetName, limit = _ref.limit, threshold = _ref.threshold, fallbackParameters = _ref.fallbackParameters, queryParameters = _ref.queryParameters, _ref_escapeHTML = _ref.// @MAJOR: this can default to false
+        escapeHTML, escapeHTML = _ref_escapeHTML === void 0 ? true : _ref_escapeHTML, _ref_transformItems = _ref.transformItems, transformItems = _ref_transformItems === void 0 ? function(items) {
+            return items;
+        } : _ref_transformItems;
+        if (!facetName) {
+            throw new Error(withUsage('The `facetName` option is required.'));
+        }
+        return {
+            dependsOn: 'recommend',
+            $$type: 'ais.trendingFacets',
+            init: function init(initOptions) {
+                renderFn(_(_$1({}, this.getWidgetRenderState(initOptions)), {
+                    instantSearchInstance: initOptions.instantSearchInstance
+                }), true);
+            },
+            render: function render(renderOptions) {
+                var renderState = this.getWidgetRenderState(renderOptions);
+                renderFn(_(_$1({}, renderState), {
+                    instantSearchInstance: renderOptions.instantSearchInstance
+                }), false);
+            },
+            getRenderState: function getRenderState(renderState) {
+                return renderState;
+            },
+            getWidgetRenderState: function getWidgetRenderState(param) {
+                var results = param.results; param.helper; param.instantSearchInstance;
+                if (results === null || results === undefined) {
+                    return {
+                        items: [],
+                        widgetParams: widgetParams
+                    };
+                }
+                var items = (results.hits || []).map(function(hit) {
+                    return {
+                        facetName: hit.facetName,
+                        facetValue: hit.facetValue,
+                        _score: hit._score
+                    };
+                });
+                if (escapeHTML) {
+                    items = items.map(function(item) {
+                        return _(_$1({}, item), {
+                            facetValue: escape(item.facetValue)
+                        });
+                    });
+                }
+                items = transformItems(items, {
+                    results: results
+                });
+                return {
+                    items: items,
+                    widgetParams: widgetParams
+                };
+            },
+            dispose: function dispose(param) {
+                var recommendState = param.recommendState;
+                unmountFn();
+                return recommendState.removeParams(this.$$id);
+            },
+            getWidgetParameters: function getWidgetParameters(state) {
+                // v4 TrendingFacetsQuery doesn't include queryParameters or
+                // fallbackParameters, but the v5 API and the helper support them.
+                return state.removeParams(this.$$id).addTrendingFacets({
+                    facetName: facetName,
+                    maxRecommendations: limit,
+                    threshold: threshold,
+                    fallbackParameters: fallbackParameters ? _$1({}, fallbackParameters, escapeHTML ? TAG_PLACEHOLDER : {}) : undefined,
+                    queryParameters: _$1({}, queryParameters, escapeHTML ? TAG_PLACEHOLDER : {}),
+                    $$id: this.$$id
+                });
+            }
+        };
+    };
+});
+
+export { connectTrendingFacets as default };

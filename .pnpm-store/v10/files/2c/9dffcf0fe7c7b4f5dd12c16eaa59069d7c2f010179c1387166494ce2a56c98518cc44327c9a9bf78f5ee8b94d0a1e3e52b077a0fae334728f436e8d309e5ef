@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Console.js",
+  "module": "../dist/esm/Console.js",
+  "types": "../dist/dts/Console.d.ts"
+}

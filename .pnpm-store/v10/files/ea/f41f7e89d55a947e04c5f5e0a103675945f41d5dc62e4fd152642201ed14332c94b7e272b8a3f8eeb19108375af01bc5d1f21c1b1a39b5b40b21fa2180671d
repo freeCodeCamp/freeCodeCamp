@@ -1,0 +1,98 @@
+{
+  "name": "unified",
+  "version": "7.1.0",
+  "description": "Pluggable text processing interface",
+  "license": "MIT",
+  "keywords": [
+    "process",
+    "parse",
+    "transform",
+    "compile",
+    "stringify",
+    "rehype",
+    "retext",
+    "remark"
+  ],
+  "homepage": "https://unified.js.org",
+  "repository": "unifiedjs/unified",
+  "bugs": "https://github.com/unifiedjs/unified/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "types": "types/index.d.ts",
+  "files": [
+    "types/index.d.ts",
+    "index.js",
+    "lib"
+  ],
+  "dependencies": {
+    "@types/unist": "^2.0.0",
+    "@types/vfile": "^3.0.0",
+    "bail": "^1.0.0",
+    "extend": "^3.0.0",
+    "is-plain-obj": "^1.1.0",
+    "trough": "^1.0.0",
+    "vfile": "^3.0.0",
+    "x-is-string": "^0.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "dtslint": "^0.4.1",
+    "esmangle": "^1.0.0",
+    "nyc": "^13.0.0",
+    "prettier": "^1.12.1",
+    "remark-cli": "^6.0.0",
+    "remark-preset-wooorm": "^4.0.0",
+    "tape": "^4.4.0",
+    "typescript": "^3.2.2",
+    "xo": "^0.23.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write '**/{*.js,*.ts}' && xo --fix",
+    "build-bundle": "browserify index.js -s unified > unified.js",
+    "build-mangle": "esmangle unified.js > unified.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "guard-for-in": "off",
+      "no-var": "off",
+      "object-shorthand": "off",
+      "prefer-arrow-callback": "off",
+      "unicorn/prefer-type-error": "off"
+    },
+    "ignores": [
+      "unified.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  }
+}

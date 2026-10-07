@@ -1,0 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TokenizerContextTypes = void 0;
+var TokenizerContextTypes;
+(function (TokenizerContextTypes) {
+    TokenizerContextTypes["Data"] = "Data";
+    TokenizerContextTypes["OpenTagStart"] = "OpenTagStart";
+    TokenizerContextTypes["CloseTag"] = "CloseTag";
+    TokenizerContextTypes["Attributes"] = "Attributes";
+    TokenizerContextTypes["OpenTagEnd"] = "OpenTagEnd";
+    TokenizerContextTypes["AttributeKey"] = "AttributeKey";
+    TokenizerContextTypes["AttributeValue"] = "AttributeValue";
+    TokenizerContextTypes["AttributeValueBare"] = "AttributeValueBare";
+    TokenizerContextTypes["AttributeValueWrapped"] = "AttributeValueWrapped";
+    TokenizerContextTypes["ScriptContent"] = "ScriptContent";
+    TokenizerContextTypes["StyleContent"] = "StyleContent";
+    TokenizerContextTypes["DoctypeOpen"] = "DoctypeOpen";
+    TokenizerContextTypes["DoctypeClose"] = "DoctypeClose";
+    TokenizerContextTypes["DoctypeAttributes"] = "DoctypeAttributes";
+    TokenizerContextTypes["DoctypeAttributeWrapped"] = "DoctypeAttributeWrapped";
+    TokenizerContextTypes["DoctypeAttributeBare"] = "DoctypeAttributeBare";
+    TokenizerContextTypes["CommentOpen"] = "CommentOpen";
+    TokenizerContextTypes["CommentContent"] = "CommentContent";
+    TokenizerContextTypes["CommentClose"] = "CommentClose";
+    TokenizerContextTypes["CustomTagRawContent"] = "CustomTagRawContent";
+})(TokenizerContextTypes || (exports.TokenizerContextTypes = TokenizerContextTypes = {}));

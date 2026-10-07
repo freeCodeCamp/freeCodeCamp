@@ -1,0 +1,37 @@
+{
+  "name": "buffer-xor",
+  "version": "1.0.3",
+  "description": "A simple module for bitwise-xor on buffers",
+  "main": "index.js",
+  "scripts": {
+    "standard": "standard",
+    "test": "npm run-script unit",
+    "unit": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto-browserify/buffer-xor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/buffer-xor/issues"
+  },
+  "homepage": "https://github.com/crypto-browserify/buffer-xor",
+  "keywords": [
+    "bits",
+    "bitwise",
+    "buffer",
+    "buffer-xor",
+    "crypto",
+    "inline",
+    "math",
+    "memory",
+    "performance",
+    "xor"
+  ],
+  "author": "Daniel Cousens",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "*",
+    "standard": "*"
+  }
+}

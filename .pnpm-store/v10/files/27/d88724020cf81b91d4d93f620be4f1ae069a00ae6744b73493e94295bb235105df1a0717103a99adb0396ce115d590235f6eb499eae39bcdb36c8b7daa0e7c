@@ -1,0 +1,37 @@
+{
+  "name": "fast-uri",
+  "description": "Dependency free RFC 3986 URI toolbox",
+  "version": "2.4.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "license": "MIT",
+  "author": "Vincent Le Goff <vince.legoff@gmail.com> (https://github.com/zekth)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fast-uri.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fastify/fast-uri/issues"
+  },
+  "homepage": "https://github.com/fastify/fast-uri",
+  "scripts": {
+    "bench": "node benchmark.js",
+    "lint:fix": "standard --fix",
+    "test:lint": "standard | snazzy",
+    "test:typescript": "tsd",
+    "test:unit": "tap -J test/*.test.js",
+    "test:unit:dev": "tap -J test/*.test.js --coverage-report=html",
+    "test": "npm run test:lint && npm run test:unit && npm run test:typescript",
+    "test:ci": "npm run test:lint && npm run test:unit -- --cov --coverage-report=lcovonly && npm run test:typescript"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "coveralls": "^3.1.1",
+    "snazzy": "^9.0.0",
+    "standard": "^17.0.0",
+    "tap": "^16.0.0",
+    "tsd": "^0.31.0",
+    "uri-js": "^4.4.1"
+  }
+}

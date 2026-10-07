@@ -1,0 +1,37 @@
+{
+  "name": "gatsby-parcel-config",
+  "main": "lib/index.json",
+  "version": "1.16.0",
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-parcel-config#readme",
+  "description": "A minimal Parcel config for use in Gatsby",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-parcel-config"
+  },
+  "license": "MIT",
+  "engines": {
+    "parcel": "2.x"
+  },
+  "dependencies": {
+    "@gatsbyjs/parcel-namer-relative-to-cwd": "^2.16.0",
+    "@parcel/bundler-default": "2.8.3",
+    "@parcel/compressor-raw": "2.8.3",
+    "@parcel/namer-default": "2.8.3",
+    "@parcel/optimizer-terser": "2.8.3",
+    "@parcel/packager-js": "2.8.3",
+    "@parcel/packager-raw": "2.8.3",
+    "@parcel/reporter-dev-server": "2.8.3",
+    "@parcel/resolver-default": "2.8.3",
+    "@parcel/runtime-js": "2.8.3",
+    "@parcel/transformer-js": "2.8.3",
+    "@parcel/transformer-json": "2.8.3"
+  },
+  "peerDependencies": {
+    "@parcel/core": "^2.0.0"
+  },
+  "scripts": {
+    "version": "node ../../scripts/pin-version.js"
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

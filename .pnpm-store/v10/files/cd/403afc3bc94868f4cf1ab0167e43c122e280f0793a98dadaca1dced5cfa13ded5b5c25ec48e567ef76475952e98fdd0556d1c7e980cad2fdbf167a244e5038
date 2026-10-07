@@ -1,0 +1,94 @@
+{
+  "name": "@fastify/type-provider-typebox",
+  "version": "6.1.0",
+  "description": "A Type Provider for Typebox over Fastify",
+  "module": "dist/esm/index.mjs",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "import": {
+        "types": "./dist/esm/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      }
+    }
+  },
+  "peerDependencies": {
+    "typebox": "^1.0.13"
+  },
+  "scripts": {
+    "build:clean": "rimraf ./dist",
+    "build:cjs": "tsc --outDir dist/cjs --module CommonJS --moduleResolution Node10 --sourcemap false",
+    "build:esm": "tsc --outDir dist/esm --module NodeNext --moduleResolution NodeNext --sourcemap false",
+    "build:post": "node post-build.js",
+    "build:test": "attw --pack .",
+    "build": "npm-run-all build:clean build:cjs build:esm build:post build:test",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "test:node": "node --test test/index.js",
+    "test:types": "tsd --files 'types/*'",
+    "test": "npm-run-all build test:node test:types",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-type-provider-typebox.git"
+  },
+  "keywords": [
+    "typebox",
+    "fastify"
+  ],
+  "author": "RafaelGSS",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "James Sumners",
+      "url": "https://james.sumners.info"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    },
+    {
+      "name": "Gürgün Dayıoğlu",
+      "email": "hey@gurgun.day",
+      "url": "https://heyhey.to/G"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-type-provider-typebox/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-type-provider-typebox#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.1",
+    "@types/node": "^24.0.8",
+    "eslint": "^9.17.0",
+    "fastify": "^5.0.0",
+    "fastify-plugin": "^5.0.0",
+    "fastify-tsconfig": "^3.0.0",
+    "neostandard": "^0.12.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "tsd": "^0.33.0",
+    "typescript": "~5.5.4"
+  }
+}

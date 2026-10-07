@@ -1,0 +1,1 @@
+{"version":3,"file":"id.js","sourceRoot":"","sources":["../../../lib/vocabularies/core/id.ts"],"names":[],"mappings":";;AAEA,MAAM,GAAG,GAA0B;IACjC,OAAO,EAAE,IAAI;IACb,IAAI;QACF,MAAM,IAAI,KAAK,CAAC,sDAAsD,CAAC,CAAA;IACzE,CAAC;CACF,CAAA;AAED,kBAAe,GAAG,CAAA"}

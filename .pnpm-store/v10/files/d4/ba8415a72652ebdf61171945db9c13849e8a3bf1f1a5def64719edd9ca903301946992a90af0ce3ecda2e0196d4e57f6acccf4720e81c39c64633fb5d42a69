@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/FiberHandle.js",
+  "module": "../dist/esm/FiberHandle.js",
+  "types": "../dist/dts/FiberHandle.d.ts"
+}

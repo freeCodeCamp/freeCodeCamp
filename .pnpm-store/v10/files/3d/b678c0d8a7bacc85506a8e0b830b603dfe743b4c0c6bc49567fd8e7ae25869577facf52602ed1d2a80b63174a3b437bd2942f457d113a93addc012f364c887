@@ -1,0 +1,1 @@
+{"version":3,"file":"set-target-automation-event.d.ts","sourceRoot":"","sources":["../../../src/interfaces/set-target-automation-event.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,yBAAyB;IACtC,QAAQ,CAAC,SAAS,EAAE,MAAM,CAAC;IAE3B,QAAQ,CAAC,MAAM,EAAE,MAAM,CAAC;IAExB,QAAQ,CAAC,YAAY,EAAE,MAAM,CAAC;IAE9B,QAAQ,CAAC,IAAI,EAAE,WAAW,CAAC;CAC9B"}

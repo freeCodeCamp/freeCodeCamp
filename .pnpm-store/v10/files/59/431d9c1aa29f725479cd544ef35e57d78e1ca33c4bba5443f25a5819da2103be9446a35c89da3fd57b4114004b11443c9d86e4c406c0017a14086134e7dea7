@@ -1,0 +1,32 @@
+{
+  "name": "w3c-xmlserializer",
+  "description": "A per-spec XML serializer implementation",
+  "keywords": [
+    "dom",
+    "w3c",
+    "xml",
+    "xmlserializer"
+  ],
+  "version": "5.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "xml-name-validator": "^5.0.0"
+  },
+  "devDependencies": {
+    "@domenic/eslint-config": "^3.0.0",
+    "eslint": "^8.53.0",
+    "jsdom": "^22.1.0"
+  },
+  "repository": "jsdom/w3c-xmlserializer",
+  "files": [
+    "lib/"
+  ],
+  "main": "lib/serialize.js",
+  "scripts": {
+    "test": "node --test",
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

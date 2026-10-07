@@ -1,0 +1,70 @@
+{
+  "name": "bare-stream",
+  "version": "2.13.0",
+  "description": "Streaming data for JavaScript",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./package": "./package.json",
+    "./promises": "./promises.js",
+    "./web": {
+      "types": "./web.d.ts",
+      "default": "./web.js"
+    },
+    "./global": "./global.js"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "promises.js",
+    "web.js",
+    "web.d.ts",
+    "global.js"
+  ],
+  "scripts": {
+    "format": "prettier --write . && lunte --fix",
+    "lint": "prettier --check . && lunte",
+    "test": "brittle-bare --coverage test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/bare-stream.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/bare-stream/issues"
+  },
+  "homepage": "https://github.com/holepunchto/bare-stream#readme",
+  "dependencies": {
+    "streamx": "^2.25.0",
+    "teex": "^1.0.1"
+  },
+  "devDependencies": {
+    "bare-abort-controller": "^1.1.0",
+    "bare-buffer": "^3.0.0",
+    "bare-events": "^2.5.4",
+    "brittle": "^3.5.2",
+    "lunte": "^1.6.0",
+    "prettier": "^3.3.3",
+    "prettier-config-holepunch": "^2.0.0"
+  },
+  "peerDependencies": {
+    "bare-abort-controller": "*",
+    "bare-buffer": "*",
+    "bare-events": "*"
+  },
+  "peerDependenciesMeta": {
+    "bare-abort-controller": {
+      "optional": true
+    },
+    "bare-buffer": {
+      "optional": true
+    },
+    "bare-events": {
+      "optional": true
+    }
+  }
+}

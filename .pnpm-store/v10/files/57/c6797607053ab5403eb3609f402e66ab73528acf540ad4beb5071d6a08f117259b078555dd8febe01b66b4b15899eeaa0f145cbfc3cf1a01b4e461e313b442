@@ -1,0 +1,86 @@
+{
+  "name": "mini-css-extract-plugin",
+  "version": "1.6.2",
+  "description": "extracts CSS into separate files",
+  "license": "MIT",
+  "repository": "webpack-contrib/mini-css-extract-plugin",
+  "author": "Tobias Koppers @sokra",
+  "homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+  "bugs": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/webpack"
+  },
+  "main": "dist/cjs.js",
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "scripts": {
+    "start": "npm run build -- -w",
+    "prebuild": "npm run clean",
+    "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+    "postbuild": "es-check es5 dist/hmr/hotModuleReplacement.js",
+    "clean": "del-cli dist",
+    "commitlint": "commitlint --from=master",
+    "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+    "lint:js": "eslint --cache .",
+    "lint": "npm-run-all -l -p \"lint:**\"",
+    "prepare": "husky install && npm run build",
+    "release": "standard-version",
+    "security": "npm audit --production",
+    "test:only": "cross-env NODE_ENV=test jest",
+    "test:watch": "npm run test:only -- --watch",
+    "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+    "test:manual": "npm run build && webpack serve ./test/manual/src/index.js --open --config ./test/manual/webpack.config.js",
+    "pretest": "npm run lint",
+    "test": "cross-env NODE_ENV=test npm run test:coverage"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "webpack": "^4.4.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "loader-utils": "^2.0.0",
+    "schema-utils": "^3.0.0",
+    "webpack-sources": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.2",
+    "bootstrap": "^4.6.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.6",
+    "del": "^6.0.0",
+    "del-cli": "^3.0.1",
+    "es-check": "5.2.3",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.23.4",
+    "file-loader": "^6.2.0",
+    "husky": "^5.2.0",
+    "jest": "^27.0.4",
+    "jsdom": "^16.5.1",
+    "lint-staged": "^10.5.4",
+    "memfs": "^3.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.1",
+    "standard-version": "^9.1.0",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "keywords": [
+    "webpack",
+    "css",
+    "extract",
+    "hmr"
+  ]
+}

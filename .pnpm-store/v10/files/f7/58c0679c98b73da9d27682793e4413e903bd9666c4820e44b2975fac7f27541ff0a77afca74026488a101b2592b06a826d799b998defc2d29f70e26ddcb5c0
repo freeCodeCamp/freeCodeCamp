@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Boolean.js",
+  "module": "../dist/esm/Boolean.js",
+  "types": "../dist/dts/Boolean.d.ts"
+}

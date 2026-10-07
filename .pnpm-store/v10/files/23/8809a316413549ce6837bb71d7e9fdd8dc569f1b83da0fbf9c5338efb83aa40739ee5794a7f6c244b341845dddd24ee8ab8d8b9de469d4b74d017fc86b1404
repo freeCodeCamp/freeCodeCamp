@@ -1,0 +1,69 @@
+{
+  "name": "promise-polyfill",
+  "version": "8.3.0",
+  "description": "Lightweight promise polyfill. A+ compliant",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "jsnext:main": "src/index.js",
+  "unpkg": "dist/polyfill.min.js",
+  "files": [
+    "src",
+    "lib",
+    "dist"
+  ],
+  "scripts": {
+    "precommit": "lint-staged",
+    "pretest": "npm run build:cjs",
+    "closure": "google-closure-compiler --js=src/*.js --checks_only --module_resolution=node --compilation_level=ADVANCED",
+    "typescript": "tsc --checkJS --allowJS --noEmit src/index.js",
+    "lint": "eslint src && npm run closure && npm run typescript",
+    "test": "npm run lint && mocha && karma start --single-run",
+    "ci-test": "npm run lint && mocha",
+    "prebuild": "rimraf lib dist",
+    "build": "run-p build:**",
+    "build:cjs": "rollup -i src/index.js -o lib/index.js -f cjs",
+    "build:cjs-polyfill": "rollup -i src/polyfill.js -o lib/polyfill.js -f cjs",
+    "build:umd-polyfill": "cross-env NODE_ENV=development rollup -i src/polyfill.js -o dist/polyfill.js -c rollup.umd.config.js",
+    "build:umd-polyfill:min": "cross-env NODE_ENV=production rollup -i src/polyfill.js -o dist/polyfill.min.js -c rollup.umd.config.js",
+    "prepublish": "test $(npm -v | tr . '\\n' | head -n 1) -ge '4' || exit 1",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taylorhakes/promise-polyfill.git"
+  },
+  "author": "Taylor Hakes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taylorhakes/promise-polyfill/issues"
+  },
+  "homepage": "https://github.com/taylorhakes/promise-polyfill",
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.11.0",
+    "google-closure-compiler": "^20180610.0.1",
+    "husky": "^0.14.3",
+    "karma": "^6.3.16",
+    "karma-browserify": "^8.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.1",
+    "lint-staged": "^5.0.0",
+    "mocha": "^10.1.0",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.8.2",
+    "promises-aplus-tests": "*",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.52.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "sinon": "^1.17.2",
+    "watchify": "^3.11.1",
+    "typescript": "^4.6.2"
+  },
+  "keywords": [
+    "promise",
+    "promise-polyfill",
+    "ES6",
+    "promises-aplus"
+  ]
+}

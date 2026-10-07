@@ -1,0 +1,1 @@
+{"version":3,"file":"format-exception.mjs","mappings":"MAEaA,E","sources":["webpack://@freecodecamp/curriculum-helpers/./packages/helpers/python/index.ts"],"sourcesContent":["import formatExceptionCode from \"./format_exception.py\";\n\nexport const formatException = formatExceptionCode;\n"],"names":["formatException"],"ignoreList":[],"sourceRoot":""}

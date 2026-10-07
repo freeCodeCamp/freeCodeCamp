@@ -1,0 +1,96 @@
+{
+	"name": "@sindresorhus/is",
+	"version": "4.6.0",
+	"description": "Type check values",
+	"license": "MIT",
+	"repository": "sindresorhus/is",
+	"funding": "https://github.com/sindresorhus/is?sponsor=1",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"main": "dist/index.js",
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"build": "del dist && tsc",
+		"test": "xo && ava",
+		"prepare": "npm run build"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"type",
+		"types",
+		"is",
+		"check",
+		"checking",
+		"validate",
+		"validation",
+		"utility",
+		"util",
+		"typeof",
+		"instanceof",
+		"object",
+		"assert",
+		"assertion",
+		"test",
+		"kind",
+		"primitive",
+		"verify",
+		"compare",
+		"typescript",
+		"typeguards",
+		"types"
+	],
+	"devDependencies": {
+		"@sindresorhus/tsconfig": "^0.7.0",
+		"@types/jsdom": "^16.1.0",
+		"@types/node": "^14.0.13",
+		"@types/zen-observable": "^0.8.0",
+		"@typescript-eslint/eslint-plugin": "^2.20.0",
+		"@typescript-eslint/parser": "^2.20.0",
+		"ava": "^3.3.0",
+		"del-cli": "^2.0.0",
+		"eslint-config-xo-typescript": "^0.26.0",
+		"jsdom": "^16.0.1",
+		"rxjs": "^6.4.0",
+		"tempy": "^0.4.0",
+		"ts-node": "^8.3.0",
+		"typescript": "~3.8.2",
+		"xo": "^0.26.1",
+		"zen-observable": "^0.8.8"
+	},
+	"types": "dist/index.d.ts",
+	"sideEffects": false,
+	"ava": {
+		"extensions": [
+			"ts"
+		],
+		"require": [
+			"ts-node/register"
+		]
+	},
+	"xo": {
+		"extends": "xo-typescript",
+		"extensions": [
+			"ts"
+		],
+		"parserOptions": {
+			"project": "./tsconfig.xo.json"
+		},
+		"globals": [
+			"BigInt",
+			"BigInt64Array",
+			"BigUint64Array"
+		],
+		"rules": {
+			"@typescript-eslint/promise-function-async": "off",
+			"@typescript-eslint/no-empty-function": "off",
+			"@typescript-eslint/explicit-function-return-type": "off"
+		}
+	}
+}

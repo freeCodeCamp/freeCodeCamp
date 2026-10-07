@@ -1,0 +1,1 @@
+{"version":3,"file":"event-target-constructor.d.ts","sourceRoot":"","sources":["../../../src/types/event-target-constructor.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,eAAe,CAAC;AAC7C,OAAO,EAAE,kBAAkB,EAAE,MAAM,uBAAuB,CAAC;AAE3D,MAAM,MAAM,uBAAuB,GAAG,KAAK,QAAQ,SAAS,MAAM,CAAC,MAAM,EAAE,KAAK,CAAC,EAC7E,iBAAiB,EAAE,kBAAkB,KACpC,YAAY,CAAC,QAAQ,CAAC,CAAC"}

@@ -1,0 +1,71 @@
+{
+  "name": "fs-extra",
+  "version": "11.2.0",
+  "description": "fs-extra contains methods that aren't included in the vanilla Node.js fs package. Such as recursive mkdir, copy, and remove.",
+  "engines": {
+    "node": ">=14.14"
+  },
+  "homepage": "https://github.com/jprichardson/node-fs-extra",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jprichardson/node-fs-extra"
+  },
+  "keywords": [
+    "fs",
+    "file",
+    "file system",
+    "copy",
+    "directory",
+    "extra",
+    "mkdirp",
+    "mkdir",
+    "mkdirs",
+    "recursive",
+    "json",
+    "read",
+    "write",
+    "extra",
+    "delete",
+    "remove",
+    "touch",
+    "create",
+    "text",
+    "output",
+    "move",
+    "promise"
+  ],
+  "author": "JP Richardson <jprichardson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graceful-fs": "^4.2.0",
+    "jsonfile": "^6.0.1",
+    "universalify": "^2.0.0"
+  },
+  "devDependencies": {
+    "klaw": "^2.1.1",
+    "klaw-sync": "^3.0.2",
+    "minimist": "^1.1.1",
+    "mocha": "^10.1.0",
+    "nyc": "^15.0.0",
+    "proxyquire": "^2.0.1",
+    "read-dir-files": "^0.1.1",
+    "standard": "^17.0.0"
+  },
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./esm": "./lib/esm.mjs"
+  },
+  "files": [
+    "lib/",
+    "!lib/**/__tests__/"
+  ],
+  "scripts": {
+    "lint": "standard",
+    "test-find": "find ./lib/**/__tests__ -name *.test.js | xargs mocha",
+    "test": "npm run lint && npm run unit && npm run unit-esm",
+    "unit": "nyc node test.js",
+    "unit-esm": "node test.mjs"
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,694 @@
+{
+    "name": "@swc/helpers",
+    "version": "0.5.18",
+    "description": "External helpers for the swc project.",
+    "module": "esm/index.js",
+    "main": "cjs/index.cjs",
+    "sideEffects": false,
+    "scripts": {
+        "build": "zx ./scripts/build.js",
+        "prepack": "zx ./scripts/build.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/swc-project/swc.git"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "keywords": [
+        "swc",
+        "helpers"
+    ],
+    "author": "강동윤 <kdy1997.dev@gmail.com>",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/swc-project/swc/issues"
+    },
+    "homepage": "https://swc.rs",
+    "type": "module",
+    "devDependencies": {
+        "@ast-grep/napi": "^0.3.1",
+        "dprint": "^0.35.3",
+        "magic-string": "^0.30.0",
+        "zx": "^7.2.1"
+    },
+    "dependencies": {
+        "tslib": "^2.8.0"
+    },
+    "exports": {
+        "./package.json": "./package.json",
+        "./esm/*": "./esm/*",
+        "./cjs/*": "./cjs/*",
+        "./src/*": "./src/*",
+        ".": {
+            "module-sync": "./esm/index.js",
+            "webpack": "./esm/index.js",
+            "import": "./esm/index.js",
+            "default": "./cjs/index.cjs"
+        },
+        "./_": {
+            "module-sync": "./esm/index.js",
+            "webpack": "./esm/index.js",
+            "import": "./esm/index.js",
+            "default": "./cjs/index.cjs"
+        },
+        "./_/_apply_decorated_descriptor": {
+            "module-sync": "./esm/_apply_decorated_descriptor.js",
+            "webpack": "./esm/_apply_decorated_descriptor.js",
+            "import": "./esm/_apply_decorated_descriptor.js",
+            "default": "./cjs/_apply_decorated_descriptor.cjs"
+        },
+        "./_/_apply_decs_2203_r": {
+            "module-sync": "./esm/_apply_decs_2203_r.js",
+            "webpack": "./esm/_apply_decs_2203_r.js",
+            "import": "./esm/_apply_decs_2203_r.js",
+            "default": "./cjs/_apply_decs_2203_r.cjs"
+        },
+        "./_/_array_like_to_array": {
+            "module-sync": "./esm/_array_like_to_array.js",
+            "webpack": "./esm/_array_like_to_array.js",
+            "import": "./esm/_array_like_to_array.js",
+            "default": "./cjs/_array_like_to_array.cjs"
+        },
+        "./_/_array_with_holes": {
+            "module-sync": "./esm/_array_with_holes.js",
+            "webpack": "./esm/_array_with_holes.js",
+            "import": "./esm/_array_with_holes.js",
+            "default": "./cjs/_array_with_holes.cjs"
+        },
+        "./_/_array_without_holes": {
+            "module-sync": "./esm/_array_without_holes.js",
+            "webpack": "./esm/_array_without_holes.js",
+            "import": "./esm/_array_without_holes.js",
+            "default": "./cjs/_array_without_holes.cjs"
+        },
+        "./_/_assert_this_initialized": {
+            "module-sync": "./esm/_assert_this_initialized.js",
+            "webpack": "./esm/_assert_this_initialized.js",
+            "import": "./esm/_assert_this_initialized.js",
+            "default": "./cjs/_assert_this_initialized.cjs"
+        },
+        "./_/_async_generator": {
+            "module-sync": "./esm/_async_generator.js",
+            "webpack": "./esm/_async_generator.js",
+            "import": "./esm/_async_generator.js",
+            "default": "./cjs/_async_generator.cjs"
+        },
+        "./_/_async_generator_delegate": {
+            "module-sync": "./esm/_async_generator_delegate.js",
+            "webpack": "./esm/_async_generator_delegate.js",
+            "import": "./esm/_async_generator_delegate.js",
+            "default": "./cjs/_async_generator_delegate.cjs"
+        },
+        "./_/_async_iterator": {
+            "module-sync": "./esm/_async_iterator.js",
+            "webpack": "./esm/_async_iterator.js",
+            "import": "./esm/_async_iterator.js",
+            "default": "./cjs/_async_iterator.cjs"
+        },
+        "./_/_async_to_generator": {
+            "module-sync": "./esm/_async_to_generator.js",
+            "webpack": "./esm/_async_to_generator.js",
+            "import": "./esm/_async_to_generator.js",
+            "default": "./cjs/_async_to_generator.cjs"
+        },
+        "./_/_await_async_generator": {
+            "module-sync": "./esm/_await_async_generator.js",
+            "webpack": "./esm/_await_async_generator.js",
+            "import": "./esm/_await_async_generator.js",
+            "default": "./cjs/_await_async_generator.cjs"
+        },
+        "./_/_await_value": {
+            "module-sync": "./esm/_await_value.js",
+            "webpack": "./esm/_await_value.js",
+            "import": "./esm/_await_value.js",
+            "default": "./cjs/_await_value.cjs"
+        },
+        "./_/_call_super": {
+            "module-sync": "./esm/_call_super.js",
+            "webpack": "./esm/_call_super.js",
+            "import": "./esm/_call_super.js",
+            "default": "./cjs/_call_super.cjs"
+        },
+        "./_/_check_private_redeclaration": {
+            "module-sync": "./esm/_check_private_redeclaration.js",
+            "webpack": "./esm/_check_private_redeclaration.js",
+            "import": "./esm/_check_private_redeclaration.js",
+            "default": "./cjs/_check_private_redeclaration.cjs"
+        },
+        "./_/_class_apply_descriptor_destructure": {
+            "module-sync": "./esm/_class_apply_descriptor_destructure.js",
+            "webpack": "./esm/_class_apply_descriptor_destructure.js",
+            "import": "./esm/_class_apply_descriptor_destructure.js",
+            "default": "./cjs/_class_apply_descriptor_destructure.cjs"
+        },
+        "./_/_class_apply_descriptor_get": {
+            "module-sync": "./esm/_class_apply_descriptor_get.js",
+            "webpack": "./esm/_class_apply_descriptor_get.js",
+            "import": "./esm/_class_apply_descriptor_get.js",
+            "default": "./cjs/_class_apply_descriptor_get.cjs"
+        },
+        "./_/_class_apply_descriptor_set": {
+            "module-sync": "./esm/_class_apply_descriptor_set.js",
+            "webpack": "./esm/_class_apply_descriptor_set.js",
+            "import": "./esm/_class_apply_descriptor_set.js",
+            "default": "./cjs/_class_apply_descriptor_set.cjs"
+        },
+        "./_/_class_apply_descriptor_update": {
+            "module-sync": "./esm/_class_apply_descriptor_update.js",
+            "webpack": "./esm/_class_apply_descriptor_update.js",
+            "import": "./esm/_class_apply_descriptor_update.js",
+            "default": "./cjs/_class_apply_descriptor_update.cjs"
+        },
+        "./_/_class_call_check": {
+            "module-sync": "./esm/_class_call_check.js",
+            "webpack": "./esm/_class_call_check.js",
+            "import": "./esm/_class_call_check.js",
+            "default": "./cjs/_class_call_check.cjs"
+        },
+        "./_/_class_check_private_static_access": {
+            "module-sync": "./esm/_class_check_private_static_access.js",
+            "webpack": "./esm/_class_check_private_static_access.js",
+            "import": "./esm/_class_check_private_static_access.js",
+            "default": "./cjs/_class_check_private_static_access.cjs"
+        },
+        "./_/_class_check_private_static_field_descriptor": {
+            "module-sync": "./esm/_class_check_private_static_field_descriptor.js",
+            "webpack": "./esm/_class_check_private_static_field_descriptor.js",
+            "import": "./esm/_class_check_private_static_field_descriptor.js",
+            "default": "./cjs/_class_check_private_static_field_descriptor.cjs"
+        },
+        "./_/_class_extract_field_descriptor": {
+            "module-sync": "./esm/_class_extract_field_descriptor.js",
+            "webpack": "./esm/_class_extract_field_descriptor.js",
+            "import": "./esm/_class_extract_field_descriptor.js",
+            "default": "./cjs/_class_extract_field_descriptor.cjs"
+        },
+        "./_/_class_name_tdz_error": {
+            "module-sync": "./esm/_class_name_tdz_error.js",
+            "webpack": "./esm/_class_name_tdz_error.js",
+            "import": "./esm/_class_name_tdz_error.js",
+            "default": "./cjs/_class_name_tdz_error.cjs"
+        },
+        "./_/_class_private_field_destructure": {
+            "module-sync": "./esm/_class_private_field_destructure.js",
+            "webpack": "./esm/_class_private_field_destructure.js",
+            "import": "./esm/_class_private_field_destructure.js",
+            "default": "./cjs/_class_private_field_destructure.cjs"
+        },
+        "./_/_class_private_field_get": {
+            "module-sync": "./esm/_class_private_field_get.js",
+            "webpack": "./esm/_class_private_field_get.js",
+            "import": "./esm/_class_private_field_get.js",
+            "default": "./cjs/_class_private_field_get.cjs"
+        },
+        "./_/_class_private_field_init": {
+            "module-sync": "./esm/_class_private_field_init.js",
+            "webpack": "./esm/_class_private_field_init.js",
+            "import": "./esm/_class_private_field_init.js",
+            "default": "./cjs/_class_private_field_init.cjs"
+        },
+        "./_/_class_private_field_loose_base": {
+            "module-sync": "./esm/_class_private_field_loose_base.js",
+            "webpack": "./esm/_class_private_field_loose_base.js",
+            "import": "./esm/_class_private_field_loose_base.js",
+            "default": "./cjs/_class_private_field_loose_base.cjs"
+        },
+        "./_/_class_private_field_loose_key": {
+            "module-sync": "./esm/_class_private_field_loose_key.js",
+            "webpack": "./esm/_class_private_field_loose_key.js",
+            "import": "./esm/_class_private_field_loose_key.js",
+            "default": "./cjs/_class_private_field_loose_key.cjs"
+        },
+        "./_/_class_private_field_set": {
+            "module-sync": "./esm/_class_private_field_set.js",
+            "webpack": "./esm/_class_private_field_set.js",
+            "import": "./esm/_class_private_field_set.js",
+            "default": "./cjs/_class_private_field_set.cjs"
+        },
+        "./_/_class_private_field_update": {
+            "module-sync": "./esm/_class_private_field_update.js",
+            "webpack": "./esm/_class_private_field_update.js",
+            "import": "./esm/_class_private_field_update.js",
+            "default": "./cjs/_class_private_field_update.cjs"
+        },
+        "./_/_class_private_method_get": {
+            "module-sync": "./esm/_class_private_method_get.js",
+            "webpack": "./esm/_class_private_method_get.js",
+            "import": "./esm/_class_private_method_get.js",
+            "default": "./cjs/_class_private_method_get.cjs"
+        },
+        "./_/_class_private_method_init": {
+            "module-sync": "./esm/_class_private_method_init.js",
+            "webpack": "./esm/_class_private_method_init.js",
+            "import": "./esm/_class_private_method_init.js",
+            "default": "./cjs/_class_private_method_init.cjs"
+        },
+        "./_/_class_private_method_set": {
+            "module-sync": "./esm/_class_private_method_set.js",
+            "webpack": "./esm/_class_private_method_set.js",
+            "import": "./esm/_class_private_method_set.js",
+            "default": "./cjs/_class_private_method_set.cjs"
+        },
+        "./_/_class_static_private_field_destructure": {
+            "module-sync": "./esm/_class_static_private_field_destructure.js",
+            "webpack": "./esm/_class_static_private_field_destructure.js",
+            "import": "./esm/_class_static_private_field_destructure.js",
+            "default": "./cjs/_class_static_private_field_destructure.cjs"
+        },
+        "./_/_class_static_private_field_spec_get": {
+            "module-sync": "./esm/_class_static_private_field_spec_get.js",
+            "webpack": "./esm/_class_static_private_field_spec_get.js",
+            "import": "./esm/_class_static_private_field_spec_get.js",
+            "default": "./cjs/_class_static_private_field_spec_get.cjs"
+        },
+        "./_/_class_static_private_field_spec_set": {
+            "module-sync": "./esm/_class_static_private_field_spec_set.js",
+            "webpack": "./esm/_class_static_private_field_spec_set.js",
+            "import": "./esm/_class_static_private_field_spec_set.js",
+            "default": "./cjs/_class_static_private_field_spec_set.cjs"
+        },
+        "./_/_class_static_private_field_update": {
+            "module-sync": "./esm/_class_static_private_field_update.js",
+            "webpack": "./esm/_class_static_private_field_update.js",
+            "import": "./esm/_class_static_private_field_update.js",
+            "default": "./cjs/_class_static_private_field_update.cjs"
+        },
+        "./_/_class_static_private_method_get": {
+            "module-sync": "./esm/_class_static_private_method_get.js",
+            "webpack": "./esm/_class_static_private_method_get.js",
+            "import": "./esm/_class_static_private_method_get.js",
+            "default": "./cjs/_class_static_private_method_get.cjs"
+        },
+        "./_/_construct": {
+            "module-sync": "./esm/_construct.js",
+            "webpack": "./esm/_construct.js",
+            "import": "./esm/_construct.js",
+            "default": "./cjs/_construct.cjs"
+        },
+        "./_/_create_class": {
+            "module-sync": "./esm/_create_class.js",
+            "webpack": "./esm/_create_class.js",
+            "import": "./esm/_create_class.js",
+            "default": "./cjs/_create_class.cjs"
+        },
+        "./_/_create_for_of_iterator_helper_loose": {
+            "module-sync": "./esm/_create_for_of_iterator_helper_loose.js",
+            "webpack": "./esm/_create_for_of_iterator_helper_loose.js",
+            "import": "./esm/_create_for_of_iterator_helper_loose.js",
+            "default": "./cjs/_create_for_of_iterator_helper_loose.cjs"
+        },
+        "./_/_create_super": {
+            "module-sync": "./esm/_create_super.js",
+            "webpack": "./esm/_create_super.js",
+            "import": "./esm/_create_super.js",
+            "default": "./cjs/_create_super.cjs"
+        },
+        "./_/_decorate": {
+            "module-sync": "./esm/_decorate.js",
+            "webpack": "./esm/_decorate.js",
+            "import": "./esm/_decorate.js",
+            "default": "./cjs/_decorate.cjs"
+        },
+        "./_/_defaults": {
+            "module-sync": "./esm/_defaults.js",
+            "webpack": "./esm/_defaults.js",
+            "import": "./esm/_defaults.js",
+            "default": "./cjs/_defaults.cjs"
+        },
+        "./_/_define_enumerable_properties": {
+            "module-sync": "./esm/_define_enumerable_properties.js",
+            "webpack": "./esm/_define_enumerable_properties.js",
+            "import": "./esm/_define_enumerable_properties.js",
+            "default": "./cjs/_define_enumerable_properties.cjs"
+        },
+        "./_/_define_property": {
+            "module-sync": "./esm/_define_property.js",
+            "webpack": "./esm/_define_property.js",
+            "import": "./esm/_define_property.js",
+            "default": "./cjs/_define_property.cjs"
+        },
+        "./_/_dispose": {
+            "module-sync": "./esm/_dispose.js",
+            "webpack": "./esm/_dispose.js",
+            "import": "./esm/_dispose.js",
+            "default": "./cjs/_dispose.cjs"
+        },
+        "./_/_export_star": {
+            "module-sync": "./esm/_export_star.js",
+            "webpack": "./esm/_export_star.js",
+            "import": "./esm/_export_star.js",
+            "default": "./cjs/_export_star.cjs"
+        },
+        "./_/_extends": {
+            "module-sync": "./esm/_extends.js",
+            "webpack": "./esm/_extends.js",
+            "import": "./esm/_extends.js",
+            "default": "./cjs/_extends.cjs"
+        },
+        "./_/_get": {
+            "module-sync": "./esm/_get.js",
+            "webpack": "./esm/_get.js",
+            "import": "./esm/_get.js",
+            "default": "./cjs/_get.cjs"
+        },
+        "./_/_get_prototype_of": {
+            "module-sync": "./esm/_get_prototype_of.js",
+            "webpack": "./esm/_get_prototype_of.js",
+            "import": "./esm/_get_prototype_of.js",
+            "default": "./cjs/_get_prototype_of.cjs"
+        },
+        "./_/_identity": {
+            "module-sync": "./esm/_identity.js",
+            "webpack": "./esm/_identity.js",
+            "import": "./esm/_identity.js",
+            "default": "./cjs/_identity.cjs"
+        },
+        "./_/_inherits": {
+            "module-sync": "./esm/_inherits.js",
+            "webpack": "./esm/_inherits.js",
+            "import": "./esm/_inherits.js",
+            "default": "./cjs/_inherits.cjs"
+        },
+        "./_/_inherits_loose": {
+            "module-sync": "./esm/_inherits_loose.js",
+            "webpack": "./esm/_inherits_loose.js",
+            "import": "./esm/_inherits_loose.js",
+            "default": "./cjs/_inherits_loose.cjs"
+        },
+        "./_/_initializer_define_property": {
+            "module-sync": "./esm/_initializer_define_property.js",
+            "webpack": "./esm/_initializer_define_property.js",
+            "import": "./esm/_initializer_define_property.js",
+            "default": "./cjs/_initializer_define_property.cjs"
+        },
+        "./_/_initializer_warning_helper": {
+            "module-sync": "./esm/_initializer_warning_helper.js",
+            "webpack": "./esm/_initializer_warning_helper.js",
+            "import": "./esm/_initializer_warning_helper.js",
+            "default": "./cjs/_initializer_warning_helper.cjs"
+        },
+        "./_/_instanceof": {
+            "module-sync": "./esm/_instanceof.js",
+            "webpack": "./esm/_instanceof.js",
+            "import": "./esm/_instanceof.js",
+            "default": "./cjs/_instanceof.cjs"
+        },
+        "./_/_interop_require_default": {
+            "module-sync": "./esm/_interop_require_default.js",
+            "webpack": "./esm/_interop_require_default.js",
+            "import": "./esm/_interop_require_default.js",
+            "default": "./cjs/_interop_require_default.cjs"
+        },
+        "./_/_interop_require_wildcard": {
+            "module-sync": "./esm/_interop_require_wildcard.js",
+            "webpack": "./esm/_interop_require_wildcard.js",
+            "import": "./esm/_interop_require_wildcard.js",
+            "default": "./cjs/_interop_require_wildcard.cjs"
+        },
+        "./_/_is_native_function": {
+            "module-sync": "./esm/_is_native_function.js",
+            "webpack": "./esm/_is_native_function.js",
+            "import": "./esm/_is_native_function.js",
+            "default": "./cjs/_is_native_function.cjs"
+        },
+        "./_/_is_native_reflect_construct": {
+            "module-sync": "./esm/_is_native_reflect_construct.js",
+            "webpack": "./esm/_is_native_reflect_construct.js",
+            "import": "./esm/_is_native_reflect_construct.js",
+            "default": "./cjs/_is_native_reflect_construct.cjs"
+        },
+        "./_/_iterable_to_array": {
+            "module-sync": "./esm/_iterable_to_array.js",
+            "webpack": "./esm/_iterable_to_array.js",
+            "import": "./esm/_iterable_to_array.js",
+            "default": "./cjs/_iterable_to_array.cjs"
+        },
+        "./_/_iterable_to_array_limit": {
+            "module-sync": "./esm/_iterable_to_array_limit.js",
+            "webpack": "./esm/_iterable_to_array_limit.js",
+            "import": "./esm/_iterable_to_array_limit.js",
+            "default": "./cjs/_iterable_to_array_limit.cjs"
+        },
+        "./_/_iterable_to_array_limit_loose": {
+            "module-sync": "./esm/_iterable_to_array_limit_loose.js",
+            "webpack": "./esm/_iterable_to_array_limit_loose.js",
+            "import": "./esm/_iterable_to_array_limit_loose.js",
+            "default": "./cjs/_iterable_to_array_limit_loose.cjs"
+        },
+        "./_/_jsx": {
+            "module-sync": "./esm/_jsx.js",
+            "webpack": "./esm/_jsx.js",
+            "import": "./esm/_jsx.js",
+            "default": "./cjs/_jsx.cjs"
+        },
+        "./_/_new_arrow_check": {
+            "module-sync": "./esm/_new_arrow_check.js",
+            "webpack": "./esm/_new_arrow_check.js",
+            "import": "./esm/_new_arrow_check.js",
+            "default": "./cjs/_new_arrow_check.cjs"
+        },
+        "./_/_non_iterable_rest": {
+            "module-sync": "./esm/_non_iterable_rest.js",
+            "webpack": "./esm/_non_iterable_rest.js",
+            "import": "./esm/_non_iterable_rest.js",
+            "default": "./cjs/_non_iterable_rest.cjs"
+        },
+        "./_/_non_iterable_spread": {
+            "module-sync": "./esm/_non_iterable_spread.js",
+            "webpack": "./esm/_non_iterable_spread.js",
+            "import": "./esm/_non_iterable_spread.js",
+            "default": "./cjs/_non_iterable_spread.cjs"
+        },
+        "./_/_object_destructuring_empty": {
+            "module-sync": "./esm/_object_destructuring_empty.js",
+            "webpack": "./esm/_object_destructuring_empty.js",
+            "import": "./esm/_object_destructuring_empty.js",
+            "default": "./cjs/_object_destructuring_empty.cjs"
+        },
+        "./_/_object_spread": {
+            "module-sync": "./esm/_object_spread.js",
+            "webpack": "./esm/_object_spread.js",
+            "import": "./esm/_object_spread.js",
+            "default": "./cjs/_object_spread.cjs"
+        },
+        "./_/_object_spread_props": {
+            "module-sync": "./esm/_object_spread_props.js",
+            "webpack": "./esm/_object_spread_props.js",
+            "import": "./esm/_object_spread_props.js",
+            "default": "./cjs/_object_spread_props.cjs"
+        },
+        "./_/_object_without_properties": {
+            "module-sync": "./esm/_object_without_properties.js",
+            "webpack": "./esm/_object_without_properties.js",
+            "import": "./esm/_object_without_properties.js",
+            "default": "./cjs/_object_without_properties.cjs"
+        },
+        "./_/_object_without_properties_loose": {
+            "module-sync": "./esm/_object_without_properties_loose.js",
+            "webpack": "./esm/_object_without_properties_loose.js",
+            "import": "./esm/_object_without_properties_loose.js",
+            "default": "./cjs/_object_without_properties_loose.cjs"
+        },
+        "./_/_overload_yield": {
+            "module-sync": "./esm/_overload_yield.js",
+            "webpack": "./esm/_overload_yield.js",
+            "import": "./esm/_overload_yield.js",
+            "default": "./cjs/_overload_yield.cjs"
+        },
+        "./_/_possible_constructor_return": {
+            "module-sync": "./esm/_possible_constructor_return.js",
+            "webpack": "./esm/_possible_constructor_return.js",
+            "import": "./esm/_possible_constructor_return.js",
+            "default": "./cjs/_possible_constructor_return.cjs"
+        },
+        "./_/_read_only_error": {
+            "module-sync": "./esm/_read_only_error.js",
+            "webpack": "./esm/_read_only_error.js",
+            "import": "./esm/_read_only_error.js",
+            "default": "./cjs/_read_only_error.cjs"
+        },
+        "./_/_set": {
+            "module-sync": "./esm/_set.js",
+            "webpack": "./esm/_set.js",
+            "import": "./esm/_set.js",
+            "default": "./cjs/_set.cjs"
+        },
+        "./_/_set_prototype_of": {
+            "module-sync": "./esm/_set_prototype_of.js",
+            "webpack": "./esm/_set_prototype_of.js",
+            "import": "./esm/_set_prototype_of.js",
+            "default": "./cjs/_set_prototype_of.cjs"
+        },
+        "./_/_skip_first_generator_next": {
+            "module-sync": "./esm/_skip_first_generator_next.js",
+            "webpack": "./esm/_skip_first_generator_next.js",
+            "import": "./esm/_skip_first_generator_next.js",
+            "default": "./cjs/_skip_first_generator_next.cjs"
+        },
+        "./_/_sliced_to_array": {
+            "module-sync": "./esm/_sliced_to_array.js",
+            "webpack": "./esm/_sliced_to_array.js",
+            "import": "./esm/_sliced_to_array.js",
+            "default": "./cjs/_sliced_to_array.cjs"
+        },
+        "./_/_sliced_to_array_loose": {
+            "module-sync": "./esm/_sliced_to_array_loose.js",
+            "webpack": "./esm/_sliced_to_array_loose.js",
+            "import": "./esm/_sliced_to_array_loose.js",
+            "default": "./cjs/_sliced_to_array_loose.cjs"
+        },
+        "./_/_super_prop_base": {
+            "module-sync": "./esm/_super_prop_base.js",
+            "webpack": "./esm/_super_prop_base.js",
+            "import": "./esm/_super_prop_base.js",
+            "default": "./cjs/_super_prop_base.cjs"
+        },
+        "./_/_tagged_template_literal": {
+            "module-sync": "./esm/_tagged_template_literal.js",
+            "webpack": "./esm/_tagged_template_literal.js",
+            "import": "./esm/_tagged_template_literal.js",
+            "default": "./cjs/_tagged_template_literal.cjs"
+        },
+        "./_/_tagged_template_literal_loose": {
+            "module-sync": "./esm/_tagged_template_literal_loose.js",
+            "webpack": "./esm/_tagged_template_literal_loose.js",
+            "import": "./esm/_tagged_template_literal_loose.js",
+            "default": "./cjs/_tagged_template_literal_loose.cjs"
+        },
+        "./_/_throw": {
+            "module-sync": "./esm/_throw.js",
+            "webpack": "./esm/_throw.js",
+            "import": "./esm/_throw.js",
+            "default": "./cjs/_throw.cjs"
+        },
+        "./_/_to_array": {
+            "module-sync": "./esm/_to_array.js",
+            "webpack": "./esm/_to_array.js",
+            "import": "./esm/_to_array.js",
+            "default": "./cjs/_to_array.cjs"
+        },
+        "./_/_to_consumable_array": {
+            "module-sync": "./esm/_to_consumable_array.js",
+            "webpack": "./esm/_to_consumable_array.js",
+            "import": "./esm/_to_consumable_array.js",
+            "default": "./cjs/_to_consumable_array.cjs"
+        },
+        "./_/_to_primitive": {
+            "module-sync": "./esm/_to_primitive.js",
+            "webpack": "./esm/_to_primitive.js",
+            "import": "./esm/_to_primitive.js",
+            "default": "./cjs/_to_primitive.cjs"
+        },
+        "./_/_to_property_key": {
+            "module-sync": "./esm/_to_property_key.js",
+            "webpack": "./esm/_to_property_key.js",
+            "import": "./esm/_to_property_key.js",
+            "default": "./cjs/_to_property_key.cjs"
+        },
+        "./_/_ts_add_disposable_resource": {
+            "module-sync": "./esm/_ts_add_disposable_resource.js",
+            "webpack": "./esm/_ts_add_disposable_resource.js",
+            "import": "./esm/_ts_add_disposable_resource.js",
+            "default": "./cjs/_ts_add_disposable_resource.cjs"
+        },
+        "./_/_ts_decorate": {
+            "module-sync": "./esm/_ts_decorate.js",
+            "webpack": "./esm/_ts_decorate.js",
+            "import": "./esm/_ts_decorate.js",
+            "default": "./cjs/_ts_decorate.cjs"
+        },
+        "./_/_ts_dispose_resources": {
+            "module-sync": "./esm/_ts_dispose_resources.js",
+            "webpack": "./esm/_ts_dispose_resources.js",
+            "import": "./esm/_ts_dispose_resources.js",
+            "default": "./cjs/_ts_dispose_resources.cjs"
+        },
+        "./_/_ts_generator": {
+            "module-sync": "./esm/_ts_generator.js",
+            "webpack": "./esm/_ts_generator.js",
+            "import": "./esm/_ts_generator.js",
+            "default": "./cjs/_ts_generator.cjs"
+        },
+        "./_/_ts_metadata": {
+            "module-sync": "./esm/_ts_metadata.js",
+            "webpack": "./esm/_ts_metadata.js",
+            "import": "./esm/_ts_metadata.js",
+            "default": "./cjs/_ts_metadata.cjs"
+        },
+        "./_/_ts_param": {
+            "module-sync": "./esm/_ts_param.js",
+            "webpack": "./esm/_ts_param.js",
+            "import": "./esm/_ts_param.js",
+            "default": "./cjs/_ts_param.cjs"
+        },
+        "./_/_ts_rewrite_relative_import_extension": {
+            "module-sync": "./esm/_ts_rewrite_relative_import_extension.js",
+            "webpack": "./esm/_ts_rewrite_relative_import_extension.js",
+            "import": "./esm/_ts_rewrite_relative_import_extension.js",
+            "default": "./cjs/_ts_rewrite_relative_import_extension.cjs"
+        },
+        "./_/_ts_values": {
+            "module-sync": "./esm/_ts_values.js",
+            "webpack": "./esm/_ts_values.js",
+            "import": "./esm/_ts_values.js",
+            "default": "./cjs/_ts_values.cjs"
+        },
+        "./_/_type_of": {
+            "module-sync": "./esm/_type_of.js",
+            "webpack": "./esm/_type_of.js",
+            "import": "./esm/_type_of.js",
+            "default": "./cjs/_type_of.cjs"
+        },
+        "./_/_unsupported_iterable_to_array": {
+            "module-sync": "./esm/_unsupported_iterable_to_array.js",
+            "webpack": "./esm/_unsupported_iterable_to_array.js",
+            "import": "./esm/_unsupported_iterable_to_array.js",
+            "default": "./cjs/_unsupported_iterable_to_array.cjs"
+        },
+        "./_/_update": {
+            "module-sync": "./esm/_update.js",
+            "webpack": "./esm/_update.js",
+            "import": "./esm/_update.js",
+            "default": "./cjs/_update.cjs"
+        },
+        "./_/_using": {
+            "module-sync": "./esm/_using.js",
+            "webpack": "./esm/_using.js",
+            "import": "./esm/_using.js",
+            "default": "./cjs/_using.cjs"
+        },
+        "./_/_using_ctx": {
+            "module-sync": "./esm/_using_ctx.js",
+            "webpack": "./esm/_using_ctx.js",
+            "import": "./esm/_using_ctx.js",
+            "default": "./cjs/_using_ctx.cjs"
+        },
+        "./_/_wrap_async_generator": {
+            "module-sync": "./esm/_wrap_async_generator.js",
+            "webpack": "./esm/_wrap_async_generator.js",
+            "import": "./esm/_wrap_async_generator.js",
+            "default": "./cjs/_wrap_async_generator.cjs"
+        },
+        "./_/_wrap_native_super": {
+            "module-sync": "./esm/_wrap_native_super.js",
+            "webpack": "./esm/_wrap_native_super.js",
+            "import": "./esm/_wrap_native_super.js",
+            "default": "./cjs/_wrap_native_super.cjs"
+        },
+        "./_/_write_only_error": {
+            "module-sync": "./esm/_write_only_error.js",
+            "webpack": "./esm/_write_only_error.js",
+            "import": "./esm/_write_only_error.js",
+            "default": "./cjs/_write_only_error.cjs"
+        },
+        "./_/index": {
+            "module-sync": "./esm/index.js",
+            "webpack": "./esm/index.js",
+            "import": "./esm/index.js",
+            "default": "./cjs/index.cjs"
+        }
+    }
+}

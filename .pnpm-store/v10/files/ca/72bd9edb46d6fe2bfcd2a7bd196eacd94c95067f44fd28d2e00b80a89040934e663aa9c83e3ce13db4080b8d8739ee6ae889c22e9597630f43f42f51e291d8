@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "scripts": {
+    "bundle": "esbuild success=src/index.js failPlugin=src/fail-plugin-version.js --bundle  --outdir=dist --platform=node",
+    "test": "npm run bundle && node bundler-test.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}

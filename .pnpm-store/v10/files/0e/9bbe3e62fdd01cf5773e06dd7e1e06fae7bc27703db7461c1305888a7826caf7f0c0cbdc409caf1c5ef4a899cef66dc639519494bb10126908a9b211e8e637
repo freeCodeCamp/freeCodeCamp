@@ -1,0 +1,38 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "AutocompleteSearch", {
+    enumerable: true,
+    get: function() {
+        return AutocompleteSearch;
+    }
+});
+var _interop_require_wildcard = require("@swc/helpers/_/_interop_require_wildcard");
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_spread_props = require("@swc/helpers/_/_object_spread_props");
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _react = /*#__PURE__*/ _interop_require_wildcard._(require("react"));
+var AutocompleteSearchComponent = (0, _instantsearchuicomponents.createAutocompleteSearchComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+function AutocompleteSearch(param) {
+    var inputProps = param.inputProps, clearQuery = param.clearQuery, onQueryChange = param.onQueryChange, query = param.query, isSearchStalled = param.isSearchStalled, onCancel = param.onCancel, isDetached = param.isDetached, submitTitle = param.submitTitle, onAiModeClick = param.onAiModeClick;
+    return /*#__PURE__*/ _react.default.createElement(AutocompleteSearchComponent, {
+        inputProps: _object_spread_props._(_object_spread._({}, inputProps), {
+            onChange: function onChange(event) {
+                var value = event.currentTarget.value;
+                onQueryChange === null || onQueryChange === void 0 ? void 0 : onQueryChange(value);
+            }
+        }),
+        onClear: clearQuery,
+        query: query,
+        isSearchStalled: isSearchStalled,
+        onCancel: onCancel,
+        isDetached: isDetached,
+        submitTitle: submitTitle,
+        onAiModeClick: onAiModeClick
+    });
+}

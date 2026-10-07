@@ -1,0 +1,480 @@
+{
+  "bugs": {
+    "url": "https://github.com/nodejs/node-addon-api/issues"
+  },
+  "contributors": [
+    {
+      "name": "Abhishek Kumar Singh",
+      "url": "https://github.com/abhi11210646"
+    },
+    {
+      "name": "Alba Mendez",
+      "url": "https://github.com/jmendeth"
+    },
+    {
+      "name": "Alexander Floh",
+      "url": "https://github.com/alexanderfloh"
+    },
+    {
+      "name": "Ammar Faizi",
+      "url": "https://github.com/ammarfaizi2"
+    },
+    {
+      "name": "András Timár, Dr",
+      "url": "https://github.com/timarandras"
+    },
+    {
+      "name": "Andrew Petersen",
+      "url": "https://github.com/kirbysayshi"
+    },
+    {
+      "name": "Anisha Rohra",
+      "url": "https://github.com/anisha-rohra"
+    },
+    {
+      "name": "Anna Henningsen",
+      "url": "https://github.com/addaleax"
+    },
+    {
+      "name": "Arnaud Botella",
+      "url": "https://github.com/BotellaA"
+    },
+    {
+      "name": "Arunesh Chandra",
+      "url": "https://github.com/aruneshchandra"
+    },
+    {
+      "name": "Azlan Mukhtar",
+      "url": "https://github.com/azlan"
+    },
+    {
+      "name": "Ben Berman",
+      "url": "https://github.com/rivertam"
+    },
+    {
+      "name": "Benjamin Byholm",
+      "url": "https://github.com/kkoopa"
+    },
+    {
+      "name": "Bill Gallafent",
+      "url": "https://github.com/gallafent"
+    },
+    {
+      "name": "blagoev",
+      "url": "https://github.com/blagoev"
+    },
+    {
+      "name": "Bruce A. MacNaughton",
+      "url": "https://github.com/bmacnaughton"
+    },
+    {
+      "name": "Cory Mickelson",
+      "url": "https://github.com/corymickelson"
+    },
+    {
+      "name": "Daniel Bevenius",
+      "url": "https://github.com/danbev"
+    },
+    {
+      "name": "Dante Calderón",
+      "url": "https://github.com/dantehemerson"
+    },
+    {
+      "name": "Darshan Sen",
+      "url": "https://github.com/RaisinTen"
+    },
+    {
+      "name": "David Halls",
+      "url": "https://github.com/davedoesdev"
+    },
+    {
+      "name": "Deepak Rajamohan",
+      "url": "https://github.com/deepakrkris"
+    },
+    {
+      "name": "Dmitry Ashkadov",
+      "url": "https://github.com/dmitryash"
+    },
+    {
+      "name": "Dongjin Na",
+      "url": "https://github.com/nadongguri"
+    },
+    {
+      "name": "Doni Rubiagatra",
+      "url": "https://github.com/rubiagatra"
+    },
+    {
+      "name": "Eric Bickle",
+      "url": "https://github.com/ebickle"
+    },
+    {
+      "name": "extremeheat",
+      "url": "https://github.com/extremeheat"
+    },
+    {
+      "name": "Feng Yu",
+      "url": "https://github.com/F3n67u"
+    },
+    {
+      "name": "Ferdinand Holzer",
+      "url": "https://github.com/fholzer"
+    },
+    {
+      "name": "Gabriel Schulhof",
+      "url": "https://github.com/gabrielschulhof"
+    },
+    {
+      "name": "Guenter Sandner",
+      "url": "https://github.com/gms1"
+    },
+    {
+      "name": "Gus Caplan",
+      "url": "https://github.com/devsnek"
+    },
+    {
+      "name": "Helio Frota",
+      "url": "https://github.com/helio-frota"
+    },
+    {
+      "name": "Hitesh Kanwathirtha",
+      "url": "https://github.com/digitalinfinity"
+    },
+    {
+      "name": "ikokostya",
+      "url": "https://github.com/ikokostya"
+    },
+    {
+      "name": "Jack Xia",
+      "url": "https://github.com/JckXia"
+    },
+    {
+      "name": "Jake Barnes",
+      "url": "https://github.com/DuBistKomisch"
+    },
+    {
+      "name": "Jake Yoon",
+      "url": "https://github.com/yjaeseok"
+    },
+    {
+      "name": "Jason Ginchereau",
+      "url": "https://github.com/jasongin"
+    },
+    {
+      "name": "Jenny",
+      "url": "https://github.com/egg-bread"
+    },
+    {
+      "name": "Jeroen Janssen",
+      "url": "https://github.com/japj"
+    },
+    {
+      "name": "Jim Schlight",
+      "url": "https://github.com/jschlight"
+    },
+    {
+      "name": "Jinho Bang",
+      "url": "https://github.com/romandev"
+    },
+    {
+      "name": "José Expósito",
+      "url": "https://github.com/JoseExposito"
+    },
+    {
+      "name": "joshgarde",
+      "url": "https://github.com/joshgarde"
+    },
+    {
+      "name": "Julian Mesa",
+      "url": "https://github.com/julianmesa-gitkraken"
+    },
+    {
+      "name": "Kasumi Hanazuki",
+      "url": "https://github.com/hanazuki"
+    },
+    {
+      "name": "Kelvin",
+      "url": "https://github.com/kelvinhammond"
+    },
+    {
+      "name": "Kevin Eady",
+      "url": "https://github.com/KevinEady"
+    },
+    {
+      "name": "Kévin VOYER",
+      "url": "https://github.com/kecsou"
+    },
+    {
+      "name": "kidneysolo",
+      "url": "https://github.com/kidneysolo"
+    },
+    {
+      "name": "Koki Nishihara",
+      "url": "https://github.com/Nishikoh"
+    },
+    {
+      "name": "Konstantin Tarkus",
+      "url": "https://github.com/koistya"
+    },
+    {
+      "name": "Kyle Farnung",
+      "url": "https://github.com/kfarnung"
+    },
+    {
+      "name": "Kyle Kovacs",
+      "url": "https://github.com/nullromo"
+    },
+    {
+      "name": "legendecas",
+      "url": "https://github.com/legendecas"
+    },
+    {
+      "name": "LongYinan",
+      "url": "https://github.com/Brooooooklyn"
+    },
+    {
+      "name": "Lovell Fuller",
+      "url": "https://github.com/lovell"
+    },
+    {
+      "name": "Luciano Martorella",
+      "url": "https://github.com/lmartorella"
+    },
+    {
+      "name": "mastergberry",
+      "url": "https://github.com/mastergberry"
+    },
+    {
+      "name": "Mathias Küsel",
+      "url": "https://github.com/mathiask88"
+    },
+    {
+      "name": "Mathias Stearn",
+      "url": "https://github.com/RedBeard0531"
+    },
+    {
+      "name": "Matteo Collina",
+      "url": "https://github.com/mcollina"
+    },
+    {
+      "name": "Michael Dawson",
+      "url": "https://github.com/mhdawson"
+    },
+    {
+      "name": "Michael Price",
+      "url": "https://github.com/mikepricedev"
+    },
+    {
+      "name": "Michele Campus",
+      "url": "https://github.com/kYroL01"
+    },
+    {
+      "name": "Mikhail Cheshkov",
+      "url": "https://github.com/mcheshkov"
+    },
+    {
+      "name": "nempoBu4",
+      "url": "https://github.com/nempoBu4"
+    },
+    {
+      "name": "Nicola Del Gobbo",
+      "url": "https://github.com/NickNaso"
+    },
+    {
+      "name": "Nick Soggin",
+      "url": "https://github.com/iSkore"
+    },
+    {
+      "name": "Nikolai Vavilov",
+      "url": "https://github.com/seishun"
+    },
+    {
+      "name": "Nurbol Alpysbayev",
+      "url": "https://github.com/anurbol"
+    },
+    {
+      "name": "pacop",
+      "url": "https://github.com/pacop"
+    },
+    {
+      "name": "Peter Šándor",
+      "url": "https://github.com/petersandor"
+    },
+    {
+      "name": "Philipp Renoth",
+      "url": "https://github.com/DaAitch"
+    },
+    {
+      "name": "rgerd",
+      "url": "https://github.com/rgerd"
+    },
+    {
+      "name": "Richard Lau",
+      "url": "https://github.com/richardlau"
+    },
+    {
+      "name": "Rolf Timmermans",
+      "url": "https://github.com/rolftimmermans"
+    },
+    {
+      "name": "Ross Weir",
+      "url": "https://github.com/ross-weir"
+    },
+    {
+      "name": "Ryuichi Okumura",
+      "url": "https://github.com/okuryu"
+    },
+    {
+      "name": "Saint Gabriel",
+      "url": "https://github.com/chineduG"
+    },
+    {
+      "name": "Sampson Gao",
+      "url": "https://github.com/sampsongao"
+    },
+    {
+      "name": "Sam Roberts",
+      "url": "https://github.com/sam-github"
+    },
+    {
+      "name": "strager",
+      "url": "https://github.com/strager"
+    },
+    {
+      "name": "Taylor Woll",
+      "url": "https://github.com/boingoing"
+    },
+    {
+      "name": "Thomas Gentilhomme",
+      "url": "https://github.com/fraxken"
+    },
+    {
+      "name": "Tim Rach",
+      "url": "https://github.com/timrach"
+    },
+    {
+      "name": "Tobias Nießen",
+      "url": "https://github.com/tniessen"
+    },
+    {
+      "name": "todoroff",
+      "url": "https://github.com/todoroff"
+    },
+    {
+      "name": "Toyo Li",
+      "url": "https://github.com/toyobayashi"
+    },
+    {
+      "name": "Tux3",
+      "url": "https://github.com/tux3"
+    },
+    {
+      "name": "Vlad Velmisov",
+      "url": "https://github.com/Velmisov"
+    },
+    {
+      "name": "Vladimir Morozov",
+      "url": "https://github.com/vmoroz"
+
+    },
+    {
+      "name": "WenheLI",
+      "url": "https://github.com/WenheLI"
+    },
+    {
+      "name": "Xuguang Mei",
+      "url": "https://github.com/meixg"
+    },
+    {
+      "name": "Yohei Kishimoto",
+      "url": "https://github.com/morokosi"
+    },
+    {
+      "name": "Yulong Wang",
+      "url": "https://github.com/fs-eire"
+    },
+    {
+      "name": "Ziqiu Zhao",
+      "url": "https://github.com/ZzqiZQute"
+    },
+    {
+      "name": "Feng Yu",
+      "url": "https://github.com/F3n67u"
+    },
+    {
+      "name": "wanlu wang",
+      "url": "https://github.com/wanlu"
+    },
+    {
+      "name": "Caleb Hearon",
+      "url": "https://github.com/chearon"
+    },
+    {
+      "name": "Marx",
+      "url": "https://github.com/MarxJiao"
+    },
+    {
+      "name": "Ömer AKGÜL",
+      "url": "https://github.com/tuhalf"
+    }
+  ],
+  "description": "Node.js API (Node-API)",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "bindings": "^1.5.0",
+    "clang-format": "^1.4.0",
+    "eslint": "^7.32.0",
+    "eslint-config-semistandard": "^16.0.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "fs-extra": "^11.1.1",
+    "path": "^0.12.7",
+    "pre-commit": "^1.2.2",
+    "safe-buffer": "^5.1.1"
+  },
+  "directories": {},
+  "gypfile": false,
+  "homepage": "https://github.com/nodejs/node-addon-api",
+  "keywords": [
+    "n-api",
+    "napi",
+    "addon",
+    "native",
+    "bindings",
+    "c",
+    "c++",
+    "nan",
+    "node-addon-api"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "node-addon-api",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nodejs/node-addon-api.git"
+  },
+  "files": [
+    "*.{c,h,gyp,gypi}",
+    "package-support.json",
+    "tools/"
+  ],
+  "scripts": {
+    "prebenchmark": "node-gyp rebuild -C benchmark",
+    "benchmark": "node benchmark",
+    "pretest": "node-gyp rebuild -C test",
+    "test": "node test",
+    "test:debug": "node-gyp rebuild -C test --debug && NODE_API_BUILD_CONFIG=Debug node ./test/index.js",
+    "predev": "node-gyp rebuild -C test --debug",
+    "dev": "node test",
+    "predev:incremental": "node-gyp configure build -C test --debug",
+    "dev:incremental": "node test",
+    "doc": "doxygen doc/Doxyfile",
+    "lint": "node tools/eslint-format && node tools/clang-format",
+    "lint:fix": "node tools/clang-format --fix && node tools/eslint-format --fix"
+  },
+  "pre-commit": "lint",
+  "version": "7.1.1",
+  "support": true
+}

@@ -1,0 +1,38 @@
+{
+    "name": "@swc/helpers",
+    "version": "0.4.14",
+    "description": "External helpers for the swc project.",
+    "esnext": "src/index.mjs",
+    "module": "src/index.mjs",
+    "main": "lib/index.js",
+    "sideEffects": false,
+    "scripts": {
+        "build": "swc -V && bash ./scripts/build.sh",
+        "prepublishOnly": "bash ./scripts/build.sh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/swc-project/swc.git"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "keywords": [
+        "swc",
+        "helpers"
+    ],
+    "author": "강동윤 <kdy1997.dev@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/swc-project/swc/issues"
+    },
+    "homepage": "https://swc.rs",
+    "devDependencies": {
+        "@swc/cli": "^0.1.36",
+        "@swc/core": "=1.3.3"
+    },
+    "dependencies": {
+        "tslib": "^2.4.0"
+    }
+}

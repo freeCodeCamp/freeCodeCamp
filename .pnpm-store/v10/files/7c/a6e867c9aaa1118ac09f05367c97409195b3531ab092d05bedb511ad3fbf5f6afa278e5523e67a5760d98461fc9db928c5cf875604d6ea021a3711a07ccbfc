@@ -1,0 +1,70 @@
+{
+  "name": "engine.io",
+  "version": "6.6.5",
+  "description": "The realtime engine behind Socket.IO. Provides the foundation of a bidirectional connection between client and server",
+  "type": "commonjs",
+  "main": "./build/engine.io.js",
+  "types": "./build/engine.io.d.ts",
+  "exports": {
+    "types": "./build/engine.io.d.ts",
+    "import": "./wrapper.mjs",
+    "require": "./build/engine.io.js"
+  },
+  "author": "Guillermo Rauch <guillermo@learnboost.com>",
+  "contributors": [
+    {
+      "name": "Eugen Dueck",
+      "web": "https://github.com/EugenDueck"
+    },
+    {
+      "name": "Afshin Mehrabani",
+      "web": "https://github.com/afshinm"
+    },
+    {
+      "name": "Christoph Dorn",
+      "web": "https://github.com/cadorn"
+    },
+    {
+      "name": "Mark Mokryn",
+      "email": "mokesmokes@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/node": ">=10.0.0",
+    "accepts": "~1.3.4",
+    "base64id": "2.0.0",
+    "cookie": "~0.7.2",
+    "cors": "~2.8.5",
+    "debug": "~4.4.1",
+    "engine.io-parser": "~5.2.1",
+    "ws": "~8.18.3"
+  },
+  "scripts": {
+    "compile": "rimraf ./build && tsc",
+    "test": "npm run compile && npm run format:check && npm run test:default && npm run test:compat-v3",
+    "test:default": "mocha --bail --exit",
+    "test:compat-v3": "EIO_CLIENT=3 mocha --exit",
+    "test:eiows": "EIO_WS_ENGINE=eiows mocha --exit",
+    "test:uws": "EIO_WS_ENGINE=uws mocha --exit",
+    "format:check": "prettier --check \"wrapper.mjs\" \"lib/**/*.ts\" \"test/**/*.js\" \"test/webtransport.mjs\"",
+    "format:fix": "prettier --write \"wrapper.mjs\" \"lib/**/*.ts\" \"test/**/*.js\" \"test/webtransport.mjs\"",
+    "prepack": "npm run compile"
+  },
+  "homepage": "https://github.com/socketio/socket.io/tree/main/packages/engine.io#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/socketio/socket.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/socketio/socket.io/issues"
+  },
+  "files": [
+    "build/",
+    "wrapper.mjs"
+  ],
+  "engines": {
+    "node": ">=10.2.0"
+  }
+}

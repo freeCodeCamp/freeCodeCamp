@@ -1,0 +1,20 @@
+sauce_connect: true
+loopback: airtap.local
+browsers:
+  - name: chrome
+    version: latest
+  - name: firefox
+    # extended support releases 52, 60, 68
+    version: [52, 60, 68, latest]
+  - name: safari
+    version: 9..latest
+  - name: iphone
+    version: latest
+  - name: ie
+    version: 9..latest
+  - name: microsoftedge
+    version: 13..latest
+browserify:
+  - plugin: ./test/use-stream.js
+  - require: tape
+    expose: tape

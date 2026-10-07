@@ -1,0 +1,67 @@
+{
+  "name": "tsconfig-paths",
+  "version": "3.15.0",
+  "description": "Load node modules according to tsconfig paths, in run-time or via API.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "Jonas Kello",
+  "license": "MIT",
+  "repository": "https://github.com/dividab/tsconfig-paths",
+  "files": [
+    "/src",
+    "/lib",
+    "register.js",
+    "package.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^6.0.54",
+    "@types/strip-bom": "^3.0.0",
+    "@types/strip-json-comments": "^0.0.30",
+    "husky": "^4.2.5",
+    "jest": "^27.3.1",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.7.0",
+    "tslint": "^5.8.0",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@types/json5": "^0.0.29",
+    "json5": "^1.0.2",
+    "minimist": "^1.2.6",
+    "strip-bom": "^3.0.0"
+  },
+  "scripts": {
+    "start": "cd src && ts-node index.ts",
+    "example:node": "yarn build && cd ./example/node && ts-node -r ../register.js main.ts",
+    "example:project": "yarn build && ts-node -r ./register.js -P ./example/project/tsconfig.json ./example/project/main.ts",
+    "example:api": "cd example/api && ts-node main.ts",
+    "example:perf": "cd example/perf && ts-node main.ts",
+    "test": "jest",
+    "test-coverage": "jest --coverage",
+    "build": "rimraf lib && tsc -p .",
+    "lint": "tslint './{src,tests}/**/*.ts{,x}'",
+    "verify": "yarn build && yarn lint && yarn test-coverage",
+    "preversion": "yarn verify",
+    "postversion": "git push --tags && yarn publish --new-version $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "tslint",
+    "*.{ts,tsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

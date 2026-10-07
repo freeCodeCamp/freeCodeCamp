@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/lastDayOfYear/index.js",
+  "typings": "../typings.d.ts"
+}

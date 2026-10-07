@@ -1,0 +1,11 @@
+// This file is read by tools that parse documentation comments conforming to the TSDoc standard.
+// It should be published with your NPM package.  It should not be tracked by Git.
+{
+  "tsdocVersion": "0.12",
+  "toolPackages": [
+    {
+      "packageName": "@microsoft/api-extractor",
+      "packageVersion": "7.36.3"
+    }
+  ]
+}

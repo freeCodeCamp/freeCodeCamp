@@ -1,0 +1,29 @@
+@import '../variables';
+@import '../mixins';
+
+@keyframes ball-scale-ripple {
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+
+.ball-scale-ripple {
+
+  > div {
+    @include global-animation();
+
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: 2px solid $primary-color;;
+    animation: ball-scale-ripple 1s 0s infinite cubic-bezier(.21,.53,.56,.8);
+  }
+}

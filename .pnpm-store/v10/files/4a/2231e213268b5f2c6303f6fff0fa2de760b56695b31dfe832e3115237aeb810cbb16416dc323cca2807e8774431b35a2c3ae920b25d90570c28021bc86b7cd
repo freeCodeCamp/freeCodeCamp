@@ -1,0 +1,25 @@
+import { Memory } from '../../system/memory/index.mjs';
+import { type TSchema } from '../types/schema.mjs';
+import { type TProperties } from '../types/properties.mjs';
+import { type TAny } from '../types/any.mjs';
+import { type TEnum, type TEnumValue } from '../types/enum.mjs';
+import { type TInfer } from '../types/infer.mjs';
+import { type TIntersect } from '../types/intersect.mjs';
+import { type TTemplateLiteral } from '../types/template_literal.mjs';
+import { type TUnion } from '../types/union.mjs';
+import { type TUnknown } from '../types/unknown.mjs';
+import { type TExtendsLeft } from './extends_left.mjs';
+import * as Result from './result.mjs';
+import { type TTemplateLiteralDecode } from '../engine/template_literal/decode.mjs';
+import { type TEnumValuesToUnion } from '../engine/enum/index.mjs';
+type TExtendsRightInfer<Inferred extends TProperties, Name extends string, Left extends TSchema, Right extends TSchema, Result extends Result.TResult = (TExtendsLeft<Inferred, Left, Right> extends Result.TExtendsTrueLike<infer CheckInferred extends TProperties> ? Result.TExtendsTrue<Memory.TAssign<Memory.TAssign<Inferred, CheckInferred>, {
+    [_ in Name]: Left;
+}>> : Result.TExtendsFalse)> = Result;
+type TExtendsRightAny<Inferred extends TProperties, _Left extends TSchema, Result extends Result.TResult = Result.TExtendsTrue<Inferred>> = Result;
+type TExtendsRightEnum<Inferred extends TProperties, Left extends TSchema, Right extends TEnumValue[], Union extends TSchema = TEnumValuesToUnion<Right>> = TExtendsLeft<Inferred, Left, Union>;
+type TExtendsRightIntersect<Inferred extends TProperties, Left extends TSchema, Right extends TSchema[]> = (Right extends [infer Head extends TSchema, ...infer Tail extends TSchema[]] ? TExtendsLeft<Inferred, Left, Head> extends Result.TExtendsTrueLike<infer Inferred extends TProperties> ? TExtendsRightIntersect<Inferred, Left, Tail> : Result.TExtendsFalse : Result.TExtendsTrue<Inferred>);
+type TExtendsRightTemplateLiteral<Inferred extends TProperties, Left extends TSchema, Right extends string, Decoded extends TSchema = TTemplateLiteralDecode<Right>> = TExtendsLeft<Inferred, Left, Decoded>;
+type TExtendsRightUnion<Inferred extends TProperties, Left extends TSchema, Right extends TSchema[]> = (Right extends [infer Head extends TSchema, ...infer Tail extends TSchema[]] ? TExtendsLeft<Inferred, Left, Head> extends Result.TExtendsTrueLike<infer Inferred extends TProperties> ? Result.TExtendsTrue<Inferred> : TExtendsRightUnion<Inferred, Left, Tail> : Result.TExtendsFalse);
+export type TExtendsRight<Inferred extends TProperties, Left extends TSchema, Right extends TSchema> = (Right extends TAny ? TExtendsRightAny<Inferred, Left> : Right extends TEnum<infer Values extends TEnumValue[]> ? TExtendsRightEnum<Inferred, Left, Values> : Right extends TInfer<infer Name extends string, infer Type extends TSchema> ? TExtendsRightInfer<Inferred, Name, Left, Type> : Right extends TTemplateLiteral<infer Pattern extends string> ? TExtendsRightTemplateLiteral<Inferred, Left, Pattern> : Right extends TIntersect<infer Types extends TSchema[]> ? TExtendsRightIntersect<Inferred, Left, Types> : Right extends TUnion<infer Types extends TSchema[]> ? TExtendsRightUnion<Inferred, Left, Types> : Right extends TUnknown ? Result.TExtendsTrue<Inferred> : Result.TExtendsFalse);
+export declare function ExtendsRight<Inferred extends TProperties, Left extends TSchema, Right extends TSchema>(inferred: Inferred, left: Left, right: Right): TExtendsRight<Inferred, Left, Right>;
+export {};

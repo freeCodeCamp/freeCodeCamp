@@ -1,0 +1,8 @@
+
+<script src="http://twitter.github.com/hogan.js/builds/2.0.0/template-2.0.0.js">
+<script>
+if (!!!templates) var templates = {};
+templates["TM.test"] = new Hogan.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("<div>");t.b(t.v(t.f("foo",c,p,0)));t.b("</div>");return t.fl(); },partials: {}, subs: {  }});
+
+alert(templates.test.render({'foo': 'bar'}));
+</script>

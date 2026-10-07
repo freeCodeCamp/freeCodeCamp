@@ -1,0 +1,24 @@
+{
+  "name": "fs-exists-cached",
+  "version": "1.0.0",
+  "description": "Just like `fs.exists` and `fs.existsSync`, but cached",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test.js --100"
+  },
+  "devDependencies": {
+    "tap": "9 || 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/fs-exists-cached.git"
+  },
+  "keywords": [],
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacs/fs-exists-cached/issues"
+  },
+  "homepage": "https://github.com/isaacs/fs-exists-cached#readme",
+  "dependencies": {}
+}

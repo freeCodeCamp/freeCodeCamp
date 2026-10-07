@@ -1,0 +1,37 @@
+{
+    "name": "@types/hast",
+    "version": "2.3.6",
+    "description": "TypeScript definitions for Hast",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/hast",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "lukeggchapman",
+            "url": "https://github.com/lukeggchapman",
+            "githubUsername": "lukeggchapman"
+        },
+        {
+            "name": "Junyoung Choi",
+            "url": "https://github.com/rokt33r",
+            "githubUsername": "rokt33r"
+        },
+        {
+            "name": "Christian Murphy",
+            "url": "https://github.com/ChristianMurphy",
+            "githubUsername": "ChristianMurphy"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/hast"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/unist": "^2"
+    },
+    "typesPublisherContentHash": "b56d39082e30c815bb24bc4b8b3b2b544d83a5970b8cbbfc2d77b8927e65ffea",
+    "typeScriptVersion": "4.5"
+}

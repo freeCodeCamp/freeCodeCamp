@@ -1,0 +1,47 @@
+{
+  "name": "type-is",
+  "description": "Infer the content-type of a request.",
+  "version": "2.0.1",
+  "contributors": [
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
+  ],
+  "license": "MIT",
+  "repository": "jshttp/type-is",
+  "dependencies": {
+    "content-type": "^1.0.5",
+    "media-typer": "^1.1.0",
+    "mime-types": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-markdown": "2.2.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.2.0",
+    "eslint-plugin-standard": "4.1.0",
+    "mocha": "9.2.1",
+    "nyc": "15.1.0"
+  },
+  "engines": {
+    "node": ">= 0.6"
+  },
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha --reporter spec --check-leaks --bail test/",
+    "test:debug": "mocha --reporter spec --check-leaks --inspect --inspect-brk test/",
+    "test-ci": "nyc --reporter=lcovonly --reporter=text npm test",
+    "test-cov": "nyc --reporter=html --reporter=text npm test"
+  },
+  "keywords": [
+    "content",
+    "type",
+    "checking"
+  ]
+}

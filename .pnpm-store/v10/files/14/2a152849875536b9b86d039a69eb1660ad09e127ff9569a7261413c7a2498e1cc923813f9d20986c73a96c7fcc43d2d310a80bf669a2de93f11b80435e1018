@@ -1,0 +1,107 @@
+{
+  "name": "@total-typescript/ts-reset",
+  "version": "0.5.1",
+  "description": "A CSS reset for TypeScript, improving types for common JavaScript API's",
+  "private": false,
+  "repository": "https://github.com/total-typescript/ts-reset",
+  "homepage": "https://totaltypescript.com/ts-reset",
+  "main": "./dist/recommended.js",
+  "module": "./dist/recommended.mjs",
+  "types": "./dist/recommended.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/recommended.d.ts",
+      "import": "./dist/recommended.mjs",
+      "default": "./dist/recommended.js"
+    },
+    "./recommended": {
+      "types": "./dist/recommended.d.ts",
+      "import": "./dist/recommended.mjs",
+      "default": "./dist/recommended.js"
+    },
+    "./filter-boolean": {
+      "types": "./dist/filter-boolean.d.ts",
+      "import": "./dist/filter-boolean.mjs",
+      "default": "./dist/filter-boolean.js"
+    },
+    "./is-array": {
+      "types": "./dist/is-array.d.ts",
+      "import": "./dist/is-array.mjs",
+      "default": "./dist/is-array.js"
+    },
+    "./json-parse": {
+      "types": "./dist/json-parse.d.ts",
+      "import": "./dist/json-parse.mjs",
+      "default": "./dist/json-parse.js"
+    },
+    "./fetch": {
+      "types": "./dist/fetch.d.ts",
+      "import": "./dist/fetch.mjs",
+      "default": "./dist/fetch.js"
+    },
+    "./array-includes": {
+      "types": "./dist/array-includes.d.ts",
+      "import": "./dist/array-includes.mjs",
+      "default": "./dist/array-includes.js"
+    },
+    "./set-has": {
+      "types": "./dist/set-has.d.ts",
+      "import": "./dist/set-has.mjs",
+      "default": "./dist/set-has.js"
+    },
+    "./map-has": {
+      "types": "./dist/map-has.d.ts",
+      "import": "./dist/map-has.mjs",
+      "default": "./dist/map-has.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "import": "./dist/utils.mjs",
+      "default": "./dist/utils.js"
+    },
+    "./array-index-of": {
+      "types": "./dist/array-index-of.d.ts",
+      "import": "./dist/array-index-of.mjs",
+      "default": "./dist/array-index-of.js"
+    },
+    "./dom": {
+      "types": "./dist/dom.d.ts",
+      "import": "./dist/dom.mjs",
+      "default": "./dist/dom.js"
+    },
+    "./storage": {
+      "types": "./dist/storage.d.ts",
+      "import": "./dist/storage.mjs",
+      "default": "./dist/storage.js"
+    }
+  },
+  "keywords": [],
+  "author": "Matt Pocock",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@types/node": "^18.14.0",
+    "check-export-map": "^1.3.0",
+    "tsx": "^3.12.3",
+    "turbo": "^1.8.1",
+    "typescript": "^4.9.5"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "trailingComma": "all",
+    "semi": true,
+    "printWidth": 80,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "useTabs": false
+  },
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "ci": "turbo build check-exports lint lint-pkg-json",
+    "check-exports": "check-export-map",
+    "lint": "tsc",
+    "lint-pkg-json": "tsx scripts/lint.ts",
+    "release": "turbo run publish"
+  }
+}

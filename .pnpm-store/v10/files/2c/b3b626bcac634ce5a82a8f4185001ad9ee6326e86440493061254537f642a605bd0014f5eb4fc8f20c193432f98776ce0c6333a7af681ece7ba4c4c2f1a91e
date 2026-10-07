@@ -1,0 +1,107 @@
+{
+  "name": "@typescript-eslint/utils",
+  "version": "8.59.1",
+  "description": "Utilities for working with TypeScript + ESLint together",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./ast-utils": {
+      "types": "./dist/ast-utils/index.d.ts",
+      "default": "./dist/ast-utils/index.js"
+    },
+    "./eslint-utils": {
+      "types": "./dist/eslint-utils/index.d.ts",
+      "default": "./dist/eslint-utils/index.js"
+    },
+    "./json-schema": {
+      "types": "./dist/json-schema.d.ts",
+      "default": "./dist/json-schema.js"
+    },
+    "./ts-eslint": {
+      "types": "./dist/ts-eslint/index.d.ts",
+      "default": "./dist/ts-eslint/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "homepage": "https://typescript-eslint.io/packages/utils",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "typescript",
+    "estree"
+  ],
+  "dependencies": {
+    "@eslint-community/eslint-utils": "^4.9.1",
+    "@typescript-eslint/scope-manager": "8.59.1",
+    "@typescript-eslint/typescript-estree": "8.59.1",
+    "@typescript-eslint/types": "8.59.1"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+    "typescript": ">=4.8.4 <6.1.0"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^10.0.0",
+    "rimraf": "^5.0.10",
+    "typescript": ">=4.8.4 <6.1.0",
+    "vitest": "^4.0.18"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "nx": {
+    "name": "utils",
+    "includedScripts": [
+      "clean"
+    ],
+    "targets": {
+      "lint": {
+        "command": "eslint"
+      },
+      "typecheck": {
+        "outputs": [
+          "{workspaceRoot}/dist",
+          "{projectRoot}/dist"
+        ]
+      },
+      "test": {
+        "dependsOn": [
+          "^build",
+          "typecheck"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "build": "pnpm exec nx build",
+    "clean": "rimraf dist/ coverage/",
+    "format": "pnpm -w run format",
+    "lint": "pnpm -w exec nx lint",
+    "test": "pnpm -w exec nx test",
+    "typecheck": "pnpm -w exec nx typecheck"
+  }
+}

@@ -1,0 +1,8 @@
+export type Messenger<Message> = {
+    postMessage: (message: Message, options: WindowPostMessageOptions) => void;
+};
+export declare function post<Returned>({ messenger, message, }: {
+    messenger: Messenger<unknown>;
+    message: unknown;
+}): Promise<Returned>;
+//# sourceMappingURL=awaitable-post.d.ts.map

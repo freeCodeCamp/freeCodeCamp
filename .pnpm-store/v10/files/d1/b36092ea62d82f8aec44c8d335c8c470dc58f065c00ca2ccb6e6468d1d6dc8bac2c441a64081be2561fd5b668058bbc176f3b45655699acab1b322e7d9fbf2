@@ -1,0 +1,35 @@
+{
+  "name": "promise",
+  "version": "7.3.1",
+  "description": "Bare bones Promises/A+ implementation",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "node build",
+    "pretest": "node build",
+    "pretest-resolve": "node build",
+    "pretest-extensions": "node build",
+    "pretest-memory-leak": "node build",
+    "test": "mocha --bail --timeout 200 --slow 99999 -R dot && npm run test-memory-leak",
+    "test-resolve": "mocha test/resolver-tests.js --timeout 200 --slow 999999",
+    "test-extensions": "mocha test/extensions-tests.js --timeout 200 --slow 999999",
+    "test-memory-leak": "node --expose-gc test/memory-leak.js",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --bail --timeout 200 --slow 99999 -R dot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/then/promise.git"
+  },
+  "author": "ForbesLindesay",
+  "license": "MIT",
+  "devDependencies": {
+    "acorn": "^1.0.1",
+    "better-assert": "*",
+    "istanbul": "^0.3.13",
+    "mocha": "*",
+    "promises-aplus-tests": "*",
+    "rimraf": "^2.3.2"
+  },
+  "dependencies": {
+    "asap": "~2.0.3"
+  }
+}

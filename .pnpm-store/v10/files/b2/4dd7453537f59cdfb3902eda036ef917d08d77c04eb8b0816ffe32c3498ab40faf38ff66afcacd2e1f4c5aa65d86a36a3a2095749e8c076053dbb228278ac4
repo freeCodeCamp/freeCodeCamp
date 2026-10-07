@@ -1,0 +1,15 @@
+import { type TSchema, type TSchemaOptions } from '../../types/schema.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TCyclic } from '../../types/cyclic.mjs';
+import { type TIntersect } from '../../types/intersect.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TKeyOfDeferred } from '../../action/keyof.mjs';
+import { type TState, type TInstantiateType, type TCanInstantiate } from '../instantiate.mjs';
+import { type TCollapseToObject } from '../object/index.mjs';
+import { type TFromType } from './from_type.mjs';
+type TNormalizeType<Type extends TSchema, Result extends TSchema = (Type extends TCyclic | TIntersect | TUnion ? TCollapseToObject<Type> : Type)> = Result;
+export type TKeyOfAction<Type extends TSchema, Result extends TSchema = TCanInstantiate<[Type]> extends true ? TFromType<TNormalizeType<Type>> : TKeyOfDeferred<Type>> = Result;
+export declare function KeyOfAction<Type extends TSchema>(type: Type, options: TSchemaOptions): TKeyOfAction<Type>;
+export type TKeyOfInstantiate<Context extends TProperties, State extends TState, Type extends TSchema, InstantiatedType extends TSchema = TInstantiateType<Context, State, Type>> = TKeyOfAction<InstantiatedType>;
+export declare function KeyOfInstantiate<Context extends TProperties, State extends TState, Type extends TSchema>(context: Context, state: State, type: Type, options: TSchemaOptions): TKeyOfInstantiate<Context, State, Type>;
+export {};

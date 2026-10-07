@@ -1,0 +1,103 @@
+{
+  "name": "react-helmet",
+  "description": "A document head manager for React",
+  "version": "6.1.0",
+  "main": "./lib/Helmet.js",
+  "module": "./es/Helmet.js",
+  "author": "NFL <engineers@nfl.com>",
+  "contributors": [
+    "Chris Welch <chris.welch@nfl.com>",
+    "Robert dela Victoria <robert.delavictoria@nfl.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nfl/react-helmet"
+  },
+  "keywords": [
+    "react-helmet",
+    "nfl",
+    "react",
+    "document",
+    "head",
+    "title",
+    "meta",
+    "link",
+    "script",
+    "base",
+    "noscript",
+    "style"
+  ],
+  "peerDependencies": {
+    "react": ">=16.3.0"
+  },
+  "dependencies": {
+    "object-assign": "^4.1.1",
+    "prop-types": "^15.7.2",
+    "react-fast-compare": "^3.1.1",
+    "react-side-effect": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-istanbul": "^4.0.0",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-react": "^6.23.0",
+    "chai": "^3.5.0",
+    "codecov": "^3.6.5",
+    "conventional-changelog-cli": "^1.3.1",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^3.18.0",
+    "eslint-config-nfl": "^11.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-mocha": "^4.9.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^6.10.2",
+    "istanbul": "^0.4.5",
+    "karma": "^1.5.0",
+    "karma-chai": "^0.1.0",
+    "karma-chai-sinon": "^0.1.5",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-html-reporter": "^0.2.7",
+    "karma-mocha": "^2.0.1",
+    "karma-rollup-preprocessor": "^6.1.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-tap-reporter": "^0.0.6",
+    "mocha": "^7.2.0",
+    "prettier": "^1.4.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^0.67.0",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.8.0"
+  },
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "clean": "rimraf lib coverage es",
+    "lint": "eslint --ignore-path .gitignore --fix -- .",
+    "test": "karma start karma.config.js",
+    "posttest": "istanbul report lcov text",
+    "pretest": "npm run clean && npm run lint",
+    "commit": "git-cz",
+    "build": "rollup -c",
+    "prepublish": "npm run build"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

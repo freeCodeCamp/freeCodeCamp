@@ -1,0 +1,53 @@
+{
+	"name": "is64bit",
+	"version": "2.0.0",
+	"description": "Check whether operating system CPU architecture is 64-bit or 32-bit (Supports browsers)",
+	"license": "MIT",
+	"repository": "sindresorhus/is64bit",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"node": "./index.js",
+		"default": "./browser.js"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"sideEffects": false,
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"browser.js"
+	],
+	"keywords": [
+		"64-bit",
+		"32-bit",
+		"bitness",
+		"detect",
+		"check",
+		"arch",
+		"architecture",
+		"cpu",
+		"arm64",
+		"arm",
+		"x64",
+		"x86",
+		"browser"
+	],
+	"dependencies": {
+		"system-architecture": "^0.1.0"
+	},
+	"devDependencies": {
+		"ava": "^5.3.1",
+		"xo": "^0.56.0"
+	}
+}

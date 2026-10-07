@@ -1,0 +1,31 @@
+{
+  "name": "@pnpm/config.env-replace",
+  "version": "1.1.0",
+  "homepage": "https://bit.cloud/pnpm/config/env-replace",
+  "main": "dist/index.js",
+  "componentId": {
+    "scope": "pnpm.config",
+    "name": "env-replace",
+    "version": "1.1.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "26.0.20",
+    "@types/node": "12.20.4",
+    "@babel/runtime": "7.20.0"
+  },
+  "peerDependencies": {},
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=12.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnpm/components"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

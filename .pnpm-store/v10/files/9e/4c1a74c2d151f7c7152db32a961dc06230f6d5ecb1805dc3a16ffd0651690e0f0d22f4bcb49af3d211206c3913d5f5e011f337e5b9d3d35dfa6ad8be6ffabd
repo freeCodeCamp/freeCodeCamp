@@ -1,0 +1,29 @@
+{
+  "name": "expand-template",
+  "version": "2.0.3",
+  "description": "Expand placeholders in a template string",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ralphtheninja/expand-template.git"
+  },
+  "homepage": "https://github.com/ralphtheninja/expand-template",
+  "scripts": {
+    "test": "tape test.js && standard"
+  },
+  "keywords": [
+    "template",
+    "expand",
+    "replace"
+  ],
+  "author": "LM <ralphtheninja@riseup.net>",
+  "license": "(MIT OR WTFPL)",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^12.0.0",
+    "tape": "^4.2.2"
+  },
+  "engines": {
+    "node": ">=6"
+  }
+}

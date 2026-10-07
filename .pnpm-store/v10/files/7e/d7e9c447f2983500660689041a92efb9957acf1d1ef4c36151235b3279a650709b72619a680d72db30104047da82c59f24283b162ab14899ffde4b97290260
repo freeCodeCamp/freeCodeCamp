@@ -1,0 +1,42 @@
+{
+	"name": "find-cache-dir",
+	"version": "2.1.0",
+	"description": "Finds the common standard cache directory",
+	"license": "MIT",
+	"repository": "avajs/find-cache-dir",
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && nyc ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"cache",
+		"directory",
+		"dir",
+		"caching",
+		"find",
+		"search"
+	],
+	"dependencies": {
+		"commondir": "^1.0.1",
+		"make-dir": "^2.0.0",
+		"pkg-dir": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "^1.3.1",
+		"coveralls": "^3.0.3",
+		"del": "^4.0.0",
+		"nyc": "^13.3.0",
+		"xo": "^0.24.0"
+	},
+	"nyc": {
+		"reporter": [
+			"lcov",
+			"text"
+		]
+	}
+}

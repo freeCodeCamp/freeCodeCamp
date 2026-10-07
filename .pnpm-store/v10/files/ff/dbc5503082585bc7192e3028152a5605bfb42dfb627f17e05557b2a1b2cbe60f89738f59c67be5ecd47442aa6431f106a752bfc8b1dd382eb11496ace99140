@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "4"
+before_install:
+  - pip install --user codecov
+after_success:
+  - codecov --file coverage/lcov.info --disable search
+# travis encrypt [subdomain]:[api token]@[room id]
+# notifications:
+#   email: false
+#   campfire:
+#     rooms:
+#       secure: xyz
+#     on_failure: always
+#     on_success: always

@@ -1,0 +1,171 @@
+{
+  "scripts": {
+    "lint": "xo src/*.ts",
+    "format": "npm run format:js && npm run format:md",
+    "format:md": "prettier --write --parser markdown '**/*.md'",
+    "format:js": "prettier --write '{src,demos,scripts,test,website}/*.{js,ts}'",
+    "commit-amend-build": "scripts/commit-amend-build.sh",
+    "prebuild": "rimraf dist/**",
+    "dev": "cross-env NODE_ENV=development BABEL_ENV=rollup rollup -w -c -o dist/purify.js",
+    "build": "run-s build:types build:rollup build:fix-types build:cleanup",
+    "build:types": "tsc --outDir dist/types --declaration --emitDeclarationOnly",
+    "build:rollup": "rollup -c",
+    "build:fix-types": "node ./scripts/fix-types.js",
+    "build:umd": "rollup -c -f umd -o dist/purify.js",
+    "build:umd:min": "rollup -c -f umd -o dist/purify.min.js -p terser",
+    "build:es": "rollup -c -f es -o dist/purify.es.mjs",
+    "build:cjs": "rollup -c -f cjs -o dist/purify.cjs.js",
+    "build:cleanup": "rimraf dist/types",
+    "test:jsdom": "cross-env NODE_ENV=test BABEL_ENV=rollup node test/jsdom-node-runner --dot",
+    "test:karma": "cross-env NODE_ENV=test BABEL_ENV=rollup karma start test/karma.conf.js --log-level warn ",
+    "test:ci": "cross-env NODE_ENV=test BABEL_ENV=rollup npm run test:jsdom && npm run test:karma -- --log-level error --reporters dots --single-run --shouldTestOnBrowserStack=\"${TEST_BROWSERSTACK}\" --shouldProbeOnly=\"${TEST_PROBE_ONLY}\"",
+    "test": "cross-env NODE_ENV=test BABEL_ENV=rollup npm run lint &&  npm run test:jsdom && npm run test:karma -- --browsers Chrome",
+    "verify-typescript": "node ./typescript/verify.js"
+  },
+  "main": "./dist/purify.cjs.js",
+  "module": "./dist/purify.es.mjs",
+  "browser": "./dist/purify.js",
+  "production": "./dist/purify.min.js",
+  "types": "./dist/purify.cjs.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/purify.es.d.mts",
+        "default": "./dist/purify.es.mjs"
+      },
+      "default": {
+        "types": "./dist/purify.cjs.d.ts",
+        "default": "./dist/purify.cjs.js"
+      }
+    },
+    "./purify.min.js": "./dist/purify.min.js",
+    "./purify.js": "./dist/purify.js",
+    "./dist/purify.min.js": "./dist/purify.min.js",
+    "./dist/purify.js": "./dist/purify.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "pre-commit": [
+    "lint",
+    "build",
+    "commit-amend-build"
+  ],
+  "xo": {
+    "semicolon": true,
+    "space": 2,
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "import/no-useless-path-segments": 0,
+      "unicorn/prefer-optional-catch-binding": 0,
+      "unicorn/prefer-node-remove": 0,
+      "prettier/prettier": [
+        "error",
+        {
+          "trailingComma": "es5",
+          "singleQuote": true
+        }
+      ],
+      "camelcase": [
+        "error",
+        {
+          "properties": "never"
+        }
+      ],
+      "@typescript-eslint/ban-types": 0,
+      "@typescript-eslint/consistent-type-definitions": 0,
+      "@typescript-eslint/indent": 0,
+      "@typescript-eslint/naming-convention": 0,
+      "@typescript-eslint/no-throw-literal": 0,
+      "@typescript-eslint/no-unnecessary-boolean-literal-compare": 0,
+      "@typescript-eslint/no-unsafe-argument": 0,
+      "@typescript-eslint/no-unsafe-assignment": 0,
+      "@typescript-eslint/no-unsafe-call": 0,
+      "@typescript-eslint/no-unsafe-return": 0,
+      "@typescript-eslint/prefer-includes": 0,
+      "@typescript-eslint/prefer-optional-chain": 0,
+      "@typescript-eslint/prefer-nullish-coalescing": 0,
+      "@typescript-eslint/restrict-plus-operands": 0
+    },
+    "globals": [
+      "window",
+      "VERSION"
+    ]
+  },
+  "optionalDependencies": {
+    "@types/trusted-types": "^2.0.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-replace": "^6.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/estree": "^1.0.0",
+    "@types/node": "^16.18.120",
+    "cross-env": "^7.0.3",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jquery": "^3.6.0",
+    "jsdom": "^20.0.0",
+    "karma": "^6.3.17",
+    "karma-browserstack-launcher": "^1.5.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-qunit": "^4.1.2",
+    "karma-rollup-preprocessor": "^7.0.8",
+    "lodash.sample": "^4.2.1",
+    "minimist": "^1.2.6",
+    "npm-run-all": "^4.1.5",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.5.1",
+    "qunit": "^2.4.1",
+    "qunit-tap": "^1.5.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.29.5",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-includepaths": "^0.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.7.0",
+    "typescript": "^5.6.3",
+    "xo": "^0.54.1"
+  },
+  "resolutions": {
+    "natives": "1.1.6"
+  },
+  "name": "dompurify",
+  "description": "DOMPurify is a DOM-only, super-fast, uber-tolerant XSS sanitizer for HTML, MathML and SVG. It's written in JavaScript and works in all modern browsers (Safari, Opera (15+), Internet Explorer (10+), Firefox and Chrome - as well as almost anything else using Blink or WebKit). DOMPurify is written by security people who have vast background in web attacks and XSS. Fear not.",
+  "version": "3.2.7",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cure53/DOMPurify.git"
+  },
+  "keywords": [
+    "dom",
+    "xss",
+    "html",
+    "svg",
+    "mathml",
+    "security",
+    "secure",
+    "sanitizer",
+    "sanitize",
+    "filter",
+    "purify"
+  ],
+  "author": "Dr.-Ing. Mario Heiderich, Cure53 <mario@cure53.de> (https://cure53.de/)",
+  "license": "(MPL-2.0 OR Apache-2.0)",
+  "bugs": {
+    "url": "https://github.com/cure53/DOMPurify/issues"
+  },
+  "homepage": "https://github.com/cure53/DOMPurify"
+}

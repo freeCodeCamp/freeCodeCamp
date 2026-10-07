@@ -1,0 +1,72 @@
+{
+  "name": "cssstyle",
+  "description": "CSSStyleDeclaration Object Model implementation",
+  "keywords": [
+    "CSS",
+    "CSSStyleDeclaration",
+    "StyleSheet"
+  ],
+  "version": "4.6.0",
+  "homepage": "https://github.com/jsdom/cssstyle",
+  "maintainers": [
+    {
+      "name": "Jon Sakas",
+      "email": "jon.sakas@gmail.com",
+      "url": "https://jon.sakas.co/"
+    },
+    {
+      "name": "Rafał Ruciński",
+      "email": "fatfisz@gmail.com",
+      "url": "https://fatfisz.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Chad Walker",
+      "email": "chad@chad-cat-lore-eddie.com",
+      "url": "https://github.com/chad3814"
+    }
+  ],
+  "repository": "jsdom/cssstyle",
+  "bugs": "https://github.com/jsdom/cssstyle/issues",
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/"
+  ],
+  "main": "./lib/CSSStyleDeclaration.js",
+  "dependencies": {
+    "@asamuzakjp/css-color": "^3.2.0",
+    "rrweb-cssom": "^0.8.0"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.26.9",
+    "@babel/parser": "^7.26.9",
+    "@babel/traverse": "^7.26.9",
+    "@babel/types": "^7.26.9",
+    "@domenic/eslint-config": "^4.0.1",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^16.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.5.3",
+    "resolve": "^1.22.10"
+  },
+  "scripts": {
+    "download": "node ./scripts/downloadLatestProperties.mjs",
+    "generate": "run-p generate:*",
+    "generate:implemented_properties": "node ./scripts/generateImplementedProperties.mjs",
+    "generate:properties": "node ./scripts/generateProperties.js",
+    "lint": "npm run generate && eslint --max-warnings 0",
+    "lint:fix": "eslint --fix --max-warnings 0",
+    "prepublishOnly": "npm run lint && npm run test",
+    "test": "npm run generate && node --test",
+    "test-ci": "npm run lint && npm run test"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

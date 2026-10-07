@@ -1,0 +1,28 @@
+name: publish-on-tag
+
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - name: Install dependencies
+        run: npm install
+      - name: Test
+        run: npm test
+      - name: Publish
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          npm config set registry 'https://wombat-dressing-room.appspot.com/'
+          npm config set '//wombat-dressing-room.appspot.com/:_authToken' '${NPM_TOKEN}'
+          npm publish

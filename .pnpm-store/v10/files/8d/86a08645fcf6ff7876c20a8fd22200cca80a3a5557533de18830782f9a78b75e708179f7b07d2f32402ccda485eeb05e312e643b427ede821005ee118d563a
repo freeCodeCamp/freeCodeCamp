@@ -1,0 +1,63 @@
+.sk-fading-circle {
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+
+.sk-fading-circle .sk-circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sk-fading-circle .sk-circle:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 18%;
+  height: 18%;
+  background-color: #333;
+
+  border-radius: 100%;
+  -webkit-animation: sk-fadedelay 1.2s infinite ease-in-out;
+  animation: sk-fadedelay 1.2s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.sk-circle2  { transform: rotate(30deg);  -webkit-transform: rotate(30deg)  }
+.sk-circle3  { transform: rotate(60deg);  -webkit-transform: rotate(60deg)  }
+.sk-circle4  { transform: rotate(90deg);  -webkit-transform: rotate(90deg)  }
+.sk-circle5  { transform: rotate(120deg); -webkit-transform: rotate(120deg) }
+.sk-circle6  { transform: rotate(150deg); -webkit-transform: rotate(150deg) }
+.sk-circle7  { transform: rotate(180deg); -webkit-transform: rotate(180deg) }
+.sk-circle8  { transform: rotate(210deg); -webkit-transform: rotate(210deg) }
+.sk-circle9  { transform: rotate(240deg); -webkit-transform: rotate(240deg) }
+.sk-circle10 { transform: rotate(270deg); -webkit-transform: rotate(270deg) }
+.sk-circle11 { transform: rotate(300deg); -webkit-transform: rotate(300deg) }
+.sk-circle12 { transform: rotate(330deg); -webkit-transform: rotate(330deg) }
+
+.sk-circle2:before  { animation-delay: -1.1s; -webkit-animation-delay: -1.1s }
+.sk-circle3:before  { animation-delay: -1.0s; -webkit-animation-delay: -1.0s }
+.sk-circle4:before  { animation-delay: -0.9s; -webkit-animation-delay: -0.9s }
+.sk-circle5:before  { animation-delay: -0.8s; -webkit-animation-delay: -0.8s }
+.sk-circle6:before  { animation-delay: -0.7s; -webkit-animation-delay: -0.7s }
+.sk-circle7:before  { animation-delay: -0.6s; -webkit-animation-delay: -0.6s }
+.sk-circle8:before  { animation-delay: -0.5s; -webkit-animation-delay: -0.5s }
+.sk-circle9:before  { animation-delay: -0.4s; -webkit-animation-delay: -0.4s }
+.sk-circle10:before { animation-delay: -0.3s; -webkit-animation-delay: -0.3s }
+.sk-circle11:before { animation-delay: -0.2s; -webkit-animation-delay: -0.2s }
+.sk-circle12:before { animation-delay: -0.1s; -webkit-animation-delay: -0.1s }
+
+@keyframes sk-fadedelay {
+  0%, 39%, 100% { opacity: 0 }
+  40% { opacity: 0 }
+}
+
+@-webkit-keyframes sk-fadedelay {
+  0%, 39%, 100% { opacity: 0 }
+  40% { opacity: 1 }
+}

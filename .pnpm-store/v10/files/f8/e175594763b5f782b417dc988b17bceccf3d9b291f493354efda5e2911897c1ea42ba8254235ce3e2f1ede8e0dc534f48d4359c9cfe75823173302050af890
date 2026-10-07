@@ -1,0 +1,111 @@
+{
+  "name": "unist-util-select",
+  "version": "3.0.4",
+  "description": "unist utility to select nodes with CSS-like selectors",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "visit",
+    "tree",
+    "ast",
+    "node",
+    "visit",
+    "walk",
+    "select",
+    "selector",
+    "child",
+    "descendant",
+    "sibling",
+    "type",
+    "attribute",
+    "expression",
+    "filter",
+    "find",
+    "match"
+  ],
+  "repository": "syntax-tree/unist-util-select",
+  "bugs": "https://github.com/syntax-tree/unist-util-select/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Eugene Sharygin <eush77@gmail.com>",
+  "contributors": [
+    "Eugene Sharygin <eush77@gmail.com>",
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
+  ],
+  "files": [
+    "index.js",
+    "lib/",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "css-selector-parser": "^1.0.0",
+    "not": "^0.1.0",
+    "nth-check": "^2.0.0",
+    "unist-util-is": "^4.0.0",
+    "zwitch": "^1.0.0"
+  },
+  "devDependencies": {
+    "dtslint": "^4.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "unist-builder": "^2.0.0",
+    "xo": "^0.36.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignore": [
+      "types"
+    ],
+    "rules": {
+      "eqeqeq": [
+        "error",
+        "always",
+        {
+          "null": "ignore"
+        }
+      ],
+      "no-eq-null": "off",
+      "max-params": "off",
+      "unicorn/explicit-length-check": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-reflect-apply": "off"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

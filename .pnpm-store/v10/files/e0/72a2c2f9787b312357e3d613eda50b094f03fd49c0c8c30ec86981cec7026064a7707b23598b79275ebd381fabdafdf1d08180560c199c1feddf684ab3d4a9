@@ -1,0 +1,113 @@
+{
+  "name": "@stripe/react-stripe-js",
+  "version": "1.16.5",
+  "description": "React components for Stripe.js and Stripe Elements",
+  "main": "dist/react-stripe.js",
+  "module": "dist/react-stripe.esm.js",
+  "jsnext:main": "dist/react-stripe.esm.js",
+  "browser:min": "dist/react-stripe.umd.min.js",
+  "browser": "dist/react-stripe.umd.js",
+  "types": "dist/react-stripe.d.ts",
+  "scripts": {
+    "test": "yarn run lint && yarn run lint:prettier && yarn run test:unit && yarn run typecheck",
+    "test:unit": "jest",
+    "lint": "eslint --max-warnings=0 '{src,examples}/**/*.{ts,tsx,js}'",
+    "lint:prettier": "prettier './**/*.js' './**/*.ts' './**/*.tsx' './**/*.css' './**/*.md' --list-different",
+    "typecheck": "tsc",
+    "build": "yarn run clean && yarn run rollup -c && yarn checkimport",
+    "checkimport": "scripts/check-imports",
+    "clean": "rimraf dist",
+    "prettier:fix": "prettier './**/*.js' './**/*.ts' './**/*.tsx' './**/*.css' './**/*.md' --write",
+    "prepublishOnly": "echo \"\nPlease use ./scripts/publish instead\n\" && exit 1",
+    "doctoc": "doctoc README.md",
+    "storybook": "start-storybook -p 6006 "
+  },
+  "keywords": [
+    "React",
+    "Stripe",
+    "Elements"
+  ],
+  "author": "Stripe (https://www.stripe.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stripe/react-stripe-js.git"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "jest": {
+    "preset": "ts-jest/presets/js-with-ts",
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setupJest.js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "ignoreCodes": [
+            151001
+          ]
+        }
+      },
+      "_VERSION": true
+    }
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "@storybook/react": "^6.5.0-beta.8",
+    "@stripe/stripe-js": "^1.46.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/react-hooks": "^8.0.0",
+    "@types/jest": "^25.1.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "@wessberg/rollup-plugin-ts": "^1.2.15",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "6.6.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.6.3",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "fork-ts-checker-webpack-plugin": "^4.0.3",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "react": "18.1.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-dom": "18.1.0",
+    "react-test-renderer": "^18.0.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^1.27.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "ts-jest": "^25.1.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5"
+  },
+  "resolutions": {
+    "@types/react": "18.0.5"
+  },
+  "peerDependencies": {
+    "@stripe/stripe-js": "^1.44.1",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  }
+}

@@ -1,0 +1,1 @@
+export default String.fromCharCode

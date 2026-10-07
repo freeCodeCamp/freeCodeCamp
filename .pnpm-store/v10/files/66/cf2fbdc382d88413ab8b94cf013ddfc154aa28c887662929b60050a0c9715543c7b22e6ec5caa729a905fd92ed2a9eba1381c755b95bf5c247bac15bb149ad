@@ -1,0 +1,9 @@
+export const DEFAULT_RETRY_DELAY_BASE = 100;
+export const MAXIMUM_RETRY_DELAY = 20 * 1000;
+export const THROTTLING_RETRY_DELAY_BASE = 500;
+export const INITIAL_RETRY_TOKENS = 500;
+export const RETRY_COST = 5;
+export const TIMEOUT_RETRY_COST = 10;
+export const NO_RETRY_INCREMENT = 1;
+export const INVOCATION_ID_HEADER = "amz-sdk-invocation-id";
+export const REQUEST_HEADER = "amz-sdk-request";

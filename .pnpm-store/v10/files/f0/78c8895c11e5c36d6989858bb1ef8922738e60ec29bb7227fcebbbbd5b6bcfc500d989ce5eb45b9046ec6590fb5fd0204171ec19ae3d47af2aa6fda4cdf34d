@@ -1,0 +1,8 @@
+import type { Pass, Fail } from "./interfaces/test-evaluator";
+type Message = {
+    type: "result";
+    value: Pass | Fail;
+};
+export declare const postCloneableMessage: (postMessage: (msg: unknown) => void, msg: Message) => void;
+export {};
+//# sourceMappingURL=messages.d.ts.map

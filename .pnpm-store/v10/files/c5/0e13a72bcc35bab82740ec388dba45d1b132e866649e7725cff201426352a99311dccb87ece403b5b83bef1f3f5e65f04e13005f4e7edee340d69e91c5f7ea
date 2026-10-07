@@ -1,0 +1,42 @@
+{
+  "name": "@babel/plugin-transform-class-static-block",
+  "version": "7.23.4",
+  "description": "Transform class static blocks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-class-static-block"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/helper-create-class-features-plugin": "^7.22.15",
+    "@babel/helper-plugin-utils": "^7.22.5",
+    "@babel/plugin-syntax-class-static-block": "^7.14.5"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/helper-plugin-test-runner": "^7.22.5",
+    "@babel/traverse": "^7.23.4",
+    "@babel/types": "^7.23.4"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-transform-class-static-block",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

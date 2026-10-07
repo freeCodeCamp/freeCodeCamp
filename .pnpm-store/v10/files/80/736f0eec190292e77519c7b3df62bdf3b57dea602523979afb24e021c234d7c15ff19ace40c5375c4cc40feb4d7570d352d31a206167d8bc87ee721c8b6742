@@ -1,0 +1,61 @@
+import { SearchIndexToolType, RecommendToolType, MemorizeToolType, MemorySearchToolType, PonderToolType } from 'instantsearch.js/es/lib/chat';
+import React from 'react';
+export { SearchIndexToolType, RecommendToolType, MemorizeToolType, MemorySearchToolType, PonderToolType, };
+import type { ChatProps as ChatUiProps, ChatLayoutOwnProps, RecommendComponentProps, RecordWithObjectID, UserClientSideTool, UserClientSideTools, ChatMessageProps } from 'instantsearch-ui-components';
+import type { IndexUiState } from 'instantsearch.js';
+import type { UIMessage } from 'instantsearch.js/es/lib/chat';
+import type { UseChatProps } from 'react-instantsearch-core';
+export declare function createDefaultTools<TObject extends RecordWithObjectID>(itemComponent?: ItemComponent<TObject>, getSearchPageURL?: (nextUiState: IndexUiState) => string): UserClientSideTools;
+type ItemComponent<TObject> = RecommendComponentProps<TObject>['itemComponent'];
+type UiProps = Pick<ChatUiProps, 'open' | 'headerProps' | 'toggleButtonProps' | 'messagesProps' | 'promptProps' | 'suggestionsProps' | 'headerComponent' | 'promptComponent' | 'suggestionsComponent' | 'layoutComponent' | 'sendMessage' | 'regenerate' | 'stop' | 'error'>;
+type UserToggleButtonProps = Omit<ChatUiProps['toggleButtonProps'], 'open' | 'onClick'>;
+type UserHeaderProps = Omit<ChatUiProps['headerProps'], 'onClose'>;
+type UserMessagesProps = Omit<ChatUiProps['messagesProps'], 'messages' | 'tools' | 'indexUiState' | 'setIndexUiState' | 'scrollRef' | 'contentRef' | 'messageComponent' | 'leadingComponent' | 'footerComponent' | 'suggestionsComponent' | 'translations' | 'classNames'>;
+type UserPromptProps = Omit<ChatUiProps['promptProps'], 'value' | 'onInput' | 'onSubmit' | 'headerComponent' | 'footerComponent'>;
+export type Tool = UserClientSideTool;
+export type Tools = UserClientSideTools;
+export type ChatProps<TObject, TUiMessage extends UIMessage = UIMessage> = Omit<ChatUiProps, keyof UiProps | 'ref'> & UseChatProps<TUiMessage> & {
+    itemComponent?: ItemComponent<TObject>;
+    tools?: UserClientSideTools;
+    getSearchPageURL?: (nextUiState: IndexUiState) => string;
+    toggleButtonProps?: UserToggleButtonProps;
+    headerProps?: UserHeaderProps;
+    messagesProps?: UserMessagesProps;
+    promptProps?: UserPromptProps;
+    layoutComponent?: (props: ChatLayoutOwnProps) => JSX.Element;
+    toggleButtonComponent?: ChatUiProps['toggleButtonComponent'];
+    toggleButtonIconComponent?: ChatUiProps['toggleButtonProps']['toggleIconComponent'];
+    headerComponent?: ChatUiProps['headerComponent'];
+    headerTitleIconComponent?: ChatUiProps['headerProps']['titleIconComponent'];
+    headerCloseIconComponent?: ChatUiProps['headerProps']['closeIconComponent'];
+    headerMinimizeIconComponent?: ChatUiProps['headerProps']['minimizeIconComponent'];
+    headerMaximizeIconComponent?: ChatUiProps['headerProps']['maximizeIconComponent'];
+    messagesErrorComponent?: ChatUiProps['messagesProps']['errorComponent'];
+    promptComponent?: ChatUiProps['promptComponent'];
+    promptHeaderComponent?: ChatUiProps['promptProps']['headerComponent'];
+    promptFooterComponent?: ChatUiProps['promptProps']['footerComponent'];
+    loaderComponent?: ChatUiProps['messagesProps']['loaderComponent'];
+    emptyComponent?: ChatUiProps['messagesProps']['emptyComponent'];
+    actionsComponent?: ChatUiProps['messagesProps']['actionsComponent'];
+    assistantMessageLeadingComponent?: ChatMessageProps['leadingComponent'];
+    assistantMessageFooterComponent?: ChatMessageProps['footerComponent'];
+    userMessageLeadingComponent?: ChatMessageProps['leadingComponent'];
+    userMessageFooterComponent?: ChatMessageProps['footerComponent'];
+    suggestionsComponent?: ChatUiProps['suggestionsComponent'];
+    translations?: Partial<{
+        prompt: ChatUiProps['promptProps']['translations'];
+        header: ChatUiProps['headerProps']['translations'];
+        message: ChatUiProps['messagesProps']['messageTranslations'];
+        messages: ChatUiProps['messagesProps']['translations'];
+    }>;
+};
+export type ChatHandle = {
+    setOpen: (open: boolean) => void;
+    sendMessage: (params: {
+        text: string;
+    }) => void;
+    setInput: (input: string) => void;
+};
+export declare const Chat: <TObject extends RecordWithObjectID = RecordWithObjectID, TUiMessage extends UIMessage = UIMessage>(props: ChatProps<TObject, TUiMessage> & {
+    ref?: React.Ref<ChatHandle>;
+}) => React.ReactElement | null;

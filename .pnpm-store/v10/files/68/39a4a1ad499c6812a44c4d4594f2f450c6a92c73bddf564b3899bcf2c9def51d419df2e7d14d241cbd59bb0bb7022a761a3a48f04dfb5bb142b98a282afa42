@@ -1,0 +1,286 @@
+{
+  "name": "@reduxjs/toolkit",
+  "version": "2.11.2",
+  "description": "The official, opinionated, batteries-included toolset for efficient Redux development",
+  "author": "Mark Erikson <mark@isquaredsoftware.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reduxjs/redux-toolkit.git"
+  },
+  "keywords": [
+    "redux",
+    "react",
+    "starter",
+    "toolkit",
+    "reducer",
+    "slice",
+    "immer",
+    "immutable",
+    "redux-toolkit"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "module": "dist/redux-toolkit.legacy-esm.js",
+  "main": "dist/cjs/index.js",
+  "types": "dist/index.d.ts",
+  "react-native": "dist/redux-toolkit.legacy-esm.js",
+  "unpkg": "dist/redux-toolkit.browser.mjs",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "module-sync": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/redux-toolkit.modern.mjs"
+      },
+      "module": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/redux-toolkit.modern.mjs"
+      },
+      "react-native": {
+        "import": {
+          "types": "./dist/index.d.mts",
+          "default": "./dist/redux-toolkit.modern.mjs"
+        },
+        "default": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/cjs/index.js"
+        }
+      },
+      "browser": {
+        "import": {
+          "types": "./dist/index.d.mts",
+          "default": "./dist/redux-toolkit.browser.mjs"
+        },
+        "default": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/cjs/index.js"
+        }
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/redux-toolkit.modern.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./react": {
+      "module-sync": {
+        "types": "./dist/react/index.d.mts",
+        "default": "./dist/react/redux-toolkit-react.modern.mjs"
+      },
+      "module": {
+        "types": "./dist/react/index.d.mts",
+        "default": "./dist/react/redux-toolkit-react.modern.mjs"
+      },
+      "react-native": {
+        "import": {
+          "types": "./dist/react/index.d.mts",
+          "default": "./dist/react/redux-toolkit-react.modern.mjs"
+        },
+        "default": {
+          "types": "./dist/react/index.d.ts",
+          "default": "./dist/react/cjs/index.js"
+        }
+      },
+      "browser": {
+        "import": {
+          "types": "./dist/react/index.d.mts",
+          "default": "./dist/react/redux-toolkit-react.browser.mjs"
+        },
+        "default": {
+          "types": "./dist/react/index.d.ts",
+          "default": "./dist/react/cjs/index.js"
+        }
+      },
+      "import": {
+        "types": "./dist/react/index.d.mts",
+        "default": "./dist/react/redux-toolkit-react.modern.mjs"
+      },
+      "default": {
+        "types": "./dist/react/index.d.ts",
+        "default": "./dist/react/cjs/index.js"
+      }
+    },
+    "./query": {
+      "module-sync": {
+        "types": "./dist/query/index.d.mts",
+        "default": "./dist/query/rtk-query.modern.mjs"
+      },
+      "module": {
+        "types": "./dist/query/index.d.mts",
+        "default": "./dist/query/rtk-query.modern.mjs"
+      },
+      "react-native": {
+        "import": {
+          "types": "./dist/query/index.d.mts",
+          "default": "./dist/query/rtk-query.modern.mjs"
+        },
+        "default": {
+          "types": "./dist/query/index.d.ts",
+          "default": "./dist/query/cjs/index.js"
+        }
+      },
+      "browser": {
+        "import": {
+          "types": "./dist/query/index.d.mts",
+          "default": "./dist/query/rtk-query.browser.mjs"
+        },
+        "default": {
+          "types": "./dist/query/index.d.ts",
+          "default": "./dist/query/cjs/index.js"
+        }
+      },
+      "import": {
+        "types": "./dist/query/index.d.mts",
+        "default": "./dist/query/rtk-query.modern.mjs"
+      },
+      "default": {
+        "types": "./dist/query/index.d.ts",
+        "default": "./dist/query/cjs/index.js"
+      }
+    },
+    "./query/react": {
+      "module-sync": {
+        "types": "./dist/query/react/index.d.mts",
+        "default": "./dist/query/react/rtk-query-react.modern.mjs"
+      },
+      "module": {
+        "types": "./dist/query/react/index.d.mts",
+        "default": "./dist/query/react/rtk-query-react.modern.mjs"
+      },
+      "react-native": {
+        "import": {
+          "types": "./dist/query/react/index.d.mts",
+          "default": "./dist/query/react/rtk-query-react.modern.mjs"
+        },
+        "default": {
+          "types": "./dist/query/react/index.d.ts",
+          "default": "./dist/query/react/cjs/index.js"
+        }
+      },
+      "browser": {
+        "import": {
+          "types": "./dist/query/react/index.d.mts",
+          "default": "./dist/query/react/rtk-query-react.browser.mjs"
+        },
+        "default": {
+          "types": "./dist/query/react/index.d.ts",
+          "default": "./dist/query/react/cjs/index.js"
+        }
+      },
+      "import": {
+        "types": "./dist/query/react/index.d.mts",
+        "default": "./dist/query/react/rtk-query-react.modern.mjs"
+      },
+      "default": {
+        "types": "./dist/query/react/index.d.ts",
+        "default": "./dist/query/react/cjs/index.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.13.5",
+    "@babel/core": "^7.24.8",
+    "@babel/helper-module-imports": "^7.24.7",
+    "@microsoft/api-extractor": "^7.13.2",
+    "@phryneas/ts-version": "^1.0.2",
+    "@size-limit/file": "^11.0.1",
+    "@size-limit/webpack": "^11.0.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/react-render-stream": "^1.0.3",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__helper-module-imports": "^7.18.3",
+    "@types/json-stringify-safe": "^5.0.0",
+    "@types/nanoid": "^2.1.0",
+    "@types/node": "^20.11.0",
+    "@types/query-string": "^6.3.0",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@types/yargs": "^16.0.1",
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6",
+    "axios": "^0.19.2",
+    "esbuild": "^0.25.1",
+    "esbuild-extra": "^0.4.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-flowtype": "^5.7.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "fs-extra": "^9.1.0",
+    "invariant": "^2.2.4",
+    "jsdom": "^25.0.1",
+    "json-stringify-safe": "^5.0.1",
+    "msw": "^2.1.4",
+    "node-fetch": "^3.3.2",
+    "prettier": "^3.2.5",
+    "query-string": "^7.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rimraf": "^3.0.2",
+    "size-limit": "^11.0.1",
+    "tslib": "^1.10.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.2",
+    "valibot": "^1.0.0",
+    "vite-tsconfig-paths": "^4.3.1",
+    "vitest": "^4",
+    "yargs": "^15.3.1"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "run-build": "tsup --config=$INIT_CWD/tsup.config.mts",
+    "build": "yarn clean && yarn run-build && tsx scripts/fixUniqueSymbolExports.mts",
+    "build-only": "yarn clean && yarn run-build",
+    "format": "prettier --write \"(src|examples)/**/*.{ts,tsx}\" \"**/*.md\"",
+    "format:check": "prettier --list-different \"(src|examples)/**/*.{ts,tsx}\" \"docs/*/**.md\"",
+    "lint": "eslint src examples",
+    "test": "vitest --typecheck --run ",
+    "test:watch": "vitest --watch",
+    "type-tests": "yarn tsc -p tsconfig.test.json --noEmit",
+    "prepack": "yarn build",
+    "size": "size-limit"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "query",
+    "react"
+  ],
+  "dependencies": {
+    "@standard-schema/spec": "^1.0.0",
+    "@standard-schema/utils": "^0.3.0",
+    "immer": "^11.0.0",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
+    "reselect": "^5.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0 || ^17.0.0 || ^18 || ^19",
+    "react-redux": "^7.2.1 || ^8.1.3 || ^9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-redux": {
+      "optional": true
+    }
+  },
+  "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/reduxjs/redux-toolkit/issues"
+  },
+  "homepage": "https://redux-toolkit.js.org"
+}

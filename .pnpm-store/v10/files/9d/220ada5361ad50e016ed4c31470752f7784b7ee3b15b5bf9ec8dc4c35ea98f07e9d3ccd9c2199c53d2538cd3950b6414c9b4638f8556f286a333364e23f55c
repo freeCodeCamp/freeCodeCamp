@@ -1,0 +1,91 @@
+{
+  "name": "@eslint-community/regexpp",
+  "version": "4.12.2",
+  "description": "Regular expression parser for ECMAScript.",
+  "keywords": [
+    "regexp",
+    "regular",
+    "expression",
+    "parser",
+    "validator",
+    "ast",
+    "abstract",
+    "syntax",
+    "tree",
+    "ecmascript",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018",
+    "es2019",
+    "es2020",
+    "es2021",
+    "annexB"
+  ],
+  "homepage": "https://github.com/eslint-community/regexpp#readme",
+  "bugs": {
+    "url": "https://github.com/eslint-community/regexpp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eslint-community/regexpp"
+  },
+  "license": "MIT",
+  "author": "Toru Nagashima",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "index",
+  "files": [
+    "index.*"
+  ],
+  "scripts": {
+    "prebuild": "npm run -s clean",
+    "build": "run-s build:*",
+    "build:tsc": "tsc --module es2015",
+    "build:rollup": "rollup -c",
+    "build:dts": "npm run -s build:tsc -- --removeComments false && dts-bundle --name @eslint-community/regexpp --main .temp/index.d.ts --out ../index.d.ts && prettier --write index.d.ts",
+    "clean": "rimraf .temp index.*",
+    "lint": "eslint . --ext .ts",
+    "test": "nyc _mocha \"test/*.ts\" --reporter dot --timeout 10000",
+    "debug": "mocha --require ts-node/register/transpile-only \"test/*.ts\" --reporter dot --timeout 10000",
+    "update:test": "ts-node scripts/update-fixtures.ts",
+    "update:unicode": "run-s update:unicode:*",
+    "update:unicode:ids": "ts-node scripts/update-unicode-ids.ts",
+    "update:unicode:props": "ts-node scripts/update-unicode-properties.ts",
+    "update:test262:extract": "ts-node -T scripts/extract-test262.ts",
+    "preversion": "npm test && npm run -s build",
+    "postversion": "git push && git push --tags",
+    "prewatch": "npm run -s clean",
+    "watch": "_mocha \"test/*.ts\" --require ts-node/register --reporter dot --timeout 10000 --watch-extensions ts --watch --growl"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint-community/eslint-plugin-mysticatea": "^15.5.1",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@types/eslint": "^8.44.3",
+    "@types/jsdom": "^16.2.15",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^12.20.55",
+    "dts-bundle": "^0.7.3",
+    "eslint": "^8.50.0",
+    "js-tokens": "^8.0.2",
+    "jsdom": "^19.0.0",
+    "mocha": "^9.2.2",
+    "npm-run-all2": "^6.2.2",
+    "nyc": "^14.1.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.1",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "ts-node": "^10.9.1",
+    "typescript": "~5.0.2"
+  },
+  "engines": {
+    "node": "^12.0.0 || ^14.0.0 || >=16.0.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@arr/every",
+  "version": "1.0.1",
+  "repository": "lukeed/arr",
+  "description": "A tiny, faster alternative to native Array.prototype.every",
+  "types": "module.d.ts",
+  "module": "module.js",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "keywords": [
+    "arr",
+    "array",
+    "Array.every",
+    "Array.prototype.every",
+    "performance",
+    "native",
+    "every"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

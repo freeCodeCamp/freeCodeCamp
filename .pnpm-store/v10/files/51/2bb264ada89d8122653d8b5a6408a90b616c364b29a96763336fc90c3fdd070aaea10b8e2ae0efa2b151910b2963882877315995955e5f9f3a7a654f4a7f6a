@@ -1,0 +1,251 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# A domain for letting clients substitute browser's network layer with client code.
+domain Fetch
+  depends on Network
+  depends on IO
+  depends on Page
+
+  # Unique request identifier.
+  # Note that this does not identify individual HTTP requests that are part of
+  # a network request.
+  type RequestId extends string
+
+  # Stages of the request to handle. Request will intercept before the request is
+  # sent. Response will intercept after the response is received (but before response
+  # body is received).
+  type RequestStage extends string
+    enum
+      Request
+      Response
+
+  type RequestPattern extends object
+    properties
+      # Wildcards (`'*'` -> zero or more, `'?'` -> exactly one) are allowed. Escape character is
+      # backslash. Omitting is equivalent to `"*"`.
+      optional string urlPattern
+      # If set, only requests for matching resource types will be intercepted.
+      optional Network.ResourceType resourceType
+      # Stage at which to begin intercepting requests. Default is Request.
+      optional RequestStage requestStage
+
+  # Response HTTP header entry
+  type HeaderEntry extends object
+    properties
+      string name
+      string value
+
+  # Authorization challenge for HTTP status code 401 or 407.
+  type AuthChallenge extends object
+    properties
+      # Source of the authentication challenge.
+      optional enum source
+        Server
+        Proxy
+      # Origin of the challenger.
+      string origin
+      # The authentication scheme used, such as basic or digest
+      string scheme
+      # The realm of the challenge. May be empty.
+      string realm
+
+  # Response to an AuthChallenge.
+  type AuthChallengeResponse extends object
+    properties
+      # The decision on what to do in response to the authorization challenge.  Default means
+      # deferring to the default behavior of the net stack, which will likely either the Cancel
+      # authentication or display a popup dialog box.
+      enum response
+        Default
+        CancelAuth
+        ProvideCredentials
+      # The username to provide, possibly empty. Should only be set if response is
+      # ProvideCredentials.
+      optional string username
+      # The password to provide, possibly empty. Should only be set if response is
+      # ProvideCredentials.
+      optional string password
+
+  # Disables the fetch domain.
+  command disable
+
+  # Enables issuing of requestPaused events. A request will be paused until client
+  # calls one of failRequest, fulfillRequest or continueRequest/continueWithAuth.
+  command enable
+    parameters
+      # If specified, only requests matching any of these patterns will produce
+      # fetchRequested event and will be paused until clients response. If not set,
+      # all requests will be affected.
+      optional array of RequestPattern patterns
+      # If true, authRequired events will be issued and requests will be paused
+      # expecting a call to continueWithAuth.
+      optional boolean handleAuthRequests
+
+  # Causes the request to fail with specified reason.
+  command failRequest
+    parameters
+      # An id the client received in requestPaused event.
+      RequestId requestId
+      # Causes the request to fail with the given reason.
+      Network.ErrorReason errorReason
+
+  # Provides response to the request.
+  command fulfillRequest
+    parameters
+      # An id the client received in requestPaused event.
+      RequestId requestId
+      # An HTTP response code.
+      integer responseCode
+      # Response headers.
+      optional array of HeaderEntry responseHeaders
+      # Alternative way of specifying response headers as a \0-separated
+      # series of name: value pairs. Prefer the above method unless you
+      # need to represent some non-UTF8 values that can't be transmitted
+      # over the protocol as text.
+      optional binary binaryResponseHeaders
+      # A response body. If absent, original response body will be used if
+      # the request is intercepted at the response stage and empty body
+      # will be used if the request is intercepted at the request stage.
+      optional binary body
+      # A textual representation of responseCode.
+      # If absent, a standard phrase matching responseCode is used.
+      optional string responsePhrase
+
+  # Continues the request, optionally modifying some of its parameters.
+  command continueRequest
+    parameters
+      # An id the client received in requestPaused event.
+      RequestId requestId
+      # If set, the request url will be modified in a way that's not observable by page.
+      optional string url
+      # If set, the request method is overridden.
+      optional string method
+      # If set, overrides the post data in the request.
+      optional binary postData
+      # If set, overrides the request headers. Note that the overrides do not
+      # extend to subsequent redirect hops, if a redirect happens. Another override
+      # may be applied to a different request produced by a redirect.
+      optional array of HeaderEntry headers
+      # If set, overrides response interception behavior for this request.
+      experimental optional boolean interceptResponse
+
+  # Continues a request supplying authChallengeResponse following authRequired event.
+  command continueWithAuth
+    parameters
+      # An id the client received in authRequired event.
+      RequestId requestId
+      # Response to  with an authChallenge.
+      AuthChallengeResponse authChallengeResponse
+
+  # Continues loading of the paused response, optionally modifying the
+  # response headers. If either responseCode or headers are modified, all of them
+  # must be present.
+  experimental command continueResponse
+    parameters
+      # An id the client received in requestPaused event.
+      RequestId requestId
+      # An HTTP response code. If absent, original response code will be used.
+      optional integer responseCode
+      # A textual representation of responseCode.
+      # If absent, a standard phrase matching responseCode is used.
+      optional string responsePhrase
+      # Response headers. If absent, original response headers will be used.
+      optional array of HeaderEntry responseHeaders
+      # Alternative way of specifying response headers as a \0-separated
+      # series of name: value pairs. Prefer the above method unless you
+      # need to represent some non-UTF8 values that can't be transmitted
+      # over the protocol as text.
+      optional binary binaryResponseHeaders
+
+  # Causes the body of the response to be received from the server and
+  # returned as a single string. May only be issued for a request that
+  # is paused in the Response stage and is mutually exclusive with
+  # takeResponseBodyForInterceptionAsStream. Calling other methods that
+  # affect the request or disabling fetch domain before body is received
+  # results in an undefined behavior.
+  # Note that the response body is not available for redirects. Requests
+  # paused in the _redirect received_ state may be differentiated by
+  # `responseCode` and presence of `location` response header, see
+  # comments to `requestPaused` for details.
+  command getResponseBody
+    parameters
+      # Identifier for the intercepted request to get body for.
+      RequestId requestId
+    returns
+      # Response body.
+      string body
+      # True, if content was sent as base64.
+      boolean base64Encoded
+
+  # Returns a handle to the stream representing the response body.
+  # The request must be paused in the HeadersReceived stage.
+  # Note that after this command the request can't be continued
+  # as is -- client either needs to cancel it or to provide the
+  # response body.
+  # The stream only supports sequential read, IO.read will fail if the position
+  # is specified.
+  # This method is mutually exclusive with getResponseBody.
+  # Calling other methods that affect the request or disabling fetch
+  # domain before body is received results in an undefined behavior.
+  command takeResponseBodyAsStream
+    parameters
+      RequestId requestId
+    returns
+      IO.StreamHandle stream
+
+  # Issued when the domain is enabled and the request URL matches the
+  # specified filter. The request is paused until the client responds
+  # with one of continueRequest, failRequest or fulfillRequest.
+  # The stage of the request can be determined by presence of responseErrorReason
+  # and responseStatusCode -- the request is at the response stage if either
+  # of these fields is present and in the request stage otherwise.
+  # Redirect responses and subsequent requests are reported similarly to regular
+  # responses and requests. Redirect responses may be distinguished by the value
+  # of `responseStatusCode` (which is one of 301, 302, 303, 307, 308) along with
+  # presence of the `location` header. Requests resulting from a redirect will
+  # have `redirectedRequestId` field set.
+  event requestPaused
+    parameters
+      # Each request the page makes will have a unique id.
+      RequestId requestId
+      # The details of the request.
+      Network.Request request
+      # The id of the frame that initiated the request.
+      Page.FrameId frameId
+      # How the requested resource will be used.
+      Network.ResourceType resourceType
+      # Response error if intercepted at response stage.
+      optional Network.ErrorReason responseErrorReason
+      # Response code if intercepted at response stage.
+      optional integer responseStatusCode
+      # Response status text if intercepted at response stage.
+      optional string responseStatusText
+      # Response headers if intercepted at the response stage.
+      optional array of HeaderEntry responseHeaders
+      # If the intercepted request had a corresponding Network.requestWillBeSent event fired for it,
+      # then this networkId will be the same as the requestId present in the requestWillBeSent event.
+      optional Network.RequestId networkId
+      # If the request is due to a redirect response from the server, the id of the request that
+      # has caused the redirect.
+      experimental optional RequestId redirectedRequestId
+
+  # Issued when the domain is enabled with handleAuthRequests set to true.
+  # The request is paused until client responds with continueWithAuth.
+  event authRequired
+    parameters
+      # Each request the page makes will have a unique id.
+      RequestId requestId
+      # The details of the request.
+      Network.Request request
+      # The id of the frame that initiated the request.
+      Page.FrameId frameId
+      # How the requested resource will be used.
+      Network.ResourceType resourceType
+      # Details of the Authorization Challenge encountered.
+      # If this is set, client should respond with continueRequest that
+      # contains AuthChallengeResponse.
+      AuthChallenge authChallenge

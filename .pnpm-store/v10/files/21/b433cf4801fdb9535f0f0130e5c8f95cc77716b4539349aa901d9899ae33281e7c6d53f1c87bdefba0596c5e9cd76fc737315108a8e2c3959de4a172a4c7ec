@@ -1,0 +1,34 @@
+{
+  "name": "fast-string-width",
+  "repository": "github:fabiospampinato/fast-string-width",
+  "description": "A fast function for calculating the visual width of a string once printed to the terminal.",
+  "license": "MIT",
+  "version": "3.0.2",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "tsex clean",
+    "compile": "tsex compile",
+    "compile:watch": "tsex compile --watch",
+    "test": "tsex test",
+    "test:watch": "tsex test --watch",
+    "prepublishOnly": "tsex prepare"
+  },
+  "keywords": [
+    "fast",
+    "string",
+    "width",
+    "cli",
+    "terminal"
+  ],
+  "dependencies": {
+    "fast-string-truncated-width": "^3.0.2"
+  },
+  "devDependencies": {
+    "fava": "^0.3.4",
+    "tsex": "^4.0.2",
+    "typescript": "^5.7.3"
+  }
+}

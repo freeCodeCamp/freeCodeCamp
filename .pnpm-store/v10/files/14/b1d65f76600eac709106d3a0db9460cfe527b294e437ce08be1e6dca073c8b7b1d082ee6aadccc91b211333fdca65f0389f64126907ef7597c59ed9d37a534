@@ -1,0 +1,109 @@
+{
+  "name": "mdast-util-from-markdown",
+  "version": "0.8.5",
+  "description": "mdast utility to parse markdown",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "util",
+    "utility",
+    "markdown",
+    "markup",
+    "parse",
+    "syntax",
+    "tree",
+    "ast"
+  ],
+  "repository": "syntax-tree/mdast-util-from-markdown",
+  "bugs": "https://github.com/syntax-tree/mdast-util-from-markdown/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "dist/",
+    "lib/",
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types",
+  "dependencies": {
+    "@types/mdast": "^3.0.0",
+    "mdast-util-to-string": "^2.0.0",
+    "micromark": "~2.11.0",
+    "parse-entities": "^2.0.0",
+    "unist-util-stringify-position": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "babel-plugin-inline-constants": "^1.0.0",
+    "browserify": "^17.0.0",
+    "commonmark.json": "^0.29.0",
+    "dtslint": "^4.0.0",
+    "gzip-size-cli": "^4.0.0",
+    "hast-util-to-html": "^7.0.0",
+    "mdast-util-to-hast": "^10.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "rehype-parse": "^7.0.0",
+    "rehype-stringify": "^8.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unified": "^9.0.0",
+    "xo": "^0.37.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "generate-dist": "babel lib/ --out-dir dist/ --quiet --retain-lines; prettier dist/ --loglevel error --write",
+    "generate-size": "browserify . -p tinyify -s mdast-util-from-markdown -o mdast-util-from-markdown.min.js; gzip-size mdast-util-from-markdown.min.js --raw",
+    "generate": "npm run generate-dist && npm run generate-size",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run generate && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "complexity": "off",
+      "guard-for-in": "off",
+      "unicorn/explicit-length-check": "off",
+      "unicorn/no-array-callback-reference": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-number-properties": "off",
+      "unicorn/prefer-optional-catch-binding": "off"
+    },
+    "ignores": [
+      "types/"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

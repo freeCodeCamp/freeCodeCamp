@@ -1,0 +1,27 @@
+{
+  "name": "acorn-jsx",
+  "description": "Modern, fast React.js JSX parser",
+  "homepage": "https://github.com/acornjs/acorn-jsx",
+  "version": "5.3.2",
+  "maintainers": [
+    {
+      "name": "Ingvar Stepanyan",
+      "email": "me@rreverser.com",
+      "web": "http://rreverser.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acornjs/acorn-jsx"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/run.js"
+  },
+  "peerDependencies": {
+    "acorn": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "devDependencies": {
+    "acorn": "^8.0.1"
+  }
+}

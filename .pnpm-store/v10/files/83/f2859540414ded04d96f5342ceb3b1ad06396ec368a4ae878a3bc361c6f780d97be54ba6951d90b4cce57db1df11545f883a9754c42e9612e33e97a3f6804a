@@ -1,0 +1,64 @@
+# Decorators on classes and class fields
+
+@d1 class Foo {
+  @d2 bar() {}
+  @d3 get baz() { return 1 }
+  @d4 quux = 1
+}
+
+==>
+
+Script(ClassDeclaration(
+  Decorator(VariableName),
+  class,VariableDefinition,ClassBody(
+    MethodDeclaration(Decorator(VariableName),PropertyDefinition,ParamList,Block),
+    MethodDeclaration(Decorator(VariableName),get,PropertyDefinition,ParamList,Block(
+      ReturnStatement(return,Number))),
+    PropertyDeclaration(Decorator(VariableName),PropertyDefinition,Equals,Number))))
+
+# Multiple decorators
+
+@d1 @d2 class Y {}
+
+==>
+
+Script(ClassDeclaration(Decorator(VariableName),Decorator(VariableName),class,VariableDefinition,ClassBody))
+
+# Member decorators
+
+@one.two class X {}
+
+==>
+
+Script(ClassDeclaration(Decorator(MemberExpression(VariableName,PropertyName)),class,VariableDefinition,ClassBody))
+
+# Call decorators
+
+@d(2) @a.b() class Z {}
+
+==>
+
+Script(ClassDeclaration(
+  Decorator(CallExpression(VariableName,ArgList(Number))),
+  Decorator(CallExpression(MemberExpression(VariableName,PropertyName),ArgList)),
+  class,VariableDefinition,ClassBody))
+
+# Parenthesized decorators
+
+@(a instanceof Array ? x : y)(2) class P {}
+
+==>
+
+Script(ClassDeclaration(
+  Decorator(CallExpression(ParenthesizedExpression(
+    ConditionalExpression(BinaryExpression(VariableName,instanceof,VariableName),LogicOp,VariableName,LogicOp,VariableName)),
+    ArgList(Number))),
+  class,VariableDefinition,ClassBody))
+
+# Parameter decorators
+
+function foo(@d bar) {}
+
+==>
+
+Script(FunctionDeclaration(function,VariableDefinition,ParamList(Decorator(VariableName),VariableDefinition),Block))

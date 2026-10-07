@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "partytown",
+  "version": "1.0.0",
+  "description": "Internal plugin that handles Partytown setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ty Hopp <ty.hopp@gatsbyjs.com>",
+  "license": "MIT"
+}

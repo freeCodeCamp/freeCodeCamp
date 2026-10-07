@@ -1,0 +1,46 @@
+{
+  "name": "sanitize-html",
+  "version": "2.17.4",
+  "description": "Clean up user-submitted HTML, preserving allowlisted elements and allowlisted attributes on a per-element basis",
+  "sideEffects": false,
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apostrophecms/apostrophe.git",
+    "directory": "packages/sanitize-html"
+  },
+  "homepage": "https://github.com/apostrophecms/apostrophe/tree/main/packages/sanitize-html#readme",
+  "keywords": [
+    "html",
+    "parser",
+    "sanitizer",
+    "sanitize"
+  ],
+  "author": "Apostrophe Technologies, Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "escape-string-regexp": "^4.0.0",
+    "htmlparser2": "^10.1.0",
+    "is-plain-object": "^5.0.0",
+    "parse-srcset": "^1.0.2",
+    "postcss": "^8.3.11",
+    "launder": "^1.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "mocha": "^11.7.5",
+    "sinon": "^9.0.2",
+    "eslint-config-apostrophe": "^6.0.2"
+  },
+  "apostropheTestConfig": {
+    "requiresMongo": false
+  },
+  "scripts": {
+    "test": "npm run lint && mocha",
+    "lint": "eslint ."
+  }
+}

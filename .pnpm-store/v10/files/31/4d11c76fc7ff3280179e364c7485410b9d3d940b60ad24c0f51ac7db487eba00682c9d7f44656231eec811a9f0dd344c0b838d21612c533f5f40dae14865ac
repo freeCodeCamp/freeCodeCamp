@@ -1,0 +1,35 @@
+# `MD050` - Strong style
+
+Tags: `emphasis`
+
+Aliases: `strong-style`
+
+Parameters:
+
+- `style`: Strong style (`string`, default `consistent`, values `asterisk` /
+  `consistent` / `underscore`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when the symbols used in the document for strong do not
+match the configured strong style:
+
+```markdown
+**Text**
+__Text__
+```
+
+To fix this issue, use the configured strong style throughout the document:
+
+```markdown
+**Text**
+**Text**
+```
+
+The configured strong style can be a specific symbol to use (`asterisk`,
+`underscore`) or can require all strong matches the first strong (`consistent`).
+
+Note: Emphasis within a word is restricted to `asterisk` in order to avoid
+unwanted emphasis for words containing internal underscores like__this__one.
+
+Rationale: Consistent formatting makes it easier to understand a document.

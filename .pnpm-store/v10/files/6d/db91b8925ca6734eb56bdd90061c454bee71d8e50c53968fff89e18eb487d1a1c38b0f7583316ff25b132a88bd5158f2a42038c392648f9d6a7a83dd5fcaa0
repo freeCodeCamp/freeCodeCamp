@@ -1,0 +1,77 @@
+{
+  "name": "espree",
+  "description": "An Esprima-compatible JavaScript parser built on Acorn",
+  "author": "Nicholas C. Zakas <nicholas+npm@nczconsulting.com>",
+  "homepage": "https://github.com/eslint/js/blob/main/packages/espree/README.md",
+  "main": "dist/espree.cjs",
+  "type": "module",
+  "exports": {
+    ".": [
+      {
+        "import": "./espree.js",
+        "require": "./dist/espree.cjs",
+        "default": "./dist/espree.cjs"
+      },
+      "./dist/espree.cjs"
+    ],
+    "./package.json": "./package.json"
+  },
+  "version": "10.4.0",
+  "files": [
+    "lib",
+    "dist/espree.cjs",
+    "espree.js"
+  ],
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eslint/js.git",
+    "directory": "packages/espree"
+  },
+  "bugs": {
+    "url": "https://github.com/eslint/js/issues"
+  },
+  "funding": "https://opencollective.com/eslint",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "acorn-jsx": "^5.3.2",
+    "eslint-visitor-keys": "^4.2.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "eslint-release": "^3.2.0",
+    "esprima-fb": "^8001.2001.0-dev-harmony-fb",
+    "npm-run-all2": "^6.2.2",
+    "rollup": "^2.79.1",
+    "shelljs": "^0.8.5"
+  },
+  "keywords": [
+    "ast",
+    "ecmascript",
+    "javascript",
+    "parser",
+    "syntax",
+    "acorn"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "build:debug": "npm run build -- -m",
+    "build:docs": "node tools/sync-docs.js",
+    "build:update-version": "node tools/update-version.js",
+    "prepublishOnly": "npm run build:update-version && npm run build",
+    "pretest": "npm run build",
+    "release:generate:latest": "eslint-generate-release",
+    "release:generate:alpha": "eslint-generate-prerelease alpha",
+    "release:generate:beta": "eslint-generate-prerelease beta",
+    "release:generate:rc": "eslint-generate-prerelease rc",
+    "release:publish": "eslint-publish-release",
+    "test": "npm-run-all -s test:*",
+    "test:cjs": "mocha --color --reporter progress --timeout 30000 tests/lib/commonjs.cjs",
+    "test:esm": "c8 mocha --color --reporter progress --timeout 30000 tests/lib/**/*.js"
+  }
+}

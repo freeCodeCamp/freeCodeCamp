@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/FiberStatus.js",
+  "module": "../dist/esm/FiberStatus.js",
+  "types": "../dist/dts/FiberStatus.d.ts"
+}

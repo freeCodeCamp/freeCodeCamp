@@ -1,0 +1,8 @@
+{
+  "name": "@builder.io/partytown/utils",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "version": "0.7.6",
+  "private": true
+}

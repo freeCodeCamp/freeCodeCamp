@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/scrollLeft",
+  "private": true,
+  "main": "../cjs/scrollLeft.js",
+  "module": "../esm/scrollLeft.js",
+  "types": "../esm/scrollLeft.d.ts"
+}

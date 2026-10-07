@@ -1,0 +1,64 @@
+{
+  "name": "ansi-regex",
+  "version": "2.1.1",
+  "description": "Regular expression for matching ANSI escape codes",
+  "license": "MIT",
+  "repository": "chalk/ansi-regex",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "maintainers": [
+    "Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)",
+    "Joshua Appelman <jappelman@xebia.com> (jbnicolai.com)",
+    "JD Ballard <i.am.qix@gmail.com> (github.com/qix-)"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava --verbose",
+    "view-supported": "node fixtures/view-codes.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "ansi",
+    "styles",
+    "color",
+    "colour",
+    "colors",
+    "terminal",
+    "console",
+    "cli",
+    "string",
+    "tty",
+    "escape",
+    "formatting",
+    "rgb",
+    "256",
+    "shell",
+    "xterm",
+    "command-line",
+    "text",
+    "regex",
+    "regexp",
+    "re",
+    "match",
+    "test",
+    "find",
+    "pattern"
+  ],
+  "devDependencies": {
+    "ava": "0.17.0",
+    "xo": "0.16.0"
+  },
+  "xo": {
+    "rules": {
+      "guard-for-in": 0,
+      "no-loop-func": 0
+    }
+  }
+}

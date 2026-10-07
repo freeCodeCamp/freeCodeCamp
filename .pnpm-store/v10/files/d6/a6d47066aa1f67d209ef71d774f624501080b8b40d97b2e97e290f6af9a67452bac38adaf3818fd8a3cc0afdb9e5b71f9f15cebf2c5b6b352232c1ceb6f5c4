@@ -1,0 +1,27 @@
+{
+  "title": "LoaderOptionsPluginOptions",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "debug": {
+      "description": "Whether loaders should be in debug mode or not. debug will be removed as of webpack 3.",
+      "type": "boolean"
+    },
+    "minimize": {
+      "description": "Where loaders can be switched to minimize mode.",
+      "type": "boolean"
+    },
+    "options": {
+      "description": "A configuration object that can be used to configure older loaders.",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "context": {
+          "description": "The context that can be used to configure older loaders.",
+          "type": "string",
+          "absolutePath": true
+        }
+      }
+    }
+  }
+}

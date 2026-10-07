@@ -1,0 +1,113 @@
+{
+    "name": "htmlparser2",
+    "version": "10.1.0",
+    "description": "Fast & forgiving HTML/XML parser",
+    "keywords": [
+        "html",
+        "parser",
+        "streams",
+        "xml",
+        "dom",
+        "rss",
+        "feed",
+        "atom"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/fb55/htmlparser2.git"
+    },
+    "funding": [
+        "https://github.com/fb55/htmlparser2?sponsor=1",
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/fb55"
+        }
+    ],
+    "license": "MIT",
+    "author": "Felix Boehm <me@feedic.com>",
+    "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/esm/index.d.ts",
+                "default": "./dist/esm/index.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/index.d.ts",
+                "default": "./dist/commonjs/index.js"
+            }
+        },
+        "./WritableStream": {
+            "import": {
+                "types": "./dist/esm/WritableStream.d.ts",
+                "default": "./dist/esm/WritableStream.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/WritableStream.d.ts",
+                "default": "./dist/commonjs/WritableStream.js"
+            }
+        }
+    },
+    "main": "./dist/commonjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/commonjs/index.d.ts",
+    "files": [
+        "WritableStream.js",
+        "dist",
+        "src",
+        "!**/*.spec.ts",
+        "!**/__fixtures__/*",
+        "!**/__snapshots__/*"
+    ],
+    "scripts": {
+        "build": "tshy",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run format:prettier:raw -- --write",
+        "format:prettier:raw": "prettier '**/*.{ts,md,json,yml}'",
+        "lint": "npm run lint:es && npm run lint:ts && npm run lint:prettier",
+        "lint:es": "eslint src",
+        "lint:prettier": "npm run format:prettier:raw -- --check",
+        "lint:ts": "tsc --noEmit",
+        "prepare": "npm run build",
+        "test": "npm run test:vi && npm run lint",
+        "test:vi": "vitest run"
+    },
+    "prettier": {
+        "tabWidth": 4
+    },
+    "dependencies": {
+        "domelementtype": "^2.3.0",
+        "domhandler": "^5.0.3",
+        "domutils": "^3.2.2",
+        "entities": "^7.0.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.2",
+        "@types/node": "^25.0.9",
+        "@vitest/coverage-v8": "^4.0.17",
+        "eslint": "^9.39.2",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-n": "^17.23.2",
+        "eslint-plugin-unicorn": "^62.0.0",
+        "globals": "^17.0.0",
+        "prettier": "^3.8.0",
+        "tshy": "^3.1.0",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.53.1",
+        "vitest": "^4.0.12"
+    },
+    "tshy": {
+        "exclude": [
+            "**/*.spec.ts",
+            "**/__fixtures__/*",
+            "**/__tests__/*",
+            "**/__snapshots__/*"
+        ],
+        "exports": {
+            ".": "./src/index.ts",
+            "./WritableStream": "./src/WritableStream.ts"
+        }
+    }
+}

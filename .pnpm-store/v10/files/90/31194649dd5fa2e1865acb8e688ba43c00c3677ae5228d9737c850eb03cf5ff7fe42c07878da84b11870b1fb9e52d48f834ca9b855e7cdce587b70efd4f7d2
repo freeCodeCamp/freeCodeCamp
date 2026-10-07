@@ -1,0 +1,25 @@
+{
+    "name": "@types/http-cache-semantics",
+    "version": "4.0.2",
+    "description": "TypeScript definitions for http-cache-semantics",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/http-cache-semantics",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "BendingBender",
+            "url": "https://github.com/BendingBender",
+            "githubUsername": "BendingBender"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/http-cache-semantics"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "df6036962b0d372d0ea7f321dd50e4d14789e9818e808b2af19e3fe1c744681f",
+    "typeScriptVersion": "4.5"
+}

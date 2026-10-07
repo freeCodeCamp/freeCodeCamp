@@ -1,0 +1,46 @@
+{
+  "name": "@codemirror/lang-html",
+  "version": "6.4.10",
+  "description": "HTML language support for the CodeMirror code editor",
+  "scripts": {
+    "test": "cm-runtests",
+    "prepare": "cm-buildhelper src/html.ts"
+  },
+  "keywords": [
+    "editor",
+    "code"
+  ],
+  "author": {
+    "name": "Marijn Haverbeke",
+    "email": "marijn@haverbeke.berlin",
+    "url": "http://marijnhaverbeke.nl"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "license": "MIT",
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.0.0",
+    "@codemirror/lang-css": "^6.0.0",
+    "@codemirror/lang-javascript": "^6.0.0",
+    "@codemirror/language": "^6.4.0",
+    "@codemirror/state": "^6.0.0",
+    "@codemirror/view": "^6.17.0",
+    "@lezer/html": "^1.3.0",
+    "@lezer/common": "^1.0.0",
+    "@lezer/css": "^1.1.0"
+  },
+  "devDependencies": {
+    "@codemirror/buildhelper": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codemirror/lang-html.git"
+  }
+}

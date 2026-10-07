@@ -1,0 +1,16 @@
+language: node_js
+sudo: false
+node_js:
+  - "10"
+  - "9"
+  - "8"
+  - "6"
+  - "4"
+  - "iojs"
+  - "0.12"
+  - "0.10"
+  - "0.8"
+before_install:
+  # Old npm certs are untrusted https://github.com/npm/npm/issues/20191
+  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.6" ] || [ "${TRAVIS_NODE_VERSION}" = "0.8" ]; then export NPM_CONFIG_STRICT_SSL=false; fi'
+  - 'nvm install-latest-npm'

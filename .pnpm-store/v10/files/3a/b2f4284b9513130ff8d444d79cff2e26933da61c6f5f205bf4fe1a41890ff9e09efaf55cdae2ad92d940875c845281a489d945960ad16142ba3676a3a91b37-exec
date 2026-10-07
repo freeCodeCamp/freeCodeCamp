@@ -1,0 +1,31 @@
+{
+  "name": "dependency-graph",
+  "description": "Simple dependency graph.",
+  "version": "0.11.0",
+  "author": "Jim Riecken <jriecken@gmail.com>",
+  "keywords": [
+    "dependency",
+    "graph"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jriecken/dependency-graph.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jriecken/dependency-graph/issues"
+  },
+  "main": "./lib/dep_graph.js",
+  "scripts": {
+    "test": "jasmine specs/**/*.js"
+  },
+  "dependencies": {},
+  "optionalDependencies": {},
+  "devDependencies": {
+    "jasmine": "3.5.0"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "types": "./lib/index.d.ts"
+}

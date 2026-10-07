@@ -1,0 +1,14 @@
+{
+  "name": "@nicolo-ribaudo/eslint-scope-5-internals",
+  "version": "5.1.1-v1",
+  "description": "Proxy package exposing internals of eslint-scope@5 for @babel/eslint-parser",
+  "main": "index.js",
+  "dependencies": {
+    "eslint-scope": "5.1.1"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  }
+}

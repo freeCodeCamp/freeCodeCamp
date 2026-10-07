@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/addEventListener",
+  "private": true,
+  "main": "../cjs/addEventListener.js",
+  "module": "../esm/addEventListener.js",
+  "types": "../esm/addEventListener.d.ts"
+}

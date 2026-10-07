@@ -1,0 +1,36 @@
+{
+  "name": "css-mediaquery",
+  "version": "0.1.2",
+  "description": "Parses and determines if a given CSS Media Query matches a set of values.",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover -- ./node_modules/mocha/bin/_mocha test/ --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ericf/css-mediaquery.git"
+  },
+  "keywords": [
+    "css",
+    "media",
+    "query",
+    "mediaquery",
+    "mobile",
+    "parse",
+    "match"
+  ],
+  "author": "Eric Ferraiuolo <eferraiuolo@gmail.com>",
+  "contributors": [
+    "Tilo Mitra <tilomitra@gmail.com>"
+  ],
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/ericf/css-mediaquery/issues"
+  },
+  "homepage": "https://github.com/ericf/css-mediaquery",
+  "devDependencies": {
+    "mocha": "~1.16.2",
+    "chai": "~1.8.1",
+    "istanbul": "~0.2.3"
+  }
+}

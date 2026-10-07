@@ -1,0 +1,57 @@
+{
+  "name": "dequal",
+  "version": "2.0.3",
+  "repository": "lukeed/dequal",
+  "description": "A tiny (304B to 489B) utility for check for deep equality",
+  "unpkg": "dist/index.min.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "build": "bundt",
+    "pretest": "npm run build",
+    "postbuild": "echo \"lite\" | xargs -n1 cp -v index.d.ts",
+    "test": "uvu -r esm test"
+  },
+  "files": [
+    "*.d.ts",
+    "dist",
+    "lite"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./lite": {
+      "types": "./index.d.ts",
+      "import": "./lite/index.mjs",
+      "require": "./lite/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "modes": {
+    "lite": "src/lite.js",
+    "default": "src/index.js"
+  },
+  "keywords": [
+    "deep",
+    "deep-equal",
+    "equality"
+  ],
+  "devDependencies": {
+    "bundt": "1.0.2",
+    "esm": "3.2.25",
+    "uvu": "0.3.2"
+  }
+}

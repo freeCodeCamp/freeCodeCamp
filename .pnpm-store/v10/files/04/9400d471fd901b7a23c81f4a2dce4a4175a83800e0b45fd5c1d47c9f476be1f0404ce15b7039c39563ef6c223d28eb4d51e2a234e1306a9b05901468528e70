@@ -1,0 +1,38 @@
+{
+    "root": true,
+
+    "extends": "@ljharb",
+
+    "ignorePatterns": [
+        "dist/",
+    ],
+
+    "rules": {
+        "complexity": 0,
+        "consistent-return": 1,
+        "func-name-matching": 0,
+        "id-length": [2, { "min": 1, "max": 25, "properties": "never" }],
+        "indent": [2, 4],
+        "max-lines-per-function": [2, { "max": 150 }],
+        "max-params": [2, 16],
+        "max-statements": [2, 53],
+        "multiline-comment-style": 0,
+        "no-continue": 1,
+        "no-magic-numbers": 0,
+        "no-restricted-syntax": [2, "BreakStatement", "DebuggerStatement", "ForInStatement", "LabeledStatement", "WithStatement"],
+    },
+
+    "overrides": [
+        {
+            "files": "test/**",
+            "rules": {
+                "function-paren-newline": 0,
+                "max-lines-per-function": 0,
+                "max-statements": 0,
+                "no-buffer-constructor": 0,
+                "no-extend-native": 0,
+                "no-throw-literal": 0,
+            },
+        },
+    ],
+}

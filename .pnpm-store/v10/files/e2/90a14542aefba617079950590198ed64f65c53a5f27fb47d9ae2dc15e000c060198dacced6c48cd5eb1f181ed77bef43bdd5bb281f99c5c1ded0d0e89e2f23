@@ -1,0 +1,32 @@
+# `MD042` - No empty links
+
+Tags: `links`
+
+Aliases: `no-empty-links`
+
+This rule is triggered when an empty link is encountered:
+
+```markdown
+[an empty link]()
+```
+
+To fix the violation, provide a destination for the link:
+
+```markdown
+[a valid link](https://example.com/)
+```
+
+Empty fragments will trigger this rule:
+
+```markdown
+[an empty fragment](#)
+```
+
+But non-empty fragments will not:
+
+```markdown
+[a valid fragment](#fragment)
+```
+
+Rationale: Empty links do not lead anywhere and therefore don't function as
+links.

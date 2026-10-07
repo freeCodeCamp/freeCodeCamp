@@ -1,0 +1,34 @@
+import { DOMTestRunner, WorkerTestRunner } from "./test-runner";
+declare global {
+    interface Window {
+        FCCTestRunner: FCCTestRunner;
+    }
+}
+interface EvaluatorConfig {
+    source?: string;
+    type: "dom" | "javascript" | "python";
+    assetPath?: string;
+    code?: {
+        contents?: string;
+        editableContents?: string;
+    };
+    hooks?: {
+        beforeAll?: string;
+        beforeEach?: string;
+        afterEach?: string;
+        afterAll?: string;
+    };
+    allowAnimations?: boolean;
+    loadEnzyme?: boolean;
+}
+interface RunnerConfig {
+    timeout?: number;
+}
+export declare class FCCTestRunner {
+    #private;
+    constructor();
+    getRunner(type: "dom" | "javascript" | "python"): DOMTestRunner | WorkerTestRunner | null;
+    createTestRunner({ source, type, code, assetPath, hooks, loadEnzyme, allowAnimations, }: EvaluatorConfig, { timeout }?: RunnerConfig): Promise<DOMTestRunner | WorkerTestRunner>;
+}
+export {};
+//# sourceMappingURL=index.d.ts.map

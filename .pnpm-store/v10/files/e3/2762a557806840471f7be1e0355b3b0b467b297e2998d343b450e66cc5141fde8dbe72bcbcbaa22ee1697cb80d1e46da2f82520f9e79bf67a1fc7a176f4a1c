@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/toggleClass",
+  "private": true,
+  "main": "../cjs/toggleClass.js",
+  "module": "../esm/toggleClass.js",
+  "types": "../esm/toggleClass.d.ts"
+}

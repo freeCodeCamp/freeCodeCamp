@@ -1,0 +1,1 @@
+{"version":3,"file":"incremental-id-generator.js","sourceRoot":"","sources":["../../../src/util/incremental-id-generator.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH;;GAEG;AACH,MAAM,UAAU,4BAA4B;IAC1C,IAAI,EAAE,GAAG,CAAC,CAAC;IACX,OAAO,GAAW,EAAE;QAClB,IAAI,EAAE,KAAK,MAAM,CAAC,gBAAgB,EAAE,CAAC;YACnC,EAAE,GAAG,CAAC,CAAC;QACT,CAAC;QACD,OAAO,EAAE,EAAE,CAAC;IACd,CAAC,CAAC;AACJ,CAAC"}

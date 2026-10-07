@@ -1,0 +1,35 @@
+{
+  "name": "@nolyfill/is-core-module",
+  "version": "1.0.39",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SukkaW/nolyfill",
+    "directory": "packages/manual/is-core-module"
+  },
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "**/*.js",
+    "*.d.ts",
+    "*.js"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./index.js": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.7",
+    "ljharb-is-core-module": "npm:is-core-module@^2.15.0",
+    "resolve-pkg": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=12.4.0"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.ts --configPlugin swc3"
+  }
+}

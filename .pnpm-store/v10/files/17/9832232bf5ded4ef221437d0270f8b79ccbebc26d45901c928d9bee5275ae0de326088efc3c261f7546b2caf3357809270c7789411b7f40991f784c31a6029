@@ -1,0 +1,1 @@
+{"version":3,"file":"native-audio-destination-node-factory.d.ts","sourceRoot":"","sources":["../../../src/types/native-audio-destination-node-factory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,2BAA2B,EAAE,MAAM,iCAAiC,CAAC;AAC9E,OAAO,EAAE,cAAc,EAAE,MAAM,kBAAkB,CAAC;AAElD,MAAM,MAAM,kCAAkC,GAAG,CAC7C,aAAa,EAAE,cAAc,EAC7B,YAAY,EAAE,MAAM,EACpB,iCAAiC,EAAE,OAAO,KACzC,2BAA2B,CAAC"}

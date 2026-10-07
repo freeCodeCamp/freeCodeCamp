@@ -1,0 +1,88 @@
+{
+  "name": "@parcel/watcher",
+  "version": "2.5.6",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/watcher.git"
+  },
+  "description": "A native C++ Node module for querying and subscribing to filesystem events. Used by Parcel 2.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "files": [
+    "index.js",
+    "index.js.flow",
+    "index.d.ts",
+    "wrapper.js",
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "src",
+    "scripts/build-from-source.js",
+    "binding.gyp"
+  ],
+  "scripts": {
+    "prebuild": "prebuildify --napi --strip --tag-libc",
+    "format": "prettier --write \"./**/*.{js,json,md}\"",
+    "build": "node-gyp rebuild",
+    "install": "node scripts/build-from-source.js",
+    "test": "mocha"
+  },
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "detect-libc": "^2.0.3",
+    "is-glob": "^4.0.3",
+    "node-addon-api": "^7.0.0",
+    "picomatch": "^4.0.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.8",
+    "fs-extra": "^10.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "mocha": "^9.1.1",
+    "napi-wasm": "^1.1.0",
+    "prebuildify": "^6.0.1",
+    "prettier": "^2.3.2"
+  },
+  "binary": {
+    "napi_versions": [
+      3
+    ]
+  },
+  "optionalDependencies": {
+    "@parcel/watcher-darwin-x64": "2.5.6",
+    "@parcel/watcher-darwin-arm64": "2.5.6",
+    "@parcel/watcher-win32-x64": "2.5.6",
+    "@parcel/watcher-win32-arm64": "2.5.6",
+    "@parcel/watcher-win32-ia32": "2.5.6",
+    "@parcel/watcher-linux-x64-glibc": "2.5.6",
+    "@parcel/watcher-linux-x64-musl": "2.5.6",
+    "@parcel/watcher-linux-arm64-glibc": "2.5.6",
+    "@parcel/watcher-linux-arm64-musl": "2.5.6",
+    "@parcel/watcher-linux-arm-glibc": "2.5.6",
+    "@parcel/watcher-linux-arm-musl": "2.5.6",
+    "@parcel/watcher-android-arm64": "2.5.6",
+    "@parcel/watcher-freebsd-x64": "2.5.6"
+  }
+}

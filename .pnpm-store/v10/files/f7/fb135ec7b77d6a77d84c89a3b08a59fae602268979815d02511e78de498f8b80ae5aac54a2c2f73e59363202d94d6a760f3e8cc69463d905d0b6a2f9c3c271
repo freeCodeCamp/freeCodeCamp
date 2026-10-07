@@ -1,0 +1,58 @@
+{
+  "name": "browser-cookies",
+  "description": "Tiny cookies library for the browser",
+  "version": "1.2.0",
+  "main": "src/browser-cookies.js",
+  "files": [
+    "src/browser-cookies.js",
+    "src/browser-cookies.d.ts",
+    "README.md",
+    "LICENCE"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "14.5.0",
+    "concurrently": "3.5.1",
+    "coveralls": "3.0.0",
+    "gulp": "git://github.com/gulpjs/gulp.git#4.0",
+    "gulp-rename": "1.2.2",
+    "gulp-size": "2.1.0",
+    "gulp-uglify": "3.0.0",
+    "gulp-wrap": "0.13.0",
+    "karma": "2.0.0",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "0.1.6",
+    "karma-phantomjs-launcher": "1.0.4",
+    "karma-spec-reporter": "0.0.32",
+    "phantomjs-prebuilt": "2.1.16",
+    "watchify": "3.9.0",
+    "zuul": "3.11.1",
+    "zuul-ngrok": "4.0.0"
+  },
+  "scripts": {
+    "build": "node ./node_modules/gulp/bin/gulp.js build",
+    "test:local": "node ./node_modules/gulp/bin/gulp.js localtest",
+    "test:full": "concurrently \"node ./node_modules/gulp/bin/gulp.js build\" \"node ./node_modules/zuul/bin/zuul -- test/*.js\"",
+    "test:travis_saucelabs": "node ./node_modules/gulp/bin/gulp.js coverage && node ./node_modules/zuul/bin/zuul -- test/*.js",
+    "test": "if [ -z \"$SAUCE_ACCESS_KEY\" ]; then npm run test:local; else npm run test:travis_saucelabs; fi"
+    },
+  "types": "./src/browser-cookies.d.ts",
+  "author": {
+    "name": "Voltace",
+    "email": "support@voltace.com",
+    "url": "http://www.voltace.com/"
+  },
+  "license": "Unlicence",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voltace/browser-cookies"
+  },
+  "bugs": {
+    "url": "https://github.com/voltace/browser-cookies/issues"
+  },
+  "keywords": [
+    "cookies",
+    "cookie",
+    "client"
+  ]
+}

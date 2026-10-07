@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/startOfWeekYearWithOptions/index.js",
+  "typings": "../../typings.d.ts"
+}

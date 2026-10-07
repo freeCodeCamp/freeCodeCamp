@@ -1,0 +1,119 @@
+{
+  "name": "@testing-library/dom",
+  "version": "9.3.4",
+  "description": "Simple and complete DOM testing utilities that encourage good testing practices.",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "module": "dist/@testing-library/dom.esm.js",
+  "umd:main": "dist/@testing-library/dom.umd.js",
+  "source": "src/index.js",
+  "keywords": [
+    "testing",
+    "ui",
+    "dom",
+    "jsdom",
+    "unit",
+    "integration",
+    "functional",
+    "end-to-end",
+    "e2e"
+  ],
+  "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "browserslist": [
+    "and_chr 103",
+    "and_ff 101",
+    "and_qq 10.4",
+    "and_uc 12.12",
+    "android 103",
+    "chrome 102",
+    "edge 102",
+    "firefox 91",
+    "ios_saf 12.2-12.5",
+    "kaios 2.5",
+    "op_mini all",
+    "op_mob 64",
+    "opera 88",
+    "safari 15.5",
+    "samsung 17.0",
+    "samsung 16.0",
+    "node 14.0"
+  ],
+  "scripts": {
+    "build": "kcd-scripts build  --no-ts-defs --ignore \"**/__tests__/**,**/__node_tests__/**,**/__mocks__/**\" && kcd-scripts build --no-ts-defs --bundle --no-clean",
+    "format": "kcd-scripts format",
+    "install:csb": "npm install",
+    "lint": "kcd-scripts lint",
+    "setup": "npm install && npm run validate -s",
+    "test": "kcd-scripts test",
+    "test:debug": "node --inspect-brk ./node_modules/.bin/jest --watch --runInBand",
+    "test:update": "npm test -- --updateSnapshot --coverage",
+    "validate": "kcd-scripts validate",
+    "typecheck": "kcd-scripts typecheck --build types"
+  },
+  "files": [
+    "dist",
+    "types/*.d.ts"
+  ],
+  "dependencies": {
+    "@babel/code-frame": "^7.10.4",
+    "@babel/runtime": "^7.12.5",
+    "@types/aria-query": "^5.0.1",
+    "aria-query": "5.1.3",
+    "chalk": "^4.1.0",
+    "dom-accessibility-api": "^0.5.9",
+    "lz-string": "^1.5.0",
+    "pretty-format": "^27.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "browserslist": "4.21.8",
+    "caniuse-lite": "1.0.30001502",
+    "jest-in-case": "^1.0.2",
+    "jest-snapshot-serializer-ansi": "^1.0.0",
+    "jest-watch-select-projects": "^2.0.0",
+    "jsdom": "20.0.0",
+    "kcd-scripts": "^13.0.0",
+    "typescript": "^4.1.2"
+  },
+  "overrides": {
+    "browserslist": "4.21.8",
+    "caniuse-lite": "1.0.30001502"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/kcd-scripts/eslint.js",
+      "plugin:import/typescript"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {
+      "@typescript-eslint/prefer-optional-chain": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off",
+      "@typescript-eslint/prefer-includes": "off",
+      "import/prefer-default-export": "off",
+      "import/no-unassigned-import": "off",
+      "import/no-useless-path-segments": "off",
+      "no-console": "off"
+    }
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/testing-library/dom-testing-library"
+  },
+  "bugs": {
+    "url": "https://github.com/testing-library/dom-testing-library/issues"
+  },
+  "homepage": "https://github.com/testing-library/dom-testing-library#readme"
+}

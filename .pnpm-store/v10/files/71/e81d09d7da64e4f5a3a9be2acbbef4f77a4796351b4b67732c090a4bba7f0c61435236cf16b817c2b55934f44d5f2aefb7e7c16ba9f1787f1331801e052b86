@@ -1,0 +1,26 @@
+import { _ as _$2 } from '@swc/helpers/esm/_object_spread.js';
+import { _ as _$1 } from '@swc/helpers/esm/_object_spread_props.js';
+import { _ } from '@swc/helpers/esm/_object_without_properties.js';
+import { createChatSidePanelLayoutComponent } from 'instantsearch-ui-components';
+import { h, Fragment } from 'preact';
+
+var ChatSidePanelLayout = createChatSidePanelLayoutComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+function chatSidePanelLayout(options) {
+    return function ChatSidePanelLayoutTemplate(props) {
+        var templates = props.templates, rest = _(props, [
+            "templates"
+        ]);
+        return /*#__PURE__*/ h(ChatSidePanelLayout, _$1(_$2({}, rest), {
+            parentElement: options === null || options === void 0 ? void 0 : options.parentElement,
+            headerComponent: templates.header(),
+            messagesComponent: templates.messages(),
+            promptComponent: templates.prompt(),
+            toggleButtonComponent: templates.toggleButton()
+        }));
+    };
+}
+
+export { chatSidePanelLayout };

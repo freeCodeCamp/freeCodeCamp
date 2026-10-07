@@ -1,0 +1,88 @@
+{
+    "name": "@types/react-dom",
+    "version": "18.3.7",
+    "description": "TypeScript definitions for react-dom",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Asana",
+            "url": "https://asana.com"
+        },
+        {
+            "name": "AssureSign",
+            "url": "http://www.assuresign.com"
+        },
+        {
+            "name": "Microsoft",
+            "url": "https://microsoft.com"
+        },
+        {
+            "name": "MartynasZilinskas",
+            "githubUsername": "MartynasZilinskas",
+            "url": "https://github.com/MartynasZilinskas"
+        },
+        {
+            "name": "Josh Rutherford",
+            "githubUsername": "theruther4d",
+            "url": "https://github.com/theruther4d"
+        },
+        {
+            "name": "Jessica Franco",
+            "githubUsername": "Jessidhia",
+            "url": "https://github.com/Jessidhia"
+        },
+        {
+            "name": "Sebastian Silbermann",
+            "githubUsername": "eps1lon",
+            "url": "https://github.com/eps1lon"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "exports": {
+        ".": {
+            "types": {
+                "default": "./index.d.ts"
+            }
+        },
+        "./canary": {
+            "types": {
+                "default": "./canary.d.ts"
+            }
+        },
+        "./client": {
+            "types": {
+                "default": "./client.d.ts"
+            }
+        },
+        "./server": {
+            "types": {
+                "default": "./server.d.ts"
+            }
+        },
+        "./experimental": {
+            "types": {
+                "default": "./experimental.d.ts"
+            }
+        },
+        "./test-utils": {
+            "types": {
+                "default": "./test-utils/index.d.ts"
+            }
+        },
+        "./package.json": "./package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-dom"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {
+        "@types/react": "^18.0.0"
+    },
+    "typesPublisherContentHash": "091d1528d83863778f5cb9fbf6c81d6e64ed2394f4c3c73a57ed81d9871b4465",
+    "typeScriptVersion": "5.1"
+}

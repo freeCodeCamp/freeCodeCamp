@@ -1,0 +1,71 @@
+{
+  "name": "@parcel/fs",
+  "version": "2.8.3",
+  "description": "Blazing fast, zero configuration web application bundler",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/index.js",
+  "source": "src/index.js",
+  "types": "index.d.ts",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "targets": {
+    "types": false,
+    "main": {
+      "includeNodeModules": {
+        "@parcel/core": false,
+        "@parcel/fs-search": false,
+        "@parcel/types": false,
+        "@parcel/utils": false,
+        "@parcel/watcher": false,
+        "@parcel/workers": false
+      }
+    },
+    "browser": {
+      "includeNodeModules": {
+        "@parcel/core": false,
+        "@parcel/fs-search": false,
+        "@parcel/types": false,
+        "@parcel/utils": false,
+        "@parcel/watcher": false,
+        "@parcel/workers": false
+      }
+    }
+  },
+  "scripts": {
+    "build-ts": "mkdir -p lib && flow-to-ts src/types.js > lib/types.d.ts",
+    "check-ts": "tsc --noEmit index.d.ts"
+  },
+  "dependencies": {
+    "@parcel/fs-search": "2.8.3",
+    "@parcel/types": "2.8.3",
+    "@parcel/utils": "2.8.3",
+    "@parcel/watcher": "^2.0.7",
+    "@parcel/workers": "2.8.3"
+  },
+  "devDependencies": {
+    "graceful-fs": "^4.2.4",
+    "ncp": "^2.0.0",
+    "nullthrows": "^1.1.1",
+    "utility-types": "^3.10.0"
+  },
+  "peerDependencies": {
+    "@parcel/core": "^2.8.3"
+  },
+  "browser": {
+    "@parcel/fs": "./lib/browser.js",
+    "./src/NodeFS.js": "./src/NodeFS.browser.js"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

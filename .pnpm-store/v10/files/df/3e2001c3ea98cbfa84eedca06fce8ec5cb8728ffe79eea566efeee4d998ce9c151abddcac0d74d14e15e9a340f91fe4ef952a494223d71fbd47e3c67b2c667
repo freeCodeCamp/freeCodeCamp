@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": ["es6"],
+    "target": "es2018",
+    "moduleResolution": "Node16",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "redux-saga": ["./index.d.ts"],
+      "redux-saga/effects": ["./effects.d.ts"]
+    }
+  }
+}

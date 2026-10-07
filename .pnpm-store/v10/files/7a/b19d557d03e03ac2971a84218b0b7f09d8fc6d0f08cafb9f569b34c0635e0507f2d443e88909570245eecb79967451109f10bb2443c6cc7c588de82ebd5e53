@@ -1,0 +1,1 @@
+{"version":3,"file":"automation-event.d.ts","sourceRoot":"","sources":["../../../src/types/automation-event.ts"],"names":[],"mappings":"AAAA,OAAO,EACH,6BAA6B,EAC7B,qCAAqC,EACrC,sCAAsC,EACtC,iCAAiC,EACjC,yBAAyB,EACzB,wBAAwB,EACxB,6BAA6B,EAChC,MAAM,eAAe,CAAC;AAEvB,MAAM,MAAM,gBAAgB,GACtB,6BAA6B,GAC7B,qCAAqC,GACrC,sCAAsC,GACtC,iCAAiC,GACjC,yBAAyB,GACzB,wBAAwB,GACxB,6BAA6B,CAAC"}

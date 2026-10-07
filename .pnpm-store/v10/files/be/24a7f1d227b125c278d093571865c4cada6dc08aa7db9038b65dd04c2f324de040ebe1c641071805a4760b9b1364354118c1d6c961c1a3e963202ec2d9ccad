@@ -1,0 +1,1 @@
+{"version":3,"file":"periodic-wave-options.d.ts","sourceRoot":"","sources":["../../../src/interfaces/periodic-wave-options.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,wBAAwB,EAAE,MAAM,6BAA6B,CAAC;AAEvE,MAAM,WAAW,oBAAqB,SAAQ,wBAAwB;IAClE,IAAI,EAAE,QAAQ,CAAC,MAAM,CAAC,CAAC;IAEvB,IAAI,EAAE,QAAQ,CAAC,MAAM,CAAC,CAAC;CAC1B"}

@@ -1,0 +1,25 @@
+[ req ]
+# Which algorithm to use
+default_md = sha256
+# Don't prompt the TTY for input, just use the config file values
+prompt = no
+# Interpret strings as utf8, not ASCII
+utf8 = yes
+# This specifies the section containing the distinguished name fields to
+# prompt for when generating a certificate request.
+distinguished_name = req_distinguished_name
+# This specifies the configuration file section containing a list of extensions
+# to add to the certificate request.
+req_extensions = req_extensions
+
+[ req_distinguished_name ]
+CN = %DOMAIN%
+
+[ req_extensions ]
+basicConstraints = CA:FALSE
+subjectAltName = @subject_alt_names
+subjectKeyIdentifier = hash
+
+[ subject_alt_names ]
+DNS.1 = %DOMAIN%
+DNS.2 = *.%DOMAIN%

@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_extends.cjs",
+    "module": "../../esm/_extends.js"
+}

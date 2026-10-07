@@ -1,0 +1,209 @@
+import { _ } from '@swc/helpers/esm/_define_property.js';
+import { _ as _$4 } from '@swc/helpers/esm/_object_spread.js';
+import { _ as _$5 } from '@swc/helpers/esm/_object_spread_props.js';
+import { _ as _$2 } from '@swc/helpers/esm/_object_without_properties.js';
+import { _ as _$3 } from '@swc/helpers/esm/_sliced_to_array.js';
+import { _ as _$1 } from '@swc/helpers/esm/_to_array.js';
+import { createChatComponent } from 'instantsearch-ui-components';
+import { SearchIndexToolType, RecommendToolType, MemorizeToolType, MemorySearchToolType, PonderToolType } from 'instantsearch.js/es/lib/chat/index.js';
+export { MemorizeToolType, MemorySearchToolType, PonderToolType, RecommendToolType, SearchIndexToolType } from 'instantsearch.js/es/lib/chat/index.js';
+import React, { createElement, Fragment, useState, useRef, useMemo, useImperativeHandle, useEffect } from 'react';
+import { useInstantSearch, useChat } from 'react-instantsearch-core';
+import { useStickToBottom } from '../lib/useStickToBottom.js';
+import { createCarouselTool } from './chat/tools/SearchIndexTool.js';
+
+var ChatUiComponent = createChatComponent({
+    createElement: createElement,
+    Fragment: Fragment
+});
+function createDefaultTools(itemComponent, getSearchPageURL) {
+    var _obj;
+    return _obj = {}, _(_obj, SearchIndexToolType, createCarouselTool(true, itemComponent, getSearchPageURL)), _(_obj, RecommendToolType, createCarouselTool(false, itemComponent, getSearchPageURL)), _(_obj, MemorizeToolType, {}), _(_obj, MemorySearchToolType, {}), _(_obj, PonderToolType, {}), _obj;
+}
+function ChatInner(_0, _1) {
+    var _ref = [
+        _0,
+        _1
+    ], _ref1 = _$1(_ref), _ref2 = _ref1[0], _rest = _ref1.slice(1), userTools = _ref2.tools, toggleButtonProps = _ref2.toggleButtonProps, headerProps = _ref2.headerProps, messagesProps = _ref2.messagesProps, promptProps = _ref2.promptProps, itemComponent = _ref2.itemComponent, layoutComponent = _ref2.layoutComponent, toggleButtonComponent = _ref2.toggleButtonComponent, toggleButtonIconComponent = _ref2.toggleButtonIconComponent, headerComponent = _ref2.headerComponent, headerTitleIconComponent = _ref2.headerTitleIconComponent, headerCloseIconComponent = _ref2.headerCloseIconComponent, headerMinimizeIconComponent = _ref2.headerMinimizeIconComponent, headerMaximizeIconComponent = _ref2.headerMaximizeIconComponent, loaderComponent = _ref2.loaderComponent, messagesErrorComponent = _ref2.messagesErrorComponent, promptComponent = _ref2.promptComponent, promptHeaderComponent = _ref2.promptHeaderComponent, promptFooterComponent = _ref2.promptFooterComponent, assistantMessageLeadingComponent = _ref2.assistantMessageLeadingComponent, assistantMessageFooterComponent = _ref2.assistantMessageFooterComponent, userMessageLeadingComponent = _ref2.userMessageLeadingComponent, userMessageFooterComponent = _ref2.userMessageFooterComponent, emptyComponent = _ref2.emptyComponent, actionsComponent = _ref2.actionsComponent, suggestionsComponent = _ref2.suggestionsComponent, classNames = _ref2.classNames, _ref_translations = _ref2.translations, translations = _ref_translations === void 0 ? {} : _ref_translations, title = _ref2.title, getSearchPageURL = _ref2.getSearchPageURL, props = _$2(_ref2, [
+        "tools",
+        "toggleButtonProps",
+        "headerProps",
+        "messagesProps",
+        "promptProps",
+        "itemComponent",
+        "layoutComponent",
+        "toggleButtonComponent",
+        "toggleButtonIconComponent",
+        "headerComponent",
+        "headerTitleIconComponent",
+        "headerCloseIconComponent",
+        "headerMinimizeIconComponent",
+        "headerMaximizeIconComponent",
+        "loaderComponent",
+        "messagesErrorComponent",
+        "promptComponent",
+        "promptHeaderComponent",
+        "promptFooterComponent",
+        "assistantMessageLeadingComponent",
+        "assistantMessageFooterComponent",
+        "userMessageLeadingComponent",
+        "userMessageFooterComponent",
+        "emptyComponent",
+        "actionsComponent",
+        "suggestionsComponent",
+        "classNames",
+        "translations",
+        "title",
+        "getSearchPageURL"
+    ]), _rest1 = _$3(_rest, 1), ref = _rest1[0];
+    var promptTranslations = translations.prompt, headerTranslations = translations.header, messageTranslations = translations.message, messagesTranslations = translations.messages;
+    var _useInstantSearch = useInstantSearch(), indexUiState = _useInstantSearch.indexUiState, setIndexUiState = _useInstantSearch.setIndexUiState;
+    var _useState = _$3(useState(false), 2), maximized = _useState[0], setMaximized = _useState[1];
+    var promptRef = useRef(null);
+    var _useStickToBottom = useStickToBottom({
+        initial: 'smooth',
+        resize: 'smooth'
+    }), scrollRef = _useStickToBottom.scrollRef, contentRef = _useStickToBottom.contentRef, scrollToBottom = _useStickToBottom.scrollToBottom, isAtBottom = _useStickToBottom.isAtBottom;
+    var tools = useMemo(function() {
+        var defaults = createDefaultTools(itemComponent, getSearchPageURL);
+        return _$4({}, defaults, userTools);
+    }, [
+        getSearchPageURL,
+        itemComponent,
+        userTools
+    ]);
+    var chatState = useChat(_$5(_$4({}, props), {
+        tools: tools
+    }));
+    var messages = chatState.messages, sendMessage = chatState.sendMessage, status = chatState.status, regenerate = chatState.regenerate, stop = chatState.stop, error = chatState.error, input = chatState.input, setInput = chatState.setInput, open = chatState.open, setOpen = chatState.setOpen, isClearing = chatState.isClearing, clearMessages = chatState.clearMessages, onClearTransitionEnd = chatState.onClearTransitionEnd, toolsFromConnector = chatState.tools, suggestions = chatState.suggestions, onFeedback = chatState.sendChatMessageFeedback, feedbackState = chatState.feedbackState;
+    useImperativeHandle(ref, function() {
+        return {
+            setOpen: setOpen,
+            sendMessage: function sendMessage1(params) {
+                return sendMessage(params);
+            },
+            setInput: setInput
+        };
+    });
+    var wasOpenRef = useRef(false);
+    useEffect(function() {
+        var shouldFocusPrompt = !wasOpenRef.current && open;
+        if (shouldFocusPrompt) {
+            window.requestAnimationFrame(function() {
+                var _promptRef_current;
+                (_promptRef_current = promptRef.current) === null || _promptRef_current === void 0 ? void 0 : _promptRef_current.focus();
+            });
+        }
+        wasOpenRef.current = open;
+    }, [
+        open
+    ]);
+    return /*#__PURE__*/ React.createElement(ChatUiComponent, {
+        title: title,
+        open: open,
+        maximized: maximized,
+        sendMessage: sendMessage,
+        regenerate: regenerate,
+        stop: stop,
+        error: error,
+        layoutComponent: layoutComponent,
+        headerComponent: headerComponent,
+        promptComponent: promptComponent,
+        toggleButtonComponent: toggleButtonComponent,
+        suggestionsComponent: suggestionsComponent,
+        toggleButtonProps: _$4({
+            open: open,
+            onClick: function onClick() {
+                return setOpen(!open);
+            },
+            toggleIconComponent: toggleButtonIconComponent
+        }, toggleButtonProps),
+        headerProps: _$4({
+            onClose: function onClose() {
+                return setOpen(false);
+            },
+            maximized: maximized,
+            onToggleMaximize: function onToggleMaximize() {
+                return setMaximized(!maximized);
+            },
+            onClear: clearMessages,
+            canClear: Boolean(messages === null || messages === void 0 ? void 0 : messages.length) && !isClearing,
+            titleIconComponent: headerTitleIconComponent,
+            closeIconComponent: headerCloseIconComponent,
+            minimizeIconComponent: headerMinimizeIconComponent,
+            maximizeIconComponent: headerMaximizeIconComponent,
+            translations: headerTranslations
+        }, headerProps),
+        messagesProps: _$4({
+            status: status,
+            onReload: function onReload(messageId) {
+                return regenerate({
+                    messageId: messageId
+                });
+            },
+            onClose: function onClose() {
+                return setOpen(false);
+            },
+            sendMessage: sendMessage,
+            setInput: setInput,
+            onFeedback: onFeedback,
+            feedbackState: feedbackState,
+            messages: messages,
+            tools: toolsFromConnector,
+            indexUiState: indexUiState,
+            setIndexUiState: setIndexUiState,
+            isClearing: isClearing,
+            onClearTransitionEnd: onClearTransitionEnd,
+            isScrollAtBottom: isAtBottom,
+            scrollRef: scrollRef,
+            contentRef: contentRef,
+            onScrollToBottom: scrollToBottom,
+            loaderComponent: loaderComponent,
+            errorComponent: messagesErrorComponent,
+            emptyComponent: emptyComponent,
+            actionsComponent: actionsComponent,
+            assistantMessageProps: _$4({
+                leadingComponent: assistantMessageLeadingComponent,
+                footerComponent: assistantMessageFooterComponent
+            }, messagesProps === null || messagesProps === void 0 ? void 0 : messagesProps.assistantMessageProps),
+            userMessageProps: _$4({
+                leadingComponent: userMessageLeadingComponent,
+                footerComponent: userMessageFooterComponent
+            }, messagesProps === null || messagesProps === void 0 ? void 0 : messagesProps.userMessageProps),
+            translations: messagesTranslations,
+            messageTranslations: messageTranslations
+        }, messagesProps),
+        promptProps: _$4({
+            promptRef: promptRef,
+            status: status,
+            value: input,
+            translations: promptTranslations,
+            onInput: function onInput(event) {
+                setInput(event.currentTarget.value);
+            },
+            onSubmit: function onSubmit() {
+                sendMessage({
+                    text: input
+                });
+                setInput('');
+            },
+            onStop: function onStop() {
+                stop();
+            },
+            headerComponent: promptHeaderComponent,
+            footerComponent: promptFooterComponent
+        }, promptProps),
+        suggestionsProps: {
+            suggestions: suggestions,
+            onSuggestionClick: function onSuggestionClick(suggestion) {
+                sendMessage({
+                    text: suggestion
+                });
+            }
+        },
+        classNames: classNames
+    });
+}
+var Chat = /*#__PURE__*/ React.forwardRef(ChatInner);
+
+export { Chat, createDefaultTools };

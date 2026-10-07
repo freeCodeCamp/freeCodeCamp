@@ -1,0 +1,38 @@
+# `MD012` - Multiple consecutive blank lines
+
+Tags: `blank_lines`, `whitespace`
+
+Aliases: `no-multiple-blanks`
+
+Parameters:
+
+- `maximum`: Consecutive blank lines (`integer`, default `1`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when there are multiple consecutive blank lines in the
+document:
+
+```markdown
+Some text here
+
+
+Some more text here
+```
+
+To fix this, delete the offending lines:
+
+```markdown
+Some text here
+
+Some more text here
+```
+
+Note: this rule will not be triggered if there are multiple consecutive blank
+lines inside code blocks.
+
+Note: The `maximum` parameter can be used to configure the maximum number of
+consecutive blank lines.
+
+Rationale: Except in a code block, blank lines serve no purpose and do not
+affect the rendering of content.

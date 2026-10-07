@@ -1,0 +1,1118 @@
+{
+  "lang": "ja",
+  "rules": {
+    "accesskeys": {
+      "description": "すべてのaccesskey属性の値が一意であることを確認します",
+      "help": "accesskey属性の値は一意でなければなりません"
+    },
+    "area-alt": {
+      "description": "イメージマップの<area>要素に代替テキストが存在することを確認します",
+      "help": "アクティブな<area>要素には代替テキストが存在しなければなりません"
+    },
+    "aria-allowed-attr": {
+      "description": "要素のロールがARIA属性をサポートしていることを確認します",
+      "help": "要素にはサポートされているARIA属性のみを使用しなければなりません"
+    },
+    "aria-allowed-role": {
+      "description": "role属性の値が要素に対して適切であることを確認します",
+      "help": "ARIAロールは要素に対して適切でなければなりません"
+    },
+    "aria-braille-equivalent": {
+      "description": "aria-braillelabelとaria-brailleroledescriptionには、点字以外の同等のものが存在することを確認します",
+      "help": "aria-braille属性には、点字以外の同等のものがなければなりません "
+    },
+    "aria-command-name": {
+      "description": "すべてのARIA button、link、menuitemにアクセシブルな名前があることを確認します",
+      "help": "ARIAコマンドにはアクセシブルな名前がなければなりません"
+    },
+    "aria-conditional-attr": {
+      "description": "ARIA属性が要素のロールの仕様に従って使用されていることを確認します",
+      "help": "ARIA属性は要素のロールの仕様に従って使用しなければなりません"
+    },
+    "aria-deprecated-role": {
+      "description": "要素に非推奨のロールが使用されていないことを確認します",
+      "help": "非推奨のARIAロールを使用してはなりません"
+    },
+    "aria-dialog-name": {
+      "description": "すべてのARIA dialog、alertdialogノードにアクセシブルな名前があることを確認します",
+      "help": "ARIA dialogとalertdialogノードにはアクセシブルな名前がなければなりません"
+    },
+    "aria-hidden-body": {
+      "description": "ドキュメント本体にaria-hidden=\"true\"が存在しないことを確認します",
+      "help": "ドキュメント本体にaria-hidden=\"true\"が存在してはなりません"
+    },
+    "aria-hidden-focus": {
+      "description": "aria-hiddenが指定されている要素にフォーカスできないこと、その要素にフォーカス可能な要素が含まれていないことを確認します",
+      "help": "aria-hiddenが指定されている要素は、フォーカス可能であったり、フォーカス可能な要素を含んでいたりしてはなりません"
+    },
+    "aria-input-field-name": {
+      "description": "すべてのARIA入力欄にアクセシブルな名前があることを確認します",
+      "help": "ARIA入力欄にはアクセシブルな名前がなければなりません"
+    },
+    "aria-meter-name": {
+      "description": "すべてのARIA meterノードにアクセシブルな名前があることを確認します",
+      "help": "ARIA meterノードにはアクセシブルな名前がなければなりません"
+    },
+    "aria-progressbar-name": {
+      "description": "すべてのARIA progressbarノードにアクセシブルな名前があることを確認します",
+      "help": "ARIA progressbarノードにはアクセシブルな名前がなければなりません"
+    },
+    "aria-prohibited-attr": {
+      "description": "要素のロールでARIA属性が禁止されていないことを確認します",
+      "help": "要素には禁止されているARIA属性を使用してはなりません"
+    },
+    "aria-required-attr": {
+      "description": "ARIAロールのある要素にすべての必須ARIA属性が存在することを確認します",
+      "help": "必須のARIA属性が提供されていなければなりません"
+    },
+    "aria-required-children": {
+      "description": "子ロールを必須とするARIAロールが指定された要素に、それらが含まれていることを確認します",
+      "help": "特定のARIAロールには特定の子が含まれていなければなりません"
+    },
+    "aria-required-parent": {
+      "description": "親ロールを必須とするARIAロールが指定された要素に、それらが含まれていることを確認します",
+      "help": "特定のARIAロールは特定の親に含まれていなければなりません"
+    },
+    "aria-roledescription": {
+      "description": "aria-roledescriptionが暗黙的もしくは明示的なロールを持った要素に使用されていることを確認します",
+      "help": "aria-roledescriptionはセマンティックなロールを持った要素に使用しなければなりません"
+    },
+    "aria-roles": {
+      "description": "すべてのrole属性が指定された要素で、有効な値が使用されていることを確認します",
+      "help": "使用されているARIAロールは有効な値に一致しなければなりません"
+    },
+    "aria-text": {
+      "description": "role=\"text\"が指定されている要素にフォーカス可能な子孫がないことを確認します",
+      "help": "\"role=text\"が指定されている要素には、フォーカス可能な子孫が含まれていてはなりません"
+    },
+    "aria-toggle-field-name": {
+      "description": "すべてのARIAトグル欄にアクセシブルな名前があることを確認します",
+      "help": "ARIAトグル欄にはアクセシブルな名前がなければなりません"
+    },
+    "aria-tooltip-name": {
+      "description": "すべてのARIA tooltipノードにアクセシブルな名前があることを確認します",
+      "help": "ARIA tooltipノードにはアクセシブルな名前がなければなりません"
+    },
+    "aria-treeitem-name": {
+      "description": "すべてのARIA treeitemノードにアクセシブルな名前があることを確認します",
+      "help": "ARIA treeitemノードにはアクセシブルな名前がなければなりません"
+    },
+    "aria-valid-attr-value": {
+      "description": "すべてのARIA属性に有効な値が存在することを確認します",
+      "help": "ARIA属性は有効な値に一致しなければなりません"
+    },
+    "aria-valid-attr": {
+      "description": "aria- で始まる属性が有効なARIA属性であることを確認します",
+      "help": "ARIA属性は有効な名前に一致しなければなりません"
+    },
+    "audio-caption": {
+      "description": "<audio>要素にキャプションが存在することを確認します",
+      "help": "<audio>要素にはキャプショントラックが存在しなければなりません"
+    },
+    "autocomplete-valid": {
+      "description": "autocomplete属性が正しく、かつフォームフィールドに対して適切であることを確認します",
+      "help": "autocomplete属性は正しく使用しなければなりません"
+    },
+    "avoid-inline-spacing": {
+      "description": "style属性で指定されたテキストの間隔は、カスタムスタイルシートにより調整可能であることを確認します",
+      "help": "インラインのテキスト間隔設定はカスタムスタイルシートによって調整可能でなければなりません"
+    },
+    "blink": {
+      "description": "<blink>要素が使用されていないことを確認します",
+      "help": "<blink>要素の使用は非推奨で、使用するべきではありません"
+    },
+    "button-name": {
+      "description": "ボタンに認識可能なテキストが存在することを確認します",
+      "help": "ボタンには認識可能なテキストが存在しなければなりません"
+    },
+    "bypass": {
+      "description": "各ページに少なくとも1つ、ユーザーがナビゲーション部分をスキップして直接本文へ移動できるメカニズムが存在することを確認します",
+      "help": "ページには繰り返されるブロックをスキップする手段が存在しなければなりません"
+    },
+    "color-contrast-enhanced": {
+      "description": "前景色と背景色のコントラストがWCAG 2のAAAコントラスト比（高度）のしきい値を満たすことを確認します",
+      "help": "要素は色のコントラスト比（高度）の閾値を満たしていなければなりません"
+    },
+    "color-contrast": {
+      "description": "前景色と背景色のコントラストがWCAG 2のAAコントラスト比（最低限）のしきい値を満たすことを確認します",
+      "help": "要素は色のコントラスト比（最低限）の閾値を満たしていなければなりません"
+    },
+    "css-orientation-lock": {
+      "description": "コンテンツが特定のディスプレイの向きに固定されていないこと、およびコンテンツがすべてのディスプレイの向きで操作可能なことを確認します",
+      "help": "CSSメディアクエリーはディスプレイの向きを固定するために使用してはなりません"
+    },
+    "definition-list": {
+      "description": "<dl>要素の構造が正しいことを確認します",
+      "help": "<dl>要素は、適切な順序で並べられた<dt>および<dd>のグループ、<script>要素、<template>要素またはdiv要素のみを直接含んでいなければなりません"
+    },
+    "dlitem": {
+      "description": "<dt>および<dd>要素が<dl>に含まれていることを確認します",
+      "help": "<dt>および<dd>要素は<dl>に含まれていなければなりません"
+    },
+    "document-title": {
+      "description": "各HTMLドキュメントに空ではない<title>要素が含まれていることを確認します",
+      "help": "ドキュメントにはナビゲーションを補助するために<title>要素がなければなりません"
+    },
+    "duplicate-id-active": {
+      "description": "アクティブな要素のid属性の値が一意であることを確認します",
+      "help": "アクティブな要素のIDは一意でなければなりません"
+    },
+    "duplicate-id-aria": {
+      "description": "ARIAおよびラベルに使用されているすべてのid属性の値が一意であることを確認します",
+      "help": "ARIAおよびラベルに使用されているIDは一意でなければなりません"
+    },
+    "duplicate-id": {
+      "description": "すべてのid属性の値が一意であることを確認します",
+      "help": "id属性の値は一意でなければなりません"
+    },
+    "empty-heading": {
+      "description": "見出しに認識可能なテキストが存在することを確認します",
+      "help": "見出しは空にしてはなりません"
+    },
+    "empty-table-header": {
+      "description": "テーブルのヘッダーに認識可能なテキストが存在することを確認します",
+      "help": "テーブルのヘッダーは空にしてはなりません"
+    },
+    "focus-order-semantics": {
+      "description": "フォーカス順序に含まれる要素にインタラクティブコンテンツに適したロールがあることを確認します",
+      "help": "フォーカス順序に含まれる要素には、適切なロールがなければなりません"
+    },
+    "form-field-multiple-labels": {
+      "description": "フォームフィールドに複数のlabel要素が存在しないことを確認します",
+      "help": "フォームフィールドに複数のlabel要素を付与してはなりりません"
+    },
+    "frame-focusable-content": {
+      "description": "フォーカス可能な<frame>と<iframe>要素に、tabindex=-1が指定されていないことを確認します",
+      "help": "フォーカス可能なコンテンツを含むフレームには、tabindex=-1が指定されていてはなりません"
+    },
+    "frame-tested": {
+      "description": "<iframe>および<frame>要素にaxe-coreスクリプトが含まれていることを確認します",
+      "help": "フレームはaxe-coreでテストしなければなりません"
+    },
+    "frame-title-unique": {
+      "description": "<iframe>および<frame>要素に一意のtitle属性が含まれていることを確認します",
+      "help": "フレームには一意のtitle属性がなければなりません"
+    },
+    "frame-title": {
+      "description": "<iframe>および<frame>要素にアクセシブルな名前が存在することを確認します",
+      "help": "フレームにはアクセシブルな名前がなければなりません"
+    },
+    "heading-order": {
+      "description": "見出しの順序が意味的に正しいことを確認します",
+      "help": "見出しのレベルは1つずつ増加させなければなりません"
+    },
+    "hidden-content": {
+      "description": "隠れているコンテンツについてユーザーに通知します",
+      "help": "ページ上の隠れているコンテンツは分析されなければなりません"
+    },
+    "html-has-lang": {
+      "description": "すべてのHTMLドキュメントにlang属性が存在することを確認します",
+      "help": "<html>要素にはlang属性がなければなりません"
+    },
+    "html-lang-valid": {
+      "description": "<html>要素のlang属性に有効な値があることを確認します",
+      "help": "<html>要素のlang属性には有効な値がなければなりません"
+    },
+    "html-xml-lang-mismatch": {
+      "description": "HTML要素に指定された有効なlangおよびxml:lang属性の両方がページの基本言語と一致することを確認します",
+      "help": "HTML要素に指定されたlangおよびxml:lang属性は同じ基本言語を持たなければなりません"
+    },
+    "identical-links-same-purpose": {
+      "description": "同じアクセシブルな名前を持つ複数のリンクが類似した目的を果たすことを確認します",
+      "help": "同じ名前を持つ複数のリンクは類似した目的を持っていなければなりません"
+    },
+    "image-alt": {
+      "description": "<img>要素に代替テキストが存在する、またはnoneまたはpresentationのロールが存在することを確認します",
+      "help": "画像には代替テキストがなければなりません"
+    },
+    "image-redundant-alt": {
+      "description": "画像の代替がテキストとして繰り返されていないことを確認します",
+      "help": "画像の代替テキストはテキストとして繰り返されるべきではありません"
+    },
+    "input-button-name": {
+      "description": "入力ボタンに認識可能なテキストが存在することを確認します",
+      "help": "入力ボタンには認識可能なテキストが存在しなければなりません"
+    },
+    "input-image-alt": {
+      "description": "<input type=\"image\">要素に代替テキストが存在することを確認します",
+      "help": "画像ボタンには代替テキストがなければなりません"
+    },
+    "label-content-name-mismatch": {
+      "description": "コンテンツによってラベル付けされた要素は、それらの視認できるテキストがアクセシブルな名前の一部になっていることを確認します",
+      "help": "要素の視認できるテキストはそれらのアクセシブルな名前の一部でなければなりません"
+    },
+    "label-title-only": {
+      "description": "すべてのフォーム要素に視認できるラベルがあり、非表示のラベル、titleまたはaria-describedby属性のみを使用してラベル付けされていないことを確認します",
+      "help": "フォーム要素には視認できるラベルがなければなりません"
+    },
+    "label": {
+      "description": "すべてのフォーム要素にラベルが存在することを確認します",
+      "help": "フォーム要素にはラベルがなければなりません"
+    },
+    "landmark-banner-is-top-level": {
+      "description": "bannerランドマークがトップレベルにあることを確認します",
+      "help": "bannerランドマークは他のランドマークに含まれるべきではありません"
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "complementaryランドマークあるいはasideがトップレベルにあることを確認します",
+      "help": "asideは他の要素に含まれるべきではありません"
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "contentinfoランドマークがトップレベルにあることを確認します",
+      "help": "contentinfoランドマークは他のランドマークに含まれるべきではありません"
+    },
+    "landmark-main-is-top-level": {
+      "description": "mainランドマークがトップレベルにあることを確認します",
+      "help": "mainランドマークは他のランドマークに含まれるべきではありません"
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "ドキュメント内のbannerランドマークが最大で1つのみであることを確認します",
+      "help": "ドキュメントに複数のbannerランドマークが存在してはなりません"
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "ドキュメント内のcontentinfoランドマークが最大で1つのみであることを確認します",
+      "help": "ドキュメントに複数のcontentinfoランドマークが存在してはなりません"
+    },
+    "landmark-no-duplicate-main": {
+      "description": "ドキュメント内のmainランドマークが最大で1つのみであることを確認します",
+      "help": "ドキュメントに複数のmainランドマークが存在してはなりません"
+    },
+    "landmark-one-main": {
+      "description": "ドキュメントにmainランドマークが含まれていることを確認します",
+      "help": "ドキュメントにはmainランドマークが1つ含まれていなければなりません"
+    },
+    "landmark-unique": {
+      "help": "ランドマークが一意であることを確認します",
+      "description": "ランドマークには一意のロール又はロール／ラベル／タイトル (すなわちアクセシブルな名前) の組み合わせがなければなりません"
+    },
+    "link-in-text-block": {
+      "description": "リンクが色に依存しない形で周囲のテキストと区別できることを確認します",
+      "help": "リンクは色に依存しない形で区別できなければなりません"
+    },
+    "link-name": {
+      "description": "リンクに認識可能なテキストが存在することを確認します",
+      "help": "リンクには認識可能なテキストがなければなりません"
+    },
+    "list": {
+      "description": "リストが正しく構造化されていることを確認します",
+      "help": "<ul>および<ol>の直下には<li>、<script>または<template>要素のみを含まなければなりません"
+    },
+    "listitem": {
+      "description": "<li>要素がセマンティックに使用されていることを確認します",
+      "help": "<li>要素は<ul>または<ol>内に含まれていなければなりません"
+    },
+    "marquee": {
+      "description": "<marquee>要素が使用されていないことを確認します",
+      "help": "<marquee>要素は非推奨のため、使用してはなりません"
+    },
+    "meta-refresh-no-exceptions": {
+      "description": "一定時間経過後のページの自動リロードのために<meta http-equiv=\"refresh\">が使用されていないことを確認します",
+      "help": "一定時間経過後のページの自動リロードを使用してはなりません"
+    },
+    "meta-refresh": {
+      "description": "一定時間経過後のページの自動リロードのために<meta http-equiv=\"refresh\">が使用されていないことを確認します",
+      "help": "20時間より短い時間経過後のページの自動リロードを使用してはなりません"
+    },
+    "meta-viewport-large": {
+      "description": "<meta name=\"viewport\">で大幅に拡大縮小できることを確認します",
+      "help": "ユーザーがズームをしてテキストを最大500％まで拡大できなければなりません"
+    },
+    "meta-viewport": {
+      "description": "<meta name=\"viewport\">がテキストのサイズ変更やズームを無効化しないことを確認します",
+      "help": "ズーム機能やテキストのサイズ変更は無効にしてはなりません"
+    },
+    "nested-interactive": {
+      "description": "スクリーン・リーダーで必ずしもよみあげられなかったり支援技術のフォーカスに関する問題を引き起こす可能性があったりするため、対話的なコントロールがネストされていないことを確認します",
+      "help": "対話的なコントロールはネストされていてはなりません"
+    },
+    "no-autoplay-audio": {
+      "description": "<video> または <audio> 要素が音声を停止またはミュートするコントロールなしに音声を3秒より長く自動再生しないことを確認します",
+      "help": "<video> または <audio> 要素は音声を自動再生してはなりません"
+    },
+    "object-alt": {
+      "description": "<object>要素に代替テキストが存在することを確認します",
+      "help": "<object>要素には代替テキストがなければなりません"
+    },
+    "p-as-heading": {
+      "description": "<p>要素を見出しとしてスタイル付けするために太字、イタリック体、およびフォントサイズが使用されていないことを確認します",
+      "help": "スタイル付けした<p>要素を見出しとして使用してはなりません"
+    },
+    "page-has-heading-one": {
+      "description": "ページ、またはそのページ中のフレームの少なくとも1つにはレベル1の見出しが含まれていることを確認します",
+      "help": "ページにはレベル1の見出しが含まれていなければなりません"
+    },
+    "presentation-role-conflict": {
+      "description": "すべてのスクリーン・リーダーに確実に無視させるために、プレゼンテーション目的とされている要素にはグローバルなARIAまたはtabindexが指定されていてはなりません",
+      "help": "プレゼンテーション目的とされている要素が一貫して無視されることを確認します"
+    },
+    "region": {
+      "description": "ページのすべてのコンテンツがlandmarkに含まれていることを確認します",
+      "help": "ページのすべてのコンテンツはlandmarkに含まれていなければなりません"
+    },
+    "role-img-alt": {
+      "description": "[role=\"img\"] の要素に代替テキストが存在することを確認します",
+      "help": "[role=\"img\"] の要素には代替テキストがなければなりません"
+    },
+    "scope-attr-valid": {
+      "description": "scope属性がテーブルで正しく使用されていることを確認します",
+      "help": "scope属性は正しく使用されなければなりません"
+    },
+    "scrollable-region-focusable": {
+      "description": "スクロール可能なコンテンツを持つ要素がキーボードでアクセスできることを確認します",
+      "help": "スクロール可能な領域はキーボードでアクセスできなければなりません"
+    },
+    "select-name": {
+      "description": "select要素にはアクセシブルな名前があることを確認します",
+      "help": "select要素にはアクセシブルな名前がなければなりません"
+    },
+    "server-side-image-map": {
+      "description": "サーバーサイドのイメージマップが使用されていないことを確認します",
+      "help": "サーバーサイドのイメージマップを使用してはなりません"
+    },
+    "skip-link": {
+      "description": "すべてのスキップリンクにフォーカス可能なターゲットがあることを確認します",
+      "help": "スキップリンクのターゲットが存在し、フォーカス可能でなければなりません"
+    },
+    "svg-img-alt": {
+      "description": "img、graphics-documentまたはgraphics-symbolロールを持つsvg要素にアクセシブルなテキストがあることを確認します",
+      "help": "imgロールを持つ<svg>要素には代替テキストが存在しなければなりません"
+    },
+    "tabindex": {
+      "description": "tabindex属性値が0より大きくないことを確認します",
+      "help": "要素に指定するtabindexは0より大きい値であってはなりません"
+    },
+    "table-duplicate-name": {
+      "description": "<caption>要素の内用がsummary属性のテキストと同一ではないことを確認します",
+      "help": "テーブルのキャプションとサマリーは同一であってはなりません"
+    },
+    "table-fake-caption": {
+      "description": "キャプション付きのテーブルが<caption>要素を用いていることを確認します",
+      "help": "データテーブルにキャプションをつけるためにデータまたはヘッダーセルを用いてはなりません"
+    },
+    "target-size": {
+      "description": "タッチターゲットのサイズとスペースが十分にあることを確認します",
+      "help": "すべてのタッチターゲットは24pxの大きさか、十分なスペースがなければなりません"
+    },
+    "td-has-header": {
+      "description": "3×3より大きい<table>の空ではないデータセルにはそれぞれ1つ以上のテーブルヘッダーが存在することを確認します",
+      "help": "大きい<table>の空ではない<td>要素は対応するテーブルヘッダーと関連づけられていなければなりません"
+    },
+    "td-headers-attr": {
+      "description": "テーブルでheaders属性を使用している各セルの参照先が同じテーブル内の他のセルであることを確認します",
+      "help": "テーブルのheaders属性を使用するすべてのセルは同じ表内の他のセルのみを参照しなければなりません"
+    },
+    "th-has-data-cells": {
+      "description": "すべての<th>要素およびrole=columnheader/rowheaderを持つ要素にはそれらが説明するデータセルがあることを確認します",
+      "help": "データテーブルのテーブルヘッダーはデータセルを参照していなければなりません"
+    },
+    "valid-lang": {
+      "description": "lang属性に有効な値が存在することを確認します",
+      "help": "lang属性には有効な値がなければなりません"
+    },
+    "video-caption": {
+      "description": "<video>要素にキャプションが存在することを確認します",
+      "help": "<video>要素にはキャプションがなければなりません"
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "抽象ロールは使用されていません",
+      "fail": {
+        "singular": "抽象ロールは直接使用できません: ${data.values}",
+        "plural": "抽象ロールは直接使用できません: ${data.values}"
+      }
+    },
+    "aria-allowed-attr": {
+      "pass": "ARIA属性が定義されたロールに対して正しく使用されています",
+      "fail": {
+        "singular": "ARIA属性は許可されていません: ${data.values}",
+        "plural": "ARIA属性は許可されていません: ${data.values}"
+      },
+      "incomplete": "この要素のARIA属性が無視されても問題ないことを確認しましょう: ${data.values}"
+    },
+    "aria-allowed-role": {
+      "pass": "ARIAロールは指定された要素に対して許可されています",
+      "fail": {
+        "singular": "ARIAロール${data.values}は指定された要素では許可されていません",
+        "plural": "ARIAロール${data.values}は指定された要素では許可されていません"
+      },
+      "incomplete": {
+        "singular": "ARIAロール${data.values}はこの要素では許可されていないため、要素が表示されたときはARIAロールを削除する必要があります",
+        "plural": "ARIAロール${data.values}はこの要素では許可されていないため、要素が表示されたときはARIAロールを削除する必要があります"
+      }
+    },
+    "aria-busy": {
+      "pass": "要素にはaria-busy属性が存在します",
+      "fail": "ローダーを表示中に、要素aria-busy=\"true\"が指定されています"
+    },
+    "aria-conditional-attr": {
+      "pass": "ARIA 属性が許可されています",
+      "fail": {
+        "checkbox": "aria-checkedを削除するか\"${data.checkState}\"を設定して、チェックボックスの実際の状態と合うようにしましょう",
+        "rowSingular": "treegridの行でサポートされている属性ですが、${data.ownerRole}: ${data.invalidAttrs}の場合はこの限りではありません",
+        "rowPlural": "treegridの行でサポートされている属性ですが、${data.ownerRole}: ${data.invalidAttrs}の場合はこの限りではありません"
+      }
+    },
+    "aria-errormessage": {
+      "pass": "aria-errormessageが存在して、サポートされているaria-errormessageの手法を用いているスクリーン・リーダーが認識できる要素を参照しています",
+      "fail": {
+        "singular": "aria-errormessageの値`${data.values}`はメッセージを通知する方法を使用しなければなりません (例えば、aria-live、aria-describedby、role=alert等)",
+        "plural": "aria-errormessageの値`${data.values}`はメッセージを通知する方法を使用しなければなりません (例えば、aria-live、aria-describedby、role=alert等)",
+        "hidden": "aria-errormessageの値 `${data.values}`は非表示の要素を参照することはできません"
+      },
+      "incomplete": {
+        "singular": "aria-errormessageの値 `${data.values}`は存在する要素を参照していることを確認しましょう",
+        "plural": "aria-errormessageの値 `${data.values}`は存在する要素を参照していることを確認しましょう",
+        "idrefs": "aria-errormessage要素がページ上に存在するかどうか判定できません: ${data.values}"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "ドキュメント本体にaria-hidden属性は存在しません",
+      "fail": "aria-hidden=trueはドキュメント本体に存在してはなりません"
+    },
+    "aria-level": {
+      "pass": "aria-levelの値は有効です",
+      "incomplete": "6より大きいaria-levelの値は、どのスクリーンリーダーとブラウザーの組み合わせでもサポートされていません"
+    },
+    "aria-prohibited-attr": {
+      "pass": "ARIA属性は使用できます",
+      "fail": {
+        "hasRolePlural": "${data.prohibited}属性は\"${data.role}\"ロールでは使用できません",
+        "hasRoleSingular": "${data.prohibited}属性は\"${data.role}\"ロールでは使用できません",
+        "noRolePlural": "${data.prohibited}属性は、有効なrole属性のない${data.nodeName}では使用できません",
+        "noRoleSingular": "${data.prohibited}属性は、有効なrole属性のない${data.nodeName}では使用できません"
+      },
+      "incomplete": {
+        "hasRoleSingular": "${data.prohibited}属性はロール\"${data.role}\"では十分にサポートされていません",
+        "hasRolePlural": "${data.prohibited}属性はロール\"${data.role}\"では十分にサポートされていません",
+        "noRoleSingular": "${data.prohibited}属性は、有効なrole属性のない${data.nodeName}では十分にサポートされていません",
+        "noRolePlural": "${data.prohibited}属性は、有効なrole属性のない${data.nodeName}では十分にサポートされていません"
+      }
+    },
+    "aria-required-attr": {
+      "pass": "すべての必須のARIA属性が存在します",
+      "fail": {
+        "singular": "必須のARIA属性が提供されていません: ${data.values}",
+        "plural": "必須のARIA属性が提供されていません: ${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": {
+        "default": "必須のARIA子ロールが存在します",
+        "aria-busy": "要素にはaria-busy属性が指定されているため、必要な子要素を省略することが許可されています"
+      },
+      "fail": {
+        "singular": "必須のARIA子ロールが提供されていません: ${data.values}",
+        "plural": "必須のARIA子ロールが提供されていません: ${data.values}",
+        "unallowed": "要素には許可されていないARIA子ロールがあります: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "ARIAの子ロールを追加することが求められます: ${data.values}",
+        "plural": "ARIAの子ロールを追加することが求められます: ${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "必須のARIA親ロールが存在します",
+      "fail": {
+        "singular": "必須のARIA親ロールが提供されていません: ${data.values}",
+        "plural": "必須のARIA親ロールが提供されていません: ${data.values}"
+      }
+    },
+    "aria-roledescription": {
+      "pass": "aria-roledescriptionはサポートされたセマンティックなロールに使用されています",
+      "incomplete": "aria-roledescriptionがサポートされたスクリーン・リーダーで読み上げられることを確認しましょう",
+      "fail": "aria-roledescriptionをサポートするロールを要素に付与しましょう"
+    },
+    "aria-unsupported-attr": {
+      "pass": "ARIA属性はサポートされています",
+      "fail": "ARIA属性はスクリーン・リーダーや支援技術に広くサポートされていません: ${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "ARIA属性値が有効です",
+      "fail": {
+        "singular": "無効なARIA属性値です: ${data.values}",
+        "plural": "無効なARIA属性値です: ${data.values}"
+      },
+      "incomplete": {
+        "noId": "ARIA属性で指定されている要素のIDがページ上に存在しません: ${data.needsReview}",
+        "noIdShadow": "ARIA属性で指定されている要素のIDがページ上に存在しないか、別のshadow DOMツリーの小要素です: ${data.needsReview}",
+        "ariaCurrent": "ARIA属性値が無効であるため、\"aria-current=true\"として扱われます: ${data.needsReview}",
+        "idrefs": "ARIA属性で指定されている要素のIDがページ上に存在するかどうか判定できません: ${data.needsReview}",
+        "empty": "ARIA属性値が空のときは無視されます: ${data.needsReview}",
+        "controlsWithinPopup": "aria-haspopupを使用している際にaria-controlsが参照するIDがページ上に存在するかどうかを判断できません: ${data.needsReview}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": "ARIA属性名が有効です",
+      "fail": {
+        "singular": "無効なARIA属性名です: ${data.values}",
+        "plural": "無効なARIA属性名です: ${data.values}"
+      }
+    },
+    "braille-label-equivalent": {
+      "pass": "aria-braillelabelはアクセシブルなテキストがある要素に対して使用されています",
+      "fail": "aria-braillelabelがアクセシブルなテキストがない要素に対して使用されています",
+      "incomplete": "アクセシブルなテキストを算出することができません"
+    },
+    "braille-roledescription-equivalent": {
+      "pass": "aria-brailleroledescriptionはaria-roledescriptionが指定されている要素に対して使用されています",
+      "fail": {
+        "noRoleDescription": "aria-brailleroledescriptionがaria-roledescriptionが指定されていない要素に対して使用されています",
+        "emptyRoleDescription": "aria-brailleroledescriptionが空のaria-roledescriptionが指定されている要素に対して使用されています"
+      }
+    },
+    "deprecatedrole": {
+      "pass": "非推奨のARIAロールではありません",
+      "fail": "非推奨のロールが使用されています: ${data}"
+    },
+    "fallbackrole": {
+      "pass": "1つのロール値のみ使用されています",
+      "fail": "古いブラウザーではフォールバックロールがサポートされていないため、ロール値は1つのみ使用します",
+      "incomplete": "'presentation'と'none'のロールは同義なので、どちらか一方のみを使用します。"
+    },
+    "has-global-aria-attribute": {
+      "pass": {
+        "singular": "要素にはグローバルなARIA属性が指定されています: ${data.values}",
+        "plural": "要素にはグローバルなARIA属性が指定されています: ${data.values}"
+      },
+      "fail": "要素にはグローバルなARIA属性が指定されていません"
+    },
+    "has-widget-role": {
+      "pass": "要素にはwidgetロールが存在します",
+      "fail": "要素にはwidgetロールが存在しません"
+    },
+    "invalidrole": {
+      "pass": "ARIAロールが有効です",
+      "fail": {
+        "singular": "ロールは有効なARIAロールのうちの1つでなければなりません: ${data.values}",
+        "plural": "ロールは有効なARIAロールのうちの1つでなければなりません: ${data.values}"
+      }
+    },
+    "is-element-focusable": {
+      "pass": "フォーカス可能な要素です",
+      "fail": "フォーカス不可能な要素です"
+    },
+    "no-implicit-explicit-label": {
+      "pass": "<label> とアクセシブルな名前の間に不一致はありません",
+      "incomplete": "<label>がARIA ${data}欄の名前の一部である必要がないことを確認しましょう"
+    },
+    "unsupportedrole": {
+      "pass": "ARIAロールはサポートされています",
+      "fail": "使用されているロールはスクリーン・リーダーや支援技術に広くサポートされていません: ${data.values}"
+    },
+    "valid-scrollable-semantics": {
+      "pass": "要素はフォーカス順序に含まれる要素に対して有効なセマンティクスを持ちます",
+      "fail": "要素はフォーカス順序に含まれる要素に対して無効なセマンティクスを持ちます"
+    },
+    "color-contrast-enhanced": {
+      "pass": "要素には${data.contrastRatio}の十分なコントラスト比があります",
+      "fail": {
+        "default": "要素のコントラスト比が不十分です ${data.contrastRatio}（前景色: ${data.fgColor}、背景色: ${data.bgColor}、フォントサイズ: ${data.fontSize}、フォントの太さ: ${data.fontWeight}）。コントラスト比${data.expectedContrastRatio}を必要とします",
+        "fgOnShadowColor": "要素の前景色と影（text-shadow）の色のコントラスト比が不十分です ${data.contrastRatio}（前景色: ${data.fgColor}、影（text-shadow）の色: ${data.shadowColor}、フォントサイズ: ${data.fontSize}、フォントの太さ: ${data.fontWeight}）。コントラスト比${data.expectedContrastRatio}を必要とします",
+        "shadowOnBgColor": "要素の影（text-shadow）の色と背景色のコントラスト比が不十分です ${data.contrastRatio}（影（text-shadow）の色: ${data.shadowColor}、背景色: ${data.bgColor}、フォントサイズ: ${data.fontSize}、フォントの太さ: ${data.fontWeight}）。コントラスト比${data.expectedContrastRatio}を必要とします"
+      },
+      "incomplete": {
+        "default": "コントラスト比を判定できません",
+        "bgImage": "背景画像のため、要素の背景色を判定できません",
+        "bgGradient": "背景グラデーションのため、要素の背景色を判定できません",
+        "imgNode": "画像ノードが含まれるため、要素の背景色を判定できません",
+        "bgOverlap": "他の要素と重なっているため、要素の背景色を判定できません",
+        "fgAlpha": "アルファ透明度により、要素の前景色を判定できません",
+        "elmPartiallyObscured": "他の要素により部分的に不明瞭なため、要素の背景色を判定できません",
+        "elmPartiallyObscuring": "他の要素と部分的に重なっているため、要素の背景色を判定できません",
+        "outsideViewport": "ビューポートの外にあるため、要素の背景色を判定できません",
+        "equalRatio": "要素のコントラスト比が背景と1:1です",
+        "shortTextContent": "実際のテキストコンテンツであるかを判断するには要素のコンテンツが短すぎます",
+        "nonBmp": "要素のコンテンツはテキストではない文字のみを含んでいます",
+        "pseudoContent": "擬似要素のため、要素の背景色を判定することができません"
+      }
+    },
+    "color-contrast": {
+      "pass": {
+        "default": "要素には${data.contrastRatio}の十分なコントラスト比があります",
+        "hidden": "要素は非表示です"
+      },
+      "fail": {
+        "default": "要素のコントラスト比が不十分です ${data.contrastRatio}（前景色: ${data.fgColor}、背景色: ${data.bgColor}、フォントサイズ: ${data.fontSize}、フォントの太さ: ${data.fontWeight}）。コントラスト比${data.expectedContrastRatio}を必要とします",
+        "fgOnShadowColor": "要素の前景色と影（text-shadow）の色のコントラスト比が不十分です ${data.contrastRatio}（前景色: ${data.fgColor}、影（text-shadow）の色: ${data.shadowColor}、フォントサイズ: ${data.fontSize}、フォントの太さ: ${data.fontWeight}）。コントラスト比${data.expectedContrastRatio}を必要とします",
+        "shadowOnBgColor": "要素の影（text-shadow）の色と背景色のコントラスト比が不十分です ${data.contrastRatio}（影（text-shadow）の色: ${data.shadowColor}、背景色: ${data.bgColor}、フォントサイズ: ${data.fontSize}、フォントの太さ: ${data.fontWeight}）。コントラスト比${data.expectedContrastRatio}を必要とします"
+      },
+      "incomplete": {
+        "default": "コントラスト比を判定できません",
+        "bgImage": "背景画像のため、要素の背景色を判定できません",
+        "bgGradient": "背景グラデーションのため、要素の背景色を判定できません",
+        "imgNode": "画像ノードが含まれるため、要素の背景色を判定できません",
+        "bgOverlap": "他の要素と重なっているため、要素の背景色を判定できません",
+        "complexTextShadows": "複雑なtext-shadowが用いられているため、要素のコントラスト比を判定できません",
+        "fgAlpha": "アルファ透明度により、要素の前景色を判定できません",
+        "elmPartiallyObscured": "他の要素により部分的に不明瞭なため、要素の背景色を判定できません",
+        "elmPartiallyObscuring": "他の要素と部分的に重なっているため、要素の背景色を判定できません",
+        "outsideViewport": "ビューポートの外にあるため、要素の背景色を判定できません",
+        "equalRatio": "要素のコントラスト比が背景と1:1です",
+        "shortTextContent": "実際のテキストコンテンツであるかを判断するには要素のコンテンツが短すぎます",
+        "nonBmp": "要素のコンテンツはテキストではない文字のみを含んでいます",
+        "pseudoContent": "擬似要素のため、要素の背景色を判定することができません"
+      }
+    },
+    "link-in-text-block-style": {
+      "pass": "リンクは視覚的なスタイル付けによって周囲のテキストと区別できます",
+      "incomplete": {
+        "default": "リンクを近接したテキストと区別するために、スタイル付けが必要か確認しましょう。",
+        "pseudoContent": "リンクの擬似スタイルが、周囲のテキストと区別するのに充分か確認しましょう。"
+      },
+      "fail": "リンクには、周囲のテキストと区別するためのスタイル (下線など) がありません"
+    },
+    "link-in-text-block": {
+      "pass": "リンクは色以外の方法で周囲のテキストと区別できます",
+      "fail": {
+        "fgContrast": "このリンクは、周囲のテキストとの${data.contrastRatio}:1の色のコントラストが不十分です。(最小コントラストは${data.requiredContrastRatio}:1、リンクテキスト: ${data.nodeColor}、周囲のテキスト: ${data.parentColor})",
+        "bgContrast": "リンクの背景の色コントラストが${data.contrastRatio}で十分ではありません (最小コントラストは${data.requiredContrastRatio}:1、リンク背景色: ${data.nodeBackgroundColor}、周囲の背景色: ${data.parentBackgroundColor})"
+      },
+      "incomplete": {
+        "default": "要素の前景コントラスト比を判定できません",
+        "bgContrast": "要素の背景コントラスト比を判定できません",
+        "bgImage": "背景画像のため、要素のコントラスト比を判定できません",
+        "bgGradient": "背景グラデーションのため、要素のコントラスト比を判定できません",
+        "imgNode": "画像ノードが含まれるため、要素のコントラスト比を判定できません",
+        "bgOverlap": "要素の重なりにより、要素のコントラスト比を判定できません"
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "オートコンプリートの値は適切な要素に指定されています",
+      "fail": "オートコンプリートの値はこの種類の入力項目には適切ではありません"
+    },
+    "autocomplete-valid": {
+      "pass": "autocomplete属性は正しくフォーマットされています",
+      "fail": "autocomplete属性は誤ってフォーマットされています"
+    },
+    "accesskeys": {
+      "pass": "accesskey属性の値は一意です",
+      "fail": "ドキュメントに同じaccesskeyを持った複数の要素が存在します"
+    },
+    "focusable-content": {
+      "pass": "要素内にフォーカス可能な要素が含まれています",
+      "fail": "要素にフォーカス可能なコンテンツが存在するべきです"
+    },
+    "focusable-disabled": {
+      "pass": "要素内にフォーカス可能な要素は含まれていません",
+      "incomplete": "フォーカス可能な要素がすぐにフォーカスインジケータを動かすかどうか確認しましょう",
+      "fail": "フォーカス可能なコンテンツは無効にするか、DOMから削除するべきです"
+    },
+    "focusable-element": {
+      "pass": "要素はフォーカス可能です",
+      "fail": "要素はフォーカス可能であるべきです"
+    },
+    "focusable-modal-open": {
+      "pass": "モーダルが開いている時に、フォーカス可能な要素はありません",
+      "incomplete": "現在の状態で、フォーカス可能な要素にタブ移動可能になっていないことを確認しましょう"
+    },
+    "focusable-no-name": {
+      "pass": "要素がタブ順序にない、またはアクセシブルなテキストが存在します",
+      "fail": "要素がタブ順序にあり、アクセシブルなテキストが存在しません",
+      "incomplete": "要素にアクセシブルな名前があるか判定できません"
+    },
+    "focusable-not-tabbable": {
+      "pass": "要素内にフォーカス不可能な要素は含まれていません",
+      "incomplete": "フォーカス可能な要素がすぐにフォーカスインジケータを動かすかどうか確認しましょう",
+      "fail": "フォーカス可能なコンテンツはtabindex=\"-1\"を指定するか、DOMから削除するべきです"
+    },
+    "frame-focusable-content": {
+      "pass": "要素の子孫にフォーカス可能なものはありません",
+      "fail": "要素の子孫にフォーカス可能なものがあります",
+      "incomplete": "要素に子孫があるか判定できませんでした"
+    },
+    "landmark-is-top-level": {
+      "pass": "${data.role}ランドマークはトップレベルにあります",
+      "fail": "${data.role}ランドマークは他のランドマークに含まれています"
+    },
+    "no-focusable-content": {
+      "pass": "要素の子孫にフォーカス可能なものはありません",
+      "fail": {
+        "default": "要素の子孫にフォーカス可能なものがあります",
+        "notHidden": "インタラクティブなコントロールの内側の要素に負のtabindexを指定しても、（aria-hidden=\"true\"が指定されている場合も）支援技術がその要素にフォーカスできないようにはなりません"
+      },
+      "incomplete": "要素に子孫があるか判定できませんでした"
+    },
+    "page-has-heading-one": {
+      "pass": "ページには少なくとも1つのレベル1の見出しがあります",
+      "fail": "ページにはレベル1の見出しがなければなりません"
+    },
+    "page-has-main": {
+      "pass": "ドキュメントには少なくとも1つのmainランドマークがあります",
+      "fail": "ドキュメントにmainランドマークがありません"
+    },
+    "page-no-duplicate-banner": {
+      "pass": "ドキュメントにbannerランドマークは複数ありません",
+      "fail": "ドキュメントに複数のbannerランドマークがあります"
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "ドキュメントにcontentinfoランドマークは複数ありません",
+      "fail": "ドキュメントに複数のcontentinfoランドマークがあります"
+    },
+    "page-no-duplicate-main": {
+      "pass": "ドキュメントにmainランドマークは複数ありません",
+      "fail": "ドキュメントに複数のmainランドマークがあります"
+    },
+    "tabindex": {
+      "pass": "要素に0より大きいtabindexは存在しません",
+      "fail": "要素に0より大きいtabindexが存在します"
+    },
+    "alt-space-value": {
+      "pass": "要素に妥当なalt属性値があります",
+      "fail": "要素にスペース文字のみを含んだalt属性があり、これは必ずしもすべてのスクリーン・リーダーに無視されません"
+    },
+    "duplicate-img-label": {
+      "pass": "要素の既存のテキストと<img>の代替テキストは重複していません",
+      "fail": "要素が既存のテキストと重複した代替テキストの存在する<img>要素を含んでいます"
+    },
+    "explicit-label": {
+      "pass": "フォームの要素に明示的な<label>が存在します",
+      "fail": "フォームの要素に明示的な<label>が存在しません",
+      "incomplete": "フォームの要素に明示的な <label> があるか判定できませんでした"
+    },
+    "help-same-as-label": {
+      "pass": "ヘルプテキスト（titleまたはaria-describedby）はラベルのテキストと重複していません",
+      "fail": "ヘルプテキスト（titleまたはaria-describedby）がラベルのテキストと同じです"
+    },
+    "hidden-explicit-label": {
+      "pass": "フォームの要素に視認可能で明示的な<label>があります",
+      "fail": "フォームの要素に非表示の明示的な<label>があります",
+      "incomplete": "フォームの要素に明示的で非表示の <label> があるか判定できませんでした"
+    },
+    "implicit-label": {
+      "pass": "フォームの要素に暗黙の（包含された）<label>が存在します",
+      "fail": "フォームの要素に暗黙の（包含された）<label>が存在しません",
+      "incomplete": "フォームの要素に暗黙の（包含された）<label>が存在するか判定できません"
+    },
+    "label-content-name-mismatch": {
+      "pass": "視認可能なテキストが要素のアクセシブルな名前の一部に含まれています",
+      "fail": "要素内のテキストがアクセシブルな名前の一部に含まれていません"
+    },
+    "multiple-label": {
+      "pass": "フォームフィールドにlabel要素は複数ありません",
+      "incomplete": "複数のlabel要素は支援技術に広くサポートされていません。最初のラベルがすべての必要な情報を含んでいることを確認しましょう。"
+    },
+    "title-only": {
+      "pass": "フォーム要素はラベルにtitle属性だけを用いていません",
+      "fail": "フォーム要素のラベルにtitle属性だけを用いています"
+    },
+    "landmark-is-unique": {
+      "pass": "ランドマークには一意のロール又はロール／ラベル／タイトル (例: アクセシブルな名前) の組み合わせがなければなりません",
+      "fail": "ランドマークを識別可能にするため、ランドマークには一意のaria-label、aria-labelledby、またはtitleがなければなりません。"
+    },
+    "has-lang": {
+      "pass": "<html>要素にlang属性が存在します",
+      "fail": {
+        "noXHTML": "HTMLページでxml:lang属性は有効ではありません、lang属性を使用してください。",
+        "noLang": "<html>要素にlang属性が指定されていません"
+      }
+    },
+    "valid-lang": {
+      "pass": "lang属性の値が有効な言語の一覧に含まれています",
+      "fail": "lang属性の値が有効な言語の一覧に含まれていません"
+    },
+    "xml-lang-mismatch": {
+      "pass": "langおよびxml:lang属性に同じ基本言語を指定しています",
+      "fail": "langおよびxml:lang属性に同じ基本言語を指定していません"
+    },
+    "dlitem": {
+      "pass": "説明リスト項目に<dl>親要素が存在します",
+      "fail": "説明リスト項目に<dl>親要素が存在しません"
+    },
+    "listitem": {
+      "pass": "リスト項目に<ul>、<ol>、またはrole=\"list\"の親要素が存在します",
+      "fail": {
+        "default": "リスト項目に <ul>、<ol> 親要素が存在しません",
+        "roleNotValid": "リスト項目の親要素に、role=\"list\"以外のロールが指定されています"
+      }
+    },
+    "only-dlitems": {
+      "pass": "dl要素内には許可されている直接の子要素、<dt>、<dd>および<div>要素のみが存在します",
+      "fail": "dl要素内に許可されていない直接の子要素が存在します: ${data.values}"
+    },
+    "only-listitems": {
+      "pass": "リスト要素内には許可されている直接の子要素、<li>要素のみが存在します",
+      "fail": "リスト要素内に許可されていない直接の子要素が存在します: ${data.values}"
+    },
+    "structured-dlitems": {
+      "pass": "空ではない場合、要素に<dt>および<dd>要素の両方が存在します",
+      "fail": "空ではない場合、要素に少なくとも1つの<dt>要素に続く、少なくとも1つの<dd>要素が存在しません"
+    },
+    "caption": {
+      "pass": "マルチメディア要素にキャプショントラックが存在します",
+      "incomplete": "要素にキャプションが存在することを確認しましょう"
+    },
+    "frame-tested": {
+      "pass": "iframeはaxe-coreでテストされました",
+      "fail": "iframeはaxe-coreでテストできませんでした",
+      "incomplete": "iframeはまだaxe-coreでテストする必要があります"
+    },
+    "no-autoplay-audio": {
+      "pass": "<video> または <audio> は許可された時間より長く音声を出力しない、もしくはコントールするメカニズムを持っています",
+      "fail": "<video> または <audio> は許可された時間より長く音声を出力し、かつコントロールするメカニズムを持っていません",
+      "incomplete": "<video> または <audio> が許可された時間より長く音声を出力しない、またはコントロールするメカニズムを提供していることを確認しましょう"
+    },
+    "css-orientation-lock": {
+      "pass": "ディスプレイは操作可能で、向きは固定されていません",
+      "fail": "CSSにより向きが固定されており、ディスプレイ操作を不可能にしています",
+      "incomplete": "CSSで向きが固定されているかどうか特定できません"
+    },
+    "meta-viewport-large": {
+      "pass": "<meta>タグはモバイルデバイスでの大幅な拡大を阻止しません",
+      "fail": "<meta>タグはモバイルデバイスでの拡大を制限します"
+    },
+    "meta-viewport": {
+      "pass": "<meta>タグはモバイルデバイスでの拡大を無効にしません",
+      "fail": "<meta>タグの${data}がモバイルデバイスでの拡大を無効にします"
+    },
+    "target-offset": {
+      "pass": {
+        "default": "ターゲットは最も近い隣接する要素との間に充分な大きさの空白があります。クリッカブルな領域として十分な大きさは、${data.minOffset}px以上で直径${data.closestOffset}pxです。",
+        "large": "ターゲットの大きさは、最低${data.minOffset}pxの基準を大きく上回っています。"
+      },
+      "fail": "ターゲットに最も近い隣接要素との間の空白の大きさが不十分です。クリッカブルな領域として十分な大きさは、${data.minOffset}px以上ではなく、直径${data.closestOffset}pxです。",
+      "incomplete": {
+        "default": "tabindexが負の要素において、最も近い隣接要素との間の空白の大きさが不十分です。クリッカブルな領域として十分な大きさは、${data.minOffset}px以上ではなく、直径${data.closestOffset}pxです。これがターゲットであるか確認しましょう。",
+        "nonTabbableNeighbor": "ターゲットに最も近い隣接要素との間の空白の大きさが不十分です。クリッカブルな領域として十分な大きさは、${data.minOffset}px以上ではなく、直径${data.closestOffset}pxです。隣接要素がターゲットであるか確認しましょう。",
+        "tooManyRects": "重複する要素が多すぎるため、ターゲットの大きさを取得できません。"
+      }
+    },
+    "target-size": {
+      "pass": {
+        "default": "コントロールには十分なサイズがあります (${data.width}px x ${data.height}pxであり、${data.minSize}px x ${data.minSize}px以上です)",
+        "obscured": "コントロールは完全に隠されていてクリックできないため無視されます",
+        "large": "ターゲットの大きさはは最低${data.minSize}pxの基準を大きく上回っています。"
+      },
+      "fail": {
+        "default": "ターゲットのサイズが不十分です (${data.width}px x ${data.height}pxですが、${data.minSize}px x ${data.minSize}px以上でなければなりません)",
+        "partiallyObscured": "ターゲットは部分的に隠れているためサイズが不十分です (最小スペースは${data.width}px x ${data.height}pxですが、少なくとも${data.minSize}px x ${data.minSize}pxでなければなりません)"
+      },
+      "incomplete": {
+        "default": "tabindexが負の要素のサイズが不十分です (${data.width}px x ${data.height}pxですが、${data.minSize}px x ${data.minSize}px以上でなければなりません)。これがターゲットであるか確認しましょう",
+        "contentOverflow": "コンテンツがオーバーフローしたため、要素のサイズを正確に決定できませんでした",
+        "partiallyObscured": "tabindexが負の要素は、部分的に隠れているためサイズが不十分です (最小のスペースは${data.width}px x ${data.height}pxですが、${data.minSize}px x ${data.minSize}px以上でなければなりません)。これがターゲットであるか確認しましょう",
+        "partiallyObscuredNonTabbable": "ターゲットのサイズが不十分です。これはtabindexが負の隣接オブジェクトによって部分的に隠されているためです (最小のスペースは${data.width}px x ${data.height}pxですが、${data.minSize}px x ${data.minSize}px以上でなければなりません)。隣接要素がターゲットであるか確認しましょう",
+        "tooManyRects": "重複する要素が多すぎるため、ターゲットの大きさを取得できません。"
+      }
+    },
+    "header-present": {
+      "pass": "ページに見出しが存在します",
+      "fail": "ページに見出しが存在しません"
+    },
+    "heading-order": {
+      "pass": "見出しの順序が有効です",
+      "fail": "見出しの順序が無効です",
+      "incomplete": "1つ前の見出しを特定できません"
+    },
+    "identical-links-same-purpose": {
+      "pass": "同じ名前で異なるURLに遷移する他のリンクはありません",
+      "incomplete": "リンクが同じ目的を持っていること、または意図的に不明瞭になっていることを確認しましょう"
+    },
+    "internal-link-present": {
+      "pass": "有効なスキップリンクが存在します",
+      "fail": "有効なスキップリンクが存在しません"
+    },
+    "landmark": {
+      "pass": "ページにランドマーク領域が存在します",
+      "fail": "ページにランドマーク領域が存在しません"
+    },
+    "meta-refresh-no-exceptions": {
+      "pass": "<meta>タグはすぐにページを更新しません",
+      "fail": "<meta>タグは一定時間経過後に強制的にページを更新します"
+    },
+    "meta-refresh": {
+      "pass": "<meta>タグはすぐにページを更新しません",
+      "fail": "<meta>タグは一定時間経過後に強制的にページを更新します (20時間未満)"
+    },
+    "p-as-heading": {
+      "pass": "<p>要素が見出しとしてスタイル付けされていません",
+      "fail": "スタイル付けされた<p>要素ではなく、見出し要素を使用すべきです",
+      "incomplete": "<p> 要素に見出しのスタイル付けがされているかどうか判定できません"
+    },
+    "region": {
+      "pass": "ページのすべてのコンテンツがランドマークに含まれています",
+      "fail": "ページの一部のコンテンツがランドマークに含まれていません"
+    },
+    "skip-link": {
+      "pass": "スキップリンクのターゲットが存在します",
+      "incomplete": "スキップリンクのターゲットは活性化された時に表示されるべきです",
+      "fail": "スキップリンクのターゲットがありません"
+    },
+    "unique-frame-title": {
+      "pass": "要素のtitle属性が一意です",
+      "fail": "要素のtitle属性が一意ではありません"
+    },
+    "duplicate-id-active": {
+      "pass": "ドキュメントに同じid属性を持つ有効な要素はありません",
+      "fail": "ドキュメントに同じid属性を持つ有効な要素があります: ${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "ARIAまたはラベルが参照している要素で、同じid属性を持つものはありません",
+      "fail": "ARIAが参照している要素で、複数の要素で同じid属性を持つものがあります: ${data}"
+    },
+    "duplicate-id": {
+      "pass": "ドキュメントにid属性が同じ静的な要素はありません",
+      "fail": "ドキュメントにid属性が同じ静的な要素が複数存在します"
+    },
+    "aria-label": {
+      "pass": "aria-label属性が存在し、空ではありません",
+      "fail": "aria-label属性が存在しない、または空です"
+    },
+    "aria-labelledby": {
+      "pass": "aria-labelledby属性が存在し、スクリーン・リーダーに認識可能な要素を参照しています",
+      "fail": "aria-labelledby属性が存在しない、存在しない要素を参照している、または空の要素を参照しています",
+      "incomplete": "aria-labelledby属性が、存在する要素を参照していることを確認しましょう"
+    },
+    "avoid-inline-spacing": {
+      "pass": "テキストの間隔に影響する'!important'のついたインラインスタイルは指定されていません",
+      "fail": {
+        "singular": "ほとんどのブラウザーで上書きすることはサポートされていないため、インラインスタイル${data.values}から'!important'を削除します",
+        "plural": "ほとんどのブラウザーで上書きすることはサポートされていないため、インラインスタイル${data.values}から'!important'を削除します"
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "要素内にスクリーン・リーダーが認識可能なテキストが存在します",
+      "fail": "要素内にスクリーン・リーダーが認識可能なテキストが存在しません",
+      "incomplete": "要素に子ノードがあるか判定できません"
+    },
+    "doc-has-title": {
+      "pass": "ドキュメントに空ではない<title>要素が存在します",
+      "fail": "ドキュメントに空ではない<title>要素が存在しません"
+    },
+    "exists": {
+      "pass": "要素は存在しません",
+      "incomplete": "要素が存在します"
+    },
+    "has-alt": {
+      "pass": "要素にalt属性が指定されています",
+      "fail": "要素にalt属性が指定されていません"
+    },
+    "has-visible-text": {
+      "pass": "要素にスクリーン・リーダーが認識可能なテキストが存在します",
+      "fail": "要素にスクリーン・リーダーが認識可能なテキストが存在しません",
+      "incomplete": "要素に子ノードがあるか判定できません"
+    },
+    "important-letter-spacing": {
+      "pass": "style属性中のletter-spacingに'!important'が指定されていない、または最低条件を満たしています",
+      "fail": "style属性中のletter-spacingには'!important'を指定しない、または${data.minValue}em以上（現在は${data.value}em）にしてください"
+    },
+    "important-line-height": {
+      "pass": "style属性中のline-heightに'!important'が指定されていない、または最低条件を満たしています",
+      "fail": "style属性中のline-heightには'!important'を指定しない、または${data.minValue}em以上（現在は${data.value}em）にしてください"
+    },
+    "important-word-spacing": {
+      "pass": "style属性中のword-spacingに'!important'が指定されていない、または最低条件を満たしています",
+      "fail": "style属性中のword-spacingには'!important'を指定しない、または${data.minValue}em以上（現在は${data.value}em）にしてください"
+    },
+    "is-on-screen": {
+      "pass": "要素が表示されていません",
+      "fail": "要素が表示されています"
+    },
+    "non-empty-alt": {
+      "pass": "要素に空ではないalt属性が指定されています",
+      "fail": {
+        "noAttr": "要素にalt属性が指定されていません",
+        "emptyAttr": "要素に空のalt属性が指定されています"
+      }
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": "要素にvalue属性が指定されていません",
+        "has-label": "要素に空ではないvalue属性が指定されています"
+      },
+      "fail": "要素にvalue属性が指定されていますが、value属性が空です"
+    },
+    "non-empty-placeholder": {
+      "pass": "要素にplaceholder属性が指定されています",
+      "fail": {
+        "noAttr": "要素にplaceholder属性が指定されていません",
+        "emptyAttr": "要素に空のplaceholder属性が指定されています"
+      }
+    },
+    "non-empty-title": {
+      "pass": "要素にtitle属性が指定されています",
+      "fail": {
+        "noAttr": "要素にtitle属性が指定されていません",
+        "emptyAttr": "要素に空のtitle属性が指定されています"
+      }
+    },
+    "non-empty-value": {
+      "pass": "要素に空ではないvalue属性が指定されています",
+      "fail": {
+        "noAttr": "要素にvalue属性が指定されていません",
+        "emptyAttr": "要素に空のvalue属性が指定されています"
+      }
+    },
+    "presentational-role": {
+      "pass": "要素のデフォルトのセマンティクスはrole=\"${data.role}\"で上書きされました",
+      "fail": {
+        "default": "要素のデフォルトのセマンティクスはrole=\"none\"またはrole=\"presentation\"で上書きされませんでした",
+        "globalAria": "要素にはグローバルなARIA属性が指定されているため、role=\"none\"またはrole=\"presentation\"にはなりません",
+        "focusable": "要素がフォーカス可能なため、role=\"none\"またはrole=\"presentation\"にはなりません",
+        "both": "要素にはグローバナルARIA属性が指定されており、フォーカス可能なため、role=\"none\"またはrole=\"presentation\"にはなりません",
+        "iframe": "プレゼンテーション用のロールを指定した${data.nodeName}要素に'title'属性を使用すると、スクリーンリーダー間で動作が一貫しません"
+      }
+    },
+    "role-none": {
+      "pass": "要素のデフォルトのセマンティクスがrole=\"none\"で上書きされました",
+      "fail": "要素のデフォルトのセマンティクスはrole=\"none\"で上書きされませんでした"
+    },
+    "role-presentation": {
+      "pass": "要素のデフォルトのセマンティクスがrole=\"presentation\"で上書きされました",
+      "fail": "要素のデフォルトのセマンティクスはrole=\"presentation\"で上書きされませんでした"
+    },
+    "svg-non-empty-title": {
+      "pass": "要素にタイトルを示す子要素が存在します",
+      "fail": {
+        "noTitle": "要素にタイトルを示す子要素が存在しません",
+        "emptyTitle": "子要素のtitle要素が空です"
+      },
+      "incomplete": "要素にタイトルを示す子要素が存在するか判定できません"
+    },
+    "caption-faked": {
+      "pass": "テーブルの1行目がキャプションとして使用されていません",
+      "fail": "テーブルの最初の子はテーブルセルではなく、キャプションであるべきです"
+    },
+    "html5-scope": {
+      "pass": "scope属性がテーブルヘッダー要素（<th>）にのみ使用されています",
+      "fail": "HTML5では、scope属性はテーブルヘッダー要素（<th>）にのみ使用できます"
+    },
+    "same-caption-summary": {
+      "pass": "summary属性および<caption>のコンテンツは重複していません",
+      "fail": "summary属性および<caption>のコンテンツが同一です",
+      "incomplete": "<table>にキャプションがあるかどうかを確認できません"
+    },
+    "scope-value": {
+      "pass": "scope属性は正しく使用されています",
+      "fail": "scope属性の値は'row'または'col'のみです"
+    },
+    "td-has-header": {
+      "pass": "すべての空ではないデータセルにテーブルヘッダーが存在します",
+      "fail": "いくつかの空ではないデータセルにテーブルヘッダーが存在しません"
+    },
+    "td-headers-attr": {
+      "pass": "headers属性はテーブル内の他のセルを参照するためだけに使用されています",
+      "incomplete": "headers属性が空です",
+      "fail": "headers属性がテーブル内の他のセルを参照するためだけに使用されていません"
+    },
+    "th-has-data-cells": {
+      "pass": "すべてのテーブルヘッダーセルがデータセルを参照しています",
+      "fail": "一部のテーブルヘッダーセルがデータセルを参照していません",
+      "incomplete": "テーブルデータセルが存在しないまたは空です"
+    },
+    "hidden-content": {
+      "pass": "ページ内のすべてのコンテンツが分析されました",
+      "fail": "このページのコンテンツを分析中に問題が発生しました",
+      "incomplete": "ページ内に分析されなかった非表示のコンテンツが存在します。分析するには、そのコンテンツを表示させる必要があります"
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "次のいずれかを修正します:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "次のすべてを修正します:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "axeは原因を特定できませんでした。要素のインスペクターを使いましょう!"
+}

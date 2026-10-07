@@ -1,0 +1,7 @@
+{
+  "name": "package-browser-exclude",
+  "main": "main.js",
+  "browser": {
+    "./main.js": false
+  }
+}

@@ -1,0 +1,5 @@
+## Summary
+This module is designed to do fast and efficient native/C-level extraction of strings from MessagePack binary data. This works by calling `extractStrings(buffer, start, end)`, and it will extract strings by doing partial MessagePack parsing, and scanning to find the string data in the range specified in the buffer. It will return an array of strings that it finds. When it finds strings that can be represented with latin-1/one-byte strings (and important V8 optimization), it will attempt return a continuous string of MessagePack data that contains multiple sub-strings, so the decoder can slice off strings by offset. When a string contains non-latin characters, and must be represented as a two-byte string, this will always be returned as the string alone without combination with any other strings. The extractor will return an array of a maximum of 256 strings. The decoder can call the extractStrings again, with a new offset to continue extracting more strings as necessary.
+
+## License
+MIT

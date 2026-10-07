@@ -1,0 +1,25 @@
+{
+  "name": "@webassemblyjs/helper-numbers",
+  "version": "1.13.2",
+  "description": "Number parsing utility",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xtuc/webassemblyjs.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@webassemblyjs/floating-point-hex-parser": "1.13.2",
+    "@webassemblyjs/helper-api-error": "1.13.2",
+    "@xtuc/long": "4.2.2"
+  },
+  "author": "Sven Sauleau",
+  "license": "MIT",
+  "gitHead": "897aeb784f042a46a00626f1d1cca96159aa5db3"
+}

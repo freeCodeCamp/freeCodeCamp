@@ -1,0 +1,48 @@
+{
+  "name": "dom-helpers",
+  "version": "5.2.1",
+  "description": "tiny modular DOM lib for ie9+",
+  "author": {
+    "name": "Jason Quense",
+    "email": "monastic.panic@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-bootstrap/dom-helpers.git"
+  },
+  "license": "MIT",
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
+  "module": "esm/index.js",
+  "keywords": [
+    "dom-helpers",
+    "react-component",
+    "dom",
+    "api",
+    "cross-browser",
+    "style",
+    "event",
+    "height",
+    "width",
+    "dom-helpers",
+    "class",
+    "classlist",
+    "css"
+  ],
+  "publishConfig": {
+    "directory": "lib"
+  },
+  "release": {
+    "conventionalCommits": true
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.7",
+    "csstype": "^3.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/react-bootstrap/dom-helpers/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/react-bootstrap/dom-helpers#readme",
+  "_id": "dom-helpers@5.2.0"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "postcss-merge-rules",
+  "version": "5.1.4",
+  "description": "Merge CSS rules with PostCSS.",
+  "types": "types/index.d.ts",
+  "main": "src/index.js",
+  "files": [
+    "LICENSE-MIT",
+    "src",
+    "types"
+  ],
+  "keywords": [
+    "css",
+    "optimise",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cssnano/cssnano",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "cssnano/cssnano",
+  "dependencies": {
+    "browserslist": "^4.21.4",
+    "caniuse-api": "^3.0.0",
+    "postcss-selector-parser": "^6.0.5",
+    "cssnano-utils": "^3.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "@types/caniuse-api": "^3.0.2",
+    "postcss": "^8.2.15",
+    "postcss-discard-comments": "^5.1.2"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  }
+}

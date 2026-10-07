@@ -1,0 +1,654 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "EXPERIMENTAL_Autocomplete", {
+    enumerable: true,
+    get: function() {
+        return EXPERIMENTAL_Autocomplete;
+    }
+});
+var _interop_require_wildcard = require("@swc/helpers/_/_interop_require_wildcard");
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_spread_props = require("@swc/helpers/_/_object_spread_props");
+var _object_without_properties = require("@swc/helpers/_/_object_without_properties");
+var _sliced_to_array = require("@swc/helpers/_/_sliced_to_array");
+var _to_consumable_array = require("@swc/helpers/_/_to_consumable_array");
+var _type_of = require("@swc/helpers/_/_type_of");
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+require("instantsearch.js/cjs/lib/utils");
+var _react = /*#__PURE__*/ _interop_require_wildcard._(require("react"));
+var _reactinstantsearchcore = require("react-instantsearch-core");
+var _AutocompleteSearch = require("../components/AutocompleteSearch");
+var _Highlight = require("./Highlight");
+var _ReverseHighlight = require("./ReverseHighlight");
+var Autocomplete = (0, _instantsearchuicomponents.createAutocompleteComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompletePanel = (0, _instantsearchuicomponents.createAutocompletePanelComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompleteIndex = (0, _instantsearchuicomponents.createAutocompleteIndexComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompleteSuggestion = (0, _instantsearchuicomponents.createAutocompleteSuggestionComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompletePromptSuggestion = (0, _instantsearchuicomponents.createAutocompletePromptSuggestionComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompleteRecentSearch = (0, _instantsearchuicomponents.createAutocompleteRecentSearchComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompleteDetachedContainer = (0, _instantsearchuicomponents.createAutocompleteDetachedContainerComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompleteDetachedOverlay = (0, _instantsearchuicomponents.createAutocompleteDetachedOverlayComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompleteDetachedFormContainer = (0, _instantsearchuicomponents.createAutocompleteDetachedFormContainerComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var AutocompleteDetachedSearchButton = (0, _instantsearchuicomponents.createAutocompleteDetachedSearchButtonComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+var id = 0;
+var usePropGetters = (0, _instantsearchuicomponents.createAutocompletePropGetters)({
+    useEffect: _react.useEffect,
+    useId: _react.default.useId || function() {
+        return _react.default.useState(function() {
+            return (id++).toString();
+        });
+    },
+    useMemo: _react.useMemo,
+    useRef: _react.useRef,
+    useState: _react.useState
+});
+var useStorage = (0, _instantsearchuicomponents.createAutocompleteStorage)({
+    useEffect: _react.useEffect,
+    useMemo: _react.useMemo,
+    useState: _react.useState
+});
+var DEFAULT_DETACHED_MEDIA_QUERY = '(max-width: 680px)';
+var DEFAULT_DETACHED_MODAL_MEDIA_QUERY = '(min-width: 680px)';
+var DETACHED_MEDIA_QUERY_CSS_VAR = '--ais-autocomplete-detached-media-query';
+var DETACHED_MODAL_MEDIA_QUERY_CSS_VAR = '--ais-autocomplete-detached-modal-media-query';
+var DEFAULT_TRANSLATIONS = {
+    detachedCancelButtonText: 'Cancel',
+    detachedSearchButtonTitle: 'Search',
+    detachedClearButtonTitle: 'Clear'
+};
+function getCssMediaQueryValue(name) {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+        return '';
+    }
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+function resolveMediaQuery(value, cssVarName, fallback) {
+    if (value === '') {
+        return '';
+    }
+    if (value) {
+        return value;
+    }
+    return getCssMediaQueryValue(cssVarName) || fallback;
+}
+function getMediaQueryList(mediaQuery) {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+        return null;
+    }
+    return window.matchMedia(mediaQuery);
+}
+/**
+ * Hook to manage detached (mobile) mode state
+ */ function useDetachedMode(mediaQuery) {
+    var resolvedMediaQuery = (0, _react.useMemo)(function() {
+        return resolveMediaQuery(mediaQuery, DETACHED_MEDIA_QUERY_CSS_VAR, DEFAULT_DETACHED_MEDIA_QUERY);
+    }, [
+        mediaQuery
+    ]);
+    var _useState = _sliced_to_array._((0, _react.useState)(function() {
+        var _getMediaQueryList;
+        return resolvedMediaQuery ? Boolean((_getMediaQueryList = getMediaQueryList(resolvedMediaQuery)) === null || _getMediaQueryList === void 0 ? void 0 : _getMediaQueryList.matches) : false;
+    }), 2), isDetached = _useState[0], setIsDetached = _useState[1];
+    var _useState1 = _sliced_to_array._((0, _react.useState)(false), 2), isModalOpen = _useState1[0], setIsModalOpen = _useState1[1];
+    var _useState2 = _sliced_to_array._((0, _react.useState)(false), 2), isModalDetached = _useState2[0], setIsModalDetached = _useState2[1];
+    (0, _react.useEffect)(function() {
+        if (!resolvedMediaQuery) {
+            setIsDetached(false);
+            return function() {};
+        }
+        var mql = getMediaQueryList(resolvedMediaQuery);
+        if (!mql) {
+            setIsDetached(false);
+            return function() {};
+        }
+        var handler = function handler(event) {
+            var wasDetached = isDetached;
+            setIsDetached(event.matches);
+            // Close modal if switching from detached to non-detached
+            if (wasDetached && !event.matches) {
+                setIsModalOpen(false);
+            }
+        };
+        mql.addEventListener('change', handler);
+        return function() {
+            return mql.removeEventListener('change', handler);
+        };
+    }, [
+        resolvedMediaQuery,
+        isDetached
+    ]);
+    (0, _react.useEffect)(function() {
+        if (!isDetached) {
+            setIsModalDetached(false);
+            return function() {};
+        }
+        var modalMediaQuery = resolveMediaQuery(undefined, DETACHED_MODAL_MEDIA_QUERY_CSS_VAR, DEFAULT_DETACHED_MODAL_MEDIA_QUERY);
+        if (!modalMediaQuery) {
+            setIsModalDetached(false);
+            return function() {};
+        }
+        var mql = getMediaQueryList(modalMediaQuery);
+        if (!mql) {
+            setIsModalDetached(false);
+            return function() {};
+        }
+        var handler = function handler(event) {
+            setIsModalDetached(event.matches);
+        };
+        setIsModalDetached(mql.matches);
+        mql.addEventListener('change', handler);
+        return function() {
+            return mql.removeEventListener('change', handler);
+        };
+    }, [
+        isDetached
+    ]);
+    (0, _react.useEffect)(function() {
+        if (typeof document === 'undefined') return function() {};
+        if (isModalOpen) {
+            var scrollY = window.scrollY;
+            document.body.style.top = "-".concat(scrollY, "px");
+            document.body.classList.add('ais-Autocomplete--detached');
+            return function() {
+                document.body.classList.remove('ais-Autocomplete--detached');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollY);
+            };
+        }
+        return function() {};
+    }, [
+        isModalOpen
+    ]);
+    return {
+        isDetached: isDetached,
+        isModalDetached: isModalDetached,
+        isModalOpen: isModalOpen,
+        setIsModalOpen: setIsModalOpen
+    };
+}
+function EXPERIMENTAL_Autocomplete(_0) {
+    var _0_indices = _0.indices, indices = _0_indices === void 0 ? [] : _0_indices, showQuerySuggestions = _0.showQuerySuggestions, showPromptSuggestions = _0.showPromptSuggestions, showRecent = _0.showRecent, userSearchParameters = _0.searchParameters, detachedMediaQuery = _0.detachedMediaQuery, tmp = _0.translations, userTranslations = tmp === void 0 ? {} : tmp, props = _object_without_properties._(_0, [
+        "indices",
+        "showQuerySuggestions",
+        "showPromptSuggestions",
+        "showRecent",
+        "searchParameters",
+        "detachedMediaQuery",
+        "translations"
+    ]);
+    var _showRecent_classNames, _showRecent_classNames1, _showRecent_classNames2, _showRecent_classNames3;
+    var translations = _object_spread._({}, DEFAULT_TRANSLATIONS, userTranslations);
+    var _useInstantSearch = (0, _reactinstantsearchcore.useInstantSearch)(), indexUiState = _useInstantSearch.indexUiState, indexRenderState = _useInstantSearch.indexRenderState, status = _useInstantSearch.status;
+    var refine = (0, _reactinstantsearchcore.useSearchBox)({}, {
+        $$type: 'ais.autocomplete',
+        $$widgetType: 'ais.autocomplete'
+    }).refine;
+    var isSearchStalled = status === 'stalled';
+    var searchParameters = _object_spread._({
+        hitsPerPage: 5
+    }, userSearchParameters);
+    var indicesConfig = _to_consumable_array._(indices);
+    if (showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName) {
+        var _showQuerySuggestions_classNames, _showQuerySuggestions_classNames1, _showQuerySuggestions_classNames2, _showQuerySuggestions_classNames3;
+        indicesConfig.unshift({
+            indexName: showQuerySuggestions.indexName,
+            headerComponent: showQuerySuggestions.headerComponent,
+            itemComponent: showQuerySuggestions.itemComponent || function(param) {
+                var item = param.item, onSelect = param.onSelect, onApply = param.onApply;
+                return /*#__PURE__*/ _react.default.createElement(AutocompleteSuggestion, {
+                    item: item,
+                    onSelect: onSelect,
+                    onApply: onApply
+                }, /*#__PURE__*/ _react.default.createElement(ConditionalReverseHighlight, {
+                    item: item
+                }));
+            },
+            classNames: {
+                root: (0, _instantsearchuicomponents.cx)('ais-AutocompleteSuggestions', showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : (_showQuerySuggestions_classNames = showQuerySuggestions.classNames) === null || _showQuerySuggestions_classNames === void 0 ? void 0 : _showQuerySuggestions_classNames.root),
+                list: (0, _instantsearchuicomponents.cx)('ais-AutocompleteSuggestionsList', showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : (_showQuerySuggestions_classNames1 = showQuerySuggestions.classNames) === null || _showQuerySuggestions_classNames1 === void 0 ? void 0 : _showQuerySuggestions_classNames1.list),
+                header: (0, _instantsearchuicomponents.cx)('ais-AutocompleteSuggestionsHeader', showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : (_showQuerySuggestions_classNames2 = showQuerySuggestions.classNames) === null || _showQuerySuggestions_classNames2 === void 0 ? void 0 : _showQuerySuggestions_classNames2.header),
+                item: (0, _instantsearchuicomponents.cx)('ais-AutocompleteSuggestionsItem', showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : (_showQuerySuggestions_classNames3 = showQuerySuggestions.classNames) === null || _showQuerySuggestions_classNames3 === void 0 ? void 0 : _showQuerySuggestions_classNames3.item)
+            },
+            searchParameters: _object_spread._({
+                hitsPerPage: 3
+            }, showQuerySuggestions.searchParameters),
+            getQuery: function getQuery(item) {
+                return item.query;
+            },
+            getURL: showQuerySuggestions.getURL
+        });
+    }
+    if (showPromptSuggestions === null || showPromptSuggestions === void 0 ? void 0 : showPromptSuggestions.indexName) {
+        var _showPromptSuggestions_classNames, _showPromptSuggestions_classNames1, _showPromptSuggestions_classNames2, _showPromptSuggestions_classNames3;
+        indicesConfig.push({
+            indexName: showPromptSuggestions.indexName,
+            headerComponent: showPromptSuggestions.headerComponent,
+            itemComponent: showPromptSuggestions.itemComponent || function(param) {
+                var item = param.item, onSelect = param.onSelect;
+                return /*#__PURE__*/ _react.default.createElement(AutocompletePromptSuggestion, {
+                    item: item,
+                    onSelect: onSelect
+                }, /*#__PURE__*/ _react.default.createElement(ConditionalHighlight, {
+                    item: item,
+                    attribute: "prompt"
+                }));
+            },
+            classNames: {
+                root: (0, _instantsearchuicomponents.cx)('ais-AutocompletePromptSuggestions', (_showPromptSuggestions_classNames = showPromptSuggestions.classNames) === null || _showPromptSuggestions_classNames === void 0 ? void 0 : _showPromptSuggestions_classNames.root),
+                list: (0, _instantsearchuicomponents.cx)('ais-AutocompletePromptSuggestionsList', (_showPromptSuggestions_classNames1 = showPromptSuggestions.classNames) === null || _showPromptSuggestions_classNames1 === void 0 ? void 0 : _showPromptSuggestions_classNames1.list),
+                header: (0, _instantsearchuicomponents.cx)('ais-AutocompletePromptSuggestionsHeader', (_showPromptSuggestions_classNames2 = showPromptSuggestions.classNames) === null || _showPromptSuggestions_classNames2 === void 0 ? void 0 : _showPromptSuggestions_classNames2.header),
+                item: (0, _instantsearchuicomponents.cx)('ais-AutocompletePromptSuggestionsItem', (_showPromptSuggestions_classNames3 = showPromptSuggestions.classNames) === null || _showPromptSuggestions_classNames3 === void 0 ? void 0 : _showPromptSuggestions_classNames3.item)
+            },
+            searchParameters: _object_spread._({
+                hitsPerPage: 3
+            }, showPromptSuggestions.searchParameters),
+            getQuery: function getQuery(item) {
+                return item.prompt;
+            },
+            getURL: showPromptSuggestions.getURL
+        });
+    }
+    var recentSearchConfig = showRecent ? {
+        headerComponent: (typeof showRecent === "undefined" ? "undefined" : _type_of._(showRecent)) === 'object' ? showRecent.headerComponent : undefined,
+        itemComponent: (typeof showRecent === "undefined" ? "undefined" : _type_of._(showRecent)) === 'object' && showRecent.itemComponent ? showRecent.itemComponent : AutocompleteRecentSearch,
+        classNames: {
+            root: (0, _instantsearchuicomponents.cx)('ais-AutocompleteRecentSearches', (typeof showRecent === "undefined" ? "undefined" : _type_of._(showRecent)) === 'object' ? (_showRecent_classNames = showRecent.classNames) === null || _showRecent_classNames === void 0 ? void 0 : _showRecent_classNames.root : undefined),
+            list: (0, _instantsearchuicomponents.cx)('ais-AutocompleteRecentSearchesList', (typeof showRecent === "undefined" ? "undefined" : _type_of._(showRecent)) === 'object' ? (_showRecent_classNames1 = showRecent.classNames) === null || _showRecent_classNames1 === void 0 ? void 0 : _showRecent_classNames1.list : undefined),
+            header: (0, _instantsearchuicomponents.cx)('ais-AutocompleteRecentSearchesHeader', (typeof showRecent === "undefined" ? "undefined" : _type_of._(showRecent)) === 'object' ? (_showRecent_classNames2 = showRecent.classNames) === null || _showRecent_classNames2 === void 0 ? void 0 : _showRecent_classNames2.header : undefined),
+            item: (0, _instantsearchuicomponents.cx)('ais-AutocompleteRecentSearchesItem', (typeof showRecent === "undefined" ? "undefined" : _type_of._(showRecent)) === 'object' ? (_showRecent_classNames3 = showRecent.classNames) === null || _showRecent_classNames3 === void 0 ? void 0 : _showRecent_classNames3.item : undefined)
+        }
+    } : undefined;
+    var isSearchPage = (0, _react.useMemo)(function() {
+        return typeof indexRenderState.hits !== 'undefined' || typeof indexRenderState.infiniteHits !== 'undefined';
+    }, [
+        indexRenderState
+    ]);
+    return /*#__PURE__*/ _react.default.createElement(_react.Fragment, null, /*#__PURE__*/ _react.default.createElement(_reactinstantsearchcore.Index, {
+        EXPERIMENTAL_isolated: true
+    }, /*#__PURE__*/ _react.default.createElement(_reactinstantsearchcore.Configure, searchParameters), indicesConfig.map(function(index) {
+        return /*#__PURE__*/ _react.default.createElement(_reactinstantsearchcore.Index, {
+            key: index.indexName,
+            indexName: index.indexName
+        }, /*#__PURE__*/ _react.default.createElement(_reactinstantsearchcore.Configure, index.searchParameters));
+    }), /*#__PURE__*/ _react.default.createElement(InnerAutocomplete, _object_spread_props._(_object_spread._({}, props), {
+        indicesConfig: indicesConfig,
+        refineSearchBox: refine,
+        isSearchStalled: isSearchStalled,
+        indexUiState: indexUiState,
+        isSearchPage: isSearchPage,
+        showRecent: showRecent,
+        recentSearchConfig: recentSearchConfig,
+        showQuerySuggestions: showQuerySuggestions,
+        detachedMediaQuery: detachedMediaQuery,
+        translations: translations,
+        showPromptSuggestions: showPromptSuggestions,
+        chatRenderState: indexRenderState.chat
+    }))));
+}
+function InnerAutocomplete(_0) {
+    var indicesConfig = _0.indicesConfig, refineSearchBox = _0.refineSearchBox, isSearchStalled = _0.isSearchStalled, getSearchPageURL = _0.getSearchPageURL, userOnSelect = _0.onSelect, indexUiState = _0.indexUiState, isSearchPage = _0.isSearchPage, PanelComponent = _0.panelComponent, showRecent = _0.showRecent, recentSearchConfig = _0.recentSearchConfig, showQuerySuggestions = _0.showQuerySuggestions, showPromptSuggestions = _0.showPromptSuggestions, chatRenderState = _0.chatRenderState, transformItems = _0.transformItems, placeholder = _0.placeholder, autoFocus = _0.autoFocus, _0_detachedMediaQuery = _0.detachedMediaQuery, detachedMediaQuery = _0_detachedMediaQuery === void 0 ? DEFAULT_DETACHED_MEDIA_QUERY : _0_detachedMediaQuery, translations = _0.translations, classNames = _0.classNames, aiMode = _0.aiMode, props = _object_without_properties._(_0, [
+        "indicesConfig",
+        "refineSearchBox",
+        "isSearchStalled",
+        "getSearchPageURL",
+        "onSelect",
+        "indexUiState",
+        "isSearchPage",
+        "panelComponent",
+        "showRecent",
+        "recentSearchConfig",
+        "showQuerySuggestions",
+        "showPromptSuggestions",
+        "chatRenderState",
+        "transformItems",
+        "placeholder",
+        "autoFocus",
+        "detachedMediaQuery",
+        "translations",
+        "classNames",
+        "aiMode"
+    ]);
+    var _indexUiState_query, _ref;
+    var _showPromptSuggestions_searchParameters;
+    var _useAutocomplete = (0, _reactinstantsearchcore.useAutocomplete)({
+        transformItems: transformItems,
+        future: {
+            undefinedEmptyQuery: true
+        }
+    }), indices = _useAutocomplete.indices, refineAutocomplete = _useAutocomplete.refine, currentRefinement = _useAutocomplete.currentRefinement;
+    var resolvedQuery = currentRefinement !== undefined ? currentRefinement : (_indexUiState_query = indexUiState.query) !== null && _indexUiState_query !== void 0 ? _indexUiState_query : '';
+    var _useDetachedMode = useDetachedMode(detachedMediaQuery), isDetached = _useDetachedMode.isDetached, isModalDetached = _useDetachedMode.isModalDetached, isModalOpen = _useDetachedMode.isModalOpen, setIsModalOpen = _useDetachedMode.setIsModalOpen;
+    var previousIsDetachedRef = (0, _react.useRef)(isDetached);
+    var _useStorage = useStorage({
+        showRecent: showRecent,
+        query: currentRefinement,
+        indices: indices,
+        indicesConfig: indicesConfig,
+        suggestionsIndexName: showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName
+    }), storage = _useStorage.storage, storageHits = _useStorage.storageHits, indicesForPropGetters = _useStorage.indicesForPropGetters, indicesConfigForPropGetters = _useStorage.indicesConfigForPropGetters;
+    var promptSuggestionsIndexName = showPromptSuggestions === null || showPromptSuggestions === void 0 ? void 0 : showPromptSuggestions.indexName;
+    var promptSuggestionsLimit = (_ref = showPromptSuggestions === null || showPromptSuggestions === void 0 ? void 0 : (_showPromptSuggestions_searchParameters = showPromptSuggestions.searchParameters) === null || _showPromptSuggestions_searchParameters === void 0 ? void 0 : _showPromptSuggestions_searchParameters.hitsPerPage) !== null && _ref !== void 0 ? _ref : 3;
+    var indicesForPanel = (0, _react.useMemo)(function() {
+        return indices.map(function(index) {
+            var dedupedHits = index.indexName === (showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName) && showRecent ? index.hits.filter(function(suggestionHit) {
+                return !storageHits.find(function(storageHit) {
+                    return storageHit.query === suggestionHit.query;
+                });
+            }) : index.hits;
+            if (index.indexName !== promptSuggestionsIndexName) {
+                return _object_spread_props._(_object_spread._({}, index), {
+                    hits: dedupedHits
+                });
+            }
+            return _object_spread_props._(_object_spread._({}, index), {
+                hits: (0, _instantsearchuicomponents.getPromptSuggestionHits)({
+                    hits: dedupedHits,
+                    limit: promptSuggestionsLimit
+                })
+            });
+        });
+    }, [
+        indices,
+        promptSuggestionsIndexName,
+        promptSuggestionsLimit,
+        showRecent,
+        showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName,
+        storageHits
+    ]);
+    var indicesForPropGettersWithPromptSuggestions = (0, _react.useMemo)(function() {
+        return indicesForPropGetters.map(function(index) {
+            if (index.indexName !== promptSuggestionsIndexName) {
+                return index;
+            }
+            return _object_spread_props._(_object_spread._({}, index), {
+                hits: (0, _instantsearchuicomponents.getPromptSuggestionHits)({
+                    hits: index.hits,
+                    limit: promptSuggestionsLimit
+                })
+            });
+        });
+    }, [
+        indicesForPropGetters,
+        promptSuggestionsIndexName,
+        promptSuggestionsLimit
+    ]);
+    (0, _react.useRef)(false);
+    var allIndicesEmpty = indicesForPanel.every(function(param) {
+        var hits = param.hits;
+        return hits.length === 0;
+    });
+    var recentEmpty = !storageHits || storageHits.length === 0;
+    var hasNoResultsTemplate = indicesConfig.some(function(c) {
+        return c.noResultsComponent !== undefined;
+    });
+    var shouldHideEmptyPanel = allIndicesEmpty && recentEmpty && !hasNoResultsTemplate && !PanelComponent;
+    var _usePropGetters = usePropGetters({
+        indices: indicesForPropGettersWithPromptSuggestions,
+        indicesConfig: indicesConfigForPropGetters,
+        onRefine: function onRefine(query) {
+            refineAutocomplete(query);
+            refineSearchBox(query);
+            storage.onAdd(query);
+        },
+        onApply: function onApply(query) {
+            refineAutocomplete(query);
+        },
+        onSelect: userOnSelect !== null && userOnSelect !== void 0 ? userOnSelect : function(param) {
+            var item = param.item, query = param.query, setQuery = param.setQuery, url = param.url;
+            if ((0, _instantsearchuicomponents.isPromptSuggestion)(item)) {
+                var chatRenderStateWithFocus = chatRenderState;
+                if (chatRenderStateWithFocus) {
+                    var _chatRenderStateWithFocus_setOpen, _chatRenderStateWithFocus_focusInput, _chatRenderStateWithFocus_sendMessage;
+                    (_chatRenderStateWithFocus_setOpen = chatRenderStateWithFocus.setOpen) === null || _chatRenderStateWithFocus_setOpen === void 0 ? void 0 : _chatRenderStateWithFocus_setOpen.call(chatRenderStateWithFocus, true);
+                    (_chatRenderStateWithFocus_focusInput = chatRenderStateWithFocus.focusInput) === null || _chatRenderStateWithFocus_focusInput === void 0 ? void 0 : _chatRenderStateWithFocus_focusInput.call(chatRenderStateWithFocus);
+                    (_chatRenderStateWithFocus_sendMessage = chatRenderStateWithFocus.sendMessage) === null || _chatRenderStateWithFocus_sendMessage === void 0 ? void 0 : _chatRenderStateWithFocus_sendMessage.call(chatRenderStateWithFocus, {
+                        text: item.prompt
+                    });
+                    return;
+                }
+            }
+            if (url) {
+                window.location.href = url;
+                return;
+            }
+            if (!isSearchPage && typeof getSearchPageURL !== 'undefined') {
+                window.location.href = getSearchPageURL(_object_spread_props._(_object_spread._({}, indexUiState), {
+                    query: query
+                }));
+                return;
+            }
+            setQuery(query);
+        },
+        onSubmit: function onSubmit() {
+            // Close the detached modal when form is submitted
+            if (isDetached) {
+                setIsModalOpen(false);
+            }
+        },
+        placeholder: placeholder,
+        isDetached: isDetached,
+        shouldHidePanel: shouldHideEmptyPanel,
+        autoFocus: autoFocus
+    }), getInputProps = _usePropGetters.getInputProps, getItemProps = _usePropGetters.getItemProps, getPanelProps = _usePropGetters.getPanelProps, getRootProps = _usePropGetters.getRootProps, isOpen = _usePropGetters.isOpen, setIsOpen = _usePropGetters.setIsOpen, focusInput = _usePropGetters.focusInput;
+    // Open panel and focus input when modal opens
+    (0, _react.useEffect)(function() {
+        if (isDetached && isModalOpen) {
+            setIsOpen(true);
+            // Focus input to show the keyboard on mobile
+            focusInput();
+        }
+    }, [
+        isDetached,
+        isModalOpen,
+        setIsOpen,
+        focusInput
+    ]);
+    // Keep the modal open if the panel was open before switching to detached
+    (0, _react.useEffect)(function() {
+        var wasDetached = previousIsDetachedRef.current;
+        var switchedToDetached = !wasDetached && isDetached;
+        if (switchedToDetached && isOpen) {
+            setIsModalOpen(true);
+        }
+        previousIsDetachedRef.current = isDetached;
+    }, [
+        isDetached,
+        isOpen,
+        setIsModalOpen
+    ]);
+    var elements = {};
+    if (showRecent && recentSearchConfig) {
+        var RecentSearchItemComponent = recentSearchConfig.itemComponent;
+        elements.recent = /*#__PURE__*/ _react.default.createElement(AutocompleteIndex, {
+            HeaderComponent: recentSearchConfig.headerComponent,
+            // @ts-ignore - there seems to be problems with React.ComponentType and this, but it's actually correct
+            ItemComponent: function ItemComponent(param) {
+                var item = param.item, onSelect = param.onSelect, onApply = param.onApply;
+                return /*#__PURE__*/ _react.default.createElement(RecentSearchItemComponent, {
+                    item: item,
+                    onSelect: onSelect,
+                    onRemoveRecentSearch: function onRemoveRecentSearch() {
+                        return storage.onRemove(item.query);
+                    },
+                    onApply: onApply
+                }, /*#__PURE__*/ _react.default.createElement(ConditionalReverseHighlight, {
+                    item: item
+                }));
+            },
+            classNames: recentSearchConfig.classNames,
+            items: storageHits,
+            getItemProps: getItemProps,
+            key: "recentSearches"
+        });
+    }
+    indicesForPanel.forEach(function(param) {
+        var indexId = param.indexId, indexName = param.indexName, hits = param.hits, sendEvent = param.sendEvent;
+        var elementId = indexName;
+        if (indexName === (showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName)) {
+            elementId = 'suggestions';
+        } else if (indexName === (showPromptSuggestions === null || showPromptSuggestions === void 0 ? void 0 : showPromptSuggestions.indexName)) {
+            elementId = 'promptSuggestions';
+        }
+        var currentIndexConfig = indicesConfig.find(function(config) {
+            return config.indexName === indexName;
+        });
+        if (!currentIndexConfig) {
+            return;
+        }
+        elements[elementId] = /*#__PURE__*/ _react.default.createElement(AutocompleteIndex, {
+            key: indexId,
+            // @ts-expect-error - there seems to be problems with React.ComponentType and this, but it's actually correct
+            HeaderComponent: currentIndexConfig.headerComponent,
+            // @ts-expect-error - there seems to be problems with React.ComponentType and this, but it's actually correct
+            ItemComponent: currentIndexConfig.itemComponent,
+            NoResultsComponent: currentIndexConfig.noResultsComponent,
+            items: hits.map(function(item) {
+                return _object_spread_props._(_object_spread._({}, item), {
+                    __indexName: indexId
+                });
+            }),
+            getItemProps: getItemProps,
+            sendEvent: sendEvent,
+            classNames: currentIndexConfig.classNames
+        });
+    });
+    var handleCancel = function handleCancel() {
+        setIsModalOpen(false);
+        setIsOpen(false);
+    };
+    var searchBoxContent = /*#__PURE__*/ _react.default.createElement(_AutocompleteSearch.AutocompleteSearch, {
+        inputProps: getInputProps(),
+        clearQuery: function clearQuery() {
+            refineSearchBox('');
+            refineAutocomplete('');
+        },
+        onQueryChange: function onQueryChange(query) {
+            refineAutocomplete(query);
+        },
+        query: resolvedQuery,
+        isSearchStalled: isSearchStalled,
+        onCancel: function onCancel() {
+            if (isDetached) {
+                handleCancel();
+            }
+        },
+        isDetached: isDetached,
+        submitTitle: isDetached ? translations.detachedCancelButtonText : undefined,
+        onAiModeClick: aiMode ? function() {
+            setIsOpen(false);
+            if (isDetached) {
+                setIsModalOpen(false);
+            }
+            if (chatRenderState) {
+                var _chatRenderState_setOpen;
+                (_chatRenderState_setOpen = chatRenderState.setOpen) === null || _chatRenderState_setOpen === void 0 ? void 0 : _chatRenderState_setOpen.call(chatRenderState, true);
+                if (resolvedQuery.trim()) {
+                    var _chatRenderState_sendMessage;
+                    (_chatRenderState_sendMessage = chatRenderState.sendMessage) === null || _chatRenderState_sendMessage === void 0 ? void 0 : _chatRenderState_sendMessage.call(chatRenderState, {
+                        text: resolvedQuery
+                    });
+                }
+            }
+        } : undefined
+    });
+    var panelContent = /*#__PURE__*/ _react.default.createElement(AutocompletePanel, getPanelProps(), PanelComponent ? /*#__PURE__*/ _react.default.createElement(PanelComponent, {
+        elements: elements,
+        indices: indicesForPanel
+    }) : Object.keys(elements).map(function(elementId) {
+        return elements[elementId];
+    }));
+    var detachedContainerClassNames = isModalDetached ? _object_spread_props._(_object_spread._({}, classNames), {
+        detachedContainer: (0, _instantsearchuicomponents.cx)('ais-AutocompleteDetachedContainer--modal', classNames === null || classNames === void 0 ? void 0 : classNames.detachedContainer)
+    }) : classNames;
+    var _getRootProps = getRootProps(), rootRef = _getRootProps.ref, rootProps = _object_without_properties._(_getRootProps, [
+        "ref"
+    ]);
+    if (isDetached) {
+        return /*#__PURE__*/ _react.default.createElement(Autocomplete, _object_spread_props._(_object_spread._({}, props, rootProps), {
+            rootRef: rootRef,
+            classNames: classNames
+        }), /*#__PURE__*/ _react.default.createElement(AutocompleteDetachedSearchButton, {
+            query: resolvedQuery,
+            placeholder: placeholder,
+            classNames: classNames,
+            onClick: function onClick() {
+                setIsModalOpen(true);
+                setIsOpen(true);
+            },
+            onClear: function onClear() {
+                refineSearchBox('');
+                refineAutocomplete('');
+            },
+            translations: translations
+        }), isModalOpen && /*#__PURE__*/ _react.default.createElement(AutocompleteDetachedOverlay, {
+            classNames: classNames,
+            onClose: handleCancel
+        }, /*#__PURE__*/ _react.default.createElement(AutocompleteDetachedContainer, {
+            classNames: detachedContainerClassNames
+        }, /*#__PURE__*/ _react.default.createElement(AutocompleteDetachedFormContainer, {
+            classNames: classNames
+        }, searchBoxContent), panelContent)));
+    }
+    // Normal (non-detached) rendering
+    return /*#__PURE__*/ _react.default.createElement(Autocomplete, _object_spread_props._(_object_spread._({}, props, rootProps), {
+        rootRef: rootRef,
+        classNames: classNames
+    }), searchBoxContent, panelContent);
+}
+function ConditionalReverseHighlight(param) {
+    var item = param.item;
+    var _item__highlightResult;
+    if (!((_item__highlightResult = item._highlightResult) === null || _item__highlightResult === void 0 ? void 0 : _item__highlightResult.query) || // @ts-expect-error - we should not have matchLevel as arrays here
+    item._highlightResult.query.matchLevel === 'none') {
+        return item.query;
+    }
+    return /*#__PURE__*/ _react.default.createElement(_ReverseHighlight.ReverseHighlight, {
+        attribute: "query",
+        hit: item
+    });
+}
+function ConditionalHighlight(param) {
+    var item = param.item, _param_attribute = param.attribute, attribute = _param_attribute === void 0 ? 'query' : _param_attribute;
+    var _item__highlightResult;
+    if (!((_item__highlightResult = item._highlightResult) === null || _item__highlightResult === void 0 ? void 0 : _item__highlightResult[attribute]) || // @ts-expect-error - we should not have matchLevel as arrays here
+    item._highlightResult[attribute].matchLevel === 'none') {
+        return /*#__PURE__*/ _react.default.createElement(_react.default.Fragment, null, item[attribute]);
+    }
+    return /*#__PURE__*/ _react.default.createElement(_Highlight.Highlight, {
+        attribute: attribute,
+        hit: item
+    });
+}

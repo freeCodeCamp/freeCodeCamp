@@ -1,0 +1,62 @@
+{
+  "name": "eventemitter3",
+  "version": "5.0.4",
+  "description": "EventEmitter3 focuses on performance while maintaining a Node.js AND browser compatible interface.",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "rollup": "rm -rf dist && rollup -c",
+    "benchmark": "find benchmarks/run -name '*.js' -exec benchmarks/start.sh {} \\;",
+    "test": "c8 --reporter=lcov --reporter=text mocha test/test.js",
+    "test-esm": "mocha test/test.mjs",
+    "prepublishOnly": "npm run rollup"
+  },
+  "files": [
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/primus/eventemitter3.git"
+  },
+  "keywords": [
+    "EventEmitter",
+    "EventEmitter2",
+    "EventEmitter3",
+    "Events",
+    "addEventListener",
+    "addListener",
+    "emit",
+    "emits",
+    "emitter",
+    "event",
+    "once",
+    "pub/sub",
+    "publish",
+    "reactor",
+    "subscribe"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/primus/eventemitter3/issues"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "assume": "^2.2.0",
+    "c8": "^10.1.3",
+    "mocha": "^11.7.5",
+    "rollup": "^4.5.2"
+  }
+}

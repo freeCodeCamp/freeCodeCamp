@@ -1,0 +1,31 @@
+{
+    "name": "@types/google.maps",
+    "version": "3.58.1",
+    "description": "TypeScript definitions for google.maps",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/google.maps",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Ken Nevarez",
+            "githubUsername": "kwnevarez",
+            "url": "https://github.com/kwnevarez"
+        },
+        {
+            "name": "Angela Yu",
+            "githubUsername": "wangela",
+            "url": "https://github.com/wangela"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/google.maps"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "07fe5bd40f4a074f49935b5cda62bfec6c29426eee8c8ad6a0a42446e8b6e975",
+    "typeScriptVersion": "4.8",
+    "nonNpm": true
+}

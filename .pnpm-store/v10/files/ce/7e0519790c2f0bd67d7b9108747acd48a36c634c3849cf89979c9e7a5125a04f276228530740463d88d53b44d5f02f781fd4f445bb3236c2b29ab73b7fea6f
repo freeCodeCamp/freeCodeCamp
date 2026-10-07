@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+     - main
+     - master
+     - next
+     - 'v*'
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+
+jobs:
+  test:
+    uses: fastify/workflows/.github/workflows/plugins-ci.yml@v5
+    with:
+      license-check: true
+      lint: true

@@ -1,0 +1,223 @@
+#!/usr/bin/env node
+"use strict";
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+
+// lib/npm/node-platform.ts
+var fs = require("fs");
+var os = require("os");
+var path = require("path");
+var ESBUILD_BINARY_PATH = process.env.ESBUILD_BINARY_PATH || ESBUILD_BINARY_PATH;
+var isValidBinaryPath = (x) => !!x && x !== "/usr/bin/esbuild";
+var packageDarwin_arm64 = "@esbuild/darwin-arm64";
+var packageDarwin_x64 = "@esbuild/darwin-x64";
+var knownWindowsPackages = {
+  "win32 arm64 LE": "@esbuild/win32-arm64",
+  "win32 ia32 LE": "@esbuild/win32-ia32",
+  "win32 x64 LE": "@esbuild/win32-x64"
+};
+var knownUnixlikePackages = {
+  "aix ppc64 BE": "@esbuild/aix-ppc64",
+  "android arm64 LE": "@esbuild/android-arm64",
+  "darwin arm64 LE": "@esbuild/darwin-arm64",
+  "darwin x64 LE": "@esbuild/darwin-x64",
+  "freebsd arm64 LE": "@esbuild/freebsd-arm64",
+  "freebsd x64 LE": "@esbuild/freebsd-x64",
+  "linux arm LE": "@esbuild/linux-arm",
+  "linux arm64 LE": "@esbuild/linux-arm64",
+  "linux ia32 LE": "@esbuild/linux-ia32",
+  "linux mips64el LE": "@esbuild/linux-mips64el",
+  "linux ppc64 LE": "@esbuild/linux-ppc64",
+  "linux riscv64 LE": "@esbuild/linux-riscv64",
+  "linux s390x BE": "@esbuild/linux-s390x",
+  "linux x64 LE": "@esbuild/linux-x64",
+  "linux loong64 LE": "@esbuild/linux-loong64",
+  "netbsd arm64 LE": "@esbuild/netbsd-arm64",
+  "netbsd x64 LE": "@esbuild/netbsd-x64",
+  "openbsd arm64 LE": "@esbuild/openbsd-arm64",
+  "openbsd x64 LE": "@esbuild/openbsd-x64",
+  "sunos x64 LE": "@esbuild/sunos-x64"
+};
+var knownWebAssemblyFallbackPackages = {
+  "android arm LE": "@esbuild/android-arm",
+  "android x64 LE": "@esbuild/android-x64",
+  "openharmony arm64 LE": "@esbuild/openharmony-arm64"
+};
+function pkgAndSubpathForCurrentPlatform() {
+  let pkg;
+  let subpath;
+  let isWASM2 = false;
+  let platformKey = `${process.platform} ${os.arch()} ${os.endianness()}`;
+  if (platformKey in knownWindowsPackages) {
+    pkg = knownWindowsPackages[platformKey];
+    subpath = "esbuild.exe";
+  } else if (platformKey in knownUnixlikePackages) {
+    pkg = knownUnixlikePackages[platformKey];
+    subpath = "bin/esbuild";
+  } else if (platformKey in knownWebAssemblyFallbackPackages) {
+    pkg = knownWebAssemblyFallbackPackages[platformKey];
+    subpath = "bin/esbuild";
+    isWASM2 = true;
+  } else {
+    throw new Error(`Unsupported platform: ${platformKey}`);
+  }
+  return { pkg, subpath, isWASM: isWASM2 };
+}
+function pkgForSomeOtherPlatform() {
+  const libMainJS = require.resolve("esbuild");
+  const nodeModulesDirectory = path.dirname(path.dirname(path.dirname(libMainJS)));
+  if (path.basename(nodeModulesDirectory) === "node_modules") {
+    for (const unixKey in knownUnixlikePackages) {
+      try {
+        const pkg = knownUnixlikePackages[unixKey];
+        if (fs.existsSync(path.join(nodeModulesDirectory, pkg))) return pkg;
+      } catch {
+      }
+    }
+    for (const windowsKey in knownWindowsPackages) {
+      try {
+        const pkg = knownWindowsPackages[windowsKey];
+        if (fs.existsSync(path.join(nodeModulesDirectory, pkg))) return pkg;
+      } catch {
+      }
+    }
+  }
+  return null;
+}
+function downloadedBinPath(pkg, subpath) {
+  const esbuildLibDir = path.dirname(require.resolve("esbuild"));
+  return path.join(esbuildLibDir, `downloaded-${pkg.replace("/", "-")}-${path.basename(subpath)}`);
+}
+function generateBinPath() {
+  if (isValidBinaryPath(ESBUILD_BINARY_PATH)) {
+    if (!fs.existsSync(ESBUILD_BINARY_PATH)) {
+      console.warn(`[esbuild] Ignoring bad configuration: ESBUILD_BINARY_PATH=${ESBUILD_BINARY_PATH}`);
+    } else {
+      return { binPath: ESBUILD_BINARY_PATH, isWASM: false };
+    }
+  }
+  const { pkg, subpath, isWASM: isWASM2 } = pkgAndSubpathForCurrentPlatform();
+  let binPath2;
+  try {
+    binPath2 = require.resolve(`${pkg}/${subpath}`);
+  } catch (e) {
+    binPath2 = downloadedBinPath(pkg, subpath);
+    if (!fs.existsSync(binPath2)) {
+      try {
+        require.resolve(pkg);
+      } catch {
+        const otherPkg = pkgForSomeOtherPlatform();
+        if (otherPkg) {
+          let suggestions = `
+Specifically the "${otherPkg}" package is present but this platform
+needs the "${pkg}" package instead. People often get into this
+situation by installing esbuild on Windows or macOS and copying "node_modules"
+into a Docker image that runs Linux, or by copying "node_modules" between
+Windows and WSL environments.
+
+If you are installing with npm, you can try not copying the "node_modules"
+directory when you copy the files over, and running "npm ci" or "npm install"
+on the destination platform after the copy. Or you could consider using yarn
+instead of npm which has built-in support for installing a package on multiple
+platforms simultaneously.
+
+If you are installing with yarn, you can try listing both this platform and the
+other platform in your ".yarnrc.yml" file using the "supportedArchitectures"
+feature: https://yarnpkg.com/configuration/yarnrc/#supportedArchitectures
+Keep in mind that this means multiple copies of esbuild will be present.
+`;
+          if (pkg === packageDarwin_x64 && otherPkg === packageDarwin_arm64 || pkg === packageDarwin_arm64 && otherPkg === packageDarwin_x64) {
+            suggestions = `
+Specifically the "${otherPkg}" package is present but this platform
+needs the "${pkg}" package instead. People often get into this
+situation by installing esbuild with npm running inside of Rosetta 2 and then
+trying to use it with node running outside of Rosetta 2, or vice versa (Rosetta
+2 is Apple's on-the-fly x86_64-to-arm64 translation service).
+
+If you are installing with npm, you can try ensuring that both npm and node are
+not running under Rosetta 2 and then reinstalling esbuild. This likely involves
+changing how you installed npm and/or node. For example, installing node with
+the universal installer here should work: https://nodejs.org/en/download/. Or
+you could consider using yarn instead of npm which has built-in support for
+installing a package on multiple platforms simultaneously.
+
+If you are installing with yarn, you can try listing both "arm64" and "x64"
+in your ".yarnrc.yml" file using the "supportedArchitectures" feature:
+https://yarnpkg.com/configuration/yarnrc/#supportedArchitectures
+Keep in mind that this means multiple copies of esbuild will be present.
+`;
+          }
+          throw new Error(`
+You installed esbuild for another platform than the one you're currently using.
+This won't work because esbuild is written with native code and needs to
+install a platform-specific binary executable.
+${suggestions}
+Another alternative is to use the "esbuild-wasm" package instead, which works
+the same way on all platforms. But it comes with a heavy performance cost and
+can sometimes be 10x slower than the "esbuild" package, so you may also not
+want to do that.
+`);
+        }
+        throw new Error(`The package "${pkg}" could not be found, and is needed by esbuild.
+
+If you are installing esbuild with npm, make sure that you don't specify the
+"--no-optional" or "--omit=optional" flags. The "optionalDependencies" feature
+of "package.json" is used by esbuild to install the correct binary executable
+for your current platform.`);
+      }
+      throw e;
+    }
+  }
+  if (/\.zip\//.test(binPath2)) {
+    let pnpapi;
+    try {
+      pnpapi = require("pnpapi");
+    } catch (e) {
+    }
+    if (pnpapi) {
+      const root = pnpapi.getPackageInformation(pnpapi.topLevel).packageLocation;
+      const binTargetPath = path.join(
+        root,
+        "node_modules",
+        ".cache",
+        "esbuild",
+        `pnpapi-${pkg.replace("/", "-")}-${"0.27.7"}-${path.basename(subpath)}`
+      );
+      if (!fs.existsSync(binTargetPath)) {
+        fs.mkdirSync(path.dirname(binTargetPath), { recursive: true });
+        fs.copyFileSync(binPath2, binTargetPath);
+        fs.chmodSync(binTargetPath, 493);
+      }
+      return { binPath: binTargetPath, isWASM: isWASM2 };
+    }
+  }
+  return { binPath: binPath2, isWASM: isWASM2 };
+}
+
+// lib/npm/node-shim.ts
+var { binPath, isWASM } = generateBinPath();
+if (isWASM) {
+  require("child_process").execFileSync("node", [binPath].concat(process.argv.slice(2)), { stdio: "inherit" });
+} else {
+  require("child_process").execFileSync(binPath, process.argv.slice(2), { stdio: "inherit" });
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@parcel/workers",
+  "version": "2.8.3",
+  "description": "Blazing fast, zero configuration web application bundler",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/index.js",
+  "source": "src/index.js",
+  "types": "index.d.ts",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "dependencies": {
+    "@parcel/diagnostic": "2.8.3",
+    "@parcel/logger": "2.8.3",
+    "@parcel/types": "2.8.3",
+    "@parcel/utils": "2.8.3",
+    "chrome-trace-event": "^1.0.2",
+    "nullthrows": "^1.1.1"
+  },
+  "peerDependencies": {
+    "@parcel/core": "^2.8.3"
+  },
+  "browser": {
+    "./src/cpuCount.js": false,
+    "./src/process/ProcessWorker.js": false,
+    "./src/threads/ThreadsWorker.js": false
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

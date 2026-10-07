@@ -1,0 +1,1 @@
+{"version":3,"file":"is-native-audio-context.js","sourceRoot":"","sources":["../../../src/factories/is-native-audio-context.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,0BAA0B,GAAiC,CAAC,6BAA6B,EAAE,EAAE;IACtG,OAAO,CAAC,QAAQ,EAAmC,EAAE;QACjD,OAAO,6BAA6B,KAAK,IAAI,IAAI,QAAQ,YAAY,6BAA6B,CAAC;IACvG,CAAC,CAAC;AACN,CAAC,CAAC"}

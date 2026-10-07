@@ -1,0 +1,10 @@
+{
+    "rules": {
+        "multiline-comment-style": 0,
+        "capitalized-comments": 0,
+        "unicorn/escape-case": 0,
+        "unicorn/no-hex-escape": 0,
+        "unicorn/numeric-separators-style": 0,
+        "unicorn/prefer-spread": 0
+    }
+}

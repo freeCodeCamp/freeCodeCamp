@@ -1,0 +1,100 @@
+{
+  "name": "css-loader",
+  "version": "5.2.7",
+  "description": "css loader module for webpack",
+  "license": "MIT",
+  "repository": "webpack-contrib/css-loader",
+  "author": "Tobias Koppers @sokra",
+  "homepage": "https://github.com/webpack-contrib/css-loader",
+  "bugs": "https://github.com/webpack-contrib/css-loader/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/webpack"
+  },
+  "main": "dist/cjs.js",
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "scripts": {
+    "start": "npm run build -- -w",
+    "clean": "del-cli dist",
+    "validate:runtime": "es-check es5 \"dist/runtime/**/*.js\"",
+    "prebuild": "npm run clean",
+    "build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+    "postbuild": "npm run validate:runtime",
+    "commitlint": "commitlint --from=master",
+    "security": "npm audit --production",
+    "lint:prettier": "prettier --list-different .",
+    "lint:js": "eslint --cache .",
+    "lint": "npm-run-all -l -p \"lint:**\"",
+    "test:only": "cross-env NODE_ENV=test jest",
+    "test:watch": "npm run test:only -- --watch",
+    "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+    "pretest": "npm run lint",
+    "test": "npm run test:coverage",
+    "prepare": "husky install && npm run build",
+    "release": "standard-version"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "webpack": "^4.27.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "icss-utils": "^5.1.0",
+    "loader-utils": "^2.0.0",
+    "postcss": "^8.2.15",
+    "postcss-modules-extract-imports": "^3.0.0",
+    "postcss-modules-local-by-default": "^4.0.0",
+    "postcss-modules-scope": "^3.0.0",
+    "postcss-modules-values": "^4.0.0",
+    "postcss-value-parser": "^4.1.0",
+    "schema-utils": "^3.0.0",
+    "semver": "^7.3.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+    "babel-jest": "^26.6.3",
+    "cross-env": "^7.0.3",
+    "del": "^6.0.0",
+    "del-cli": "^3.0.1",
+    "es-check": "^5.2.3",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.2",
+    "file-loader": "^6.2.0",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "less": "^4.1.1",
+    "less-loader": "^7.1.0",
+    "lint-staged": "^11.0.0",
+    "memfs": "^3.2.2",
+    "mini-css-extract-plugin": "^1.6.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-loader": "^4.3.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.3.0",
+    "sass": "^1.32.13",
+    "sass-loader": "^10.2.0",
+    "standard-version": "^9.3.0",
+    "strip-ansi": "^6.0.0",
+    "style-loader": "^2.0.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^4.3.3",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.37.1"
+  },
+  "keywords": [
+    "webpack",
+    "css",
+    "loader",
+    "url",
+    "import"
+  ]
+}

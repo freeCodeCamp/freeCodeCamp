@@ -1,0 +1,319 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain facilitates obtaining document snapshots with DOM, layout, and style information.
+experimental domain DOMSnapshot
+  depends on CSS
+  depends on DOM
+  depends on DOMDebugger
+  depends on Page
+
+  # A Node in the DOM tree.
+  type DOMNode extends object
+    properties
+      # `Node`'s nodeType.
+      integer nodeType
+      # `Node`'s nodeName.
+      string nodeName
+      # `Node`'s nodeValue.
+      string nodeValue
+      # Only set for textarea elements, contains the text value.
+      optional string textValue
+      # Only set for input elements, contains the input's associated text value.
+      optional string inputValue
+      # Only set for radio and checkbox input elements, indicates if the element has been checked
+      optional boolean inputChecked
+      # Only set for option elements, indicates if the element has been selected
+      optional boolean optionSelected
+      # `Node`'s id, corresponds to DOM.Node.backendNodeId.
+      DOM.BackendNodeId backendNodeId
+      # The indexes of the node's child nodes in the `domNodes` array returned by `getSnapshot`, if
+      # any.
+      optional array of integer childNodeIndexes
+      # Attributes of an `Element` node.
+      optional array of NameValue attributes
+      # Indexes of pseudo elements associated with this node in the `domNodes` array returned by
+      # `getSnapshot`, if any.
+      optional array of integer pseudoElementIndexes
+      # The index of the node's related layout tree node in the `layoutTreeNodes` array returned by
+      # `getSnapshot`, if any.
+      optional integer layoutNodeIndex
+      # Document URL that `Document` or `FrameOwner` node points to.
+      optional string documentURL
+      # Base URL that `Document` or `FrameOwner` node uses for URL completion.
+      optional string baseURL
+      # Only set for documents, contains the document's content language.
+      optional string contentLanguage
+      # Only set for documents, contains the document's character set encoding.
+      optional string documentEncoding
+      # `DocumentType` node's publicId.
+      optional string publicId
+      # `DocumentType` node's systemId.
+      optional string systemId
+      # Frame ID for frame owner elements and also for the document node.
+      optional Page.FrameId frameId
+      # The index of a frame owner element's content document in the `domNodes` array returned by
+      # `getSnapshot`, if any.
+      optional integer contentDocumentIndex
+      # Type of a pseudo element node.
+      optional DOM.PseudoType pseudoType
+      # Shadow root type.
+      optional DOM.ShadowRootType shadowRootType
+      # Whether this DOM node responds to mouse clicks. This includes nodes that have had click
+      # event listeners attached via JavaScript as well as anchor tags that naturally navigate when
+      # clicked.
+      optional boolean isClickable
+      # Details of the node's event listeners, if any.
+      optional array of DOMDebugger.EventListener eventListeners
+      # The selected url for nodes with a srcset attribute.
+      optional string currentSourceURL
+      # The url of the script (if any) that generates this node.
+      optional string originURL
+      # Scroll offsets, set when this node is a Document.
+      optional number scrollOffsetX
+      optional number scrollOffsetY
+
+  # Details of post layout rendered text positions. The exact layout should not be regarded as
+  # stable and may change between versions.
+  type InlineTextBox extends object
+    properties
+      # The bounding box in document coordinates. Note that scroll offset of the document is ignored.
+      DOM.Rect boundingBox
+      # The starting index in characters, for this post layout textbox substring. Characters that
+      # would be represented as a surrogate pair in UTF-16 have length 2.
+      integer startCharacterIndex
+      # The number of characters in this post layout textbox substring. Characters that would be
+      # represented as a surrogate pair in UTF-16 have length 2.
+      integer numCharacters
+
+  # Details of an element in the DOM tree with a LayoutObject.
+  type LayoutTreeNode extends object
+    properties
+      # The index of the related DOM node in the `domNodes` array returned by `getSnapshot`.
+      integer domNodeIndex
+      # The bounding box in document coordinates. Note that scroll offset of the document is ignored.
+      DOM.Rect boundingBox
+      # Contents of the LayoutText, if any.
+      optional string layoutText
+      # The post-layout inline text nodes, if any.
+      optional array of InlineTextBox inlineTextNodes
+      # Index into the `computedStyles` array returned by `getSnapshot`.
+      optional integer styleIndex
+      # Global paint order index, which is determined by the stacking order of the nodes. Nodes
+      # that are painted together will have the same index. Only provided if includePaintOrder in
+      # getSnapshot was true.
+      optional integer paintOrder
+      # Set to true to indicate the element begins a new stacking context.
+      optional boolean isStackingContext
+
+  # A subset of the full ComputedStyle as defined by the request whitelist.
+  type ComputedStyle extends object
+    properties
+      # Name/value pairs of computed style properties.
+      array of NameValue properties
+
+  # A name/value pair.
+  type NameValue extends object
+    properties
+      # Attribute/property name.
+      string name
+      # Attribute/property value.
+      string value
+
+  # Index of the string in the strings table.
+  type StringIndex extends integer
+
+  # Index of the string in the strings table.
+  type ArrayOfStrings extends array of StringIndex
+
+  # Data that is only present on rare nodes.
+  type RareStringData extends object
+    properties
+      array of integer index
+      array of StringIndex value
+
+  type RareBooleanData extends object
+    properties
+      array of integer index
+
+  type RareIntegerData extends object
+    properties
+      array of integer index
+      array of integer value
+
+  type Rectangle extends array of number
+
+  # Document snapshot.
+  type DocumentSnapshot extends object
+    properties
+      # Document URL that `Document` or `FrameOwner` node points to.
+      StringIndex documentURL
+      # Document title.
+      StringIndex title
+      # Base URL that `Document` or `FrameOwner` node uses for URL completion.
+      StringIndex baseURL
+      # Contains the document's content language.
+      StringIndex contentLanguage
+      # Contains the document's character set encoding.
+      StringIndex encodingName
+      # `DocumentType` node's publicId.
+      StringIndex publicId
+      # `DocumentType` node's systemId.
+      StringIndex systemId
+      # Frame ID for frame owner elements and also for the document node.
+      StringIndex frameId
+      # A table with dom nodes.
+      NodeTreeSnapshot nodes
+      # The nodes in the layout tree.
+      LayoutTreeSnapshot layout
+      # The post-layout inline text nodes.
+      TextBoxSnapshot textBoxes
+      # Horizontal scroll offset.
+      optional number scrollOffsetX
+      # Vertical scroll offset.
+      optional number scrollOffsetY
+      # Document content width.
+      optional number contentWidth
+      # Document content height.
+      optional number contentHeight
+
+  # Table containing nodes.
+  type NodeTreeSnapshot extends object
+    properties
+      # Parent node index.
+      optional array of integer parentIndex
+      # `Node`'s nodeType.
+      optional array of integer nodeType
+      # Type of the shadow root the `Node` is in. String values are equal to the `ShadowRootType` enum.
+      optional RareStringData shadowRootType
+      # `Node`'s nodeName.
+      optional array of StringIndex nodeName
+      # `Node`'s nodeValue.
+      optional array of StringIndex nodeValue
+      # `Node`'s id, corresponds to DOM.Node.backendNodeId.
+      optional array of DOM.BackendNodeId backendNodeId
+      # Attributes of an `Element` node. Flatten name, value pairs.
+      optional array of ArrayOfStrings attributes
+      # Only set for textarea elements, contains the text value.
+      optional RareStringData textValue
+      # Only set for input elements, contains the input's associated text value.
+      optional RareStringData inputValue
+      # Only set for radio and checkbox input elements, indicates if the element has been checked
+      optional RareBooleanData inputChecked
+      # Only set for option elements, indicates if the element has been selected
+      optional RareBooleanData optionSelected
+      # The index of the document in the list of the snapshot documents.
+      optional RareIntegerData contentDocumentIndex
+      # Type of a pseudo element node.
+      optional RareStringData pseudoType
+      # Pseudo element identifier for this node. Only present if there is a
+      # valid pseudoType.
+      optional RareStringData pseudoIdentifier
+      # Whether this DOM node responds to mouse clicks. This includes nodes that have had click
+      # event listeners attached via JavaScript as well as anchor tags that naturally navigate when
+      # clicked.
+      optional RareBooleanData isClickable
+      # The selected url for nodes with a srcset attribute.
+      optional RareStringData currentSourceURL
+      # The url of the script (if any) that generates this node.
+      optional RareStringData originURL
+
+  # Table of details of an element in the DOM tree with a LayoutObject.
+  type LayoutTreeSnapshot extends object
+    properties
+      # Index of the corresponding node in the `NodeTreeSnapshot` array returned by `captureSnapshot`.
+      array of integer nodeIndex
+      # Array of indexes specifying computed style strings, filtered according to the `computedStyles` parameter passed to `captureSnapshot`.
+      array of ArrayOfStrings styles
+      # The absolute position bounding box.
+      array of Rectangle bounds
+      # Contents of the LayoutText, if any.
+      array of StringIndex text
+      # Stacking context information.
+      RareBooleanData stackingContexts
+      # Global paint order index, which is determined by the stacking order of the nodes. Nodes
+      # that are painted together will have the same index. Only provided if includePaintOrder in
+      # captureSnapshot was true.
+      optional array of integer paintOrders
+      # The offset rect of nodes. Only available when includeDOMRects is set to true
+      optional array of Rectangle offsetRects
+      # The scroll rect of nodes. Only available when includeDOMRects is set to true
+      optional array of Rectangle scrollRects
+      # The client rect of nodes. Only available when includeDOMRects is set to true
+      optional array of Rectangle clientRects
+      # The list of background colors that are blended with colors of overlapping elements.
+      experimental optional array of StringIndex blendedBackgroundColors
+      # The list of computed text opacities.
+      experimental optional array of number textColorOpacities
+
+  # Table of details of the post layout rendered text positions. The exact layout should not be regarded as
+  # stable and may change between versions.
+  type TextBoxSnapshot extends object
+    properties
+      # Index of the layout tree node that owns this box collection.
+      array of integer layoutIndex
+      # The absolute position bounding box.
+      array of Rectangle bounds
+      # The starting index in characters, for this post layout textbox substring. Characters that
+      # would be represented as a surrogate pair in UTF-16 have length 2.
+      array of integer start
+      # The number of characters in this post layout textbox substring. Characters that would be
+      # represented as a surrogate pair in UTF-16 have length 2.
+      array of integer length
+
+  # Disables DOM snapshot agent for the given page.
+  command disable
+
+  # Enables DOM snapshot agent for the given page.
+  command enable
+
+  # Returns a document snapshot, including the full DOM tree of the root node (including iframes,
+  # template contents, and imported documents) in a flattened array, as well as layout and
+  # white-listed computed style information for the nodes. Shadow DOM in the returned DOM tree is
+  # flattened.
+  deprecated command getSnapshot
+    parameters
+      # Whitelist of computed styles to return.
+      array of string computedStyleWhitelist
+      # Whether or not to retrieve details of DOM listeners (default false).
+      optional boolean includeEventListeners
+      # Whether to determine and include the paint order index of LayoutTreeNodes (default false).
+      optional boolean includePaintOrder
+      # Whether to include UA shadow tree in the snapshot (default false).
+      optional boolean includeUserAgentShadowTree
+    returns
+      # The nodes in the DOM tree. The DOMNode at index 0 corresponds to the root document.
+      array of DOMNode domNodes
+      # The nodes in the layout tree.
+      array of LayoutTreeNode layoutTreeNodes
+      # Whitelisted ComputedStyle properties for each node in the layout tree.
+      array of ComputedStyle computedStyles
+
+  # Returns a document snapshot, including the full DOM tree of the root node (including iframes,
+  # template contents, and imported documents) in a flattened array, as well as layout and
+  # white-listed computed style information for the nodes. Shadow DOM in the returned DOM tree is
+  # flattened.
+  command captureSnapshot
+    parameters
+      # Whitelist of computed styles to return.
+      array of string computedStyles
+      # Whether to include layout object paint orders into the snapshot.
+      optional boolean includePaintOrder
+      # Whether to include DOM rectangles (offsetRects, clientRects, scrollRects) into the snapshot
+      optional boolean includeDOMRects
+      # Whether to include blended background colors in the snapshot (default: false).
+      # Blended background color is achieved by blending background colors of all elements
+      # that overlap with the current element.
+      experimental optional boolean includeBlendedBackgroundColors
+      # Whether to include text color opacity in the snapshot (default: false).
+      # An element might have the opacity property set that affects the text color of the element.
+      # The final text color opacity is computed based on the opacity of all overlapping elements.
+      experimental optional boolean includeTextColorOpacities
+    returns
+      # The nodes in the DOM tree. The DOMNode at index 0 corresponds to the root document.
+      array of DocumentSnapshot documents
+      # Shared string table that all string properties refer to with indexes.
+      array of string strings

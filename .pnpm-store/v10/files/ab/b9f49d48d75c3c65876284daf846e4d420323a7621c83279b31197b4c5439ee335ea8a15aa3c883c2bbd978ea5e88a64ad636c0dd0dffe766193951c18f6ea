@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/DateTime.js",
+  "module": "../dist/esm/DateTime.js",
+  "types": "../dist/dts/DateTime.d.ts"
+}

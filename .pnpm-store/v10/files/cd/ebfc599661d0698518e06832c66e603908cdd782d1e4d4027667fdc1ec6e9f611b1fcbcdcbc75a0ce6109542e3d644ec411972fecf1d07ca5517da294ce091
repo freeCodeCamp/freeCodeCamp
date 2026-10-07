@@ -1,0 +1,13 @@
+{
+  "name": "@reduxjs/toolkit-query-react",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "module": "../../dist/query/react/rtk-query-react.legacy-esm.js",
+  "main": "../../dist/query/react/cjs/index.js",
+  "types": "./../../dist/query/react/index.d.ts",
+  "react-native": "./../../dist/query/react/rtk-query-react.legacy-esm.js",
+  "author": "Mark Erikson <mark@isquaredsoftware.com>",
+  "license": "MIT",
+  "sideEffects": false
+}

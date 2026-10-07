@@ -1,0 +1,83 @@
+@import '../variables';
+@import '../mixins';
+
+$amount: 50px;
+
+@keyframes ball-triangle-path-1 {
+  33% {
+    transform: translate($amount / 2, -$amount);
+  }
+  66% {
+    transform: translate($amount, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes ball-triangle-path-2 {
+  33% {
+    transform: translate($amount / 2, $amount);
+  }
+  66% {
+    transform: translate(- $amount / 2, $amount);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes ball-triangle-path-3 {
+  33% {
+    transform: translate(-$amount, 0px);
+  }
+  66% {
+    transform: translate(- $amount / 2, -$amount);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@mixin ball-triangle-path($n:3) {
+  $animations: ball-triangle-path-1 ball-triangle-path-2 ball-triangle-path-3;
+
+  @for $i from 1 through $n {
+    > div:nth-child(#{$i}) {
+      animation-name: nth($animations, $i);
+      animation-delay: 0;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+.ball-triangle-path {
+  position: relative;
+  @include ball-triangle-path();
+  transform: translate(-$amount / 1.667, -$amount / 1.333);
+
+  > div {
+    @include global-animation();
+
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid $primary-color;
+
+    &:nth-of-type(1) {
+      top: $amount;
+    }
+
+    &:nth-of-type(2) {
+      left: $amount / 2;
+    }
+
+    &:nth-of-type(3) {
+      top: $amount;
+      left: $amount;
+    }
+  }
+}

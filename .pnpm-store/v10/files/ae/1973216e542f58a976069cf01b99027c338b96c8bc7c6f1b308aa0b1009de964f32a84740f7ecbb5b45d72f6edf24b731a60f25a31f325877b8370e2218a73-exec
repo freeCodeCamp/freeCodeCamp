@@ -1,0 +1,19 @@
+{
+  "name": "resolver",
+  "private": true,
+  "alias": {
+    "aliased": "foo",
+    "aliased-file": "./bar.js",
+    "something": "./nested/test.js",
+    "aliasedfolder": "./nested",
+    "aliasedabsolute": "/nested",
+    "foo/bar": "./bar.js",
+    "glob/*/*": "./nested/$2"
+  },
+  "dependencies": {
+    "foo": "^0.3.4"
+  },
+  "peerDependencies": {
+    "bar": "*"
+  }
+}

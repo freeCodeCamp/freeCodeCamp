@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Debounce Component</title>
+</head>
+<body>
+  Resize the window!
+  <br>
+  <a id='cancel' href='#'>Cancel Print</a>
+  <br>
+  <a id='now' href='#'>Print Now</a>
+
+  <script src="build/build.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var debounce = require('debounce');
+    window.onresize = debounce(resize, 2000);
+
+    document.getElementById('cancel').onclick = window.onresize.clear;
+
+    document.getElementById('now').onclick = printNow;
+
+    function resize(e) {
+      console.log('height', window.innerHeight);
+      console.log('width', window.innerWidth);
+    }
+
+    function printNow(e) {
+      window.onresize.clear();
+      resize();
+    }
+  </script>
+</body>
+</html>

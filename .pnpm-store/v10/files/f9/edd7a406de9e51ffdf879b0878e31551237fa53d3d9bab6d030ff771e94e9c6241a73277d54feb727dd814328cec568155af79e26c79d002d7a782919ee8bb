@@ -1,0 +1,23 @@
+{
+  "name": "arg",
+  "version": "2.0.0",
+  "description": "Another simple argument parser",
+  "main": "index.js",
+  "repository": "zeit/arg",
+  "author": "Josh Junon <junon@zeit.co>",
+  "license": "MIT",
+  "scripts": {
+    "pretest": "xo",
+    "test": "WARN_EXIT=1 jest --coverage -w 2"
+  },
+  "xo": {
+    "rules": {
+      "complexity": 0
+    }
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "jest": "^20.0.4",
+    "xo": "^0.18.2"
+  }
+}

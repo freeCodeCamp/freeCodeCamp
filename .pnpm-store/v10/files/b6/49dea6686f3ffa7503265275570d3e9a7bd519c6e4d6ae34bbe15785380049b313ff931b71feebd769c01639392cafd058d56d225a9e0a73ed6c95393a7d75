@@ -1,0 +1,1 @@
+{"version":3,"file":"reader.js","sourceRoot":"","sources":["../../src/bidiServer/reader.ts"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;GAeG;AAEH,OAAO,EAAE,MAAM,aAAa,CAAC;AAC7B,OAAO,IAAI,MAAM,MAAM,CAAC;AAExB,MAAM,CAAC,KAAK,UAAU,kBAAkB;IACtC,OAAO,MAAM,EAAE,CAAC,QAAQ,CACtB,IAAI,CAAC,IAAI,CAAC,MAAM,CAAC,IAAI,CAAC,OAAO,EAAE,sBAAsB,CAAC,EACtD,MAAM,CACP,CAAC;AACJ,CAAC"}

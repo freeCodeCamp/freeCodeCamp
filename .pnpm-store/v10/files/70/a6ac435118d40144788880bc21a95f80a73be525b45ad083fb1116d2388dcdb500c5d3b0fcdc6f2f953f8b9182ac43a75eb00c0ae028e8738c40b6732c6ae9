@@ -1,0 +1,87 @@
+{
+  "name": "redux",
+  "version": "5.0.1",
+  "description": "Predictable state container for JavaScript apps",
+  "license": "MIT",
+  "homepage": "http://redux.js.org",
+  "repository": "github:reduxjs/redux",
+  "bugs": "https://github.com/reduxjs/redux/issues",
+  "keywords": [
+    "redux",
+    "reducer",
+    "state",
+    "predictable",
+    "functional",
+    "immutable",
+    "hot",
+    "live",
+    "replay",
+    "flux",
+    "elm"
+  ],
+  "authors": [
+    "Dan Abramov <dan.abramov@me.com> (https://github.com/gaearon)",
+    "Andrew Clark <acdlite@me.com> (https://github.com/acdlite)"
+  ],
+  "main": "dist/cjs/redux.cjs",
+  "module": "dist/redux.legacy-esm.js",
+  "types": "dist/redux.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/redux.d.ts",
+      "import": "./dist/redux.mjs",
+      "default": "./dist/cjs/redux.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "format": "prettier --write \"{src,test}/**/*.{js,ts}\" \"**/*.md\"",
+    "format:check": "prettier --list-different \"{src,test}/**/*.{js,ts}\" \"**/*.md\"",
+    "lint": "eslint --ext js,ts src test",
+    "check-types": "tsc --noEmit && echo \"Types compiled\"",
+    "test": "vitest --run",
+    "test:types": "tsc -p test/typescript && echo \"Typetests passed\"",
+    "test:watch": "vitest",
+    "test:cov": "vitest --coverage",
+    "test:typecheck": "tsc -p test && echo \"Types passed\"",
+    "build": "tsup",
+    "prepublishOnly": "yarn clean && yarn check-types && yarn format:check && yarn lint && yarn test",
+    "prepack": "yarn build",
+    "examples:lint": "eslint --ext js,ts examples",
+    "examples:test": "cross-env CI=true babel-node examples/testAll.js",
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@types/node": "^18.7.16",
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6",
+    "cross-env": "^7.0.3",
+    "esbuild-extra": "^0.1.3",
+    "eslint": "^8.23.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "glob": "^8.0.3",
+    "netlify-plugin-cache": "^1.0.3",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.5.6",
+    "tsup": "7.0.0",
+    "typescript": "5.2",
+    "vitest": "^0.34.0"
+  },
+  "resolutions": {
+    "esbuild": "0.19.7",
+    "@typescript-eslint/eslint-plugin": "6.12.0",
+    "@typescript-eslint/parser": "6.12.0"
+  },
+  "sideEffects": false
+}

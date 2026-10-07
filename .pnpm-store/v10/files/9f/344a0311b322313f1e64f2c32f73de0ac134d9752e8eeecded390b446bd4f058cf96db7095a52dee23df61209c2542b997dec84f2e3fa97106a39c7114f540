@@ -1,0 +1,10 @@
+export { c as createManualModuleSource } from './chunk-utils.js';
+export { a as automockModule, c as collectModuleExports, i as initSyntaxLexers } from './chunk-automock.js';
+export { h as hoistMocks } from './chunk-hoistMocks.js';
+import 'node:fs';
+import 'node:url';
+import 'magic-string';
+import 'estree-walker';
+import 'node:module';
+import 'node:path';
+import './chunk-helpers.js';

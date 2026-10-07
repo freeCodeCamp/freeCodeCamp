@@ -1,0 +1,49 @@
+{
+	"name": "supports-hyperlinks",
+	"version": "3.2.0",
+	"description": "Detect whether a terminal supports hyperlinks",
+	"license": "MIT",
+	"repository": "chalk/supports-hyperlinks",
+	"funding": "https://github.com/chalk/supports-hyperlinks?sponsor=1",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=14.18"
+	},
+	"scripts": {
+		"//test": "xo && ava && tsc",
+		"test": "ava"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"browser.js"
+	],
+	"browser": "browser.js",
+	"keywords": [
+		"link",
+		"terminal",
+		"hyperlink",
+		"cli",
+		"detect",
+		"check",
+		"ansi",
+		"escapes",
+		"console"
+	],
+	"dependencies": {
+		"has-flag": "^4.0.0",
+		"supports-color": "^7.0.0"
+	},
+	"devDependencies": {
+		"@tsconfig/node14": "^1.0.3",
+		"@types/supports-color": "^8.1.1",
+		"ava": "^3.2.0",
+		"codecov": "^3.5.0",
+		"typescript": "^4.9.5",
+		"xo": "^0.53.0"
+	}
+}

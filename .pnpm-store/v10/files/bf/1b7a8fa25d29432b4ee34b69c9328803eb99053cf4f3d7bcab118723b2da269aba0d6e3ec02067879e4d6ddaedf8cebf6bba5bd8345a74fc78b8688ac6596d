@@ -1,0 +1,58 @@
+{
+	"name": "type-fest",
+	"version": "0.21.3",
+	"description": "A collection of essential TypeScript types",
+	"license": "(MIT OR CC0-1.0)",
+	"repository": "sindresorhus/type-fest",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && tsd && tsc"
+	},
+	"files": [
+		"index.d.ts",
+		"base.d.ts",
+		"source",
+		"ts41"
+	],
+	"keywords": [
+		"typescript",
+		"ts",
+		"types",
+		"utility",
+		"util",
+		"utilities",
+		"omit",
+		"merge",
+		"json"
+	],
+	"devDependencies": {
+		"@sindresorhus/tsconfig": "~0.7.0",
+		"expect-type": "^0.11.0",
+		"tsd": "^0.14.0",
+		"typescript": "^4.1.3",
+		"xo": "^0.36.1"
+	},
+	"types": "./index.d.ts",
+	"typesVersions": {
+		">=4.1": {
+			"*": [
+				"ts41/*"
+			]
+		}
+	},
+	"xo": {
+		"rules": {
+			"@typescript-eslint/ban-types": "off",
+			"@typescript-eslint/indent": "off",
+			"node/no-unsupported-features/es-builtins": "off"
+		}
+	}
+}

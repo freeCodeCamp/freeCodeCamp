@@ -1,0 +1,72 @@
+{
+  "name": "fastest-levenshtein",
+  "version": "1.0.16",
+  "description": "Fastest Levenshtein distance implementation in JS.",
+  "main": "mod.js",
+  "types": "mod.d.ts",
+  "module": "./esm/mod.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ka-weihe/fastest-levenshtein.git"
+  },
+  "keywords": [
+    "levenshtein",
+    "distance",
+    "fast",
+    "fastest",
+    "edit",
+    "string",
+    "similarity",
+    "algorithm",
+    "match",
+    "comparison",
+    "fuzzy",
+    "search",
+    "string",
+    "matching",
+    "similar",
+    "node",
+    "difference"
+  ],
+  "author": "Kasper U. Weihe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ka-weihe/fastest-levenshtein/issues"
+  },
+  "homepage": "https://github.com/ka-weihe/fastest-levenshtein#README",
+  "scripts": {
+    "build": "tsc mod.ts --declaration",
+    "build:esm": "tsc --declaration -p tsconfig.esm.json",
+    "prepare": "npm run build && npm run build:esm",
+    "bench": "npm run build && tsc bench.ts && node bench.js",
+    "test": "npm run build && tsc test.ts && jest test.js",
+    "test:coverage": "npm run build && jest --coverage",
+    "test:coveralls": "npm run build && jest --coverage --coverageReporters=text-lcov | coveralls"
+  },
+  "devDependencies": {
+    "@types/benchmark": "^1.0.33",
+    "@types/jest": "^26.0.15",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "benchmark": "^2.1.4",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.13.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "fast-levenshtein": "^2.0.6",
+    "jest": "^26.6.3",
+    "js-levenshtein": "^1.1.6",
+    "leven": "^3.1.0",
+    "levenshtein-edit-distance": "^2.0.5",
+    "natural": "^2.1.5",
+    "prettier": "^2.1.2",
+    "talisman": "^1.1.3",
+    "typescript": "^4.0.5"
+  },
+  "engines": {
+    "node": ">= 4.9.1"
+  }
+}

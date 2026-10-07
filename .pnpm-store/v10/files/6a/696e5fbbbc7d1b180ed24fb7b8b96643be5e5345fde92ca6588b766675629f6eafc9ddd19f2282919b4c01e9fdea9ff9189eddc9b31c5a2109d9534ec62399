@@ -1,0 +1,44 @@
+{
+  "name": "unist-util-find",
+  "version": "1.0.4",
+  "description": "Unist node finder utility. Useful for working with remark, rehype and retext.",
+  "repository": "https://github.com/blahah/unist-util-find",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "prepack": "npm run build",
+    "test": "standard && node test.js",
+    "build": "tsc"
+  },
+  "type": "commonjs",
+  "keywords": [
+    "unist",
+    "remark",
+    "retext",
+    "rehype",
+    "hast",
+    "mdast",
+    "nlcst",
+    "find",
+    "search"
+  ],
+  "author": "Richard Smith-Unna <rik@fathomlabs.io> @blahah",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/lodash.iteratee": "^4.7.7",
+    "@types/unist": "^2.0.6",
+    "remark": "^13.0.0",
+    "standard": "^8.0.0",
+    "tape": "^5.3.1",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "lodash.iteratee": "^4.7.0",
+    "unist-util-visit": "^2.0.0"
+  }
+}

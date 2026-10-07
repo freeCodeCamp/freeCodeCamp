@@ -1,0 +1,51 @@
+{{## def.coerceType:
+  {{
+    var $dataType = 'dataType' + $lvl
+      , $coerced = 'coerced' + $lvl;
+  }}
+  var {{=$dataType}} = typeof {{=$data}};
+  var {{=$coerced}} = undefined;
+
+  {{? it.opts.coerceTypes == 'array' }}
+    if ({{=$dataType}} == 'object' && Array.isArray({{=$data}}) && {{=$data}}.length == 1) {
+      {{=$data}} = {{=$data}}[0];
+      {{=$dataType}} = typeof {{=$data}};
+      if ({{=it.util.checkDataType(it.schema.type, $data, it.opts.strictNumbers)}}) {{=$coerced}} = {{=$data}};
+    }
+  {{?}}
+
+  if ({{=$coerced}} !== undefined) ;
+  {{~ $coerceToTypes:$type:$i }}
+    {{? $type == 'string' }}
+      else if ({{=$dataType}} == 'number' || {{=$dataType}} == 'boolean')
+        {{=$coerced}} = '' + {{=$data}};
+      else if ({{=$data}} === null) {{=$coerced}} = '';
+    {{?? $type == 'number' || $type == 'integer' }}
+      else if ({{=$dataType}} == 'boolean' || {{=$data}} === null
+          || ({{=$dataType}} == 'string' && {{=$data}} && {{=$data}} == +{{=$data}}
+          {{? $type == 'integer' }} && !({{=$data}} % 1){{?}}))
+        {{=$coerced}} = +{{=$data}};
+    {{?? $type == 'boolean' }}
+      else if ({{=$data}} === 'false' || {{=$data}} === 0 || {{=$data}} === null)
+        {{=$coerced}} = false;
+      else if ({{=$data}} === 'true' || {{=$data}} === 1)
+        {{=$coerced}} = true;
+    {{?? $type == 'null' }}
+      else if ({{=$data}} === '' || {{=$data}} === 0 || {{=$data}} === false)
+        {{=$coerced}} = null;
+    {{?? it.opts.coerceTypes == 'array' && $type == 'array' }}
+      else if ({{=$dataType}} == 'string' || {{=$dataType}} == 'number' || {{=$dataType}} == 'boolean' || {{=$data}} == null)
+        {{=$coerced}} = [{{=$data}}];
+    {{?}}
+  {{~}}
+  else {
+    {{# def.error:'type' }}
+  }
+
+  if ({{=$coerced}} !== undefined) {
+    {{# def.setParentData }}
+    {{=$data}} = {{=$coerced}};
+    {{? !$dataLvl }}if ({{=$parentData}} !== undefined){{?}}
+      {{=$parentData}}[{{=$parentDataProperty}}] = {{=$coerced}};
+  }
+#}}

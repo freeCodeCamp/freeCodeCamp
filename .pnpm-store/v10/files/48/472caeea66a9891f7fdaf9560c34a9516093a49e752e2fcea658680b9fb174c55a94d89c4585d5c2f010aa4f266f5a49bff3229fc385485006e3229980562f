@@ -1,0 +1,123 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = installCertificateAuthority;
+exports.withCertificateAuthorityCredentials = withCertificateAuthorityCredentials;
+exports.ensureCACertReadable = ensureCACertReadable;
+exports.uninstall = uninstall;
+const fs_1 = require("fs");
+const debug_1 = __importDefault(require("debug"));
+const constants_1 = require("./constants");
+const platforms_1 = __importDefault(require("./platforms"));
+const utils_1 = require("./utils");
+const certificates_1 = require("./certificates");
+const debug = (0, debug_1.default)('devcert:certificate-authority');
+/**
+ * Install the once-per-machine trusted root CA. We'll use this CA to sign
+ * per-app certs.
+ */
+async function installCertificateAuthority(options = {}) {
+    debug(`Uninstalling existing certificates, which will be void once any existing CA is gone`);
+    uninstall();
+    (0, constants_1.ensureConfigDirs)();
+    debug(`Making a temp working directory for files to copied in`);
+    let rootKeyPath = (0, utils_1.mktmp)();
+    debug(`Generating the OpenSSL configuration needed to setup the certificate authority`);
+    seedConfigFiles();
+    debug(`Generating a private key`);
+    (0, certificates_1.generateKey)(rootKeyPath);
+    debug(`Generating a CA certificate`);
+    (0, utils_1.openssl)(['req', '-new', '-x509', '-config', constants_1.caSelfSignConfig, '-key', rootKeyPath, '-out', constants_1.rootCACertPath, '-days', '825']);
+    debug('Saving certificate authority credentials');
+    await saveCertificateAuthorityCredentials(rootKeyPath);
+    debug(`Adding the root certificate authority to trust stores`);
+    await platforms_1.default.addToTrustStores(constants_1.rootCACertPath, options);
+}
+/**
+ * Initializes the files OpenSSL needs to sign certificates as a certificate
+ * authority, as well as our CA setup version
+ */
+function seedConfigFiles() {
+    // This is v2 of the devcert certificate authority setup
+    (0, fs_1.writeFileSync)(constants_1.caVersionFile, '2');
+    // OpenSSL CA files
+    (0, fs_1.writeFileSync)(constants_1.opensslDatabaseFilePath, '');
+    (0, fs_1.writeFileSync)(constants_1.opensslSerialFilePath, '01');
+}
+async function withCertificateAuthorityCredentials(cb) {
+    debug(`Retrieving devcert's certificate authority credentials`);
+    let tmpCAKeyPath = (0, utils_1.mktmp)();
+    let caKey = await platforms_1.default.readProtectedFile(constants_1.rootCAKeyPath);
+    (0, fs_1.writeFileSync)(tmpCAKeyPath, caKey);
+    await cb({ caKeyPath: tmpCAKeyPath, caCertPath: constants_1.rootCACertPath });
+    (0, fs_1.unlinkSync)(tmpCAKeyPath);
+}
+async function saveCertificateAuthorityCredentials(keypath) {
+    debug(`Saving devcert's certificate authority credentials`);
+    let key = (0, fs_1.readFileSync)(keypath, 'utf-8');
+    await platforms_1.default.writeProtectedFile(constants_1.rootCAKeyPath, key);
+}
+function certErrors() {
+    try {
+        (0, utils_1.openssl)(['x509', '-in', constants_1.rootCACertPath, '-noout']);
+        return '';
+    }
+    catch (e) {
+        return e.toString();
+    }
+}
+// This function helps to migrate from v1.0.x to >= v1.1.0.
+/**
+ * Smoothly migrate the certificate storage from v1.0.x to >= v1.1.0.
+ * In v1.1.0 there are new options for retrieving the CA cert directly,
+ * to help third-party Node apps trust the root CA.
+ *
+ * If a v1.0.x cert already exists, then devcert has written it with
+ * platform.writeProtectedFile(), so an unprivileged readFile cannot access it.
+ * Pre-detect and remedy this; it should only happen once per installation.
+ */
+async function ensureCACertReadable(options = {}) {
+    if (!certErrors()) {
+        return;
+    }
+    /**
+     * on windows, writeProtectedFile left the cert encrypted on *nix, the cert
+     * has no read permissions either way, openssl will fail and that means we
+     * have to fix it
+     */
+    try {
+        const caFileContents = await platforms_1.default.readProtectedFile(constants_1.rootCACertPath);
+        await platforms_1.default.deleteProtectedFiles(constants_1.rootCACertPath);
+        (0, fs_1.writeFileSync)(constants_1.rootCACertPath, caFileContents);
+    }
+    catch (e) {
+        return await installCertificateAuthority(options);
+    }
+    // double check that we have a live one
+    const remainingErrors = certErrors();
+    if (remainingErrors) {
+        return await installCertificateAuthority(options);
+    }
+}
+/**
+ * Remove as much of the devcert files and state as we can. This is necessary
+ * when generating a new root certificate, and should be available to API
+ * consumers as well.
+ *
+ * Not all of it will be removable. If certutil is not installed, we'll leave
+ * Firefox alone. We try to remove files with maximum permissions, and if that
+ * fails, we'll silently fail.
+ *
+ * It's also possible that the command to untrust will not work, and we'll
+ * silently fail that as well; with no existing certificates anymore, the
+ * security exposure there is minimal.
+ */
+async function uninstall() {
+    await platforms_1.default.removeFromTrustStores(constants_1.rootCACertPath);
+    await platforms_1.default.deleteProtectedFiles(constants_1.domainsDir);
+    await platforms_1.default.deleteProtectedFiles(constants_1.rootCADir);
+    await platforms_1.default.deleteProtectedFiles((0, constants_1.getLegacyConfigDir)());
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2VydGlmaWNhdGUtYXV0aG9yaXR5LmpzIiwic291cmNlUm9vdCI6Ii4vIiwic291cmNlcyI6WyJjZXJ0aWZpY2F0ZS1hdXRob3JpdHkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7QUE4QkEsOENBc0JDO0FBY0Qsa0ZBT0M7QUE0QkQsb0RBc0JDO0FBZUQsOEJBS0M7QUEvSUQsMkJBSVk7QUFDWixrREFBZ0M7QUFFaEMsMkNBV3FCO0FBQ3JCLDREQUEwQztBQUMxQyxtQ0FBeUM7QUFDekMsaURBQTZDO0FBRzdDLE1BQU0sS0FBSyxHQUFHLElBQUEsZUFBVyxFQUFDLCtCQUErQixDQUFDLENBQUM7QUFFM0Q7OztHQUdHO0FBQ1ksS0FBSyxVQUFVLDJCQUEyQixDQUFDLFVBQW1CLEVBQUU7SUFDN0UsS0FBSyxDQUFDLHFGQUFxRixDQUFDLENBQUM7SUFDN0YsU0FBUyxFQUFFLENBQUM7SUFDWixJQUFBLDRCQUFnQixHQUFFLENBQUM7SUFFbkIsS0FBSyxDQUFDLHdEQUF3RCxDQUFDLENBQUM7SUFDaEUsSUFBSSxXQUFXLEdBQUcsSUFBQSxhQUFLLEdBQUUsQ0FBQztJQUUxQixLQUFLLENBQUMsZ0ZBQWdGLENBQUMsQ0FBQztJQUN4RixlQUFlLEVBQUUsQ0FBQztJQUVsQixLQUFLLENBQUMsMEJBQTBCLENBQUMsQ0FBQztJQUNsQyxJQUFBLDBCQUFXLEVBQUMsV0FBVyxDQUFDLENBQUM7SUFFekIsS0FBSyxDQUFDLDZCQUE2QixDQUFDLENBQUM7SUFDckMsSUFBQSxlQUFPLEVBQUMsQ0FBQyxLQUFLLEVBQUUsTUFBTSxFQUFFLE9BQU8sRUFBRSxTQUFTLEVBQUUsNEJBQWdCLEVBQUUsTUFBTSxFQUFFLFdBQVcsRUFBRSxNQUFNLEVBQUUsMEJBQWMsRUFBRSxPQUFPLEVBQUUsS0FBSyxDQUFDLENBQUMsQ0FBQztJQUU1SCxLQUFLLENBQUMsMENBQTBDLENBQUMsQ0FBQztJQUNsRCxNQUFNLG1DQUFtQyxDQUFDLFdBQVcsQ0FBQyxDQUFDO0lBRXZELEtB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QUN0RCxNQUFNLG1CQUFlLENBQUMsb0JBQW9CLENBQUMsSUFBQSw4QkFBa0IsR0FBRSxDQUFDLENBQUM7QUFDbkUsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XG4gIHVubGlua1N5bmMgYXMgcm0sXG4gIHJlYWRGaWxlU3luYyBhcyByZWFkRmlsZSxcbiAgd3JpdGVGaWxlU3luYyBhcyB3cml0ZUZpbGVcbn0gZnJvbSAnZnMnO1xuaW1wb3J0IGNyZWF0ZURlYnVnIGZyb20gJ2RlYnVnJztcblxuaW1wb3J0IHtcbiAgZG9tYWluc0RpcixcbiAgcm9vdENBRGlyLFxuICBlbnN1cmVDb25maWdEaXJzLFxuICBnZXRMZWdhY3lDb25maWdEaXIsXG4gIHJvb3RDQUtleVBhdGgsXG4gIHJvb3RDQUNlcnRQYXRoLFxuICBjYVNlbGZTaWduQ29uZmlnLFxuICBvcGVuc3NsU2VyaWFsRmlsZVBhdGgsXG4gIG9wZW5zc2xEYXRhYmFzZUZpbGVQYXRoLFxuICBjYVZlcnNpb25GaWxlXG59IGZyb20gJy4vY29uc3RhbnRzJztcbmltcG9ydCBjdXJyZW50UGxhdGZvcm0gZnJvbSAnLi9wbGF0Zm9ybXMnO1xuaW1wb3J0IHsgb3BlbnNzbCwgbWt0bXAgfSBmcm9tICcuL3V0aWxzJztcbmltcG9ydCB7IGdlbmVyYXRlS2V5IH0gZnJvbSAnLi9jZXJ0aWZpY2F0ZXMnO1xuaW1wb3J0IHsgT3B0aW9ucyB9IGZyb20gJy4vaW5kZXgnO1xuXG5jb25zdCBkZWJ1ZyA9IGNyZWF0ZURlYnVnKCdkZXZjZXJ0OmNlcnRpZmljYXRlLWF1dGhvcml0eScpO1xuXG4vKipcbiAqIEluc3RhbGwgdGhlIG9uY2UtcGVyLW1hY2hpbmUgdHJ1c3RlZCByb290IENBLiBXZSdsbCB1c2UgdGhpcyBDQSB0byBzaWduXG4gKiBwZXItYXBwIGNlcnRzLlxuICovXG5leHBvcnQgZGVmYXVsdCBhc3luYyBmdW5jdGlvbiBpbnN0YWxsQ2VydGlmaWNhdGVBdXRob3JpdHkob3B0aW9uczogT3B0aW9ucyA9IHt9KTogUHJvbWlzZTx2b2lkPiB7XG4gIGRlYnVnKGBVbmluc3RhbGxpbmcgZXhpc3RpbmcgY2VydGlmaWNhdGVzLCB3aGljaCB3aWxsIGJlIHZvaWQgb25jZSBhbnkgZXhpc3RpbmcgQ0EgaXMgZ29uZWApO1xuICB1bmluc3RhbGwoKTtcbiAgZW5zdXJlQ29uZmlnRGlycygpO1xuXG4gIGRlYnVnKGBNYWtpbmcgYSB0ZW1wIHdvcmtpbmcgZGlyZWN0b3J5IGZvciBmaWxlcyB0byBjb3BpZWQgaW5gKTtcbiAgbGV0IHJvb3RLZXlQYXRoID0gbWt0bXAoKTtcblxuICBkZWJ1ZyhgR2VuZXJhdGluZyB0aGUgT3BlblNTTCBjb25maWd1cmF0aW9uIG5lZWRlZCB0byBzZXR1cCB0aGUgY2VydGlmaWNhdGUgYXV0aG9yaXR5YCk7XG4gIHNlZWRDb25maWdGaWxlcygpO1xuXG4gIGRlYnVnKGBHZW5lcmF0aW5nIGEgcHJpdmF0ZSBrZXlgKTtcbiAgZ2VuZXJhdGVLZXkocm9vdEtleVBhdGgpO1xuXG4gIGRlYnVnKGBHZW5lcmF0aW5nIGEgQ0EgY2VydGlmaWNhdGVgKTtcbiAgb3BlbnNzbChbJ3JlcScsICctbmV3JywgJy14NTA5JywgJy1jb25maWcnLCBjYVNlbGZTaWduQ29uZmlnLCAnLWtleScsIHJvb3RLZXlQYXRoLCAnLW91dCcsIHJvb3RDQUNlcnRQYXRoLCAnLWRheXMnLCAnODI1J10pO1xuXG4gIGRlYnVnKCdTYXZpbmcgY2VydGlmaWNhdGUgYXV0aG9yaXR5IGNyZWRlbnRpYWxzJyk7XG4gIGF3YWl0IHNhdmVDZXJ0aWZpY2F0ZUF1dGhvcml0eUNyZWRlbnRpYWxzKHJvb3RLZXlQYXRoKTtcblxuICBkZWJ1ZyhgQWRkaW5nIHRoZSByb290IGNlcnRpZmljYXRlIGF1dGhvcml0eSB0byB0cnVzdCBzdG9yZXNgKTtcbiAgYXdhaXQgY3VycmVudFBsYXRmb3JtLmFkZFRvVHJ1c3RTdG9yZXMocm9vdENBQ2VydFBhdGgsIG9wdGlvbnMpO1xufVxuXG4vKipcbiAqIEluaXRpYWxpemVzIHRoZSBmaWxlcyBPcGVuU1NMIG5lZWRzIHRvIHNpZ24gY2VydGlmaWNhdGVzIGFzIGEgY2VydGlmaWNhdGVcbiAqIGF1dGhvcml0eSwgYXMgd2VsbCBhcyBvdXIgQ0Egc2V0dXAgdmVyc2lvblxuICovXG5mdW5jdGlvbiBzZWVkQ29uZmlnRmlsZXMoKSB7XG4gIC8vIFRoaXMgaXMgdjIgb2YgdGhlIGRldmNlcnQgY2VydGlmaWNhdGUgYXV0aG9yaXR5IHNldHVwXG4gIHdyaXRlRmlsZShjYVZlcnNpb25GaWxlLCAnMicpO1xuICAvLyBPcGVuU1NMIENBIGZpbGVzXG4gIHdyaXRlRmlsZShvcGVuc3NsRGF0YWJhc2VGaWxlUGF0aCwgJycpO1xuICB3cml0ZUZpbGUob3BlbnNzbFNlcmlhbEZpbGVQYXRoLCAnMDEnKTtcbn1cblxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIHdpdGhDZXJ0aWZpY2F0ZUF1dGhvcml0eUNyZWRlbnRpYWxzKGNiOiAoeyBjYUtleVBhdGgsIGNhQ2VydFBhdGggfTogeyBjYUtleVBhdGg6IHN0cmluZywgY2FDZXJ0UGF0aDogc3RyaW5nIH0pID0+IFByb21pc2U8dm9pZD4gfCB2b2lkKSB7XG4gIGRlYnVnKGBSZXRyaWV2aW5nIGRldmNlcnQncyBjZXJ0aWZpY2F0ZSBhdXRob3JpdHkgY3JlZGVudGlhbHNgKTtcbiAgbGV0IHRtcENBS2V5UGF0aCA9IG1rdG1wKCk7XG4gIGxldCBjYUtleSA9IGF3YWl0IGN1cnJlbnRQbGF0Zm9ybS5yZWFkUHJvdGVjdGVkRmlsZShyb290Q0FLZXlQYXRoKTtcbiAgd3JpdGVGaWxlKHRtcENBS2V5UGF0aCwgY2FLZXkpO1xuICBhd2FpdCBjYih7IGNhS2V5UGF0aDogdG1wQ0FLZXlQYXRoLCBjYUNlcnRQYXRoOiByb290Q0FDZXJ0UGF0aCB9KTtcbiAgcm0odG1wQ0FLZXlQYXRoKTtcbn1cblxuYXN5bmMgZnVuY3Rpb24gc2F2ZUNlcnRpZmljYXRlQXV0aG9yaXR5Q3JlZGVudGlhbHMoa2V5cGF0aDogc3RyaW5nKSB7XG4gIGRlYnVnKGBTYXZpbmcgZGV2Y2VydCdzIGNlcnRpZmljYXRlIGF1dGhvcml0eSBjcmVkZW50aWFsc2ApO1xuICBsZXQga2V5ID0gcmVhZEZpbGUoa2V5cGF0aCwgJ3V0Zi04Jyk7XG4gIGF3YWl0IGN1cnJlbnRQbGF0Zm9ybS53cml0ZVByb3RlY3RlZEZpbGUocm9vdENBS2V5UGF0aCwga2V5KTtcbn1cblxuXG5mdW5jdGlvbiBjZXJ0RXJyb3JzKCk6IHN0cmluZyB7XG4gIHRyeSB7XG4gICAgb3BlbnNzbChbJ3g1MDknLCAnLWluJywgcm9vdENBQ2VydFBhdGgsICctbm9vdXQnXSk7XG4gICAgcmV0dXJuICcnO1xuICB9IGNhdGNoIChlKSB7XG4gICAgcmV0dXJuIGUudG9TdHJpbmcoKTtcbiAgfVxufVxuXG4vLyBUaGlzIGZ1bmN0aW9uIGhlbHBzIHRvIG1pZ3JhdGUgZnJvbSB2MS4wLnggdG8gPj0gdjEuMS4wLlxuLyoqXG4gKiBTbW9vdGhseSBtaWdyYXRlIHRoZSBjZXJ0aWZpY2F0ZSBzdG9yYWdlIGZyb20gdjEuMC54IHRvID49IHYxLjEuMC5cbiAqIEluIHYxLjEuMCB0aGVyZSBhcmUgbmV3IG9wdGlvbnMgZm9yIHJldHJpZXZpbmcgdGhlIENBIGNlcnQgZGlyZWN0bHksXG4gKiB0byBoZWxwIHRoaXJkLXBhcnR5IE5vZGUgYXBwcyB0cnVzdCB0aGUgcm9vdCBDQS5cbiAqIFxuICogSWYgYSB2MS4wLnggY2VydCBhbHJlYWR5IGV4aXN0cywgdGhlbiBkZXZjZXJ0IGhhcyB3cml0dGVuIGl0IHdpdGhcbiAqIHBsYXRmb3JtLndyaXRlUHJvdGVjdGVkRmlsZSgpLCBzbyBhbiB1bnByaXZpbGVnZWQgcmVhZEZpbGUgY2Fubm90IGFjY2VzcyBpdC5cbiAqIFByZS1kZXRlY3QgYW5kIHJlbWVkeSB0aGlzOyBpdCBzaG91bGQgb25seSBoYXBwZW4gb25jZSBwZXIgaW5zdGFsbGF0aW9uLlxuICovXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gZW5zdXJlQ0FDZXJ0UmVhZGFibGUob3B0aW9uczogT3B0aW9ucyA9IHt9KTogUHJvbWlzZTx2b2lkPiB7XG4gIGlmICghY2VydEVycm9ycygpKSB7XG4gICAgcmV0dXJuO1xuICB9XG4gIC8qKlxuICAgKiBvbiB3aW5kb3dzLCB3cml0ZVByb3RlY3RlZEZpbGUgbGVmdCB0aGUgY2VydCBlbmNyeXB0ZWQgb24gKm5peCwgdGhlIGNlcnRcbiAgICogaGFzIG5vIHJlYWQgcGVybWlzc2lvbnMgZWl0aGVyIHdheSwgb3BlbnNzbCB3aWxsIGZhaWwgYW5kIHRoYXQgbWVhbnMgd2VcbiAgICogaGF2ZSB0byBmaXggaXRcbiAgICovXG4gIHRyeSB7XG4gICAgY29uc3QgY2FGaWxlQ29udGVudHMgPSBhd2FpdCBjdXJyZW50UGxhdGZvcm0ucmVhZFByb3RlY3RlZEZpbGUocm9vdENBQ2VydFBhdGgpO1xuICAgIGF3YWl0IGN1cnJlbnRQbGF0Zm9ybS5kZWxldGVQcm90ZWN0ZWRGaWxlcyhyb290Q0FDZXJ0UGF0aCk7XG4gICAgd3JpdGVGaWxlKHJvb3RDQUNlcnRQYXRoLCBjYUZpbGVDb250ZW50cyk7XG4gIH0gY2F0Y2ggKGUpIHtcbiAgICByZXR1cm4gYXdhaXQgaW5zdGFsbENlcnRpZmljYXRlQXV0aG9yaXR5KG9wdGlvbnMpO1xuICB9XG4gIFxuICAvLyBkb3VibGUgY2hlY2sgdGhhdCB3ZSBoYXZlIGEgbGl2ZSBvbmVcbiAgY29uc3QgcmVtYWluaW5nRXJyb3JzID0gY2VydEVycm9ycygpO1xuICBpZiAocmVtYWluaW5nRXJyb3JzKSB7XG4gICAgcmV0dXJuIGF3YWl0IGluc3RhbGxDZXJ0aWZpY2F0ZUF1dGhvcml0eShvcHRpb25zKTtcbiAgfVxufVxuXG4vKipcbiAqIFJlbW92ZSBhcyBtdWNoIG9mIHRoZSBkZXZjZXJ0IGZpbGVzIGFuZCBzdGF0ZSBhcyB3ZSBjYW4uIFRoaXMgaXMgbmVjZXNzYXJ5XG4gKiB3aGVuIGdlbmVyYXRpbmcgYSBuZXcgcm9vdCBjZXJ0aWZpY2F0ZSwgYW5kIHNob3VsZCBiZSBhdmFpbGFibGUgdG8gQVBJXG4gKiBjb25zdW1lcnMgYXMgd2VsbC5cbiAqIFxuICogTm90IGFsbCBvZiBpdCB3aWxsIGJlIHJlbW92YWJsZS4gSWYgY2VydHV0aWwgaXMgbm90IGluc3RhbGxlZCwgd2UnbGwgbGVhdmVcbiAqIEZpcmVmb3ggYWxvbmUuIFdlIHRyeSB0byByZW1vdmUgZmlsZXMgd2l0aCBtYXhpbXVtIHBlcm1pc3Npb25zLCBhbmQgaWYgdGhhdFxuICogZmFpbHMsIHdlJ2xsIHNpbGVudGx5IGZhaWwuXG4gKiBcbiAqIEl0J3MgYWxzbyBwb3NzaWJsZSB0aGF0IHRoZSBjb21tYW5kIHRvIHVudHJ1c3Qgd2lsbCBub3Qgd29yaywgYW5kIHdlJ2xsXG4gKiBzaWxlbnRseSBmYWlsIHRoYXQgYXMgd2VsbDsgd2l0aCBubyBleGlzdGluZyBjZXJ0aWZpY2F0ZXMgYW55bW9yZSwgdGhlXG4gKiBzZWN1cml0eSBleHBvc3VyZSB0aGVyZSBpcyBtaW5pbWFsLlxuICovXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gdW5pbnN0YWxsKCk6IFByb21pc2U8dm9pZD4ge1xuICBhd2FpdCBjdXJyZW50UGxhdGZvcm0ucmVtb3ZlRnJvbVRydXN0U3RvcmVzKHJvb3RDQUNlcnRQYXRoKTtcbiAgYXdhaXQgY3VycmVudFBsYXRmb3JtLmRlbGV0ZVByb3RlY3RlZEZpbGVzKGRvbWFpbnNEaXIpO1xuICBhd2FpdCBjdXJyZW50UGxhdGZvcm0uZGVsZXRlUHJvdGVjdGVkRmlsZXMocm9vdENBRGlyKTtcbiAgYXdhaXQgY3VycmVudFBsYXRmb3JtLmRlbGV0ZVByb3RlY3RlZEZpbGVzKGdldExlZ2FjeUNvbmZpZ0RpcigpKTtcbn1cbiJdfQ==

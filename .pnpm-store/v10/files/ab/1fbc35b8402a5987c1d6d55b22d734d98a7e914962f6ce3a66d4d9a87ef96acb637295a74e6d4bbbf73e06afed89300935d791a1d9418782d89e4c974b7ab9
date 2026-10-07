@@ -1,0 +1,88 @@
+{
+  "name": "reselect",
+  "version": "5.1.1",
+  "description": "Selectors for Redux.",
+  "main": "./dist/cjs/reselect.cjs",
+  "module": "./dist/reselect.legacy-esm.js",
+  "types": "./dist/reselect.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/reselect.d.ts",
+      "import": "./dist/reselect.mjs",
+      "default": "./dist/cjs/reselect.cjs"
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/reduxjs/reselect/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "format": "prettier --write \"{src,test}/**/*.{js,ts}\" \"docs/**/*.md\"",
+    "lint": "eslint src test",
+    "prepack": "yarn build",
+    "bench": "vitest --run bench --mode production",
+    "test": "node --expose-gc ./node_modules/vitest/dist/cli-wrapper.js --run && vitest --run --typecheck.only",
+    "test:watch": "node --expose-gc ./node_modules/vitest/dist/cli-wrapper.js --watch",
+    "test:cov": "vitest run --coverage",
+    "type-check": "vitest --run --typecheck.only",
+    "type-check:trace": "vitest --run --typecheck.only && tsc --noEmit -p typescript_test/tsconfig.json --generateTrace trace && npx @typescript/analyze-trace trace && rimraf trace",
+    "test:typescript": "tsc --noEmit -p typescript_test/tsconfig.json",
+    "docs:start": "yarn --cwd website start",
+    "docs:build": "yarn --cwd website build",
+    "docs:clear": "yarn --cwd website clear",
+    "docs:serve": "yarn --cwd website serve"
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "authors": [
+    "Lee Bannard",
+    "Robert Binna",
+    "Martijn Faassen",
+    "Philip Spitzlinger"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reduxjs/reselect.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
+    "@testing-library/react": "^14.1.2",
+    "@types/lodash": "^4.14.175",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
+    "@types/shelljs": "^0.8.11",
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/eslint-plugin-tslint": "^6",
+    "@typescript-eslint/parser": "^6",
+    "@typescript/analyze-trace": "^0.10.1",
+    "eslint": "^8.0.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-typescript": "0.14.0",
+    "jsdom": "^23.0.0",
+    "lodash": "^4.17.21",
+    "lodash.memoize": "^4.1.2",
+    "memoize-one": "^6.0.0",
+    "micro-memoize": "^4.0.9",
+    "netlify-plugin-cache": "^1.0.3",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.0.4",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.5",
+    "tsup": "^6.7.0",
+    "typescript": "^5.4.2",
+    "vitest": "^1.1.1"
+  },
+  "packageManager": "yarn@4.1.0"
+}

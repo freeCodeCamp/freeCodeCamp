@@ -1,0 +1,100 @@
+# `MD054` - Link and image style
+
+Tags: `images`, `links`
+
+Aliases: `link-image-style`
+
+Parameters:
+
+- `autolink`: Allow autolinks (`boolean`, default `true`)
+- `collapsed`: Allow collapsed reference links and images (`boolean`, default
+  `true`)
+- `full`: Allow full reference links and images (`boolean`, default `true`)
+- `inline`: Allow inline links and images (`boolean`, default `true`)
+- `shortcut`: Allow shortcut reference links and images (`boolean`, default
+  `true`)
+- `url_inline`: Allow URLs as inline links (`boolean`, default `true`)
+
+Fixable: Some violations can be fixed by tooling
+
+Links and images in Markdown can provide the link destination or image source at
+the time of use or can use a label to reference a definition elsewhere in the
+document. The three reference formats are convenient for keeping paragraph text
+clutter-free and make it easy to reuse the same URL in multiple places.
+
+By default, this rule allows all link/image styles.
+
+Setting the `autolink` parameter to `false` disables autolinks:
+
+```markdown
+<https://example.com>
+```
+
+Setting the `inline` parameter to `false` disables inline links and images:
+
+```markdown
+[link](https://example.com)
+
+![image](https://example.com)
+```
+
+Setting the `full` parameter to `false` disables full reference links and
+images:
+
+```markdown
+[link][url]
+
+![image][url]
+
+[url]: https://example.com
+```
+
+Setting the `collapsed` parameter to `false` disables collapsed reference links
+and images:
+
+```markdown
+[url][]
+
+![url][]
+
+[url]: https://example.com
+```
+
+Setting the `shortcut` parameter to `false` disables shortcut reference links
+and images:
+
+```markdown
+[url]
+
+![url]
+
+[url]: https://example.com
+```
+
+To fix violations of this rule, change the link or image to use an allowed
+style. This rule can automatically fix violations when a link or image can be
+converted to the `inline` style (preferred) or a link can be converted to the
+`autolink` style (which does not support images and must be an absolute URL).
+This rule does *not* fix scenarios that require converting a link or image to
+the `full`, `collapsed`, or `shortcut` reference styles because that involves
+naming the reference and determining where to insert it in the document.
+
+Setting the `url_inline` parameter to `false` prevents the use of inline links
+with the same absolute URL text/destination and no title because such links can
+be converted to autolinks:
+
+```markdown
+[https://example.com](https://example.com)
+```
+
+To fix `url_inline` violations, use the simpler autolink syntax instead:
+
+```markdown
+<https://example.com>
+```
+
+Rationale: Consistent formatting makes it easier to understand a document.
+Autolinks are concise, but appear as URLs which can be long and confusing.
+Inline links and images can include descriptive text, but take up more space in
+Markdown form. Reference links and images can be easier to read and manipulate
+in Markdown form, but require a separate link reference definition.

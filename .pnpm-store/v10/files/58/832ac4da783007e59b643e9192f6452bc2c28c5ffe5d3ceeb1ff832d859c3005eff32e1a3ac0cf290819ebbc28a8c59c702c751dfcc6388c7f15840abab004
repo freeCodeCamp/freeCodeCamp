@@ -1,0 +1,85 @@
+{
+  "name": "async",
+  "description": "Higher-order functions and common patterns for asynchronous code",
+  "main": "lib/async.js",
+  "files": [
+    "lib",
+    "dist/async.js",
+    "dist/async.min.js"
+  ],
+  "author": "Caolan McMahon",
+  "version": "1.5.2",
+  "keywords": [
+    "async",
+    "callback",
+    "utility",
+    "module"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caolan/async.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caolan/async/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "benchmark": "bestiejs/benchmark.js",
+    "bluebird": "^2.9.32",
+    "chai": "^3.1.0",
+    "coveralls": "^2.11.2",
+    "es6-promise": "^2.3.0",
+    "jscs": "^1.13.1",
+    "jshint": "~2.8.0",
+    "karma": "^0.13.2",
+    "karma-browserify": "^4.2.1",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.0.2",
+    "lodash": "^3.9.0",
+    "mkdirp": "~0.5.1",
+    "mocha": "^2.2.5",
+    "native-promise-only": "^0.8.0-a",
+    "nodeunit": ">0.0.0",
+    "nyc": "^2.1.0",
+    "rsvp": "^3.0.18",
+    "semver": "^4.3.6",
+    "uglify-js": "~2.4.0",
+    "xyz": "^0.5.0",
+    "yargs": "~3.9.1"
+  },
+  "jam": {
+    "main": "lib/async.js",
+    "include": [
+      "lib/async.js",
+      "README.md",
+      "LICENSE"
+    ],
+    "categories": [
+      "Utilities"
+    ]
+  },
+  "scripts": {
+    "mocha-node-test": "mocha mocha_test/",
+    "mocha-browser-test": "karma start",
+    "mocha-test": "npm run mocha-node-test && npm run mocha-browser-test",
+    "nodeunit-test": "nodeunit test/test-async.js",
+    "test": "npm run-script lint && npm run nodeunit-test && npm run mocha-test",
+    "lint": "jshint lib/*.js test/*.js perf/*.js && jscs lib/*.js test/*.js perf/*.js",
+    "coverage": "nyc npm test && nyc report",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "spm": {
+    "main": "lib/async.js"
+  },
+  "volo": {
+    "main": "lib/async.js",
+    "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests"
+    ]
+  }
+}

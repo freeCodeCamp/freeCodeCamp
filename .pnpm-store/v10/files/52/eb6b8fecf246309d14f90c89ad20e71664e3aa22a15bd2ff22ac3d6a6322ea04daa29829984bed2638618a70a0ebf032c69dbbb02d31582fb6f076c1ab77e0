@@ -1,0 +1,27 @@
+{
+  "name": "@webassemblyjs/wasm-gen",
+  "version": "1.14.1",
+  "description": "WebAssembly binary format printer",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xtuc/webassemblyjs.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Sven Sauleau",
+  "license": "MIT",
+  "dependencies": {
+    "@webassemblyjs/ast": "1.14.1",
+    "@webassemblyjs/helper-wasm-bytecode": "1.13.2",
+    "@webassemblyjs/ieee754": "1.13.2",
+    "@webassemblyjs/leb128": "1.13.2",
+    "@webassemblyjs/utf8": "1.13.2"
+  },
+  "gitHead": "25d52b1296e151ac56244a7c3886661e6b4a69ea"
+}

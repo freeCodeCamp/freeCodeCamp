@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/RateLimiter.js",
+  "module": "../dist/esm/RateLimiter.js",
+  "types": "../dist/dts/RateLimiter.d.ts"
+}

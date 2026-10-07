@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - '6.10.3'
+  - '10'
+  - '12'
+script: 'make test-travis'
+branches:
+  only:
+    - feature/fix-npm-vulnerabilities
+    - master

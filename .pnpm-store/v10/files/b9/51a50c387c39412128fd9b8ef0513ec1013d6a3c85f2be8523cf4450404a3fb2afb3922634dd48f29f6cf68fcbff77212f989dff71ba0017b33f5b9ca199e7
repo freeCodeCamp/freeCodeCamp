@@ -1,0 +1,28 @@
+/**
+ * @import {AttributeValueAdapter} from "@html-eslint/core"
+ * @import {
+ *   Range,
+ *   SourceLocation
+ * } from "@html-eslint/types"
+ * @import {TemplateLiteral} from "../../types"
+ */
+/** @implements {AttributeValueAdapter} */
+export class TemplateLiteralAttributeValueAdapter implements AttributeValueAdapter {
+    /** @param {TemplateLiteral} node */
+    constructor(node: TemplateLiteral);
+    /** @private */
+    private node;
+    /** @returns {SourceLocation} */
+    getLocation(): SourceLocation;
+    /** @returns {Range} */
+    getRange(): Range;
+    /** @returns {string | null} */
+    getValue(): string | null;
+    /** @returns {boolean} */
+    hasExpression(): boolean;
+}
+import type { AttributeValueAdapter } from "@html-eslint/core";
+import type { SourceLocation } from "@html-eslint/types";
+import type { Range } from "@html-eslint/types";
+import type { TemplateLiteral } from "../../types";
+//# sourceMappingURL=template-literal.d.ts.map

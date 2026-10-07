@@ -1,0 +1,36 @@
+{
+  "name": "through",
+  "version": "2.3.8",
+  "description": "simplified stream construction",
+  "main": "index.js",
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "devDependencies": {
+    "stream-spec": "~0.3.5",
+    "tape": "~2.3.2",
+    "from": "~0.1.3"
+  },
+  "keywords": [
+    "stream",
+    "streams",
+    "user-streams",
+    "pipe"
+  ],
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (dominictarr.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dominictarr/through.git"
+  },
+  "homepage": "https://github.com/dominictarr/through",
+  "testling": {
+    "browsers": [
+      "ie/8..latest",
+      "ff/15..latest",
+      "chrome/20..latest",
+      "safari/5.1..latest"
+    ],
+    "files": "test/*.js"
+  }
+}

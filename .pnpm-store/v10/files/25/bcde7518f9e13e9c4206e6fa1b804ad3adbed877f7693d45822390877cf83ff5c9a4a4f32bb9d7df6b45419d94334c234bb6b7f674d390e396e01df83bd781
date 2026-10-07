@@ -1,0 +1,32 @@
+{
+  "name": "@babel/helper-module-transforms",
+  "version": "7.28.6",
+  "description": "Babel helper functions for implementing ES6 module transformations",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-helper-module-transforms",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-module-transforms"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/helper-module-imports": "^7.28.6",
+    "@babel/helper-validator-identifier": "^7.28.5",
+    "@babel/traverse": "^7.28.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.6"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

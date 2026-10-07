@@ -1,0 +1,42 @@
+{
+  "name": "@humanfs/types",
+  "version": "0.15.0",
+  "description": "The TypeScript types for the hfs project.",
+  "type": "module",
+  "types": "src/hfs-types.ts",
+  "exports": {
+    ".": {
+      "types": "./src/hfs-types.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humanwhocodes/humanfs.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "filesystem",
+    "fs",
+    "hfs",
+    "files"
+  ],
+  "author": "Nicholas C. Zakas",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/humanwhocodes/humanfs/issues"
+  },
+  "homepage": "https://github.com/humanwhocodes/humanfs#readme",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

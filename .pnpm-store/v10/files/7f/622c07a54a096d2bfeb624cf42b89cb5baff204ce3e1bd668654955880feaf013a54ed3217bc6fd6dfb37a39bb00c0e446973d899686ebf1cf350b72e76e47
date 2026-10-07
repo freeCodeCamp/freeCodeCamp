@@ -1,0 +1,57 @@
+{
+  "name": "@quansync/fs",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Filesystem utilities for Quansync",
+  "author": "Kevin Deng <sxzz@sxzz.moe>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/sxzz",
+  "homepage": "https://github.com/quansync-dev/fs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quansync-dev/fs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quansync-dev/fs/issues"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "quansync": "^1.0.0"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config": "^7.4.1",
+    "@sxzz/prettier-config": "^2.2.6",
+    "@types/node": "^24.10.1",
+    "@typescript/native-preview": "7.0.0-dev.20251202.1",
+    "bumpp": "^10.3.2",
+    "eslint": "^9.39.1",
+    "prettier": "^3.7.3",
+    "tsdown": "^0.17.0-beta.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  },
+  "prettier": "@sxzz/prettier-config",
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsgo --noEmit",
+    "format": "prettier --cache --write .",
+    "release": "bumpp"
+  }
+}

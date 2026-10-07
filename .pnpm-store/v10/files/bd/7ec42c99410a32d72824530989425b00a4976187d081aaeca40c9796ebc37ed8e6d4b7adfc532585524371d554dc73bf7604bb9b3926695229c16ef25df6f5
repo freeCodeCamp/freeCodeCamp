@@ -1,0 +1,48 @@
+{
+  "name": "write-file-atomic",
+  "version": "3.0.3",
+  "description": "Write files in an atomic fashion w/configurable ownership",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap",
+    "posttest": "npm run lint",
+    "lint": "standard",
+    "postlint": "rimraf chowncopy good nochmod nochown nofsync nofsyncopt noopen norename \"norename nounlink\" nowrite",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/npm/write-file-atomic.git"
+  },
+  "keywords": [
+    "writeFile",
+    "atomic"
+  ],
+  "author": "Rebecca Turner <me@re-becca.org> (http://re-becca.org)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npm/write-file-atomic/issues"
+  },
+  "homepage": "https://github.com/npm/write-file-atomic",
+  "dependencies": {
+    "imurmurhash": "^0.1.4",
+    "is-typedarray": "^1.0.0",
+    "signal-exit": "^3.0.2",
+    "typedarray-to-buffer": "^3.1.5"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "require-inject": "^1.4.4",
+    "rimraf": "^2.6.3",
+    "standard": "^14.3.1",
+    "tap": "^14.10.6"
+  },
+  "files": [
+    "index.js"
+  ],
+  "tap": {
+    "100": true
+  }
+}

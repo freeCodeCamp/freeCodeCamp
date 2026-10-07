@@ -1,0 +1,6 @@
+/*
+ * This file was automatically generated.
+ * DO NOT MODIFY BY HAND.
+ * Run `yarn special-lint-fix` to update
+ */
+"use strict";function r(e,{instancePath:t="",parentData:o,parentDataProperty:a,rootData:n=e}={}){if(!e||"object"!=typeof e||Array.isArray(e))return r.errors=[{params:{type:"object"}}],!1;{const t=0;for(const t in e)if("esModule"!==t&&"exportsOnly"!==t)return r.errors=[{params:{additionalProperty:t}}],!1;if(0===t){if(void 0!==e.esModule){const t=0;if("boolean"!=typeof e.esModule)return r.errors=[{params:{type:"boolean"}}],!1;var s=0===t}else s=!0;if(s)if(void 0!==e.exportsOnly){const t=0;if("boolean"!=typeof e.exportsOnly)return r.errors=[{params:{type:"boolean"}}],!1;s=0===t}else s=!0}}return r.errors=null,!0}function e(t,{instancePath:o="",parentData:a,parentDataProperty:n,rootData:s=t}={}){let p=null,l=0;return r(t,{instancePath:o,parentData:a,parentDataProperty:n,rootData:s})||(p=null===p?r.errors:p.concat(r.errors),l=p.length),e.errors=p,0===l}module.exports=e,module.exports.default=e;

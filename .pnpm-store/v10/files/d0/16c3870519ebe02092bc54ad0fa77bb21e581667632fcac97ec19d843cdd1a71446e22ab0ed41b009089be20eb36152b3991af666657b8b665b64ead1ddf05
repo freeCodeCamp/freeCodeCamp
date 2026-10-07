@@ -1,0 +1,1 @@
+{"version":3,"names":["_AwaitValue","value","wrapped"],"sources":["../../src/helpers/AwaitValue.js"],"sourcesContent":["/* @minVersion 7.0.0-beta.0 */\n/* @onlyBabel7 */\n\nexport default function _AwaitValue(value) {\n  this.wrapped = value;\n}\n"],"mappings":";;;;;;AAGe,SAASA,WAAWA,CAACC,KAAK,EAAE;EACzC,IAAI,CAACC,OAAO,GAAGD,KAAK;AACtB","ignoreList":[]}

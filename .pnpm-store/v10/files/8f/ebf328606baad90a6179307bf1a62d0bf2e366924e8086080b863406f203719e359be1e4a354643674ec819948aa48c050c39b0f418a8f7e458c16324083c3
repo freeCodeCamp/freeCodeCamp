@@ -1,0 +1,105 @@
+{
+  "name": "@puppeteer/browsers",
+  "version": "3.0.3",
+  "description": "Download and launch browsers",
+  "scripts": {
+    "build:docs": "wireit",
+    "build": "wireit",
+    "build:test": "wireit",
+    "clean": "../../tools/clean.mjs",
+    "test": "wireit"
+  },
+  "type": "module",
+  "bin": "lib/main-cli.js",
+  "main": "./lib/main.js",
+  "module": "./lib/main.js",
+  "wireit": {
+    "build": {
+      "command": "tsc -b && node --experimental-strip-types ../../tools/chmod.ts 755 lib/main-cli.js",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json"
+      ],
+      "clean": "if-file-deleted",
+      "output": [
+        "lib/**"
+      ]
+    },
+    "build:docs": {
+      "command": "api-extractor run --local --config \"./api-extractor.docs.json\"",
+      "files": [
+        "api-extractor.docs.json",
+        "lib/main.d.ts",
+        "tsconfig.json"
+      ],
+      "dependencies": [
+        "build"
+      ]
+    },
+    "build:test": {
+      "command": "tsc -b test/src/tsconfig.json",
+      "files": [
+        "test/**/*.ts",
+        "test/src/tsconfig.json"
+      ],
+      "output": [
+        "test/build/**",
+        "!test/build/package.json"
+      ],
+      "dependencies": [
+        "build",
+        "../testserver:build"
+      ]
+    },
+    "test": {
+      "command": "node tools/downloadTestBrowsers.mjs && mocha",
+      "files": [
+        ".mocharc.cjs"
+      ],
+      "dependencies": [
+        "build:test"
+      ]
+    }
+  },
+  "keywords": [
+    "puppeteer",
+    "browsers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puppeteer/puppeteer/tree/main/packages/browsers"
+  },
+  "author": "The Chromium Authors",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "files": [
+    "lib",
+    "src",
+    "!*.tsbuildinfo"
+  ],
+  "dependencies": {
+    "debug": "^4.4.3",
+    "progress": "^2.0.3",
+    "tar-fs": "^3.1.1",
+    "yargs": "^17.7.2",
+    "semver": "^7.7.4"
+  },
+  "peerDependencies": {
+    "proxy-agent": ">=8.0.1"
+  },
+  "peerDependenciesMeta": {
+    "proxy-agent": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "proxy-agent": ">=8.0.1",
+    "@types/debug": "4.1.13",
+    "@types/progress": "2.0.7",
+    "@types/tar-fs": "2.0.4",
+    "@types/yargs": "17.0.33",
+    "@types/ws": "8.18.1"
+  }
+}

@@ -1,0 +1,14 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"complexity": 0,
+		"eqeqeq": [2, "allow-null"],
+		"func-name-matching": 0,
+		"id-length": 0,
+		"max-lines-per-function": 0,
+		"max-statements": 0,
+	},
+}

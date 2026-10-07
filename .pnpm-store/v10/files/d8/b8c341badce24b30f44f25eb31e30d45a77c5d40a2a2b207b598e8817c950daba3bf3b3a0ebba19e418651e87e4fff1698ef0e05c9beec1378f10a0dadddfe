@@ -1,0 +1,33 @@
+{
+  "name": "@humanwhocodes/object-schema",
+  "version": "1.2.1",
+  "description": "An object schema merger/validator",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humanwhocodes/object-schema.git"
+  },
+  "keywords": [
+    "object",
+    "validation",
+    "schema",
+    "merge"
+  ],
+  "author": "Nicholas C. Zakas",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/humanwhocodes/object-schema/issues"
+  },
+  "homepage": "https://github.com/humanwhocodes/object-schema#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.13.0",
+    "mocha": "^5.2.0"
+  }
+}

@@ -1,0 +1,38 @@
+# `MD053` - Link and image reference definitions should be needed
+
+Tags: `images`, `links`
+
+Aliases: `link-image-reference-definitions`
+
+Parameters:
+
+- `ignored_definitions`: Ignored definitions (`string[]`, default `["//"]`)
+
+Fixable: Some violations can be fixed by tooling
+
+Links and images in Markdown can provide the link destination or image source
+at the time of use or can use a label to reference a definition elsewhere in
+the document. The latter reference format is convenient for keeping paragraph
+text clutter-free and makes it easy to reuse the same URL in multiple places.
+
+Because link and image reference definitions are located separately from
+where they are used, there are two scenarios where a definition can be
+unnecessary:
+
+1. If a label is not referenced by any link or image in a document, that
+   definition is unused and can be deleted.
+2. If a label is defined multiple times in a document, the first definition is
+   used and the others can be deleted.
+
+This rule considers a reference definition to be used if any link or image
+reference has the corresponding label. The "full", "collapsed", and "shortcut"
+formats are all supported.
+
+If there are reference definitions that are deliberately unreferenced, they can
+be ignored by setting the `ignored_definitions` parameter to the list of strings
+to ignore. The default value of this parameter ignores the following convention
+for adding non-HTML comments to Markdown:
+
+```markdown
+[//]: # (This behaves like a comment)
+```

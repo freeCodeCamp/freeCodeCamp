@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["jest"]
+  },
+  "include": ["*.ts"]
+}

@@ -1,0 +1,274 @@
+@precedence {
+  attribute @left,
+  structure @left,
+  call,
+  valueCompareOp,
+  valueOp @left,
+  layerName
+}
+
+@skip { whitespace | Comment }
+
+@top StyleSheet { item* }
+
+@top Styles { blockContent }
+
+item {
+  RuleSet |
+  ImportStatement |
+  MediaStatement |
+  CharsetStatement |
+  NamespaceStatement |
+  KeyframesStatement |
+  SupportsStatement |
+  ScopeStatement |
+  AtRule
+}
+
+RuleSet {
+  selector ("," selector)* Block
+}
+
+ImportStatement {
+  atKw<"import">
+  value
+  Layer {
+    queryCalleeKw<"layer"> (!layerName "(" LayerName ("." LayerName)* ")")? |
+    queryKw<"layer">
+  }?
+  commaSep<query> ";"
+}
+
+LayerName { identifier }
+
+MediaStatement {
+  atKw<"media"> commaSep<query> Block
+}
+
+CharsetStatement {
+  atKw<"charset"> value ";"
+}
+
+NamespaceStatement {
+  atKw<"namespace">
+  NamespaceName { identifier }?
+  (StringLiteral | CallLiteral) ";"
+}
+
+KeyframesStatement {
+  atKw<"keyframes">
+  KeyframeName { identifier | StringLiteral }
+  KeyframeList
+}
+
+KeyframeSelector {
+  KeyframeRangeName { identifier } NumberLiteral? |
+  NumberLiteral
+}
+
+KeyframeList {
+  "{" (KeyframeSelector ("," KeyframeSelector)* Block)* "}"
+}
+
+SupportsStatement {
+  atKw<"supports"> query Block
+}
+
+ScopeStatement {
+  atKw<"scope">
+  ParenthesizedSelector?
+  (@extend[@name=to]<identifier, "to"> ParenthesizedSelector)?
+  Block
+}
+
+AtRule { AtKeyword commaSep<query> (";" | Block) }
+
+Block { "{" blockContent "}" }
+
+blockContent { ~item item* (Declaration (";" ~item item* Declaration?)*)? }
+
+selector {
+  UniversalSelector |
+  TagSelector { ~item TagName { identifier ~item } } |
+  NestingSelector |
+  ClassSelector { selector? !attribute "." ClassName { identifier } } |
+  PseudoClassSelector {
+    selector? !attribute (":" | "::") (
+      PseudoClassName { identifier } |
+      pseudoClassWithArg ArgList<value+> |
+      PseudoClassName { callee } ArgList<selector>)
+  } |
+  IdSelector { selector? !attribute "#" IdName { identifier } } |
+  AttributeSelector { selector? !attribute "[" AttributeName { identifier } (MatchOp value)? "]" } |
+  ChildSelector { selector? !structure ChildOp selector } |
+  DescendantSelector { selector !structure descendantOp selector } |
+  SiblingSelector { selector? !structure SiblingOp selector }
+}
+
+pseudoClassWithArg {
+  @specialize[@name=PseudoClassName]<callee, "lang" | "nth-child" | "nth-last-child" | "nth-of-type" | "nth-last-of-type" | "nth-of-type" | "dir" | "host-context">
+}
+
+NumberLiteral {
+  numberLiteralInner Unit?
+}
+
+ArgList<content> { "(" commaSep<content> ")" }
+
+Declaration {
+  (PropertyName { identifier ~item } | VariableName)
+  ":" (value (","? value)*)? Important?
+}
+
+query {
+  KeywordQuery { queryIdentifier } |
+  FeatureQuery { "(" FeatureName ":" value+ ")" } |
+  BinaryQuery { query !valueOp @specialize[@name=LogicOp]<queryIdentifier, "or" | "and"> query } |
+  ComparisonQuery {
+    "("
+    (queryValue | FeatureName) !valueCompareOp CompareOp (queryValue | FeatureName)
+    (!valueCompareOp CompareOp (queryValue | FeatureName))?
+    ")"
+  } |
+  UnaryQuery { @specialize[@name=UnaryQueryOp]<queryIdentifier, "not" | "only"> query } |
+  ParenthesizedQuery { "(" query ")" } |
+  SelectorQuery { queryCalleeKw<"selector"> ParenthesizedSelector } |
+  CallQuery { QueryCallee ArgList<FeatureName ":" value+ | query> }
+}
+
+ParenthesizedSelector { "(" selector ")" }
+
+FeatureName { queryIdentifier }
+
+value {
+  VariableName |
+  ValueName { identifier } |
+  ParenthesizedValue { "(" token* ")" } |
+  BracketedValue { "[" token* "]" } |
+  BracedValue { "{" token* "}" } |
+  ColorLiteral |
+  NumberLiteral |
+  StringLiteral |
+  BinaryExpression { value !valueOp BinOp value } |
+  CallExpression |
+  IfExpression |
+  CallLiteral
+}
+
+token {
+  value |
+  AtKeyword |
+  "#" | ";" | "." | ":"    
+}
+
+queryValue {
+  queryVariableName |
+  ColorLiteral |
+  NumberLiteral |
+  StringLiteral
+}
+
+IfExpression {
+  @specialize[@name=if]<callee, "if"> ArgList {
+    "(" (IfBranch ";")* IfBranch ";"? ")"
+  }
+}
+
+IfBranch { query ":" value }
+
+CallLiteral {
+  @specialize[@name=CallTag]<callee, "url" | "url-prefix" | "domain" | "regexp">
+  "(" (ParenthesizedContent | StringLiteral)? ")"
+}
+
+CallExpression {
+  (Callee { callee } | VariableName) !call ArgList<value+>
+}
+
+@skip {} {
+  Comment[isolate] { "/*" (commentContent | commentLineBreak)* commentEnd }
+}
+
+@local tokens {
+  commentEnd { "*/" | @eof }
+  commentLineBreak { "\n" }
+  @else commentContent
+}
+
+commaSep<value> { "" | value ("," value?)* }
+
+queryKw<name> { @specialize[@name={name}]<queryIdentifier, name> }
+queryCalleeKw<name> { @specialize[@name={name}]<QueryCallee, name> }
+
+atKw<name> { @specialize[@name={name}]<AtKeyword, "@" name> }
+
+@external tokens descendant from "./tokens" {
+  descendantOp
+}
+
+@external tokens unitToken from "./tokens" {
+  Unit
+}
+
+@external tokens identifiers from "./tokens" {
+  identifier,
+  callee,
+  VariableName
+}
+
+@external tokens queryIdentifiers from "./tokens" {
+  @conflict { identifier, VariableName, callee }
+  queryIdentifier,
+  queryVariableName[@name=VariableName],
+  QueryCallee
+}
+
+@tokens {
+  UniversalSelector { "*" }
+
+  NestingSelector { "&" }
+
+  AtKeyword { "@" "-"? @asciiLetter (@asciiLetter | @digit | "-")* }
+
+  MatchOp { $[~^|*$]? "=" }
+
+  ChildOp { ">" ">"? }
+
+  CompareOp { $[<>] "="? | "=" }
+
+  SiblingOp { "~" | "+" }
+
+  BinOp { $[+\-*/] }
+
+  Important { "!important" }
+
+  whitespace { @whitespace+ }
+
+  hexDigit { @digit | $[a-fA-F] }
+
+  ParenthesizedContent { !['")] ![)]+ }
+
+  @precedence { whitespace, ParenthesizedContent, "/*" }
+
+  ColorLiteral {
+    "#" hexDigit hexDigit hexDigit (hexDigit (hexDigit hexDigit (hexDigit hexDigit)?)?)?
+  }
+
+  numberLiteralInner { ("+" | "-")? (@digit+ ("." @digit*)? | "." @digit+) (("e" | "E") ("+" | "-")? @digit+)? }
+
+  @precedence { numberLiteralInner, BinOp, SiblingOp }
+
+  @precedence { numberLiteralInner, "." }
+
+  StringLiteral[isolate] { "\"" (!["\n\\] | "\\" _)* "\"" | "'" (!['\n\\] | "\\" _)* "'" }
+
+  "#" "."
+
+  ":" "::" ";" ","
+
+  "(" ")" "[" "]" "{" "}"
+}
+
+@external propSource cssHighlighting from "./highlight"
+
+@detectDelim

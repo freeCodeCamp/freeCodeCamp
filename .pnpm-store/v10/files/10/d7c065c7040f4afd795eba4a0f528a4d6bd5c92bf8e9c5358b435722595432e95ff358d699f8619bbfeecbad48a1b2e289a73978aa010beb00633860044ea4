@@ -1,0 +1,60 @@
+{
+  "name": "prop-types",
+  "version": "15.8.1",
+  "description": "Runtime type checking for React props and similar objects.",
+  "sideEffects": false,
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "checkPropTypes.js",
+    "factory.js",
+    "factoryWithThrowingShims.js",
+    "factoryWithTypeCheckers.js",
+    "index.js",
+    "prop-types.js",
+    "prop-types.min.js",
+    "lib"
+  ],
+  "repository": "facebook/prop-types",
+  "keywords": [
+    "react"
+  ],
+  "bugs": {
+    "url": "https://github.com/facebook/prop-types/issues"
+  },
+  "homepage": "https://facebook.github.io/react/",
+  "dependencies": {
+    "loose-envify": "^1.4.0",
+    "object-assign": "^4.1.1",
+    "react-is": "^16.13.1"
+  },
+  "scripts": {
+    "pretest": "npm run lint",
+    "lint": "eslint .",
+    "test": "npm run tests-only",
+    "tests-only": "jest",
+    "umd": "NODE_ENV=development browserify index.js -t loose-envify --standalone PropTypes -o prop-types.js",
+    "umd-min": "NODE_ENV=production browserify index.js -t loose-envify -t uglifyify --standalone PropTypes  -p bundle-collapser/plugin -o | uglifyjs --compress unused,dead_code -o prop-types.min.js",
+    "build": "yarn umd && yarn umd-min",
+    "prepublish": "not-in-publish || yarn build"
+  },
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-react": "^6.24.1",
+    "browserify": "^16.5.0",
+    "bundle-collapser": "^1.4.0",
+    "eslint": "^8.6.0",
+    "in-publish": "^2.0.1",
+    "jest": "^19.0.2",
+    "react": "^15.7.0",
+    "uglifyify": "^5.0.2",
+    "uglifyjs": "^2.4.11"
+  },
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
+  }
+}

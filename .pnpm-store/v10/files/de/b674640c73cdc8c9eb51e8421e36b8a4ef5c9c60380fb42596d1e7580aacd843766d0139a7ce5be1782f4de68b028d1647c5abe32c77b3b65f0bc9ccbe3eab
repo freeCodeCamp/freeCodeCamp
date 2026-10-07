@@ -1,0 +1,1 @@
+{"version":3,"file":"is-32-bit-integer.js","names":["is32BitInteger","x"],"sources":["../../src/utils/is-32-bit-integer.ts"],"sourcesContent":["export function is32BitInteger(x: unknown): boolean {\n  return typeof x === `number` && (x | 0) === x\n}\n"],"mappings":";;;;AAAO,SAASA,cAAc,CAACC,CAAU,EAAW;EAClD,OAAO,OAAOA,CAAC,KAAM,QAAO,IAAI,CAACA,CAAC,GAAG,CAAC,MAAMA,CAAC;AAC/C"}

@@ -1,0 +1,16 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TArray } from '../../types/array.mjs';
+import { type TCyclic } from '../../types/cyclic.mjs';
+import { type TIntersect } from '../../types/intersect.mjs';
+import { type TObject } from '../../types/object.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TTuple } from '../../types/tuple.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TFromArray } from './from_array.mjs';
+import { type TFromCyclic } from './from_cyclic.mjs';
+import { type TFromIntersect } from './from_intersect.mjs';
+import { type TFromObject } from './from_object.mjs';
+import { type TFromTuple } from './from_tuple.mjs';
+import { type TFromUnion } from './from_union.mjs';
+export type TFromType<Type extends TSchema> = (Type extends TArray<infer Type extends TSchema> ? TFromArray<Type> : Type extends TCyclic<infer Defs extends TProperties, infer Ref extends string> ? TFromCyclic<Defs, Ref> : Type extends TIntersect<infer Types extends TSchema[]> ? TFromIntersect<Types> : Type extends TObject<infer Properties extends TProperties> ? TFromObject<Properties> : Type extends TTuple<infer Types extends TSchema[]> ? TFromTuple<Types> : Type extends TUnion<infer Types extends TSchema[]> ? TFromUnion<Types> : Type);
+export declare function FromType<Type extends TSchema>(type: Type): TFromType<Type>;

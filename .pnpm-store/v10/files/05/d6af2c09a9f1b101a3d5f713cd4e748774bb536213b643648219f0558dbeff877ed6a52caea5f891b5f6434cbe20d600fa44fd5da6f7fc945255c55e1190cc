@@ -1,0 +1,52 @@
+{
+  "name": "@loadable/component",
+  "description": "React code splitting made easy.",
+  "version": "5.16.7",
+  "main": "./dist/cjs/loadable.cjs.js",
+  "module": "./dist/esm/loadable.esm.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/loadable.cjs.js",
+      "import": "./dist/esm/loadable.esm.mjs",
+      "default": "./dist/cjs/loadable.cjs.js"
+    }
+  },
+  "repository": "git@github.com:gregberge/loadable-components.git",
+  "author": "Greg Bergé <berge.greg@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "ssr",
+    "webpack",
+    "code-splitting",
+    "react-router",
+    "server-side-rendering",
+    "dynamic-import",
+    "react-loadable",
+    "react-async-components"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/gregberge"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "shx rm -rf dist",
+    "build": "cross-env rollup -c && yarn create-cjs-package-json",
+    "create-cjs-package-json": "echo '{\"type\": \"commonjs\"}' > ./dist/cjs/package.json",
+    "prepublishOnly": "yarn run build"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.18",
+    "hoist-non-react-statics": "^3.3.1",
+    "react-is": "^16.12.0"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/RuntimeFlagsPatch.js",
+  "module": "../dist/esm/RuntimeFlagsPatch.js",
+  "types": "../dist/dts/RuntimeFlagsPatch.d.ts"
+}

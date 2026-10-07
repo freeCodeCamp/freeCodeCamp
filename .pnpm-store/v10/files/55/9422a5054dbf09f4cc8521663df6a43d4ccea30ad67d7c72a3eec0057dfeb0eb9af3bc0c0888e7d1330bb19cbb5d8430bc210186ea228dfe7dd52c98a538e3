@@ -1,0 +1,32 @@
+{
+  "name": "@codesandbox/nodebox",
+  "version": "0.1.8",
+  "description": "Public API of Nodebox",
+  "main": "./build/index.js",
+  "module": "./build/index.mjs",
+  "typings": "./build/index.d.ts",
+  "license": "SEE LICENSE IN ./LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codesandbox/nodebox-runtime"
+  },
+  "exports": {
+    ".": {
+      "import": "./build/index.mjs",
+      "require": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  },
+  "files": [
+    "./build"
+  ],
+  "scripts": {
+    "dev": "NODE_ENV=development pnpm build",
+    "prebuild": "rimraf ./build",
+    "build": "node -r esbuild-register ./build.ts"
+  },
+  "dependencies": {
+    "outvariant": "^1.4.0",
+    "strict-event-emitter": "^0.4.3"
+  }
+}

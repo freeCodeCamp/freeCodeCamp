@@ -1,0 +1,37 @@
+{
+  "name": "tinyspy",
+  "type": "module",
+  "version": "4.0.4",
+  "packageManager": "pnpm@9.1.1",
+  "description": "A minimal fork of nanospy, with more features",
+  "license": "MIT",
+  "homepage": "https://github.com/tinylibs/tinyspy#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinylibs/tinyspy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tinylibs/tinyspy/issues"
+  },
+  "keywords": [
+    "spy",
+    "mock",
+    "typescript",
+    "method"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

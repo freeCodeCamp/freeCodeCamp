@@ -1,0 +1,11 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"max-params": [2, 3],
+		"new-cap": [2, { "capIsNewExceptions": ["GetIntrinsic"] }],
+		"no-magic-numbers": 0,
+	},
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"runEslint.d.ts","sourceRoot":"","sources":["../../../src/eslint-bulk-suppressions/cli/runEslint.ts"],"names":[],"mappings":"AAQA,wBAAsB,cAAc,CAAC,KAAK,EAAE,MAAM,EAAE,EAAE,IAAI,EAAE,UAAU,GAAG,OAAO,GAAG,OAAO,CAAC,IAAI,CAAC,CA4C/F"}

@@ -1,0 +1,79 @@
+{
+  "name": "unist-builder",
+  "version": "2.0.3",
+  "description": "unist utility to create a new trees with a nice syntax",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "tree",
+    "ast",
+    "build",
+    "builder",
+    "create",
+    "dsl",
+    "hyperscript",
+    "sugar",
+    "syntax"
+  ],
+  "repository": "syntax-tree/unist-builder",
+  "bugs": "https://github.com/syntax-tree/unist-builder/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Eugene Sharygin <eush77@gmail.com>",
+  "contributors": [
+    "Eugene Sharygin <eush77@gmail.com>",
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/mdast": "^3.0.0",
+    "dtslint": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "xo": "^0.26.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

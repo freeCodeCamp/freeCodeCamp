@@ -1,0 +1,12 @@
+{
+  "main": "../lib/node/interceptors/XMLHttpRequest/index.cjs",
+  "module": "../lib/node/interceptors/XMLHttpRequest/index.mjs",
+  "browser": "../lib/browser/interceptors/XMLHttpRequest/index.mjs",
+  "exports": {
+    ".": {
+      "browser": "./../lib/browser/interceptors/XMLHttpRequest/index.mjs",
+      "import": "./../lib/node/interceptors/XMLHttpRequest/index.mjs",
+      "default": "./../lib/node/interceptors/XMLHttpRequest/index.cjs"
+    }
+  }
+}

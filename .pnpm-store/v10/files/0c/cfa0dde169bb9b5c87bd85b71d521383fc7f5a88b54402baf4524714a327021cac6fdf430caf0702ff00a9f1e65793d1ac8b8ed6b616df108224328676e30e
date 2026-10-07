@@ -1,0 +1,155 @@
+{
+  "definitions": {
+    "Exposes": {
+      "description": "Modules that should be exposed by this container. When provided, property name is used as public name, otherwise public name is automatically inferred from request.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "description": "Modules that should be exposed by this container.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/ExposesItem"
+              },
+              {
+                "$ref": "#/definitions/ExposesObject"
+              }
+            ]
+          }
+        },
+        {
+          "$ref": "#/definitions/ExposesObject"
+        }
+      ]
+    },
+    "ExposesConfig": {
+      "description": "Advanced configuration for modules that should be exposed by this container.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "import": {
+          "description": "Request to a module that should be exposed by this container.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ExposesItem"
+            },
+            {
+              "$ref": "#/definitions/ExposesItems"
+            }
+          ]
+        },
+        "name": {
+          "description": "Custom chunk name for the exposed module.",
+          "type": "string"
+        }
+      },
+      "required": ["import"]
+    },
+    "ExposesItem": {
+      "description": "Module that should be exposed by this container.",
+      "type": "string",
+      "minLength": 1
+    },
+    "ExposesItems": {
+      "description": "Modules that should be exposed by this container.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ExposesItem"
+      }
+    },
+    "ExposesObject": {
+      "description": "Modules that should be exposed by this container. Property names are used as public paths.",
+      "type": "object",
+      "additionalProperties": {
+        "description": "Modules that should be exposed by this container.",
+        "anyOf": [
+          {
+            "$ref": "#/definitions/ExposesConfig"
+          },
+          {
+            "$ref": "#/definitions/ExposesItem"
+          },
+          {
+            "$ref": "#/definitions/ExposesItems"
+          }
+        ]
+      }
+    },
+    "Remotes": {
+      "description": "Container locations and request scopes from which modules should be resolved and loaded at runtime. When provided, property name is used as request scope, otherwise request scope is automatically inferred from container location.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "description": "Container locations and request scopes from which modules should be resolved and loaded at runtime.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/RemotesItem"
+              },
+              {
+                "$ref": "#/definitions/RemotesObject"
+              }
+            ]
+          }
+        },
+        {
+          "$ref": "#/definitions/RemotesObject"
+        }
+      ]
+    },
+    "RemotesConfig": {
+      "description": "Advanced configuration for container locations from which modules should be resolved and loaded at runtime.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "external": {
+          "description": "Container locations from which modules should be resolved and loaded at runtime.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RemotesItem"
+            },
+            {
+              "$ref": "#/definitions/RemotesItems"
+            }
+          ]
+        },
+        "shareScope": {
+          "description": "The name of the share scope shared with this remote.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": ["external"]
+    },
+    "RemotesItem": {
+      "description": "Container location from which modules should be resolved and loaded at runtime.",
+      "type": "string",
+      "minLength": 1
+    },
+    "RemotesItems": {
+      "description": "Container locations from which modules should be resolved and loaded at runtime.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/RemotesItem"
+      }
+    },
+    "RemotesObject": {
+      "description": "Container locations from which modules should be resolved and loaded at runtime. Property names are used as request scopes.",
+      "type": "object",
+      "additionalProperties": {
+        "description": "Container locations from which modules should be resolved and loaded at runtime.",
+        "anyOf": [
+          {
+            "$ref": "#/definitions/RemotesConfig"
+          },
+          {
+            "$ref": "#/definitions/RemotesItem"
+          },
+          {
+            "$ref": "#/definitions/RemotesItems"
+          }
+        ]
+      }
+    }
+  }
+}

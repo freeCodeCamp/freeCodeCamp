@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TestSized.js",
+  "module": "../dist/esm/TestSized.js",
+  "types": "../dist/dts/TestSized.d.ts"
+}

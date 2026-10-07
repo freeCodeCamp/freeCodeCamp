@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_iterable_to_array_limit_loose.cjs",
+    "module": "../../esm/_iterable_to_array_limit_loose.js"
+}

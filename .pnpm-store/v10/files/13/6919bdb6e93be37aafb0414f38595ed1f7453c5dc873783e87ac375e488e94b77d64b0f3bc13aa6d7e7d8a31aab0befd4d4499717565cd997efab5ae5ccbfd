@@ -1,0 +1,74 @@
+{
+  "name": "@gatsbyjs/reach-router",
+  "version": "2.0.1",
+  "description": "Gatsby's fork to modernize reach-router",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.mjs",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "microbundle -f cjs,modern --jsx React.createElement --generateTypes false",
+    "watch": "npm run build watch --no-compress",
+    "prepare": "husky install && cross-env NODE_ENV=production npm run clean && npm run build",
+    "clean": "del-cli dist/*",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "format": "prettier \"**/*.{md,js}\" --write",
+    "lint": "eslint . --ignore-path .gitignore",
+    "lint:fix": "npm run lint -- --fix",
+    "fix": "npm run format && npm run lint:fix"
+  },
+  "peerDependencies": {
+    "react": "18.x",
+    "react-dom": "18.x"
+  },
+  "dependencies": {
+    "invariant": "^2.2.4",
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.3.0",
+    "babel-preset-gatsby-package": "^2.20.0",
+    "cross-env": "^7.0.3",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.22.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.30.1",
+    "husky": "^7.0.0",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
+    "microbundle": "^0.15.0",
+    "prettier": "^2.7.1",
+    "react": "experimental",
+    "react-dom": "experimental"
+  },
+  "author": "Ryan Florence",
+  "contributors": [
+    "Ty Hopp",
+    "LekoArts"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/reach-router.git"
+  },
+  "keywords": [
+    "react",
+    "reach router",
+    "gatsby"
+  ],
+  "prettier": {
+    "printWidth": 80,
+    "semi": false,
+    "arrowParens": "avoid"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/reach-router/issues"
+  },
+  "homepage": "https://github.com/gatsbyjs/reach-router#readme"
+}

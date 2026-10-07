@@ -1,0 +1,32 @@
+{
+  "name": "wildcard",
+  "description": "Wildcard matching tools",
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "stability": "stable",
+  "keywords": [
+    "string",
+    "wildcard"
+  ],
+  "version": "2.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "embellish-readme": "^1.7.2",
+    "tape": "^5.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DamonOehlman/wildcard.git"
+  },
+  "bugs": {
+    "url": "http://github.com/DamonOehlman/wildcard/issues"
+  },
+  "scripts": {
+    "test": "node test/all.js",
+    "gendocs": "embellish README.md"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT"
+}

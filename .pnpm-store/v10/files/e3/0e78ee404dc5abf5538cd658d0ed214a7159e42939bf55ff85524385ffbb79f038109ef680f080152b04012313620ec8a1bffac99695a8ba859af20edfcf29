@@ -1,0 +1,47 @@
+{
+  "name": "@babel/generator",
+  "version": "8.0.0-rc.3",
+  "description": "Turns an AST into code.",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-generator"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-generator",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20generator%22+is%3Aopen",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "@babel/parser": "^8.0.0-rc.3",
+    "@babel/types": "^8.0.0-rc.3",
+    "@jridgewell/gen-mapping": "^0.3.12",
+    "@jridgewell/trace-mapping": "^0.3.28",
+    "@types/jsesc": "^2.5.0",
+    "jsesc": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^8.0.0-rc.3",
+    "@babel/helper-fixtures": "^8.0.0-rc.3",
+    "@babel/plugin-transform-typescript": "^8.0.0-rc.3",
+    "@jridgewell/sourcemap-codec": "^1.5.3",
+    "charcodes": "^0.2.0"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "type": "module"
+}

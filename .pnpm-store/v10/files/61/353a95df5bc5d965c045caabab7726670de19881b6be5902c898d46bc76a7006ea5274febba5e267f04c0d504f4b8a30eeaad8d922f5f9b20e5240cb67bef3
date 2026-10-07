@@ -1,0 +1,12 @@
+import { type TSchema, type TSchemaOptions } from '../../types/schema.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TConstructor } from '../../types/constructor.mjs';
+import { type TNever } from '../../types/never.mjs';
+import { type TInstanceTypeDeferred } from '../../action/instance_type.mjs';
+import { type TState, type TInstantiateType, type TCanInstantiate } from '../instantiate.mjs';
+type TInstanceTypeOperation<Type extends TSchema> = (Type extends TConstructor ? Type['instanceType'] : TNever);
+export type TInstanceTypeAction<Type extends TSchema, Result extends TSchema = TCanInstantiate<[Type]> extends true ? TInstanceTypeOperation<Type> : TInstanceTypeDeferred<Type>> = Result;
+export declare function InstanceTypeAction<Type extends TSchema>(type: Type, options: TSchemaOptions): TInstanceTypeAction<Type>;
+export type TInstanceTypeInstantiate<Context extends TProperties, State extends TState, Type extends TSchema, InstantiatedType extends TSchema = TInstantiateType<Context, State, Type>> = TInstanceTypeAction<InstantiatedType>;
+export declare function InstanceTypeInstantiate<Context extends TProperties, State extends TState, Type extends TSchema>(context: Context, state: State, type: Type, options?: TSchemaOptions): TInstanceTypeInstantiate<Context, State, Type>;
+export {};

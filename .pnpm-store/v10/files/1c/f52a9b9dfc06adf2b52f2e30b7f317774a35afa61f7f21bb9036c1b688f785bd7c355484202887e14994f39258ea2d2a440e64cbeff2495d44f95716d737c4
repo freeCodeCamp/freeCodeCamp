@@ -1,0 +1,1 @@
+{"version":3,"file":"iir-filter-options.d.ts","sourceRoot":"","sources":["../../../src/interfaces/iir-filter-options.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,sBAAsB,CAAC;AAEzD,MAAM,WAAW,iBAAkB,SAAQ,iBAAiB;IACxD,QAAQ,EAAE,QAAQ,CAAC,MAAM,CAAC,CAAC;IAE3B,WAAW,EAAE,QAAQ,CAAC,MAAM,CAAC,CAAC;CACjC"}

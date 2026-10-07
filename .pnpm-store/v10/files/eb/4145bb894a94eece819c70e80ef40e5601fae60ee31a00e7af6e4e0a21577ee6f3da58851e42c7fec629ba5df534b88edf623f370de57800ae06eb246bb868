@@ -1,0 +1,19 @@
+{
+  "name": "@redux-saga/core/effects",
+  "private": true,
+  "main": "dist/redux-saga-core-effects.cjs.js",
+  "module": "dist/redux-saga-core-effects.esm.js",
+  "types": "../types/effects.d.ts",
+  "typesVersions": {
+    "<3.6": {
+      "*": [
+        "../types/pre-ts3.6/*"
+      ]
+    },
+    "<4.2": {
+      "*": [
+        "../types/pre-ts4.2/*"
+      ]
+    }
+  }
+}

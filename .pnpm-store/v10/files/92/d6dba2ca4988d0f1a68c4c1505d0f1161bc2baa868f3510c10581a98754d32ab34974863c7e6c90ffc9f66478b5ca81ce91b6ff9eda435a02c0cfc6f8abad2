@@ -1,0 +1,178 @@
+{
+  "name": "mongodb",
+  "version": "6.21.0",
+  "description": "The official MongoDB driver for Node.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "etc/prepare.js",
+    "mongodb.d.ts",
+    "tsconfig.json"
+  ],
+  "types": "mongodb.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mongodb/node-mongodb-native.git"
+  },
+  "keywords": [
+    "mongodb",
+    "driver",
+    "official"
+  ],
+  "author": {
+    "name": "The MongoDB NodeJS Team",
+    "email": "dbx-node@mongodb.com"
+  },
+  "dependencies": {
+    "@mongodb-js/saslprep": "^1.3.0",
+    "bson": "^6.10.4",
+    "mongodb-connection-string-url": "^3.0.2"
+  },
+  "peerDependencies": {
+    "@aws-sdk/credential-providers": "^3.188.0",
+    "@mongodb-js/zstd": "^1.1.0 || ^2.0.0",
+    "gcp-metadata": "^5.2.0",
+    "kerberos": "^2.0.1",
+    "mongodb-client-encryption": ">=6.0.0 <7",
+    "snappy": "^7.3.2",
+    "socks": "^2.7.1"
+  },
+  "peerDependenciesMeta": {
+    "@aws-sdk/credential-providers": {
+      "optional": true
+    },
+    "@mongodb-js/zstd": {
+      "optional": true
+    },
+    "kerberos": {
+      "optional": true
+    },
+    "snappy": {
+      "optional": true
+    },
+    "mongodb-client-encryption": {
+      "optional": true
+    },
+    "gcp-metadata": {
+      "optional": true
+    },
+    "socks": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@aws-sdk/credential-providers": "^3.876.0",
+    "@iarna/toml": "^2.2.5",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@microsoft/api-extractor": "^7.52.11",
+    "@microsoft/tsdoc-config": "^0.17.1",
+    "@mongodb-js/zstd": "^2.0.1",
+    "@types/chai": "^4.3.17",
+    "@types/chai-subset": "^1.3.5",
+    "@types/express": "^5.0.3",
+    "@types/kerberos": "^1.1.5",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "^22.15.3",
+    "@types/saslprep": "^1.0.3",
+    "@types/semver": "^7.7.0",
+    "@types/sinon": "^17.0.4",
+    "@types/sinon-chai": "^4.0.0",
+    "@types/whatwg-url": "^13.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.31.1",
+    "chai": "^4.4.1",
+    "chai-subset": "^1.6.0",
+    "chalk": "^4.1.2",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-mocha": "^10.4.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-tsdoc": "^0.4.0",
+    "eslint-plugin-unused-imports": "^4.2.0",
+    "express": "^5.1.0",
+    "gcp-metadata": "^5.3.0",
+    "js-yaml": "^4.1.0",
+    "mocha": "^11.7.1",
+    "mocha-sinon": "^2.1.2",
+    "mongodb-client-encryption": "^6.5.0",
+    "mongodb-legacy": "^6.1.3",
+    "nyc": "^15.1.0",
+    "prettier": "^3.6.2",
+    "semver": "^7.7.2",
+    "sinon": "^18.0.1",
+    "sinon-chai": "^3.7.0",
+    "snappy": "^7.3.2",
+    "socks": "^2.8.7",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.2",
+    "tsd": "^0.33.0",
+    "typescript": "5.8.3",
+    "typescript-cached-transpile": "^0.0.6",
+    "v8-heapsnapshot": "^1.3.1",
+    "yargs": "^18.0.0"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=16.20.1"
+  },
+  "bugs": {
+    "url": "https://jira.mongodb.org/projects/NODE/issues/"
+  },
+  "homepage": "https://github.com/mongodb/node-mongodb-native",
+  "scripts": {
+    "build:evergreen": "node .evergreen/generate_evergreen_tasks.js",
+    "build:ts": "node ./node_modules/typescript/bin/tsc",
+    "build:dts": "npm run build:ts && api-extractor run && node etc/clean_definition_files.cjs && ESLINT_USE_FLAT_CONFIG=false eslint --no-ignore --fix mongodb.d.ts lib/beta.d.ts",
+    "build:docs": "./etc/docs/build.ts",
+    "build:typedoc": "typedoc",
+    "build:nightly": "node ./.github/scripts/nightly.mjs",
+    "check:bench": "npm --prefix test/benchmarks/driver_bench start",
+    "check:coverage": "nyc npm run test:all",
+    "check:integration-coverage": "nyc npm run check:test",
+    "check:lambda": "nyc mocha --config test/mocha_lambda.js test/integration/node-specific/examples/handler.test.js",
+    "check:lambda:aws": "nyc mocha --config test/mocha_lambda.js test/integration/node-specific/examples/aws_handler.test.js",
+    "check:lint": "npm run build:dts && npm run check:dts && npm run check:eslint && npm run check:tsd",
+    "check:eslint": "npm run build:dts && ESLINT_USE_FLAT_CONFIG=false eslint -v && ESLINT_USE_FLAT_CONFIG=false eslint --max-warnings=0 --ext '.js,.ts' src test",
+    "check:tsd": "tsd --version && tsd",
+    "check:dependencies": "mocha test/action/dependency.test.ts",
+    "check:dts": "node ./node_modules/typescript/bin/tsc --noEmit mongodb.d.ts && tsd",
+    "check:search-indexes": "nyc mocha --config test/mocha_mongodb.js test/manual/search-index-management.prose.test.ts",
+    "check:test": "mocha --config test/mocha_mongodb.js test/integration",
+    "check:unit": "nyc mocha test/unit",
+    "check:ts": "node ./node_modules/typescript/bin/tsc -v && node ./node_modules/typescript/bin/tsc --noEmit",
+    "check:atlas": "nyc mocha --config test/manual/mocharc.js test/manual/atlas_connectivity.test.ts",
+    "check:resource-management": "nyc mocha --config test/manual/mocharc.js test/manual/resource_management.test.ts",
+    "check:drivers-atlas-testing": "nyc mocha --config test/mocha_mongodb.js test/atlas/drivers_atlas_testing.test.ts",
+    "check:adl": "nyc mocha --config test/mocha_mongodb.js test/manual/atlas-data-lake-testing",
+    "check:aws": "nyc mocha --config test/mocha_mongodb.js test/integration/auth/mongodb_aws.test.ts",
+    "check:oidc-auth": "nyc mocha --config test/mocha_mongodb.js test/integration/auth/auth.spec.test.ts",
+    "check:oidc-test": "nyc mocha --config test/mocha_mongodb.js test/integration/auth/mongodb_oidc.prose.test.ts",
+    "check:oidc-azure": "nyc mocha --config test/mocha_mongodb.js test/integration/auth/mongodb_oidc_azure.prose.05.test.ts",
+    "check:oidc-gcp": "nyc mocha --config test/mocha_mongodb.js test/integration/auth/mongodb_oidc_gcp.prose.06.test.ts",
+    "check:oidc-k8s": "nyc mocha --config test/mocha_mongodb.js test/integration/auth/mongodb_oidc_k8s.prose.07.test.ts",
+    "check:kerberos": "nyc mocha --config test/manual/mocharc.js test/manual/kerberos.test.ts",
+    "check:tls": "nyc mocha --config test/manual/mocharc.js test/manual/tls_support.test.ts",
+    "check:ldap": "nyc mocha --config test/manual/mocharc.js test/manual/ldap.test.ts",
+    "check:socks5": "nyc mocha --config test/manual/mocharc.js test/manual/socks5.test.ts",
+    "check:csfle": "nyc mocha --config test/mocha_mongodb.js test/integration/client-side-encryption",
+    "check:snappy": "nyc mocha test/unit/assorted/snappy.test.js",
+    "check:x509": "nyc mocha test/manual/x509_auth.test.ts",
+    "fix:eslint": "npm run check:eslint -- --fix",
+    "prepare": "node etc/prepare.js",
+    "preview:docs": "ts-node etc/docs/preview.ts",
+    "test": "npm run check:lint && npm run test:all",
+    "test:all": "npm run check:unit && npm run check:test",
+    "update:docs": "npm run build:docs -- --yes"
+  },
+  "tsd": {
+    "directory": "test/types",
+    "compilerOptions": {
+      "strict": true,
+      "target": "esnext",
+      "module": "commonjs",
+      "moduleResolution": "node"
+    }
+  }
+}

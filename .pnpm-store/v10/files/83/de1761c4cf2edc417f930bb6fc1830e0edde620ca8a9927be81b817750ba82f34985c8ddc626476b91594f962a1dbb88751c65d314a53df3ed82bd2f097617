@@ -1,0 +1,1 @@
+{"version":3,"file":"gatsby.js","names":["require"],"sources":["../../src/bin/gatsby.js"],"sourcesContent":["#!/usr/bin/env node\n\nrequire(`gatsby-cli`)\n"],"mappings":"AAAA;AAAmB;;AAEnBA,OAAO,CAAE,YAAW,CAAC"}

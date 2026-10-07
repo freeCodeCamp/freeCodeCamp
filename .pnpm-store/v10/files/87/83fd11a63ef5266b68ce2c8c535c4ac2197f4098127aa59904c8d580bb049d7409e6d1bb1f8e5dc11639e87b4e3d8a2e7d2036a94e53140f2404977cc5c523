@@ -1,0 +1,46 @@
+{
+  "name": "check-error",
+  "description": "Error comparison and information related utility for node and the browser",
+  "keywords": [
+    "check-error",
+    "error",
+    "chai util"
+  ],
+  "license": "MIT",
+  "author": "Jake Luer <jake@alogicalparadox.com> (http://alogicalparadox.com)",
+  "contributors": [
+    "David Losert (https://github.com/davelosert)",
+    "Keith Cirkel (https://github.com/keithamus)",
+    "Miroslav Bajtoš (https://github.com/bajtos)",
+    "Lucas Fernandes da Costa (https://github.com/lucasfcosta)"
+  ],
+  "files": [
+    "index.js",
+    "check-error.js"
+  ],
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chaijs/check-error.git"
+  },
+  "scripts": {
+    "lint": "eslint index.js test/",
+    "pretest": "npm run lint",
+    "test": "npm run test:node && npm run test:browser",
+    "test:browser": "web-test-runner",
+    "test:node": "mocha"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@web/test-runner": "^0.20.2",
+    "eslint": "^9.31.0",
+    "mocha": "^11.7.1",
+    "simple-assert": "^2.0.0"
+  },
+  "engines": {
+    "node": ">= 16"
+  },
+  "version": "2.1.3"
+}

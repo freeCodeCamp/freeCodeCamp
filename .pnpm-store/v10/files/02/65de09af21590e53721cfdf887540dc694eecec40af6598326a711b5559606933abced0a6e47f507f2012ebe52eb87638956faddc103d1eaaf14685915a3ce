@@ -1,0 +1,1 @@
+{"version":3,"file":"delay-node.d.ts","sourceRoot":"","sources":["../../../src/interfaces/delay-node.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,UAAU,CAAC;AACpC,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAC1C,OAAO,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AAE5C,MAAM,WAAW,UAAU,CAAC,CAAC,SAAS,QAAQ,CAAE,SAAQ,UAAU,CAAC,CAAC,CAAC;IACjE,QAAQ,CAAC,SAAS,EAAE,WAAW,CAAC;CACnC"}

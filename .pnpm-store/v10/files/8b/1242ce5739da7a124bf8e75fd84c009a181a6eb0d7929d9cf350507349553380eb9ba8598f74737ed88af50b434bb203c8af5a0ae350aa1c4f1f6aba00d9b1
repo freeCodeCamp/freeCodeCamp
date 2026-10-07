@@ -1,0 +1,57 @@
+{
+  "name": "es-module-lexer",
+  "version": "1.7.0",
+  "description": "Lexes ES modules returning their import/export metadata",
+  "main": "dist/lexer.cjs",
+  "module": "dist/lexer.js",
+  "types": "types/lexer.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/lexer.d.ts",
+      "module": "./dist/lexer.js",
+      "import": "./dist/lexer.js",
+      "require": "./dist/lexer.cjs"
+    },
+    "./js": {
+      "types": "./types/lexer.d.ts",
+      "default": "./dist/lexer.asm.js"
+    }
+  },
+  "scripts": {
+    "build": "npm install -g chomp ; chomp build",
+    "test": "npm install -g chomp ; chomp test"
+  },
+  "author": "Guy Bedford",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.224",
+    "@types/node": "^18.7.1",
+    "kleur": "^2.0.2",
+    "mocha": "^5.2.0",
+    "terser": "^5.19.4",
+    "typescript": "^4.7.4"
+  },
+  "files": [
+    "dist",
+    "types",
+    "lexer.js"
+  ],
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guybedford/es-module-lexer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guybedford/es-module-lexer/issues"
+  },
+  "homepage": "https://github.com/guybedford/es-module-lexer#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": []
+}

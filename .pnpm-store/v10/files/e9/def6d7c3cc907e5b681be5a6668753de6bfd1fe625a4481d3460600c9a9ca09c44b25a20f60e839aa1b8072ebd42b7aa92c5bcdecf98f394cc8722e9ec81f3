@@ -1,0 +1,22 @@
+{
+  "name": "@algolia/logger-console",
+  "version": "4.27.0",
+  "private": false,
+  "description": "Promise-based log library using console log.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-javascript.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "dist/logger-console.esm.js",
+  "types": "dist/logger-console.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "dependencies": {
+    "@algolia/logger-common": "4.27.0"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "name": "@fastify/forwarded",
+  "description": "Parse HTTP X-Forwarded-For header",
+  "version": "3.0.1",
+  "type": "commonjs",
+  "author": "Douglas Christopher Wilson <doug@somethingdoug.com>",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "James Sumners",
+      "url": "https://james.sumners.info"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "x-forwarded-for",
+    "http",
+    "req"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/forwarded.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fastify/forwarded/issues"
+  },
+  "homepage": "https://github.com/fastify/forwarded#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "@types/node": "^24.0.8",
+    "benchmark": "2.1.4",
+    "c8": "^10.1.2",
+    "eslint": "^9.17.0",
+    "neostandard": "^0.12.0",
+    "tsd": "^0.33.0"
+  },
+  "types": "types/index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "scripts": {
+    "bench": "node benchmark/index.js",
+    "bench:combined": "node benchmark/combined.js",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:unit": "c8 --100 node --test",
+    "test:typescript": "tsd"
+  }
+}

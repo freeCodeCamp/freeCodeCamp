@@ -1,0 +1,100 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain allows interacting with the FedCM dialog.
+experimental domain FedCm
+  # Whether this is a sign-up or sign-in action for this account, i.e.
+  # whether this account has ever been used to sign in to this RP before.
+  type LoginState extends string
+    enum
+      SignIn
+      SignUp
+
+  # The types of FedCM dialogs.
+  type DialogType extends string
+    enum
+      AccountChooser
+      AutoReauthn
+      ConfirmIdpLogin
+      Error
+
+  # The buttons on the FedCM dialog.
+  type DialogButton extends string
+    enum
+      ConfirmIdpLoginContinue
+      ErrorGotIt
+      ErrorMoreDetails
+
+  # The URLs that each account has
+  type AccountUrlType extends string
+    enum
+      TermsOfService
+      PrivacyPolicy
+
+  # Corresponds to IdentityRequestAccount
+  type Account extends object
+    properties
+      string accountId
+      string email
+      string name
+      string givenName
+      string pictureUrl
+      string idpConfigUrl
+      string idpLoginUrl
+      LoginState loginState
+      # These two are only set if the loginState is signUp
+      optional string termsOfServiceUrl
+      optional string privacyPolicyUrl
+
+  event dialogShown
+    parameters
+      string dialogId
+      DialogType dialogType
+      array of Account accounts
+      # These exist primarily so that the caller can verify the
+      # RP context was used appropriately.
+      string title
+      optional string subtitle
+
+  # Triggered when a dialog is closed, either by user action, JS abort,
+  # or a command below.
+  event dialogClosed
+    parameters
+      string dialogId
+
+  command enable
+    parameters
+      # Allows callers to disable the promise rejection delay that would
+      # normally happen, if this is unimportant to what's being tested.
+      # (step 4 of https://fedidcg.github.io/FedCM/#browser-api-rp-sign-in)
+      optional boolean disableRejectionDelay
+
+  command disable
+
+  command selectAccount
+    parameters
+      string dialogId
+      integer accountIndex
+
+  command clickDialogButton
+    parameters
+      string dialogId
+      DialogButton dialogButton
+
+  command openUrl
+    parameters
+      string dialogId
+      integer accountIndex
+      AccountUrlType accountUrlType
+
+  command dismissDialog
+    parameters
+      string dialogId
+      optional boolean triggerCooldown
+
+  # Resets the cooldown time, if any, to allow the next FedCM call to show
+  # a dialog even if one was recently dismissed by the user.
+  command resetCooldown

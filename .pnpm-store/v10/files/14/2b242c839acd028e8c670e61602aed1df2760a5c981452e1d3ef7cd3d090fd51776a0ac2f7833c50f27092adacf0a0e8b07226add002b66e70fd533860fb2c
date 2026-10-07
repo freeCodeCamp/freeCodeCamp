@@ -1,0 +1,11 @@
+{
+  "title": "MergeDuplicateChunksPluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "stage": {
+      "description": "Specifies the stage for merging duplicate chunks.",
+      "type": "number"
+    }
+  }
+}

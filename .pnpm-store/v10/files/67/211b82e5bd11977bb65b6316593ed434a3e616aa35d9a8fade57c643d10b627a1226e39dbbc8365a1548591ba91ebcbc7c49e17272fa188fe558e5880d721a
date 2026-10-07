@@ -1,0 +1,51 @@
+{
+  "name": "javascript-stringify",
+  "version": "2.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Stringify is to `eval` as `JSON.stringify` is to `JSON.parse`",
+  "license": "MIT",
+  "repository": "https://github.com/blakeembrey/javascript-stringify.git",
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "homepage": "https://github.com/blakeembrey/javascript-stringify",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/javascript-stringify/issues"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "format": "ts-scripts format",
+    "lint": "ts-scripts lint",
+    "prepare": "ts-scripts install && ts-scripts build",
+    "specs": "ts-scripts specs",
+    "test": "ts-scripts test"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "stringify",
+    "javascript",
+    "object",
+    "eval",
+    "string",
+    "code"
+  ],
+  "devDependencies": {
+    "@borderless/ts-scripts": "^0.4.1",
+    "@types/jest": "^24.0.9",
+    "@types/node": "^11.10.4",
+    "@types/semver": "^5.5.0",
+    "fast-check": "^1.12.0",
+    "semver": "^5.6.0",
+    "typescript": "^4.2.4"
+  },
+  "types": "dist/index.d.ts",
+  "ts-scripts": {
+    "project": "tsconfig.build.json"
+  }
+}

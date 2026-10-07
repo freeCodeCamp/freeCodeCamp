@@ -1,0 +1,45 @@
+{
+	"name": "onetime",
+	"version": "6.0.0",
+	"description": "Ensure a function is only called once",
+	"license": "MIT",
+	"repository": "sindresorhus/onetime",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=12"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"once",
+		"function",
+		"one",
+		"onetime",
+		"func",
+		"fn",
+		"single",
+		"call",
+		"called",
+		"prevent"
+	],
+	"dependencies": {
+		"mimic-fn": "^4.0.0"
+	},
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"tsd": "^0.14.0",
+		"xo": "^0.38.2"
+	}
+}

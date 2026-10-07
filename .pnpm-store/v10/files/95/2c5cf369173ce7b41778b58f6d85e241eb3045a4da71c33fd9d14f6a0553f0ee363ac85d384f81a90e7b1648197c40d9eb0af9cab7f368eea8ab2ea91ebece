@@ -1,0 +1,1 @@
+import{useCallback as n,useState as f}from"react";import{useIsMounted as i}from'./use-is-mounted.js';function c(a=0){let[l,r]=f(a),t=i(),o=n(e=>{t.current&&r(u=>u|e)},[l,t]),m=n(e=>Boolean(l&e),[l]),s=n(e=>{t.current&&r(u=>u&~e)},[r,t]),g=n(e=>{t.current&&r(u=>u^e)},[r]);return{flags:l,addFlag:o,hasFlag:m,removeFlag:s,toggleFlag:g}}export{c as useFlags};

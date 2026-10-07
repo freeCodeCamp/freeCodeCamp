@@ -1,0 +1,50 @@
+<svg width="45" height="43" viewBox="0 0 45 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M21.2659 42.2067C20.9342 42.797 20.163 42.965 19.6137 42.5665L0.465308 28.6398C0.172341 28.4265 0 28.0862 0 27.7243V10.939C0 10.0148 1.04907 9.48061 1.79657 10.0235L13.5088 18.541C14.6031 19.3381 16.1476 18.9999 16.8111 17.8215L26.5113 0.577439C26.7117 0.222001 27.0887 0.00012207 27.498 0.00012207H43.0726C43.9385 0.00012207 44.4836 0.932876 44.0592 1.68683L21.2659 42.2046V42.2067Z" fill="#22FF84"/>
+  <mask id="mask0_2002_17204" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="45" height="43">
+    <path d="M21.2659 42.2066C20.9342 42.7968 20.163 42.9649 19.6137 42.5663L0.465308 28.6397C0.172341 28.4264 0 28.086 0 27.7241V10.9389C0 10.0147 1.04907 9.48049 1.79657 10.0233L13.5088 18.5409C14.6031 19.338 16.1476 18.9998 16.8111 17.8214L26.5113 0.577317C26.7117 0.221879 27.0887 0 27.498 0H43.0726C43.9385 0 44.4836 0.932754 44.0592 1.68671L21.2659 42.2044V42.2066Z" fill="black"/>
+  </mask>
+  <g mask="url(#mask0_2002_17204)">
+    <g filter="url(#filter0_f_2002_17204)">
+      <ellipse cx="14.0313" cy="3.39062" rx="14.0313" ry="3.39062" transform="matrix(-0.650066 0.759878 0.759879 0.650065 32.5093 -3.61884)" fill="#00CCC6"/>
+    </g>
+    <g filter="url(#filter1_f_2002_17204)">
+      <ellipse cx="14.0313" cy="6.0868" rx="14.0313" ry="6.0868" transform="matrix(-0.588245 -0.808682 -0.808682 0.588246 16.1094 37.5068)" fill="#00CCC6"/>
+    </g>
+    <g filter="url(#filter2_f_2002_17204)">
+      <ellipse cx="6.44313" cy="12.1953" rx="6.37416" ry="5.55082" transform="rotate(23.1293 6.44313 12.1953)" fill="#77FF00"/>
+    </g>
+    <g filter="url(#filter3_f_2002_17204)">
+      <ellipse cx="40.7746" cy="15.9509" rx="5.61461" ry="24.5343" transform="rotate(23.1293 40.7746 15.9509)" fill="#77FF00"/>
+    </g>
+    <g filter="url(#filter4_f_2002_17204)">
+      <ellipse cx="4.98534" cy="10.0691" rx="4.98534" ry="10.0691" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 39.4482 10.9414)" fill="#97FFE2"/>
+    </g>
+  </g>
+  <defs>
+    <filter id="filter0_f_2002_17204" x="7.29277" y="-10.8334" width="37.3432" height="40.1616" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="4.59556" result="effect1_foregroundBlur_2002_17204"/>
+    </filter>
+    <filter id="filter1_f_2002_17204" x="-15.8693" y="8.64781" width="37.6054" height="42.1854" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="4.59556" result="effect1_foregroundBlur_2002_17204"/>
+    </filter>
+    <filter id="filter2_f_2002_17204" x="-9.0041" y="-2.68275" width="30.8944" height="29.7561" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="4.59556" result="effect1_foregroundBlur_2002_17204"/>
+    </filter>
+    <filter id="filter3_f_2002_17204" x="20.6482" y="-15.9117" width="40.2528" height="63.7251" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="4.59556" result="effect1_foregroundBlur_2002_17204"/>
+    </filter>
+    <filter id="filter4_f_2002_17204" x="18.7156" y="-16.8414" width="34.2758" height="34.2754" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="4.59556" result="effect1_foregroundBlur_2002_17204"/>
+    </filter>
+  </defs>
+</svg>

@@ -1,0 +1,33 @@
+# `MD059` - Link text should be descriptive
+
+Tags: `accessibility`, `links`
+
+Aliases: `descriptive-link-text`
+
+Parameters:
+
+- `prohibited_texts`: Prohibited link texts (`string[]`, default `["click
+  here","here","link","more"]`)
+
+This rule is triggered when a link has generic text like `[click here](...)` or
+`[link](...)`.
+
+Link text should be descriptive and communicate the purpose of the link (e.g.,
+`[Download the budget document](...)` or `[CommonMark Specification](...)`).
+This is especially important for screen readers which sometimes present links
+without context.
+
+By default, this rule prohibits a small number of common English words/phrases.
+To customize that list of words/phrases, set the `prohibited_texts` parameter to
+an `Array` of `string`s.
+
+Note: For languages other than English, use the `prohibited_texts` parameter to
+customize the list for that language. It is *not* a goal for this rule to have
+translations for every language.
+
+Note: This rule checks Markdown links; HTML links are ignored.
+
+More information:
+
+- <https://webaim.org/techniques/hypertext/>
+- <https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-link-only.html>

@@ -1,0 +1,85 @@
+{
+  "name": "@fastify/cookie",
+  "version": "11.0.2",
+  "description": "Plugin for fastify to add support for cookies",
+  "main": "plugin.js",
+  "type": "commonjs",
+  "types": "types/plugin.d.ts",
+  "scripts": {
+    "coverage": "npm run test:unit -- --coverage-report=html",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:typescript": "tsd",
+    "test:unit": "c8 --100 node --test",
+    "test:unit:verbose": "npm run test:unit -- -Rspec"
+  },
+  "precommit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fastify/fastify-cookie.git"
+  },
+  "keywords": [
+    "fastify",
+    "cookie"
+  ],
+  "author": "James Sumners <james.sumners@gmail.com>",
+  "contributors": [
+    {
+      "name": "Salman Mitha",
+      "email": "SalmanMitha@gmail.com"
+    },
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Manuel Spigolon",
+      "email": "behemoth89@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-cookie/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-cookie#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "@fastify/pre-commit": "^2.1.0",
+    "@types/node": "^22.0.0",
+    "benchmark": "^2.1.4",
+    "c8": "^10.1.2",
+    "eslint": "^9.17.0",
+    "fastify": "^5.0.0",
+    "neostandard": "^0.12.0",
+    "sinon": "^19.0.2",
+    "tsd": "^0.31.1"
+  },
+  "dependencies": {
+    "cookie": "^1.0.0",
+    "fastify-plugin": "^5.0.0"
+  },
+  "tsd": {
+    "directory": "test"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

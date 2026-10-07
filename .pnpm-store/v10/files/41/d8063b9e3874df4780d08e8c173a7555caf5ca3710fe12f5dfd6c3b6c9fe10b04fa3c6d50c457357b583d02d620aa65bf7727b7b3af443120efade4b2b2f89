@@ -1,0 +1,38 @@
+{
+  "name": "chrome-trace-event",
+  "description": "A library to create a trace of your node app per Google's Trace Event format.",
+  "license": "MIT",
+  "version": "1.0.4",
+  "author": "Trent Mick, Sam Saccone",
+  "keywords": [
+    "trace-event",
+    "trace",
+    "event",
+    "trace-viewer",
+    "google"
+  ],
+  "repository": {
+    "url": "github:samccone/chrome-trace-event"
+  },
+  "main": "./dist/trace-event.js",
+  "typings": "./dist/trace-event.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "*",
+    "prettier": "^1.12.1",
+    "tape": "4.8.0",
+    "typescript": "^4.2.4"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "files": [
+    "dist",
+    "CHANGES.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check_format": "prettier -l lib/** test/** examples/**",
+    "test": "tape test/*.test.js"
+  }
+}

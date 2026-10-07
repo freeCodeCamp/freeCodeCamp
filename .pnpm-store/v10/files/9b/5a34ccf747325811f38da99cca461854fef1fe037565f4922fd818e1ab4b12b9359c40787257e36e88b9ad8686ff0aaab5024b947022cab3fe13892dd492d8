@@ -1,0 +1,25 @@
+{{# def.definitions }}
+{{# def.errors }}
+{{# def.setupKeyword }}
+{{# def.$data }}
+
+{{
+  var $regExpCode = it.opts.regExp ? 'regExp' : 'new RegExp';
+}}
+
+{{? $isData }}
+  var {{=$valid}} = true;
+  try {
+    {{=$valid}} = {{=$regExpCode}}({{=$schemaValue}}).test({{=$data}});
+  } catch(e) {
+    {{=$valid}} = false;
+  }
+  if ({{# def.$dataNotType:'string' }} !{{=$valid}}) {
+{{??}}
+  {{
+    var $regexp = it.usePattern($schema);
+  }}
+  if ({{# def.$dataNotType:'string' }} !{{=$regexp}}.test({{=$data}}) ) {
+{{?}}
+  {{# def.error:'pattern' }}
+} {{? $breakOnError }} else { {{?}}

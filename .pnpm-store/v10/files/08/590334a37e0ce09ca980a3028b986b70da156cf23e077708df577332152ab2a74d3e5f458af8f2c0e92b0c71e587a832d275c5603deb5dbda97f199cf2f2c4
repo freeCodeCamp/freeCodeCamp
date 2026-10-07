@@ -1,0 +1,32 @@
+{
+  "name": "@babel/plugin-syntax-top-level-await",
+  "version": "7.14.5",
+  "description": "Allow parsing of top-level await in modules",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-syntax-top-level-await"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-syntax-top-level-await",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.14.5"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.14.5"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)"
+}

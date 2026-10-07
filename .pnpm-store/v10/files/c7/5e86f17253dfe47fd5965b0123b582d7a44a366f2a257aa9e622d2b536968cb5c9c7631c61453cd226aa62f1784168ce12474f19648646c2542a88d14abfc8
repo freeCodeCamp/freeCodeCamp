@@ -1,0 +1,35 @@
+{
+  "name": "hash.js",
+  "version": "1.1.7",
+  "description": "Various hash functions that could be run by both browser and node",
+  "main": "lib/hash.js",
+  "typings": "lib/hash.d.ts",
+  "scripts": {
+    "test": "mocha --reporter=spec test/*-test.js && npm run lint",
+    "lint": "eslint lib/*.js lib/**/*.js lib/**/**/*.js test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:indutny/hash.js"
+  },
+  "keywords": [
+    "hash",
+    "sha256",
+    "sha224",
+    "hmac"
+  ],
+  "author": "Fedor Indutny <fedor@indutny.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indutny/hash.js/issues"
+  },
+  "homepage": "https://github.com/indutny/hash.js",
+  "dependencies": {
+    "inherits": "^2.0.3",
+    "minimalistic-assert": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "mocha": "^5.2.0"
+  }
+}

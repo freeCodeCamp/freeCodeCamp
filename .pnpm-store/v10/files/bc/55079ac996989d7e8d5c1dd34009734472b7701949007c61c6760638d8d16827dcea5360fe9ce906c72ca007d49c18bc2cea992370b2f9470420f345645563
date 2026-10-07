@@ -1,0 +1,32 @@
+{
+  "name": "hmac-drbg",
+  "version": "1.0.1",
+  "description": "Deterministic random bit generator (hmac)",
+  "main": "lib/hmac-drbg.js",
+  "scripts": {
+    "test": "mocha --reporter=spec test/*-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/hmac-drbg.git"
+  },
+  "keywords": [
+    "hmac",
+    "drbg",
+    "prng"
+  ],
+  "author": "Fedor Indutny <fedor@indutny.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indutny/hmac-drbg/issues"
+  },
+  "homepage": "https://github.com/indutny/hmac-drbg#readme",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "hash.js": "^1.0.3",
+    "minimalistic-assert": "^1.0.0",
+    "minimalistic-crypto-utils": "^1.0.1"
+  }
+}

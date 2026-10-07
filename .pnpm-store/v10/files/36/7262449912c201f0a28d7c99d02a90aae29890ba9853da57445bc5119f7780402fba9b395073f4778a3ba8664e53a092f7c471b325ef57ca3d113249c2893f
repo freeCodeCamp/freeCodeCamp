@@ -1,0 +1,57 @@
+{
+  "name": "react-monaco-editor",
+  "version": "0.59.0",
+  "description": "Monaco Editor for React",
+  "main": "lib/index.js",
+  "module": "lib/index",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "preversion": "npm run lint",
+    "build": "tsc",
+    "clean": "rimraf lib",
+    "format": "eslint --fix '{src,example}/**/*.{ts,tsx}'",
+    "lint": "eslint '{src,example}/**/*.{ts,tsx}'",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "monaco",
+    "editor",
+    "react",
+    "vscode"
+  ],
+  "authors": [
+    "Daniele Esposti <daniele.espsoti@gmail.com>",
+    "Dominik Moritz <domoritz@cs.washington.edu>",
+    "Leon Shi <superRaytin@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-monaco-editor/react-monaco-editor/issues"
+  },
+  "homepage": "https://github.com/react-monaco-editor/react-monaco-editor",
+  "repository": "https://github.com/react-monaco-editor/react-monaco-editor",
+  "devDependencies": {
+    "@types/react": "^19.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "monaco-editor": "^0.52.0",
+    "prettier": "^3.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "monaco-editor": "^0.52.0",
+    "react": ">=16.8.0 <20.0.0",
+    "react-dom": ">=16.8.0 <20.0.0"
+  }
+}

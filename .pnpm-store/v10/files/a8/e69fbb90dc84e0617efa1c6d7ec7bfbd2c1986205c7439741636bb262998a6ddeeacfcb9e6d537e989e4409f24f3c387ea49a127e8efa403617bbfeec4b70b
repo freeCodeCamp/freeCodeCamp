@@ -1,0 +1,56 @@
+{
+  "name": "extend-shallow",
+  "description": "Extend an object with the properties of additional objects. node.js/javascript util.",
+  "version": "2.0.1",
+  "homepage": "https://github.com/jonschlinkert/extend-shallow",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/extend-shallow",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/extend-shallow/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "is-extendable": "^0.1.0"
+  },
+  "devDependencies": {
+    "array-slice": "^0.2.3",
+    "benchmarked": "^0.1.4",
+    "chalk": "^1.0.0",
+    "for-own": "^0.1.3",
+    "glob": "^5.0.12",
+    "is-plain-object": "^2.0.1",
+    "kind-of": "^2.0.0",
+    "minimist": "^1.1.1",
+    "mocha": "^2.2.5",
+    "should": "^7.0.1"
+  },
+  "keywords": [
+    "assign",
+    "extend",
+    "javascript",
+    "js",
+    "keys",
+    "merge",
+    "obj",
+    "object",
+    "prop",
+    "properties",
+    "property",
+    "props",
+    "shallow",
+    "util",
+    "utility",
+    "utils",
+    "value"
+  ]
+}

@@ -1,0 +1,36 @@
+@import '../variables';
+@import '../mixins';
+@import '../functions';
+
+$amount: 10px;
+
+@keyframes ball-pulse-sync {
+  33% {
+    transform: translateY($amount);
+  }
+  66% {
+    transform: translateY(-$amount);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@mixin ball-pulse-sync($n:3, $start:0) {
+  @for $i from $start through $n {
+    > div:nth-child(#{$i}) {
+      animation: ball-pulse-sync 0.6s delay(0.07s, $n, $i) infinite ease-in-out;
+    }
+  }
+}
+
+.ball-pulse-sync {
+  @include ball-pulse-sync();
+
+  > div {
+    @include balls();
+    @include global-animation();
+
+    display: inline-block;
+  }
+}

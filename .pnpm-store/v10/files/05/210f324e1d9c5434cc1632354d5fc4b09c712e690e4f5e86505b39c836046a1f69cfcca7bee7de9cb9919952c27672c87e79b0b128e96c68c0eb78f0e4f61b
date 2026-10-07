@@ -1,0 +1,671 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain emulates different environments for the page.
+domain Emulation
+  depends on DOM
+  depends on Page
+  depends on Runtime
+
+  experimental type SafeAreaInsets extends object
+    properties
+      # Overrides safe-area-inset-top.
+      optional integer top
+      # Overrides safe-area-max-inset-top.
+      optional integer topMax
+      # Overrides safe-area-inset-left.
+      optional integer left
+      # Overrides safe-area-max-inset-left.
+      optional integer leftMax
+      # Overrides safe-area-inset-bottom.
+      optional integer bottom
+      # Overrides safe-area-max-inset-bottom.
+      optional integer bottomMax
+      # Overrides safe-area-inset-right.
+      optional integer right
+      # Overrides safe-area-max-inset-right.
+      optional integer rightMax
+
+  # Screen orientation.
+  type ScreenOrientation extends object
+    properties
+      # Orientation type.
+      enum type
+        portraitPrimary
+        portraitSecondary
+        landscapePrimary
+        landscapeSecondary
+      # Orientation angle.
+      integer angle
+
+  type DisplayFeature extends object
+    properties
+      # Orientation of a display feature in relation to screen
+      enum orientation
+        vertical
+        horizontal
+      # The offset from the screen origin in either the x (for vertical
+      # orientation) or y (for horizontal orientation) direction.
+      integer offset
+      # A display feature may mask content such that it is not physically
+      # displayed - this length along with the offset describes this area.
+      # A display feature that only splits content will have a 0 mask_length.
+      integer maskLength
+
+  type DevicePosture extends object
+    properties
+      # Current posture of the device
+      enum type
+        continuous
+        folded
+
+  type MediaFeature extends object
+    properties
+      string name
+      string value
+
+  # advance: If the scheduler runs out of immediate work, the virtual time base may fast forward to
+  # allow the next delayed task (if any) to run; pause: The virtual time base may not advance;
+  # pauseIfNetworkFetchesPending: The virtual time base may not advance if there are any pending
+  # resource fetches.
+  experimental type VirtualTimePolicy extends string
+    enum
+      advance
+      pause
+      pauseIfNetworkFetchesPending
+
+  # Used to specify User Agent Client Hints to emulate. See https://wicg.github.io/ua-client-hints
+  experimental type UserAgentBrandVersion extends object
+    properties
+      string brand
+      string version
+
+  # Used to specify User Agent Client Hints to emulate. See https://wicg.github.io/ua-client-hints
+  # Missing optional values will be filled in by the target with what it would normally use.
+  experimental type UserAgentMetadata extends object
+    properties
+      # Brands appearing in Sec-CH-UA.
+      optional array of UserAgentBrandVersion brands
+      # Brands appearing in Sec-CH-UA-Full-Version-List.
+      optional array of UserAgentBrandVersion fullVersionList
+      deprecated optional string fullVersion
+      string platform
+      string platformVersion
+      string architecture
+      string model
+      boolean mobile
+      optional string bitness
+      optional boolean wow64
+      # Used to specify User Agent form-factor values.
+      # See https://wicg.github.io/ua-client-hints/#sec-ch-ua-form-factors
+      optional array of string formFactors
+
+  # Used to specify sensor types to emulate.
+  # See https://w3c.github.io/sensors/#automation for more information.
+  experimental type SensorType extends string
+    enum
+      absolute-orientation
+      accelerometer
+      ambient-light
+      gravity
+      gyroscope
+      linear-acceleration
+      magnetometer
+      relative-orientation
+
+  experimental type SensorMetadata extends object
+    properties
+      optional boolean available
+      optional number minimumFrequency
+      optional number maximumFrequency
+
+  experimental type SensorReadingSingle extends object
+    properties
+      number value
+
+  experimental type SensorReadingXYZ extends object
+    properties
+      number x
+      number y
+      number z
+
+  experimental type SensorReadingQuaternion extends object
+    properties
+      number x
+      number y
+      number z
+      number w
+
+  experimental type SensorReading extends object
+    properties
+      optional SensorReadingSingle single
+      optional SensorReadingXYZ xyz
+      optional SensorReadingQuaternion quaternion
+
+  experimental type PressureSource extends string
+    enum
+      cpu
+
+  experimental type PressureState extends string
+    enum
+      nominal
+      fair
+      serious
+      critical
+
+  experimental type PressureMetadata extends object
+    properties
+      optional boolean available
+
+  experimental type WorkAreaInsets extends object
+    properties
+      # Work area top inset in pixels. Default is 0;
+      optional integer top
+      # Work area left inset in pixels. Default is 0;
+      optional integer left
+      # Work area bottom inset in pixels. Default is 0;
+      optional integer bottom
+      # Work area right inset in pixels. Default is 0;
+      optional integer right
+
+  experimental type ScreenId extends string
+
+  # Screen information similar to the one returned by window.getScreenDetails() method,
+  # see https://w3c.github.io/window-management/#screendetailed.
+  experimental type ScreenInfo extends object
+    properties
+      # Offset of the left edge of the screen.
+      integer left
+      # Offset of the top edge of the screen.
+      integer top
+      # Width of the screen.
+      integer width
+      # Height of the screen.
+      integer height
+      # Offset of the left edge of the available screen area.
+      integer availLeft
+      # Offset of the top edge of the available screen area.
+      integer availTop
+      # Width of the available screen area.
+      integer availWidth
+      # Height of the available screen area.
+      integer availHeight
+      # Specifies the screen's device pixel ratio.
+      number devicePixelRatio
+      # Specifies the screen's orientation.
+      ScreenOrientation orientation
+      # Specifies the screen's color depth in bits.
+      integer colorDepth
+      # Indicates whether the device has multiple screens.
+      boolean isExtended
+      # Indicates whether the screen is internal to the device or external, attached to the device.
+      boolean isInternal
+      # Indicates whether the screen is set as the the operating system primary screen.
+      boolean isPrimary
+      # Specifies the descriptive label for the screen.
+      string label
+      # Specifies the unique identifier of the screen.
+      ScreenId id
+
+  # Tells whether emulation is supported.
+  deprecated command canEmulate
+    returns
+      # True if emulation is supported.
+      boolean result
+
+  # Clears the overridden device metrics.
+  command clearDeviceMetricsOverride
+
+  # Clears the overridden Geolocation Position and Error.
+  command clearGeolocationOverride
+
+  # Requests that page scale factor is reset to initial values.
+  experimental command resetPageScaleFactor
+
+  # Enables or disables simulating a focused and active page.
+  experimental command setFocusEmulationEnabled
+    parameters
+      # Whether to enable to disable focus emulation.
+      boolean enabled
+
+  # Automatically render all web contents using a dark theme.
+  experimental command setAutoDarkModeOverride
+    parameters
+      # Whether to enable or disable automatic dark mode.
+      # If not specified, any existing override will be cleared.
+      optional boolean enabled
+
+  # Enables CPU throttling to emulate slow CPUs.
+  command setCPUThrottlingRate
+    parameters
+      # Throttling rate as a slowdown factor (1 is no throttle, 2 is 2x slowdown, etc).
+      number rate
+
+  # Sets or clears an override of the default background color of the frame. This override is used
+  # if the content does not specify one.
+  command setDefaultBackgroundColorOverride
+    parameters
+      # RGBA of the default background color. If not specified, any existing override will be
+      # cleared.
+      optional DOM.RGBA color
+
+  # Overrides the values for env(safe-area-inset-*) and env(safe-area-max-inset-*). Unset values will cause the
+  # respective variables to be undefined, even if previously overridden.
+  experimental command setSafeAreaInsetsOverride
+    parameters
+      SafeAreaInsets insets
+
+  # Overrides the values of device screen dimensions (window.screen.width, window.screen.height,
+  # window.innerWidth, window.innerHeight, and "device-width"/"device-height"-related CSS media
+  # query results).
+  command setDeviceMetricsOverride
+    parameters
+      # Overriding width value in pixels (minimum 0, maximum 10000000). 0 disables the override.
+      integer width
+      # Overriding height value in pixels (minimum 0, maximum 10000000). 0 disables the override.
+      integer height
+      # Overriding device scale factor value. 0 disables the override.
+      number deviceScaleFactor
+      # Whether to emulate mobile device. This includes viewport meta tag, overlay scrollbars, text
+      # autosizing and more.
+      boolean mobile
+      # Scale to apply to resulting view image.
+      experimental optional number scale
+      # Overriding screen width value in pixels (minimum 0, maximum 10000000).
+      experimental optional integer screenWidth
+      # Overriding screen height value in pixels (minimum 0, maximum 10000000).
+      experimental optional integer screenHeight
+      # Overriding view X position on screen in pixels (minimum 0, maximum 10000000).
+      experimental optional integer positionX
+      # Overriding view Y position on screen in pixels (minimum 0, maximum 10000000).
+      experimental optional integer positionY
+      # Do not set visible view size, rely upon explicit setVisibleSize call.
+      experimental optional boolean dontSetVisibleSize
+      # Screen orientation override.
+      optional ScreenOrientation screenOrientation
+      # If set, the visible area of the page will be overridden to this viewport. This viewport
+      # change is not observed by the page, e.g. viewport-relative elements do not change positions.
+      experimental optional Page.Viewport viewport
+      # If set, the display feature of a multi-segment screen. If not set, multi-segment support
+      # is turned-off.
+      # Deprecated, use Emulation.setDisplayFeaturesOverride.
+      experimental deprecated optional DisplayFeature displayFeature
+      # If set, the posture of a foldable device. If not set the posture is set
+      # to continuous.
+      # Deprecated, use Emulation.setDevicePostureOverride.
+      experimental deprecated optional DevicePosture devicePosture
+      # Scrollbar type. Default: `default`.
+      experimental optional enum scrollbarType
+        # Emulates scrollbars that float over the content, typically appearing
+        # only when scrolling.
+        overlay
+        # Restores the platform's default scrollbar behavior, which might be
+        # classic (occupying space within the layout) or overlay, depending
+        # on the platform. Note: if `mobile` is `true`, the default scrollbar type is `overlay`.
+        default
+      # If set to true, enables screen orientation lock emulation, which
+      # intercepts screen.orientation.lock() calls from the page and reports
+      # orientation changes via screenOrientationLockChanged events. This is
+      # useful for emulating mobile device orientation lock behavior in
+      # responsive design mode.
+      experimental optional boolean screenOrientationLockEmulation
+
+  # Start reporting the given posture value to the Device Posture API.
+  # This override can also be set in setDeviceMetricsOverride().
+  experimental command setDevicePostureOverride
+    parameters
+      DevicePosture posture
+
+  # Clears a device posture override set with either setDeviceMetricsOverride()
+  # or setDevicePostureOverride() and starts using posture information from the
+  # platform again.
+  # Does nothing if no override is set.
+  experimental command clearDevicePostureOverride
+
+  # Start using the given display features to pupulate the Viewport Segments API.
+  # This override can also be set in setDeviceMetricsOverride().
+  experimental command setDisplayFeaturesOverride
+    parameters
+      array of DisplayFeature features
+
+  # Clears the display features override set with either setDeviceMetricsOverride()
+  # or setDisplayFeaturesOverride() and starts using display features from the
+  # platform again.
+  # Does nothing if no override is set.
+  experimental command clearDisplayFeaturesOverride
+
+  experimental command setScrollbarsHidden
+    parameters
+      # Whether scrollbars should be always hidden.
+      boolean hidden
+
+  experimental command setDocumentCookieDisabled
+    parameters
+      # Whether document.coookie API should be disabled.
+      boolean disabled
+
+  experimental command setEmitTouchEventsForMouse
+    parameters
+      # Whether touch emulation based on mouse input should be enabled.
+      boolean enabled
+      # Touch/gesture events configuration. Default: current platform.
+      optional enum configuration
+        mobile
+        desktop
+
+  # Emulates the given media type or media feature for CSS media queries.
+  command setEmulatedMedia
+    parameters
+      # Media type to emulate. Empty string disables the override.
+      optional string media
+      # Media features to emulate.
+      optional array of MediaFeature features
+
+  # Emulates the given vision deficiency.
+  command setEmulatedVisionDeficiency
+    parameters
+      # Vision deficiency to emulate. Order: best-effort emulations come first, followed by any
+      # physiologically accurate emulations for medically recognized color vision deficiencies.
+      enum type
+        none
+        blurredVision
+        reducedContrast
+        achromatopsia
+        deuteranopia
+        protanopia
+        tritanopia
+
+  # Emulates the given OS text scale.
+  command setEmulatedOSTextScale
+    parameters
+      optional number scale
+
+  # Overrides the Geolocation Position or Error. Omitting latitude, longitude or
+  # accuracy emulates position unavailable.
+  command setGeolocationOverride
+    parameters
+      # Mock latitude
+      optional number latitude
+      # Mock longitude
+      optional number longitude
+      # Mock accuracy
+      optional number accuracy
+      # Mock altitude
+      optional number altitude
+      # Mock altitudeAccuracy
+      optional number altitudeAccuracy
+      # Mock heading
+      optional number heading
+      # Mock speed
+      optional number speed
+
+  experimental command getOverriddenSensorInformation
+    parameters
+      SensorType type
+    returns
+      number requestedSamplingFrequency
+
+  # Overrides a platform sensor of a given type. If |enabled| is true, calls to
+  # Sensor.start() will use a virtual sensor as backend rather than fetching
+  # data from a real hardware sensor. Otherwise, existing virtual
+  # sensor-backend Sensor objects will fire an error event and new calls to
+  # Sensor.start() will attempt to use a real sensor instead.
+  experimental command setSensorOverrideEnabled
+    parameters
+      boolean enabled
+      SensorType type
+      optional SensorMetadata metadata
+
+  # Updates the sensor readings reported by a sensor type previously overridden
+  # by setSensorOverrideEnabled.
+  experimental command setSensorOverrideReadings
+    parameters
+      SensorType type
+      SensorReading reading
+
+  # Overrides a pressure source of a given type, as used by the Compute
+  # Pressure API, so that updates to PressureObserver.observe() are provided
+  # via setPressureStateOverride instead of being retrieved from
+  # platform-provided telemetry data.
+  experimental command setPressureSourceOverrideEnabled
+    parameters
+      boolean enabled
+      PressureSource source
+      optional PressureMetadata metadata
+
+  # TODO: OBSOLETE: To remove when setPressureDataOverride is merged.
+  # Provides a given pressure state that will be processed and eventually be
+  # delivered to PressureObserver users. |source| must have been previously
+  # overridden by setPressureSourceOverrideEnabled.
+  experimental command setPressureStateOverride
+    parameters
+      PressureSource source
+      PressureState state
+
+  # Provides a given pressure data set that will be processed and eventually be
+  # delivered to PressureObserver users. |source| must have been previously
+  # overridden by setPressureSourceOverrideEnabled.
+  experimental command setPressureDataOverride
+    parameters
+      PressureSource source
+      PressureState state
+      optional number ownContributionEstimate
+
+  # Overrides the Idle state.
+  command setIdleOverride
+    parameters
+      # Mock isUserActive
+      boolean isUserActive
+      # Mock isScreenUnlocked
+      boolean isScreenUnlocked
+
+  # Clears Idle state overrides.
+  command clearIdleOverride
+
+  # Overrides value returned by the javascript navigator object.
+  experimental deprecated command setNavigatorOverrides
+    parameters
+      # The platform navigator.platform should return.
+      string platform
+
+  # Sets a specified page scale factor.
+  experimental command setPageScaleFactor
+    parameters
+      # Page scale factor.
+      number pageScaleFactor
+
+  # Switches script execution in the page.
+  command setScriptExecutionDisabled
+    parameters
+      # Whether script execution should be disabled in the page.
+      boolean value
+
+  # Enables touch on platforms which do not support them.
+  command setTouchEmulationEnabled
+    parameters
+      # Whether the touch event emulation should be enabled.
+      boolean enabled
+      # Maximum touch points supported. Defaults to one.
+      optional integer maxTouchPoints
+
+  # Turns on virtual time for all frames (replacing real-time with a synthetic time source) and sets
+  # the current virtual time policy.  Note this supersedes any previous time budget.
+  experimental command setVirtualTimePolicy
+    parameters
+      VirtualTimePolicy policy
+      # If set, after this many virtual milliseconds have elapsed virtual time will be paused and a
+      # virtualTimeBudgetExpired event is sent.
+      optional number budget
+      # If set this specifies the maximum number of tasks that can be run before virtual is forced
+      # forwards to prevent deadlock.
+      optional integer maxVirtualTimeTaskStarvationCount
+      # If set, base::Time::Now will be overridden to initially return this value.
+      optional Network.TimeSinceEpoch initialVirtualTime
+    returns
+      # Absolute timestamp at which virtual time was first enabled (up time in milliseconds).
+      number virtualTimeTicksBase
+
+  # Overrides default host system locale with the specified one.
+  experimental command setLocaleOverride
+    parameters
+      # ICU style C locale (e.g. "en_US"). If not specified or empty, disables the override and
+      # restores default host system locale.
+      optional string locale
+
+  # Overrides default host system timezone with the specified one.
+  command setTimezoneOverride
+    parameters
+      # The timezone identifier. List of supported timezones:
+      # https://source.chromium.org/chromium/chromium/deps/icu.git/+/faee8bc70570192d82d2978a71e2a615788597d1:source/data/misc/metaZones.txt
+      # If empty, disables the override and restores default host system timezone.
+      string timezoneId
+
+  # Resizes the frame/viewport of the page. Note that this does not affect the frame's container
+  # (e.g. browser window). Can be used to produce screenshots of the specified size. Not supported
+  # on Android.
+  experimental deprecated command setVisibleSize
+    parameters
+      # Frame width (DIP).
+      integer width
+      # Frame height (DIP).
+      integer height
+
+  # Notification sent after the virtual time budget for the current VirtualTimePolicy has run out.
+  experimental event virtualTimeBudgetExpired
+
+  # Fired when a page calls screen.orientation.lock() or screen.orientation.unlock()
+  # while device emulation is enabled. This allows the DevTools frontend to update the
+  # emulated device orientation accordingly.
+  experimental event screenOrientationLockChanged
+    parameters
+      # Whether the screen orientation is currently locked.
+      boolean locked
+      # The orientation lock type requested by the page. Only set when locked is true.
+      optional ScreenOrientation orientation
+
+  # Enum of image types that can be disabled.
+  experimental type DisabledImageType extends string
+    enum
+      avif
+      jxl
+      webp
+
+  experimental command setDisabledImageTypes
+    parameters
+      # Image types to disable.
+      array of DisabledImageType imageTypes
+
+
+  # Override the value of navigator.connection.saveData
+  experimental command setDataSaverOverride
+    parameters
+      # Override value. Omitting the parameter disables the override.
+      optional boolean dataSaverEnabled
+
+  experimental command setHardwareConcurrencyOverride
+    parameters
+      # Hardware concurrency to report
+      integer hardwareConcurrency
+
+  # Allows overriding user agent with the given string.
+  # `userAgentMetadata` must be set for Client Hint headers to be sent.
+  command setUserAgentOverride
+    parameters
+      # User agent to use.
+      string userAgent
+      # Browser language to emulate.
+      optional string acceptLanguage
+      # The platform navigator.platform should return.
+      optional string platform
+      # To be sent in Sec-CH-UA-* headers and returned in navigator.userAgentData
+      experimental optional UserAgentMetadata userAgentMetadata
+
+  # Allows overriding the automation flag.
+  experimental command setAutomationOverride
+    parameters
+      # Whether the override should be enabled.
+      boolean enabled
+
+  # Allows overriding the difference between the small and large viewport sizes, which determine the
+  # value of the `svh` and `lvh` unit, respectively. Only supported for top-level frames.
+  experimental command setSmallViewportHeightDifferenceOverride
+    parameters
+      # This will cause an element of size 100svh to be `difference` pixels smaller than an element
+      # of size 100lvh.
+      integer difference
+
+  # Returns device's screen configuration. In headful mode, the physical screens configuration is returned,
+  # whereas in headless mode, a virtual headless screen configuration is provided instead.
+  experimental command getScreenInfos
+    returns
+      array of ScreenInfo screenInfos
+
+  # Add a new screen to the device. Only supported in headless mode.
+  experimental command addScreen
+    parameters
+      # Offset of the left edge of the screen in pixels.
+      integer left
+      # Offset of the top edge of the screen in pixels.
+      integer top
+      # The width of the screen in pixels.
+      integer width
+      # The height of the screen in pixels.
+      integer height
+      # Specifies the screen's work area. Default is entire screen.
+      optional WorkAreaInsets workAreaInsets
+      # Specifies the screen's device pixel ratio. Default is 1.
+      optional number devicePixelRatio
+      # Specifies the screen's rotation angle. Available values are 0, 90, 180 and 270. Default is 0.
+      optional integer rotation
+      # Specifies the screen's color depth in bits. Default is 24.
+      optional integer colorDepth
+      # Specifies the descriptive label for the screen. Default is none.
+      optional string label
+      # Indicates whether the screen is internal to the device or external, attached to the device. Default is false.
+      optional boolean isInternal
+    returns
+      ScreenInfo screenInfo
+
+  # Updates specified screen parameters. Only supported in headless mode.
+  experimental command updateScreen
+    parameters
+      # Target screen identifier.
+      ScreenId screenId
+      # Offset of the left edge of the screen in pixels.
+      optional integer left
+      # Offset of the top edge of the screen in pixels.
+      optional integer top
+      # The width of the screen in pixels.
+      optional integer width
+      # The height of the screen in pixels.
+      optional integer height
+      # Specifies the screen's work area.
+      optional WorkAreaInsets workAreaInsets
+      # Specifies the screen's device pixel ratio.
+      optional number devicePixelRatio
+      # Specifies the screen's rotation angle. Available values are 0, 90, 180 and 270.
+      optional integer rotation
+      # Specifies the screen's color depth in bits.
+      optional integer colorDepth
+      # Specifies the descriptive label for the screen.
+      optional string label
+      # Indicates whether the screen is internal to the device or external, attached to the device. Default is false.
+      optional boolean isInternal
+    returns
+      ScreenInfo screenInfo
+
+  # Remove screen from the device. Only supported in headless mode.
+  experimental command removeScreen
+    parameters
+      ScreenId screenId
+
+  # Set primary screen. Only supported in headless mode.
+  # Note that this changes the coordinate system origin to the top-left
+  # of the new primary screen, updating the bounds and work areas
+  # of all existing screens accordingly.
+  experimental command setPrimaryScreen
+    parameters
+      ScreenId screenId

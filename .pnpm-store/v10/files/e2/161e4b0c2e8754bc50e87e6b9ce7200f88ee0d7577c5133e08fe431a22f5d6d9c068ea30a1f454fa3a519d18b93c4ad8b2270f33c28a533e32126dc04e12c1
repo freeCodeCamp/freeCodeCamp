@@ -1,0 +1,112 @@
+{
+  "name": "lru-cache",
+  "description": "A cache object that deletes the least-recently-used items.",
+  "version": "11.1.0",
+  "author": "Isaac Z. Schlueter <i@izs.me>",
+  "keywords": [
+    "mru",
+    "lru",
+    "cache"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run prepare",
+    "prepare": "tshy && bash fixup.sh",
+    "pretest": "npm run prepare",
+    "presnap": "npm run prepare",
+    "test": "tap",
+    "snap": "tap",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "format": "prettier --write .",
+    "typedoc": "typedoc --tsconfig ./.tshy/esm.json ./src/*.ts",
+    "benchmark-results-typedoc": "bash scripts/benchmark-results-typedoc.sh",
+    "prebenchmark": "npm run prepare",
+    "benchmark": "make -C benchmark",
+    "preprofile": "npm run prepare",
+    "profile": "make -C benchmark profile"
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "tshy": {
+    "exports": {
+      ".": "./src/index.ts",
+      "./min": {
+        "import": {
+          "types": "./dist/esm/index.d.ts",
+          "default": "./dist/esm/index.min.js"
+        },
+        "require": {
+          "types": "./dist/commonjs/index.d.ts",
+          "default": "./dist/commonjs/index.min.js"
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/node-lru-cache.git"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "benchmark": "^2.1.4",
+    "esbuild": "^0.25.1",
+    "marked": "^4.2.12",
+    "mkdirp": "^3.0.1",
+    "prettier": "^3.5.3",
+    "tap": "^21.1.0",
+    "tshy": "^3.0.2",
+    "typedoc": "^0.28.1"
+  },
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": "20 || >=22"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 70,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "tap": {
+    "node-arg": [
+      "--expose-gc"
+    ],
+    "plugin": [
+      "@tapjs/clock"
+    ]
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./min": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.min.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.min.js"
+      }
+    }
+  },
+  "type": "module",
+  "module": "./dist/esm/index.js"
+}

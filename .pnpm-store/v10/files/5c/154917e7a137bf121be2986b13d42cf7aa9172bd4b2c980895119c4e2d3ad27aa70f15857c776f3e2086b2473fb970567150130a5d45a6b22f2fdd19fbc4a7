@@ -1,0 +1,114 @@
+{
+  "name": "unified",
+  "version": "9.2.2",
+  "description": "Interface for parsing, inspecting, transforming, and serializing content through syntax trees",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "process",
+    "parse",
+    "transform",
+    "compile",
+    "stringify",
+    "serialize",
+    "ast",
+    "cst",
+    "syntax",
+    "tree",
+    "content",
+    "rehype",
+    "retext",
+    "remark"
+  ],
+  "homepage": "https://unifiedjs.com",
+  "repository": "unifiedjs/unified",
+  "bugs": "https://github.com/unifiedjs/unified/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Junyoung Choi <fluke8259@gmail.com>",
+    "Hernan Rajchert <hrajchert@gmail.com>",
+    "Christian Murphy <christian.murphy.42@gmail.com>",
+    "Vse Mozhet Byt <vsemozhetbyt@gmail.com>",
+    "Richard Littauer <richard.littauer@gmail.com>"
+  ],
+  "types": "types/ts3.4/index.d.ts",
+  "typesVersions": {
+    ">=4.0": {
+      "types/ts3.4/*": [
+        "types/ts4.0/*"
+      ]
+    }
+  },
+  "files": [
+    "types/ts3.4/index.d.ts",
+    "types/ts4.0/index.d.ts",
+    "index.js",
+    "lib"
+  ],
+  "dependencies": {
+    "bail": "^1.0.0",
+    "extend": "^3.0.0",
+    "is-buffer": "^2.0.0",
+    "is-plain-obj": "^2.0.0",
+    "trough": "^1.0.0",
+    "vfile": "^4.0.0"
+  },
+  "devDependencies": {
+    "vfile5": "npm:vfile@5",
+    "browserify": "^17.0.0",
+    "c8": "^7.0.0",
+    "dtslint": "^4.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "xo": "^0.38.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify index.js -s unified -o unified.js",
+    "build-mangle": "browserify index.js -s unified -p tinyify -o unified.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "c8 --check-coverage --lines 100 --functions 100 --branches 100 --reporter lcov tape test",
+    "test-types": "npm run test-types-3.4 && npm run test-types-4.0",
+    "test-types-3.4": "dtslint types/ts3.4",
+    "test-types-4.0": "dtslint types/ts4.0",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "guard-for-in": "off",
+      "no-unreachable-loop": "off",
+      "unicorn/prefer-number-properties": "off",
+      "unicorn/prefer-optional-catch-binding": "off",
+      "unicorn/prefer-reflect-apply": "off",
+      "unicorn/prefer-type-error": "off"
+    },
+    "ignores": [
+      "types",
+      "unified.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "v8-compile-cache",
+  "version": "2.4.0",
+  "description": "Require hook for automatic V8 compile cache persistence",
+  "main": "v8-compile-cache.js",
+  "scripts": {
+    "bench": "bench/run.sh",
+    "eslint": "eslint --max-warnings=0 .",
+    "tap": "tap test/*-test.js",
+    "test": "npm run tap",
+    "posttest": "npm run eslint"
+  },
+  "author": "Andres Suarez <zertosh@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zertosh/v8-compile-cache.git"
+  },
+  "files": [
+    "v8-compile-cache.js"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "eslint": "^7.12.1",
+    "flow-parser": "0.136.0",
+    "rimraf": "^2.5.4",
+    "rxjs": "6.6.3",
+    "semver": "^5.3.0",
+    "tap": "^9.0.0",
+    "temp": "^0.8.3",
+    "yarn": "1.22.10"
+  }
+}

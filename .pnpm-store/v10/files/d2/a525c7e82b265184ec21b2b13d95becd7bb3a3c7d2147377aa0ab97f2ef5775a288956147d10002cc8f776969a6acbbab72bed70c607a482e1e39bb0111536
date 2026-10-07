@@ -1,0 +1,34 @@
+{
+  "name": "caniuse-lite",
+  "version": "1.0.30001812",
+  "description": "A smaller version of caniuse-db, with only the essentials!",
+  "keywords": [
+    "support"
+  ],
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "browserslist/caniuse-lite",
+  "funding": [
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/browserslist"
+    },
+    {
+      "type": "tidelift",
+      "url": "https://tidelift.com/funding/github/npm/caniuse-lite"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ai"
+    }
+  ],
+  "files": [
+    "data",
+    "dist"
+  ],
+  "main": "dist/unpacker/index.js"
+}

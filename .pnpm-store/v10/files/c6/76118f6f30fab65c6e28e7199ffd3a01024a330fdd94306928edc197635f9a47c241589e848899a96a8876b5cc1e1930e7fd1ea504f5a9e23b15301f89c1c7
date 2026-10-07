@@ -1,0 +1,35 @@
+#include <windows.h>
+
+// DLL version information.
+1 VERSIONINFO
+FILEVERSION       @LIBVER_MAJOR@,@LIBVER_MINOR@,@LIBVER_PATCH@,0
+PRODUCTVERSION    @LIBVER_MAJOR@,@LIBVER_MINOR@,@LIBVER_PATCH@,0
+FILEFLAGSMASK      VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+  FILEFLAGS        VS_FF_DEBUG | VS_FF_PRERELEASE
+#else
+  FILEFLAGS        0
+#endif
+FILEOS             VOS_NT_WINDOWS32
+FILETYPE           VFT_DLL
+FILESUBTYPE        VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Yann Collet"
+            VALUE "FileDescription", "Extremely fast compression"
+            VALUE "FileVersion", "@LIBVER_MAJOR@.@LIBVER_MINOR@.@LIBVER_PATCH@.0"
+            VALUE "InternalName", "@LIBLZ4@"
+            VALUE "LegalCopyright", "Copyright (C) 2013-2016, Yann Collet"
+            VALUE "OriginalFilename", "@LIBLZ4@.dll"
+            VALUE "ProductName", "LZ4"
+            VALUE "ProductVersion", "@LIBVER_MAJOR@.@LIBVER_MINOR@.@LIBVER_PATCH@.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END

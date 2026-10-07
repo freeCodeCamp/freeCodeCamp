@@ -1,0 +1,91 @@
+# Copyright 2026 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain WebMCP
+  depends on Runtime
+  depends on Page
+  depends on DOM
+
+  # Tool annotations
+  type Annotation extends object
+
+    properties
+      # A hint indicating that the tool does not modify any state.
+      optional boolean readOnly
+      # If the declarative tool was declared with the autosubmit attribute.
+      optional boolean autosubmit
+
+  # Represents the status of a tool invocation.
+  type InvocationStatus extends string
+    enum
+      Success
+      Canceled
+      Error
+
+  # Definition of a tool that can be invoked.
+  type Tool extends object
+    properties
+      # Tool name.
+      string name
+      # Tool description.
+      string description
+      # Schema for the tool's input parameters.
+      optional object inputSchema
+      # Optional annotations for the tool.
+      optional Annotation annotations
+      # Frame identifier associated with the tool registration.
+      Page.FrameId frameId
+      # Optional node ID for declarative tools.
+      optional DOM.BackendNodeId backendNodeId
+      # The stack trace at the time of the registration.
+      optional Runtime.StackTrace stackTrace
+
+
+  # Enables the WebMCP domain, allowing events to be sent. Enabling the domain will trigger a toolsAdded event for
+  # all currently registered tools.
+  command enable
+
+  # Disables the WebMCP domain.
+  command disable
+
+  # Event fired when new tools are added.
+  event toolsAdded
+    parameters
+      # Array of tools that were added.
+      array of Tool tools
+
+  # Event fired when tools are removed.
+  event toolsRemoved
+    parameters
+      # Array of tools that were removed.
+      array of Tool tools
+
+  # Event fired when a tool invocation starts.
+  event toolInvoked
+    parameters
+      # Name of the tool to invoke.
+      string toolName
+      # Frame id
+      Page.FrameId frameId
+      # Invocation identifier.
+      string invocationId
+      # The input parameters used for the invocation.
+      string input
+
+  # Event fired when a tool invocation completes or fails.
+  event toolResponded
+    parameters
+      # Invocation identifier.
+      string invocationId
+      # Status of the invocation.
+      InvocationStatus status
+      # Output or error delivered as delivered to the agent. Missing if `status` is anything other than Success.
+      optional any output
+      # Error text for protocol users.
+      optional string errorText
+      # The exception object, if the javascript tool threw an error>
+      optional Runtime.RemoteObject exception
+

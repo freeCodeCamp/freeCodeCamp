@@ -1,0 +1,38 @@
+{
+  "name": "micromark-util-html-tag-name",
+  "version": "2.0.0",
+  "description": "micromark utility with list of html tag names",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "util",
+    "utility",
+    "html",
+    "tag",
+    "name"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-html-tag-name",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "exports": "./index.js",
+  "xo": false
+}

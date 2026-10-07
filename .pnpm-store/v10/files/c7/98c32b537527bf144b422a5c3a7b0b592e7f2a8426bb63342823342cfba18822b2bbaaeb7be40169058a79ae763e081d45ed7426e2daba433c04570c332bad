@@ -1,0 +1,79 @@
+{
+  "name": "zod-to-json-schema",
+  "version": "3.24.6",
+  "description": "Converts Zod schemas to Json Schemas",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    "import": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/esm/index.js"
+    },
+    "require": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "build:test": "npm --prefix ./dist-test test",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && tsx postcjs.ts",
+    "build:esm": "tsc -p tsconfig.esm.json && tsx postesm.ts",
+    "build": "npm i && npm run gen && npm test && rimraf ./dist && npm run build:types && npm run build:cjs && npm run build:esm && npm run build:test",
+    "dry": "npm run build && npm pub --dry-run",
+    "test:watch": "tsx watch test/index.ts",
+    "test:gen": "tsx test/createIndex.ts",
+    "test": "tsx test/index.ts",
+    "gen": "tsx createIndex.ts"
+  },
+  "c8": {
+    "exclude": ["createIndex.ts", "postcjs.ts", "postesm.ts", "test"]
+  },
+  "keywords": ["zod", "json", "schema", "open", "api", "conversion"],
+  "author": "Stefan Terdell",
+  "contributors": [
+    "Hammad Asif (https://github.com/mrhammadasif)",
+    "Noah Rosenzweig (https://github.com/Noah2610)",
+    "John Wright (https://github.com/johngeorgewright)",
+    "Krzysztof Ciombor (https://github.com/krzysztofciombor)",
+    "Yuta Mombetsu (https://github.com/mokocm)",
+    "Tom Arad (https://github.com/tomarad)",
+    "Isaac Way (https://github.com/iway1)",
+    "Andreas Berger (https://github.com/Andy2003)",
+    "Jan Potoms (https://github.com/Janpot)",
+    "Santiago Cammi (https://github.com/scammi)",
+    "Philipp Burckhardt (https://github.com/Planeshifter)",
+    "Bram del Canho (https://github.com/Bram-dc)",
+    "Gilad Hecht (https://github.com/gthecht)",
+    "Colin McDonnell (https://github.com/colinhacks)",
+    "Spappz (https://github.com/Spappz)",
+    "Jacob Lee (https://github.com/jacoblee93)",
+    "Brett Zamir (https://github.com/brettz9)",
+    "Isaiah Marc Sanchez (https://github.com/imsanchez)",
+    "Mitchell Merry (https://github.com/mitchell-merry)",
+    "Enzo Monjardín (https://github.com/enzomonjardin)",
+    "Víctor Hernández (https://github.com/NanezX)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StefanTerdell/zod-to-json-schema"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/json-schema": "^7.0.9",
+    "@types/node": "^20.9.0",
+    "ajv": "^8.6.3",
+    "ajv-errors": "^3.0.0",
+    "ajv-formats": "^2.1.1",
+    "fast-diff": "^1.3.0",
+    "local-ref-resolver": "^0.2.0",
+    "rimraf": "^3.0.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.1.3",
+    "zod": "^3.24.1"
+  }
+}

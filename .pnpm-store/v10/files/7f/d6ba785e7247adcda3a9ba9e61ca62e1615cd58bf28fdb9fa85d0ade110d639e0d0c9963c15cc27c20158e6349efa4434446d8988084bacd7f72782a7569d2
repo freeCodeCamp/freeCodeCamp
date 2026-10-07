@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pino - Super fast, all natural JSON logger for Node.js</title>
+  <meta name="description" content="Super fast, all natural JSON logger for Node.js">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify-themeable/dist/css/theme-simple.css">
+  <style>
+    :root {
+      --base-font-size: 16px;
+      --theme-color: rgb(104, 118, 52);
+      --link-color:  rgb(104, 118, 52);
+      --link-color--hover: rgb(137, 152, 100);
+      --sidebar-name-margin: 0;
+      --sidebar-name-padding: 0;
+      --code-font-size: .9em;
+    }
+    .sidebar > h1 {
+      margin-bottom: -.75em;
+      margin-top: .75em;
+    }
+    .sidebar > h1 img {
+      height: 4em;
+    }
+    .markdown-section a code {
+      color: var(--link-color)!important;
+    }
+    .markdown-section code:not([class*="lang-"]):not([class*="language-"]) {
+      white-space: unset
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+</head>
+<body>
+  <div id="app"></div>
+</body>
+<script>
+  window.$docsify = {
+    name: 'pino',
+    logo: './pino-tree.png',
+    loadSidebar: 'docsify/sidebar.md',
+    repo: 'https://github.com/pinojs/pino',
+    auto2top: true,
+    ga: 'UA-103155139-1'
+  }
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+<!-- To enable syntax highlighting on TypeScript codes: -->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+
+</html>

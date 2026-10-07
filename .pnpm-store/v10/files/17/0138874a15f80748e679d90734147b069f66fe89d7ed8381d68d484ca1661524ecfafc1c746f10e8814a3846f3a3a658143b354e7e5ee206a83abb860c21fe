@@ -1,0 +1,91 @@
+{
+  "name": "tldts",
+  "version": "6.1.86",
+  "description": "Library to work against complex domain names, subdomains and URIs.",
+  "author": {
+    "name": "Rémi Berson"
+  },
+  "contributors": [
+    "Alexei <alexeiatyahoodotcom@gmail.com>",
+    "Alexey <kureev-mail@ya.ru>",
+    "Andrew <chefandrew@seomoz.org>",
+    "Johannes Ewald <johannes.ewald@peerigon.com>",
+    "Jérôme Desboeufs <jerome.desboeufs@gmail.com>",
+    "Kelly Campbell <kelly.a.campbell@gmail.com>",
+    "Kiko Beats <josefrancisco.verdu@gmail.com>",
+    "Kris Reeves <krisreeves@searchfanatics.com>",
+    "Krzysztof Jan Modras <chrmod@chrmod.net>",
+    "Olivier Melcher <olivier.melcher@gmail.com>",
+    "Rémi Berson <remi.berson@pm.me>",
+    "Saad Rashid <srashid@lendinghome.com>",
+    "Thomas Parisot <hi@oncletom.io>",
+    "Timo Tijhof <krinklemail@gmail.com>",
+    "Xavier Damman <xdamman@gmail.com>",
+    "Yehezkiel Syamsuhadi <yehezkielbs@gmail.com>"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/remusao/tldts#readme",
+  "bugs": {
+    "url": "https://github.com/remusao/tldts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/remusao/tldts.git"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/es6/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "index.ts"
+  ],
+  "bin": {
+    "tldts": "bin/cli.js"
+  },
+  "scripts": {
+    "clean": "rimraf dist coverage",
+    "build": "tsc --build ./tsconfig.json",
+    "bundle": "tsc --build ./tsconfig.bundle.json && rollup --config ./rollup.config.mjs",
+    "prepack": "yarn run bundle",
+    "test": "nyc mocha --config ../../.mocharc.cjs"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^22.0.0",
+    "chai": "^4.4.1",
+    "mocha": "^11.0.1",
+    "nyc": "^17.0.0",
+    "rimraf": "^5.0.1",
+    "rollup": "^4.1.0",
+    "rollup-plugin-sourcemaps": "^0.6.1",
+    "tldts-tests": "^6.1.86",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "tldts-core": "^6.1.86"
+  },
+  "keywords": [
+    "tld",
+    "sld",
+    "domain",
+    "subdomain",
+    "subdomain",
+    "hostname",
+    "browser",
+    "uri",
+    "url",
+    "domain name",
+    "public suffix",
+    "url parsing",
+    "typescript"
+  ],
+  "gitHead": "94251baa0e4ee46df6fd06fcd3749fcdf9b14ebc"
+}

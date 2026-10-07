@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/SortedSet.js",
+  "module": "../dist/esm/SortedSet.js",
+  "types": "../dist/dts/SortedSet.d.ts"
+}

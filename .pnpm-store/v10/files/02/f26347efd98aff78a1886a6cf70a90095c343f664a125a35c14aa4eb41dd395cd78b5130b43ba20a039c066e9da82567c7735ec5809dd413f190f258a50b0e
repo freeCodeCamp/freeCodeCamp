@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "properties": {
+    "mimeTypes": {
+      "description": "Allows a user to register custom mime types or extension mappings.",
+      "link": "https://github.com/webpack/webpack-dev-middleware#mimetypes",
+      "type": "object"
+    },
+    "writeToDisk": {
+      "description": "Allows to write generated files on disk.",
+      "link": "https://github.com/webpack/webpack-dev-middleware#writetodisk",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "methods": {
+      "description": "Allows to pass the list of HTTP request methods accepted by the middleware.",
+      "link": "https://github.com/webpack/webpack-dev-middleware#methods",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minlength": "1"
+      }
+    },
+    "headers": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "description": "key of header.",
+                "type": "string"
+              },
+              "value": {
+                "description": "value of header.",
+                "type": "string"
+              }
+            }
+          },
+          "minItems": 1
+        },
+        {
+          "type": "object"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ],
+      "description": "Allows to pass custom HTTP headers on each request",
+      "link": "https://github.com/webpack/webpack-dev-middleware#headers"
+    },
+    "publicPath": {
+      "description": "The `publicPath` specifies the public URL address of the output files when referenced in a browser.",
+      "link": "https://github.com/webpack/webpack-dev-middleware#publicpath",
+      "anyOf": [
+        {
+          "enum": ["auto"]
+        },
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "stats": {
+      "description": "Stats options object or preset name.",
+      "link": "https://github.com/webpack/webpack-dev-middleware#stats",
+      "anyOf": [
+        {
+          "enum": [
+            "none",
+            "summary",
+            "errors-only",
+            "errors-warnings",
+            "minimal",
+            "normal",
+            "detailed",
+            "verbose"
+          ]
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "object",
+          "additionalProperties": true
+        }
+      ]
+    },
+    "serverSideRender": {
+      "description": "Instructs the module to enable or disable the server-side rendering mode.",
+      "link": "https://github.com/webpack/webpack-dev-middleware#serversiderender",
+      "type": "boolean"
+    },
+    "outputFileSystem": {
+      "description": "Set the default file system which will be used by webpack as primary destination of generated files.",
+      "link": "https://github.com/webpack/webpack-dev-middleware#outputfilesystem",
+      "type": "object"
+    },
+    "index": {
+      "description": "Allows to serve an index of the directory.",
+      "link": "https://github.com/webpack/webpack-dev-middleware#index",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string",
+          "minlength": "1"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

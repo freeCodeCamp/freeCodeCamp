@@ -1,0 +1,74 @@
+{
+  "name": "ajv-formats",
+  "version": "3.0.1",
+  "description": "Format validation for Ajv v7+",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prettier:write": "prettier --write \"./**/*.{md,json,yaml,js,ts}\"",
+    "prettier:check": "prettier --list-different \"./**/*.{md,json,yaml,js,ts}\"",
+    "eslint": "eslint --ext .ts ./src/**/*",
+    "test-spec": "jest",
+    "test-cov": "jest --coverage",
+    "test": "npm run prettier:check && npm run build && npm run eslint && npm run test-cov",
+    "ci-test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajv-validator/ajv-formats.git"
+  },
+  "keywords": [
+    "Ajv",
+    "JSON-Schema",
+    "format",
+    "validation"
+  ],
+  "author": "Evgeny Poberezkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajv-validator/ajv-formats/issues"
+  },
+  "homepage": "https://github.com/ajv-validator/ajv-formats#readme",
+  "dependencies": {
+    "ajv": "^8.0.0"
+  },
+  "peerDependencies": {
+    "ajv": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ajv": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@ajv-validator/config": "^0.3.0",
+    "@types/jest": "^26.0.5",
+    "@types/node": "^14.10.1",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "ajv": "^8.0.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "json-schema-test": "^2.0.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.3.2",
+    "ts-jest": "^26.1.3",
+    "typescript": "^4.0.0"
+  },
+  "prettier": "@ajv-validator/config/prettierrc.json",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{md,json,yaml,js,ts}": "prettier --write"
+  }
+}

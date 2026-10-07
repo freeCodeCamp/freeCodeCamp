@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(npm view:*)",
+      "Bash(node test/resolver_sync.js:*)",
+      "Bash(xxd:*)",
+      "Bash(npm info:*)",
+      "Bash(grep:*)",
+      "Bash(npm run submodule:update:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git -C test/list-exports diff packages/tests/fixtures/resolve-2/project/test/resolver/nested_symlinks/mylib/async.js)",
+      "Bash(gh run list:*)",
+      "Bash(ls:*)",
+      "Bash(tape test/homedir.js)",
+      "Bash(tape test/default_paths.js)",
+      "Bash(tape test/mock.js)"
+    ]
+  }
+}

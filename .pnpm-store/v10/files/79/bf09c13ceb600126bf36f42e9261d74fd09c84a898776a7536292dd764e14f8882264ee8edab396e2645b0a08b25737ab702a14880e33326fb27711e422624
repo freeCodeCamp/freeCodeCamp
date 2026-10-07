@@ -1,0 +1,65 @@
+{
+  "name": "unist-util-find-all-between",
+  "version": "2.1.0",
+  "description": "Utility to find nodes between two nodes",
+  "main": "index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "scripts": {
+    "lint": "xo",
+    "test-types": "tsd",
+    "test": "npm run lint && npm run test-types && tap -Rspec --100 test.js",
+    "report": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrzmmr/unist-util-find-all-between.git"
+  },
+  "keywords": [
+    "unist",
+    "node",
+    "find",
+    "between",
+    "util",
+    "utility"
+  ],
+  "author": "mrzmmr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrzmmr/unist-util-find-all-between/issues"
+  },
+  "homepage": "https://github.com/mrzmmr/unist-util-find-all-between#readme",
+  "dependencies": {
+    "unist-util-find": "^1.0.1",
+    "unist-util-is": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/unist": "^2.0.3",
+    "coveralls": "^3.1.0",
+    "prettier": "^2.0.5",
+    "tap": "^14.10.8",
+    "tsd": "^0.13.1",
+    "typescript": "^3.9.7",
+    "xo": "^0.32.1"
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "unicorn/prefer-number-properties": "off"
+    }
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": true,
+    "trailingComma": "none"
+  }
+}

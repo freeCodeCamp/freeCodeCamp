@@ -1,0 +1,1 @@
+export type TNativeOfflineAudioContextConstructor = typeof OfflineAudioContext;

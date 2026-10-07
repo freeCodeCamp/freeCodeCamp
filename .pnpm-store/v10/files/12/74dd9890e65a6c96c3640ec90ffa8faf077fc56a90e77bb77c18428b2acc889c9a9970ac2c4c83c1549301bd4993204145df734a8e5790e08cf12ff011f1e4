@@ -1,0 +1,27 @@
+{
+    "name": "@types/responselike",
+    "version": "1.0.1",
+    "description": "TypeScript definitions for responselike",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/responselike",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "BendingBender",
+            "url": "https://github.com/BendingBender",
+            "githubUsername": "BendingBender"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/responselike"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "f455a4d977ac656d0981fba1b87415666d812e96862b4cc39bbf86790744b4f5",
+    "typeScriptVersion": "4.5"
+}

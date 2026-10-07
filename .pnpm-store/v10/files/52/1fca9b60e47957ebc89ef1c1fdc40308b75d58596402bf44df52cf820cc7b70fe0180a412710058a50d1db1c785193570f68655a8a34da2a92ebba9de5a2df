@@ -1,0 +1,23 @@
+{
+  "name": "@algolia/client-personalization",
+  "version": "4.27.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-javascript.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "dist/client-personalization.esm.js",
+  "types": "dist/client-personalization.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "dependencies": {
+    "@algolia/client-common": "4.27.0",
+    "@algolia/requester-common": "4.27.0",
+    "@algolia/transporter": "4.27.0"
+  }
+}

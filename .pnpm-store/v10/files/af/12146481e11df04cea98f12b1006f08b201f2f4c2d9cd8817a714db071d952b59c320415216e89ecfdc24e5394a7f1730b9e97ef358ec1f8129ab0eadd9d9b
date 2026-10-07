@@ -1,0 +1,57 @@
+{
+  "name": "birpc",
+  "type": "module",
+  "version": "4.0.0",
+  "description": "Message based Two-way remote procedure call",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/antfu",
+  "homepage": "https://github.com/antfu-collective/birpc#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antfu-collective/birpc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antfu-collective/birpc/issues"
+  },
+  "keywords": [
+    "rpc",
+    "messages"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.3.0",
+    "@antfu/ni": "^28.0.0",
+    "@types/node": "^24.10.1",
+    "@vitest/coverage-v8": "^4.0.15",
+    "bumpp": "^10.3.2",
+    "eslint": "^9.39.1",
+    "tinyexec": "^1.0.2",
+    "tsdown": "0.17.0-beta.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6",
+    "vitest": "^4.0.15",
+    "vitest-package-exports": "^0.1.1",
+    "yaml": "^2.8.2"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "watch": "tsdown --watch",
+    "lint": "eslint .",
+    "release": "bumpp",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
+  }
+}

@@ -1,0 +1,28 @@
+export var MapperKind;
+(function (MapperKind) {
+    MapperKind["TYPE"] = "MapperKind.TYPE";
+    MapperKind["SCALAR_TYPE"] = "MapperKind.SCALAR_TYPE";
+    MapperKind["ENUM_TYPE"] = "MapperKind.ENUM_TYPE";
+    MapperKind["COMPOSITE_TYPE"] = "MapperKind.COMPOSITE_TYPE";
+    MapperKind["OBJECT_TYPE"] = "MapperKind.OBJECT_TYPE";
+    MapperKind["INPUT_OBJECT_TYPE"] = "MapperKind.INPUT_OBJECT_TYPE";
+    MapperKind["ABSTRACT_TYPE"] = "MapperKind.ABSTRACT_TYPE";
+    MapperKind["UNION_TYPE"] = "MapperKind.UNION_TYPE";
+    MapperKind["INTERFACE_TYPE"] = "MapperKind.INTERFACE_TYPE";
+    MapperKind["ROOT_OBJECT"] = "MapperKind.ROOT_OBJECT";
+    MapperKind["QUERY"] = "MapperKind.QUERY";
+    MapperKind["MUTATION"] = "MapperKind.MUTATION";
+    MapperKind["SUBSCRIPTION"] = "MapperKind.SUBSCRIPTION";
+    MapperKind["DIRECTIVE"] = "MapperKind.DIRECTIVE";
+    MapperKind["FIELD"] = "MapperKind.FIELD";
+    MapperKind["COMPOSITE_FIELD"] = "MapperKind.COMPOSITE_FIELD";
+    MapperKind["OBJECT_FIELD"] = "MapperKind.OBJECT_FIELD";
+    MapperKind["ROOT_FIELD"] = "MapperKind.ROOT_FIELD";
+    MapperKind["QUERY_ROOT_FIELD"] = "MapperKind.QUERY_ROOT_FIELD";
+    MapperKind["MUTATION_ROOT_FIELD"] = "MapperKind.MUTATION_ROOT_FIELD";
+    MapperKind["SUBSCRIPTION_ROOT_FIELD"] = "MapperKind.SUBSCRIPTION_ROOT_FIELD";
+    MapperKind["INTERFACE_FIELD"] = "MapperKind.INTERFACE_FIELD";
+    MapperKind["INPUT_OBJECT_FIELD"] = "MapperKind.INPUT_OBJECT_FIELD";
+    MapperKind["ARGUMENT"] = "MapperKind.ARGUMENT";
+    MapperKind["ENUM_VALUE"] = "MapperKind.ENUM_VALUE";
+})(MapperKind || (MapperKind = {}));

@@ -1,0 +1,54 @@
+{
+  "name": "gatsby-page-utils",
+  "version": "3.16.0",
+  "description": "Gatsby library that helps creating pages",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist/ --ignore \"**/__tests__\" --extensions \".ts\"",
+    "typegen": "rimraf --glob \"dist/**/*.d.ts\" && tsc --emitDeclarationOnly --declaration --declarationDir dist/",
+    "watch": "babel -w src --out-dir dist/ --ignore \"**/__tests__\" --extensions \".ts\"",
+    "prepare": "cross-env NODE_ENV=production npm run build && npm run typegen"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "author": "Yvonnick FRIN <frin.yvonnick@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-page-utils"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-page-utils#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.20.13",
+    "bluebird": "^3.7.2",
+    "chokidar": "^3.6.0",
+    "fs-exists-cached": "^1.0.0",
+    "gatsby-core-utils": "^4.16.0",
+    "glob": "^7.2.3",
+    "lodash": "^4.17.21",
+    "micromatch": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@types/micromatch": "^4.0.6",
+    "babel-preset-gatsby-package": "^3.16.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.1.6"
+  },
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=18.0.0 <26"
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

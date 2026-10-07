@@ -1,0 +1,36 @@
+{
+  "name": "postcss-discard-overridden",
+  "version": "5.1.0",
+  "description": "PostCSS plugin to discard overridden @keyframes or @counter-style.",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "LICENSE",
+    "src"
+  ],
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "at-rules",
+    "@keyframes",
+    "@counter-style"
+  ],
+  "author": "Justineo <justice360@gmail.com>",
+  "license": "MIT",
+  "repository": "cssnano/cssnano",
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "homepage": "https://github.com/cssnano/cssnano",
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# PostCSS Discard Overridden\n\n[PostCSS] plugin to discard overridden `@keyframes` or `@counter-style`.\n\n`@keyframes` or `@counter-style` will be overridden by those who share the same identifiers and appear later in stylesheets. So we can discard all of them except the last one. When defined inside a `@media` or `@supports` rule, `@keyframes` and `@counter-style` rules only override global rules in some of the client browsers so they need handled separately. This plugin has taken care of this and transforms the PostCss AST **safely**.\n\n[PostCSS]: https://github.com/postcss/postcss\n\n```css\n@-webkit-keyframes fade-in {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 0.8;\n  }\n}\n@keyframes fade-in {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 0.8;\n  }\n}\n@media (max-width: 500px) {\n  @-webkit-keyframes fade-in {\n    0% {\n      opacity: 0;\n    }\n    100% {\n      opacity: 1;\n    }\n  }\n  @keyframes fade-in {\n    0% {\n      opacity: 0;\n    }\n    100% {\n      opacity: 1;\n    }\n  }\n  @-webkit-keyframes fade-in {\n    0% {\n      opacity: 0;\n    }\n    100% {\n      opacity: 0.8;\n    }\n  }\n  @keyframes fade-in {\n    0% {\n      opacity: 0;\n    }\n    100% {\n      opacity: 0.8;\n    }\n  }\n  @supports (display: flex) {\n    @-webkit-keyframes fade-in {\n      0% {\n        opacity: 0;\n      }\n      100% {\n        opacity: 1;\n      }\n    }\n    @keyframes fade-in {\n      0% {\n        opacity: 0;\n      }\n      100% {\n        opacity: 1;\n      }\n    }\n  }\n}\n@-webkit-keyframes fade-in {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fade-in {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n```\n\n```css\n@media (max-width: 500px) {\n  @-webkit-keyframes fade-in {\n    0% {\n      opacity: 0;\n    }\n    100% {\n      opacity: 0.8;\n    }\n  }\n  @keyframes fade-in {\n    0% {\n      opacity: 0;\n    }\n    100% {\n      opacity: 0.8;\n    }\n  }\n  @supports (display: flex) {\n    @-webkit-keyframes fade-in {\n      0% {\n        opacity: 0;\n      }\n      100% {\n        opacity: 1;\n      }\n    }\n    @keyframes fade-in {\n      0% {\n        opacity: 0;\n      }\n      100% {\n        opacity: 1;\n      }\n    }\n  }\n}\n@-webkit-keyframes fade-in {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fade-in {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n```\n\n## Usage\n\nSee the [PostCSS documentation](https://github.com/postcss/postcss#usage) for\nexamples for your environment.\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n"
+}

@@ -1,0 +1,20 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+node_js:
+    - 11
+    - lts/carbon
+    - lts/dubnium
+
+env:
+  - YARN_GPG=no # https://travis-ci.community/t/timeout-after-build-finished-and-succeeded/1336
+
+os:
+  - linux
+  - windows
+
+notifications:
+  email: false

@@ -1,0 +1,63 @@
+{
+    "name": "escodegen",
+    "description": "ECMAScript code generator",
+    "homepage": "http://github.com/estools/escodegen",
+    "main": "escodegen.js",
+    "bin": {
+        "esgenerate": "./bin/esgenerate.js",
+        "escodegen": "./bin/escodegen.js"
+    },
+    "files": [
+        "LICENSE.BSD",
+        "README.md",
+        "bin",
+        "escodegen.js",
+        "package.json"
+    ],
+    "version": "2.1.0",
+    "engines": {
+        "node": ">=6.0"
+    },
+    "maintainers": [
+        {
+            "name": "Yusuke Suzuki",
+            "email": "utatane.tea@gmail.com",
+            "web": "http://github.com/Constellation"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/estools/escodegen.git"
+    },
+    "dependencies": {
+        "estraverse": "^5.2.0",
+        "esutils": "^2.0.2",
+        "esprima": "^4.0.1"
+    },
+    "optionalDependencies": {
+        "source-map": "~0.6.1"
+    },
+    "devDependencies": {
+        "acorn": "^8.0.4",
+        "bluebird": "^3.4.7",
+        "bower-registry-client": "^1.0.0",
+        "chai": "^4.2.0",
+        "chai-exclude": "^2.0.2",
+        "commonjs-everywhere": "^0.9.7",
+        "gulp": "^4.0.2",
+        "gulp-eslint": "^6.0.0",
+        "gulp-mocha": "^7.0.2",
+        "minimist": "^1.2.5",
+        "optionator": "^0.9.1",
+        "semver": "^7.3.4"
+    },
+    "license": "BSD-2-Clause",
+    "scripts": {
+        "test": "gulp travis",
+        "unit-test": "gulp test",
+        "lint": "gulp lint",
+        "release": "node tools/release.js",
+        "build-min": "./node_modules/.bin/cjsify -ma path: tools/entry-point.js > escodegen.browser.min.js",
+        "build": "./node_modules/.bin/cjsify -a path: tools/entry-point.js > escodegen.browser.js"
+    }
+}

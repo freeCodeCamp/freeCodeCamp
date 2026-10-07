@@ -1,0 +1,1 @@
+{"version":3,"file":"panner-node-constructor.d.ts","sourceRoot":"","sources":["../../../src/types/panner-node-constructor.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,cAAc,EAAE,MAAM,eAAe,CAAC;AAC5D,OAAO,EAAE,QAAQ,EAAE,MAAM,WAAW,CAAC;AAErC,MAAM,MAAM,sBAAsB,GAAG,KAAK,CAAC,SAAS,QAAQ,EAAE,OAAO,EAAE,CAAC,EAAE,OAAO,CAAC,EAAE,OAAO,CAAC,cAAc,CAAC,KAAK,WAAW,CAAC,CAAC,CAAC,CAAC"}

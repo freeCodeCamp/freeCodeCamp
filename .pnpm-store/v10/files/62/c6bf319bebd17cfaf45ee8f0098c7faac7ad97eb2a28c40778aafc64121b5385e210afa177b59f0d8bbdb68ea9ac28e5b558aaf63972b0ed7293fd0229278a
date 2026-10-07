@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "app": {
+      "engines": {
+        "browsers": "> 0.25%"
+      },
+      "distDir": "www",
+      "publicUrl": "www"
+    }
+  }
+}

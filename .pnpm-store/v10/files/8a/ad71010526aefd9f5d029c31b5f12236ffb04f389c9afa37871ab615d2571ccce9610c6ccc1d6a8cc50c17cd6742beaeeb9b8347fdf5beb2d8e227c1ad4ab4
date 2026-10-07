@@ -1,0 +1,29 @@
+import { _ as _$1 } from '@swc/helpers/esm/_object_spread.js';
+import { _ } from '@swc/helpers/esm/_object_spread_props.js';
+import { createAutocompleteSearchComponent } from 'instantsearch-ui-components';
+import React, { createElement, Fragment } from 'react';
+
+var AutocompleteSearchComponent = createAutocompleteSearchComponent({
+    createElement: createElement,
+    Fragment: Fragment
+});
+function AutocompleteSearch(param) {
+    var inputProps = param.inputProps, clearQuery = param.clearQuery, onQueryChange = param.onQueryChange, query = param.query, isSearchStalled = param.isSearchStalled, onCancel = param.onCancel, isDetached = param.isDetached, submitTitle = param.submitTitle, onAiModeClick = param.onAiModeClick;
+    return /*#__PURE__*/ React.createElement(AutocompleteSearchComponent, {
+        inputProps: _(_$1({}, inputProps), {
+            onChange: function onChange(event) {
+                var value = event.currentTarget.value;
+                onQueryChange === null || onQueryChange === void 0 ? void 0 : onQueryChange(value);
+            }
+        }),
+        onClear: clearQuery,
+        query: query,
+        isSearchStalled: isSearchStalled,
+        onCancel: onCancel,
+        isDetached: isDetached,
+        submitTitle: submitTitle,
+        onAiModeClick: onAiModeClick
+    });
+}
+
+export { AutocompleteSearch };

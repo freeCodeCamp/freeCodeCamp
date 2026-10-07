@@ -1,0 +1,1 @@
+{"version":3,"file":"getTypeArguments.d.ts","sourceRoot":"","sources":["../src/getTypeArguments.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,EAAE,MAAM,YAAY,CAAC;AAEtC,wBAAgB,gBAAgB,CAC9B,IAAI,EAAE,EAAE,CAAC,aAAa,EACtB,OAAO,EAAE,EAAE,CAAC,WAAW,GACtB,SAAS,EAAE,CAAC,IAAI,EAAE,CAOpB"}

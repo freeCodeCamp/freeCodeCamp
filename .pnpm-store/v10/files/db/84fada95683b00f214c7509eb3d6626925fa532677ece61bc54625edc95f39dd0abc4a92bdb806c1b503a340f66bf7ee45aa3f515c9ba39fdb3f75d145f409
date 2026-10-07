@@ -1,0 +1,31 @@
+{
+  "name": "strict-uri-encode",
+  "version": "2.0.0",
+  "description": "A stricter URI encode adhering to RFC 3986",
+  "license": "MIT",
+  "repository": "kevva/strict-uri-encode",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "github.com/kevva"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "component",
+    "encode",
+    "RFC3986",
+    "uri"
+  ],
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  }
+}

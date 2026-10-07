@@ -1,0 +1,111 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain allows detailed inspection of media elements.
+experimental domain Media
+
+  # Players will get an ID that is unique within the agent context.
+  type PlayerId extends string
+
+  type Timestamp extends number
+
+  # Have one type per entry in MediaLogRecord::Type
+  # Corresponds to kMessage
+  type PlayerMessage extends object
+    properties
+      # Keep in sync with MediaLogMessageLevel
+      # We are currently keeping the message level 'error' separate from the
+      # PlayerError type because right now they represent different things,
+      # this one being a DVLOG(ERROR) style log message that gets printed
+      # based on what log level is selected in the UI, and the other is a
+      # representation of a media::PipelineStatus object. Soon however we're
+      # going to be moving away from using PipelineStatus for errors and
+      # introducing a new error type which should hopefully let us integrate
+      # the error log level into the PlayerError type.
+      enum level
+        error
+        warning
+        info
+        debug
+      string message
+
+  # Corresponds to kMediaPropertyChange
+  type PlayerProperty extends object
+    properties
+      string name
+      string value
+
+  # Corresponds to kMediaEventTriggered
+  type PlayerEvent extends object
+    properties
+      Timestamp timestamp
+      string value
+
+  # Represents logged source line numbers reported in an error.
+  # NOTE: file and line are from chromium c++ implementation code, not js.
+  type PlayerErrorSourceLocation extends object
+    properties
+      string file
+      integer line
+
+  # Corresponds to kMediaError
+  type PlayerError extends object
+    properties
+      string errorType
+      # Code is the numeric enum entry for a specific set of error codes, such
+      # as PipelineStatusCodes in media/base/pipeline_status.h
+      integer code
+      # A trace of where this error was caused / where it passed through.
+      array of PlayerErrorSourceLocation stack
+      # Errors potentially have a root cause error, ie, a DecoderError might be
+      # caused by an WindowsError
+      array of PlayerError cause
+      # Extra data attached to an error, such as an HRESULT, Video Codec, etc.
+      object data
+
+  type Player extends object
+    properties
+      PlayerId playerId
+      optional DOM.BackendNodeId domNodeId
+
+  # This can be called multiple times, and can be used to set / override /
+  # remove player properties. A null propValue indicates removal.
+  event playerPropertiesChanged
+    parameters
+      PlayerId playerId
+      array of PlayerProperty properties
+
+  # Send events as a list, allowing them to be batched on the browser for less
+  # congestion. If batched, events must ALWAYS be in chronological order.
+  event playerEventsAdded
+    parameters
+      PlayerId playerId
+      array of PlayerEvent events
+
+  # Send a list of any messages that need to be delivered.
+  event playerMessagesLogged
+    parameters
+      PlayerId playerId
+      array of PlayerMessage messages
+
+  # Send a list of any errors that need to be delivered.
+  event playerErrorsRaised
+    parameters
+      PlayerId playerId
+      array of PlayerError errors
+
+  # Called whenever a player is created, or when a new agent joins and receives
+  # a list of active players. If an agent is restored, it will receive one
+  # event for each active player.
+  event playerCreated
+    parameters
+      Player player
+
+  # Enables the Media domain
+  command enable
+
+  # Disables the Media domain.
+  command disable

@@ -1,0 +1,71 @@
+{
+  "name": "micromark-util-types",
+  "version": "2.0.2",
+  "description": "micromark utility with a couple of typescript types",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "util",
+    "utility",
+    "typescript",
+    "types"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-types",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "index.d.ts.map",
+    "index.d.ts",
+    "index.js"
+  ],
+  "exports": "./index.js",
+  "xo": {
+    "envs": [
+      "shared-node-browser"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.d.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/array-type": [
+            "error",
+            {
+              "default": "generic"
+            }
+          ],
+          "@typescript-eslint/ban-types": [
+            "error",
+            {
+              "extendDefaults": true
+            }
+          ],
+          "@typescript-eslint/consistent-type-definitions": [
+            "error",
+            "interface"
+          ]
+        }
+      }
+    ],
+    "prettier": true,
+    "rules": {
+      "unicorn/text-encoding-identifier-case": "off"
+    }
+  }
+}

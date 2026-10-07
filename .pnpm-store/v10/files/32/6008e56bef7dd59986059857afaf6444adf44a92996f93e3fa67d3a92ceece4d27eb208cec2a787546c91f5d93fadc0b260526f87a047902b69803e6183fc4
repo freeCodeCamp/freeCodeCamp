@@ -1,0 +1,34 @@
+@import '../variables';
+@import '../mixins';
+@import '../functions';
+
+@keyframes line-scale {
+  0% {
+    transform: scaley(1.0);
+  }
+  50% {
+    transform: scaley(0.4);
+  }
+  100% {
+    transform: scaley(1.0);
+  }
+}
+
+@mixin line-scale($n:5) {
+  @for $i from 1 through $n {
+    > div:nth-child(#{$i}) {
+      animation: line-scale 1s delay(0.1s, $n, $i) infinite cubic-bezier(.2,.68,.18,1.08);
+    }
+  }
+}
+
+.line-scale {
+  @include line-scale();
+
+  > div {
+    @include lines();
+    @include global-animation();
+
+    display: inline-block;
+  }
+}

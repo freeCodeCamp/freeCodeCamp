@@ -1,0 +1,52 @@
+{
+  "type": "module",
+  "name": "until-async",
+  "version": "3.0.2",
+  "description": "Gracefully handle a Promise using async/await.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "homepage": "https://github.com/kettanaito/until-async",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kettanaito/until-async.git"
+  },
+  "author": {
+    "name": "Artem Zakharchenko",
+    "url": "https://github.com/kettanaito"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/kettanaito",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "keywords": [
+    "async",
+    "promise",
+    "handle",
+    "gracefully",
+    "tuple",
+    "util"
+  ],
+  "devDependencies": {
+    "@ossjs/release": "^0.8.1",
+    "@rolldown/binding-darwin-arm64": "1.0.0-beta.38",
+    "publint": "^0.3.13",
+    "tsdown": "^0.15.3",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "scripts": {
+    "dev": "tsdown -w",
+    "test": "vitest",
+    "lint": "publint",
+    "build": "tsdown",
+    "release": "release publish"
+  }
+}

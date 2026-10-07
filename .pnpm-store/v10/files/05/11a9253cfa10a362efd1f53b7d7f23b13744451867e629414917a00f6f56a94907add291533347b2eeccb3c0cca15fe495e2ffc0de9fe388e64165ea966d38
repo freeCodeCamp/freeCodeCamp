@@ -1,0 +1,42 @@
+{
+  "name": "domexception",
+  "description": "An implementation of the DOMException class from browsers",
+  "keywords": [
+    "dom",
+    "webidl",
+    "web idl",
+    "domexception",
+    "error",
+    "exception"
+  ],
+  "version": "2.0.1",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "MIT",
+  "repository": "jsdom/domexception",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "webidl2js-wrapper.js",
+    "lib/"
+  ],
+  "scripts": {
+    "prepare": "node scripts/generate.js",
+    "init-wpt": "node scripts/get-latest-platform-tests.js",
+    "pretest": "npm run prepare && npm run init-wpt",
+    "test": "mocha",
+    "lint": "eslint lib"
+  },
+  "dependencies": {
+    "webidl-conversions": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "mkdirp": "^0.5.1",
+    "mocha": "^6.2.2",
+    "request": "^2.88.0",
+    "webidl2js": "^12.0.0"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}

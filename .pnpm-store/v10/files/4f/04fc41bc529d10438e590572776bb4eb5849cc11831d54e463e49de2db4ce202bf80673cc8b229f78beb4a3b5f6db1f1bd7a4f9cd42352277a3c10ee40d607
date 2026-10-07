@@ -1,0 +1,44 @@
+{
+  "name": "pretty-format",
+  "version": "27.5.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/jest.git",
+    "directory": "packages/pretty-format"
+  },
+  "license": "MIT",
+  "description": "Stringify any JavaScript value.",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./package.json": "./package.json",
+    "./ConvertAnsi": "./build/plugins/ConvertAnsi.js"
+  },
+  "author": "James Kyle <me@thejameskyle.com>",
+  "dependencies": {
+    "ansi-regex": "^5.0.1",
+    "ansi-styles": "^5.0.0",
+    "react-is": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "*",
+    "@types/react-is": "^17.0.0",
+    "@types/react-test-renderer": "*",
+    "immutable": "^4.0.0",
+    "jest-util": "^27.5.1",
+    "react": "*",
+    "react-dom": "*",
+    "react-test-renderer": "*"
+  },
+  "engines": {
+    "node": "^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "67c1aa20c5fec31366d733e901fee2b981cb1850"
+}

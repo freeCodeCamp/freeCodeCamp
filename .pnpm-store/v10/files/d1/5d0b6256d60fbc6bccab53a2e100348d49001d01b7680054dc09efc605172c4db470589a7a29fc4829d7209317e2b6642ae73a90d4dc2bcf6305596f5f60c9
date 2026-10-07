@@ -1,0 +1,17 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "ChatSidePanelLayout", {
+    enumerable: true,
+    get: function() {
+        return ChatSidePanelLayout;
+    }
+});
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _react = require("react");
+var ChatSidePanelLayout = (0, _instantsearchuicomponents.createChatSidePanelLayoutComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});

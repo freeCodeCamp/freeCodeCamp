@@ -1,0 +1,32 @@
+{
+    "name": "@types/react-scroll",
+    "version": "1.8.10",
+    "description": "TypeScript definitions for react-scroll",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-scroll",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Ioannis Kokkinidis",
+            "githubUsername": "sudoplz",
+            "url": "https://github.com/sudoplz"
+        },
+        {
+            "name": "Giedrius Grabauskas",
+            "githubUsername": "GiedriusGrabauskas",
+            "url": "https://github.com/GiedriusGrabauskas"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-scroll"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/react": "*"
+    },
+    "typesPublisherContentHash": "0e7c0b74f7c56518c9bf3c818f24c387df29b7e69634b37e3a0bdd317ee7aafc",
+    "typeScriptVersion": "4.5"
+}

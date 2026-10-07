@@ -1,0 +1,1 @@
+{"version":3,"file":"metadata.js","sourceRoot":"","sources":["../../lib/vocabularies/metadata.ts"],"names":[],"mappings":";;;AAEa,QAAA,kBAAkB,GAAe;IAC5C,OAAO;IACP,aAAa;IACb,SAAS;IACT,YAAY;IACZ,UAAU;IACV,WAAW;IACX,UAAU;CACX,CAAA;AAEY,QAAA,iBAAiB,GAAe;IAC3C,kBAAkB;IAClB,iBAAiB;IACjB,eAAe;CAChB,CAAA"}

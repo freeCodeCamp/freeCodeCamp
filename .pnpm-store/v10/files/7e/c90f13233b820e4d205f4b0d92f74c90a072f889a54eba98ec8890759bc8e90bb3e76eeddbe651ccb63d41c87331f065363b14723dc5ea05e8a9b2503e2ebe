@@ -1,0 +1,1 @@
+{"version":3,"file":"partition.js","sources":["../../src/internal/operators/partition.ts"],"names":[],"mappings":";;AAAA,mCAAkC;AAClC,mCAAkC;AAoDlC,SAAgB,SAAS,CAAI,SAA+C,EAC/C,OAAa;IACxC,OAAO,UAAC,MAAqB,IAAK,OAAA;QAChC,eAAM,CAAC,SAAS,EAAE,OAAO,CAAC,CAAC,MAAM,CAAC;QAClC,eAAM,CAAC,SAAG,CAAC,SAAS,EAAE,OAAO,CAAQ,CAAC,CAAC,MAAM,CAAC;KACb,EAHD,CAGC,CAAC;AACtC,CAAC;AAND,8BAMC"}

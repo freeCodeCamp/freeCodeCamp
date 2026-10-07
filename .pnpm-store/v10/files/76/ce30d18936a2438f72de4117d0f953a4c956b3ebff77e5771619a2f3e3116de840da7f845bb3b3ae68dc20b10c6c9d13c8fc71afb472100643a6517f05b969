@@ -1,0 +1,18 @@
+{
+  "name": "@polka/url",
+  "version": "0.5.0",
+  "description": "Super fast, memoized `req.url` parser",
+  "repository": "lukeed/polka",
+  "license": "MIT",
+  "files": [
+    "*.js"
+  ],
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke@lukeed.com",
+    "url": "https://lukeed.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

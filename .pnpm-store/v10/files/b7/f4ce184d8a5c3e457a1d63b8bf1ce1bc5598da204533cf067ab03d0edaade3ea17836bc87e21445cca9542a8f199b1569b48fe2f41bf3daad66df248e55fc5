@@ -1,0 +1,3 @@
+{
+  "extends": ["@mike-north/js-lib-renovate-config"]
+}

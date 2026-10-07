@@ -1,0 +1,107 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Defines commands and events for browser extensions.
+experimental domain Extensions
+  # Storage areas.
+  type StorageArea extends string
+    enum
+      session
+      local
+      sync
+      managed
+
+  # Runs an extension default action.
+  # Available if the client is connected using the --remote-debugging-pipe
+  # flag and the --enable-unsafe-extension-debugging flag is set.
+  command triggerAction
+    parameters
+      # Extension id.
+      string id
+      # A tab target ID to trigger the default extension action on.
+      string targetId
+
+  # Installs an unpacked extension from the filesystem similar to
+  # --load-extension CLI flags. Returns extension ID once the extension
+  # has been installed. Available if the client is connected using the
+  # --remote-debugging-pipe flag and the --enable-unsafe-extension-debugging
+  # flag is set.
+  command loadUnpacked
+    parameters
+      # Absolute file path.
+      string path
+      # Enable the extension in incognito
+      optional boolean enableInIncognito
+    returns
+      # Extension id.
+      string id
+
+  # Detailed information about an extension.
+  type ExtensionInfo extends object
+    properties
+      # Extension id.
+      string id
+      # Extension name.
+      string name
+      # Extension version.
+      string version
+      # The path from which the extension was loaded.
+      string path
+      # Extension enabled status.
+      boolean enabled
+
+  # Gets a list of all unpacked extensions.
+  # Available if the client is connected using the --remote-debugging-pipe flag
+  # and the --enable-unsafe-extension-debugging flag is set.
+  command getExtensions
+    returns
+      array of ExtensionInfo extensions
+
+  # Uninstalls an unpacked extension (others not supported) from the profile.
+  # Available if the client is connected using the --remote-debugging-pipe flag
+  # and the --enable-unsafe-extension-debugging.
+  command uninstall
+    parameters
+      # Extension id.
+      string id
+  # Gets data from extension storage in the given `storageArea`. If `keys` is
+  # specified, these are used to filter the result.
+  command getStorageItems
+    parameters
+      # ID of extension.
+      string id
+      # StorageArea to retrieve data from.
+      StorageArea storageArea
+      # Keys to retrieve.
+      optional array of string keys
+    returns
+      object data
+  # Removes `keys` from extension storage in the given `storageArea`.
+  command removeStorageItems
+    parameters
+      # ID of extension.
+      string id
+      # StorageArea to remove data from.
+      StorageArea storageArea
+      # Keys to remove.
+      array of string keys
+  # Clears extension storage in the given `storageArea`.
+  command clearStorageItems
+    parameters
+      # ID of extension.
+      string id
+      # StorageArea to remove data from.
+      StorageArea storageArea
+  # Sets `values` in extension storage in the given `storageArea`. The provided `values`
+  # will be merged with existing values in the storage area.
+  command setStorageItems
+    parameters
+      # ID of extension.
+      string id
+      # StorageArea to set data in.
+      StorageArea storageArea
+      # Values to set.
+      object values

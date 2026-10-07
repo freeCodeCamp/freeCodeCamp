@@ -1,0 +1,39 @@
+{
+  "name": "micromark-util-resolve-all",
+  "version": "2.0.0",
+  "description": "micromark utility to resolve subtokens",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "util",
+    "utility",
+    "resolve"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-resolve-all",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "exports": "./index.js",
+  "dependencies": {
+    "micromark-util-types": "^2.0.0"
+  },
+  "xo": false
+}

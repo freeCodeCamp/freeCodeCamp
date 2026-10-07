@@ -1,0 +1,131 @@
+{
+  "name": "puppeteer",
+  "version": "25.0.4",
+  "description": "A high-level API to control headless Chrome over the DevTools Protocol",
+  "keywords": [
+    "puppeteer",
+    "chrome",
+    "headless",
+    "automation"
+  ],
+  "type": "module",
+  "bin": "./lib/puppeteer/node/cli.js",
+  "main": "./lib/puppeteer/puppeteer.js",
+  "module": "./lib/puppeteer/puppeteer.js",
+  "types": "./lib/types.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types.d.ts",
+      "import": "./lib/puppeteer/puppeteer.js",
+      "require": "./lib/puppeteer/puppeteer.js"
+    },
+    "./internal/*": {
+      "import": "./lib/puppeteer/*",
+      "require": "./lib/puppeteer/*"
+    },
+    "./*": {
+      "import": "./*",
+      "require": "./*"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puppeteer/puppeteer/tree/main/packages/puppeteer"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build:docs": "wireit",
+    "build": "wireit",
+    "clean": "../../tools/clean.mjs",
+    "postinstall": "node install.mjs",
+    "prepack": "wireit"
+  },
+  "wireit": {
+    "prepack": {
+      "command": "node --experimental-strip-types ../../tools/cp.ts ../../README.md README.md",
+      "files": [
+        "../../README.md"
+      ],
+      "output": [
+        "README.md"
+      ]
+    },
+    "build": {
+      "dependencies": [
+        "build:tsc",
+        "build:types"
+      ]
+    },
+    "build:docs": {
+      "command": "api-extractor run --local --config \"./api-extractor.docs.json\"",
+      "files": [
+        "api-extractor.docs.json",
+        "lib/puppeteer/puppeteer.docs.d.ts",
+        "tsconfig.json"
+      ],
+      "dependencies": [
+        "build:tsc"
+      ]
+    },
+    "build:tsc": {
+      "command": "tsc -b && node --experimental-strip-types ../../tools/chmod.ts 755 lib/puppeteer/node/cli.js",
+      "clean": "if-file-deleted",
+      "dependencies": [
+        "../puppeteer-core:build",
+        "../browsers:build"
+      ],
+      "files": [
+        "src/**"
+      ],
+      "output": [
+        "lib/**",
+        "!lib/package.json"
+      ]
+    },
+    "build:types": {
+      "command": "api-extractor run --local && eslint --fix lib/types.d.ts --no-ignore",
+      "files": [
+        "api-extractor.json",
+        "lib/puppeteer/types.d.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "lib/types.d.ts"
+      ],
+      "dependencies": [
+        "build:tsc"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "src",
+    "install.mjs",
+    "!*.test.ts",
+    "!*.test.js",
+    "!*.test.d.ts",
+    "!*.test.js.map",
+    "!*.test.d.ts.map",
+    "!*.docs.ts",
+    "!*.docs.js",
+    "!*.docs.d.ts",
+    "!*.docs.js.map",
+    "!*.docs.d.ts.map",
+    "!*.tsbuildinfo"
+  ],
+  "author": "The Chromium Authors",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@puppeteer/browsers": "3.0.3",
+    "chromium-bidi": "16.0.1",
+    "cosmiconfig": "^9.0.0",
+    "devtools-protocol": "0.0.1608973",
+    "puppeteer-core": "25.0.4",
+    "typed-query-selector": "^2.12.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.17.15"
+  }
+}

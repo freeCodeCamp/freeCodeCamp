@@ -1,0 +1,43 @@
+{
+  "name": "babel-preset-react-app",
+  "version": "10.1.0",
+  "description": "Babel preset used by Create React App",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/create-react-app.git",
+    "directory": "packages/babel-preset-react-app"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/facebook/create-react-app/issues"
+  },
+  "files": [
+    "create.js",
+    "dependencies.js",
+    "dev.js",
+    "index.js",
+    "webpack-overrides.js",
+    "prod.js",
+    "test.js"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-decorators": "^7.16.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.16.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.0",
+    "@babel/plugin-proposal-private-methods": "^7.16.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@babel/plugin-transform-flow-strip-types": "^7.16.0",
+    "@babel/plugin-transform-react-display-name": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
+  },
+  "gitHead": "6254386531d263688ccfa542d0e628fbc0de0b28"
+}

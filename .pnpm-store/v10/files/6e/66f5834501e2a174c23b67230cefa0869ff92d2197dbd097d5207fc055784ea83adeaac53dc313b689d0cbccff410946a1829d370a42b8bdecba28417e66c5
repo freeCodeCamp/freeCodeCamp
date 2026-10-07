@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MetricHook.js",
+  "module": "../dist/esm/MetricHook.js",
+  "types": "../dist/dts/MetricHook.d.ts"
+}

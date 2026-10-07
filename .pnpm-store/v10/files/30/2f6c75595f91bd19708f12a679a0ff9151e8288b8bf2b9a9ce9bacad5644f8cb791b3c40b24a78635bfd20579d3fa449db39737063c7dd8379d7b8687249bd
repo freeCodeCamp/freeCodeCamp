@@ -1,0 +1,17 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "useTrendingFacets", {
+    enumerable: true,
+    get: function() {
+        return useTrendingFacets;
+    }
+});
+var _interop_require_default = require("@swc/helpers/_/_interop_require_default");
+var _connectTrendingFacets = /*#__PURE__*/ _interop_require_default._(require("instantsearch.js/cjs/connectors/trending-facets/connectTrendingFacets"));
+var _useConnector = require("../hooks/useConnector");
+function useTrendingFacets(props, additionalWidgetProperties) {
+    return (0, _useConnector.useConnector)(_connectTrendingFacets.default, props, additionalWidgetProperties);
+}

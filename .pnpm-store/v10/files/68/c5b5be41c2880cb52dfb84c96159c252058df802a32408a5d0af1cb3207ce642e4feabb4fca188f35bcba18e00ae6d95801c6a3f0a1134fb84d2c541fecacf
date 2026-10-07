@@ -1,0 +1,5 @@
+{
+  "name": "package-browser",
+  "main": "main.js",
+  "browser": "browser.js"
+}

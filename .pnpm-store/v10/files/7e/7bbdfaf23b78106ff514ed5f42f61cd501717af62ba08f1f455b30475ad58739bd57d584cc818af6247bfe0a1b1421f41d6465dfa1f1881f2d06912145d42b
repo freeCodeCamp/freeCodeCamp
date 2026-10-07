@@ -1,0 +1,35 @@
+{
+  "name": "micromark-util-symbol",
+  "version": "2.0.0",
+  "description": "micromark utility with symbols",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "util",
+    "utility",
+    "symbol"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-symbol",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "lib/"
+  ],
+  "exports": "./lib/default.js",
+  "xo": false
+}

@@ -1,0 +1,82 @@
+{
+  "name": "@stitches/core",
+  "version": "1.2.8",
+  "description": "The modern CSS-in-JS library",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "types/index.d.ts",
+  "typesVersions": {
+    ">= 4.1": {
+      "*": [
+        "types/index.d.ts"
+      ]
+    }
+  },
+  "jsdelivr": "dist/index.global.js",
+  "unpkg": "dist/index.global.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./types/index.d.ts"
+    },
+    "./global": "./dist/index.global.js"
+  },
+  "files": [
+    "dist/*.cjs",
+    "dist/*.js",
+    "dist/*.map",
+    "dist/*.mjs",
+    "types/*.d.ts"
+  ],
+  "sideEffects": false,
+  "license": "MIT",
+  "repository": "modulz/stitches",
+  "homepage": "https://stitches.dev/",
+  "bugs": "https://github.com/modulz/stitches/issues",
+  "contributors": [
+    "Pedro Duarte <pedro@modulz.app>",
+    "Abdulhadi Alhallak <abdulhadi@modulz.app>",
+    "Jonathan Neal <jonathan@modulz.app>"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "component",
+    "components",
+    "create",
+    "css",
+    "css-in-js",
+    "global",
+    "globals",
+    "javascript",
+    "js",
+    "nesting",
+    "object",
+    "object-oriented",
+    "oo",
+    "oocss",
+    "oriented",
+    "scope",
+    "scoped",
+    "style",
+    "styled",
+    "styles",
+    "stylesheet",
+    "stylesheets",
+    "theme",
+    "themes",
+    "theming",
+    "token",
+    "tokens",
+    "type",
+    "typed",
+    "types",
+    "transform",
+    "ts",
+    "variable",
+    "variables"
+  ]
+}

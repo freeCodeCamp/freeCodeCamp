@@ -1,0 +1,53 @@
+{
+  "name": "identity-obj-proxy",
+  "version": "3.0.0",
+  "description": "an identity object using ES6 proxies",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "node --harmony_proxies node_modules/.bin/jest",
+    "coverage": "node --harmony_proxies node_modules/.bin/jest --coverage",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
+    "prepublish": "npm run lint && npm run test"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keyanzhang/identity-obj-proxy.git"
+  },
+  "keywords": [
+    "proxy",
+    "proxies",
+    "identity",
+    "jest",
+    "mock"
+  ],
+  "author": "Keyan Zhang <root@keyanzhang.com> (http://keya.nz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keyanzhang/identity-obj-proxy/issues"
+  },
+  "homepage": "https://github.com/keyanzhang/identity-obj-proxy#readme",
+  "dependencies": {
+    "harmony-reflect": "^1.4.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-jest": "^14.1.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "coveralls": "^2.11.12",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb-base": "^5.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "jest-cli": "^14.1.0"
+  },
+  "jest": {
+    "automock": false,
+    "testPathDirs": [
+      "<rootDir>/src"
+    ]
+  }
+}

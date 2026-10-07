@@ -1,0 +1,30 @@
+{
+  "type": "commonjs",
+  "browser": null,
+  "main": "../lib/native/index.js",
+  "module": "../lib/native/index.mjs",
+  "types": "../lib/native/index.d.ts",
+  "exports": {
+    ".": {
+      "react-native": {
+        "import": {
+          "types": "./../lib/native/index.d.mts",
+          "default": "./../lib/native/index.mjs"
+        },
+        "default": {
+          "types": "./../lib/native/index.d.ts",
+          "default": "./../lib/native/index.js"
+        }
+      },
+      "browser": null,
+      "import": {
+        "types": "./../lib/native/index.d.mts",
+        "default": "./../lib/native/index.mjs"
+      },
+      "default": {
+        "types": "./../lib/native/index.d.ts",
+        "default": "./../lib/native/index.js"
+      }
+    }
+  }
+}

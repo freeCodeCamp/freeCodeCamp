@@ -1,0 +1,799 @@
+{
+  "lang": "da",
+  "rules": {
+    "accesskeys": {
+      "description": "",
+      "help": "Værdien for attributten 'accesskey' skal være unik"
+    },
+    "area-alt": {
+      "description": "",
+      "help": "Aktive <area> elementer skal have alternativ tekst"
+    },
+    "aria-allowed-attr": {
+      "description": "",
+      "help": "Elementer må kun bruge tilladte ARIA-attributter"
+    },
+    "aria-allowed-role": {
+      "description": "",
+      "help": "ARIA-attributten 'role' skal være passende for elementet"
+    },
+    "aria-hidden-body": {
+      "description": "",
+      "help": "aria-hidden='true' må ikke bruges på dokumentets <body> element"
+    },
+    "aria-hidden-focus": {
+      "description": "",
+      "help": "Elementer med ARIA-'hidden' må ikke indeholde fokuserbare elementer"
+    },
+    "aria-input-field-name": {
+      "description": "",
+      "help": "ARIA-input-felter skal have et tilgængeligt navn"
+    },
+    "aria-required-attr": {
+      "description": "",
+      "help": "Krævede ARIA-attributter skal være angivet"
+    },
+    "aria-required-children": {
+      "description": "",
+      "help": "Bestemte ARIA-roller skal indeholde specifikke under-elementer"
+    },
+    "aria-required-parent": {
+      "description": "",
+      "help": "Bestemte ARIA-roller skal være under-element til specifikke over-elementer"
+    },
+    "aria-roledescription": {
+      "description": "",
+      "help": "Brug 'aria-roledescription' på elementer med en semantisk rolle"
+    },
+    "aria-roles": {
+      "description": "",
+      "help": "ARIA-roller skal have en korrekt værdi"
+    },
+    "aria-toggle-field-name": {
+      "description": "",
+      "help": "ARIA afkrydsningsfelter skal have et tilgængeligt navn"
+    },
+    "aria-valid-attr-value": {
+      "description": "",
+      "help": "ARIA-attributter skal have en korrekt værdi"
+    },
+    "aria-valid-attr": {
+      "description": "",
+      "help": "ARIA-attributter skal have et korrekt navn"
+    },
+    "audio-caption": {
+      "description": "",
+      "help": "<audio> elementer skal have en transskription ('captions track')"
+    },
+    "autocomplete-valid": {
+      "description": "",
+      "help": "Attributten 'autocomplete' skal benyttes korrekt"
+    },
+    "avoid-inline-spacing": {
+      "description": "",
+      "help": "Inline tekst-afstande skal være justerbare med brugerdefinerede stylesheets"
+    },
+    "blink": {
+      "description": "",
+      "help": "Elementet <blink> er udfaset og må ikke bruges"
+    },
+    "button-name": {
+      "description": "",
+      "help": "Knapper skal have forståelig (dvs. detekterbar) tekst"
+    },
+    "bypass": {
+      "description": "",
+      "help": "Sider skal have en metode til at springe over gentaget indhold"
+    },
+    "color-contrast": {
+      "description": "",
+      "help": "Elementer skal have tilstrækkelig farvekontrast"
+    },
+    "color-contrast-enhanced": {
+      "description": "",
+      "help": "Elementer skal have tilstrækkelig farvekontrast"
+    },
+    "css-orientation-lock": {
+      "description": "",
+      "help": "'CSS Media queries' bør ikke bruges til at låse skærmretningen ('orientation')"
+    },
+    "definition-list": {
+      "description": "",
+      "help": "<dl> elementer må kun direkte indeholde velsorterede <dt> og <dd> grupper, <script> eller <template> elementer"
+    },
+    "dlitem": {
+      "description": "",
+      "help": "<dt> og <dd> elementer skal være under-element til et <dl> element"
+    },
+    "document-title": {
+      "description": "",
+      "help": "Dokumenter skal have et <title> element for at bidrage til nemmere navigation"
+    },
+    "duplicate-id-active": {
+      "description": "",
+      "help": "'id'-attributten for aktive elementer skal være unik"
+    },
+    "duplicate-id-aria": {
+      "description": "",
+      "help": "'id'-attributten brugt på ARIA-elementer og -labels skal være unik"
+    },
+    "duplicate-id": {
+      "description": "",
+      "help": "Værdien for 'id'-attributen skal være unik"
+    },
+    "empty-heading": {
+      "description": "",
+      "help": "Overskrifter må ikke være tomme"
+    },
+    "focus-order-semantics": {
+      "description": "",
+      "help": "Elementer i fokus-rækkefølgen bør have en 'role'-attribut, som er passende for det interaktive indhold"
+    },
+    "form-field-multiple-labels": {
+      "description": "",
+      "help": "Form-feltet bør ikke have flere label-elementer"
+    },
+    "frame-tested": {
+      "description": "",
+      "help": "Frame-elementer skal være testet med axe-core"
+    },
+    "frame-title-unique": {
+      "description": "",
+      "help": "Frame-elementer skal have en unik 'title'-attribut"
+    },
+    "frame-title": {
+      "description": "",
+      "help": "Frame-elementer skal have 'title'-attribut"
+    },
+    "heading-order": {
+      "description": "",
+      "help": "Overskriftsniveauer bør kun ændres sekventielt"
+    },
+    "hidden-content": {
+      "description": "",
+      "help": "Skjult indhold på siden kan ikke analyseres"
+    },
+    "html-has-lang": {
+      "description": "",
+      "help": "<html> elementet skal have en 'lang'-attribut"
+    },
+    "html-lang-valid": {
+      "description": "",
+      "help": "<html> elementet skal have en korrekt værdi for 'lang'-attributten"
+    },
+    "html-xml-lang-mismatch": {
+      "description": "",
+      "help": "<html> elementer med 'lang' og 'xml:lang' skal have det samme basesprog"
+    },
+    "image-alt": {
+      "description": "",
+      "help": "Billeder skal have en alternativ tekst"
+    },
+    "image-redundant-alt": {
+      "description": "",
+      "help": "Alternativ tekst til billeder (alt-tekst) bør ikke gentages som brødtekst"
+    },
+    "input-button-name": {
+      "description": "",
+      "help": "Input-knapper skal have en forståelig tekst"
+    },
+    "input-image-alt": {
+      "description": "",
+      "help": "Billed-knapper skal have en alternativ tekst"
+    },
+    "label-content-name-mismatch": {
+      "description": "",
+      "help": "Elementers synlige tekst skal være del af deres tilgængelige navn"
+    },
+    "label-title-only": {
+      "description": "",
+      "help": "Form-elementer bør have en synlig label"
+    },
+    "label": {
+      "description": "",
+      "help": "Form-elementer skal have labels"
+    },
+    "landmark-banner-is-top-level": {
+      "description": "",
+      "help": "Et 'banner'-landmark må ikke være indeholdt i et andet landmark"
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "",
+      "help": "Et 'aside'- eller 'complimentary'-landmark må ikke være indeholdt i et andet landmark"
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "",
+      "help": "Et 'contentinfo'-landmark må ikke være indeholdt i et andet landmark"
+    },
+    "landmark-main-is-top-level": {
+      "description": "",
+      "help": "Et 'main'-landmark må ikke være indeholdt i et andet landmark"
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "",
+      "help": "Dokumentet må ikke have mere end ét 'banner'-landmark"
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "",
+      "help": "Dokumentet må ikke have mere end ét 'contentinfo'-landmark"
+    },
+    "landmark-one-main": {
+      "description": "",
+      "help": "Dokumentet skal have ét 'main'-landmark"
+    },
+    "landmark-unique": {
+      "description": "",
+      "help": "Sikrer at landmarks er unikke"
+    },
+    "link-in-text-block": {
+      "description": "",
+      "help": "Links skal være fremtrædende fra den omkringliggende tekst på en måde, som ikke afhænger af farve"
+    },
+    "link-name": {
+      "description": "",
+      "help": "Links skal have forståelig (detekterbar) tekst"
+    },
+    "list": {
+      "description": "",
+      "help": "<ul> og <ol> må kun direkte indeholde <li>, <script> eller <template> elementer"
+    },
+    "listitem": {
+      "description": "",
+      "help": "<li> elementer skal være indeholdt i et <ul> eller <ol> element"
+    },
+    "marquee": {
+      "description": "",
+      "help": "<marquee> elementer er udfaset og må ikke bruges"
+    },
+    "meta-refresh": {
+      "description": "",
+      "help": "Tidsindstillet 'refresh' må ikke bruges"
+    },
+    "meta-viewport-large": {
+      "description": "",
+      "help": "Brugere bør kunne zoome og skalere tekst op til 500%"
+    },
+    "meta-viewport": {
+      "description": "",
+      "help": "Zoom og skalering må ikke være slået fra"
+    },
+    "object-alt": {
+      "description": "",
+      "help": "<object> elementer skal have en alternativ tekst"
+    },
+    "p-as-heading": {
+      "description": "",
+      "help": "Fremhævelse med fed, kursiv og skriftstørrelse (font-size) må ikke bruges til at style <p> elementer som en overskrift"
+    },
+    "page-has-heading-one": {
+      "description": "",
+      "help": "Siden skal indeholde en overskrift på øverste niveau"
+    },
+    "region": {
+      "description": "",
+      "help": "Alt indhold på siden skal være indeholdt i landmarks"
+    },
+    "role-img-alt": {
+      "description": "",
+      "help": "Elementer med 'role' attributværdien 'img' skal have en alternativ tekst"
+    },
+    "scope-attr-valid": {
+      "description": "",
+      "help": "'scope'-attributten skal bruges korrekt i tabeller"
+    },
+    "scrollable-region-focusable": {
+      "description": "",
+      "help": "Sørg for, at en scrollbar region er tilgængeligt via keyboard"
+    },
+    "server-side-image-map": {
+      "description": "",
+      "help": "Såkaldte 'server-side image-maps' må ikke bruges"
+    },
+    "skip-link": {
+      "description": "",
+      "help": "Et 'skip-link' skal pege på et eksisterende og fokuserbart element"
+    },
+    "tabindex": {
+      "description": "",
+      "help": "Elementer bør ikke have et 'tabindex' højere end 0"
+    },
+    "table-duplicate-name": {
+      "description": "",
+      "help": "Elementet <caption> bør ikke indeholde samme tekst som 'summary'-attributten"
+    },
+    "table-fake-caption": {
+      "description": "",
+      "help": "Data- eller overskrifts-celler bør ikke bruges til at beskrive indholdet af en data-tabel"
+    },
+    "td-has-header": {
+      "description": "",
+      "help": "Alle ikke-tomme <td> elementer i en tabel større end 3x3 bør have en tabeloverskrift (<th>)"
+    },
+    "td-headers-attr": {
+      "description": "",
+      "help": "Alle celler i en tabel, som  bruger 'header'-attributten må kun referere til andre celler i samme tabel"
+    },
+    "th-has-data-cells": {
+      "description": "",
+      "help": "Alle <th> elementer og elementer med 'role=columnheader/rowheader' skal referere til de data-celler, som de beskriver"
+    },
+    "valid-lang": {
+      "description": "",
+      "help": "'lang'-attributten skal have en korrekt værdi"
+    },
+    "video-caption": {
+      "description": "",
+      "help": "<video> elementer skal have undertekster ('captions')"
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "Abstrakte roller er ikke brugt",
+      "fail": "Abstrakte roller bør ikke bruges"
+    },
+    "aria-allowed-attr": {
+      "pass": "ARIA-attribut er brugt korrekt for den angivede rolle",
+      "fail": {
+        "singular": "ARIA-attributterne er ikke tilladt: ${data.values}",
+        "plural": "ARIA-attribut er ikke tilladt: ${data.values}"
+      }
+    },
+    "aria-allowed-role": {
+      "pass": "ARIA-rollen er tilladt for det givne element",
+      "fail": {
+        "singular": "ARIA-rollerne ${data.values} er ikke tilladt for det givne element",
+        "plural": "ARIA-rollen ${data.values} er ikke tilladt for det givne element"
+      },
+      "incomplete": {
+        "singular": "ARIA-rollerne ${data.values} skal være fjernet, når elementet er synligt, da de ikke er tilladt for elementet",
+        "plural": "ARIA-rollen ${data.values} skal være fjernet, når elementet er synligt, da det ikke er tilladt for elementet"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "Ingen 'aria-hidden'-attribut er at finde i dokumentets <body> element",
+      "fail": "'aria-hidden=true' bør ikke bruges på dokumentets <body> element"
+    },
+    "aria-roledescription": {
+      "pass": "'aria-roledescription' bruges på en understøttet semantisk rolle",
+      "incomplete": "Tjek at 'aria-roledescription' bliver læst op af understøttet skærmlæser",
+      "fail": "Giv elementet en rolle, som understøtter 'aria-roledescription'"
+    },
+    "aria-errormessage": {
+      "pass": "Bruger en understøttet 'aria-errormessage'-teknik",
+      "fail": {
+        "singular": "'aria-errormessage'-værdier ${data.values}` bør bruge en teknik til at annoncere beskeden (fx 'aria-live', 'aria-describedby', 'role=alert', osv.)",
+        "plural": "'aria-errormessage'-værdi ${data.values}` bør bruge en teknik til at annoncere beskeden (fx 'aria-live', 'aria-describedby', 'role=alert', osv.)"
+      }
+    },
+    "has-widget-role": {
+      "pass": "Elementet har en 'widget'-rolle.",
+      "fail": "Elementet har ikke en 'widget'-rolle."
+    },
+    "invalidrole": {
+      "pass": "ARIA-rollen er korrekt",
+      "fail": "Rollen skal være en af de mulige ARIA-roller"
+    },
+    "no-implicit-explicit-label": {
+      "pass": "Der er uoverensstemmelse mellem <label> og det tilgængelige navn",
+      "incomplete": "Tjek at <label> elementet ikke behøver være en del af ${data}-feltets navn"
+    },
+    "aria-required-attr": {
+      "pass": "Alle krævede ARIA-attributter er tilstede",
+      "fail": {
+        "singular": "Krævet ARIA-attributter er ikke til stede: ${data.values}",
+        "plural": "Krævet ARIA-attribut er ikke til stede: ${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": {
+        "default": "Krævet ARIA-under-elementer er til stede"
+      },
+      "fail": {
+        "singular": "Krævet ARIA-under-elementers rolle er ikke til stede: ${data.values}",
+        "plural": "Krævet ARIA-under-elements rolle er ikke til stede: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "Forventer at ARIA under-elementers rolle bliver tilføjet: ${data.values}",
+        "plural": "Forventer at ARIA under-elements rolle bliver tilføjet: ${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "Krævet ARIA-over-elements rolle er til stede",
+      "fail": {
+        "singular": "Krævet ARIA-over-elementers rolle er ikke til stede: ${data.values}",
+        "plural": "Krævet ARIA-over-elements rolle er ikke til stede: ${data.values}"
+      }
+    },
+    "aria-unsupported-attr": {
+      "pass": "ARIA-attribut er understøttet",
+      "fail": "ARIA-attribut er ikke bredt understøttet i skærmlæsere og tilgængelighedsteknologier:  ${data.values}"
+    },
+    "unsupportedrole": {
+      "pass": "ARIA rollen er understøttet",
+      "fail": "Den brugte rolle er ikke bredt understøttet i skærmlæsere og tilgængelighedsteknologier:  ${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "ARIA-attributværdien er valid",
+      "fail": {
+        "singular": "Ikke-korrekt ARIA-attributværdier: ${data.values}",
+        "plural": "Ikke-korrekt ARIA-attributværdi: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "ARIA-attributternes element 'id' er ikke at finde på siden: ${data.values}",
+        "plural": "ARIA-attributtens element 'id' er ikke at finde på siden: ${data.values}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": {
+        "singular": "ARIA-attributnavnene er korrekt",
+        "plural": "ARIA-attributnavnet er korrekt"
+      },
+      "fail": {
+        "singular": "Ikke-korrekt ARIA-attributnavne: ${data.values}",
+        "plural": "Ikke-korrekt ARIA-attributnavn: ${data.values}"
+      }
+    },
+    "valid-scrollable-semantics": {
+      "pass": "Elementet har korrekt semantik for et element i fokus-rækkefølgen.",
+      "fail": "Elementet har ikke korrekt semantik for et element i fokus-rækkefølgen."
+    },
+    "color-contrast": {
+      "pass": "Elementet har stor farvekontrast, den er ${data.contrastRatio}",
+      "fail": "Elementet har ikke nok farvekontrast, den er ${data.contrastRatio} (forgrundsfarve: ${data.fgColor}, baggrundsfarve: ${data.bgColor}, tekststørrelse: ${data.fontSize}, teksttykkelse: ${data.fontWeight}). Forventet kontrastforhold er ${data.expectedContrastRatio}",
+      "incomplete": {
+        "bgImage": "Elementets baggrundsfarve kunne ikke detekteres på grund af et baggrundsbillede",
+        "bgGradient": "Elementets baggrundsfarve kunne ikke detekteres på grund af en baggrundsgradient",
+        "imgNode": "Elementets baggrundsfarve kunne ikke detekteres, fordi elementet indeholder et billedelement",
+        "bgOverlap": "Elementets baggrundsfarve kunne ikke detekteres, fordi det er overlappet af et andet element",
+        "fgAlpha": "Elementets forgrundsfarve kunne ikke detekteres på grund af dets gennemsigtighed",
+        "elmPartiallyObscured": "Elementets baggrundsfarve kunne ikke detekteres, fordi det er delvist dækket af et andet element",
+        "elmPartiallyObscuring": "Elementets baggrundsfarve kunne ikke detekteres, fordi det delvist dækker et andet element",
+        "outsideViewport": "Elementets baggrundsfarve kunne ikke detekteres, fordi det er udenfor sidens 'viewport'",
+        "equalRatio": "Elementet har et 1:1-kontrastforhold med baggrunden",
+        "shortTextContent": "Elementets indhold er for kort til at kunne afgøre, om indholdet ren faktisk ER tekst",
+        "default": "Kan ikke udregne kontrastforhold"
+      }
+    },
+    "color-contrast-enhanced": {
+      "pass": "Elementet har stor farvekontrast, den er ${data.contrastRatio}",
+      "fail": "Elementet har ikke nok farvekontrast, den er ${data.contrastRatio} (forgrundsfarve: ${data.fgColor}, baggrundsfarve: ${data.bgColor}, tekststørrelse: ${data.fontSize}, teksttykkelse: ${data.fontWeight}). Forventet kontrastforhold er ${data.expectedContrastRatio}",
+      "incomplete": {
+        "bgImage": "Elementets baggrundsfarve kunne ikke detekteres på grund af et baggrundsbillede",
+        "bgGradient": "Elementets baggrundsfarve kunne ikke detekteres på grund af en baggrundsgradient",
+        "imgNode": "Elementets baggrundsfarve kunne ikke detekteres, fordi elementet indeholder et billedelement",
+        "bgOverlap": "Elementets baggrundsfarve kunne ikke detekteres, fordi det er overlappet af et andet element",
+        "fgAlpha": "Elementets forgrundsfarve kunne ikke detekteres på grund af dets gennemsigtighed",
+        "elmPartiallyObscured": "Elementets baggrundsfarve kunne ikke detekteres, fordi det er delvist dækket af et andet element",
+        "elmPartiallyObscuring": "Elementets baggrundsfarve kunne ikke detekteres, fordi det delvist dækker et andet element",
+        "outsideViewport": "Elementets baggrundsfarve kunne ikke detekteres, fordi det er udenfor sidens 'viewport'",
+        "equalRatio": "Elementet har et 1:1-kontrastforhold med baggrunden",
+        "shortTextContent": "Elementets indhold er for kort til at kunne afgøre, om indholdet ren faktisk ER tekst",
+        "default": "Kan ikke udregne kontrastforhold"
+      }
+    },
+    "link-in-text-block": {
+      "pass": "Links kan adskilles fra den omkringliggende tekst på anden måde end med farve",
+      "fail": "Links bør skille sig ud fra den omkringliggende tekst på anden måde end med farve",
+      "incomplete": {
+        "bgContrast": "Elementets kontrastforhold kunne ikke detekteres. Tjek for specifik 'hover'/'focus' styling",
+        "bgImage": "Elementets kontrastforhold kunne ikke detekteres på grund af et baggrundsbillede",
+        "bgGradient": "Elementets kontrastforhold kunne ikke detekteres på grund af en baggrundsgradient",
+        "imgNode": "Elementets kontrastforhold kunne ikke detekteres, fordi elementet indeholder et billedelement",
+        "bgOverlap": "Elementets kontrastforhold kunne ikke detekteres på grund af overlappende elementer",
+        "default": "Kan ikke udregne kontrastforhold"
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "'autocomplete'-værdien er brugt på et passende element",
+      "fail": "'autocomplete'-værdien er ikke passende for denne type input"
+    },
+    "autocomplete-valid": {
+      "pass": "'autocomplete'-attributten er korrekt formateret",
+      "fail": "'autocomplete'-attributten er forkert formateret"
+    },
+    "accesskeys": {
+      "pass": "'Accesskey' attributværdien er unik",
+      "fail": "Dokumentet har flere elementer med den samme 'accesskey'-attribut"
+    },
+    "focusable-content": {
+      "pass": "Elementet indeholder fokuserbare elementer",
+      "fail": "Elementet bør have fokuserbart indhold"
+    },
+    "focusable-disabled": {
+      "pass": "Ingen fokuserbare elementer indeholdt i elementet",
+      "fail": "Fokuserbart indhold bør slås fra eller fjernes fra sidens DOM"
+    },
+    "focusable-element": {
+      "pass": "Elementet er fokuserbart",
+      "fail": "Elementet bør være fokuserbart"
+    },
+    "focusable-no-name": {
+      "pass": "Elementet er ikke i sidens tabulerings-rækkefølge ('tab order') eller har tilgængelig tekst",
+      "fail": "Elementet er i sidens tabulerings-rækkefølge ('tab order') og har ikke tilgængelig tekst"
+    },
+    "focusable-not-tabbable": {
+      "pass": "Ingen fokuserbare elementer indeholdt i element",
+      "fail": "Fokuserbart indhold bør have tabindex='-1' eller fjernes fra sidens DOM"
+    },
+    "landmark-is-top-level": {
+      "pass": "${data.role} landmark er på det øverste niveau.",
+      "fail": "${data.role} landmark er indhold i et andet landmark."
+    },
+    "page-has-heading-one": {
+      "pass": "Siden har mindst én overskrift på niveau 1",
+      "fail": "Siden skal have mindst én overskrift på niveau 1"
+    },
+    "page-has-main": {
+      "pass": "Dokumentet har mindst ét 'main'-landmark",
+      "fail": "Dokumentet har ikke et 'main'-landmark"
+    },
+    "page-no-duplicate-banner": {
+      "pass": "Dokumentet har ikke mere end ét 'banner'-landmark",
+      "fail": "Dokumentet har mere end ét 'banner-'landmark"
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "Dokumentet har ikke mere end ét 'contentinfo'-landmark",
+      "fail": "Dokumentet har mere end ét 'contentinfo'-landmark"
+    },
+    "page-no-duplicate-main": {
+      "pass": "Dokumentet har ikke mere end ét 'main'-landmark",
+      "fail": "Dokumentet har mere end ét 'main'-landmark"
+    },
+    "tabindex": {
+      "pass": "Elementet har ikke et 'tabindex' større end 0",
+      "fail": "Elementet har et 'tabindex' større end 0"
+    },
+    "alt-space-value": {
+      "pass": "Elementet har en alt-attribut med valid værdi",
+      "fail": "Elementet har en alt-attribut, som kun indeholder et mellemrum, hvilket ikke ignoreres af alle skærmlæsere"
+    },
+    "duplicate-img-label": {
+      "pass": "Elementet duplikerer ikke den eksisterende tekst fra <img> elementets alt-tekst",
+      "fail": "Elementet indeholder et <img> element med alt-tekst, som duplikerer den eksisterende tekst"
+    },
+    "explicit-label": {
+      "pass": "Form-elementet har en eksplicit <label>",
+      "fail": "Form-elementet har ikke en eksplicit <label>"
+    },
+    "help-same-as-label": {
+      "pass": "Hjælpeteksten ('title' eller 'aria-describedby') duplikerer ikke label-teksten",
+      "fail": "Hjælpeteksten ('title' eller 'aria-describedby') er den samme som label-teksten"
+    },
+    "hidden-explicit-label": {
+      "pass": "Form-elementet har en synlig og eksplicit <label>",
+      "fail": "Form-elementet har en eksplicit <label>, som er skjult"
+    },
+    "implicit-label": {
+      "pass": "Form-elementet har en implicit (indeholdt i en) <label>",
+      "fail": "Form-elementet har ikke en implicit (indeholdt i en) <label>"
+    },
+    "label-content-name-mismatch": {
+      "pass": "Elementet indeholder synlig tekst som del af dets tilgængelige navn",
+      "fail": "Tekst i elementet er ikke inkluderet i det tilgængelige navn"
+    },
+    "multiple-label": {
+      "pass": "Form-feltet har ikke flere label-elementer",
+      "incomplete": "Flere label-elementer er ikke bredt understøttet i tilgængelighedsteknologier. Sørg for, at det første label-element indeholder alle de nødvendige informationer."
+    },
+    "title-only": {
+      "pass": "Form-elementet bruger ikke udelukkende 'title'-attributten som label",
+      "fail": "Kun 'title'-attributten er brugt som label for form-elementet"
+    },
+    "landmark-is-unique": {
+      "pass": "Landmarks skal have en unik rolle eller 'role'/'label'/'title'-attribut-kombination (som tilgængeligt navn)",
+      "fail": "Et landmark skal have en unik 'aria-label', 'aria-labelledby', eller 'title' for at gøre landmarks adskillelige"
+    },
+    "has-lang": {
+      "pass": "<html> elementet har en 'lang'-attribut",
+      "fail": "<html> elementet har ikke en 'lang'-attribut"
+    },
+    "valid-lang": {
+      "pass": "'lang'-attributtens værdi er inkluderet i listen over godkendte sprog",
+      "fail": "'lang'-attributtens værdi er ikke inkluderet i listen over godkendte sprog"
+    },
+    "xml-lang-mismatch": {
+      "pass": "Attributterne 'lang' og 'xml:lang' har samme basissprog",
+      "fail": "Attributterne 'lang' og 'xml:lang' har ikke samme basissprog"
+    },
+    "dlitem": {
+      "pass": "Beskrivelsesliste-elementet har et <dl>-over-element",
+      "fail": "Beskrivelsesliste-elementet har ikke et <dl>-over-element"
+    },
+    "listitem": {
+      "pass": "Elementet i listen har et <ul>, <ol> eller 'role=\"list\"'-over-element",
+      "fail": "Elementet i listen har ikke et <ul>, <ol> eller 'role=\"list\"'-over-element"
+    },
+    "only-dlitems": {
+      "pass": "Elementet i listen har kun direkte under-elementer, som er tilladt i <dt> eller <dd> elementer",
+      "fail": "Elementet i listen har direkte under-elementer, som ikke er tilladt inde i <dt> eller <dd> elementer"
+    },
+    "only-listitems": {
+      "pass": "Elementet i listen har kun direkte under-elementer, som er tilladt i <li> elementer",
+      "fail": "Elementet i listen har direkte under-elementer, som ikke er tilladt inde i <li> elementer"
+    },
+    "structured-dlitems": {
+      "pass": "Det ikke-tomme element har både <dt> og <dd> elementer",
+      "fail": "Det ikke-tomme element har ikke mindst ét <dt> element efterfulgt af mindst ét <dd> element"
+    },
+    "caption": {
+      "pass": "Multimedia-elementet har et track med undertekster",
+      "incomplete": "Tjek at undertekster er tilgængelige for elementet"
+    },
+    "frame-tested": {
+      "pass": "Denne <iframe> blev testet af axe-core",
+      "fail": "Denne <iframe> kunne ikke testes af axe-core",
+      "incomplete": "Denne <iframe> er endnu ikke blevet testet af axe-core"
+    },
+    "css-orientation-lock": {
+      "pass": "Skærmen kan styres, og sidens skærmretning er ikke låst med med 'css-orientation-lock'",
+      "fail": "Skærmretningen ('css-orientation-lock') er låst, hvilket gør sidevisning svær at styre på skærmen",
+      "incomplete": "Det kan ikke detekteres om skærmretning er låst (med 'css-orientation-lock')"
+    },
+    "meta-viewport-large": {
+      "pass": "<meta>-tagget begrænser ikke høj zoom på mobile enheder",
+      "fail": "<meta>-tagget begrænser zoom på mobile enheder"
+    },
+    "meta-viewport": {
+      "pass": "<meta>-tagget slår ikke zoom fra på mobile enheder",
+      "fail": "${data} på <meta>-tagget slår zoom fra på mobile enheder"
+    },
+    "header-present": {
+      "pass": "Siden har en overskrift (header)",
+      "fail": "Siden har ikke en overskrift (header)"
+    },
+    "heading-order": {
+      "pass": "Rækkefølgen af overskiftsniveauer er korrekt",
+      "fail": "Rækkefølgen af overskiftsniveauer er ikke korrekt"
+    },
+    "internal-link-present": {
+      "pass": "Passende 'skip link' fundet",
+      "fail": "Intet passende 'skip link' fundet"
+    },
+    "landmark": {
+      "pass": "Siden har en 'landmark' region",
+      "fail": "Siden har ikke en 'landmark' region"
+    },
+    "meta-refresh": {
+      "pass": "<meta>-tagget genindlæser ikke siden med det samme",
+      "fail": "<meta>-tagget genindlæser siden med det samme"
+    },
+    "p-as-heading": {
+      "pass": "<p> elementer er ikke stylet som en overskrift",
+      "fail": "Overskrifts-elementer (<h1>, <h2>, osv.) bør bruges i stedet for stylet <p> elementer"
+    },
+    "region": {
+      "pass": "Al indhold på siden er lagt ind under landmarks",
+      "fail": "Dele af sidens indhold er ikke lagt under et landmark"
+    },
+    "skip-link": {
+      "pass": "Det element, som 'skip link' refererer til, eksisterer",
+      "incomplete": "Det element, som 'skip link' refererer til, bør blive synligt ved aktivering",
+      "fail": "Manglende 'skip link' 'target'-attribut"
+    },
+    "unique-frame-title": {
+      "pass": "Elementets 'title'-attribut er unik",
+      "fail": "Elementets 'title'-attribut er ikke unik"
+    },
+    "duplicate-id-active": {
+      "pass": "Dokumentet har ingen aktive elementer, der deler den samme 'id'-attribut",
+      "fail": "Dokumentet har aktive elementer, der deler den samme 'id'-attribut: ${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "Dokumentet har ingen elementer refereret med ARIA eller labels, der deler den samme 'id'-attribut",
+      "fail": "Dokumentet har flere elementer refereret med ARIA med den samme 'id'-attribut: ${data}"
+    },
+    "duplicate-id": {
+      "pass": "Dokumentet har ingen statiske elementer, der deler den samme 'id'-attribut",
+      "fail": "Dokumentet har flere statiske elementer med den samme 'id'-attribut"
+    },
+    "aria-label": {
+      "pass": "'aria-label'-attribut er til stede og er ikke tom",
+      "fail": "'aria-label'-attribut eksisterer ikke eller er tom"
+    },
+    "aria-labelledby": {
+      "pass": "'aria-labelledby'-attribut eksisterer og refererer elementer, der er synlige for skærmlæsere",
+      "fail": "'aria-labelledby'-attribut eksisterer ikke, eller refererer elementer, som ikke eksisterer - eller refererer til elementer, der er tomme"
+    },
+    "avoid-inline-spacing": {
+      "pass": "Ingen inline styling med '!important', som påvirker tekst-mellemrums-afstand er specificeret",
+      "fail": {
+        "singular": "Fjern '!important' fra inline stylings ${data.values}, da overskrivning af dette, ikke er understøttet i de fleste browsere",
+        "plural": "Fjern '!important' fra inline styling ${data.values}, da overskrivning af dette, ikke er understøttet i de fleste browsere"
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "Elementet har indre tekst, som er synlig for skærmlæsere",
+      "fail": "Elementet har ingen indre tekst, som er synlig for skærmlæsere"
+    },
+    "doc-has-title": {
+      "pass": "Dokumentet har et <title> element, der ikke er tomt",
+      "fail": "Dokumentet mangler et <title> element med indhold"
+    },
+    "exists": {
+      "pass": "Elementet eksisterer ikke",
+      "fail": "Elementet eksisterer"
+    },
+    "has-alt": {
+      "pass": "Elementet har en 'alt'-attribut",
+      "fail": "Elementet har ikke en 'alt'-attribut"
+    },
+    "has-visible-text": {
+      "pass": "Elementet har tekst, der er synligt for skærmlæsere",
+      "fail": "Elementet har ikke tekst, der er synligt for skærmlæsere"
+    },
+    "is-on-screen": {
+      "pass": "Elementet er ikke synligt",
+      "fail": "Elementet er synligt"
+    },
+    "non-empty-alt": {
+      "pass": "Elementet har 'alt'-attribut med indhold",
+      "fail": "Elementet har ingen 'alt'-attribut, eller 'alt'-attributten er tom"
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": "Elementet har ikke en 'value'-attribut",
+        "has-label": "Elementet har en 'værdi'-attribut med indhold"
+      },
+      "fail": "Elementet har en 'value'-attribut, og 'værdi'-attributten er tom"
+    },
+    "non-empty-title": {
+      "pass": "Elementet har en 'title'-attribut",
+      "fail": "Elementet har ingen 'title'-attribut, eller 'title'-attributten er tom"
+    },
+    "non-empty-value": {
+      "pass": "Elementet har 'value'-attribut med indhold",
+      "fail": "Elementet har ingen 'value'-attribut, eller 'value'-attributten er tom"
+    },
+    "role-none": {
+      "pass": "Elementets standard semantik blev overskrevet med attributten 'role=\"none\"'",
+      "fail": "Elementets standard semantik blev ikke overskrevet med attributten 'role=\"none\"'"
+    },
+    "role-presentation": {
+      "pass": "Elementets standard semantik blev overskrevet med attributten 'role=\"presentation\"'",
+      "fail": "Elementets standard semantik blev ikke overskrevet med attributten 'role=\"presentation\"'"
+    },
+    "caption-faked": {
+      "pass": "Den første række i tabellen er ikke brugt som en beskrivelse ('caption')",
+      "fail": "Det første element i tabellen bør være en beskrivelse (<caption>) i stedet for en celle"
+    },
+    "html5-scope": {
+      "pass": "'Scope'-attributten bør kun bruges på tabellens header-elementer (<th>)",
+      "fail": "'Scope'-attributten bør kun bruges på tabellens header-elementer (<th>)"
+    },
+    "same-caption-summary": {
+      "pass": "Indholdet af 'summary'-attributten og <caption> elementet er ikke identisk",
+      "fail": "Indholdet af 'summary'-attributten og <caption> elementet er identisk"
+    },
+    "scope-value": {
+      "pass": "'scope'-attributten bruges korrekt",
+      "fail": "Værdien af 'scope'-attributten må kun være 'row' eller 'col'"
+    },
+    "td-has-header": {
+      "pass": "Alle data-celler med indhold har en tabel-header",
+      "fail": "Nogle data-celler med indhold har ikke tabel-headers"
+    },
+    "td-headers-attr": {
+      "pass": "Header-attributten bruges kun til at referere til andre celler i den samme tabel",
+      "fail": "Header-attributten bruges ikke kun til at referere til andre celler i den samme tabel"
+    },
+    "th-has-data-cells": {
+      "pass": "Alle tabellens header-celler refererer til data-celler",
+      "fail": "Ikke alle tabellens header-celler refererer til data-celler",
+      "incomplete": "Nogle af tabellens data-celler mangler eller er tomme"
+    },
+    "hidden-content": {
+      "pass": "Alt indhold på siden er blevet analyseret.",
+      "fail": "Der var problemer med at analysere dele af indholdet på denne side.",
+      "incomplete": "Der er skjult indhold på siden, som ikke blev analyseret. Du skal gøre dette indhold synligt for at kunne analysere det."
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "Ret en af følgende:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "Ret alle de følgende:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "axe kunne ikke give en årsag. Tid til at finde dit udviklingsværktøj frem!"
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"recursiveRef.js","sourceRoot":"","sources":["../../../lib/vocabularies/dynamic/recursiveRef.ts"],"names":[],"mappings":";;AACA,6CAAuC;AAEvC,MAAM,GAAG,GAA0B;IACjC,OAAO,EAAE,eAAe;IACxB,UAAU,EAAE,QAAQ;IACpB,IAAI,EAAE,CAAC,GAAG,EAAE,EAAE,CAAC,IAAA,uBAAU,EAAC,GAAG,EAAE,GAAG,CAAC,MAAM,CAAC;CAC3C,CAAA;AAED,kBAAe,GAAG,CAAA"}

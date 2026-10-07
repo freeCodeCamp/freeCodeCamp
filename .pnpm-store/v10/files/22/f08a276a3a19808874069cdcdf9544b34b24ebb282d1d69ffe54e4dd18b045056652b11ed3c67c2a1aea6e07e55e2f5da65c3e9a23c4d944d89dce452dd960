@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_tagged_template_literal.js")

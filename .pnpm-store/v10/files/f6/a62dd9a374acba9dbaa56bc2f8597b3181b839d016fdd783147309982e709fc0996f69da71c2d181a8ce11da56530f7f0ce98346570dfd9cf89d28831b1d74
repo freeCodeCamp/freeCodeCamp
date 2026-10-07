@@ -1,0 +1,152 @@
+{
+  "name": "@testing-library/jest-dom",
+  "version": "6.9.1",
+  "description": "Custom jest matchers to test the state of the DOM",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./types/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./types/index.d.ts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./jest-globals": {
+      "require": {
+        "types": "./types/jest-globals.d.ts",
+        "default": "./dist/jest-globals.js"
+      },
+      "import": {
+        "types": "./types/jest-globals.d.ts",
+        "default": "./dist/jest-globals.mjs"
+      }
+    },
+    "./matchers": {
+      "require": {
+        "types": "./types/matchers-standalone.d.ts",
+        "default": "./dist/matchers.js"
+      },
+      "import": {
+        "types": "./types/matchers-standalone.d.ts",
+        "default": "./dist/matchers.mjs"
+      }
+    },
+    "./vitest": {
+      "require": {
+        "types": "./types/vitest.d.ts",
+        "default": "./dist/vitest.js"
+      },
+      "import": {
+        "types": "./types/vitest.d.ts",
+        "default": "./dist/vitest.mjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "types/index.d.ts",
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6",
+    "yarn": ">=1"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "format": "kcd-scripts format",
+    "lint": "kcd-scripts lint",
+    "setup": "npm install && npm run validate -s",
+    "test": "kcd-scripts test",
+    "test:update": "npm test -- --updateSnapshot --coverage",
+    "test:types": "tsc -p types/__tests__/jest && tsc -p types/__tests__/jest-globals && tsc -p types/__tests__/vitest && tsc -p types/__tests__/bun",
+    "validate": "kcd-scripts validate && npm run test:types"
+  },
+  "files": [
+    "dist",
+    "types",
+    "*.d.ts",
+    "jest-globals.js",
+    "matchers.js",
+    "vitest.js"
+  ],
+  "keywords": [
+    "testing",
+    "dom",
+    "jest",
+    "jsdom"
+  ],
+  "author": "Ernesto Garcia <gnapse@gmail.com> (http://gnapse.github.io)",
+  "license": "MIT",
+  "dependencies": {
+    "@adobe/css-tools": "^4.4.0",
+    "aria-query": "^5.0.0",
+    "css.escape": "^1.5.1",
+    "dom-accessibility-api": "^0.6.3",
+    "picocolors": "^1.1.1",
+    "redent": "^3.0.0"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.6.2",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@types/bun": "latest",
+    "@types/web": "latest",
+    "expect": "^29.6.2",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-watch-select-projects": "^2.0.0",
+    "jsdom": "^16.2.1",
+    "kcd-scripts": "^14.0.0",
+    "pretty-format": "^25.1.0",
+    "rollup": "^3.28.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.1"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/kcd-scripts/eslint.js",
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2020
+    },
+    "rules": {
+      "no-invalid-this": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "src/__tests__/*.js"
+        ],
+        "rules": {
+          "max-lines-per-function": "off"
+        }
+      },
+      {
+        "files": [
+          "**/*.d.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/no-empty-interface": "off",
+          "@typescript-eslint/no-explicit-any": "off",
+          "@typescript-eslint/no-invalid-void-type": "off",
+          "@typescript-eslint/no-unused-vars": "off",
+          "@typescript-eslint/triple-slash-reference": "off"
+        }
+      }
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist",
+    "types/__tests__"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/testing-library/jest-dom"
+  },
+  "bugs": {
+    "url": "https://github.com/testing-library/jest-dom/issues"
+  },
+  "homepage": "https://github.com/testing-library/jest-dom#readme"
+}

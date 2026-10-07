@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Cause.js",
+  "module": "../dist/esm/Cause.js",
+  "types": "../dist/dts/Cause.d.ts"
+}

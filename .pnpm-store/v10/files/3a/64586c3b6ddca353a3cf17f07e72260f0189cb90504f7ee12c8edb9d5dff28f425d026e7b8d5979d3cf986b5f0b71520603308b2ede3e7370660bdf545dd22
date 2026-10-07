@@ -1,0 +1,149 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+:root {
+	--vscode-sash-size: 4px;
+	--vscode-sash-hover-size: 4px;
+}
+
+.monaco-sash {
+	position: absolute;
+	z-index: 35;
+	touch-action: none;
+}
+
+.monaco-sash.disabled {
+	pointer-events: none;
+}
+
+.monaco-sash.mac.vertical {
+	cursor: col-resize;
+}
+
+.monaco-sash.vertical.minimum {
+	cursor: e-resize;
+}
+
+.monaco-sash.vertical.maximum {
+	cursor: w-resize;
+}
+
+.monaco-sash.mac.horizontal {
+	cursor: row-resize;
+}
+
+.monaco-sash.horizontal.minimum {
+	cursor: s-resize;
+}
+
+.monaco-sash.horizontal.maximum {
+	cursor: n-resize;
+}
+
+.monaco-sash.disabled {
+	cursor: default !important;
+	pointer-events: none !important;
+}
+
+.monaco-sash.vertical {
+	cursor: ew-resize;
+	top: 0;
+	width: var(--vscode-sash-size);
+	height: 100%;
+}
+
+.monaco-sash.horizontal {
+	cursor: ns-resize;
+	left: 0;
+	width: 100%;
+	height: var(--vscode-sash-size);
+}
+
+.monaco-sash:not(.disabled) > .orthogonal-drag-handle {
+	content: " ";
+	height: calc(var(--vscode-sash-size) * 2);
+	width: calc(var(--vscode-sash-size) * 2);
+	z-index: 100;
+	display: block;
+	cursor: all-scroll;
+	position: absolute;
+}
+
+.monaco-sash.horizontal.orthogonal-edge-north:not(.disabled)
+	> .orthogonal-drag-handle.start,
+.monaco-sash.horizontal.orthogonal-edge-south:not(.disabled)
+	> .orthogonal-drag-handle.end {
+	cursor: nwse-resize;
+}
+
+.monaco-sash.horizontal.orthogonal-edge-north:not(.disabled)
+	> .orthogonal-drag-handle.end,
+.monaco-sash.horizontal.orthogonal-edge-south:not(.disabled)
+	> .orthogonal-drag-handle.start {
+	cursor: nesw-resize;
+}
+
+.monaco-sash.vertical > .orthogonal-drag-handle.start {
+	left: calc(var(--vscode-sash-size) * -0.5);
+	top: calc(var(--vscode-sash-size) * -1);
+}
+.monaco-sash.vertical > .orthogonal-drag-handle.end {
+	left: calc(var(--vscode-sash-size) * -0.5);
+	bottom: calc(var(--vscode-sash-size) * -1);
+}
+.monaco-sash.horizontal > .orthogonal-drag-handle.start {
+	top: calc(var(--vscode-sash-size) * -0.5);
+	left: calc(var(--vscode-sash-size) * -1);
+}
+.monaco-sash.horizontal > .orthogonal-drag-handle.end {
+	top: calc(var(--vscode-sash-size) * -0.5);
+	right: calc(var(--vscode-sash-size) * -1);
+}
+
+.monaco-sash:before {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+
+.monaco-enable-motion .monaco-sash:before {
+	transition: background-color 0.1s ease-out;
+}
+
+.monaco-sash.hover:before,
+.monaco-sash.active:before {
+	background: var(--vscode-sash-hoverBorder);
+}
+
+.monaco-sash.vertical:before {
+	width: var(--vscode-sash-hover-size);
+	left: calc(50% - (var(--vscode-sash-hover-size) / 2));
+}
+
+.monaco-sash.horizontal:before {
+	height: var(--vscode-sash-hover-size);
+	top: calc(50% - (var(--vscode-sash-hover-size) / 2));
+}
+
+.pointer-events-disabled {
+	pointer-events: none !important;
+}
+
+/** Debug **/
+
+.monaco-sash.debug {
+	background: cyan;
+}
+
+.monaco-sash.debug.disabled {
+	background: rgba(0, 255, 255, 0.2);
+}
+
+.monaco-sash.debug:not(.disabled) > .orthogonal-drag-handle {
+	background: red;
+}

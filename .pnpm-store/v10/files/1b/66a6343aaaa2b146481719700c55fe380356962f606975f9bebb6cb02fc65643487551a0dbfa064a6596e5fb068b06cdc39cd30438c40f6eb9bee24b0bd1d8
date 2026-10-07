@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_new_arrow_check.js")

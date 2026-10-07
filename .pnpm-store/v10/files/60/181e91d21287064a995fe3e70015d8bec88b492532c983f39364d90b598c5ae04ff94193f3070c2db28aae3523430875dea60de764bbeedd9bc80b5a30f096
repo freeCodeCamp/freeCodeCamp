@@ -1,0 +1,99 @@
+import { _ } from '@swc/helpers/esm/_object_spread.js';
+import { createButtonComponent, ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon } from 'instantsearch-ui-components';
+import { addAbsolutePosition, addQueryID } from 'instantsearch.js/es/lib/utils/index.js';
+import React, { createElement } from 'react';
+import { Carousel } from '../../../components/Carousel.js';
+
+function createCarouselTool(showViewAll, itemComponent, getSearchPageURL) {
+    var Button = createButtonComponent({
+        createElement: createElement
+    });
+    function SearchLayoutComponent(param) {
+        var message = param.message, applyFilters = param.applyFilters, onClose = param.onClose, sendEvent = param.sendEvent;
+        var _ref;
+        var _output_hits;
+        var input = message === null || message === void 0 ? void 0 : message.input;
+        var output = message === null || message === void 0 ? void 0 : message.output;
+        var hitsWithAbsolutePosition = addAbsolutePosition((output === null || output === void 0 ? void 0 : output.hits) || [], 0, ((_ref = input === null || input === void 0 ? void 0 : input.number_of_results) !== null && _ref !== void 0 ? _ref : output === null || output === void 0 ? void 0 : (_output_hits = output.hits) === null || _output_hits === void 0 ? void 0 : _output_hits.length) || 5);
+        var items = addQueryID(hitsWithAbsolutePosition, output === null || output === void 0 ? void 0 : output.queryID);
+        var MemoedHeaderComponent = React.useMemo(function() {
+            return function(props) {
+                return /*#__PURE__*/ React.createElement(HeaderComponent, _({
+                    nbHits: output === null || output === void 0 ? void 0 : output.nbHits,
+                    input: input,
+                    hitsPerPage: items.length,
+                    onClose: onClose,
+                    applyFilters: applyFilters
+                }, props));
+            };
+        }, [
+            items.length,
+            input,
+            output === null || output === void 0 ? void 0 : output.nbHits,
+            applyFilters,
+            onClose
+        ]);
+        return /*#__PURE__*/ React.createElement(Carousel, {
+            items: items,
+            itemComponent: itemComponent,
+            sendEvent: sendEvent,
+            showNavigation: false,
+            headerComponent: MemoedHeaderComponent
+        });
+    }
+    function HeaderComponent(param) {
+        var canScrollLeft = param.canScrollLeft, canScrollRight = param.canScrollRight, scrollLeft = param.scrollLeft, scrollRight = param.scrollRight, nbHits = param.nbHits, input = param.input, hitsPerPage = param.hitsPerPage, applyFilters = param.applyFilters, onClose = param.onClose;
+        if ((hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0) < 1) {
+            return null;
+        }
+        return /*#__PURE__*/ React.createElement("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeader"
+        }, /*#__PURE__*/ React.createElement("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderResults"
+        }, nbHits && /*#__PURE__*/ React.createElement("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderCount"
+        }, hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0, " of ", nbHits.toLocaleString(), " result", nbHits > 1 ? 's' : ''), showViewAll && /*#__PURE__*/ React.createElement(Button, {
+            variant: "ghost",
+            size: "sm",
+            onClick: function onClick() {
+                if (!input || !applyFilters) return;
+                var params = applyFilters({
+                    query: input.query,
+                    facetFilters: input.facet_filters
+                });
+                if (getSearchPageURL && new URL(getSearchPageURL(params)).pathname !== window.location.pathname) {
+                    window.location.href = getSearchPageURL(params);
+                }
+                onClose();
+            },
+            className: "ais-ChatToolSearchIndexCarouselHeaderViewAll"
+        }, "View all", /*#__PURE__*/ React.createElement(ArrowRightIcon, {
+            createElement: createElement
+        }))), (hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0) > 2 && /*#__PURE__*/ React.createElement("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButtons"
+        }, /*#__PURE__*/ React.createElement(Button, {
+            variant: "outline",
+            size: "sm",
+            iconOnly: true,
+            onClick: scrollLeft,
+            disabled: !canScrollLeft,
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButton"
+        }, /*#__PURE__*/ React.createElement(ChevronLeftIcon, {
+            createElement: createElement
+        })), /*#__PURE__*/ React.createElement(Button, {
+            variant: "outline",
+            size: "sm",
+            iconOnly: true,
+            onClick: scrollRight,
+            disabled: !canScrollRight,
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButton"
+        }, /*#__PURE__*/ React.createElement(ChevronRightIcon, {
+            createElement: createElement
+        }))));
+    }
+    return {
+        layoutComponent: SearchLayoutComponent
+    };
+}
+
+export { createCarouselTool };

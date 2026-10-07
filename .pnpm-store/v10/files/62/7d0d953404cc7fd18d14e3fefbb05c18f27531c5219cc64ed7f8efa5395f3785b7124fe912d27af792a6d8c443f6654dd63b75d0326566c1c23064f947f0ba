@@ -1,0 +1,53 @@
+{
+  "name": "vscode-css-languageservice",
+  "version": "6.3.10",
+  "description": "Language service for CSS, LESS and SCSS",
+  "main": "./lib/umd/cssLanguageService.js",
+  "typings": "./lib/umd/cssLanguageService",
+  "module": "./lib/esm/cssLanguageService.js",
+  "author": "Microsoft Corporation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-css-languageservice"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/vscode-css-languageservice"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "@vscode/web-custom-data": "^0.6.3",
+    "eslint": "^9.39.3",
+    "js-beautify": "^1.15.4",
+    "mocha": "^11.7.5",
+    "rimraf": "^6.1.3",
+    "source-map-support": "^0.5.21",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@vscode/l10n": "^0.0.18",
+    "vscode-languageserver-textdocument": "^1.0.12",
+    "vscode-languageserver-types": "3.17.5",
+    "vscode-uri": "^3.1.0"
+  },
+  "scripts": {
+    "prepack": "npm run clean && npm run compile-esm && npm run test && npm run remove-sourcemap-refs",
+    "compile": "tsc -p ./src && npm run copy-jsbeautify && npm run lint",
+    "compile-esm": "tsc -p ./src/tsconfig.esm.json",
+    "clean": "rimraf lib",
+    "remove-sourcemap-refs": "node ./build/remove-sourcemap-refs.js",
+    "watch": "npm run copy-jsbeautify && tsc -w -p ./src",
+    "test": "npm run compile && npm run mocha",
+    "mocha": "mocha --require source-map-support/register",
+    "coverage": "npm run compile && npx nyc --reporter=html --reporter=text  mocha",
+    "lint": "eslint src/**/*.ts",
+    "update-data": "npm install @vscode/web-custom-data -D && node ./build/generateData.js",
+    "install-types-next": "npm install vscode-languageserver-types@next -f -S && npm install vscode-languageserver-textdocument@next -f -S",
+    "copy-jsbeautify": "node ./build/copy-jsbeautify.js",
+    "update-jsbeautify": "npm install js-beautify && node ./build/update-jsbeautify.js",
+    "update-jsbeautify-next": "npm install js-beautify@next && node ./build/update-jsbeautify.js"
+  }
+}

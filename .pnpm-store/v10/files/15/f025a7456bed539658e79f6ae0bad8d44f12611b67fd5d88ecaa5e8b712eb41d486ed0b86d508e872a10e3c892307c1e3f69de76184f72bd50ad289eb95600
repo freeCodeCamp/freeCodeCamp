@@ -1,0 +1,8 @@
+{
+  "name": "beep-boop",
+  "version": "1.2.3",
+  "repository" : {
+    "type" : "git",
+    "url": "git@github.com:substack/beep-boop.git"
+  }
+}

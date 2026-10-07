@@ -1,0 +1,74 @@
+{
+  "name": "character-reference-invalid",
+  "version": "1.1.4",
+  "description": "HTML invalid numeric character reference information",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "entity",
+    "numeric",
+    "character",
+    "reference",
+    "replacement",
+    "invalid",
+    "name"
+  ],
+  "repository": "wooorm/character-reference-invalid",
+  "bugs": "https://github.com/wooorm/character-reference-invalid/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "main": "index.json",
+  "files": [
+    "index.json"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bail": "^1.0.0",
+    "browserify": "^16.0.0",
+    "concat-stream": "^2.0.0",
+    "hast-util-select": "^3.0.0",
+    "hast-util-to-string": "^1.0.0",
+    "rehype-parse": "^6.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "unified": "^8.0.0",
+    "xo": "^0.25.0"
+  },
+  "scripts": {
+    "generate": "node build",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify index.json -s characterReferenceInvalid -o character-reference-invalid.js",
+    "build-mangle": "browserify index.json -s characterReferenceInvalid -p tinyify -o character-reference-invalid.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test": "npm run generate && npm run format && npm run build && npm run test-api"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignores": [
+      "character-reference-invalid.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "intersection-observer",
+  "version": "0.10.0",
+  "description": "A polyfill for IntersectionObserver",
+  "main": "intersection-observer",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:w3c/IntersectionObserver.git"
+  },
+  "keywords": [
+    "Intersection",
+    "Observer"
+  ],
+  "author": {
+    "name": "Philip Walton",
+    "email": "philip@philipwalton.com",
+    "url": "http://philipwalton.com"
+  },
+  "license": "W3C-20150513",
+  "bugs": {
+    "url": "https://github.com/w3c/IntersectionObserver/issues"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "css-functions-list",
+  "version": "3.3.3",
+  "description": "List of standard and browser specific CSS functions.",
+  "license": "MIT",
+  "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./index.json": "./dist/index.json",
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.cjs",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "dist/",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rolldown --config rolldown.config.js && cp index.json dist/index.json",
+    "generate-list": "node generate-list.js",
+    "lint": "eslint '{index,lib/**/*,test/**/*,generate-list}.{js,cjs}'",
+    "lint:types": "tsc",
+    "module-check": "node -e 'require(\"css-functions-list\");' && node --input-type=module -e 'import \"css-functions-list\";'",
+    "prepare": "if [[ -x \"$(command -v husky)\" ]]; then husky; fi",
+    "prepublishOnly": "npm run build",
+    "postpublish": "GITHUB_TOKEN=$GITHUB_RELEASE_TOKEN github-release-from-changelog",
+    "prerelease": "npm run lint && npm run lint:types && npm run build && npm run module-check",
+    "release": "np --no-release-draft",
+    "test": "mocha 'test/**/*.js'",
+    "test:watch": "npm test -- --watch",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
+  },
+  "devDependencies": {
+    "@swc-node/register": "^1.11.1",
+    "@types/jsdom": "^16.2.15",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.19.9",
+    "@types/node-fetch": "^2.6.13",
+    "changelog-verify": "^1.1.2",
+    "eslint": "^9.39.2",
+    "eslint-config-nitpick": "^14.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "github-release-from-changelog": "^2.1.1",
+    "husky": "^9.1.7",
+    "isomorphic-unfetch": "^4.0.2",
+    "jsdom": "^28.0.0",
+    "lint-staged": "^15.5.2",
+    "mocha": "^10.8.2",
+    "np": "^10.3.0",
+    "prettier": "^3.8.1",
+    "rolldown": "^1.0.0-rc.3",
+    "rolldown-plugin-dts": "^0.17.8",
+    "typescript": "^5.9.3",
+    "version-changelog": "^3.1.1",
+    "write-json-file": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "css",
+    "functions",
+    "list"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niksy/css-functions-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niksy/css-functions-list/issues"
+  },
+  "homepage": "https://github.com/niksy/css-functions-list#readme"
+}

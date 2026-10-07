@@ -1,0 +1,41 @@
+{
+  "type": "module",
+  "name": "@open-draft/deferred-promise",
+  "version": "3.0.0",
+  "description": "A Promise-compatible abstraction that defers resolving/rejecting promises to another closure.",
+  "exports": {
+    ".": "./build/index.mjs"
+  },
+  "scripts": {
+    "start": "tsdown -w",
+    "lint": "publint",
+    "test": "vitest",
+    "test:compliance": "export NODE_OPTIONS=--import=tsx || set NODE_OPTIONS=--import=tsx&& npx -y promises-aplus-tests ./test/aplus-tests-adapter.ts",
+    "build": "tsdown",
+    "release": "release publish"
+  },
+  "files": [
+    "./build"
+  ],
+  "keywords": [
+    "promise",
+    "defer",
+    "deferred",
+    "resolve",
+    "reject",
+    "executor"
+  ],
+  "author": "Artem Zakharchenko",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/open-draft/deferred-promise"
+  },
+  "devDependencies": {
+    "@ossjs/release": "^0.10.1",
+    "publint": "^0.3.18",
+    "tsdown": "^0.21.4",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.1"
+  }
+}

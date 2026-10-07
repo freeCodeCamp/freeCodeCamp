@@ -1,0 +1,84 @@
+{
+  "name": "@typescript-eslint/types",
+  "version": "5.62.0",
+  "description": "Types for the TypeScript-ESTree AST spec",
+  "keywords": [
+    "eslint",
+    "typescript",
+    "estree"
+  ],
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  },
+  "files": [
+    "dist",
+    "_ts3.4",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/types"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prebuild": "yarn tsx ./tools/copy-ast-spec.ts",
+    "build": "tsc -b tsconfig.build.json",
+    "postbuild": "downlevel-dts dist _ts3.4/dist",
+    "clean": "tsc -b tsconfig.build.json --clean",
+    "postclean": "rimraf dist && rimraf src/generated && rimraf _ts3.4 && rimraf coverage",
+    "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
+    "generate:lib": "yarn tsx ../scope-manager/tools/generate-lib.ts",
+    "lint": "nx lint",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "nx": {
+    "targets": {
+      "prebuild": {
+        "dependsOn": [
+          {
+            "target": "build",
+            "projects": "dependencies"
+          }
+        ],
+        "outputs": [
+          "packages/types/src/generated"
+        ]
+      },
+      "build": {
+        "dependsOn": [
+          {
+            "target": "build",
+            "projects": "dependencies"
+          },
+          {
+            "target": "prebuild",
+            "projects": "self"
+          }
+        ]
+      }
+    }
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "typesVersions": {
+    "<3.8": {
+      "*": [
+        "_ts3.4/*"
+      ]
+    }
+  },
+  "devDependencies": {
+    "typescript": "*"
+  },
+  "gitHead": "cba0d113bba1bbcee69149c954dc6bd4c658c714"
+}

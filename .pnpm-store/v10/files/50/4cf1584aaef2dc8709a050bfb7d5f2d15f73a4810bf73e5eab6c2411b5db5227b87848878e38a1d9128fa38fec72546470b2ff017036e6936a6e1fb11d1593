@@ -1,0 +1,1 @@
+{"version":3,"file":"handoffSignal.d.ts","sourceRoot":"","sources":["../../../../src/internal/stream/handoffSignal.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,KAAK,KAAK,MAAM,gBAAgB,CAAA;AAwB5C,MAAM,WAAW,IAAI,CAAC,GAAG,CAAC,CAAC;IACzB,QAAQ,CAAC,IAAI,EAAE,OAAO,CAAA;IACtB,QAAQ,CAAC,QAAQ,EAAE,KAAK,CAAC,KAAK,CAAC,CAAC,CAAC,CAAA;CAClC"}

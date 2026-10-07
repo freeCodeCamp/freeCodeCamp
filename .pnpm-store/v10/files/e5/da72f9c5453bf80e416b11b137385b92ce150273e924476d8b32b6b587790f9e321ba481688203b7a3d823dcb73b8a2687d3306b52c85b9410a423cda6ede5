@@ -1,0 +1,69 @@
+{
+	"name": "execa",
+	"version": "1.0.0",
+	"description": "A better `child_process`",
+	"license": "MIT",
+	"repository": "sindresorhus/execa",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && nyc ava"
+	},
+	"files": [
+		"index.js",
+		"lib"
+	],
+	"keywords": [
+		"exec",
+		"child",
+		"process",
+		"execute",
+		"fork",
+		"execfile",
+		"spawn",
+		"file",
+		"shell",
+		"bin",
+		"binary",
+		"binaries",
+		"npm",
+		"path",
+		"local"
+	],
+	"dependencies": {
+		"cross-spawn": "^6.0.0",
+		"get-stream": "^4.0.0",
+		"is-stream": "^1.1.0",
+		"npm-run-path": "^2.0.0",
+		"p-finally": "^1.0.0",
+		"signal-exit": "^3.0.0",
+		"strip-eof": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"cat-names": "^1.0.2",
+		"coveralls": "^3.0.1",
+		"delay": "^3.0.0",
+		"is-running": "^2.0.0",
+		"nyc": "^13.0.1",
+		"tempfile": "^2.0.0",
+		"xo": "*"
+	},
+	"nyc": {
+		"reporter": [
+			"text",
+			"lcov"
+		],
+		"exclude": [
+			"**/fixtures/**",
+			"**/test.js",
+			"**/test/**"
+		]
+	}
+}

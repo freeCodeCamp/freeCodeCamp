@@ -1,0 +1,39 @@
+{
+  "name": "joycon",
+  "version": "3.1.1",
+  "description": "Load config with ease.",
+  "repository": {
+    "url": "egoist/joycon",
+    "type": "git"
+  },
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib",
+    "types/index.d.ts"
+  ],
+  "scripts": {
+    "test": "jest --testPathPattern tests",
+    "build": "babel src -d lib --no-comments",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "egoist <0x142857@gmail.com>",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@egoist/prettier-config": "^0.1.0",
+    "@types/node": "^14.14.33",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-sync": "^0.1.0",
+    "jest-cli": "^26.6.3",
+    "prettier": "^2.2.1"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

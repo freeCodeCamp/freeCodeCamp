@@ -1,0 +1,98 @@
+{
+  "definitions": {
+    "ManifestEntrypoint": {
+      "description": "Describes a manifest entrypoint.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "imports": {
+          "description": "Contains the names of entrypoints.",
+          "type": "array",
+          "items": {
+            "description": "The name of file.",
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "parents": {
+          "description": "Contains the names of parent entrypoints.",
+          "type": "array",
+          "items": {
+            "description": "The entrypoint name.",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": ["imports"]
+    },
+    "ManifestItem": {
+      "description": "Describes a manifest asset that links the emitted path to the producing asset.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "description": "The path absolute URL (this indicates that the path is absolute from the server's root directory) to file.",
+          "type": "string"
+        },
+        "src": {
+          "description": "The source path relative to the context.",
+          "type": "string"
+        }
+      },
+      "required": ["file"]
+    },
+    "ManifestObject": {
+      "description": "The manifest object.",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "assets": {
+          "description": "Contains the names of assets.",
+          "type": "object",
+          "tsType": "Record<string, ManifestItem>"
+        },
+        "entrypoints": {
+          "description": "Contains the names of entrypoints.",
+          "type": "object",
+          "tsType": "Record<string, ManifestEntrypoint>"
+        }
+      },
+      "required": ["assets", "entrypoints"]
+    }
+  },
+  "title": "ManifestPluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "entrypoints": {
+      "description": "Enables/disables generation of the entrypoints manifest section.",
+      "type": "boolean"
+    },
+    "filename": {
+      "description": "Specifies the filename of the output file on disk. By default the plugin will emit `manifest.json` inside the 'output.path' directory.",
+      "type": "string",
+      "absolutePath": false,
+      "minLength": 1
+    },
+    "filter": {
+      "description": "Allows filtering the files which make up the manifest.",
+      "instanceof": "Function",
+      "tsType": "import('../../lib/ManifestPlugin').Filter"
+    },
+    "generate": {
+      "description": "A function that receives the manifest object, modifies it, and returns the modified manifest.",
+      "instanceof": "Function",
+      "tsType": "import('../../lib/ManifestPlugin').Generate"
+    },
+    "prefix": {
+      "description": "Specifies a path prefix for all keys in the manifest.",
+      "type": "string"
+    },
+    "serialize": {
+      "description": "A function that receives the manifest object and returns the manifest string.",
+      "instanceof": "Function",
+      "tsType": "import('../../lib/ManifestPlugin').Serialize"
+    }
+  }
+}

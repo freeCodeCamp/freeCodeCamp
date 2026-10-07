@@ -1,0 +1,50 @@
+{
+  "name": "@vscode/l10n",
+  "version": "0.0.18",
+  "description": "A helper library to assist in localizing subprocesses spun up by VS Code extensions",
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-l10n.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/vscode-l10n/issues"
+  },
+  "main": "./dist/main.js",
+  "sideEffects": false,
+  "browser": {
+    "./dist/main.js": "./dist/browser.js",
+    "./src/node/reader": "./src/browser/reader"
+  },
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@microsoft/api-extractor": "^7.32.1",
+    "@types/mock-fs": "^4.13.1",
+    "@types/node": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "esbuild": "^0.15.5",
+    "eslint": "^7.29.0",
+    "http-proxy-agent": "^5.0.0",
+    "https-proxy-agent": "^5.0.1",
+    "jest": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
+    "mock-fs": "^5.1.4",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^29.1.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "clean": "rimraf dist && rimraf lib",
+    "compile": "npm run clean && tsc --emitDeclarationOnly --outDir lib && node .esbuild.config.js",
+    "lint": "eslint src --ext ts",
+    "watch": "node .esbuild.config.js --watch",
+    "test": "jest --preset ts-jest",
+    "prepublishOnly": "npm run lint && npm run compile && npm run test"
+  }
+}

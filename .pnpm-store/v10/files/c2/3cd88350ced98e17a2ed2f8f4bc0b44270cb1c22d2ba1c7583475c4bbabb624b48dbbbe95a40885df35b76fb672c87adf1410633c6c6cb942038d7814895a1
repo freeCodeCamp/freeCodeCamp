@@ -1,0 +1,27 @@
+/**
+ * @import {AttributeKeyAdapter} from "@html-eslint/core"
+ * @import {
+ *   Range,
+ *   SourceLocation
+ * } from "@html-eslint/types"
+ * @import {JSXNamespacedName} from "../../types"
+ */
+/** @implements {AttributeKeyAdapter} */
+export class JSXNamespaceNameAttributeKeyAdapter implements AttributeKeyAdapter {
+    /** @param {JSXNamespacedName} node */
+    constructor(node: JSXNamespacedName);
+    node: JSXNamespacedName;
+    /** @returns {SourceLocation} */
+    getLocation(): SourceLocation;
+    /** @returns {Range} */
+    getRange(): Range;
+    /** @returns {string} */
+    getValue(): string;
+    /** @returns {boolean} */
+    hasExpression(): boolean;
+}
+import type { AttributeKeyAdapter } from "@html-eslint/core";
+import type { JSXNamespacedName } from "../../types";
+import type { SourceLocation } from "@html-eslint/types";
+import type { Range } from "@html-eslint/types";
+//# sourceMappingURL=jsx-namespace-name.d.ts.map

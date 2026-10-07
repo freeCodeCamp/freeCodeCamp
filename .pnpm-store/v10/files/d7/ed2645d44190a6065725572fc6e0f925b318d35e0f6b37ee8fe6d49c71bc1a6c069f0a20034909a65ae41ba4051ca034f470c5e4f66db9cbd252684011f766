@@ -1,0 +1,38 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 200
+
+[*.{,m}js]
+block_comment_start = /*
+block_comment = *
+block_comment_end = */
+
+[*.yml]
+indent_style = space
+indent_size = 1
+
+[{package.json,*.mjs}]
+indent_style = tab
+
+[lib/core.json]
+indent_style = tab
+
+[CHANGELOG.md]
+indent_style = space
+indent_size = 2
+
+[{*.json,Makefile,CONTRIBUTING.md}]
+max_line_length = off
+
+[test/{dotdot,resolver,module_dir,multirepo,node_path,pathfilter,precedence}/**/*]
+indent_style = off
+indent_size = off
+max_line_length = off
+insert_final_newline = off

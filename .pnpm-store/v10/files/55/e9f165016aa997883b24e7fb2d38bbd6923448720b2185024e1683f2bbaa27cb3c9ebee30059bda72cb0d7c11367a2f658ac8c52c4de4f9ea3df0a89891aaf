@@ -1,0 +1,28 @@
+{
+  "name": "xml-name-validator",
+  "description": "Validates whether a string matches the production for an XML name or qualified name",
+  "keywords": [
+    "xml",
+    "name",
+    "qname"
+  ],
+  "version": "3.0.0",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "Apache-2.0",
+  "repository": "jsdom/xml-name-validator",
+  "main": "lib/xml-name-validator.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "prepublish": "node scripts/generate-grammar.js < lib/grammar.pegjs > lib/generated-parser.js",
+    "pretest": "npm run prepublish",
+    "test": "mocha",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "mocha": "^2.4.5",
+    "waka": "0.1.2"
+  }
+}

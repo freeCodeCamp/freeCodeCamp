@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Schedule.js",
+  "module": "../dist/esm/Schedule.js",
+  "types": "../dist/dts/Schedule.d.ts"
+}

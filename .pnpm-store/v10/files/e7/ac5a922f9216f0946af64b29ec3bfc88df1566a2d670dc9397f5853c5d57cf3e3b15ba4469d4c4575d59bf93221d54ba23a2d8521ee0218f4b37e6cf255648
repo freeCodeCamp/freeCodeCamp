@@ -1,0 +1,58 @@
+{
+  "name": "run-parallel",
+  "description": "Run an array of functions in parallel",
+  "version": "1.2.0",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/run-parallel/issues"
+  },
+  "dependencies": {
+    "queue-microtask": "^1.2.2"
+  },
+  "devDependencies": {
+    "airtap": "^3.0.0",
+    "standard": "*",
+    "tape": "^5.0.1"
+  },
+  "homepage": "https://github.com/feross/run-parallel",
+  "keywords": [
+    "parallel",
+    "async",
+    "function",
+    "callback",
+    "asynchronous",
+    "run",
+    "array",
+    "run parallel"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/run-parallel.git"
+  },
+  "scripts": {
+    "test": "standard && npm run test-node && npm run test-browser",
+    "test-browser": "airtap -- test/*.js",
+    "test-browser-local": "airtap --local -- test/*.js",
+    "test-node": "tape test/*.js"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/feross"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/feross"
+    },
+    {
+      "type": "consulting",
+      "url": "https://feross.org/support"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# EventBreakpoints permits setting JavaScript breakpoints on operations and events
+# occurring in native code invoked from JavaScript. Once breakpoint is hit, it is
+# reported through Debugger domain, similarly to regular breakpoints being hit.
+experimental domain EventBreakpoints
+  # Sets breakpoint on particular native event.
+  command setInstrumentationBreakpoint
+    parameters
+      # Instrumentation name to stop on.
+      string eventName
+
+  # Removes breakpoint on particular native event.
+  command removeInstrumentationBreakpoint
+    parameters
+      # Instrumentation name to stop on.
+      string eventName
+
+  # Removes all breakpoints
+  command disable

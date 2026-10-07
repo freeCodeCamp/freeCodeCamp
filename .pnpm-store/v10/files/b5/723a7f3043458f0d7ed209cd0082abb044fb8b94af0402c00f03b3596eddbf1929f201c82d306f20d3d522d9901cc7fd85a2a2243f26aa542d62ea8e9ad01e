@@ -1,0 +1,23 @@
+{
+  "name": "physical-cpu-count",
+  "version": "2.0.0",
+  "description": "Provides the number of physical cores",
+  "main": "index.js",
+  "scripts": {
+    "test": "snazzy && node test.js"
+  },
+  "keywords": [
+    "os",
+    "cpu",
+    "cpus",
+    "length",
+    "physical",
+    "logical",
+    "cores"
+  ],
+  "author": "Sebastiaan Deckers <sebdeckers83@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "snazzy": "^5.0.0"
+  }
+}

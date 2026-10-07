@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist-es",
+    "baseUrl": "."
+  },
+  "extends": "../../tsconfig.es.json",
+  "include": ["src/"]
+}

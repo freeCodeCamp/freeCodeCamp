@@ -1,0 +1,3 @@
+{
+	"extends": "@ljharb/tsconfig",
+}

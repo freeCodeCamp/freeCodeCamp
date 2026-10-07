@@ -1,0 +1,57 @@
+{
+  "name": "reduce-reducers",
+  "version": "0.4.3",
+  "description": "Reduce multiple reducers into a single reducer",
+  "keywords": [
+    "reduce",
+    "reducers",
+    "redux"
+  ],
+  "license": "MIT",
+  "author": "Andrew Clark <acdlite@me.com>",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "repository": "redux-utilities/reduce-reducers",
+  "scripts": {
+    "precommit": "pretty-quick --staged",
+    "format": "pretty-quick",
+    "format:check": "prettier --list-different \"**/*.{js,md}\"",
+    "lint": "xo",
+    "test": "jest",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir=lib",
+    "build:es": "babel src --out-dir=es",
+    "build": "run-p build:**",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.4",
+    "eslint-config-jest-files": "^0.1.2",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.12.0",
+    "pretty-quick": "^1.4.1",
+    "xo": "^0.20.3"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "jest-files"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  }
+}

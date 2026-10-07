@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../src/tracing/vercel-ai/types.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,YAAY;IAC3B,WAAW,EAAE,MAAM,CAAC;IACpB,YAAY,EAAE,MAAM,CAAC;CACtB;AAED,MAAM,WAAW,mBAAmB;IAClC,OAAO,EAAE,MAAM,CAAC;IAChB,MAAM,EAAE,MAAM,CAAC;CAChB"}

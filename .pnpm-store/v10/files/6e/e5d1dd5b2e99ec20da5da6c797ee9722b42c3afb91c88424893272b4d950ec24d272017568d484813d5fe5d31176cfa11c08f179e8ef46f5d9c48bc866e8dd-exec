@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+// -*- js -*-
+/* eslint-env node */
+
+"use strict";
+
+process.stderr.write( "DEPRECATION WARNING: uglifyjs binary will soon be discontinued!\n");
+process.stderr.write("Please use \"terser\" instead.\n\n");
+
+require("./terser");

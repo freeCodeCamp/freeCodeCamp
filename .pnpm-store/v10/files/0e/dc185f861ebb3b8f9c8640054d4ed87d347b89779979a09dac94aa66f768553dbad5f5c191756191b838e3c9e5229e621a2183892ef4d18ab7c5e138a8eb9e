@@ -1,0 +1,19 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"func-name-matching": [2, "always"],
+		"id-length": 1,
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"func-name-matching": 0,
+			},
+		},
+	],
+}

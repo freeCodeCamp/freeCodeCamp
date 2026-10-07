@@ -1,0 +1,31 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": "off",
+		"new-cap": ["error", {
+			"capIsNewExceptions": [
+				"ArrayCreate",
+				"CompareArrayElements",
+				"CreateDataPropertyOrThrow",
+				"GetIntrinsic",
+				"IsCallable",
+				"LengthOfArrayLike",
+				"SortIndexedProperties",
+				"ToObject",
+				"ToString",
+			],
+		}],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"max-lines-per-function": "off",
+			},
+		},
+	]
+}

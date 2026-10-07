@@ -1,0 +1,1 @@
+{"version":3,"file":"convert-number-to-unsigned-long.js","sourceRoot":"","sources":["../../../src/factories/convert-number-to-unsigned-long.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,iCAAiC,GAAwC,CAAC,WAAW,EAAE,EAAE;IAClG,OAAO,CAAC,KAAK,EAAE,EAAE;QACb,WAAW,CAAC,CAAC,CAAC,GAAG,KAAK,CAAC;QAEvB,OAAO,WAAW,CAAC,CAAC,CAAC,CAAC;IAC1B,CAAC,CAAC;AACN,CAAC,CAAC"}

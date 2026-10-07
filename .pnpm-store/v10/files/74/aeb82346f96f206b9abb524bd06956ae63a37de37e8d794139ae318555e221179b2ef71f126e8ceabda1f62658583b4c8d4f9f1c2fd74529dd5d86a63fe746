@@ -1,0 +1,19 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": [2, { "min": 1, "max": 35 }],
+		"max-params": [2, 4],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"max-lines-per-function": 0,
+			},
+		},
+	],
+}

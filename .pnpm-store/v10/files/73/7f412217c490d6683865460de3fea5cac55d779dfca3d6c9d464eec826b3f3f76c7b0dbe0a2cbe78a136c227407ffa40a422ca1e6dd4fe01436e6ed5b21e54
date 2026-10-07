@@ -1,0 +1,85 @@
+{
+  "name": "mitt",
+  "version": "3.0.1",
+  "description": "Tiny 200b functional Event Emitter / pubsub.",
+  "module": "dist/mitt.mjs",
+  "main": "dist/mitt.js",
+  "jsnext:main": "dist/mitt.mjs",
+  "umd:main": "dist/mitt.umd.js",
+  "source": "src/index.ts",
+  "typings": "index.d.ts",
+  "exports": {
+    "types": "./index.d.ts",
+    "module": "./dist/mitt.mjs",
+    "import": "./dist/mitt.mjs",
+    "require": "./dist/mitt.js",
+    "default": "./dist/mitt.mjs"
+  },
+  "scripts": {
+    "test": "npm-run-all --silent typecheck lint mocha test-types",
+    "mocha": "mocha test",
+    "test-types": "tsc test/test-types-compilation.ts --noEmit --strict",
+    "lint": "eslint src test --ext ts --ext js",
+    "typecheck": "tsc --noEmit",
+    "bundle": "microbundle -f es,cjs,umd",
+    "build": "npm-run-all --silent clean -p bundle -s docs",
+    "clean": "rimraf dist",
+    "docs": "documentation readme src/index.ts --section API -q --parse-extension ts",
+    "release": "npm run -s build -s && npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "repository": "developit/mitt",
+  "keywords": [
+    "events",
+    "eventemitter",
+    "emitter",
+    "pubsub"
+  ],
+  "homepage": "https://github.com/developit/mitt",
+  "authors": [
+    "Jason Miller <jason@developit.ca>"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "mocha": {
+    "extension": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register",
+      "esm"
+    ],
+    "spec": [
+      "test/*_test.ts"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/sinon": "^9.0.4",
+    "@types/sinon-chai": "^3.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "chai": "^4.2.0",
+    "documentation": "^14.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-developit": "^1.2.0",
+    "eslint-plugin-compat": "^4.1.4",
+    "esm": "^3.2.25",
+    "microbundle": "^0.12.3",
+    "mocha": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8",
+    "rimraf": "^3.0.2",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}

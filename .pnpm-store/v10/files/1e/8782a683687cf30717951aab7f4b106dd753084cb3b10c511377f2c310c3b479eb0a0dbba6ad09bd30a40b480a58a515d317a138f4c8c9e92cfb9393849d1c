@@ -1,0 +1,26 @@
+export = rules;
+declare const rules: {
+    "no-invalid-attr-value": import("../types").RuleModule<[{
+        allow?: {
+            tag: string;
+            attr: string;
+            valuePattern?: string;
+        }[];
+    }]>;
+    "use-baseline": import("../types").RuleModule<[useBaseline.Option]>;
+    "no-ineffective-attrs": import("../types").RuleModule<[]>;
+    "no-obsolete-tags": import("../types").RuleModule<[{
+        allow?: {
+            tag: string;
+            attr: string;
+            valuePattern?: string;
+        }[];
+    }]>;
+    "no-obsolete-attrs": import("../types").RuleModule<[]>;
+    "classname-spacing": import("../types").RuleModule<[classnameSpacing.Option]>;
+    "no-duplicate-classname": import("../types").RuleModule<[noDuplicateClassname.Option]>;
+};
+import useBaseline = require("./use-baseline");
+import classnameSpacing = require("./classname-spacing");
+import noDuplicateClassname = require("./no-duplicate-classname");
+//# sourceMappingURL=index.d.ts.map

@@ -1,0 +1,124 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-action-bar {
+	white-space: nowrap;
+	height: 100%;
+}
+
+.monaco-action-bar .actions-container {
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+}
+
+.monaco-action-bar.vertical .actions-container {
+	display: inline-block;
+}
+
+.monaco-action-bar .action-item {
+	display: block;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	position: relative;  /* DO NOT REMOVE - this is the key to preventing the ghosting icon bug in Chrome 42 */
+}
+
+.monaco-action-bar .action-item.disabled {
+	cursor: default;
+}
+
+.monaco-action-bar .action-item .icon,
+.monaco-action-bar .action-item .codicon {
+	display: block;
+}
+
+.monaco-action-bar .action-item .codicon {
+	display: flex;
+	align-items: center;
+	width: 16px;
+	height: 16px;
+}
+
+.monaco-action-bar .action-label {
+	display: flex;
+	font-size: 11px;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+.monaco-action-bar .action-item.disabled .action-label:not(.icon) ,
+.monaco-action-bar .action-item.disabled .action-label:not(.icon)::before,
+.monaco-action-bar .action-item.disabled .action-label:not(.icon):hover {
+	color: var(--vscode-disabledForeground);
+}
+
+/* Unable to change color of SVGs, hence opacity is used */
+.monaco-action-bar .action-item.disabled .action-label.icon ,
+.monaco-action-bar .action-item.disabled .action-label.icon::before,
+.monaco-action-bar .action-item.disabled .action-label.icon:hover {
+	opacity: 0.6;
+}
+
+/* Vertical actions */
+
+.monaco-action-bar.vertical {
+	text-align: left;
+}
+
+.monaco-action-bar.vertical .action-item {
+	display: block;
+}
+
+.monaco-action-bar.vertical .action-label.separator {
+	display: block;
+	border-bottom: 1px solid var(--vscode-disabledForeground);
+	padding-top: 1px;
+	margin-left: .8em;
+	margin-right: .8em;
+}
+
+.monaco-action-bar .action-item .action-label.separator {
+	width: 1px;
+	height: 16px;
+	margin: 5px 4px !important;
+	cursor: default;
+	min-width: 1px;
+	padding: 0;
+	background-color: var(--vscode-disabledForeground);
+}
+
+.secondary-actions .monaco-action-bar .action-label {
+	margin-left: 6px;
+}
+
+/* Action Items */
+.monaco-action-bar .action-item.select-container {
+	overflow: hidden; /* somehow the dropdown overflows its container, we prevent it here to not push */
+	flex: 1;
+	max-width: 170px;
+	min-width: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+}
+
+.monaco-action-bar .action-item.action-dropdown-item {
+	display: flex;
+}
+
+.monaco-action-bar .action-item.action-dropdown-item > .action-dropdown-item-separator {
+	display: flex;
+	align-items: center;
+	cursor: default;
+}
+
+.monaco-action-bar .action-item.action-dropdown-item > .action-dropdown-item-separator > div {
+	width: 1px;
+}

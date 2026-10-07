@@ -1,0 +1,90 @@
+{
+	"name": "execa",
+	"version": "8.0.1",
+	"description": "Process execution for humans",
+	"license": "MIT",
+	"repository": "sindresorhus/execa",
+	"funding": "https://github.com/sindresorhus/execa?sponsor=1",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"engines": {
+		"node": ">=16.17"
+	},
+	"scripts": {
+		"test": "xo && c8 ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"lib"
+	],
+	"keywords": [
+		"exec",
+		"child",
+		"process",
+		"execute",
+		"fork",
+		"execfile",
+		"spawn",
+		"file",
+		"shell",
+		"bin",
+		"binary",
+		"binaries",
+		"npm",
+		"path",
+		"local",
+		"zx"
+	],
+	"dependencies": {
+		"cross-spawn": "^7.0.3",
+		"get-stream": "^8.0.1",
+		"human-signals": "^5.0.0",
+		"is-stream": "^3.0.0",
+		"merge-stream": "^2.0.0",
+		"npm-run-path": "^5.1.0",
+		"onetime": "^6.0.0",
+		"signal-exit": "^4.1.0",
+		"strip-final-newline": "^3.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.4.0",
+		"ava": "^5.2.0",
+		"c8": "^8.0.1",
+		"get-node": "^14.2.0",
+		"is-running": "^2.1.0",
+		"p-event": "^6.0.0",
+		"path-key": "^4.0.0",
+		"tempfile": "^5.0.0",
+		"tsd": "^0.28.1",
+		"xo": "^0.55.0"
+	},
+	"c8": {
+		"reporter": [
+			"text",
+			"lcov"
+		],
+		"exclude": [
+			"**/fixtures/**",
+			"**/test.js",
+			"**/test/**"
+		]
+	},
+	"ava": {
+		"workerThreads": false
+	},
+	"xo": {
+		"rules": {
+			"unicorn/no-empty-file": "off",
+			"@typescript-eslint/ban-types": "off"
+		}
+	}
+}

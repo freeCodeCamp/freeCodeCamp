@@ -1,0 +1,27 @@
+{
+  "name": "read",
+  "version": "1.0.7",
+  "main": "lib/read.js",
+  "dependencies": {
+    "mute-stream": "~0.0.4"
+  },
+  "devDependencies": {
+    "tap": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "description": "read(1) for node programs",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/read.git"
+  },
+  "license": "ISC",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "files": [
+    "lib/read.js"
+  ]
+}

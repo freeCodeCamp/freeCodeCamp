@@ -1,0 +1,2238 @@
+// lib/rules/no-invalid-attr-value.js
+import { element } from "html-standard";
+var NO_INVALID_ATTR_VALUE_MESSAGE_IDS = {
+  invalid: "invalid"
+};
+function noInvalidAttrValue(options) {
+  const allowList = options.allow || [];
+  const compiledAllowList = allowList.map((rule) => ({
+    tag: rule.tag.toLowerCase(),
+    attr: rule.attr.toLowerCase(),
+    valuePattern: rule.valuePattern ? new RegExp(rule.valuePattern) : void 0
+  }));
+  function shouldAllow(elementName, attrKey, attrValue) {
+    return compiledAllowList.some((allowRule) => {
+      const tagMatch = allowRule.tag === elementName.toLowerCase();
+      const attrMatch = allowRule.attr === attrKey.toLowerCase();
+      if (!tagMatch || !attrMatch) {
+        return false;
+      }
+      if (allowRule.valuePattern === void 0) {
+        return true;
+      }
+      return allowRule.valuePattern.test(attrValue);
+    });
+  }
+  return {
+    /**
+     * @param {ElementAdapter} adapter
+     * @returns {NoInvalidAttrValueResult}
+     */
+    checkAttributes(adapter) {
+      const name = adapter.getElementName();
+      if (name.includes("-")) {
+        return [];
+      }
+      const spec = element(name);
+      const result = [];
+      for (const attribute of adapter.getAttributes()) {
+        const attributeKey = attribute.getKey();
+        if (!attributeKey) {
+          continue;
+        }
+        if (attributeKey.hasExpression()) {
+          continue;
+        }
+        const attributeValue = attribute.getValue();
+        if (attributeValue?.hasExpression()) {
+          continue;
+        }
+        const attrKeyValue = attributeKey.getValue();
+        const attrValueValue = attributeValue?.getValue() ?? null;
+        if (attrValueValue === null) {
+          continue;
+        }
+        if (attrKeyValue && shouldAllow(name, attrKeyValue, attrValueValue)) {
+          continue;
+        }
+        if (!attrKeyValue || attrValueValue === null) {
+          continue;
+        }
+        const validator = spec.attributes.get(attrKeyValue);
+        if (validator) {
+          const validateResult = validator.validateValue(attrValueValue);
+          if (!validateResult.valid) {
+            result.push({
+              loc: attributeValue?.getLocation() ?? attributeKey?.getLocation(),
+              messageId: NO_INVALID_ATTR_VALUE_MESSAGE_IDS.invalid,
+              data: {
+                value: attrValueValue || "",
+                attr: attrKeyValue,
+                element: name,
+                suggestion: validateResult.reason || "Use a valid value."
+              }
+            });
+          }
+        }
+      }
+      return result;
+    }
+  };
+}
+
+// lib/utils/baseline.js
+var BASELINE_HIGH = 10;
+var BASELINE_LOW = 5;
+var elements = /* @__PURE__ */ new Map([
+  ["a", "10:2015"],
+  ["a.attributionsourceid", "0:"],
+  ["a.attributionsrc", "0:"],
+  ["a.download", "10:2019"],
+  ["a.href", "10:2015"],
+  ["a.href.href_sms", "0:"],
+  ["a.href.href_top", "10:2015"],
+  ["a.hreflang", "10:2015"],
+  ["a.implicit_noopener", "10:2021"],
+  ["a.interestfor", "0:"],
+  ["a.ping", "0:"],
+  ["a.referrerpolicy", "10:2020"],
+  ["a.referrerpolicy.no-referrer-when-downgrade", "0:"],
+  ["a.referrerpolicy.origin-when-cross-origin", "0:"],
+  ["a.referrerpolicy.unsafe-url", "0:"],
+  ["a.rel", "10:2015"],
+  ["a.rel.noopener", "10:2020"],
+  ["a.rel.noreferrer", "10:2015"],
+  ["a.target", "10:2015"],
+  ["a.target.unfencedTop", "0:"],
+  ["a.text_fragments", "5:2024"],
+  ["a.type", "10:2015"],
+  ["abbr", "10:2015"],
+  ["address", "10:2015"],
+  ["area", "10:2015"],
+  ["area.alt", "10:2015"],
+  ["area.attributionsrc", "0:"],
+  ["area.coords", "10:2015"],
+  ["area.download", "10:2017"],
+  ["area.href", "10:2015"],
+  ["area.implicit_noopener", "10:2021"],
+  ["area.interestfor", "0:"],
+  ["area.ping", "0:"],
+  ["area.referrerpolicy", "10:2020"],
+  ["area.referrerpolicy.no-referrer-when-downgrade", "0:"],
+  ["area.referrerpolicy.origin-when-cross-origin", "0:"],
+  ["area.referrerpolicy.unsafe-url", "0:"],
+  ["area.rel", "10:2015"],
+  ["area.rel.noopener", "10:2020"],
+  ["area.rel.noreferrer", "10:2015"],
+  ["area.shape", "10:2015"],
+  ["area.target", "10:2015"],
+  ["article", "10:2015"],
+  ["aside", "10:2015"],
+  ["audio", "10:2015"],
+  ["audio.controls", "10:2015"],
+  ["audio.controlslist", "0:"],
+  ["audio.crossorigin", "10:2020"],
+  ["audio.disableremoteplayback", "0:"],
+  ["audio.loading", "0:"],
+  ["audio.loop", "10:2015"],
+  ["audio.muted", "10:2018"],
+  ["audio.preload", "10:2015"],
+  ["audio.src", "10:2015"],
+  ["b", "10:2015"],
+  ["base", "10:2015"],
+  ["base.href", "10:2015"],
+  ["base.href.forbid_data_javascript_urls", "5:2024"],
+  ["base.href.relative_url", "10:2015"],
+  ["base.target", "10:2015"],
+  ["bdi", "10:2020"],
+  ["bdo", "10:2015"],
+  ["blockquote", "10:2015"],
+  ["blockquote.cite", "10:2015"],
+  ["body", "10:2015"],
+  ["br", "10:2015"],
+  ["button", "10:2015"],
+  ["button.command", "5:2025"],
+  ["button.command.request-close", "5:2025"],
+  ["button.commandfor", "5:2025"],
+  ["button.commandfor.implicit_anchor_reference", "5:2026"],
+  ["button.disabled", "10:2015"],
+  ["button.form", "10:2017"],
+  ["button.formaction", "10:2015"],
+  ["button.formenctype", "10:2015"],
+  ["button.formmethod", "10:2015"],
+  ["button.formnovalidate", "10:2015"],
+  ["button.formtarget", "10:2015"],
+  ["button.interestfor", "0:"],
+  ["button.name", "10:2015"],
+  ["button.popovertarget", "5:2024"],
+  ["button.popovertarget.implicit_anchor_reference", "5:2026"],
+  ["button.popovertargetaction", "5:2024"],
+  ["button.type", "10:2015"],
+  ["button.value", "10:2015"],
+  ["canvas", "10:2015"],
+  ["canvas.height", "10:2015"],
+  ["canvas.width", "10:2015"],
+  ["caption", "10:2015"],
+  ["caption.align", "0:"],
+  ["cite", "10:2015"],
+  ["code", "10:2015"],
+  ["col", "10:2015"],
+  ["col.align", "0:"],
+  ["col.char", "0:"],
+  ["col.charoff", "0:"],
+  ["col.span", "10:2015"],
+  ["col.valign", "0:"],
+  ["col.width", "0:"],
+  ["colgroup", "10:2015"],
+  ["colgroup.align", "0:"],
+  ["colgroup.char", "0:"],
+  ["colgroup.charoff", "0:"],
+  ["colgroup.span", "10:2015"],
+  ["colgroup.valign", "0:"],
+  ["colgroup.width", "0:"],
+  ["data", "10:2017"],
+  ["data.value", "10:2017"],
+  ["datalist", "0:"],
+  ["datalist.input_type_color", "0:"],
+  ["datalist.input_type_date", "0:"],
+  ["datalist.input_type_email", "0:"],
+  ["datalist.input_type_number", "0:"],
+  ["datalist.input_type_range", "0:"],
+  ["datalist.input_type_search", "0:"],
+  ["datalist.input_type_tel", "0:"],
+  ["datalist.input_type_text", "0:"],
+  ["datalist.input_type_time", "0:"],
+  ["datalist.input_type_url", "0:"],
+  ["dd", "10:2015"],
+  ["del", "10:2015"],
+  ["del.cite", "10:2015"],
+  ["del.datetime", "10:2015"],
+  ["details", "10:2020"],
+  ["details.name", "5:2024"],
+  ["details.open", "10:2020"],
+  ["dfn", "10:2015"],
+  ["dialog", "10:2022"],
+  ["dialog.closedby", "0:"],
+  ["dialog.open", "10:2022"],
+  ["div", "10:2015"],
+  ["dl", "10:2015"],
+  ["dt", "10:2015"],
+  ["em", "10:2015"],
+  ["embed", "10:2015"],
+  ["embed.height", "10:2015"],
+  ["embed.src", "10:2015"],
+  ["embed.type", "10:2020"],
+  ["embed.width", "10:2015"],
+  ["fencedframe", "0:"],
+  ["fencedframe.allow", "0:"],
+  ["fencedframe.height", "0:"],
+  ["fencedframe.width", "0:"],
+  ["fieldset", "10:2015"],
+  ["fieldset.disabled", "10:2020"],
+  ["fieldset.form", "10:2015"],
+  ["fieldset.name", "10:2015"],
+  ["figcaption", "10:2015"],
+  ["figure", "10:2015"],
+  ["footer", "10:2015"],
+  ["form", "10:2015"],
+  ["form.accept-charset", "10:2015"],
+  ["form.action", "10:2015"],
+  ["form.autocomplete", "10:2015"],
+  ["form.enctype", "10:2015"],
+  ["form.method", "10:2015"],
+  ["form.name", "10:2015"],
+  ["form.novalidate", "10:2017"],
+  ["form.rel", "10:2023"],
+  ["form.target", "10:2015"],
+  ["geolocation", "0:"],
+  ["geolocation.autolocate", "0:"],
+  ["geolocation.watch", "0:"],
+  ["h1", "10:2015"],
+  ["h1.no_ua_styles_in_article_aside_nav_section", "0:"],
+  ["h2", "10:2015"],
+  ["h3", "10:2015"],
+  ["h4", "10:2015"],
+  ["h5", "10:2015"],
+  ["h6", "10:2015"],
+  ["head", "10:2015"],
+  ["header", "10:2015"],
+  ["hgroup", "10:2015"],
+  ["hr", "10:2015"],
+  ["html", "10:2015"],
+  ["i", "10:2015"],
+  ["iframe", "10:2015"],
+  ["iframe.allow", "10:2020"],
+  ["iframe.allow.accelerometer", "0:"],
+  ["iframe.allow.ambient-light-sensor", "0:"],
+  ["iframe.allow.attribution-reporting", "0:"],
+  ["iframe.allow.bluetooth", "0:"],
+  ["iframe.allow.browsing-topics", "0:"],
+  ["iframe.allow.camera", "10:2020"],
+  ["iframe.allow.compute-pressure", "0:"],
+  ["iframe.allow.display-capture", "0:"],
+  ["iframe.allow.encrypted-media", "0:"],
+  ["iframe.allow.fullscreen", "0:"],
+  ["iframe.allow.gamepad", "0:"],
+  ["iframe.allow.geolocation", "0:"],
+  ["iframe.allow.gyroscope", "0:"],
+  ["iframe.allow.hid", "0:"],
+  ["iframe.allow.idle-detection", "0:"],
+  ["iframe.allow.local-fonts", "0:"],
+  ["iframe.allow.magnetometer", "0:"],
+  ["iframe.allow.microphone", "10:2020"],
+  ["iframe.allow.midi", "0:"],
+  ["iframe.allow.otp-credentials", "0:"],
+  ["iframe.allow.payment", "0:"],
+  ["iframe.allow.picture-in-picture", "0:"],
+  ["iframe.allow.publickey-credentials-create", "0:"],
+  ["iframe.allow.publickey-credentials-get", "0:"],
+  ["iframe.allow.screen-wake-lock", "5:2024"],
+  ["iframe.allow.serial", "0:"],
+  ["iframe.allow.storage-access", "0:"],
+  ["iframe.allow.usb", "0:"],
+  ["iframe.allow.web-share", "0:"],
+  ["iframe.allow.window-management", "0:"],
+  ["iframe.allow.xr-spatial-tracking", "0:"],
+  ["iframe.allowfullscreen", "0:"],
+  ["iframe.browsingtopics", "0:"],
+  ["iframe.credentialless", "0:"],
+  ["iframe.csp", "0:"],
+  ["iframe.height", "10:2015"],
+  ["iframe.loading", "5:2023"],
+  ["iframe.name", "10:2015"],
+  ["iframe.referrerpolicy", "10:2020"],
+  ["iframe.referrerpolicy.no-referrer-when-downgrade", "0:"],
+  ["iframe.referrerpolicy.origin-when-cross-origin", "0:"],
+  ["iframe.referrerpolicy.unsafe-url", "0:"],
+  ["iframe.sandbox", "10:2015"],
+  ["iframe.sandbox.allow-downloads", "10:2023"],
+  ["iframe.sandbox.allow-forms", "10:2020"],
+  ["iframe.sandbox.allow-modals", "10:2020"],
+  ["iframe.sandbox.allow-pointer-lock", "0:"],
+  ["iframe.sandbox.allow-popups", "10:2015"],
+  ["iframe.sandbox.allow-popups-to-escape-sandbox", "10:2020"],
+  ["iframe.sandbox.allow-presentation", "0:"],
+  ["iframe.sandbox.allow-same-origin", "10:2020"],
+  ["iframe.sandbox.allow-scripts", "10:2020"],
+  ["iframe.sandbox.allow-top-navigation", "10:2020"],
+  ["iframe.sandbox.allow-top-navigation-by-user-activation", "10:2020"],
+  ["iframe.sandbox.allow-top-navigation-to-custom-protocols", "0:"],
+  ["iframe.src", "10:2015"],
+  ["iframe.srcdoc", "10:2020"],
+  ["iframe.width", "10:2015"],
+  ["img", "10:2015"],
+  ["img.alt", "10:2015"],
+  ["img.aspect_ratio_computed_from_attributes", "10:2021"],
+  ["img.attributionsrc", "0:"],
+  ["img.crossorigin", "10:2015"],
+  ["img.decoding", "10:2020"],
+  ["img.fetchpriority", "5:2024"],
+  ["img.height", "10:2015"],
+  ["img.ismap", "10:2015"],
+  ["img.loading", "10:2022"],
+  ["img.referrerpolicy", "10:2020"],
+  ["img.referrerpolicy.no-referrer-when-downgrade", "0:"],
+  ["img.referrerpolicy.origin-when-cross-origin", "0:"],
+  ["img.referrerpolicy.unsafe-url", "0:"],
+  ["img.sizes", "10:2016"],
+  ["img.sizes.auto", "0:"],
+  ["img.src", "10:2015"],
+  ["img.srcset", "10:2015"],
+  ["img.usemap", "10:2015"],
+  ["img.width", "10:2015"],
+  ["input", "10:2015"],
+  ["input.accept", "10:2015"],
+  ["input.alpha", "0:"],
+  ["input.alt", "10:2015"],
+  ["input.capture", "0:"],
+  ["input.checked", "10:2015"],
+  ["input.colorspace", "0:"],
+  ["input.dirname", "10:2023"],
+  ["input.disabled", "10:2015"],
+  ["input.form", "10:2015"],
+  ["input.formaction", "10:2015"],
+  ["input.formenctype", "10:2015"],
+  ["input.formmethod", "10:2015"],
+  ["input.formnovalidate", "10:2015"],
+  ["input.formtarget", "10:2015"],
+  ["input.max", "10:2015"],
+  ["input.maxlength", "10:2015"],
+  ["input.min", "10:2015"],
+  ["input.minlength", "10:2018"],
+  ["input.multiple", "10:2015"],
+  ["input.name", "10:2015"],
+  ["input.pattern", "10:2015"],
+  ["input.placeholder", "10:2015"],
+  ["input.popovertarget", "5:2024"],
+  ["input.popovertarget.implicit_anchor_reference", "5:2026"],
+  ["input.popovertargetaction", "5:2024"],
+  ["input.readonly", "10:2015"],
+  ["input.required", "10:2015"],
+  ["input.size", "10:2015"],
+  ["input.src", "10:2015"],
+  ["input.step", "10:2015"],
+  ["input.switch", "0:"],
+  ["input.type_button", "10:2015"],
+  ["input.type_checkbox", "10:2015"],
+  ["input.type_color", "0:"],
+  ["input.type_color.accepts_css_colors", "0:"],
+  ["input.type_color.list", "0:"],
+  ["input.type_date", "10:2021"],
+  ["input.type_date.list", "0:"],
+  ["input.type_datetime-local", "10:2021"],
+  ["input.type_email", "10:2015"],
+  ["input.type_email.list", "10:2019"],
+  ["input.type_file", "10:2015"],
+  ["input.type_hidden", "10:2015"],
+  ["input.type_image", "10:2015"],
+  ["input.type_month", "0:"],
+  ["input.type_number", "10:2015"],
+  ["input.type_number.list", "10:2019"],
+  ["input.type_password", "10:2015"],
+  ["input.type_password.insecure_login_handling", "0:"],
+  ["input.type_radio", "10:2015"],
+  ["input.type_range", "10:2017"],
+  ["input.type_range.labeled_values", "0:"],
+  ["input.type_range.list", "0:"],
+  ["input.type_range.tick_marks", "10:2023"],
+  ["input.type_range.vertical_orientation", "5:2024"],
+  ["input.type_reset", "10:2015"],
+  ["input.type_search", "10:2015"],
+  ["input.type_search.list", "10:2019"],
+  ["input.type_submit", "10:2015"],
+  ["input.type_tel", "10:2015"],
+  ["input.type_tel.list", "10:2019"],
+  ["input.type_text", "10:2015"],
+  ["input.type_text.list", "10:2019"],
+  ["input.type_time", "10:2021"],
+  ["input.type_time.list", "0:"],
+  ["input.type_url", "10:2015"],
+  ["input.type_url.list", "10:2019"],
+  ["input.type_week", "0:"],
+  ["input.webkitdirectory", "5:2025"],
+  ["ins", "10:2015"],
+  ["ins.cite", "10:2015"],
+  ["ins.datetime", "10:2015"],
+  ["kbd", "10:2015"],
+  ["label", "10:2015"],
+  ["label.for", "10:2015"],
+  ["legend", "10:2015"],
+  ["li", "10:2015"],
+  ["li.value", "10:2015"],
+  ["link", "10:2015"],
+  ["link.as", "10:2018"],
+  ["link.blocking", "0:"],
+  ["link.crossorigin", "10:2018"],
+  ["link.disabled", "10:2015"],
+  ["link.fetchpriority", "5:2024"],
+  ["link.href", "10:2015"],
+  ["link.hreflang", "10:2015"],
+  ["link.imagesizes", "5:2023"],
+  ["link.imagesrcset", "5:2023"],
+  ["link.integrity", "10:2018"],
+  ["link.media", "10:2015"],
+  ["link.referrerpolicy", "10:2020"],
+  ["link.referrerpolicy.no-referrer-when-downgrade", "0:"],
+  ["link.referrerpolicy.origin-when-cross-origin", "0:"],
+  ["link.referrerpolicy.unsafe-url", "0:"],
+  ["link.rel", "10:2015"],
+  ["link.rel.alternate_stylesheet", "0:"],
+  ["link.rel.compression-dictionary", "0:"],
+  ["link.rel.dns-prefetch", "5:2025"],
+  ["link.rel.expect", "0:"],
+  ["link.rel.manifest", "0:"],
+  ["link.rel.modulepreload", "10:2023"],
+  ["link.rel.preconnect", "10:2020"],
+  ["link.rel.prefetch", "0:"],
+  ["link.rel.preload", "10:2021"],
+  ["link.rel.preload.as-fetch", "10:2021"],
+  ["link.rel.preload.as-font", "10:2021"],
+  ["link.rel.preload.as-image", "10:2021"],
+  ["link.rel.preload.as-script", "10:2021"],
+  ["link.rel.preload.as-style", "10:2021"],
+  ["link.rel.preload.as-track", "0:"],
+  ["link.sizes", "10:2020"],
+  ["link.type", "10:2015"],
+  ["main", "10:2015"],
+  ["map", "10:2015"],
+  ["map.name", "10:2015"],
+  ["mark", "10:2015"],
+  ["menu", "10:2015"],
+  ["meta", "10:2015"],
+  ["meta.charset", "10:2015"],
+  ["meta.content", "10:2015"],
+  ["meta.http-equiv", "10:2015"],
+  ["meta.http-equiv.content-security-policy", "10:2017"],
+  ["meta.http-equiv.content-type", "10:2017"],
+  ["meta.http-equiv.refresh", "10:2015"],
+  ["meta.name", "10:2015"],
+  ["meta.name.application-title", "0:"],
+  ["meta.name.color-scheme", "10:2022"],
+  ["meta.name.referrer", "10:2020"],
+  ["meta.name.text-scale", "0:"],
+  ["meta.name.theme-color", "0:"],
+  ["meter", "10:2017"],
+  ["meter.high", "10:2017"],
+  ["meter.low", "10:2017"],
+  ["meter.max", "10:2017"],
+  ["meter.min", "10:2017"],
+  ["meter.optimum", "10:2017"],
+  ["meter.value", "10:2017"],
+  ["nav", "10:2015"],
+  ["noscript", "10:2015"],
+  ["object", "10:2015"],
+  ["object.data", "10:2015"],
+  ["object.form", "10:2015"],
+  ["object.height", "10:2015"],
+  ["object.name", "10:2015"],
+  ["object.type", "10:2015"],
+  ["object.width", "10:2015"],
+  ["ol", "10:2015"],
+  ["ol.reversed", "10:2020"],
+  ["ol.start", "10:2015"],
+  ["ol.type", "10:2015"],
+  ["optgroup", "10:2015"],
+  ["optgroup.disabled", "0:"],
+  ["optgroup.label", "10:2015"],
+  ["option", "10:2015"],
+  ["option.disabled", "10:2015"],
+  ["option.label", "10:2015"],
+  ["option.selected", "10:2015"],
+  ["option.value", "10:2015"],
+  ["output", "10:2018"],
+  ["output.for", "10:2018"],
+  ["output.form", "10:2018"],
+  ["output.name", "10:2018"],
+  ["p", "10:2015"],
+  ["picture", "10:2016"],
+  ["pre", "10:2015"],
+  ["progress", "10:2015"],
+  ["progress.max", "10:2015"],
+  ["progress.value", "10:2015"],
+  ["q", "10:2015"],
+  ["q.cite", "10:2015"],
+  ["rp", "10:2015"],
+  ["rt", "10:2015"],
+  ["ruby", "10:2015"],
+  ["s", "10:2015"],
+  ["samp", "10:2015"],
+  ["script", "10:2015"],
+  ["script.async", "10:2015"],
+  ["script.attributionsrc", "0:"],
+  ["script.blocking", "0:"],
+  ["script.crossorigin", "10:2016"],
+  ["script.defer", "10:2015"],
+  ["script.fetchpriority", "5:2024"],
+  ["script.integrity", "10:2018"],
+  ["script.integrity.ed25519_public_key", "0:"],
+  ["script.nomodule", "10:2018"],
+  ["script.referrerpolicy", "10:2020"],
+  ["script.referrerpolicy.no-referrer-when-downgrade", "0:"],
+  ["script.referrerpolicy.origin-when-cross-origin", "0:"],
+  ["script.referrerpolicy.unsafe-url", "0:"],
+  ["script.src", "10:2015"],
+  ["script.type", "10:2015"],
+  ["script.type.importmap", "10:2023"],
+  ["script.type.module", "10:2018"],
+  ["script.type.speculationrules", "0:"],
+  ["script.type.speculationrules.eagerness", "0:"],
+  ["script.type.speculationrules.expects_no_vary_search", "0:"],
+  ["script.type.speculationrules.prefetch", "0:"],
+  ["script.type.speculationrules.prerender", "0:"],
+  ["script.type.speculationrules.referrer_policy", "0:"],
+  ["script.type.speculationrules.relative_to", "0:"],
+  ["script.type.speculationrules.requires", "0:"],
+  [
+    "script.type.speculationrules.requires.anonymous-client-ip-when-cross-origin",
+    "0:"
+  ],
+  ["script.type.speculationrules.source_optional", "0:"],
+  ["script.type.speculationrules.tag", "0:"],
+  ["script.type.speculationrules.target_hint", "0:"],
+  ["script.type.speculationrules.urls", "0:"],
+  ["script.type.speculationrules.where", "0:"],
+  ["search", "10:2023"],
+  ["section", "10:2015"],
+  ["select", "10:2015"],
+  ["select.disabled", "10:2015"],
+  ["select.form", "10:2015"],
+  ["select.hr_in_select", "0:"],
+  ["select.multiple", "10:2015"],
+  ["select.name", "10:2015"],
+  ["select.required", "10:2015"],
+  ["select.size", "0:"],
+  ["selectedcontent", "0:"],
+  ["slot", "10:2020"],
+  ["slot.name", "10:2020"],
+  ["small", "10:2015"],
+  ["source", "10:2015"],
+  ["source.height", "10:2022"],
+  ["source.media", "10:2015"],
+  ["source.sizes", "10:2016"],
+  ["source.src", "10:2015"],
+  ["source.srcset", "10:2016"],
+  ["source.type", "10:2015"],
+  ["source.width", "10:2022"],
+  ["span", "10:2015"],
+  ["strong", "10:2015"],
+  ["style", "10:2015"],
+  ["style.blocking", "0:"],
+  ["style.media", "10:2015"],
+  ["sub", "10:2015"],
+  ["summary", "10:2020"],
+  ["summary.display_list_item", "0:"],
+  ["sup", "10:2015"],
+  ["table", "10:2015"],
+  ["table.align", "0:"],
+  ["table.bgcolor", "0:"],
+  ["table.border", "0:"],
+  ["table.cellpadding", "0:"],
+  ["table.cellspacing", "0:"],
+  ["table.frame", "0:"],
+  ["table.rules", "0:"],
+  ["table.summary", "0:"],
+  ["table.width", "0:"],
+  ["tbody", "10:2015"],
+  ["tbody.align", "0:"],
+  ["tbody.bgcolor", "0:"],
+  ["tbody.char", "0:"],
+  ["tbody.charoff", "0:"],
+  ["tbody.valign", "0:"],
+  ["td", "10:2015"],
+  ["td.abbr", "0:"],
+  ["td.align", "0:"],
+  ["td.axis", "0:"],
+  ["td.bgcolor", "0:"],
+  ["td.char", "0:"],
+  ["td.charoff", "0:"],
+  ["td.colspan", "10:2015"],
+  ["td.headers", "10:2015"],
+  ["td.rowspan", "10:2015"],
+  ["td.rowspan.rowspan_zero", "0:"],
+  ["td.scope", "0:"],
+  ["td.valign", "0:"],
+  ["td.width", "0:"],
+  ["template", "10:2015"],
+  ["template.shadowrootclonable", "5:2024"],
+  ["template.shadowrootcustomelementregistry", "0:"],
+  ["template.shadowrootdelegatesfocus", "5:2024"],
+  ["template.shadowrootmode", "5:2024"],
+  ["template.shadowrootreferencetarget", "0:"],
+  ["template.shadowrootserializable", "0:"],
+  ["template.shadowrootslotassignment", "0:"],
+  ["textarea", "10:2015"],
+  ["textarea.autocomplete", "10:2020"],
+  ["textarea.cols", "10:2015"],
+  ["textarea.dirname", "10:2023"],
+  ["textarea.disabled", "10:2015"],
+  ["textarea.form", "10:2015"],
+  ["textarea.maxlength", "10:2015"],
+  ["textarea.minlength", "10:2018"],
+  ["textarea.name", "10:2015"],
+  ["textarea.placeholder", "10:2015"],
+  ["textarea.placeholder.line_breaks", "10:2022"],
+  ["textarea.readonly", "10:2015"],
+  ["textarea.required", "10:2015"],
+  ["textarea.rows", "10:2015"],
+  ["textarea.wrap", "10:2015"],
+  ["textarea.wrap.hard", "0:"],
+  ["tfoot", "10:2015"],
+  ["tfoot.align", "0:"],
+  ["tfoot.bgcolor", "0:"],
+  ["tfoot.char", "0:"],
+  ["tfoot.charoff", "0:"],
+  ["tfoot.valign", "0:"],
+  ["th", "10:2015"],
+  ["th.abbr", "10:2015"],
+  ["th.align", "0:"],
+  ["th.axis", "0:"],
+  ["th.bgcolor", "0:"],
+  ["th.char", "0:"],
+  ["th.charoff", "0:"],
+  ["th.colspan", "10:2015"],
+  ["th.headers", "10:2015"],
+  ["th.rowspan", "10:2015"],
+  ["th.rowspan.rowspan_zero", "0:"],
+  ["th.scope", "10:2015"],
+  ["th.valign", "0:"],
+  ["th.width", "0:"],
+  ["thead", "10:2015"],
+  ["thead.align", "0:"],
+  ["thead.bgcolor", "0:"],
+  ["thead.char", "0:"],
+  ["thead.charoff", "0:"],
+  ["thead.valign", "0:"],
+  ["time", "10:2017"],
+  ["time.datetime", "10:2017"],
+  ["title", "10:2015"],
+  ["tr", "10:2015"],
+  ["tr.align", "0:"],
+  ["tr.bgcolor", "0:"],
+  ["tr.char", "0:"],
+  ["tr.charoff", "0:"],
+  ["tr.valign", "0:"],
+  ["track", "10:2015"],
+  ["track.default", "10:2015"],
+  ["track.kind", "10:2015"],
+  ["track.label", "10:2015"],
+  ["track.src", "10:2016"],
+  ["track.srclang", "10:2015"],
+  ["u", "10:2015"],
+  ["ul", "10:2015"],
+  ["var", "10:2015"],
+  ["video", "10:2015"],
+  ["video.aspect_ratio_computed_from_attributes", "10:2020"],
+  ["video.autoplay", "10:2016"],
+  ["video.controls", "10:2015"],
+  ["video.controlslist", "0:"],
+  ["video.crossorigin", "10:2020"],
+  ["video.disablepictureinpicture", "0:"],
+  ["video.disableremoteplayback", "0:"],
+  ["video.height", "10:2015"],
+  ["video.loading", "0:"],
+  ["video.loop", "10:2015"],
+  ["video.muted", "10:2015"],
+  ["video.playsinline", "0:"],
+  ["video.poster", "10:2015"],
+  ["video.preload", "10:2015"],
+  ["video.src", "10:2015"],
+  ["video.width", "10:2015"],
+  ["wbr", "10:2015"]
+]);
+var globalAttributes = /* @__PURE__ */ new Map([
+  ["accesskey", "10:2015"],
+  ["autocapitalize", "0:"],
+  ["autocorrect", "0:"],
+  ["autofocus", "10:2023"],
+  ["contenteditable", "10:2015"],
+  ["contenteditable.plaintext-only", "5:2025"],
+  ["enterkeyhint", "10:2021"],
+  ["exportparts", "10:2020"],
+  ["inert", "10:2023"],
+  ["inert.ignores_find_in_page", "0:"],
+  ["inputmode", "10:2021"],
+  ["is", "0:"],
+  ["lang", "10:2015"],
+  ["nonce", "10:2022"],
+  ["part", "10:2020"],
+  ["popover", "5:2024"],
+  ["popover.hint", "0:"],
+  ["slot", "10:2020"],
+  ["spellcheck", "10:2017"],
+  ["style", "10:2015"],
+  ["tabindex", "10:2015"],
+  ["title", "10:2015"],
+  ["title.multi-line_titles", "10:2018"],
+  ["translate", "10:2023"],
+  ["virtualkeyboardpolicy", "0:"],
+  ["writingsuggestions", "0:"]
+]);
+
+// lib/utils/node.js
+function isCustomElement(name) {
+  return name.includes("-");
+}
+
+// lib/rules/use-baseline.js
+var USE_BASELINE_MESSAGE_IDS = {
+  noBaselineElement: "noBaselineElement",
+  notBaselineElementAttribute: "notBaselineElementAttribute",
+  notBaselineGlobalAttribute: "notBaselineGlobalAttribute"
+};
+function toStatusKey(...parts) {
+  return parts.map((part) => part.toLowerCase().trim()).join(".");
+}
+function decodeStatus(encoded) {
+  const [status, year = NaN] = encoded.split(":").map((part) => Number(part));
+  return [status, year];
+}
+function getElementAttributeSpecificStatusKey(element2, key, value) {
+  const elementName = element2.toLowerCase();
+  const attributeKey = key.toLowerCase();
+  const attributeValue = value.toLowerCase();
+  if (elementName === "input" && attributeKey === "type") {
+    return `input.type_${attributeValue}`;
+  }
+  if (elementName === "a" && attributeKey === "href" && attributeValue.trim().startsWith("sms:")) {
+    return "a.href.href_sms";
+  }
+  if ((elementName === "td" || elementName === "th") && attributeKey === "rowspan" && attributeValue === "0") {
+    return `${elementName}.rowspan.rowspan_zero`;
+  }
+  return null;
+}
+function useBaseline({ available }) {
+  const baseYear = typeof available === "number" ? available : null;
+  const baseStatus = available === "widely" ? BASELINE_HIGH : BASELINE_LOW;
+  const availability = String(available);
+  function isSupported(encoded) {
+    const [status, year = NaN] = decodeStatus(encoded);
+    if (baseYear) {
+      return year <= baseYear;
+    }
+    return status >= baseStatus;
+  }
+  function isSupportedElementAttributeKey(element2, key) {
+    const elementStatus = elements.get(toStatusKey(element2, key));
+    if (!elementStatus) {
+      return true;
+    }
+    return isSupported(elementStatus);
+  }
+  function isSupportedGlobalAttributeKey(key) {
+    const globalAttrStatus = globalAttributes.get(toStatusKey(key));
+    if (!globalAttrStatus) {
+      return true;
+    }
+    return isSupported(globalAttrStatus);
+  }
+  function isSupportedElementAttributeKeyValue(element2, key, value) {
+    const elementStatus = elements.get(toStatusKey(element2, key, value));
+    if (!elementStatus) {
+      return true;
+    }
+    return isSupported(elementStatus);
+  }
+  function isSupportedGlobalAttributeKeyValue(key, value) {
+    const globalAttrStatus = globalAttributes.get(toStatusKey(key, value));
+    if (!globalAttrStatus) {
+      return true;
+    }
+    return isSupported(globalAttrStatus);
+  }
+  function isSupportedElementSpecificAttributeKeyValue(element2, key, value) {
+    const statusKey = getElementAttributeSpecificStatusKey(element2, key, value);
+    if (!statusKey) {
+      return true;
+    }
+    const elementStatus = elements.get(statusKey);
+    if (!elementStatus) {
+      return true;
+    }
+    return isSupported(elementStatus);
+  }
+  function isSupportedElement(element2) {
+    const elementEncoded = elements.get(element2);
+    if (!elementEncoded) {
+      return true;
+    }
+    return isSupported(elementEncoded);
+  }
+  return {
+    /**
+     * @param {ElementAdapter} adapter
+     * @returns {UseBaselineResult}
+     */
+    checkAttributes(adapter) {
+      const elementName = adapter.getElementName();
+      if (isCustomElement(elementName)) {
+        return [];
+      }
+      if (!isSupportedElement(elementName)) {
+        return [
+          {
+            messageId: USE_BASELINE_MESSAGE_IDS.noBaselineElement,
+            loc: adapter.getLocation(),
+            data: {
+              element: `<${elementName}>`,
+              availability
+            }
+          }
+        ];
+      }
+      const result = [];
+      for (const attribute of adapter.getAttributes()) {
+        const attributeKey = attribute.getKey();
+        if (!attributeKey) {
+          continue;
+        }
+        const attributeKeyValue = attributeKey.getValue();
+        const attributeKeyHasExpression = attributeKey.hasExpression();
+        if (!attributeKeyValue || attributeKeyHasExpression) {
+          continue;
+        }
+        const attributeValue = attribute.getValue();
+        const attributeValueValue = attributeValue?.getValue();
+        if (attributeValueValue === null) {
+          continue;
+        }
+        if (!isSupportedElementAttributeKey(elementName, attributeKeyValue)) {
+          result.push({
+            messageId: USE_BASELINE_MESSAGE_IDS.notBaselineElementAttribute,
+            loc: attributeKey.getLocation(),
+            data: {
+              element: `<${elementName}>`,
+              attr: attributeKey.getValue(),
+              availability
+            }
+          });
+        } else if (!isSupportedGlobalAttributeKey(attributeKeyValue)) {
+          result.push({
+            messageId: USE_BASELINE_MESSAGE_IDS.notBaselineGlobalAttribute,
+            loc: attributeKey.getLocation(),
+            data: {
+              attr: attributeKey.getValue(),
+              availability
+            }
+          });
+        } else if (attributeValue !== null) {
+          if (!isSupportedElementAttributeKeyValue(
+            elementName,
+            attributeKeyValue,
+            attributeValueValue || ""
+          ) || !isSupportedElementSpecificAttributeKeyValue(
+            elementName,
+            attributeKeyValue,
+            attributeValueValue || ""
+          )) {
+            result.push({
+              messageId: USE_BASELINE_MESSAGE_IDS.notBaselineElementAttribute,
+              loc: attributeValue.getLocation(),
+              data: {
+                element: `<${elementName}>`,
+                attr: `${attributeKeyValue}="${attributeValueValue}"`,
+                availability
+              }
+            });
+          } else if (!isSupportedGlobalAttributeKeyValue(
+            attributeKeyValue,
+            attributeValueValue || ""
+          )) {
+            result.push({
+              messageId: USE_BASELINE_MESSAGE_IDS.notBaselineGlobalAttribute,
+              loc: attributeValue.getLocation(),
+              data: {
+                attr: `${attributeKeyValue}="${attributeValueValue}"`,
+                availability
+              }
+            });
+          }
+        }
+      }
+      return result;
+    }
+  };
+}
+
+// lib/rules/no-ineffective-attrs.js
+var NO_INEFFECTIVE_ATTRS_MESSAGE_IDS = {
+  ineffective: "ineffective"
+};
+function noIneffectiveAttrs() {
+  function getAttrValue(adapter, attrName) {
+    for (const attribute of adapter.getAttributes()) {
+      const attrKeyValue = attribute.getKey()?.getValue();
+      if (attrKeyValue && attrKeyValue === attrName) {
+        const value = attribute.getValue()?.getValue();
+        return value || null;
+      }
+    }
+    return null;
+  }
+  function hasAttr(adapter, attrName) {
+    for (const attribute of adapter.getAttributes()) {
+      const keyValue = attribute.getKey()?.getValue();
+      if (keyValue && keyValue.toLocaleLowerCase() === attrName.toLocaleLowerCase()) {
+        return true;
+      }
+    }
+    return false;
+  }
+  function isAttrValueExpression(adapter, attrName) {
+    return adapter.getAttributes().some((attr) => {
+      const key = attr.getKey();
+      return key?.getValue() === attrName && !!attr?.getValue()?.hasExpression();
+    });
+  }
+  const checkersByTag = {
+    input: [
+      {
+        attr: "multiple",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return [
+            "text",
+            "password",
+            "radio",
+            "checkbox",
+            "image",
+            "hidden",
+            "reset",
+            "button"
+          ].includes(type);
+        },
+        message: 'The "multiple" attribute has no effect on this input type.'
+      },
+      {
+        attr: "accept",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return type !== "file";
+        },
+        message: 'The "accept" attribute has no effect unless input type is "file".'
+      },
+      {
+        attr: "readonly",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ["checkbox", "radio", "file", "range", "color"].includes(type);
+        },
+        message: 'The "readonly" attribute has no effect on this input type.'
+      },
+      {
+        attr: "min",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ![
+            "number",
+            "range",
+            "date",
+            "datetime-local",
+            "month",
+            "time",
+            "week"
+          ].includes(type);
+        },
+        message: 'The "min" attribute only works with numeric, date, and time input types.'
+      },
+      {
+        attr: "max",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ![
+            "number",
+            "range",
+            "date",
+            "datetime-local",
+            "month",
+            "time",
+            "week"
+          ].includes(type);
+        },
+        message: 'The "max" attribute only works with numeric, date, and time input types.'
+      },
+      {
+        attr: "step",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ![
+            "number",
+            "range",
+            "date",
+            "datetime-local",
+            "month",
+            "time",
+            "week"
+          ].includes(type);
+        },
+        message: 'The "step" attribute only works with numeric, date, and time input types.'
+      },
+      {
+        attr: "pattern",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ![
+            "text",
+            "search",
+            "url",
+            "tel",
+            "email",
+            "password"
+          ].includes(type);
+        },
+        message: 'The "pattern" attribute only works with text-based input types.'
+      },
+      {
+        attr: "maxlength",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ![
+            "text",
+            "search",
+            "url",
+            "tel",
+            "email",
+            "password"
+          ].includes(type);
+        },
+        message: 'The "maxlength" attribute only works with text-based input types.'
+      },
+      {
+        attr: "minlength",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ![
+            "text",
+            "search",
+            "url",
+            "tel",
+            "email",
+            "password"
+          ].includes(type);
+        },
+        message: 'The "minlength" attribute only works with text-based input types.'
+      },
+      {
+        attr: "placeholder",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ![
+            "text",
+            "search",
+            "url",
+            "tel",
+            "email",
+            "password",
+            "number"
+          ].includes(type);
+        },
+        message: 'The "placeholder" attribute has no effect on this input type.'
+      },
+      {
+        attr: "size",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return ![
+            "text",
+            "search",
+            "url",
+            "tel",
+            "email",
+            "password"
+          ].includes(type);
+        },
+        message: 'The "size" attribute only works with text-based input types.'
+      },
+      {
+        attr: "list",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "text";
+          return [
+            "checkbox",
+            "radio",
+            "file",
+            "submit",
+            "image",
+            "reset",
+            "button",
+            "hidden"
+          ].includes(type);
+        },
+        message: 'The "list" attribute has no effect on this input type.'
+      }
+    ],
+    script: [
+      {
+        attr: "defer",
+        when: (adapter) => !hasAttr(adapter, "src"),
+        message: 'The "defer" attribute has no effect on inline scripts.'
+      },
+      {
+        attr: "async",
+        when: (adapter) => !hasAttr(adapter, "src"),
+        message: 'The "async" attribute has no effect on inline scripts.'
+      }
+    ],
+    a: [
+      {
+        attr: "download",
+        when: (adapter) => !hasAttr(adapter, "href"),
+        message: 'The "download" attribute has no effect without an "href".'
+      },
+      {
+        attr: "ping",
+        when: (adapter) => !hasAttr(adapter, "href"),
+        message: 'The "ping" attribute has no effect without an "href".'
+      },
+      {
+        attr: "target",
+        when: (adapter) => !hasAttr(adapter, "href"),
+        message: 'The "target" attribute has no effect without an "href".'
+      }
+    ],
+    audio: [
+      {
+        attr: "controlslist",
+        when: (adapter) => !hasAttr(adapter, "controls"),
+        message: 'The "controlslist" attribute has no effect without "controls".'
+      }
+    ],
+    video: [
+      {
+        attr: "controlslist",
+        when: (adapter) => !hasAttr(adapter, "controls"),
+        message: 'The "controlslist" attribute has no effect without "controls".'
+      }
+    ],
+    form: [
+      {
+        attr: "enctype",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "method")) {
+            return false;
+          }
+          const method = getAttrValue(adapter, "method") || "get";
+          return method ? method.toLowerCase() !== "post" : false;
+        },
+        message: 'The "enctype" attribute only has effect when method is "post".'
+      }
+    ],
+    button: [
+      {
+        attr: "formaction",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "submit";
+          return type !== "submit";
+        },
+        message: 'The "formaction" attribute only works with type="submit".'
+      },
+      {
+        attr: "formmethod",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "submit";
+          return type !== "submit";
+        },
+        message: 'The "formmethod" attribute only works with type="submit".'
+      },
+      {
+        attr: "formenctype",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "submit";
+          return type !== "submit";
+        },
+        message: 'The "formenctype" attribute only works with type="submit".'
+      },
+      {
+        attr: "formnovalidate",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "submit";
+          return type !== "submit";
+        },
+        message: 'The "formnovalidate" attribute only works with type="submit".'
+      },
+      {
+        attr: "formtarget",
+        when: (adapter) => {
+          if (isAttrValueExpression(adapter, "type")) {
+            return false;
+          }
+          const type = getAttrValue(adapter, "type") || "submit";
+          return type !== "submit";
+        },
+        message: 'The "formtarget" attribute only works with type="submit".'
+      }
+    ],
+    area: [
+      {
+        attr: "download",
+        when: (adapter) => !hasAttr(adapter, "href"),
+        message: 'The "download" attribute has no effect without an "href".'
+      },
+      {
+        attr: "ping",
+        when: (adapter) => !hasAttr(adapter, "href"),
+        message: 'The "ping" attribute has no effect without an "href".'
+      },
+      {
+        attr: "target",
+        when: (adapter) => !hasAttr(adapter, "href"),
+        message: 'The "target" attribute has no effect without an "href".'
+      }
+    ],
+    img: [
+      {
+        attr: "usemap",
+        when: (adapter) => hasAttr(adapter, "ismap"),
+        message: 'The "usemap" and "ismap" attributes cannot be used together.'
+      }
+    ]
+  };
+  return {
+    /**
+     * @param {ElementAdapter} adapter
+     * @returns {NoIneffectiveAttrsResult}
+     */
+    checkAttributes(adapter) {
+      const elementName = adapter.getElementName();
+      const tagCheckers = checkersByTag[elementName];
+      if (!tagCheckers) {
+        return [];
+      }
+      const result = [];
+      for (const check of tagCheckers) {
+        for (const attribute of adapter.getAttributes()) {
+          const attributeKey = attribute.getKey();
+          if (!attributeKey) {
+            continue;
+          }
+          if (attributeKey.hasExpression()) {
+            continue;
+          }
+          const attributeValue = attribute.getValue();
+          if (attributeValue?.hasExpression()) {
+            continue;
+          }
+          const attributeKeyValue = attributeKey.getValue();
+          const attributeValueValue = attributeValue?.getValue();
+          if (attributeValueValue === null || attributeKeyValue?.toLowerCase() !== check.attr) {
+            continue;
+          }
+          if (check.when(adapter)) {
+            result.push({
+              loc: attributeKey.getLocation(),
+              messageId: NO_INEFFECTIVE_ATTRS_MESSAGE_IDS.ineffective,
+              data: {
+                message: check.message
+              }
+            });
+          }
+        }
+      }
+      return result;
+    }
+  };
+}
+
+// lib/rules/no-obsolete-tags.js
+var OBSOLETE_TAGS = [
+  "applet",
+  "acronym",
+  "bgsound",
+  "dir",
+  "frame",
+  "frameset",
+  "noframes",
+  "isindex",
+  "keygen",
+  "listing",
+  "menuitem",
+  "nextid",
+  "noembed",
+  "plaintext",
+  "rb",
+  "rtc",
+  "strike",
+  "xmp",
+  "basefont",
+  "big",
+  "blink",
+  "center",
+  "font",
+  "marquee",
+  "multicol",
+  "nobr",
+  "spacer",
+  "tt"
+];
+var OBSOLETE_TAGS_SET = new Set(OBSOLETE_TAGS);
+var NO_OBSOLETE_TAGS_MESSAGE_IDS = {
+  unexpected: "unexpected"
+};
+function noObsoleteTags() {
+  return {
+    /**
+     * @param {ElementAdapter} adapter
+     * @returns {NoObsoleteTagsResult}
+     */
+    checkElement(adapter) {
+      const tagName = adapter.getElementName();
+      if (OBSOLETE_TAGS_SET.has(tagName)) {
+        return [
+          {
+            messageId: NO_OBSOLETE_TAGS_MESSAGE_IDS.unexpected,
+            loc: adapter.getOpenStartLocation(),
+            data: {
+              tag: tagName
+            }
+          }
+        ];
+      }
+      return [];
+    }
+  };
+}
+
+// lib/utils/obsolete-attrs.js
+var OBSOLETE_ATTRS = {
+  charset: [
+    {
+      elements: ["a", "link"],
+      suggestion: "Use an HTTP `Content-Type` header on the linked resource instead."
+    },
+    {
+      elements: ["script"],
+      suggestion: "It is redundant to specify it on the script element since it inherits from the document."
+    }
+  ],
+  coords: [
+    {
+      elements: ["a"],
+      suggestion: "Use area instead of a for image maps."
+    }
+  ],
+  shape: [
+    {
+      elements: ["a"],
+      suggestion: "Use area instead of a for image maps."
+    }
+  ],
+  methods: [
+    {
+      elements: ["a", "link"],
+      suggestion: "Use the HTTP OPTIONS feature instead."
+    }
+  ],
+  name: [
+    {
+      elements: ["a", "embed", "img", "option"],
+      suggestion: "Use the id attribute instead."
+    }
+  ],
+  rev: [
+    {
+      elements: ["a", "link"],
+      suggestion: 'Use the rel attribute instead, with an opposite term. (For example, instead of rev="made", use rel="author".)'
+    }
+  ],
+  urn: [
+    {
+      elements: ["a", "link"],
+      suggestion: "Specify the preferred persistent identifier using the href attribute instead."
+    }
+  ],
+  accept: [
+    {
+      elements: ["form"],
+      suggestion: "Use the accept attribute directly on the input elements instead."
+    }
+  ],
+  hreflang: [
+    {
+      elements: ["area"],
+      suggestion: "These attributes do not do anything useful, and for historical reasons there are no corresponding IDL attributes on area elements. Omit them altogether."
+    }
+  ],
+  type: [
+    {
+      elements: ["area"],
+      suggestion: "These attributes do not do anything useful, and for historical reasons there are no corresponding IDL attributes on area elements. Omit them altogether."
+    },
+    {
+      elements: ["li"],
+      suggestion: "Use CSS instead."
+    },
+    {
+      elements: ["menu"],
+      suggestion: "To implement a custom context menu, use script to handle the contextmenu event. For toolbar menus, omit the attribute."
+    },
+    {
+      elements: ["style"],
+      suggestion: "Omit the attribute for CSS; for data blocks, use script as the container instead of style."
+    },
+    {
+      elements: ["ul"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  nohref: [
+    {
+      elements: ["area"],
+      suggestion: "Omitting the href attribute is sufficient; the nohref attribute is unnecessary. Omit it altogether."
+    }
+  ],
+  profile: [
+    {
+      elements: ["head"],
+      suggestion: "Unnecessary. Omit it altogether."
+    }
+  ],
+  manifest: [
+    {
+      elements: ["html"],
+      suggestion: "Use service workers instead."
+    }
+  ],
+  version: [
+    {
+      elements: ["html"],
+      suggestion: "Unnecessary. Omit it altogether."
+    }
+  ],
+  ismap: [
+    {
+      elements: ["input"],
+      suggestion: "Unnecessary. Omit it altogether. All input elements with a type attribute in the Image Button state are processed as server-side image maps."
+    }
+  ],
+  usemap: [
+    {
+      elements: ["input", "object"],
+      suggestion: "Use the img element for image maps."
+    }
+  ],
+  longdesc: [
+    {
+      elements: ["iframe", "img"],
+      suggestion: "Use a regular a element to link to the description, or (in the case of images) use an image map to provide a link from the image to the image's description."
+    }
+  ],
+  lowsrc: [
+    {
+      elements: ["img"],
+      suggestion: "Use a progressive JPEG image (given in the src attribute), instead of using two separate images."
+    }
+  ],
+  target: [
+    {
+      elements: ["link"],
+      suggestion: "Unnecessary. Omit it altogether."
+    }
+  ],
+  label: [
+    {
+      elements: ["menu"],
+      suggestion: "To implement a custom context menu, use script to handle the contextmenu event."
+    }
+  ],
+  contextmenu: [
+    {
+      elements: ["*"],
+      suggestion: "To implement a custom context menu, use script to handle the contextmenu event."
+    }
+  ],
+  onshow: [
+    {
+      elements: ["*"],
+      suggestion: "To implement a custom context menu, use script to handle the contextmenu event."
+    }
+  ],
+  scheme: [
+    {
+      elements: ["meta"],
+      suggestion: "Use only one scheme per field, or make the scheme declaration part of the value."
+    }
+  ],
+  archive: [
+    {
+      elements: ["object"],
+      suggestion: "Use the data and type attributes to invoke plugins."
+    }
+  ],
+  classid: [
+    {
+      elements: ["object"],
+      suggestion: "Use the data and type attributes to invoke plugins."
+    }
+  ],
+  code: [
+    {
+      elements: ["object"],
+      suggestion: "Use the data and type attributes to invoke plugins."
+    }
+  ],
+  codebase: [
+    {
+      elements: ["object"],
+      suggestion: "Use the data and type attributes to invoke plugins."
+    }
+  ],
+  codetype: [
+    {
+      elements: ["object"],
+      suggestion: "Use the data and type attributes to invoke plugins."
+    }
+  ],
+  declare: [
+    {
+      elements: ["object"],
+      suggestion: "Repeat the object element completely each time the resource is to be reused."
+    }
+  ],
+  standby: [
+    {
+      elements: ["object"],
+      suggestion: "Optimize the linked resource so that it loads quickly or, at least, incrementally."
+    }
+  ],
+  typemustmatch: [
+    {
+      elements: ["object"],
+      suggestion: "Avoid using object elements with untrusted resources."
+    }
+  ],
+  language: [
+    {
+      elements: ["script"],
+      suggestion: "Omit the attribute for JavaScript; for data blocks, use the type attribute instead."
+    }
+  ],
+  event: [
+    {
+      elements: ["script"],
+      suggestion: "Use DOM events mechanisms to register event listeners."
+    }
+  ],
+  for: [
+    {
+      elements: ["script"],
+      suggestion: "Use DOM events mechanisms to register event listeners."
+    }
+  ],
+  datapagesize: [
+    {
+      elements: ["table"],
+      suggestion: "Unnecessary. Omit it altogether."
+    }
+  ],
+  summary: [
+    {
+      elements: ["table"],
+      suggestion: "Use one of the techniques for describing tables given in the table section instead."
+    }
+  ],
+  abbr: [
+    {
+      elements: ["td"],
+      suggestion: "Use text that begins in an unambiguous and terse manner, and include any more elaborate text after that. The title attribute can also be useful in including more detailed text, so that the cell's contents can be made terse. If it's a heading, use th (which has an abbr attribute)."
+    }
+  ],
+  axis: [
+    {
+      elements: ["td", "th"],
+      suggestion: "Use the scope attribute on the relevant th."
+    }
+  ],
+  scope: [
+    {
+      elements: ["td"],
+      suggestion: "Use th elements for heading cells."
+    }
+  ],
+  datasrc: [
+    {
+      elements: [
+        "a",
+        "button",
+        "div",
+        "frame",
+        "iframe",
+        "img",
+        "input",
+        "label",
+        "legend",
+        "marquee",
+        "object",
+        "option",
+        "select",
+        "span",
+        "table",
+        "textarea"
+      ],
+      suggestion: "Use script and a mechanism such as XMLHttpRequest to populate the page dynamically."
+    }
+  ],
+  datafld: [
+    {
+      elements: [
+        "a",
+        "button",
+        "div",
+        "fieldset",
+        "frame",
+        "iframe",
+        "img",
+        "input",
+        "label",
+        "legend",
+        "marquee",
+        "object",
+        "select",
+        "span",
+        "textarea"
+      ],
+      suggestion: "Use script and a mechanism such as XMLHttpRequest to populate the page dynamically."
+    }
+  ],
+  dataformatas: [
+    {
+      elements: [
+        "button",
+        "div",
+        "input",
+        "label",
+        "legend",
+        "marquee",
+        "object",
+        "option",
+        "select",
+        "span",
+        "table"
+      ],
+      suggestion: "Use script and a mechanism such as XMLHttpRequest to populate the page dynamically."
+    }
+  ],
+  dropzone: [
+    {
+      elements: ["*"],
+      suggestion: "Use script to handle the dragenter and dragover events instead."
+    }
+  ],
+  alink: [
+    {
+      elements: ["body"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  bgcolor: [
+    {
+      elements: ["body", "table", "td", "th", "tr"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  bottommargin: [
+    {
+      elements: ["body"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  leftmargin: [
+    {
+      elements: ["body"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  link: [
+    {
+      elements: ["body"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  marginheight: [
+    {
+      elements: ["body", "iframe"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  marginwidth: [
+    {
+      elements: ["body", "iframe"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  rightmargin: [
+    {
+      elements: ["body"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  text: [
+    {
+      elements: ["body"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  topmargin: [
+    {
+      elements: ["body"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  vlink: [
+    {
+      elements: ["body"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  clear: [
+    {
+      elements: ["br"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  align: [
+    {
+      elements: [
+        "caption",
+        "col",
+        "div",
+        "embed",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "hr",
+        "iframe",
+        "input",
+        "img",
+        "legend",
+        "object",
+        "p",
+        "table",
+        "tbody",
+        "thead",
+        "tfoot",
+        "td",
+        "th",
+        "tr"
+      ],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  char: [
+    {
+      elements: ["col", "tbody", "thead", "tfoot", "td", "th", "tr"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  charoff: [
+    {
+      elements: ["col", "tbody", "thead", "tfoot", "td", "th", "tr"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  valign: [
+    {
+      elements: ["col", "tbody", "thead", "tfoot", "td", "th", "tr"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  width: [
+    {
+      elements: ["col", "hr", "pre", "table", "td", "th"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  compact: [
+    {
+      elements: ["dl", "menu", "ol", "ul"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  hspace: [
+    {
+      elements: ["embed", "iframe", "input", "img", "object"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  vspace: [
+    {
+      elements: ["embed", "iframe", "input", "img", "object"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  color: [
+    {
+      elements: ["hr"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  noshade: [
+    {
+      elements: ["hr"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  size: [
+    {
+      elements: ["hr"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  allowtransparency: [
+    {
+      elements: ["iframe"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  frameborder: [
+    {
+      elements: ["iframe"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  framespacing: [
+    {
+      elements: ["iframe"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  scrolling: [
+    {
+      elements: ["iframe"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  border: [
+    {
+      elements: ["input", "img", "object", "table"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  frame: [
+    {
+      elements: ["table"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  bordercolor: [
+    {
+      elements: ["table"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  cellpadding: [
+    {
+      elements: ["table"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  cellspacing: [
+    {
+      elements: ["table"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  height: [
+    {
+      elements: ["table", "thead", "tbody", "tfoot", "td", "th", "tr"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  rules: [
+    {
+      elements: ["table"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  nowrap: [
+    {
+      elements: ["td", "th"],
+      suggestion: "Use CSS instead."
+    }
+  ],
+  background: [
+    {
+      elements: ["body", "table", "thead", "tbody", "tfoot", "tr", "td", "th"],
+      suggestion: "Use CSS instead."
+    }
+  ]
+};
+
+// lib/rules/no-obsolete-attrs.js
+var NO_OBSOLETE_ATTRS_MESSAGE_IDS = {
+  obsolete: "obsolete"
+};
+function noObsoleteAttrs() {
+  return {
+    /**
+     * @param {ElementAdapter} adapter
+     * @returns {NoObsoleteAttrsResult}
+     */
+    checkAttributes(adapter) {
+      const elementName = adapter.getElementName();
+      const result = [];
+      for (const attribute of adapter.getAttributes()) {
+        const attributeKey = attribute.getKey();
+        if (!attributeKey) {
+          continue;
+        }
+        const attrKeyValue = attributeKey.getValue();
+        const attributeValue = attribute.getValue();
+        const attrValueValueValue = attributeValue?.getValue();
+        if (attributeKey.hasExpression() || attrKeyValue === null || attrValueValueValue === null) {
+          continue;
+        }
+        const attrName = attrKeyValue.toLowerCase();
+        if (OBSOLETE_ATTRS[attrName]) {
+          const obsoleteConfigs = OBSOLETE_ATTRS[attrName];
+          for (const config of obsoleteConfigs) {
+            if (config.elements.includes("*") || config.elements.includes(elementName)) {
+              result.push({
+                loc: attributeKey.getLocation(),
+                messageId: NO_OBSOLETE_ATTRS_MESSAGE_IDS.obsolete,
+                data: {
+                  attr: attrName,
+                  element: elementName,
+                  suggestion: config.suggestion
+                }
+              });
+              break;
+            }
+          }
+        }
+      }
+      return result;
+    }
+  };
+}
+
+// lib/rules/class-spacing.js
+var CLASS_BETWEEN_EXTRA_SPACES_REGEX = /\s{2,}/;
+var CLASS_BETWEEN_EXTRA_SPACES_REGEX_GLOBAL = /\s{2,}/g;
+var LINE_BREAK_REGEX = /\r\n|[\r\n\u2028\u2029]/u;
+var CLASS_SPACING_MESSAGE_IDS = {
+  extraSpacing: "extraSpacing"
+};
+function checkLeading(value, loc, range, result) {
+  if (value.startsWith("\n")) {
+    return;
+  }
+  if (value.startsWith(" ")) {
+    const leadingSpaces = value.length - value.trimStart().length;
+    const spacingStart = loc.start;
+    const spacingEnd = {
+      line: spacingStart.line,
+      column: spacingStart.column + leadingSpaces
+    };
+    const spacingRange = [range[0], range[0] + leadingSpaces];
+    result.push({
+      messageId: CLASS_SPACING_MESSAGE_IDS.extraSpacing,
+      loc: {
+        start: spacingStart,
+        end: spacingEnd
+      },
+      range: spacingRange
+    });
+  }
+}
+function splitLines(value) {
+  const lines = value.split(LINE_BREAK_REGEX);
+  let pos = 0;
+  return lines.map((line, i) => {
+    const entry = { line, start: pos };
+    const lineBreakLength = i < lines.length - 1 ? 1 : 0;
+    pos += line.length + lineBreakLength;
+    return entry;
+  });
+}
+function toColumn(lineIndex, columnInLine, loc) {
+  return lineIndex === 0 ? loc.start.column + columnInLine : columnInLine;
+}
+function checkBetween(value, loc, range, result) {
+  const lineEntries = splitLines(value);
+  for (let lineIndex = 0; lineIndex < lineEntries.length; lineIndex++) {
+    const { line, start: lineStart } = lineEntries[lineIndex];
+    const trimmedLine = line.trim();
+    if (!CLASS_BETWEEN_EXTRA_SPACES_REGEX.test(trimmedLine)) continue;
+    const lineLeadingSpaces = line.length - line.trimStart().length;
+    for (const match of trimmedLine.matchAll(
+      CLASS_BETWEEN_EXTRA_SPACES_REGEX_GLOBAL
+    )) {
+      const matchStartInLine = lineLeadingSpaces + match.index;
+      const matchEndInLine = matchStartInLine + match[0].length;
+      result.push({
+        messageId: CLASS_SPACING_MESSAGE_IDS.extraSpacing,
+        loc: {
+          start: {
+            line: loc.start.line + lineIndex,
+            column: toColumn(lineIndex, matchStartInLine, loc) + 1
+          },
+          end: {
+            line: loc.start.line + lineIndex,
+            column: toColumn(lineIndex, matchEndInLine, loc)
+          }
+        },
+        range: [
+          range[0] + lineStart + matchStartInLine + 1,
+          range[0] + lineStart + matchEndInLine
+        ]
+      });
+    }
+  }
+}
+function trailingLoc(line, lineIndex, isSingleLine, loc) {
+  const trailingSpaces = line.length - line.trimEnd().length;
+  if (isSingleLine) {
+    return {
+      start: { line: loc.end.line, column: loc.end.column - trailingSpaces },
+      end: { line: loc.end.line, column: loc.end.column }
+    };
+  }
+  const columnOffset = lineIndex === 0 ? loc.start.column : 0;
+  return {
+    start: {
+      line: loc.start.line + lineIndex,
+      column: columnOffset + line.length - trailingSpaces
+    },
+    end: {
+      line: loc.start.line + lineIndex,
+      column: columnOffset + line.length
+    }
+  };
+}
+function checkTrailing(value, loc, range, result) {
+  const lineEntries = splitLines(value);
+  const isSingleLine = lineEntries.length === 1;
+  for (let i = 0; i < lineEntries.length; i++) {
+    const { line, start: lineStart } = lineEntries[i];
+    if (!line.endsWith(" ")) continue;
+    const trailingSpaces = line.length - line.trimEnd().length;
+    result.push({
+      messageId: CLASS_SPACING_MESSAGE_IDS.extraSpacing,
+      loc: trailingLoc(line, i, isSingleLine, loc),
+      range: [
+        range[0] + lineStart + line.length - trailingSpaces,
+        range[0] + lineStart + line.length
+      ]
+    });
+  }
+}
+function classSpacing() {
+  return {
+    /**
+     * @param {AttributeValueAdapter} classValue
+     * @returns {ClassSpacingResult}
+     */
+    checkClassValue(classValue) {
+      const result = [];
+      if (classValue.hasExpression()) {
+        return result;
+      }
+      const value = classValue.getValue();
+      if (!value) {
+        return result;
+      }
+      const loc = classValue.getLocation();
+      const range = classValue.getRange();
+      checkLeading(value, loc, range, result);
+      checkBetween(value, loc, range, result);
+      checkTrailing(value, loc, range, result);
+      return result;
+    }
+  };
+}
+
+// lib/rules/no-duplicate-class.js
+var NO_DUPLICATE_CLASS_MESSAGE_IDS = {
+  duplicateClass: "duplicateClass"
+};
+function splitClassAndSpaces(value) {
+  const result = [];
+  const regex = /(\s+|\S+)/g;
+  let match = null;
+  while ((match = regex.exec(value)) !== null) {
+    result.push({
+      value: match[0],
+      pos: match.index
+    });
+  }
+  return result;
+}
+function noDuplicateClass() {
+  return {
+    /**
+     * @param {AttributeValueAdapter} classValue
+     * @returns {NoDuplicateClassResult}
+     */
+    checkClassValue(classValue) {
+      const result = [];
+      if (classValue.hasExpression()) {
+        return result;
+      }
+      const value = classValue.getValue();
+      if (!value) {
+        return result;
+      }
+      const loc = classValue.getLocation();
+      const range = classValue.getRange();
+      const classesAndSpaces = splitClassAndSpaces(value);
+      const classSet = /* @__PURE__ */ new Set();
+      classesAndSpaces.forEach(({ value: value2, pos }) => {
+        const className = value2.trim();
+        if (className.length) {
+          if (classSet.has(className)) {
+            const classStart = {
+              line: loc.start.line,
+              column: loc.start.column + pos
+            };
+            const classEnd = {
+              line: loc.start.line,
+              column: loc.start.column + pos + value2.length
+            };
+            result.push({
+              messageId: NO_DUPLICATE_CLASS_MESSAGE_IDS.duplicateClass,
+              loc: {
+                start: classStart,
+                end: classEnd
+              },
+              range: [range[0] + pos, range[0] + pos + value2.length],
+              data: {
+                className
+              }
+            });
+          } else {
+            classSet.add(className);
+          }
+        }
+      });
+      return result;
+    }
+  };
+}
+export {
+  CLASS_SPACING_MESSAGE_IDS,
+  NO_DUPLICATE_CLASS_MESSAGE_IDS,
+  NO_INEFFECTIVE_ATTRS_MESSAGE_IDS,
+  NO_INVALID_ATTR_VALUE_MESSAGE_IDS,
+  NO_OBSOLETE_ATTRS_MESSAGE_IDS,
+  NO_OBSOLETE_TAGS_MESSAGE_IDS,
+  USE_BASELINE_MESSAGE_IDS,
+  classSpacing,
+  noDuplicateClass,
+  noIneffectiveAttrs,
+  noInvalidAttrValue,
+  noObsoleteAttrs,
+  noObsoleteTags,
+  useBaseline
+};
+//# sourceMappingURL=index.mjs.map

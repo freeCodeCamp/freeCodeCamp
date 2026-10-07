@@ -1,0 +1,14 @@
+// @flow
+
+declare export var daysInWeek: number
+declare export var maxTime: number
+declare export var millisecondsInMinute: number
+declare export var millisecondsInHour: number
+declare export var millisecondsInSecond: number
+declare export var minTime: number
+declare export var minutesInHour: number
+declare export var monthsInQuarter: number
+declare export var monthsInYear: number
+declare export var quartersInYear: number
+declare export var secondsInHour: number
+declare export var secondsInMinute: number

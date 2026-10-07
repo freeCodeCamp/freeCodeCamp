@@ -1,0 +1,1 @@
+{"version":3,"names":["DEPRECATED_ALIASES","exports","ModuleDeclaration"],"sources":["../../src/definitions/deprecated-aliases.ts"],"sourcesContent":["export const DEPRECATED_ALIASES = {\n  ModuleDeclaration: \"ImportOrExportDeclaration\",\n};\n"],"mappings":";;;;;;AAAO,MAAMA,kBAAkB,GAAAC,OAAA,CAAAD,kBAAA,GAAG;EAChCE,iBAAiB,EAAE;AACrB,CAAC","ignoreList":[]}

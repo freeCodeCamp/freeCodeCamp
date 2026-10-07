@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/HashSet.js",
+  "module": "../dist/esm/HashSet.js",
+  "types": "../dist/dts/HashSet.d.ts"
+}

@@ -1,0 +1,58 @@
+{
+	"name": "supports-color",
+	"version": "8.1.1",
+	"description": "Detect whether a terminal supports color",
+	"license": "MIT",
+	"repository": "chalk/supports-color",
+	"funding": "https://github.com/chalk/supports-color?sponsor=1",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"browser.js"
+	],
+	"exports": {
+		"node": "./index.js",
+		"default": "./browser.js"
+	},
+	"keywords": [
+		"color",
+		"colour",
+		"colors",
+		"terminal",
+		"console",
+		"cli",
+		"ansi",
+		"styles",
+		"tty",
+		"rgb",
+		"256",
+		"shell",
+		"xterm",
+		"command-line",
+		"support",
+		"supports",
+		"capability",
+		"detect",
+		"truecolor",
+		"16m"
+	],
+	"dependencies": {
+		"has-flag": "^4.0.0"
+	},
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"import-fresh": "^3.2.2",
+		"xo": "^0.35.0"
+	},
+	"browser": "browser.js"
+}

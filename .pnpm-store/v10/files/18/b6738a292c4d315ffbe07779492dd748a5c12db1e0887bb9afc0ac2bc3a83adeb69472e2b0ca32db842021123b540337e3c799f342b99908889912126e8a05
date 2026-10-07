@@ -1,0 +1,1 @@
+{"version":3,"file":"enums.js","sourceRoot":"","sources":["../../src/enums.ts"],"names":[],"mappings":";AAAA;;;GAGG;;;AAEH,yBAAyB;AACZ,QAAA,kBAAkB,GAAG,WAAW,CAAC","sourcesContent":["/*\n * Copyright The OpenTelemetry Authors\n * SPDX-License-Identifier: Apache-2.0\n */\n\n// Event name definitions\nexport const ExceptionEventName = 'exception';\n"]}

@@ -1,0 +1,35 @@
+{
+  "name": "fb-watchman",
+  "version": "2.0.2",
+  "description": "Bindings for the Watchman file watching service",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:facebook/watchman.git"
+  },
+  "keywords": [
+    "facebook",
+    "watchman",
+    "file",
+    "watch",
+    "watcher",
+    "watching",
+    "fs.watch",
+    "fswatcher",
+    "fs",
+    "glob",
+    "utility"
+  ],
+  "author": "Wez Furlong <wez@fb.com> (http://wezfurlong.org)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/facebook/watchman/issues"
+  },
+  "homepage": "https://facebook.github.io/watchman/",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "bser": "2.1.1"
+  }
+}

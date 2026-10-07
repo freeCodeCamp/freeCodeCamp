@@ -1,0 +1,19 @@
+--- examples/pow.js
++++ examples/pow.js
+@@ -1,6 +1,15 @@
+-var mkdirp = require('mkdirp').mkdirp;
++var mkdirp = require('../').mkdirp,
++    mkdirpSync = require('../').mkdirpSync;
+ 
+ mkdirp('/tmp/foo/bar/baz', 0755, function (err) {
+     if (err) console.error(err)
+     else console.log('pow!')
+ });
++
++try {
++  mkdirpSync('/tmp/bar/foo/baz', 0755);
++  console.log('double pow!');
++}
++catch (ex) {
++  console.log(ex);
++}

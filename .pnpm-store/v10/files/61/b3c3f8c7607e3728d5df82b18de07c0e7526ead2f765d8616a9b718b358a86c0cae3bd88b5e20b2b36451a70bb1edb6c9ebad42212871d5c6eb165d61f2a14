@@ -1,0 +1,184 @@
+{
+  "cap": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "ch": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "cm": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "deg": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "dpcm": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "dpi": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "dppx": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "em": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "ex": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "fr": {
+    "groups": [
+      "CSS Values and Units",
+      "CSS Flexible Box Layout",
+      "CSS Grid Layout"
+    ],
+    "status": "standard"
+  },
+  "grad": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "Hz": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "ic": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "in": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "kHz": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "mm": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "ms": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "pc": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "pt": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "px": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "Q": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "rad": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "rem": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "s": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "turn": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "vh": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "vmax": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "vmin": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "vw": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  },
+  "x": {
+    "groups": [
+      "CSS Values and Units"
+    ],
+    "status": "standard"
+  }
+}

@@ -1,0 +1,100 @@
+# `MD029` - Ordered list item prefix
+
+Tags: `ol`
+
+Aliases: `ol-prefix`
+
+Parameters:
+
+- `style`: List style (`string`, default `one_or_ordered`, values `one` /
+  `one_or_ordered` / `ordered` / `zero`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered for ordered lists that do not either start with '1.' or
+do not have a prefix that increases in numerical order (depending on the
+configured style). The less-common pattern of using '0.' as a first prefix or
+for all prefixes is also supported.
+
+Example valid list if the style is configured as 'one':
+
+```markdown
+1. Do this.
+1. Do that.
+1. Done.
+```
+
+Examples of valid lists if the style is configured as 'ordered':
+
+```markdown
+1. Do this.
+2. Do that.
+3. Done.
+```
+
+```markdown
+0. Do this.
+1. Do that.
+2. Done.
+```
+
+All three examples are valid when the style is configured as 'one_or_ordered'.
+
+Example valid list if the style is configured as 'zero':
+
+```markdown
+0. Do this.
+0. Do that.
+0. Done.
+```
+
+Example invalid list for all styles:
+
+```markdown
+1. Do this.
+3. Done.
+```
+
+This rule supports 0-prefixing ordered list items for uniform indentation:
+
+```markdown
+...
+08. Item
+09. Item
+10. Item
+11. Item
+...
+```
+
+Note: This rule will report violations for cases like the following where an
+improperly-indented code block (or similar) appears between two list items and
+"breaks" the list in two:
+
+<!-- markdownlint-disable code-fence-style -->
+
+~~~markdown
+1. First list
+
+```text
+Code block
+```
+
+1. Second list
+~~~
+
+The fix is to indent the code block so it becomes part of the preceding list
+item as intended:
+
+~~~markdown
+1. First list
+
+   ```text
+   Code block
+   ```
+
+2. Still first list
+~~~
+
+<!-- markdownlint-restore -->
+
+Rationale: Consistent formatting makes it easier to understand a document.

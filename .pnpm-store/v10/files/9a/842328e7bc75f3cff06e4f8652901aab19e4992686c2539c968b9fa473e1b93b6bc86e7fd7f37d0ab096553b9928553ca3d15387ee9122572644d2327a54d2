@@ -1,0 +1,36 @@
+{
+	"name": "tagged-tag",
+	"version": "1.0.0",
+	"description": "Unique tag for use in the type-fest Tagged type",
+	"license": "MIT",
+	"repository": "sindresorhus/tagged-tag",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts"
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"test": "tsc index.d.ts"
+	},
+	"files": [
+		"index.d.ts"
+	],
+	"keywords": [
+		"tagged",
+		"tag",
+		"unique",
+		"symbol",
+		"type-fest"
+	],
+	"devDependencies": {
+		"typescript": "^5.8.3"
+	}
+}

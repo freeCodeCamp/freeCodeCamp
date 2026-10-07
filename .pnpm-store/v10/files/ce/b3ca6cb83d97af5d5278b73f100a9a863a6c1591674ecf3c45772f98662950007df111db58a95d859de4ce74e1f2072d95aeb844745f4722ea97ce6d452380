@@ -1,0 +1,1 @@
+{"version":3,"file":"isUndefinedIdentifier.js","sourceRoot":"","sources":["../../src/util/isUndefinedIdentifier.ts"],"names":[],"mappings":";;;AACA,oDAA0D;AAE1D,SAAgB,qBAAqB,CAAC,CAAgB;IACpD,OAAO,CAAC,CAAC,IAAI,KAAK,sBAAc,CAAC,UAAU,IAAI,CAAC,CAAC,IAAI,KAAK,WAAW,CAAC;AACxE,CAAC;AAFD,sDAEC"}

@@ -1,0 +1,59 @@
+{
+  "name": "css-declaration-sorter",
+  "version": "6.4.1",
+  "description": "Sorts CSS declarations fast and automatically in a certain order.",
+  "type": "module",
+  "main": "./dist/main.cjs",
+  "exports": {
+    "import": "./src/main.mjs",
+    "require": "./dist/main.cjs"
+  },
+  "types": "./src/main.d.ts",
+  "files": [
+    "src/main.mjs",
+    "src/main.d.ts",
+    "src/shorthand-data.mjs",
+    "src/bubble-sort.mjs",
+    "orders",
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "preversion": "npm test",
+    "test": "uvu src .+\\.test\\.mjs",
+    "test:ci": "npm test && npm run lint -- --max-warnings 0",
+    "lint": "eslint src/*.mjs",
+    "scrape": "node --experimental-import-meta-resolve src/property-scraper.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@mdn/browser-compat-data": "^5.2.23",
+    "@rollup/plugin-dynamic-import-vars": "^2.0.2",
+    "@rollup/plugin-replace": "^5.0.2",
+    "eslint": "^8.35.0",
+    "postcss": "^8.4.18",
+    "rollup": "^3.15.0",
+    "uvu": "^0.5.6"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.9"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Siilwyn/css-declaration-sorter.git"
+  },
+  "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
+  "license": "ISC",
+  "keywords": [
+    "postcss",
+    "postcss-plugin",
+    "css",
+    "declaration",
+    "sorter",
+    "property",
+    "order"
+  ]
+}

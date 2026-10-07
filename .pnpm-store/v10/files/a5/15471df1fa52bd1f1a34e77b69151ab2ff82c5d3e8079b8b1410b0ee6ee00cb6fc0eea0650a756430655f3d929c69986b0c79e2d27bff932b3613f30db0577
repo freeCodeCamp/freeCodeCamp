@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body,
+      body * {
+        font-family: "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas,
+          "Liberation Mono", Monaco, "Lucida Console", monospace;
+        font-size: 10px;
+        text-decoration: none;
+        color: #808080;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin: 0;
+      }
+
+      iframe {
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Relay frame to communicate between preview and main frame</div>
+    <script type="module" src="/__csb_relay/__csb_relay.30yfeq026i8arwjbp19vlgcep8e6tgf.js"></script>
+  </body>
+</html>

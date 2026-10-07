@@ -1,0 +1,81 @@
+{
+  "name": "react-shallow-renderer",
+  "version": "16.15.0",
+  "description": "React package for shallow rendering.",
+  "main": "index.js",
+  "repository": "https://github.com/NMinhNguyen/react-shallow-renderer.git",
+  "keywords": [
+    "react",
+    "react-native",
+    "react-testing"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NMinhNguyen/react-shallow-renderer/issues"
+  },
+  "homepage": "https://reactjs.org/",
+  "dependencies": {
+    "object-assign": "^4.1.1",
+    "react-is": "^16.12.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-classes": "^7.8.6",
+    "@babel/plugin-transform-react-jsx-source": "^7.8.3",
+    "@babel/plugin-transform-template-literals": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@rollup/plugin-replace": "^2.3.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.1.0",
+    "confusing-browser-globals": "^1.0.9",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-jest": "^23.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "fs-extra": "^8.1.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "jest-diff": "^25.1.0",
+    "lint-staged": "^10.0.8",
+    "prettier": "1.19.1",
+    "react": "^18.0.0",
+    "rimraf": "^3.0.1",
+    "rollup": "^1.30.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-strip-banner": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "cjs/",
+    "esm/",
+    "umd/"
+  ],
+  "scripts": {
+    "prebuild": "rimraf build",
+    "build": "rollup --config",
+    "postbuild": "node ./scripts/copyFiles.js",
+    "lint": "eslint --ignore-path .gitignore .",
+    "test": "jest",
+    "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand --no-cache"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}

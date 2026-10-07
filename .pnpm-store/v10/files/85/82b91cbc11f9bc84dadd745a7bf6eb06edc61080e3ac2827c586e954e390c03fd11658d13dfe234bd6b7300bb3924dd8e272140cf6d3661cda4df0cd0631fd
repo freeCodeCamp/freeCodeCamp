@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../lib/vocabularies/core/index.ts"],"names":[],"mappings":";;AACA,6BAA4B;AAC5B,+BAA8B;AAE9B,MAAM,IAAI,GAAe;IACvB,SAAS;IACT,KAAK;IACL,OAAO;IACP,aAAa;IACb,EAAC,OAAO,EAAE,UAAU,EAAC;IACrB,aAAa;IACb,YAAS;IACT,aAAU;CACX,CAAA;AAED,kBAAe,IAAI,CAAA"}

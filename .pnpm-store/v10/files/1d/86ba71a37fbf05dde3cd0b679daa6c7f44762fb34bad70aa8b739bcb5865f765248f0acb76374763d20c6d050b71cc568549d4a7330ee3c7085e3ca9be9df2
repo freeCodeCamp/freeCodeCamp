@@ -1,0 +1,83 @@
+{
+  "name": "html-entities",
+  "version": "2.4.0",
+  "description": "Fastest HTML entities encode/decode library.",
+  "keywords": [
+    "html",
+    "html entities",
+    "html entities encode",
+    "html entities decode",
+    "entities",
+    "entities encode",
+    "entities decode"
+  ],
+  "author": {
+    "name": "Marat Dulin",
+    "email": "mdevils@yandex.ru"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/mdevils"
+    },
+    {
+      "type": "patreon",
+      "url": "https://patreon.com/mdevils"
+    }
+  ],
+  "devDependencies": {
+    "@types/benchmark": "^2.1.0",
+    "@types/chai": "^4.2.11",
+    "@types/he": "^1.1.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.4",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "benchmark": "^2.1.4",
+    "chai": "^4.2.0",
+    "entities": "^4.5.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "flowgen": "^1.13.0",
+    "he": "^1.2.0",
+    "husky": "^4.3.6",
+    "mocha": "^9.2.2",
+    "prettier": "^2.1.2",
+    "terser": "^5.6.1",
+    "ts-node": "^8.9.1",
+    "ttypescript": "^1.5.15",
+    "typescript": "^3.8.3",
+    "typescript-transform-macros": "^1.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdevils/html-entities.git"
+  },
+  "sideEffects": false,
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "TS_NODE_COMPILER=ttypescript mocha --recursive -r ts-node/register test/**/*.ts",
+    "test:lib": "TEST_LIB=1 npm run test",
+    "benchmark": "TS_NODE_COMPILER=ttypescript ts-node benchmark/benchmark",
+    "lint": "eslint src/**.ts",
+    "flow-type-gen": "flowgen --add-flow-header lib/index.d.ts -o lib/index.js.flow",
+    "remove-unused-declarations": "find lib -type f \\( -name '*.d.ts' ! -name index.d.ts \\) | xargs rm",
+    "minimize-lib-files": "find lib -type f \\( -name '*.js' ! -name index.js \\) | while read fn; do terser $fn -o $fn; done",
+    "build": "rm -Rf lib/* && ttsc && npm run remove-unused-declarations && npm run flow-type-gen && npm run minimize-lib-files && npm run test:lib",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
+  },
+  "license": "MIT"
+}

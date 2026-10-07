@@ -1,0 +1,20 @@
+{
+  "title": "MinChunkSizePluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "chunkOverhead": {
+      "description": "Constant overhead for a chunk.",
+      "type": "number"
+    },
+    "entryChunkMultiplicator": {
+      "description": "Multiplicator for initial chunks.",
+      "type": "number"
+    },
+    "minChunkSize": {
+      "description": "Minimum number of characters.",
+      "type": "number"
+    }
+  },
+  "required": ["minChunkSize"]
+}

@@ -1,0 +1,351 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Supports additional targets discovery and allows to attach to them.
+domain Target
+
+  type TargetID extends string
+
+  # Unique identifier of attached debugging session.
+  type SessionID extends string
+
+  type TargetInfo extends object
+    properties
+      TargetID targetId
+      # List of types: https://source.chromium.org/chromium/chromium/src/+/main:content/browser/devtools/devtools_agent_host_impl.cc?ss=chromium&q=f:devtools%20-f:out%20%22::kTypeTab%5B%5D%22
+      string type
+      string title
+      string url
+      # Whether the target has an attached client.
+      boolean attached
+      # Opener target Id
+      optional TargetID openerId
+      # Whether the target has access to the originating window.
+      experimental boolean canAccessOpener
+      # Frame id of originating window (is only set if target has an opener).
+      experimental optional Page.FrameId openerFrameId
+      # Id of the parent frame, only present for the "iframe" targets.
+      experimental optional Page.FrameId parentFrameId
+      experimental optional Browser.BrowserContextID browserContextId
+      # Provides additional details for specific target types. For example, for
+      # the type of "page", this may be set to "prerender".
+      experimental optional string subtype
+
+  # A filter used by target query/discovery/auto-attach operations.
+  experimental type FilterEntry extends object
+    properties
+      # If set, causes exclusion of matching targets from the list.
+      optional boolean exclude
+      # If not present, matches any type.
+      optional string type
+
+  # The entries in TargetFilter are matched sequentially against targets and
+  # the first entry that matches determines if the target is included or not,
+  # depending on the value of `exclude` field in the entry.
+  # If filter is not specified, the one assumed is
+  # [{type: "browser", exclude: true}, {type: "tab", exclude: true}, {}]
+  # (i.e. include everything but `browser` and `tab`).
+  experimental type TargetFilter extends array of FilterEntry
+
+  experimental type RemoteLocation extends object
+    properties
+      string host
+      integer port
+
+  # The state of the target window.
+  experimental type WindowState extends string
+    enum
+      normal
+      minimized
+      maximized
+      fullscreen
+
+  # Activates (focuses) the target.
+  command activateTarget
+    parameters
+      TargetID targetId
+
+  # Attaches to the target with given id.
+  command attachToTarget
+    parameters
+      TargetID targetId
+      # Enables "flat" access to the session via specifying sessionId attribute in the commands.
+      # We plan to make this the default, deprecate non-flattened mode,
+      # and eventually retire it. See crbug.com/991325.
+      optional boolean flatten
+    returns
+      # Id assigned to the session.
+      SessionID sessionId
+
+  # Attaches to the browser target, only uses flat sessionId mode.
+  experimental command attachToBrowserTarget
+    returns
+      # Id assigned to the session.
+      SessionID sessionId
+
+  # Closes the target. If the target is a page that gets closed too.
+  command closeTarget
+    parameters
+      TargetID targetId
+    returns
+      # Always set to true. If an error occurs, the response indicates protocol error.
+      deprecated boolean success
+
+  # Inject object to the target's main frame that provides a communication
+  # channel with browser target.
+  #
+  # Injected object will be available as `window[bindingName]`.
+  #
+  # The object has the following API:
+  # - `binding.send(json)` - a method to send messages over the remote debugging protocol
+  # - `binding.onmessage = json => handleMessage(json)` - a callback that will be called for the protocol notifications and command responses.
+  experimental command exposeDevToolsProtocol
+    parameters
+      TargetID targetId
+      # Binding name, 'cdp' if not specified.
+      optional string bindingName
+      # If true, inherits the current root session's permissions (default: false).
+      optional boolean inheritPermissions
+
+  # Creates a new empty BrowserContext. Similar to an incognito profile but you can have more than
+  # one.
+  command createBrowserContext
+    parameters
+      # If specified, disposes this context when debugging session disconnects.
+      experimental optional boolean disposeOnDetach
+      # Proxy server, similar to the one passed to --proxy-server
+      experimental optional string proxyServer
+      # Proxy bypass list, similar to the one passed to --proxy-bypass-list
+      experimental optional string proxyBypassList
+      # An optional list of origins to grant unlimited cross-origin access to.
+      # Parts of the URL other than those constituting origin are ignored.
+      experimental optional array of string originsWithUniversalNetworkAccess
+    returns
+      # The id of the context created.
+      Browser.BrowserContextID browserContextId
+
+  # Returns all browser contexts created with `Target.createBrowserContext` method.
+  command getBrowserContexts
+    returns
+      # An array of browser context ids.
+      array of Browser.BrowserContextID browserContextIds
+      # The id of the default browser context if available.
+      experimental optional Browser.BrowserContextID defaultBrowserContextId
+
+  # Creates a new page.
+  command createTarget
+    parameters
+      # The initial URL the page will be navigated to. An empty string indicates about:blank.
+      string url
+      # Frame left origin in DIP (requires newWindow to be true or headless shell).
+      experimental optional integer left
+      # Frame top origin in DIP (requires newWindow to be true or headless shell).
+      experimental optional integer top
+      # Frame width in DIP (requires newWindow to be true or headless shell).
+      optional integer width
+      # Frame height in DIP (requires newWindow to be true or headless shell).
+      optional integer height
+      # Frame window state (requires newWindow to be true or headless shell).
+      # Default is normal.
+      optional WindowState windowState
+      # The browser context to create the page in.
+      experimental optional Browser.BrowserContextID browserContextId
+      # Whether BeginFrames for this target will be controlled via DevTools (headless shell only,
+      # not supported on MacOS yet, false by default).
+      experimental optional boolean enableBeginFrameControl
+      # Whether to create a new Window or Tab (false by default, not supported by headless shell).
+      optional boolean newWindow
+      # Whether to create the target in background or foreground (false by default, not supported
+      # by headless shell).
+      optional boolean background
+      # Whether to create the target of type "tab".
+      experimental optional boolean forTab
+      # Whether to create a hidden target. The hidden target is observable via protocol, but not
+      # present in the tab UI strip. Cannot be created with `forTab: true`, `newWindow: true` or
+      # `background: false`. The life-time of the tab is limited to the life-time of the session.
+      experimental optional boolean hidden
+      # If specified, the option is used to determine if the new target should
+      # be focused or not. By default, the focus behavior depends on the
+      # value of the background field. For example, background=false and focus=false
+      # will result in the target tab being opened but the browser window remain
+      # unchanged (if it was in the background, it will remain in the background)
+      # and background=false with focus=undefined will result in the window being focused.
+      # Using background: true and focus: true is not supported and will result in an error.
+      experimental optional boolean focus
+    returns
+      # The id of the page opened.
+      TargetID targetId
+
+  # Detaches session with given id.
+  command detachFromTarget
+    parameters
+      # Session to detach.
+      optional SessionID sessionId
+      # Deprecated.
+      deprecated optional TargetID targetId
+
+  # Deletes a BrowserContext. All the belonging pages will be closed without calling their
+  # beforeunload hooks.
+  command disposeBrowserContext
+    parameters
+      Browser.BrowserContextID browserContextId
+
+  # Returns information about a target.
+  experimental command getTargetInfo
+    parameters
+      optional TargetID targetId
+    returns
+      TargetInfo targetInfo
+
+  # Retrieves a list of available targets.
+  command getTargets
+    parameters
+      # Only targets matching filter will be reported. If filter is not specified
+      # and target discovery is currently enabled, a filter used for target discovery
+      # is used for consistency.
+      experimental optional TargetFilter filter
+    returns
+      # The list of targets.
+      array of TargetInfo targetInfos
+
+  # Sends protocol message over session with given id.
+  # Consider using flat mode instead; see commands attachToTarget, setAutoAttach,
+  # and crbug.com/991325.
+  deprecated command sendMessageToTarget
+    parameters
+      string message
+      # Identifier of the session.
+      optional SessionID sessionId
+      # Deprecated.
+      deprecated optional TargetID targetId
+
+  # Controls whether to automatically attach to new targets which are considered
+  # to be directly related to this one (for example, iframes or workers).
+  # When turned on, attaches to all existing related targets as well. When turned off,
+  # automatically detaches from all currently attached targets.
+  # This also clears all targets added by `autoAttachRelated` from the list of targets to watch
+  # for creation of related targets.
+  # You might want to call this recursively for auto-attached targets to attach
+  # to all available targets.
+  command setAutoAttach
+    parameters
+      # Whether to auto-attach to related targets.
+      boolean autoAttach
+      # Whether to pause new targets when attaching to them. Use `Runtime.runIfWaitingForDebugger`
+      # to run paused targets.
+      boolean waitForDebuggerOnStart
+      # Enables "flat" access to the session via specifying sessionId attribute in the commands.
+      # We plan to make this the default, deprecate non-flattened mode,
+      # and eventually retire it. See crbug.com/991325.
+      experimental optional boolean flatten
+      # Only targets matching filter will be attached.
+      experimental optional TargetFilter filter
+
+  # Adds the specified target to the list of targets that will be monitored for any related target
+  # creation (such as child frames, child workers and new versions of service worker) and reported
+  # through `attachedToTarget`. The specified target is also auto-attached.
+  # This cancels the effect of any previous `setAutoAttach` and is also cancelled by subsequent
+  # `setAutoAttach`. Only available at the Browser target.
+  experimental command autoAttachRelated
+    parameters
+      TargetID targetId
+      # Whether to pause new targets when attaching to them. Use `Runtime.runIfWaitingForDebugger`
+      # to run paused targets.
+      boolean waitForDebuggerOnStart
+      # Only targets matching filter will be attached.
+      experimental optional TargetFilter filter
+
+  # Controls whether to discover available targets and notify via
+  # `targetCreated/targetInfoChanged/targetDestroyed` events.
+  command setDiscoverTargets
+    parameters
+      # Whether to discover available targets.
+      boolean discover
+      # Only targets matching filter will be attached. If `discover` is false,
+      # `filter` must be omitted or empty.
+      experimental optional TargetFilter filter
+
+  # Enables target discovery for the specified locations, when `setDiscoverTargets` was set to
+  # `true`.
+  experimental command setRemoteLocations
+    parameters
+      # List of remote locations.
+      array of RemoteLocation locations
+
+  # Gets the targetId of the DevTools page target opened for the given target
+  # (if any).
+  experimental command getDevToolsTarget
+    parameters
+      # Page or tab target ID.
+      TargetID targetId
+    returns
+      # The targetId of DevTools page target if exists.
+      optional TargetID targetId
+
+  # Issued when attached to target because of auto-attach or `attachToTarget` command.
+  experimental event attachedToTarget
+    parameters
+      # Identifier assigned to the session used to send/receive messages.
+      SessionID sessionId
+      TargetInfo targetInfo
+      boolean waitingForDebugger
+
+  # Issued when detached from target for any reason (including `detachFromTarget` command). Can be
+  # issued multiple times per target if multiple sessions have been attached to it.
+  experimental event detachedFromTarget
+    parameters
+      # Detached session identifier.
+      SessionID sessionId
+      # Deprecated.
+      deprecated optional TargetID targetId
+
+  # Notifies about a new protocol message received from the session (as reported in
+  # `attachedToTarget` event).
+  event receivedMessageFromTarget
+    parameters
+      # Identifier of a session which sends a message.
+      SessionID sessionId
+      string message
+      # Deprecated.
+      deprecated optional TargetID targetId
+
+  # Issued when a possible inspection target is created.
+  event targetCreated
+    parameters
+      TargetInfo targetInfo
+
+  # Issued when a target is destroyed.
+  event targetDestroyed
+    parameters
+      TargetID targetId
+
+  # Issued when a target has crashed.
+  event targetCrashed
+    parameters
+      TargetID targetId
+      # Termination status type.
+      string status
+      # Termination error code.
+      integer errorCode
+
+  # Issued when some information about a target has changed. This only happens between
+  # `targetCreated` and `targetDestroyed`.
+  event targetInfoChanged
+    parameters
+      TargetInfo targetInfo
+
+  # Opens a DevTools window for the target.
+  experimental command openDevTools
+    parameters
+      # This can be the page or tab target ID.
+      TargetID targetId
+      # The id of the panel we want DevTools to open initially. Currently
+      # supported panels are elements, console, network, sources, resources
+      # and performance.
+      optional string panelId
+    returns
+      # The targetId of DevTools page target.
+      TargetID targetId

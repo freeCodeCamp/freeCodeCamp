@@ -1,0 +1,37 @@
+{
+  "name": "atomic-sleep",
+  "version": "1.0.0",
+  "description": "Zero CPU overhead, zero dependency, true event-loop blocking sleep",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap -R classic- -j1 test",
+    "lint": "standard",
+    "ci": "npm run lint && npm test"
+  },
+  "keywords": [
+    "sleep",
+    "pause",
+    "wait",
+    "performance",
+    "atomics"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "author": "David Mark Clements (@davidmarkclem)",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^14.3.1",
+    "tap": "^14.10.6",
+    "tape": "^4.13.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmarkclements/atomic-sleep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidmarkclements/atomic-sleep/issues"
+  },
+  "homepage": "https://github.com/davidmarkclements/atomic-sleep#readme"
+}

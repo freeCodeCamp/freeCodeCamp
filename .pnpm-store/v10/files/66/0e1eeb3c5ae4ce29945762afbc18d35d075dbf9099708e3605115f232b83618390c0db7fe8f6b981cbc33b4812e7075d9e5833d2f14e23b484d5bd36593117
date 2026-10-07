@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4e64f350-25a6-403f-a43b-d6f2437d8d4b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser-context.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser-context.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/render.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/render.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/selector.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="node-css-selector-parser" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1aOV1sKCT8kceBK7rpA4CDjSjjZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v5.7.0/bin/node" />
+    <property name="js-jscs-package" value="$USER_HOME$/.nvm/versions/node/v5.7.0/lib/node_modules/jscs" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.TypeScript" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e64f350-25a6-403f-a43b-d6f2437d8d4b" name="Default" comment="" />
+      <created>1440604068064</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1440604068064</updated>
+      <workItem from="1472309245338" duration="4624000" />
+      <workItem from="1472465304405" duration="306000" />
+      <workItem from="1480439203655" duration="1514000" />
+      <workItem from="1586606416700" duration="3138000" />
+      <workItem from="1586609582085" duration="3308000" />
+      <workItem from="1586613354044" duration="667000" />
+      <workItem from="1586616020692" duration="929000" />
+      <workItem from="1586632967570" duration="842000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../sahtml/src/sahtml.js" />
+        <option value="$PROJECT_DIR$/../sahtml/test/test.js" />
+      </list>
+    </option>
+  </component>
+  <component name="UncommittedReviewsManager">
+    <reviews />
+    <uncommitted-review-parts />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="773" y="76" key="SettingsEditor" timestamp="1586609227124">
+      <screen x="0" y="23" width="1920" height="1131" />
+    </state>
+    <state x="773" y="76" key="SettingsEditor/-1440.519.1440.877/0.23.1920.1131@0.23.1920.1131" timestamp="1586609227124" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1586633095884">
+      <screen x="0" y="23" width="1920" height="1131" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/-1440.519.1440.877/0.23.1920.1131@0.23.1920.1131" timestamp="1586633095884" />
+    <state x="335" y="261" width="632" height="496" key="find.popup" timestamp="1586611492950">
+      <screen x="0" y="23" width="1920" height="1131" />
+    </state>
+    <state x="335" y="261" width="632" height="496" key="find.popup/-1440.519.1440.877/0.23.1920.1131@0.23.1920.1131" timestamp="1586611492950" />
+    <state x="316" y="234" key="run.anything.popup" timestamp="1586607482677">
+      <screen x="0" y="23" width="1920" height="1131" />
+    </state>
+    <state x="316" y="234" key="run.anything.popup/-1440.519.1440.877/0.23.1920.1131@0.23.1920.1131" timestamp="1586607482677" />
+    <state x="316" y="160" width="670" height="676" key="search.everywhere.popup" timestamp="1586606860017">
+      <screen x="0" y="23" width="1920" height="1131" />
+    </state>
+    <state x="316" y="160" width="670" height="676" key="search.everywhere.popup/-1440.519.1440.877/0.23.1920.1131@0.23.1920.1131" timestamp="1586606860017" />
+  </component>
+</project>

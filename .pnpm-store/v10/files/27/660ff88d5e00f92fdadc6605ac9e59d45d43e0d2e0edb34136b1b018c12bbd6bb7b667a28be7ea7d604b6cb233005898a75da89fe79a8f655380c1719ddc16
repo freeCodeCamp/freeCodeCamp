@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "checkJs": true,
+
+    "lib": [ "esnext" ],
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "isolatedModules": true,
+
+    "noEmit": true
+  },
+  "include": [
+    "test/fixtures-typescript/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

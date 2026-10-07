@@ -1,0 +1,48 @@
+{
+  "name": "compressible",
+  "description": "Compressible Content-Type / mime checking",
+  "version": "2.0.18",
+  "contributors": [
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
+    "Jeremiah Senkpiel <fishrock123@rocketmail.com> (https://searchbeam.jit.su)"
+  ],
+  "license": "MIT",
+  "repository": "jshttp/compressible",
+  "keywords": [
+    "compress",
+    "gzip",
+    "mime",
+    "content-type"
+  ],
+  "dependencies": {
+    "mime-db": ">= 1.43.0 < 2"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-markdown": "1.0.1",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "mocha": "7.0.0",
+    "nyc": "15.0.0"
+  },
+  "engines": {
+    "node": ">= 0.6"
+  },
+  "files": [
+    "HISTORY.md",
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint --plugin markdown --ext js,md .",
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "test-cov": "nyc --reporter=html --reporter=text npm test",
+    "test-travis": "nyc --reporter=text npm test",
+    "version": "node scripts/version-history.js && git add HISTORY.md"
+  }
+}

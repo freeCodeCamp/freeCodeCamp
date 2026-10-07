@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/formatISO9075/index.js",
+  "typings": "../../typings.d.ts"
+}

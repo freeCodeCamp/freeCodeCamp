@@ -1,0 +1,3 @@
+import React from "react";
+import { type ImageProps } from "./types";
+export declare const Image: React.ForwardRefExoticComponent<ImageProps & React.RefAttributes<HTMLImageElement>>;

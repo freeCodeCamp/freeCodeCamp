@@ -1,0 +1,227 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _default;
+    }
+});
+var _call_super = require("@swc/helpers/_/_call_super");
+var _class_call_check = require("@swc/helpers/_/_class_call_check");
+var _create_class = require("@swc/helpers/_/_create_class");
+var _define_property = require("@swc/helpers/_/_define_property");
+var _inherits = require("@swc/helpers/_/_inherits");
+var _interop_require_default = require("@swc/helpers/_/_interop_require_default");
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_spread_props = require("@swc/helpers/_/_object_spread_props");
+var _preact = require("preact");
+var _utils = require("../../lib/utils");
+var _Template = /*#__PURE__*/ _interop_require_default._(require("../Template/Template"));
+var defaultProps = {
+    query: '',
+    showSubmit: true,
+    showReset: true,
+    showLoadingIndicator: true,
+    autofocus: false,
+    searchAsYouType: true,
+    ignoreCompositionEvents: false,
+    isSearchStalled: false,
+    disabled: false,
+    ariaLabel: 'Search',
+    onChange: _utils.noop,
+    onSubmit: _utils.noop,
+    onReset: _utils.noop,
+    refine: _utils.noop,
+    inputProps: {}
+};
+var SearchBox = /*#__PURE__*/ function(Component) {
+    _inherits._(SearchBox, Component);
+    function SearchBox() {
+        _class_call_check._(this, SearchBox);
+        var _this;
+        _this = _call_super._(this, SearchBox, arguments), _define_property._(_this, "state", {
+            query: _this.props.query,
+            focused: false
+        }), _define_property._(_this, "input", (0, _preact.createRef)()), _define_property._(_this, "onInput", function(event) {
+            var // @ts-expect-error the context incompatibility of `this` doesn't matter
+            _this_props_inputProps_onInput, _this_props_inputProps;
+            (_this_props_inputProps_onInput = (_this_props_inputProps = _this.props.inputProps).onInput) === null || _this_props_inputProps_onInput === void 0 ? void 0 : _this_props_inputProps_onInput.call(_this_props_inputProps, event);
+            var _this_props = _this.props, searchAsYouType = _this_props.searchAsYouType, refine = _this_props.refine, onChange = _this_props.onChange;
+            var query = event.target.value;
+            if (!(_this.props.ignoreCompositionEvents && event.isComposing)) {
+                if (searchAsYouType) {
+                    refine(query);
+                }
+                _this.setState({
+                    query: query
+                });
+                onChange(event);
+            }
+        }), _define_property._(_this, "onSubmit", function(event) {
+            var _this_props = _this.props, searchAsYouType = _this_props.searchAsYouType, refine = _this_props.refine, onSubmit = _this_props.onSubmit;
+            event.preventDefault();
+            event.stopPropagation();
+            if (_this.input.current) {
+                _this.input.current.blur();
+            }
+            if (!searchAsYouType) {
+                refine(_this.state.query);
+            }
+            onSubmit(event);
+            return false;
+        }), _define_property._(_this, "onReset", function(event) {
+            var _this_props = _this.props, refine = _this_props.refine, onReset = _this_props.onReset;
+            var query = '';
+            if (_this.input.current) {
+                _this.input.current.focus();
+            }
+            refine(query);
+            _this.setState({
+                query: query
+            });
+            onReset(event);
+        }), _define_property._(_this, "onBlur", function(event) {
+            var // @ts-expect-error the context incompatibility of `this` doesn't matter
+            _this_props_inputProps_onBlur, _this_props_inputProps;
+            (_this_props_inputProps_onBlur = (_this_props_inputProps = _this.props.inputProps).onBlur) === null || _this_props_inputProps_onBlur === void 0 ? void 0 : _this_props_inputProps_onBlur.call(_this_props_inputProps, event);
+            _this.setState({
+                focused: false
+            });
+        }), _define_property._(_this, "onFocus", function(event) {
+            var // @ts-expect-error the context incompatibility of `this` doesn't matter
+            _this_props_inputProps_onFocus, _this_props_inputProps;
+            (_this_props_inputProps_onFocus = (_this_props_inputProps = _this.props.inputProps).onFocus) === null || _this_props_inputProps_onFocus === void 0 ? void 0 : _this_props_inputProps_onFocus.call(_this_props_inputProps, event);
+            _this.setState({
+                focused: true
+            });
+        }), _define_property._(_this, "onAiModeClick", function(event) {
+            var _this_props_onAiModeClick, _this_props;
+            event.preventDefault();
+            (_this_props_onAiModeClick = (_this_props = _this.props).onAiModeClick) === null || _this_props_onAiModeClick === void 0 ? void 0 : _this_props_onAiModeClick.call(_this_props, _this.state.query);
+        });
+        return _this;
+    }
+    _create_class._(SearchBox, [
+        {
+            key: "resetInput",
+            value: /**
+   * This public method is used in the RefinementList SFFV search box
+   * to reset the input state when an item is selected.
+   *
+   * @see RefinementList#componentWillReceiveProps
+   * @return {undefined}
+   */ function resetInput() {
+                this.setState({
+                    query: ''
+                });
+            }
+        },
+        {
+            key: "componentWillReceiveProps",
+            value: function componentWillReceiveProps(nextProps) {
+                /**
+     * when the user is typing, we don't want to replace the query typed
+     * by the user (state.query) with the query exposed by the connector (props.query)
+     * see: https://github.com/algolia/instantsearch/issues/4141
+     */ if (!this.state.focused && nextProps.query !== this.state.query) {
+                    this.setState({
+                        query: nextProps.query
+                    });
+                }
+            }
+        },
+        {
+            key: "render",
+            value: function render() {
+                var _this_props = this.props, cssClasses = _this_props.cssClasses, placeholder = _this_props.placeholder, autofocus = _this_props.autofocus, showSubmit = _this_props.showSubmit, showReset = _this_props.showReset, showLoadingIndicator = _this_props.showLoadingIndicator, templates = _this_props.templates, isSearchStalled = _this_props.isSearchStalled, ariaLabel = _this_props.ariaLabel, inputProps = _this_props.inputProps, onAiModeClick = _this_props.onAiModeClick;
+                return /*#__PURE__*/ (0, _preact.h)("div", {
+                    className: cssClasses.root
+                }, /*#__PURE__*/ (0, _preact.h)("form", {
+                    action: "",
+                    role: "search",
+                    className: cssClasses.form,
+                    noValidate: true,
+                    onSubmit: this.onSubmit,
+                    onReset: this.onReset
+                }, /*#__PURE__*/ (0, _preact.h)("input", _object_spread_props._(_object_spread._({}, inputProps), {
+                    ref: this.input,
+                    value: this.state.query,
+                    disabled: this.props.disabled,
+                    className: cssClasses.input,
+                    type: "search",
+                    placeholder: placeholder,
+                    autoFocus: autofocus,
+                    autoComplete: "off",
+                    autoCorrect: "off",
+                    autoCapitalize: "off",
+                    // @ts-expect-error `spellCheck` attribute is missing in preact JSX types
+                    spellCheck: "false",
+                    maxLength: 512,
+                    onInput: this.onInput,
+                    // see: https://github.com/preactjs/preact/issues/1978
+                    // eslint-disable-next-line react/no-unknown-property
+                    oncompositionend: this.onInput,
+                    onBlur: this.onBlur,
+                    onFocus: this.onFocus,
+                    "aria-label": ariaLabel
+                })), /*#__PURE__*/ (0, _preact.h)(_Template.default, {
+                    templateKey: "submit",
+                    rootTagName: "button",
+                    rootProps: {
+                        className: cssClasses.submit,
+                        type: 'submit',
+                        title: 'Submit the search query',
+                        hidden: !showSubmit
+                    },
+                    templates: templates,
+                    data: {
+                        cssClasses: cssClasses
+                    }
+                }), /*#__PURE__*/ (0, _preact.h)(_Template.default, {
+                    templateKey: "reset",
+                    rootTagName: "button",
+                    rootProps: {
+                        className: cssClasses.reset,
+                        type: 'reset',
+                        title: 'Clear the search query',
+                        hidden: !(showReset && this.state.query.trim() && !isSearchStalled)
+                    },
+                    templates: templates,
+                    data: {
+                        cssClasses: cssClasses
+                    }
+                }), showLoadingIndicator && /*#__PURE__*/ (0, _preact.h)(_Template.default, {
+                    templateKey: "loadingIndicator",
+                    rootTagName: "span",
+                    rootProps: {
+                        className: cssClasses.loadingIndicator,
+                        hidden: !isSearchStalled
+                    },
+                    templates: templates,
+                    data: {
+                        cssClasses: cssClasses
+                    }
+                }), onAiModeClick && /*#__PURE__*/ (0, _preact.h)(_Template.default, {
+                    templateKey: "aiMode",
+                    rootTagName: "button",
+                    rootProps: {
+                        className: cssClasses.aiModeButton,
+                        type: 'button',
+                        title: 'AI Mode',
+                        onClick: this.onAiModeClick
+                    },
+                    templates: templates,
+                    data: {
+                        cssClasses: cssClasses
+                    }
+                })));
+            }
+        }
+    ]);
+    return SearchBox;
+}(_preact.Component);
+_define_property._(SearchBox, "defaultProps", defaultProps);
+var _default = SearchBox;

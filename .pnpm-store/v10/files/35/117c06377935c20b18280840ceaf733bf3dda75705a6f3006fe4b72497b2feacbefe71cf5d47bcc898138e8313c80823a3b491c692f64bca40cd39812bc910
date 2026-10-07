@@ -1,0 +1,1 @@
+{"version":3,"file":"spanJsonToStreamedSpan.d.ts","sourceRoot":"","sources":["../../../../src/tracing/spans/spanJsonToStreamedSpan.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,sBAAsB,EAAE,QAAQ,EAAoB,MAAM,kBAAkB,CAAC;AAG3F;;GAEG;AACH,wBAAgB,gCAAgC,CAAC,IAAI,EAAE,QAAQ,GAAG,sBAAsB,CAevF"}

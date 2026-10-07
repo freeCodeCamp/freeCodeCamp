@@ -1,0 +1,88 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* Uncomment to see lines flashing when they're painted */
+/*.monaco-editor .view-lines > .view-line {
+	background-color: none;
+	animation-name: flash-background;
+	animation-duration: 800ms;
+}
+@keyframes flash-background {
+	0%   { background-color: lightgreen; }
+	100% { background-color: none }
+}*/
+
+.mtkcontrol {
+	color: rgb(255, 255, 255) !important;
+	background: rgb(150, 0, 0) !important;
+}
+
+.mtkoverflow {
+	background-color: var(--vscode-button-background, var(--vscode-editor-background));
+	color: var(--vscode-button-foreground, var(--vscode-editor-foreground));
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--vscode-contrastBorder);
+	border-radius: 2px;
+	padding: 4px;
+	cursor: pointer;
+}
+.mtkoverflow:hover {
+	background-color: var(--vscode-button-hoverBackground);
+}
+
+.monaco-editor.no-user-select .lines-content,
+.monaco-editor.no-user-select .view-line,
+.monaco-editor.no-user-select .view-lines {
+	user-select: none;
+	-webkit-user-select: none;
+}
+/* Use user-select: text for lookup feature on macOS */
+/* https://github.com/microsoft/vscode/issues/85632 */
+.monaco-editor.mac .lines-content:hover,
+.monaco-editor.mac .view-line:hover,
+.monaco-editor.mac .view-lines:hover {
+	user-select: text;
+	-webkit-user-select: text;
+	-ms-user-select: text;
+}
+
+.monaco-editor.enable-user-select {
+	user-select: initial;
+	-webkit-user-select: initial;
+}
+
+.monaco-editor .view-lines {
+	white-space: nowrap;
+}
+
+.monaco-editor .view-line {
+	box-sizing: border-box;
+	position: absolute;
+	width: 100%;
+}
+
+/* There are view-lines in view-zones. We have to make sure this rule does not apply to them, as they don't set a line height */
+.monaco-editor .lines-content > .view-lines > .view-line > span {
+	top: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.monaco-editor .mtkw {
+	color: var(--vscode-editorWhitespace-foreground) !important;
+}
+
+.monaco-editor .mtkz {
+	display: inline-block;
+	color: var(--vscode-editorWhitespace-foreground) !important;
+}
+
+/* TODO@tokenization bootstrap fix */
+/*.monaco-editor .view-line > span > span {
+	float: none;
+	min-height: inherit;
+	margin-left: inherit;
+}*/

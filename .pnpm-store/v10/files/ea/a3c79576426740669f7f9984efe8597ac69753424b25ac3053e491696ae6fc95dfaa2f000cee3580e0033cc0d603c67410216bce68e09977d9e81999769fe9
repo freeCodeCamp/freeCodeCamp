@@ -1,0 +1,103 @@
+{
+  "author": "tony_quetano@planttheidea.com",
+  "contributors": [
+    "Dariusz Rzepka <rzepkadarek@gmail.com>"
+  ],
+  "browser": "dist/umd/index.js",
+  "bugs": {
+    "url": "https://github.com/planttheidea/fast-copy/issues"
+  },
+  "description": "A blazing fast deep object copier",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/eslint": "^8.21.1",
+    "@types/jest": "^29.4.0",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^18.14.0",
+    "@types/ramda": "^0.28.23",
+    "@types/react": "^18.0.28",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "benchee": "^1.0.3",
+    "cli-table3": "^0.6.3",
+    "clone": "^2.1.2",
+    "deepclone": "^1.0.2",
+    "eslint": "^8.34.0",
+    "eslint-webpack-plugin": "^4.0.0",
+    "fast-clone": "^1.5.3",
+    "html-webpack-plugin": "^5.5.0",
+    "in-publish": "^2.0.1",
+    "jest": "^29.4.3",
+    "lodash": "^4.17.11",
+    "nyc": "^15.1.0",
+    "ramda": "^0.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "release-it": "15.6.0",
+    "rollup": "^3.16.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^29.0.5",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      },
+      "default": {
+        "types": "./dist/umd/types/index.d.ts",
+        "default": "./dist/umd/index.js"
+      }
+    }
+  },
+  "homepage": "https://github.com/planttheidea/fast-copy#readme",
+  "keywords": [
+    "clone",
+    "deep",
+    "copy",
+    "fast"
+  ],
+  "license": "MIT",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
+  "name": "fast-copy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planttheidea/fast-copy.git"
+  },
+  "scripts": {
+    "benchmark": "npm run clean && npm run build:cjs && node benchmark/index.cjs",
+    "build": "npm run build:esm && npm run build:cjs && npm run build:umd && npm run build:min",
+    "build:cjs": "NODE_ENV=production rollup -c rollup/config.cjs.js && tsc -p ./tsconfig/cjs.json",
+    "build:esm": "NODE_ENV=production rollup -c rollup/config.esm.js && tsc -p ./tsconfig/esm.json",
+    "build:min": "NODE_ENV=production rollup -c rollup/config.min.js && tsc -p ./tsconfig/min.json",
+    "build:umd": "NODE_ENV=production rollup -c rollup/config.umd.js && tsc -p ./tsconfig/umd.json",
+    "clean": "rimraf dist",
+    "dev": "NODE_ENV=development webpack-dev-server --config=webpack/webpack.config.js",
+    "dist": "npm run clean && npm run build",
+    "lint": "eslint 'src/*.ts' '__tests__/*.ts' 'DEV_ONLY/*.ts'",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm run test && npm run dist",
+    "release": "release-it",
+    "release:beta": "release-it --config=.release-it.beta.json",
+    "release:dry": "release-it --dry-run",
+    "start": "npm run dev",
+    "test": "NODE_PATH=. jest",
+    "test:coverage": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "types": "index.d.ts",
+  "version": "3.0.1"
+}

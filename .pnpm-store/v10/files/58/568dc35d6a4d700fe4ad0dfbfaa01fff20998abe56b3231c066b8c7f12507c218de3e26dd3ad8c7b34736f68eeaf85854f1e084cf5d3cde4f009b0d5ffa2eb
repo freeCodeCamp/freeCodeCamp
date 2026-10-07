@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-destination-node.d.ts","sourceRoot":"","sources":["../../../src/interfaces/audio-destination-node.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,UAAU,CAAC;AACpC,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAE1C,MAAM,WAAW,qBAAqB,CAAC,CAAC,SAAS,QAAQ,CAAE,SAAQ,UAAU,CAAC,CAAC,CAAC;IAC5E,QAAQ,CAAC,eAAe,EAAE,MAAM,CAAC;CACpC"}

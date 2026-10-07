@@ -1,0 +1,46 @@
+{
+    "name": "@types/katex",
+    "version": "0.16.8",
+    "description": "TypeScript definitions for katex",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/katex",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Kevin Nguyen",
+            "githubUsername": "knguyen0125",
+            "url": "https://github.com/knguyen0125"
+        },
+        {
+            "name": "bLue",
+            "githubUsername": "dreamerblue",
+            "url": "https://github.com/dreamerblue"
+        },
+        {
+            "name": "Sebastian Weigand",
+            "githubUsername": "s-weigand",
+            "url": "https://github.com/s-weigand"
+        },
+        {
+            "name": "sapphi-red",
+            "githubUsername": "sapphi-red",
+            "url": "https://github.com/sapphi-red"
+        },
+        {
+            "name": "Stefaans",
+            "githubUsername": "Stefaans",
+            "url": "https://github.com/Stefaans"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/katex"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {},
+    "typesPublisherContentHash": "843b74923cb5d38471fb372b663c3c3c10e8f5d383d24b56a11f1e3d2d122e5a",
+    "typeScriptVersion": "5.2"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "dotenv",
+  "version": "8.6.0",
+  "description": "Loads environment variables from .env file",
+  "main": "lib/main.js",
+  "exports": {
+    ".": "./lib/main.js",
+    "./config": "./config.js",
+    "./package.json": "./package.json"
+  },
+  "types": "types/index.d.ts",
+  "scripts": {
+    "flow": "flow",
+    "dtslint": "dtslint types",
+    "lint": "standard",
+    "postlint": "standard-markdown",
+    "pretest": "npm run lint && npm run dtslint",
+    "test": "tap tests/*.js --100",
+    "prerelease": "npm test",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/motdotla/dotenv.git"
+  },
+  "keywords": [
+    "dotenv",
+    "env",
+    ".env",
+    "environment",
+    "variables",
+    "config",
+    "settings"
+  ],
+  "readmeFilename": "README.md",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "decache": "^4.5.1",
+    "dtslint": "^0.9.8",
+    "flow-bin": "^0.109.0",
+    "sinon": "^7.5.0",
+    "standard": "^13.1.0",
+    "standard-markdown": "^5.1.0",
+    "standard-version": "^7.0.0",
+    "tap": "^14.7.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=10"
+  },
+  "standard": {
+    "ignore": [
+      "flow-typed/"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+# `MD032` - Lists should be surrounded by blank lines
+
+Tags: `blank_lines`, `bullet`, `ol`, `ul`
+
+Aliases: `blanks-around-lists`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when lists (of any kind) are either not preceded or not
+followed by a blank line:
+
+```markdown
+Some text
+* List item
+* List item
+
+1. List item
+2. List item
+***
+```
+
+In the first case above, text immediately precedes the unordered list. In the
+second case above, a thematic break immediately follows the ordered list. To fix
+violations of this rule, ensure that all lists have a blank line both before and
+after (except when the list is at the very beginning or end of the document):
+
+```markdown
+Some text
+
+* List item
+* List item
+
+1. List item
+2. List item
+
+***
+```
+
+Note that the following case is **not** a violation of this rule:
+
+```markdown
+1. List item
+   More item 1
+2. List item
+More item 2
+```
+
+Although it is not indented, the text "More item 2" is referred to as a
+[lazy continuation line][lazy-continuation] and considered part of the second
+list item.
+
+Rationale: In addition to aesthetic reasons, some parsers, including kramdown,
+will not parse lists that don't have blank lines before and after them.
+
+[lazy-continuation]: https://spec.commonmark.org/0.30/#lazy-continuation-line

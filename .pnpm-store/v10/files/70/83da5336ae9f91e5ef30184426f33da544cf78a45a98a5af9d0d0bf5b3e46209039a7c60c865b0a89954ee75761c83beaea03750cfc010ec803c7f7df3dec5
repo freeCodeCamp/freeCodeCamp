@@ -1,0 +1,38 @@
+{
+	"name": "dir-glob",
+	"version": "3.0.1",
+	"description": "Convert directories to glob compatible strings",
+	"license": "MIT",
+	"repository": "kevva/dir-glob",
+	"author": {
+		"name": "Kevin Mårtensson",
+		"email": "kevinmartensson@gmail.com",
+		"url": "github.com/kevva"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"convert",
+		"directory",
+		"extensions",
+		"files",
+		"glob"
+	],
+	"dependencies": {
+		"path-type": "^4.0.0"
+	},
+	"devDependencies": {
+		"ava": "^2.1.0",
+		"del": "^4.1.1",
+		"make-dir": "^3.0.0",
+		"rimraf": "^2.5.0",
+		"xo": "^0.24.0"
+	}
+}

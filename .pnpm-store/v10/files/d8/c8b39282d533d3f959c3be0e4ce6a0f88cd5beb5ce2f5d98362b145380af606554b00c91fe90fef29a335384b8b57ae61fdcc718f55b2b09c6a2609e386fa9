@@ -1,0 +1,47 @@
+{
+  "name": "compression",
+  "description": "Node.js compression middleware",
+  "version": "1.7.4",
+  "contributors": [
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
+  ],
+  "license": "MIT",
+  "repository": "expressjs/compression",
+  "dependencies": {
+    "accepts": "~1.3.5",
+    "bytes": "3.0.0",
+    "compressible": "~2.0.16",
+    "debug": "2.6.9",
+    "on-headers": "~1.0.2",
+    "safe-buffer": "5.1.2",
+    "vary": "~1.1.2"
+  },
+  "devDependencies": {
+    "after": "0.8.2",
+    "eslint": "5.15.1",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-markdown": "1.0.0",
+    "eslint-plugin-node": "7.0.1",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "istanbul": "0.4.5",
+    "mocha": "6.0.2",
+    "supertest": "4.0.0"
+  },
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "lint": "eslint --plugin markdown --ext js,md .",
+    "test": "mocha --check-leaks --reporter spec --bail",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --reporter dot",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --check-leaks --reporter spec"
+  }
+}

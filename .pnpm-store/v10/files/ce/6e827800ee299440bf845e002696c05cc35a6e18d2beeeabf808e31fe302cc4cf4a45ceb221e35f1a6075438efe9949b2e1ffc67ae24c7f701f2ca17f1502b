@@ -1,0 +1,58 @@
+{
+  "name": "path-root",
+  "description": "Get the root of a posix or windows filepath.",
+  "version": "0.1.1",
+  "homepage": "https://github.com/jonschlinkert/path-root",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/path-root",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/path-root/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "path-root-regex": "^0.1.0"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^0.1.7",
+    "mocha": "^2.4.5"
+  },
+  "keywords": [
+    "path",
+    "root"
+  ],
+  "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "highlight": "parse-filepath",
+      "list": [
+        "path-root-regex",
+        "parse-filepath",
+        "is-absolute"
+      ]
+    },
+    "reflinks": [
+      "verb"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

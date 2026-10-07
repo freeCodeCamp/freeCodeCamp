@@ -1,0 +1,74 @@
+{
+  "name": "watchpack",
+  "version": "2.5.1",
+  "description": "",
+  "homepage": "https://github.com/webpack/watchpack",
+  "bugs": {
+    "url": "https://github.com/webpack/watchpack/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webpack/watchpack.git"
+  },
+  "license": "MIT",
+  "author": "Tobias Koppers @sokra",
+  "main": "lib/index.js",
+  "types": "types/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "lib/",
+    "types/"
+  ],
+  "scripts": {
+    "lint": "npm run lint:code && npm run lint:types && npm run lint:types-test && npm run lint:declarations && npm run fmt:check",
+    "lint:code": "eslint --cache .",
+    "lint:types": "tsc",
+    "lint:types-test": "tsc -p tsconfig.types.test.json",
+    "lint:declarations": "npm run fix:declarations && git diff --exit-code ./types",
+    "fix": "npm run fix:code && npm run fix:declarations",
+    "fix:code": "npm run lint:code -- --fix",
+    "fix:declarations": "tsc --noEmit false --declaration --emitDeclarationOnly --outDir types && npm run fmt -- ./types",
+    "fmt": "npm run fmt:base -- --log-level warn --write",
+    "fmt:check": "npm run fmt:base -- --check",
+    "fmt:base": "prettier --cache --ignore-unknown .",
+    "pretest": "npm run lint",
+    "test": "npm run test:coverage",
+    "test:base": "jest --runInBand",
+    "test:only": "npm run test:base",
+    "test:watch": "npm run test:base -- --watch",
+    "test:coverage": "npm run test:base -- --collectCoverageFrom=\"lib/**/*.js\" --coverage"
+  },
+  "dependencies": {
+    "glob-to-regexp": "^0.4.1",
+    "graceful-fs": "^4.1.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@eslint/markdown": "^7.5.1",
+    "@stylistic/eslint-plugin": "^5.6.1",
+    "@types/glob-to-regexp": "^0.4.4",
+    "@types/graceful-fs": "^4.1.9",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^24.10.4",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-config-webpack": "^4.7.3",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^29.5.0",
+    "eslint-plugin-jsdoc": "^61.5.0",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-unicorn": "^62.0.0",
+    "globals": "^16.5.0",
+    "jest": "^27.5.1",
+    "prettier": "^3.7.4",
+    "rimraf": "^2.6.2",
+    "typescript": "^5.9.3",
+    "write-file-atomic": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  }
+}

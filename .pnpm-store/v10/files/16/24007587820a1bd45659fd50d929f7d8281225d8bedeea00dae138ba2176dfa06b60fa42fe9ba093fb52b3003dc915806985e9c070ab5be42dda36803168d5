@@ -1,0 +1,26 @@
+import { isElementType } from '../misc/isElementType.js';
+import { isContentEditable } from './isContentEditable.js';
+
+function isEditable(element) {
+    return isEditableInputOrTextArea(element) && !element.readOnly || isContentEditable(element);
+}
+var editableInputTypes = /*#__PURE__*/ function(editableInputTypes) {
+    editableInputTypes["text"] = "text";
+    editableInputTypes["date"] = "date";
+    editableInputTypes["datetime-local"] = "datetime-local";
+    editableInputTypes["email"] = "email";
+    editableInputTypes["month"] = "month";
+    editableInputTypes["number"] = "number";
+    editableInputTypes["password"] = "password";
+    editableInputTypes["search"] = "search";
+    editableInputTypes["tel"] = "tel";
+    editableInputTypes["time"] = "time";
+    editableInputTypes["url"] = "url";
+    editableInputTypes["week"] = "week";
+    return editableInputTypes;
+}(editableInputTypes || {});
+function isEditableInputOrTextArea(element) {
+    return isElementType(element, 'textarea') || isElementType(element, 'input') && element.type in editableInputTypes;
+}
+
+export { isEditable, isEditableInputOrTextArea };

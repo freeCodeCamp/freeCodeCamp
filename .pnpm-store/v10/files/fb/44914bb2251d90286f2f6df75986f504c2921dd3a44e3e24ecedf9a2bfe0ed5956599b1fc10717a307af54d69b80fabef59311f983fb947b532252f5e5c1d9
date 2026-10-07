@@ -1,0 +1,8 @@
+import connectTrendingFacets from 'instantsearch.js/es/connectors/trending-facets/connectTrendingFacets.js';
+import { useConnector } from '../hooks/useConnector.js';
+
+function useTrendingFacets(props, additionalWidgetProperties) {
+    return useConnector(connectTrendingFacets, props, additionalWidgetProperties);
+}
+
+export { useTrendingFacets };

@@ -1,0 +1,92 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"plugins": [
+		"import",
+	],
+
+	"globals": {
+		"Iterator": false,
+	},
+
+	"rules": {
+		"array-bracket-newline": 0,
+		"func-name-matching": 0,
+		"id-length": 0,
+		"max-lines-per-function": 0,
+		"max-statements": 0,
+		"multiline-comment-style": 0,
+		"new-cap": [2, {
+			"capIsNewExceptions": [
+				"Call",
+				"CreateDataPropertyOrThrow",
+				"CreateIteratorFromClosure",
+				"CreateIterResultObject",
+				"GeneratorResume",
+				"GeneratorResumeAbrupt",
+				"GeneratorStart",
+				"GeneratorValidate",
+				"Get",
+				"GetIntrinsic",
+				"GetIterator",
+				"GetIteratorDirect",
+				"GetIteratorFlattenable",
+				"GetMethod",
+				"GetOptionsObject",
+				"IfAbruptCloseIterators",
+				"IsAccessorDescriptor",
+				"IsArray",
+				"IsCallable",
+				"IsDataDescriptor",
+				"IteratorClose",
+				"IteratorCloseAll",
+				"IteratorStep",
+				"IteratorStepValue",
+				"IteratorZip",
+				"NormalCompletion",
+				"OrdinaryHasInstance",
+				"OrdinaryObjectCreate",
+				"ReturnCompletion",
+				"StringToCodePoints",
+				"ThrowCompletion",
+				"ToBoolean",
+				"ToIntegerOrInfinity",
+				"ToNumber",
+				"ToPropertyDescriptor",
+				"Type",
+			],
+		}],
+		"no-negated-condition": 1,
+		"object-curly-newline": 0,
+		"sort-keys": 0,
+		"import/no-extraneous-dependencies": 2,
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"eqeqeq": ["error", "allow-null"],
+				"func-style": 0,
+				"max-params": 0,
+				"import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+			},
+		},
+		{
+			"files": "Iterator.zip*/implementation.js",
+			"rules": {
+				"complexity": "off",
+				"max-depth": "off",
+			},
+		},
+		{
+			"files": "aos/IteratorZip.js",
+			"rules": {
+				"max-depth": "off",
+				"max-params": "off",
+			},
+		},
+	],
+}

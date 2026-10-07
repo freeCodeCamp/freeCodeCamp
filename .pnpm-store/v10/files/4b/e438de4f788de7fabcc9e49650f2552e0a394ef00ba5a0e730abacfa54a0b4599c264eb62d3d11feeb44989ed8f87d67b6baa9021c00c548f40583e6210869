@@ -1,0 +1,28 @@
+{
+  "description": "The iconic font, CSS, and SVG framework",
+  "keywords": [
+    "font",
+    "awesome",
+    "fontawesome",
+    "icon",
+    "svg",
+    "bootstrap"
+  ],
+  "homepage": "https://fontawesome.com",
+  "bugs": {
+    "url": "https://github.com/FortAwesome/Font-Awesome/issues"
+  },
+  "author": "The Font Awesome Team (https://github.com/orgs/FortAwesome/people)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FortAwesome/Font-Awesome"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {},
+  "version": "7.2.0",
+  "name": "@fortawesome/fontawesome-common-types",
+  "license": "MIT",
+  "types": "./index.d.ts"
+}

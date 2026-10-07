@@ -1,0 +1,1 @@
+{"version":3,"file":"prefer-default.js","names":["preferDefault","m","default"],"sources":["../../src/bootstrap/prefer-default.ts"],"sourcesContent":["export const preferDefault = (m: any): any => (m && m.default) || m\n"],"mappings":";;;;AAAO,MAAMA,aAAa,GAAIC,CAAM,IAAWA,CAAC,IAAIA,CAAC,CAACC,OAAO,IAAKD,CAAC;AAAA"}

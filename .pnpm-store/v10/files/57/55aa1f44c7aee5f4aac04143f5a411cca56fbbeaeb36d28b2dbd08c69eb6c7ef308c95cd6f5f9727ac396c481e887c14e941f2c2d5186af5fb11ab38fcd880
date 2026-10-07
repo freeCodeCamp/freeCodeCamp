@@ -1,0 +1,51 @@
+{
+  "name": "gatsby-legacy-polyfills",
+  "description": "Polyfills for legacy browsers",
+  "version": "3.16.0",
+  "main": "dist/polyfills.js",
+  "author": "Ward Peeters <ward@gatsbyjs.com>",
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-legacy-polyfills#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-legacy-polyfills"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "npm-run-all --npm-path npm -p build:*",
+    "build:exclude": "cpy \"exclude.js\" \"../dist\" --cwd=./src",
+    "build:polyfills": "microbundle -f iife -i src/polyfills.js --no-sourcemap --external=none",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "watch": "npm-run-all --npm-path npm -p watch:*",
+    "watch:exclude": "npm run build:exclude && chokidar \"src/exclude.js\" -c \"npm run build:exclude\"",
+    "watch:polyfills": "microbundle -f iife -i src/polyfills.js --no-sourcemap --external=none --watch"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.20.13",
+    "core-js-compat": "3.31.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@jridgewell/trace-mapping": "^0.3.18",
+    "chokidar-cli": "^3.0.0",
+    "codegen.macro": "^4.1.0",
+    "core-js": "3.31.0",
+    "cpy-cli": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "event-target-polyfill": "^0.0.3",
+    "execa": "^5.1.1",
+    "fs-extra": "^11.2.0",
+    "microbundle": "^0.15.1",
+    "npm-run-all": "^4.1.5",
+    "object-assign": "^4.1.1",
+    "url-polyfill": "^1.1.12",
+    "whatwg-fetch": "^3.6.2",
+    "yet-another-abortcontroller-polyfill": "0.0.4"
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

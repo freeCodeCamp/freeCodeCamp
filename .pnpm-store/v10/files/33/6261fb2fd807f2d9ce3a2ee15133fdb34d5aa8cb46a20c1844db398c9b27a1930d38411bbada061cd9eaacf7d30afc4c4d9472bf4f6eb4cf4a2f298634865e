@@ -1,0 +1,63 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .codelens-decoration {
+	overflow: hidden;
+	display: inline-flex !important; /* !important to override inline display:block style */
+	align-items: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: var(--vscode-editorCodeLens-foreground);
+	line-height: var(--vscode-editorCodeLens-lineHeight);
+	font-size: var(--vscode-editorCodeLens-fontSize);
+	padding-right: calc(var(--vscode-editorCodeLens-fontSize)*0.5);
+	font-feature-settings: var(--vscode-editorCodeLens-fontFeatureSettings);
+	font-family: var(--vscode-editorCodeLens-fontFamily), var(--vscode-editorCodeLens-fontFamilyDefault);
+}
+
+.monaco-editor .codelens-decoration > span,
+.monaco-editor .codelens-decoration > a {
+	user-select: none;
+	-webkit-user-select: none;
+	white-space: nowrap;
+	vertical-align: sub;
+	display: inline-flex;
+	align-items: center;
+}
+
+.monaco-editor .codelens-decoration > a {
+	text-decoration: none;
+}
+
+.monaco-editor .codelens-decoration > a:hover {
+	cursor: pointer;
+	color: var(--vscode-editorLink-activeForeground) !important;
+}
+
+.monaco-editor .codelens-decoration > a:hover .codicon {
+	color: var(--vscode-editorLink-activeForeground) !important;
+}
+
+.monaco-editor .codelens-decoration .codicon[class*='codicon-'] {
+	vertical-align: middle;
+	color: currentColor !important;
+	color: var(--vscode-editorCodeLens-foreground);
+	line-height: var(--vscode-editorCodeLens-lineHeight);
+	font-size: var(--vscode-editorCodeLens-fontSize);
+}
+
+
+.monaco-editor .codelens-decoration > a:hover .codicon::before {
+	cursor: pointer;
+}
+
+@keyframes fadein {
+	0% { opacity: 0;}
+	100% { opacity: 1;}
+}
+
+.monaco-editor .codelens-decoration.fadein {
+	animation: fadein 0.1s linear;
+}

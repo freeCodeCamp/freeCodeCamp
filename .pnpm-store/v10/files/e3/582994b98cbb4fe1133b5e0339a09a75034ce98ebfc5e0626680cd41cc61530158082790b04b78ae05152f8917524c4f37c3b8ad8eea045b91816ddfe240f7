@@ -1,0 +1,32 @@
+{
+  "name": "siginfo",
+  "version": "2.0.0",
+  "description": "Utility module to print pretty messages on SIGINFO/SIGUSR1",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilbayes/siginfo.git"
+  },
+  "keywords": [
+    "siginfo",
+    "sigusr1",
+    "ctrl",
+    "t",
+    "info",
+    "progress",
+    "inspect"
+  ],
+  "author": "Emil Bay <github@tixz.dk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilbayes/siginfo/issues"
+  },
+  "homepage": "https://github.com/emilbayes/siginfo#readme"
+}

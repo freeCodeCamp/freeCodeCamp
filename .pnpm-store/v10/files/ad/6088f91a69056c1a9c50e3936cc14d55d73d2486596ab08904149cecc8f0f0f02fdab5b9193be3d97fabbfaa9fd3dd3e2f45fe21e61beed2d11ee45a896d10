@@ -1,0 +1,5 @@
+--- /dev/null
++++ .gitignore
+@@ -0,0 +1,2 @@
++node_modules/
++npm-debug.log

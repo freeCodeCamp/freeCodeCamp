@@ -1,0 +1,9 @@
+name: Automatic Rebase
+
+on: [pull_request_target]
+
+jobs:
+  _:
+    uses: ljharb/actions/.github/workflows/rebase.yml@main
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}

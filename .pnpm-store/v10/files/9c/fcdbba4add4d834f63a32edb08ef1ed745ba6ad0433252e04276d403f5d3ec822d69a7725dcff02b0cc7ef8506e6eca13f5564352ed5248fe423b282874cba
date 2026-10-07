@@ -1,0 +1,1 @@
+{"version":3,"file":"is-native-context.js","sourceRoot":"","sources":["../../../src/factories/is-native-context.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,qBAAqB,GAA4B,CAAC,oBAAoB,EAAE,2BAA2B,EAAE,EAAE;IAChH,OAAO,CAAC,QAAQ,EAAmC,EAAE;QACjD,OAAO,oBAAoB,CAAC,QAAQ,CAAC,IAAI,2BAA2B,CAAC,QAAQ,CAAC,CAAC;IACnF,CAAC,CAAC;AACN,CAAC,CAAC"}

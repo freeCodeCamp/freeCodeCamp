@@ -1,0 +1,33 @@
+// @flow
+import type { Config, ConfigKey, FormApi, FormValuesShape } from "./types";
+
+export type {
+  Config,
+  DebugFunction,
+  Decorator,
+  FieldState,
+  FieldSubscription,
+  FieldValidator,
+  FormApi,
+  FormState,
+  FormSubscription,
+  FormValuesShape,
+  GetFieldValidator,
+  MutableState,
+  Mutator,
+  RegisterField,
+  Tools,
+  Unsubscribe,
+} from "./types";
+
+declare export function createForm<FormValues: FormValuesShape>(
+  config: Config<FormValues>,
+): FormApi<FormValues>;
+declare export var fieldSubscriptionItems: string[];
+declare export var formSubscriptionItems: string[];
+declare export var FORM_ERROR: string;
+declare export var ARRAY_ERROR: string;
+declare export function getIn(state: Object, complexKey: string): any;
+declare export function setIn(state: Object, key: string, value: any): Object;
+declare export var version: string;
+declare export var configOptions: ConfigKey[];

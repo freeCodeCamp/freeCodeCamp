@@ -1,0 +1,42 @@
+{
+	"name": "convert-hrtime",
+	"version": "3.0.0",
+	"description": "Convert the result of `process.hrtime()` to seconds, milliseconds, nanoseconds",
+	"license": "MIT",
+	"repository": "sindresorhus/convert-hrtime",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"process",
+		"hrtime",
+		"time",
+		"highres",
+		"perf",
+		"performance",
+		"bench",
+		"benchmark",
+		"measure",
+		"seconds",
+		"milliseconds",
+		"nanoseconds"
+	],
+	"devDependencies": {
+		"@types/node": "^11.13.2",
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

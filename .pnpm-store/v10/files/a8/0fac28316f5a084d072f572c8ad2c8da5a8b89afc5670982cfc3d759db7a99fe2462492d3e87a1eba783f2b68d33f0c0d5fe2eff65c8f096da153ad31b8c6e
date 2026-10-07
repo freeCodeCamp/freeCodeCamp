@@ -1,0 +1,1 @@
+{"version":3,"file":"es2020.promise.js","sourceRoot":"","sources":["../../src/lib/es2020.promise.ts"],"names":[],"mappings":";AAAA,wCAAwC;AACxC,gCAAgC;AAChC,mEAAmE;AACnE,uDAAuD;;;AAGvD,+CAAqC;AAExB,QAAA,cAAc,GAAG;IAC5B,sBAAsB,EAAE,kBAAI;IAC5B,qBAAqB,EAAE,kBAAI;IAC3B,oBAAoB,EAAE,kBAAI;IAC1B,kBAAkB,EAAE,kBAAI;CACqB,CAAC"}

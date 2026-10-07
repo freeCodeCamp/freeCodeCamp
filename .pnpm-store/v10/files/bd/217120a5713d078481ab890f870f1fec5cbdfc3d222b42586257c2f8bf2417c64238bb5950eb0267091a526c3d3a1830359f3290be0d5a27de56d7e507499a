@@ -1,0 +1,38 @@
+{
+  "name": "@babel/plugin-proposal-optional-chaining",
+  "version": "7.21.0",
+  "description": "Transform optional chaining operators into a series of nil checks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-proposal-optional-chaining"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-proposal-optional-chaining",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.20.2",
+    "@babel/helper-skip-transparent-expression-wrappers": "^7.20.0",
+    "@babel/plugin-syntax-optional-chaining": "^7.8.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/helper-plugin-test-runner": "^7.18.6",
+    "@babel/plugin-transform-block-scoping": "^7.21.0",
+    "@babel/traverse": "^7.21.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

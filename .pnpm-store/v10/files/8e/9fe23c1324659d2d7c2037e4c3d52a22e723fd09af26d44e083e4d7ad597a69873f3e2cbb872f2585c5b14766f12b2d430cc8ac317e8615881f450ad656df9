@@ -1,0 +1,26 @@
+{
+  "name": "gatsby-plugin-schema-snapshot",
+  "version": "4.16.0",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "files": [
+    "gatsby-node.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-plugin-schema-snapshot"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-schema-snapshot#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.20.13"
+  },
+  "peerDependencies": {
+    "gatsby": "^5.0.0-next"
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

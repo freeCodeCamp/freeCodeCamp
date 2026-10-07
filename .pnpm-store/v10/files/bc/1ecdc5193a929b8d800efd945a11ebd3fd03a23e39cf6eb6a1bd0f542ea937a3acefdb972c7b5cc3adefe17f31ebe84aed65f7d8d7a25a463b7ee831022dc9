@@ -1,0 +1,27 @@
+{
+	"name": "next-tick",
+	"version": "1.1.0",
+	"description": "Environment agnostic nextTick polyfill",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+	"keywords": [
+		"nexttick",
+		"setImmediate",
+		"setTimeout",
+		"async"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/medikoo/next-tick.git"
+	},
+	"devDependencies": {
+		"tad": "^3.0.1",
+		"xlint": "^0.2.2",
+		"xlint-jslint-medikoo": "^0.1.4"
+	},
+	"scripts": {
+		"lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
+		"lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
+		"test": "node node_modules/tad/bin/tad"
+	},
+	"license": "ISC"
+}

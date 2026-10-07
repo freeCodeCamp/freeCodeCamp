@@ -1,0 +1,99 @@
+{
+  "name": "parse-entities",
+  "version": "2.0.0",
+  "description": "Parse HTML character references: fast, spec-compliant, positional information",
+  "license": "MIT",
+  "keywords": [
+    "parse",
+    "html",
+    "character",
+    "reference",
+    "entity",
+    "entities"
+  ],
+  "repository": "wooorm/parse-entities",
+  "bugs": "https://github.com/wooorm/parse-entities/issues",
+  "funding": {
+     "type": "github",
+     "url": "https://github.com/sponsors/wooorm"
+   },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "browser": {
+    "./decode-entity.js": "./decode-entity.browser.js"
+  },
+  "react-native": {
+    "./decode-entity.js": "./decode-entity.js"
+  },
+  "files": [
+    "index.js",
+    "decode-entity.js",
+    "decode-entity.browser.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "character-entities": "^1.0.0",
+    "character-entities-legacy": "^1.0.0",
+    "character-reference-invalid": "^1.0.0",
+    "is-alphanumerical": "^1.0.0",
+    "is-decimal": "^1.0.0",
+    "is-hexadecimal": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "dtslint": "^2.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "tape-run": "^6.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.25.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.{js,ts}\" && xo --fix",
+    "build-bundle": "browserify . -s parseEntities > parse-entities.js",
+    "build-mangle": "browserify . -s parseEntities -p tinyify > parse-entities.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-browser": "browserify test.js | tape-run",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "no-self-compare": "off",
+      "guard-for-in": "off",
+      "max-depth": "off"
+    },
+    "ignores": [
+      "parse-entities.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

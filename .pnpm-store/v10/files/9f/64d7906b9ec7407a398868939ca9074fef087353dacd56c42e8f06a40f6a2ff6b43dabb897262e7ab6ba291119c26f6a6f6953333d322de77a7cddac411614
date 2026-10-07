@@ -1,0 +1,1 @@
+{"version":3,"file":"getRequestSpanData.d.ts","sourceRoot":"","sources":["../../../src/utils/getRequestSpanData.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,oBAAoB,CAAC;AAC/C,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,+BAA+B,CAAC;AAOlE,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,cAAc,CAAC;AAIzD;;GAEG;AACH,wBAAgB,kBAAkB,CAAC,IAAI,EAAE,IAAI,GAAG,YAAY,GAAG,OAAO,CAAC,oBAAoB,CAAC,CA0C3F"}

@@ -1,0 +1,1 @@
+exports.polyfill = Component => Component

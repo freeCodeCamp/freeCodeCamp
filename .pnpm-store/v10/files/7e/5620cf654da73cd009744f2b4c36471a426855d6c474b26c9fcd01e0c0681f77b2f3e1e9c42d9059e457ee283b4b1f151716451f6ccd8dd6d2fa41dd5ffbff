@@ -1,0 +1,42 @@
+{
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
+  "version": "1.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "gatsby": "^0.12.3",
+    "history": "^2.0.2",
+    "postcss-loader": "^0.10.0",
+    "react-document-title": "^2.0.2",
+    "react-responsive-grid": "^0.3.3",
+    "react-router": "^2.6.1",
+    "react-transform-hmr": "^1.0.4",
+    "typography": "^0.12.4",
+    "typography-plugin-code": "^0.12.0",
+    "typography-react": "^0.10.4",
+    "typography-theme-lawton": "^0.12.0",
+    "typography-theme-noriega": "^0.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.13.0",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "gh-pages": "^0.11.0",
+    "typography-design-tools": "^0.12.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+  }
+}

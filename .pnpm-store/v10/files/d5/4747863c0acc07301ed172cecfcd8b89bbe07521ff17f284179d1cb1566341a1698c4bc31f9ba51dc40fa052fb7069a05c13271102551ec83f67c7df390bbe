@@ -1,0 +1,27 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor {
+	.scroll-editor-on-middle-click-dot {
+		cursor: all-scroll;
+		position: absolute;
+		z-index: 1;
+		background-color: var(--vscode-editor-foreground, white);
+		border: 1px solid var(--vscode-editor-background, black);
+		opacity: 0.5;
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+	&.scroll-editor-on-middle-click-editor * {
+		cursor: all-scroll;
+	}
+}

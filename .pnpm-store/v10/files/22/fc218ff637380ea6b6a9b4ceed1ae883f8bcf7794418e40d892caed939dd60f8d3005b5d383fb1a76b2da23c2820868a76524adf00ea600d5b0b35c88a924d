@@ -1,0 +1,13 @@
+{
+  "extends": "@parcel/eslint-config",
+  "overrides": [
+    {
+      "files": ["dev-prelude.js"],
+      "parser": "espree",
+      "parserOptions": {
+        "ecmaVersion": 5,
+        "sourceType": "script"
+      }
+    }
+  ]
+}

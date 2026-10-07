@@ -1,0 +1,447 @@
+import { DefaultChatTransport } from '../../lib/ai-lite';
+import { Chat } from '../../lib/chat';
+import type { AbstractChat, ChatInit as ChatInitAi, UIMessage } from '../../lib/chat';
+import type { SendEventForHits } from '../../lib/utils';
+import type { Connector, Renderer, Unmounter, UnknownWidgetParams, IndexUiState, IndexWidget, WidgetRenderState, IndexRenderState } from '../../types';
+import type { UserClientSideTool, ClientSideTools } from 'instantsearch-ui-components';
+export type ChatRenderState<TUiMessage extends UIMessage = UIMessage> = {
+    indexUiState: IndexUiState;
+    input: string;
+    open: boolean;
+    /**
+     * Sends an event to the Insights middleware.
+     */
+    sendEvent: SendEventForHits;
+    setIndexUiState: IndexWidget['setIndexUiState'];
+    setInput: (input: string) => void;
+    setOpen: (open: boolean) => void;
+    /**
+     * Opens the chat (if needed) and focuses the prompt input.
+     */
+    focusInput: () => void;
+    /**
+     * Updates the `messages` state locally. This is useful when you want to
+     * edit the messages on the client, and then trigger the `reload` method
+     * manually to regenerate the AI response.
+     */
+    setMessages: (messages: TUiMessage[] | ((m: TUiMessage[]) => TUiMessage[])) => void;
+    /**
+     * Whether the chat is in the process of clearing messages.
+     */
+    isClearing: boolean;
+    /**
+     * Clear all messages.
+     */
+    clearMessages: () => void;
+    /**
+     * Callback to be called when the clear transition ends.
+     */
+    onClearTransitionEnd: () => void;
+    /**
+     * Tools configuration with addToolResult bound, ready to be used by the UI.
+     */
+    tools: ClientSideTools;
+    /**
+     * Suggestions received from the AI model.
+     */
+    suggestions?: string[];
+    /**
+     * Sends feedback (thumbs up/down) for an assistant message.
+     * Only available when using `agentId` and `feedback` is true.
+     * Returns `undefined` otherwise.
+     */
+    sendChatMessageFeedback?: (messageId: string, vote: 0 | 1) => void;
+    /**
+     * Map of message IDs to their feedback state.
+     * 'sending' means the request is in flight, 0/1 means the vote was recorded.
+     */
+    feedbackState: Record<string, 'sending' | 0 | 1>;
+} & Pick<AbstractChat<TUiMessage>, 'addToolResult' | 'clearError' | 'error' | 'id' | 'messages' | 'regenerate' | 'resumeStream' | 'sendMessage' | 'status' | 'stop'>;
+export type ChatInitWithoutTransport<TUiMessage extends UIMessage> = Omit<ChatInitAi<TUiMessage>, 'transport'>;
+export type ChatTransport = {
+    transport?: ConstructorParameters<typeof DefaultChatTransport>[0];
+} & ({
+    agentId: string;
+    /**
+     * Whether to enable feedback (thumbs up/down) on assistant messages.
+     */
+    feedback?: boolean;
+} | {
+    agentId?: undefined;
+    feedback?: never;
+});
+export type ApplyFiltersParams = {
+    query?: string;
+    facetFilters?: string[][];
+};
+export type ChatInit<TUiMessage extends UIMessage> = ChatInitWithoutTransport<TUiMessage> & ChatTransport;
+export type ChatConnectorParams<TUiMessage extends UIMessage = UIMessage> = ({
+    chat: Chat<TUiMessage>;
+} | ChatInit<TUiMessage>) & {
+    /**
+     * Whether to resume an ongoing chat generation stream.
+     */
+    resume?: boolean;
+    /**
+     * Configuration for client-side tools.
+     */
+    tools?: Record<string, Omit<UserClientSideTool, 'layoutComponent'>>;
+    /**
+     * Identifier of this type of chat widget. This is used for the key in renderState.
+     * @default 'chat'
+     */
+    type?: string;
+    /**
+     * Additional context to send with each user message (e.g. current page info).
+     * This context is included in the message parts sent to the API but is not
+     * displayed in the chat UI.
+     * Can be a static object or a function that returns the context at send time.
+     */
+    context?: Record<string, unknown> | (() => Record<string, unknown>);
+    /**
+     * A message to send automatically when the chat is initialized.
+     *
+     * This message is only sent when the chat has no existing messages yet. If
+     * messages were restored or otherwise already exist when the widget starts,
+     * this message is not sent.
+     *
+     * When `resume` is enabled, this message is not sent.
+     */
+    initialUserMessage?: string;
+};
+export type ChatWidgetDescription<TUiMessage extends UIMessage = UIMessage> = {
+    $$type: 'ais.chat';
+    renderState: ChatRenderState<TUiMessage>;
+    indexRenderState: {
+        chat: WidgetRenderState<ChatRenderState<TUiMessage>, ChatConnectorParams<TUiMessage>>;
+    };
+};
+export type ChatConnector<TUiMessage extends UIMessage = UIMessage> = Connector<ChatWidgetDescription<TUiMessage>, ChatConnectorParams<TUiMessage>>;
+declare const _default: <TWidgetParams extends UnknownWidgetParams>(renderFn: Renderer<ChatRenderState, TWidgetParams & ChatConnectorParams>, unmountFn?: Unmounter) => <TUiMessage extends UIMessage = UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>>(widgetParams: TWidgetParams & ChatConnectorParams<TUiMessage>) => {
+    $$type: "ais.chat";
+    init(initOptions: import("../../types").InitOptions): void;
+    render(renderOptions: import("../../types").RenderOptions): void;
+    getRenderState(renderState: {
+        answers?: WidgetRenderState<import("../answers/connectAnswers").AnswersRenderState, import("../answers/connectAnswers").AnswersConnectorParams> | undefined;
+        autocomplete?: WidgetRenderState<import("../autocomplete/connectAutocomplete").AutocompleteRenderState, import("../autocomplete/connectAutocomplete").AutocompleteConnectorParams> | undefined;
+        breadcrumb?: {
+            [rootAttribute: string]: WidgetRenderState<import("../breadcrumb/connectBreadcrumb").BreadcrumbRenderState, import("../breadcrumb/connectBreadcrumb").BreadcrumbConnectorParams>;
+        } | undefined;
+        chat?: WidgetRenderState<ChatRenderState<UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>>, ChatConnectorParams<UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>>> | undefined;
+        clearRefinements?: WidgetRenderState<import("../clear-refinements/connectClearRefinements").ClearRefinementsRenderState, import("../clear-refinements/connectClearRefinements").ClearRefinementsConnectorParams> | undefined;
+        configure?: WidgetRenderState<import("../configure/connectConfigure").ConfigureRenderState, import("../configure/connectConfigure").ConfigureConnectorParams> | undefined;
+        currentRefinements?: WidgetRenderState<import("../current-refinements/connectCurrentRefinements").CurrentRefinementsRenderState, import("../current-refinements/connectCurrentRefinements").CurrentRefinementsConnectorParams> | undefined;
+        geoSearch?: WidgetRenderState<import("../geo-search/connectGeoSearch").GeoSearchRenderState<import("../../types").GeoHit>, import("../geo-search/connectGeoSearch").GeoSearchConnectorParams<import("../../types").GeoHit>> | undefined;
+        hierarchicalMenu?: {
+            [rootAttribute: string]: WidgetRenderState<import("../hierarchical-menu/connectHierarchicalMenu").HierarchicalMenuRenderState, import("../hierarchical-menu/connectHierarchicalMenu").HierarchicalMenuConnectorParams>;
+        } | undefined;
+        hits?: WidgetRenderState<import("../hits/connectHits").HitsRenderState<import("../../types").BaseHit>, import("../hits/connectHits").HitsConnectorParams<import("../../types").BaseHit>> | undefined;
+        hitsPerPage?: WidgetRenderState<import("../hits-per-page/connectHitsPerPage").HitsPerPageRenderState, import("../hits-per-page/connectHitsPerPage").HitsPerPageConnectorParams> | undefined;
+        infiniteHits?: WidgetRenderState<import("../infinite-hits/connectInfiniteHits").InfiniteHitsRenderState<import("../../types").BaseHit>, import("../infinite-hits/connectInfiniteHits").InfiniteHitsConnectorParams<import("../../types").BaseHit>> | undefined;
+        menu?: {
+            [attribute: string]: WidgetRenderState<import("../menu/connectMenu").MenuRenderState, import("../menu/connectMenu").MenuConnectorParams>;
+        } | undefined;
+        numericMenu?: {
+            [attribute: string]: WidgetRenderState<import("../numeric-menu/connectNumericMenu").NumericMenuRenderState, import("../numeric-menu/connectNumericMenu").NumericMenuConnectorParams>;
+        } | undefined;
+        pagination?: WidgetRenderState<import("../pagination/connectPagination").PaginationRenderState, import("../pagination/connectPagination").PaginationConnectorParams> | undefined;
+        poweredBy?: WidgetRenderState<import("../powered-by/connectPoweredBy").PoweredByRenderState, import("../powered-by/connectPoweredBy").PoweredByConnectorParams> | undefined;
+        queryRules?: WidgetRenderState<import("../query-rules/connectQueryRules").QueryRulesRenderState, import("../query-rules/connectQueryRules").QueryRulesConnectorParams> | undefined;
+        range?: {
+            [attribute: string]: WidgetRenderState<import("../range/connectRange").RangeRenderState, import("../range/connectRange").RangeConnectorParams>;
+        } | undefined;
+        ratingMenu?: {
+            [attribute: string]: WidgetRenderState<import("../rating-menu/connectRatingMenu").RatingMenuRenderState, import("../rating-menu/connectRatingMenu").RatingMenuConnectorParams>;
+        } | undefined;
+        refinementList?: {
+            [attribute: string]: WidgetRenderState<import("../refinement-list/connectRefinementList").RefinementListRenderState, import("../refinement-list/connectRefinementList").RefinementListConnectorParams>;
+        } | undefined;
+        relevantSort?: WidgetRenderState<import("../relevant-sort/connectRelevantSort").RelevantSortRenderState, import("../relevant-sort/connectRelevantSort").RelevantSortConnectorParams> | undefined;
+        searchBox?: WidgetRenderState<import("../search-box/connectSearchBox").SearchBoxRenderState, import("../search-box/connectSearchBox").SearchBoxConnectorParams> | undefined;
+        sortBy?: WidgetRenderState<import("../sort-by/connectSortBy").SortByRenderState, import("../sort-by/connectSortBy").SortByConnectorParams> | undefined;
+        stats?: WidgetRenderState<import("../stats/connectStats").StatsRenderState, import("../stats/connectStats").StatsConnectorParams> | undefined;
+        toggleRefinement?: {
+            [attribute: string]: WidgetRenderState<import("../toggle-refinement/connectToggleRefinement").ToggleRefinementRenderState, import("../toggle-refinement/connectToggleRefinement").ToggleRefinementConnectorParams>;
+        } | undefined;
+        voiceSearch?: WidgetRenderState<import("../voice-search/connectVoiceSearch").VoiceSearchRenderState, import("../voice-search/connectVoiceSearch").VoiceSearchConnectorParams> | undefined;
+        analytics?: WidgetRenderState<Record<string, unknown>, import("../../widgets/analytics/analytics").AnalyticsWidgetParams> | undefined;
+        places?: WidgetRenderState<Record<string, unknown>, import("../../widgets/places/places").PlacesWidgetParams> | undefined;
+    }, renderOptions: import("../../types").InitOptions | import("../../types").RenderOptions): IndexRenderState & ChatWidgetDescription["indexRenderState"];
+    getWidgetRenderState(renderOptions: import("../../types").InitOptions | import("../../types").RenderOptions): {
+        indexUiState: Partial<{
+            query: string;
+        } & {
+            configure: import("algoliasearch-helper").PlainSearchParameters;
+        } & {
+            geoSearch: {
+                boundingBox: string;
+            };
+        } & {
+            hierarchicalMenu: {
+                [rootAttribute: string]: string[];
+            };
+        } & {
+            hitsPerPage: number;
+        } & {
+            page: number;
+        } & {
+            menu: {
+                [attribute: string]: string;
+            };
+        } & {
+            numericMenu: {
+                [attribute: string]: string;
+            };
+        } & {
+            page: number;
+        } & {
+            range: {
+                [attribute: string]: string;
+            };
+        } & {
+            ratingMenu: {
+                [attribute: string]: number | undefined;
+            };
+        } & {
+            refinementList: {
+                [attribute: string]: string[];
+            };
+        } & {
+            relevantSort: number;
+        } & {
+            query: string;
+        } & {
+            sortBy: string;
+        } & {
+            toggle: {
+                [attribute: string]: boolean;
+            };
+        } & {
+            query: string;
+        } & {
+            places: {
+                query: string;
+                position: string;
+            };
+        }>;
+        input: string;
+        open: boolean;
+        sendEvent: SendEventForHits;
+        setIndexUiState: (indexUiState: Partial<{
+            query: string;
+        } & {
+            configure: import("algoliasearch-helper").PlainSearchParameters;
+        } & {
+            geoSearch: {
+                boundingBox: string;
+            };
+        } & {
+            hierarchicalMenu: {
+                [rootAttribute: string]: string[];
+            };
+        } & {
+            hitsPerPage: number;
+        } & {
+            page: number;
+        } & {
+            menu: {
+                [attribute: string]: string;
+            };
+        } & {
+            numericMenu: {
+                [attribute: string]: string;
+            };
+        } & {
+            page: number;
+        } & {
+            range: {
+                [attribute: string]: string;
+            };
+        } & {
+            ratingMenu: {
+                [attribute: string]: number | undefined;
+            };
+        } & {
+            refinementList: {
+                [attribute: string]: string[];
+            };
+        } & {
+            relevantSort: number;
+        } & {
+            query: string;
+        } & {
+            sortBy: string;
+        } & {
+            toggle: {
+                [attribute: string]: boolean;
+            };
+        } & {
+            query: string;
+        } & {
+            places: {
+                query: string;
+                position: string;
+            };
+        }> | ((previousIndexUiState: Partial<{
+            query: string;
+        } & {
+            configure: import("algoliasearch-helper").PlainSearchParameters;
+        } & {
+            geoSearch: {
+                boundingBox: string;
+            };
+        } & {
+            hierarchicalMenu: {
+                [rootAttribute: string]: string[];
+            };
+        } & {
+            hitsPerPage: number;
+        } & {
+            page: number;
+        } & {
+            menu: {
+                [attribute: string]: string;
+            };
+        } & {
+            numericMenu: {
+                [attribute: string]: string;
+            };
+        } & {
+            page: number;
+        } & {
+            range: {
+                [attribute: string]: string;
+            };
+        } & {
+            ratingMenu: {
+                [attribute: string]: number | undefined;
+            };
+        } & {
+            refinementList: {
+                [attribute: string]: string[];
+            };
+        } & {
+            relevantSort: number;
+        } & {
+            query: string;
+        } & {
+            sortBy: string;
+        } & {
+            toggle: {
+                [attribute: string]: boolean;
+            };
+        } & {
+            query: string;
+        } & {
+            places: {
+                query: string;
+                position: string;
+            };
+        }>) => Partial<{
+            query: string;
+        } & {
+            configure: import("algoliasearch-helper").PlainSearchParameters;
+        } & {
+            geoSearch: {
+                boundingBox: string;
+            };
+        } & {
+            hierarchicalMenu: {
+                [rootAttribute: string]: string[];
+            };
+        } & {
+            hitsPerPage: number;
+        } & {
+            page: number;
+        } & {
+            menu: {
+                [attribute: string]: string;
+            };
+        } & {
+            numericMenu: {
+                [attribute: string]: string;
+            };
+        } & {
+            page: number;
+        } & {
+            range: {
+                [attribute: string]: string;
+            };
+        } & {
+            ratingMenu: {
+                [attribute: string]: number | undefined;
+            };
+        } & {
+            refinementList: {
+                [attribute: string]: string[];
+            };
+        } & {
+            relevantSort: number;
+        } & {
+            query: string;
+        } & {
+            sortBy: string;
+        } & {
+            toggle: {
+                [attribute: string]: boolean;
+            };
+        } & {
+            query: string;
+        } & {
+            places: {
+                query: string;
+                position: string;
+            };
+        }>)) => void;
+        setInput: (input: string) => void;
+        setOpen: (open: boolean) => void;
+        focusInput: () => void;
+        setMessages: (messagesParam: TUiMessage[] | ((m: TUiMessage[]) => TUiMessage[])) => void;
+        suggestions: string[] | undefined;
+        isClearing: boolean;
+        clearMessages: () => void;
+        onClearTransitionEnd: () => void;
+        tools: ClientSideTools;
+        sendChatMessageFeedback: ((messageId: string, vote: 0 | 1) => void) | undefined;
+        feedbackState: Record<string, 0 | 1 | "sending">;
+        widgetParams: TWidgetParams & ChatConnectorParams<TUiMessage>;
+        addToolResult: <TTool extends keyof import("../../lib/ai-lite").InferUIMessageTools<TUiMessage>>({ tool, toolCallId, output, }: {
+            tool: TTool;
+            toolCallId: string;
+            output: import("../../lib/ai-lite").InferUIMessageTools<TUiMessage>[TTool]["output"];
+        }) => Promise<void>;
+        clearError: () => void;
+        error: Error | undefined;
+        id: string;
+        messages: TUiMessage[];
+        regenerate: ({ messageId, ...options }?: {
+            messageId?: string;
+        } & import("../../lib/ai-lite").ChatRequestOptions) => Promise<void>;
+        resumeStream: (options?: import("../../lib/ai-lite").ChatRequestOptions) => Promise<void>;
+        sendMessage: (message?: (Omit<TUiMessage, "id" | "role"> & {
+            id?: TUiMessage["id"] | undefined;
+            role?: TUiMessage["role"] | undefined;
+        } & {
+            text?: never;
+            files?: never;
+            messageId?: string;
+        }) | {
+            text: string;
+            files?: FileList | import("../../lib/ai-lite").FileUIPart[];
+            metadata?: import("../../lib/ai-lite").InferUIMessageMetadata<TUiMessage> | undefined;
+            parts?: never;
+            messageId?: string;
+        } | {
+            files: FileList | import("../../lib/ai-lite").FileUIPart[];
+            metadata?: import("../../lib/ai-lite").InferUIMessageMetadata<TUiMessage> | undefined;
+            parts?: never;
+            messageId?: string;
+        } | undefined, options?: import("../../lib/ai-lite").ChatRequestOptions) => Promise<void>;
+        status: import("../../lib/ai-lite").ChatStatus;
+        stop: () => Promise<void>;
+    };
+    dispose(): void;
+    shouldRender(): true;
+    readonly chatInstance: Chat<TUiMessage>;
+};
+export default _default;

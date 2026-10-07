@@ -1,0 +1,126 @@
+{
+  "name": "ajv",
+  "version": "8.20.0",
+  "description": "Another JSON Schema Validator",
+  "main": "dist/ajv.js",
+  "types": "dist/ajv.d.ts",
+  "files": [
+    "lib/",
+    "dist/",
+    ".runkit_example.js"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "eslint": "eslint \"lib/**/*.ts\" \"spec/**/*.*s\" --ignore-pattern spec/JSON-Schema-Test-Suite",
+    "prettier:write": "prettier --write \"./**/*.{json,yaml,js,ts}\"",
+    "prettier:check": "prettier --list-different \"./**/*.{json,yaml,js,ts}\"",
+    "test-spec": "cross-env TS_NODE_PROJECT=spec/tsconfig.json mocha -r ts-node/register \"spec/**/*.spec.{ts,js}\" -R dot",
+    "test-codegen": "nyc cross-env TS_NODE_PROJECT=spec/tsconfig.json mocha -r ts-node/register 'spec/codegen.spec.ts' -R spec",
+    "test-debug": "npm run test-spec -- --inspect-brk",
+    "test-cov": "nyc npm run test-spec",
+    "rollup": "rm -rf bundle && rollup -c",
+    "bundle": "rm -rf bundle && node ./scripts/bundle.js ajv ajv7 ajv7 && node ./scripts/bundle.js 2019 ajv2019 ajv2019 && node ./scripts/bundle.js 2020 ajv2020 ajv2020 && node ./scripts/bundle.js jtd ajvJTD ajvJTD",
+    "build": "rm -rf dist && tsc && cp -r lib/refs dist && rm dist/refs/json-schema-2019-09/index.ts && rm dist/refs/json-schema-2020-12/index.ts && rm dist/refs/jtd-schema.ts",
+    "json-tests": "rm -rf spec/_json/*.js && node scripts/jsontests",
+    "test-karma": "karma start",
+    "test-browser": "rm -rf .browser && npm run bundle && scripts/prepare-tests && karma start",
+    "test-all": "npm run test-cov",
+    "test": "npm run json-tests && npm run prettier:check && npm run eslint && npm link && npm link --legacy-peer-deps ajv && npm run test-cov",
+    "test-ci": "AJV_FULL_TEST=true npm test",
+    "prepublish": "npm run build",
+    "benchmark": "npm i && npm run build && npm link && cd ./benchmark && npm link --legacy-peer-deps ajv && npm i && node ./jtd",
+    "docs:dev": "./scripts/prepare-site && vuepress dev docs",
+    "docs:build": "./scripts/prepare-site && vuepress build docs"
+  },
+  "nyc": {
+    "exclude": [
+      "**/spec/**",
+      "node_modules"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "repository": "ajv-validator/ajv",
+  "keywords": [
+    "JSON",
+    "schema",
+    "validator",
+    "validation",
+    "jsonschema",
+    "json-schema",
+    "json-schema-validator",
+    "json-schema-validation"
+  ],
+  "author": "Evgeny Poberezkin",
+  "license": "MIT",
+  "bugs": "https://github.com/ajv-validator/ajv/issues",
+  "homepage": "https://ajv.js.org",
+  "runkitExampleFilename": ".runkit_example.js",
+  "dependencies": {
+    "fast-deep-equal": "^3.1.3",
+    "fast-uri": "^3.0.1",
+    "json-schema-traverse": "^1.0.0",
+    "require-from-string": "^2.0.2"
+  },
+  "devDependencies": {
+    "@ajv-validator/config": "^0.5.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.30",
+    "@types/require-from-string": "^1.2.3",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "ajv-formats": "^3.0.1",
+    "browserify": "^17.0.0",
+    "chai": "^4.4.1",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.11.10",
+    "dayjs-plugin-utc": "^0.1.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "glob": "^10.3.10",
+    "husky": "^9.0.11",
+    "jimp": "^0.22.10",
+    "js-beautify": "^1.15.1",
+    "json-schema-test": "^2.0.0",
+    "karma": "^6.4.2",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-mocha": "^2.0.1",
+    "lint-staged": "^15.2.2",
+    "mocha": "^10.3.0",
+    "module-from-string": "^3.3.0",
+    "node-fetch": "^3.3.2",
+    "nyc": "^15.1.0",
+    "prettier": "3.0.3",
+    "re2": "^1.20.9",
+    "rollup": "^2.79.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-node": "^10.9.2",
+    "tsify": "^5.0.4",
+    "typescript": "5.3.3",
+    "uri-js": "^4.4.1"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/ajv"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/epoberezkin"
+  },
+  "prettier": "@ajv-validator/config/prettierrc.json",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{json,yaml,js,ts}": "prettier --write"
+  }
+}

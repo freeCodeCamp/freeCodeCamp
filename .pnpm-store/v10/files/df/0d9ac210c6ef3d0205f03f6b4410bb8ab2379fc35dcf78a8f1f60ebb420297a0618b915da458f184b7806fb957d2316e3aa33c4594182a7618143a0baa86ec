@@ -1,0 +1,39 @@
+{
+  "name": "responselike",
+  "version": "2.0.1",
+  "description": "A response-like object for mocking a Node.js HTTP response stream",
+  "funding": "https://github.com/sponsors/sindresorhus",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "xo && nyc ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "xo": {
+    "extends": "xo-lukechilds"
+  },
+  "keywords": [
+    "http",
+    "https",
+    "response",
+    "mock",
+    "request",
+    "responselike"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sindresorhus/responselike.git"
+  },
+  "author": "lukechilds",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "coveralls": "^3.0.0",
+    "eslint-config-xo-lukechilds": "^1.0.0",
+    "get-stream": "^3.0.0",
+    "nyc": "^11.8.0",
+    "xo": "^0.19.0"
+  },
+  "dependencies": {
+    "lowercase-keys": "^2.0.0"
+  }
+}

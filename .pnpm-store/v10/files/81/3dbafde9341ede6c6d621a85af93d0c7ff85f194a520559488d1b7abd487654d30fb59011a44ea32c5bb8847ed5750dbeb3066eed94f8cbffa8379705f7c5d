@@ -1,0 +1,97 @@
+{
+  "name": "unist-util-find-all-after",
+  "version": "3.0.2",
+  "description": "unist utility to find nodes after another node",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "tree",
+    "node",
+    "find",
+    "after"
+  ],
+  "repository": "syntax-tree/unist-util-find-all-after",
+  "bugs": "https://github.com/syntax-tree/unist-util-find-all-after/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Lucas Brandstaetter <lucas@brandstaetter.tech> (https://github.com/Roang-zero1)"
+  ],
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "types": "index.d.ts",
+  "dependencies": {
+    "unist-util-is": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/tape": "^4.0.0",
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^13.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "typescript": "^4.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . -s unistUtilFindAllAfter -o unist-util-find-all-after.js",
+    "build-mangle": "browserify . -s unistUtilFindAllAfter -p tinyify -o unist-util-find-all-after.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint .",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "eqeqeq": [
+        "error",
+        "always",
+        {
+          "null": "ignore"
+        }
+      ],
+      "guard-for-in": "off",
+      "no-eq-null": "off"
+    },
+    "ignore": [
+      "unist-util-find-all-after.js",
+      "*.ts"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

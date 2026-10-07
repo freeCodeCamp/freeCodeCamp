@@ -1,0 +1,32 @@
+{
+  "name": "cipher-base",
+  "version": "1.0.4",
+  "description": "abstract base class for crypto-streams",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js | tspec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/cipher-base.git"
+  },
+  "keywords": [
+    "cipher",
+    "stream"
+  ],
+  "author": "Calvin Metcalf <calvin.metcalf@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/cipher-base/issues"
+  },
+  "homepage": "https://github.com/crypto-browserify/cipher-base#readme",
+  "dependencies": {
+    "inherits": "^2.0.1",
+    "safe-buffer": "^5.0.1"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@babel/helper-compilation-targets",
+  "version": "7.28.6",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "license": "MIT",
+  "description": "Helper functions on Babel compilation targets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-compilation-targets"
+  },
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "babel",
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "@babel/compat-data": "^7.28.6",
+    "@babel/helper-validator-option": "^7.27.1",
+    "browserslist": "^4.24.0",
+    "lru-cache": "^5.1.1",
+    "semver": "^6.3.1"
+  },
+  "devDependencies": {
+    "@babel/helper-plugin-test-runner": "^7.27.1",
+    "@types/lru-cache": "^5.1.1",
+    "@types/semver": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

@@ -1,0 +1,15 @@
+/**
+ * @import {AttributeAdapter} from "@html-eslint/core"
+ * @import {JSXSpreadAttribute} from "../../types"
+ */
+/** @implements {AttributeAdapter} */
+export class JSXSpreadAttributeAdapter implements AttributeAdapter {
+    /** @param {JSXSpreadAttribute} node */
+    constructor(node: JSXSpreadAttribute);
+    node: JSXSpreadAttribute;
+    getKey(): null;
+    getValue(): null;
+}
+import type { AttributeAdapter } from "@html-eslint/core";
+import type { JSXSpreadAttribute } from "../../types";
+//# sourceMappingURL=jsx-spread-attribute.d.ts.map

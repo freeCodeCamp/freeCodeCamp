@@ -1,0 +1,11 @@
+import { type TSchema, type TSchemaOptions } from '../../types/schema.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TPromise } from '../../types/promise.mjs';
+import { type TAwaitedDeferred } from '../../action/awaited.mjs';
+import { type TState, type TInstantiateType, type TCanInstantiate } from '../instantiate.mjs';
+type TAwaitedOperation<Type extends TSchema> = (Type extends TPromise<infer Type extends TSchema> ? TAwaitedOperation<Type> : Type);
+export type TAwaitedAction<Type extends TSchema, Result extends TSchema = TCanInstantiate<[Type]> extends true ? TAwaitedOperation<Type> : TAwaitedDeferred<Type>> = Result;
+export declare function AwaitedAction<Type extends TSchema>(type: Type, options: TSchemaOptions): TAwaitedAction<Type>;
+export type TAwaitedInstantiate<Context extends TProperties, State extends TState, Type extends TSchema, InstantiateType extends TSchema = TInstantiateType<Context, State, Type>> = TAwaitedAction<InstantiateType>;
+export declare function AwaitedInstantiate<Context extends TProperties, State extends TState, Type extends TSchema>(context: Context, state: State, type: Type, options: TSchemaOptions): TAwaitedInstantiate<Context, State, Type>;
+export {};

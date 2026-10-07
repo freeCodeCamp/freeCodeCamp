@@ -1,0 +1,1 @@
+{"version":3,"file":"iterator.js","sources":["../../src/internal/symbol/iterator.ts"],"names":[],"mappings":";;AAAA,SAAgB,iBAAiB;IAC/B,IAAI,OAAO,MAAM,KAAK,UAAU,IAAI,CAAC,MAAM,CAAC,QAAQ,EAAE;QACpD,OAAO,YAAmB,CAAC;KAC5B;IAED,OAAO,MAAM,CAAC,QAAQ,CAAC;AACzB,CAAC;AAND,8CAMC;AAEY,QAAA,QAAQ,GAAG,iBAAiB,EAAE,CAAC;AAK/B,QAAA,UAAU,GAAG,gBAAQ,CAAC"}

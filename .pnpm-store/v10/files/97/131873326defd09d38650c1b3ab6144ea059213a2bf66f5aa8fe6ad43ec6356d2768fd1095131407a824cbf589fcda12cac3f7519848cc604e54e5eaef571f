@@ -1,0 +1,43 @@
+{
+  "name": "exsolve",
+  "version": "1.0.7",
+  "description": "Module resolution utilities based on Node.js upstream implementation.",
+  "repository": "unjs/exsolve",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "types": "./dist/index.d.mts",
+    "default": "./dist/index.mjs"
+  },
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest dev",
+    "lint": "eslint . && prettier -c .",
+    "node-ts": "node --disable-warning=ExperimentalWarning --experimental-strip-types",
+    "lint:fix": "automd && eslint . --fix && prettier -w .",
+    "prepack": "pnpm build",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+    "test:types": "tsc --noEmit --skipLibCheck"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "@vitest/coverage-v8": "^3.2.4",
+    "automd": "^0.4.0",
+    "changelogen": "^0.6.1",
+    "eslint": "^9.29.0",
+    "eslint-config-unjs": "^0.4.2",
+    "happy-dom": "^18.0.1",
+    "jiti": "^2.4.2",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "unbuild": "^3.5.0",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.12.1"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/isInput",
+  "private": true,
+  "main": "../cjs/isInput.js",
+  "module": "../esm/isInput.js",
+  "types": "../esm/isInput.d.ts"
+}

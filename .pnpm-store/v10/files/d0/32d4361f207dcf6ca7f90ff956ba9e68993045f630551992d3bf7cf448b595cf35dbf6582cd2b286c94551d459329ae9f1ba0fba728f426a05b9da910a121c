@@ -1,0 +1,11 @@
+{
+  "name": "internal-data-bridge",
+  "version": "1.0.0",
+  "description": "An internal Gatsby plugin which creates data nodes from internal data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "path-to-regexp",
+  "description": "Express style path to RegExp utility",
+  "version": "2.2.1",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "standard",
+    "test-spec": "mocha --require ts-node/register -R spec --bail test.ts",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require ts-node/register -R spec test.ts",
+    "test": "npm run lint && npm run test-cov"
+  },
+  "keywords": [
+    "express",
+    "regexp",
+    "route",
+    "routing"
+  ],
+  "component": {
+    "scripts": {
+      "path-to-regexp": "index.js"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pillarjs/path-to-regexp.git"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.24",
+    "chai": "^4.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0",
+    "standard": "^10.0.3",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2"
+  }
+}

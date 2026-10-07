@@ -1,0 +1,124 @@
+{
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "bugs": "https://github.com/micromark/micromark-extension-directive/issues",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "dependencies": {
+    "devlop": "^1.0.0",
+    "micromark-factory-space": "^2.0.0",
+    "micromark-factory-whitespace": "^2.0.0",
+    "micromark-util-character": "^2.0.0",
+    "micromark-util-symbol": "^2.0.0",
+    "micromark-util-types": "^2.0.0",
+    "parse-entities": "^4.0.0"
+  },
+  "description": "micromark extension to support generic directives (`:cite[smith04]`)",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "c8": "^10.0.0",
+    "html-void-elements": "^3.0.0",
+    "micromark": "^4.0.0",
+    "micromark-build": "^2.0.0",
+    "prettier": "^3.0.0",
+    "remark-cli": "^12.0.0",
+    "remark-preset-wooorm": "^11.0.0",
+    "type-coverage": "^2.0.0",
+    "typescript": "^5.0.0",
+    "xo": "^0.60.0"
+  },
+  "exports": {
+    "development": "./dev/index.js",
+    "default": "./index.js"
+  },
+  "files": [
+    "dev/",
+    "index.d.ts",
+    "index.js",
+    "lib/"
+  ],
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "keywords": [
+    "container",
+    "directive",
+    "extension",
+    "generic",
+    "markdown",
+    "micromark-extension",
+    "micromark",
+    "unified"
+  ],
+  "license": "MIT",
+  "name": "micromark-extension-directive",
+  "prettier": {
+    "bracketSpacing": false,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-wooorm"
+    ]
+  },
+  "repository": "micromark/micromark-extension-directive",
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build && type-coverage && micromark-build",
+    "format": "remark --frail --output --quiet -- . && prettier --log-level warn --write -- . && xo --fix",
+    "test-api-prod": "node --conditions production test/index.js",
+    "test-api-dev": "node --conditions development test/index.js",
+    "test-api": "npm run test-api-dev && npm run test-api-prod",
+    "test-coverage": "c8 --100 --reporter lcov -- npm run test-api",
+    "test": "npm run build && npm run format && npm run test-coverage"
+  },
+  "sideEffects": false,
+  "typeCoverage": {
+    "atLeast": 100,
+    "strict": true
+  },
+  "type": "module",
+  "version": "4.0.0",
+  "xo": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.d.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/array-type": [
+            "error",
+            {
+              "default": "generic"
+            }
+          ],
+          "@typescript-eslint/ban-types": [
+            "error",
+            {
+              "extendDefaults": true
+            }
+          ],
+          "@typescript-eslint/consistent-indexed-object-style": [
+            "error",
+            "index-signature"
+          ],
+          "@typescript-eslint/consistent-type-definitions": [
+            "error",
+            "interface"
+          ]
+        }
+      }
+    ],
+    "prettier": true,
+    "rules": {
+      "logical-assignment-operators": "off",
+      "max-params": "off",
+      "unicorn/no-this-assignment": "off",
+      "unicorn/prefer-at": "off"
+    }
+  }
+}

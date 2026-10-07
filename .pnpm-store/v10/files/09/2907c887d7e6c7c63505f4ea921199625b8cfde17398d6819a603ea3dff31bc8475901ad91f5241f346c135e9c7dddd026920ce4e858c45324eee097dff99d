@@ -1,0 +1,1 @@
+export declare const ChatOverlayLayout: (userProps: import("instantsearch-ui-components").ChatLayoutOwnProps) => JSX.Element;

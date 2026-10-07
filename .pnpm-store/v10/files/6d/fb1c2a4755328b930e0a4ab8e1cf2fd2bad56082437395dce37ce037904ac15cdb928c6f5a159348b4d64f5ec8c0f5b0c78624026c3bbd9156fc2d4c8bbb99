@@ -1,0 +1,12 @@
+{
+  "main": "dist/main/index.js",
+  "module": "dist/module/index.js",
+  "engines": {
+    "node": [
+      ">= 8.0.0"
+    ],
+    "browser": [
+      "Chrome 70"
+    ]
+  }
+}

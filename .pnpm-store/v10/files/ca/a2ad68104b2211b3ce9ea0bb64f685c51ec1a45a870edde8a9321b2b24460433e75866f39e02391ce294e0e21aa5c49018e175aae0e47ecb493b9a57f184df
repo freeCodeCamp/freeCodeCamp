@@ -1,0 +1,39 @@
+{
+  "name": "text-decoder",
+  "version": "1.2.7",
+  "description": "Streaming text decoder that preserves multibyte Unicode characters",
+  "exports": {
+    "./package": "./package.json",
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "prettier --check . && lunte",
+    "test": "npm run test:node && npm run test:bare",
+    "test:node": "brittle-node test.js",
+    "test:bare": "brittle-bare test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/text-decoder.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/text-decoder/issues"
+  },
+  "homepage": "https://github.com/holepunchto/text-decoder#readme",
+  "dependencies": {
+    "b4a": "^1.6.4"
+  },
+  "devDependencies": {
+    "brittle": "^3.3.2",
+    "lunte": "^1.3.0",
+    "prettier": "^3.6.2",
+    "prettier-config-holepunch": "^1.0.0"
+  }
+}

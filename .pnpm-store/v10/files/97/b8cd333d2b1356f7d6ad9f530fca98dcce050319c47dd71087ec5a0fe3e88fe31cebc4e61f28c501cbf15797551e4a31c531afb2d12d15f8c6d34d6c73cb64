@@ -1,0 +1,55 @@
+# `MD034` - Bare URL used
+
+Tags: `links`, `url`
+
+Aliases: `no-bare-urls`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered whenever a URL or email address appears without
+surrounding angle brackets:
+
+```markdown
+For more info, visit https://www.example.com/ or email user@example.com.
+```
+
+To fix this, add angle brackets around the URL or email address:
+
+```markdown
+For more info, visit <https://www.example.com/> or email <user@example.com>.
+```
+
+If a URL or email address contains non-ASCII characters, it may be not be
+handled as intended even when angle brackets are present. In such cases,
+[percent-encoding](https://en.m.wikipedia.org/wiki/Percent-encoding) can be used
+to comply with the required syntax for URL and email.
+
+Note: To include a bare URL or email without it being converted into a link,
+wrap it in a code span:
+
+```markdown
+Not a clickable link: `https://www.example.com`
+```
+
+Note: The following scenario does not trigger this rule because it could be a
+shortcut link:
+
+```markdown
+[https://www.example.com]
+```
+
+Note: The following syntax triggers this rule because the nested link could be
+a shortcut link (which takes precedence):
+
+```markdown
+[text [shortcut] text](https://example.com)
+```
+
+To avoid this, escape both inner brackets:
+
+```markdown
+[link \[text\] link](https://example.com)
+```
+
+Rationale: Without angle brackets, a bare URL or email isn't converted into a
+link by some Markdown parsers.

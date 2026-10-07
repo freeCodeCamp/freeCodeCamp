@@ -1,0 +1,70 @@
+{
+  "name": "express-http-proxy",
+  "version": "1.6.3",
+  "description": "http proxy middleware for express",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "npm -s run mocha && npm run -s lint",
+    "test:debug": "mocha debug -R spec test --recursive --exit",
+    "mocha": "mocha -R spec test --recursive --exit",
+    "lint": "eslint index.js **/*js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/villadora/express-http-proxy.git"
+  },
+  "keywords": [
+    "express-http-proxy"
+  ],
+  "author": {
+    "name": "villadora",
+    "email": "jky239@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/villadora/express-http-proxy/issues"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "chai": "^4.1.2",
+    "cookie-parser": "^1.4.3",
+    "eslint": "^4.19.1",
+    "express": "^4.15.4",
+    "mocha": "^8.0.1",
+    "nock": "^10.0.6",
+    "supertest": "^3.4.2"
+  },
+  "dependencies": {
+    "debug": "^3.0.1",
+    "es6-promise": "^4.1.1",
+    "raw-body": "^2.3.0"
+  },
+  "contributors": [
+    {
+      "name": "Liam Bennett"
+    },
+    {
+      "name": "eldereal",
+      "url": "https://github.com/eldereal"
+    },
+    {
+      "name": "Saulius Menkevičius",
+      "url": "https://github.com/razzmatazz"
+    },
+    {
+      "name": "Jérémy Lal",
+      "email": "kapouer@melix.org"
+    },
+    {
+      "name": "Wei Gao",
+      "email": "jky239@gmail.com"
+    },
+    {
+      "name": "Nik Krimm",
+      "url": "https://github.com/monkpow"
+    }
+  ]
+}

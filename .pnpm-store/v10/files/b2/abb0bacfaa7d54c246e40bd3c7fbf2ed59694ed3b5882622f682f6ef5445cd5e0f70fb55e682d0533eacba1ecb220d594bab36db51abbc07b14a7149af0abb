@@ -1,0 +1,1 @@
+{"version":3,"file":"Variable.d.ts","sourceRoot":"","sources":["../../src/variable/Variable.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,gBAAgB,CAAC;AAE9C;;GAEG;AACH,cAAM,QAAS,SAAQ,YAAY;IACjC;;;OAGG;IACH,IAAW,cAAc,IAAI,OAAO,CAOnC;IAED;;;OAGG;IACH,IAAW,eAAe,IAAI,OAAO,CAOpC;CACF;AAED,OAAO,EAAE,QAAQ,EAAE,CAAC"}

@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/differenceInISOWeekYears/index.js",
+  "typings": "../typings.d.ts"
+}

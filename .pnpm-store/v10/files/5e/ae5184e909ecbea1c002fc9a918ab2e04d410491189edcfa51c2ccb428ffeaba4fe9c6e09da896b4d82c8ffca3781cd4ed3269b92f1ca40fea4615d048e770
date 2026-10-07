@@ -1,0 +1,49 @@
+{
+  "Commands:": "Komennot:",
+  "Options:": "Valinnat:",
+  "Examples:": "Esimerkkejä:",
+  "boolean": "totuusarvo",
+  "count": "lukumäärä",
+  "string": "merkkijono",
+  "number": "numero",
+  "array": "taulukko",
+  "required": "pakollinen",
+  "default": "oletusarvo",
+  "default:": "oletusarvo:",
+  "choices:": "vaihtoehdot:",
+  "aliases:": "aliakset:",
+  "generated-value": "generoitu-arvo",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Liian vähän argumentteja, jotka eivät ole valintoja: annettu %s, vaaditaan vähintään %s",
+    "other": "Liian vähän argumentteja, jotka eivät ole valintoja: annettu %s, vaaditaan vähintään %s"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "Liikaa argumentteja, jotka eivät ole valintoja: annettu %s, sallitaan enintään %s",
+    "other": "Liikaa argumentteja, jotka eivät ole valintoja: annettu %s, sallitaan enintään %s"
+  },
+  "Missing argument value: %s": {
+    "one": "Argumentin arvo puuttuu: %s",
+    "other": "Argumentin arvot puuttuvat: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Pakollinen argumentti puuttuu: %s",
+    "other": "Pakollisia argumentteja puuttuu: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Tuntematon argumenttn: %s",
+    "other": "Tuntemattomia argumentteja: %s"
+  },
+  "Invalid values:": "Virheelliset arvot:",
+  "Argument: %s, Given: %s, Choices: %s": "Argumentti: %s, Annettu: %s, Vaihtoehdot: %s",
+  "Argument check failed: %s": "Argumentin tarkistus epäonnistui: %s",
+  "Implications failed:": "Riippuvia argumentteja puuttuu:",
+  "Not enough arguments following: %s": "Argumentin perässä ei ole tarpeeksi argumentteja: %s",
+  "Invalid JSON config file: %s": "Epävalidi JSON-asetustiedosto: %s",
+  "Path to JSON config file": "JSON-asetustiedoston polku",
+  "Show help": "Näytä ohje",
+  "Show version number": "Näytä versionumero",
+  "Did you mean %s?": "Tarkoititko %s?",
+  "Arguments %s and %s are mutually exclusive" : "Argumentit %s ja %s eivät ole yhteensopivat",
+  "Positionals:": "Sijaintiparametrit:",
+  "command": "komento"
+}

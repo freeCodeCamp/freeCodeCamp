@@ -1,0 +1,72 @@
+{
+  "author": "Remy Sharp",
+  "name": "@freecodecamp/loop-protect",
+  "description": "Prevent infinite loops and recursion in dynamically eval'd JavaScript.",
+  "main": "dist/",
+  "version": "3.0.0",
+  "homepage": "https://github.com/freeCodeCamp/loop-protect",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/freeCodeCamp/loop-protect.git"
+  },
+  "scripts": {
+    "test": "jest test/*.test.js",
+    "build": "NODE_ENV=production babel lib/ --out-dir dist --copy-files",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "browsers": [
+              ">0.25%",
+              "not dead"
+            ]
+          }
+        }
+      ],
+      [
+        "@babel/preset-react"
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/standalone": "^7.12.12",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "husky": "^4.3.8",
+    "jest": "^24.9.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "2.2.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://jsbin.mit-license.org"
+    }
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": "prettier --write"
+  }
+}

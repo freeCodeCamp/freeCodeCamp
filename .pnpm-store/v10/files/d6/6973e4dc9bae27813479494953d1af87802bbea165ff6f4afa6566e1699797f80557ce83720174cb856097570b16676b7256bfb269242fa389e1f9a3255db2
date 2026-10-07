@@ -1,0 +1,44 @@
+{
+  "name": "esutils",
+  "description": "utility box for ECMAScript language tools",
+  "homepage": "https://github.com/estools/esutils",
+  "main": "lib/utils.js",
+  "version": "2.0.3",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "LICENSE.BSD",
+    "README.md",
+    "lib"
+  ],
+  "maintainers": [
+    {
+      "name": "Yusuke Suzuki",
+      "email": "utatane.tea@gmail.com",
+      "web": "http://github.com/Constellation"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/estools/esutils.git"
+  },
+  "devDependencies": {
+    "chai": "~1.7.2",
+    "coffee-script": "~1.6.3",
+    "jshint": "2.6.3",
+    "mocha": "~2.2.1",
+    "regenerate": "~1.3.1",
+    "unicode-9.0.0": "~0.7.0"
+  },
+  "license": "BSD-2-Clause",
+  "scripts": {
+    "test": "npm run-script lint && npm run-script unit-test",
+    "lint": "jshint lib/*.js",
+    "unit-test": "mocha --compilers coffee:coffee-script -R spec",
+    "generate-regex": "node tools/generate-identifier-regex.js"
+  }
+}

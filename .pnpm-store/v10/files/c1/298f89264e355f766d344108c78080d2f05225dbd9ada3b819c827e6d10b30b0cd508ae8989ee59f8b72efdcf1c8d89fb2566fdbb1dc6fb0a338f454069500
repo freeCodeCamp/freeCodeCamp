@@ -1,0 +1,41 @@
+{
+	"name": "lowercase-keys",
+	"version": "3.0.0",
+	"description": "Lowercase the keys of an object",
+	"license": "MIT",
+	"repository": "sindresorhus/lowercase-keys",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"object",
+		"assign",
+		"extend",
+		"properties",
+		"lowercase",
+		"lower-case",
+		"case",
+		"keys",
+		"key"
+	],
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"tsd": "^0.18.0",
+		"xo": "^0.45.0"
+	}
+}

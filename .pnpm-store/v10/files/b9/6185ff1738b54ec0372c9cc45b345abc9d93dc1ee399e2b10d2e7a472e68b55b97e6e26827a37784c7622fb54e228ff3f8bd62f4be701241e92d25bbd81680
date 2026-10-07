@@ -1,0 +1,45 @@
+{
+  "name": "@expo/sudo-prompt",
+  "public": true,
+  "version": "9.3.2",
+  "description": "Run a command using sudo, prompting the user with an OS dialog if necessary",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.d.ts",
+    "index.js",
+    "package.json",
+    "test.js",
+    "test-concurrent.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expo/sudo-prompt.git"
+  },
+  "keywords": [
+    "sudo",
+    "os",
+    "dialog",
+    "prompt",
+    "command",
+    "exec",
+    "user access control",
+    "UAC",
+    "privileges",
+    "administrative",
+    "elevate",
+    "run as administrator"
+  ],
+  "author": "Joran Dirk Greef",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/expo/sudo-prompt/issues"
+  },
+  "homepage": "https://github.com/expo/sudo-prompt",
+  "scripts": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}

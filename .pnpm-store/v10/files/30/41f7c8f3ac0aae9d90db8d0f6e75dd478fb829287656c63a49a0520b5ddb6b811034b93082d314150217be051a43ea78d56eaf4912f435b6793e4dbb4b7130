@@ -1,0 +1,55 @@
+{
+  "name": "@keyv/serialize",
+  "version": "1.1.1",
+  "description": "Serialization for Keyv",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredwray/keyv.git"
+  },
+  "keywords": [
+    "keyv",
+    "serialize",
+    "key",
+    "value",
+    "store"
+  ],
+  "author": "Jared Wray <me@jaredwray.com> (https://jaredwray.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaredwray/keyv/issues"
+  },
+  "homepage": "https://github.com/jaredwray/keyv",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.3",
+    "@vitest/coverage-v8": "^3.2.4",
+    "rimraf": "^6.0.1",
+    "tsd": "^0.33.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "@keyv/test-suite": "^2.1.1",
+    "keyv": "^5.5.0"
+  },
+  "tsd": {
+    "directory": "test"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "biome check --write && vitest run --coverage",
+    "test:ci": "biome check && vitest --run --sequence.setupFiles=list --coverage",
+    "clean": "rimraf ./node_modules ./coverage ./dist"
+  }
+}

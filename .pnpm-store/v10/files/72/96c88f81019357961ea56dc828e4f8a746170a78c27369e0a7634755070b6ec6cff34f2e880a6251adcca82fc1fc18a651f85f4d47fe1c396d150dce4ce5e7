@@ -1,0 +1,73 @@
+{
+  "name": "instantsearch.js",
+  "version": "4.95.0",
+  "description": "InstantSearch.js is a JavaScript library for building performant and instant search experiences with Algolia.",
+  "homepage": "https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/",
+  "types": "es/index.d.ts",
+  "keywords": [
+    "algolia",
+    "instantsearch",
+    "search",
+    "widget",
+    "vanilla"
+  ],
+  "author": "Algolia <support@algolia.com>",
+  "license": "MIT",
+  "repository": "algolia/instantsearch",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "jsdelivr": "dist/instantsearch.production.min.js",
+  "unpkg": "dist/instantsearch.production.min.js",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "cjs",
+    "es",
+    "scripts/transforms"
+  ],
+  "dependencies": {
+    "@algolia/events": "^4.0.1",
+    "@swc/helpers": "0.5.18",
+    "@types/dom-speech-recognition": "^0.0.1",
+    "@types/google.maps": "^3.55.12",
+    "@types/hogan.js": "^3.0.0",
+    "@types/qs": "^6.5.3",
+    "algoliasearch-helper": "3.28.2",
+    "hogan.js": "^3.0.2",
+    "htm": "^3.0.0",
+    "instantsearch-ui-components": "0.25.0",
+    "preact": "^10.10.0",
+    "qs": "^6.5.1",
+    "react": ">= 0.14.0",
+    "search-insights": "^2.17.2",
+    "zod": "^3.25.76 || ^4",
+    "zod-to-json-schema": "3.24.6"
+  },
+  "peerDependencies": {
+    "algoliasearch": ">= 3.1 < 6"
+  },
+  "scripts": {
+    "build": "BABEL_ENV=es,rollup BUILD_FORMAT=esm rollup -c rollup.config.mjs && BABEL_ENV=rollup BUILD_FORMAT=cjs rollup -c rollup.config.mjs && BABEL_ENV=rollup BUILD_FORMAT=umd rollup -c rollup.config.mjs && yarn build:types",
+    "build:umd": "BABEL_ENV=rollup BUILD_FORMAT=umd rollup --config rollup.config.mjs",
+    "build:cjs": "BABEL_ENV=rollup BUILD_FORMAT=cjs rollup --config rollup.config.mjs",
+    "build:es": "BABEL_ENV=es,rollup BUILD_FORMAT=esm rollup --config rollup.config.mjs",
+    "build:types": "scripts/typescript/extract.js",
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook --quiet --port 6006 --ci --static-dir .storybook/static",
+    "storybook:build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook --quiet --output-dir ../../website/stories/js --static-dir .storybook/static",
+    "test:exports": "node test/module/is-es-module.mjs && node test/module/is-cjs-module.cjs",
+    "version": "./scripts/version/update-version.js",
+    "watch:es": "BABEL_ENV=es,rollup BUILD_FORMAT=esm rollup --config rollup.config.mjs --watch"
+  },
+  "devDependencies": {
+    "@instantsearch/mocks": "1.99.0",
+    "@instantsearch/tests": "1.99.0",
+    "@instantsearch/testutils": "1.88.0",
+    "@storybook/html": "5.3.9",
+    "@types/scriptjs": "0.0.2",
+    "algoliasearch": "5.1.1",
+    "places.js": "1.17.1",
+    "scriptjs": "2.5.9",
+    "webpack": "4.47.0"
+  },
+  "gitHead": "0e8b659cc3a4dec1bc1c36fc4c01ecd09d46617c"
+}

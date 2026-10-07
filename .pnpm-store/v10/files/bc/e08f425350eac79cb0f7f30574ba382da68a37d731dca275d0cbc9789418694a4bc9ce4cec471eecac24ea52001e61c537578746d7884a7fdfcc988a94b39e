@@ -1,0 +1,58 @@
+{
+  "name": "react-instantsearch",
+  "version": "7.31.0",
+  "description": "⚡ Lightning-fast search for React, by Algolia",
+  "types": "dist/es/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/es/index.d.ts",
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "sideEffects": false,
+  "license": "MIT",
+  "homepage": "https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/react/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algolia/instantsearch"
+  },
+  "author": {
+    "name": "Algolia, Inc.",
+    "url": "https://www.algolia.com"
+  },
+  "keywords": [
+    "algolia",
+    "components",
+    "fast",
+    "instantsearch",
+    "react",
+    "search"
+  ],
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "BABEL_ENV=es,rollup BUILD_FORMAT=esm rollup -c rollup.config.mjs && BABEL_ENV=rollup BUILD_FORMAT=cjs rollup -c rollup.config.mjs && BABEL_ENV=rollup BUILD_FORMAT=umd rollup -c rollup.config.mjs && yarn build:types",
+    "build:types": "tsc -p ./tsconfig.declaration.json --outDir ./dist/es",
+    "test:exports": "node ./test/module/is-es-module.mjs && node ./test/module/is-cjs-module.cjs",
+    "watch:es": "BABEL_ENV=es,rollup BUILD_FORMAT=esm rollup -c rollup.config.mjs --watch"
+  },
+  "dependencies": {
+    "@swc/helpers": "0.5.18",
+    "instantsearch-ui-components": "0.25.0",
+    "instantsearch.js": "4.95.0",
+    "react-instantsearch-core": "7.31.0"
+  },
+  "peerDependencies": {
+    "algoliasearch": ">= 3.1 < 6",
+    "react": ">= 16.8.0 < 20",
+    "react-dom": ">= 16.8.0 < 20"
+  },
+  "gitHead": "0e8b659cc3a4dec1bc1c36fc4c01ecd09d46617c"
+}

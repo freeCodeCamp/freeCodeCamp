@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TSemaphore.js",
+  "module": "../dist/esm/TSemaphore.js",
+  "types": "../dist/dts/TSemaphore.d.ts"
+}

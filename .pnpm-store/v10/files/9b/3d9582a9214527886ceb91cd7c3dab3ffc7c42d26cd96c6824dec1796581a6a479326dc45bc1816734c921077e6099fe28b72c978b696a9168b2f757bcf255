@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["dom", "es5", "es2015.collection"],
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "./build",
+    "importHelpers": true,
+    "noEmitHelpers": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/**"]
+}

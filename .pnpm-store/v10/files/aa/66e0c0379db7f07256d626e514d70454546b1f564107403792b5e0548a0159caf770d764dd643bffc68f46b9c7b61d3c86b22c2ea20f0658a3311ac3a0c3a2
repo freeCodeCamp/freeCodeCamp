@@ -1,0 +1,22 @@
+/** @jsx createElement */
+import type { Renderer } from '../../types';
+type IconProps = Pick<Renderer, 'createElement'>;
+export declare function SparklesIcon({ createElement }: IconProps): JSX.Element;
+export declare function ArrowUpIcon({ createElement }: IconProps): JSX.Element;
+export declare function ArrowRightIcon({ createElement }: IconProps): JSX.Element;
+export declare function ChevronUpIcon({ createElement }: IconProps): JSX.Element;
+export declare function ChevronDownIcon({ createElement }: IconProps): JSX.Element;
+export declare function CloseIcon({ createElement }: IconProps): JSX.Element;
+export declare function MaximizeIcon({ createElement }: IconProps): JSX.Element;
+export declare function MinimizeIcon({ createElement }: IconProps): JSX.Element;
+export declare function StopIcon({ createElement }: IconProps): JSX.Element;
+export declare function ReloadIcon({ createElement }: IconProps): JSX.Element;
+export declare function CopyIcon({ createElement }: IconProps): JSX.Element;
+export declare function MenuIcon({ createElement }: IconProps): JSX.Element;
+export declare function LoadingSpinnerIcon({ createElement }: IconProps): JSX.Element;
+export declare function CheckIcon({ createElement }: IconProps): JSX.Element;
+export declare function ThumbsUpIcon({ createElement }: IconProps): JSX.Element;
+export declare function ThumbsDownIcon({ createElement }: IconProps): JSX.Element;
+export declare function ChevronLeftIcon({ createElement }: IconProps): JSX.Element;
+export declare function ChevronRightIcon({ createElement }: IconProps): JSX.Element;
+export {};

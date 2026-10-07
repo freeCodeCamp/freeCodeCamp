@@ -1,0 +1,71 @@
+{
+  "name": "unixify",
+  "description": "Convert Windows file paths to unix paths.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jonschlinkert/unixify",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/unixify",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/unixify/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "normalize-path": "^2.1.1"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^0.1.12",
+    "mocha": "^3.2.0"
+  },
+  "keywords": [
+    "backslash",
+    "directory",
+    "file",
+    "filepath",
+    "fix",
+    "forward",
+    "fp",
+    "fs",
+    "normalize",
+    "path",
+    "slash",
+    "slashes",
+    "trailing",
+    "unix",
+    "unixify",
+    "urix",
+    "windows"
+  ],
+  "verb": {
+    "related": {
+      "description": "Other useful libraries for working with paths in node.js:",
+      "list": [
+        "contains-path",
+        "ends-with",
+        "is-absolute",
+        "normalize-path",
+        "path-ends-with"
+      ]
+    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

@@ -1,0 +1,126 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _default;
+    }
+});
+var _interop_require_default = require("@swc/helpers/_/_interop_require_default");
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_spread_props = require("@swc/helpers/_/_object_spread_props");
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _preact = require("preact");
+var _SearchBox = /*#__PURE__*/ _interop_require_default._(require("../../components/SearchBox/SearchBox"));
+var _connectSearchBox = /*#__PURE__*/ _interop_require_default._(require("../../connectors/search-box/connectSearchBox"));
+var _suit = require("../../lib/suit");
+var _utils = require("../../lib/utils");
+var _defaultTemplates = /*#__PURE__*/ _interop_require_default._(require("./defaultTemplates"));
+var withUsage = (0, _utils.createDocumentationMessageGenerator)({
+    name: 'search-box'
+});
+var suit = (0, _suit.component)('SearchBox');
+var aiModeSuit = (0, _suit.component)('AiModeButton');
+var renderer = function renderer(param) {
+    var containerNode = param.containerNode, cssClasses = param.cssClasses, placeholder = param.placeholder, templates = param.templates, autofocus = param.autofocus, searchAsYouType = param.searchAsYouType, ignoreCompositionEvents = param.ignoreCompositionEvents, showReset = param.showReset, showSubmit = param.showSubmit, showLoadingIndicator = param.showLoadingIndicator, aiMode = param.aiMode;
+    return function(param) {
+        var refine = param.refine, query = param.query, isSearchStalled = param.isSearchStalled, instantSearchInstance = param.instantSearchInstance;
+        var onAiModeClick = aiMode ? function(currentQuery) {
+            var _instantSearchInstance_renderState_indexId;
+            var indexId = instantSearchInstance.mainIndex.getIndexId();
+            var chatRenderState = (_instantSearchInstance_renderState_indexId = instantSearchInstance.renderState[indexId]) === null || _instantSearchInstance_renderState_indexId === void 0 ? void 0 : _instantSearchInstance_renderState_indexId.chat;
+            if (chatRenderState) {
+                var _chatRenderState_setOpen;
+                (_chatRenderState_setOpen = chatRenderState.setOpen) === null || _chatRenderState_setOpen === void 0 ? void 0 : _chatRenderState_setOpen.call(chatRenderState, true);
+                if (currentQuery.trim()) {
+                    var _chatRenderState_sendMessage;
+                    (_chatRenderState_sendMessage = chatRenderState.sendMessage) === null || _chatRenderState_sendMessage === void 0 ? void 0 : _chatRenderState_sendMessage.call(chatRenderState, {
+                        text: currentQuery
+                    });
+                }
+            }
+        } : undefined;
+        (0, _preact.render)(/*#__PURE__*/ (0, _preact.h)(_SearchBox.default, {
+            query: query,
+            placeholder: placeholder,
+            autofocus: autofocus,
+            refine: refine,
+            searchAsYouType: searchAsYouType,
+            ignoreCompositionEvents: ignoreCompositionEvents,
+            templates: templates,
+            showSubmit: showSubmit,
+            showReset: showReset,
+            showLoadingIndicator: showLoadingIndicator,
+            isSearchStalled: isSearchStalled,
+            cssClasses: cssClasses,
+            onAiModeClick: onAiModeClick
+        }), containerNode);
+    };
+};
+var searchBox = function searchBox(widgetParams) {
+    var _ref = widgetParams || {}, container = _ref.container, _ref_placeholder = _ref.placeholder, placeholder = _ref_placeholder === void 0 ? '' : _ref_placeholder, tmp = _ref.cssClasses, userCssClasses = tmp === void 0 ? {} : tmp, _ref_autofocus = _ref.autofocus, autofocus = _ref_autofocus === void 0 ? false : _ref_autofocus, _ref_searchAsYouType = _ref.searchAsYouType, searchAsYouType = _ref_searchAsYouType === void 0 ? true : _ref_searchAsYouType, _ref_ignoreCompositionEvents = _ref.ignoreCompositionEvents, ignoreCompositionEvents = _ref_ignoreCompositionEvents === void 0 ? false : _ref_ignoreCompositionEvents, _ref_showReset = _ref.showReset, showReset = _ref_showReset === void 0 ? true : _ref_showReset, _ref_showSubmit = _ref.showSubmit, showSubmit = _ref_showSubmit === void 0 ? true : _ref_showSubmit, _ref_showLoadingIndicator = _ref.showLoadingIndicator, showLoadingIndicator = _ref_showLoadingIndicator === void 0 ? true : _ref_showLoadingIndicator, queryHook = _ref.queryHook, tmp1 = _ref.templates, userTemplates = tmp1 === void 0 ? {} : tmp1, aiMode = _ref.aiMode;
+    if (!container) {
+        throw new Error(withUsage('The `container` option is required.'));
+    }
+    var containerNode = (0, _utils.getContainerNode)(container);
+    var cssClasses = {
+        root: (0, _instantsearchuicomponents.cx)(suit(), userCssClasses.root),
+        form: (0, _instantsearchuicomponents.cx)(suit({
+            descendantName: 'form'
+        }), userCssClasses.form),
+        input: (0, _instantsearchuicomponents.cx)(suit({
+            descendantName: 'input'
+        }), userCssClasses.input),
+        submit: (0, _instantsearchuicomponents.cx)(suit({
+            descendantName: 'submit'
+        }), userCssClasses.submit),
+        submitIcon: (0, _instantsearchuicomponents.cx)(suit({
+            descendantName: 'submitIcon'
+        }), userCssClasses.submitIcon),
+        reset: (0, _instantsearchuicomponents.cx)(suit({
+            descendantName: 'reset'
+        }), userCssClasses.reset),
+        resetIcon: (0, _instantsearchuicomponents.cx)(suit({
+            descendantName: 'resetIcon'
+        }), userCssClasses.resetIcon),
+        loadingIndicator: (0, _instantsearchuicomponents.cx)(suit({
+            descendantName: 'loadingIndicator'
+        }), userCssClasses.loadingIndicator),
+        loadingIcon: (0, _instantsearchuicomponents.cx)(suit({
+            descendantName: 'loadingIcon'
+        }), userCssClasses.loadingIcon),
+        aiModeButton: (0, _instantsearchuicomponents.cx)(aiModeSuit(), userCssClasses.aiModeButton),
+        aiModeIcon: (0, _instantsearchuicomponents.cx)(aiModeSuit({
+            descendantName: 'icon'
+        }), userCssClasses.aiModeIcon),
+        aiModeLabel: (0, _instantsearchuicomponents.cx)(aiModeSuit({
+            descendantName: 'label'
+        }), userCssClasses.aiModeLabel)
+    };
+    var templates = _object_spread._({}, _defaultTemplates.default, userTemplates);
+    var specializedRenderer = renderer({
+        containerNode: containerNode,
+        cssClasses: cssClasses,
+        placeholder: placeholder,
+        templates: templates,
+        autofocus: autofocus,
+        searchAsYouType: searchAsYouType,
+        ignoreCompositionEvents: ignoreCompositionEvents,
+        showReset: showReset,
+        showSubmit: showSubmit,
+        showLoadingIndicator: showLoadingIndicator,
+        aiMode: aiMode
+    });
+    var makeWidget = (0, _connectSearchBox.default)(specializedRenderer, function() {
+        return (0, _preact.render)(null, containerNode);
+    });
+    return _object_spread_props._(_object_spread._({}, makeWidget({
+        queryHook: queryHook
+    })), {
+        $$widgetType: 'ais.searchBox'
+    });
+};
+var _default = searchBox;

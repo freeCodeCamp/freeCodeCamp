@@ -1,0 +1,41 @@
+{
+  "name": "@html-eslint/types",
+  "version": "0.60.0",
+  "description": "Types for @html-eslint/eslint-plugin",
+  "author": {
+    "name": "yeonjuan",
+    "url": "https://github.com/yeonjuan"
+  },
+  "homepage": "https://github.com/yeonjuan/html-eslint#readme",
+  "license": "MIT",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeonjuan/html-eslint.git"
+  },
+  "scripts": {
+    "ts": "tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/yeonjuan/html-eslint/issues"
+  },
+  "keywords": [
+    "html",
+    "eslint",
+    "types",
+    "typescript",
+    "ast"
+  ],
+  "dependencies": {
+    "@types/css-tree": "^2.3.11",
+    "@types/estree": "^1.0.6",
+    "es-html-parser": "0.3.1"
+  },
+  "gitHead": "64d9d73aa7130ce5d3530add8fe06bcc9e4cf3de"
+}

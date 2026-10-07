@@ -1,0 +1,66 @@
+{
+  "name": "tinyexec",
+  "version": "0.3.2",
+  "type": "module",
+  "description": "A minimal library for executing processes in Node",
+  "main": "./dist/main.js",
+  "files": [
+    "dist",
+    "!dist/node_modules",
+    "!dist/cjs/test",
+    "!dist/esm/test"
+  ],
+  "scripts": {
+    "build": "npm run build:types && tsup",
+    "build:types": "tsc",
+    "dev": "tsup --watch",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
+    "lint": "eslint src",
+    "prepare": "npm run build",
+    "test": "npm run build && c8 node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinylibs/tinyexec.git"
+  },
+  "keywords": [
+    "execa",
+    "exec",
+    "tiny",
+    "child_process",
+    "spawn"
+  ],
+  "author": "James Garbutt (https://github.com/43081j)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tinylibs/tinyexec/issues"
+  },
+  "homepage": "https://github.com/tinylibs/tinyexec#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/node": "^20.12.7",
+    "c8": "^9.1.0",
+    "cross-spawn": "^7.0.3",
+    "eslint-config-google": "^0.14.0",
+    "prettier": "^3.2.5",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.js"
+      },
+      "require": {
+        "types": "./dist/main.d.cts",
+        "default": "./dist/main.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/main.d.ts"
+}

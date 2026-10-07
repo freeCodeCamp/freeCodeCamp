@@ -1,0 +1,694 @@
+// @flow
+// This file is generated automatically by `scripts/build/typings.js`. Please, don't change it.
+
+export type Interval = {
+  start: Date | number,
+  end: Date | number,
+}
+
+export type Locale = {
+  code?: string,
+  formatDistance?: (...args: Array<any>) => any,
+  formatRelative?: (...args: Array<any>) => any,
+  localize?: {
+    ordinalNumber: (...args: Array<any>) => any,
+    era: (...args: Array<any>) => any,
+    quarter: (...args: Array<any>) => any,
+    month: (...args: Array<any>) => any,
+    day: (...args: Array<any>) => any,
+    dayPeriod: (...args: Array<any>) => any,
+  },
+  formatLong?: {
+    date: (...args: Array<any>) => any,
+    time: (...args: Array<any>) => any,
+    dateTime: (...args: Array<any>) => any,
+  },
+  match?: {
+    ordinalNumber: (...args: Array<any>) => any,
+    era: (...args: Array<any>) => any,
+    quarter: (...args: Array<any>) => any,
+    month: (...args: Array<any>) => any,
+    day: (...args: Array<any>) => any,
+    dayPeriod: (...args: Array<any>) => any,
+  },
+  options?: {
+    weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+    firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  },
+}
+
+export type Duration = {
+  years?: number,
+  months?: number,
+  weeks?: number,
+  days?: number,
+  hours?: number,
+  minutes?: number,
+  seconds?: number,
+}
+
+export type Day = 0 | 1 | 2 | 3 | 4 | 5 | 6
+
+type CurriedFn1<A, R> = <A>(a: A) => R
+
+type CurriedFn2<A, B, R> = <A>(
+  a: A
+) => CurriedFn1<B, R> | (<A, B>(a: A, b: B) => R)
+
+type CurriedFn3<A, B, C, R> = <A>(
+  a: A
+) =>
+  | CurriedFn2<B, C, R>
+  | (<A, B>(
+      a: A,
+      b: B
+    ) => CurriedFn1<C, R> | (<A, B, C>(a: A, b: B, c: C) => R))
+
+type CurriedFn4<A, B, C, D, R> = <A>(
+  a: A
+) =>
+  | CurriedFn3<B, C, D, R>
+  | (<A, B>(
+      a: A,
+      b: B
+    ) =>
+      | CurriedFn2<C, D, R>
+      | (<A, B, C>(
+          a: A,
+          b: B,
+          c: C
+        ) => CurriedFn1<D, R> | (<A, B, C, D>(a: A, b: B, c: C, d: D) => R)))
+
+declare module.exports: {
+  add: CurriedFn2<Duration, Date | number, Date>,
+  addBusinessDays: CurriedFn2<number, Date | number, Date>,
+  addDays: CurriedFn2<number, Date | number, Date>,
+  addHours: CurriedFn2<number, Date | number, Date>,
+  addISOWeekYears: CurriedFn2<number, Date | number, Date>,
+  addMilliseconds: CurriedFn2<number, Date | number, Date>,
+  addMinutes: CurriedFn2<number, Date | number, Date>,
+  addMonths: CurriedFn2<number, Date | number, Date>,
+  addQuarters: CurriedFn2<number, Date | number, Date>,
+  addSeconds: CurriedFn2<number, Date | number, Date>,
+  addWeeks: CurriedFn2<number, Date | number, Date>,
+  addYears: CurriedFn2<number, Date | number, Date>,
+  areIntervalsOverlapping: CurriedFn2<Interval, Interval, boolean>,
+  areIntervalsOverlappingWithOptions: CurriedFn3<
+    {
+      inclusive?: boolean,
+    },
+    Interval,
+    Interval,
+    boolean
+  >,
+  clamp: CurriedFn2<Interval, Date | number, Date>,
+  closestIndexTo: CurriedFn2<(Date | number)[], Date | number, ?number>,
+  closestTo: CurriedFn2<(Date | number)[], Date | number, ?Date>,
+  compareAsc: CurriedFn2<Date | number, Date | number, number>,
+  compareDesc: CurriedFn2<Date | number, Date | number, number>,
+  daysToWeeks: CurriedFn1<number, number>,
+  differenceInBusinessDays: CurriedFn2<Date | number, Date | number, number>,
+  differenceInCalendarDays: CurriedFn2<Date | number, Date | number, number>,
+  differenceInCalendarISOWeeks: CurriedFn2<
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInCalendarISOWeekYears: CurriedFn2<
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInCalendarMonths: CurriedFn2<Date | number, Date | number, number>,
+  differenceInCalendarQuarters: CurriedFn2<
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInCalendarWeeks: CurriedFn2<Date | number, Date | number, number>,
+  differenceInCalendarWeeksWithOptions: CurriedFn3<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInCalendarYears: CurriedFn2<Date | number, Date | number, number>,
+  differenceInDays: CurriedFn2<Date | number, Date | number, number>,
+  differenceInHours: CurriedFn2<Date | number, Date | number, number>,
+  differenceInHoursWithOptions: CurriedFn3<
+    {
+      roundingMethod?: string,
+    },
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInISOWeekYears: CurriedFn2<Date | number, Date | number, number>,
+  differenceInMilliseconds: CurriedFn2<Date | number, Date | number, number>,
+  differenceInMinutes: CurriedFn2<Date | number, Date | number, number>,
+  differenceInMinutesWithOptions: CurriedFn3<
+    {
+      roundingMethod?: string,
+    },
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInMonths: CurriedFn2<Date | number, Date | number, number>,
+  differenceInQuarters: CurriedFn2<Date | number, Date | number, number>,
+  differenceInQuartersWithOptions: CurriedFn3<
+    {
+      roundingMethod?: string,
+    },
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInSeconds: CurriedFn2<Date | number, Date | number, number>,
+  differenceInSecondsWithOptions: CurriedFn3<
+    {
+      roundingMethod?: string,
+    },
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInWeeks: CurriedFn2<Date | number, Date | number, number>,
+  differenceInWeeksWithOptions: CurriedFn3<
+    {
+      roundingMethod?: string,
+    },
+    Date | number,
+    Date | number,
+    number
+  >,
+  differenceInYears: CurriedFn2<Date | number, Date | number, number>,
+  eachDayOfInterval: CurriedFn1<Interval, Date[]>,
+  eachDayOfIntervalWithOptions: CurriedFn2<
+    {
+      step?: number,
+    },
+    Interval,
+    Date[]
+  >,
+  eachHourOfInterval: CurriedFn1<Interval, Date[]>,
+  eachHourOfIntervalWithOptions: CurriedFn2<
+    {
+      step?: number,
+    },
+    Interval,
+    Date[]
+  >,
+  eachMinuteOfInterval: CurriedFn1<Interval, Date[]>,
+  eachMinuteOfIntervalWithOptions: CurriedFn2<
+    {
+      step?: number,
+    },
+    Interval,
+    Date[]
+  >,
+  eachMonthOfInterval: CurriedFn1<Interval, Date[]>,
+  eachQuarterOfInterval: CurriedFn1<Interval, Date[]>,
+  eachWeekendOfInterval: CurriedFn1<Interval, Date[]>,
+  eachWeekendOfMonth: CurriedFn1<Date | number, Date[]>,
+  eachWeekendOfYear: CurriedFn1<Date | number, Date[]>,
+  eachWeekOfInterval: CurriedFn1<Interval, Date[]>,
+  eachWeekOfIntervalWithOptions: CurriedFn2<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Interval,
+    Date[]
+  >,
+  eachYearOfInterval: CurriedFn1<Interval, Date[]>,
+  endOfDay: CurriedFn1<Date | number, Date>,
+  endOfDecade: CurriedFn1<Date | number, Date>,
+  endOfDecadeWithOptions: CurriedFn2<
+    {
+      additionalDigits?: 0 | 1 | 2,
+    },
+    Date | number,
+    Date
+  >,
+  endOfHour: CurriedFn1<Date | number, Date>,
+  endOfISOWeek: CurriedFn1<Date | number, Date>,
+  endOfISOWeekYear: CurriedFn1<Date | number, Date>,
+  endOfMinute: CurriedFn1<Date | number, Date>,
+  endOfMonth: CurriedFn1<Date | number, Date>,
+  endOfQuarter: CurriedFn1<Date | number, Date>,
+  endOfSecond: CurriedFn1<Date | number, Date>,
+  endOfWeek: CurriedFn1<Date | number, Date>,
+  endOfWeekWithOptions: CurriedFn2<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    Date
+  >,
+  endOfYear: CurriedFn1<Date | number, Date>,
+  format: CurriedFn2<string, Date | number, string>,
+  formatDistance: CurriedFn2<Date | number, Date | number, string>,
+  formatDistanceStrict: CurriedFn2<Date | number, Date | number, string>,
+  formatDistanceStrictWithOptions: CurriedFn3<
+    {
+      locale?: Locale,
+      roundingMethod?: 'floor' | 'ceil' | 'round',
+      unit?: 'second' | 'minute' | 'hour' | 'day' | 'month' | 'year',
+      addSuffix?: boolean,
+    },
+    Date | number,
+    Date | number,
+    string
+  >,
+  formatDistanceWithOptions: CurriedFn3<
+    {
+      locale?: Locale,
+      addSuffix?: boolean,
+      includeSeconds?: boolean,
+    },
+    Date | number,
+    Date | number,
+    string
+  >,
+  formatDuration: CurriedFn1<Duration, string>,
+  formatDurationWithOptions: CurriedFn2<
+    {
+      locale?: Locale,
+      delimiter?: string,
+      zero?: boolean,
+      format?: string[],
+    },
+    Duration,
+    string
+  >,
+  formatISO: CurriedFn1<Date | number, string>,
+  formatISO9075: CurriedFn1<Date | number, string>,
+  formatISO9075WithOptions: CurriedFn2<
+    {
+      representation?: 'complete' | 'date' | 'time',
+      format?: 'extended' | 'basic',
+    },
+    Date | number,
+    string
+  >,
+  formatISODuration: CurriedFn1<Duration, string>,
+  formatISOWithOptions: CurriedFn2<
+    {
+      representation?: 'complete' | 'date' | 'time',
+      format?: 'extended' | 'basic',
+    },
+    Date | number,
+    string
+  >,
+  formatRelative: CurriedFn2<Date | number, Date | number, string>,
+  formatRelativeWithOptions: CurriedFn3<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    Date | number,
+    string
+  >,
+  formatRFC3339: CurriedFn1<Date | number, string>,
+  formatRFC3339WithOptions: CurriedFn2<
+    {
+      fractionDigits?: 0 | 1 | 2 | 3,
+    },
+    Date | number,
+    string
+  >,
+  formatRFC7231: CurriedFn1<Date | number, string>,
+  formatWithOptions: CurriedFn3<
+    {
+      useAdditionalDayOfYearTokens?: boolean,
+      useAdditionalWeekYearTokens?: boolean,
+      firstWeekContainsDate?: number,
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    string,
+    Date | number,
+    string
+  >,
+  fromUnixTime: CurriedFn1<number, Date>,
+  getDate: CurriedFn1<Date | number, number>,
+  getDay: CurriedFn1<Date | number, 0 | 1 | 2 | 3 | 4 | 5 | 6>,
+  getDayOfYear: CurriedFn1<Date | number, number>,
+  getDaysInMonth: CurriedFn1<Date | number, number>,
+  getDaysInYear: CurriedFn1<Date | number, number>,
+  getDecade: CurriedFn1<Date | number, number>,
+  getHours: CurriedFn1<Date | number, number>,
+  getISODay: CurriedFn1<Date | number, number>,
+  getISOWeek: CurriedFn1<Date | number, number>,
+  getISOWeeksInYear: CurriedFn1<Date | number, number>,
+  getISOWeekYear: CurriedFn1<Date | number, number>,
+  getMilliseconds: CurriedFn1<Date | number, number>,
+  getMinutes: CurriedFn1<Date | number, number>,
+  getMonth: CurriedFn1<Date | number, number>,
+  getOverlappingDaysInIntervals: CurriedFn2<Interval, Interval, number>,
+  getQuarter: CurriedFn1<Date | number, number>,
+  getSeconds: CurriedFn1<Date | number, number>,
+  getTime: CurriedFn1<Date | number, number>,
+  getUnixTime: CurriedFn1<Date | number, number>,
+  getWeek: CurriedFn1<Date | number, number>,
+  getWeekOfMonth: CurriedFn1<Date | number, number>,
+  getWeekOfMonthWithOptions: CurriedFn2<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    number
+  >,
+  getWeeksInMonth: CurriedFn1<Date | number, number>,
+  getWeeksInMonthWithOptions: CurriedFn2<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    number
+  >,
+  getWeekWithOptions: CurriedFn2<
+    {
+      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    number
+  >,
+  getWeekYear: CurriedFn1<Date | number, number>,
+  getWeekYearWithOptions: CurriedFn2<
+    {
+      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    number
+  >,
+  getYear: CurriedFn1<Date | number, number>,
+  hoursToMilliseconds: CurriedFn1<number, number>,
+  hoursToMinutes: CurriedFn1<number, number>,
+  hoursToSeconds: CurriedFn1<number, number>,
+  intervalToDuration: CurriedFn1<Interval, Duration>,
+  intlFormat: CurriedFn3<
+    {
+      locale?: string | string[],
+    },
+    {
+      timeZone?: string,
+      hour12?: boolean,
+      formatMatcher?: 'basic' | 'best fit',
+      timeZoneName?: 'short' | 'long',
+      second?: 'numeric' | '2-digit',
+      minute?: 'numeric' | '2-digit',
+      hour?: 'numeric' | '2-digit',
+      day?: 'numeric' | '2-digit',
+      month?: 'numeric' | '2-digit' | 'narrow' | 'short' | 'long',
+      year?: 'numeric' | '2-digit',
+      era?: 'narrow' | 'short' | 'long',
+      weekday?: 'narrow' | 'short' | 'long',
+      localeMatcher?: 'lookup' | 'best fit',
+    },
+    Date | number,
+    string
+  >,
+  intlFormatDistance: CurriedFn2<Date | number, Date | number, string>,
+  intlFormatDistanceWithOptions: CurriedFn3<
+    {
+      style?: string,
+      numeric?: string,
+      localeMatcher?: string,
+      locale?: string | string[],
+      unit?: string,
+    },
+    Date | number,
+    Date | number,
+    string
+  >,
+  isAfter: CurriedFn2<Date | number, Date | number, boolean>,
+  isBefore: CurriedFn2<Date | number, Date | number, boolean>,
+  isDate: CurriedFn1<any, boolean>,
+  isEqual: CurriedFn2<Date | number, Date | number, boolean>,
+  isExists: CurriedFn3<number, number, number, boolean>,
+  isFirstDayOfMonth: CurriedFn1<Date | number, boolean>,
+  isFriday: CurriedFn1<Date | number, boolean>,
+  isLastDayOfMonth: CurriedFn1<Date | number, boolean>,
+  isLeapYear: CurriedFn1<Date | number, boolean>,
+  isMatch: CurriedFn2<string, string, boolean>,
+  isMatchWithOptions: CurriedFn3<
+    {
+      useAdditionalDayOfYearTokens?: boolean,
+      useAdditionalWeekYearTokens?: boolean,
+      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    string,
+    string,
+    boolean
+  >,
+  isMonday: CurriedFn1<Date | number, boolean>,
+  isSameDay: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameHour: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameISOWeek: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameISOWeekYear: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameMinute: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameMonth: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameQuarter: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameSecond: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameWeek: CurriedFn2<Date | number, Date | number, boolean>,
+  isSameWeekWithOptions: CurriedFn3<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    Date | number,
+    boolean
+  >,
+  isSameYear: CurriedFn2<Date | number, Date | number, boolean>,
+  isSaturday: CurriedFn1<Date | number, boolean>,
+  isSunday: CurriedFn1<Date | number, boolean>,
+  isThursday: CurriedFn1<Date | number, boolean>,
+  isTuesday: CurriedFn1<Date | number, boolean>,
+  isValid: CurriedFn1<any, boolean>,
+  isWednesday: CurriedFn1<Date | number, boolean>,
+  isWeekend: CurriedFn1<Date | number, boolean>,
+  isWithinInterval: CurriedFn2<Interval, Date | number, boolean>,
+  lastDayOfDecade: CurriedFn1<Date | number, Date>,
+  lastDayOfISOWeek: CurriedFn1<Date | number, Date>,
+  lastDayOfISOWeekYear: CurriedFn1<Date | number, Date>,
+  lastDayOfMonth: CurriedFn1<Date | number, Date>,
+  lastDayOfQuarter: CurriedFn1<Date | number, Date>,
+  lastDayOfQuarterWithOptions: CurriedFn2<
+    {
+      additionalDigits?: 0 | 1 | 2,
+    },
+    Date | number,
+    Date
+  >,
+  lastDayOfWeek: CurriedFn1<Date | number, Date>,
+  lastDayOfWeekWithOptions: CurriedFn2<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    Date
+  >,
+  lastDayOfYear: CurriedFn1<Date | number, Date>,
+  lightFormat: CurriedFn2<string, Date | number, string>,
+  max: CurriedFn1<(Date | number)[], Date>,
+  milliseconds: CurriedFn1<Duration, number>,
+  millisecondsToHours: CurriedFn1<number, number>,
+  millisecondsToMinutes: CurriedFn1<number, number>,
+  millisecondsToSeconds: CurriedFn1<number, number>,
+  min: CurriedFn1<(Date | number)[], Date>,
+  minutesToHours: CurriedFn1<number, number>,
+  minutesToMilliseconds: CurriedFn1<number, number>,
+  minutesToSeconds: CurriedFn1<number, number>,
+  monthsToQuarters: CurriedFn1<number, number>,
+  monthsToYears: CurriedFn1<number, number>,
+  nextDay: CurriedFn2<Day, Date | number, Date>,
+  nextFriday: CurriedFn1<Date | number, Date>,
+  nextMonday: CurriedFn1<Date | number, Date>,
+  nextSaturday: CurriedFn1<Date | number, Date>,
+  nextSunday: CurriedFn1<Date | number, Date>,
+  nextThursday: CurriedFn1<Date | number, Date>,
+  nextTuesday: CurriedFn1<Date | number, Date>,
+  nextWednesday: CurriedFn1<Date | number, Date>,
+  parse: CurriedFn3<Date | number, string, string, Date>,
+  parseISO: CurriedFn1<string, Date>,
+  parseISOWithOptions: CurriedFn2<
+    {
+      additionalDigits?: 0 | 1 | 2,
+    },
+    string,
+    Date
+  >,
+  parseJSON: CurriedFn1<string | number | Date, Date>,
+  parseWithOptions: CurriedFn4<
+    {
+      useAdditionalDayOfYearTokens?: boolean,
+      useAdditionalWeekYearTokens?: boolean,
+      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    string,
+    string,
+    Date
+  >,
+  previousDay: CurriedFn2<number, Date | number, Date>,
+  previousFriday: CurriedFn1<Date | number, Date>,
+  previousMonday: CurriedFn1<Date | number, Date>,
+  previousSaturday: CurriedFn1<Date | number, Date>,
+  previousSunday: CurriedFn1<Date | number, Date>,
+  previousThursday: CurriedFn1<Date | number, Date>,
+  previousTuesday: CurriedFn1<Date | number, Date>,
+  previousWednesday: CurriedFn1<Date | number, Date>,
+  quartersToMonths: CurriedFn1<number, number>,
+  quartersToYears: CurriedFn1<number, number>,
+  roundToNearestMinutes: CurriedFn1<Date | number, Date>,
+  roundToNearestMinutesWithOptions: CurriedFn2<
+    {
+      roundingMethod?: string,
+      nearestTo?: number,
+    },
+    Date | number,
+    Date
+  >,
+  secondsToHours: CurriedFn1<number, number>,
+  secondsToMilliseconds: CurriedFn1<number, number>,
+  secondsToMinutes: CurriedFn1<number, number>,
+  set: CurriedFn2<
+    {
+      milliseconds?: number,
+      seconds?: number,
+      minutes?: number,
+      hours?: number,
+      date?: number,
+      month?: number,
+      year?: number,
+    },
+    Date | number,
+    Date
+  >,
+  setDate: CurriedFn2<number, Date | number, Date>,
+  setDay: CurriedFn2<number, Date | number, Date>,
+  setDayOfYear: CurriedFn2<number, Date | number, Date>,
+  setDayWithOptions: CurriedFn3<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    number,
+    Date | number,
+    Date
+  >,
+  setHours: CurriedFn2<number, Date | number, Date>,
+  setISODay: CurriedFn2<number, Date | number, Date>,
+  setISOWeek: CurriedFn2<number, Date | number, Date>,
+  setISOWeekYear: CurriedFn2<number, Date | number, Date>,
+  setMilliseconds: CurriedFn2<number, Date | number, Date>,
+  setMinutes: CurriedFn2<number, Date | number, Date>,
+  setMonth: CurriedFn2<number, Date | number, Date>,
+  setQuarter: CurriedFn2<number, Date | number, Date>,
+  setSeconds: CurriedFn2<number, Date | number, Date>,
+  setWeek: CurriedFn2<number, Date | number, Date>,
+  setWeekWithOptions: CurriedFn3<
+    {
+      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    number,
+    Date | number,
+    Date
+  >,
+  setWeekYear: CurriedFn2<number, Date | number, Date>,
+  setWeekYearWithOptions: CurriedFn3<
+    {
+      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    number,
+    Date | number,
+    Date
+  >,
+  setYear: CurriedFn2<number, Date | number, Date>,
+  startOfDay: CurriedFn1<Date | number, Date>,
+  startOfDecade: CurriedFn1<Date | number, Date>,
+  startOfHour: CurriedFn1<Date | number, Date>,
+  startOfISOWeek: CurriedFn1<Date | number, Date>,
+  startOfISOWeekYear: CurriedFn1<Date | number, Date>,
+  startOfMinute: CurriedFn1<Date | number, Date>,
+  startOfMonth: CurriedFn1<Date | number, Date>,
+  startOfQuarter: CurriedFn1<Date | number, Date>,
+  startOfSecond: CurriedFn1<Date | number, Date>,
+  startOfWeek: CurriedFn1<Date | number, Date>,
+  startOfWeekWithOptions: CurriedFn2<
+    {
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    Date
+  >,
+  startOfWeekYear: CurriedFn1<Date | number, Date>,
+  startOfWeekYearWithOptions: CurriedFn2<
+    {
+      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6,
+      locale?: Locale,
+    },
+    Date | number,
+    Date
+  >,
+  startOfYear: CurriedFn1<Date | number, Date>,
+  sub: CurriedFn2<Duration, Date | number, Date>,
+  subBusinessDays: CurriedFn2<number, Date | number, Date>,
+  subDays: CurriedFn2<number, Date | number, Date>,
+  subHours: CurriedFn2<number, Date | number, Date>,
+  subISOWeekYears: CurriedFn2<number, Date | number, Date>,
+  subMilliseconds: CurriedFn2<number, Date | number, Date>,
+  subMinutes: CurriedFn2<number, Date | number, Date>,
+  subMonths: CurriedFn2<number, Date | number, Date>,
+  subQuarters: CurriedFn2<number, Date | number, Date>,
+  subSeconds: CurriedFn2<number, Date | number, Date>,
+  subWeeks: CurriedFn2<number, Date | number, Date>,
+  subYears: CurriedFn2<number, Date | number, Date>,
+  toDate: CurriedFn1<Date | number, Date>,
+  weeksToDays: CurriedFn1<number, number>,
+  yearsToMonths: CurriedFn1<number, number>,
+  yearsToQuarters: CurriedFn1<number, number>,
+  daysInWeek: number,
+  daysInYear: number,
+  maxTime: number,
+  millisecondsInMinute: number,
+  millisecondsInHour: number,
+  millisecondsInSecond: number,
+  minTime: number,
+  minutesInHour: number,
+  monthsInQuarter: number,
+  monthsInYear: number,
+  quartersInYear: number,
+  secondsInHour: number,
+  secondsInMinute: number,
+  secondsInDay: number,
+  secondsInWeek: number,
+  secondsInYear: number,
+  secondsInMonth: number,
+  secondsInQuarter: number,
+}

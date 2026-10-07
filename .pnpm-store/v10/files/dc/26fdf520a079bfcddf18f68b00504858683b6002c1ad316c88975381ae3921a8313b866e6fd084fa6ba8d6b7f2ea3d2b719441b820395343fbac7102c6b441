@@ -1,0 +1,47 @@
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+
+const nodeStackTrace = require('./node-stack-trace.js');
+const stacktrace = require('./stacktrace.js');
+
+function watchdogTimer(createTimer, pollInterval, anrThreshold, callback) {
+  const timer = createTimer();
+  let triggered = false;
+  let enabled = true;
+  setInterval(() => {
+    const diffMs = timer.getTimeMs();
+    if (triggered === false && diffMs > pollInterval + anrThreshold) {
+      triggered = true;
+      if (enabled) {
+        callback();
+      }
+    }
+    if (diffMs < pollInterval + anrThreshold) {
+      triggered = false;
+    }
+  }, 20);
+  return {
+    poll: () => {
+      timer.reset();
+    },
+    enabled: (state) => {
+      enabled = state;
+    }
+  };
+}
+function callFrameToStackFrame(frame, url, getModuleFromFilename) {
+  const filename = url ? url.replace(/^file:\/\//, "") : void 0;
+  const colno = frame.location.columnNumber ? frame.location.columnNumber + 1 : void 0;
+  const lineno = frame.location.lineNumber ? frame.location.lineNumber + 1 : void 0;
+  return {
+    filename,
+    module: getModuleFromFilename(filename),
+    function: frame.functionName || stacktrace.UNKNOWN_FUNCTION,
+    colno,
+    lineno,
+    in_app: filename ? nodeStackTrace.filenameIsInApp(filename) : void 0
+  };
+}
+
+exports.callFrameToStackFrame = callFrameToStackFrame;
+exports.watchdogTimer = watchdogTimer;
+//# sourceMappingURL=anr.js.map

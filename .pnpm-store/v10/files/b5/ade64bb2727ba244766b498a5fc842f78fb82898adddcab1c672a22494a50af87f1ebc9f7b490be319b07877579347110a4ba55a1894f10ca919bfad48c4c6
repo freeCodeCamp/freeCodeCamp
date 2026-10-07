@@ -1,0 +1,53 @@
+{
+  "name": "supertest",
+  "description": "SuperAgent driven library for testing HTTP servers",
+  "version": "6.3.4",
+  "author": "TJ Holowaychuk",
+  "contributors": [],
+  "dependencies": {
+    "methods": "^1.1.2",
+    "superagent": "^8.1.2"
+  },
+  "devDependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "express": "^4.18.2",
+    "mocha": "^10.2.0",
+    "nock": "^13.3.0",
+    "nyc": "^15.1.0",
+    "proxyquire": "^2.1.3",
+    "should": "^13.2.3"
+  },
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "keywords": [
+    "bdd",
+    "http",
+    "request",
+    "superagent",
+    "tdd",
+    "test",
+    "testing"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ladjs/supertest.git"
+  },
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov",
+    "lint": "eslint lib/**/*.js test/**/*.js index.js",
+    "lint:fix": "eslint --fix lib/**/*.js test/**/*.js index.js",
+    "pretest": "npm run lint --if-present",
+    "test": "nyc --reporter=html --reporter=text mocha --exit --require should --reporter spec --check-leaks"
+  }
+}

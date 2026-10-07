@@ -1,0 +1,1 @@
+{"version":3,"file":"eventprocessor.d.ts","sourceRoot":"","sources":["../../../src/types/eventprocessor.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,KAAK,EAAE,SAAS,EAAE,MAAM,SAAS,CAAC;AAEhD;;;;;GAKG;AACH,MAAM,WAAW,cAAc;IAC7B,CAAC,KAAK,EAAE,KAAK,EAAE,IAAI,EAAE,SAAS,GAAG,WAAW,CAAC,KAAK,GAAG,IAAI,CAAC,GAAG,KAAK,GAAG,IAAI,CAAC;IAC1E,EAAE,CAAC,EAAE,MAAM,CAAC;CACb"}

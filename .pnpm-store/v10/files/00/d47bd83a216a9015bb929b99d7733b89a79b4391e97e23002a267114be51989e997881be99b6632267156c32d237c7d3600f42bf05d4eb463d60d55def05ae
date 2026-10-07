@@ -1,0 +1,9 @@
+{
+  "test": "dist/index.js",
+  "targets": {
+    "test": {
+      "isLibrary": true,
+      "scopeHoist": false
+    }
+  }
+}

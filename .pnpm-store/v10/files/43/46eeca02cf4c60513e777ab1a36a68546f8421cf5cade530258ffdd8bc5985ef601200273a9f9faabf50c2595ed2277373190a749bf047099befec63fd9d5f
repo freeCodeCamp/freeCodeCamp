@@ -1,0 +1,72 @@
+{
+	"name": "@szmarczak/http-timer",
+	"version": "4.0.6",
+	"description": "Timings for HTTP requests",
+	"main": "dist/source",
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && tsc --noEmit && nyc ava",
+		"build": "del-cli dist && tsc",
+		"prepare": "npm run build",
+		"coveralls": "nyc report --reporter=text-lcov | coveralls"
+	},
+	"files": [
+		"dist/source"
+	],
+	"keywords": [
+		"http",
+		"https",
+		"timer",
+		"timings"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/szmarczak/http-timer.git"
+	},
+	"author": "Szymon Marczak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/szmarczak/http-timer/issues"
+	},
+	"homepage": "https://github.com/szmarczak/http-timer#readme",
+	"dependencies": {
+		"defer-to-connect": "^2.0.0"
+	},
+	"devDependencies": {
+		"@ava/typescript": "^2.0.0",
+		"@sindresorhus/tsconfig": "^1.0.2",
+		"@types/node": "^16.3.1",
+		"ava": "^3.15.0",
+		"coveralls": "^3.1.1",
+		"del-cli": "^3.0.1",
+		"http2-wrapper": "^2.0.7",
+		"nyc": "^15.1.0",
+		"p-event": "^4.2.0",
+		"typescript": "^4.3.5",
+		"xo": "^0.39.1"
+	},
+	"types": "dist/source",
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"exclude": [
+			"**/tests/**"
+		]
+	},
+	"xo": {
+		"rules": {
+			"@typescript-eslint/no-non-null-assertion": "off"
+		}
+	},
+	"ava": {
+		"typescript": {
+			"compile": false,
+			"rewritePaths": {
+				"tests/": "dist/tests/"
+			}
+		}
+	}
+}

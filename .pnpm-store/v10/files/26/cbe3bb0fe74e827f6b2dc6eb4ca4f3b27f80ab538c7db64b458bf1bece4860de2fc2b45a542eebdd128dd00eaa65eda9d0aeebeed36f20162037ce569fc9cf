@@ -1,0 +1,49 @@
+{
+  "Commands:": "Commando's:",
+  "Options:": "Opties:",
+  "Examples:": "Voorbeelden:",
+  "boolean": "booleaans",
+  "count": "aantal",
+  "string": "string",
+  "number": "getal",
+  "array": "lijst",
+  "required": "verplicht",
+  "default": "standaard",
+  "default:": "standaard:",
+  "choices:": "keuzes:",
+  "aliases:": "aliassen:",
+  "generated-value": "gegenereerde waarde",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Niet genoeg niet-optie-argumenten: %s gekregen, minstens %s nodig",
+    "other": "Niet genoeg niet-optie-argumenten: %s gekregen, minstens %s nodig"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "Te veel niet-optie-argumenten: %s gekregen, maximum is %s",
+    "other": "Te veel niet-optie-argumenten: %s gekregen, maximum is %s"
+  },
+  "Missing argument value: %s": {
+    "one": "Missende argumentwaarde: %s",
+    "other": "Missende argumentwaarden: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Missend verplicht argument: %s",
+    "other": "Missende verplichte argumenten: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Onbekend argument: %s",
+    "other": "Onbekende argumenten: %s"
+  },
+  "Invalid values:": "Ongeldige waarden:",
+  "Argument: %s, Given: %s, Choices: %s": "Argument: %s, Gegeven: %s, Keuzes: %s",
+  "Argument check failed: %s": "Argumentcontrole mislukt: %s",
+  "Implications failed:": "Ontbrekende afhankelijke argumenten:",
+  "Not enough arguments following: %s": "Niet genoeg argumenten na: %s",
+  "Invalid JSON config file: %s": "Ongeldig JSON-config-bestand: %s",
+  "Path to JSON config file": "Pad naar JSON-config-bestand",
+  "Show help": "Toon help",
+  "Show version number": "Toon versienummer",
+  "Did you mean %s?": "Bedoelde u misschien %s?",
+  "Arguments %s and %s are mutually exclusive": "Argumenten %s en %s kunnen niet tegelijk gebruikt worden",
+  "Positionals:": "Positie-afhankelijke argumenten",
+  "command": "commando"
+}

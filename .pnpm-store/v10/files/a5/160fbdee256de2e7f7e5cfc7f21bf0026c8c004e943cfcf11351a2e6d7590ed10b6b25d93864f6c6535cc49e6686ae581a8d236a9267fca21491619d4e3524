@@ -1,0 +1,178 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain LayerTree
+  depends on DOM
+
+  # Unique Layer identifier.
+  type LayerId extends string
+
+  # Unique snapshot identifier.
+  type SnapshotId extends string
+
+  # Rectangle where scrolling happens on the main thread.
+  type ScrollRect extends object
+    properties
+      # Rectangle itself.
+      DOM.Rect rect
+      # Reason for rectangle to force scrolling on the main thread
+      enum type
+        RepaintsOnScroll
+        TouchEventHandler
+        WheelEventHandler
+
+  # Sticky position constraints.
+  type StickyPositionConstraint extends object
+    properties
+      # Layout rectangle of the sticky element before being shifted
+      DOM.Rect stickyBoxRect
+      # Layout rectangle of the containing block of the sticky element
+      DOM.Rect containingBlockRect
+      # The nearest sticky layer that shifts the sticky box
+      optional LayerId nearestLayerShiftingStickyBox
+      # The nearest sticky layer that shifts the containing block
+      optional LayerId nearestLayerShiftingContainingBlock
+
+  # Serialized fragment of layer picture along with its offset within the layer.
+  type PictureTile extends object
+    properties
+      # Offset from owning layer left boundary
+      number x
+      # Offset from owning layer top boundary
+      number y
+      # Base64-encoded snapshot data.
+      binary picture
+
+  # Information about a compositing layer.
+  type Layer extends object
+    properties
+      # The unique id for this layer.
+      LayerId layerId
+      # The id of parent (not present for root).
+      optional LayerId parentLayerId
+      # The backend id for the node associated with this layer.
+      optional DOM.BackendNodeId backendNodeId
+      # Offset from parent layer, X coordinate.
+      number offsetX
+      # Offset from parent layer, Y coordinate.
+      number offsetY
+      # Layer width.
+      number width
+      # Layer height.
+      number height
+      # Transformation matrix for layer, default is identity matrix
+      optional array of number transform
+      # Transform anchor point X, absent if no transform specified
+      optional number anchorX
+      # Transform anchor point Y, absent if no transform specified
+      optional number anchorY
+      # Transform anchor point Z, absent if no transform specified
+      optional number anchorZ
+      # Indicates how many time this layer has painted.
+      integer paintCount
+      # Indicates whether this layer hosts any content, rather than being used for
+      # transform/scrolling purposes only.
+      boolean drawsContent
+      # Set if layer is not visible.
+      optional boolean invisible
+      # Rectangles scrolling on main thread only.
+      optional array of ScrollRect scrollRects
+      # Sticky position constraint information
+      optional StickyPositionConstraint stickyPositionConstraint
+
+  # Array of timings, one per paint step.
+  type PaintProfile extends array of number
+
+  # Provides the reasons why the given layer was composited.
+  command compositingReasons
+    parameters
+      # The id of the layer for which we want to get the reasons it was composited.
+      LayerId layerId
+    returns
+      # A list of strings specifying reasons for the given layer to become composited.
+      array of string compositingReasons
+      # A list of strings specifying reason IDs for the given layer to become composited.
+      array of string compositingReasonIds
+
+  # Disables compositing tree inspection.
+  command disable
+
+  # Enables compositing tree inspection.
+  command enable
+
+  # Returns the snapshot identifier.
+  command loadSnapshot
+    parameters
+      # An array of tiles composing the snapshot.
+      array of PictureTile tiles
+    returns
+      # The id of the snapshot.
+      SnapshotId snapshotId
+
+  # Returns the layer snapshot identifier.
+  command makeSnapshot
+    parameters
+      # The id of the layer.
+      LayerId layerId
+    returns
+      # The id of the layer snapshot.
+      SnapshotId snapshotId
+
+  command profileSnapshot
+    parameters
+      # The id of the layer snapshot.
+      SnapshotId snapshotId
+      # The maximum number of times to replay the snapshot (1, if not specified).
+      optional integer minRepeatCount
+      # The minimum duration (in seconds) to replay the snapshot.
+      optional number minDuration
+      # The clip rectangle to apply when replaying the snapshot.
+      optional DOM.Rect clipRect
+    returns
+      # The array of paint profiles, one per run.
+      array of PaintProfile timings
+
+  # Releases layer snapshot captured by the back-end.
+  command releaseSnapshot
+    parameters
+      # The id of the layer snapshot.
+      SnapshotId snapshotId
+
+  # Replays the layer snapshot and returns the resulting bitmap.
+  command replaySnapshot
+    parameters
+      # The id of the layer snapshot.
+      SnapshotId snapshotId
+      # The first step to replay from (replay from the very start if not specified).
+      optional integer fromStep
+      # The last step to replay to (replay till the end if not specified).
+      optional integer toStep
+      # The scale to apply while replaying (defaults to 1).
+      optional number scale
+    returns
+      # A data: URL for resulting image.
+      string dataURL
+
+  # Replays the layer snapshot and returns canvas log.
+  command snapshotCommandLog
+    parameters
+      # The id of the layer snapshot.
+      SnapshotId snapshotId
+    returns
+      # The array of canvas function calls.
+      array of object commandLog
+
+  event layerPainted
+    parameters
+      # The id of the painted layer.
+      LayerId layerId
+      # Clip rectangle.
+      DOM.Rect clip
+
+  event layerTreeDidChange
+    parameters
+      # Layer tree, absent if not in the compositing mode.
+      optional array of Layer layers

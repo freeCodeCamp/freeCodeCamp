@@ -1,0 +1,46 @@
+{
+  "name": "@graphql-codegen/plugin-helpers",
+  "version": "3.1.2",
+  "description": "GraphQL Code Generator common utils and types",
+  "peerDependencies": {
+    "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "@graphql-tools/utils": "^9.0.0",
+    "change-case-all": "1.0.15",
+    "common-tags": "1.8.2",
+    "import-from": "4.0.0",
+    "lodash": "~4.17.0",
+    "tslib": "~2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotansimha/graphql-code-generator.git",
+    "directory": "packages/utils/plugins-helpers"
+  },
+  "license": "MIT",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "typings": "typings/index.d.ts",
+  "typescript": {
+    "definition": "typings/index.d.ts"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./typings/index.d.cts",
+        "default": "./cjs/index.js"
+      },
+      "import": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "default": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  }
+}

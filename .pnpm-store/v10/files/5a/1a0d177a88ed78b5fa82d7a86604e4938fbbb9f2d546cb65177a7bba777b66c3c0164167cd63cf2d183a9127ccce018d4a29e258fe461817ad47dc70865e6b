@@ -1,0 +1,10 @@
+{
+  "name": "dist",
+  "private": true,
+  "version": "1.0.0",
+  "main": "bundle.min.js",
+  "type": "commonjs",
+  "author": "",
+  "license": "BSD-2-Clause",
+  "description": "A package to hold the Terser dist bundle as commonjs while keeping the rest of it ESM. Nothing to see here."
+}

@@ -1,0 +1,72 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Query and modify DOM storage.
+experimental domain DOMStorage
+
+  type SerializedStorageKey extends string
+
+  # DOM Storage identifier.
+  type StorageId extends object
+    properties
+      # Security origin for the storage.
+      optional string securityOrigin
+      # Represents a key by which DOM Storage keys its CachedStorageAreas
+      optional SerializedStorageKey storageKey
+      # Whether the storage is local storage (not session storage).
+      boolean isLocalStorage
+
+  # DOM Storage item.
+  type Item extends array of string
+
+  command clear
+    parameters
+      StorageId storageId
+
+  # Disables storage tracking, prevents storage events from being sent to the client.
+  command disable
+
+  # Enables storage tracking, storage events will now be delivered to the client.
+  command enable
+
+  command getDOMStorageItems
+    parameters
+      StorageId storageId
+    returns
+      array of Item entries
+
+  command removeDOMStorageItem
+    parameters
+      StorageId storageId
+      string key
+
+  command setDOMStorageItem
+    parameters
+      StorageId storageId
+      string key
+      string value
+
+  event domStorageItemAdded
+    parameters
+      StorageId storageId
+      string key
+      string newValue
+
+  event domStorageItemRemoved
+    parameters
+      StorageId storageId
+      string key
+
+  event domStorageItemUpdated
+    parameters
+      StorageId storageId
+      string key
+      string oldValue
+      string newValue
+
+  event domStorageItemsCleared
+    parameters
+      StorageId storageId

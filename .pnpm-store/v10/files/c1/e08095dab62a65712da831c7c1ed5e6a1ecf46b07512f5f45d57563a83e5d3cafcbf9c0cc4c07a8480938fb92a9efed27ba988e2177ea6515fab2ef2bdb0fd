@@ -1,0 +1,76 @@
+{
+	"name": "language-tags",
+	"version": "1.0.9",
+	"implements": [
+		"CommonJS/Modules/1.0"
+	],
+	"description": "Work with IANA language tags.",
+	"main": "lib/index.js",
+	"homepage": "https://github.com/mattcg/language-tags",
+	"author": "Matthew Caruana Galizia <mattcg@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/mattcg/language-tags.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mattcg/language-tags/issues"
+	},
+	"license": "MIT",
+	"scripts": {
+		"prepublishOnly": "npm run build",
+		"prebuild": "rimraf lib && mkdirp lib",
+		"build": "babel src -d lib",
+		"lint": "eslint --ext=js,mjs .",
+		"tests-only": "nyc mocha --recursive test",
+		"pretest": "npm run lint",
+		"test": "npm run tests-only"
+	},
+	"keywords": [
+		"iana",
+		"bcp47",
+		"subtags",
+		"rfc5646",
+		"m17n",
+		"multilingualization"
+	],
+	"dependencies": {
+		"language-subtag-registry": "^0.3.20"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.22.10",
+		"@babel/preset-env": "^7.22.10",
+		"coveralls": "^3.1.1",
+		"eslint": "^8.47.0",
+		"mkdirp": "^0.5.6",
+		"mocha": "^3.5.3",
+		"nyc": "^10.3.2",
+		"rimraf": "^2.7.1"
+	},
+	"files": [
+		"/lib"
+	],
+	"engines": {
+		"node": ">=0.10"
+	},
+	"eslintConfig": {
+		"parserOptions": {
+			"ecmaVersion": 2022,
+			"sourceType": "script"
+		},
+		"env": {
+			"node": true
+		},
+		"ignorePatterns": [
+			"!.babelrc.js"
+		],
+		"overrides": [
+			{
+				"files": "test/**",
+				"globals": {
+					"suite": false,
+					"test": false
+				}
+			}
+		]
+	}
+}

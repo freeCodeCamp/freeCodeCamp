@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-worklet-node.d.ts","sourceRoot":"","sources":["../../../src/guards/audio-worklet-node.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,iBAAiB,EAAE,MAAM,eAAe,CAAC;AAC9D,OAAO,EAAE,QAAQ,EAAE,MAAM,UAAU,CAAC;AAEpC,eAAO,MAAM,kBAAkB,GAAI,CAAC,SAAS,QAAQ,aAAa,UAAU,CAAC,CAAC,CAAC,KAAG,SAAS,IAAI,iBAAiB,CAAC,CAAC,CAEjH,CAAC"}

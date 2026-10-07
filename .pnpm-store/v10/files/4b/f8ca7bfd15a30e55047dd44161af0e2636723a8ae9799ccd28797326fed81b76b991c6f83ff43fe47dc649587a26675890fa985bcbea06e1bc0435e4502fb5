@@ -1,0 +1,23 @@
+{
+  "name": "lodash-es",
+  "version": "4.18.1",
+  "description": "Lodash exported as ES modules.",
+  "keywords": "es6, modules, stdlib, util",
+  "homepage": "https://lodash.com/custom-builds",
+  "bugs": "https://github.com/lodash/lodash-cli/issues",
+  "repository": "lodash/lodash",
+  "license": "MIT",
+  "type": "module",
+  "jsnext:main": "lodash.js",
+  "main": "lodash.js",
+  "module": "lodash.js",
+  "sideEffects": false,
+  "author": "John-David Dalton <john.david.dalton@gmail.com>",
+  "contributors": [
+    "John-David Dalton <john.david.dalton@gmail.com>",
+    "Mathias Bynens <mathias@qiwi.be>"
+  ],
+  "scripts": {
+    "test": "echo \"See https://travis-ci.org/lodash-archive/lodash-cli for testing details.\""
+  }
+}

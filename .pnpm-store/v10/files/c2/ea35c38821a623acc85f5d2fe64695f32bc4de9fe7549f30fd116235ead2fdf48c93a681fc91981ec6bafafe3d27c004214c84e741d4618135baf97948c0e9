@@ -1,0 +1,15 @@
+{
+  "name": "browser-stdout",
+  "version": "1.3.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kumavis/browser-stdout.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kumavis",
+  "license": "ISC"
+}

@@ -1,0 +1,128 @@
+{
+  "name": "@paypal/react-paypal-js",
+  "version": "10.3.0",
+  "description": "React components for the PayPal JS SDK",
+  "keywords": [
+    "react",
+    "component",
+    "paypal",
+    "button",
+    "checkout",
+    "payment",
+    "paypal javascript sdk",
+    "paypal smart buttons"
+  ],
+  "main": "index.js",
+  "module": "dist/esm/react-paypal-js.js",
+  "types": "dist/types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/react-paypal-js.js",
+      "require": "./dist/cjs/react-paypal-js.js"
+    },
+    "./sdk-v6": {
+      "types": "./dist/types/v6/index.d.ts",
+      "import": "./dist/v6/esm/react-paypal-js.js"
+    },
+    "./sdk-v6/server": {
+      "types": "./dist/types/v6/server.d.ts",
+      "import": "./dist/v6/esm/server.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup --config --bundleConfigAsCjs",
+    "check-node-version": "node scripts/check-node-version.js",
+    "dev": "concurrently \"rollup --config --bundleConfigAsCjs --watch\" \"npm run type-declarations -- --watch\"",
+    "lint": "eslint . && npm run typecheck",
+    "postrelease": "git push && git push --follow-tags && npm run build && npm publish",
+    "prepack": "rimraf dist && npm run build && npm run type-declarations",
+    "prerelease": "npm run validate",
+    "release": "standard-version",
+    "test": "jest --env=jsdom",
+    "test:watch": "jest --env=jsdom --watch",
+    "type-declarations": "tsc --emitDeclarationOnly --outDir dist/types --project tsconfig.declarations.json",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run check-node-version && npm run typecheck && npm run build && npm run lint && npm test -- --coverage"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paypal/paypal-js.git",
+    "directory": "packages/react-paypal-js"
+  },
+  "homepage": "https://paypal.github.io/paypal-js/web-sdk-v6-react-storybook/",
+  "dependencies": {
+    "@paypal/paypal-js": "^10.1.0",
+    "@paypal/sdk-constants": "^1.0.122",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.6",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^27.4.0",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^8.59.0",
+    "@typescript-eslint/parser": "^8.59.0",
+    "babel-jest": "^27.5.1",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^61.1.11",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-mock-extended": "^3.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "react-is": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^4.9.1",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "scheduler": "^0.20.2",
+    "semver": "^7.3.5",
+    "standard-version": "^9.3.2",
+    "tslib": "2.6.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18 || ^19",
+    "react-dom": "^16.8.0 || ^17 || ^18 || ^19"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/!node_modules\\/@paypal\\/sdk-constants/"
+    ],
+    "setupFilesAfterEnv": [
+      "./jest.setup.ts"
+    ],
+    "moduleNameMapper": {
+      "@paypal/paypal-js/sdk-v6": "<rootDir>/../../node_modules/@paypal/paypal-js/dist/v6/esm/paypal-js.js",
+      "^server-only$": "<rootDir>/jest.setup.ts"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/paypal/react-paypal-js/issues"
+  },
+  "author": ""
+}

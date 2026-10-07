@@ -1,0 +1,21 @@
+{
+  "modules": {
+    "android": "61",
+    "bun": "0.1.1",
+    "chrome": "61",
+    "chrome-android": "61",
+    "deno": "1.0",
+    "edge": "16",
+    "firefox": "60",
+    "firefox-android": "60",
+    "ios": "10.3",
+    "node": "13.2",
+    "oculus": "4.0",
+    "opera": "48",
+    "opera-android": "45",
+    "opera_mobile": "45",
+    "quest": "4.0",
+    "safari": "10.1",
+    "samsung": "8.0"
+  }
+}

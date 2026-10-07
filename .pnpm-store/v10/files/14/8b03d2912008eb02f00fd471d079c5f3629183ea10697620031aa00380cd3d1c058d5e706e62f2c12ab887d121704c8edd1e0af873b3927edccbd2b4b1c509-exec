@@ -1,0 +1,63 @@
+{
+    "name": "@hapi/tlds",
+    "description": "TLDS list for domain validation",
+    "version": "1.1.6",
+    "repository": "git://github.com/hapijs/tlds",
+    "type": "module",
+    "tshy": {
+        "main": true,
+        "exports": {
+            "./package.json": "./package.json",
+            ".": "./src/index.ts"
+        }
+    },
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": {
+                "types": "./dist/esm/index.d.ts",
+                "default": "./dist/esm/index.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/index.d.ts",
+                "default": "./dist/commonjs/index.js"
+            }
+        }
+    },
+    "main": "./dist/commonjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/commonjs/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "domain",
+        "tlds"
+    ],
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "devDependencies": {
+        "@hapi/code": "^9.0.3",
+        "@hapi/eslint-plugin": "^7.0.0",
+        "@hapi/lab": "^26.0.0",
+        "@hapi/wreck": "^18.1.0",
+        "@types/node": "^18.19.59",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "globals": "^15.11.0",
+        "prettier": "^3.3.3",
+        "ts-node": "^10.9.2",
+        "tshy": "^2.0.1",
+        "typescript": "^5.6.3",
+        "typescript-eslint": "^8.11.0"
+    },
+    "scripts": {
+        "prepare": "tshy",
+        "test": "lab -t 100 -L --typescript",
+        "test-cov-html": "lab -t 100 -L -r html -o coverage.html",
+        "format": "prettier --write '**/*.{cjs,ts,md}'",
+        "update-list": "node --loader ts-node/esm .github/scripts/update-list.ts"
+    },
+    "license": "BSD-3-Clause"
+}

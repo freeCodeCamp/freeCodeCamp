@@ -1,0 +1,8 @@
+import { createChatGreetingComponent } from 'instantsearch-ui-components';
+import { createElement } from 'react';
+
+var ChatGreeting = createChatGreetingComponent({
+    createElement: createElement
+});
+
+export { ChatGreeting };

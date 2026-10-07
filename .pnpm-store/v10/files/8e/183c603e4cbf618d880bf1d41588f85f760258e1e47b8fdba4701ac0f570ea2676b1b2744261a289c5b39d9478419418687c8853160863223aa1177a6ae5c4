@@ -1,0 +1,239 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain allows configuring virtual authenticators to test the WebAuthn
+# API.
+experimental domain WebAuthn
+  type AuthenticatorId extends string
+
+  type AuthenticatorProtocol extends string
+    enum
+      # Universal 2nd Factor.
+      u2f
+      # Client To Authenticator Protocol 2.
+      ctap2
+
+  type Ctap2Version extends string
+    enum
+      ctap2_0
+      ctap2_1
+      ctap2_2
+
+  type AuthenticatorTransport extends string
+    enum
+      # Cross-Platform authenticator attachments:
+      usb
+      nfc
+      ble
+      cable
+      # Platform authenticator attachment:
+      internal
+
+  type VirtualAuthenticatorOptions extends object
+    properties
+      AuthenticatorProtocol protocol
+      # Defaults to ctap2_0. Ignored if |protocol| == u2f.
+      optional Ctap2Version ctap2Version
+      AuthenticatorTransport transport
+      # Defaults to false.
+      optional boolean hasResidentKey
+      # Defaults to false.
+      optional boolean hasUserVerification
+      # If set to true, the authenticator will support the largeBlob extension.
+      # https://w3c.github.io/webauthn#largeBlob
+      # Defaults to false.
+      optional boolean hasLargeBlob
+      # If set to true, the authenticator will support the credBlob extension.
+      # https://fidoalliance.org/specs/fido-v2.1-rd-20201208/fido-client-to-authenticator-protocol-v2.1-rd-20201208.html#sctn-credBlob-extension
+      # Defaults to false.
+      optional boolean hasCredBlob
+      # If set to true, the authenticator will support the minPinLength extension.
+      # https://fidoalliance.org/specs/fido-v2.1-ps-20210615/fido-client-to-authenticator-protocol-v2.1-ps-20210615.html#sctn-minpinlength-extension
+      # Defaults to false.
+      optional boolean hasMinPinLength
+      # If set to true, the authenticator will support the prf extension.
+      # https://w3c.github.io/webauthn/#prf-extension
+      # Defaults to false.
+      optional boolean hasPrf
+      # If set to true, the authenticator will support the hmac-secret extension.
+      # https://fidoalliance.org/specs/fido-v2.1-ps-20210615/fido-client-to-authenticator-protocol-v2.1-ps-20210615.html#sctn-hmac-secret-extension
+      # Defaults to false.
+      optional boolean hasHmacSecret
+      # If set to true, the authenticator will support the hmac-secret-mc extension.
+      # https://fidoalliance.org/specs/fido-v2.2-rd-20241003/fido-client-to-authenticator-protocol-v2.2-rd-20241003.html#sctn-hmac-secret-make-cred-extension
+      # Defaults to false.
+      optional boolean hasHmacSecretMc
+      # If set to true, tests of user presence will succeed immediately.
+      # Otherwise, they will not be resolved. Defaults to true.
+      optional boolean automaticPresenceSimulation
+      # Sets whether User Verification succeeds or fails for an authenticator.
+      # Defaults to false.
+      optional boolean isUserVerified
+      # Credentials created by this authenticator will have the backup
+      # eligibility (BE) flag set to this value. Defaults to false.
+      # https://w3c.github.io/webauthn/#sctn-credential-backup
+      optional boolean defaultBackupEligibility
+      # Credentials created by this authenticator will have the backup state
+      # (BS) flag set to this value. Defaults to false.
+      # https://w3c.github.io/webauthn/#sctn-credential-backup
+      optional boolean defaultBackupState
+
+  type Credential extends object
+    properties
+      binary credentialId
+      boolean isResidentCredential
+      # Relying Party ID the credential is scoped to. Must be set when adding a
+      # credential.
+      optional string rpId
+      # The ECDSA P-256 private key in PKCS#8 format.
+      binary privateKey
+      # An opaque byte sequence with a maximum size of 64 bytes mapping the
+      # credential to a specific user.
+      optional binary userHandle
+      # Signature counter. This is incremented by one for each successful
+      # assertion.
+      # See https://w3c.github.io/webauthn/#signature-counter
+      integer signCount
+      # The large blob associated with the credential.
+      # See https://w3c.github.io/webauthn/#sctn-large-blob-extension
+      optional binary largeBlob
+      # Assertions returned by this credential will have the backup eligibility
+      # (BE) flag set to this value. Defaults to the authenticator's
+      # defaultBackupEligibility value.
+      optional boolean backupEligibility
+      # Assertions returned by this credential will have the backup state (BS)
+      # flag set to this value. Defaults to the authenticator's
+      # defaultBackupState value.
+      optional boolean backupState
+      # The credential's user.name property. Equivalent to empty if not set.
+      # https://w3c.github.io/webauthn/#dom-publickeycredentialentity-name
+      optional string userName
+      # The credential's user.displayName property. Equivalent to empty if
+      # not set.
+      # https://w3c.github.io/webauthn/#dom-publickeycredentialuserentity-displayname
+      optional string userDisplayName
+
+  # Enable the WebAuthn domain and start intercepting credential storage and
+  # retrieval with a virtual authenticator.
+  command enable
+    parameters
+      # Whether to enable the WebAuthn user interface. Enabling the UI is
+      # recommended for debugging and demo purposes, as it is closer to the real
+      # experience. Disabling the UI is recommended for automated testing.
+      # Supported at the embedder's discretion if UI is available.
+      # Defaults to false.
+      optional boolean enableUI
+
+  # Disable the WebAuthn domain.
+  command disable
+
+  # Creates and adds a virtual authenticator.
+  command addVirtualAuthenticator
+    parameters
+      VirtualAuthenticatorOptions options
+    returns
+      AuthenticatorId authenticatorId
+
+  # Resets parameters isBogusSignature, isBadUV, isBadUP to false if they are not present.
+  command setResponseOverrideBits
+    parameters
+      AuthenticatorId authenticatorId
+      # If isBogusSignature is set, overrides the signature in the authenticator response to be zero.
+      # Defaults to false.
+      optional boolean isBogusSignature
+      # If isBadUV is set, overrides the UV bit in the flags in the authenticator response to
+      # be zero. Defaults to false.
+      optional boolean isBadUV
+      # If isBadUP is set, overrides the UP bit in the flags in the authenticator response to
+      # be zero. Defaults to false.
+      optional boolean isBadUP
+
+  # Removes the given authenticator.
+  command removeVirtualAuthenticator
+    parameters
+      AuthenticatorId authenticatorId
+
+  # Adds the credential to the specified authenticator.
+  command addCredential
+    parameters
+      AuthenticatorId authenticatorId
+      Credential credential
+
+  # Returns a single credential stored in the given virtual authenticator that
+  # matches the credential ID.
+  command getCredential
+    parameters
+      AuthenticatorId authenticatorId
+      binary credentialId
+    returns
+      Credential credential
+
+  # Returns all the credentials stored in the given virtual authenticator.
+  command getCredentials
+    parameters
+      AuthenticatorId authenticatorId
+    returns
+      array of Credential credentials
+
+  # Removes a credential from the authenticator.
+  command removeCredential
+    parameters
+      AuthenticatorId authenticatorId
+      binary credentialId
+
+  # Clears all the credentials from the specified device.
+  command clearCredentials
+    parameters
+      AuthenticatorId authenticatorId
+
+  # Sets whether User Verification succeeds or fails for an authenticator.
+  # The default is true.
+  command setUserVerified
+    parameters
+      AuthenticatorId authenticatorId
+      boolean isUserVerified
+
+  # Sets whether tests of user presence will succeed immediately (if true) or fail to resolve (if false) for an authenticator.
+  # The default is true.
+  command setAutomaticPresenceSimulation
+    parameters
+      AuthenticatorId authenticatorId
+      boolean enabled
+
+  # Allows setting credential properties.
+  # https://w3c.github.io/webauthn/#sctn-automation-set-credential-properties
+  command setCredentialProperties
+    parameters
+      AuthenticatorId authenticatorId
+      binary credentialId
+      optional boolean backupEligibility
+      optional boolean backupState
+
+  # Triggered when a credential is added to an authenticator.
+  event credentialAdded
+    parameters
+      AuthenticatorId authenticatorId
+      Credential credential
+
+  # Triggered when a credential is deleted, e.g. through
+  # PublicKeyCredential.signalUnknownCredential().
+  event credentialDeleted
+    parameters
+      AuthenticatorId authenticatorId
+      binary credentialId
+
+  # Triggered when a credential is updated, e.g. through
+  # PublicKeyCredential.signalCurrentUserDetails().
+  event credentialUpdated
+    parameters
+      AuthenticatorId authenticatorId
+      Credential credential
+
+  # Triggered when a credential is used in a webauthn assertion.
+  event credentialAsserted
+    parameters
+      AuthenticatorId authenticatorId
+      Credential credential

@@ -1,0 +1,57 @@
+{
+  "name": "ohash",
+  "version": "2.0.11",
+  "description": "Simple object hashing, serialization and comparison utils.",
+  "repository": "unjs/ohash",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.mts",
+      "default": "./dist/utils/index.mjs"
+    },
+    "./crypto": {
+      "node": {
+        "types": "./dist/crypto/node/index.d.mts",
+        "default": "./dist/crypto/node/index.mjs"
+      },
+      "default": {
+        "types": "./dist/crypto/js/index.d.mts",
+        "default": "./dist/crypto/js/index.mjs"
+      }
+    }
+  },
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "@vitest/coverage-v8": "^3.0.7",
+    "automd": "^0.4.0",
+    "changelogen": "^0.6.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.21.0",
+    "eslint-config-unjs": "^0.4.2",
+    "mitata": "^1.0.34",
+    "prettier": "^3.5.2",
+    "typescript": "^5.7.3",
+    "unbuild": "^3.5.0",
+    "vitest": "^3.0.7"
+  },
+  "scripts": {
+    "bench": "vitest bench",
+    "build": "unbuild",
+    "dev": "vitest dev",
+    "lint": "eslint . && prettier -c src test",
+    "lint:fix": "automd && eslint --fix . && prettier -w src test",
+    "release": "pnpm test && changelogen --release --push && pnpm publish",
+    "test": "pnpm lint && vitest run --coverage && pnpm test:types",
+    "test:types": "tsc --noEmit"
+  }
+}

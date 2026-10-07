@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TReentrantLock.js",
+  "module": "../dist/esm/TReentrantLock.js",
+  "types": "../dist/dts/TReentrantLock.d.ts"
+}

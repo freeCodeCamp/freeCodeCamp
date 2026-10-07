@@ -1,0 +1,34 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": 0,
+		"new-cap": [2, {
+			"capIsNewExceptions": [
+				"AddEntriesFromIterable",
+				"CreateDataPropertyOrThrow",
+				"Get",
+				"GetIterator",
+				"IsArray",
+				"IteratorStep",
+				"IteratorClose",
+				"IteratorValue",
+				"ThrowCompletion",
+				"ToPropertyKey",
+				"Type",
+				"RequireObjectCoercible",
+			],
+		}],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"no-invalid-this": 1,
+			},
+		},
+	],
+}

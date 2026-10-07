@@ -1,0 +1,47 @@
+{
+  "name": "destr",
+  "version": "2.0.5",
+  "description": "A faster, secure and convenient alternative for JSON.parse",
+  "repository": "unjs/destr",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./lib/index.cjs"
+    }
+  },
+  "main": "./lib/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "bench:bun": "pnpm build && bun --bun ./test/bench.mjs",
+    "bench:node": "pnpm build && node ./test/bench.mjs",
+    "build": "unbuild",
+    "dev": "vitest dev",
+    "lint": "eslint . && prettier -c src test",
+    "lint:fix": "eslint . --fix && prettier -w src test",
+    "release": "pnpm test && pnpm build && changelogen --release --push && npm publish",
+    "test": "pnpm lint && vitest run --coverage"
+  },
+  "devDependencies": {
+    "@hapi/bourne": "^3.0.0",
+    "@vitest/coverage-v8": "^3.1.1",
+    "changelogen": "^0.6.1",
+    "eslint": "^9.23.0",
+    "eslint-config-unjs": "^0.4.2",
+    "mitata": "^1.0.34",
+    "prettier": "^3.5.3",
+    "secure-json-parse": "^4.0.0",
+    "typescript": "^5.8.2",
+    "unbuild": "~3.4",
+    "vitest": "^3.1.1"
+  },
+  "packageManager": "pnpm@10.7.1"
+}

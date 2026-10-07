@@ -1,0 +1,44 @@
+{
+  "name": "@codemirror/language",
+  "version": "6.11.3",
+  "description": "Language support infrastructure for the CodeMirror code editor",
+  "scripts": {
+    "test": "cm-runtests",
+    "prepare": "cm-buildhelper src/index.ts"
+  },
+  "keywords": [
+    "editor",
+    "code"
+  ],
+  "author": {
+    "name": "Marijn Haverbeke",
+    "email": "marijn@haverbeke.berlin",
+    "url": "http://marijnhaverbeke.nl"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "license": "MIT",
+  "dependencies": {
+    "@codemirror/state": "^6.0.0",
+    "@codemirror/view": "^6.23.0",
+    "@lezer/common": "^1.1.0",
+    "@lezer/highlight": "^1.0.0",
+    "@lezer/lr": "^1.0.0",
+    "style-mod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@codemirror/buildhelper": "^1.0.0",
+    "@lezer/javascript": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codemirror/language.git"
+  }
+}

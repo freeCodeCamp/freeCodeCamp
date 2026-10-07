@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+  - 6.2.0
+  - 5.3.0
+  - 4.0
+
+compiler: clang-3.6
+
+env:
+  - CXX=clang-3.6
+
+addons:
+  apt:
+    sources:
+      - llvm-toolchain-precise-3.6
+      - ubuntu-toolchain-r-test
+    packages:
+      - clang-3.6
+      - g++-4.8
+
+after_success: npm run coveralls

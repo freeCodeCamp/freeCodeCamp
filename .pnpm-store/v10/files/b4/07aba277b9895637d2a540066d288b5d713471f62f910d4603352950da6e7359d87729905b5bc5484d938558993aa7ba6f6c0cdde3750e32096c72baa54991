@@ -1,0 +1,7 @@
+.sk-spinner {
+  color: #333;
+}
+
+.sk-spinner > div {
+  background-color: currentColor;
+}

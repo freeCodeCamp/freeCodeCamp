@@ -1,0 +1,1 @@
+{"version":3,"file":"circular.js","names":["TypeId","exports","Symbol","for"],"sources":["../../../../src/internal/managedRuntime/circular.ts"],"sourcesContent":[null],"mappings":";;;;;;AAEA;AAEA;AACO,MAAMA,MAAM,GAAAC,OAAA,CAAAD,MAAA,gBAAaE,MAAM,CAACC,GAAG,CAAC,uBAAuB,CAAa","ignoreList":[]}

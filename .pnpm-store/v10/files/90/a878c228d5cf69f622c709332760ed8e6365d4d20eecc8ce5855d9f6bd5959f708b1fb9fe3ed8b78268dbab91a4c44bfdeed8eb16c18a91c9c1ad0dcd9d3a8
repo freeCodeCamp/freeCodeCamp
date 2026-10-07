@@ -1,0 +1,1 @@
+{"version":3,"file":"ConditionalTypeScope.js","sourceRoot":"","sources":["../../src/scope/ConditionalTypeScope.ts"],"names":[],"mappings":";;;AAIA,2CAAwC;AACxC,2CAAwC;AAExC,MAAM,oBAAqB,SAAQ,qBAIlC;IACC,YACE,YAA0B,EAC1B,UAAyC,EACzC,KAAoC;QAEpC,KAAK,CAAC,YAAY,EAAE,qBAAS,CAAC,eAAe,EAAE,UAAU,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IAC3E,CAAC;CACF;AAEQ,oDAAoB"}

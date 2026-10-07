@@ -1,0 +1,37 @@
+# `MD056` - Table column count
+
+Tags: `table`
+
+Aliases: `table-column-count`
+
+This rule is triggered when a [GitHub Flavored Markdown table][gfm-table-056]
+does not have the same number of cells in every row.
+
+This table's second data row has too few cells and its third data row has too
+many cells:
+
+```markdown
+| Header | Header |
+| ------ | ------ |
+| Cell   | Cell   |
+| Cell   |
+| Cell   | Cell   | Cell   |
+```
+
+To fix these issues, ensure every row has the same number of cells:
+
+```markdown
+| Header | Header |
+| ------ | ------ |
+| Cell   | Cell   |
+| Cell   | Cell   |
+| Cell   | Cell   |
+```
+
+Note that a table's header row and its delimiter row must have the same number
+of cells or it will not be recognized as a table (per specification).
+
+Rationale: Extra cells in a row are usually not shown, so their data is lost.
+Missing cells in a row create holes in the table and suggest an omission.
+
+[gfm-table-056]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables

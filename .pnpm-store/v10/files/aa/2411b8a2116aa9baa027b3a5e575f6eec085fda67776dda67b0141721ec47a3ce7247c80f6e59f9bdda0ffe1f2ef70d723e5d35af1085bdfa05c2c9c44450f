@@ -1,0 +1,168 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "node": true,
+    "mocha": true,
+  },
+  "globals": {},
+  "parserOptions": { "ecmaVersion": 8 },
+  "rules": {
+    "camelcase": [
+      2,
+      {
+        "properties": "always"
+      }
+    ],
+    "eqeqeq": 2,
+    "indent": [
+      "error",
+      2,
+      {
+        "ArrayExpression": 1,
+        "CallExpression": {"arguments": 1},
+        "FunctionDeclaration": {"body": 1, "parameters": 2},
+        "MemberExpression": 1,
+        "ObjectExpression": 1,
+        "SwitchCase": 1
+      }
+    ],
+    "no-use-before-define": [
+      2,
+      {
+        "functions": false
+      }
+    ],
+    "max-len": [
+      2,
+      120
+    ],
+    "max-depth": [
+      2,
+      2
+    ],
+    "complexity": [
+      2,
+      15
+    ],
+    "new-cap": 2,
+    "quotes": [
+      2,
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "strict": [
+      2,
+      "global"
+    ],
+    "no-undef": 2,
+    "no-unused-vars": 2,
+    "no-eq-null": 2,
+    "space-before-function-paren": ["error", {
+        "anonymous": "always",
+        "named": "never"
+    }],
+    "no-empty": [
+      2,
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "space-in-parens": [
+      2,
+      "never"
+    ],
+    "quote-props": [
+      2,
+      "as-needed"
+    ],
+    "key-spacing": [
+      2,
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
+    "space-unary-ops": [
+      2,
+      {
+        "words": false,
+        "nonwords": false
+      }
+    ],
+    "no-mixed-spaces-and-tabs": 2,
+    "no-trailing-spaces": 2,
+    "comma-dangle": 0,
+    "comma-spacing": [
+      2,
+      {
+        "after": true,
+        "before": false
+      }
+    ],
+    "no-with": 2,
+    "brace-style": [
+      2,
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "no-multiple-empty-lines": 2,
+    "no-multi-str": 2,
+    "one-var": [
+      2,
+      "never"
+    ],
+    "semi-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "space-before-blocks": [
+      2,
+      "always"
+    ],
+    "wrap-iife": 2,
+    "comma-style": [
+      2,
+      "last"
+    ],
+    "space-infix-ops": 2,
+    "eol-last": 2,
+    "dot-notation": 2,
+    "curly": [
+      2,
+      "all"
+    ],
+    "keyword-spacing": [
+      2,
+      {}
+    ],
+    "lines-around-comment": [
+      2,
+      { "afterLineComment": true, "allowBlockEnd": true }
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "consistent-this": [
+      2,
+      "self"
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ]
+  }
+}

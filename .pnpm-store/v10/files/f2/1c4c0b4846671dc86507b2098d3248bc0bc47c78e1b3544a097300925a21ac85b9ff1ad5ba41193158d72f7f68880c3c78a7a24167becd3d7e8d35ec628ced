@@ -1,0 +1,174 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-text-button {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	padding: 4px;
+	border-radius: 2px;
+	text-align: center;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--vscode-button-border, transparent);
+	line-height: 18px;
+}
+
+.monaco-text-button:focus {
+	outline-offset: 2px !important;
+}
+
+.monaco-text-button:hover {
+	text-decoration: none !important;
+}
+
+.monaco-button.disabled:focus,
+.monaco-button.disabled {
+	opacity: 0.4 !important;
+	cursor: default;
+}
+
+.monaco-text-button .codicon {
+	margin: 0 0.2em;
+	color: inherit !important;
+}
+
+.monaco-text-button.monaco-text-button-with-short-label {
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 0 4px;
+	overflow: hidden;
+	height: 28px;
+}
+
+.monaco-text-button.monaco-text-button-with-short-label > .monaco-button-label {
+	flex-basis: 100%;
+}
+
+.monaco-text-button.monaco-text-button-with-short-label > .monaco-button-label-short {
+	flex-grow: 1;
+	width: 0;
+	overflow: hidden;
+}
+
+.monaco-text-button.monaco-text-button-with-short-label > .monaco-button-label,
+.monaco-text-button.monaco-text-button-with-short-label > .monaco-button-label-short {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: normal;
+	font-style: inherit;
+	padding: 4px 0;
+}
+
+.monaco-button-dropdown {
+	display: flex;
+	cursor: pointer;
+}
+
+.monaco-button-dropdown.disabled {
+	cursor: default;
+}
+
+.monaco-button-dropdown > .monaco-button:focus {
+	outline-offset: -1px !important;
+}
+
+.monaco-button-dropdown.disabled > .monaco-button.disabled,
+.monaco-button-dropdown.disabled > .monaco-button.disabled:focus,
+.monaco-button-dropdown.disabled > .monaco-button-dropdown-separator {
+	opacity: 0.4 !important;
+}
+
+.monaco-button-dropdown > .monaco-button.monaco-text-button {
+	border-right-width: 0 !important;
+}
+
+.monaco-button-dropdown .monaco-button-dropdown-separator {
+	padding: 4px 0;
+	cursor: default;
+}
+
+.monaco-button-dropdown .monaco-button-dropdown-separator > div {
+	height: 100%;
+	width: 1px;
+}
+
+.monaco-button-dropdown > .monaco-button.monaco-dropdown-button {
+	border: 1px solid var(--vscode-button-border, transparent);
+	border-left-width: 0 !important;
+	border-radius: 0 2px 2px 0;
+	display: flex;
+	align-items: center;
+}
+
+.monaco-button-dropdown > .monaco-button.monaco-text-button {
+	border-radius: 2px 0 0 2px;
+}
+
+.monaco-description-button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 4px 5px; /* allows button focus outline to be visible */
+}
+
+.monaco-description-button .monaco-button-description {
+	font-style: italic;
+	font-size: 11px;
+	padding: 4px 20px;
+}
+
+.monaco-description-button .monaco-button-label,
+.monaco-description-button .monaco-button-description {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.monaco-description-button .monaco-button-label > .codicon,
+.monaco-description-button .monaco-button-description > .codicon {
+	margin: 0 0.2em;
+	color: inherit !important;
+}
+
+/* default color styles - based on CSS variables */
+
+.monaco-button.default-colors,
+.monaco-button-dropdown.default-colors > .monaco-button{
+	color: var(--vscode-button-foreground);
+	background-color: var(--vscode-button-background);
+}
+
+.monaco-button.default-colors:hover,
+.monaco-button-dropdown.default-colors > .monaco-button:hover {
+	background-color: var(--vscode-button-hoverBackground);
+}
+
+.monaco-button.default-colors.secondary,
+.monaco-button-dropdown.default-colors > .monaco-button.secondary {
+	color: var(--vscode-button-secondaryForeground);
+	background-color: var(--vscode-button-secondaryBackground);
+}
+
+.monaco-button.default-colors.secondary:hover,
+.monaco-button-dropdown.default-colors > .monaco-button.secondary:hover {
+	background-color: var(--vscode-button-secondaryHoverBackground);
+}
+
+.monaco-button-dropdown.default-colors .monaco-button-dropdown-separator {
+	background-color: var(--vscode-button-background);
+	border-top: 1px solid var(--vscode-button-border);
+	border-bottom: 1px solid var(--vscode-button-border);
+}
+
+.monaco-button-dropdown.default-colors .monaco-button.secondary + .monaco-button-dropdown-separator {
+	background-color: var(--vscode-button-secondaryBackground);
+}
+
+.monaco-button-dropdown.default-colors .monaco-button-dropdown-separator > div {
+	background-color: var(--vscode-button-separator);
+}

@@ -1,0 +1,36 @@
+{
+  "title": "DllPluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "context": {
+      "description": "Context of requests in the manifest file (defaults to the webpack context).",
+      "type": "string",
+      "minLength": 1
+    },
+    "entryOnly": {
+      "description": "If true, only entry points will be exposed (default: true).",
+      "type": "boolean"
+    },
+    "format": {
+      "description": "If true, manifest json file (output) will be formatted.",
+      "type": "boolean"
+    },
+    "name": {
+      "description": "Name of the exposed dll function (external name, use value of 'output.library').",
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "description": "Absolute path to the manifest json file (output).",
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "description": "Type of the dll bundle (external type, use value of 'output.libraryTarget').",
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": ["path"]
+}

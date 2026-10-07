@@ -1,0 +1,70 @@
+{
+  "name": "fastify-plugin",
+  "version": "5.1.0",
+  "description": "Plugin helper for Fastify",
+  "main": "plugin.js",
+  "type": "commonjs",
+  "types": "types/plugin.d.ts",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:unit": "c8 --100 node --test",
+    "test:coverage": "c8 node --test && c8 report --reporter=html",
+    "test:typescript": "tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-plugin.git"
+  },
+  "keywords": [
+    "plugin",
+    "helper",
+    "fastify"
+  ],
+  "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Manuel Spigolon",
+      "email": "behemoth89@gmail.com"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-plugin/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-plugin#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "@fastify/type-provider-typebox": "^5.1.0",
+    "@types/node": "^24.0.8",
+    "c8": "^10.1.2",
+    "eslint": "^9.17.0",
+    "fastify": "^5.0.0",
+    "neostandard": "^0.12.0",
+    "proxyquire": "^2.1.3",
+    "tsd": "^0.33.0"
+  }
+}

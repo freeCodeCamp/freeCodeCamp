@@ -1,0 +1,24 @@
+{
+  "bundler": "@parcel/bundler-default",
+  "transformers": {
+    "*.{js,mjs,jsm,jsx,es6,cjs,ts,tsx}": [
+      "@parcel/transformer-js"
+    ],
+    "*.{json,json5}": ["@parcel/transformer-json"]
+  },
+  "namers": ["@gatsbyjs/parcel-namer-relative-to-cwd", "@parcel/namer-default"],
+  "runtimes": ["@parcel/runtime-js"],
+  "optimizers": {
+    "*.{js,mjs,cjs}": ["@parcel/optimizer-terser"]
+  },
+  "packagers": {
+    "*.{js,mjs,cjs}": "@parcel/packager-js",
+    "*.ts": "@parcel/packager-ts",
+    "*": "@parcel/packager-raw"
+  },
+  "compressors": {
+    "*": ["@parcel/compressor-raw"]
+  },
+  "resolvers": ["@parcel/resolver-default"],
+  "reporters": ["@parcel/reporter-dev-server"]
+}

@@ -1,0 +1,4 @@
+import type { AdditionalWidgetProperties } from '../hooks/useConnector';
+import type { TrendingFacetsConnectorParams } from 'instantsearch.js/es/connectors/trending-facets/connectTrendingFacets';
+export type UseTrendingFacetsProps = TrendingFacetsConnectorParams;
+export declare function useTrendingFacets(props?: UseTrendingFacetsProps, additionalWidgetProperties?: AdditionalWidgetProperties): import("instantsearch.js/es/connectors/trending-facets/connectTrendingFacets").TrendingFacetsRenderState;

@@ -1,0 +1,11 @@
+{
+  "name": "prod-404-500",
+  "version": "1.0.0",
+  "description": "Internal plugin to detect various flavors of 404 pages and ensure there's a 404.html path created as well to ensure compatibility with static hosts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "clone-response",
+  "version": "1.0.3",
+  "description": "Clone a Node.js HTTP response stream",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "xo && nyc ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "funding": "https://github.com/sponsors/sindresorhus",
+  "xo": {
+    "extends": "xo-lukechilds"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/clone-response.git"
+  },
+  "keywords": [
+    "clone",
+    "duplicate",
+    "copy",
+    "response",
+    "HTTP",
+    "stream"
+  ],
+  "author": "Luke Childs <lukechilds123@gmail.com> (http://lukechilds.co.uk)",
+  "license": "MIT",
+  "dependencies": {
+    "mimic-response": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "coveralls": "^2.13.1",
+    "create-test-server": "^2.0.1",
+    "eslint-config-xo-lukechilds": "^1.0.0",
+    "get-stream": "^3.0.0",
+    "nyc": "^11.0.2",
+    "pify": "^3.0.0",
+    "xo": "^0.19.0"
+  }
+}

@@ -1,0 +1,46 @@
+{
+    "name": "@types/prismjs",
+    "version": "1.26.6",
+    "description": "TypeScript definitions for prismjs",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/prismjs",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Michael Schmidt",
+            "githubUsername": "RunDevelopment",
+            "url": "https://github.com/RunDevelopment"
+        },
+        {
+            "name": "ExE Boss",
+            "githubUsername": "ExE-Boss",
+            "url": "https://github.com/ExE-Boss"
+        },
+        {
+            "name": "Erik Lieben",
+            "githubUsername": "eriklieben",
+            "url": "https://github.com/eriklieben"
+        },
+        {
+            "name": "Andre Wiggins",
+            "githubUsername": "andrewiggins",
+            "url": "https://github.com/andrewiggins"
+        },
+        {
+            "name": "Michał Miszczyszyn",
+            "githubUsername": "typeofweb",
+            "url": "https://github.com/typeofweb"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/prismjs"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {},
+    "typesPublisherContentHash": "566e007bc9ef9e1efc18fe241a4138ee64b9f9a0d5c231878128fcd62b3fa025",
+    "typeScriptVersion": "5.2"
+}

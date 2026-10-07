@@ -1,0 +1,93 @@
+{
+  "name": "lint-staged",
+  "version": "16.4.0",
+  "description": "Lint files staged by git",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lint-staged/lint-staged.git"
+  },
+  "homepage": "https://github.com/lint-staged/lint-staged#readme",
+  "bugs": {
+    "url": "https://github.com/lint-staged/lint-staged/issues"
+  },
+  "author": "Andrey Okonetchnikov <andrey@okonet.ru>",
+  "maintainers": [
+    "Iiro Jäppinen <iiro@jappinen.fi> (https://iiro.fi)"
+  ],
+  "funding": {
+    "url": "https://opencollective.com/lint-staged"
+  },
+  "engines": {
+    "node": ">=20.17"
+  },
+  "type": "module",
+  "bin": {
+    "lint-staged": "bin/lint-staged.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./bin": "./bin/lint-staged.js",
+    "./package.json": "./package.json"
+  },
+  "types": "./lib/index.d.ts",
+  "files": [
+    "bin/",
+    "lib/",
+    "MIGRATION.md"
+  ],
+  "scripts": {
+    "lint": "eslint",
+    "test": "vitest",
+    "typecheck": "tsc",
+    "version": "npx changeset version",
+    "postversion": "npm i --package-lock-only && git commit -am \"chore(changeset): release\"",
+    "tag": "npx changeset tag"
+  },
+  "dependencies": {
+    "commander": "^14.0.3",
+    "listr2": "^9.0.5",
+    "picomatch": "^4.0.3",
+    "string-argv": "^0.3.2",
+    "tinyexec": "^1.0.4",
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "0.6.0",
+    "@changesets/cli": "2.30.0",
+    "@commitlint/cli": "20.4.4",
+    "@commitlint/config-conventional": "20.4.4",
+    "@eslint/js": "10.0.1",
+    "@vitest/coverage-v8": "4.0.18",
+    "@vitest/eslint-plugin": "1.6.9",
+    "consolemock": "1.1.0",
+    "cross-env": "10.1.0",
+    "eslint": "10.0.2",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-n": "17.24.0",
+    "eslint-plugin-prettier": "5.5.5",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "husky": "9.1.7",
+    "mock-stdin": "1.0.0",
+    "prettier": "3.8.1",
+    "semver": "7.7.4",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18"
+  },
+  "keywords": [
+    "lint",
+    "git",
+    "staged",
+    "eslint",
+    "prettier",
+    "stylelint",
+    "code",
+    "quality",
+    "check",
+    "format",
+    "validate"
+  ]
+}

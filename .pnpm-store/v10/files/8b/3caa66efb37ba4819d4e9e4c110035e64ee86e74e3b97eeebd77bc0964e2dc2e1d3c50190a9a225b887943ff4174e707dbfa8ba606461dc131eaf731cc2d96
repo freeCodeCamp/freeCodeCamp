@@ -1,0 +1,52 @@
+{
+  "author": {
+    "name": "Robert Kieffer",
+    "url": "http://github.com/broofa",
+    "email": "robert@broofa.com"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "bin": {
+    "mime": "cli.js"
+  },
+  "contributors": [],
+  "description": "A comprehensive library for mime-type mapping",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "benchmark": "*",
+    "chalk": "4.1.2",
+    "eslint": "8.1.0",
+    "mime-db": "1.50.0",
+    "mime-score": "1.2.0",
+    "mime-types": "2.1.33",
+    "mocha": "9.1.3",
+    "runmd": "*",
+    "standard-version": "9.3.2"
+  },
+  "files": [
+    "index.js",
+    "lite.js",
+    "Mime.js",
+    "cli.js",
+    "/types"
+  ],
+  "scripts": {
+    "prepare": "node src/build.js && runmd --output README.md src/README_js.md",
+    "release": "standard-version",
+    "benchmark": "node src/benchmark.js",
+    "md": "runmd --watch --output README.md src/README_js.md",
+    "test": "mocha src/test.js"
+  },
+  "keywords": [
+    "util",
+    "mime"
+  ],
+  "name": "mime",
+  "repository": {
+    "url": "https://github.com/broofa/mime",
+    "type": "git"
+  },
+  "version": "2.6.0"
+}

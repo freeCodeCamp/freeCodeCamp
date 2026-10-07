@@ -1,0 +1,11 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"max-statements-per-line": [2, { "max": 2 }],
+		"no-magic-numbers": 0,
+		"multiline-comment-style": 0,
+	}
+}

@@ -1,0 +1,181 @@
+@top Document { (entity | DoctypeDecl)+ }
+
+@dialects { noMatch, selfClosing }
+
+entity[@isGroup=Entity] {
+  Text |
+  EntityReference |
+  CharacterReference |
+  InvalidEntity |
+  Element |
+  Comment |
+  ProcessingInst |
+  IncompleteTag |
+  IncompleteCloseTag |
+  MismatchedCloseTag |
+  NoMatchCloseTag
+}
+
+Element {
+  OpenScriptTag ScriptText (CloseScriptTag | missingCloseTag) |
+  OpenStyleTag StyleText (CloseStyleTag | missingCloseTag) |
+  OpenTextareaTag TextareaText (CloseTextareaTag | missingCloseTag) |
+  OpenTag entity* (CloseTag | missingCloseTag) |
+  SelfClosingTag
+}
+
+ScriptText[group="TextContent Entity"] { scriptText* }
+
+StyleText[group="TextContent Entity"] { styleText* }
+
+TextareaText[group="TextContent Entity"] { textareaText* }
+
+@skip { space } {
+  OpenTag[closedBy=CloseTag,isolate=ltr] {
+    StartTag TagName Attribute* EndTag
+  }
+
+  SelfClosingTag[isolate=ltr] {
+    StartSelfClosingTag TagName Attribute* (EndTag | SelfClosingEndTag) |
+    (StartTag | StartScriptTag | StartStyleTag | StartTextareaTag) TagName Attribute* SelfClosingEndTag
+  }
+
+  MismatchedCloseTag[isolate=ltr] {
+    MismatchedStartCloseTag TagName EndTag
+  }
+
+  NoMatchCloseTag[@name=CloseTag,isolate=ltr] {
+    NoMatchStartCloseTag TagName EndTag
+  }
+
+  CloseTag[openedBy=OpenTag,isolate=ltr] {
+    StartCloseTag TagName EndTag
+  }
+
+  OpenScriptTag[@name=OpenTag,closedBy=CloseTag,isolate=ltr] {
+    StartScriptTag TagName Attribute* EndTag
+  }
+
+  CloseScriptTag[@name=CloseTag,openedBy=OpenTag,isolate=ltr] {
+    StartCloseScriptTag TagName EndTag
+  }
+
+  OpenStyleTag[@name=OpenTag,closedBy=CloseTag,isolate=ltr] {
+    StartStyleTag TagName Attribute* EndTag
+  }
+
+  CloseStyleTag[@name=CloseTag,openedBy=OpenTag,isolate=ltr] {
+    StartCloseStyleTag TagName EndTag
+  }
+
+  OpenTextareaTag[@name=OpenTag,closedBy=CloseTag,isolate=ltr] {
+    StartTextareaTag TagName Attribute* EndTag
+  }
+
+  CloseTextareaTag[@name=CloseTag,openedBy=OpenTag,isolate=ltr] {
+    StartCloseTextareaTag TagName EndTag
+  }
+
+  Attribute {
+    AttributeName (Is (AttributeValue | UnquotedAttributeValue))?
+  }
+}
+
+AttributeValue[isolate] {
+  "\"" (attributeContentDouble | EntityReference | CharacterReference | InvalidEntity)* "\"" |
+  "\'" (attributeContentSingle | EntityReference | CharacterReference | InvalidEntity)* "\'"
+}
+
+Comment[isolate] { commentStart commentContent* commentEnd }
+
+@context elementContext from "./tokens.js"
+
+@external tokens scriptTokens from "./tokens.js" {
+  scriptText
+  StartCloseScriptTag[@name=StartCloseTag,closedBy=EndTag]
+}
+
+@external tokens styleTokens from "./tokens.js" {
+  styleText
+  StartCloseStyleTag[@name=StartCloseTag,closedBy=EndTag]
+}
+
+@external tokens textareaTokens from "./tokens.js" {
+  textareaText
+  StartCloseTextareaTag[@name=StartCloseTag,closedBy=EndTag]
+}
+
+@external tokens endTag from "./tokens.js" {
+  EndTag[openedBy="StartTag StartCloseTag"]
+  SelfClosingEndTag[openedBy=StartTag,@dialect=selfClosing]
+}
+
+@external tokens tagStart from "./tokens.js" {
+  StartTag[closedBy="EndTag SelfClosingEndTag"],
+  StartScriptTag[@name=StartTag,closedBy=EndTag],
+  StartStyleTag[@name=StartTag,closedBy=EndTag],
+  StartTextareaTag[@name=StartTag,closedBy=EndTag],
+  StartSelfClosingTag[@name=StartTag,closedBy=EndTag],
+  StartCloseTag[closedBy=EndTag],
+  NoMatchStartCloseTag[@name=StartCloseTag,closedBy=EndTag]
+  MismatchedStartCloseTag[@name=StartCloseTag,closedBy=EndTag],
+  missingCloseTag,
+  IncompleteTag,
+  IncompleteCloseTag
+}
+
+@external tokens commentContent from "./tokens.js" {
+  commentContent
+}
+
+@tokens {
+  nameStart {
+    ":" | @asciiLetter | "_" |
+    $[\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D] |
+    $[\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\u{10000}-\u{EFFFF}]
+  }
+
+  nameChar {
+    nameStart | "-" | "." | @digit | $[\u00B7\u0300-\u036F\u203F-\u2040]
+  }
+
+  identifier { nameStart nameChar* }
+
+  TagName { identifier }
+
+  AttributeName { ![\u0000-\u0020\u007F-\u009F"'<>/=\uFDD0-\uFDEF\uFFFE\uFFFF]+ }
+
+  UnquotedAttributeValue[isolate] { ![ \t\n\r\u000C=<>"'`]+ }
+
+  attributeContentDouble { !["&]+ }
+
+  attributeContentSingle { !['&]+ }
+
+  Is { "=" }
+
+  EntityReference { "&" ![#; ]+ ";" }
+
+  CharacterReference { "&#" ![; ]+ ";" }
+
+  InvalidEntity { "&" }
+
+  @precedence { CharacterReference, EntityReference, InvalidEntity }
+
+  Text[group=TextContent] { ![<&]+ }
+
+  commentStart { "<!--" }
+  commentEnd { "-->" }
+
+  ProcessingInst { "<?" piContent }
+
+  piContent { ![?] piContent | "?" piQuestion }
+  piQuestion { ![>] piContent | ">" }
+
+  DoctypeDecl { "<!" ("doctype" | "DOCTYPE") ![>]* ">" }
+
+  @precedence { commentStart, ProcessingInst, DoctypeDecl }
+
+  space { (" " | "\t" | "\r" | "\n")+ }
+}
+
+@external propSource htmlHighlighting from "./highlight"

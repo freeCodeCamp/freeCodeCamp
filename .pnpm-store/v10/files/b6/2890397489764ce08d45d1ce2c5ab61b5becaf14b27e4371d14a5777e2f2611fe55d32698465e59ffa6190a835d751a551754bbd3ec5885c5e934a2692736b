@@ -1,0 +1,28 @@
+"use strict";
+
+exports.__esModule = true;
+exports.UNIVERSAL = exports.TAG = exports.STRING = exports.SELECTOR = exports.ROOT = exports.PSEUDO = exports.NESTING = exports.ID = exports.COMMENT = exports.COMBINATOR = exports.CLASS = exports.ATTRIBUTE = void 0;
+var TAG = 'tag';
+exports.TAG = TAG;
+var STRING = 'string';
+exports.STRING = STRING;
+var SELECTOR = 'selector';
+exports.SELECTOR = SELECTOR;
+var ROOT = 'root';
+exports.ROOT = ROOT;
+var PSEUDO = 'pseudo';
+exports.PSEUDO = PSEUDO;
+var NESTING = 'nesting';
+exports.NESTING = NESTING;
+var ID = 'id';
+exports.ID = ID;
+var COMMENT = 'comment';
+exports.COMMENT = COMMENT;
+var COMBINATOR = 'combinator';
+exports.COMBINATOR = COMBINATOR;
+var CLASS = 'class';
+exports.CLASS = CLASS;
+var ATTRIBUTE = 'attribute';
+exports.ATTRIBUTE = ATTRIBUTE;
+var UNIVERSAL = 'universal';
+exports.UNIVERSAL = UNIVERSAL;

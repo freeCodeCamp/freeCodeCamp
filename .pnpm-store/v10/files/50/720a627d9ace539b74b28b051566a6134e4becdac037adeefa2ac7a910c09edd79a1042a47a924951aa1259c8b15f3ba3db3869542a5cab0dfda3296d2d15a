@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_jsx.cjs",
+    "module": "../../esm/_jsx.js"
+}

@@ -1,0 +1,108 @@
+{
+  "name": "redux-saga-test-plan",
+  "version": "4.0.6",
+  "description": "Test Redux Saga with an easy plan",
+  "main": "lib/index.js",
+  "files": [
+    "decls",
+    "src",
+    "lib",
+    "matchers.js",
+    "providers.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir lib --ignore **/*/__mocks__",
+    "check": "npm run lint && npm run typecheck && npm test",
+    "clean": "rimraf lib",
+    "format": "prettier --write \"{src,__tests__}/**/*.js\"",
+    "lint": "eslint src/ __tests__/",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "jest",
+    "test:ci": "jest --runInBand",
+    "watch:test": "npm test -- --watch",
+    "typecheck": "flow",
+    "docs:clean": "rimraf _book",
+    "docs:prepare": "gitbook install",
+    "docs:build": "npm run docs:prepare && gitbook build",
+    "docs:watch": "npm run docs:prepare && gitbook serve",
+    "docs:publish": "npm run docs:clean && npm run docs:build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update book' && git push git@github.com:jfairbank/redux-saga-test-plan gh-pages --force"
+  },
+  "typings": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfairbank/redux-saga-test-plan.git"
+  },
+  "keywords": [
+    "redux",
+    "saga",
+    "redux-saga",
+    "test",
+    "testing",
+    "tdd",
+    "bdd"
+  ],
+  "author": "Jeremy Fairbank <elpapapollo@gmail.com> (http://jeremyfairbank.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfairbank/redux-saga-test-plan/issues"
+  },
+  "homepage": "https://github.com/jfairbank/redux-saga-test-plan#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-transform-async-to-generator": "^7.4.4",
+    "@babel/plugin-transform-flow-strip-types": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@redux-saga/is": "^1.0.1",
+    "@redux-saga/symbols": "^1.0.1",
+    "@redux-saga/testing-utils": "^1.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-import-resolver-node": "^0.3.0",
+    "eslint-plugin-flowtype": "^3.9.1",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "flow-bin": "^0.46.0",
+    "gitbook-cli": "^2.3.0",
+    "gitbook-plugin-advanced-emoji": "^0.2.2",
+    "gitbook-plugin-github": "^2.0.0",
+    "jest": "^24.8.0",
+    "prettier": "1.11.0",
+    "redux": "^4.0.0",
+    "redux-saga": "^1.0.1",
+    "rimraf": "^2.5.4"
+  },
+  "dependencies": {
+    "fsm-iterator": "^1.1.0",
+    "lodash.isequal": "^4.5.0",
+    "lodash.ismatch": "^4.4.0"
+  },
+  "peerDependencies": {
+    "redux-saga": "^1.0.1",
+    "@redux-saga/is": "^1.0.1",
+    "@redux-saga/symbols": "^1.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/utils/**/*.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text-summary"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/",
+      "<rootDir/__tests__/"
+    ],
+    "testRegex": "__tests__/.*\\.test\\.js$"
+  }
+}

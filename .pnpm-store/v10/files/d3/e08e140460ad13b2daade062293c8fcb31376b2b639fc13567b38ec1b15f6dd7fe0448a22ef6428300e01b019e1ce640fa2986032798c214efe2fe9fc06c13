@@ -1,0 +1,93 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Provides access to log entries.
+domain Log
+  depends on Runtime
+  depends on Network
+
+  # Log entry.
+  type LogEntry extends object
+    properties
+      # Log entry source.
+      enum source
+        xml
+        javascript
+        network
+        storage
+        appcache
+        rendering
+        security
+        deprecation
+        worker
+        violation
+        intervention
+        recommendation
+        other
+      # Log entry severity.
+      enum level
+        verbose
+        info
+        warning
+        error
+      # Logged text.
+      string text
+      optional enum category
+        cors
+      # Timestamp when this entry was added.
+      Runtime.Timestamp timestamp
+      # URL of the resource if known.
+      optional string url
+      # Line number in the resource.
+      optional integer lineNumber
+      # JavaScript stack trace.
+      optional Runtime.StackTrace stackTrace
+      # Identifier of the network request associated with this entry.
+      optional Network.RequestId networkRequestId
+      # Identifier of the worker associated with this entry.
+      optional string workerId
+      # Call arguments.
+      optional array of Runtime.RemoteObject args
+
+  # Violation configuration setting.
+  type ViolationSetting extends object
+    properties
+      # Violation type.
+      enum name
+        longTask
+        longLayout
+        blockedEvent
+        blockedParser
+        discouragedAPIUse
+        handler
+        recurringHandler
+      # Time threshold to trigger upon.
+      number threshold
+
+  # Clears the log.
+  command clear
+
+  # Disables log domain, prevents further log entries from being reported to the client.
+  command disable
+
+  # Enables log domain, sends the entries collected so far to the client by means of the
+  # `entryAdded` notification.
+  command enable
+
+  # start violation reporting.
+  command startViolationsReport
+    parameters
+      # Configuration for violations.
+      array of ViolationSetting config
+
+  # Stop violation reporting.
+  command stopViolationsReport
+
+  # Issued when new message was logged.
+  event entryAdded
+    parameters
+      # The entry.
+      LogEntry entry

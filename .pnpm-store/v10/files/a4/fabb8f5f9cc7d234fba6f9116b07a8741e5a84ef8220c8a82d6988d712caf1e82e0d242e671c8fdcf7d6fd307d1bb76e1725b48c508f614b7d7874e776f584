@@ -1,0 +1,41 @@
+{
+  "name": "module-details-from-path",
+  "version": "1.0.3",
+  "description": "Extract the Node.js module details like name and base path given an abosulte path to a file inside the module",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^7.1.2",
+    "tape": "^4.6.0"
+  },
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson/module-details-from-path.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "npm",
+    "module",
+    "extract",
+    "parse",
+    "name",
+    "basedir",
+    "directory",
+    "path",
+    "relative"
+  ],
+  "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/watson/module-details-from-path/issues"
+  },
+  "homepage": "https://github.com/watson/module-details-from-path#readme",
+  "coordinates": [
+    55.666507,
+    12.5798711
+  ]
+}

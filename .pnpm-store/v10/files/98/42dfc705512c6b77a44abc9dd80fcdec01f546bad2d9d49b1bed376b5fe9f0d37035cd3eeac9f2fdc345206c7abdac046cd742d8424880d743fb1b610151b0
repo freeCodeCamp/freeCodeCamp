@@ -1,0 +1,15 @@
+@root
+
+module
+es5
+
+indent 2
+maxlen 80
+tabs
+
+ass
+plusplus
+nomen
+
+./benchmark
+predef+ console

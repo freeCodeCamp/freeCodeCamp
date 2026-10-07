@@ -1,0 +1,286 @@
+{
+  "angle": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/angle"
+  },
+  "angle-percentage": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/angle-percentage"
+  },
+  "basic-shape": {
+    "groups": [
+      "CSS Shapes",
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape"
+  },
+  "blend-mode": {
+    "groups": [
+      "Compositing and Blending",
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/blend-mode"
+  },
+  "color": {
+    "groups": [
+      "CSS Color",
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value"
+  },
+  "custom-ident": {
+    "groups": [
+      "CSS Will Change",
+      "CSS Counter Styles",
+      "CSS Lists and Counters",
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/custom-ident"
+  },
+  "dashed-ident": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/dashed-ident"
+  },
+  "dimension": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/dimension"
+  },
+  "display-box": {
+    "groups": [
+      "CSS Display"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-box"
+  },
+  "display-inside": {
+    "groups": [
+      "CSS Display"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-inside"
+  },
+  "display-internal": {
+    "groups": [
+      "CSS Display"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-internal"
+  },
+  "display-legacy": {
+    "groups": [
+      "CSS Display"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-legacy"
+  },
+  "display-listitem": {
+    "groups": [
+      "CSS Display"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-listitem"
+  },
+  "display-outside": {
+    "groups": [
+      "CSS Display"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-outside"
+  },
+  "easing-function": {
+    "groups": [
+      "CSS Easing Functions"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/easing-function"
+  },
+  "filter-function": {
+    "groups": [
+      "Filter Effects"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/filter-function"
+  },
+  "flex": {
+    "groups": [
+      "CSS Grid Layout",
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/flex_value"
+  },
+  "frequency": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/frequency"
+  },
+  "frequency-percentage": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/frequency-percentage"
+  },
+  "gradient": {
+    "groups": [
+      "CSS Images",
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient"
+  },
+  "ident": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/ident"
+  },
+  "image": {
+    "groups": [
+      "CSS Images",
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image"
+  },
+  "integer": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/integer"
+  },
+  "length": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/length"
+  },
+  "length-percentage": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/length-percentage"
+  },
+  "line-style": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/line-style"
+  },
+  "number": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/number"
+  },
+  "overflow": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/overflow_value"
+  },
+  "percentage": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/percentage"
+  },
+  "position": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/position_value"
+  },
+  "ratio": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/ratio"
+  },
+  "resolution": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/resolution"
+  },
+  "shape": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "obsolete",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/shape"
+  },
+  "string": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/string"
+  },
+  "text-edge": {
+    "groups": [
+      "CSS Types",
+      "CSS Inline"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-edge"
+  },
+  "time": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/time"
+  },
+  "time-percentage": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/time-percentage"
+  },
+  "transform-function": {
+    "groups": [
+      "CSS Transforms",
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transform-function"
+  },
+  "url": {
+    "groups": [
+      "CSS Types"
+    ],
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/url_value"
+  }
+}

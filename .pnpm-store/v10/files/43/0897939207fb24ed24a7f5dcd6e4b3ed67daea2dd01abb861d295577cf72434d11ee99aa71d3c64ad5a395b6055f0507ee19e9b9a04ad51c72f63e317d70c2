@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/matches",
+  "private": true,
+  "main": "../cjs/matches.js",
+  "module": "../esm/matches.js",
+  "types": "../esm/matches.d.ts"
+}

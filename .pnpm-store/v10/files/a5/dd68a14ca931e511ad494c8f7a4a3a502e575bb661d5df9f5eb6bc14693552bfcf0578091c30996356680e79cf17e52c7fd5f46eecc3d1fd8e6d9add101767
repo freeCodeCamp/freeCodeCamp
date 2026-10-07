@@ -1,0 +1,15 @@
+{
+	"all": true,
+	"check-coverage": false,
+	"reporter": ["text-summary", "text", "html", "json"],
+	"exclude": [
+		"coverage",
+		"operations",
+		"test",
+		"helpers/callBind.js",
+		"helpers/callBound.js",
+		"helpers/getOwnPropertyDescriptor.js",
+		"helpers/getSymbolDescription.js",
+		"helpers/regexTester.js"
+	]
+}

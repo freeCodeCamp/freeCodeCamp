@@ -1,0 +1,24 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": "off",
+		"new-cap": ["error", {
+			"capIsNewExceptions": [
+				"RequireObjectCoercible",
+			],
+		}],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"id-length": 0,
+				"no-invalid-this": 1,
+			},
+		},
+	],
+}

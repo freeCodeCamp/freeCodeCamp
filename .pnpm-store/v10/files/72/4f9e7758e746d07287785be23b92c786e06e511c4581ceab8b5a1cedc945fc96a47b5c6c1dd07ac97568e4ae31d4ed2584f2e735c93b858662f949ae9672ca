@@ -1,0 +1,77 @@
+{
+  "name": "nlcst-to-string",
+  "version": "2.0.4",
+  "description": "nlcst utility to transform a tree to a string",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "nlcst",
+    "nlcst-util",
+    "util",
+    "utility",
+    "string",
+    "serialize",
+    "stringify"
+  ],
+  "repository": "syntax-tree/nlcst-to-string",
+  "bugs": "https://github.com/syntax-tree/nlcst-to-string/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Kenichiro Murata <kenichiro.murata@gmail.com>"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "unist-builder": "^2.0.0",
+    "xo": "^0.26.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify . -s nlcstToString -o nlcst-to-string.js",
+    "build-mangle": "browserify . -s nlcstToString -p tinyify -o nlcst-to-string.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignore": [
+      "nlcst-to-string.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

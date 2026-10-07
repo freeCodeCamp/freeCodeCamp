@@ -1,0 +1,28 @@
+{
+  "name": "napi-postinstall",
+  "version": "0.2.4",
+  "type": "commonjs",
+  "description": "The `postinstall` script helper for handling native bindings in legacy `npm` versions",
+  "repository": "git+https://github.com/un-ts/napi-postinstall.git",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "funding": "https://opencollective.com/napi-postinstall",
+  "license": "MIT",
+  "engines": {
+    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+  },
+  "bin": "./lib/cli.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "!**/*.tsbuildinfo"
+  ],
+  "packageManager": "npm@11.3.0+sha512.96eb611483f49c55f7fa74df61b588de9e213f80a256728e6798ddc67176c7b07e4a1cfc7de8922422cbce02543714367037536955221fa451b0c4fefaf20c66"
+}

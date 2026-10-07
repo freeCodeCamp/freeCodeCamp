@@ -1,0 +1,127 @@
+{
+  "name": "gray-matter",
+  "description": "Parse front-matter from a string or file. Fast, reliable and easy to use. Parses YAML front matter by default, but also has support for YAML, JSON, TOML or Coffee Front-Matter, with options to set custom delimiters. Used by metalsmith, assemble, verb and many other projects.",
+  "version": "4.0.3",
+  "homepage": "https://github.com/jonschlinkert/gray-matter",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Andrew Meyer (https://github.com/Ajedi32)",
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Caesar Schinas (https://caesarschinas.com)",
+    "Ian Storm Taylor (http://ianstormtaylor.com)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Osman Nuri Okumuş (http://onokumus.com)",
+    "Pawel Kadluczka (http://blog.3d-logic.com)",
+    "Rob Loach (http://robloach.net)",
+    "(https://github.com/heymind)",
+    "Zach Whaley (http://zachwhaleys.website)"
+  ],
+  "repository": "jonschlinkert/gray-matter",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/gray-matter/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "gray-matter.d.ts",
+    "index.js",
+    "lib"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "kind-of": "^6.0.2",
+    "section-matter": "^1.0.0",
+    "strip-bom-string": "^1.0.0"
+  },
+  "devDependencies": {
+    "ansi-green": "^0.1.1",
+    "benchmarked": "^2.0.0",
+    "coffeescript": "^2.2.3",
+    "delimiter-regex": "^2.0.0",
+    "extend-shallow": "^3.0.2",
+    "front-matter": "^2.3.0",
+    "gulp-format-md": "^1.0.0",
+    "minimist": "^1.2.0",
+    "mocha": "^6.1.4",
+    "toml": "^2.3.3",
+    "vinyl": "^2.1.0",
+    "write": "^1.0.3"
+  },
+  "keywords": [
+    "assemble",
+    "coffee",
+    "coffee-script",
+    "data",
+    "docs",
+    "documentation",
+    "extract",
+    "extracting",
+    "front",
+    "front-matter",
+    "frontmatter",
+    "generate",
+    "generator",
+    "gh-pages",
+    "gray",
+    "javascript",
+    "jekyll",
+    "js",
+    "JSON",
+    "markdown",
+    "matter",
+    "parse",
+    "parser",
+    "parsing",
+    "site",
+    "static",
+    "template",
+    "toml",
+    "yaml",
+    "yfm"
+  ],
+  "browser": {
+    "fs": false
+  },
+  "typings": "gray-matter.d.ts",
+  "eslintConfig": {
+    "rules": {
+      "no-console": 0
+    }
+  },
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "helpers": {
+      "examples": "./examples/helper.js"
+    },
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": [
+        "assemble",
+        "metalsmith",
+        "verb"
+      ]
+    },
+    "reflinks": [
+      "coffe-script",
+      "generate",
+      "js-yaml",
+      "toml",
+      "update"
+    ]
+  }
+}

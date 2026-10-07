@@ -1,0 +1,19 @@
+{
+  "name": "polka",
+  "version": "0.5.2",
+  "description": "A micro web server so fast, it'll make you dance! :dancers:",
+  "repository": "lukeed/polka",
+  "license": "MIT",
+  "files": [
+    "*.js"
+  ],
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke@lukeed.com",
+    "url": "https://lukeed.com"
+  },
+  "dependencies": {
+    "@polka/url": "^0.5.0",
+    "trouter": "^2.0.1"
+  }
+}

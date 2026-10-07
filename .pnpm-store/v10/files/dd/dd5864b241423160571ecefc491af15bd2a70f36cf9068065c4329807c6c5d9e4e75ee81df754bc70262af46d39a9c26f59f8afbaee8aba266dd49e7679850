@@ -1,0 +1,5 @@
+{
+  "name": "side-effects-false",
+  "main": "src/index.js",
+  "sideEffects": false
+}

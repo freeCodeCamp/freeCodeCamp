@@ -1,0 +1,16 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "ChatMessageLoader", {
+    enumerable: true,
+    get: function() {
+        return ChatMessageLoader;
+    }
+});
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _react = require("react");
+var ChatMessageLoader = (0, _instantsearchuicomponents.createChatMessageLoaderComponent)({
+    createElement: _react.createElement
+});

@@ -1,0 +1,71 @@
+{
+  "name": "@growthbook/growthbook-react",
+  "version": "1.6.5",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/esm/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/growthbook/growthbook",
+    "directory": "packages/sdk-react"
+  },
+  "scripts": {
+    "build:bundles": "rollup -c",
+    "build:clean": "rimraf -rf dist",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "pnpm build:clean && npm-run-all --parallel build:types build:bundles",
+    "test": "jest",
+    "clean": "rimraf node_modules",
+    "type-check": "tsc --pretty --noEmit",
+    "size": "cat ./dist/esm/index.js ../sdk-js/dist/bundles/index.min.js | terser | gzip-size --include-original"
+  },
+  "author": "Jeremy Dorn",
+  "peerDependencies": {
+    "react": "^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0"
+  },
+  "dependencies": {
+    "@growthbook/growthbook": "^1.6.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-replace": "^6.0.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^22.8.6",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "gzip-size-cli": "^5.0.0",
+    "jest": "^27.1.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^4.52.5",
+    "ts-jest": "^27.0.5",
+    "typescript": "5.7.3"
+  },
+  "browserslist": [
+    "defaults",
+    ">0.35%",
+    "not IE 11",
+    "maintained node versions"
+  ]
+}

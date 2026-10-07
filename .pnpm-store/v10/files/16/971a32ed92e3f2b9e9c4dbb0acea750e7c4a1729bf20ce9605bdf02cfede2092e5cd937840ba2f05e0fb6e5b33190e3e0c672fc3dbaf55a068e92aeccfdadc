@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MetricBoundaries.js",
+  "module": "../dist/esm/MetricBoundaries.js",
+  "types": "../dist/dts/MetricBoundaries.d.ts"
+}

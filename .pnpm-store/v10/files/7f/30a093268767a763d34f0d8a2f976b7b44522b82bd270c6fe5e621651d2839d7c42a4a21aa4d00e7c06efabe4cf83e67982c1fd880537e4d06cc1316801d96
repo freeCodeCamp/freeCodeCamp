@@ -1,0 +1,46 @@
+{
+  "name": "tr46",
+  "version": "2.1.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "description": "An implementation of the Unicode UTS #46: Unicode IDNA Compatibility Processing",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/mappingTable.json",
+    "lib/regexes.js",
+    "lib/statusMapping.js"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint .",
+    "pretest": "node scripts/getLatestTests.js",
+    "prepublish": "node scripts/generateMappingTable.js && node scripts/generateRegexes.js"
+  },
+  "repository": "https://github.com/jsdom/tr46",
+  "keywords": [
+    "unicode",
+    "tr46",
+    "uts46",
+    "punycode",
+    "url",
+    "whatwg"
+  ],
+  "author": "Sebastian Mayr <npm@smayr.name>",
+  "contributors": [
+    "Timothy Gu <timothygu99@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "punycode": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "mocha": "^8.4.0",
+    "node-fetch": "^2.6.0",
+    "regenerate": "^1.4.2",
+    "unicode-13.0.0": "^0.8.0"
+  },
+  "unicodeVersion": "13.0.0"
+}

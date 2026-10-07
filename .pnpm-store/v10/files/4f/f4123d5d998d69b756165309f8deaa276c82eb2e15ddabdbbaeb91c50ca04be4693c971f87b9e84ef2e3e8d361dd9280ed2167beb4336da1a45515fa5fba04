@@ -1,0 +1,9 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"func-name-matching": 0,
+	},
+}

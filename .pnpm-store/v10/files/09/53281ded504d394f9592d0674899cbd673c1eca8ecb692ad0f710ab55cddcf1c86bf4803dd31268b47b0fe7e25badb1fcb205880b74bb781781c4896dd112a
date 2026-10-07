@@ -1,0 +1,62 @@
+{
+  "name": "@paypal/sdk-constants",
+  "version": "1.0.158",
+  "description": "Utilities.",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install && npm run flow-typed",
+    "lint": "eslint src/ *.js",
+    "flow-typed": "rm -rf ./flow-typed && flow-typed install",
+    "flow": "flow",
+    "karma": "cross-env NODE_ENV=test babel-node --plugins=@babel/plugin-transform-modules-commonjs ./node_modules/.bin/karma start",
+    "babel": "babel src/ --out-dir dist/module",
+    "webpack": "babel-node --plugins=@babel/plugin-transform-modules-commonjs ./node_modules/.bin/webpack --progress",
+    "format": "prettier --write --ignore-unknown .",
+    "format:check": "prettier --check .",
+    "test": "npm run format:check && npm run lint && npm run flow",
+    "build": "npm run test && npm run babel && npm run webpack",
+    "release": "./publish.sh",
+    "release:patch": "./publish.sh patch",
+    "release:minor": "./publish.sh minor",
+    "release:major": "./publish.sh major",
+    "clean": "rimraf dist coverage",
+    "reinstall": "rimraf flow-typed && rimraf node_modules && npm install && flow-typed install",
+    "debug": "cross-env NODE_ENV=debug",
+    "prepare": "husky install"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "browserslist": [
+    "IE >= 11",
+    "chrome >= 27",
+    "firefox >= 30",
+    "safari >= 7",
+    "opera >= 23"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paypal/paypal-sdk-constants.git"
+  },
+  "keywords": [
+    "template"
+  ],
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "@krakenjs/grumbler-scripts": "^8.0.5",
+    "cross-env": "^7.0.3",
+    "flow-bin": "0.129.0",
+    "flow-typed": "^3.8.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "hi-base32": "^0.5.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}

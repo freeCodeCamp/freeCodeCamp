@@ -1,0 +1,32 @@
+{
+    "name": "@types/keyv",
+    "version": "3.1.4",
+    "description": "TypeScript definitions for keyv",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/keyv",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "AryloYeung",
+            "url": "https://github.com/Arylo",
+            "githubUsername": "Arylo"
+        },
+        {
+            "name": "BendingBender",
+            "url": "https://github.com/BendingBender",
+            "githubUsername": "BendingBender"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/keyv"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "e83393e0860475d12e960cede22532e18e129cf659f31f2a0298a88cb5d02d36",
+    "typeScriptVersion": "3.9"
+}

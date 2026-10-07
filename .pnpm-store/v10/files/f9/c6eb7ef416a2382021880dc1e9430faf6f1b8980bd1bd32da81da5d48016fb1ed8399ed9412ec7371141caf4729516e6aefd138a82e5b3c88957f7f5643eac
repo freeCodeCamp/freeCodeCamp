@@ -1,0 +1,82 @@
+{
+  "name": "@adobe/css-tools",
+  "version": "4.4.4",
+  "description": "A modern CSS parser and stringifier with TypeScript support",
+  "source": "src/index.ts",
+  "main": "./dist/cjs/adobe-css-tools.cjs",
+  "module": "./dist/esm/adobe-css-tools.mjs",
+  "browser": "./dist/umd/adobe-css-tools.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/esm/adobe-css-tools.mjs",
+      "require": "./dist/cjs/adobe-css-tools.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/esm/adobe-css-tools.d.mts",
+  "type": "module",
+  "files": [
+    "dist/cjs",
+    "dist/esm",
+    "dist/umd",
+    "README.md",
+    "docs/"
+  ],
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@biomejs/biome": "^2.1.2",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@types/benchmark": "^2.1.1",
+    "@types/bytes": "^3.1.5",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.0.3",
+    "benchmark": "^2.1.4",
+    "bytes": "^3.1.0",
+    "jest": "^29.7.0",
+    "rollup": "^4.45.1",
+    "rollup-plugin-dts": "^6.2.1",
+    "ts-jest": "^29.1.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "benchmark": "npm run build && node benchmark/index.mjs",
+    "test": "jest",
+    "clean": "rm -rf ./dist",
+    "build": "rollup -c",
+    "fix": "biome check --write",
+    "check-package-bundle": "attw --pack .",
+    "lint": "biome check",
+    "prebuild": "npm run clean",
+    "prepack": "rollup -c",
+    "posttest": "npm run lint",
+    "postbuild": "tar -czf dist/archive.tgz LICENSE README.md dist/cjs dist/esm dist/umd docs package.json && npx attw --format ascii dist/archive.tgz && rm dist/archive.tgz"
+  },
+  "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "contributors": [
+    "Jean-Philippe Zolesio <holblin@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adobe/css-tools.git"
+  },
+  "keywords": [
+    "css",
+    "parser",
+    "stringifier",
+    "stylesheet",
+    "ast",
+    "typescript",
+    "css-parser",
+    "css-ast",
+    "css-tools",
+    "minify",
+    "format",
+    "preprocessor"
+  ]
+}

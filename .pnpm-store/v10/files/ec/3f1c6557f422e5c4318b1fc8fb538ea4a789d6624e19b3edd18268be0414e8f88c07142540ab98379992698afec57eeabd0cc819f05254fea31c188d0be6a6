@@ -1,0 +1,35 @@
+{
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
+  "name": "minimatch",
+  "description": "a glob matcher in javascript",
+  "publishConfig": {
+    "tag": "legacy-v5"
+  },
+  "version": "5.1.9",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/minimatch.git"
+  },
+  "main": "minimatch.js",
+  "scripts": {
+    "test": "tap",
+    "snap": "tap",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "brace-expansion": "^2.0.1"
+  },
+  "devDependencies": {
+    "tap": "^16.3.2"
+  },
+  "license": "ISC",
+  "files": [
+    "minimatch.js",
+    "lib"
+  ]
+}

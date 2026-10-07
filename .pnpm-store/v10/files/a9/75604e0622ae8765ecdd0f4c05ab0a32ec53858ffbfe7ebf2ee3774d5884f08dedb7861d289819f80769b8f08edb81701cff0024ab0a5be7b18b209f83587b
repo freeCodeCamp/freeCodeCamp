@@ -1,0 +1,3 @@
+{
+  "editor.formatOnSave": true
+}

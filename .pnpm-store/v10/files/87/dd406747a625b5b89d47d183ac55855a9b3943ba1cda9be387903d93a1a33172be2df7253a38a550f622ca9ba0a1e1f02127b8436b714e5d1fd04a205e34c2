@@ -1,0 +1,1 @@
+{"version":3,"file":"no-invalid-attr-value.d.ts","sourceRoot":"","sources":["../../lib/rules/no-invalid-attr-value.js"],"names":[],"mappings":"wBAMU,WACT,CAAK;IAAE,KAAK,CAAC,EAAE;QAAE,GAAG,EAAE,MAAM,CAAC;QAAC,IAAI,EAAE,MAAM,CAAC;QAAC,YAAY,CAAC,EAAE,MAAM,CAAA;KAAE,EAAE,CAAA;CAAE,CAAC,CACrE;;gCAR0B,UAAU"}

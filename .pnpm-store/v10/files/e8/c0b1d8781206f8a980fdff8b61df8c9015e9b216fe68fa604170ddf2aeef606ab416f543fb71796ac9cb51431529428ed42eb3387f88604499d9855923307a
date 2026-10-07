@@ -1,0 +1,69 @@
+{
+  "name": "@jridgewell/resolve-uri",
+  "version": "3.1.2",
+  "description": "Resolve a URI relative to an optional base URI",
+  "keywords": [
+    "resolve",
+    "uri",
+    "url",
+    "path"
+  ],
+  "author": "Justin Ridgewell <justin@ridgewell.name>",
+  "license": "MIT",
+  "repository": "https://github.com/jridgewell/resolve-uri",
+  "main": "dist/resolve-uri.umd.js",
+  "module": "dist/resolve-uri.mjs",
+  "types": "dist/types/resolve-uri.d.ts",
+  "exports": {
+    ".": [
+      {
+        "types": "./dist/types/resolve-uri.d.ts",
+        "browser": "./dist/resolve-uri.umd.js",
+        "require": "./dist/resolve-uri.umd.js",
+        "import": "./dist/resolve-uri.mjs"
+      },
+      "./dist/resolve-uri.umd.js"
+    ],
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "run-s -n build:*",
+    "build:rollup": "rollup -c rollup.config.js",
+    "build:ts": "tsc --project tsconfig.build.json",
+    "lint": "run-s -n lint:*",
+    "lint:prettier": "npm run test:lint:prettier -- --write",
+    "lint:ts": "npm run test:lint:ts -- --fix",
+    "pretest": "run-s build:rollup",
+    "test": "run-s -n test:lint test:only",
+    "test:debug": "mocha --inspect-brk",
+    "test:lint": "run-s -n test:lint:*",
+    "test:lint:prettier": "prettier --check '{src,test}/**/*.ts'",
+    "test:lint:ts": "eslint '{src,test}/**/*.ts'",
+    "test:only": "mocha",
+    "test:coverage": "c8 mocha",
+    "test:watch": "mocha --watch",
+    "prepublishOnly": "npm run preversion",
+    "preversion": "run-s test build"
+  },
+  "devDependencies": {
+    "@jridgewell/resolve-uri-latest": "npm:@jridgewell/resolve-uri@*",
+    "@rollup/plugin-typescript": "8.3.0",
+    "@typescript-eslint/eslint-plugin": "5.10.0",
+    "@typescript-eslint/parser": "5.10.0",
+    "c8": "7.11.0",
+    "eslint": "8.7.0",
+    "eslint-config-prettier": "8.3.0",
+    "mocha": "9.2.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.5.1",
+    "rollup": "2.66.0",
+    "typescript": "4.5.5"
+  }
+}

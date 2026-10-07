@@ -1,0 +1,22 @@
+declare global {
+  let suite: typeof import('vitest')['suite']
+  let test: typeof import('vitest')['test']
+  let chai: typeof import("vitest")["chai"]
+  let describe: typeof import('vitest')['describe']
+  let it: typeof import('vitest')['it']
+  let expectTypeOf: typeof import('vitest')['expectTypeOf']
+  let assertType: typeof import('vitest')['assertType']
+  let expect: typeof import('vitest')['expect']
+  let assert: typeof import('vitest')['assert']
+  let vitest: typeof import('vitest')['vitest']
+  let vi: typeof import('vitest')['vitest']
+  let beforeAll: typeof import('vitest')['beforeAll']
+  let afterAll: typeof import('vitest')['afterAll']
+  let beforeEach: typeof import('vitest')['beforeEach']
+  let afterEach: typeof import('vitest')['afterEach']
+  let aroundEach: typeof import('vitest')['aroundEach']
+  let aroundAll: typeof import('vitest')['aroundAll']
+  let onTestFailed: typeof import('vitest')['onTestFailed']
+  let onTestFinished: typeof import('vitest')['onTestFinished']
+}
+export {}

@@ -1,0 +1,1 @@
+{"version":3,"file":"oscillator-node.js","sourceRoot":"","sources":["../../../src/guards/oscillator-node.ts"],"names":[],"mappings":"AAGA,MAAM,CAAC,MAAM,gBAAgB,GAAG,CAAqB,SAAwB,EAAmC,EAAE;IAC9G,OAAO,QAAQ,IAAI,SAAS,IAAI,WAAW,IAAI,SAAS,IAAI,CAAC,CAAC,MAAM,IAAI,SAAS,CAAC,CAAC;AACvF,CAAC,CAAC"}

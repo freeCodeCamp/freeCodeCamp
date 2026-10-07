@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-worklet.d.ts","sourceRoot":"","sources":["../../../src/interfaces/audio-worklet.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AAEpD,MAAM,WAAW,aAAa;IAC1B,SAAS,CAAC,SAAS,EAAE,MAAM,EAAE,OAAO,CAAC,EAAE,eAAe,GAAG,OAAO,CAAC,IAAI,CAAC,CAAC;CAC1E"}

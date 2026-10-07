@@ -1,0 +1,51 @@
+{
+  "name": "debug",
+  "version": "3.2.7",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/visionmedia/debug.git"
+  },
+  "description": "small debugging utility",
+  "keywords": [
+    "debug",
+    "log",
+    "debugger"
+  ],
+  "files": [
+    "src",
+    "node.js",
+    "dist/debug.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "contributors": [
+    "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io)",
+    "Andrew Rhyne <rhyneandrew@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "ms": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "browserify": "14.4.0",
+    "chai": "^3.5.0",
+    "concurrently": "^3.1.0",
+    "coveralls": "^3.0.2",
+    "istanbul": "^0.4.5",
+    "karma": "^3.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.2.0",
+    "rimraf": "^2.5.4",
+    "xo": "^0.23.0"
+  },
+  "main": "./src/index.js",
+  "browser": "./src/browser.js",
+  "unpkg": "./dist/debug.js"
+}

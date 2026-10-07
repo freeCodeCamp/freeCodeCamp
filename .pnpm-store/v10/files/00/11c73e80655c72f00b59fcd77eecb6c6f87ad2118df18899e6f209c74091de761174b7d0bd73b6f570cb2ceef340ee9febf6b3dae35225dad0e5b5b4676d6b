@@ -1,0 +1,69 @@
+{
+  "name": "react-transition-group",
+  "version": "4.4.5",
+  "description": "A react component toolset for managing animations",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reactjs/react-transition-group.git"
+  },
+  "keywords": [
+    "react",
+    "transition",
+    "addons",
+    "transition-group",
+    "animation",
+    "css",
+    "transitions"
+  ],
+  "author": "",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/reactjs/react-transition-group/issues"
+  },
+  "homepage": "https://github.com/reactjs/react-transition-group#readme",
+  "jest": {
+    "testRegex": "-test\\.js",
+    "setupFiles": [
+      "./test/setup.js"
+    ],
+    "setupFilesAfterEnv": [
+      "./test/setupAfterEnv.js"
+    ],
+    "roots": [
+      "<rootDir>/test"
+    ]
+  },
+  "peerDependencies": {
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "dom-helpers": "^5.0.1",
+    "loose-envify": "^1.4.0",
+    "prop-types": "^15.6.2"
+  },
+  "release": {
+    "pkgRoot": "lib",
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "semantic-release-alt-publish-dir",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "semantic-release-alt-publish-dir",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
+  },
+  "sideEffects": false
+}

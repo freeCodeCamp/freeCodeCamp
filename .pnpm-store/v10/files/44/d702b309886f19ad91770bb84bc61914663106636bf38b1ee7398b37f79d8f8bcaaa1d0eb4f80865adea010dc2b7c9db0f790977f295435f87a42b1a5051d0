@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/toDate/index.js",
+  "typings": "../typings.d.ts"
+}

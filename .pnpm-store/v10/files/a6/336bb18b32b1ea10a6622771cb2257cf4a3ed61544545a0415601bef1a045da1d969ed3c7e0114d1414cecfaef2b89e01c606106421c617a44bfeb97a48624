@@ -1,0 +1,97 @@
+{
+  "name": "@vitest/mocker",
+  "type": "module",
+  "version": "4.1.5",
+  "description": "Vitest module mocker implementation",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://github.com/vitest-dev/vitest/tree/main/packages/mocker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/mocker"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "keywords": [
+    "vitest",
+    "test",
+    "mock"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "default": "./dist/browser.js"
+    },
+    "./redirect": {
+      "types": "./dist/redirect.d.ts",
+      "default": "./dist/redirect.js"
+    },
+    "./automock": {
+      "types": "./dist/automock.d.ts",
+      "default": "./dist/automock.js"
+    },
+    "./register": {
+      "types": "./dist/register.d.ts",
+      "default": "./dist/register.js"
+    },
+    "./auto-register": {
+      "types": "./dist/register.d.ts",
+      "default": "./dist/register.js"
+    },
+    "./transforms": {
+      "types": "./dist/transforms.d.ts",
+      "default": "./dist/transforms.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "peerDependencies": {
+    "msw": "^2.4.9",
+    "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "msw": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "estree-walker": "^3.0.3",
+    "magic-string": "^0.30.21",
+    "@vitest/spy": "4.1.5"
+  },
+  "devDependencies": {
+    "@types/estree": "^1.0.8",
+    "acorn-walk": "^8.3.5",
+    "cjs-module-lexer": "^2.2.0",
+    "es-module-lexer": "^2.0.0",
+    "msw": "^2.12.10",
+    "pathe": "^2.0.3",
+    "vite": "^6.3.5",
+    "@vitest/utils": "4.1.5",
+    "@vitest/spy": "4.1.5"
+  },
+  "scripts": {
+    "build": "premove dist && rollup -c",
+    "dev": "rollup -c --watch"
+  }
+}

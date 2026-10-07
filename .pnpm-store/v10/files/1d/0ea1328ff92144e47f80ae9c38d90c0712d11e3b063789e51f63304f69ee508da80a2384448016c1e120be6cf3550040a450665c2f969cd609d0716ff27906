@@ -1,0 +1,37 @@
+{
+  "name": "tinyrainbow",
+  "version": "2.0.0",
+  "packageManager": "pnpm@9.15.1",
+  "description": "A small library to print colourful messages.",
+  "type": "module",
+  "main": "./dist/node.js",
+  "module": "./dist/browser.js",
+  "browser": "./dist/browser.js",
+  "types": "./dist/node.d.ts",
+  "exports": {
+    "types": "./dist/node.d.ts",
+    "node": "./dist/node.js",
+    "browser": "./dist/browser.js",
+    "import": "./dist/browser.js",
+    "default": "./dist/browser.js"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinylibs/tinyrainbow.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tinylibs/tinyrainbow/issues"
+  },
+  "homepage": "https://github.com/tinylibs/tinyrainbow#readme",
+  "keywords": [
+    "colors",
+    "tty"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "definitions": {
+    "DllReferencePluginOptionsContent": {
+      "description": "The mappings from request to module info.",
+      "type": "object",
+      "additionalProperties": {
+        "description": "Module info.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "buildMeta": {
+            "description": "Meta information about the module.",
+            "type": "object"
+          },
+          "exports": {
+            "description": "Information about the provided exports of the module.",
+            "anyOf": [
+              {
+                "description": "List of provided exports of the module.",
+                "type": "array",
+                "items": {
+                  "description": "Name of the export.",
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              {
+                "description": "Exports unknown/dynamic.",
+                "enum": [true]
+              }
+            ]
+          },
+          "id": {
+            "description": "Module ID.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string",
+                "minLength": 1
+              }
+            ]
+          }
+        },
+        "required": ["id"]
+      },
+      "minProperties": 1
+    },
+    "DllReferencePluginOptionsManifest": {
+      "description": "An object containing content, name and type.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "description": "The mappings from request to module info.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DllReferencePluginOptionsContent"
+            }
+          ]
+        },
+        "name": {
+          "description": "The name where the dll is exposed (external name).",
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "description": "The type how the dll is exposed (external type).",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DllReferencePluginOptionsSourceType"
+            }
+          ]
+        }
+      },
+      "required": ["content"]
+    },
+    "DllReferencePluginOptionsSourceType": {
+      "description": "The type how the dll is exposed (external type).",
+      "enum": [
+        "var",
+        "assign",
+        "this",
+        "window",
+        "global",
+        "commonjs",
+        "commonjs2",
+        "commonjs-module",
+        "amd",
+        "amd-require",
+        "umd",
+        "umd2",
+        "jsonp",
+        "system"
+      ]
+    }
+  },
+  "title": "DllReferencePluginOptions",
+  "anyOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "context": {
+          "description": "Context of requests in the manifest (or content property) as absolute path.",
+          "type": "string",
+          "absolutePath": true
+        },
+        "extensions": {
+          "description": "Extensions used to resolve modules in the dll bundle (only used when using 'scope').",
+          "type": "array",
+          "items": {
+            "description": "An extension.",
+            "type": "string"
+          }
+        },
+        "manifest": {
+          "description": "An object containing content and name or a string to the absolute path of the JSON manifest to be loaded upon compilation.",
+          "anyOf": [
+            {
+              "type": "string",
+              "absolutePath": true
+            },
+            {
+              "$ref": "#/definitions/DllReferencePluginOptionsManifest"
+            }
+          ]
+        },
+        "name": {
+          "description": "The name where the dll is exposed (external name, defaults to manifest.name).",
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "description": "Prefix which is used for accessing the content of the dll.",
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceType": {
+          "description": "How the dll is exposed (libraryTarget, defaults to manifest.type).",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DllReferencePluginOptionsSourceType"
+            }
+          ]
+        },
+        "type": {
+          "description": "The way how the export of the dll bundle is used.",
+          "enum": ["require", "object"]
+        }
+      },
+      "required": ["manifest"]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "description": "The mappings from request to module info.",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DllReferencePluginOptionsContent"
+            }
+          ]
+        },
+        "context": {
+          "description": "Context of requests in the manifest (or content property) as absolute path.",
+          "type": "string",
+          "absolutePath": true
+        },
+        "extensions": {
+          "description": "Extensions used to resolve modules in the dll bundle (only used when using 'scope').",
+          "type": "array",
+          "items": {
+            "description": "An extension.",
+            "type": "string"
+          }
+        },
+        "name": {
+          "description": "The name where the dll is exposed (external name).",
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "description": "Prefix which is used for accessing the content of the dll.",
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceType": {
+          "description": "How the dll is exposed (libraryTarget).",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/DllReferencePluginOptionsSourceType"
+            }
+          ]
+        },
+        "type": {
+          "description": "The way how the export of the dll bundle is used.",
+          "enum": ["require", "object"]
+        }
+      },
+      "required": ["content", "name"]
+    }
+  ]
+}

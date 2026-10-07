@@ -1,0 +1,37 @@
+{
+  "name": "@lezer/html",
+  "version": "1.3.12",
+  "description": "lezer-based HTML grammar",
+  "main": "dist/index.cjs",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
+  "license": "MIT",
+  "devDependencies": {
+    "@lezer/javascript": "^1.0.0",
+    "@lezer/generator": "^1.0.0",
+    "mocha": "^10.2.0",
+    "rollup": "^2.52.2",
+    "@rollup/plugin-node-resolve": "^9.0.0"
+  },
+  "dependencies": {
+    "@lezer/lr": "^1.0.0",
+    "@lezer/highlight": "^1.0.0",
+    "@lezer/common": "^1.2.0"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/lezer-parser/html.git"
+  },
+  "scripts": {
+    "build": "lezer-generator src/html.grammar -o src/parser && rollup -c",
+    "build-debug": "lezer-generator src/html.grammar --names -o src/parser && rollup -c",
+    "prepare": "npm run build",
+    "test": "mocha test/test-*.js"
+  }
+}

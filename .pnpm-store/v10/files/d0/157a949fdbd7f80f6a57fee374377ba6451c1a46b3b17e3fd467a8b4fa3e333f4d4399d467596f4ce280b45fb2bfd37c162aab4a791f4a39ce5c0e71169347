@@ -1,0 +1,64 @@
+{
+  "name": "sass.js",
+  "version": "0.11.1",
+  "libsass": "3.6.2",
+  "title": "Sass.js - API for emscripted libsass",
+  "description": "Sass.js is a convenience API for the JavaScript libsass (compiled with Emscripten)",
+  "homepage": "http://medialize.github.com/sass.js/",
+  "author": "Rodney Rehm (mail+github@rodneyrehm.de) <http://rodneyrehm.de>",
+  "contributors": [
+    {
+      "name": "Sebastian Golasch",
+      "url": "http://asciidisco.com/"
+    },
+    {
+      "name": "Christian Kruse",
+      "url": "http://http://wwwtech.de/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medialize/sass.js.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "libsass",
+    "sass",
+    "scss",
+    "css"
+  ],
+  "main": "./dist/sass.sync.js",
+  "scripts": {
+    "build": "grunt build",
+    "build:debug": "grunt build:debug",
+    "rebuild": "grunt rebuild",
+    "rebuild:debug": "grunt rebuild:debug",
+    "libsass:prepare": "grunt libsass:prepare",
+    "libsass:build": "grunt libsass:build",
+    "libsass:debug": "grunt libsass:debug",
+    "test": "grunt test",
+    "lint": "grunt lint",
+    "serve": "serve ."
+  },
+  "files": [
+    "dist/",
+    "maps/"
+  ],
+  "devDependencies": {
+    "benchmark": "^2.0.0",
+    "chai": "^4.2.0",
+    "grunt": "^1.0.4",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-mkdir": "^1.0.0",
+    "grunt-mocha-test": "^0.13.3",
+    "grunt-shell": "^3.0.1",
+    "jit-grunt": "^0.10.0",
+    "jshint-stylish": "^2.1.0",
+    "mocha": "^6.2.2",
+    "node-sass": "^4.12.0",
+    "serve": "^11.2.0",
+    "time-grunt": "^2.0.0"
+  }
+}

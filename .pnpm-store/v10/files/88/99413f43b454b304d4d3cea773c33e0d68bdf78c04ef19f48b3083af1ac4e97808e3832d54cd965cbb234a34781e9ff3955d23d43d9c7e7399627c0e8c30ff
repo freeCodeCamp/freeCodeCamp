@@ -1,0 +1,89 @@
+{
+	"name": "are-docs-informative",
+	"version": "0.0.2",
+	"description": "Checks whether a documentation description introduces any new information.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JoshuaKGoldberg/are-docs-informative"
+	},
+	"license": "MIT",
+	"author": "Josh Goldberg <npm@joshuakgoldberg.com>",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": {
+				"import": "./lib/index.d.ts",
+				"require": "./lib/index.d.cts"
+			},
+			"import": "./lib/index.js",
+			"require": "./lib/index.cjs"
+		}
+	},
+	"main": "./lib/index.js",
+	"files": [
+		"lib/",
+		"package.json",
+		"LICENSE.md",
+		"README.md"
+	],
+	"scripts": {
+		"build": "tsc",
+		"build:full": "tsup src/index.ts --clean --format cjs,esm --outDir lib --dts && cp lib/index.d.ts lib/index.d.cts",
+		"format": "prettier \"**/*\" --ignore-unknown",
+		"format:write": "pnpm format --write",
+		"lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+		"lint:knip": "knip",
+		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\" --rules sentences-per-line",
+		"lint:package": "npmPkgJsonLint .",
+		"lint:packages": "pnpm-deduplicate --list",
+		"lint:spelling": "cspell \"**\" \".github/**/*\"",
+		"prepare": "husky install",
+		"should-semantic-release": "should-semantic-release --verbose",
+		"test": "vitest"
+	},
+	"lint-staged": {
+		"*": "prettier --ignore-unknown --write"
+	},
+	"devDependencies": {
+		"@types/eslint": "^8.21.1",
+		"@typescript-eslint/eslint-plugin": "^5.48.2",
+		"@typescript-eslint/parser": "^5.48.2",
+		"@vitest/coverage-istanbul": "^0.29.0",
+		"cspell": "^6.19.2",
+		"eslint": "^8.32.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-deprecation": "^1.3.3",
+		"eslint-plugin-eslint-comments": "^3.2.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-jsonc": "^2.6.0",
+		"eslint-plugin-markdown": "^3.0.0",
+		"eslint-plugin-no-only-tests": "^3.1.0",
+		"eslint-plugin-regexp": "^1.12.0",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"eslint-plugin-typescript-sort-keys": "^2.1.0",
+		"eslint-plugin-vitest": "^0.1.0",
+		"eslint-plugin-yml": "^1.5.0",
+		"husky": "^8.0.3",
+		"jsonc-eslint-parser": "^2.1.0",
+		"knip": "2.8.2",
+		"lint-staged": "^13.1.0",
+		"markdownlint": "^0.27.0",
+		"markdownlint-cli": "^0.33.0",
+		"npm-package-json-lint": "^6.4.0",
+		"npm-package-json-lint-config-default": "^5.0.0",
+		"pnpm-deduplicate": "^0.4.1",
+		"prettier": "^2.8.3",
+		"prettier-plugin-packagejson": "^2.4.2",
+		"release-it": "^15.6.0",
+		"sentences-per-line": "^0.2.1",
+		"should-semantic-release": "^0.1.0",
+		"tsup": "^6.7.0",
+		"typescript": "^5.0.0",
+		"vitest": "^0.29.0",
+		"yaml-eslint-parser": "^1.2.0"
+	},
+	"packageManager": "pnpm@7.31.0",
+	"engines": {
+		"node": ">=14"
+	}
+}

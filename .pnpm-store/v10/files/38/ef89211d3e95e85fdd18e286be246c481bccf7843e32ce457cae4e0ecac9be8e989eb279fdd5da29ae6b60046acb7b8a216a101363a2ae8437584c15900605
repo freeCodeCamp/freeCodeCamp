@@ -1,0 +1,9 @@
+import { createChatOverlayLayoutComponent } from 'instantsearch-ui-components';
+import { createElement, Fragment } from 'react';
+
+var ChatOverlayLayout = createChatOverlayLayoutComponent({
+    createElement: createElement,
+    Fragment: Fragment
+});
+
+export { ChatOverlayLayout };

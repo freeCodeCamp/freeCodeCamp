@@ -1,0 +1,55 @@
+{{# def.definitions }}
+{{# def.errors }}
+{{# def.setupKeyword }}
+{{# def.setupNextLevel }}
+
+
+{{
+  var $idx = 'i' + $lvl
+    , $dataNxt = $it.dataLevel = it.dataLevel + 1
+    , $nextData = 'data' + $dataNxt
+    , $currentBaseId = it.baseId
+    , $nonEmptySchema = {{# def.nonEmptySchema:$schema }};
+}}
+
+var {{=$errs}} = errors;
+var {{=$valid}};
+
+{{? $nonEmptySchema }}
+  {{# def.setCompositeRule }}
+
+  {{
+    $it.schema = $schema;
+    $it.schemaPath = $schemaPath;
+    $it.errSchemaPath = $errSchemaPath;
+  }}
+
+  var {{=$nextValid}} = false;
+
+  for (var {{=$idx}} = 0; {{=$idx}} < {{=$data}}.length; {{=$idx}}++) {
+    {{
+      $it.errorPath = it.util.getPathExpr(it.errorPath, $idx, it.opts.jsonPointers, true);
+      var $passData = $data + '[' + $idx + ']';
+      $it.dataPathArr[$dataNxt] = $idx;
+    }}
+
+    {{# def.generateSubschemaCode }}
+    {{# def.optimizeValidate }}
+
+    if ({{=$nextValid}}) break;
+  }
+
+  {{# def.resetCompositeRule }}
+  {{= $closingBraces }}
+
+  if (!{{=$nextValid}}) {
+{{??}}
+  if ({{=$data}}.length == 0) {
+{{?}}
+
+    {{# def.error:'contains' }}
+  } else {
+    {{? $nonEmptySchema }}
+      {{# def.resetErrors }}
+    {{?}}
+  {{? it.opts.allErrors }} } {{?}}

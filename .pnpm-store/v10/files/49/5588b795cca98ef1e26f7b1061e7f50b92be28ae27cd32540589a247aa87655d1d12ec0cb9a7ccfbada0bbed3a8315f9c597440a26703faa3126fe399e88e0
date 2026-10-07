@@ -1,0 +1,187 @@
+/** @jsx createElement */
+import type { ComponentProps, MutableRef, Renderer, VNode } from '../../types';
+import type { ChatMessageProps, ChatMessageClassNames, ChatMessageTranslations } from './ChatMessage';
+import type { ChatMessageErrorProps } from './ChatMessageError';
+import type { ChatMessageLoaderProps } from './ChatMessageLoader';
+import type { ChatEmptyProps, ChatLayoutOwnProps, ChatMessageBase, ChatStatus, ClientSideTools } from './types';
+export type ChatMessagesTranslations = {
+    /**
+     * Label for the scroll to bottom button
+     */
+    scrollToBottomLabel: string;
+    /**
+     * Text to display in the loader
+     */
+    loaderText?: string;
+    /**
+     * Label for the copy to clipboard action
+     */
+    copyToClipboardLabel?: string;
+    /**
+     * Label for the regenerate action
+     */
+    regenerateLabel?: string;
+    /**
+     * Label for the thumbs up action
+     */
+    thumbsUpLabel?: string;
+    /**
+     * Label for the thumbs down action
+     */
+    thumbsDownLabel?: string;
+    /**
+     * Text shown after submitting feedback
+     */
+    feedbackThankYouText?: string;
+    /**
+     * Label for the feedback spinner
+     */
+    sendingFeedbackLabel?: string;
+};
+export type ChatMessagesClassNames = {
+    /**
+     * Class names to apply to the root element
+     */
+    root: string | string[];
+    /**
+     * Class names to apply to the scroll container
+     */
+    scroll: string | string[];
+    /**
+     * Class names to apply to the content container
+     */
+    content: string | string[];
+    /**
+     * Class names to apply to the scroll to bottom button
+     */
+    scrollToBottom: string | string[];
+    /**
+     * Class names to apply to the scroll to bottom button when hidden
+     */
+    scrollToBottomHidden: string | string[];
+};
+export type ChatMessagesProps<TMessage extends ChatMessageBase = ChatMessageBase> = ComponentProps<'div'> & {
+    /**
+     * Array of messages to display
+     */
+    messages: TMessage[];
+    /**
+     * Custom message renderer
+     */
+    messageComponent?: (props: {
+        message: TMessage;
+    }) => JSX.Element;
+    /**
+     * Custom loader component
+     */
+    loaderComponent?: (props: ChatMessageLoaderProps) => JSX.Element;
+    /**
+     * Custom error component
+     */
+    errorComponent?: (props: ChatMessageErrorProps) => JSX.Element;
+    /**
+     * Custom empty component shown when there are no messages
+     */
+    emptyComponent?: (props: ChatEmptyProps) => JSX.Element;
+    /**
+     * Custom actions component
+     */
+    actionsComponent?: ChatMessageProps['actionsComponent'];
+    /**
+     * The index UI state
+     */
+    indexUiState: object;
+    /**
+     * Set the index UI state
+     */
+    setIndexUiState: (state: object) => void;
+    /**
+     * Tools available for the assistant
+     */
+    tools: ClientSideTools;
+    /**
+     * Current chat status
+     */
+    status?: ChatStatus;
+    /**
+     * Whether to hide the scroll to bottom button
+     */
+    hideScrollToBottom?: boolean;
+    /**
+     * Callback for reload action
+     */
+    onReload: (messageId?: string) => void;
+    /**
+     * Function to close the chat
+     */
+    onClose: () => void;
+    /**
+     * Function to send a message to the chat
+     */
+    sendMessage?: ChatLayoutOwnProps['sendMessage'];
+    /**
+     * Function to set the prompt input value
+     */
+    setInput?: (input: string) => void;
+    /**
+     * Optional class names
+     */
+    classNames?: Partial<ChatMessagesClassNames>;
+    /**
+     * Optional message class names
+     */
+    messageClassNames?: Partial<ChatMessageClassNames>;
+    /**
+     * Optional translations
+     */
+    translations?: Partial<ChatMessagesTranslations>;
+    /**
+     * Optional message translations
+     */
+    messageTranslations?: Partial<ChatMessageTranslations>;
+    /**
+     * Optional user message props
+     */
+    userMessageProps?: Partial<Omit<ChatMessageProps, 'ref' | 'key'>>;
+    /**
+     * Optional assistant message props
+     */
+    assistantMessageProps?: Partial<Omit<ChatMessageProps, 'ref' | 'key'>>;
+    /**
+     * Whether the scroll is at the bottom (controlled state)
+     */
+    isScrollAtBottom?: boolean;
+    /**
+     * Whether the messages are clearing (for animation)
+     */
+    isClearing?: boolean;
+    /**
+     * Callback for when clearing transition ends
+     */
+    onClearTransitionEnd?: () => void;
+    /**
+     * Ref callback for the scroll container element
+     */
+    scrollRef?: MutableRef<HTMLDivElement | null>;
+    /**
+     * Ref callback for the content element
+     */
+    contentRef?: MutableRef<HTMLDivElement | null>;
+    /**
+     * Callback to scroll to bottom
+     */
+    onScrollToBottom?: () => void;
+    /**
+     * Suggestions element to display below a message
+     */
+    suggestionsElement?: VNode;
+    /**
+     * Callback for feedback (thumbs up/down) on a message.
+     */
+    onFeedback?: (messageId: string, vote: 0 | 1) => void;
+    /**
+     * Map of message IDs to their feedback state.
+     */
+    feedbackState?: Record<string, 'sending' | 0 | 1>;
+};
+export declare function createChatMessagesComponent({ createElement, Fragment, }: Renderer): <TMessage extends ChatMessageBase = ChatMessageBase>(userProps: ChatMessagesProps<TMessage>) => JSX.Element;

@@ -1,0 +1,78 @@
+{
+  "name": "store",
+  "version": "2.0.12",
+  "description": "A localStorage wrapper for all browsers without using cookies or flash. Uses localStorage, globalStorage, and userData behavior under the hood",
+  "main": "dist/store.legacy.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marcuswestin/store.js.git"
+  },
+  "author": "Marcus Westin <narcvs@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/marcuswestin/store.js/issues"
+  },
+  "homepage": "https://github.com/marcuswestin/store.js#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "budo": "^7.1.0",
+    "eslint": "^3.12.2",
+    "localStorage": "^1.0.3",
+    "lodash": "^3.10.1",
+    "ngrok": "^2.2.6",
+    "request": "^2.67.0",
+    "tinytest": "^1.1.3",
+    "uglify-js": "^2.7.5"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "globals": {
+      "test": false,
+      "assert": false,
+      "print": false
+    },
+    "rules": {
+      "comma-dangle": ["error", "only-multiline"],
+      "no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "none",
+          "varsIgnorePattern": "^_$"
+        }
+      ],
+      "indent": [
+        "error",
+        "tab"
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
+  },
+  "engines": {
+    "node": "*"
+  },
+  "directories": {
+    "lib": "."
+  }
+}

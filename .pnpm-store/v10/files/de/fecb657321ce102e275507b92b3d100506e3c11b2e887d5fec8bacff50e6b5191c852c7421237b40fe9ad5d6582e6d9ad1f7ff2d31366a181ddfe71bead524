@@ -1,0 +1,45 @@
+{
+  "name": "dotenv",
+  "version": "7.0.0",
+  "description": "Loads environment variables from .env file",
+  "main": "lib/main.js",
+  "scripts": {
+    "flow": "flow",
+    "lint": "standard",
+    "postlint": "standard-markdown",
+    "pretest": "npm run lint",
+    "test": "tap tests/*.js --100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/motdotla/dotenv.git"
+  },
+  "keywords": [
+    "dotenv",
+    "env",
+    ".env",
+    "environment",
+    "variables",
+    "config",
+    "settings"
+  ],
+  "readmeFilename": "README.md",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "decache": "^4.5.1",
+    "flow-bin": "^0.92.1",
+    "sinon": "^7.2.3",
+    "standard": "^12.0.1",
+    "standard-markdown": "^5.0.1",
+    "tap": "^12.5.1"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=6"
+  },
+  "standard": {
+    "ignore": [
+      "flow-typed/"
+    ]
+  }
+}

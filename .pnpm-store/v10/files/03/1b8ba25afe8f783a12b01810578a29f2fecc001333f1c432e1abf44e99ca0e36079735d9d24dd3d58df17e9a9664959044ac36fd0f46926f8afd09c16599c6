@@ -1,0 +1,37 @@
+{
+  "name": "update-check",
+  "version": "1.5.2",
+  "description": "Minimalistic update notifications for command line interfaces",
+  "main": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "zeit-eslint --ext .jsx,.js .",
+    "lint-staged": "git diff --diff-filter=ACMRT --cached --name-only '*.js' '*.jsx' | xargs zeit-eslint"
+  },
+  "repository": "zeit/update-check",
+  "keywords": [
+    "update",
+    "notifications",
+    "checker",
+    "notifier"
+  ],
+  "author": "leo",
+  "license": "MIT",
+  "devDependencies": {
+    "@zeit/eslint-config-node": "0.2.13",
+    "@zeit/git-hooks": "0.1.4",
+    "eslint": "4.19.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@zeit/eslint-config-node"
+    ]
+  },
+  "git": {
+    "pre-commit": "lint-staged"
+  },
+  "dependencies": {
+    "registry-auth-token": "3.3.2",
+    "registry-url": "3.1.0"
+  }
+}

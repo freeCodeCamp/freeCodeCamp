@@ -1,0 +1,91 @@
+{
+  "name": "stringify-entities",
+  "version": "3.1.0",
+  "description": "Encode HTML character references and character entities",
+  "license": "MIT",
+  "keywords": [
+    "stringify",
+    "encode",
+    "escape",
+    "html",
+    "character",
+    "reference",
+    "entity",
+    "entities"
+  ],
+  "repository": "wooorm/stringify-entities",
+  "bugs": "https://github.com/wooorm/stringify-entities/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "lib/",
+    "index.js",
+    "light.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "character-entities-html4": "^1.0.0",
+    "character-entities-legacy": "^1.0.0",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "character-entities": "^1.0.0",
+    "dtslint": "^4.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "generate": "node build",
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . -s stringifyEntities -o stringify-entities.js",
+    "build-mangle": "browserify . -s stringifyEntities -p tinyify -o stringify-entities.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-includes": "off",
+      "guard-for-in": "off"
+    },
+    "ignores": [
+      "stringify-entities.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

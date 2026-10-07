@@ -1,0 +1,55 @@
+{
+  "name": "inline-style-parser",
+  "version": "0.1.1",
+  "description": "An inline style parser.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && npm run build:min && npm run build:unmin",
+    "build:min": "NODE_ENV=production rollup --config --output.file dist/inline-style-parser.min.js --sourcemap",
+    "build:unmin": "NODE_ENV=development rollup --config --file dist/inline-style-parser.js",
+    "clean": "rm -rf dist",
+    "coveralls": "cat coverage/lcov.info | coveralls",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
+    "prepublishOnly": "npm run build",
+    "release": "standard-version --no-verify",
+    "test": "jest",
+    "test:ci": "npm run test:coverage -- --ci",
+    "test:coverage": "jest --coverage --collectCoverageFrom=index.js",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remarkablemark/inline-style-parser"
+  },
+  "bugs": {
+    "url": "https://github.com/remarkablemark/inline-style-parser/issues"
+  },
+  "keywords": [
+    "inline-style-parser",
+    "inline-style",
+    "style",
+    "parser",
+    "css"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "coveralls": "^3.0.4",
+    "css": "2.2.4",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.4.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "rollup": "^1.15.6",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "standard-version": "^6.0.1"
+  },
+  "files": [
+    "/dist"
+  ],
+  "license": "MIT"
+}

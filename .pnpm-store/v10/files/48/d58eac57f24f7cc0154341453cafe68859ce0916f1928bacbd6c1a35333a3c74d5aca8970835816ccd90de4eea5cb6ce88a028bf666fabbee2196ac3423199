@@ -1,0 +1,39 @@
+{
+  "name": "unicode-match-property-value-ecmascript",
+  "version": "2.1.0",
+  "description": "Match a Unicode property or property alias to its canonical property name per the algorithm used for RegExp Unicode property escapes in ECMAScript.",
+  "homepage": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "LICENSE-MIT.txt",
+    "data/mappings.js",
+    "index.js"
+  ],
+  "keywords": [
+    "unicode",
+    "unicode property values",
+    "unicode property value aliases"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript.git"
+  },
+  "bugs": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript/issues",
+  "devDependencies": {
+    "ava": "*",
+    "jsesc": "^3.0.2",
+    "unicode-property-value-aliases-ecmascript": "^2.1.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "ava tests/tests.js"
+  }
+}

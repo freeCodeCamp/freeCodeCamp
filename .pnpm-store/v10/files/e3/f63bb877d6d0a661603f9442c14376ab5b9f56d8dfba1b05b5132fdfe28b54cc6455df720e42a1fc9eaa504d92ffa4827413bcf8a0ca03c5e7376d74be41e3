@@ -1,0 +1,45 @@
+{
+  "name": "pkg-types",
+  "version": "2.3.0",
+  "description": "Node.js utilities and TypeScript definitions for `package.json` and `tsconfig.json`",
+  "repository": "unjs/pkg-types",
+  "license": "MIT",
+  "sideEffects": false,
+  "exports": {
+    "types": "./dist/index.d.mts",
+    "default": "./dist/index.mjs"
+  },
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest --typecheck",
+    "lint": "eslint && prettier -c src test",
+    "lint:fix": "automd && eslint --fix . && prettier -w src test",
+    "prepack": "pnpm build",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "vitest run --typecheck --coverage"
+  },
+  "dependencies": {
+    "confbox": "^0.2.2",
+    "exsolve": "^1.0.7",
+    "pathe": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "automd": "^0.4.0",
+    "changelogen": "^0.6.2",
+    "eslint": "^9.33.0",
+    "eslint-config-unjs": "^0.5.0",
+    "expect-type": "^1.2.2",
+    "jiti": "^2.5.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "unbuild": "^3.6.1",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.14.0"
+}

@@ -1,0 +1,42 @@
+{
+	"name": "yoga-layout-prebuilt",
+	"version": "1.10.0",
+	"description": "Prebuilt yoga-layout package",
+	"license": "MIT",
+	"repository": "vadimdemedes/yoga-layout-prebuilt",
+	"author": {
+		"name": "Vadim Demedes",
+		"email": "vdemedes@gmail.com",
+		"url": "github.com/vadimdemedes"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"build": "./build.sh",
+		"test": "xo && ava",
+		"prepublishOnly": "npm run build"
+	},
+	"main": "yoga-layout/dist/entry-browser",
+	"types": "index.d.ts",
+	"files": [
+		"yoga-layout",
+		"index.d.ts"
+	],
+	"keywords": [
+		"yoga",
+		"yoga-layout"
+	],
+	"devDependencies": {
+		"ava": "^0.25.0",
+		"xo": "^0.21.0"
+	},
+	"xo": {
+		"ignores": [
+			"yoga-layout"
+		]
+	},
+	"dependencies": {
+		"@types/yoga-layout": "1.9.2"
+	}
+}

@@ -1,0 +1,73 @@
+{
+  "name": "style-to-object",
+  "version": "0.4.4",
+  "description": "Converts inline style to object.",
+  "author": "Mark <mark@remarkablemark.org>",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "module": "index.mjs",
+  "exports": {
+    "types": "./index.d.ts",
+    "import": "./index.mjs",
+    "require": "./index.js"
+  },
+  "scripts": {
+    "build": "rollup --config --failAfterWarnings",
+    "clean": "rm -rf dist",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:dts": "dtslint .",
+    "_postinstall": "husky install",
+    "postpublish": "pinst --enable",
+    "prepublishOnly": "pinst --disable && run-s lint lint:dts test clean build",
+    "test": "jest",
+    "test:ci": "CI=true jest --ci --colors --coverage",
+    "test:esm": "node --test __tests__/index.test.mjs",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remarkablemark/style-to-object"
+  },
+  "bugs": {
+    "url": "https://github.com/remarkablemark/style-to-object/issues"
+  },
+  "keywords": [
+    "style-to-object",
+    "inline",
+    "style",
+    "parser",
+    "css",
+    "object",
+    "pojo"
+  ],
+  "dependencies": {
+    "inline-style-parser": "0.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.8.0",
+    "@commitlint/config-conventional": "17.8.0",
+    "@definitelytyped/dtslint": "0.0.182",
+    "@rollup/plugin-commonjs": "25.0.5",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "@rollup/plugin-terser": "0.4.4",
+    "@typescript-eslint/parser": "5.62.0",
+    "eslint": "8.51.0",
+    "eslint-plugin-prettier": "5.0.1",
+    "husky": "8.0.3",
+    "jest": "29.7.0",
+    "lint-staged": "14.0.1",
+    "npm-run-all": "4.1.5",
+    "pinst": "3.0.0",
+    "prettier": "3.0.3",
+    "rollup": "4.1.0",
+    "typescript": "5.2.2"
+  },
+  "files": [
+    "/dist",
+    "index.d.ts",
+    "index.js",
+    "index.mjs"
+  ],
+  "license": "MIT"
+}

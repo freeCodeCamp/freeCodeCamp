@@ -1,0 +1,66 @@
+{
+  "name": "global-modules",
+  "description": "The directory used by npm for globally installed npm modules.",
+  "version": "2.0.0",
+  "homepage": "https://github.com/jonschlinkert/global-modules",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "JasonChang (https://packagist.org/packages/jason-chang)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Kiko Beats (https://kikobeats.com)"
+  ],
+  "repository": "jonschlinkert/global-modules",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/global-modules/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "global-prefix": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^2.0.0",
+    "mocha": "^5.2.0"
+  },
+  "keywords": [
+    "directory",
+    "dirname",
+    "global",
+    "module",
+    "modules",
+    "package",
+    "path",
+    "prefix",
+    "resolve"
+  ],
+  "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "git-config-path",
+        "global-prefix",
+        "npm-paths"
+      ]
+    },
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

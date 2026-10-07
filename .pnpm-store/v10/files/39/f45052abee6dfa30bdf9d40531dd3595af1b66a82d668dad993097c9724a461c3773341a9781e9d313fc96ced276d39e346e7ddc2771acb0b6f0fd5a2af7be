@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/position",
+  "private": true,
+  "main": "../cjs/position.js",
+  "module": "../esm/position.js",
+  "types": "../esm/position.d.ts"
+}

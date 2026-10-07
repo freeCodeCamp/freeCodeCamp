@@ -1,0 +1,25 @@
+{
+  "name": "parse-srcset",
+  "version": "1.0.2",
+  "description": "A spec-conformant JavaScript parser for the HTML5 srcset attribute",
+  "main": "src/parse-srcset.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "intern-client config=tests/intern"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albell/parse-srcset.git"
+  },
+  "author": "Alex Bell <alex@bellandwhistle.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albell/parse-srcset/issues"
+  },
+  "homepage": "https://github.com/albell/parse-srcset#readme",
+  "devDependencies": {
+    "intern-geezer": "^2.2.3"
+  }
+}

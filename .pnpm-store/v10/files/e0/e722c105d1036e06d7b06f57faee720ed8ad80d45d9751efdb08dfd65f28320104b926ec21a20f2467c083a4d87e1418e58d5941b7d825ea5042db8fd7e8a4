@@ -1,0 +1,61 @@
+{
+  "name": "opentracing",
+  "version": "0.14.7",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "files": [
+    "src",
+    "lib",
+    "dist"
+  ],
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "https://opensource.org/licenses/Apache-2.0"
+    }
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "lint": "tslint -t msbuild -c tslint.json 'src/**/*.ts'",
+    "test": "mocha lib/test/unittest.js --check-leaks --color",
+    "cover": "npm run test-cover && istanbul check-coverage",
+    "test-cover": "istanbul cover --report lcovonly --print none ./node_modules/.bin/_mocha lib/test/unittest.js -- --check-leaks --color && istanbul report text",
+    "cover-html": "istanbul cover --report html --print none ./node_modules/.bin/_mocha lib/test/unittest.js -- --check-leaks --color && istanbul report text",
+    "webpack": "webpack --display-error-details",
+    "build": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "typedoc": "typedoc --out typedoc --tsconfig tsconfig.json --mode file",
+    "example": "node lib/examples/demo/demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opentracing/opentracing-javascript"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "4.1.4",
+    "@types/mocha": "2.2.40",
+    "@types/node": "10.3.5",
+    "chai": "^4.1.2",
+    "clone": "^2.1.1",
+    "colors": "^1.1.2",
+    "coveralls": "^3.0.1",
+    "cross-env": "^5.2.0",
+    "istanbul": "^0.4.5",
+    "json-loader": "^0.5.4",
+    "mocha": "^2.4.5",
+    "shelljs": "^0.8.2",
+    "source-map-support": "^0.5.6",
+    "surge": "^0.20.1",
+    "ts-loader": "^4.4.1",
+    "tslint": "^5.0.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^3.2.2",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  }
+}

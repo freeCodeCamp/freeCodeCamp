@@ -1,0 +1,58 @@
+{
+  "name": "webpack-merge",
+  "description": "Variant of merge that's useful for webpack configuration",
+  "author": "Juho Vepsalainen <bebraw@gmail.com>",
+  "version": "5.9.0",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier . --write --ignore-path .gitignore",
+    "start": "tsdx watch",
+    "test": "tsdx test",
+    "prepare": "npm run build"
+  },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "clone-deep": "^4.0.1",
+    "wildcard": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/estree": "0.0.48",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/survivejs/webpack-merge.git"
+  },
+  "homepage": "https://github.com/survivejs/webpack-merge",
+  "bugs": {
+    "url": "https://github.com/survivejs/webpack-merge/issues"
+  },
+  "keywords": [
+    "webpack",
+    "merge"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "dist/*.js"
+    ]
+  },
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  }
+}

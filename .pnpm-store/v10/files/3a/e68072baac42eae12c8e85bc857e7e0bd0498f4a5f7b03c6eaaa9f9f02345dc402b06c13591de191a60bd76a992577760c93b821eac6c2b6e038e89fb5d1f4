@@ -1,0 +1,1 @@
+{"version":3,"file":"ModuleScope.js","sourceRoot":"","sources":["../../src/scope/ModuleScope.ts"],"names":[],"mappings":";;;AAIA,2CAAwC;AACxC,2CAAwC;AAExC,MAAM,WAAY,SAAQ,qBAAoD;IAC5E,YACE,YAA0B,EAC1B,UAAgC,EAChC,KAA2B;QAE3B,KAAK,CAAC,YAAY,EAAE,qBAAS,CAAC,MAAM,EAAE,UAAU,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IAClE,CAAC;CACF;AAEQ,kCAAW"}

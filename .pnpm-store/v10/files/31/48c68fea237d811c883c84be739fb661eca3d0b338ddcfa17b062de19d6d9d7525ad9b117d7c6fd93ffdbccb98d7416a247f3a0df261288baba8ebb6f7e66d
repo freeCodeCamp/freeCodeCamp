@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/StreamEmit.js",
+  "module": "../dist/esm/StreamEmit.js",
+  "types": "../dist/dts/StreamEmit.d.ts"
+}

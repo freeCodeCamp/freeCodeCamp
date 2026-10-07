@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Redacted.js",
+  "module": "../dist/esm/Redacted.js",
+  "types": "../dist/dts/Redacted.d.ts"
+}

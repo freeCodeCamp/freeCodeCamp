@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/ExecutionStrategy.js",
+  "module": "../dist/esm/ExecutionStrategy.js",
+  "types": "../dist/dts/ExecutionStrategy.d.ts"
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/ScopedCache.js",
+  "module": "../dist/esm/ScopedCache.js",
+  "types": "../dist/dts/ScopedCache.d.ts"
+}

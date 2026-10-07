@@ -1,0 +1,46 @@
+{
+	"name": "auto-bind",
+	"version": "4.0.0",
+	"description": "Automatically bind methods to their class instance",
+	"license": "MIT",
+	"repository": "sindresorhus/auto-bind",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"react.js",
+		"react.d.ts"
+	],
+	"keywords": [
+		"auto",
+		"bind",
+		"class",
+		"methods",
+		"method",
+		"automatically",
+		"prototype",
+		"instance",
+		"function",
+		"this",
+		"self",
+		"react",
+		"component"
+	],
+	"devDependencies": {
+		"@types/react": "^16.9.9",
+		"ava": "^2.4.0",
+		"tsd": "^0.11.0",
+		"xo": "^0.25.3"
+	}
+}

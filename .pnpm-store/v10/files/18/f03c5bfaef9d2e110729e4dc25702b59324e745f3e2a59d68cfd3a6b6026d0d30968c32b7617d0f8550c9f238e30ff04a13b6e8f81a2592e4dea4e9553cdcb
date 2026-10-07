@@ -1,0 +1,195 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain Animation
+  depends on Runtime
+  depends on DOM
+
+  # Animation instance.
+  type Animation extends object
+    properties
+      # `Animation`'s id.
+      string id
+      # `Animation`'s name.
+      string name
+      # `Animation`'s internal paused state.
+      boolean pausedState
+      # `Animation`'s play state.
+      string playState
+      # `Animation`'s playback rate.
+      number playbackRate
+      # `Animation`'s start time.
+      # Milliseconds for time based animations and
+      # percentage [0 - 100] for scroll driven animations
+      # (i.e. when viewOrScrollTimeline exists).
+      number startTime
+      # `Animation`'s current time.
+      number currentTime
+      # Animation type of `Animation`.
+      enum type
+        CSSTransition
+        CSSAnimation
+        WebAnimation
+      # `Animation`'s source animation node.
+      optional AnimationEffect source
+      # A unique ID for `Animation` representing the sources that triggered this CSS
+      # animation/transition.
+      optional string cssId
+      # View or scroll timeline
+      optional ViewOrScrollTimeline viewOrScrollTimeline
+
+  # Timeline instance
+  type ViewOrScrollTimeline extends object
+    properties
+      # Scroll container node
+      optional DOM.BackendNodeId sourceNodeId
+      # Represents the starting scroll position of the timeline
+      # as a length offset in pixels from scroll origin.
+      optional number startOffset
+      # Represents the ending scroll position of the timeline
+      # as a length offset in pixels from scroll origin.
+      optional number endOffset
+      # The element whose principal box's visibility in the
+      # scrollport defined the progress of the timeline.
+      # Does not exist for animations with ScrollTimeline
+      optional DOM.BackendNodeId subjectNodeId
+      # Orientation of the scroll
+      DOM.ScrollOrientation axis
+
+  # AnimationEffect instance
+  type AnimationEffect extends object
+    properties
+      # `AnimationEffect`'s delay.
+      number delay
+      # `AnimationEffect`'s end delay.
+      number endDelay
+      # `AnimationEffect`'s iteration start.
+      number iterationStart
+      # `AnimationEffect`'s iterations. Omitted if the value is infinite.
+      optional number iterations
+      # `AnimationEffect`'s iteration duration.
+      # Milliseconds for time based animations and
+      # percentage [0 - 100] for scroll driven animations
+      # (i.e. when viewOrScrollTimeline exists).
+      number duration
+      # `AnimationEffect`'s playback direction.
+      string direction
+      # `AnimationEffect`'s fill mode.
+      string fill
+      # `AnimationEffect`'s target node.
+      optional DOM.BackendNodeId backendNodeId
+      # `AnimationEffect`'s keyframes.
+      optional KeyframesRule keyframesRule
+      # `AnimationEffect`'s timing function.
+      string easing
+
+  # Keyframes Rule
+  type KeyframesRule extends object
+    properties
+      # CSS keyframed animation's name.
+      optional string name
+      # List of animation keyframes.
+      array of KeyframeStyle keyframes
+
+  # Keyframe Style
+  type KeyframeStyle extends object
+    properties
+      # Keyframe's time offset.
+      string offset
+      # `AnimationEffect`'s timing function.
+      string easing
+
+  # Disables animation domain notifications.
+  command disable
+
+  # Enables animation domain notifications.
+  command enable
+
+  # Returns the current time of the an animation.
+  command getCurrentTime
+    parameters
+      # Id of animation.
+      string id
+    returns
+      # Current time of the page.
+      number currentTime
+
+  # Gets the playback rate of the document timeline.
+  command getPlaybackRate
+    returns
+      # Playback rate for animations on page.
+      number playbackRate
+
+  # Releases a set of animations to no longer be manipulated.
+  command releaseAnimations
+    parameters
+      # List of animation ids to seek.
+      array of string animations
+
+  # Gets the remote object of the Animation.
+  command resolveAnimation
+    parameters
+      # Animation id.
+      string animationId
+    returns
+      # Corresponding remote object.
+      Runtime.RemoteObject remoteObject
+
+  # Seek a set of animations to a particular time within each animation.
+  command seekAnimations
+    parameters
+      # List of animation ids to seek.
+      array of string animations
+      # Set the current time of each animation.
+      number currentTime
+
+  # Sets the paused state of a set of animations.
+  command setPaused
+    parameters
+      # Animations to set the pause state of.
+      array of string animations
+      # Paused state to set to.
+      boolean paused
+
+  # Sets the playback rate of the document timeline.
+  command setPlaybackRate
+    parameters
+      # Playback rate for animations on page
+      number playbackRate
+
+  # Sets the timing of an animation node.
+  command setTiming
+    parameters
+      # Animation id.
+      string animationId
+      # Duration of the animation.
+      number duration
+      # Delay of the animation.
+      number delay
+
+  # Event for when an animation has been cancelled.
+  event animationCanceled
+    parameters
+      # Id of the animation that was cancelled.
+      string id
+
+  # Event for each animation that has been created.
+  event animationCreated
+    parameters
+      # Id of the animation that was created.
+      string id
+
+  # Event for animation that has been started.
+  event animationStarted
+    parameters
+      # Animation that was started.
+      Animation animation
+
+  # Event for animation that has been updated.
+  event animationUpdated
+    parameters
+      # Animation that was updated.
+      Animation animation

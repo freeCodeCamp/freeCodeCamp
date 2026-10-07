@@ -1,0 +1,12 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"globals": {
+		"Uint8Array": false,
+	},
+
+	"rules": {
+	},
+}

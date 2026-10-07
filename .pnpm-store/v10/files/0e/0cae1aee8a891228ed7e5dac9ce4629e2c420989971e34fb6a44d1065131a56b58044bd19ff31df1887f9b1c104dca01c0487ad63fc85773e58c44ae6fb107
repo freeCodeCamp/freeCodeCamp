@@ -1,0 +1,1 @@
+{"version":3,"file":"context-store.d.ts","sourceRoot":"","sources":["../../../src/types/context-store.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,WAAW,CAAC;AACrC,OAAO,EAAE,cAAc,EAAE,MAAM,kBAAkB,CAAC;AAElD,MAAM,MAAM,aAAa,GAAG,OAAO,CAAC,QAAQ,EAAE,cAAc,CAAC,CAAC"}

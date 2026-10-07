@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true
+  }
+}

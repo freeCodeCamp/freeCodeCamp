@@ -1,0 +1,38 @@
+{
+  "name": "shallow-compare",
+  "version": "1.2.2",
+  "description": "Stand alone shallowCompare for use in libraries that support shouldComponentUpdate",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && npm clean-demo",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nwb": "0.15.x",
+    "preact": "^7.2.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "author": "",
+  "homepage": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tkh44/shallow-compare"
+  },
+  "keywords": [
+    "react-component"
+  ]
+}

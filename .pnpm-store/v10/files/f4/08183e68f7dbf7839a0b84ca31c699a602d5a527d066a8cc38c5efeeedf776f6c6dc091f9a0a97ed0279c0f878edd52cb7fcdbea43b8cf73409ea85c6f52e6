@@ -1,0 +1,14 @@
+cache:
+  paths:
+    - node_modules
+
+argon:
+  image: node:argon
+  script:
+    - npm i
+    - npm t
+
+boron:
+  image: node:boron
+  script:
+    - npm it

@@ -1,0 +1,23 @@
+{
+    "$schema": "https://plugins.dprint.dev/dprint/dprint-plugin-typescript/latest/schema.json",
+    "typescript": {
+        "indentWidth": 4,
+        "lineWidth": 200,
+        "useBraces": "preferNone",
+        "ifStatement.useBraces": "whenNotSingleLine",
+        "singleBodyPosition": "sameLine",
+        "trailingCommas": "never",
+        "preferSingleLine": true,
+        "binaryExpression.linePerExpression": true,
+        "memberExpression.linePerExpression": true
+    },
+    "json": {
+        "indentWidth": 4
+    },
+    "includes": ["{esm,cjs,src}/*.{js,mjs,cjs}", "**/*.json"],
+    "excludes": ["**/node_modules", "**/*-lock.json"],
+    "plugins": [
+        "https://plugins.dprint.dev/typescript-0.84.0.wasm",
+        "https://plugins.dprint.dev/json-0.17.1.wasm"
+    ]
+}

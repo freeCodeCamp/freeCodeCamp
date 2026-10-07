@@ -1,0 +1,92 @@
+{
+  "name": "jsdom",
+  "version": "26.1.0",
+  "description": "A JavaScript implementation of many web standards",
+  "keywords": [
+    "dom",
+    "html",
+    "whatwg",
+    "w3c"
+  ],
+  "maintainers": [
+    "Elijah Insua <tmpvar@gmail.com> (http://tmpvar.com)",
+    "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+    "Sebastian Mayr <sebmaster16@gmail.com> (https://blog.smayr.name/)",
+    "Joris van der Wel <joris@jorisvanderwel.com>",
+    "Timothy Gu <timothygu99@gmail.com> (https://timothygu.me/)",
+    "Magne Andersson <code@zirro.se> (https://zirro.se/)",
+    "Pierre-Marie Dartus <dartus.pierremarie@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsdom/jsdom.git"
+  },
+  "dependencies": {
+    "cssstyle": "^4.2.1",
+    "data-urls": "^5.0.0",
+    "decimal.js": "^10.5.0",
+    "html-encoding-sniffer": "^4.0.0",
+    "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.6",
+    "is-potential-custom-element-name": "^1.0.1",
+    "nwsapi": "^2.2.16",
+    "parse5": "^7.2.1",
+    "rrweb-cssom": "^0.8.0",
+    "saxes": "^6.0.0",
+    "symbol-tree": "^3.2.4",
+    "tough-cookie": "^5.1.1",
+    "w3c-xmlserializer": "^5.0.0",
+    "webidl-conversions": "^7.0.0",
+    "whatwg-encoding": "^3.1.1",
+    "whatwg-mimetype": "^4.0.0",
+    "whatwg-url": "^14.1.1",
+    "ws": "^8.18.0",
+    "xml-name-validator": "^5.0.0"
+  },
+  "peerDependencies": {
+    "canvas": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "canvas": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@domenic/eslint-config": "^4.0.1",
+    "benchmark": "^2.1.4",
+    "eslint": "^9.20.0",
+    "eslint-plugin-html": "^8.1.2",
+    "globals": "^15.14.0",
+    "js-yaml": "^4.1.0",
+    "minimatch": "^9.0.5",
+    "mocha": "^11.1.0",
+    "mocha-sugar-free": "^1.4.0",
+    "pngjs": "^7.0.0",
+    "server-destroy": "^1.0.1",
+    "webidl2js": "^18.0.0",
+    "yargs": "^17.7.2"
+  },
+  "scripts": {
+    "prepare": "npm run convert-idl && npm run generate-js-globals",
+    "pretest": "npm run prepare && npm run init-wpt",
+    "test-wpt": "mocha test/web-platform-tests/run-wpts.js",
+    "test-tuwpt": "mocha test/web-platform-tests/run-tuwpts.js",
+    "test-mocha": "mocha",
+    "test-api": "mocha test/api",
+    "test": "mocha test/index.js",
+    "lint": "eslint --cache",
+    "init-wpt": "git submodule update --init --recursive",
+    "reset-wpt": "rm -rf ./test/web-platform-tests/tests && npm run init-wpt",
+    "update-wpt": "git submodule update --init --recursive --remote && cd test/web-platform-tests/tests && python wpt.py manifest --path ../wpt-manifest.json",
+    "update-authors": "git log --format=\"%aN <%aE>\" | sort -f | uniq > AUTHORS.txt",
+    "benchmark": "node ./benchmark/runner",
+    "convert-idl": "node ./scripts/webidl/convert.js",
+    "generate-js-globals": "node ./scripts/generate-js-globals.js"
+  },
+  "main": "./lib/api.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  }
+}

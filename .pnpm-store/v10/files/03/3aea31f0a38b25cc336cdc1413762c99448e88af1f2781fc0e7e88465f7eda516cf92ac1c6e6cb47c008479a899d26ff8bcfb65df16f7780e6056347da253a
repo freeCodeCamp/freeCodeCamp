@@ -1,0 +1,98 @@
+{
+  "name": "@vitest/ui",
+  "type": "module",
+  "version": "4.1.5",
+  "description": "UI for Vitest",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://vitest.dev/guide/ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/ui"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "keywords": [
+    "vitest",
+    "html",
+    "reporter"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./reporter": {
+      "types": "./reporter.d.ts",
+      "default": "./dist/reporter.js"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "peerDependencies": {
+    "vitest": "4.1.5"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2",
+    "flatted": "^3.4.2",
+    "pathe": "^2.0.3",
+    "sirv": "^3.0.2",
+    "tinyglobby": "^0.2.15",
+    "tinyrainbow": "^3.1.0",
+    "@vitest/utils": "4.1.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.3.0",
+    "@iconify-json/carbon": "^1.2.19",
+    "@iconify-json/logos": "^1.2.10",
+    "@types/codemirror": "^5.60.17",
+    "@types/d3-force": "^3.0.10",
+    "@types/d3-selection": "^3.0.11",
+    "@types/ws": "^8.18.1",
+    "@unocss/reset": "^66.6.6",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vue/test-utils": "^2.4.6",
+    "@vueuse/core": "^14.2.1",
+    "ansi-to-html": "^0.7.2",
+    "birpc": "^4.0.0",
+    "codemirror": "^5.65.18",
+    "codemirror-theme-vars": "^0.1.2",
+    "d3-graph-controller": "^3.1.8",
+    "floating-vue": "^5.2.2",
+    "mime": "^4.1.0",
+    "rollup": "^4.59.0",
+    "splitpanes": "^4.0.4",
+    "typescript": "^5.9.3",
+    "unocss": "^66.6.6",
+    "vite": "^5.0.0",
+    "vite-plugin-pages": "^0.33.3",
+    "vitest-browser-vue": "2.0.2",
+    "vue": "^3.5.29",
+    "vue-router": "^5.0.3",
+    "vue-tsc": "^3.2.5",
+    "vue-virtual-scroller": "2.0.0-beta.8",
+    "@vitest/browser-playwright": "4.1.5",
+    "@vitest/runner": "4.1.5",
+    "@vitest/ws-client": "4.1.5"
+  },
+  "scripts": {
+    "build": "premove dist && pnpm build:node && pnpm build:client",
+    "build:client": "vite build",
+    "build:node": "rollup -c",
+    "typecheck": "tsc --noEmit",
+    "typecheck:client": "vue-tsc --noEmit",
+    "dev:client": "vite",
+    "dev": "rollup -c --watch --watch.include 'node/**'",
+    "dev:ui": "pnpm run --stream '/^(dev|dev:client)$/'",
+    "test:ui": "vitest"
+  }
+}

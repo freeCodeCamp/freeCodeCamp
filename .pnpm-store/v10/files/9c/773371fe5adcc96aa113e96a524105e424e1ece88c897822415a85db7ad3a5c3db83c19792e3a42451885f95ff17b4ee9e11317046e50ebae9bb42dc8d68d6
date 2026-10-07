@@ -1,0 +1,104 @@
+{
+  "name": "unist-util-visit-parents",
+  "version": "3.1.1",
+  "description": "unist utility to recursively walk over nodes, with ancestral information",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "tree",
+    "ast",
+    "visit",
+    "traverse",
+    "walk",
+    "check",
+    "parent",
+    "parents"
+  ],
+  "repository": "syntax-tree/unist-util-visit-parents",
+  "bugs": "https://github.com/syntax-tree/unist-util-visit-parents/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "browser": {
+    "./color.js": "./color.browser.js"
+  },
+  "react-native": {
+    "./color.js": "./color.browser.js"
+  },
+  "files": [
+    "index.js",
+    "color.js",
+    "color.browser.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "@types/unist": "^2.0.0",
+    "unist-util-is": "^4.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^13.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-gfm": "^1.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "strip-ansi": "^6.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "typescript": "^4.0.0",
+    "unified": "^9.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . --write && xo --fix",
+    "build-bundle": "browserify index.js -s unistUtilVisitParents > unist-util-visit-parents.js",
+    "build-mangle": "browserify index.js -s unistUtilVisitParents -p tinyify > unist-util-visit-parents.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-set-has": "off",
+      "unicorn/prefer-reflect-apply": "off"
+    },
+    "ignores": [
+      "types/",
+      "unist-util-visit-parents.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

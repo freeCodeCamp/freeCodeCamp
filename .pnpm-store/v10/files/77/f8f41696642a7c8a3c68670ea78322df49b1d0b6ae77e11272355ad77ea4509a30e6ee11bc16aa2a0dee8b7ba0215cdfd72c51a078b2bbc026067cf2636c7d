@@ -1,0 +1,118 @@
+# `MD060` - Table column style
+
+Tags: `table`
+
+Aliases: `table-column-style`
+
+Parameters:
+
+- `aligned_delimiter`: Aligned delimiter columns (`boolean`, default `false`)
+- `style`: Table column style (`string`, default `any`, values `aligned` /
+  `any` / `compact` / `tight`)
+
+This rule is triggered when the column separator pipe characters (`|`) of a
+[GitHub Flavored Markdown table][gfm-table-060] are used inconsistently.
+
+This rule recognizes three table column styles based on popular use.
+
+Style `aligned` ensures pipe characters are vertically aligned:
+
+```markdown
+| Character | Meaning |
+| --------- | ------- |
+| Y         | Yes     |
+| N         | No      |
+```
+
+The `aligned` style ignores cell content, so the following is also valid:
+
+```markdown
+| Character | Meaning |
+|-----------|---------|
+|     Y     |     Yes |
+|     N     |      No |
+```
+
+Style `compact` avoids extra padding with a single space around cell content:
+
+```markdown
+| Character | Meaning |
+| --- | --- |
+| Y | Yes |
+| N | No |
+```
+
+Style `tight` uses no padding at all for cell content:
+
+```markdown
+|Character|Meaning|
+|---|---|
+|Y|Yes|
+|N|No|
+```
+
+When this rule's `style` parameter is set to `aligned`, `compact`, or `tight`,
+every table must match the corresponding pattern and any violations will be
+reported. By default, or when the `any` style is used, each table is analyzed to
+see if it satisfies any supported style. If so, no violations are reported. If
+not, violations are be reported for whichever style would produce the *fewest*
+issues (i.e., whichever style is the closest match).
+
+Setting the `aligned_delimiter` parameter to `true` requires pipe characters in
+the delimiter row to align with those in the header row. This can be used with
+`compact` and `tight` tables to make the header text more obvious. (It's already
+required for tables with style `aligned`.)
+
+Style `compact` with `aligned_delimiter`:
+
+```markdown
+| Character | Meaning |
+| --------- | ------- |
+| Y | Yes |
+| N | No |
+```
+
+Style `tight` with `aligned_delimiter`:
+
+```markdown
+|Character|Meaning|
+|---------|-------|
+|Y|Yes|
+|N|No|
+```
+
+**Note**: This rule does not require leading/trailing pipe characters, so this
+is also a valid table for style `compact`:
+
+```markdown
+Character | Meaning
+--- | ---
+Y | Yes
+N | No
+```
+
+**Note**: Pipe alignment for the `aligned` style is based on visual appearance
+and not character count. Because editors typically render [emoji][emoji] and
+[CJK characters][cjk-characters] at *twice* the width of
+[Latin characters][latin-script], this rule takes that into account for tables
+using the `aligned` style. The following table is correctly formatted and will
+appear aligned in most editors and monospaced fonts:
+
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable extended-ascii -->
+
+```markdown
+| Response | Emoji |
+| -------- | ----- |
+| Yes      | ✅    |
+| No       | ❎    |
+```
+
+<!-- markdownlint-restore -->
+
+Rationale: Consistent formatting makes it easier to understand a document.
+
+[cjk-characters]: https://en.wikipedia.org/wiki/CJK_characters
+[emoji]: https://en.wikipedia.org/wiki/Emoji
+[gfm-table-060]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
+[latin-script]: https://en.wikipedia.org/wiki/Latin_script

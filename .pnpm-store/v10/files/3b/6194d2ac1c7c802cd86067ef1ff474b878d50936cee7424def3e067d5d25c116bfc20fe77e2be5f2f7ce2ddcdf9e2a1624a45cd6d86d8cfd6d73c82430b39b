@@ -1,0 +1,85 @@
+name: Benchmark PR
+
+on:
+  pull_request_target:
+    types: [labeled]
+
+jobs:
+  benchmark:
+    if: ${{ github.event.label.name == 'benchmark' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      PR-BENCH: ${{ steps.benchmark-pr.outputs.BENCH_RESULT }}
+      MASTER-BENCH: ${{ steps.benchmark-master.outputs.BENCH_RESULT }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{github.event.pull_request.head.sha}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install
+        run: |
+          npm install --ignore-scripts
+
+      - name: Run benchmark
+        id: benchmark-pr
+        run: |
+          npm run --silent bench > ./bench-result
+          content=$(cat ./bench-result)
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=BENCH_RESULT::$content"
+
+      # master benchmark
+      - uses: actions/checkout@v4
+        with:
+          ref: 'master'
+
+      - name: Install
+        run: |
+          npm install --ignore-scripts
+
+      - name: Run benchmark
+        id: benchmark-master
+        run: |
+          npm run --silent bench > ./bench-result
+          content=$(cat ./bench-result)
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=BENCH_RESULT::$content"
+
+  output-benchmark:
+    if: "always()"
+    needs: [benchmark]
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            **PR**:
+            ```
+            ${{ needs.benchmark.outputs.PR-BENCH }}
+            ```
+            **MASTER**:
+            ```
+            ${{ needs.benchmark.outputs.MASTER-BENCH }}
+            ```
+
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          labels: |
+            benchmark
+          github_token: ${{ secrets.GITHUB_TOKEN }}

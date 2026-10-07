@@ -1,0 +1,30 @@
+{
+    "name": "setimmediate",
+    "description": "A shim for the setImmediate efficient script yielding API",
+    "version": "1.0.5",
+    "author": "YuzuJS",
+    "contributors": [
+        "Domenic Denicola <d@domenic.me> (https://domenic.me)",
+        "Donavon West <github@donavon.com> (http://donavon.com)",
+        "Yaffle"
+    ],
+    "license": "MIT",
+    "repository": "YuzuJS/setImmediate",
+    "main": "setImmediate.js",
+    "files": [
+        "setImmediate.js"
+    ],
+    "scripts": {
+        "lint": "jshint setImmediate.js",
+        "test": "mocha test/tests.js",
+        "test-browser": "opener http://localhost:9008/__zuul && zuul test/tests.js --ui mocha-bdd --local 9008",
+        "test-browser-only": "opener http://localhost:9007/test/browserOnly/index.html && http-server . -p 9007"
+    },
+    "devDependencies": {
+        "jshint": "^2.5.0",
+        "mocha": "~1.18.2",
+        "http-server": "~0.6.1",
+        "opener": "^1.3",
+        "zuul": "^1.6.4"
+    }
+}

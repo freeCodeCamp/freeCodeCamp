@@ -1,0 +1,92 @@
+{
+  "name": "@typescript-eslint/typescript-estree",
+  "version": "8.59.1",
+  "description": "A parser that converts TypeScript source code into an ESTree compatible form",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./use-at-your-own-risk": {
+      "types": "./dist/use-at-your-own-risk.d.ts",
+      "default": "./dist/use-at-your-own-risk.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/typescript-estree"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "homepage": "https://typescript-eslint.io/packages/typescript-estree",
+  "license": "MIT",
+  "keywords": [
+    "ast",
+    "estree",
+    "ecmascript",
+    "javascript",
+    "typescript",
+    "parser",
+    "syntax"
+  ],
+  "dependencies": {
+    "debug": "^4.4.3",
+    "minimatch": "^10.2.2",
+    "semver": "^7.7.3",
+    "tinyglobby": "^0.2.15",
+    "ts-api-utils": "^2.5.0",
+    "@typescript-eslint/project-service": "8.59.1",
+    "@typescript-eslint/tsconfig-utils": "8.59.1",
+    "@typescript-eslint/types": "8.59.1",
+    "@typescript-eslint/visitor-keys": "8.59.1"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^10.0.0",
+    "glob": "^11.1.0",
+    "rimraf": "^5.0.10",
+    "typescript": ">=4.8.4 <6.1.0",
+    "vitest": "^4.0.18",
+    "yaml": "^2.8.2"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.8.4 <6.1.0"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "nx": {
+    "name": "typescript-estree",
+    "includedScripts": [
+      "clean"
+    ],
+    "targets": {
+      "lint": {
+        "command": "eslint"
+      }
+    }
+  },
+  "scripts": {
+    "build": "pnpm exec nx build",
+    "clean": "rimraf dist/ coverage/",
+    "format": "pnpm -w run format",
+    "lint": "pnpm -w exec nx lint",
+    "test": "pnpm -w exec nx test",
+    "typecheck": "pnpm -w exec nx typecheck"
+  }
+}

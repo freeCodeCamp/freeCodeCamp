@@ -1,0 +1,68 @@
+  Usage: pino pretty [options] [command]
+  
+  Commands:
+    help     Display help
+    version  Display version
+  
+  Options:
+    -c, --colorize              Force adding color sequences to the output
+    -C, --config                specify a path to a json file containing the pino-pretty options
+    -f, --crlf                  Append CRLF instead of LF to formatted lines
+    -X, --customColors          Override default colors using names from https://www.npmjs.com/package/colorette (`-X err:red,info:blue`)
+    -x, --customLevels          Override default levels (`-x err:99,info:1`)
+    -k, --errorLikeObjectKeys   Define which keys contain error objects (`-k err,error`) (defaults to `err,error`)
+    -e, --errorProps            Comma separated list of properties on error objects to show (`*` for all properties) (defaults to ``)
+    -h, --help                  Output usage information
+    -H, --hideObject            Hide objects from output (but not error object)
+    -i, --ignore                Ignore one or several keys: (`-i time,hostname`)
+    -I, --include               The opposite of `--ignore`, only include one or several keys: (`-I level,time`)
+    -l, --levelFirst            Display the log level as the first output field
+    -L, --levelKey [value]      Detect the log level under the specified key (defaults to "level")
+    -b, --levelLabel [value]    Output the log level using the specified label (defaults to "levelLabel")
+    -o, --messageFormat         Format output of message
+    -m, --messageKey [value]    Highlight the message under the specified key (defaults to "msg")
+    -L, --minimumLevel          Hide messages below the specified log level
+    -S, --singleLine            Print all non-error objects on a single line
+    -a, --timestampKey [value]  Display the timestamp from the specified key (defaults to "time")
+    -t, --translateTime         Display epoch timestamps as UTC ISO format or according to an optional format string (default ISO 8601)
+    -U, --useOnlyCustomProps    Only use custom levels and colors (if provided); don't fallback to default levels and colors (-U false)
+    -v, --version               Output the version number
+  
+  Examples:
+    - To prettify logs, simply pipe a log file through
+    $ cat log | pino-pretty
+
+    - To highlight a string at a key other than 'msg'
+    $ cat log | pino-pretty -m fooMessage
+
+    - To detect the log level at a key other than 'level'
+    $ cat log | pino-pretty --levelKey fooLevel
+
+    - To output the log level label using a key other than 'levelLabel'
+    $ cat log | pino-pretty --levelLabel LVL -o "{LVL}"
+
+    - To display timestamp from a key other than 'time'
+    $ cat log | pino-pretty -a fooTimestamp
+
+    - To convert Epoch timestamps to ISO timestamps use the -t option
+    $ cat log | pino-pretty -t
+
+    - To convert Epoch timestamps to local timezone format use the -t option with "SYS:" prefixed format string
+    $ cat log | pino-pretty -t "SYS:yyyy-mm-dd HH:MM:ss"
+
+    - To flip level and time/date in standard output use the -l option
+    $ cat log | pino-pretty -l
+
+    - Only prints messages with a minimum log level of info
+    $ cat log | pino-pretty -L info
+
+    - Prettify logs but don't print pid and hostname
+    $ cat log | pino-pretty -i pid,hostname
+    
+    - Prettify logs but only print time and level
+    $ cat log | pino-pretty -I time,level
+
+    - Loads options from a config file
+    $ cat log | pino-pretty --config=/path/to/config.json
+
+  

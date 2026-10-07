@@ -1,0 +1,42 @@
+{
+  "name": "serve-static",
+  "description": "Serve static files",
+  "version": "1.15.0",
+  "author": "Douglas Christopher Wilson <doug@somethingdoug.com>",
+  "license": "MIT",
+  "repository": "expressjs/serve-static",
+  "dependencies": {
+    "encodeurl": "~1.0.2",
+    "escape-html": "~1.0.3",
+    "parseurl": "~1.3.3",
+    "send": "0.18.0"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-markdown": "2.2.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.2.0",
+    "eslint-plugin-standard": "4.1.0",
+    "mocha": "9.2.2",
+    "nyc": "15.1.0",
+    "safe-buffer": "5.2.1",
+    "supertest": "6.2.2"
+  },
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "test-ci": "nyc --reporter=lcov --reporter=text npm test",
+    "test-cov": "nyc --reporter=html --reporter=text npm test",
+    "version": "node scripts/version-history.js && git add HISTORY.md"
+  }
+}

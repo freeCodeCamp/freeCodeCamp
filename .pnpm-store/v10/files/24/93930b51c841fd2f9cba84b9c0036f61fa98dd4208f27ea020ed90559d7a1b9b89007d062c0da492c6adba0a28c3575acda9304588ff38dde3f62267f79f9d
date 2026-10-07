@@ -1,0 +1,41 @@
+{
+  "name": "eslint-import-resolver-node",
+  "version": "0.3.9",
+  "description": "Node default behavior import resolution plugin for eslint-plugin-import.",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "prepublishOnly": "cp ../../{LICENSE,.npmrc} ./",
+    "tests-only": "nyc mocha",
+    "test": "npm run tests-only"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/import-js/eslint-plugin-import"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "esnext",
+    "modules",
+    "eslint-plugin-import"
+  ],
+  "author": "Ben Mosher (me@benmosher.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/import-js/eslint-plugin-import/issues"
+  },
+  "homepage": "https://github.com/import-js/eslint-plugin-import",
+  "dependencies": {
+    "debug": "^3.2.7",
+    "is-core-module": "^2.13.0",
+    "resolve": "^1.22.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.5.3",
+    "nyc": "^11.9.0"
+  }
+}

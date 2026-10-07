@@ -1,0 +1,1017 @@
+{
+  "lang": "he",
+  "rules": {
+    "accesskeys": {
+      "description": "מוודא שכל ערך תכונה של accesskey יהיה ייחודי",
+      "help": "ערך התכונה accesskey צריך להיות ייחודי"
+    },
+    "area-alt": {
+      "description": "מוודא שלאלמנטים של <area> של מפות תמונה יש טקסט חלופי",
+      "help": "אלמנטים פעילים של <area> מוכרחים להיות עם טקסט חלופי"
+    },
+    "aria-allowed-attr": {
+      "description": "מוודא שתכונות ARIA מורשות לתפקיד אלמנט",
+      "help": "אלמנטים מוכרחים להרשות רק תכונות ARIA"
+    },
+    "aria-allowed-role": {
+      "description": "מוודא שלתכונת תפקיד יש ערך מתאים לאלמנט",
+      "help": "תפקיד ARIA צריך להתאים לאלמנט"
+    },
+    "aria-command-name": {
+      "description": "מוודא שלכל כפתור, קישור ופריט תפריט של ARIA יש שם נגיש",
+      "help": "על פקודות ARIA להיות עם שם נגיש"
+    },
+    "aria-dialog-name": {
+      "description": "מוודא שלכל רכיב תיבת דיאלוג או תיבת התראה של ARIA יש שם נגיש",
+      "help": "על רכיבי תיבת דיאלוג או תיבת התראה של ARIA להיות עם שם נגיש"
+    },
+    "aria-hidden-body": {
+      "description": "מוודא ש-aria-hidden='true' לא מוצג בגוף המסמך.",
+      "help": "אסור ש-aria-hidden='true' יוצג בגוף המסמך"
+    },
+    "aria-hidden-focus": {
+      "description": "מוודא שאלמנטים של aria-hidden לא מכילים אלמנטים בני מיקוד",
+      "help": "אסור שאלמנט סמוי של ARIA יכיל אלמנטים בני מיקוד"
+    },
+    "aria-input-field-name": {
+      "description": "מוודא שלכל שדה הזנה של ARIA יש שם נגיש",
+      "help": "שדות הזנה של ARIA מוכרחים להיות עם שם נגיש"
+    },
+    "aria-meter-name": {
+      "description": "מוודא שלכל רכיב meter של ARIA יש שם נגיש",
+      "help": "על רכיבי meter של ARIA להיות עם שם נגיש"
+    },
+    "aria-progressbar-name": {
+      "description": "מוודא שלכל רכיב progressbar של ARIA יש שם נגיש",
+      "help": "על רכיבי progressbar של ARIA להיות עם שם נגיש"
+    },
+    "aria-required-attr": {
+      "description": "מוודא שלאלמנטים עם תפקידי ARIA יש את כל תכונות ARIA הדרושות",
+      "help": "יש לספק את תכונות ARIA הדרושות"
+    },
+    "aria-required-children": {
+      "description": "מוודא שאלמנטים עם תפקיד ARIA שדורשים תפקידי ילדים מכילים אותם",
+      "help": "תפקידי ARIA מסוימים מוכרחים להכיל ילדים מסוימים"
+    },
+    "aria-required-parent": {
+      "description": "מוודא שאלמנטים עם תפקיד ARIA שדורשים תפקידי הורים מכילים אותם",
+      "help": "תפקידי ARIA מסוימים מוכרחים להכיל הורים מסוימים"
+    },
+    "aria-roledescription": {
+      "description": "מוודא ש-aria-roledescription הוא בשימוש רק על אלמנטים עם תפקיד מרומז או מפורש",
+      "help": "aria-roledescription מוכרח להיות על אלמנטים עם תפקיד סמנטי"
+    },
+    "aria-roles": {
+      "description": "מוודא שכל האלמנטים עם תכונת role משתמשים בערך קביל",
+      "help": "תפקידי ARIA שבשימוש מוכרחים להיות עם ערכים קבילים"
+    },
+    "aria-text": {
+      "description": "מוודא ש-\"role=text\" הוא בשימוש על אלמנטים ללא צאצאים בני מיקוד",
+      "help": "על \"role=text\" להיות ללא צאצאים בני מיקוד"
+    },
+    "aria-toggle-field-name": {
+      "description": "מוודא שלכל שדה toggle של ARIA יש שם נגיש",
+      "help": "על שדות toggle של ARIA להיות עם שם נגיש"
+    },
+    "aria-tooltip-name": {
+      "description": "מוודא שלכל רכיב tooltip של ARIA יש שם נגיש",
+      "help": "על רכיבי toolrip של ARIA להיות עם שם נגיש"
+    },
+    "aria-treeitem-name": {
+      "description": "מוודא שלכל רכיב treeitem של ARIA יש שם נגיש",
+      "help": "רכיבי treeitem של ARIA צריכים להיות עם שם נגיש"
+    },
+    "aria-valid-attr-value": {
+      "description": "מוודא שלכל תכונות ARIA יש ערכים קבילים",
+      "help": "תכונות ARIA מוכרחות להתאים לערכים קבילים"
+    },
+    "aria-valid-attr": {
+      "description": "מוודא שתכונות שמתחילות עם aria- הן תכונות ARIA קבילות",
+      "help": "תכונות ARIA מוכרחות להתאים לשמות קבילים"
+    },
+    "audio-caption": {
+      "description": "מוודא שלאלמנטים של <audio> יש כתוביות",
+      "help": "אלמנטים של <audio> מוכרחים להיות עם רצועת כתוביות"
+    },
+    "autocomplete-valid": {
+      "description": "מוודא שתכונת autocomplete נכונה ומתאימה לשדה הטופס",
+      "help": "יש להשתמש בתכונה autocomplete באופן נכון"
+    },
+    "avoid-inline-spacing": {
+      "description": "מוודא שאפשר לשנות את ריווח הטקסט שהוגדר בתכונות העיצוב לפי stylesheets מותאמים אישית",
+      "help": "ריווח טקסט בשורה מוכרח להיות ניתן להתאמה עם stylesheets מותאמים אישית"
+    },
+    "blink": {
+      "description": "מוודא שאלמנטים של <blink> אינם בשימוש",
+      "help": "אלמנטים של <blink> אסורים ואין להשתמש בהם"
+    },
+    "button-name": {
+      "description": "מוודא שללחצנים יש טקסט מובן",
+      "help": "לחצנים מוכרחים להיות עם טקסט מובן"
+    },
+    "bypass": {
+      "description": "מוודא שלכל עמוד יש לפחות מנגנון אחד למשתמש לעקוף ניווט ולקפוץ ישירות לתוכן",
+      "help": "לעמוד מוכרחים להיות אמצעים לעקיפת חסימות חוזרות"
+    },
+    "color-contrast-enhanced": {
+      "description": "מוודא שהניגוד בין צבעי הרקע והחזית עונה על דרישות הסף עבור יחסי הניגוד של WCAG 2 AAA",
+      "help": "לאלמנטים צריך להיות ניגוד צבעים מספק"
+    },
+    "color-contrast": {
+      "description": "מוודא שהניגוד בין צבעי הרקע והחזית עונה על דרישות הסף עבור יחסי הניגוד של WCAG 2 AA",
+      "help": "לאלמנטים צריך להיות ניגוד צבעים מספק"
+    },
+    "css-orientation-lock": {
+      "description": "מוודא שהתוכן אינו נעול לכיוון תצוגה מסוים, והתוכן הוא בר ביצוע בכל כיווני התצוגה",
+      "help": "אסור ששאילתות CSS מדיה ינעלו את כיוון התצוגה"
+    },
+    "definition-list": {
+      "description": "מוודא שאלמנטים של <dl> בנויים נכונה",
+      "help": "אלמנטים של <dl> חייבים להכיל רק באופן ישיר קבוצות <dt> וכן <dd> שהוזמנו כראוי, <script>, <template> או אלמנטים של <div>"
+    },
+    "dlitem": {
+      "description": "מוודא שאלמנטים של <dt> וכן <dd> מוכלים על ידי <dl>",
+      "help": "אלמנטים של <dt> וכן <dd> מוכלים על ידי <dl>"
+    },
+    "document-title": {
+      "description": "מוודא שכל מסמך HTML מכיל אלמנט לא-ריק של <title>",
+      "help": "מסמכים מוכרחים להיות עם אלמנט <title> כדי לסייע בניווט"
+    },
+    "duplicate-id-active": {
+      "description": "מוודא שכל ערך של התכונה id של אלמנטים פעילים הוא ייחודי",
+      "help": "ID של אלמנטים פעילים מוכרח להיות ייחודי"
+    },
+    "duplicate-id-aria": {
+      "description": "מוודא שכל ערך תכונת id שבשימוש ב-ARIA ובתוויות הוא ייחודי",
+      "help": "ID בשימוש ב-ARIA ובתוויות מוכרח להיות ייחודי"
+    },
+    "duplicate-id": {
+      "description": "מוודא שכל ערך של התכונה id הוא ייחודי",
+      "help": "ערכי התכונה id מוכרחים להיות ייחודיים"
+    },
+    "empty-heading": {
+      "description": "מוודא שלכותרות יש טקסט מובן",
+      "help": "אסור שכותרות יהיו ריקות"
+    },
+    "empty-table-header": {
+      "description": "מוודא שלכותרות של טבלה יש טקסט מובן",
+      "help": "אסור שכותרות של טבלה יהיו ריקות"
+    },
+    "focus-order-semantics": {
+      "description": "מוודא שלאלמנטים בסדר המיקוד יש תפקיד מתאים לתוכן אינטראקטיבי",
+      "help": "אלמנטים בסדר המיקוד צריכים להיות עם תפקיד מתאים"
+    },
+    "form-field-multiple-labels": {
+      "description": "מוודא ששדות הזנה הם בלי מספר אלמנטים של תווית",
+      "help": "אסור ששדות הזנה יהיו עם מספר אלמנטים של תווית"
+    },
+    "frame-focusable-content": {
+      "description": "מוודא שלאלמנטים של <frame> ושל <iframe> עם תוכן בר מיקוד אין tabindex=-1",
+      "help": "אסור שלמסגרות עם תוכן בר מיקוד יהיה tabindex=-1"
+    },
+    "frame-tested": {
+      "description": "מוודא שאלמנטים של <iframe> ושל <frame> מכילים את סקריפט ה-axe-core",
+      "help": "על מסגרות להיבחן עם axe-core"
+    },
+    "frame-title-unique": {
+      "description": "מוודא שאלמנטים של <iframe> ושל <frame> מכילים תכונת כותרת ייחודית",
+      "help": "מסגרות מוכרחות להיות עם תכונת כותרת ייחודית"
+    },
+    "frame-title": {
+      "description": "מוודא שלאלמנטים של <iframe> ושל <frame> יש שמות נגישים",
+      "help": "מסגרות מוכרחות להיות עם שמות נגישים"
+    },
+    "heading-order": {
+      "description": "מוודא שסדר הכותרות נכון סמנטית",
+      "help": "הדרגות של הכותרות צריכות לגדול רק באחת"
+    },
+    "hidden-content": {
+      "description": "מיידע את המשתמשים על תוכן נסתר.",
+      "help": "יש לנתח תוכן נסתר בעמוד"
+    },
+    "html-has-lang": {
+      "description": "מוודא שלכל מסמך HTML יש תכונת lang",
+      "help": "אלמנט <html> מוכרח להיות עם תכונת lang"
+    },
+    "html-lang-valid": {
+      "description": "מוודא שלתכונת lang של האלמנט <html> יש ערך תקין",
+      "help": "אלמנט <html> מוכרח להיות עם ערך תקין לתכונה lang"
+    },
+    "html-xml-lang-mismatch": {
+      "description": "מוודא שאלמנטים של HTML עם תכונות lang ו-xml:lang תקינות מסכימים על שפת הבסיס של העמוד",
+      "help": "אלמנטים של HTML עם lang ו-xml:lang מוכרחים להיות עם אותה שפת בסיס"
+    },
+    "identical-links-same-purpose": {
+      "description": "מוודא שקישורים עם אותו שם נגיש משרתים מטרה דומה",
+      "help": "קישורים עם אותו השם מוכרחים לשרת מטרה דומה"
+    },
+    "image-alt": {
+      "description": "מוודא שלאלמנטים של <img> יש טקסט חלופי או תפקיד של none או תצוגה",
+      "help": "תמונות מוכרחות להיות עם טקסט חלופי"
+    },
+    "image-redundant-alt": {
+      "description": "מוודא שהחלופה של התמונה לא חוזרת על עצמה בטקסט",
+      "help": "טקסט חלופי של תמונות לא אמור לחזור על עצמו בטקסט"
+    },
+    "input-button-name": {
+      "description": "מוודא שללחצני קלט יש טקסט מובן",
+      "help": "לחצני קלט מוכרחים להיות עם טקסט מובן"
+    },
+    "input-image-alt": {
+      "description": "מוודא שלאלמנטים של <input type=\"image\"> יש טקסט חלופי",
+      "help": "לחצני תמונה מוכרחים להיות עם טקסט חלופי"
+    },
+    "label-content-name-mismatch": {
+      "description": "מוודא שאלמנטים שמקבלים תווית דרך התוכן שלהם עם טקסט גלוי כחלק משמם הנגיש",
+      "help": "אלמנטים מוכרחים להיות עם טקסט גלוי כחלק משמם הנגיש"
+    },
+    "label-title-only": {
+      "description": "מוודא שלכל אלמנט של טופס יש תווית נראית ולא מתויג רק בשימוש בתוויות נסתרות, או בשימוש בתכונות של כותרת או aria-describedby",
+      "help": "אלמנטים של טופס צריכים תווית ברורה וגלויה"
+    },
+    "label": {
+      "description": "מוודא שלכל אלמנט של טופס יש תווית",
+      "help": "אלמנטים של טופס מוכרחים להיות עם תוויות"
+    },
+    "landmark-banner-is-top-level": {
+      "description": "מוודא שבאנר ציון הדרך הוא ברמה העליונה בהיררכיה",
+      "help": "באנר ציון הדרך לא צריך להיות מוכל בתוך ציון דרך אחר"
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "מוודא שציון הדרך המשלים או aside הוא ברמה העליונה",
+      "help": "אין להכיל aside בתוך ציון דרך אחר"
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "מוודא שציון דרך מידע-תוכן הוא ברמה העליונה בהיררכיה",
+      "help": "ציון הדרך מידע-תוכן לא צריך להיות מוכל בתוך ציון דרך אחר"
+    },
+    "landmark-main-is-top-level": {
+      "description": "מוודא שציון הדרך הראשי הוא ברמה העליונה בהיררכיה",
+      "help": "ציון הדרך הראשי לא צריך להיות מוכל בתוך ציון דרך אחר"
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "מוודא שלמסמך יש לכל היותר באנר ציון דרך אחד",
+      "help": "המסמך לא צריך להיות עם יותר מבאנר ציון דרך אחד"
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "מוודא שלמסמך יש לכל היותר ציון דרך מידע-תוכן אחד",
+      "help": "מסמך לא צריך להיות עם יותר מציון דרך מידע-תוכן אחד"
+    },
+    "landmark-no-duplicate-main": {
+      "description": "מוודא שלמסמך יש ציון דרך אחד מרכזי לכל היותר",
+      "help": "במסמך לא נכון שיהיה יותר מציון דרך ראשי אחד"
+    },
+    "landmark-one-main": {
+      "description": "מוודא שלמסמך יש ציון דרך מרכזי",
+      "help": "במסמך צריך להיות ציון דרך ראשי אחד"
+    },
+    "landmark-unique": {
+      "help": "מוודא שציוני דרך הם ייחודיים",
+      "description": "לציוני דרך צריך להיות תפקיד או שילוב של תפקיד/תווית/כותרת (לדוג' שם נגיש) ייחודיים"
+    },
+    "link-in-text-block": {
+      "description": "מוודא שקישורים נבדלים מהטקסט מסביב באופן שאינו נסמך על צבע",
+      "help": "על קישורים להיות נבדלים מבלי להסתמך על צבע"
+    },
+    "link-name": {
+      "description": "מוודא שלקישורים יש טקסט מובן",
+      "help": "קישורים מוכרחים להיות עם טקסט מובן"
+    },
+    "list": {
+      "description": "מוודא שרשימות בנויות נכונה",
+      "help": "<ul> וכן <ol> חייבים להכיל רק באופן ישיר אלמנטים של <li>, <script> וכן <template>"
+    },
+    "listitem": {
+      "description": "מוודא שאלמנטים של <li> הם בשימוש סמנטי",
+      "help": "אלמנטים של <li> חייבים להיות מוכלים על ידי <ul> או <ol>"
+    },
+    "marquee": {
+      "description": "מוודא שאלמנטים של <marquee> אינם בשימוש",
+      "help": "אלמנטים של <marquee> אסורים ואין להשתמש בהם"
+    },
+    "meta-refresh-no-exceptions": {
+      "description": "מוודא ש-<meta http-equiv=\"refresh\"> אינו בשימוש עבור ריענון מושהה",
+      "help": "אסור שריענון מושהה יתקיים"
+    },
+    "meta-refresh": {
+      "description": "מוודא ש-<meta http-equiv=\"refresh\"> אינו בשימוש עבור ריענון מושהה",
+      "help": "אסור להשתמש בריענון מושהה של פחות מ-20 שעות"
+    },
+    "meta-viewport-large": {
+      "description": "מוודא ש-<meta name=\"viewport\"> יכול להגדיל בכמות משמעותית",
+      "help": "משתמשים צריכים להצליח להגדיל את הטקסט עד 500%"
+    },
+    "meta-viewport": {
+      "description": "מוודא ש-<meta name=\"viewport\"> לא מנטרל הגדלת טקסט ומסך",
+      "help": "אין לבטל את הפונקציות של הגדלת המסך וטקסט"
+    },
+    "nested-interactive": {
+      "description": "מוודא שמנגנוני בקרה לא מקוננים משום שקוראי מסך לא תמיד מתריעים עליהם או שהם יכולים לגרום לבעיות מיקוד עבור טכנולוגיות מסייעות",
+      "help": "אסור שמנגנוני בקרה לא פעילים יהיו מקוננים"
+    },
+    "no-autoplay-audio": {
+      "description": "מוודא שאלמנטים של <video> או <audio> אינם מפעילים שמע באופן אוטומטי למשך יותר מ-3 שניות ללא מנגנון בקרה לעצירה או להנמכת עוצמת השמע",
+      "help": "אלמנטים של <video> או <audio> אינם מופעלים באופן אוטומטי"
+    },
+    "object-alt": {
+      "description": "מוודא שלאלמנטים של <object> יש טקסט חלופי",
+      "help": "אלמנטים של <object> מוכרחים להיות עם טקסט חלופי"
+    },
+    "p-as-heading": {
+      "description": "מוודא שטקסט דגוש, נטוי וגודל פונט לא בשימוש בעיצוב אלמנטים של <p> ככותרת",
+      "help": "אסור שאלמנטים מעוצבים של <p> ישמשו ככותרות"
+    },
+    "page-has-heading-one": {
+      "description": "מוודא שהעמוד, או לפחות אחת המסגרות שלו, מכילים כותרת רמה אחת",
+      "help": "העמוד אמור להכיל כותרת רמה אחת"
+    },
+    "presentation-role-conflict": {
+      "description": "מסמן אלמנטים שהתפקיד שלהם הוא none או presentation ושמפעיל את הטריגר של פתרון תפקידים מתנגשים.",
+      "help": "על אלמנטים של תפקיד none או presentation להיות מסומנים"
+    },
+    "region": {
+      "description": "מוודא שכל תוכן העמוד בתוך ציוני דרך",
+      "help": "כל תוכן העמוד צריך להיות בתוך ציוני דרך"
+    },
+    "role-img-alt": {
+      "description": "מוודא שלאלמנטים של [role='img'] יש טקסט חלופי",
+      "help": "אלמנטים של [role='img'] עם תפקיד של תמונה חייבים להיות עם טקסט חלופי"
+    },
+    "scope-attr-valid": {
+      "description": "מוודא שמשתמשים בתכונה תחום נכונה על טבלאות",
+      "help": "יש להשתמש בתכונה תחום נכונה"
+    },
+    "scrollable-region-focusable": {
+      "description": "מוודא שאלמנטים שיש להם תוכן בר גלילה נגישים על ידי מקלדת",
+      "help": "אזורי גלילה מוכרחים להיות עם נגישות של מקלדת"
+    },
+    "select-name": {
+      "description": "מוודא שלאלמנט הנבחר יש שם נגיש",
+      "help": "לאלמנט הנבחר צריך להיות שם נגיש"
+    },
+    "server-side-image-map": {
+      "description": "מוודא שמפות תמונה צד-שרת לא יהיו בשימוש",
+      "help": "אסור שמפות תמונה צד-שרת יהיו בשימוש"
+    },
+    "skip-link": {
+      "description": "מוודא שלכל קישורי דילוג לתוכן יש מטרה ברת מיקוד",
+      "help": "המטרה של קישור דילוג לתוכן צריכה להתקיים ולהיות ברת מיקוד"
+    },
+    "svg-img-alt": {
+      "description": "מוודא שלאלמנטים של <svg> עם תפקיד תמונה, מסמך גרפי או סמל גרפי יש טקסט נגיש",
+      "help": "אלמנטים של <svg> עם תפקיד של תמונה חייבים להיות עם טקסט חלופי"
+    },
+    "tabindex": {
+      "description": "מוודא שערכי התכונה tabindex אינם גדולים מ-0",
+      "help": "אלמנטים לא צריכים להיות עם tabindex גדול מאפס"
+    },
+    "table-duplicate-name": {
+      "description": "מוודא שהאלמנט <caption> לא מכיל אותו טקסט כמו התכונה תקציר",
+      "help": "לטבלאות לא צריכים להיות אותם תקציר טבלה וכיתוב"
+    },
+    "table-fake-caption": {
+      "description": "מוודא שטבלאות עם כיתוב משתמשות באלמנט <caption>.",
+      "help": "תאי מידע או כותרת לא אמורים לשמש כדי לתת כיתוב לטבלת מידע."
+    },
+    "td-has-header": {
+      "description": "מוודא שלכל תאי מידע לא-ריק ב-<table> גדולה מ-3X3 יש כותרות טבלה אחת או יותר",
+      "help": "אלמנטים לא ריקים של <td> ב-<table> גדולה יותר חייבים להיות מקושרים עם כותרת טבלה "
+    },
+    "td-headers-attr": {
+      "description": "מוודא שכל תא בטבלה שמשתמש בתכונת הכותרת מתייחס רק לתאים אחרים באותה טבלה",
+      "help": "תאי טבלה שמשתמשים בתכונת כותרות חייבים להתייחס לתאים באותה הטבלה"
+    },
+    "th-has-data-cells": {
+      "description": "מוודא שלאלמנטים של <th> ולאלמנטים עם role=columnheader/rowheader יש תאי מידע שהם מתארים",
+      "help": "כותרות טבלה בטבלת מידע חייבים להתייחס לתאי מידע"
+    },
+    "valid-lang": {
+      "description": "מוודא שלתכונות lang יש ערכים קבילים",
+      "help": "לתכונה lang חייב להיות ערך קביל"
+    },
+    "video-caption": {
+      "description": "מוודא שלאלמנטים של <video> יש כתוביות",
+      "help": "אלמנטים של <video> מוכרחים להיות עם כתוביות"
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "תפקידים מופשטים אינם בשימוש",
+      "fail": {
+        "singular": "תפקיד מופשט לא יכול להיות בשימוש ישיר: ${data.values}",
+        "plural": "תפקידים מופשטים לא יכולים להיות בשימוש ישיר: ${data.values}"
+      }
+    },
+    "aria-allowed-attr": {
+      "pass": "תכונות ARIA בשימוש נכון עבור התפקיד המוגדר",
+      "fail": {
+        "singular": "תכונת ARIA לא מורשית: ${data.values}",
+        "plural": "תכונות ARIA לא מורשות: ${data.values}"
+      },
+      "incomplete": "בדקו שאין בעיה אם מתעלמים מתכונת ה-ARIA באלמנט הזה: ${data.values}"
+    },
+    "aria-allowed-role": {
+      "pass": "תפקיד ARIA מורשה עבור האלמנט הנתון",
+      "fail": {
+        "singular": "תפקיד ARIA ${data.values} לא מורשה עבור האלמנט הנתון",
+        "plural": "תפקידי ARIA ${data.values} לא מורשים עבור האלמנט הנתון"
+      },
+      "incomplete": {
+        "singular": "מוכרחים להסיר תפקיד ARIA ${data.values} כאשר האלמנט נעשה גלוי, שכן הוא לא מורשה עבור האלמנט",
+        "plural": "מוכרחים להסיר תפקידי ARIA ${data.values} כאשר האלמנט נעשה גלוי, שכן הם לא מורשים עבור האלמנט"
+      }
+    },
+    "aria-errormessage": {
+      "pass": "aria-errormessage קיים ומפנה לאלמנטים הגלויים לקוראי מסך שמשתמשים בטכניקת aria-errormessage נתמכת",
+      "fail": {
+        "singular": "ערך aria-errormessage `${data.values}` מוכרח להשתמש בטכניקה להקראת ההודעה (לדוג', aria-live, aria-describedby, role=alert, וכו')",
+        "plural": "ערכי aria-errormessage `${data.values}` מוכרחים להשתמש בטכניקה להקראת ההודעה (לדוג', aria-live, aria-describedby, role=alert, וכו')",
+        "hidden": "ערך aria-errormessage `${data.values}` לא יכול להפנות לאלמנט סמוי"
+      },
+      "incomplete": {
+        "singular": "ודאו שערך `aria-errormessage `${data.values} מפנה לאלמנט קיים",
+        "plural": "ודאו שערכי `aria-errormessage `${data.values} מפנים לאלמנטים קיימים",
+        "idrefs": "לא ניתן לקבוע אם אלמנט aria-errormessage קיים בעמוד: ${data.values}"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "אף תכונת aria-hidden לא נמצאת בגוף המסמך",
+      "fail": "אסור ש-aria-hidden=true יימצא בגוף המסמך"
+    },
+    "aria-level": {
+      "pass": "ערכי aria-level קבילים",
+      "incomplete": "ערכי aria-level אשר גדולים מ-6 לא נתמכים בכל השילובים של קוראי מסך ודפדפנים"
+    },
+    "aria-prohibited-attr": {
+      "pass": "תכונת ARIA מורשית",
+      "fail": {
+        "hasRolePlural": "לא ניתן להשתמש בתכונת ${data.prohibited} עם תפקיד \"${data.role}\".",
+        "hasRoleSingular": "לא ניתן להשתמש בתכונות ${data.prohibited} עם תפקיד \"${data.role}\".",
+        "noRolePlural": "לא ניתן להשתמש בתכונות ${data.prohibited} עבור ${data.nodeName} ללא תכונת תפקיד תקפה.",
+        "noRoleSingular": "לא ניתן להשתמש בתכונת ${data.prohibited} עבור ${data.nodeName} ללא תכונת תפקיד תקפה."
+      },
+      "incomplete": {
+        "hasRoleSingular": "תכונת ${data.prohibited} אינה נתמכת היטב עבור תפקיד \"${data.role}\".",
+        "hasRolePlural": "תכונות ${data.prohibited} אינן נתמכות היטב עבור תפקיד \"${data.role}\".",
+        "noRoleSingular": "תכונת ${data.prohibited} אינה נתמכת היטב עבור ${data.nodeName} ללא תכונת תפקיד תקפה.",
+        "noRolePlural": "תכונות ${data.prohibited} אינן נתמכות היטב עבור ${data.nodeName} ללא תכונת תפקיד תקפה."
+      }
+    },
+    "aria-required-attr": {
+      "pass": "כל תכונות ARIA הדרושות נמצאות",
+      "fail": {
+        "singular": "תכונת ARIA הדרושה לא נמצאת: ${data.values}",
+        "plural": "תכונות ARIA הדרושות לא נמצאות: ${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": {
+        "default": "ילדי ARIA הדרושים נמצאים"
+      },
+      "fail": {
+        "singular": "תפקיד ילד ARIA הדרוש אינו נמצא: ${data.values}",
+        "plural": "תפקיד ילדי ARIA הדרושים אינם נמצאים: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "מצפים שתפקיד ילד ARIA יתווסף: ${data.values}",
+        "plural": "מצפים שתפקידי ילדי ARIA יתווספו: ${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "תפקיד הורה ARIA דרוש נמצא",
+      "fail": {
+        "singular": "תפקיד הורה ARIA דרוש לא נמצא: ${data.values}",
+        "plural": "תפקידי הורים ARIA דרושים לא נמצאים: ${data.values}"
+      }
+    },
+    "aria-roledescription": {
+      "pass": "aria-roledescription בשימוש על תפקיד סמנטי נתמך",
+      "incomplete": "בדקו שה-aria-roledescription מוצהר על ידי קוראי מסך נתמכים",
+      "fail": "תנו לאלמנט תפקיד שתומך ב-aria-roledescription"
+    },
+    "aria-unsupported-attr": {
+      "pass": "תכונת ARIA נתמכת",
+      "fail": "תכונת ARIA לא נתמכת בהרחבה בקוראי מסך וטכנולוגיות מסייעות: ${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "כל ערכי תכונות ARIA תקינים",
+      "fail": {
+        "singular": "ערך לא תקין של תכונת ARIA: ${data.values}",
+        "plural": "ערכים לא תקינים של תכונת ARIA: ${data.values}"
+      },
+      "incomplete": {
+        "noId": "תכונת ARIA האלמנט ID לא קיים בעמוד: ${data.needsReview}",
+        "noIdShadow": "אלמנט ID בתכונת ARIA אינו קיים בעמוד או שהוא צאצא של צל עץ DOM אחר: ${data.needsReview}",
+        "ariaCurrent": "ערך תכונת ARIA לא תקין ויתייחסו אליו כאל \"aria-current=true\": ${data.needsReview}",
+        "idrefs": "לא ניתן לקבוע אם בתכונת ARIA האלמנט ID קיים בעמוד: ${data.needsReview}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": "שם תכונת ARIA קביל",
+      "fail": {
+        "singular": "שם לא קביל לתכונת ARIA: ${data.values}",
+        "plural": "שמות לא קבילים לתכונות ARIA: ${data.values}"
+      }
+    },
+    "deprecatedrole": {
+      "pass": "תפקיד ARIA אינו נגנז",
+      "fail": "תפקיד זה אינו נגנז: ${data}"
+    },
+    "fallbackrole": {
+      "pass": "ערך תפקיד אחד בלבד בשימוש",
+      "fail": "השתמשו רק בערך תפקיד אחד, מאחר ותפקידי fallback לא נתמכים בדפדפנים ישנים",
+      "incomplete": "השתמשו רק בתפקיד 'presentation' או 'none' מאחר והם נרדפים."
+    },
+    "has-global-aria-attribute": {
+      "pass": {
+        "singular": "לאלמנט יש תכונת ARIA גלובלית: ${data.values}",
+        "plural": "לאלמנט יש תכונות ARIA גלובליות: ${data.values}"
+      },
+      "fail": "לאלמנט אין תכונת ARIA גלובלית: "
+    },
+    "has-widget-role": {
+      "pass": "לאלמנט יש תפקיד של וגדג'ט.",
+      "fail": "לאלמנט אין תפקיד של וגדג'ט."
+    },
+    "invalidrole": {
+      "pass": "תפקיד ARIA קביל",
+      "fail": {
+        "singular": "התפקיד צריך להיות אחד מתפקידי ARIA הקבילים: ${data.values}",
+        "plural": "התפקידים צריכים להיות מתפקידי ARIA הקבילים: ${data.values}"
+      }
+    },
+    "is-element-focusable": {
+      "pass": "האלמנט הוא בר מיקוד.",
+      "fail": "האלמנט אינו בר מיקוד."
+    },
+    "no-implicit-explicit-label": {
+      "pass": "אין חוסר תיאום בין <label> ושם נגיש",
+      "incomplete": "בדקו שה-<label> לא צריך להיות חלק משם השדה של ARIA ${data}"
+    },
+    "unsupportedrole": {
+      "pass": "תפקיד ARIA נתמך",
+      "fail": "התפקיד בשימוש לא נתמך בהרחבה בקוראי מסך וטכנולוגיות מסייעות: ${data}"
+    },
+    "valid-scrollable-semantics": {
+      "pass": "לאלמנט יש שדות סמנטיים קבילים לאלמנט בסדר המיקוד.",
+      "fail": "לאלמנט אין שדות סמנטיים קבילים לאלמנט בסדר המיקוד."
+    },
+    "color-contrast-enhanced": {
+      "pass": "לאלמנט יש ניגוד צבעים מספק של ${data.contrastRatio}",
+      "fail": {
+        "default": "לאלמנט יש ניגוד צבעים לא מספק של ${data.contrastRatio} (צבע חזית: ${data.fgColor}, צבע רקע: ${data.bgColor}, גודל פונט: ${data.fontSize}, משקל פונט: ${data.fontWeight}).  יחס ניגוד מצופה של ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "לאלמנט יש ניגוד צבעים לא מספק של ${data.contrastRatio} בין צבע החזית וצבע הצל (צבע חזית: ${data.fgColor}, צבע צל טקסט: ${data.shadowColor}, גודל פונט: ${data.fontSize}, משקל פונט: ${data.fontWeight}). יחס ניגוד מצופה של ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "לאלמנט יש ניגוד צבעים לא מספק של ${data.contrastRatio} בין צבע הצל וצבע הרקע (צבע צל טקסט: ${data.shadowColor}, צבע רקע: ${data.bgColor}, גודל פונט: ${data.fontSize}, משקל פונט: ${data.fontWeight}). יחס ניגוד מצופה של ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "לא ניתן לקבוע את יחס הניגוד",
+        "bgImage": "לא ניתן לקבוע את צבע הרקע של האלמנט בגלל תמונת רקע",
+        "bgGradient": "לא ניתן לקבוע את צבע הרקע של האלמנט בגלל גרדה נאט רקע",
+        "imgNode": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהאלמנט מכיל רכיב תמונה",
+        "bgOverlap": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהוא חופף עם אלמנט אחר",
+        "fgAlpha": "לא ניתן לקבוע את צבע החזית של האלמנט בגלל שקיפות אלפא",
+        "elmPartiallyObscured": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהוא מוסתר חלקית על ידי אלמנט אחר",
+        "elmPartiallyObscuring": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהוא חופף חלקית עם אלמנטים אחרים",
+        "outsideViewport": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהוא מחוץ ל-viewpoint",
+        "equalRatio": "לאלמנט יש יחס ניגוד 1:1 עם הרקע",
+        "shortTextContent": "תוכן האלמנט קצר מכדי לקבוע אם מדובר בתוכן טקסט אמיתי",
+        "nonBmp": "תוכן האלמנט מכיל רק תווים שאינם טקסט",
+        "pseudoContent": "לא ניתן לקבוע את צבע הרקע של האלמנט בגלל פסאודו-אלמנט"
+      }
+    },
+    "color-contrast": {
+      "pass": {
+        "default": "לאלמנט יש ניגוד צבעים מספק של ${data.contrastRatio}",
+        "hidden": "האלמנט מוסתר"
+      },
+      "fail": {
+        "default": "לאלמנט יש ניגוד צבעים לא מספק של ${data.contrastRatio} (צבע חזית: ${data.fgColor}, צבע רקע: ${data.bgColor}, גודל פונט: ${data.fontSize}, משקל פונט: ${data.fontWeight}).  יחס ניגוד מצופה של ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "לאלמנט יש ניגוד צבעים לא מספק של ${data.contrastRatio} בין צבע החזית וצבע הצל (צבע חזית: ${data.fgColor}, צבע צל טקסט: ${data.shadowColor}, גודל פונט: ${data.fontSize}, משקל פונט: ${data.fontWeight}). יחס ניגוד מצופה של ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "לאלמנט יש ניגוד צבעים לא מספק של ${data.contrastRatio} בין צבע הצל וצבע הרקע (צבע צל טקסט: ${data.shadowColor}, צבע רקע: ${data.bgColor}, גודל פונט: ${data.fontSize}, משקל פונט: ${data.fontWeight}). יחס ניגוד מצופה של ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "לא ניתן לקבוע את יחס הניגוד",
+        "bgImage": "לא ניתן לקבוע את צבע הרקע של האלמנט בגלל תמונת רקע",
+        "bgGradient": "לא ניתן לקבוע את צבע הרקע של האלמנט בגלל גרדה נאט רקע",
+        "imgNode": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהאלמנט מכיל רכיב תמונה",
+        "bgOverlap": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהוא חופף עם אלמנט אחר",
+        "fgAlpha": "לא ניתן לקבוע את צבע החזית של האלמנט בגלל שקיפות אלפא",
+        "elmPartiallyObscured": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהוא מוסתר חלקית על ידי אלמנט אחר",
+        "elmPartiallyObscuring": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהוא חופף חלקית עם אלמנטים אחרים",
+        "outsideViewport": "לא ניתן לקבוע את צבע הרקע של האלמנט כיוון שהוא מחוץ ל-viewpoint",
+        "equalRatio": "לאלמנט יש יחס ניגוד 1:1 עם הרקע",
+        "shortTextContent": "תוכן האלמנט קצר מכדי לקבוע אם מדובר בתוכן טקסט אמיתי",
+        "nonBmp": "תוכן האלמנט מכיל רק תווים שאינם טקסט",
+        "pseudoContent": "לא ניתן לקבוע את צבע הרקע של האלמנט בגלל פסאודו-אלמנט"
+      }
+    },
+    "link-in-text-block": {
+      "pass": "קישורים יכולים להיבדל מהטקסט סביב בדרך אחרת שהיא לא צבע",
+      "fail": "קישורים צריכים להיבדל מהטקסט סביב בדרך אחרת שהיא לא צבע",
+      "incomplete": {
+        "default": "לא ניתן לקבוע את יחס הניגוד",
+        "bgContrast": "יחס הניגוד של האלמנט לא יכול היה להיקבע.  בדקו עבור עיצוב מבדיל של מעבר עכבר/מיקוד",
+        "bgImage": "יחס הניגוד של האלמנט לא יכול היה להיקבע בגלל תמונת רקע",
+        "bgGradient": "יחס הניגוד של האלמנט לא יכול היה להיקבע בגלל גרדיאנט רקע",
+        "imgNode": "יחס הניגוד של האלמנט לא יכול היה להיקבע כיוון שהאלמנט מכיל ",
+        "bgOverlap": "יחס הניגוד של האלמנט לא יכול היה להיקבע בגלל חפיפת אלמנטים"
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "ערך ההשלמה האוטומטית הוא על האלמנט הנכון",
+      "fail": "ערך ההשלמה האוטומטית אינו נכון לסוג זה של קלט"
+    },
+    "autocomplete-valid": {
+      "pass": "תכונת ההשלמה האוטומטית מוגדרת נכונה",
+      "fail": "תכונת ההשלמה האוטומטית אינה מוגדרת נכונה"
+    },
+    "accesskeys": {
+      "pass": "ערך תכונת accesskey הוא ייחודי",
+      "fail": "למסמך יש מספר אלמנטים עם אותו accesskey"
+    },
+    "focusable-content": {
+      "pass": "אלמנט מכיל אלמנטים בני מיקוד",
+      "fail": "לאלמנט צריך להיות תוכן בר מיקוד"
+    },
+    "focusable-disabled": {
+      "pass": "אין אלמנטים בני מיקוד שמוכלים בתוך אלמנט",
+      "incomplete": "בדקו אם האלמנטים בני המיקוד מניעים באופן מיידי את סמן המיקוד",
+      "fail": "צריך לנטרל תוכן בר מיקוד או להסירו מה-DOM"
+    },
+    "focusable-element": {
+      "pass": "אלמנט הוא בר מיקוד",
+      "fail": "אלמנט צריך להיות בר מיקוד"
+    },
+    "focusable-modal-open": {
+      "pass": "אין אלמנטים בני מיקוד בזמן שחלון פופ-אפ פתוח",
+      "incomplete": "בדקו שאי אפשר לפתוח בכרטיסיות אלמנטים בני מיקוד במצב הנוכחי "
+    },
+    "focusable-no-name": {
+      "pass": "אלמנט אינו בסדר הכרטיסיות או שיש לו טקסט נגיש",
+      "fail": "אלמנט הוא בסדר הכרטיסיות ואין לו טקסט נגיש",
+      "incomplete": "לא ניתן לקבוע אם לאלמנט שם נגיש"
+    },
+    "focusable-not-tabbable": {
+      "pass": "אין אלמנטים בני מיקוד שמוכלים בתוך אלמנט",
+      "incomplete": "בדקו אם האלמנטים בני המיקוד מניעים באופן מיידי את סמן המיקוד",
+      "fail": "לתוכן בר מיקוד צריך שיהיה tabindex='-1' או שיוסר מה-DOM"
+    },
+    "frame-focusable-content": {
+      "pass": "לאלמנט אין צאצאים בני מיקוד",
+      "fail": "לאלמנט יש צאצאים בני מיקוד",
+      "incomplete": "לא ניתן לקבוע אם לאלמנט יש צאצאים"
+    },
+    "landmark-is-top-level": {
+      "pass": "ציון הדרך ${data.role} הוא ברמה הגבוהה ביותר.",
+      "fail": "ציון הדרך ${data.role} מוכל בציון דרך אחר."
+    },
+    "no-focusable-content": {
+      "pass": "לאלמנט אין צאצאים בני מיקוד",
+      "fail": {
+        "default": "לאלמנט יש צאצאים בני מיקוד",
+        "notHidden": "שימוש ב- tabindexשלילי על אלמנט בתוך בקרה אינטראקטיבית אינו מונע מטכנולוגיות סיוע למקד את האלמנט (אפילו עם 'aria-hidden=true')"
+      },
+      "incomplete": "לא ניתן לקבוע אם לאלמנט יש צאצאים"
+    },
+    "page-has-heading-one": {
+      "pass": "לעמוד יש לפחות כותרת אחת ברמה 1",
+      "fail": "לעמוד מוכרחה להיות כותרת רמה 1"
+    },
+    "page-has-main": {
+      "pass": "לעמוד יש לפחות ציון דרך ראשי אחד",
+      "fail": "לעמוד אין ציון דרך ראשי"
+    },
+    "page-no-duplicate-banner": {
+      "pass": "למסמך אין יותר מבאנר ציון דרך אחד",
+      "fail": "למסמך יש יותר מבאנר ציון דרך אחד"
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "למסמך אין יותר מציון דרך מידע-תוכן אחד",
+      "fail": "למסמך יש יותר מציון דרך מידע-תוכן אחד"
+    },
+    "page-no-duplicate-main": {
+      "pass": "למסמך אין יותר מציון דרך ראשי אחד",
+      "fail": "למסמך יש יותר מציון דרך ראשי אחד"
+    },
+    "tabindex": {
+      "pass": "לאלמנט אין tabindex גדול מ-0",
+      "fail": "לאלמנט יש tabindex גדול מ-0"
+    },
+    "alt-space-value": {
+      "pass": "לאלמנט יש ערך תכונה חלופי קביל",
+      "fail": "לאלמנט יש תכונה חלופית שמכילה רק תו רווח, שלא כל קוראי המסך מתעלמים ממנו"
+    },
+    "duplicate-img-label": {
+      "pass": "אלמנט לא משכפל טקסט קיים בטקסט חלופי של <img>",
+      "fail": "אלמנט מכיל אלמנט <img> עם טקסט חלופי שמשכפל טקסט קיים"
+    },
+    "explicit-label": {
+      "pass": "לאלמנט טופס יש <label> מפורש",
+      "fail": "לאלמנט טופס אין <label> מפורש",
+      "incomplete": "אי אפשר לקבוע אם לאלמנט טופס יש <label> מפורש"
+    },
+    "help-same-as-label": {
+      "pass": "טקסט עזרה (כותרת או aria-describedby) לא משכפל טקסט תווית",
+      "fail": "טקסט עזרה (כותרת או aria-describedby) זהה לטקסט התווית"
+    },
+    "hidden-explicit-label": {
+      "pass": "לאלמנט טופס יש <label> ברור וגלוי",
+      "fail": "לאלמנט טופס יש <label> ברור שהוא חבוי",
+      "incomplete": "לא ניתן לקבוע אם לאלמנט טופס יש <label> ברור שהוא גלוי"
+    },
+    "implicit-label": {
+      "pass": "לאלמנט טופס יש <label> מרומז (גולש)",
+      "fail": "לאלמנט טופס אין <label> מרומז (גולש)",
+      "incomplete": "לא ניתן לקבוע אם לאלמנט טופס יש <label> מרומז (גולש)"
+    },
+    "label-content-name-mismatch": {
+      "pass": "אלמנט מכיל טקסט גלוי כחלק משמו הנגיש",
+      "fail": "הטקסט בתוך באלמנט לא כלול בשם הנגיש"
+    },
+    "multiple-label": {
+      "pass": "לשדה טופס אין הרבה אלמנטים של תווית",
+      "incomplete": "אלמנטים מרובים של תווית אינם נתמכים באופן נרחב בטכנולוגיות מסייעות. ודאו שהתווית הראשונה מכילה את כל המידע הנחוץ."
+    },
+    "title-only": {
+      "pass": "אלמנט טופס לא משתמש רק בתכונה כותרת בתור תווית",
+      "fail": "רק כותרת משמשת לייצור תווית לאלמנט טופס"
+    },
+    "landmark-is-unique": {
+      "pass": "ציוני דרך מוכרחים להיות עם תפקיד ייחודי או שילוב תפקיד/תווית/כותרת (לדוג' שם נגיש)",
+      "fail": "לציון הדרך מוכרח להיות aria-label, aria-labelledby, או כותרת כדי להפוך ציוני דרך לייחודיים"
+    },
+    "has-lang": {
+      "pass": "לאלמנט <html> יש תכונת lang",
+      "fail": {
+        "noXHTML": "התכונה xml:lang אינה תקינה בעמודי HTML, השתמשו בתכונה lang.",
+        "noLang": "לאלמנט <html> אין תכונת lang"
+      }
+    },
+    "valid-lang": {
+      "pass": "ערך התכונה lang כלול ברשימת השפות הקבילות",
+      "fail": "ערך התכונה lang אינו כלול ברשימת השפות הקבילות"
+    },
+    "xml-lang-mismatch": {
+      "pass": "לתכונות lang ו-xml:lang יש את אותה שפת בסיס",
+      "fail": "לתכונות lang ו-xml:lang אין את אותה שפת בסיס"
+    },
+    "dlitem": {
+      "pass": "לפריט רשימה תיאורית יש אלמנט הורה <dl>",
+      "fail": "לפריט רשימה תיאורית אין אלמנט הורה <dl>"
+    },
+    "listitem": {
+      "pass": "לפריט רשימה יש <ul>, <ol> או שאלמנט הורה הוא role=\"list\"",
+      "fail": {
+        "default": "לפריט רשימה אין <ul>, <ol> אלמנט הורה",
+        "roleNotValid": "לפריט רשימה אין <ul>, <ol> אלמנט הורה ללא תפקיד, או שמתקיים role=\"list\""
+      }
+    },
+    "only-dlitems": {
+      "pass": "לאלמנט רשימה יש רק ילדים ישירים שמורשים בתוך אלמנטים של <dt> או <dd>",
+      "fail": "לאלמנט רשימה יש ילידים ישירים שאינם מורשים בתוך אלמנטים של <dt> או <dd>"
+    },
+    "only-listitems": {
+      "pass": "לאלמנט רשימה יש רק ילדים ישירים שמורשים בתוך אלמנטים של <li>",
+      "fail": {
+        "default": "לאלמנט רשימה יש ילידים ישירים שאינם מורשים בתוך אלמנטים של <li>",
+        "roleNotValid": "לאלמנט רשימה יש ילדים ישירים עם תפקיד שלא מורשה: ${data.roles}"
+      }
+    },
+    "structured-dlitems": {
+      "pass": "כאשר אינו ריק, לאלמנט יש הן אלמנטים של <dt> והן אלמנטים של <dd>",
+      "fail": "כאשר אינו ריק, לאלמנט אין הן לפחות אלמנט אחד של <dt> ולאחר מכן לפחות אלמנט אחד של <dd>"
+    },
+    "caption": {
+      "pass": "לאלמנט מולטימדיה יש רצועת כתוביות",
+      "incomplete": "בדקו שהכתוביות זמינות עבור האלמנט"
+    },
+    "frame-tested": {
+      "pass": "ה-iframe נבחנה עם axe-core",
+      "fail": "אי אפשר היה לבחון את ה-iframe עם axe-core",
+      "incomplete": "עדיין צריך לבחון את ה-iframe עם axe-core"
+    },
+    "no-autoplay-audio": {
+      "pass": "<video> או <audio> אינם מפיקים שמע עבור יותר ממשך הזמן המותר או שקיימים מנגנוני בקרה",
+      "fail": "<video> או <audio> מפיקים שמע עבור יותר ממשך הזמן המותר או שלא קיימים מנגנוני בקרה",
+      "incomplete": "בדקו שה-<video> או ה-<audio> אינם מפיקים שמע עבור יותר ממשך הזמן המותר או מספקים מנגנוני בקרה"
+    },
+    "css-orientation-lock": {
+      "pass": "התצוגה ניתנת להפעלה, ונעילות כיוון מסך לא קיימת",
+      "fail": "נעילת מסך ב-CSS מופעלת, והופכת את התצוגה לבלתי ניתנת להפעלה",
+      "incomplete": "לא ניתן לקבוע נעילת מסך ב-CSS"
+    },
+    "meta-viewport-large": {
+      "pass": "תגית <meta> לא מונעת הגדלה משמעותית על מכשירים ניידים",
+      "fail": "תגית <meta> מגבילה את ההגדלה על מכשירים ניידים"
+    },
+    "meta-viewport": {
+      "pass": "תגית <meta> לא מבטלת הגדלה על מכשירים ניידים",
+      "fail": "${data} על תגית <meta> מבטלת הגדלה על מכשירים ניידים"
+    },
+    "header-present": {
+      "pass": "יש לעמוד כותרת",
+      "fail": "אין לעמוד כותרת"
+    },
+    "heading-order": {
+      "pass": "סדר הכותרות תקין",
+      "fail": "סדר הכותרות לא תקין",
+      "incomplete": "אי אפשר לקבוע מה הכותרת הקודמת"
+    },
+    "identical-links-same-purpose": {
+      "pass": "אין קישורים עם אותו השם שמובילים ל-URL שונים",
+      "incomplete": "בדקו שלקישורים יש אותה מטרה, או שהם דו-משמעיים בכוונה."
+    },
+    "internal-link-present": {
+      "pass": "נמצא קישור דילוג תקין",
+      "fail": "לא נמצא קישור דילוג תקין"
+    },
+    "landmark": {
+      "pass": "לעמוד יש אזור ציון דרך",
+      "fail": "לעמוד אין אזור ציון דרך"
+    },
+    "meta-refresh-no-exceptions": {
+      "pass": "תגית <meta> לא מרעננת מייד את העמוד",
+      "fail": "תגית <meta> כופה ריענון מתוזמן של העמוד"
+    },
+    "meta-refresh": {
+      "pass": "תגית <meta> לא מרעננת מייד את העמוד",
+      "fail": "תגית <meta> כופה ריענון מתוזמן של העמוד (פחות מ-20 שעות)"
+    },
+    "p-as-heading": {
+      "pass": "אלמנטים של <p> לא מעוצבים ככותרות",
+      "fail": "יש להשתמש באלמנטים של כותרת במקום באלמנטים מעוצבים של <p>",
+      "incomplete": "לא ניתן לקבוע אם אלמנטים של <p> מעוצבים ככותרות"
+    },
+    "region": {
+      "pass": "כל התוכן בעמוד מוכל בציוני דרך",
+      "fail": "חלק מתוכן העמוד לא מוכל בציוני דרך"
+    },
+    "skip-link": {
+      "pass": "קיימת מטרה לקישור דילוג לתוכן",
+      "incomplete": "מטרה לקישור דילוג לתוכן צריכה להפוך לגלויה עם ההפעלה",
+      "fail": "אין מטרה לקישור דילוג לתוכן"
+    },
+    "unique-frame-title": {
+      "pass": "תכונת הכותרת של האלמנט ייחודית",
+      "fail": "תכונת הכותרת של האלמנט אינה ייחודית"
+    },
+    "duplicate-id-active": {
+      "pass": "למסמך אין אלמנטים פעילים שחולקים את אותה תכונת id",
+      "fail": "למסמך יש אלמנטים פעילים עם אותה תכונת id: ${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "למסמך אין אלמנטים עם הפניה על ידי ARIA או תוויות שחולקות את אותה תכונת id",
+      "fail": "למסמך יש מספר אלמנטים המופנים על ידי ARIA עם אותה תכונת id: ${data}"
+    },
+    "duplicate-id": {
+      "pass": "למסמך אין אלמנטים סטטיים שחולקים אותה תכונת id",
+      "fail": "למסמך יש מספר אלמנטים סטטיים עם אותה תכונת id: ${data}"
+    },
+    "aria-label": {
+      "pass": "תכונת aria-label קיימת ואינה ריקה",
+      "fail": "תכונת aria-label אינה קיימת או שהיא ריקה"
+    },
+    "aria-labelledby": {
+      "pass": "תכונת aria-labeledby קיימת ומפנה לאלמנטים שגלויים לקוראי מסך",
+      "fail": "תכונת aria-labeledby לא קיימת, מפנה לאלמנטים שלא קיימים או מפנה לאלמנטים ריקים",
+      "incomplete": "ודאו ש- aria-labeledby מפנה לאלמנט קיים"
+    },
+    "avoid-inline-spacing": {
+      "pass": "אין עיצובים בתוך השורה עם '!important' שמשפיעים על ריווח הטקסט שהוגדר",
+      "fail": {
+        "singular": "הסירו את '!important' מעיצוב בתוך השורה ${data.values}, כיוון שדריסתו לא נתמכת על ידי רוב הדפדפנים",
+        "plural": "הסירו את '!important' מעיצובי בתוך השורה ${data.values}, כיוון שדריסתו לא נתמכת על ידי רוב הדפדפנים"
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "לאלמנט יש טקסט פנימי שגלוי לקוראי מסך",
+      "fail": "לאלמנט אין טקסט פנימי שגלוי לקוראי מסך",
+      "incomplete": "לא ניתן לקבוע אם לאלמנט יש ילדים"
+    },
+    "doc-has-title": {
+      "pass": "למסמך יש אלמנט לא-ריק של <title>",
+      "fail": "למסמך אין אלמנט לא-ריק של <title>"
+    },
+    "exists": {
+      "pass": "האלמנט לא קיים",
+      "incomplete": "האלמנט קיים"
+    },
+    "has-alt": {
+      "pass": "לאלמנט יש תכונת טקסט חלופי",
+      "fail": "לאלמנט אין תכונת טקסט חלופי"
+    },
+    "has-visible-text": {
+      "pass": "לאלמנט יש טקסט שגלוי לקוראי מסך",
+      "fail": "לאלמנט אין טקסט שגלוי לקוראי מסך",
+      "incomplete": "לא ניתן לקבוע אם לאלמנט יש ילדים"
+    },
+    "is-on-screen": {
+      "pass": "האלמנט אינו גלוי",
+      "fail": "האלמנט גלוי"
+    },
+    "non-empty-alt": {
+      "pass": "לאלמנט יש תכונת טקסט חלופי לא ריקה",
+      "fail": {
+        "noAttr": "לאלמנט אין תכונת טקסט חלופי",
+        "emptyAttr": "לאלמנט יש תכונת טקסט חלופי ריקה"
+      }
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": "לאלמנט אין תכונת ערך",
+        "has-label": "לאלמנט יש תכונת ערך לא ריקה"
+      },
+      "fail": "לאלמנט יש תכונת ערך ותכונת הערך ריקה"
+    },
+    "non-empty-placeholder": {
+      "pass": "לאלמנט יש תכונה של ממלא מקום",
+      "fail": {
+        "noAttr": "לאלמנט אין תכונה של ממלא מקום",
+        "emptyAttr": "לאלמנט יש תכונה של ממלא מקום ריק"
+      }
+    },
+    "non-empty-title": {
+      "pass": "לאלמנט יש תכונת כותרת",
+      "fail": {
+        "noAttr": "לאלמנט אין תכונת כותרת",
+        "emptyAttr": "לאלמנט יש תכונת כותרת ריקה"
+      }
+    },
+    "non-empty-value": {
+      "pass": "לאלמנט יש תכונת ערך לא ריקה",
+      "fail": {
+        "noAttr": "לאלמנט אין תכונת ערך",
+        "emptyAttr": "לאלמנט יש תכונת ערך ריקה"
+      }
+    },
+    "presentational-role": {
+      "pass": "הסמנטיקה ברירת המחדל של האלמנט נדרסה עם role=\"${data.role}\"",
+      "fail": {
+        "default": "הסמנטיקה ברירת המחדל של האלמנט לא נדרסה עם role=\"none\" או role=\"presentation\"",
+        "globalAria": "תפקיד האלמנט לא אפשרי לתצוגה כי יש לו תכונת ARIA גלובלית",
+        "focusable": "תפקיד האלמנט לא אפשרי לתצוגה כי הוא בר מיקוד",
+        "both": "תפקיד האלמנט לא אפשרי לתצוגה כי יש לו תכונת ARIA גלובלית והוא בר מיקוד"
+      }
+    },
+    "role-none": {
+      "pass": "השדות ברירת המחדל של האלמנט נדרסו עם role=\"none\"",
+      "fail": "השדות ברירת המחדל של האלמנט לא נדרסו עם role=\"none\""
+    },
+    "role-presentation": {
+      "pass": "השדות ברירת המחדל של האלמנט נדרסו עם role=\"presentation\"",
+      "fail": "השדות ברירת המחדל של האלמנט לא נדרסו עם role=\"presentation\""
+    },
+    "svg-non-empty-title": {
+      "pass": "לאלמנט יש ילד שהוא כותרת",
+      "fail": {
+        "noTitle": "לאלמנט אין ילד שהוא כותרת",
+        "emptyTitle": "כותרת ילד אלמנט ריקה"
+      },
+      "incomplete": "לא ניתן לקבוע אם לאלמנט יש ילד שהוא כותרת"
+    },
+    "caption-faked": {
+      "pass": "השורה הראשונה בטבלה לא משמשת ככתובית",
+      "fail": "הילד הראשון של הטבלה צריך להיות כתובית במקום תא בטבלה"
+    },
+    "html5-scope": {
+      "pass": "התכונה scope בשימוש רק על אלמנטים של כותרת טבלה (<th>)",
+      "fail": "ב-HTML5, תכונות scope יכולות להיות בשימוש רק על אלמנטים של כותרת טבלה (<th>)"
+    },
+    "same-caption-summary": {
+      "pass": "תוכן תכונת התקציר ו-<caption> אינם משוכפלים",
+      "fail": "תוכן תכונת התקציר ואלמנט <caption> זהים"
+    },
+    "scope-value": {
+      "pass": "התכונה scope בשימוש נכון",
+      "fail": "ערך התכונה scope יכול להיות רק על 'row' או 'col'"
+    },
+    "td-has-header": {
+      "pass": "לכל תאי המידע שאינם ריקים יש כותרות טבלה",
+      "fail": "לחלק מתאי המידע שאינם ריקים אין כותרות טבלה"
+    },
+    "td-headers-attr": {
+      "pass": "תכונת הכותרות משמשת רק בהתייחסות לתאים אחרים בטבלה",
+      "incomplete": "תכונת הכותרות ריקה",
+      "fail": "תכונת הכותרות לא משמשת רק בהתייחסות לתאים אחרים בטבלה"
+    },
+    "th-has-data-cells": {
+      "pass": "כל תאי כותרת בטבלה מתייחסים לתאי מידע",
+      "fail": "לא כל תאי הכותרת בטבלה מתייחסים לתאי מידע",
+      "incomplete": "תאי מידע בטבלה חסרים או ריקים"
+    },
+    "hidden-content": {
+      "pass": "כל התוכן בעמוד נותח.",
+      "fail": "היו בעיות בניתוח התוכן בעמוד זה.",
+      "incomplete": "יש תוכן נסתר בעמוד שלא עבר ניתוח.  יש להפעיל את תצוגת תוכן זה כדי לנתח אותו."
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "תקנו את אחד מהבאים:{{~it:value}}{{=value.split('\n').join('\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "תקנו את כל הבאים:{{~it:value}}{{=value.split('\n').join('\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "axe לא הצליח למצוא את הסיבה. הגיע הזמן להיפרד מבודק האלמנטים!"
+}

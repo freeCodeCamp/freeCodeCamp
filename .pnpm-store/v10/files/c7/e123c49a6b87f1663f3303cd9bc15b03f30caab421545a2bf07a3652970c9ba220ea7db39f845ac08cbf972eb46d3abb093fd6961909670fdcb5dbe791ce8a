@@ -1,0 +1,161 @@
+import { parse, walk } from 'css-tree';
+
+import { isRegExp, isString } from '../../utils/validateTypes.mjs';
+import { atRuleParamIndex } from '../../utils/nodeFieldIndices.mjs';
+import { atRuleRegexes } from '../../utils/regexes.mjs';
+import getAtRuleParams from '../../utils/getAtRuleParams.mjs';
+import getRuleSelector from '../../utils/getRuleSelector.mjs';
+import isStandardSyntaxAtRule from '../../utils/isStandardSyntaxAtRule.mjs';
+import isStandardSyntaxRule from '../../utils/isStandardSyntaxRule.mjs';
+import optionsMatches from '../../utils/optionsMatches.mjs';
+import report from '../../utils/report.mjs';
+import ruleMessages from '../../utils/ruleMessages.mjs';
+import validateOptions from '../../utils/validateOptions.mjs';
+
+const ruleName = 'nesting-selector-no-missing-scoping-root';
+
+const messages = ruleMessages(ruleName, {
+	rejected: 'Unexpected missing scoping root',
+});
+
+const meta = {
+	url: 'https://stylelint.io/user-guide/rules/nesting-selector-no-missing-scoping-root',
+};
+
+/** @type {import('stylelint').CoreRules[ruleName]} */
+const rule = (primary, secondaryOptions) => {
+	return (root, result) => {
+		const validOptions = validateOptions(
+			result,
+			ruleName,
+			{ actual: primary, possible: [true] },
+			{
+				actual: secondaryOptions,
+				possible: {
+					ignoreAtRules: [isString, isRegExp],
+				},
+				optional: true,
+			},
+		);
+
+		if (!validOptions) return;
+
+		root.walkRules(/&/, (ruleNode) => {
+			if (!isStandardSyntaxRule(ruleNode)) return;
+
+			// Check if the rule is nested within a scoping root
+			if (hasValidScopingRoot(ruleNode, secondaryOptions)) return;
+
+			let ast;
+
+			try {
+				ast = parse(getRuleSelector(ruleNode), { context: 'selectorList', positions: true });
+			} catch {
+				// Cannot parse selector list, skip checking
+				return;
+			}
+
+			check(ruleNode, ast);
+		});
+
+		// Check @scope at-rules for nesting selectors in parameters
+		root.walkAtRules(atRuleRegexes.scopeName, (atRule) => {
+			if (!isStandardSyntaxAtRule(atRule)) return;
+
+			// Cheap check for nesting selector
+			if (!atRule.params.includes('&')) return;
+
+			// Only check @scope at-rules that don't have a parent scoping context
+			if (hasValidScopingRoot(atRule, secondaryOptions)) return;
+
+			let ast;
+
+			try {
+				ast = parse(getAtRuleParams(atRule), {
+					atrule: 'scope',
+					context: 'atrulePrelude',
+					positions: true,
+				});
+			} catch {
+				// Cannot parse @scope at-rule, skip checking
+				return;
+			}
+
+			check(atRule, ast, atRuleParamIndex(atRule));
+		});
+
+		/**
+		 * @param {import('postcss').Rule | import('postcss').AtRule} node
+		 * @param {import('css-tree').CssNode} ast
+		 * @param {number} [offset=0]
+		 */
+		function check(node, ast, offset = 0) {
+			walk(ast, {
+				/**
+				 * @param {import('css-tree').CssNode} cssNode
+				 */
+				enter(cssNode) {
+					if (cssNode.type !== 'NestingSelector') return;
+
+					if (!cssNode.loc) return;
+
+					const index = offset + cssNode.loc.start.offset;
+					const endIndex = index + 1;
+
+					report({
+						message: messages.rejected,
+						node,
+						result,
+						ruleName,
+						index,
+						endIndex,
+					});
+				},
+			});
+		}
+	};
+};
+
+/**
+ * Check if a node has a valid scoping root
+ * @param {import('postcss').Rule | import('postcss').AtRule} node
+ * @param {object} secondaryOptions
+ * @returns {boolean}
+ */
+function hasValidScopingRoot(node, secondaryOptions) {
+	let current = node.parent;
+
+	while (current) {
+		// If we find a rule in the parent chain, it provides a scoping root
+		if (current.type === 'rule') {
+			return true;
+		}
+
+		// If we find an @scope at-rule, it provides a scoping root
+		if (current.type === 'atrule' && current.name === 'scope') {
+			return true;
+		}
+
+		// If we find an ignored at-rule, it provides a scoping root
+		if (
+			current.type === 'atrule' &&
+			optionsMatches(secondaryOptions, 'ignoreAtRules', current.name)
+		) {
+			return true;
+		}
+
+		// If we reach the root without finding a scoping root
+		if (current.type === 'root') {
+			return false;
+		}
+
+		current = current.parent;
+	}
+
+	return false;
+}
+
+rule.ruleName = ruleName;
+rule.messages = messages;
+rule.meta = meta;
+export default rule;

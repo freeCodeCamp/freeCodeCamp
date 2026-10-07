@@ -1,0 +1,49 @@
+{
+  "name": "@parcel/reporter-dev-server",
+  "version": "2.8.3",
+  "description": "Blazing fast, zero configuration web application bundler",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/ServerReporter.js",
+  "source": "src/ServerReporter.js",
+  "engines": {
+    "node": ">= 12.0.0",
+    "parcel": "^2.8.3"
+  },
+  "targets": {
+    "main": {
+      "includeNodeModules": {
+        "@parcel/plugin": false,
+        "@parcel/utils": false
+      }
+    }
+  },
+  "dependencies": {
+    "@parcel/plugin": "2.8.3",
+    "@parcel/utils": "2.8.3"
+  },
+  "devDependencies": {
+    "@parcel/babel-preset": "2.8.3",
+    "@parcel/types": "2.8.3",
+    "connect": "^3.7.0",
+    "ejs": "^3.1.6",
+    "fresh": "^0.5.2",
+    "http-proxy-middleware": "^2.0.1",
+    "launch-editor": "^2.3.0",
+    "mime-types": "2.1.18",
+    "nullthrows": "^1.1.1",
+    "serve-handler": "^6.0.0",
+    "ws": "^7.0.0"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "abstract-logging",
+  "version": "2.0.1",
+  "description": "A noop logger that conforms to the Log4j interface for modules to stub out internal logging",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsumners/abstract-logging.git"
+  },
+  "keywords": [
+    "log",
+    "logging",
+    "logger",
+    "pino"
+  ],
+  "author": "James Sumners <james.sumners@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsumners/abstract-logging/issues"
+  },
+  "homepage": "https://github.com/jsumners/abstract-logging#readme"
+}

@@ -1,0 +1,59 @@
+{
+    "author": "Felix Böhm <me@feedic.com> (http://feedic.com)",
+    "name": "css-what",
+    "description": "a CSS selector parser",
+    "version": "6.1.0",
+    "funding": {
+        "url": "https://github.com/sponsors/fb55"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fb55/css-what"
+    },
+    "main": "lib/commonjs/index.js",
+    "module": "lib/es/index.js",
+    "types": "lib/es/index.d.ts",
+    "sideEffects": false,
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "npm run test:jest && npm run lint",
+        "test:jest": "jest",
+        "lint": "npm run lint:es && npm run lint:prettier",
+        "lint:es": "eslint src",
+        "lint:prettier": "npm run prettier -- --check",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run prettier -- --write",
+        "prettier": "prettier '**/*.{ts,md,json,yml}'",
+        "build": "tsc && tsc -p tsconfig.es.json",
+        "prepare": "npm run build"
+    },
+    "devDependencies": {
+        "@types/jest": "^27.4.1",
+        "@types/node": "^17.0.23",
+        "@typescript-eslint/eslint-plugin": "^5.17.0",
+        "@typescript-eslint/parser": "^5.17.0",
+        "eslint": "^8.12.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-node": "^11.1.0",
+        "jest": "^27.5.1",
+        "prettier": "^2.6.1",
+        "ts-jest": "^27.1.4",
+        "typescript": "^4.6.3"
+    },
+    "engines": {
+        "node": ">= 6"
+    },
+    "license": "BSD-2-Clause",
+    "jest": {
+        "preset": "ts-jest",
+        "roots": [
+            "src"
+        ]
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}

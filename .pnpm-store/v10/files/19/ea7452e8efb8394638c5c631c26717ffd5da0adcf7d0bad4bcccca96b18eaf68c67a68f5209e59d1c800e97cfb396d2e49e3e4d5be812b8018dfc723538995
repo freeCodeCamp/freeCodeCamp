@@ -1,0 +1,39 @@
+{
+	"name": "responselike",
+	"version": "3.0.0",
+	"description": "A response-like object for mocking a Node.js HTTP response stream",
+	"license": "MIT",
+	"repository": "sindresorhus/responselike",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": "Luke Childs <lukechilds123@gmail.com> (https://lukechilds.co.uk)",
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=14.16"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"http",
+		"https",
+		"response",
+		"mock",
+		"test",
+		"request",
+		"responselike"
+	],
+	"dependencies": {
+		"lowercase-keys": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "^4.3.1",
+		"get-stream": "^6.0.1",
+		"tsd": "^0.22.0",
+		"xo": "^0.50.0"
+	}
+}

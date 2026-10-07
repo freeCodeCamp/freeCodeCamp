@@ -1,0 +1,33 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"array-bracket-newline": "off",
+		"id-length": "off",
+		"max-lines-per-function": "off",
+		"new-cap": ["error", {
+			"capIsNewExceptions": [
+				"CreateDataPropertyOrThrow",
+				"GroupBy",
+				"OrdinaryObjectCreate",
+			],
+		}],
+	},
+
+	"overrides": [
+		{
+			"files": "aos/*.js",
+			"rules": {
+				"max-statements": "off",
+			},
+		},
+		{
+			"files": "test/tests.js",
+			"rules": {
+				"max-lines-per-function": "off",
+			},
+		},
+	],
+}

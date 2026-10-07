@@ -1,0 +1,226 @@
+{
+  "name": "eslint",
+  "version": "9.39.4",
+  "author": "Nicholas C. Zakas <nicholas+npm@nczconsulting.com>",
+  "description": "An AST-based pattern checker for JavaScript.",
+  "type": "commonjs",
+  "bin": {
+    "eslint": "./bin/eslint.js"
+  },
+  "main": "./lib/api.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/api.js"
+    },
+    "./config": {
+      "types": "./lib/types/config-api.d.ts",
+      "default": "./lib/config-api.js"
+    },
+    "./package.json": "./package.json",
+    "./use-at-your-own-risk": {
+      "types": "./lib/types/use-at-your-own-risk.d.ts",
+      "default": "./lib/unsupported-api.js"
+    },
+    "./rules": {
+      "types": "./lib/types/rules.d.ts"
+    },
+    "./universal": {
+      "types": "./lib/types/universal.d.ts",
+      "default": "./lib/universal.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "use-at-your-own-risk": [
+        "./lib/types/use-at-your-own-risk.d.ts"
+      ],
+      "rules": [
+        "./lib/types/rules.d.ts"
+      ],
+      "universal": [
+        "./lib/types/universal.d.ts"
+      ],
+      "config": [
+        "./lib/types/config-api.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build:docs:update-links": "node tools/fetch-docs-links.js",
+    "build:site": "node Makefile.js gensite",
+    "build:webpack": "node Makefile.js webpack",
+    "build:readme": "node tools/update-readme.js",
+    "build:rules-index": "node Makefile.js generateRuleIndexPage",
+    "lint": "trunk check --no-fix --ignore=docs/**/*.js -a --filter=eslint && trunk check --no-fix --ignore=docs/**/*.js",
+    "lint:docs:js": "trunk check --no-fix --ignore=** --ignore=!docs/**/*.js -a --filter=eslint && trunk check --no-fix --ignore=** --ignore=!docs/**/*.js",
+    "lint:docs:rule-examples": "node Makefile.js checkRuleExamples",
+    "lint:unused": "knip",
+    "lint:fix": "trunk check -y --ignore=docs/**/*.js -a --filter=eslint && trunk check -y --ignore=docs/**/*.js",
+    "lint:fix:docs:js": "trunk check -y --ignore=** --ignore=!docs/**/*.js -a --filter=eslint && trunk check -y --ignore=** --ignore=!docs/**/*.js",
+    "lint:rule-types": "node tools/update-rule-type-headers.js --check",
+    "lint:types": "attw --pack",
+    "release:generate:alpha": "node Makefile.js generatePrerelease -- alpha",
+    "release:generate:beta": "node Makefile.js generatePrerelease -- beta",
+    "release:generate:latest": "node Makefile.js generateRelease -- latest",
+    "release:generate:maintenance": "node Makefile.js generateRelease -- maintenance",
+    "release:generate:rc": "node Makefile.js generatePrerelease -- rc",
+    "release:publish": "node Makefile.js publishRelease",
+    "test": "node Makefile.js test",
+    "test:browser": "node Makefile.js cypress",
+    "test:cli": "mocha",
+    "test:emfile": "node tools/check-emfile-handling.js",
+    "test:fuzz": "node Makefile.js fuzz",
+    "test:performance": "node Makefile.js perf",
+    "test:pnpm": "cd tests/pnpm && node check.js && pnpm install && pnpm exec tsc",
+    "test:types": "tsc -p tests/lib/types/tsconfig.json"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*": "trunk check --fix",
+    "lib/rules/*.js": [
+      "node tools/update-eslint-all.js",
+      "node tools/update-eslint-recommended.js",
+      "node tools/update-rule-type-headers.js",
+      "git add packages/js/src/configs/*.js lib/types/rules.d.ts"
+    ],
+    "docs/src/rules/*.md": [
+      "node tools/check-rule-examples.js",
+      "node tools/fetch-docs-links.js",
+      "git add docs/src/_data/further_reading_links.json"
+    ]
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "bin",
+    "conf",
+    "lib",
+    "messages"
+  ],
+  "repository": "eslint/eslint",
+  "funding": "https://eslint.org/donate",
+  "homepage": "https://eslint.org",
+  "bugs": "https://github.com/eslint/eslint/issues/",
+  "dependencies": {
+    "@eslint-community/eslint-utils": "^4.8.0",
+    "@eslint-community/regexpp": "^4.12.1",
+    "@eslint/config-array": "^0.21.2",
+    "@eslint/config-helpers": "^0.4.2",
+    "@eslint/core": "^0.17.0",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "9.39.4",
+    "@eslint/plugin-kit": "^0.4.1",
+    "@humanfs/node": "^0.16.6",
+    "@humanwhocodes/module-importer": "^1.0.1",
+    "@humanwhocodes/retry": "^0.4.2",
+    "@types/estree": "^1.0.6",
+    "ajv": "^6.14.0",
+    "chalk": "^4.0.0",
+    "cross-spawn": "^7.0.6",
+    "debug": "^4.3.2",
+    "escape-string-regexp": "^4.0.0",
+    "eslint-scope": "^8.4.0",
+    "eslint-visitor-keys": "^4.2.1",
+    "espree": "^10.4.0",
+    "esquery": "^1.5.0",
+    "esutils": "^2.0.2",
+    "fast-deep-equal": "^3.1.3",
+    "file-entry-cache": "^8.0.0",
+    "find-up": "^5.0.0",
+    "glob-parent": "^6.0.2",
+    "ignore": "^5.2.0",
+    "imurmurhash": "^0.1.4",
+    "is-glob": "^4.0.0",
+    "json-stable-stringify-without-jsonify": "^1.0.1",
+    "lodash.merge": "^4.6.2",
+    "minimatch": "^3.1.5",
+    "natural-compare": "^1.4.0",
+    "optionator": "^0.9.3"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.0",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "@eslint/json": "^0.13.2",
+    "@trunkio/launcher": "^1.3.4",
+    "@types/esquery": "^1.5.4",
+    "@types/node": "^22.13.14",
+    "@typescript-eslint/parser": "^8.4.0",
+    "babel-loader": "^8.0.5",
+    "c8": "^7.12.0",
+    "chai": "^4.0.1",
+    "cheerio": "^0.22.0",
+    "common-tags": "^1.8.0",
+    "core-js": "^3.1.3",
+    "cypress": "^14.1.0",
+    "ejs": "^3.0.2",
+    "eslint": "file:.",
+    "eslint-config-eslint": "file:packages/eslint-config-eslint",
+    "eslint-plugin-eslint-plugin": "^6.0.0",
+    "eslint-plugin-expect-type": "^0.6.0",
+    "eslint-plugin-yml": "^1.14.0",
+    "eslint-release": "^3.3.0",
+    "eslint-rule-composer": "^0.3.0",
+    "eslump": "^3.0.0",
+    "esprima": "^4.0.1",
+    "fast-glob": "^3.2.11",
+    "fs-teardown": "^0.1.3",
+    "glob": "^10.0.0",
+    "globals": "^16.2.0",
+    "got": "^11.8.3",
+    "gray-matter": "^4.0.3",
+    "jiti": "^2.6.1",
+    "jiti-v2.0": "npm:jiti@2.0.x",
+    "jiti-v2.1": "npm:jiti@2.1.x",
+    "knip": "^5.60.2",
+    "lint-staged": "^11.0.0",
+    "markdown-it": "^12.2.0",
+    "markdown-it-container": "^3.0.0",
+    "marked": "^4.0.8",
+    "metascraper": "^5.25.7",
+    "metascraper-description": "^5.25.7",
+    "metascraper-image": "^5.29.3",
+    "metascraper-logo": "^5.25.7",
+    "metascraper-logo-favicon": "^5.25.7",
+    "metascraper-title": "^5.25.7",
+    "mocha": "^11.7.1",
+    "node-polyfill-webpack-plugin": "^1.0.3",
+    "npm-license": "^0.3.3",
+    "pirates": "^4.0.5",
+    "progress": "^2.0.3",
+    "proxyquire": "^2.0.1",
+    "recast": "^0.23.0",
+    "regenerator-runtime": "^0.14.0",
+    "semver": "^7.5.3",
+    "shelljs": "^0.10.0",
+    "sinon": "^11.0.0",
+    "typescript": "^5.3.3",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0",
+    "yorkie": "^2.0.0"
+  },
+  "peerDependencies": {
+    "jiti": "*"
+  },
+  "peerDependenciesMeta": {
+    "jiti": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "ast",
+    "lint",
+    "javascript",
+    "ecmascript",
+    "espree"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  }
+}

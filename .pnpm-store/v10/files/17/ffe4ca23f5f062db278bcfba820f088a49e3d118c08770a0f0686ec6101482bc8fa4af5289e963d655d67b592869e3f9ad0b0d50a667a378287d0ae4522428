@@ -1,0 +1,41 @@
+{
+  "name": "postcss-normalize-string",
+  "version": "5.1.0",
+  "description": "Normalize wrapping quotes for CSS string literals.",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "src",
+    "LICENSE-MIT",
+    "types"
+  ],
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cssnano/cssnano",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "cssnano/cssnano",
+  "dependencies": {
+    "postcss-value-parser": "^4.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# [postcss][postcss]-normalize-string\n\n> Normalize strings with PostCSS.\n\n## Install\n\nWith [npm](https://npmjs.org/package/postcss-normalize-string) do:\n\n```\nnpm install postcss-normalize-string --save\n```\n\n## Example\n\n### Input\n\n```css\np:after{ content: '\\\\'string\\\\' is intact' }\n```\n\n### Output\n\n```css\np:after{ content:\"'string' is intact\" }\n```\n\n## Usage\n\nSee the [PostCSS documentation](https://github.com/postcss/postcss#usage) for\nexamples for your environment.\n\n## API\n\n### normalize([options])\n\n#### options\n\n##### preferredQuote\n\nType: `string`\nDefault: `double`\n\nSets what type of quote to prefer. Possible values are `single` and `double`.\n\n```js\nvar css = 'p:after{content:\"\"}';\nconsole.log(postcss(normalize({preferredQuote: 'single'})).process(css).css);\n//=> p:after{content:''}\n```\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n\n## License\n\nMIT © [Ben Briggs](http://beneb.info)\n\n[postcss]: https://github.com/postcss/postcss\n"
+}

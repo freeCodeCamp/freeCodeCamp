@@ -1,0 +1,74 @@
+{
+  "name": "ignore",
+  "version": "5.3.2",
+  "description": "Ignore is a manager and filter for .gitignore rules, the one used by eslint, gitbook and many others.",
+  "files": [
+    "legacy.js",
+    "index.js",
+    "index.d.ts",
+    "LICENSE-MIT"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "babel -o legacy.js index.js",
+    "test:lint": "eslint .",
+    "test:tsc": "tsc ./test/ts/simple.ts --lib ES6",
+    "test:ts": "node ./test/ts/simple.js",
+    "tap": "tap --reporter classic",
+    "test:git": "npm run tap test/git-check-ignore.js",
+    "test:ignore": "npm run tap test/ignore.js",
+    "test:ignore:only": "IGNORE_ONLY_IGNORES=1 npm run tap test/ignore.js",
+    "test:others": "npm run tap test/others.js",
+    "test:cases": "npm run tap test/*.js -- --coverage",
+    "test:no-coverage": "npm run tap test/*.js -- --no-check-coverage",
+    "test:only": "npm run test:lint && npm run test:tsc && npm run test:ts && npm run test:cases",
+    "test": "npm run test:only",
+    "test:win32": "IGNORE_TEST_WIN32=1 npm run test",
+    "report": "tap --coverage-report=html",
+    "posttest": "npm run report && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kaelzhang/node-ignore.git"
+  },
+  "keywords": [
+    "ignore",
+    ".gitignore",
+    "gitignore",
+    "npmignore",
+    "rules",
+    "manager",
+    "filter",
+    "regexp",
+    "regex",
+    "fnmatch",
+    "glob",
+    "asterisks",
+    "regular-expression"
+  ],
+  "author": "kael",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/node-ignore/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "codecov": "^3.8.2",
+    "debug": "^4.3.4",
+    "eslint": "^8.46.0",
+    "eslint-config-ostai": "^3.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "mkdirp": "^3.0.1",
+    "pre-suf": "^1.1.1",
+    "rimraf": "^6.0.1",
+    "spawn-sync": "^2.0.0",
+    "tap": "^16.3.9",
+    "tmp": "0.2.3",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">= 4"
+  }
+}

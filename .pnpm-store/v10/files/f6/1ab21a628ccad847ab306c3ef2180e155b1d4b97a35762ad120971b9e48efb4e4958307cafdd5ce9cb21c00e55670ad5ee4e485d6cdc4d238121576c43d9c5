@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_create_for_of_iterator_helper_loose.js")

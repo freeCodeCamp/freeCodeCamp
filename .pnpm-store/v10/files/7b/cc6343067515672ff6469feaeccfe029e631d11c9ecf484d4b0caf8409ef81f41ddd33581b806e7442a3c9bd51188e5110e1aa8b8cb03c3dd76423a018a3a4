@@ -1,0 +1,46 @@
+{
+  "Commands:": "Parancsok:",
+  "Options:": "Opciók:",
+  "Examples:": "Példák:",
+  "boolean": "boolean",
+  "count": "számláló",
+  "string": "szöveg",
+  "number": "szám",
+  "array": "tömb",
+  "required": "kötelező",
+  "default": "alapértelmezett",
+  "default:": "alapértelmezett:",
+  "choices:": "lehetőségek:",
+  "aliases:": "aliaszok:",
+  "generated-value": "generált-érték",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Nincs elég nem opcionális argumentum: %s van, legalább %s kell",
+    "other": "Nincs elég nem opcionális argumentum: %s van, legalább %s kell"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "Túl sok nem opciánlis argumentum van: %s van, maximum %s lehet",
+    "other": "Túl sok nem opciánlis argumentum van: %s van, maximum %s lehet"
+  },
+  "Missing argument value: %s": {
+    "one": "Hiányzó argumentum érték: %s",
+    "other": "Hiányzó argumentum értékek: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Hiányzó kötelező argumentum: %s",
+    "other": "Hiányzó kötelező argumentumok: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Ismeretlen argumentum: %s",
+    "other": "Ismeretlen argumentumok: %s"
+  },
+  "Invalid values:": "Érvénytelen érték:",
+  "Argument: %s, Given: %s, Choices: %s": "Argumentum: %s, Megadott: %s, Lehetőségek: %s",
+  "Argument check failed: %s": "Argumentum ellenőrzés sikertelen: %s",
+  "Implications failed:": "Implikációk sikertelenek:",
+  "Not enough arguments following: %s": "Nem elég argumentum követi: %s",
+  "Invalid JSON config file: %s": "Érvénytelen JSON konfigurációs file: %s",
+  "Path to JSON config file": "JSON konfigurációs file helye",
+  "Show help": "Súgo megjelenítése",
+  "Show version number": "Verziószám megjelenítése",
+  "Did you mean %s?": "Erre gondoltál %s?"
+}

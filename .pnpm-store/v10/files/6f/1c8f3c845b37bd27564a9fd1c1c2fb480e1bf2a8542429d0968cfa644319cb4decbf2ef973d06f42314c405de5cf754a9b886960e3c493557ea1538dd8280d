@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TDeferred.js",
+  "module": "../dist/esm/TDeferred.js",
+  "types": "../dist/dts/TDeferred.d.ts"
+}

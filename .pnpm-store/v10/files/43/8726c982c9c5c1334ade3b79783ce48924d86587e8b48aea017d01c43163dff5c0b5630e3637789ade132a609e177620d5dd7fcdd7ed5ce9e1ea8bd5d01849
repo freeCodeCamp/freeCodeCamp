@@ -1,0 +1,33 @@
+{
+  "name": "@parcel/watcher-linux-x64-glibc",
+  "version": "2.5.6",
+  "main": "watcher.node",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/watcher.git"
+  },
+  "description": "A native C++ Node module for querying and subscribing to filesystem events. Used by Parcel 2.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "files": [
+    "watcher.node"
+  ],
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "libc": [
+    "glibc"
+  ]
+}

@@ -1,0 +1,163 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+domain Tracing
+  depends on IO
+
+  # Configuration for memory dump. Used only when "memory-infra" category is enabled.
+  experimental type MemoryDumpConfig extends object
+
+  type TraceConfig extends object
+    properties
+      # Controls how the trace buffer stores data. The default is `recordUntilFull`.
+      experimental optional enum recordMode
+        recordUntilFull
+        recordContinuously
+        recordAsMuchAsPossible
+        echoToConsole
+      # Size of the trace buffer in kilobytes. If not specified or zero is passed, a default value
+      # of 200 MB would be used.
+      experimental optional number traceBufferSizeInKb
+      # Turns on JavaScript stack sampling.
+      experimental optional boolean enableSampling
+      # Turns on system tracing.
+      experimental optional boolean enableSystrace
+      # Turns on argument filter.
+      experimental optional boolean enableArgumentFilter
+      # Included category filters.
+      optional array of string includedCategories
+      # Excluded category filters.
+      optional array of string excludedCategories
+      # Configuration to synthesize the delays in tracing.
+      experimental optional array of string syntheticDelays
+      # Configuration for memory dump triggers. Used only when "memory-infra" category is enabled.
+      experimental optional MemoryDumpConfig memoryDumpConfig
+
+  # Data format of a trace. Can be either the legacy JSON format or the
+  # protocol buffer format. Note that the JSON format will be deprecated soon.
+  experimental type StreamFormat extends string
+    enum
+      json
+      proto
+
+  # Compression type to use for traces returned via streams.
+  experimental type StreamCompression extends string
+    enum
+      none
+      gzip
+
+  # Details exposed when memory request explicitly declared.
+  # Keep consistent with memory_dump_request_args.h and
+  # memory_instrumentation.mojom
+  experimental type MemoryDumpLevelOfDetail extends string
+    enum
+      background
+      light
+      detailed
+
+  # Backend type to use for tracing. `chrome` uses the Chrome-integrated
+  # tracing service and is supported on all platforms. `system` is only
+  # supported on Chrome OS and uses the Perfetto system tracing service.
+  # `auto` chooses `system` when the perfettoConfig provided to Tracing.start
+  # specifies at least one non-Chrome data source; otherwise uses `chrome`.
+  experimental type TracingBackend extends string
+    enum
+      auto
+      chrome
+      system
+
+  # Stop trace events collection.
+  command end
+
+  # Gets supported tracing categories.
+  experimental command getCategories
+    returns
+      # A list of supported tracing categories.
+      array of string categories
+
+  # Return a descriptor for all available tracing categories.
+  experimental command getTrackEventDescriptor
+    returns
+      # Base64-encoded serialized perfetto.protos.TrackEventDescriptor protobuf message.
+      binary descriptor
+
+  # Record a clock sync marker in the trace.
+  experimental command recordClockSyncMarker
+    parameters
+      # The ID of this clock sync marker
+      string syncId
+
+  # Request a global memory dump.
+  experimental command requestMemoryDump
+    parameters
+      # Enables more deterministic results by forcing garbage collection
+      optional boolean deterministic
+      # Specifies level of details in memory dump. Defaults to "detailed".
+      optional MemoryDumpLevelOfDetail levelOfDetail
+    returns
+      # GUID of the resulting global memory dump.
+      string dumpGuid
+      # True iff the global memory dump succeeded.
+      boolean success
+
+  # Start trace events collection.
+  command start
+    parameters
+      # Category/tag filter
+      experimental deprecated optional string categories
+      # Tracing options
+      experimental deprecated optional string options
+      # If set, the agent will issue bufferUsage events at this interval, specified in milliseconds
+      experimental optional number bufferUsageReportingInterval
+      # Whether to report trace events as series of dataCollected events or to save trace to a
+      # stream (defaults to `ReportEvents`).
+      optional enum transferMode
+        ReportEvents
+        ReturnAsStream
+      # Trace data format to use. This only applies when using `ReturnAsStream`
+      # transfer mode (defaults to `json`).
+      optional StreamFormat streamFormat
+      # Compression format to use. This only applies when using `ReturnAsStream`
+      # transfer mode (defaults to `none`)
+      experimental optional StreamCompression streamCompression
+      optional TraceConfig traceConfig
+      # Base64-encoded serialized perfetto.protos.TraceConfig protobuf message
+      # When specified, the parameters `categories`, `options`, `traceConfig`
+      # are ignored.
+      experimental optional binary perfettoConfig
+      # Backend type (defaults to `auto`)
+      experimental optional TracingBackend tracingBackend
+
+  experimental event bufferUsage
+    parameters
+      # A number in range [0..1] that indicates the used size of event buffer as a fraction of its
+      # total size.
+      optional number percentFull
+      # An approximate number of events in the trace log.
+      optional number eventCount
+      # A number in range [0..1] that indicates the used size of event buffer as a fraction of its
+      # total size.
+      optional number value
+
+  # Contains a bucket of collected trace events. When tracing is stopped collected events will be
+  # sent as a sequence of dataCollected events followed by tracingComplete event.
+  experimental event dataCollected
+    parameters
+      array of object value
+
+  # Signals that tracing is stopped and there is no trace buffers pending flush, all data were
+  # delivered via dataCollected events.
+  event tracingComplete
+    parameters
+      # Indicates whether some trace data is known to have been lost, e.g. because the trace ring
+      # buffer wrapped around.
+      boolean dataLossOccurred
+      # A handle of the stream that holds resulting trace data.
+      optional IO.StreamHandle stream
+      # Trace data format of returned stream.
+      optional StreamFormat traceFormat
+      # Compression format of returned stream.
+      optional StreamCompression streamCompression

@@ -1,0 +1,1 @@
+{"version":3,"file":"form.d.ts","sourceRoot":"","sources":["../../../../src/types/feedback/form.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAEhD,MAAM,MAAM,gBAAgB,GAAG;IAC7B,IAAI,EAAE,MAAM,CAAC;IACb,KAAK,EAAE,MAAM,CAAC;IACd,OAAO,EAAE,MAAM,CAAC;IAChB,WAAW,EAAE,UAAU,EAAE,GAAG,SAAS,CAAC;CACvC,CAAC"}

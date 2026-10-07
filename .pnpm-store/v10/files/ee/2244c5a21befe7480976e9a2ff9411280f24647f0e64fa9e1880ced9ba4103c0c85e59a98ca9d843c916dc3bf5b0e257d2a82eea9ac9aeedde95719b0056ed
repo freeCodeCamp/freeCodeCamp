@@ -1,0 +1,38 @@
+{
+  "name": "dom-converter",
+  "version": "0.2.0",
+  "description": "converts bare objects to DOM objects or xml representations",
+  "main": "lib/domConverter.js",
+  "dependencies": {
+    "utila": "~0.4"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "chai-changes": "^1.3.4",
+    "chai-fuzzy": "^1.4.0",
+    "coffee-script": "^1.8.0",
+    "jitter": "^1.3.0",
+    "mocha": "^2.0.1",
+    "mocha-pretty-spec-reporter": "0.1.0-beta.1",
+    "sinon": "^1.12.2",
+    "sinon-chai": "^2.6.0"
+  },
+  "scripts": {
+    "test": "mocha \"test/**/*.coffee\"",
+    "test:watch": "mocha \"test/**/*.coffee\" --watch",
+    "compile": "coffee --bare --compile --output ./lib ./src",
+    "compile:watch": "jitter src lib -b",
+    "watch": "npm run compile:watch & npm run test:watch",
+    "winwatch": "start/b npm run compile:watch & npm run test:watch",
+    "prepublish": "npm run compile"
+  },
+  "author": "Aria Minaei",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AriaMinaei/dom-converter"
+  },
+  "bugs": {
+    "url": "https://github.com/AriaMinaei/dom-converter/issues"
+  }
+}

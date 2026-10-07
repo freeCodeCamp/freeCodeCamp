@@ -1,0 +1,44 @@
+import "prismjs/plugins/line-numbers/prism-line-numbers";
+import type { PrismFormattedProps } from "./types";
+import "./prism-base.css";
+import "./prism-light.css";
+import "./prism-dark.css";
+/**
+ * PrismFormatted is used to render code blocks with syntax highlighting.
+ *
+ * ## Usage
+ *
+ * It is recommended to pass an aria-label to the code block, to help non-sighted users
+ * understand what the code block is for and which programming language it is written in.
+ *
+ * The label can be constructed by passing a callback function to the `getCodeBlockAriaLabel` prop as follows:
+ *
+ * ```tsx
+ * import { PrismFormatted } from '@freecodecamp/ui';
+ *
+ * const App = () => {
+ *   return (
+ *     <PrismFormatted text={text} getCodeBlockAriaLabel={codeName => `${codeName} code example`} />
+ *   );
+ * }
+ * ```
+ *
+ * To reduce the overhead of creating and passing the label every time `PrismFormatted` is used,
+ * you can create a wrapper component as follows:
+ *
+ * ```tsx
+ * import { PrismFormatted as FccUIPrismFormatted } from '@freecodecamp/ui';
+ *
+ * const PrismFormatted = ({ text }) => {
+ *   return (
+ *     <FccUIPrismFormatted text={text} getCodeBlockAriaLabel={codeName => `${codeName} code example`} />
+ *   );
+ * }
+ *
+ * const App = () => {
+ *   return <PrismFormatted text={text} />
+ * }
+ * ```
+ *
+ */
+export declare const PrismFormatted: ({ className, text, useSpan, noAria, getCodeBlockAriaLabel, hasLineNumbers, isCollapsible, disclosureLabel, }: PrismFormattedProps) => JSX.Element;

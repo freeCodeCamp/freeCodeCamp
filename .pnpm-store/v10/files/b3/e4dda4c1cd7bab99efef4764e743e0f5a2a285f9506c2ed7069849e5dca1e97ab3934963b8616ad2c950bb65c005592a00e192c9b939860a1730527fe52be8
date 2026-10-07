@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Measure should handle bounds 1`] = `
+<div>
+  {
+  "contentRect": {
+    "entry": {},
+    "client": {},
+    "offset": {},
+    "scroll": {},
+    "bounds": {},
+    "margin": {}
+  }
+}
+</div>
+`;
+
+exports[`Measure should handle bounds 2`] = `
+<div>
+  {
+  "contentRect": {
+    "bounds": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0,
+      "width": 0,
+      "height": 0
+    }
+  }
+}
+</div>
+`;
+
+exports[`Measure should handle entry 1`] = `
+<div>
+  {
+  "contentRect": {
+    "entry": {},
+    "client": {},
+    "offset": {},
+    "scroll": {},
+    "bounds": {},
+    "margin": {}
+  }
+}
+</div>
+`;
+
+exports[`Measure should handle entry 2`] = `
+<div>
+  {
+  "contentRect": {
+    "entry": {
+      "width": 0,
+      "height": 0
+    }
+  }
+}
+</div>
+`;

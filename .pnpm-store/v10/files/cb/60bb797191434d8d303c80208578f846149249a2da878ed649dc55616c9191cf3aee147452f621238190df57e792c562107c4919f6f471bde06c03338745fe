@@ -1,0 +1,11 @@
+{
+	"extends": "@ljharb/tsconfig",
+	"compilerOptions": {
+		"target": "ES2017",
+		"moduleResolution": "node",
+		"maxNodeModuleJsDepth": 0,
+	},
+	"exclude": [
+		"coverage",
+	],
+}

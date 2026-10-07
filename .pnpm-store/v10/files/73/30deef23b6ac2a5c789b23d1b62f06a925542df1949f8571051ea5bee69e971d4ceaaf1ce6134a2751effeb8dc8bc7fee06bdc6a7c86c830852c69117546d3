@@ -1,0 +1,12 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TCyclic } from '../../types/cyclic.mjs';
+import { type TIntersect } from '../../types/intersect.mjs';
+import { type TObject } from '../../types/object.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TFromCyclic } from './from_cyclic.mjs';
+import { type TFromIntersect } from './from_intersect.mjs';
+import { type TFromUnion } from './from_union.mjs';
+import { type TFromObject } from './from_object.mjs';
+export type TFromType<Type extends TSchema> = (Type extends TCyclic<infer Defs extends TProperties, infer Ref extends string> ? TFromCyclic<Defs, Ref> : Type extends TIntersect<infer Types extends TSchema[]> ? TFromIntersect<Types> : Type extends TUnion<infer Types extends TSchema[]> ? TFromUnion<Types> : Type extends TObject<infer Properties extends TProperties> ? TFromObject<Properties> : TObject<{}>);
+export declare function FromType<Type extends TSchema>(type: Type): TFromType<Type>;

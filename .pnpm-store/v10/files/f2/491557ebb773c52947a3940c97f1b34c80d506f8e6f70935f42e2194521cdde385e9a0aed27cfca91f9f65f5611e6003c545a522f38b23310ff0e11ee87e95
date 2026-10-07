@@ -1,0 +1,47 @@
+{
+  "name": "pretty-error",
+  "version": "2.1.2",
+  "description": "See nodejs errors with less clutter",
+  "main": "./lib/PrettyError.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "test": "mocha \"test/**/*.coffee\"",
+    "test:watch": "mocha \"test/**/*.coffee\" --watch",
+    "compile": "coffee --bare --compile --output ./lib ./src",
+    "compile:watch": "jitter src lib -b",
+    "watch": "npm run compile:watch & npm run test:watch",
+    "winwatch": "start/b npm run compile:watch & npm run test:watch",
+    "prepublish": "npm run compile"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "renderkid": "^2.0.4"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.8.0",
+    "chai": "~1.9.2",
+    "mocha": "~2.0.1",
+    "jitter": "^1.3.0"
+  },
+  "author": "Aria Minaei",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AriaMinaei/pretty-error.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AriaMinaei/pretty-error/issues"
+  },
+  "keywords": [
+    "pretty",
+    "error",
+    "exception",
+    "debug",
+    "error-handling",
+    "readable",
+    "colorful",
+    "prettify",
+    "format",
+    "human"
+  ]
+}

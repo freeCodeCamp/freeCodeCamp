@@ -1,0 +1,65 @@
+{
+    "name": "domutils",
+    "version": "2.8.0",
+    "description": "Utilities for working with htmlparser2's dom",
+    "author": "Felix Boehm <me@feedic.com>",
+    "funding": {
+        "url": "https://github.com/fb55/domutils?sponsor=1"
+    },
+    "license": "BSD-2-Clause",
+    "sideEffects": false,
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "npm run test:jest && npm run lint",
+        "test:jest": "jest",
+        "lint": "npm run lint:es && npm run lint:prettier",
+        "lint:es": "eslint --ignore-path .gitignore .",
+        "lint:prettier": "npm run prettier -- --check",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run prettier -- --write",
+        "prettier": "prettier \"**/*.{ts,md,json,yml}\" --ignore-path .gitignore",
+        "build": "tsc",
+        "build:docs": "typedoc --hideGenerator --exclude \"**/*+(index|.spec).ts\" src",
+        "prepare": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/fb55/domutils.git"
+    },
+    "keywords": [
+        "dom",
+        "htmlparser2"
+    ],
+    "dependencies": {
+        "dom-serializer": "^1.0.1",
+        "domelementtype": "^2.2.0",
+        "domhandler": "^4.2.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^27.0.1",
+        "@types/node": "^16.7.2",
+        "@typescript-eslint/eslint-plugin": "^4.29.3",
+        "@typescript-eslint/parser": "^4.29.3",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.1.0",
+        "eslint-plugin-jsdoc": "^36.0.8",
+        "htmlparser2": "~7.0.0",
+        "jest": "^27.1.0",
+        "prettier": "^2.0.5",
+        "ts-jest": "^27.0.5",
+        "typedoc": "^0.21.6",
+        "typescript": "^4.4.2"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node"
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}

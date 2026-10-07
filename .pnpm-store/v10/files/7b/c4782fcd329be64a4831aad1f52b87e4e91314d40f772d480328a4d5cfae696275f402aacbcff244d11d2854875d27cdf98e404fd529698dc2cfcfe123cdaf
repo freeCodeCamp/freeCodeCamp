@@ -1,0 +1,55 @@
+# packages/playwright/lib/transform/esmLoader.js
+# total: 245.0 KB
+
+## Inlined (46)
+   1.5 KB  node_modules/balanced-match/index.js
+   4.4 KB  node_modules/brace-expansion/index.js
+   1.8 KB  node_modules/buffer-from/index.js
+   0.5 KB  node_modules/concat-map/index.js
+   4.6 KB  node_modules/debug/src/browser.js
+   5.8 KB  node_modules/debug/src/common.js
+   0.3 KB  node_modules/debug/src/index.js
+   4.2 KB  node_modules/debug/src/node.js
+   0.4 KB  node_modules/has-flag/index.js
+   0.2 KB  node_modules/json5/lib/index.js
+  20.2 KB  node_modules/json5/lib/parse.js
+   6.8 KB  node_modules/json5/lib/stringify.js
+  15.5 KB  node_modules/json5/lib/unicode.js
+   0.9 KB  node_modules/json5/lib/util.js
+   0.2 KB  node_modules/mime/index.js
+   2.0 KB  node_modules/mime/Mime.js
+  26.8 KB  node_modules/mime/types/other.js
+  10.1 KB  node_modules/mime/types/standard.js
+  20.9 KB  node_modules/minimatch/minimatch.js
+   2.8 KB  node_modules/ms/index.js
+  16.1 KB  node_modules/source-map-support/source-map-support.js
+   2.2 KB  node_modules/source-map/lib/array-set.js
+   1.7 KB  node_modules/source-map/lib/base64-vlq.js
+   1.1 KB  node_modules/source-map/lib/base64.js
+   1.5 KB  node_modules/source-map/lib/binary-search.js
+   1.3 KB  node_modules/source-map/lib/mapping-list.js
+   0.9 KB  node_modules/source-map/lib/quick-sort.js
+  24.0 KB  node_modules/source-map/lib/source-map-consumer.js
+  10.6 KB  node_modules/source-map/lib/source-map-generator.js
+   9.6 KB  node_modules/source-map/lib/source-node.js
+   8.6 KB  node_modules/source-map/lib/util.js
+   0.3 KB  node_modules/source-map/source-map.js
+   3.4 KB  node_modules/supports-color/index.js
+   0.1 KB  packages/isomorphic/rtti.ts
+   0.2 KB  packages/isomorphic/stackTrace.ts
+   0.2 KB  packages/isomorphic/stringUtils.ts
+   6.3 KB  packages/playwright/src/transform/compilationCache.ts
+   3.1 KB  packages/playwright/src/transform/esmLoader.ts
+   1.1 KB  packages/playwright/src/transform/pirates.ts
+   1.1 KB  packages/playwright/src/transform/portTransport.ts
+   9.7 KB  packages/playwright/src/transform/transform.ts
+   2.9 KB  packages/playwright/src/transform/tsconfig-loader.ts
+   4.6 KB  packages/playwright/src/util.ts
+   0.2 KB  packages/utils/crypto.ts
+   0.2 KB  packages/utils/debug.ts
+   0.5 KB  packages/utils/env.ts
+
+## External (3)
+  ../globals
+  ../package
+  playwright-core/package.json

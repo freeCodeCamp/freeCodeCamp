@@ -1,0 +1,97 @@
+{
+  "name": "hast-util-from-parse5",
+  "version": "6.0.1",
+  "description": "hast utility to transform from Parse5’s AST",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "hast",
+    "hast-util",
+    "util",
+    "utility",
+    "transform",
+    "change",
+    "ast"
+  ],
+  "repository": "syntax-tree/hast-util-from-parse5",
+  "bugs": "https://github.com/syntax-tree/hast-util-from-parse5/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "@types/parse5": "^5.0.0",
+    "hastscript": "^6.0.0",
+    "property-information": "^5.0.0",
+    "vfile": "^4.0.0",
+    "vfile-location": "^3.2.0",
+    "web-namespaces": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "is-hidden": "^1.0.0",
+    "not": "^0.1.0",
+    "nyc": "^15.0.0",
+    "parse5": "^6.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "to-vfile": "^6.0.0",
+    "unist-util-visit": "^2.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify index.js -s hastUtilFromParse5 > hast-util-from-parse5.js",
+    "build-mangle": "browserify index.js -p tinyify -s hastUtilFromParse5 > hast-util-from-parse5.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/no-fn-reference-in-iterator": "off",
+      "unicorn/prefer-optional-catch-binding": "off",
+      "guard-for-in": "off"
+    },
+    "ignores": [
+      "hast-util-from-parse5.js",
+      "**/*.ts"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

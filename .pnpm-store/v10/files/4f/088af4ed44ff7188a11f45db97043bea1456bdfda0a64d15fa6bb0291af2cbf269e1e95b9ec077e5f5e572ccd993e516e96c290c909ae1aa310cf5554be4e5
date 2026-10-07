@@ -1,0 +1,1 @@
+{"version":3,"file":"timestampSequence.d.ts","sourceRoot":"","sources":["../../../src/utils/timestampSequence.ts"],"names":[],"mappings":"AAKA;;;;;;;;GAQG;AACH,wBAAgB,oBAAoB,CAAC,kBAAkB,EAAE,MAAM,GAAG;IAChE,GAAG,EAAE,MAAM,CAAC;IACZ,KAAK,EAAE;QAAE,KAAK,EAAE,MAAM,CAAC;QAAC,IAAI,EAAE,SAAS,CAAA;KAAE,CAAC;CAC3C,CAeA;AAED;;GAEG;AACH,wBAAgB,6BAA6B,IAAI,IAAI,CAGpD"}

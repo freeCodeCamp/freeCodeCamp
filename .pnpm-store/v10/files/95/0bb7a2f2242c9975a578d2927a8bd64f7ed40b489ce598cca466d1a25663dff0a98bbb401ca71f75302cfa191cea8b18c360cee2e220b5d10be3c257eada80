@@ -1,0 +1,681 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+@use "sass:list";
+@use "sass:math";
+
+@forward "fonts.scss" with (
+    $font-folder: "../../fonts" !default,
+    $use-woff2: true !default,
+    $use-woff: true !default,
+    $use-ttf: true !default,
+    $font-display: block !default
+);
+
+@use "fonts.scss";
+
+// The mu unit is defined as 1/18 em
+$mu: calc(1em / 18);
+
+// The version is dynamically set from package.json via webpack.common.js
+$version: "" !default;
+
+// CSS margin property for math in display mode
+$display-margin: 1em 0 !default;
+
+.katex {
+    font: normal 1.21em KaTeX_Main, Times New Roman, serif;
+    line-height: 1.2;
+    position: relative;
+
+    // Protect elements inside .katex from inheriting text-indent.
+    text-indent: 0;
+
+    // Prevent a rendering bug that misplaces \vec in Chrome.
+    text-rendering: auto;
+
+    * {
+        // Prevent background resetting on elements in Windows's high-contrast
+        // mode, while still allowing background/foreground setting on root .katex
+        -ms-high-contrast-adjust: none !important;
+
+        // Insulate fraction bars and rules from CSS that sets border-color.
+        border-color: currentColor;
+    }
+
+    .katex-version::after {
+        content: $version;
+    }
+
+    .katex-mathml {
+        /* Accessibility hack to only show to screen readers
+         Found at: http://a11yproject.com/posts/how-to-hide-content/ */
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+
+    .katex-html {
+        /* \newline is an empty block at top level, between .base elements */
+        > .newline {
+            display: block;
+        }
+    }
+
+    .base {
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+
+        // Fix width of containers of negative spaces, working around Chrome bug.
+        width: min-content;
+    }
+
+    .strut {
+        display: inline-block;
+    }
+
+    // Text font weights
+    .textbf {
+        font-weight: bold;
+    }
+
+    // Text font shapes.
+    .textit {
+        font-style: italic;
+    }
+
+    // Text font families.
+    .textrm {
+        font-family: KaTeX_Main;
+    }
+
+    .textsf {
+        font-family: KaTeX_SansSerif;
+    }
+
+    .texttt {
+        font-family: KaTeX_Typewriter;
+    }
+
+    // Math fonts.
+    .mathnormal {
+        font-family: KaTeX_Math;
+        font-style: italic;
+    }
+
+    .mathit {
+        font-family: KaTeX_Main;
+        font-style: italic;
+    }
+
+    .mathrm {
+        font-style: normal;
+    }
+
+    .mathbf {
+        font-family: KaTeX_Main;
+        font-weight: bold;
+    }
+
+    .boldsymbol {
+        font-family: KaTeX_Math;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .amsrm {
+        font-family: KaTeX_AMS;
+    }
+
+    .mathbb,
+    .textbb {
+        font-family: KaTeX_AMS;
+    }
+
+    .mathcal {
+        font-family: KaTeX_Caligraphic;
+    }
+
+    .mathfrak,
+    .textfrak {
+        font-family: KaTeX_Fraktur;
+    }
+
+    .mathboldfrak,
+    .textboldfrak {
+        font-family: KaTeX_Fraktur;
+        font-weight: bold;
+    }
+
+    .mathtt {
+        font-family: KaTeX_Typewriter;
+    }
+
+    .mathscr,
+    .textscr {
+        font-family: KaTeX_Script;
+    }
+
+    .mathsf,
+    .textsf {
+        font-family: KaTeX_SansSerif;
+    }
+
+    .mathboldsf,
+    .textboldsf {
+        font-family: KaTeX_SansSerif;
+        font-weight: bold;
+    }
+
+    .mathsfit,
+    .mathitsf,
+    .textitsf {
+        font-family: KaTeX_SansSerif;
+        font-style: italic;
+    }
+
+    .mainrm {
+        font-family: KaTeX_Main;
+        font-style: normal;
+    }
+
+    // This value is also used in fontMetrics.js, if you change it make sure the
+    // values match.
+    $ptperem: 10;
+    $nulldelimiterspace: calc(1.2em / $ptperem);
+
+    $muspace: 0.055556em;       // 1mu
+    $thinspace: 0.16667em;      // 3mu
+    $mediumspace: 0.22222em;    // 4mu
+    $thickspace: 0.27778em;     // 5mu
+
+    .vlist-t {
+        display: inline-table;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+    .vlist-r {
+        display: table-row;
+    }
+
+    .vlist {
+        display: table-cell;
+        vertical-align: bottom;
+        position: relative;
+
+        > span {
+            display: block;
+            height: 0;
+            position: relative;
+
+            > span {
+                display: inline-block;
+            }
+
+            > .pstrut {
+                overflow: hidden;
+                width: 0;
+            }
+        }
+    }
+
+    .vlist-t2 {
+        margin-right: -2px;
+    }
+
+    .vlist-s {
+        // This cell solves Safari rendering problems. It has text content, so
+        // its baseline is used for the table. A very small font avoids line-box
+        // issues; absolute units prevent user font-size overrides from breaking
+        // rendering. Safari refuses to make the box zero-width, so we give it
+        // a known width and compensate with negative right margin on the
+        // inline-table. To prevent the "width: min-content" Chrome workaround
+        // from shrinking this box, we also set min-width.
+        display: table-cell;
+        vertical-align: bottom;
+        font-size: 1px;
+        width: 2px;
+        min-width: 2px;
+    }
+
+    .vbox {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .hbox {
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .thinbox {
+        display: inline-flex;
+        flex-direction: row;
+        width: 0;
+        max-width: 0; // necessary for Safari
+    }
+
+    .msupsub {
+        text-align: left;
+    }
+
+    .mfrac {
+        > span > span {
+            text-align: center;
+        }
+
+        .frac-line {
+            display: inline-block;
+            width: 100%;
+            border-bottom-style: solid;
+        }
+    }
+
+    // Prevent Chrome from disappearing frac-lines, rules, etc.
+    .mfrac .frac-line,
+    .overline .overline-line,
+    .underline .underline-line,
+    .hline,
+    .hdashline,
+    .rule {
+        min-height: 1px;
+    }
+
+    .mspace {
+        display: inline-block;
+    }
+
+    .smash {
+        display: inline;
+        line-height: 0;
+    }
+
+    .llap,
+    .rlap,
+    .clap {
+        width: 0;
+        position: relative;
+
+        > .inner {
+            position: absolute;
+        }
+
+        > .fix {
+            display: inline-block;
+        }
+    }
+
+    .llap > .inner {
+        right: 0;
+    }
+
+    .rlap > .inner,
+    .clap > .inner {
+        left: 0;
+    }
+
+    .clap > .inner > span {
+        margin-left: -50%;
+        margin-right: 50%;
+    }
+
+    .rule {
+        display: inline-block;
+        border: solid 0;
+        position: relative;
+    }
+
+    .overline .overline-line,
+    .underline .underline-line,
+    .hline {
+        display: inline-block;
+        width: 100%;
+        border-bottom-style: solid;
+    }
+
+    .hdashline {
+        display: inline-block;
+        width: 100%;
+        border-bottom-style: dashed;
+    }
+
+    .sqrt {
+        > .root {
+            /* These values are taken from the definition of `\r@@t`,
+             `\mkern 5mu` and `\mkern -10mu`. */
+            margin-left: calc(5*$mu);
+            margin-right: calc(-10*$mu);
+        }
+    }
+
+    .sizing,
+    .fontsize-ensurer {
+        $sizes: 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.2, 1.44, 1.728, 2.074, 2.488;
+
+        @for $from from 1 through list.length($sizes) {
+            @for $to from 1 through list.length($sizes) {
+                &.reset-size#{$from}.size#{$to} {
+                    /* stylelint-disable-next-line */
+                    font-size: calc(math.div(list.nth($sizes, $to), list.nth($sizes, $from)) * 1em);
+                }
+            }
+        }
+    }
+
+    .delimsizing {
+        &.size1 { font-family: KaTeX_Size1; }
+        &.size2 { font-family: KaTeX_Size2; }
+        &.size3 { font-family: KaTeX_Size3; }
+        &.size4 { font-family: KaTeX_Size4; }
+
+        &.mult {
+            .delim-size1 > span {
+                font-family: KaTeX_Size1;
+            }
+
+            .delim-size4 > span {
+                font-family: KaTeX_Size4;
+            }
+        }
+    }
+
+    .nulldelimiter {
+        display: inline-block;
+        width: $nulldelimiterspace;
+    }
+
+    .delimcenter {
+        position: relative;
+    }
+
+    .op-symbol {
+        position: relative;
+
+        &.small-op {
+            font-family: KaTeX_Size1;
+        }
+
+        &.large-op {
+            font-family: KaTeX_Size2;
+        }
+    }
+
+    .op-limits {
+        > .vlist-t {
+            text-align: center;
+        }
+    }
+
+    .accent {
+        > .vlist-t {
+            text-align: center;
+        }
+
+        .accent-body {
+            position: relative; // so that 'left' can shift the accent
+        }
+
+        // Accents that are not of the accent-full class have zero width
+        // (do not contribute to the width of the final symbol).
+        .accent-body:not(.accent-full) {
+            width: 0;
+        }
+    }
+
+    .overlay {
+        display: block;
+    }
+
+    .mtable {
+        .vertical-separator {
+            display: inline-block;
+            // margin and border-right are set in JavaScript
+            min-width: 1px;  // Prevent Chrome from omitting a line.
+        }
+
+        .arraycolsep {
+            display: inline-block;
+        }
+
+        .col-align-c > .vlist-t {
+            text-align: center;
+        }
+
+        .col-align-l > .vlist-t {
+            text-align: left;
+        }
+
+        .col-align-r > .vlist-t {
+            text-align: right;
+        }
+    }
+
+    .svg-align {
+        text-align: left;
+    }
+
+    svg {
+        display: block;
+        position: absolute; // absolute relative to parent
+        width: 100%;
+        height: inherit;
+
+        // We want to inherit colors from our environment
+        fill: currentColor;
+        stroke: currentColor;
+
+        // But path elements should not have an outline by default
+        // that would make them bigger than we expect.
+        path {
+            stroke: none;
+        }
+
+        // And we don't want to inherit any other style properties
+        // that could affect SVG rendering without affecting font
+        // rendering. So we reset these properties to their default
+        // values for every <svg> element.
+        // See https://www.w3.org/TR/SVG/painting.html
+        fill-rule: nonzero;
+        fill-opacity: 1;
+        stroke-width: 1;
+        stroke-linecap: butt;
+        stroke-linejoin: miter;
+        stroke-miterlimit: 4;
+        stroke-dasharray: none;
+        stroke-dashoffset: 0;
+        stroke-opacity: 1;
+    }
+
+    img {
+        border-style: none;
+        min-width: 0;
+        min-height: 0;
+        max-width: none;
+        max-height: none;
+    }
+
+    // Define CSS for image whose width will match its span width.
+    .stretchy {
+        width: 100%;
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+            content: "";
+        }
+    }
+
+    // Hide the long tail of a stretchy SVG.
+    .hide-tail {
+        width: 100%;          // necessary only to get IE to work properly
+        position: relative;   // ditto
+        overflow: hidden;     // This line applies to all browsers.
+    }
+
+    .halfarrow-left {
+        position: absolute;
+        left: 0;
+        width: 50.2%;
+        overflow: hidden;
+    }
+
+    .halfarrow-right {
+        position: absolute;
+        right: 0;
+        width: 50.2%;
+        overflow: hidden;
+    }
+
+    .brace-left {
+        position: absolute;
+        left: 0;
+        width: 25.1%;
+        overflow: hidden;
+    }
+
+    .brace-center {
+        position: absolute;
+        left: 25%;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .brace-right {
+        position: absolute;
+        right: 0;
+        width: 25.1%;
+        overflow: hidden;
+    }
+
+    // Lengthen the extensible arrows via padding.
+    .x-arrow-pad {
+        padding: 0 0.5em;
+    }
+
+    .cd-arrow-pad {
+        padding: 0 0.55556em 0 0.27778em;  // \;{#1}\;\;
+    }
+
+    .x-arrow,
+    .mover,
+    .munder {
+        text-align: center;
+    }
+
+    .boxpad {
+        padding: 0 0.3em;              // \fboxsep = 3pt
+    }
+
+    .fbox,
+    .fcolorbox {
+        box-sizing: border-box;
+        border: 0.04em solid;         // \fboxrule = 0.4pt
+    }
+
+    .cancel-pad {
+        padding: 0 0.2em;            // ref: cancel package  \advance\dimen@ 2\p@ %  "+2"
+    }
+
+    .cancel-lap {
+        margin-left: -0.2em;    // \cancel does not affect horizontal spacing.
+        margin-right: -0.2em;   // Apply negative margin to correct for 0.2em padding
+    }                           // inside the \cancel group.
+
+    .sout {
+        border-bottom-style: solid;
+        border-bottom-width: 0.08em;
+    }
+
+    .angl {
+        // from package actuarialangle, which is always used in a subscript.
+        box-sizing: border-box;
+        border-top: 0.049em solid;        // defaultRuleThickness in scriptstyle
+        border-right: 0.049em solid;      // ditto
+        margin-right: 0.03889em;          // 1 mu
+    }
+
+    .anglpad {
+        padding: 0 0.03889em;             // pad 1mu left and right (in scriptstyle)
+    }
+
+    .eqn-num::before {
+        counter-increment: katexEqnNo;
+        content: "(" counter(katexEqnNo) ")";
+    }
+
+    .mml-eqn-num::before {
+        counter-increment: mmlEqnNo;
+        content: "(" counter(mmlEqnNo) ")";
+    }
+
+    .mtr-glue {
+        width: 50%;
+    }
+
+    .cd-vert-arrow {
+        display: inline-block;
+        position: relative;
+    }
+
+    .cd-label-left {
+        display: inline-block;
+        position: absolute;
+        right: calc(50% + 0.3em);
+        text-align: left;
+    }
+
+    .cd-label-right {
+        display: inline-block;
+        position: absolute;
+        left: calc(50% + 0.3em);
+        text-align: right;
+    }
+}
+
+.katex-display {
+    display: block;
+    margin: $display-margin;
+    text-align: center;
+
+    > .katex {
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+
+        > .katex-html {
+            display: block;
+            position: relative;
+
+            > .tag {
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}
+
+// Left-justified tags (default is right-justified)
+.katex-display.leqno > .katex > .katex-html > .tag {
+    left: 0;
+    right: auto;
+}
+
+// Flush-left display math
+.katex-display.fleqn > .katex {
+    text-align: left;
+    padding-left: 2em;
+}
+
+// Automatic equation numbers for some environments.
+// Use parallel counters for HTML and MathML.
+body {
+    counter-reset: katexEqnNo mmlEqnNo;
+}

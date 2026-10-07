@@ -1,0 +1,25 @@
+{
+    "name": "@types/aria-query",
+    "version": "5.0.2",
+    "description": "TypeScript definitions for aria-query",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aria-query",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Sebastian Silbermann",
+            "url": "https://github.com/eps1lon",
+            "githubUsername": "eps1lon"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/aria-query"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "fc26e948200e4dc941c5c904ab76a543cb4cff59bb51c35709d4385b2060b8d0",
+    "typeScriptVersion": "4.5"
+}

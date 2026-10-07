@@ -1,0 +1,14 @@
+import React from 'react';
+import type { ComponentProps } from 'instantsearch-ui-components';
+export type AutocompleteSearchProps = {
+    inputProps: ComponentProps<'input'>;
+    clearQuery: () => void;
+    onQueryChange?: (query: string) => void;
+    query: string;
+    isSearchStalled: boolean;
+    onCancel?: () => void;
+    isDetached?: boolean;
+    submitTitle?: string;
+    onAiModeClick?: () => void;
+};
+export declare function AutocompleteSearch({ inputProps, clearQuery, onQueryChange, query, isSearchStalled, onCancel, isDetached, submitTitle, onAiModeClick, }: AutocompleteSearchProps): React.JSX.Element;

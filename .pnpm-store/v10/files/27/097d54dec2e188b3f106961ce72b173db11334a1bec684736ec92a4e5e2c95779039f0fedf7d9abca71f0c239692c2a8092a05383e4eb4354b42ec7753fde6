@@ -1,0 +1,40 @@
+{
+  "name": "postcss-discard-duplicates",
+  "version": "5.1.0",
+  "description": "Discard duplicate rules in your CSS files with PostCSS.",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "src",
+    "LICENSE-MIT",
+    "types"
+  ],
+  "keywords": [
+    "css",
+    "dedupe",
+    "optimise",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cssnano/cssnano",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "cssnano/cssnano",
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# [postcss][postcss]-discard-duplicates\n\n> Discard duplicate rules in your CSS files with PostCSS.\n\n## Install\n\nWith [npm](https://npmjs.org/package/postcss-discard-duplicates) do:\n\n```\nnpm install postcss-discard-duplicates --save\n```\n\n## Example\n\nThis module will remove all duplicate rules from your stylesheets. It works on\nat rules, normal rules and declarations. Note that this module does not have any\nresponsibility for normalising declarations, selectors or whitespace, so that it\nconsiders these two rules to be different:\n\n```css\nh1, h2 {\n    color: blue;\n}\n\nh2, h1 {\n    color: blue;\n}\n```\n\nIt has to assume that your rules have already been transformed by another\nprocessor, otherwise it would be responsible for too many things.\n\n### Input\n\n```css\nh1 {\n    margin: 0 auto;\n    margin: 0 auto\n}\n\nh1 {\n    margin: 0 auto\n}\n```\n\n### Output\n\n```css\nh1 {\n    margin: 0 auto\n}\n```\n\n## Usage\n\nSee the [PostCSS documentation](https://github.com/postcss/postcss#usage) for\nexamples for your environment.\n\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n\n\n## License\n\nMIT © [Ben Briggs](http://beneb.info)\n\n\n[postcss]: https://github.com/postcss/postcss\n"
+}

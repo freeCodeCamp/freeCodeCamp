@@ -1,0 +1,102 @@
+{
+  "name": "lmdb",
+  "author": "Kris Zyp",
+  "version": "2.5.3",
+  "description": "Simple, efficient, scalable, high-performance LMDB interface",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DoctorEvidence/lmdb-js.git"
+  },
+  "keywords": [
+    "lmdb",
+    "database",
+    "mdb",
+    "lightning",
+    "key-value store",
+    "storage",
+    "adapter",
+    "performance"
+  ],
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "node": {
+        "require": "./dist/index.cjs",
+        "import": "./node-index.js"
+      },
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "/dist",
+    "/util",
+    "/dict",
+    "/dependencies",
+    "/src",
+    "*.md",
+    "/*.js",
+    "index.d.ts",
+    "/*.ts",
+    "/*.gyp"
+  ],
+  "types": "./index.d.ts",
+  "tsd": {
+    "directory": "test/types"
+  },
+  "scripts": {
+    "install": "node-gyp-build-optional-packages",
+    "build": "node-gyp configure && node-gyp build && rollup -c",
+    "rebuild": "node-gyp build && rollup -c",
+    "build-js": "rollup -c",
+    "prepare": "rollup -c",
+    "before-publish": "rollup -c && prebuildify-ci download && prebuildify-platform-packages --target 16.14.0 && prebuildify-platform-packages --target 14.19.1 && prebuildify-platform-packages --target 17.9.0 && prebuildify-platform-packages --target 18.0.0 && set ENABLE_V8_FUNCTIONS=false&& prebuildify-platform-packages --napi --platform-packages --target 16.14.0 && node util/set-optional-deps.cjs && npm run test",
+    "prebuild-libc-expanded": "prebuildify-platform-packages --tag-libc --target 16.14.0 && prebuildify-platform-packages --tag-libc --target 14.19.1 && prebuildify-platform-packages --tag-libc --target 17.9.0 && prebuildify-platform-packages --tag-libc --target 18.0.0 && ENABLE_V8_FUNCTIONS=false prebuildify-platform-packages --tag-libc --napi --platform-packages --target 16.14.0",
+    "prebuild-libc": "prebuildify-platform-packages --tag-libc --target 17.9.0 && prebuildify-platform-packages --tag-libc --target 18.0.0 && prebuildify-platform-packages --napi --platform-packages --tag-libc --target 16.14.2",
+    "prebuildify": "prebuildify-platform-packages --target 16.14.2",
+    "full-publish": "cd prebuilds/win32-x64 && npm publish --access public && cd ../darwin-x64 && npm publish --access public && cd ../darwin-arm64 && npm publish --access public && cd ../linux-x64 && npm publish --access public && cd ../linux-arm64 && npm publish --access public  && cd ../linux-arm && npm publish --access public && cd ../.. && npm publish",
+    "recompile": "node-gyp clean && node-gyp configure && node-gyp build",
+    "test": "mocha test/**.test.js --recursive && npm run test:types",
+    "deno-test": "deno run --allow-ffi --allow-write --allow-read --allow-env --allow-net --unstable test/deno.ts",
+    "test2": "mocha test/performance.js -u tdd",
+    "test:types": "tsd",
+    "benchmark": "node ./benchmark/index.js"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "msgpackr": "^1.5.4",
+    "node-addon-api": "^4.3.0",
+    "node-gyp-build-optional-packages": "5.0.3",
+    "ordered-binary": "^1.2.4",
+    "weak-lru-cache": "^1.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.10",
+    "benchmark": "^2.1.4",
+    "chai": "^4.3.4",
+    "fs-extra": "^9.0.1",
+    "mocha": "^9.1.3",
+    "prebuildify-platform-packages": "5.0.0",
+    "prebuildify-ci": "^1.0.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.61.1",
+    "tsd": "^0.14.0"
+  },
+  "bugs": {
+    "url": "https://github.com/DoctorEvidence/lmdb-js/issues"
+  },
+  "homepage": "https://github.com/DoctorEvidence/lmdb-js#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "optionalDependencies": {
+    "@lmdb/lmdb-darwin-arm64": "2.5.3",
+    "@lmdb/lmdb-darwin-x64": "2.5.3",
+    "@lmdb/lmdb-linux-arm": "2.5.3",
+    "@lmdb/lmdb-linux-arm64": "2.5.3",
+    "@lmdb/lmdb-linux-x64": "2.5.3",
+    "@lmdb/lmdb-win32-x64": "2.5.3"
+  }
+}

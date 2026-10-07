@@ -1,0 +1,47 @@
+{
+  "name": "caniuse-api",
+  "version": "3.0.0",
+  "description": "request the caniuse data to check browsers compatibilities",
+  "repository": "https://github.com/nyalab/caniuse-api.git",
+  "keywords": [
+    "caniuse",
+    "browserslist"
+  ],
+  "authors": [
+    "nyalab",
+    "MoOx"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "browserslist": "^4.0.0",
+    "caniuse-lite": "^1.0.0",
+    "lodash.memoize": "^4.1.2",
+    "lodash.uniq": "^4.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-eslint": "^5.0.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-tape-runner": "^2.0.1",
+    "jshint": "^2.5.10",
+    "npmpub": "^3.1.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "lint": "jshint src",
+    "prepublish": "npm run build",
+    "test": "npm run lint && babel-tape-runner test/*.js | tap-spec",
+    "release": "npmpub"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-latest"
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "name": "rolldown",
+  "version": "1.0.0-rc.17",
+  "description": "Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API.",
+  "keywords": [
+    "bundler",
+    "esbuild",
+    "parcel",
+    "rolldown",
+    "rollup",
+    "webpack"
+  ],
+  "homepage": "https://rolldown.rs/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolldown/rolldown.git",
+    "directory": "packages/rolldown"
+  },
+  "bin": {
+    "rolldown": "./bin/cli.mjs"
+  },
+  "files": [
+    "bin",
+    "cli",
+    "dist",
+    "!dist/*.node"
+  ],
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "imports": {
+    "#parallel-plugin-worker": "./dist/parallel-plugin-worker.mjs"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./config": "./dist/config.mjs",
+    "./experimental": "./dist/experimental-index.mjs",
+    "./experimental/runtime-types": {
+      "types": "./dist/experimental-runtime-types.d.ts"
+    },
+    "./filter": "./dist/filter-index.mjs",
+    "./getLogFilter": "./dist/get-log-filter.mjs",
+    "./parallelPlugin": "./dist/parallel-plugin.mjs",
+    "./parseAst": "./dist/parse-ast-index.mjs",
+    "./package.json": "./package.json",
+    "./plugins": "./dist/plugins-index.mjs",
+    "./utils": "./dist/utils-index.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@oxc-project/types": "=0.127.0",
+    "@rolldown/pluginutils": "1.0.0-rc.17"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^3.6.1",
+    "@napi-rs/wasm-runtime": "^1.1.4",
+    "@oxc-node/cli": "^0.1.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "buble": "^0.20.0",
+    "cac": "^7.0.0",
+    "consola": "^3.4.2",
+    "execa": "^9.2.0",
+    "glob": "^13.0.0",
+    "oxc-parser": "=0.127.0",
+    "pathe": "^2.0.3",
+    "remeda": "^2.10.0",
+    "rolldown-plugin-dts": "^0.23.0",
+    "rollup": "^4.18.0",
+    "signal-exit": "4.1.0",
+    "source-map": "0.7.6",
+    "typescript": "^6.0.0",
+    "valibot": "1.3.1",
+    "rolldown": "1.0.0-rc.17"
+  },
+  "napi": {
+    "binaryName": "rolldown-binding",
+    "dtsHeader": "type MaybePromise<T> = T | Promise<T>\ntype Nullable<T> = T | null | undefined\ntype VoidNullable<T = void> = T | null | undefined | void\nexport type BindingStringOrRegex = string | RegExp\nexport type BindingResult<T> = { errors: BindingError[], isBindingErrors: boolean } | T\n\n",
+    "packageName": "@rolldown/binding",
+    "targets": [
+      "x86_64-apple-darwin",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "x86_64-unknown-freebsd",
+      "armv7-unknown-linux-gnueabihf",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-apple-darwin",
+      "aarch64-unknown-linux-musl",
+      "aarch64-unknown-linux-ohos",
+      "aarch64-pc-windows-msvc",
+      "aarch64-linux-android",
+      "wasm32-wasip1-threads",
+      "s390x-unknown-linux-gnu",
+      "powerpc64le-unknown-linux-gnu"
+    ],
+    "wasm": {
+      "initialMemory": 16384,
+      "browser": {
+        "fs": true,
+        "asyncInit": true,
+        "errorEvent": true
+      }
+    }
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-darwin-x64": "1.0.0-rc.17",
+    "@rolldown/binding-win32-x64-msvc": "1.0.0-rc.17",
+    "@rolldown/binding-linux-x64-gnu": "1.0.0-rc.17",
+    "@rolldown/binding-linux-x64-musl": "1.0.0-rc.17",
+    "@rolldown/binding-freebsd-x64": "1.0.0-rc.17",
+    "@rolldown/binding-linux-arm-gnueabihf": "1.0.0-rc.17",
+    "@rolldown/binding-linux-arm64-gnu": "1.0.0-rc.17",
+    "@rolldown/binding-darwin-arm64": "1.0.0-rc.17",
+    "@rolldown/binding-linux-arm64-musl": "1.0.0-rc.17",
+    "@rolldown/binding-openharmony-arm64": "1.0.0-rc.17",
+    "@rolldown/binding-win32-arm64-msvc": "1.0.0-rc.17",
+    "@rolldown/binding-android-arm64": "1.0.0-rc.17",
+    "@rolldown/binding-wasm32-wasi": "1.0.0-rc.17",
+    "@rolldown/binding-linux-s390x-gnu": "1.0.0-rc.17",
+    "@rolldown/binding-linux-ppc64-gnu": "1.0.0-rc.17"
+  },
+  "scripts": {
+    "# Scrips for binding #": "_",
+    "artifacts": "napi artifacts --cwd ./src --package-json-path ../package.json -o=../artifacts --npm-dir ../npm",
+    "build-binding": "oxnode ./build-binding.ts",
+    "build-binding:release": "pnpm build-binding --release",
+    "build-binding:profile": "pnpm build-binding --profile profile",
+    "build-binding:wasi": "pnpm build-binding --target wasm32-wasip1-threads",
+    "build-binding:wasi:release": "pnpm build-binding --profile release-wasi --target wasm32-wasip1-threads",
+    "# Scrips for node #": "_",
+    "build-node": "node --enable-source-maps --import @oxc-node/core/register -C dev ./build.ts",
+    "build-types-check": "tsc -p ./tsconfig.check.json",
+    "build-js-glue": "pnpm run --sequential '/^build-(node|types-check)$/'",
+    "build-native:debug": "pnpm run --sequential '/^build-(binding|js-glue)$/'",
+    "build-native:release": "pnpm run --sequential '/^build-(binding:release|js-glue)$/'",
+    "build-native:profile": "pnpm run build-binding:profile && pnpm run build-js-glue",
+    "build-native:memory-profile": "pnpm run build-binding:profile --features default_global_allocator && pnpm run build-js-glue",
+    "build-wasi:debug": "TARGET='rolldown-wasi' pnpm run --sequential '/^build-(binding|binding:wasi|node)$/'",
+    "build-wasi:release": "TARGET='rolldown-wasi' pnpm run --sequential '/^build-(binding|binding:wasi:release|node)$/'",
+    "build-browser-pkg:debug": "TARGET='browser' pnpm run --sequential '/^build-(binding:wasi|node)$/'",
+    "build-browser-pkg:release": "TARGET='browser' pnpm run --sequential '/^build-(binding:wasi:release|node)$/'",
+    "# Scrips for docs #": "_",
+    "publint": "publint ."
+  }
+}

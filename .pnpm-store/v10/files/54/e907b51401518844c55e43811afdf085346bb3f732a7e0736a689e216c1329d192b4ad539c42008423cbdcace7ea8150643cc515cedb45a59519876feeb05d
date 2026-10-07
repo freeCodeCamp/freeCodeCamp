@@ -1,0 +1,36 @@
+{
+  "name": "clean-set",
+  "version": "1.1.2",
+  "description": "A fast deep assignment alternative to the object spread operator and Object.assign",
+  "umd:main": "dist/clean-set.min.js",
+  "module": "dist/clean-set.es.js",
+  "main": "dist/clean-set.js",
+  "source": "lib/index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "build": "microbundle",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "tap": "tape -r esm tests/**/*.js | tap-difflet",
+    "test": "nyc --reporter=text npm run tap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fwilkerson/clean-set.git"
+  },
+  "keywords": [],
+  "author": "Frank A. Wilkerson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fwilkerson/clean-set/issues"
+  },
+  "homepage": "https://github.com/fwilkerson/clean-set#readme",
+  "devDependencies": {
+    "codecov": "^3.2.0",
+    "esm": "^3.2.18",
+    "microbundle": "^0.12.0",
+    "nyc": "^15.0.1",
+    "prettier": "^1.16.4",
+    "tap-difflet": "^0.7.1",
+    "tape": "^4.10.1"
+  }
+}

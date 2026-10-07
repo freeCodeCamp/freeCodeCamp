@@ -1,0 +1,1 @@
+{"version":3,"file":"CatchScope.js","sourceRoot":"","sources":["../../src/scope/CatchScope.ts"],"names":[],"mappings":";;;AAIA,2CAAwC;AACxC,2CAAwC;AAExC,MAAM,UAAW,SAAQ,qBAIxB;IACC,YACE,YAA0B,EAC1B,UAA+B,EAC/B,KAA0B;QAE1B,KAAK,CAAC,YAAY,EAAE,qBAAS,CAAC,KAAK,EAAE,UAAU,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IACjE,CAAC;CACF;AAEQ,gCAAU"}

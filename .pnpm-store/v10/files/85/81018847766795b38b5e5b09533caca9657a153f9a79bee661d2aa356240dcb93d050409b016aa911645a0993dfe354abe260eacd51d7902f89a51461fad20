@@ -1,0 +1,64 @@
+{
+  "name": "pathval",
+  "description": "Object value retrieval given a string path",
+  "homepage": "https://github.com/chaijs/pathval",
+  "version": "2.0.1",
+  "keywords": [
+    "pathval",
+    "value retrieval",
+    "chai util"
+  ],
+  "license": "MIT",
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "files": [
+    "index.js"
+  ],
+  "main": "./index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chaijs/pathval.git"
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "pretest": "npm run lint",
+    "test": "npm run test:node && npm run test:browser",
+    "test:browser": "web-test-runner test/index.js --node-resolve",
+    "test:node": "mocha",
+    "prepare": "husky"
+  },
+  "eslintConfig": {
+    "extends": [
+      "strict/es6"
+    ],
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true
+    },
+    "globals": {
+      "HTMLElement": false
+    },
+    "rules": {
+      "complexity": 0,
+      "max-statements": 0
+    }
+  },
+  "devDependencies": {
+    "@web/test-runner": "^0.17.0",
+    "eslint": "^7.13.0",
+    "eslint-config-strict": "^14.0.1",
+    "eslint-plugin-filenames": "^1.3.2",
+    "husky": "^9.1.7",
+    "mocha": "^8.2.1",
+    "semantic-release": "^17.2.2",
+    "simple-assert": "^2.0.0",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "engines": {
+    "node": ">= 14.16"
+  }
+}

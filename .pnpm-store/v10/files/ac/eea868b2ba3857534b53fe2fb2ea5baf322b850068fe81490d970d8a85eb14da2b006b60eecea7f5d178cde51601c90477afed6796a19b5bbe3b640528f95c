@@ -1,0 +1,1 @@
+{"version":3,"names":["_validator","require","_findSuggestion"],"sources":["../src/index.ts"],"sourcesContent":["export { OptionValidator } from \"./validator.ts\";\nexport { findSuggestion } from \"./find-suggestion.ts\";\n"],"mappings":";;;;;;;;;;;;;;;;;AAAA,IAAAA,UAAA,GAAAC,OAAA;AACA,IAAAC,eAAA,GAAAD,OAAA","ignoreList":[]}

@@ -1,0 +1,87 @@
+# `MD043` - Required heading structure
+
+Tags: `headings`
+
+Aliases: `required-headings`
+
+Parameters:
+
+- `headings`: List of headings (`string[]`, default `[]`)
+- `match_case`: Match case of headings (`boolean`, default `false`)
+
+This rule is triggered when the headings in a file do not match the array of
+headings passed to the rule. It can be used to enforce a standard heading
+structure for a set of files.
+
+To require exactly the following structure:
+
+```markdown
+# Heading
+## Item
+### Detail
+```
+
+Set the `headings` parameter to:
+
+```json
+[
+    "# Heading",
+    "## Item",
+    "### Detail"
+]
+```
+
+To allow optional headings as with the following structure:
+
+```markdown
+# Heading
+## Item
+### Detail (optional)
+## Foot
+### Notes (optional)
+```
+
+Use the special value `"*"` meaning "zero or more unspecified headings" or the
+special value `"+"` meaning "one or more unspecified headings" and set the
+`headings` parameter to:
+
+```json
+[
+    "# Heading",
+    "## Item",
+    "*",
+    "## Foot",
+    "*"
+]
+```
+
+To allow a single required heading to vary as with a project name:
+
+```markdown
+# Project Name
+## Description
+## Examples
+```
+
+Use the special value `"?"` meaning "exactly one unspecified heading":
+
+```json
+[
+    "?",
+    "## Description",
+    "## Examples"
+]
+```
+
+When an error is detected, this rule outputs the line number of the first
+problematic heading (otherwise, it outputs the last line number of the file).
+
+Note that while the `headings` parameter uses the "## Text" ATX heading style
+for simplicity, a file may use any supported heading style.
+
+By default, the case of headings in the document is not required to match that
+of `headings`. To require that case match exactly, set the `match_case`
+parameter to `true`.
+
+Rationale: Projects may wish to enforce a consistent document structure across
+a set of similar content.

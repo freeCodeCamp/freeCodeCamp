@@ -1,0 +1,58 @@
+{
+    "name": "stable",
+    "version": "0.1.8",
+    "keywords": [
+        "stable",
+        "array",
+        "sort"
+    ],
+    "description": "A stable array sort for JavaScript",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Two-Screen/stable.git"
+    },
+    "main": "./stable.js",
+    "types": "./index.d.ts",
+    "files": [
+        "stable.js",
+        "stable.min.js",
+        "index.d.ts"
+    ],
+    "devDependencies": {
+        "rollup": "^0.57.1",
+        "standard": "^11.0.1",
+        "tape": "^4.6.3",
+        "uglify-js": "^3.3.21"
+    },
+    "scripts": {
+        "test": "standard src/ && node ./src/test.js",
+        "prepare": "npm run build && npm run minify",
+        "build": "rollup -c",
+        "minify": "uglifyjs --comments \"/^!/\" -c -m -o ./stable.min.js ./stable.js"
+    },
+    "testling": {
+        "files": "./src/test.js",
+        "browsers": [
+            "ie6",
+            "ie7",
+            "ie8",
+            "ie9",
+            "ie10",
+            "firefox/25",
+            "chrome/31",
+            "safari/6.0",
+            "opera/12.0",
+            "opera/17.0",
+            "iphone/6.0",
+            "android-browser/4.2"
+        ]
+    },
+    "author": "Angry Bytes <info@angrybytes.com>",
+    "contributors": [
+        "Domenic Denicola <domenic@domenicdenicola.com>",
+        "Mattias Buelens <mattias@buelens.com>",
+        "Stéphan Kochen <stephan@angrybytes.com>",
+        "Yaffle"
+    ],
+    "license": "MIT"
+}

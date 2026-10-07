@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Subscribable.js",
+  "module": "../dist/esm/Subscribable.js",
+  "types": "../dist/dts/Subscribable.d.ts"
+}

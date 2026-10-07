@@ -1,0 +1,51 @@
+{
+  "name": "fast-wrap-ansi",
+  "version": "0.2.0",
+  "files": [
+    "lib"
+  ],
+  "description": "A tiny and fast text wrap library which takes ANSI escapes into account.",
+  "keywords": [
+    "wrap",
+    "ansi",
+    "term",
+    "colors"
+  ],
+  "homepage": "https://github.com/43081j/fast-wrap-ansi#readme",
+  "bugs": {
+    "url": "https://github.com/43081j/fast-wrap-ansi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/43081j/fast-wrap-ansi.git"
+  },
+  "license": "MIT",
+  "author": "James Garbutt (https://github.com/43081j)",
+  "type": "module",
+  "main": "lib/main.js",
+  "scripts": {
+    "format": "prettier --write src test",
+    "lint": "npm run lint:js && npm run lint:format && npm run lint:types",
+    "lint:js": "eslint src test",
+    "lint:format": "prettier --check src test",
+    "lint:types": "npx tsc --noEmit -p tsconfig.test.json",
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^24.2.0",
+    "eslint": "^9.32.0",
+    "fast-wrap-ansi-prod": "npm:fast-wrap-ansi@*",
+    "picocolors": "^1.1.1",
+    "prettier": "^3.6.2",
+    "tinybench": "^5.0.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vitest": "^3.2.4",
+    "wrap-ansi": "^9.0.2"
+  },
+  "dependencies": {
+    "fast-string-width": "^3.0.2"
+  }
+}

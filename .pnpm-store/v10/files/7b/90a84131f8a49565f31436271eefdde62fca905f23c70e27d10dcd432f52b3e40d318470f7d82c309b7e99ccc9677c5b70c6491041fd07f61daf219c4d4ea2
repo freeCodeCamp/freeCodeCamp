@@ -1,0 +1,130 @@
+{
+  "name": "@builder.io/partytown",
+  "version": "0.7.6",
+  "description": "Relocate resource intensive third-party scripts off of the main thread and into a web worker.",
+  "license": "MIT",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "type": "module",
+  "exports": {
+    "./integration": {
+      "types": "./integration/index.d.ts",
+      "import": "./integration/index.mjs",
+      "require": "./integration/index.cjs"
+    },
+    "./integration/index.mjs": "./integration/index.mjs",
+    "./integration/index.cjs": "./integration/index.cjs",
+    "./react": {
+      "types": "./react/index.d.ts",
+      "import": "./react/index.mjs",
+      "require": "./react/index.cjs"
+    },
+    "./react/index.mjs": "./react/index.mjs",
+    "./react/index.cjs": "./react/index.cjs",
+    "./services/index.mjs": "./services/index.mjs",
+    "./services/index.cjs": "./services/index.cjs",
+    "./services": {
+      "types": "./services/index.d.ts",
+      "import": "./services/index.mjs",
+      "require": "./services/index.cjs"
+    },
+    "./utils": {
+      "types": "./utils/index.d.ts",
+      "import": "./utils/index.mjs",
+      "require": "./utils/index.cjs"
+    },
+    "./utils/index.mjs": "./utils/index.mjs",
+    "./utils/index.cjs": "./utils/index.cjs",
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    }
+  },
+  "bin": "bin/partytown.cjs",
+  "files": [
+    "bin/partytown.cjs",
+    "index.cjs",
+    "index.mjs",
+    "index.d.ts",
+    "integration/",
+    "lib/",
+    "react/",
+    "services/",
+    "utils/"
+  ],
+  "scripts": {
+    "build": "tsc && rollup -c scripts/rollup.config.js",
+    "build.prod": "tsc && rollup -c scripts/rollup.config.js --configReleaseBuild",
+    "build.site": "npm run build && cd docs/site && npm i && npm run build && node ../../scripts/copy-site.cjs",
+    "build.watch": "rollup -c scripts/rollup.config.js -w --configDev",
+    "start": "npm run dev",
+    "dev": "tsc && concurrently \"npm:build.watch\" \"npm:tsc.watch\" -n build,tsc -c magenta,yellow",
+    "release": "npm run build && npm test && np --no-tests",
+    "serve": "node scripts/serve.cjs 4000",
+    "serve.test": "node scripts/serve.cjs 4001",
+    "serve.atomics": "node scripts/serve.cjs 4002 --atomics",
+    "serve.atomics.test": "node scripts/serve.cjs 4003 --atomics",
+    "test": "npm run test.unit && npm run test.chromium",
+    "test.atomics": "playwright test tests/integrations tests/platform --config playwright.atomics.config.ts --browser=chromium",
+    "test.chromium": "playwright test tests/integrations tests/platform --browser=chromium",
+    "test.webkit": "playwright test tests/integrations tests/platform --browser=webkit",
+    "test.nextjs.chromium": "cd tests/nextjs && npm i && playwright test --config playwright.nextjs.ts --browser=chromium",
+    "test.nextjs.webkit": "cd tests/nextjs && npm i && playwright test --config playwright.nextjs.ts --browser=webkit",
+    "benchmark": "node tests/benchmarks/run.cjs",
+    "test.unit": "uvu -r tsm tests/unit",
+    "tsc.watch": "tsc -w",
+    "version": "npm run build.prod",
+    "fmt": "prettier --config package.json --write src"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.19.5",
+    "@playwright/test": "^1.17.1",
+    "@types/fs-extra": "^9.0.13",
+    "@types/react": "^17.0.42",
+    "concurrently": "^7.0.0",
+    "domino": "^2.1.6",
+    "fs-extra": "^10.0.1",
+    "gzip-size": "^6.0.0",
+    "np": "^7.6.1",
+    "playwright": "^1.17.2",
+    "prettier": "^2.6.0",
+    "rollup": "^2.70.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.3.1",
+    "tsm": "^2.2.1",
+    "typescript": "^4.6.2",
+    "uvu": "^0.5.3"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 100,
+    "useTabs": false,
+    "quoteProps": "consistent"
+  },
+  "author": "Builder.io Team",
+  "homepage": "https://github.com/BuilderIO/partytown#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuilderIO/partytown.git"
+  },
+  "keywords": [
+    "web worker",
+    "3rd-party",
+    "third-party",
+    "analytics",
+    "webapp",
+    "performance",
+    "lighthouse",
+    "core web vitals",
+    "react"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

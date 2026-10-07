@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_read_only_error.cjs",
+    "module": "../../esm/_read_only_error.js"
+}

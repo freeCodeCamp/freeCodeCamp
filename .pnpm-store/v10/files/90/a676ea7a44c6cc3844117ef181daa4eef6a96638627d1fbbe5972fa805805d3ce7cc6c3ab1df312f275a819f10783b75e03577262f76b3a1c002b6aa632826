@@ -1,0 +1,50 @@
+{
+    "name": "@types/redux-actions",
+    "version": "2.6.5",
+    "description": "TypeScript definitions for redux-actions",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/redux-actions",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Jack Hsu",
+            "githubUsername": "jaysoo",
+            "url": "https://github.com/jaysoo"
+        },
+        {
+            "name": "Alex Gorbatchev",
+            "githubUsername": "alexgorbatchev",
+            "url": "https://github.com/alexgorbatchev"
+        },
+        {
+            "name": "Alec Hill",
+            "githubUsername": "alechill",
+            "url": "https://github.com/alechill"
+        },
+        {
+            "name": "Alexey Pelykh",
+            "githubUsername": "alexey-pelykh",
+            "url": "https://github.com/alexey-pelykh"
+        },
+        {
+            "name": "Thiago de Andrade",
+            "githubUsername": "7hi4g0",
+            "url": "https://github.com/7hi4g0"
+        },
+        {
+            "name": "Ziyu",
+            "githubUsername": "oddui",
+            "url": "https://github.com/oddui"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/redux-actions"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "bc8a0ec46a3e4ad0944d84eeda5fee27f319b8770191b57f3633bd9fce267d41",
+    "typeScriptVersion": "4.5"
+}

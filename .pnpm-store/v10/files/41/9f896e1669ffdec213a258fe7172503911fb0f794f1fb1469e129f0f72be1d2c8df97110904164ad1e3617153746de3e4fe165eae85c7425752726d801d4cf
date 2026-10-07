@@ -1,0 +1,45 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Input/Output operations for streams produced by DevTools.
+domain IO
+
+  # This is either obtained from another method or specified as `blob:<uuid>` where
+  # `<uuid>` is an UUID of a Blob.
+  type StreamHandle extends string
+
+  # Close the stream, discard any temporary backing storage.
+  command close
+    parameters
+      # Handle of the stream to close.
+      StreamHandle handle
+
+  # Read a chunk of the stream
+  command read
+    parameters
+      # Handle of the stream to read.
+      StreamHandle handle
+      # Seek to the specified offset before reading (if not specified, proceed with offset
+      # following the last read). Some types of streams may only support sequential reads.
+      optional integer offset
+      # Maximum number of bytes to read (left upon the agent discretion if not specified).
+      optional integer size
+    returns
+      # Set if the data is base64-encoded
+      optional boolean base64Encoded
+      # Data that were read.
+      string data
+      # Set if the end-of-file condition occurred while reading.
+      boolean eof
+
+  # Return UUID of Blob object specified by a remote object id.
+  command resolveBlob
+    parameters
+      # Object id of a Blob object wrapper.
+      Runtime.RemoteObjectId objectId
+    returns
+      # UUID of the specified Blob.
+      string uuid

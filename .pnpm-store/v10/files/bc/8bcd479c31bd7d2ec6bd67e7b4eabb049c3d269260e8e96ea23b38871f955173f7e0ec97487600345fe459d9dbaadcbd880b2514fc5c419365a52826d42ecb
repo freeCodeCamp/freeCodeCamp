@@ -1,0 +1,11 @@
+{
+  "name": "dev-404-page",
+  "version": "1.0.0",
+  "description": "Internal plugin to add a 404 page in development with helpful information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "license": "MIT"
+}

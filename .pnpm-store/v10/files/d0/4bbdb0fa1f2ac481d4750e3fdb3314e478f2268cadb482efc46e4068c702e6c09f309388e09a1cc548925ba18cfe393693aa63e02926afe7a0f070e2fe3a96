@@ -1,0 +1,67 @@
+{
+	"name": "regexpu-core",
+	"version": "5.3.2",
+	"description": "regexpu’s core functionality (i.e. `rewritePattern(pattern, flag)`), capable of translating ES6 Unicode regular expressions to ES5.",
+	"homepage": "https://mths.be/regexpu",
+	"main": "rewrite-pattern.js",
+	"engines": {
+		"node": ">=4"
+	},
+	"keywords": [
+		"codegen",
+		"desugaring",
+		"ecmascript",
+		"es5",
+		"es6",
+		"harmony",
+		"javascript",
+		"refactoring",
+		"regex",
+		"regexp",
+		"regular expressions",
+		"rewriting",
+		"syntax",
+		"transformation",
+		"transpile",
+		"transpiler",
+		"unicode"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "https://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/regexpu-core.git"
+	},
+	"bugs": "https://github.com/mathiasbynens/regexpu-core/issues",
+	"files": [
+		"LICENSE-MIT.txt",
+		"rewrite-pattern.js",
+		"data/character-class-escape-sets.js",
+		"data/iu-mappings.js"
+	],
+	"scripts": {
+		"build": "node scripts/iu-mappings.js && node scripts/character-class-escape-sets.js",
+		"test": "mocha tests",
+		"cover": "istanbul cover --report html node_modules/.bin/_mocha tests -- -u exports -R spec"
+	},
+	"dependencies": {
+		"regenerate": "^1.4.2",
+		"regenerate-unicode-properties": "^10.1.0",
+		"@babel/regjsgen": "^0.8.0",
+		"regjsparser": "^0.9.1",
+		"unicode-match-property-ecmascript": "^2.0.0",
+		"unicode-match-property-value-ecmascript": "^2.1.0"
+	},
+	"devDependencies": {
+		"codecov": "^3.8.3",
+		"istanbul": "^0.4.5",
+		"jsesc": "^3.0.2",
+		"lodash": "^4.17.21",
+		"mocha": "^10.1.0",
+		"regexpu-fixtures": "^2.1.6",
+		"@unicode/unicode-15.0.0": "^1.3.1"
+	}
+}

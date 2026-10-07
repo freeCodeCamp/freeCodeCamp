@@ -1,0 +1,63 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* START cover the case that slider is visible on mouseover */
+.monaco-editor .minimap.slider-mouseover .minimap-slider {
+	opacity: 0;
+	transition: opacity 100ms linear;
+}
+.monaco-editor .minimap.slider-mouseover:hover .minimap-slider {
+	opacity: 1;
+}
+.monaco-editor .minimap.slider-mouseover .minimap-slider.active {
+	opacity: 1;
+}
+/* END cover the case that slider is visible on mouseover */
+.monaco-editor .minimap-slider .minimap-slider-horizontal {
+	background: var(--vscode-minimapSlider-background);
+}
+.monaco-editor .minimap-slider:hover .minimap-slider-horizontal {
+	background: var(--vscode-minimapSlider-hoverBackground);
+}
+.monaco-editor .minimap-slider.active .minimap-slider-horizontal {
+	background: var(--vscode-minimapSlider-activeBackground);
+}
+.monaco-editor .minimap-shadow-visible {
+	box-shadow: var(--vscode-scrollbar-shadow) -6px 0 6px -6px inset;
+}
+.monaco-editor .minimap-shadow-hidden {
+	position: absolute;
+	width: 0;
+}
+.monaco-editor .minimap-shadow-visible {
+	position: absolute;
+	left: -6px;
+	width: 6px;
+	pointer-events: none;
+}
+.monaco-editor.no-minimap-shadow .minimap-shadow-visible {
+	position: absolute;
+	left: -1px;
+	width: 1px;
+}
+
+/* 0.5s fade in/out for the minimap */
+.minimap.minimap-autohide-mouseover,
+.minimap.minimap-autohide-scroll {
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.minimap.minimap-autohide-scroll{
+	pointer-events: none;
+}
+.minimap.minimap-autohide-mouseover:hover,
+.minimap.minimap-autohide-scroll.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.monaco-editor .minimap {
+	z-index: 5;
+}

@@ -1,0 +1,62 @@
+/**
+ * Check if a node represents a static string value
+ *
+ * A node is considered a static string if it's either:
+ *
+ * - A Literal node (e.g., "foo", 'bar')
+ * - A TemplateLiteral without any expressions (e.g., `foo`)
+ *
+ * @example
+ *   isStaticString("foo"); // true - Literal
+ *   isStaticString(`bar`); // true - TemplateLiteral without expressions
+ *   isStaticString(`${foo}`); // false - has expression
+ *   isStaticString(someVariable); // false - not a string literal
+ *
+ * @param {Node} node - The AST node to check
+ * @returns {node is Literal | TemplateLiteral} True if the node is a static
+ *   string
+ */
+export function isStaticString(node: Node): node is Literal | TemplateLiteral;
+/**
+ * @param {JSXAttribute} node
+ * @returns {Literal | TemplateLiteral | JSXIdentifier | null}
+ */
+export function findAttributeValueNode(node: JSXAttribute): Literal | TemplateLiteral | JSXIdentifier | null;
+/**
+ * Adjust the column position of a source location
+ *
+ * @param {AST.SourceLocation} location - The source location to adjust
+ * @param {number} columnOffset - The number of columns to add
+ * @returns {AST.SourceLocation} A new location with adjusted columns
+ */
+export function adjustLocationColumn(location: AST.SourceLocation, columnOffset: number): AST.SourceLocation;
+/**
+ * @param {NodeOrToken} node
+ * @returns {node is Literal}
+ */
+export function isLiteral(node: NodeOrToken): node is Literal;
+/**
+ * @param {NodeOrToken} node
+ * @returns {node is TemplateLiteral}
+ */
+export function isTemplateLiteral(node: NodeOrToken): node is TemplateLiteral;
+/**
+ * @param {NodeOrToken} node
+ * @returns {node is LogicalExpression}
+ */
+export function isLogicalExpression(node: NodeOrToken): node is LogicalExpression;
+/**
+ * @param {NodeOrToken} node
+ * @returns {node is ConditionalExpression}
+ */
+export function isConditionalExpression(node: NodeOrToken): node is ConditionalExpression;
+import type { Node } from "../../types";
+import type { Literal } from "../../types";
+import type { TemplateLiteral } from "../../types";
+import type { JSXAttribute } from "../../types";
+import type { JSXIdentifier } from "../../types";
+import type { AST } from "eslint";
+import type { NodeOrToken } from "../../types";
+import type { LogicalExpression } from "../../types";
+import type { ConditionalExpression } from "../../types";
+//# sourceMappingURL=node.d.ts.map

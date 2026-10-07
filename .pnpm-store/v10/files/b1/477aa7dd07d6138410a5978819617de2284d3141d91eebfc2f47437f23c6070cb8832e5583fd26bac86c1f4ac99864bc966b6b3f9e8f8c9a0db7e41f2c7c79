@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/startOfMonth/index.js",
+  "typings": "../../typings.d.ts"
+}

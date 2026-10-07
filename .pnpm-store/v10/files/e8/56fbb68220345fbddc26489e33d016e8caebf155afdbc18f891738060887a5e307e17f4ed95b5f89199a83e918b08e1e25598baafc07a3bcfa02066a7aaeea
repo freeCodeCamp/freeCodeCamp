@@ -1,0 +1,46 @@
+{
+  "name": "@redux-saga/is",
+  "version": "1.2.1",
+  "description": "Runtime type checking helpers",
+  "main": "dist/redux-saga-is.cjs.js",
+  "module": "dist/redux-saga-is.esm.js",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/redux-saga-is.cjs.mjs",
+        "default": "./dist/redux-saga-is.cjs.js"
+      },
+      "module": "./dist/redux-saga-is.esm.js",
+      "import": "./dist/redux-saga-is.cjs.mjs",
+      "default": "./dist/redux-saga-is.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/redux-saga-is.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {},
+  "repository": "https://github.com/redux-saga/redux-saga/tree/main/packages/is",
+  "keywords": [],
+  "author": "Yassine ELOUAFI <yelouafi@gmail.com>",
+  "contributors": [
+    "Mateusz Burzyński <mateuszburzynski@gmail.com> (https://github.com/Andarist)",
+    "Mikhail Shustov <restrry@gmail.com> (https://github.com/restrry)",
+    "Shi Feichao <842351815@qq.com> (https://github.com/shinima)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redux-saga/redux-saga/issues"
+  },
+  "homepage": "https://redux-saga.js.org/",
+  "dependencies": {
+    "@redux-saga/symbols": "^1.2.1",
+    "@redux-saga/types": "^1.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.6.3",
+    "babel-plugin-annotate-pure-calls": "^0.4.0"
+  }
+}

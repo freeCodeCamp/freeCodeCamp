@@ -1,0 +1,1 @@
+{"version":3,"file":"create-linear-ramp-to-value-automation-event.js","sourceRoot":"","sources":["../../../src/functions/create-linear-ramp-to-value-automation-event.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,sCAAsC,GAAG,CAAC,KAAa,EAAE,OAAe,EAAqC,EAAE;IACxH,OAAO,EAAE,OAAO,EAAE,IAAI,EAAE,mBAAmB,EAAE,KAAK,EAAE,CAAC;AACzD,CAAC,CAAC"}

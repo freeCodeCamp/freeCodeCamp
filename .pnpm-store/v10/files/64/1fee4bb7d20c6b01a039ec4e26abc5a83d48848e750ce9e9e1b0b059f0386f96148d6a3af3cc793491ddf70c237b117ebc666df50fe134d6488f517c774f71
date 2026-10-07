@@ -1,0 +1,63 @@
+{
+  "name": "@sigmacomputing/babel-plugin-lodash",
+  "version": "3.3.5",
+  "description": "Modular Lodash builds without the hassle.",
+  "keywords": [
+    "babel-plugin",
+    "cherry-pick",
+    "lodash",
+    "modules"
+  ],
+  "repository": "lodash/babel-plugin-lodash",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "author": "Graeme Yeates <megawac@gmail.com> (https://github.com/megawac)",
+  "contributors": [
+    "Graeme Yeates <megawac@gmail.com> (https://github.com/megawac)",
+    "John-David Dalton <john.david.dalton@gmail.com>"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir lib || true",
+    "prepublish": "npm run build",
+    "test": "mocha --check-leaks --require @babel/register"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-flow": "^7.0.0",
+    "@babel/plugin-syntax-jsx": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@storybook/addon-links": "^3.4.7",
+    "async": "^2.6.1",
+    "babel-plugin-add-module-exports": "~0.2.1",
+    "babel-plugin-lodash": "3.3.2",
+    "chai": "^4.1.2",
+    "lodash-bound": "^1.1.2",
+    "lodash-compat": "^3.10.2",
+    "lodash-es": "^4.17.10",
+    "mocha": "^4.1.0",
+    "ramda": "^0.25.0",
+    "react-bootstrap": "^0.31.5"
+  },
+  "dependencies": {
+    "@babel/helper-module-imports": "^7.0.0",
+    "@babel/types": "^7.0.0",
+    "glob": "^7.1.1",
+    "lodash": "^4.17.10",
+    "require-package-name": "^2.0.1"
+  },
+  "files": [
+    "lib"
+  ],
+  "greenkeeper": {
+    "ignore": [
+      "babel-plugin-lodash"
+    ]
+  }
+}

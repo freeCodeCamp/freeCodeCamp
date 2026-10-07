@@ -1,0 +1,63 @@
+{
+  "name": "tinyexec",
+  "version": "1.1.1",
+  "type": "module",
+  "description": "A minimal library for executing processes in Node",
+  "main": "./dist/main.mjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "build:types": "tsc",
+    "dev": "tsdown --watch",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
+    "lint": "eslint src && publint",
+    "prepare": "npm run build",
+    "test": "npm run build && vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinylibs/tinyexec.git"
+  },
+  "keywords": [
+    "execa",
+    "exec",
+    "tiny",
+    "child_process",
+    "spawn"
+  ],
+  "author": "James Garbutt (https://github.com/43081j)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tinylibs/tinyexec/issues"
+  },
+  "homepage": "https://github.com/tinylibs/tinyexec#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/node": "^25.5.2",
+    "@vitest/coverage-v8": "^4.1.2",
+    "cross-spawn": "^7.0.6",
+    "eslint": "^10.2.0",
+    "prettier": "^3.8.1",
+    "publint": "^0.3.18",
+    "rollup-plugin-license": "^3.7.0",
+    "tsdown": "^0.21.7",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.0",
+    "vitest": "^4.0.7"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.mts",
+      "default": "./dist/main.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/main.d.mts"
+}

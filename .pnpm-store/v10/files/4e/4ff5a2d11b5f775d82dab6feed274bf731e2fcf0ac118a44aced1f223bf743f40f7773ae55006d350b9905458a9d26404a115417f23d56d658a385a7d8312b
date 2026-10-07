@@ -1,0 +1,52 @@
+{
+  "name": "@redux-devtools/extension",
+  "version": "3.3.0",
+  "description": "Wrappers for Redux DevTools Extension.",
+  "homepage": "https://github.com/reduxjs/redux-devtools/tree/master/packages/redux-devtools-extension",
+  "license": "MIT",
+  "author": "Mihail Diordiev <zalmoxisus@gmail.com> (https://github.com/zalmoxisus)",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reduxjs/redux-devtools"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.23.2",
+    "immutable": "^4.3.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/plugin-transform-runtime": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "redux": "^4.2.1",
+    "rimraf": "^5.0.5",
+    "typescript": "~5.2.2"
+  },
+  "peerDependencies": {
+    "redux": "^3.1.0 || ^4.0.0 || ^5.0.0"
+  },
+  "scripts": {
+    "build": "pnpm run build:cjs && pnpm run build:esm && pnpm run build:types",
+    "build:cjs": "babel src --extensions \".ts\" --out-dir lib/cjs",
+    "build:esm": "babel src --config-file ./babel.config.esm.json --extensions \".ts\" --out-dir lib/esm",
+    "build:types": "tsc --emitDeclarationOnly",
+    "clean": "rimraf lib",
+    "lint": "eslint . --ext .ts",
+    "type-check": "tsc --noEmit",
+    "prepublish": "pnpm run type-check && pnpm run lint"
+  }
+}

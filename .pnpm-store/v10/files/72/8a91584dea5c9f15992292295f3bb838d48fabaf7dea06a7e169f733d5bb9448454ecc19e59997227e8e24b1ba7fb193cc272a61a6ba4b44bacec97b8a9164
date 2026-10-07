@@ -1,0 +1,26 @@
+{
+  "name": "true-case-path",
+  "version": "2.2.1",
+  "description": "Given a possibly case-variant version of an existing filesystem path, returns the case-exact, normalized version as stored in the filesystem.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test",
+    "release": "standard-version --sign"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Profiscience/true-case-path.git"
+  },
+  "author": "barsh",
+  "contributors": [
+    "Casey Webb <notcaseywebb@gmail.com> (https://caseyWebb.xyz)"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Profiscience/true-case-path/issues"
+  },
+  "homepage": "https://github.com/Profiscience/true-case-path#readme",
+  "devDependencies": {
+    "standard-version": "^6.0.1"
+  }
+}

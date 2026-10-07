@@ -1,0 +1,42 @@
+{
+  "name": "napi-build-utils",
+  "version": "2.0.0",
+  "description": "A set of utilities to assist developers of tools that build N-API native add-ons",
+  "main": "index.js",
+  "scripts": {
+    "doc": "jsdoc2md index.js >index.md",
+    "test": "mocha test/ && npm run lint",
+    "lint": "standard",
+    "prepublishOnly": "npm run test"
+  },
+  "keywords": [
+    "n-api",
+    "prebuild",
+    "prebuild-install"
+  ],
+  "author": "Jim Schlight",
+  "license": "MIT",
+  "homepage": "https://github.com/inspiredware/napi-build-utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inspiredware/napi-build-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inspiredware/napi-build-utils/issues"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "jsdoc-to-markdown": "^4.0.1",
+    "mocha": "^5.2.0",
+    "standard": "^12.0.1"
+  },
+  "binary": {
+    "note": "napi-build-tools is not an N-API module. This entry is for unit testing.",
+    "napi_versions": [
+      2,
+      2,
+      3,
+      10
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "dts-resolver",
+  "version": "2.1.3",
+  "description": "Resolves TypeScript declaration files for dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/sxzz/dts-resolver#readme",
+  "bugs": {
+    "url": "https://github.com/sxzz/dts-resolver/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxzz/dts-resolver.git"
+  },
+  "author": "Kevin Deng <sxzz@sxzz.moe>",
+  "funding": "https://github.com/sponsors/sxzz",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "oxc-resolver": ">=11.0.0"
+  },
+  "peerDependenciesMeta": {
+    "oxc-resolver": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.28.5",
+    "@babel/parser": "^7.28.5",
+    "@babel/types": "^7.28.5",
+    "@sxzz/eslint-config": "^7.2.8",
+    "@sxzz/prettier-config": "^2.2.4",
+    "@types/babel__generator": "^7.27.0",
+    "@types/debug": "^4.1.12",
+    "@types/node": "^24.10.0",
+    "@types/yargs": "^17.0.34",
+    "@vue/reactivity": "^3.5.24",
+    "bumpp": "^10.3.1",
+    "eslint": "^9.39.1",
+    "fast-glob": "^3.3.3",
+    "magic-string": "^0.30.21",
+    "magic-string-ast": "^1.0.3",
+    "oxc-resolver": "^11.13.1",
+    "prettier": "^3.6.2",
+    "tsdown": "^0.16.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8",
+    "vue": "^3.5.24"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "prettier": "@sxzz/prettier-config",
+  "tsdown": {
+    "exports": true
+  },
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --cache --write .",
+    "release": "bumpp"
+  }
+}

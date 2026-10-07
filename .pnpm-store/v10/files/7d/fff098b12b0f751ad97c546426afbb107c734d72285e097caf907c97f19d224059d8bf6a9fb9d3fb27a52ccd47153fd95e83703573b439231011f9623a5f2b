@@ -1,0 +1,27 @@
+export { B as BaseCoverageProvider } from './chunks/coverage.DM_a_rWm.js';
+import 'node:fs';
+import 'node:module';
+import 'node:path';
+import 'node:url';
+import '@vitest/utils/helpers';
+import 'pathe';
+import 'picomatch';
+import 'tinyglobby';
+import 'tinyrainbow';
+import './chunks/defaults.9aQKnqFk.js';
+import 'node:os';
+import './chunks/env.D4Lgay0q.js';
+import 'std-env';
+import 'node:crypto';
+import './chunks/index.BCY_7LL2.js';
+import 'node:process';
+import 'node:fs/promises';
+import 'node:assert';
+import 'node:v8';
+import 'node:util';
+import 'vite';
+import './chunks/constants.CPYnjOGj.js';
+import './chunks/utils.BS4fH3nR.js';
+import './chunks/coverage.CTzCuANN.js';
+
+console.warn("Importing from \"vitest/coverage\" is deprecated since Vitest 4.1. Please use \"vitest/node\" instead.");

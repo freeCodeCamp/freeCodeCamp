@@ -1,0 +1,90 @@
+import { ReactNode } from "react";
+export interface QuizQuestionAnswer<T extends number | string> {
+    label: ReactNode;
+    value: T;
+    feedback?: ReactNode;
+    /**
+     * Information needed to render the validation status
+     */
+    validation?: QuizQuestionValidation;
+    /**
+     * Optional action button configuration.
+     * When provided, renders an action button next to this answer.
+     */
+    action?: {
+        /**
+         * Click handler for the action button
+         */
+        onClick: () => void;
+        /**
+         * Accessible label for the action button
+         */
+        ariaLabel: string;
+    };
+}
+export interface QuizQuestionValidation {
+    state: "correct" | "incorrect";
+    message: string;
+}
+interface QuizQuestionBaseProps<AnswerT extends number | string> {
+    /**
+     * Question text, can be plain text or contain code.
+     * If the question text contains code, use the PrismFormatted component to ensure the code is rendered correctly.
+     */
+    question: ReactNode;
+    /**
+     * Answer options
+     */
+    answers: QuizQuestionAnswer<AnswerT>[];
+    /**
+     * Position of the question amongst its siblings
+     */
+    position?: number;
+    /**
+     * Whether the question is required
+     */
+    required?: boolean;
+    /**
+     * Whether the question is disabled
+     */
+    disabled?: boolean;
+    /**
+     * Value of the selected answer
+     */
+    selectedAnswer?: AnswerT;
+    /**
+     * Change event handler, called when an answer is selected
+     */
+    onChange?: (selectedAnswer: AnswerT) => void;
+}
+type QuizQuestionWithoutAudio<AnswerT extends number | string> = QuizQuestionBaseProps<AnswerT> & {
+    audioUrl?: never;
+    audioAriaLabel?: never;
+    transcript?: never;
+    audioStartTime?: never;
+    audioFinishTime?: never;
+};
+type QuizQuestionWithAudio<AnswerT extends number | string> = QuizQuestionBaseProps<AnswerT> & {
+    /**
+     * URL to an audio file for the question
+     */
+    audioUrl: string;
+    /**
+     * Accessible label for the audio element
+     */
+    audioAriaLabel: string;
+    /**
+     * Transcript text for the audio
+     */
+    transcript: string;
+    /**
+     * Start time in seconds for the audio segment
+     */
+    audioStartTime?: number;
+    /**
+     * Finish time in seconds for the audio segment
+     */
+    audioFinishTime?: number;
+};
+export type QuizQuestionProps<AnswerT extends number | string> = QuizQuestionWithoutAudio<AnswerT> | QuizQuestionWithAudio<AnswerT>;
+export {};

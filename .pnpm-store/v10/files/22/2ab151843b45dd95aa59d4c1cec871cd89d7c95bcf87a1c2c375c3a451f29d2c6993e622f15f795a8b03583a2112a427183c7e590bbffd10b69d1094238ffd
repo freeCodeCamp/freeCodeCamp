@@ -1,0 +1,84 @@
+{
+  "name": "graphql-type-json",
+  "version": "0.3.2",
+  "description": "JSON scalar types for GraphQL.js",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "babel -d lib --delete-dir-on-start src",
+    "build:esm": "babel --env-name esm -d es --delete-dir-on-start src",
+    "build:types": "cpy types/*.d.ts lib",
+    "format": "eslint --fix . && npm run prettier -- --write",
+    "lint": "eslint . && npm run prettier -- -l",
+    "prepublish": "npm run build",
+    "prettier": "prettier --ignore-path .eslintignore '**/*.{md,ts,tsx}'",
+    "tdd": "jest --watch",
+    "test": "npm run lint && npm run test:ts && npm run testonly -- --coverage",
+    "test:ts": "dtslint types",
+    "testonly": "jest --runInBand --verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{md,ts}": "prettier --write"
+  },
+  "prettier": {
+    "printWidth": 79,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**"
+    ],
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taion/graphql-type-json.git"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "Jimmy Jia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taion/graphql-type-json/issues"
+  },
+  "homepage": "https://github.com/taion/graphql-type-json#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-jest": "^26.0.1",
+    "codecov": "^3.7.0",
+    "cpy-cli": "^3.1.1",
+    "dtslint": "^3.6.11",
+    "eslint": "^7.2.0",
+    "eslint-config-4catalyzer": "^1.1.2",
+    "eslint-config-4catalyzer-jest": "^2.0.7",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "graphql": "^15.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.9",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5"
+  },
+  "peerDependencies": {
+    "graphql": ">=0.8.0"
+  }
+}

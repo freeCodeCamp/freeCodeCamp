@@ -1,0 +1,46 @@
+{
+  "name": "matchit",
+  "version": "1.1.0",
+  "repository": "lukeed/matchit",
+  "description": "Quickly parse & match URLs",
+  "module": "lib/matchit.mjs",
+  "main": "lib/matchit.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "files": [
+    "*.d.ts",
+    "lib"
+  ],
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "build": "bundt",
+    "bench": "node bench",
+    "pretest": "npm run build",
+    "prebench": "npm run build",
+    "test": "tape test/*.js | tap-spec"
+  },
+  "keywords": [
+    "route",
+    "regexp",
+    "routing",
+    "pattern",
+    "match",
+    "parse",
+    "url"
+  ],
+  "dependencies": {
+    "@arr/every": "^1.0.0"
+  },
+  "devDependencies": {
+    "bundt": "^0.3.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  }
+}

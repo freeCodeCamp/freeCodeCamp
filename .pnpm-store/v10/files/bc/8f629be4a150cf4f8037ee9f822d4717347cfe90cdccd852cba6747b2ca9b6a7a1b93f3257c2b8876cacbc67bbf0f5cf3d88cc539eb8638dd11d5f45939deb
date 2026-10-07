@@ -1,0 +1,13 @@
+{
+  "name": "parcel_sourcemap_wasm",
+  "collaborators": [
+    "Jasper De Moor <jasperdemoor@gmail.com>"
+  ],
+  "version": "2.1.1",
+  "files": [
+    "parcel_sourcemap_wasm_bg.wasm",
+    "parcel_sourcemap_wasm.js"
+  ],
+  "module": "parcel_sourcemap_wasm.js",
+  "sideEffects": false
+}

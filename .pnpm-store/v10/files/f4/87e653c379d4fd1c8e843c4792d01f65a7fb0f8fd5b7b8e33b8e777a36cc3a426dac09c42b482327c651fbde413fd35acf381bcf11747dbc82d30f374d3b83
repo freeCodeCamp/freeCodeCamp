@@ -1,0 +1,79 @@
+{
+  "name": "@typescript-eslint/scope-manager",
+  "version": "8.59.1",
+  "description": "TypeScript scope analyser for ESLint",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/scope-manager"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "homepage": "https://typescript-eslint.io/packages/scope-manager",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "typescript",
+    "estree"
+  ],
+  "dependencies": {
+    "@typescript-eslint/types": "8.59.1",
+    "@typescript-eslint/visitor-keys": "8.59.1"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/pretty-format": "^4.0.18",
+    "eslint": "^10.0.0",
+    "glob": "^11.1.0",
+    "rimraf": "^5.0.10",
+    "typescript": ">=4.8.4 <6.1.0",
+    "vitest": "^4.0.18",
+    "@typescript-eslint/typescript-estree": "8.59.1"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "nx": {
+    "name": "scope-manager",
+    "includedScripts": [
+      "clean",
+      "clean-fixtures"
+    ],
+    "targets": {
+      "lint": {
+        "command": "eslint"
+      }
+    }
+  },
+  "scripts": {
+    "build": "pnpm exec nx build",
+    "clean": "rimraf dist/ coverage/",
+    "clean-fixtures": "rimraf -g \"./src/**/fixtures/**/snapshots\"",
+    "format": "pnpm -w run format",
+    "generate-lib": "pnpm -w exec nx generate-lib repo",
+    "lint": "pnpm -w exec nx lint",
+    "test": "pnpm -w exec nx test",
+    "typecheck": "pnpm -w exec nx typecheck"
+  }
+}

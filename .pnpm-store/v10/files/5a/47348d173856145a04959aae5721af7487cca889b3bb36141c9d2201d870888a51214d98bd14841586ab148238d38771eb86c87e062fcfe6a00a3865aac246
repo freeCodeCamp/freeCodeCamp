@@ -1,0 +1,1 @@
+!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e="undefined"!=typeof globalThis?globalThis:e||self).uuidNIL=n()}(this,(function(){"use strict";return"00000000-0000-0000-0000-000000000000"}));

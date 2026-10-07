@@ -1,0 +1,32 @@
+{
+  "name": "typescript-logic",
+  "version": "0.0.0",
+  "description": "TypeScript generics to work with boolean types",
+  "main": "index.js",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "test": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodemodules/typescript-logic.git"
+  },
+  "keywords": [
+    "logic",
+    "generic",
+    "typescript",
+    "boolean",
+    "true",
+    "false"
+  ],
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksxnodemodules/typescript-logic/issues"
+  },
+  "homepage": "https://github.com/ksxnodemodules/typescript-logic#readme",
+  "devDependencies": {
+    "typescript": "^3.0.3",
+    "static-type-assert": "^1.2.1"
+  }
+}

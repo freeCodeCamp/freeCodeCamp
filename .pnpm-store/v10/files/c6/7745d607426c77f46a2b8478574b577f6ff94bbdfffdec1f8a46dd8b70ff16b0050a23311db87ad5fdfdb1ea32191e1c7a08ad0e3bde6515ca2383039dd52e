@@ -1,0 +1,790 @@
+{
+  "lang": "es",
+  "rules": {
+    "accesskeys": {
+      "description": "Garantiza que cada valor para el atributo accesskey es único",
+      "help": "El valor del atributo accesskey debe ser único"
+    },
+    "area-alt": {
+      "description": "Garantiza que los elementos <area> de los mapas de imágenes tienen texto alternativo",
+      "help": "Los elementos <area> activos deben tener texto alternativo"
+    },
+    "aria-allowed-attr": {
+      "description": "Garantiza que los atributos ARIA están permitidos para el rol de un elemento",
+      "help": "Los elementos solo deben usar atributos ARIA permitidos"
+    },
+    "aria-allowed-role": {
+      "description": "Garantiza que el atributo role tiene un valor apropiado para el elemento",
+      "help": "ARIA role debe ser apropiado para el elemento"
+    },
+    "aria-hidden-body": {
+      "description": "Garantiza que aria-hidden='true' no está presente en el 'body' del documento.",
+      "help": "aria-hidden='true' no debe estar presente en el 'body' del documento"
+    },
+    "aria-hidden-focus": {
+      "description": "Garantiza que los elementos 'aria-hidden' no contienen elementos que admitan el foco",
+      "help": "Los elementos 'ARIA hidden' no deben contener elementos que admitan el foco"
+    },
+    "aria-input-field-name": {
+      "description": "Garantiza que cada 'ARIA input field' tiene un nombre accesible",
+      "help": "Los 'ARIA input fields' tienen un nombre accesible"
+    },
+    "aria-required-attr": {
+      "description": "Garantiza que los elementos con 'ARIA roles' tienen todos los atributos ARIA requeridos",
+      "help": "Deben proporcionarse los atributos ARIA requeridos"
+    },
+    "aria-required-children": {
+      "description": "Garantiza que los elementos con un 'ARIA role' que requieren 'child roles' los contienen",
+      "help": "Ciertos 'ARIA roles' deben contener determinados hijos"
+    },
+    "aria-required-parent": {
+      "description": "Garantiza que los elementos con un 'ARIA role' que requieren 'parent roles' están contenidos en ellos",
+      "help": "Ciertos 'ARIA roles' deben estar contenidos en determinados padres"
+    },
+    "aria-roles": {
+      "description": "Garantiza que todos los elementos con un atributo role usan un valor válido",
+      "help": "Los 'ARIA roles' usados deben cumplir los requisitos para valores válidos"
+    },
+    "aria-toggle-field-name": {
+      "description": "Garantiza que cada 'ARIA toggle field' tiene un nombre accesible",
+      "help": "Los 'ARIA toggle fields' tienen un nombre accesible"
+    },
+    "aria-valid-attr-value": {
+      "description": "Garantiza que todos los atributos ARIA tienen valores válidos",
+      "help": "Los atributos ARIA deben cumplir los requisitos para valores válidos"
+    },
+    "aria-valid-attr": {
+      "description": "Garantiza que los atributos que empiezan por aria- son atributos ARIA válidos",
+      "help": "Los atributos ARIA deben cumplir los requisitos para nombres válidos"
+    },
+    "audio-caption": {
+      "description": "Garantiza que los elementos <audio> tienen subtítulos",
+      "help": "Los elementos <audio> deben tener una pista de subtítulos"
+    },
+    "autocomplete-valid": {
+      "description": "Garantizar que el atributo autocomplete es correcto y adecuado para el campo de formulario",
+      "help": "El atributo autocomplete debe usarse correctamente"
+    },
+    "avoid-inline-spacing": {
+      "description": "Garantizar que el espaciado de texto establecido mediante atributos style se puede ajustar con hojas de estilo personalizadas",
+      "help": "El espaciado de texto 'inline' debe poder ajustarse mediante hojas de estilo personalizadas"
+    },
+    "blink": {
+      "description": "Garantiza que no se usan elementos <blink>",
+      "help": "Los elementos <blink> están obsoletos y no deben usarse"
+    },
+    "button-name": {
+      "description": "Garantiza que los botones tienen texto discernible",
+      "help": "Los botones deben tener texto discernible"
+    },
+    "bypass": {
+      "description": "Garantiza que cada página tiene al menos un medio para que un usuario pueda saltarse la navegación y pasar directamente al contenido",
+      "help": "Las páginas deben tener medios para saltarse bloques repetidos"
+    },
+    "color-contrast": {
+      "description": "Garantiza que el contraste entre colores de primer plano y fondo cumple los límites de la ratio para contraste WCAG 2 AA",
+      "help": "Los elementos deben tener un contraste de colores suficiente"
+    },
+    "color-contrast-enhanced": {
+      "description": "Garantiza que el contraste entre colores de primer plano y fondo cumple los límites de la ratio para contraste WCAG 2 AAA",
+      "help": "Los elementos deben tener un contraste de colores suficiente"
+    },
+    "css-orientation-lock": {
+      "description": "Garantiza que el contenido no está bloqueado en ninguna orientación de pantalla específica, y que el contenido es manejable en cualquier orientación de pantalla",
+      "help": "Las 'CSS Media queries' no se usan para bloquear la orientación de pantalla"
+    },
+    "definition-list": {
+      "description": "Garantiza que los elementos <dl> están estructurados correctamente",
+      "help": "Los elementos <dl> solo deben contener directamente grupos de <dt> y <dd> debidamente ordenados, o elementos <script> o <template>"
+    },
+    "dlitem": {
+      "description": "Garantiza que los elementos <dt> y <dd> están contenidos en un <dl>",
+      "help": "Los elementos <dt> y <dd> deben estar contenidos en un <dl>"
+    },
+    "document-title": {
+      "description": "Garantiza que cada documento HTML tiene un elemento <title> no vacío",
+      "help": "Los documentos deben tener elementos <title> para ayudar en la navegación"
+    },
+    "duplicate-id-active": {
+      "description": "Garantiza que cada valor para el atributo id de elementos activos es único",
+      "help": "Los 'IDs' de elementos activos deben ser únicos"
+    },
+    "duplicate-id-aria": {
+      "description": "Garantiza que cada valor del atributo id usado en ARIA y en 'labels' es único",
+      "help": "Los 'IDs' usados en ARIA y en 'labels' deben ser únicos"
+    },
+    "duplicate-id": {
+      "description": "Garantiza que cada valor para el atributo id es único",
+      "help": "El valor del atributo id debe ser único"
+    },
+    "empty-heading": {
+      "description": "Garantiza que los encabezados tienen texto discernible",
+      "help": "Los encabezados no deben estar vacíos"
+    },
+    "focus-order-semantics": {
+      "description": "Garantiza que los elementos en orden de foco tienen un rol apropiado",
+      "help": "Los elementos en orden de foco necesitan un rol apropiado para contenido interactivo"
+    },
+    "form-field-multiple-labels": {
+      "description": "Garantiza que el campo de formulario no tiene múltiples elementos label",
+      "help": "El campo de formulario no debe tener múltiples elementos label"
+    },
+    "frame-tested": {
+      "description": "Garantiza que los elementos <iframe> y <frame> contienen el script axe-core",
+      "help": "Los marcos deben probarse con axe-core"
+    },
+    "frame-title-unique": {
+      "description": "Garantiza que los elementos <iframe> y <frame> contienen un atributo título único",
+      "help": "Los marcos deben tener un único atributo title"
+    },
+    "frame-title": {
+      "description": "Garantiza que los elementos <iframe> y <frame> contienen un atributo título no vacío",
+      "help": "Los marcos deben tener el atributo title"
+    },
+    "heading-order": {
+      "description": "Garantiza que el orden de los encabezados es semánticamente correcto",
+      "help": "El nivel de encabezados solo debería incrementarse en 1"
+    },
+    "hidden-content": {
+      "description": "Informa a los usuarios sobre contenido oculto.",
+      "help": "El contenido oculto de la página no se puede analizar"
+    },
+    "html-has-lang": {
+      "description": "Garantiza que cada documento HTML tiene un atributo lang",
+      "help": "El elemento <html> debe tener un atributo lang"
+    },
+    "html-lang-valid": {
+      "description": "Garantiza que el atributo lang del elemento <html> tiene un valor válido",
+      "help": "El elemento <html> debe tener un valor válido para el atributo lang"
+    },
+    "html-xml-lang-mismatch": {
+      "description": "Garantizar que en los elementos HTML con atributos tanto lang como xml:lang válidos haya concordancia en el idioma base de la página",
+      "help": "Los elementos HTML con lang y xml:lang deben tener el mismo idioma base"
+    },
+    "image-alt": {
+      "description": "Garantiza que los elementos <img> tienen texto alternativo o un rol de none o presentation",
+      "help": "Las imágenes deben tener texto alternativo"
+    },
+    "image-redundant-alt": {
+      "description": "Garantiza que la alternativa a la imagen no se repite como texto",
+      "help": "El texto alternativo de las imágenes no debe repetirse como texto"
+    },
+    "input-button-name": {
+      "description": "Garantizar que los 'input buttons' tienen texto discernible",
+      "help": "Los 'Input buttons' deben tener texto discernible"
+    },
+    "input-image-alt": {
+      "description": "Garantiza que los elementos <input type=\"image\"> tienen texto alternativo",
+      "help": "Los 'image buttons' deben tener texto alternativo"
+    },
+    "label-content-name-mismatch": {
+      "description": "Garantiza que, en los elementos etiquetados mediante su contenido, su texto visible debe formar parte de su nombre accesible",
+      "help": "Los elementos deben tener su texto visible como parte de su nombre accesible"
+    },
+    "label-title-only": {
+      "description": "Garantiza que cada elemento de formulario no está etiquetado únicamente mediante los atributos title o aria-describedby ",
+      "help": "Los elementos de formulario deben tener una etiqueta visible"
+    },
+    "label": {
+      "description": "Garantiza que cada elemento de formulario tiene una etiqueta",
+      "help": "Los elementos de formulario deben tener etiquetas"
+    },
+    "landmark-banner-is-top-level": {
+      "description": "Garantiza que el punto de referencia banner está en el nivel superior",
+      "help": "El punto de referencia banner no debe estar contenido en otro punto de referencia"
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "Garantiza que el punto de referencia complementary o aside está en el nivel superior",
+      "help": "Aside no debe estar contenido en otro punto de referencia"
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "Garantiza que el punto de referencia contentinfo está en el nivel superior",
+      "help": "El punto de referencia contentinfo no debe estar contenido en otro punto de referencia"
+    },
+    "landmark-main-is-top-level": {
+      "description": "Garantiza que el punto de referencia main está en el nivel superior",
+      "help": "El punto de referencia main no debe estar contenido en otro punto de referencia"
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "Garantiza que el documento tiene, como mucho, un punto de referencia banner",
+      "help": "El documento no debe tener más de un punto de referencia banner"
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "Garantiza que el documento tiene, como mucho, un punto de referencia contentinfo",
+      "help": "El documento no debe tener más de un punto de referencia contentinfo"
+    },
+    "landmark-one-main": {
+      "description": "Garantiza que el documento solo tiene un punto de referencia main y que cada marco incorporado en la página tiene, como mucho, un punto de referencia main",
+      "help": "El documento debe tener un punto de referencia main"
+    },
+    "landmark-unique": {
+      "help": "Garantiza que los puntos de referencia son únicos",
+      "description": "Los puntos de referencia deben tener una única combinación de role o role/label/title (es decir, un nombre accesible único)"
+    },
+    "link-in-text-block": {
+      "description": "Los enlaces pueden distinguirse sin depender del color",
+      "help": "Los enlaces deben distinguirse del texto adyacente por un medio que no dependa del color"
+    },
+    "link-name": {
+      "description": "Garantiza que los enlaces tienen texto discernible",
+      "help": "Los enlaces deben tener texto discernible"
+    },
+    "list": {
+      "description": "Garantiza que las listas están estructuradas correctamente",
+      "help": "<ul> y <ol> solo deben contener directamente elementos <li>, <script> o <template>"
+    },
+    "listitem": {
+      "description": "Garantiza que los elementos <li> se utilizan semánticamente",
+      "help": "Los elementos <li> deben estar contenidos en un <ul> o un <ol>"
+    },
+    "marquee": {
+      "description": "Garantiza que no se usan elementos <marquee>",
+      "help": "Los elementos <marquee> están obsoletos y no deben usarse"
+    },
+    "meta-refresh": {
+      "description": "Garantiza que no se usa <meta http-equiv=\"refresh\">",
+      "help": "El refresco programado no debe existir"
+    },
+    "meta-viewport-large": {
+      "description": "Garantizar que <meta name=\"viewport\"> puede ampliarse en grado significativo",
+      "help": "Los usuarios deben poder hacer zum y ampliar el texto hasta 500%"
+    },
+    "meta-viewport": {
+      "description": "Garantiza que <meta name=\"viewport\"> no impide la ampliación y el zum en el texto",
+      "help": "No debe impedirse el zum y la ampliación"
+    },
+    "object-alt": {
+      "description": "Garantiza que los elementos <object> tienen texto alternativo",
+      "help": "Los elementos <object> deben tener texto alternativo"
+    },
+    "p-as-heading": {
+      "description": "Garantizar que los elementos p no se usan para diseñar encabezados",
+      "help": "No se usa texto en negrita, cursiva o tamaño de fuente para dar estilo de encabezados a elementos p"
+    },
+    "page-has-heading-one": {
+      "description": "Garantizar que la página, o al menos uno de sus marcos, contiene un encabezado de nivel 1",
+      "help": "La página debe contener un encabezado de nivel 1"
+    },
+    "region": {
+      "description": "Garantiza que todo el contenido de la página está incluido en puntos de referencia",
+      "help": "Todo el contenido de la página debe estar incluido en puntos de referencia"
+    },
+    "role-img-alt": {
+      "description": "Garantiza que los elementos [role='img'] tienen texto alternativo",
+      "help": "Los elementos [role='img'] tienen un texto alternativo"
+    },
+    "scope-attr-valid": {
+      "description": "Garantiza que el atributo scope se usa correctamente en las tablas",
+      "help": "El atributo scope debería usarse correctamente"
+    },
+    "scrollable-region-focusable": {
+      "description": "Los elementos que tienen contenido que puede desplazarse verticalmente (en 'scroll') deberían ser accesibles mediante el teclado",
+      "help": "Asegurar que la región de desplazamiento vertical ('scroll') tiene acceso por teclado"
+    },
+    "server-side-image-map": {
+      "description": "Garantiza que no se usan mapas de imágenes del lado del servidor",
+      "help": "No deben usarse mapas de imágenes del lado del servidor"
+    },
+    "skip-link": {
+      "description": "Garantizar que todos los enlaces de salto ('skip') tienen un destino que admite el foco",
+      "help": "El destino del enlace de salto ('skip') debería existir y admitir el foco"
+    },
+    "tabindex": {
+      "description": "Garantiza que los valores del atributo tabindex no son mayores que 0",
+      "help": "Los elementos no deberían tener un tabindex mayor que 0"
+    },
+    "table-duplicate-name": {
+      "description": "Garantizar que las tablas no tienen el mismo summary y caption",
+      "help": "El elemento <caption> no debería contener el mismo texto que el atributo summary"
+    },
+    "table-fake-caption": {
+      "description": "Garantizar que las tablas con título usan el elemento <caption>.",
+      "help": "Las celdas de datos o de encabezados no deberían usarse para dar título a una tabla de datos."
+    },
+    "td-has-header": {
+      "description": "Garantizar que cada celda de datos no vacía de una tabla grande tiene uno o más encabezados de tabla",
+      "help": "Todos los elementos td no vacíos de una tabla mayor que 3 por 3 deben tener un encabezado de tabla asociado"
+    },
+    "td-headers-attr": {
+      "description": "Garantizar que cada celda que use los encabezados en una tabla haga referencia a otra celda de esa tabla",
+      "help": "Todas las celdas de un elemento table que usen el atributo headers deben hacer referencia solo a otras celdas de esa misma tabla"
+    },
+    "th-has-data-cells": {
+      "description": "Garantizar que cada encabezado de tabla en una tabla de datos hace referencia a celdas de datos",
+      "help": "Todos los elementos th y elementos con role=columnheader/rowheader deben tener las celdas de datos que describen"
+    },
+    "valid-lang": {
+      "description": "Garantiza que los atributos lang tienen valores válidos",
+      "help": "El atributo lang debe tener un valor válido"
+    },
+    "video-caption": {
+      "description": "Garantiza que los elementos <video> tienen subtítulos",
+      "help": "Los elementos <video> deben tener subtítulos"
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "No se usan 'abstract roles'",
+      "fail": "Los 'abstract roles' no se pueden usar directamente"
+    },
+    "aria-allowed-attr": {
+      "pass": "Los atributos ARIA se usan correctamente para el rol definido",
+      "fail": {
+        "singular": "En ARIA, atributos no están permitidos : ${data.values}",
+        "plural": "En ARIA, atributono está permitido : ${data.values}"
+      }
+    },
+    "aria-allowed-role": {
+      "pass": "El rol ARIA está permitido para el elemento proporcionado",
+      "fail": {
+        "singular": "En ARIA, roles ${data.values} no están permitidos para el elemento proporcionado",
+        "plural": "En ARIA, role ${data.values}  no está permitido para el elemento proporcionado"
+      },
+      "incomplete": {
+        "singular": "En ARIA, hay que eliminar roles ${data.values} cuando el elemento se haga visible, ya que no están permitidos para el elemento",
+        "plural": "En ARIA, hay que eliminar role ${data.values} cuando el elemento se haga visible, ya que no está permitido para el elemento"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "No hay ningún atributo aria-hidden presente en el 'body' del documento",
+      "fail": "aria-hidden=true no debe estar presente en el 'body' del documento"
+    },
+    "aria-errormessage": {
+      "pass": "Usa una técnica admitida para aria-errormessage",
+      "fail": {
+        "singular": "En aria-errormessage, valores  ${data.values}`, se debe usar una técnica para anunciar el mensaje (p. ej., aria-live, aria-describedby, role=alert, etc.)",
+        "plural": "En aria-errormessage, valor  ${data.values}`, se debe usar una técnica para anunciar el mensaje (p. ej., aria-live, aria-describedby, role=alert, etc.)"
+      }
+    },
+    "has-widget-role": {
+      "pass": "El elemento tiene un rol de widget.",
+      "fail": "El elemento no tiene un rol de widget."
+    },
+    "invalidrole": {
+      "pass": "El rol ARIA es válido",
+      "fail": "El rol debe ser uno de los roles ARIA válidos"
+    },
+    "no-implicit-explicit-label": {
+      "pass": "No hay discordancia entre un <label> y el nombre accesible",
+      "incomplete": "Comprobar que el <label> no necesita ser parte del ARIA ${data} para el nombre del campo"
+    },
+    "aria-required-attr": {
+      "pass": "Todos los atributos ARIA requeridos están presentes",
+      "fail": {
+        "singular": "Atributos requeridos no presentes: ${data.values}",
+        "plural": "Atributo requerido no presente: ${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": {
+        "default": "Los hijos ARIA requeridos están presentes"
+      },
+      "fail": {
+        "singular": "Rol de hijos requerido en ARIA no presente: ${data.values}",
+        "plural": "Rol de hijo requerido en ARIA no presente: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "Esperando que se añada rol ARIA para hijos: ${data.values}",
+        "plural": "Esperando que se añada rol ARIA para hijo: ${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "Rol de padre requerido en ARIA presente",
+      "fail": {
+        "singular": "Rol de ARIA requerido para padre s no presente: ${data.values}",
+        "plural": "Rol de ARIA requerido para padre  no presente: ${data.values}"
+      }
+    },
+    "aria-unsupported-attr": {
+      "pass": "El atributo ARIA está admitido",
+      "fail": "El atributo ARIA no está ampliamente admitido en lectores de pantalla y tecnologías de apoyo:  ${data.values}"
+    },
+    "unsupportedrole": {
+      "pass": "El rol ARIA está admitido",
+      "fail": "El rol usado no está ampliamente admitido en lectores de pantalla y tecnologías de apoyo:  ${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "Los valores de los atributos ARIA son válidos",
+      "fail": {
+        "singular": "Valores no válidos para atributo ARIA: ${data.values}",
+        "plural": "Valor no válido para atributo ARIA: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "Atributos ARIA ID de elemento no existe en la página: ${data.values}",
+        "plural": "Atributo ARIA ID de elemento no existe en la página: ${data.values}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": {
+        "singular": "Nombres de atributos ARIA válidos",
+        "plural": "Nombrede atributo ARIA válido"
+      },
+      "fail": {
+        "singular": "Nombres de atributos ARIA no válidos:  ${data.values}",
+        "plural": "Nombre de atributo ARIA no válido:  ${data.values}"
+      }
+    },
+    "valid-scrollable-semantics": {
+      "pass": "El elemento tiene una semántica válida para un elemento en orden de foco.",
+      "fail": "El elemento tiene una semántica no válida para un elemento en orden de foco."
+    },
+    "color-contrast": {
+      "pass": "El elemento tiene un contraste de color suficiente de ${data.contrastRatio}",
+      "fail": "El elemento tiene un contraste de color insuficiente de ${data.contrastRatio} (color de primer plano: ${data.fgColor}, color de fondo: ${data.bgColor}, tamaño de fuente: ${data.fontSize}, grosor de fuente: ${data.fontWeight}). Ratio de contraste esperado: ${data.expectedContrastRatio}",
+      "incomplete": {
+        "bgImage": "El color de fondo del elemento no se pudo determinar debido a una imagen de fondo",
+        "bgGradient": "El color de fondo del elemento no se pudo determinar debido a un degradado de fondo",
+        "imgNode": "El color de fondo del elemento no se pudo determinar porque el elemento contiene un nodo de imagen",
+        "bgOverlap": "El color de fondo no se pudo determinar porque tiene otro elemento superpuesto",
+        "fgAlpha": "El color de fondo no se pudo determinar debido a una transparencia alfa",
+        "elmPartiallyObscured": "El color de fondo no se pudo determinar porque está parcialmente oculto por otro elemento",
+        "elmPartiallyObscuring": "El color de fondo del elemento no se pudo determinar porque se superpone parcialmente a otros elementos",
+        "outsideViewport": "El color de fondo del elemento no se pudo determinar porque está fuera de la ventana gráfica ('viewport')",
+        "equalRatio": "El elemento tiene una ratio de contraste 1:1 con el fondo",
+        "shortTextContent": "El contenido del elemento es demasiado corto para determinar si es contenido de texto propiamente dicho",
+        "default": "Imposible determinar la ratio de contraste"
+      }
+    },
+    "color-contrast-enhanced": {
+      "pass": "El elemento tiene un contraste de color suficiente de ${data.contrastRatio}",
+      "fail": "El elemento tiene un contraste de color insuficiente de ${data.contrastRatio} (color de primer plano: ${data.fgColor}, color de fondo: ${data.bgColor}, tamaño de fuente: ${data.fontSize}, grosor de fuente: ${data.fontWeight}). Ratio de contraste esperado: ${data.expectedContrastRatio}",
+      "incomplete": {
+        "bgImage": "El color de fondo del elemento no se pudo determinar debido a una imagen de fondo",
+        "bgGradient": "El color de fondo del elemento no se pudo determinar debido a un degradado de fondo",
+        "imgNode": "El color de fondo del elemento no se pudo determinar porque el elemento contiene un nodo de imagen",
+        "bgOverlap": "El color de fondo no se pudo determinar porque tiene otro elemento superpuesto",
+        "fgAlpha": "El color de fondo no se pudo determinar debido a una transparencia alfa",
+        "elmPartiallyObscured": "El color de fondo no se pudo determinar porque está parcialmente oculto por otro elemento",
+        "elmPartiallyObscuring": "El color de fondo del elemento no se pudo determinar porque se superpone parcialmente a otros elementos",
+        "outsideViewport": "El color de fondo del elemento no se pudo determinar porque está fuera de la ventana gráfica ('viewport')",
+        "equalRatio": "El elemento tiene una ratio de contraste 1:1 con el fondo",
+        "shortTextContent": "El contenido del elemento es demasiado corto para determinar si es contenido de texto propiamente dicho",
+        "default": "Imposible determinar la ratio de contraste"
+      }
+    },
+    "link-in-text-block": {
+      "pass": "Los enlaces se pueden distinguir respecto al texto adyacente de forma ajena al color",
+      "fail": "Es necesario distinguir los enlaces respecto al texto adyacente de una forma ajena al color",
+      "incomplete": {
+        "bgContrast": "No se pudo determinar la ratio de contraste del elemento. Comprobar si existe un estilo hover/focus distinto",
+        "bgImage": "La ratio de contraste del elemento no se pudo determinar debido a una imagen de fondo",
+        "bgGradient": "La ratio de contraste del elemento no se pudo determinar debido a un degradado de fondo",
+        "imgNode": "La ratio de contraste del elemento no se pudo determinar porque el elemento contiene un nodo de imagen",
+        "bgOverlap": "La ratio de contraste del elemento no se pudo determinar debido a superposición de elementos",
+        "default": "Imposible determinar la ratio de contraste"
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "el valor de autocomplete está en un elemento apropiado",
+      "fail": "el valor de autocomplete es inapropiado para este tipo de input"
+    },
+    "autocomplete-valid": {
+      "pass": "el atributo autocomplete está formateado correctamente",
+      "fail": "el atributo autocomplete está formateado incorrectamente"
+    },
+    "accesskeys": {
+      "pass": "El valor del atributo accesskey es único",
+      "fail": "El documento tiene múltiples elementos con el mismo accesskey"
+    },
+    "focusable-content": {
+      "pass": "El elemento contiene elementos que admiten el foco",
+      "fail": "El elemento debería tener contenido que admita el foco"
+    },
+    "focusable-disabled": {
+      "pass": "Dentro del elemento no hay elementos que admitan el foco",
+      "fail": "El contenido que admita el foco debería ser desactivado o eliminado del DOM"
+    },
+    "focusable-element": {
+      "pass": "El elemento admite el foco",
+      "fail": "El elemento debería admitir el foco"
+    },
+    "focusable-no-name": {
+      "pass": "El elemento no está en orden de tabulación o tiene texto accesible",
+      "fail": "El elemento está en orden de tabulación y no tiene texto accesible"
+    },
+    "focusable-not-tabbable": {
+      "pass": "Dentro del elemento no hay elementos que admitan el foco",
+      "fail": "El contenido que admita el foco debería tener tabindex='-1' o ser eliminado del DOM"
+    },
+    "landmark-is-top-level": {
+      "pass": "El punto de referencia ${data.role} está en el nivel superior.",
+      "fail": "El punto de referencia ${data.role} está contenido en otro punto de referencia."
+    },
+    "page-has-heading-one": {
+      "pass": "La página tiene al menos un encabezado de nivel 1",
+      "fail": "La página debe tener un encabezado de nivel 1"
+    },
+    "page-has-main": {
+      "pass": "El documento tiene al menos un punto de referencia main",
+      "fail": "El documento no tiene punto de referencia main"
+    },
+    "page-no-duplicate-banner": {
+      "pass": "El documento no tiene más de un punto de referencia banner",
+      "fail": "El documento tiene más de un punto de referencia banner"
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "El documento no tiene más de un punto de referencia contentinfo",
+      "fail": "El documento tiene más de un punto de referencia contentinfo"
+    },
+    "page-no-duplicate-main": {
+      "pass": "El documento no tiene más de un punto de referencia main",
+      "fail": "El documento tiene más de un punto de referencia main"
+    },
+    "tabindex": {
+      "pass": "El elemento no tiene un tabindex mayor que 0",
+      "fail": "El elemento tiene un tabindex mayor que 0"
+    },
+    "alt-space-value": {
+      "pass": "El elemento tiene un valor válido para el atributo alt",
+      "fail": "El elemento tiene un atributo alt que contiene solo un carácter de espacio, que no es ignorado por todos los lectores de pantalla"
+    },
+    "duplicate-img-label": {
+      "pass": "El elemento no duplica texto existente en el texto alternativo de <img>",
+      "fail": "El elemento contiene un elemento <img> con texto alternativo que duplica texto existente"
+    },
+    "explicit-label": {
+      "pass": "El elemento de formulario tiene un <label> explícito",
+      "fail": "El elemento de formulario no tiene un <label> explícito"
+    },
+    "help-same-as-label": {
+      "pass": "El texto de ayuda (title o aria-describedby) no duplica el texto de label",
+      "fail": "El texto de ayuda (title o aria-describedby) es el mismo que el texto de label"
+    },
+    "hidden-explicit-label": {
+      "pass": "El elemento de formulario tiene un <label> explícito visible",
+      "fail": "El elemento de formulario tiene un <label> explícito oculto"
+    },
+    "implicit-label": {
+      "pass": "El elemento de formulario tiene un <label> implícito ('envuelto')",
+      "fail": "El elemento de formulario no tiene un <label> implícito ('envuelto')"
+    },
+    "label-content-name-mismatch": {
+      "pass": "El elemento contiene texto visible como parte de su nombre accesible",
+      "fail": "El texto contenido en el elemento no está incluido en el nombre accesible"
+    },
+    "multiple-label": {
+      "pass": "El campo de formulario no tiene múltiples elementos label",
+      "fail": "Múltiples elementos label no son ampliamente admitidos en las tecnologías de apoyo"
+    },
+    "title-only": {
+      "pass": "El elemento de formulario no usa únicamente el atributo title para su etiqueta",
+      "fail": "Solo se usó title para generar la etiqueta de un elemento de formulario"
+    },
+    "landmark-is-unique": {
+      "pass": "Los puntos de referencia deben tener una combinación única de role o role/label/title (es decir, un nombre accesible único)",
+      "fail": "El punto de referencia debe tener un aria-label, aria-labelledby o title único para que los puntos de referencia sean distinguibles"
+    },
+    "has-lang": {
+      "pass": "El elemento <html> tiene un atributo lang",
+      "fail": "El elemento <html> no tiene un atributo lang"
+    },
+    "valid-lang": {
+      "pass": "El valor del atributo lang está incluido en la lista de idiomas válidos",
+      "fail": "Valor del atributo lang no incluido en la lista de idiomas válidos"
+    },
+    "xml-lang-mismatch": {
+      "pass": "Los atributos lang y xml:lang tienen el mismo idioma base",
+      "fail": "Los atributos lang y xml:lang no tienen el mismo idioma base"
+    },
+    "dlitem": {
+      "pass": "El elemento de lista de descripción tiene un elemento <dl> padre",
+      "fail": "El elemento de lista de descripción no tiene un elemento <dl> padre"
+    },
+    "listitem": {
+      "pass": "El elemento de lista tiene un elemento padre <ul>, <ol> o role=\"list\"",
+      "fail": "El elemento de lista no tiene un elemento padre <ul>, <ol> o role=\"list\""
+    },
+    "only-dlitems": {
+      "pass": "El elemento de lista solo tiene hijos directos que están permitidos dentro de elementos <dt> o <dd>",
+      "fail": "El elemento de lista tiene hijos directos que no están permitidos dentro de elementos <dt> o <dd>"
+    },
+    "only-listitems": {
+      "pass": "El elemento de lista solo tiene hijos directos que están permitidos dentro de elementos <li>",
+      "fail": "El elemento de lista tiene hijos directos que no están permitidos dentro de elementos <li>"
+    },
+    "structured-dlitems": {
+      "pass": "Cuando no está vacío, el elemento tiene tanto elementos <dt> como <dd>",
+      "fail": "Cuando no está vacío, el elemento no tiene al menos un elemento <dt> seguido por, al menos, un elemento <dd>"
+    },
+    "caption": {
+      "pass": "El elemento multimedia tiene una pista de subtítulos",
+      "incomplete": "Comprobar que hay disponibles subtítulos para el elemento"
+    },
+    "frame-tested": {
+      "pass": "El marco incorporado fue probado con axe-core",
+      "fail": "El marco incorporado no se pudo probar con axe-core",
+      "incomplete": "El marco incorporado aún tiene que probarse con axe-core"
+    },
+    "css-orientation-lock": {
+      "pass": "La pantalla es manejable y no existe bloqueo de orientación",
+      "fail": "Se aplica bloqueo de orientación CSS y hace que la pantalla sea inmanejable",
+      "incomplete": "No se puede determinar  si hay bloqueo de orientación CSS"
+    },
+    "meta-viewport-large": {
+      "pass": "La etiqueta <meta> no impide un zum significativo en dispositivos móviles",
+      "fail": "La etiqueta <meta> limita el zum en dispositivos móviles"
+    },
+    "meta-viewport": {
+      "pass": "La etiqueta <meta> no impide el zum en dispositivos móviles",
+      "fail": "${data} en la etiqueta <meta> impide el zum en dispositivos móviles"
+    },
+    "header-present": {
+      "pass": "La página tiene un 'header'",
+      "fail": "La página no tiene un 'header'"
+    },
+    "heading-order": {
+      "pass": "Horden de encabezados válido",
+      "fail": "Orden de encabezados no válido"
+    },
+    "internal-link-present": {
+      "pass": "Encontrado enlace de salto ('skip') válido",
+      "fail": "No se han encontrado enlaces de salto ('skip') válidos"
+    },
+    "landmark": {
+      "pass": "La página tiene una región punto de referencia",
+      "fail": "La página no tiene una región punto de referencia"
+    },
+    "meta-refresh": {
+      "pass": "La etiqueta <meta> no refresca la página inmediatamente",
+      "fail": "La etiqueta <meta> fuerza el refresco programado de la página"
+    },
+    "p-as-heading": {
+      "pass": "Los elementos <p> no se han diseñado como encabezados",
+      "fail": "Deberían usarse elementos de encabezado en vez de elementos <p> con estilos"
+    },
+    "region": {
+      "pass": "Todo el contenido de la página está incluido en puntos de referencia",
+      "fail": "La página tiene contenido no incluido en puntos de referencia"
+    },
+    "skip-link": {
+      "pass": "Existe el destino del enlace de salto ('skip')",
+      "incomplete": "El destino del enlace de salto ('skip') debería volverse visible en la activación",
+      "fail": "No hay destino para el enlace de salto ('skip')"
+    },
+    "unique-frame-title": {
+      "pass": "El atributo title del elemento es único",
+      "fail": "El atributo title del elemento no es único"
+    },
+    "duplicate-id-active": {
+      "pass": "El documento no tiene elementos activos que compartan el mismo atributo id",
+      "fail": "El documento tiene elementos activos con el mismo atributo id: ${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "El documento no tiene elementos referidos con ARIA o etiquetas que compartan el mismo atributo id",
+      "fail": "El documento tiene múltiples elementos referidos con ARIA con el mismo atributo id: ${data}"
+    },
+    "duplicate-id": {
+      "pass": "El documento no tiene elementos estáticos que compartan el mismo atributo id",
+      "fail": "El documento tiene múltiples elementos estáticos con el mismo atributo id"
+    },
+    "aria-label": {
+      "pass": "El atributo aria-label existe y no está vacío",
+      "fail": "El atributo aria-label no existe o está vacío"
+    },
+    "aria-labelledby": {
+      "pass": "El atributo aria-labelledby existe y hace referencia a elementos visibles para lectores de pantalla",
+      "fail": "El atributo aria-labelledby no existe, hace referencia a elementos inexistentes o hace referencia a elementos vacíos"
+    },
+    "avoid-inline-spacing": {
+      "pass": "No se han especificado estilos 'inline' con '!important' que afecten al espaciado de texto",
+      "fail": {
+        "singular": "Eliminar '!important' de inline styles ${data.values}, porque su anulación no está admitida en la mayoría de navegadores",
+        "plural": "Eliminar '!important' de inline style ${data.values}, porque su anulación no está admitida en la mayoría de navegadores"
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "El elemento tiene texto interno visible para lectores de pantalla",
+      "fail": "El elemento no tiene texto interno visible para lectores de pantalla"
+    },
+    "doc-has-title": {
+      "pass": "El documento tiene un elemento <title> no vacío",
+      "fail": "El documento no tiene un elemento <title> no vacío"
+    },
+    "exists": {
+      "pass": "El elemento no existe",
+      "fail": "El elemento existe"
+    },
+    "has-alt": {
+      "pass": "El elemento tiene un atributo alt",
+      "fail": "El elemento no tiene un atributo alt"
+    },
+    "has-visible-text": {
+      "pass": "El elemento tiene texto visible para lectores de pantalla",
+      "fail": "El elemento no tiene texto visible para lectores de pantalla"
+    },
+    "is-on-screen": {
+      "pass": "El elemento no es visible",
+      "fail": "El elemento es visible"
+    },
+    "non-empty-alt": {
+      "pass": "El elemento tiene un atributo alt no vacío",
+      "fail": "El elemento no tiene atributo alt o el atributo alt está vacío"
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": "El elemento no tiene un atributo de valor",
+        "has-label": "El elemento tiene un atributo de valor no vacío"
+      },
+      "fail": "El elemento tiene un atributo de valor y el atributo de valor está vacío"
+    },
+    "non-empty-title": {
+      "pass": "El elemento tiene un atributo title",
+      "fail": "El elemento no tiene atributo title o el atributo title está vacío"
+    },
+    "non-empty-value": {
+      "pass": "El elemento tiene un atributo de valor no vacío",
+      "fail": "El elemento no tiene un atributo de valor o el atributo de valor está vacío"
+    },
+    "role-none": {
+      "pass": "La semántica predeterminada del elemento se anuló mediante role=\"none\"",
+      "fail": "La semántica predeterminada del elemento no se anuló mediante role=\"none\""
+    },
+    "role-presentation": {
+      "pass": "La semántica predeterminada del elemento se anuló mediante role=\"presentation\"",
+      "fail": "La semántica predeterminada del elemento no se anuló mediante role=\"presentation\""
+    },
+    "caption-faked": {
+      "pass": "La primera fila de una tabla no se usa como título ('caption')",
+      "fail": "La primera fila de la tabla debería ser un título ('caption') en vez de una celda de tabla"
+    },
+    "html5-scope": {
+      "pass": "El atributo scope solo se usa en elementos de encabezados de tabla (<th>)",
+      "fail": "En HTML 5, los atributos scope solo se pueden usar en elementos de encabezados de tabla (<th>)"
+    },
+    "same-caption-summary": {
+      "pass": "El contenido del atributo summary y de <caption> no están duplicados",
+      "fail": "El contenido del atributo summary y del elemento <caption> son idénticos"
+    },
+    "scope-value": {
+      "pass": "El atributo scope se usa correctamente",
+      "fail": "El valor del atributo scope solo puede ser 'row' o 'col'"
+    },
+    "td-has-header": {
+      "pass": "Todas las celdas de datos no vacías tienen encabezados de tabla",
+      "fail": "Algunas celdas de datos no vacías no tienen encabezados de tabla"
+    },
+    "td-headers-attr": {
+      "pass": "El atributo headers se usa exclusivamente para hacer referencia a otras celdas de la tabla",
+      "fail": "El atributo headers no se usa exclusivamente para hacer referencia a otras celdas de la tabla"
+    },
+    "th-has-data-cells": {
+      "pass": "Todas las celdas de encabezados de tabla hacen referencia a celdas de datos",
+      "fail": "No todas las celdas de encabezados de tabla hacen referencia a celdas de datos",
+      "incomplete": "Hay celdas de datos de la tabla ausentes o vacías"
+    },
+    "hidden-content": {
+      "pass": "Se ha analizado todo el contenido de la página.",
+      "fail": "Hubo problemas al analizar el contenido de esta página.",
+      "incomplete": "Hay contenido oculto en la página que no fue analizado. Necesitarás activar la visualización de este contenido a fin de analizarlo."
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "Corregir cualquiera de las siguientes incidencias:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "Corregir (todas) las siguientes incidencias:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "Corregir (todas) las siguientes incidencias:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+}

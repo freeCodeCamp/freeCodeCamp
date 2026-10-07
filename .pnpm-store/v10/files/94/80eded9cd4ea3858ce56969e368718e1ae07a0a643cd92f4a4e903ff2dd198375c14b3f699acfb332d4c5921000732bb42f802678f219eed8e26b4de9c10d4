@@ -1,0 +1,1123 @@
+{
+  "lang": "xyz",
+  "rules": {
+    "accesskeys": {
+      "description": "Ensure every accesskey attribute value is unique",
+      "help": "accesskey attribute value should be unique"
+    },
+    "area-alt": {
+      "description": "Ensure <area> elements of image maps have alternative text",
+      "help": "Active <area> elements must have alternative text"
+    },
+    "aria-allowed-attr": {
+      "description": "Ensure an element's role supports its ARIA attributes",
+      "help": "Elements must only use supported ARIA attributes"
+    },
+    "aria-allowed-role": {
+      "description": "Ensure role attribute has an appropriate value for the element",
+      "help": "ARIA role should be appropriate for the element"
+    },
+    "aria-braille-equivalent": {
+      "description": "Ensure aria-braillelabel and aria-brailleroledescription have a non-braille equivalent",
+      "help": "aria-braille attributes must have a non-braille equivalent"
+    },
+    "aria-command-name": {
+      "description": "Ensure every ARIA button, link and menuitem has an accessible name",
+      "help": "ARIA commands must have an accessible name"
+    },
+    "aria-conditional-attr": {
+      "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+      "help": "ARIA attributes must be used as specified for the element's role"
+    },
+    "aria-deprecated-role": {
+      "description": "Ensure elements do not use deprecated roles",
+      "help": "Deprecated ARIA roles must not be used"
+    },
+    "aria-dialog-name": {
+      "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+      "help": "ARIA dialog and alertdialog nodes should have an accessible name"
+    },
+    "aria-hidden-body": {
+      "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+      "help": "aria-hidden=\"true\" must not be present on the document body"
+    },
+    "aria-hidden-focus": {
+      "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+      "help": "ARIA hidden element must not be focusable or contain focusable elements"
+    },
+    "aria-input-field-name": {
+      "description": "Ensure every ARIA input field has an accessible name",
+      "help": "ARIA input fields must have an accessible name"
+    },
+    "aria-meter-name": {
+      "description": "Ensure every ARIA meter node has an accessible name",
+      "help": "ARIA meter nodes must have an accessible name"
+    },
+    "aria-progressbar-name": {
+      "description": "Ensure every ARIA progressbar node has an accessible name",
+      "help": "ARIA progressbar nodes must have an accessible name"
+    },
+    "aria-prohibited-attr": {
+      "description": "Ensure ARIA attributes are not prohibited for an element's role",
+      "help": "Elements must only use permitted ARIA attributes"
+    },
+    "aria-required-attr": {
+      "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+      "help": "Required ARIA attributes must be provided"
+    },
+    "aria-required-children": {
+      "description": "Ensure elements with an ARIA role that require child roles contain them",
+      "help": "Certain ARIA roles must contain particular children"
+    },
+    "aria-required-parent": {
+      "description": "Ensure elements with an ARIA role that require parent roles are contained by them",
+      "help": "Certain ARIA roles must be contained by particular parents"
+    },
+    "aria-roledescription": {
+      "description": "Ensure aria-roledescription is only used on elements with an implicit or explicit role",
+      "help": "aria-roledescription must be on elements with a semantic role"
+    },
+    "aria-roles": {
+      "description": "Ensure all elements with a role attribute use a valid value",
+      "help": "ARIA roles used must conform to valid values"
+    },
+    "aria-text": {
+      "description": "Ensure role=\"text\" is used on elements with no focusable descendants",
+      "help": "\"role=text\" should have no focusable descendants"
+    },
+    "aria-toggle-field-name": {
+      "description": "Ensure every ARIA toggle field has an accessible name",
+      "help": "ARIA toggle fields must have an accessible name"
+    },
+    "aria-tooltip-name": {
+      "description": "Ensure every ARIA tooltip node has an accessible name",
+      "help": "ARIA tooltip nodes must have an accessible name"
+    },
+    "aria-treeitem-name": {
+      "description": "Ensure every ARIA treeitem node has an accessible name",
+      "help": "ARIA treeitem nodes should have an accessible name"
+    },
+    "aria-valid-attr-value": {
+      "description": "Ensure all ARIA attributes have valid values",
+      "help": "ARIA attributes must conform to valid values"
+    },
+    "aria-valid-attr": {
+      "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+      "help": "ARIA attributes must conform to valid names"
+    },
+    "audio-caption": {
+      "description": "Ensure <audio> elements have captions",
+      "help": "<audio> elements must have a captions track"
+    },
+    "autocomplete-valid": {
+      "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+      "help": "autocomplete attribute must be used correctly"
+    },
+    "avoid-inline-spacing": {
+      "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+      "help": "Inline text spacing must be adjustable with custom stylesheets"
+    },
+    "blink": {
+      "description": "Ensure <blink> elements are not used",
+      "help": "<blink> elements are deprecated and must not be used"
+    },
+    "button-name": {
+      "description": "Ensure buttons have discernible text",
+      "help": "Buttons must have discernible text"
+    },
+    "bypass": {
+      "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+      "help": "Page must have means to bypass repeated blocks"
+    },
+    "color-contrast-enhanced": {
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AAA enhanced contrast ratio thresholds",
+      "help": "Elements must meet enhanced color contrast ratio thresholds"
+    },
+    "color-contrast": {
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds"
+    },
+    "css-orientation-lock": {
+      "description": "Ensure content is not locked to any specific display orientation, and the content is operable in all display orientations",
+      "help": "CSS Media queries must not lock display orientation"
+    },
+    "definition-list": {
+      "description": "Ensure <dl> elements are structured correctly",
+      "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements"
+    },
+    "dlitem": {
+      "description": "Ensure <dt> and <dd> elements are contained by a <dl>",
+      "help": "<dt> and <dd> elements must be contained by a <dl>"
+    },
+    "document-title": {
+      "description": "Ensure each HTML document contains a non-empty <title> element",
+      "help": "Documents must have <title> element to aid in navigation"
+    },
+    "duplicate-id-active": {
+      "description": "Ensure every id attribute value of active elements is unique",
+      "help": "IDs of active elements must be unique"
+    },
+    "duplicate-id-aria": {
+      "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+      "help": "IDs used in ARIA and labels must be unique"
+    },
+    "duplicate-id": {
+      "description": "Ensure every id attribute value is unique",
+      "help": "id attribute value must be unique"
+    },
+    "empty-heading": {
+      "description": "Ensure headings have discernible text",
+      "help": "Headings should not be empty"
+    },
+    "empty-table-header": {
+      "description": "Ensure table headers have discernible text",
+      "help": "Table header text should not be empty"
+    },
+    "focus-order-semantics": {
+      "description": "Ensure elements in the focus order have a role appropriate for interactive content",
+      "help": "Elements in the focus order should have an appropriate role"
+    },
+    "form-field-multiple-labels": {
+      "description": "Ensure form field does not have multiple label elements",
+      "help": "Form field must not have multiple label elements"
+    },
+    "frame-focusable-content": {
+      "description": "Ensure <frame> and <iframe> elements with focusable content do not have tabindex=-1",
+      "help": "Frames with focusable content must not have tabindex=-1"
+    },
+    "frame-tested": {
+      "description": "Ensure <iframe> and <frame> elements contain the axe-core script",
+      "help": "Frames should be tested with axe-core"
+    },
+    "frame-title-unique": {
+      "description": "Ensure <iframe> and <frame> elements contain a unique title attribute",
+      "help": "Frames must have a unique title attribute"
+    },
+    "frame-title": {
+      "description": "Ensure <iframe> and <frame> elements have an accessible name",
+      "help": "Frames must have an accessible name"
+    },
+    "heading-order": {
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one"
+    },
+    "hidden-content": {
+      "description": "Informs users about hidden content.",
+      "help": "Hidden content on the page should be analyzed"
+    },
+    "html-has-lang": {
+      "description": "Ensure every HTML document has a lang attribute",
+      "help": "<html> element must have a lang attribute"
+    },
+    "html-lang-valid": {
+      "description": "Ensure the lang attribute of the <html> element has a valid value",
+      "help": "<html> element must have a valid value for the lang attribute"
+    },
+    "html-xml-lang-mismatch": {
+      "description": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
+      "help": "HTML elements with lang and xml:lang must have the same base language"
+    },
+    "identical-links-same-purpose": {
+      "description": "Ensure that links with the same accessible name serve a similar purpose",
+      "help": "Links with the same name must have a similar purpose"
+    },
+    "image-alt": {
+      "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+      "help": "Images must have alternative text"
+    },
+    "image-redundant-alt": {
+      "description": "Ensure image alternative is not repeated as text",
+      "help": "Alternative text of images should not be repeated as text"
+    },
+    "input-button-name": {
+      "description": "Ensure input buttons have discernible text",
+      "help": "Input buttons must have discernible text"
+    },
+    "input-image-alt": {
+      "description": "Ensure <input type=\"image\"> elements have alternative text",
+      "help": "Image buttons must have alternative text"
+    },
+    "label-content-name-mismatch": {
+      "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+      "help": "Elements must have their visible text as part of their accessible name"
+    },
+    "label-title-only": {
+      "description": "Ensure that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+      "help": "Form elements should have a visible label"
+    },
+    "label": {
+      "description": "Ensure every form element has a label",
+      "help": "Form elements must have labels"
+    },
+    "landmark-banner-is-top-level": {
+      "description": "Ensure the banner landmark is at top level",
+      "help": "Banner landmark should not be contained in another landmark"
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "Ensure the complementary landmark or aside is at top level",
+      "help": "Aside should not be contained in another landmark"
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "Ensure the contentinfo landmark is at top level",
+      "help": "Contentinfo landmark should not be contained in another landmark"
+    },
+    "landmark-main-is-top-level": {
+      "description": "Ensure the main landmark is at top level",
+      "help": "Main landmark should not be contained in another landmark"
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "Ensure the document has at most one banner landmark",
+      "help": "Document should not have more than one banner landmark"
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "Ensure the document has at most one contentinfo landmark",
+      "help": "Document should not have more than one contentinfo landmark"
+    },
+    "landmark-no-duplicate-main": {
+      "description": "Ensure the document has at most one main landmark",
+      "help": "Document should not have more than one main landmark"
+    },
+    "landmark-one-main": {
+      "description": "Ensure the document has a main landmark",
+      "help": "Document should have one main landmark"
+    },
+    "landmark-unique": {
+      "description": "Ensure landmarks are unique",
+      "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination"
+    },
+    "link-in-text-block": {
+      "description": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+      "help": "Links must be distinguishable without relying on color"
+    },
+    "link-name": {
+      "description": "Ensure links have discernible text",
+      "help": "Links must have discernible text"
+    },
+    "list": {
+      "description": "Ensure that lists are structured correctly",
+      "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements"
+    },
+    "listitem": {
+      "description": "Ensure <li> elements are used semantically",
+      "help": "<li> elements must be contained in a <ul> or <ol>"
+    },
+    "marquee": {
+      "description": "Ensure <marquee> elements are not used",
+      "help": "<marquee> elements are deprecated and must not be used"
+    },
+    "meta-refresh-no-exceptions": {
+      "description": "Ensure <meta http-equiv=\"refresh\"> is not used for delayed refresh",
+      "help": "Delayed refresh must not be used"
+    },
+    "meta-refresh": {
+      "description": "Ensure <meta http-equiv=\"refresh\"> is not used for delayed refresh",
+      "help": "Delayed refresh under 20 hours must not be used"
+    },
+    "meta-viewport-large": {
+      "description": "Ensure <meta name=\"viewport\"> can scale a significant amount",
+      "help": "Users should be able to zoom and scale the text up to 500%"
+    },
+    "meta-viewport": {
+      "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+      "help": "Zooming and scaling must not be disabled"
+    },
+    "nested-interactive": {
+      "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+      "help": "Interactive controls must not be nested"
+    },
+    "no-autoplay-audio": {
+      "description": "Ensure <video> or <audio> elements do not autoplay audio for more than 3 seconds without a control mechanism to stop or mute the audio",
+      "help": "<video> or <audio> elements must not play automatically"
+    },
+    "object-alt": {
+      "description": "Ensure <object> elements have alternative text",
+      "help": "<object> elements must have alternative text"
+    },
+    "p-as-heading": {
+      "description": "Ensure bold, italic text and font-size is not used to style <p> elements as a heading",
+      "help": "Styled <p> elements must not be used as headings"
+    },
+    "page-has-heading-one": {
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "help": "Page should contain a level-one heading"
+    },
+    "presentation-role-conflict": {
+      "description": "Elements marked as presentational should not have global ARIA or tabindex to ensure all screen readers ignore them",
+      "help": "Ensure elements marked as presentational are consistently ignored"
+    },
+    "region": {
+      "description": "Ensure all page content is contained by landmarks",
+      "help": "All page content should be contained by landmarks"
+    },
+    "role-img-alt": {
+      "description": "Ensure [role=\"img\"] elements have alternative text",
+      "help": "[role=\"img\"] elements must have an alternative text"
+    },
+    "scope-attr-valid": {
+      "description": "Ensure the scope attribute is used correctly on tables",
+      "help": "scope attribute should be used correctly"
+    },
+    "scrollable-region-focusable": {
+      "description": "Ensure elements that have scrollable content are accessible by keyboard",
+      "help": "Scrollable region must have keyboard access"
+    },
+    "select-name": {
+      "description": "Ensure select element has an accessible name",
+      "help": "Select element must have an accessible name"
+    },
+    "server-side-image-map": {
+      "description": "Ensure that server-side image maps are not used",
+      "help": "Server-side image maps must not be used"
+    },
+    "skip-link": {
+      "description": "Ensure all skip links have a focusable target",
+      "help": "The skip-link target should exist and be focusable"
+    },
+    "summary-name": {
+      "description": "Ensure summary elements have discernible text",
+      "help": "Summary elements must have discernible text"
+    },
+    "svg-img-alt": {
+      "description": "Ensure <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text",
+      "help": "<svg> elements with an img role must have an alternative text"
+    },
+    "tabindex": {
+      "description": "Ensure tabindex attribute values are not greater than 0",
+      "help": "Elements should not have tabindex greater than zero"
+    },
+    "table-duplicate-name": {
+      "description": "Ensure the <caption> element does not contain the same text as the summary attribute",
+      "help": "Tables should not have the same summary and caption"
+    },
+    "table-fake-caption": {
+      "description": "Ensure that tables with a caption use the <caption> element.",
+      "help": "Data or header cells must not be used to give caption to a data table."
+    },
+    "target-size": {
+      "description": "Ensure touch targets have sufficient size and space",
+      "help": "All touch targets must be 24px large, or leave sufficient space"
+    },
+    "td-has-header": {
+      "description": "Ensure that each non-empty data cell in a <table> larger than 3 by 3  has one or more table headers",
+      "help": "Non-empty <td> elements in larger <table> must have an associated table header"
+    },
+    "td-headers-attr": {
+      "description": "Ensure that each cell in a table that uses the headers attribute refers only to other cells in that table",
+      "help": "Table cells that use the headers attribute must only refer to cells in the same table"
+    },
+    "th-has-data-cells": {
+      "description": "Ensure that <th> elements and elements with role=columnheader/rowheader have data cells they describe",
+      "help": "Table headers in a data table must refer to data cells"
+    },
+    "valid-lang": {
+      "description": "Ensure lang attributes have valid values",
+      "help": "lang attribute must have a valid value"
+    },
+    "video-caption": {
+      "description": "Ensure <video> elements have captions",
+      "help": "<video> elements must have captions"
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "Abstract roles are not used",
+      "fail": {
+        "singular": "Abstract role cannot be directly used: ${data.values}",
+        "plural": "Abstract roles cannot be directly used: ${data.values}"
+      }
+    },
+    "aria-allowed-attr": {
+      "pass": "ARIA attributes are used correctly for the defined role",
+      "fail": {
+        "singular": "ARIA attribute is not allowed: ${data.values}",
+        "plural": "ARIA attributes are not allowed: ${data.values}"
+      },
+      "incomplete": "Check that there is no problem if the ARIA attribute is ignored on this element: ${data.values}"
+    },
+    "aria-allowed-role": {
+      "pass": "ARIA role is allowed for given element",
+      "fail": {
+        "singular": "ARIA role ${data.values} is not allowed for given element",
+        "plural": "ARIA roles ${data.values} are not allowed for given element"
+      },
+      "incomplete": {
+        "singular": "ARIA role ${data.values} must be removed when the element is made visible, as it is not allowed for the element",
+        "plural": "ARIA roles ${data.values} must be removed when the element is made visible, as they are not allowed for the element"
+      }
+    },
+    "aria-busy": {
+      "pass": "Element has an aria-busy attribute",
+      "fail": "Element uses aria-busy=\"true\" while showing a loader"
+    },
+    "aria-conditional-attr": {
+      "pass": "ARIA attribute is allowed",
+      "fail": {
+        "checkbox": "Remove aria-checked, or set it to \"${data.checkState}\" to match the real checkbox state",
+        "rowSingular": "This attribute is supported with treegrid rows, but not ${data.ownerRole}: ${data.invalidAttrs}",
+        "rowPlural": "These attributes are supported with treegrid rows, but not ${data.ownerRole}: ${data.invalidAttrs}"
+      }
+    },
+    "aria-errormessage": {
+      "pass": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique",
+      "fail": {
+        "singular": "aria-errormessage value `${data.values}` must use a technique to announce the message (e.g., aria-live, aria-describedby, role=alert, etc.)",
+        "plural": "aria-errormessage values `${data.values}` must use a technique to announce the message (e.g., aria-live, aria-describedby, role=alert, etc.)",
+        "hidden": "aria-errormessage value `${data.values}` cannot reference a hidden element"
+      },
+      "incomplete": {
+        "singular": "Ensure aria-errormessage value `${data.values}` references an existing element",
+        "plural": "Ensure aria-errormessage values `${data.values}` reference existing elements",
+        "idrefs": "Unable to determine if aria-errormessage element exists on the page: ${data.values}"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "No aria-hidden attribute is present on document body",
+      "fail": "aria-hidden=true should not be present on the document body"
+    },
+    "aria-level": {
+      "pass": "aria-level values are valid",
+      "incomplete": "aria-level values greater than 6 are not supported in all screenreader and browser combinations"
+    },
+    "aria-prohibited-attr": {
+      "pass": "ARIA attribute is allowed",
+      "fail": {
+        "hasRolePlural": "${data.prohibited} attributes cannot be used with role \"${data.role}\".",
+        "hasRoleSingular": "${data.prohibited} attribute cannot be used with role \"${data.role}\".",
+        "noRolePlural": "${data.prohibited} attributes cannot be used on a ${data.nodeName} with no valid role attribute.",
+        "noRoleSingular": "${data.prohibited} attribute cannot be used on a ${data.nodeName} with no valid role attribute."
+      },
+      "incomplete": {
+        "hasRoleSingular": "${data.prohibited} attribute is not well supported with role \"${data.role}\".",
+        "hasRolePlural": "${data.prohibited} attributes are not well supported with role \"${data.role}\".",
+        "noRoleSingular": "${data.prohibited} attribute is not well supported on a ${data.nodeName} with no valid role attribute.",
+        "noRolePlural": "${data.prohibited} attributes are not well supported on a ${data.nodeName} with no valid role attribute."
+      }
+    },
+    "aria-required-attr": {
+      "pass": "All required ARIA attributes are present",
+      "fail": {
+        "singular": "Required ARIA attribute not present: ${data.values}",
+        "plural": "Required ARIA attributes not present: ${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": {
+        "default": "Required ARIA children are present",
+        "aria-busy": "Element has an aria-busy attribute, so it is allowed to omit required children"
+      },
+      "fail": {
+        "singular": "Required ARIA child role not present: ${data.values}",
+        "plural": "Required ARIA children role not present: ${data.values}",
+        "unallowed": "Element has children which are not allowed: ${data.values}"
+      },
+      "incomplete": {
+        "singular": "Expecting ARIA child role to be added: ${data.values}",
+        "plural": "Expecting ARIA children role to be added: ${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "Required ARIA parent role present",
+      "fail": {
+        "singular": "Required ARIA parent role not present: ${data.values}",
+        "plural": "Required ARIA parents role not present: ${data.values}"
+      }
+    },
+    "aria-roledescription": {
+      "pass": "aria-roledescription used on a supported semantic role",
+      "incomplete": "Check that the aria-roledescription is announced by supported screen readers",
+      "fail": "Give the element a role that supports aria-roledescription"
+    },
+    "aria-unsupported-attr": {
+      "pass": "ARIA attribute is supported",
+      "fail": "ARIA attribute is not widely supported in screen readers and assistive technologies: ${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "ARIA attribute values are valid",
+      "fail": {
+        "singular": "Invalid ARIA attribute value: ${data.values}",
+        "plural": "Invalid ARIA attribute values: ${data.values}"
+      },
+      "incomplete": {
+        "noId": "ARIA attribute element ID does not exist on the page: ${data.needsReview}",
+        "noIdShadow": "ARIA attribute element ID does not exist on the page or is a descendant of a different shadow DOM tree: ${data.needsReview}",
+        "ariaCurrent": "ARIA attribute value is invalid and will be treated as \"aria-current=true\": ${data.needsReview}",
+        "idrefs": "Unable to determine if ARIA attribute element ID exists on the page: ${data.needsReview}",
+        "empty": "ARIA attribute value is ignored while empty: ${data.needsReview}",
+        "controlsWithinPopup": "Unable to determine if aria-controls referenced ID exists on the page while using aria-haspopup: ${data.needsReview}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": "ARIA attribute name is valid",
+      "fail": {
+        "singular": "Invalid ARIA attribute name: ${data.values}",
+        "plural": "Invalid ARIA attribute names: ${data.values}"
+      }
+    },
+    "braille-label-equivalent": {
+      "pass": "aria-braillelabel is used on an element with accessible text",
+      "fail": "aria-braillelabel is used on an element with no accessible text",
+      "incomplete": "Unable to compute accessible text"
+    },
+    "braille-roledescription-equivalent": {
+      "pass": "aria-brailleroledescription is used on an element with aria-roledescription",
+      "fail": {
+        "noRoleDescription": "aria-brailleroledescription is used on an element with no aria-roledescription",
+        "emptyRoleDescription": "aria-brailleroledescription is used on an element with an empty aria-roledescription"
+      }
+    },
+    "deprecatedrole": {
+      "pass": "ARIA role is not deprecated",
+      "fail": "The role used is deprecated: ${data}"
+    },
+    "fallbackrole": {
+      "pass": "Only one role value used",
+      "fail": "Use only one role value, since fallback roles are not supported in older browsers",
+      "incomplete": "Use only role 'presentation' or 'none' since they are synonymous."
+    },
+    "has-global-aria-attribute": {
+      "pass": {
+        "singular": "Element has global ARIA attribute: ${data.values}",
+        "plural": "Element has global ARIA attributes: ${data.values}"
+      },
+      "fail": "Element does not have global ARIA attribute"
+    },
+    "has-widget-role": {
+      "pass": "Element has a widget role.",
+      "fail": "Element does not have a widget role."
+    },
+    "invalidrole": {
+      "pass": "ARIA role is valid",
+      "fail": {
+        "singular": "Role must be one of the valid ARIA roles: ${data.values}",
+        "plural": "Roles must be one of the valid ARIA roles: ${data.values}"
+      }
+    },
+    "is-element-focusable": {
+      "pass": "Element is focusable.",
+      "fail": "Element is not focusable."
+    },
+    "no-implicit-explicit-label": {
+      "pass": "There is no mismatch between a <label> and accessible name",
+      "incomplete": "Check that the <label> does not need be part of the ARIA ${data} field's name"
+    },
+    "unsupportedrole": {
+      "pass": "ARIA role is supported",
+      "fail": "The role used is not widely supported in screen readers and assistive technologies: ${data}"
+    },
+    "valid-scrollable-semantics": {
+      "pass": "Element has valid semantics for an element in the focus order.",
+      "fail": "Element has invalid semantics for an element in the focus order."
+    },
+    "color-contrast-enhanced": {
+      "pass": "Element has sufficient color contrast of ${data.contrastRatio}",
+      "fail": {
+        "default": "Element has insufficient color contrast of ${data.contrastRatio} (foreground color: ${data.fgColor}, background color: ${data.bgColor}, font size: ${data.fontSize}, font weight: ${data.fontWeight}). Expected contrast ratio of ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "Element has insufficient color contrast of ${data.contrastRatio} between the foreground and shadow color (foreground color: ${data.fgColor}, text-shadow color: ${data.shadowColor}, font size: ${data.fontSize}, font weight: ${data.fontWeight}). Expected contrast ratio of ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "Element has insufficient color contrast of ${data.contrastRatio} between the shadow color and background color (text-shadow color: ${data.shadowColor}, background color: ${data.bgColor}, font size: ${data.fontSize}, font weight: ${data.fontWeight}). Expected contrast ratio of ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "Unable to determine contrast ratio",
+        "bgImage": "Element's background color could not be determined due to a background image",
+        "bgGradient": "Element's background color could not be determined due to a background gradient",
+        "imgNode": "Element's background color could not be determined because element contains an image node",
+        "bgOverlap": "Element's background color could not be determined because it is overlapped by another element",
+        "fgAlpha": "Element's foreground color could not be determined because of alpha transparency",
+        "elmPartiallyObscured": "Element's background color could not be determined because it's partially obscured by another element",
+        "elmPartiallyObscuring": "Element's background color could not be determined because it partially overlaps other elements",
+        "outsideViewport": "Element's background color could not be determined because it's outside the viewport",
+        "equalRatio": "Element has a 1:1 contrast ratio with the background",
+        "shortTextContent": "Element content is too short to determine if it is actual text content",
+        "nonBmp": "Element content contains only non-text characters",
+        "pseudoContent": "Element's background color could not be determined due to a pseudo element"
+      }
+    },
+    "color-contrast": {
+      "pass": {
+        "default": "Element has sufficient color contrast of ${data.contrastRatio}",
+        "hidden": "Element is hidden"
+      },
+      "fail": {
+        "default": "Element has insufficient color contrast of ${data.contrastRatio} (foreground color: ${data.fgColor}, background color: ${data.bgColor}, font size: ${data.fontSize}, font weight: ${data.fontWeight}). Expected contrast ratio of ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "Element has insufficient color contrast of ${data.contrastRatio} between the foreground and shadow color (foreground color: ${data.fgColor}, text-shadow color: ${data.shadowColor}, font size: ${data.fontSize}, font weight: ${data.fontWeight}). Expected contrast ratio of ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "Element has insufficient color contrast of ${data.contrastRatio} between the shadow color and background color (text-shadow color: ${data.shadowColor}, background color: ${data.bgColor}, font size: ${data.fontSize}, font weight: ${data.fontWeight}). Expected contrast ratio of ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "Unable to determine contrast ratio",
+        "bgImage": "Element's background color could not be determined due to a background image",
+        "bgGradient": "Element's background color could not be determined due to a background gradient",
+        "imgNode": "Element's background color could not be determined because element contains an image node",
+        "bgOverlap": "Element's background color could not be determined because it is overlapped by another element",
+        "complexTextShadows": "Element's contrast could not be determined because it uses complex text shadows",
+        "fgAlpha": "Element's foreground color could not be determined because of alpha transparency",
+        "elmPartiallyObscured": "Element's background color could not be determined because it's partially obscured by another element",
+        "elmPartiallyObscuring": "Element's background color could not be determined because it partially overlaps other elements",
+        "outsideViewport": "Element's background color could not be determined because it's outside the viewport",
+        "equalRatio": "Element has a 1:1 contrast ratio with the background",
+        "shortTextContent": "Element content is too short to determine if it is actual text content",
+        "nonBmp": "Element content contains only non-text characters",
+        "pseudoContent": "Element's background color could not be determined due to a pseudo element"
+      }
+    },
+    "link-in-text-block-style": {
+      "pass": "Links can be distinguished from surrounding text by visual styling",
+      "incomplete": {
+        "default": "Check if the link needs styling to distinguish it from nearby text",
+        "pseudoContent": "Check if the link's pseudo style is sufficient to distinguish it from the surrounding text"
+      },
+      "fail": "The link has no styling (such as underline) to distinguish it from the surrounding text"
+    },
+    "link-in-text-block": {
+      "pass": "Links can be distinguished from surrounding text in some way other than by color",
+      "fail": {
+        "fgContrast": "The link has insufficient color contrast of ${data.contrastRatio}:1 with the surrounding text. (Minimum contrast is ${data.requiredContrastRatio}:1, link text: ${data.nodeColor}, surrounding text: ${data.parentColor})",
+        "bgContrast": "The link background has insufficient color contrast of ${data.contrastRatio} (Minimum contrast is ${data.requiredContrastRatio}:1, link background color: ${data.nodeBackgroundColor}, surrounding background color: ${data.parentBackgroundColor})"
+      },
+      "incomplete": {
+        "default": "Element's foreground contrast ratio could not be determined",
+        "bgContrast": "Element's background contrast ratio could not be determined",
+        "bgImage": "Element's contrast ratio could not be determined due to a background image",
+        "bgGradient": "Element's contrast ratio could not be determined due to a background gradient",
+        "imgNode": "Element's contrast ratio could not be determined because element contains an image node",
+        "bgOverlap": "Element's contrast ratio could not be determined because of element overlap"
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "The autocomplete value is on an appropriate element",
+      "fail": "The autocomplete value is inappropriate for this type of input"
+    },
+    "autocomplete-valid": {
+      "pass": "the autocomplete attribute is correctly formatted",
+      "fail": "the autocomplete attribute is incorrectly formatted",
+      "incomplete": "the autocomplete attribute has a non-standard value. Check whether any standard value could be used instead."
+    },
+    "accesskeys": {
+      "pass": "Accesskey attribute value is unique",
+      "fail": "Document has multiple elements with the same accesskey"
+    },
+    "focusable-content": {
+      "pass": "Element contains focusable elements",
+      "fail": "Element should have focusable content"
+    },
+    "focusable-disabled": {
+      "pass": "No focusable elements contained within element",
+      "incomplete": "Check if the focusable elements immediately move the focus indicator",
+      "fail": "Focusable content should be disabled or be removed from the DOM"
+    },
+    "focusable-element": {
+      "pass": "Element is focusable",
+      "fail": "Element should be focusable"
+    },
+    "focusable-modal-open": {
+      "pass": "No focusable elements while a modal is open",
+      "incomplete": "Check that focusable elements are not tabbable in the current state"
+    },
+    "focusable-no-name": {
+      "pass": "Element is not in tab order or has accessible text",
+      "fail": "Element is in tab order and does not have accessible text",
+      "incomplete": "Unable to determine if element has an accessible name"
+    },
+    "focusable-not-tabbable": {
+      "pass": "No focusable elements contained within element",
+      "incomplete": "Check if the focusable elements immediately move the focus indicator",
+      "fail": "Focusable content should have tabindex=\"-1\" or be removed from the DOM"
+    },
+    "frame-focusable-content": {
+      "pass": "Element does not have focusable descendants",
+      "fail": "Element has focusable descendants",
+      "incomplete": "Could not determine if element has descendants"
+    },
+    "landmark-is-top-level": {
+      "pass": "The ${data.role} landmark is at the top level.",
+      "fail": "The ${data.role} landmark is contained in another landmark."
+    },
+    "no-focusable-content": {
+      "pass": "Element does not have focusable descendants",
+      "fail": {
+        "default": "Element has focusable descendants",
+        "notHidden": "Using a negative tabindex on an element inside an interactive control does not prevent assistive technologies from focusing the element (even with aria-hidden=\"true\")"
+      },
+      "incomplete": "Could not determine if element has descendants"
+    },
+    "page-has-heading-one": {
+      "pass": "Page has at least one level-one heading",
+      "fail": "Page must have a level-one heading"
+    },
+    "page-has-main": {
+      "pass": "Document has at least one main landmark",
+      "fail": "Document does not have a main landmark"
+    },
+    "page-no-duplicate-banner": {
+      "pass": "Document does not have more than one banner landmark",
+      "fail": "Document has more than one banner landmark"
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "Document does not have more than one contentinfo landmark",
+      "fail": "Document has more than one contentinfo landmark"
+    },
+    "page-no-duplicate-main": {
+      "pass": "Document does not have more than one main landmark",
+      "fail": "Document has more than one main landmark"
+    },
+    "tabindex": {
+      "pass": "Element does not have a tabindex greater than 0",
+      "fail": "Element has a tabindex greater than 0"
+    },
+    "alt-space-value": {
+      "pass": "Element has a valid alt attribute value",
+      "fail": "Element has an alt attribute containing only a space character, which is not ignored by all screen readers"
+    },
+    "duplicate-img-label": {
+      "pass": "Element does not duplicate existing text in <img> alt text",
+      "fail": "Element contains <img> element with alt text that duplicates existing text"
+    },
+    "explicit-label": {
+      "pass": "Element has an explicit <label>",
+      "fail": "Element does not have an explicit <label>",
+      "incomplete": "Unable to determine if form element has an explicit <label>"
+    },
+    "help-same-as-label": {
+      "pass": "Help text (title or aria-describedby) does not duplicate label text",
+      "fail": "Help text (title or aria-describedby) text is the same as the label text"
+    },
+    "hidden-explicit-label": {
+      "pass": "Form element has a visible explicit <label>",
+      "fail": "Form element has explicit <label> that is hidden",
+      "incomplete": "Unable to determine if form element has explicit <label> that is hidden"
+    },
+    "implicit-label": {
+      "pass": "Element has an implicit (wrapped) <label>",
+      "fail": "Element does not have an implicit (wrapped) <label>",
+      "incomplete": "Unable to determine if form element has an implicit (wrapped) <label>"
+    },
+    "label-content-name-mismatch": {
+      "pass": "Element contains visible text as part of it's accessible name",
+      "fail": "Text inside the element is not included in the accessible name"
+    },
+    "multiple-label": {
+      "pass": "Form field does not have multiple label elements",
+      "incomplete": "Multiple label elements is not widely supported in assistive technologies. Ensure the first label contains all necessary information."
+    },
+    "title-only": {
+      "pass": "Form element does not solely use title attribute for its label",
+      "fail": "Only title used to generate label for form element"
+    },
+    "landmark-is-unique": {
+      "pass": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination",
+      "fail": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+    },
+    "has-lang": {
+      "pass": "The <html> element has a lang attribute",
+      "fail": {
+        "noXHTML": "The xml:lang attribute is not valid on HTML pages, use the lang attribute.",
+        "noLang": "The <html> element does not have a lang attribute"
+      }
+    },
+    "valid-lang": {
+      "pass": "Value of lang attribute is included in the list of valid languages",
+      "fail": "Value of lang attribute not included in the list of valid languages"
+    },
+    "xml-lang-mismatch": {
+      "pass": "Lang and xml:lang attributes have the same base language",
+      "fail": "Lang and xml:lang attributes do not have the same base language"
+    },
+    "dlitem": {
+      "pass": "Description list item has a <dl> parent element",
+      "fail": "Description list item does not have a <dl> parent element"
+    },
+    "listitem": {
+      "pass": "List item has a <ul>, <ol> or role=\"list\" parent element",
+      "fail": {
+        "default": "List item does not have a <ul>, <ol> parent element",
+        "roleNotValid": "List item parent element has a role that is not role=\"list\""
+      }
+    },
+    "only-dlitems": {
+      "pass": "dl element only has direct children that are allowed inside; <dt>, <dd>, or <div> elements",
+      "fail": "dl element has direct children that are not allowed: ${data.values}"
+    },
+    "only-listitems": {
+      "pass": "List element only has direct children that are allowed inside <li> elements",
+      "fail": "List element has direct children that are not allowed: ${data.values}"
+    },
+    "structured-dlitems": {
+      "pass": "When not empty, element has both <dt> and <dd> elements",
+      "fail": "When not empty, element does not have at least one <dt> element followed by at least one <dd> element"
+    },
+    "caption": {
+      "pass": "The multimedia element has a captions track",
+      "incomplete": "Check that captions are available for the element"
+    },
+    "frame-tested": {
+      "pass": "The iframe was tested with axe-core",
+      "fail": "The iframe could not be tested with axe-core",
+      "incomplete": "The iframe still has to be tested with axe-core"
+    },
+    "no-autoplay-audio": {
+      "pass": "<video> or <audio> does not output audio for more than allowed duration or has controls mechanism",
+      "fail": "<video> or <audio> outputs audio for more than allowed duration and does not have a controls mechanism",
+      "incomplete": "Check that the <video> or <audio> does not output audio for more than allowed duration or provides a controls mechanism"
+    },
+    "css-orientation-lock": {
+      "pass": "Display is operable, and orientation lock does not exist",
+      "fail": "CSS Orientation lock is applied, and makes display inoperable",
+      "incomplete": "CSS Orientation lock cannot be determined"
+    },
+    "meta-viewport-large": {
+      "pass": "<meta> tag does not prevent significant zooming on mobile devices",
+      "fail": "<meta> tag limits zooming on mobile devices"
+    },
+    "meta-viewport": {
+      "pass": "<meta> tag does not disable zooming on mobile devices",
+      "fail": "${data} on <meta> tag disables zooming on mobile devices"
+    },
+    "target-offset": {
+      "pass": {
+        "default": "Target has sufficient space from its closest neighbors. Safe clickable space has a diameter of ${data.closestOffset}px which is at least ${data.minOffset}px.",
+        "large": "Target far exceeds the minimum size of ${data.minOffset}px."
+      },
+      "fail": "Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of ${data.closestOffset}px instead of at least ${data.minOffset}px.",
+      "incomplete": {
+        "default": "Element with negative tabindex has insufficient space to its closest neighbors. Safe clickable space has a diameter of ${data.closestOffset}px instead of at least ${data.minOffset}px. Is this a target?",
+        "nonTabbableNeighbor": "Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of ${data.closestOffset}px instead of at least ${data.minOffset}px. Is the neighbor a target?",
+        "tooManyRects": "Could not get the target size because there are too many overlapping elements"
+      }
+    },
+    "target-size": {
+      "pass": {
+        "default": "Control has sufficient size (${data.width}px by ${data.height}px, should be at least ${data.minSize}px by ${data.minSize}px)",
+        "obscured": "Control is ignored because it is fully obscured and thus not clickable",
+        "large": "Target far exceeds the minimum size of ${data.minSize}px."
+      },
+      "fail": {
+        "default": "Target has insufficient size (${data.width}px by ${data.height}px, should be at least ${data.minSize}px by ${data.minSize}px)",
+        "partiallyObscured": "Target has insufficient size because it is partially obscured (smallest space is ${data.width}px by ${data.height}px, should be at least ${data.minSize}px by ${data.minSize}px)"
+      },
+      "incomplete": {
+        "default": "Element with negative tabindex has insufficient size (${data.width}px by ${data.height}px, should be at least ${data.minSize}px by ${data.minSize}px). Is this a target?",
+        "contentOverflow": "Element size could not be accurately determined due to overflow content",
+        "partiallyObscured": "Element with negative tabindex has insufficient size because it is partially obscured (smallest space is ${data.width}px by ${data.height}px, should be at least ${data.minSize}px by ${data.minSize}px). Is this a target?",
+        "partiallyObscuredNonTabbable": "Target has insufficient size because it is partially obscured by a neighbor with negative tabindex (smallest space is ${data.width}px by ${data.height}px, should be at least ${data.minSize}px by ${data.minSize}px). Is the neighbor a target?",
+        "tooManyRects": "Could not get the target size because there are too many overlapping elements"
+      }
+    },
+    "header-present": {
+      "pass": "Page has a heading",
+      "fail": "Page does not have a heading"
+    },
+    "heading-order": {
+      "pass": "Heading order valid",
+      "fail": "Heading order invalid",
+      "incomplete": "Unable to determine previous heading"
+    },
+    "identical-links-same-purpose": {
+      "pass": "There are no other links with the same name, that go to a different URL",
+      "incomplete": "Check that links have the same purpose, or are intentionally ambiguous."
+    },
+    "internal-link-present": {
+      "pass": "Valid skip link found",
+      "fail": "No valid skip link found"
+    },
+    "landmark": {
+      "pass": "Page has a landmark region",
+      "fail": "Page does not have a landmark region"
+    },
+    "meta-refresh-no-exceptions": {
+      "pass": "<meta> tag does not immediately refresh the page",
+      "fail": "<meta> tag forces timed refresh of page"
+    },
+    "meta-refresh": {
+      "pass": "<meta> tag does not immediately refresh the page",
+      "fail": "<meta> tag forces timed refresh of page (less than 20 hours)"
+    },
+    "p-as-heading": {
+      "pass": "<p> elements are not styled as headings",
+      "fail": "Heading elements should be used instead of styled <p> elements",
+      "incomplete": "Unable to determine if <p> elements are styled as headings"
+    },
+    "region": {
+      "pass": "All page content is contained by landmarks",
+      "fail": "Some page content is not contained by landmarks"
+    },
+    "skip-link": {
+      "pass": "Skip link target exists",
+      "incomplete": "Skip link target should become visible on activation",
+      "fail": "No skip link target"
+    },
+    "unique-frame-title": {
+      "pass": "Element's title attribute is unique",
+      "fail": "Element's title attribute is not unique"
+    },
+    "duplicate-id-active": {
+      "pass": "Document has no active elements that share the same id attribute",
+      "fail": "Document has active elements with the same id attribute: ${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "Document has no elements referenced with ARIA or labels that share the same id attribute",
+      "fail": "Document has multiple elements referenced with ARIA with the same id attribute: ${data}"
+    },
+    "duplicate-id": {
+      "pass": "Document has no static elements that share the same id attribute",
+      "fail": "Document has multiple static elements with the same id attribute: ${data}"
+    },
+    "aria-label": {
+      "pass": "aria-label attribute exists and is not empty",
+      "fail": "aria-label attribute does not exist or is empty"
+    },
+    "aria-labelledby": {
+      "pass": "aria-labelledby attribute exists and references elements that are visible to screen readers",
+      "fail": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
+      "incomplete": "Ensure aria-labelledby references an existing element"
+    },
+    "avoid-inline-spacing": {
+      "pass": "No inline styles with '!important' that affect text spacing has been specified",
+      "fail": {
+        "singular": "Remove '!important' from inline style ${data.values}, as overriding this is not supported by most browsers",
+        "plural": "Remove '!important' from inline styles ${data.values}, as overriding this is not supported by most browsers"
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "Element has inner text that is visible to screen readers",
+      "fail": "Element does not have inner text that is visible to screen readers",
+      "incomplete": "Unable to determine if element has children"
+    },
+    "doc-has-title": {
+      "pass": "Document has a non-empty <title> element",
+      "fail": "Document does not have a non-empty <title> element"
+    },
+    "exists": {
+      "pass": "Element does not exist",
+      "incomplete": "Element exists"
+    },
+    "has-alt": {
+      "pass": "Element has an alt attribute",
+      "fail": "Element does not have an alt attribute"
+    },
+    "has-visible-text": {
+      "pass": "Element has text that is visible to screen readers",
+      "fail": "Element does not have text that is visible to screen readers",
+      "incomplete": "Unable to determine if element has children"
+    },
+    "important-letter-spacing": {
+      "pass": "Letter-spacing in the style attribute is not set to !important, or meets the minimum",
+      "fail": "letter-spacing in the style attribute must not use !important, or be at ${data.minValue}em (current ${data.value}em)"
+    },
+    "important-line-height": {
+      "pass": "line-height in the style attribute is not set to !important, or meets the minimum",
+      "fail": "line-height in the style attribute must not use !important, or be at ${data.minValue}em (current ${data.value}em)"
+    },
+    "important-word-spacing": {
+      "pass": "word-spacing in the style attribute is not set to !important, or meets the minimum",
+      "fail": "word-spacing in the style attribute must not use !important, or be at ${data.minValue}em (current ${data.value}em)"
+    },
+    "is-on-screen": {
+      "pass": "Element is not visible",
+      "fail": "Element is visible"
+    },
+    "non-empty-alt": {
+      "pass": "Element has a non-empty alt attribute",
+      "fail": {
+        "noAttr": "Element has no alt attribute",
+        "emptyAttr": "Element has an empty alt attribute"
+      }
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": "Element does not have a value attribute",
+        "has-label": "Element has a non-empty value attribute"
+      },
+      "fail": "Element has a value attribute and the value attribute is empty"
+    },
+    "non-empty-placeholder": {
+      "pass": "Element has a placeholder attribute",
+      "fail": {
+        "noAttr": "Element has no placeholder attribute",
+        "emptyAttr": "Element has an empty placeholder attribute"
+      }
+    },
+    "non-empty-title": {
+      "pass": "Element has a title attribute",
+      "fail": {
+        "noAttr": "Element has no title attribute",
+        "emptyAttr": "Element has an empty title attribute"
+      }
+    },
+    "non-empty-value": {
+      "pass": "Element has a non-empty value attribute",
+      "fail": {
+        "noAttr": "Element has no value attribute",
+        "emptyAttr": "Element has an empty value attribute"
+      }
+    },
+    "presentational-role": {
+      "pass": "Element's default semantics were overridden with role=\"${data.role}\"",
+      "fail": {
+        "default": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+        "globalAria": "Element's role is not presentational because it has a global ARIA attribute",
+        "focusable": "Element's role is not presentational because it is focusable",
+        "both": "Element's role is not presentational because it has a global ARIA attribute and is focusable",
+        "iframe": "Using the \"title\" attribute on an ${data.nodeName} element with a presentational role behaves inconsistently between screen readers"
+      }
+    },
+    "role-none": {
+      "pass": "Element's default semantics were overridden with role=\"none\"",
+      "fail": "Element's default semantics were not overridden with role=\"none\""
+    },
+    "role-presentation": {
+      "pass": "Element's default semantics were overridden with role=\"presentation\"",
+      "fail": "Element's default semantics were not overridden with role=\"presentation\""
+    },
+    "svg-non-empty-title": {
+      "pass": "Element has a child that is a title",
+      "fail": {
+        "noTitle": "Element has no child that is a title",
+        "emptyTitle": "Element child title is empty"
+      },
+      "incomplete": "Unable to determine element has a child that is a title"
+    },
+    "caption-faked": {
+      "pass": "The first row of a table is not used as a caption",
+      "fail": "The first child of the table should be a caption instead of a table cell"
+    },
+    "html5-scope": {
+      "pass": "Scope attribute is only used on table header elements (<th>)",
+      "fail": "In HTML 5, scope attributes may only be used on table header elements (<th>)"
+    },
+    "same-caption-summary": {
+      "pass": "Content of summary attribute and <caption> are not duplicated",
+      "fail": "Content of summary attribute and <caption> element are identical",
+      "incomplete": "Unable to determine if <table> element has a caption"
+    },
+    "scope-value": {
+      "pass": "Scope attribute is used correctly",
+      "fail": "The value of the scope attribute may only be 'row' or 'col'"
+    },
+    "td-has-header": {
+      "pass": "All non-empty data cells have table headers",
+      "fail": "Some non-empty data cells do not have table headers"
+    },
+    "td-headers-attr": {
+      "pass": "The headers attribute is exclusively used to refer to other cells in the table",
+      "incomplete": "The headers attribute is empty",
+      "fail": "The headers attribute is not exclusively used to refer to other cells in the table"
+    },
+    "th-has-data-cells": {
+      "pass": "All table header cells refer to data cells",
+      "fail": "Not all table header cells refer to data cells",
+      "incomplete": "Table data cells are missing or empty"
+    },
+    "hidden-content": {
+      "pass": "All content on the page has been analyzed.",
+      "fail": "There were problems analyzing the content on this page.",
+      "incomplete": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it."
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "Fix any of the following:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "Fix all of the following:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "axe couldn't tell the reason. Time to break out the element inspector!"
+}

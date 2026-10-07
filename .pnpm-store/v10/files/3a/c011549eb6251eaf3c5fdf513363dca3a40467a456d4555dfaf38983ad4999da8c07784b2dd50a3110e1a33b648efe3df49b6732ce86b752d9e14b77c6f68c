@@ -1,0 +1,1 @@
+{"version":3,"file":"childProcess.d.ts","sourceRoot":"","sources":["../../../src/integrations/childProcess.ts"],"names":[],"mappings":"AAKA,UAAU,OAAO;IACf;;;;OAIG;IACH,uBAAuB,CAAC,EAAE,OAAO,CAAC;IAElC;;;;OAIG;IACH,mBAAmB,CAAC,EAAE,OAAO,CAAC;CAC/B;AAID;;GAEG;AACH,eAAO,MAAM,uBAAuB,uEAiBlC,CAAC"}

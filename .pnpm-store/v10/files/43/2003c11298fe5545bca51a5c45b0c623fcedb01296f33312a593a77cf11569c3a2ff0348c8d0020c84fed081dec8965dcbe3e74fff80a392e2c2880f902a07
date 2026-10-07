@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/eachMonthOfInterval/index.js",
+  "typings": "../../typings.d.ts"
+}

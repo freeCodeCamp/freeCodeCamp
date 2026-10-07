@@ -1,0 +1,401 @@
+# Undefined and Null Type {"dialect": "ts"}
+
+let x: undefined
+let y: null
+
+==>
+
+Script(
+  VariableDeclaration(let,VariableDefinition,TypeAnnotation(
+    TypeName)),
+  VariableDeclaration(let,VariableDefinition,TypeAnnotation(
+    NullType(null))))
+
+# Type declaration {"dialect": "ts"}
+
+function foo(a: number, b: "literal" | Map<number, boolean>): RegExp[] {}
+
+==>
+
+Script(FunctionDeclaration(function, VariableDefinition, ParamList(
+  VariableDefinition, TypeAnnotation(TypeName),
+  VariableDefinition, TypeAnnotation(UnionType(LiteralType(String), LogicOp, ParameterizedType(TypeName, TypeArgList(TypeName, TypeName))))
+), TypeAnnotation(ArrayType(TypeName)), Block))
+
+# Type predicate {"dialect": "ts"}
+
+function isFoo(foo: any): foo is Foo { return true }
+
+function assertFoo(foo: any): asserts foo is "string" { return true }
+
+==>
+
+Script(
+  FunctionDeclaration(function, VariableDefinition, ParamList(
+    VariableDefinition, TypeAnnotation(TypeName)
+  ), TypePredicate(VariableName, is, TypeName), Block(ReturnStatement(return, BooleanLiteral))),
+  FunctionDeclaration(function,VariableDefinition,ParamList(
+    VariableDefinition,TypeAnnotation(TypeName)
+  ),TypePredicate(asserts,VariableName,is,LiteralType(String)),Block(ReturnStatement(return,BooleanLiteral))))
+
+# Type alias {"dialect": "ts"}
+
+type Foo<T extends string> = T[]
+
+==>
+
+Script(TypeAliasDeclaration(type, TypeDefinition, TypeParamList(TypeDefinition, extends, TypeName), Equals, ArrayType(TypeName)))
+
+# Enum declaration {"dialect": "ts"}
+
+const enum Type { Red = 1, Blue, Green }
+
+==>
+
+Script(EnumDeclaration(const, enum, TypeDefinition, EnumBody(PropertyName, Equals, Number, PropertyName, PropertyName)))
+
+# Interface declaration {"dialect": "ts"}
+
+interface Foo {
+  readonly a: number
+  b(arg: string): void
+  (call: number): boolean
+  new (): Foo
+  readonly [x: string]: number
+}
+
+==>
+
+Script(InterfaceDeclaration(interface, TypeDefinition, ObjectType(
+  PropertyType(readonly, PropertyDefinition, TypeAnnotation(TypeName)),
+  MethodType(PropertyDefinition, ParamList(VariableDefinition, TypeAnnotation(TypeName)), TypeAnnotation(VoidType(void))),
+  CallSignature(ParamList(VariableDefinition, TypeAnnotation(TypeName)), TypeAnnotation(TypeName)),
+  NewSignature(new,ParamList, TypeAnnotation(TypeName)),
+  IndexSignature(readonly, PropertyDefinition, TypeAnnotation(TypeName), TypeAnnotation(TypeName)))))
+
+# Call type args {"dialect": "ts"}
+
+foo<number, string>() + new Bar<11>()
+x < 10 > 5
+
+==>
+
+Script(
+  ExpressionStatement(BinaryExpression(
+    CallExpression(InstantiationExpression(VariableName, TypeArgList(TypeName, TypeName)), ArgList),
+    ArithOp,
+    NewExpression(new, InstantiationExpression(VariableName, TypeArgList(LiteralType(Number))), ArgList))),
+  ExpressionStatement(BinaryExpression(BinaryExpression(VariableName, CompareOp, Number), CompareOp, Number)))
+
+# Advanced types {"dialect": "ts"}
+
+let x: typeof X.x | keyof Y & Z["Foo"] | A<string>
+let tuple: [a, b]
+let f: (x: number) => boolean
+
+==>
+
+Script(
+  VariableDeclaration(let, VariableDefinition, TypeAnnotation(
+    UnionType(TypeofType(typeof, MemberExpression(VariableName, PropertyName)), LogicOp,
+              IntersectionType(KeyofType(keyof, TypeName), LogicOp, IndexedType(TypeName, LiteralType(String))),
+              LogicOp, ParameterizedType(TypeName, TypeArgList(TypeName))))),
+  VariableDeclaration(let, VariableDefinition, TypeAnnotation(TupleType(TypeName, TypeName))),
+  VariableDeclaration(let, VariableDefinition, TypeAnnotation(FunctionSignature(
+    ParamList(VariableDefinition, TypeAnnotation(TypeName)), Arrow, TypeName))))
+
+# Prefix union/intersection
+
+let x:
+  | A
+  | B
+  | C
+let y: & RegExp & (& Date)
+
+==>
+
+Script(
+  VariableDeclaration(let,VariableDefinition,TypeAnnotation(
+    UnionType(LogicOp,TypeName,LogicOp,TypeName,LogicOp,TypeName))),
+  VariableDeclaration(let,VariableDefinition,TypeAnnotation(
+    IntersectionType(LogicOp,TypeName,LogicOp,ParenthesizedType(IntersectionType(LogicOp,TypeName))))))
+
+# Prefix cast {"dialect": "ts"}
+
+<string>foo
+
+==>
+
+Script(ExpressionStatement(PrefixCast(TypeName, VariableName)))
+
+# No prefix cast in JSX {"dialect": "ts jsx"}
+
+<string>foo</string>
+
+==>
+
+Script(ExpressionStatement(JSXElement(
+  JSXOpenTag(JSXStartTag, JSXBuiltin(JSXIdentifier), JSXEndTag),
+  JSXText,
+  JSXCloseTag(JSXStartCloseTag, JSXBuiltin(JSXIdentifier), JSXEndTag))))
+
+# Class definition {"dialect": "ts"}
+
+class Foo<T> extends Bar<T> implements Stuff {
+  a: number
+  public readonly b: string = "two"
+  constructor(readonly x: boolean, public y: number, z: string) {}
+  private static blah(): void {}
+}
+
+==>
+
+Script(ClassDeclaration(
+  class, VariableDefinition, TypeParamList(TypeDefinition),
+  extends, VariableName, TypeArgList(TypeName),
+  implements TypeName,
+  ClassBody(
+    PropertyDeclaration(PropertyDefinition, TypeAnnotation(TypeName)),
+    PropertyDeclaration(Privacy, readonly, PropertyDefinition, TypeAnnotation(TypeName), Equals, String),
+    MethodDeclaration(PropertyDefinition, ParamList(
+      readonly, VariableDefinition, TypeAnnotation(TypeName),
+      Privacy, VariableDefinition, TypeAnnotation(TypeName),
+      VariableDefinition, TypeAnnotation(TypeName)), Block),
+    MethodDeclaration(Privacy, static, PropertyDefinition, ParamList, TypeAnnotation(VoidType(void)), Block))))
+
+# Arrow with type params {"dialect": "ts"}
+
+let x = <T>(arg: T): T => arg
+
+==>
+
+Script(VariableDeclaration(let, VariableDefinition, Equals, ArrowFunction(
+  TypeParamList(TypeDefinition),
+  ParamList(VariableDefinition, TypeAnnotation(TypeName)),
+  TypeAnnotation(TypeName),
+  Arrow,
+  VariableName)))
+
+# Template types {"dialect": "ts"}
+
+type Tmpl<T> = `${string} ${5}` | `one ${Two}`
+
+==>
+
+Script(TypeAliasDeclaration(type, TypeDefinition, TypeParamList(TypeDefinition), Equals,
+  UnionType(TemplateType(Interpolation(InterpolationStart,TypeName,InterpolationEnd), Interpolation(InterpolationStart,LiteralType(Number),InterpolationEnd)), LogicOp, TemplateType(Interpolation(InterpolationStart,TypeName,InterpolationEnd)))))
+
+# Extending complex types {"dialect": "ts"}
+
+class Foo extends A.B<Param> {}
+
+==>
+
+Script(ClassDeclaration(class, VariableDefinition,
+  extends, MemberExpression(VariableName, PropertyName), TypeArgList(TypeName),
+  ClassBody))
+
+# Object type {"dialect": "ts"}
+
+type A = {a: number, b: number}
+type B = {a: number; b: number;}
+
+==>
+
+Script(
+  TypeAliasDeclaration(type,TypeDefinition,Equals,ObjectType(
+    PropertyType(PropertyDefinition,TypeAnnotation(TypeName)),
+    PropertyType(PropertyDefinition,TypeAnnotation(TypeName)))),
+  TypeAliasDeclaration(type,TypeDefinition,Equals,ObjectType(
+    PropertyType(PropertyDefinition,TypeAnnotation(TypeName)),
+    PropertyType(PropertyDefinition,TypeAnnotation(TypeName)))))
+
+# Conditional Type {"dialect": "ts"}
+
+type X<T> = T extends E ? number : A
+
+==>
+
+Script(
+  TypeAliasDeclaration(type,TypeDefinition,TypeParamList(TypeDefinition),Equals,
+    ConditionalType(TypeName,extends,TypeName,LogicOp,TypeName,LogicOp,TypeName)))
+
+# Generic Function Type {"dialect": "ts"}
+
+let f: <T>() => T
+
+==>
+
+Script(
+  VariableDeclaration(let,VariableDefinition,TypeAnnotation(
+    FunctionSignature(TypeParamList(TypeDefinition),ParamList,Arrow,TypeName))))
+
+# Satisfies operator {"dialect": "ts"}
+
+let x = 1 satisfies number
+
+==>
+
+Script(VariableDeclaration(let,VariableDefinition,Equals,BinaryExpression(Number,satisfies,TypeName)))
+
+# Override modifier on properties {"dialect": "ts"}
+
+class A {
+  override accessor a;
+  static override b = 1;
+  override c = 2;
+}
+
+==>
+
+Script(ClassDeclaration(class,VariableDefinition,ClassBody(
+  PropertyDeclaration(override,accessor,PropertyDefinition),
+  PropertyDeclaration(static,override,PropertyDefinition,Equals,Number),
+  PropertyDeclaration(override,PropertyDefinition,Equals,Number))))
+
+# Class extending expression {"dialect": "ts"}
+
+class X extends class {} {}
+
+==>
+
+Script(ClassDeclaration(class,VariableDefinition,extends,ClassExpression(class,ClassBody),ClassBody))
+
+# Declare syntax {"dialect": "ts"}
+
+declare namespace myLib {
+  function makeGreeting(s: string): string;
+  let numberOfGreetings: number;
+}
+
+declare function greet(setting: GreetingSettings): void;
+
+declare class Greeter {
+  constructor(greeting: string);
+  greeting: string;
+  showGreeting(): void;
+}
+
+class X {
+  declare foo();
+  declare bar: number;
+}
+
+==>
+
+Script(
+  AmbientDeclaration(declare,NamespaceDeclaration(namespace,VariableDefinition,Block(
+    FunctionDeclaration(function,VariableDefinition,ParamList(VariableDefinition,TypeAnnotation(TypeName)),
+      TypeAnnotation(TypeName)),
+    VariableDeclaration(let,VariableDefinition,TypeAnnotation(TypeName))))),
+  AmbientDeclaration(declare,AmbientFunctionDeclaration(function,VariableDefinition,
+    ParamList(VariableDefinition,TypeAnnotation(TypeName)),TypeAnnotation(VoidType(void)))),
+  AmbientDeclaration(declare,ClassDeclaration(class,VariableDefinition,ClassBody(
+    MethodDeclaration(PropertyDefinition,ParamList(VariableDefinition,TypeAnnotation(TypeName))),
+    PropertyDeclaration(PropertyDefinition,TypeAnnotation(TypeName)),
+    MethodDeclaration(PropertyDefinition,ParamList,TypeAnnotation(VoidType(void)))))),
+  ClassDeclaration(class,VariableDefinition,ClassBody(
+    MethodDeclaration(declare,PropertyDefinition,ParamList),
+    PropertyDeclaration(declare,PropertyDefinition,TypeAnnotation(TypeName)))))
+
+# Declare this in a Function {"dialect": "ts"}
+
+function foo(this: User) {}
+
+==>
+
+Script(FunctionDeclaration(function,VariableDefinition,ParamList(this,TypeAnnotation(TypeName)),Block))
+
+# Prefers type parameters to comparison operators {"dialect": "ts jsx"}
+
+let a = useState<string>(1)
+return 2
+
+==>
+
+Script(
+  VariableDeclaration(let,VariableDefinition,Equals,
+    CallExpression(InstantiationExpression(VariableName,TypeArgList(TypeName)),ArgList(Number))),
+  ReturnStatement(return,Number))
+
+# Type parameters vs JSX {"dialect": "jsx ts"}
+
+let a = <T extends any>(f) => null
+let b = <T,>() => 1
+
+==>
+
+Script(
+  VariableDeclaration(let,VariableDefinition,Equals,ArrowFunction(
+    TypeParamList(TypeDefinition,extends,TypeName),ParamList(VariableDefinition),Arrow,null)),
+  VariableDeclaration(let,VariableDefinition,Equals,ArrowFunction(
+    TypeParamList(TypeDefinition),ParamList,Arrow,Number)))
+
+# Destructured parameters in function signature {"dialect": "ts"}
+
+type F = ([a, b]: [number, number]) => void
+
+==>
+
+Script(TypeAliasDeclaration(type,TypeDefinition,Equals,FunctionSignature(
+  ParamList(ArrayPattern(VariableDefinition,VariableDefinition),TypeAnnotation(TupleType(TypeName,TypeName))),
+  Arrow,
+  VoidType(void))))
+
+# Instantiated expression {"dialect": "ts"}
+
+let x = a<b>;
+
+type Foo = Bar<typeof baz<Bug<Quux>>>;
+
+==>
+
+Script(
+  VariableDeclaration(let,VariableDefinition,Equals,InstantiationExpression(VariableName,TypeArgList(TypeName))),
+  TypeAliasDeclaration(type,TypeDefinition,Equals,ParameterizedType(TypeName,TypeArgList(
+    TypeofType(typeof,InstantiationExpression(VariableName,TypeArgList(
+      ParameterizedType(TypeName,TypeArgList(TypeName)))))))))
+
+# Not instantiated {"dialect": "ts"}
+
+let x = a<b>c
+
+==>
+
+Script(VariableDeclaration(let,VariableDefinition,Equals,BinaryExpression(
+  BinaryExpression(VariableName,CompareOp,VariableName),CompareOp,VariableName)))
+
+# Allows computed properties in types {"dialect": "ts"}
+
+interface X {
+  [Symbol.iterator](): Iterator<number>
+  [1]: string
+}
+
+==>
+
+Script(InterfaceDeclaration(interface,TypeDefinition,ObjectType(
+  MethodType(MemberExpression(VariableName,PropertyName),ParamList,
+    TypeAnnotation(ParameterizedType(TypeName,TypeArgList(TypeName)))),
+  PropertyType(Number,TypeAnnotation(TypeName)))))
+
+# Binary type operators {"dialect": "ts"}
+
+log(foo as number, {} satisfies AbstractObjectFactory<ParticleEmitter>)
+
+==>
+
+Script(ExpressionStatement(CallExpression(VariableName,ArgList(
+  BinaryExpression(VariableName,as,TypeName),
+  BinaryExpression(ObjectExpression,satisfies,ParameterizedType(TypeName,TypeArgList(TypeName)))))))
+
+# Allows this parameters in function types {"dialect": "ts"}
+
+let x: (this: X, expression: string) => Promise<T[]>
+
+==>
+
+Script(VariableDeclaration(let,VariableDefinition,TypeAnnotation(FunctionSignature(
+  ParamList(this,TypeAnnotation(TypeName),VariableDefinition,TypeAnnotation(TypeName)),
+  Arrow,
+  ParameterizedType(TypeName,TypeArgList(ArrayType(TypeName)))))))

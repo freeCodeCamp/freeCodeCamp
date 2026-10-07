@@ -1,0 +1,3 @@
+@function delay($interval, $count, $index) {
+  @return ($index * $interval) - ($interval * $count);
+}

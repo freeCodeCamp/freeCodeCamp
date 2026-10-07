@@ -1,0 +1,1 @@
+{"version":3,"file":"minimal-audio-context.d.ts","sourceRoot":"","sources":["../../../src/interfaces/minimal-audio-context.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,mBAAmB,EAAE,MAAM,wBAAwB,CAAC;AAC7D,OAAO,EAAE,wBAAwB,EAAE,MAAM,8BAA8B,CAAC;AAExE,MAAM,WAAW,oBAAqB,SAAQ,mBAAmB,EAAE,wBAAwB,CAAC,oBAAoB,CAAC;CAAG"}

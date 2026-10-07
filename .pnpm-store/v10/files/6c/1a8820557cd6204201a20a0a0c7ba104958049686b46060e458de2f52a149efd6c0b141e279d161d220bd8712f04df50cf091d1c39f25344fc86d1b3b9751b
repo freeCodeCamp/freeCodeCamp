@@ -1,0 +1,87 @@
+{
+  "name": "typebox",
+  "description": "Json Schema Type Builder with Static Type Resolution for TypeScript",
+  "version": "1.1.35",
+  "keywords": [
+    "typescript",
+    "jsonschema"
+  ],
+  "license": "MIT",
+  "author": "sinclairzx81",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sinclairzx81/typebox"
+  },
+  "type": "module",
+  "types": "./build/index.d.mts",
+  "module": "./build/index.mjs",
+  "exports": {
+    "./guard": {
+      "import": "./build/guard/index.mjs",
+      "default": "./build/guard/index.mjs"
+    },
+    "./error": {
+      "import": "./build/error/index.mjs",
+      "default": "./build/error/index.mjs"
+    },
+    "./compile": {
+      "import": "./build/compile/index.mjs",
+      "default": "./build/compile/index.mjs"
+    },
+    "./system": {
+      "import": "./build/system/index.mjs",
+      "default": "./build/system/index.mjs"
+    },
+    "./format": {
+      "import": "./build/format/index.mjs",
+      "default": "./build/format/index.mjs"
+    },
+    "./type": {
+      "import": "./build/type/index.mjs",
+      "default": "./build/type/index.mjs"
+    },
+    "./schema": {
+      "import": "./build/schema/index.mjs",
+      "default": "./build/schema/index.mjs"
+    },
+    "./value": {
+      "import": "./build/value/index.mjs",
+      "default": "./build/value/index.mjs"
+    },
+    ".": {
+      "import": "./build/index.mjs",
+      "default": "./build/index.mjs"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "guard": [
+        "./build/guard/index.d.mts"
+      ],
+      "error": [
+        "./build/error/index.d.mts"
+      ],
+      "compile": [
+        "./build/compile/index.d.mts"
+      ],
+      "system": [
+        "./build/system/index.d.mts"
+      ],
+      "format": [
+        "./build/format/index.d.mts"
+      ],
+      "type": [
+        "./build/type/index.d.mts"
+      ],
+      "schema": [
+        "./build/schema/index.d.mts"
+      ],
+      "value": [
+        "./build/value/index.d.mts"
+      ],
+      ".": [
+        "./build/index.d.mts"
+      ]
+    }
+  }
+}

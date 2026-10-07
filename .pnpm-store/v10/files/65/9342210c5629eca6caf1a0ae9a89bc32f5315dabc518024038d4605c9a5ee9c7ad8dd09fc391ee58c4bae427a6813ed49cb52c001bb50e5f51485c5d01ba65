@@ -1,0 +1,5 @@
+import { Menu } from "@headlessui/react";
+import { type ComponentPropsWithoutRef } from "react";
+import { type ButtonProps } from "../button";
+export type MenuItemsProps = ComponentPropsWithoutRef<typeof Menu.Items> & ButtonProps;
+export declare const MenuItem: ({ children, className, ...props }: MenuItemsProps) => JSX.Element;

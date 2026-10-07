@@ -1,0 +1,28 @@
+{
+  "name": "test-utils",
+  "amdName": "preactTestUtils",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Test-utils for Preact",
+  "main": "dist/testUtils.js",
+  "module": "dist/testUtils.module.js",
+  "umd:main": "dist/testUtils.umd.js",
+  "source": "src/index.js",
+  "license": "MIT",
+  "types": "src/index.d.ts",
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "mangle": {
+    "regex": "^_"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "browser": "./dist/testUtils.module.js",
+      "umd": "./dist/testUtils.umd.js",
+      "import": "./dist/testUtils.mjs",
+      "require": "./dist/testUtils.js"
+    }
+  }
+}

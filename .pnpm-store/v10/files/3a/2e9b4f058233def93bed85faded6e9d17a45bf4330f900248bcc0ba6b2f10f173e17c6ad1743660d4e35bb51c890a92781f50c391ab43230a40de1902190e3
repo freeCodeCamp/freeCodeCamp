@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./playwright-logo.svg" type="image/svg+xml">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <title>Playwright Trace Viewer</title>
+    <script type="module" crossorigin src="./index.BCnMPevh.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/urlMatch-BYQrIQwR.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultSettingsView-D31xz8zv.js">
+    <link rel="stylesheet" crossorigin href="./defaultSettingsView.BDKsFU3c.css">
+    <link rel="stylesheet" crossorigin href="./index.CzXZzn5A.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <dialog id="fallback-error">
+      <p>The Playwright Trace Viewer must be loaded over the <code>http://</code> or <code>https://</code> protocols.</p>
+      <p>For more information, please see the <a href="https://aka.ms/playwright/trace-viewer-file-protocol">docs</a>.</p>
+    </dialog>
+    <script>
+      if (!/^https?:/.test(window.location.protocol)) {
+        const fallbackErrorDialog = document.getElementById('fallback-error');
+        const isTraceViewerInsidePlaywrightReport = window.location.protocol === 'file:' && window.location.pathname.endsWith('/trace/index.html');
+        // Best-effort to show the report path in the dialog.
+        if (isTraceViewerInsidePlaywrightReport) {
+          const reportPath = (() => {
+            const base = decodeURIComponent(window.location.pathname).replace(/\/trace\/index\.html$/, '');
+            if (navigator.platform === 'Win32')
+              return base.replace(/^\//, '').replace(/\//g, '\\\\');
+            return base;
+          })();
+          const reportLink = document.createElement('div');
+          const command = `npx playwright show-report "${reportPath}"`;
+          reportLink.innerHTML = `You can open the report via <code>${command}</code> from your Playwright project. <button type="button">Copy Command</button>`;
+          fallbackErrorDialog.insertBefore(reportLink, fallbackErrorDialog.children[1]);
+          reportLink.querySelector('button').addEventListener('click', () => navigator.clipboard.writeText(command));
+        }
+        fallbackErrorDialog.show();
+      }
+    </script>
+  </body>
+</html>

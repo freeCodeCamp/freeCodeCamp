@@ -1,0 +1,67 @@
+{
+  "name": "get-node-dimensions",
+  "version": "1.2.1",
+  "description": "Get accurate element dimensions, even if it's hidden!",
+  "main": "lib/get-node-dimensions.js",
+  "files": ["dist", "lib"],
+  "scripts": {
+    "build":
+      "npm run build:lib && NODE_ENV=production webpack --config webpack.config.js",
+    "build:lib": "babel src --out-dir lib --stage 0",
+    "prebuild": "rm -rf dist lib && mkdir dist lib",
+    "prepublish": "npm run build",
+    "postbuild":
+      "NODE_ENV=production TARGET=minify webpack --config webpack.config.js",
+    "karma": "karma start ./karma.conf.js",
+    "test": "npm run karma --  --single-run --reporters nyan",
+    "test:dev":
+      "npm run karma -- --no-single-run --auto-watch --reporters nyan",
+    "test:cov": "COVERAGE=1 npm run karma -- --single-run --reporters coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/souporserious/get-node-dimensions"
+  },
+  "keywords": [
+    "dimensions",
+    "measure node",
+    "measure element",
+    "width",
+    "height",
+    "hidden element width",
+    "hidden element height",
+    "actual"
+  ],
+  "author":
+    "Travis Arnold <travis@souporserious.com> (http://souporserious.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/souporserious/get-node-dimensions/issues"
+  },
+  "homepage": "https://github.com/souporserious/get-node-dimensions",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.2.2",
+    "babel-plugin-object-assign": "^1.2.0",
+    "css-loader": "^0.15.1",
+    "http-server": "^0.8.0",
+    "isparta-loader": "^2.0.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.2",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-nyan-reporter": "^0.2.4",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-webpack": "^1.7.0",
+    "lodash": "^3.10.0",
+    "node-libs-browser": "^0.5.2",
+    "node-sass": "^3.2.0",
+    "phantomjs-polyfill": "0.0.2",
+    "phantomjs-prebuilt": "^2.1.10",
+    "sass-loader": "^1.0.2",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.12",
+    "webpack-dev-server": "^1.9.0"
+  }
+}

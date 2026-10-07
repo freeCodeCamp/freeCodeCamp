@@ -1,0 +1,56 @@
+{
+	"name": "cacheable-request",
+	"version": "7.0.4",
+	"description": "Wrap native HTTP requests with RFC compliant cache support",
+	"license": "MIT",
+	"repository": "lukechilds/cacheable-request",
+	"author": "Luke Childs <lukechilds123@gmail.com> (http://lukechilds.co.uk)",
+	"main": "src/index.js",
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && nyc ava",
+		"coverage": "nyc report --reporter=text-lcov | coveralls"
+	},
+	"files": [
+		"src"
+	],
+	"keywords": [
+		"HTTP",
+		"HTTPS",
+		"cache",
+		"caching",
+		"layer",
+		"cacheable",
+		"RFC 7234",
+		"RFC",
+		"7234",
+		"compliant"
+	],
+	"dependencies": {
+		"clone-response": "^1.0.2",
+		"get-stream": "^5.1.0",
+		"http-cache-semantics": "^4.0.0",
+		"keyv": "^4.0.0",
+		"lowercase-keys": "^2.0.0",
+		"normalize-url": "^6.0.1",
+		"responselike": "^2.0.0"
+	},
+	"devDependencies": {
+		"@keyv/sqlite": "^2.0.0",
+		"ava": "^1.1.0",
+		"coveralls": "^3.0.0",
+		"create-test-server": "3.0.0",
+		"delay": "^4.0.0",
+		"eslint-config-xo-lukechilds": "^1.0.0",
+		"nyc": "^14.1.1",
+		"pify": "^4.0.0",
+		"sqlite3": "^4.0.2",
+		"this": "^1.0.2",
+		"xo": "^0.23.0"
+	},
+	"xo": {
+		"extends": "xo-lukechilds"
+	}
+}

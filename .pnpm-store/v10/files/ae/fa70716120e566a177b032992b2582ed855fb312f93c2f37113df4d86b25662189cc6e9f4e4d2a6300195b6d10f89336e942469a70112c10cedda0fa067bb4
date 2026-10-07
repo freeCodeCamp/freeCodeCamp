@@ -1,0 +1,57 @@
+{
+  "name": "strip-ansi",
+  "version": "3.0.1",
+  "description": "Strip ANSI escape codes",
+  "license": "MIT",
+  "repository": "chalk/strip-ansi",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "maintainers": [
+    "Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)",
+    "Joshua Boy Nicolai Appelman <joshua@jbna.nl> (jbna.nl)",
+    "JD Ballard <i.am.qix@gmail.com> (github.com/qix-)"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "strip",
+    "trim",
+    "remove",
+    "ansi",
+    "styles",
+    "color",
+    "colour",
+    "colors",
+    "terminal",
+    "console",
+    "string",
+    "tty",
+    "escape",
+    "formatting",
+    "rgb",
+    "256",
+    "shell",
+    "xterm",
+    "log",
+    "logging",
+    "command-line",
+    "text"
+  ],
+  "dependencies": {
+    "ansi-regex": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "@humanwhocodes/retry",
+  "version": "0.4.3",
+  "description": "A utility to retry failed async methods.",
+  "type": "module",
+  "main": "dist/retrier.cjs",
+  "module": "dist/retrier.js",
+  "types": "dist/retrier.d.ts",
+  "exports": {
+    "require": {
+      "types": "./dist/retrier.d.cts",
+      "default": "./dist/retrier.cjs"
+    },
+    "import": {
+      "types": "./dist/retrier.d.ts",
+      "default": "./dist/retrier.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/nzakas"
+  },
+  "scripts": {
+    "build:cts-types": "node -e \"fs.copyFileSync('dist/retrier.d.ts', 'dist/retrier.d.cts')\"",
+    "build": "rollup -c && tsc && npm run build:cts-types",
+    "prepare": "npm run build",
+    "lint": "eslint src/ tests/",
+    "pretest": "npm run build",
+    "test:unit": "mocha tests/retrier.test.js",
+    "test:build": "node tests/pkg.test.cjs && node tests/pkg.test.mjs",
+    "test:jsr": "npx jsr@latest publish --dry-run",
+    "test:emfile": "node tools/check-emfile-handling.js",
+    "test": "npm run test:unit && npm run test:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humanwhocodes/retry.git"
+  },
+  "keywords": [
+    "nodejs",
+    "retry",
+    "async",
+    "promises"
+  ],
+  "author": "Nicholas C. Zaks",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@eslint/js": "^8.49.0",
+    "@rollup/plugin-terser": "0.4.4",
+    "@tsconfig/node16": "^16.1.1",
+    "@types/mocha": "^10.0.3",
+    "@types/node": "20.12.6",
+    "eslint": "^8.21.0",
+    "lint-staged": "15.2.1",
+    "mocha": "^10.3.0",
+    "rollup": "3.29.4",
+    "typescript": "5.4.4",
+    "yorkie": "2.0.0"
+  }
+}

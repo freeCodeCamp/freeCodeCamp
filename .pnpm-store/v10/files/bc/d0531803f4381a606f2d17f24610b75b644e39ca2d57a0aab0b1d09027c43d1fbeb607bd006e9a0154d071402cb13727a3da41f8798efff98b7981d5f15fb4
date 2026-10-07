@@ -1,0 +1,62 @@
+# `MD010` - Hard tabs
+
+Tags: `hard_tab`, `whitespace`
+
+Aliases: `no-hard-tabs`
+
+Parameters:
+
+- `code_blocks`: Include code blocks (`boolean`, default `true`)
+- `ignore_code_languages`: Fenced code languages to ignore (`string[]`, default
+  `[]`)
+- `spaces_per_tab`: Number of spaces for each hard tab (`integer`, default `1`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered by any lines that contain hard tab characters instead
+of using spaces for indentation. To fix this, replace any hard tab characters
+with spaces instead.
+
+Example:
+
+<!-- markdownlint-disable no-hard-tabs -->
+
+```markdown
+Some text
+
+	* hard tab character used to indent the list item
+```
+
+<!-- markdownlint-restore -->
+
+Corrected example:
+
+```markdown
+Some text
+
+    * Spaces used to indent the list item instead
+```
+
+You have the option to exclude this rule for code blocks and spans. To do so,
+set the `code_blocks` parameter to `false`. Code blocks and spans are included
+by default since handling of tabs by Markdown tools can be inconsistent (e.g.,
+using 4 vs. 8 spaces).
+
+When code blocks are scanned (e.g., by default or if `code_blocks` is `true`),
+the `ignore_code_languages` parameter can be set to a list of languages that
+should be ignored (i.e., hard tabs will be allowed, though not required). This
+makes it easier for documents to include code for languages that require hard
+tabs.
+
+By default, violations of this rule are fixed by replacing the tab with 1 space
+character. To use a different number of spaces, set the `spaces_per_tab`
+parameter to the desired value.
+
+Rationale: Hard tabs are often rendered inconsistently by different editors and
+can be harder to work with than spaces.
+
+More information:
+
+- <https://agiletribe.wordpress.com/2011/10/27/18-dont-use-tab-characters/>
+- <https://www.jwz.org/doc/tabs-vs-spaces.html>
+- <https://adamspiers.org/computing/why_no_tabs.html>

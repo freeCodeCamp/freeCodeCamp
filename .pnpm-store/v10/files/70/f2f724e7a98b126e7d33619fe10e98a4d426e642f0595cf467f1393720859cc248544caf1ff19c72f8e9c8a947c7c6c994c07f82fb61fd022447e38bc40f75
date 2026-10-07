@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TestContext.js",
+  "module": "../dist/esm/TestContext.js",
+  "types": "../dist/dts/TestContext.d.ts"
+}

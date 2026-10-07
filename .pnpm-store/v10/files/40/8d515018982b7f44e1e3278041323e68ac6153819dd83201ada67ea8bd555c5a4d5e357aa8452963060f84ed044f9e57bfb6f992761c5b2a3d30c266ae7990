@@ -1,0 +1,9 @@
+# packages/playwright/lib/loader/loaderProcessEntry.js
+# total: 1.2 KB
+
+## Inlined (2)
+  1.0 KB  packages/playwright/src/loader/loaderMain.ts
+  0.1 KB  packages/playwright/src/loader/loaderProcessEntry.ts
+
+## External (1)
+  ../common

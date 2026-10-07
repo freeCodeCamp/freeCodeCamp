@@ -1,0 +1,52 @@
+{
+  "version": "0.6.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": ["dist", "src"],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "dom-mutator",
+  "author": "Jeremy Dorn",
+  "module": "dist/dom-mutator.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/dom-mutator.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/dom-mutator.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.9.2",
+    "husky": "^4.3.8",
+    "size-limit": "^4.9.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.3"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "react-spinkit",
+  "description": "A collection of loading indicators animated with CSS for React",
+  "version": "3.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "browserify": {
+    "transform": [
+      "cssify"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/KyleAMathews/react-spinkit/issues"
+  },
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "loaders.css": "^0.1.2",
+    "object-assign": "^4.1.0",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
+    "cssify": "^1.0.2",
+    "enzyme": "^2.6.0",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb": "^10.0.0",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^6.0.0",
+    "ignore-styles": "^5.0.1",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.1.2",
+    "react": "^15.3.0",
+    "react-addons-test-utils": "^15.4.0",
+    "react-dom": "^15.3.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.0"
+  },
+  "homepage": "https://github.com/KyleAMathews/react-spinkit",
+  "keywords": [
+    "react",
+    "react-component",
+    "spinkit",
+    "spinners"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KyleAMathews/react-spinkit.git"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run mocha",
+    "build": "babel src --out-dir dist/",
+    "lint": "eslint --ext .js,.jsx --ignore-path .gitignore --ignore-pattern www --ignore-pattern test --ignore-pattern node_modules .",
+    "mocha": "./node_modules/.bin/mocha mocha ./test/**/*.test.jsx  --opts ./test/mocha.opts",
+    "watch": "babel -w src --out-dir dist/"
+  }
+}

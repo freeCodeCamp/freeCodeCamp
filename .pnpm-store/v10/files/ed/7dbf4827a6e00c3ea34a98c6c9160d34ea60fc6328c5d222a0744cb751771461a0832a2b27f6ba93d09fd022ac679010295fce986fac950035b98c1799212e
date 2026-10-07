@@ -1,0 +1,84 @@
+import { _ as _$2 } from '@swc/helpers/esm/_object_spread.js';
+import { _ } from '@swc/helpers/esm/_object_without_properties.js';
+import { _ as _$1 } from '@swc/helpers/esm/_sliced_to_array.js';
+import React, { useState, useRef } from 'react';
+import { useSearchBox, useInstantSearch } from 'react-instantsearch-core';
+import { SearchBox as SearchBox$1 } from '../ui/SearchBox.js';
+
+function SearchBox(_0) {
+    var queryHook = _0.queryHook, _0_searchAsYouType = _0.searchAsYouType, searchAsYouType = _0_searchAsYouType === void 0 ? true : _0_searchAsYouType, _0_ignoreCompositionEvents = _0.ignoreCompositionEvents, ignoreCompositionEvents = _0_ignoreCompositionEvents === void 0 ? false : _0_ignoreCompositionEvents, aiMode = _0.aiMode, translations = _0.translations, props = _(_0, [
+        "queryHook",
+        "searchAsYouType",
+        "ignoreCompositionEvents",
+        "aiMode",
+        "translations"
+    ]);
+    var _useSearchBox = useSearchBox({
+        queryHook: queryHook
+    }, {
+        $$widgetType: 'ais.searchBox'
+    }), query = _useSearchBox.query, refine = _useSearchBox.refine, isSearchStalled = _useSearchBox.isSearchStalled;
+    var indexRenderState = useInstantSearch().indexRenderState;
+    var _useState = _$1(useState(query), 2), inputValue = _useState[0], setInputValue = _useState[1];
+    var inputRef = useRef(null);
+    function setQuery(newQuery) {
+        var isComposing = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : false;
+        setInputValue(newQuery);
+        if (searchAsYouType && !(ignoreCompositionEvents && isComposing)) {
+            refine(newQuery);
+        }
+    }
+    function onReset() {
+        setQuery('');
+        if (!searchAsYouType) {
+            refine('');
+        }
+    }
+    function onChange(event) {
+        setQuery(event.currentTarget.value, event.nativeEvent.isComposing);
+    }
+    function onSubmit(event) {
+        if (!searchAsYouType) {
+            refine(inputValue);
+        }
+        if (props.onSubmit) {
+            props.onSubmit(event);
+        }
+    }
+    // Track when the InstantSearch query changes to synchronize it with
+    // the React state.
+    // We bypass the state update if the input is focused to avoid concurrent
+    // updates when typing.
+    if (query !== inputValue && document.activeElement !== inputRef.current) {
+        setInputValue(query);
+    }
+    var uiProps = {
+        inputRef: inputRef,
+        isSearchStalled: isSearchStalled,
+        onChange: onChange,
+        onReset: onReset,
+        onSubmit: onSubmit,
+        onAiModeClick: aiMode ? function() {
+            var chatRenderState = indexRenderState.chat;
+            if (chatRenderState) {
+                var _chatRenderState_setOpen;
+                (_chatRenderState_setOpen = chatRenderState.setOpen) === null || _chatRenderState_setOpen === void 0 ? void 0 : _chatRenderState_setOpen.call(chatRenderState, true);
+                if (inputValue.trim()) {
+                    var _chatRenderState_sendMessage;
+                    (_chatRenderState_sendMessage = chatRenderState.sendMessage) === null || _chatRenderState_sendMessage === void 0 ? void 0 : _chatRenderState_sendMessage.call(chatRenderState, {
+                        text: inputValue
+                    });
+                }
+            }
+        } : undefined,
+        value: inputValue,
+        translations: _$2({
+            submitButtonTitle: 'Submit the search query',
+            resetButtonTitle: 'Clear the search query',
+            aiModeButtonTitle: 'AI Mode'
+        }, translations)
+    };
+    return /*#__PURE__*/ React.createElement(SearchBox$1, _$2({}, props, uiProps));
+}
+
+export { SearchBox };

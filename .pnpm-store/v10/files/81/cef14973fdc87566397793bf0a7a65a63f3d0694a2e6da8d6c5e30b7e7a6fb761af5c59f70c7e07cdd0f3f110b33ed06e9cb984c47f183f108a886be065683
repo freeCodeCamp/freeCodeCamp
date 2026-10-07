@@ -1,0 +1,56 @@
+{
+    "name": "@discoveryjs/json-ext",
+    "version": "0.5.7",
+    "description": "A set of utilities that extend the use of JSON",
+    "keywords": [
+        "json",
+        "utils",
+        "stream",
+        "async",
+        "promise",
+        "stringify",
+        "info"
+    ],
+    "author": "Roman Dvornov <rdvornov@gmail.com> (https://github.com/lahmatiy)",
+    "license": "MIT",
+    "repository": "discoveryjs/json-ext",
+    "main": "./src/index",
+    "browser": {
+        "./src/stringify-stream.js": "./src/stringify-stream-browser.js",
+        "./src/text-decoder.js": "./src/text-decoder-browser.js",
+        "./src/version.js": "./dist/version.js"
+    },
+    "types": "./index.d.ts",
+    "scripts": {
+        "test": "mocha --reporter progress",
+        "lint": "eslint src test",
+        "lint-and-test": "npm run lint && npm test",
+        "build": "rollup --config",
+        "test:all": "npm run test:src && npm run test:dist",
+        "test:src": "npm test",
+        "test:dist": "cross-env MODE=dist npm test && cross-env MODE=dist-min npm test",
+        "build-and-test": "npm run build && npm run test:dist",
+        "coverage": "c8 --reporter=lcovonly npm test",
+        "prepublishOnly": "npm run lint && npm test && npm run build-and-test"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^15.1.0",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^9.0.0",
+        "c8": "^7.10.0",
+        "chalk": "^4.1.0",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.10.0",
+        "mocha": "^8.4.0",
+        "rollup": "^2.28.2",
+        "rollup-plugin-terser": "^7.0.2"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "files": [
+        "dist",
+        "src",
+        "index.d.ts"
+    ]
+}

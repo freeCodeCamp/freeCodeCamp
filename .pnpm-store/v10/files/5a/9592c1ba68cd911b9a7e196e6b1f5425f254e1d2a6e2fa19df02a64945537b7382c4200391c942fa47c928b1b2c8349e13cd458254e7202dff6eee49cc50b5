@@ -1,0 +1,42 @@
+{
+  "name": "eslint-config-react-app",
+  "version": "7.0.1",
+  "description": "ESLint configuration used by Create React App",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/create-react-app.git",
+    "directory": "packages/eslint-config-react-app"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/facebook/create-react-app/issues"
+  },
+  "files": [
+    "base.js",
+    "index.js",
+    "jest.js"
+  ],
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "babel-preset-react-app": "^10.0.1",
+    "confusing-browser-globals": "^1.0.11",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "gitHead": "19fa58d527ae74f2b6baa0867463eea1d290f9a5"
+}

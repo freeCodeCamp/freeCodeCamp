@@ -1,0 +1,3 @@
+allow-incomplete-coverage: true
+files:
+  - test/**/*test.js

@@ -1,0 +1,25 @@
+{
+    "name": "@types/hogan.js",
+    "version": "3.0.5",
+    "description": "TypeScript definitions for hogan.js",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/hogan.js",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Andrew Leedham",
+            "githubUsername": "AndrewLeedham",
+            "url": "https://github.com/AndrewLeedham"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/hogan.js"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "d7cd4f5419d513f8b715f8c45b0d89dbf1fdc9e8d92a9cd044ec60bef324c548",
+    "typeScriptVersion": "4.5"
+}

@@ -1,0 +1,44 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.floating-menu-overlay-widget {
+	padding: 0px;
+	color: var(--vscode-button-foreground);
+	background-color: var(--vscode-button-background);
+	border-radius: 2px;
+	border: 1px solid var(--vscode-contrastBorder);
+	display: flex;
+	align-items: center;
+	z-index: 10;
+	box-shadow: 0 2px 8px var(--vscode-widget-shadow);
+	overflow: hidden;
+
+	.action-item > .action-label {
+		padding: 5px;
+		font-size: 12px;
+		border-radius: 2px;
+	}
+
+	.action-item > .action-label.codicon {
+		color: var(--vscode-button-foreground);
+	}
+
+	.action-item > .action-label.codicon:not(.separator) {
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	.action-item:first-child > .action-label {
+		padding-left: 7px;
+	}
+
+	.action-item:last-child > .action-label {
+		padding-right: 7px;
+	}
+
+	.action-item .action-label.separator {
+		background-color: var(--vscode-menu-separatorBackground);
+	}
+}

@@ -1,0 +1,94 @@
+{
+  "name": "i18next-fs-backend",
+  "version": "2.6.8",
+  "private": false,
+  "type": "module",
+  "main": "./cjs/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": {
+        "require": "./cjs/index.d.ts",
+        "import": "./esm/index.d.mts"
+      },
+      "module": "./esm/index.js",
+      "import": "./esm/index.js",
+      "require": "./cjs/index.js",
+      "default": "./esm/index.js"
+    },
+    "./cjs": {
+      "types": "./cjs/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./esm": {
+      "types": "./esm/index.d.mts",
+      "default": "./esm/index.js"
+    }
+  },
+  "module": "./esm/index.js",
+  "types": "./index.d.mts",
+  "devDependencies": {
+    "@babel/cli": "7.28.6",
+    "@babel/core": "7.29.6",
+    "@babel/preset-env": "7.29.2",
+    "babel-plugin-add-module-exports": "1.0.4",
+    "dtslint": "4.2.1",
+    "esbuild": "0.28.1",
+    "eslint": "8.55.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-n": "16.3.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-require-path-exists": "1.1.9",
+    "eslint-plugin-standard": "5.0.0",
+    "expect.js": "0.3.1",
+    "i18next": "26.0.6",
+    "js-yaml": "4.3.1",
+    "jsonc-parser": "3.3.1",
+    "json5": "2.2.3",
+    "mocha": "11.7.5",
+    "tslint": "5.20.1",
+    "tsd": "0.33.0",
+    "typescript": "6.0.3",
+    "uglify-js": "3.19.3"
+  },
+  "description": "i18next-fs-backend is a backend layer for i18next using in Node.js and for Deno to load translations from the filesystem.",
+  "keywords": [
+    "i18next",
+    "i18next-backend",
+    "i18next-fs-backend"
+  ],
+  "homepage": "https://github.com/i18next/i18next-fs-backend",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:i18next/i18next-fs-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/i18next/i18next-fs-backend/issues"
+  },
+  "license": "MIT",
+  "config": {
+    "fixcjs": "fs.writeFileSync('cjs/writeFile.js', fs.readFileSync('cjs/writeFile.js').toString().replace(`(await Promise.resolve().then(function () {\n  return _interopRequireWildcard(require('node:fs'));\n})).default`, `require('node:fs')`));fs.writeFileSync('cjs/readFile.js', fs.readFileSync('cjs/readFile.js').toString().replace(`(await Promise.resolve().then(function () {\n  return _interopRequireWildcard(require('node:fs'));\n})).default`, `require('node:fs')`))"
+  },
+  "scripts": {
+    "copy:jsonc": "esbuild node_modules/jsonc-parser/lib/esm/main.js --bundle --format=esm --platform=neutral --banner:js=\"/*\n$(sed 's/\\r$//' node_modules/jsonc-parser/LICENSE.md)\n*/\" --outfile=lib/formats/jsonc.js",
+    "copy:json5": "cp node_modules/json5/dist/index.mjs lib/formats/json5.js",
+    "copy:yaml": "cp node_modules/js-yaml/dist/js-yaml.mjs lib/formats/yaml.js",
+    "copy": "rm -rf lib/formats && mkdir lib/formats && npm run copy:jsonc && npm run copy:json5 && npm run copy:yaml",
+    "lint": "eslint .",
+    "fixcjs": "node -e \"$npm_package_config_fixcjs\"",
+    "compile:esm": "rm -rf esm && mkdir esm && BABEL_ENV=esm babel lib -d esm && cp index.d.ts esm/index.d.ts && cp index.d.mts esm/index.d.mts",
+    "compile:cjs": "rm -rf cjs && mkdir cjs && BABEL_ENV=cjs babel lib -d cjs && cp index.d.ts cjs/index.d.ts && echo '{\"type\":\"commonjs\"}' > cjs/package.json && npm run fixcjs",
+    "compile": "npm run copy && npm run compile:esm && npm run compile:cjs",
+    "build": "npm run compile",
+    "test": "npm run lint && npm run build && mocha test -R spec --exit --experimental-modules && npm run test:typescript",
+    "test:typescript": "tslint --project tsconfig.json && tsd",
+    "test:deno": "deno test test/deno/*.js --allow-read --allow-write --no-check",
+    "test:bun": "bun test test/bun/*.js",
+    "preversion": "npm run test && npm run build && git push",
+    "postversion": "git push && git push --tags"
+  },
+  "tsd": {
+    "directory": "test/typescript"
+  }
+}

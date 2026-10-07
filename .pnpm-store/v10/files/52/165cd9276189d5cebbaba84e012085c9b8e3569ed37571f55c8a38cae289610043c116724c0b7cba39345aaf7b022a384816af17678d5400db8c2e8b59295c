@@ -1,0 +1,34 @@
+{
+    "name": "@types/jsesc",
+    "version": "2.5.1",
+    "description": "TypeScript definitions for jsesc",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Bart van der Schoor",
+            "url": "https://github.com/Bartvds",
+            "githubUsername": "Bartvds"
+        },
+        {
+            "name": "Lyanbin",
+            "url": "https://github.com/Lyanbin",
+            "githubUsername": "Lyanbin"
+        },
+        {
+            "name": "Colin Reeder",
+            "url": "https://github.com/vpzomtrrfrt",
+            "githubUsername": "vpzomtrrfrt"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/jsesc"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "3cb9a26966bc917d73fad57143a6ab5f4dd10b4f96082e6c4743fd2e8e52abec",
+    "typeScriptVersion": "3.0"
+}

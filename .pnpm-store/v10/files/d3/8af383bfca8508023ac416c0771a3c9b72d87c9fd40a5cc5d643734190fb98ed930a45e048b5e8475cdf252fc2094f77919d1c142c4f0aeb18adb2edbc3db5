@@ -1,0 +1,22 @@
+export declare enum TokenizerContextTypes {
+    Data = "Data",
+    OpenTagStart = "OpenTagStart",
+    CloseTag = "CloseTag",
+    Attributes = "Attributes",
+    OpenTagEnd = "OpenTagEnd",
+    AttributeKey = "AttributeKey",
+    AttributeValue = "AttributeValue",
+    AttributeValueBare = "AttributeValueBare",
+    AttributeValueWrapped = "AttributeValueWrapped",
+    ScriptContent = "ScriptContent",
+    StyleContent = "StyleContent",
+    DoctypeOpen = "DoctypeOpen",
+    DoctypeClose = "DoctypeClose",
+    DoctypeAttributes = "DoctypeAttributes",
+    DoctypeAttributeWrapped = "DoctypeAttributeWrapped",
+    DoctypeAttributeBare = "DoctypeAttributeBare",
+    CommentOpen = "CommentOpen",
+    CommentContent = "CommentContent",
+    CommentClose = "CommentClose",
+    CustomTagRawContent = "CustomTagRawContent"
+}

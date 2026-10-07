@@ -1,0 +1,80 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <script>(function(){
+      var props = {};
+
+      function addObject(obj) {
+        if (obj == null) return;
+        try {
+          Object.getOwnPropertyNames(obj).forEach(add);
+        } catch(ex) {}
+        if (obj.prototype) {
+          Object.getOwnPropertyNames(obj.prototype).forEach(add);
+        }
+        if (typeof obj == "function") {
+          try {
+            Object.getOwnPropertyNames(new obj).forEach(add);
+          } catch(ex) {}
+        }
+      }
+
+      function add(name) {
+        if (/^[a-z_$][a-z0-9_$]*$/i.test(name)) {
+            props[name] = true;
+        }
+      }
+
+      Object.getOwnPropertyNames(window).forEach(function(thing){
+        addObject(window[thing]);
+      });
+
+      try {
+        addObject(new Event("click"));
+        addObject(new Event("contextmenu"));
+        addObject(new Event("mouseup"));
+        addObject(new Event("mousedown"));
+        addObject(new Event("keydown"));
+        addObject(new Event("keypress"));
+        addObject(new Event("keyup"));
+        addObject(new Event("input"));
+        addObject(new Event("touchstart"));
+        addObject(new Event("touchmove"));
+        addObject(new Event("touchend"));
+        addObject(new Event("touchcancel"));
+        addObject(new Event("pointerdown"));
+        addObject(new Event("pointermove"));
+        addObject(new Event("pointerup"));
+        addObject(new Event("pointercancel"));
+        addObject(new Event("pointerenter"));
+        addObject(new Event("pointerleave"));
+      } catch(ex) {console.error(ex)}
+
+      try {
+        addObject(Temporal.Duration.from({ years: 1 }));
+        addObject(new Temporal.Instant());
+        addObject(Temporal.Now);
+        addObject(new Temporal.PlainDate(2021, 7, 1));
+        addObject(new Temporal.ZonedDateTime(0n, "America/New_York"));
+        addObject(new Temporal.PlainYearMonth(2021, 7));
+        addObject(new Temporal.PlainTime());
+        addObject(new Temporal.PlainMonthDay(7, 1));
+        addObject(new Temporal.PlainDateTime(2021, 7, 1));
+      } catch(ex) {console.error(ex)}
+
+      var ta = document.createElement("textarea");
+      ta.style.width = "100%";
+      ta.style.height = "20em";
+      ta.style.boxSizing = "border-box";
+      ta.value = 'export var domprops = ' + JSON.stringify(Object.keys(props).sort(cmp), null, 4);
+      document.body.appendChild(ta);
+
+      function cmp(a, b) {
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+        return a < b ? -1 : a > b ? 1 : 0;
+      }
+    })();</script>
+  </body>
+</html>

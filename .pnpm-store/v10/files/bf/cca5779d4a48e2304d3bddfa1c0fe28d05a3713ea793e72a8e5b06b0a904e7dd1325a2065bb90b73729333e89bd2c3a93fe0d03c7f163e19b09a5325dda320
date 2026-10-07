@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [ "es2022" ],
+    "module": "commonjs",
+    "noEmit": true,
+    "strict": true
+  },
+  "include": [
+    "./test/types/*.test-d.ts",
+    "./index.d.ts"
+  ]
+}

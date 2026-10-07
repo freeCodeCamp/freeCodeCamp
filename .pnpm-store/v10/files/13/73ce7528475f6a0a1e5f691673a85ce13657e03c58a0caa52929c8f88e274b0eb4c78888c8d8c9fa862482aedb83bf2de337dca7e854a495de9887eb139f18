@@ -1,0 +1,85 @@
+{
+  "name": "listr2",
+  "version": "9.0.5",
+  "description": "Terminal task list reborn! Create beautiful CLI interfaces via easy and logical to implement task lists that feel alive and interactive.",
+  "license": "MIT",
+  "repository": "https://github.com/listr2/listr2",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "author": {
+    "name": "Cenk Kilic",
+    "email": "cenk@kilic.dev",
+    "url": "https://cenk.kilic.dev"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev:start": "tsdown --watch",
+    "format": "prettier --log-level warn --write src/ tests/ && pnpm run lint --fix",
+    "lint": "eslint --flag v10_config_lookup_from_file src/ tests/",
+    "test": "NO_COLOR=1 TS_NODE_PROJECT=tests/tsconfig.json NODE_OPTIONS='--no-warnings --experimental-specifier-resolution=node --experimental-vm-modules' jest --config tests/jest.config.ts",
+    "test:cov": "pnpm run test --coverage",
+    "test:dev": "NODE_OPTIONS='--no-warnings --experimental-specifier-resolution=node --experimental-vm-modules --inspect=0.0.0.0:9229' pnpm run test --verbose --watchAll"
+  },
+  "lint-staged": {
+    "{src,tests}/**/*.{ts,js,tsx,jsx,spec.ts}": [
+      "prettier --log-level warn --write",
+      "eslint --flag v10_config_lookup_from_file --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --log-level warn --write"
+    ]
+  },
+  "keywords": [
+    "listr",
+    "listr2",
+    "cli",
+    "task",
+    "list",
+    "tasklist",
+    "terminal",
+    "term",
+    "console",
+    "ascii",
+    "unicode",
+    "loading",
+    "indicator",
+    "progress",
+    "busy",
+    "wait",
+    "idle"
+  ],
+  "dependencies": {
+    "cli-truncate": "^5.0.0",
+    "colorette": "^2.0.20",
+    "eventemitter3": "^5.0.1",
+    "log-update": "^6.1.0",
+    "rfdc": "^1.4.1",
+    "wrap-ansi": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/zen-observable": "^0.8.7",
+    "rxjs": "^7.8.2",
+    "zen-observable": "^0.10.0"
+  }
+}

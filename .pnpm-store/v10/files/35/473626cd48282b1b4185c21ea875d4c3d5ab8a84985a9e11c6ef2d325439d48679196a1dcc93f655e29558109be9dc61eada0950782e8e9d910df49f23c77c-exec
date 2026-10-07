@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+var bn = require('bn.js');
+var fs = require('fs');
+var mr = require('../').create();
+
+var num = '';
+if (process.argv[2]) {
+  num += fs.readFileSync(process.argv[2]);
+  start(num);
+} else {
+  process.stdin.on('data', function(chunk) {
+    num += chunk.toString().replace(/[^0-9a-f]/gi, '');
+  });
+  process.stdin.once('end', function() {
+    start(num);
+  });
+}
+
+function start(text) {
+  var num = new bn(text, 16);
+
+  var divisor = mr.getDivisor(num);
+  if (!divisor)
+    process.exit(1);
+  if (divisor.cmpn(1) === 0)
+    process.exit(0);
+
+  console.log(divisor.toString(16));
+}

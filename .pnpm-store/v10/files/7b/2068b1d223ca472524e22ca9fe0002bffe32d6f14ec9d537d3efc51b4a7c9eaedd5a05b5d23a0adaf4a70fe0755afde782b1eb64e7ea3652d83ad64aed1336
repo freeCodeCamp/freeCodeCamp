@@ -1,0 +1,1 @@
+export declare const formatInTimeZoneWithOptions: import("../_lib/convertToFP/index.js").CurriedFn4<string | number | Date, string, string, import("../../index.js").FormatOptionsWithTZ | undefined, string>;

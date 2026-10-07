@@ -1,0 +1,78 @@
+{
+  "name": "@fastify/oauth2",
+  "version": "8.2.0",
+  "description": "Perform login using oauth2 protocol",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:coverage": "npm run test:unit -- --cov --coverage-report=html",
+    "test:typescript": "tsd",
+    "test:unit": "c8 --100 node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-oauth2.git"
+  },
+  "author": "Tommaso Allevi - @allevo",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Manuel Spigolon",
+      "email": "behemoth89@gmail.com"
+    },
+    {
+      "name": "KaKa Ng",
+      "email": "kaka@kakang.dev",
+      "url": "https://github.com/climba03003"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-oauth2/issues"
+  },
+  "keywords": [
+    "fastify",
+    "oauth2"
+  ],
+  "homepage": "https://github.com/fastify/fastify-oauth2#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@types/simple-oauth2": "^5.0.8",
+    "c8": "^10.1.3",
+    "eslint": "^9.39.2",
+    "fastify": "^5.6.2",
+    "neostandard": "^0.12.2",
+    "nock": "^14.0.10",
+    "tsd": "^0.33.0"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "fastify-plugin": "^5.1.0",
+    "simple-oauth2": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

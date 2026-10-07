@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/RedBlackTree.js",
+  "module": "../dist/esm/RedBlackTree.js",
+  "types": "../dist/dts/RedBlackTree.d.ts"
+}

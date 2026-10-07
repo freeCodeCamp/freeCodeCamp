@@ -1,0 +1,466 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* Suggest widget*/
+
+.monaco-editor .suggest-widget {
+	width: 430px;
+	z-index: 40;
+	display: flex;
+	flex-direction: column;
+	border-radius: 3px;
+}
+
+.monaco-editor .suggest-widget.message {
+	flex-direction: row;
+	align-items: center;
+}
+
+.monaco-editor .suggest-widget,
+.monaco-editor .suggest-details {
+	flex: 0 1 auto;
+	width: 100%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--vscode-editorSuggestWidget-border);
+	background-color: var(--vscode-editorSuggestWidget-background);
+}
+
+.monaco-editor.hc-black .suggest-widget,
+.monaco-editor.hc-black .suggest-details,
+.monaco-editor.hc-light .suggest-widget,
+.monaco-editor.hc-light .suggest-details {
+	border-width: 2px;
+}
+
+/* Styles for status bar part */
+
+
+.monaco-editor .suggest-widget .suggest-status-bar {
+	box-sizing: border-box;
+	display: none;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 80%;
+	padding: 0 4px 0 4px;
+	border-top: 1px solid var(--vscode-editorSuggestWidget-border);
+	overflow: hidden;
+}
+
+.monaco-editor .suggest-widget.with-status-bar .suggest-status-bar {
+	display: flex;
+}
+
+.monaco-editor .suggest-widget .suggest-status-bar .left {
+	padding-right: 8px;
+}
+
+.monaco-editor .suggest-widget.with-status-bar .suggest-status-bar .action-label {
+	color: var(--vscode-editorSuggestWidgetStatus-foreground);
+}
+
+.monaco-editor .suggest-widget.with-status-bar .suggest-status-bar .action-item:not(:last-of-type) .action-label {
+	margin-right: 0;
+}
+
+.monaco-editor .suggest-widget.with-status-bar .suggest-status-bar .action-item:not(:last-of-type) .action-label::after {
+	content: ', ';
+	margin-right: 0.3em;
+}
+
+.monaco-editor .suggest-widget.with-status-bar .monaco-list .monaco-list-row > .contents > .main > .right > .readMore,
+.monaco-editor .suggest-widget.with-status-bar .monaco-list .monaco-list-row.focused.string-label > .contents > .main > .right > .readMore {
+	display: none;
+}
+
+.monaco-editor .suggest-widget.with-status-bar:not(.docs-side) .monaco-list .monaco-list-row:hover > .contents > .main > .right.can-expand-details > .details-label {
+	width: 100%;
+}
+
+/* Styles for Message element for when widget is loading or is empty */
+
+.monaco-editor .suggest-widget > .message {
+	padding-left: 22px;
+}
+
+/** Styles for the list element **/
+
+.monaco-editor .suggest-widget > .tree {
+	height: 100%;
+	width: 100%;
+}
+
+.monaco-editor .suggest-widget .monaco-list {
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+/** Styles for each row in the list element **/
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row {
+	display: flex;
+	-mox-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-right: 10px;
+	background-repeat: no-repeat;
+	background-position: 2px 2px;
+	white-space: nowrap;
+	cursor: pointer;
+	touch-action: none;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused {
+	color: var(--vscode-editorSuggestWidget-selectedForeground);
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused .codicon {
+	color: var(--vscode-editorSuggestWidget-selectedIconForeground);
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents {
+	flex: 1;
+	height: 100%;
+	overflow: hidden;
+	padding-left: 2px;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main {
+	display: flex;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: pre;
+	justify-content: space-between;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .left,
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right {
+	display: flex;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row:not(.focused) > .contents > .main .monaco-icon-label {
+	color: var(--vscode-editorSuggestWidget-foreground);
+}
+
+.monaco-editor .suggest-widget:not(.frozen) .monaco-highlighted-label .highlight {
+	font-weight: bold;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main .monaco-highlighted-label .highlight {
+	color: var(--vscode-editorSuggestWidget-highlightForeground);
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused > .contents > .main .monaco-highlighted-label .highlight {
+	color: var(--vscode-editorSuggestWidget-focusHighlightForeground);
+}
+
+/** ReadMore Icon styles **/
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .header > .codicon-close,
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right > .readMore::before {
+	color: inherit;
+	opacity: 1;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .header > .codicon-close {
+	position: absolute;
+	top: 6px;
+	right: 2px;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .header > .codicon-close:hover,
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right > .readMore:hover {
+	opacity: 1;
+}
+
+/** signature, qualifier, type/details opacity **/
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right > .details-label {
+	opacity: 0.7;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .left > .signature-label {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	opacity: 0.6;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .left > .qualifier-label {
+	margin-left: 12px;
+	opacity: 0.4;
+	font-size: 85%;
+	line-height: initial;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	align-self: center;
+}
+
+/** Type Info and icon next to the label in the focused completion item **/
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right > .details-label {
+	font-size: 85%;
+	margin-left: 1.1em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right > .details-label > .monaco-tokenized-source {
+	display: inline;
+}
+
+/** Details: if using CompletionItem#details, show on focus **/
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right > .details-label {
+	display: none;
+}
+
+.monaco-editor .suggest-widget:not(.shows-details) .monaco-list .monaco-list-row.focused > .contents > .main > .right > .details-label {
+	display: inline;
+}
+
+/** Details: if using CompletionItemLabel#details, always show **/
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row:not(.string-label) > .contents > .main > .right > .details-label,
+.monaco-editor .suggest-widget.docs-side .monaco-list .monaco-list-row.focused:not(.string-label) > .contents > .main > .right > .details-label {
+	display: inline;
+}
+
+/** Ellipsis on hover **/
+
+.monaco-editor .suggest-widget:not(.docs-side) .monaco-list .monaco-list-row.focused:hover > .contents > .main > .right.can-expand-details > .details-label {
+	width: calc(100% - 26px);
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .left {
+	flex-shrink: 1;
+	flex-grow: 1;
+	overflow: hidden;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .left > .monaco-icon-label {
+	flex-shrink: 0;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row:not(.string-label) > .contents > .main > .left > .monaco-icon-label {
+	max-width: 100%;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.string-label > .contents > .main > .left > .monaco-icon-label {
+	flex-shrink: 1;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right {
+	overflow: hidden;
+	flex-shrink: 4;
+	max-width: 70%;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row > .contents > .main > .right > .readMore {
+	display: inline-block;
+	position: absolute;
+	right: 10px;
+	width: 18px;
+	height: 18px;
+	visibility: hidden;
+}
+
+/** Do NOT display ReadMore when docs is side/below **/
+
+.monaco-editor .suggest-widget.docs-side .monaco-list .monaco-list-row > .contents > .main > .right > .readMore {
+	display: none !important;
+}
+
+/** Do NOT display ReadMore when using plain CompletionItemLabel (details/documentation might not be resolved) **/
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.string-label > .contents > .main > .right > .readMore {
+	display: none;
+}
+
+/** Focused item can show ReadMore, but can't when docs is side/below **/
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused.string-label > .contents > .main > .right > .readMore {
+	display: inline-block;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused:hover > .contents > .main > .right > .readMore {
+	visibility: visible;
+}
+
+/** Styles for each row in the list **/
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .monaco-icon-label.deprecated {
+	opacity: 0.66;
+	text-decoration: unset;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .monaco-icon-label.deprecated > .monaco-icon-label-container > .monaco-icon-name-container {
+	text-decoration: line-through;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .monaco-icon-label::before {
+	height: 100%;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .icon {
+	display: block;
+	height: 16px;
+	width: 16px;
+	margin-left: 2px;
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .icon.hide {
+	display: none;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .suggest-icon {
+	display: flex;
+	align-items: center;
+	margin-right: 4px;
+}
+
+.monaco-editor .suggest-widget.no-icons .monaco-list .monaco-list-row .icon,
+.monaco-editor .suggest-widget.no-icons .monaco-list .monaco-list-row .suggest-icon::before {
+	display: none;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .icon.customcolor .colorspan {
+	margin: 0 0 0 0.3em;
+	border: 0.1em solid #000;
+	width: 0.7em;
+	height: 0.7em;
+	display: inline-block;
+}
+
+/** Styles for the docs of the completion item in focus **/
+
+.monaco-editor .suggest-details-container {
+	z-index: 41;
+}
+
+.monaco-editor .suggest-details {
+	display: flex;
+	flex-direction: column;
+	cursor: default;
+	color: var(--vscode-editorSuggestWidget-foreground);
+}
+
+.monaco-editor .suggest-details:focus {
+	border-color: var(--vscode-focusBorder);
+}
+
+.monaco-editor .suggest-details a {
+	color: var(--vscode-textLink-foreground);
+}
+
+.monaco-editor .suggest-details a:hover {
+	color: var(--vscode-textLink-activeForeground);
+}
+
+.monaco-editor .suggest-details code {
+	background-color: var(--vscode-textCodeBlock-background);
+}
+
+.monaco-editor .suggest-details.no-docs {
+	display: none;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element {
+	flex: 1;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body {
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .header > .type {
+	flex: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	opacity: 0.7;
+	white-space: pre;
+	margin: 0 24px 0 0;
+	padding: 4px 0 4px 5px;
+}
+
+.monaco-editor .suggest-details.detail-and-doc > .monaco-scrollable-element > .body > .header > .type {
+	padding-bottom: 12px;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .header > .type.auto-wrap {
+	white-space: normal;
+	word-break: break-all;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs {
+	margin: 0;
+	padding: 4px 5px;
+	white-space: pre-wrap;
+}
+
+.monaco-editor .suggest-details.no-type > .monaco-scrollable-element > .body > .docs {
+	margin-right: 24px;
+	overflow: hidden;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs.markdown-docs {
+	padding: 0;
+	white-space: initial;
+	min-height: calc(1rem + 8px);
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs.markdown-docs > div,
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs.markdown-docs > span:not(:empty) {
+	padding: 4px 5px;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs.markdown-docs > div > p:first-child {
+	margin-top: 0;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs.markdown-docs > div > p:last-child {
+	margin-bottom: 0;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs.markdown-docs .monaco-tokenized-source {
+	white-space: pre;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs .code {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > .docs.markdown-docs .codicon {
+	vertical-align: sub;
+}
+
+.monaco-editor .suggest-details > .monaco-scrollable-element > .body > p:empty {
+	display: none;
+}
+
+.monaco-editor .suggest-details code {
+	border-radius: 3px;
+	padding: 0 0.4em;
+}
+
+.monaco-editor .suggest-details ul {
+	padding-left: 20px;
+}
+
+.monaco-editor .suggest-details ol {
+	padding-left: 20px;
+}
+
+.monaco-editor .suggest-details p code {
+	font-family: var(--monaco-monospace-font);
+}

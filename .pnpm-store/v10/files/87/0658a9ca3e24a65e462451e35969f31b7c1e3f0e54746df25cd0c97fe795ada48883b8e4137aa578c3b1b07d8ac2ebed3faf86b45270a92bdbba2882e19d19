@@ -1,0 +1,85 @@
+{
+  "name": "@sentry/profiling-node",
+  "version": "10.55.0",
+  "description": "Official Sentry SDK for Node.js Profiling",
+  "repository": "git://github.com/getsentry/sentry-javascript.git",
+  "homepage": "https://github.com/getsentry/sentry-javascript/tree/master/packages/profiling-node",
+  "author": "Sentry",
+  "license": "MIT",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/types/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./build/types/index.d.ts",
+        "default": "./build/esm/index.js"
+      },
+      "require": {
+        "types": "./build/types/index.d.ts",
+        "default": "./build/cjs/index.js"
+      }
+    }
+  },
+  "typesVersions": {
+    "<5.0": {
+      "build/types/index.d.ts": [
+        "build/types-ts3.8/index.d.ts"
+      ]
+    }
+  },
+  "bin": {
+    "sentry-prune-profiler-binaries": "scripts/prune-profiler-binaries.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/build",
+    "package.json",
+    "/scripts/prune-profiler-binaries.js"
+  ],
+  "scripts": {
+    "clean": "rm -rf build",
+    "lint": "OXLINT_TSGOLINT_DANGEROUSLY_SUPPRESS_PROGRAM_DIAGNOSTICS=true oxlint . --type-aware",
+    "lint:es-compatibility": "es-check es2022 ./build/cjs/*.js && es-check es2022 ./build/esm/*.js --module",
+    "lint:fix": "OXLINT_TSGOLINT_DANGEROUSLY_SUPPRESS_PROGRAM_DIAGNOSTICS=true oxlint . --fix --type-aware",
+    "build": "yarn build:types && yarn build:transpile",
+    "build:transpile": "yarn rollup -c rollup.npm.config.mjs",
+    "build:types:downlevel": "yarn downlevel-dts build/types build/types-ts3.8 --to ts3.8",
+    "build:types": "tsc -p tsconfig.types.json && yarn build:types:downlevel",
+    "build:dev": "yarn clean && yarn build",
+    "build:transpile:watch": "rollup -c rollup.npm.config.mjs --watch",
+    "build:watch": "run-p build:transpile:watch",
+    "build:tarball": "npm pack",
+    "test:bundle": "node test-binaries.esbuild.js",
+    "test": "vitest run",
+    "test:watch": "vitest --watch"
+  },
+  "dependencies": {
+    "@sentry-internal/node-cpu-profiler": "^2.4.0",
+    "@sentry/core": "10.55.0",
+    "@sentry/node": "10.55.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.1"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "sideEffects": false,
+  "nx": {
+    "targets": {
+      "build:transpile": {
+        "dependsOn": [
+          "^build:transpile",
+          "^build:types"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "pathe",
+  "version": "2.0.3",
+  "description": "Universal filesystem path utils",
+  "repository": "unjs/pathe",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./utils": {
+      "import": {
+        "types": "./dist/utils.d.mts",
+        "default": "./dist/utils.mjs"
+      },
+      "require": {
+        "types": "./dist/utils.d.cts",
+        "default": "./dist/utils.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "utils.d.ts"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "@vitest/coverage-v8": "^3.0.5",
+    "changelogen": "^0.5.7",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.20.1",
+    "eslint-config-unjs": "^0.4.2",
+    "jiti": "^2.4.2",
+    "prettier": "^3.5.0",
+    "typescript": "^5.7.3",
+    "unbuild": "^3.3.1",
+    "vitest": "^3.0.5",
+    "zeptomatch": "^2.0.0"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest",
+    "lint": "eslint . && prettier -c src test",
+    "lint:fix": "eslint . --fix && prettier -w src test",
+    "release": "pnpm test && pnpm build && changelogen --release && pnpm publish && git push --follow-tags",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:types": "tsc --noEmit"
+  }
+}

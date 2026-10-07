@@ -1,0 +1,46 @@
+{
+  "name": "remark",
+  "version": "13.0.0",
+  "description": "Markdown processor powered by plugins part of the unified collective",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "markdown",
+    "mdast",
+    "abstract",
+    "syntax",
+    "tree",
+    "ast",
+    "parse",
+    "stringify",
+    "serialize",
+    "compile",
+    "process"
+  ],
+  "homepage": "https://remark.js.org",
+  "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark",
+  "bugs": "https://github.com/remarkjs/remark/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "remark-parse": "^9.0.0",
+    "remark-stringify": "^9.0.0",
+    "unified": "^9.1.0"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "xo": false
+}

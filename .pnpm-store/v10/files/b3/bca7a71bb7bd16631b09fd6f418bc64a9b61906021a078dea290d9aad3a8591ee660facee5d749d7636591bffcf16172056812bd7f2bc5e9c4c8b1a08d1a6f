@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_export_star.cjs",
+    "module": "../../esm/_export_star.js"
+}

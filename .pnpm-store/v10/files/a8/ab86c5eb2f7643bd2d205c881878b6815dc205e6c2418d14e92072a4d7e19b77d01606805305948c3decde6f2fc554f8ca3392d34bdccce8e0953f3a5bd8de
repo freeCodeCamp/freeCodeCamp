@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Mailbox.js",
+  "module": "../dist/esm/Mailbox.js",
+  "types": "../dist/dts/Mailbox.d.ts"
+}

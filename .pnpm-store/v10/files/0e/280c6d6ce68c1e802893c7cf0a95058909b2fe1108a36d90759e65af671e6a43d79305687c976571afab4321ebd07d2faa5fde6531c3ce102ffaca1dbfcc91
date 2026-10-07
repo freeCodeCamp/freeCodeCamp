@@ -1,0 +1,34 @@
+{
+  "name": "streamsearch",
+  "version": "1.1.0",
+  "author": "Brian White <mscdex@mscdex.net>",
+  "description": "Streaming Boyer-Moore-Horspool searching for node.js",
+  "main": "./lib/sbmh.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@mscdex/eslint-config": "^1.1.0",
+    "eslint": "^7.32.0"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "lint": "eslint --cache --report-unused-disable-directives --ext=.js .eslintrc.js lib test",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "keywords": [
+    "stream",
+    "horspool",
+    "boyer-moore-horspool",
+    "boyer-moore",
+    "search"
+  ],
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://github.com/mscdex/streamsearch/raw/master/LICENSE"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mscdex/streamsearch.git"
+  }
+}

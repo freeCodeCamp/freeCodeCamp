@@ -1,0 +1,42 @@
+{
+    "name": "@types/babel__generator",
+    "version": "7.6.5",
+    "description": "TypeScript definitions for @babel/generator",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/babel__generator",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Troy Gerwien",
+            "url": "https://github.com/yortus",
+            "githubUsername": "yortus"
+        },
+        {
+            "name": "Melvin Groenhoff",
+            "url": "https://github.com/mgroenhoff",
+            "githubUsername": "mgroenhoff"
+        },
+        {
+            "name": "Cameron Yan",
+            "url": "https://github.com/khell",
+            "githubUsername": "khell"
+        },
+        {
+            "name": "Lyanbin",
+            "url": "https://github.com/Lyanbin",
+            "githubUsername": "Lyanbin"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/babel__generator"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@babel/types": "^7.0.0"
+    },
+    "typesPublisherContentHash": "dcc3612d81219f6babd5a1c1663d2f3a602f5d3f54ede996832f73c6669bbf9e",
+    "typeScriptVersion": "4.5"
+}

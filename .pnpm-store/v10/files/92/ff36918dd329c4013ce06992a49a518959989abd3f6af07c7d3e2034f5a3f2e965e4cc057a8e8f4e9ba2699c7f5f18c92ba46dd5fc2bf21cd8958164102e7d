@@ -1,0 +1,73 @@
+{
+  "name": "rfdc",
+  "version": "1.4.1",
+  "description": "Really Fast Deep Clone",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./default": "./default.js"
+  },
+  "scripts": {
+    "test": "tap -R min test && npm run lint",
+    "bench": "node benchmark",
+    "lint": "standard --fix",
+    "cov": "tap --100 test",
+    "cov-ui": "tap --coverage-report=html test",
+    "ci": "standard && tap --100 --coverage-report=text-lcov test | codecov --pipe"
+  },
+  "keywords": [
+    "object",
+    "obj",
+    "properties",
+    "clone",
+    "copy",
+    "deep",
+    "recursive",
+    "key",
+    "keys",
+    "values",
+    "prop",
+    "deep-clone",
+    "deepclone",
+    "deep-copy",
+    "deepcopy",
+    "fast",
+    "performance",
+    "performant",
+    "fastclone",
+    "fastcopy",
+    "fast-clone",
+    "fast-deep-clone",
+    "fast-copy",
+    "fast-deep-copy"
+  ],
+  "author": "David Mark Clements <david.clements@nearform.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "clone-deep": "^4.0.1",
+    "codecov": "^3.4.0",
+    "deep-copy": "^1.4.2",
+    "fast-copy": "^1.2.1",
+    "fastbench": "^1.0.1",
+    "fastest-json-copy": "^1.0.1",
+    "lodash.clonedeep": "^4.5.0",
+    "nano-copy": "^0.1.0",
+    "plain-object-clone": "^1.1.0",
+    "ramda": "^0.27.1",
+    "standard": "^17.0.0",
+    "tap": "^12.0.1",
+    "tsd": "^0.7.4"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmarkclements/rfdc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidmarkclements/rfdc/issues"
+  },
+  "homepage": "https://github.com/davidmarkclements/rfdc#readme"
+}

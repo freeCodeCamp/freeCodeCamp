@@ -1,0 +1,54 @@
+{
+	"name": "p-locate",
+	"version": "5.0.0",
+	"description": "Get the first fulfilled promise that satisfies the provided testing function",
+	"license": "MIT",
+	"repository": "sindresorhus/p-locate",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"promise",
+		"locate",
+		"find",
+		"finder",
+		"search",
+		"searcher",
+		"test",
+		"array",
+		"collection",
+		"iterable",
+		"iterator",
+		"race",
+		"fulfilled",
+		"fastest",
+		"async",
+		"await",
+		"promises",
+		"bluebird"
+	],
+	"dependencies": {
+		"p-limit": "^3.0.2"
+	},
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"delay": "^4.1.0",
+		"in-range": "^2.0.0",
+		"time-span": "^4.0.0",
+		"tsd": "^0.13.1",
+		"xo": "^0.32.1"
+	}
+}

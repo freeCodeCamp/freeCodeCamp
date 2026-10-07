@@ -1,0 +1,55 @@
+{
+	"name": "jsesc",
+	"version": "0.5.0",
+	"description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+	"homepage": "http://mths.be/jsesc",
+	"main": "jsesc.js",
+	"bin": "bin/jsesc",
+	"man": "man/jsesc.1",
+	"keywords": [
+		"string",
+		"escape",
+		"javascript",
+		"tool"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://mths.be/mit"
+		}
+	],
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "http://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/jsesc.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mathiasbynens/jsesc/issues"
+	},
+	"files": [
+		"LICENSE-MIT.txt",
+		"jsesc.js",
+		"bin/",
+		"man/"
+	],
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "node tests/tests.js"
+	},
+	"devDependencies": {
+		"coveralls": "^2.10.0",
+		"grunt": "^0.4.5",
+		"grunt-shell": "^0.7.0",
+		"grunt-template": "^0.2.3",
+		"istanbul": "^0.3.0",
+		"qunit-extras": "^1.2.0",
+		"qunitjs": "~1.11.0",
+		"regenerate": "^0.6.2",
+		"requirejs": "^2.1.14"
+	}
+}

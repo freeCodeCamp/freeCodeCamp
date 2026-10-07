@@ -1,0 +1,3 @@
+import { ICancelAndHoldAutomationEvent, ICancelScheduledValuesAutomationEvent, IExponentialRampToValueAutomationEvent, ILinearRampToValueAutomationEvent, ISetTargetAutomationEvent, ISetValueAutomationEvent, ISetValueCurveAutomationEvent } from '../interfaces';
+export type TAutomationEvent = ICancelAndHoldAutomationEvent | ICancelScheduledValuesAutomationEvent | IExponentialRampToValueAutomationEvent | ILinearRampToValueAutomationEvent | ISetTargetAutomationEvent | ISetValueAutomationEvent | ISetValueCurveAutomationEvent;
+//# sourceMappingURL=automation-event.d.ts.map

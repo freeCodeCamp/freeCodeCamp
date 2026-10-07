@@ -1,0 +1,127 @@
+{
+  "name": "cross-fetch",
+  "version": "3.2.0",
+  "description": "Universal WHATWG Fetch API for Node, Browsers and React Native",
+  "homepage": "https://github.com/lquixada/cross-fetch",
+  "main": "dist/node-ponyfill.js",
+  "browser": "dist/browser-ponyfill.js",
+  "react-native": "dist/react-native-ponyfill.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "commit": "cz",
+    "prepare": "husky install",
+    "prepublishOnly": "rimraf dist && make dist"
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "standard": {
+    "env": [
+      "mocha",
+      "browser"
+    ],
+    "globals": [
+      "expect",
+      "assert",
+      "chai"
+    ],
+    "ignore": [
+      "/dist/",
+      "bundle.js",
+      "test.js",
+      "test.*.js",
+      "api.spec.js",
+      "*.ts"
+    ]
+  },
+  "mocha": {
+    "require": [
+      "chai/register-expect",
+      "chai/register-assert"
+    ],
+    "check-leaks": true
+  },
+  "nyc": {
+    "temp-dir": ".reports/.coverage"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lquixada/cross-fetch.git"
+  },
+  "author": "Leonardo Quixada <lquixada@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lquixada/cross-fetch/issues"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "12.0.1",
+    "@commitlint/config-conventional": "12.0.1",
+    "@types/chai": "4.2.22",
+    "@types/mocha": "8.2.2",
+    "@types/node": "14.14.37",
+    "body-parser": "1.19.0",
+    "chai": "4.3.4",
+    "codecov": "3.8.3",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "express": "4.17.1",
+    "husky": "6.0.0",
+    "lint-staged": "10.5.4",
+    "mocha": "8.3.2",
+    "mocha-headless-chrome": "4.0.0",
+    "nock": "13.1.3",
+    "nyc": "15.1.0",
+    "open-cli": "6.0.1",
+    "rimraf": "3.0.2",
+    "rollup": "2.58.0",
+    "rollup-plugin-copy": "3.4.0",
+    "rollup-plugin-terser": "7.0.2",
+    "semver": "7.3.5",
+    "serve-index": "1.9.1",
+    "standard": "16.0.4",
+    "standard-version": "9.3.1",
+    "typescript": "4.4.4",
+    "webpack": "5.82.1",
+    "webpack-cli": "4.9.0",
+    "whatwg-fetch": "3.6.20",
+    "yargs": "16.2.0"
+  },
+  "files": [
+    "dist",
+    "polyfill",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "fetch",
+    "http",
+    "url",
+    "promise",
+    "async",
+    "await",
+    "isomorphic",
+    "universal",
+    "node",
+    "react",
+    "native",
+    "browser",
+    "ponyfill",
+    "whatwg",
+    "xhr",
+    "ajax"
+  ]
+}

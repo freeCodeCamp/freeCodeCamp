@@ -1,0 +1,93 @@
+{
+  "name": "bowser",
+  "description": "Lightweight browser detector",
+  "files": [
+    "src/",
+    "es5.js",
+    "bundled.js",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "browser",
+    "useragent",
+    "user-agent",
+    "parser",
+    "ua",
+    "detection",
+    "ender",
+    "sniff"
+  ],
+  "homepage": "https://github.com/bowser-js/bowser",
+  "author": "Dustin Diaz <dustin@dustindiaz.com> (http://dustindiaz.com)",
+  "contributors": [
+    {
+      "name": "Denis Demchenko",
+      "url": "http://twitter.com/lancedikson"
+    },
+    {
+      "name": "Naor Peled",
+      "url": "https://github.com/naorpeled"
+    }
+  ],
+  "main": "es5.js",
+  "browser": "es5.js",
+  "module": "src/bowser.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bowser-js/bowser.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.8.0",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.2",
+    "@babel/register": "^7.8.3",
+    "ava": "^3.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-plugin-istanbul": "^6.0.0",
+    "compression-webpack-plugin": "^4.0.0",
+    "coveralls": "^3.0.6",
+    "docdash": "^1.1.1",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-ava": "^10.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "gh-pages": "^3.0.0",
+    "jsdoc": "^3.6.3",
+    "nyc": "^15.0.0",
+    "sinon": "^9.0.0",
+    "testem": "^3.0.0",
+    "webpack": "^4.41.0",
+    "webpack-bundle-analyzer": "^3.5.2",
+    "webpack-cli": "^3.3.9",
+    "yamljs": "^0.3.0"
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/bowser-js/bowser/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "generate-and-deploy-docs": "npm run generate-docs && gh-pages --dist docs --dest docs",
+    "watch": "webpack --watch --config webpack.config.js",
+    "lint:check": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
+    "testem": "testem",
+    "test": "nyc --reporter=html --reporter=text ava",
+    "test:watch": "ava --watch",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "generate-docs": "jsdoc -c jsdoc.json"
+  },
+  "license": "MIT",
+  "version": "2.14.1"
+}

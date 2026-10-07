@@ -1,0 +1,10 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": 0,
+		"max-statements-per-line": [2, { "max": 2 }],
+	},
+}

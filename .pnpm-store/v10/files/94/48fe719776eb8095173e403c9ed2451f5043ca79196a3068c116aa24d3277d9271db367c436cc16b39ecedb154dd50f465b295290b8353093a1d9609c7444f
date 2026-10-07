@@ -1,0 +1,39 @@
+{
+  "name": "@babel/generator",
+  "version": "7.29.1",
+  "description": "Turns an AST into code.",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-generator"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-generator",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20generator%22+is%3Aopen",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "@babel/parser": "^7.29.0",
+    "@babel/types": "^7.29.0",
+    "@jridgewell/gen-mapping": "^0.3.12",
+    "@jridgewell/trace-mapping": "^0.3.28",
+    "jsesc": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/helper-fixtures": "^7.28.6",
+    "@babel/plugin-transform-typescript": "^7.28.6",
+    "@jridgewell/sourcemap-codec": "^1.5.3",
+    "charcodes": "^0.2.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

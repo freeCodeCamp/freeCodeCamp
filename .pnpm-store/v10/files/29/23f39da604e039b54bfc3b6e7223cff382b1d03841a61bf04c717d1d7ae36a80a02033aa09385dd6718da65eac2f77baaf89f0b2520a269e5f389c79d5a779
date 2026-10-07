@@ -1,0 +1,108 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "createCarouselTool", {
+    enumerable: true,
+    get: function() {
+        return createCarouselTool;
+    }
+});
+var _interop_require_wildcard = require("@swc/helpers/_/_interop_require_wildcard");
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _utils = require("instantsearch.js/cjs/lib/utils");
+var _react = /*#__PURE__*/ _interop_require_wildcard._(require("react"));
+var _components = require("../../../components");
+function createCarouselTool(showViewAll, itemComponent, getSearchPageURL) {
+    var Button = (0, _instantsearchuicomponents.createButtonComponent)({
+        createElement: _react.createElement
+    });
+    function SearchLayoutComponent(param) {
+        var message = param.message, applyFilters = param.applyFilters, onClose = param.onClose, sendEvent = param.sendEvent;
+        var _ref;
+        var _output_hits;
+        var input = message === null || message === void 0 ? void 0 : message.input;
+        var output = message === null || message === void 0 ? void 0 : message.output;
+        var hitsWithAbsolutePosition = (0, _utils.addAbsolutePosition)((output === null || output === void 0 ? void 0 : output.hits) || [], 0, ((_ref = input === null || input === void 0 ? void 0 : input.number_of_results) !== null && _ref !== void 0 ? _ref : output === null || output === void 0 ? void 0 : (_output_hits = output.hits) === null || _output_hits === void 0 ? void 0 : _output_hits.length) || 5);
+        var items = (0, _utils.addQueryID)(hitsWithAbsolutePosition, output === null || output === void 0 ? void 0 : output.queryID);
+        var MemoedHeaderComponent = _react.default.useMemo(function() {
+            return function(props) {
+                return /*#__PURE__*/ _react.default.createElement(HeaderComponent, _object_spread._({
+                    nbHits: output === null || output === void 0 ? void 0 : output.nbHits,
+                    input: input,
+                    hitsPerPage: items.length,
+                    onClose: onClose,
+                    applyFilters: applyFilters
+                }, props));
+            };
+        }, [
+            items.length,
+            input,
+            output === null || output === void 0 ? void 0 : output.nbHits,
+            applyFilters,
+            onClose
+        ]);
+        return /*#__PURE__*/ _react.default.createElement(_components.Carousel, {
+            items: items,
+            itemComponent: itemComponent,
+            sendEvent: sendEvent,
+            showNavigation: false,
+            headerComponent: MemoedHeaderComponent
+        });
+    }
+    function HeaderComponent(param) {
+        var canScrollLeft = param.canScrollLeft, canScrollRight = param.canScrollRight, scrollLeft = param.scrollLeft, scrollRight = param.scrollRight, nbHits = param.nbHits, input = param.input, hitsPerPage = param.hitsPerPage, applyFilters = param.applyFilters, onClose = param.onClose;
+        if ((hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0) < 1) {
+            return null;
+        }
+        return /*#__PURE__*/ _react.default.createElement("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeader"
+        }, /*#__PURE__*/ _react.default.createElement("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderResults"
+        }, nbHits && /*#__PURE__*/ _react.default.createElement("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderCount"
+        }, hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0, " of ", nbHits.toLocaleString(), " result", nbHits > 1 ? 's' : ''), showViewAll && /*#__PURE__*/ _react.default.createElement(Button, {
+            variant: "ghost",
+            size: "sm",
+            onClick: function onClick() {
+                if (!input || !applyFilters) return;
+                var params = applyFilters({
+                    query: input.query,
+                    facetFilters: input.facet_filters
+                });
+                if (getSearchPageURL && new URL(getSearchPageURL(params)).pathname !== window.location.pathname) {
+                    window.location.href = getSearchPageURL(params);
+                }
+                onClose();
+            },
+            className: "ais-ChatToolSearchIndexCarouselHeaderViewAll"
+        }, "View all", /*#__PURE__*/ _react.default.createElement(_instantsearchuicomponents.ArrowRightIcon, {
+            createElement: _react.createElement
+        }))), (hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0) > 2 && /*#__PURE__*/ _react.default.createElement("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButtons"
+        }, /*#__PURE__*/ _react.default.createElement(Button, {
+            variant: "outline",
+            size: "sm",
+            iconOnly: true,
+            onClick: scrollLeft,
+            disabled: !canScrollLeft,
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButton"
+        }, /*#__PURE__*/ _react.default.createElement(_instantsearchuicomponents.ChevronLeftIcon, {
+            createElement: _react.createElement
+        })), /*#__PURE__*/ _react.default.createElement(Button, {
+            variant: "outline",
+            size: "sm",
+            iconOnly: true,
+            onClick: scrollRight,
+            disabled: !canScrollRight,
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButton"
+        }, /*#__PURE__*/ _react.default.createElement(_instantsearchuicomponents.ChevronRightIcon, {
+            createElement: _react.createElement
+        }))));
+    }
+    return {
+        layoutComponent: SearchLayoutComponent
+    };
+}

@@ -1,0 +1,46 @@
+{
+  "name": "acorn-import-phases",
+  "version": "1.0.4",
+  "description": "Support for `import <defer|source>` phase syntax in Acorn",
+  "type": "module",
+  "main": "./src/index.cjs",
+  "types": "./src/index.d.cts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./src/index.d.cts",
+        "default": "./src/index.cjs"
+      },
+      "types": "./src/index.d.mts",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "node --test ./test/index.js"
+  },
+  "keywords": [
+    "acorn",
+    "import",
+    "defer",
+    "source",
+    "phase",
+    "wasm",
+    "proposal"
+  ],
+  "author": "Nicolò Ribaudo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicolo-ribaudo/acorn-import-phases.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "acorn": "^8.14.0"
+  },
+  "peerDependencies": {
+    "acorn": "^8.14.0"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  }
+}

@@ -1,0 +1,35 @@
+{
+	"name": "postcss-resolve-nested-selector",
+	"version": "0.1.6",
+	"description": "Resolve a nested selector in a PostCSS AST",
+	"main": "index.js",
+	"scripts": {
+		"test": "node --test"
+	},
+	"contributors": [
+		{
+			"name": "David Clark"
+		},
+		{
+			"name": "Romain Menke",
+			"email": "romainmenke@gmail.com"
+		}
+	],
+	"license": "MIT",
+	"files": [
+		"CHANGELOG.md",
+		"LICENSE",
+		"README.md",
+		"index.js"
+	],
+	"devDependencies": {
+		"postcss": "^8.0.0",
+		"postcss-nested": "^6.0.0"
+	},
+	"homepage": "https://github.com/csstools/postcss-resolve-nested-selector/tree/main/packages/css-tokenizer#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/csstools/postcss-resolve-nested-selector.git"
+	},
+	"bugs": "https://github.com/csstools/postcss-resolve-nested-selector/issues"
+}

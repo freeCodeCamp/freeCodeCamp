@@ -1,0 +1,43 @@
+{
+	"name": "strip-final-newline",
+	"version": "3.0.0",
+	"description": "Strip the final newline character from a string/buffer",
+	"license": "MIT",
+	"repository": "sindresorhus/strip-final-newline",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=12"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"strip",
+		"trim",
+		"remove",
+		"delete",
+		"final",
+		"last",
+		"end",
+		"file",
+		"newline",
+		"linebreak",
+		"character",
+		"string",
+		"buffer"
+	],
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"xo": "^0.39.1"
+	}
+}

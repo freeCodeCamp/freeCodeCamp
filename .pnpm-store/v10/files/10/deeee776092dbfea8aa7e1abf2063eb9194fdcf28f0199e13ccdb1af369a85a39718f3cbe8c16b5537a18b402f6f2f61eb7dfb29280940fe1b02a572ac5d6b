@@ -1,0 +1,199 @@
+{
+  "name": "katex",
+  "version": "0.16.45",
+  "description": "Fast math typesetting for the web.",
+  "main": "dist/katex.js",
+  "types": "types/katex.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./types/katex.d.ts",
+        "default": "./dist/katex.js"
+      },
+      "import": {
+        "types": "./types/katex.d.ts",
+        "default": "./dist/katex.mjs"
+      }
+    },
+    "./contrib/auto-render": {
+      "require": "./dist/contrib/auto-render.js",
+      "import": "./dist/contrib/auto-render.mjs"
+    },
+    "./contrib/mhchem": {
+      "require": "./dist/contrib/mhchem.js",
+      "import": "./dist/contrib/mhchem.mjs"
+    },
+    "./contrib/copy-tex": {
+      "require": "./dist/contrib/copy-tex.js",
+      "import": "./dist/contrib/copy-tex.mjs"
+    },
+    "./contrib/mathtex-script-type": {
+      "require": "./dist/contrib/mathtex-script-type.js",
+      "import": "./dist/contrib/mathtex-script-type.mjs"
+    },
+    "./contrib/render-a11y-string": {
+      "require": "./dist/contrib/render-a11y-string.js",
+      "import": "./dist/contrib/render-a11y-string.mjs"
+    },
+    "./*": "./*"
+  },
+  "homepage": "https://katex.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KaTeX/KaTeX.git"
+  },
+  "funding": [
+    "https://opencollective.com/katex",
+    "https://github.com/sponsors/katex"
+  ],
+  "files": [
+    "katex.ts",
+    "cli.js",
+    "src/",
+    "contrib/",
+    "dist/",
+    "types/"
+  ],
+  "license": "MIT",
+  "packageManager": "yarn@4.1.1",
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/eslint-parser": "^7.28.6",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-react-jsx": "^7.28.6",
+    "@babel/plugin-transform-runtime": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@babel/register": "^7.28.6",
+    "@babel/runtime": "^7.28.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^28.0.9",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "babel-jest": "^30.2.0",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-istanbul": "^6.1.1",
+    "babel-plugin-preval": "^5.1.0",
+    "babel-plugin-version-inline": "^1.0.0",
+    "benchmark": "^2.1.4",
+    "browserslist": "^4.21.3",
+    "browserstack-local": "^1.5.1",
+    "caniuse-lite": "^1.0.30001384",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.13",
+    "eslint": "^8.23.0",
+    "eslint-import-resolver-webpack": "^0.13.10",
+    "eslint-plugin-actions": "^2.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.1",
+    "fs-extra": "^10.1.0",
+    "got": "^11.8.5",
+    "husky": "^4.3.8",
+    "istanbul-lib-coverage": "^3.2.0",
+    "istanbul-lib-report": "^3.0.0",
+    "istanbul-reports": "^3.1.5",
+    "jest": "^30.2.0",
+    "jest-diff": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jest-matcher-utils": "^30.2.0",
+    "jest-message-util": "^30.2.0",
+    "jest-serializer-html": "^7.1.0",
+    "js-yaml": "^4.1.0",
+    "json-stable-stringify": "^1.0.1",
+    "jspngopt": "^0.2.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "mkdirp": "^1.0.4",
+    "p-retry": "^4.6.2",
+    "pako": "^2.0.4",
+    "postcss": "^8.4.16",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.8.0",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.2",
+    "sass": "^1.94.2",
+    "sass-loader": "^16.0.6",
+    "selenium-webdriver": "^4.4.0",
+    "semantic-release": "^19.0.5",
+    "sri-toolbox": "^0.2.0",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard": "^28.0.0",
+    "stylelint-scss": "^6.3.2",
+    "terser-webpack-plugin": "^5.3.6",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3",
+    "webpack": "^5.74.0",
+    "webpack-bundle-analyzer": "^4.6.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1",
+    "webpack-remove-empty-scripts": "^1.0.4"
+  },
+  "bin": "cli.js",
+  "scripts": {
+    "test": "yarn test:lint && yarn test:ts && yarn test:jest",
+    "test:lint": "yarn test:lint:js && yarn test:lint:css",
+    "test:lint:js": "eslint .",
+    "test:lint:css": "stylelint src/styles/katex.scss static/main.css website/static/**/*.css",
+    "test:jest": "jest",
+    "test:jest:watch": "jest --watch",
+    "test:jest:update": "jest --updateSnapshot",
+    "test:jest:coverage": "jest --coverage",
+    "test:screenshots": "yarn test:screenshots:update --verify",
+    "test:screenshots:update": "dockers/screenshotter/screenshotter.sh",
+    "test:perf": "NODE_ENV=test node -e \"require('@babel/register')({extensions:['.js','.ts']}); require('./test/perf-test.ts')\"",
+    "test:ts": "tsc --noEmit",
+    "test:build": "node test/verify-build.js",
+    "clean": "rm -rf dist/ node_modules/",
+    "clean-install": "yarn clean && yarn",
+    "start": "webpack serve --config webpack.dev.js",
+    "analyze": "webpack --config webpack.analyze.js",
+    "build": "rimraf dist/ && mkdirp dist && cp README.md dist && rollup -c --failAfterWarnings && webpack && node update-sri.js package dist/README.md",
+    "build:fonts": "dockers/fonts/buildFonts.sh",
+    "build:metrics": "dockers/fonts/buildMetrics.sh",
+    "watch": "yarn build --watch",
+    "postversion": "yarn dist && node update-sri.js package README.md contrib/*/README.md docs/*.md website/pages/index.html",
+    "semantic-release": "semantic-release",
+    "dist": "yarn build && yarn dist:zip",
+    "dist:zip": "rimraf katex/ katex.tar.gz katex.zip && cp -R dist katex && tar czf katex.tar.gz katex && zip -rq katex.zip katex && rimraf katex/"
+  },
+  "dependencies": {
+    "commander": "^8.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test:lint"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}",
+      "contrib/**/*.{js,ts}",
+      "!src/unicodeSymbols.{js,ts}",
+      "!contrib/mhchem/**"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setup.ts"
+    ],
+    "snapshotSerializers": [
+      "jest-serializer-html"
+    ],
+    "testMatch": [
+      "**/test/*-spec.ts"
+    ],
+    "testEnvironmentOptions": {
+      "url": "http://localhost/"
+    },
+    "transform": {
+      "^.+\\.(js|ts)$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^katex$": "<rootDir>/katex.ts"
+    }
+  }
+}

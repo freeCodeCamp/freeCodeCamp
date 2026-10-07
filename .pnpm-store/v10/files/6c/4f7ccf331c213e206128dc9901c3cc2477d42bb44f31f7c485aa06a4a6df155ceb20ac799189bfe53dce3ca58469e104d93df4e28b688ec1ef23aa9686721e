@@ -1,0 +1,44 @@
+{
+  "definitions": {
+    "HashFunction": {
+      "description": "Algorithm used for generation the hash (see node.js crypto package).",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "instanceof": "Function",
+          "tsType": "typeof import('../../lib/util/Hash')"
+        }
+      ]
+    }
+  },
+  "title": "HashedModuleIdsPluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "context": {
+      "description": "The context directory for creating names.",
+      "type": "string",
+      "absolutePath": true
+    },
+    "hashDigest": {
+      "description": "The encoding to use when generating the hash, defaults to 'base64'. All encodings from Node.JS' hash.digest are supported.",
+      "enum": ["hex", "latin1", "base64"]
+    },
+    "hashDigestLength": {
+      "description": "The prefix length of the hash digest to use, defaults to 4.",
+      "type": "number",
+      "minimum": 1
+    },
+    "hashFunction": {
+      "description": "The hashing algorithm to use, defaults to 'md4'. All functions from Node.JS' crypto.createHash are supported.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/HashFunction"
+        }
+      ]
+    }
+  }
+}

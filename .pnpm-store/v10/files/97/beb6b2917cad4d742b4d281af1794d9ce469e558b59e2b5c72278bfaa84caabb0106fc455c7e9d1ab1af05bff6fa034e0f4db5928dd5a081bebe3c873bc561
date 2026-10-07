@@ -1,0 +1,405 @@
+# Copyright 2025 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+# This domain allows to emulate smart card readers and cards,
+# bypassing the need for physical hardware.
+
+experimental domain SmartCardEmulation
+
+  # Indicates the PC/SC error code.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__ErrorCodes.html
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/secauthn/authentication-return-values
+  type ResultCode extends string
+    enum
+      success
+      removed-card
+      reset-card
+      unpowered-card
+      unresponsive-card
+      unsupported-card
+      reader-unavailable
+      sharing-violation
+      not-transacted
+      no-smartcard
+      proto-mismatch
+      system-cancelled
+      not-ready
+      cancelled
+      insufficient-buffer
+      invalid-handle
+      invalid-parameter
+      invalid-value
+      no-memory
+      timeout
+      unknown-reader
+      unsupported-feature
+      no-readers-available
+      service-stopped
+      no-service
+      comm-error
+      internal-error
+      server-too-busy
+      unexpected
+      shutdown
+
+      # Maps to SCARD_E_UNKNOWN_CARD.
+      # TODO(crbug.com/472114998): Rename Mojo's kUnknownError to kUnknownCard to match.
+      unknown-card
+
+      # Error code that is not mapped in this enum.
+      unknown
+
+  # Maps to the |SCARD_SHARE_*| values.
+  type ShareMode extends string
+    enum
+      shared
+      exclusive
+      direct
+
+  # Indicates what the reader should do with the card.
+  type Disposition extends string
+    enum
+      leave-card
+      reset-card
+      unpower-card
+      eject-card
+
+  # Maps to |SCARD_*| connection state values.
+  type ConnectionState extends string
+    enum
+      absent
+      present
+      swallowed
+      powered
+      negotiable
+      specific
+
+  # Maps to the |SCARD_STATE_*| flags.
+  type ReaderStateFlags extends object
+    properties
+      optional boolean unaware
+      optional boolean ignore
+      optional boolean changed
+      optional boolean unknown
+      optional boolean unavailable
+      optional boolean empty
+      optional boolean present
+      optional boolean exclusive
+      optional boolean inuse
+      optional boolean mute
+      optional boolean unpowered
+
+  # Maps to the |SCARD_PROTOCOL_*| flags.
+  type ProtocolSet extends object
+    properties
+      optional boolean t0
+      optional boolean t1
+      optional boolean raw
+
+  # Maps to the |SCARD_PROTOCOL_*| values.
+  type Protocol extends string
+    enum
+      t0
+      t1
+      raw
+
+  type ReaderStateIn extends object
+    properties
+      string reader
+      ReaderStateFlags currentState
+      integer currentInsertionCount
+
+  type ReaderStateOut extends object
+    properties
+      string reader
+      ReaderStateFlags eventState
+      integer eventCount
+      binary atr
+
+  # Enables the |SmartCardEmulation| domain.
+  command enable
+
+  # Disables the |SmartCardEmulation| domain.
+  command disable
+
+  # Reports the successful result of a |SCardEstablishContext| call.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gaa1b8970169fd4883a6dc4a8f43f19b67
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardestablishcontext
+  command reportEstablishContextResult
+    parameters
+      string requestId
+      integer contextId
+
+  # Reports the successful result of a |SCardReleaseContext| call.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga6aabcba7744c5c9419fdd6404f73a934
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardreleasecontext
+  command reportReleaseContextResult
+    parameters
+      string requestId
+
+  # Reports the successful result of a |SCardListReaders| call.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga93b07815789b3cf2629d439ecf20f0d9
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardlistreadersa
+  command reportListReadersResult
+    parameters
+      string requestId
+      array of string readers
+
+  # Reports the successful result of a |SCardGetStatusChange| call.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga33247d5d1257d59e55647c3bb717db24
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardgetstatuschangea
+  command reportGetStatusChangeResult
+    parameters
+      string requestId
+      array of ReaderStateOut readerStates
+
+  # Reports the result of a |SCardBeginTransaction| call.
+  # On success, this creates a new transaction object.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gaddb835dce01a0da1d6ca02d33ee7d861
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardbegintransaction
+  command reportBeginTransactionResult
+    parameters
+      string requestId
+      integer handle
+
+  # Reports the successful result of a call that returns only a result code.
+  # Used for: |SCardCancel|, |SCardDisconnect|, |SCardSetAttrib|, |SCardEndTransaction|.
+  #
+  # This maps to:
+  # 1. SCardCancel
+  #    PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gaacbbc0c6d6c0cbbeb4f4debf6fbeeee6
+  #    Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardcancel
+  #
+  # 2. SCardDisconnect
+  #    PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga4be198045c73ec0deb79e66c0ca1738a
+  #    Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scarddisconnect
+  #
+  # 3. SCardSetAttrib
+  #    PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga060f0038a4ddfd5dd2b8fadf3c3a2e4f
+  #    Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardsetattrib
+  #
+  # 4. SCardEndTransaction
+  #    PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gae8742473b404363e5c587f570d7e2f3b
+  #    Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardendtransaction
+  command reportPlainResult
+    parameters
+      string requestId
+
+  # Reports the successful result of a |SCardConnect| call.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga4e515829752e0a8dbc4d630696a8d6a5
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardconnecta
+  command reportConnectResult
+    parameters
+      string requestId
+      integer handle
+      optional Protocol activeProtocol
+
+  # Reports the successful result of a call that sends back data on success.
+  # Used for |SCardTransmit|, |SCardControl|, and |SCardGetAttrib|.
+  #
+  # This maps to:
+  # 1. SCardTransmit
+  #    PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga9a2d77242a271310269065e64633ab99
+  #    Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardtransmit
+  #
+  # 2. SCardControl
+  #    PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gac3454d4657110fd7f753b2d3d8f4e32f
+  #    Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardcontrol
+  #
+  # 3. SCardGetAttrib
+  #    PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gaacfec51917255b7a25b94c5104961602
+  #    Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardgetattrib
+  command reportDataResult
+    parameters
+      string requestId
+      binary data
+
+  # Reports the successful result of a |SCardStatus| call.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gae49c3c894ad7ac12a5b896bde70d0382
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardstatusa
+  command reportStatusResult
+    parameters
+      string requestId
+      string readerName
+      ConnectionState state
+      binary atr
+      optional Protocol protocol
+
+  # Reports an error result for the given request.
+  command reportError
+    parameters
+      string requestId
+      ResultCode resultCode
+
+  # Fired when |SCardEstablishContext| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gaa1b8970169fd4883a6dc4a8f43f19b67
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardestablishcontext
+  event establishContextRequested
+    parameters
+      string requestId
+
+  # Fired when |SCardReleaseContext| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga6aabcba7744c5c9419fdd6404f73a934
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardreleasecontext
+  event releaseContextRequested
+    parameters
+      string requestId
+      integer contextId
+
+  # Fired when |SCardListReaders| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga93b07815789b3cf2629d439ecf20f0d9
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardlistreadersa
+  event listReadersRequested
+    parameters
+      string requestId
+      integer contextId
+
+  # Fired when |SCardGetStatusChange| is called. Timeout is specified in milliseconds.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga33247d5d1257d59e55647c3bb717db24
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardgetstatuschangea
+  event getStatusChangeRequested
+    parameters
+      string requestId
+      integer contextId
+      array of ReaderStateIn readerStates
+
+      # in milliseconds, if absent, it means "infinite"
+      optional integer timeout
+
+  # Fired when |SCardCancel| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gaacbbc0c6d6c0cbbeb4f4debf6fbeeee6
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardcancel
+  event cancelRequested
+    parameters
+      string requestId
+      integer contextId
+
+  # Fired when |SCardConnect| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga4e515829752e0a8dbc4d630696a8d6a5
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardconnecta
+  event connectRequested
+    parameters
+      string requestId
+      integer contextId
+      string reader
+      ShareMode shareMode
+      ProtocolSet preferredProtocols
+
+  # Fired when |SCardDisconnect| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga4be198045c73ec0deb79e66c0ca1738a
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scarddisconnect
+  event disconnectRequested
+    parameters
+      string requestId
+      integer handle
+      Disposition disposition
+
+  # Fired when |SCardTransmit| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga9a2d77242a271310269065e64633ab99
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardtransmit
+  event transmitRequested
+    parameters
+      string requestId
+      integer handle
+      binary data
+      optional Protocol protocol
+
+  # Fired when |SCardControl| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gac3454d4657110fd7f753b2d3d8f4e32f
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardcontrol
+  event controlRequested
+    parameters
+      string requestId
+      integer handle
+      integer controlCode
+      binary data
+
+  # Fired when |SCardGetAttrib| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gaacfec51917255b7a25b94c5104961602
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardgetattrib
+  event getAttribRequested
+    parameters
+      string requestId
+      integer handle
+      integer attribId
+
+  # Fired when |SCardSetAttrib| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#ga060f0038a4ddfd5dd2b8fadf3c3a2e4f
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardsetattrib
+  event setAttribRequested
+    parameters
+      string requestId
+      integer handle
+      integer attribId
+      binary data
+
+  # Fired when |SCardStatus| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gae49c3c894ad7ac12a5b896bde70d0382
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardstatusa
+  event statusRequested
+    parameters
+      string requestId
+      integer handle
+
+  # Fired when |SCardBeginTransaction| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gaddb835dce01a0da1d6ca02d33ee7d861
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardbegintransaction
+  event beginTransactionRequested
+    parameters
+      string requestId
+      integer handle
+
+  # Fired when |SCardEndTransaction| is called.
+  #
+  # This maps to:
+  # PC/SC Lite: https://pcsclite.apdu.fr/api/group__API.html#gae8742473b404363e5c587f570d7e2f3b
+  # Microsoft: https://learn.microsoft.com/en-us/windows/win32/api/winscard/nf-winscard-scardendtransaction
+  event endTransactionRequested
+    parameters
+      string requestId
+      integer handle
+      Disposition disposition

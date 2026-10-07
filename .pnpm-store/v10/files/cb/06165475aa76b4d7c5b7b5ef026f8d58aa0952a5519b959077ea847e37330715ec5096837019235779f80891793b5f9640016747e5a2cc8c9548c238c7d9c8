@@ -1,0 +1,118 @@
+{
+  "name": "zod",
+  "version": "3.25.76",
+  "type": "module",
+  "author": "Colin McDonnell <zod@colinhacks.com>",
+  "description": "TypeScript-first schema declaration and validation library with static type inference",
+  "files": [
+    "src",
+    "**/*.js",
+    "**/*.mjs",
+    "**/*.cjs",
+    "**/*.d.ts",
+    "**/*.d.mts",
+    "**/*.d.cts"
+  ],
+  "funding": "https://github.com/sponsors/colinhacks",
+  "homepage": "https://zod.dev",
+  "keywords": [
+    "typescript",
+    "schema",
+    "validation",
+    "type",
+    "inference"
+  ],
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./index.cjs",
+  "types": "./index.d.cts",
+  "module": "./index.js",
+  "zshy": {
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts",
+      "./v3": "./src/v3/index.ts",
+      "./v4": "./src/v4/index.ts",
+      "./v4-mini": "./src/v4-mini/index.ts",
+      "./v4/mini": "./src/v4/mini/index.ts",
+      "./v4/core": "./src/v4/core/index.ts",
+      "./v4/locales": "./src/v4/locales/index.ts",
+      "./v4/locales/*": "./src/v4/locales/*"
+    },
+    "sourceDialects": [
+      "@zod/source"
+    ]
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@zod/source": "./src/index.ts",
+      "types": "./index.d.cts",
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./v3": {
+      "@zod/source": "./src/v3/index.ts",
+      "types": "./v3/index.d.cts",
+      "import": "./v3/index.js",
+      "require": "./v3/index.cjs"
+    },
+    "./v4": {
+      "@zod/source": "./src/v4/index.ts",
+      "types": "./v4/index.d.cts",
+      "import": "./v4/index.js",
+      "require": "./v4/index.cjs"
+    },
+    "./v4-mini": {
+      "@zod/source": "./src/v4-mini/index.ts",
+      "types": "./v4-mini/index.d.cts",
+      "import": "./v4-mini/index.js",
+      "require": "./v4-mini/index.cjs"
+    },
+    "./v4/mini": {
+      "@zod/source": "./src/v4/mini/index.ts",
+      "types": "./v4/mini/index.d.cts",
+      "import": "./v4/mini/index.js",
+      "require": "./v4/mini/index.cjs"
+    },
+    "./v4/core": {
+      "@zod/source": "./src/v4/core/index.ts",
+      "types": "./v4/core/index.d.cts",
+      "import": "./v4/core/index.js",
+      "require": "./v4/core/index.cjs"
+    },
+    "./v4/locales": {
+      "@zod/source": "./src/v4/locales/index.ts",
+      "types": "./v4/locales/index.d.cts",
+      "import": "./v4/locales/index.js",
+      "require": "./v4/locales/index.cjs"
+    },
+    "./v4/locales/*": {
+      "@zod/source": "./src/v4/locales/*",
+      "types": "./v4/locales/*",
+      "import": "./v4/locales/*",
+      "require": "./v4/locales/*"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colinhacks/zod.git"
+  },
+  "bugs": {
+    "url": "https://github.com/colinhacks/zod/issues"
+  },
+  "support": {
+    "backing": {
+      "npm-funding": true
+    }
+  },
+  "scripts": {
+    "clean": "git clean -xdf . -e node_modules",
+    "build": "zshy --project tsconfig.build.json",
+    "postbuild": "pnpm biome check --write .",
+    "test:watch": "pnpm vitest",
+    "test": "pnpm vitest run",
+    "bump:beta": "pnpm version \"v$(pnpm pkg get version | jq -r)-beta.$(date +%Y%m%dT%H%M%S)\"",
+    "pub:beta": "pnpm bump:beta && pnpm publish --tag next --publish-branch v4 --no-git-checks --dry-run"
+  }
+}

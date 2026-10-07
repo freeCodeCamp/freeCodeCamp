@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TestAnnotations.js",
+  "module": "../dist/esm/TestAnnotations.js",
+  "types": "../dist/dts/TestAnnotations.d.ts"
+}

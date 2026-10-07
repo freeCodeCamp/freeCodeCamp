@@ -1,0 +1,1 @@
+{"version":3,"file":"generate-code-points.d.ts","sourceRoot":"","sources":["../src/generate-code-points.ts"],"names":[],"mappings":""}

@@ -1,0 +1,16 @@
+{
+    "theme_color": "#000",
+    "background_color": "#fff",
+    "display": "standalone",
+    "start_url": "index.html",
+    "name": "Playwright Trace Viewer",
+    "short_name": "Trace Viewer",
+    "icons": [
+        {
+            "src": "playwright-logo.svg",
+            "sizes": "48x48 72x72 96x96 128x128 150x150 256x256 512x512 1024x1024",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}

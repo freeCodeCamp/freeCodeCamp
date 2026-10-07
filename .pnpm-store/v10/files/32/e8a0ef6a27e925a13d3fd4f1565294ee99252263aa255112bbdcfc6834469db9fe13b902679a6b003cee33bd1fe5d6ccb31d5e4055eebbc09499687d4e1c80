@@ -1,0 +1,74 @@
+{
+  "name": "isobject",
+  "description": "Returns true if the value is an object and not an array or null.",
+  "version": "3.0.1",
+  "homepage": "https://github.com/jonschlinkert/isobject",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "(https://github.com/LeSuisse)",
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Magnús Dæhlen (https://github.com/magnudae)",
+    "Tom MacWright (https://macwright.org)"
+  ],
+  "repository": "jonschlinkert/isobject",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/isobject/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-format-md": "^0.1.9",
+    "mocha": "^2.4.5"
+  },
+  "keywords": [
+    "check",
+    "is",
+    "is-object",
+    "isobject",
+    "kind",
+    "kind-of",
+    "kindof",
+    "native",
+    "object",
+    "type",
+    "typeof",
+    "value"
+  ],
+  "types": "index.d.ts",
+  "verb": {
+    "related": {
+      "list": [
+        "extend-shallow",
+        "is-plain-object",
+        "kind-of",
+        "merge-deep"
+      ]
+    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "verb"
+    ]
+  }
+}

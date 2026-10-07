@@ -1,0 +1,47 @@
+{
+  "name": "postcss-svgo",
+  "version": "5.1.0",
+  "description": "Optimise inline SVG with PostCSS.",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "LICENSE-MIT",
+    "src",
+    "types"
+  ],
+  "keywords": [
+    "css",
+    "minify",
+    "optimise",
+    "postcss",
+    "postcss-plugin",
+    "svg",
+    "svgo"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cssnano/cssnano",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "cssnano/cssnano",
+  "dependencies": {
+    "postcss-value-parser": "^4.2.0",
+    "svgo": "^2.7.0"
+  },
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "devDependencies": {
+    "@types/svgo": "^2.6.2",
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# [postcss][postcss]-svgo\n\n> Optimise inline SVG with PostCSS.\n\n\n## Install\n\nWith [npm](https://npmjs.org/package/postcss-svgo) do:\n\n```\nnpm install postcss-svgo --save\n```\n\n\n## Example\n\n### Input\n\n```css\nh1 {\n    background: url('data:image/svg+xml;charset=utf-8,<?xml version=\"1.0\" encoding=\"utf-8\"?><!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\"><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"yellow\" /></svg>');\n}\n\nh2 {\n    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9InllbGxvdyIgLz48IS0tdGVzdCBjb21tZW50LS0+PC9zdmc+');\n}\n```\n\n### Output\n\n```css\nh1 {\n    background: url('data:image/svg+xml;charset=utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"%23ff0\"/></svg>');\n}\n\nh2 {\n    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBmaWxsPSIjZmYwIi8+PC9zdmc+');\n}\n```\n\n\n## API\n\n### `svgo([options])`\n\n#### options\n\n##### encode\n\nType: `boolean`\nDefault: `undefined`\n\nIf `true`, it will encode URL-unsafe characters such as `<`, `>` and `&`;\n`false` will decode these characters, and `undefined` will neither encode nor\ndecode the original input. Note that regardless of this setting, `#` will\nalways be URL-encoded.\n\n##### plugins\n\nOptionally, you can customise the output by specifying the `plugins` option. You\nwill need to provide the config in comma separated objects, like the example\nbelow. Note that you can either disable the plugin by setting it to `false`,\nor pass different options to change the default behaviour.\n\n```js\nvar postcss = require('postcss');\nvar svgo = require('postcss-svgo');\n\nvar opts = {\n    plugins: [{\n        removeDoctype: false\n    }, {\n        removeComments: false\n    }, {\n        cleanupNumericValues: {\n            floatPrecision: 2\n        }\n    }, {\n        convertColors: {\n            names2hex: false,\n            rgb2hex: false\n        }\n    }]\n};\n\npostcss([ svgo(opts) ]).process(css).then(function (result) {\n    console.log(result.css)\n});\n```\n\nYou can view the [full list of plugins here][plugins].\n\n\n## Usage\n\nSee the [PostCSS documentation](https://github.com/postcss/postcss#usage) for\nexamples for your environment.\n\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n\n\n## License\n\nMIT © [Ben Briggs](http://beneb.info)\n\n[postcss]: https://github.com/postcss/postcss\n[plugins]: https://github.com/svg/svgo/tree/master/plugins\n"
+}

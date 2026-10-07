@@ -1,0 +1,15 @@
+{
+	"all": true,
+	"check-coverage": false,
+	"reporter": ["text-summary", "lcov", "text", "html", "json"],
+	"instrument": false,
+	"exclude": [
+		"coverage",
+		"test",
+		"tests",
+		"resolvers/*/test",
+		"scripts",
+		"memo-parser",
+		"lib"
+	]
+}

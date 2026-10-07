@@ -1,0 +1,49 @@
+{
+  "name": "@babel/plugin-transform-unicode-sets-regex",
+  "version": "7.23.3",
+  "description": "Compile regular expressions' unicodeSets (v) flag.",
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-transform-unicode-sets-regex",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin",
+    "regex",
+    "regexp",
+    "unicode",
+    "sets",
+    "properties",
+    "property",
+    "string",
+    "strings",
+    "regular expressions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-unicode-sets-regex"
+  },
+  "bugs": "https://github.com/babel/babel/issues",
+  "dependencies": {
+    "@babel/helper-create-regexp-features-plugin": "^7.22.15",
+    "@babel/helper-plugin-utils": "^7.22.5"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/helper-plugin-test-runner": "^7.22.5"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

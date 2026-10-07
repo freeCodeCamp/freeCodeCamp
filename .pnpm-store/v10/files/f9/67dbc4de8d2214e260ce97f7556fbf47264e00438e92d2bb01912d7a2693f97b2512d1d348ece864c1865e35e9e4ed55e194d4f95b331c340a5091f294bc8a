@@ -1,0 +1,12 @@
+---
+labels: ['ca', 'certificate authority']
+description: 'A component for reading the certificate authority data from a text file'
+---
+
+API:
+
+```ts
+import { readCAFileSync } from '@pnpm/network.ca-file'
+
+readCAFileSync('cafile.txt')
+```

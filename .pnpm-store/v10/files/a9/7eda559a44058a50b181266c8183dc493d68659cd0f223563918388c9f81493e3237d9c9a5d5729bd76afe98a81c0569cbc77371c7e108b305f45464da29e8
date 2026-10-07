@@ -1,0 +1,4 @@
+Component,Origin,License,Copyright
+require,module-details-from-path,MIT,Copyright 2016 Thomas Watson Steen
+dev,c8,ISC,"Copyright (c) 2017, Contributors"
+dev,imhotap,MIT,Copyright (c) 2019 Bryan English.

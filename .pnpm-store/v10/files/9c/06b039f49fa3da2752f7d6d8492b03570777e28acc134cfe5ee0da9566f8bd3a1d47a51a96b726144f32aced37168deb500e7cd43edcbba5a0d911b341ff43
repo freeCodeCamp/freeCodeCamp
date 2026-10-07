@@ -1,0 +1,10 @@
+{
+  "name": "engine.io-client",
+  "type": "module",
+  "browser": {
+    "ws": false,
+    "./transports/polling-xhr.node.js": "./transports/polling-xhr.js",
+    "./transports/websocket.node.js": "./transports/websocket.js",
+    "./globals.node.js": "./globals.js"
+  }
+}

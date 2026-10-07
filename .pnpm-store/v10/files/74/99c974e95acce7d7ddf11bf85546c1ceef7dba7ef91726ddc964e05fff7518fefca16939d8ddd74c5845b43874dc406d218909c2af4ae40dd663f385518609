@@ -1,0 +1,64 @@
+{
+  "name": "@eslint/config-array",
+  "version": "0.21.2",
+  "description": "General purpose glob-based configuration matching.",
+  "author": "Nicholas C. Zakas",
+  "type": "module",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "exports": {
+    "require": {
+      "types": "./dist/cjs/index.d.cts",
+      "default": "./dist/cjs/index.cjs"
+    },
+    "import": {
+      "types": "./dist/esm/index.d.ts",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eslint/rewrite.git",
+    "directory": "packages/config-array"
+  },
+  "bugs": {
+    "url": "https://github.com/eslint/rewrite/issues"
+  },
+  "homepage": "https://github.com/eslint/rewrite/tree/main/packages/config-array#readme",
+  "scripts": {
+    "build:dedupe-types": "node ../../tools/dedupe-types.js dist/cjs/index.cjs dist/esm/index.js",
+    "build:cts": "node ../../tools/build-cts.js dist/esm/index.d.ts dist/cjs/index.d.cts",
+    "build:std__path": "rollup -c rollup.std__path-config.js && node fix-std__path-imports",
+    "build": "rollup -c && npm run build:dedupe-types && tsc -p tsconfig.esm.json && npm run build:cts && npm run build:std__path",
+    "pretest": "npm run build",
+    "test": "mocha \"tests/**/*.test.js\"",
+    "test:coverage": "c8 npm test",
+    "test:jsr": "npx jsr@latest publish --dry-run",
+    "test:types": "tsc -p tests/types/tsconfig.json"
+  },
+  "keywords": [
+    "configuration",
+    "configarray",
+    "config file"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@eslint/object-schema": "^2.1.7",
+    "debug": "^4.3.1",
+    "minimatch": "^3.1.5"
+  },
+  "devDependencies": {
+    "@jsr/std__path": "^1.0.4",
+    "@types/minimatch": "^3.0.5",
+    "rollup-plugin-copy": "^3.5.0"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  }
+}

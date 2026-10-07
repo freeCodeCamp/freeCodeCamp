@@ -1,0 +1,6 @@
+/*
+ * This file was automatically generated.
+ * DO NOT MODIFY BY HAND.
+ * Run `yarn fix:special` to update
+ */
+"use strict";function r(e,{instancePath:t="",parentData:o,parentDataProperty:a,rootData:n=e}={}){if(!e||"object"!=typeof e||Array.isArray(e))return r.errors=[{params:{type:"object"}}],!1;{const t=0;for(const t in e)if("exportType"!==t&&"import"!==t&&"namedExports"!==t&&"url"!==t)return r.errors=[{params:{additionalProperty:t}}],!1;if(0===t){if(void 0!==e.exportType){let t=e.exportType;const o=0;if("link"!==t&&"text"!==t&&"css-style-sheet"!==t&&"style"!==t)return r.errors=[{params:{}}],!1;var s=0===o}else s=!0;if(s){if(void 0!==e.import){const t=0;if("boolean"!=typeof e.import)return r.errors=[{params:{type:"boolean"}}],!1;s=0===t}else s=!0;if(s){if(void 0!==e.namedExports){const t=0;if("boolean"!=typeof e.namedExports)return r.errors=[{params:{type:"boolean"}}],!1;s=0===t}else s=!0;if(s)if(void 0!==e.url){const t=0;if("boolean"!=typeof e.url)return r.errors=[{params:{type:"boolean"}}],!1;s=0===t}else s=!0}}}}return r.errors=null,!0}function e(t,{instancePath:o="",parentData:a,parentDataProperty:n,rootData:s=t}={}){let p=null,i=0;return r(t,{instancePath:o,parentData:a,parentDataProperty:n,rootData:s})||(p=null===p?r.errors:p.concat(r.errors),i=p.length),e.errors=p,0===i}module.exports=e,module.exports.default=e;

@@ -1,0 +1,44 @@
+{
+	"name": "@mischnic/json-sourcemap",
+	"version": "0.1.1",
+	"license": "MIT",
+	"description": "Generate positions for values in JSON and JSON5 strings",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mischnic/json-sourcemap"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"main": "dist/index.js",
+	"sideEffects": true,
+	"scripts": {
+		"watch": "parcel watch index.ts --no-source-maps",
+		"build": "parcel build index.ts --no-source-maps",
+		"run-watch": "nodemon experiment.js",
+		"test": "mocha"
+	},
+	"devDependencies": {
+		"json-pointer": "^0.6.2",
+		"json-source-map": "^0.6.1",
+		"mocha": "^10.0.0",
+		"parcel": "~2.8.0",
+		"parcel-reporter-static-files-copy": "^1.0.0",
+		"parcel-transformer-lezer": "^0.2.0",
+		"typescript": "^5.2.2"
+	},
+	"dependencies": {
+		"@lezer/common": "^1.0.0",
+		"@lezer/lr": "^1.0.0",
+		"json5": "^2.2.1"
+	},
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": ">=12.0.0"
+	},
+	"targets": {
+		"types": false
+	}
+}

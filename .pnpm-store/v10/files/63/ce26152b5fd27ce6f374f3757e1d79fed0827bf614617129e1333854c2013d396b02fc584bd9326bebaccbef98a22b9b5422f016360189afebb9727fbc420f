@@ -1,0 +1,17 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor {
+	.editorPlaceholder {
+		top: 0px;
+		position: absolute;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-wrap: nowrap;
+		pointer-events: none;
+
+		color: var(--vscode-editor-placeholder-foreground);
+	}
+}

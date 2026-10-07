@@ -1,0 +1,15 @@
+import { type TSchema, type TSchemaOptions } from '../../types/schema.mjs';
+import { type TCyclic } from '../../types/cyclic.mjs';
+import { type TIntersect } from '../../types/intersect.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TState, type TInstantiateType, type TCanInstantiate } from '../instantiate.mjs';
+import { type TIndexDeferred } from '../../action/indexed.mjs';
+import { type TCollapseToObject } from '../object/index.mjs';
+import { type TFromType } from './from_type.mjs';
+type TNormalizeType<Type extends TSchema, Result extends TSchema = (Type extends TCyclic | TIntersect | TUnion ? TCollapseToObject<Type> : Type)> = Result;
+export type TIndexAction<Type extends TSchema, Indexer extends TSchema, Result extends TSchema = TCanInstantiate<[Type, Indexer]> extends true ? TFromType<TNormalizeType<Type>, Indexer> : TIndexDeferred<Type, Indexer>> = Result;
+export declare function IndexAction<Type extends TSchema, Indexer extends TSchema>(type: Type, indexer: Indexer, options: TSchemaOptions): TIndexAction<Type, Indexer>;
+export type TIndexInstantiate<Context extends TProperties, State extends TState, Type extends TSchema, Indexer extends TSchema, InstantiatedType extends TSchema = TInstantiateType<Context, State, Type>, InstantiatedIndexer extends TSchema = TInstantiateType<Context, State, Indexer>> = TIndexAction<InstantiatedType, InstantiatedIndexer>;
+export declare function IndexInstantiate<Context extends TProperties, State extends TState, Type extends TSchema, Indexer extends TSchema>(context: Context, state: State, type: Type, indexer: Indexer, options: TSchemaOptions): TIndexInstantiate<Context, State, Type, Indexer>;
+export {};

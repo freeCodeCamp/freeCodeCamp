@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TPriorityQueue.js",
+  "module": "../dist/esm/TPriorityQueue.js",
+  "types": "../dist/dts/TPriorityQueue.d.ts"
+}

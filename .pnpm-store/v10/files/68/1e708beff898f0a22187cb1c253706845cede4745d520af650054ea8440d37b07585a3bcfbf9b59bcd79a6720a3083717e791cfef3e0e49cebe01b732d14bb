@@ -1,0 +1,46 @@
+{
+  "name": "std-env",
+  "version": "3.10.0",
+  "description": "Runtime agnostic JS utils",
+  "repository": "unjs/std-env",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest",
+    "lint": "eslint . && prettier -c src test",
+    "lint:fix": "eslint --fix . && prettier -w src test",
+    "prepack": "unbuild",
+    "play:bun": "bun playground/bun.ts",
+    "play:deno": "pnpm build && deno run -A playground/deno.ts",
+    "play:node": "pnpm build && node playground/node.mjs",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "pnpm lint && pnpm typecheck && vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "@vitest/coverage-v8": "^3.2.4",
+    "changelogen": "^0.6.2",
+    "esbuild": "^0.25.10",
+    "eslint": "^9.37.0",
+    "eslint-config-unjs": "^0.5.0",
+    "prettier": "^3.6.2",
+    "rollup": "^4.52.4",
+    "typescript": "^5.9.3",
+    "unbuild": "^3.6.1",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.18.2"
+}

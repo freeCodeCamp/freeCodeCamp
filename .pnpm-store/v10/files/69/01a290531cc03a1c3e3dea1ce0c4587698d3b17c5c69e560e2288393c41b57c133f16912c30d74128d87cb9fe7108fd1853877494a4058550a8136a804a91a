@@ -1,0 +1,10 @@
+import { Types } from '@graphql-codegen/plugin-helpers';
+import { DocumentNode, GraphQLSchema } from 'graphql';
+export declare function isObjectMap(obj: any): obj is Types.PluginConfig<any>;
+export declare function prioritize<T>(...values: T[]): T;
+export declare function pickFlag<TConfig, TKey extends keyof TConfig>(flag: TKey, config: TConfig): TConfig[TKey] | undefined;
+export declare function shouldValidateDuplicateDocuments(skipDocumentsValidationOption: Types.GenerateOptions['skipDocumentsValidation']): boolean;
+export declare function shouldValidateDocumentsAgainstSchema(skipDocumentsValidationOption: Types.GenerateOptions['skipDocumentsValidation']): boolean;
+export declare function getSkipDocumentsValidationOption(options: Types.GenerateOptions): Types.SkipDocumentsValidationOptions;
+export declare function hasFederationSpec(schemaOrAST: GraphQLSchema | DocumentNode): boolean;
+export declare function extractHashFromSchema(schema: GraphQLSchema): string | null;

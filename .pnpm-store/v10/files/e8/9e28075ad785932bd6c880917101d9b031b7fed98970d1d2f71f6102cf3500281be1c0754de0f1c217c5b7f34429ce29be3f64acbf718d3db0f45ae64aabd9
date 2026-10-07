@@ -1,0 +1,27 @@
+/**
+ * @import {AttributeKeyAdapter} from "@html-eslint/core"
+ * @import {
+ *   Range,
+ *   SourceLocation
+ * } from "@html-eslint/types"
+ * @import {JSXIdentifier} from "../../types"
+ */
+/** @implements {AttributeKeyAdapter} */
+export class JSXIdentifierAttributeKeyAdapter implements AttributeKeyAdapter {
+    /** @param {JSXIdentifier} node */
+    constructor(node: JSXIdentifier);
+    node: JSXIdentifier;
+    /** @returns {SourceLocation} */
+    getLocation(): SourceLocation;
+    /** @returns {Range} */
+    getRange(): Range;
+    /** @returns {string} */
+    getValue(): string;
+    /** @returns {boolean} */
+    hasExpression(): boolean;
+}
+import type { AttributeKeyAdapter } from "@html-eslint/core";
+import type { JSXIdentifier } from "../../types";
+import type { SourceLocation } from "@html-eslint/types";
+import type { Range } from "@html-eslint/types";
+//# sourceMappingURL=jsx-identifier.d.ts.map

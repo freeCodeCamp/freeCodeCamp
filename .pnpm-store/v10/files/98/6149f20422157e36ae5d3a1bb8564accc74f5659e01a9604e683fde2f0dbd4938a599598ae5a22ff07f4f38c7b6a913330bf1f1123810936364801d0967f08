@@ -1,0 +1,24 @@
+# packages/playwright/lib/worker/workerProcessEntry.js
+# total: 123.4 KB
+
+## Inlined (12)
+   4.7 KB  packages/playwright/src/util.ts
+   8.6 KB  packages/playwright/src/worker/fixtureRunner.ts
+  20.8 KB  packages/playwright/src/worker/testInfo.ts
+  11.6 KB  packages/playwright/src/worker/testTracing.ts
+   5.4 KB  packages/playwright/src/worker/timeoutManager.ts
+   0.3 KB  packages/playwright/src/worker/util.ts
+  21.0 KB  packages/playwright/src/worker/workerMain.ts
+   0.1 KB  packages/playwright/src/worker/workerProcessEntry.ts
+   6.0 KB  packages/utils/third_party/yauzl/buffer-crc32.js
+   9.3 KB  packages/utils/third_party/yauzl/fd-slicer.js
+  32.2 KB  packages/utils/third_party/yauzl/index.js
+   1.4 KB  packages/utils/third_party/yauzl/pend.js
+
+## External (6)
+  ../common
+  ../globals
+  ../matchers/expect
+  playwright-core/lib/coreBundle
+  playwright-core/lib/utilsBundle
+  playwright-core/package.json

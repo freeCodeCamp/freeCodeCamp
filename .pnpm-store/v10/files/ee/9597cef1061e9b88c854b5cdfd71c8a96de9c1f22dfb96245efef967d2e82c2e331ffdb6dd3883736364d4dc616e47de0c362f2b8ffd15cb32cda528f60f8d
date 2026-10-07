@@ -1,0 +1,60 @@
+{
+  "name": "is-glob",
+  "description": "Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a better user experience.",
+  "version": "2.0.1",
+  "homepage": "https://github.com/jonschlinkert/is-glob",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": "jonschlinkert/is-glob",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-glob/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "is-extglob": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "keywords": [
+    "bash",
+    "braces",
+    "check",
+    "exec",
+    "extglob",
+    "expression",
+    "glob",
+    "globbing",
+    "globstar",
+    "match",
+    "matches",
+    "pattern",
+    "regex",
+    "regular",
+    "string",
+    "test"
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "has-glob",
+        "is-extglob",
+        "is-posix-bracket",
+        "is-valid-glob",
+        "micromatch"
+      ]
+    }
+  }
+}

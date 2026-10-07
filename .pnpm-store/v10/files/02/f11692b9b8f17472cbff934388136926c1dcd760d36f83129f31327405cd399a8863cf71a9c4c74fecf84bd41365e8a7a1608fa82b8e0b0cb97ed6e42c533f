@@ -1,0 +1,35 @@
+@import '../variables';
+@import '../mixins';
+@import '../functions';
+
+@keyframes line-scale-pulse-out {
+  0% {
+    transform: scaley(1.0);
+  }
+  50% {
+    transform: scaley(0.4);
+  }
+  100% {
+    transform: scaley(1.0);
+  }
+}
+
+.line-scale-pulse-out {
+
+  > div {
+    @include lines();
+    @include global-animation();
+
+    display: inline-block;
+    animation: line-scale-pulse-out 0.9s delay(0.2s, 3, 0) infinite cubic-bezier(.85,.25,.37,.85);
+
+    &:nth-child(2), &:nth-child(4) {
+      animation-delay: delay(0.2s, 3, 1) !important;
+    }
+
+    &:nth-child(1), &:nth-child(5) {
+      animation-delay: delay(0.2s, 3, 2) !important;
+    }
+
+  }
+}

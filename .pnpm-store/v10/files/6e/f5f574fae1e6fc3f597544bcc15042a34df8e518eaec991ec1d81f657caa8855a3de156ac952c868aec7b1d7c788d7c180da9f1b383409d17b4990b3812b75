@@ -1,0 +1,24 @@
+{
+  "name": "use-sync-external-store",
+  "description": "Backwards compatible shim for React's useSyncExternalStore. Works with any React that supports hooks.",
+  "version": "1.2.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/react.git",
+    "directory": "packages/use-sync-external-store"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "index.native.js",
+    "with-selector.js",
+    "with-selector.native.js",
+    "shim/",
+    "cjs/"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "name": "fast-check",
+  "version": "3.23.2",
+  "description": "Property based testing framework for JavaScript (like QuickCheck)",
+  "type": "commonjs",
+  "main": "lib/fast-check.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "require": {
+        "types": "./lib/types/fast-check.d.ts",
+        "default": "./lib/fast-check.js"
+      },
+      "import": {
+        "types": "./lib/esm/types/fast-check.d.ts",
+        "default": "./lib/esm/fast-check.js"
+      }
+    }
+  },
+  "module": "lib/esm/fast-check.js",
+  "types": "lib/types/fast-check.d.ts",
+  "files": [
+    "lib",
+    "runkit.cjs"
+  ],
+  "sideEffects": false,
+  "runkitExampleFilename": "runkit.cjs",
+  "scripts": {
+    "build": "yarn build:publish-cjs && yarn build:publish-esm && yarn build:publish-types && node postbuild/main.mjs",
+    "build-ci": "cross-env EXPECT_GITHUB_SHA=true yarn build",
+    "build:publish-types": "tsc -p tsconfig.publish.types.json && tsc -p tsconfig.publish.types.json --outDir lib/esm/types",
+    "build:publish-cjs": "tsc -p tsconfig.publish.json",
+    "build:publish-esm": "tsc -p tsconfig.publish.json --module es2015 --moduleResolution node --outDir lib/esm && cp package.esm-template.json lib/esm/package.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest --config vitest.unit.config.mjs",
+    "e2e": "vitest --config vitest.e2e.config.mjs",
+    "update:documentation": "cross-env UPDATE_CODE_SNIPPETS=true vitest --config vitest.documentation.config.mjs",
+    "test-bundle": "node test-bundle/run.cjs && node test-bundle/run.mjs && node test-bundle/run-advanced.cjs",
+    "test-legacy-bundle": "nvs add 8 && $(nvs which 8) test-bundle/run.cjs && $(nvs which 8) test-bundle/run-advanced.cjs",
+    "docs": "api-extractor run --local && rm docs/fast-check.api.json && typedoc --out docs src/fast-check-default.ts && node postbuild/main.mjs",
+    "docs-ci": "cross-env EXPECT_GITHUB_SHA=true yarn docs",
+    "docs:serve": "yarn dlx serve docs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dubzzz/fast-check.git",
+    "directory": "packages/fast-check"
+  },
+  "author": "Nicolas DUBIEN <github@dubien.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dubzzz/fast-check/issues"
+  },
+  "homepage": "https://fast-check.dev/",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "pure-rand": "^6.1.0"
+  },
+  "devDependencies": {
+    "@fast-check/expect-type": "0.2.0",
+    "@fast-check/poisoning": "0.2.2",
+    "@microsoft/api-extractor": "^7.48.0",
+    "@types/node": "^20.14.15",
+    "@vitest/coverage-v8": "^2.1.8",
+    "cross-env": "^7.0.3",
+    "glob": "^11.0.0",
+    "not-node-buffer": "npm:buffer@^6.0.3",
+    "regexp-tree": "^0.1.27",
+    "replace-in-file": "^8.2.0",
+    "typedoc": "^0.27.4",
+    "typescript": "~5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "property-based testing",
+    "end-to-end testing",
+    "unit testing",
+    "testing",
+    "quickcheck",
+    "jscheck",
+    "jsverify",
+    "faker",
+    "fuzzer",
+    "fuzz",
+    "jest"
+  ],
+  "tsd": {
+    "directory": "test/type"
+  },
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://github.com/sponsors/dubzzz"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fast-check"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "react-error-overlay",
+  "version": "6.0.11",
+  "description": "An overlay for displaying stack frames.",
+  "main": "lib/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development node build.js --watch",
+    "test": "cross-env NODE_ENV=test jest",
+    "build": "cross-env NODE_ENV=development node build.js",
+    "build:prod": "cross-env NODE_ENV=production node build.js",
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/create-react-app.git",
+    "directory": "packages/react-error-overlay"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/facebook/create-react-app/issues"
+  },
+  "keywords": [
+    "overlay",
+    "syntax",
+    "error",
+    "red",
+    "box",
+    "redbox",
+    "crash",
+    "warning"
+  ],
+  "author": "Joe Haddad <timer150@gmail.com>",
+  "files": [
+    "lib/index.js"
+  ],
+  "devDependencies": {
+    "@babel/code-frame": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "anser": "^2.1.0",
+    "babel-jest": "^27.4.2",
+    "babel-loader": "^8.2.3",
+    "babel-preset-react-app": "^10.0.1",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.3.0",
+    "eslint-config-react-app": "^7.0.1",
+    "flow-bin": "^0.116.0",
+    "html-entities": "^2.3.2",
+    "jest": "^27.4.3",
+    "jest-fetch-mock": "^3.0.3",
+    "object-assign": "^4.1.1",
+    "promise": "^8.1.0",
+    "raw-loader": "^4.0.2",
+    "react": "^17.0.2",
+    "react-app-polyfill": "^3.0.0",
+    "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "settle-promise": "^1.0.0",
+    "source-map": "^0.5.7",
+    "webpack": "^5.64.4"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/__tests__/setupJest.js"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.js?(x)",
+      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/fixtures/",
+      "setupJest.js"
+    ]
+  },
+  "gitHead": "19fa58d527ae74f2b6baa0867463eea1d290f9a5"
+}

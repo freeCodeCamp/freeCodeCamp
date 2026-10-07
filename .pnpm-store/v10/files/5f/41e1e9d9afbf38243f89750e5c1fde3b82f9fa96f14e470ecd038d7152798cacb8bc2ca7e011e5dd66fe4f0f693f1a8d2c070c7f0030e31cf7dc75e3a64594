@@ -1,0 +1,2 @@
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t(require("react")):"function"==typeof define&&define.amd?define(["react"],t):(e=e||self).usePassiveLayoutEffect=t(e.React)}(this,(function(e){"use strict";return(e=e&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e)["undefined"!=typeof document&&void 0!==document.createElement?"useLayoutEffect":"useEffect"]}));
+//# sourceMappingURL=use-passive-layout-effect.js.map

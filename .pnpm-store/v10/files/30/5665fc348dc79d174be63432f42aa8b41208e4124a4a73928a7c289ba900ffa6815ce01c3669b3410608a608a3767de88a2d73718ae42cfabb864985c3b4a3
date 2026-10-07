@@ -1,0 +1,31 @@
+{
+    "name": "@types/canvas-confetti",
+    "version": "1.9.0",
+    "description": "TypeScript definitions for canvas-confetti",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/canvas-confetti",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Martin Tracey",
+            "githubUsername": "matracey",
+            "url": "https://github.com/matracey"
+        },
+        {
+            "name": "Josh Batley",
+            "githubUsername": "joshbatley",
+            "url": "https://github.com/joshbatley"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/canvas-confetti"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {},
+    "typesPublisherContentHash": "f0da5703625036e4726adaf72a3f4e5926ae6594704d3a1e044d80b00f582dfc",
+    "typeScriptVersion": "5.0"
+}

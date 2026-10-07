@@ -1,0 +1,45 @@
+{
+    "name": "@types/store",
+    "version": "2.0.5",
+    "description": "TypeScript definitions for store",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/store",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Vincent Bortone",
+            "githubUsername": "vbortone",
+            "url": "https://github.com/vbortone"
+        },
+        {
+            "name": "harry0000",
+            "githubUsername": "harry0000",
+            "url": "https://github.com/harry0000"
+        },
+        {
+            "name": "Roman Nuritdinov (Ky6uk)",
+            "githubUsername": "Ky6uk",
+            "url": "https://github.com/Ky6uk"
+        },
+        {
+            "name": "Johnny Edwards (igl00)",
+            "githubUsername": "igl00",
+            "url": "https://github.com/igl00"
+        },
+        {
+            "name": "Jason Kwok (JasonHK)",
+            "githubUsername": "JasonHK",
+            "url": "https://github.com/JasonHK"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/store"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "24bb8545b055c24c9324129aef2809e3b37285c426f6d95d7cff943bddf5fd37",
+    "typeScriptVersion": "4.5"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "@types/deep-eql",
+    "version": "4.0.2",
+    "description": "TypeScript definitions for deep-eql",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/deep-eql",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Rodrigo Pietnechuk",
+            "githubUsername": "ghnoob",
+            "url": "https://github.com/ghnoob"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/deep-eql"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "3b8981ce557947fc00ca08cbd93b4206bfc0943360956867381a0a3f6b1eabf5",
+    "typeScriptVersion": "4.5"
+}

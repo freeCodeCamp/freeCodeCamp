@@ -1,0 +1,35 @@
+{
+  "name": "is-potential-custom-element-name",
+  "version": "1.0.1",
+  "description": "Check whether a given string matches the `PotentialCustomElementName` production as defined in the HTML Standard.",
+  "homepage": "https://github.com/mathiasbynens/is-potential-custom-element-name",
+  "main": "index.js",
+  "files": [
+    "LICENSE-MIT.txt",
+    "index.js"
+  ],
+  "keywords": [
+    "html",
+    "custom element",
+    "custom element name",
+    "web components"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathiasbynens/is-potential-custom-element-name.git"
+  },
+  "bugs": "https://github.com/mathiasbynens/is-potential-custom-element-name/issues",
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "regenerate": "^1.4.2"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "test": "mocha"
+  }
+}

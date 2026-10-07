@@ -1,0 +1,67 @@
+{
+  "name": "react-side-effect",
+  "version": "2.1.2",
+  "description": "Create components whose prop changes map to a global side effect",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "clean": "rimraf lib",
+    "prepare": "npm test && npm run clean && npm run build",
+    "test": "mocha",
+    "test:watch": "mocha --watch",
+    "test:cov": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaearon/react-side-effect.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "side",
+    "effect"
+  ],
+  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaearon/react-side-effect/issues"
+  },
+  "homepage": "https://github.com/gaearon/react-side-effect",
+  "contributors": [
+    "Louis DeScioli (https://descioli.design)"
+  ],
+  "peerDependencies": {
+    "react": "^16.3.0 || ^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.5.5",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "chai": "^3.2.0",
+    "create-react-class": "^15.6.3",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "gzip-size": "^4.1.0",
+    "isparta": "^4.0.0",
+    "jsdom": "^9.9.1",
+    "mocha": "^3.2.0",
+    "pretty-bytes": "^4.0.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "rimraf": "^2.4.3",
+    "rollup": "^1.20.3",
+    "rollup-plugin-babel": "^4.0.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib/"
+  ]
+}

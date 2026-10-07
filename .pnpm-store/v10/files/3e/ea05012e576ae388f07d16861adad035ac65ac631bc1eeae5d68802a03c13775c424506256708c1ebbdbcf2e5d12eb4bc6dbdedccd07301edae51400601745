@@ -1,0 +1,51 @@
+{
+  "name": "eslint-config-prettier",
+  "version": "10.1.8",
+  "type": "commonjs",
+  "description": "Turns off all rules that are unnecessary or might conflict with Prettier.",
+  "repository": "prettier/eslint-config-prettier",
+  "homepage": "https://github.com/prettier/eslint-config-prettier#readme",
+  "author": "Simon Lydell",
+  "maintainers": [
+    "JounQin (https://www.1stG.me) <admin@1stg.me>"
+  ],
+  "funding": "https://opencollective.com/eslint-config-prettier",
+  "license": "MIT",
+  "bin": "bin/cli.js",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./flat": {
+      "types": "./flat.d.ts",
+      "default": "./flat.js"
+    },
+    "./prettier": {
+      "types": "./prettier.d.ts",
+      "default": "./prettier.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "flat.d.ts",
+    "flat.js",
+    "index.d.ts",
+    "index.js",
+    "prettier.d.ts",
+    "prettier.js"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config",
+    "eslint-prettier",
+    "prettier"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.0.0"
+  }
+}

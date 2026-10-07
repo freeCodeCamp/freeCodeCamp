@@ -1,0 +1,74 @@
+{
+  "name": "xxhash-wasm",
+  "version": "0.4.2",
+  "description": "A WebAssembly implementation of xxHash",
+  "main": "cjs/xxhash-wasm.js",
+  "module": "esm/xxhash-wasm.js",
+  "types": "./types.d.ts",
+  "author": "Michael Jungo <michaeljungo92@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jungomi/xxhash-wasm.git"
+  },
+  "files": [
+    "cjs",
+    "esm",
+    "umd",
+    "types.d.ts"
+  ],
+  "keywords": [
+    "xxhash",
+    "hash",
+    "wasm",
+    "webassembly"
+  ],
+  "scripts": {
+    "build": "yarn run build-wasm && yarn run build-js",
+    "build-js": "yarn run build-browser && yarn run build-node",
+    "build-browser": "rollup -c",
+    "build-node": "TARGET=node rollup -c",
+    "build-wasm": "wasm-opt -O3 src/xxhash.wat -o src/xxhash.wasm",
+    "clean": "rimraf coverage cjs esm umd",
+    "fix": "eslint . --fix",
+    "lint": "eslint .",
+    "size": "bundlesize",
+    "test": "jest",
+    "test-update": "jest --updateSnapshot",
+    "test-coverage": "jest --coverage",
+    "prebuild": "yarn run clean",
+    "prepublish": "yarn run build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "bundlesize": "^0.18.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.2.6",
+    "jest-t-assert": "^0.3.0",
+    "prettier": "^2.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.3.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-terser": "^5.3.0"
+  },
+  "bundlesize": [
+    {
+      "path": "./cjs/xxhash-wasm.js",
+      "maxSize": "1.5kb"
+    },
+    {
+      "path": "./esm/xxhash-wasm.js",
+      "maxSize": "1.5kb"
+    },
+    {
+      "path": "./umd/xxhash-wasm.js",
+      "maxSize": "1.5kb"
+    }
+  ]
+}

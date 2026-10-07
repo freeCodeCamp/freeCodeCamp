@@ -1,0 +1,74 @@
+{
+	"name": "environment",
+	"version": "1.1.0",
+	"description": "Check which JavaScript environment your code is running in at runtime: browser, Node.js, Bun, etc",
+	"license": "MIT",
+	"repository": "sindresorhus/environment",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"test": "xo && ava && tsc index.d.ts"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"runtime",
+		"environment",
+		"env",
+		"execution",
+		"engine",
+		"platform",
+		"context",
+		"js",
+		"javascript",
+		"is",
+		"check",
+		"checking",
+		"detect",
+		"detection",
+		"browser",
+		"node",
+		"bun",
+		"deno",
+		"electron",
+		"jsdom",
+		"webworker",
+		"worker",
+		"serviceworker",
+		"macos",
+		"ios",
+		"iphone",
+		"ipad",
+		"windows",
+		"linux",
+		"android",
+		"os",
+		"operating",
+		"system"
+	],
+	"devDependencies": {
+		"ava": "^6.1.3",
+		"typescript": "^5.4.5",
+		"xo": "^0.58.0"
+	},
+	"xo": {
+		"rules": {
+			"n/prefer-global/process": "off"
+		}
+	}
+}

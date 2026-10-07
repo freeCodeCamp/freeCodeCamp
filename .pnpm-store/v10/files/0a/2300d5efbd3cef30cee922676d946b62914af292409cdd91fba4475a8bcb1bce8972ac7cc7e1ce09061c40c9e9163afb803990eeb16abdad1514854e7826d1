@@ -1,0 +1,51 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "createAutocompleteRecentSearchComponent", {
+    enumerable: true,
+    get: function() {
+        return createAutocompleteRecentSearchComponent;
+    }
+});
+var _lib = require("../../lib");
+var _icons = require("./icons");
+function createAutocompleteRecentSearchComponent(param) {
+    var createElement = param.createElement;
+    return function AutocompleteRecentSearch(userProps) {
+        var item = userProps.item, children = userProps.children, onSelect = userProps.onSelect, onRemoveRecentSearch = userProps.onRemoveRecentSearch, onApply = userProps.onApply, _userProps_classNames = userProps.classNames, classNames = _userProps_classNames === void 0 ? {} : _userProps_classNames;
+        return /*#__PURE__*/ createElement("div", {
+            onClick: onSelect,
+            className: (0, _lib.cx)('ais-AutocompleteItemWrapper ais-AutocompleteRecentSearchWrapper', classNames.root)
+        }, /*#__PURE__*/ createElement("div", {
+            className: (0, _lib.cx)('ais-AutocompleteItemContent', 'ais-AutocompleteRecentSearchItemContent', classNames.content)
+        }, /*#__PURE__*/ createElement("div", {
+            className: (0, _lib.cx)('ais-AutocompleteItemIcon', 'ais-AutocompleteRecentSearchItemIcon', classNames.content)
+        }, /*#__PURE__*/ createElement(_icons.ClockIcon, {
+            createElement: createElement
+        })), /*#__PURE__*/ createElement("div", {
+            className: (0, _lib.cx)('ais-AutocompleteItemContentBody', 'ais-AutocompleteRecentSearchItemContentBody', classNames.content)
+        }, children)), /*#__PURE__*/ createElement("div", {
+            className: (0, _lib.cx)('ais-AutocompleteItemActions', 'ais-AutocompleteRecentSearchItemActions', classNames.actions)
+        }, /*#__PURE__*/ createElement("button", {
+            className: (0, _lib.cx)('ais-AutocompleteItemActionButton', 'ais-AutocompleteRecentSearchItemDeleteButton', classNames.deleteButton),
+            title: "Remove ".concat(item.query, " from recent searches"),
+            onClick: function onClick(evt) {
+                evt.stopPropagation();
+                onRemoveRecentSearch();
+            }
+        }, /*#__PURE__*/ createElement(_icons.TrashIcon, {
+            createElement: createElement
+        })), /*#__PURE__*/ createElement("button", {
+            className: (0, _lib.cx)('ais-AutocompleteItemActionButton', 'ais-AutocompleteRecentSearchItemApplyButton', classNames.applyButton),
+            title: "Apply ".concat(item.query, " as search"),
+            onClick: function onClick(evt) {
+                evt.stopPropagation();
+                onApply();
+            }
+        }, /*#__PURE__*/ createElement(_icons.ApplyIcon, {
+            createElement: createElement
+        }))));
+    };
+}

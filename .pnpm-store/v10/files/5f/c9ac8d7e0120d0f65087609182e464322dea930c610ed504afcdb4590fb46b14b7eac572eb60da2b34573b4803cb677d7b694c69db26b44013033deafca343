@@ -1,0 +1,32 @@
+// @flow
+
+opaque type Next = Function | void;
+opaque type Yield = mixed;
+
+export type Gensync<Args, Return> = {
+  (...args: Args): Handler<Return>,
+  sync(...args: Args): Return,
+  async(...args: Args): Promise<Return>,
+  // ...args: [...Args, Callback]
+  errback(...args: any[]): void,
+};
+
+export type Handler<Return> = Generator<Yield, Return, Next>;
+export type Options<Args, Return> = {
+  sync(...args: Args): Return,
+  arity?: number,
+  name?: string,
+} & (
+  | { async?: (...args: Args) => Promise<Return> }
+  // ...args: [...Args, Callback]
+  | { errback(...args: any[]): void }
+);
+
+declare module.exports: {
+  <Args, Return>(
+    Options<Args, Return> | ((...args: Args) => Handler<Return>)
+  ): Gensync<Args, Return>,
+
+  all<Return>(Array<Handler<Return>>): Handler<Return[]>,
+  race<Return>(Array<Handler<Return>>): Handler<Return>,
+};

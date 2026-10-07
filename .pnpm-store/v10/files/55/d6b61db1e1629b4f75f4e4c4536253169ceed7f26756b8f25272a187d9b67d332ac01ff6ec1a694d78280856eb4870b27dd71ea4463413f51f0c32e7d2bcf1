@@ -1,0 +1,73 @@
+{
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
+  "name": "minimatch",
+  "description": "a glob matcher in javascript",
+  "version": "10.2.5",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:isaacs/minimatch"
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "prepare": "tshy",
+    "pretest": "npm run prepare",
+    "presnap": "npm run prepare",
+    "test": "tap",
+    "snap": "tap",
+    "format": "prettier --write .",
+    "benchmark": "node benchmark/index.js",
+    "typedoc": "typedoc --tsconfig .tshy/esm.json ./src/*.ts",
+    "lint": "oxlint --fix src test",
+    "postsnap": "npm run lint",
+    "postlint": "npm run format"
+  },
+  "engines": {
+    "node": "18 || 20 || >=22"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "mkdirp": "^3.0.1",
+    "oxlint": "^1.57.0",
+    "oxlint-tsgolint": "^0.18.1",
+    "prettier": "^3.8.1",
+    "tap": "^21.6.2",
+    "tshy": "^4.0.0",
+    "typedoc": "^0.28.18"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/isaacs"
+  },
+  "license": "BlueOak-1.0.0",
+  "tshy": {
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts"
+    },
+    "selfLink": false
+  },
+  "type": "module",
+  "module": "./dist/esm/index.js",
+  "dependencies": {
+    "brace-expansion": "^5.0.5"
+  }
+}

@@ -1,0 +1,9 @@
+interface AudioProps {
+    src: string;
+    "aria-label": string;
+    className?: string;
+    startTime?: number;
+    finishTime?: number;
+}
+export declare const Audio: ({ src, "aria-label": ariaLabel, className, startTime, finishTime, }: AudioProps) => JSX.Element;
+export {};

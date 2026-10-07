@@ -1,0 +1,15 @@
+{
+  "name": "browser-process-hrtime",
+  "version": "1.0.0",
+  "description": "Shim for process.hrtime in the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kumavis/browser-process-hrtime.git"
+  },
+  "author": "kumavis",
+  "license": "BSD-2-Clause"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "hookable",
+  "version": "6.1.1",
+  "description": "Awaitable hook system",
+  "keywords": [
+    "hook",
+    "hookable",
+    "plugin",
+    "tapable",
+    "tappable"
+  ],
+  "license": "MIT",
+  "repository": "unjs/hookable",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs"
+  },
+  "scripts": {
+    "bench": "node --expose-gc --allow-natives-syntax test/bench.ts",
+    "build": "obuild src/index.ts",
+    "dev": "vitest",
+    "lint": "oxlint . && oxfmt --check src test",
+    "lint:fix": "oxlint . --fix && oxfmt src test",
+    "prepublish": "pnpm build",
+    "release": "pnpm test && pnpm build && changelogen --release --publish --push",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:types": "tsgo --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@typescript/native-preview": "^7.0.0-dev.20260414.1",
+    "@vitest/coverage-v8": "^4.1.4",
+    "changelogen": "^0.6.2",
+    "esbuild": "^0.28.0",
+    "eslint-config-unjs": "^0.6.2",
+    "expect-type": "^1.3.0",
+    "hookable-prev": "npm:hookable@^6.1.0",
+    "mitata": "^1.0.34",
+    "obuild": "^0.4.33",
+    "oxfmt": "^0.45.0",
+    "oxlint": "^1.60.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8",
+    "vitest": "^4.1.4"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

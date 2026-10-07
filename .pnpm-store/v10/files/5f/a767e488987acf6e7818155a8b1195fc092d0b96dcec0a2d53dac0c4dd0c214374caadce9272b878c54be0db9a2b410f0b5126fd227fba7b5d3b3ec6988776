@@ -1,0 +1,75 @@
+{
+    "name": "@types/chai",
+    "version": "5.2.3",
+    "description": "TypeScript definitions for chai",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/chai",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Bart van der Schoor",
+            "githubUsername": "Bartvds",
+            "url": "https://github.com/Bartvds"
+        },
+        {
+            "name": "Andrew Brown",
+            "githubUsername": "AGBrown",
+            "url": "https://github.com/AGBrown"
+        },
+        {
+            "name": "Olivier Chevet",
+            "githubUsername": "olivr70",
+            "url": "https://github.com/olivr70"
+        },
+        {
+            "name": "Matt Wistrand",
+            "githubUsername": "mwistrand",
+            "url": "https://github.com/mwistrand"
+        },
+        {
+            "name": "Shaun Luttin",
+            "githubUsername": "shaunluttin",
+            "url": "https://github.com/shaunluttin"
+        },
+        {
+            "name": "Satana Charuwichitratana",
+            "githubUsername": "micksatana",
+            "url": "https://github.com/micksatana"
+        },
+        {
+            "name": "Erik Schierboom",
+            "githubUsername": "ErikSchierboom",
+            "url": "https://github.com/ErikSchierboom"
+        },
+        {
+            "name": "Bogdan Paranytsia",
+            "githubUsername": "bparan",
+            "url": "https://github.com/bparan"
+        },
+        {
+            "name": "CXuesong",
+            "githubUsername": "CXuesong",
+            "url": "https://github.com/CXuesong"
+        },
+        {
+            "name": "Joey Kilpatrick",
+            "githubUsername": "joeykilpatrick",
+            "url": "https://github.com/joeykilpatrick"
+        }
+    ],
+    "type": "module",
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/deep-eql": "*",
+        "assertion-error": "^2.0.1"
+    },
+    "peerDependencies": {},
+    "typesPublisherContentHash": "d9d83f1594f42010e624e46e4c8cfeee284bdd04cb05eb0730aec14140f2a833",
+    "typeScriptVersion": "5.2"
+}

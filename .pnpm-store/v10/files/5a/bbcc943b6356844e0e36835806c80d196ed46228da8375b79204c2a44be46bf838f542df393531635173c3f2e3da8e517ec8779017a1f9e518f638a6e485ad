@@ -1,0 +1,58 @@
+{
+  "name": "tmp",
+  "version": "0.2.1",
+  "description": "Temporary file and directory creator",
+  "author": "KARASZI István <github@spam.raszi.hu> (http://raszi.hu/)",
+  "contributors": [
+    "Carsten Klein <trancesilken@gmail.com> (https://github.com/silkentrance)"
+  ],
+  "keywords": [
+    "temporary",
+    "tmp",
+    "temp",
+    "tempdir",
+    "tempfile",
+    "tmpdir",
+    "tmpfile"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/raszi/node-tmp.git",
+  "homepage": "http://github.com/raszi/node-tmp",
+  "bugs": {
+    "url": "http://github.com/raszi/node-tmp/issues"
+  },
+  "engines": {
+    "node": ">=8.17.0"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-plugin-mocha": "^6.1.1",
+    "istanbul": "^0.4.5",
+    "lerna-changelog": "^1.0.1",
+    "mocha": "^6.2.0"
+  },
+  "main": "lib/tmp.js",
+  "files": [
+    "lib/"
+  ],
+  "changelog": {
+    "labels": {
+      "breaking": ":boom: Breaking Change",
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "documentation": ":memo: Documentation",
+      "internal": ":house: Internal"
+    },
+    "cacheDir": ".changelog"
+  },
+  "scripts": {
+    "changelog": "lerna-changelog",
+    "lint": "eslint lib --env mocha test",
+    "clean": "rm -Rf ./coverage",
+    "test": "npm run clean && istanbul cover ./node_modules/mocha/bin/_mocha --report none --print none --dir ./coverage/json -u exports -R test/*-test.js && istanbul report --root ./coverage/json html && istanbul report text-summary",
+    "doc": "jsdoc -c .jsdoc.json"
+  }
+}

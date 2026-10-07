@@ -1,0 +1,35 @@
+{
+  "name": "@hapi/bourne",
+  "description": "JSON parse with prototype poisoning protection",
+  "version": "3.0.0",
+  "repository": "git://github.com/hapijs/bourne",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "JSON",
+    "parse",
+    "safe",
+    "prototype"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "plugin:@hapi/module"
+    ]
+  },
+  "devDependencies": {
+    "@hapi/code": "^9.0.0",
+    "@hapi/eslint-plugin": "*",
+    "@hapi/lab": "25.0.0-beta.1",
+    "@types/node": "^17.0.31",
+    "benchmark": "2.x.x",
+    "typescript": "^4.6.3"
+  },
+  "scripts": {
+    "test": "lab -a @hapi/code -t 100 -L -Y",
+    "test-cov-html": "lab -a @hapi/code -r html -o coverage.html"
+  },
+  "license": "BSD-3-Clause"
+}

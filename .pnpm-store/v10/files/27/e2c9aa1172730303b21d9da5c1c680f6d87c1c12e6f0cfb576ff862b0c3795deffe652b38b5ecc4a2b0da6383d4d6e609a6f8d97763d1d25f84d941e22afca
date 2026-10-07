@@ -1,0 +1,22 @@
+{
+  "name": "@algolia/requester-browser-xhr",
+  "version": "4.27.0",
+  "private": false,
+  "description": "Promise-based request library for browser using xhr.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-javascript.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "dist/requester-browser-xhr.esm.js",
+  "types": "dist/requester-browser-xhr.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "dependencies": {
+    "@algolia/requester-common": "4.27.0"
+  }
+}

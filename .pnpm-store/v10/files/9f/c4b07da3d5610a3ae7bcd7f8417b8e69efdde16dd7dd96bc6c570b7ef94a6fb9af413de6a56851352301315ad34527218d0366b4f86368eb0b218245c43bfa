@@ -1,0 +1,75 @@
+{
+	"name": "type-fest",
+	"version": "5.6.0",
+	"description": "A collection of essential TypeScript types",
+	"license": "(MIT OR CC0-1.0)",
+	"repository": "sindresorhus/type-fest",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./index.d.ts"
+		},
+		"./globals": {
+			"types": "./source/globals/index.d.ts"
+		}
+	},
+	"types": "./index.d.ts",
+	"sideEffects": false,
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"test:tsc": "node --max-old-space-size=6144 ./node_modules/.bin/tsc",
+		"test:tsd": "node --max-old-space-size=6144 ./node_modules/.bin/tsd",
+		"test:xo": "node --max-old-space-size=6144 ./node_modules/.bin/xo --ignores=lint-processors/fixtures/**/*.d.ts '**/*.{js,ts,md}'",
+		"test:linter": "node --test",
+		"test": "run-p test:*"
+	},
+	"files": [
+		"index.d.ts",
+		"source",
+		"license-mit",
+		"license-cc0"
+	],
+	"keywords": [
+		"typescript",
+		"ts",
+		"types",
+		"utility",
+		"util",
+		"utilities",
+		"omit",
+		"merge",
+		"json",
+		"generics"
+	],
+	"dependencies": {
+		"tagged-tag": "^1.0.0"
+	},
+	"devDependencies": {
+		"@eslint/markdown": "^8.0.1",
+		"@sindresorhus/tsconfig": "^8.0.1",
+		"@types/node": "^25.5.0",
+		"@typescript-eslint/parser": "^8.44.0",
+		"@typescript/vfs": "^1.6.1",
+		"dedent": "^1.7.0",
+		"eslint": "^10.1.0",
+		"expect-type": "^1.2.2",
+		"npm-run-all2": "^8.0.4",
+		"tsd": "^0.33.0",
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.47.0",
+		"xo": "^2.0.2"
+	},
+	"tsd": {
+		"compilerOptions": {
+			"noUnusedLocals": false
+		}
+	}
+}

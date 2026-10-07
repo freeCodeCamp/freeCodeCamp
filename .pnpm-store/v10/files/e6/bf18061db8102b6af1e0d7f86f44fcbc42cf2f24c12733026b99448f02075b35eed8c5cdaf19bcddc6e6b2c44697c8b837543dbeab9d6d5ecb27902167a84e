@@ -1,0 +1,43 @@
+{
+  "name": "set-cookie-parser",
+  "version": "2.6.0",
+  "description": "Parses set-cookie headers into objects",
+  "homepage": "https://github.com/nfriedly/set-cookie-parser",
+  "repository": "nfriedly/set-cookie-parser",
+  "author": {
+    "name": "Nathan Friedly",
+    "email": "",
+    "url": "http://nfriedly.com/"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/set-cookie.js",
+  "sideEffects": false,
+  "keywords": [
+    "set-cookie",
+    "set",
+    "cookie",
+    "cookies",
+    "header",
+    "parser"
+  ],
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "mocha": "^10.0.0",
+    "prettier": "^2.0.2",
+    "pretty-quick": "^2.0.1",
+    "sinon": "^9.0.1"
+  },
+  "scripts": {
+    "lint": "eslint . --ignore-pattern '!.eslintrc.js'",
+    "test": "npm run lint && mocha",
+    "autofix": "npm run lint -- --fix",
+    "precommit": "npm test"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

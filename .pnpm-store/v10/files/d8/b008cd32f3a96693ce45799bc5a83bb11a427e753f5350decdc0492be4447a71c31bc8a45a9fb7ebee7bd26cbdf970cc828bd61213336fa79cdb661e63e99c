@@ -1,0 +1,23 @@
+{
+  "name": "glob-to-regexp",
+  "version": "0.4.1",
+  "description": "Convert globs to regular expressions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fitzgen/glob-to-regexp.git"
+  },
+  "keywords": [
+    "regexp",
+    "glob",
+    "regexps",
+    "regular expressions",
+    "regular expression",
+    "wildcard"
+  ],
+  "author": "Nick Fitzgerald <fitzgen@gmail.com>",
+  "license": "BSD-2-Clause"
+}

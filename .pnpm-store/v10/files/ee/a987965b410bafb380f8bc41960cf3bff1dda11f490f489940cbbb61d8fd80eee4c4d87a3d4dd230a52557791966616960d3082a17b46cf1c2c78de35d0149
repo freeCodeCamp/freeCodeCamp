@@ -1,0 +1,104 @@
+{
+  "name": "immer",
+  "version": "9.0.21",
+  "description": "Create your next immutable state by mutating the current one",
+  "main": "dist/index.js",
+  "module": "dist/immer.esm.js",
+  "exports": {
+    ".": {
+      "types": "./dist/immer.d.ts",
+      "import": "./dist/immer.esm.mjs",
+      "require": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "umd:main": "dist/immer.umd.production.min.js",
+  "unpkg": "dist/immer.umd.production.min.js",
+  "jsdelivr": "dist/immer.umd.production.min.js",
+  "jsnext:main": "dist/immer.esm.js",
+  "react-native": "dist/immer.esm.js",
+  "source": "src/immer.ts",
+  "types": "./dist/immer.d.ts",
+  "typesVersions": {
+    ">=3.7": {
+      "*": [
+        "./*"
+      ]
+    },
+    ">=3.1": {
+      "*": [
+        "compat/pre-3.7/*"
+      ]
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "test": "jest && yarn test:build && yarn test:flow",
+    "test:perf": "cd __performance_tests__ && babel-node add-data.js && babel-node todo.js && babel-node incremental.js",
+    "test:flow": "yarn flow check __tests__/flow",
+    "test:build": "yarn build && NODE_ENV='production' yarn jest --config jest.config.build.js",
+    "watch": "jest --watch",
+    "coverage": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage",
+    "build": "rimraf dist/ && tsdx build --name immer --format esm,cjs,umd && cp dist/immer.esm.js dist/immer.esm.mjs && yarn build:flow",
+    "build:flow": "cpx 'src/types/index.js.flow' dist -v",
+    "publish-docs": "cd website && GIT_USER=mweststrate USE_SSH=true yarn docusaurus deploy",
+    "start": "cd website && yarn start",
+    "test:size": "yarn build && yarn import-size --report . produce enableES5 enableMapSet enablePatches enableAllPlugins",
+    "test:sizequick": "tsdx build --name immer --format esm && yarn import-size . produce"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/immerjs/immer.git"
+  },
+  "keywords": [
+    "immutable",
+    "mutable",
+    "copy-on-write"
+  ],
+  "author": "Michel Weststrate",
+  "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/immer"
+  },
+  "bugs": {
+    "url": "https://github.com/immerjs/immer/issues"
+  },
+  "homepage": "https://github.com/immerjs/immer#readme",
+  "files": [
+    "dist",
+    "compat",
+    "src"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@types/jest": "^25.1.2",
+    "coveralls": "^3.0.0",
+    "cpx2": "^3.0.0",
+    "deep-freeze": "^0.0.1",
+    "flow-bin": "^0.123.0",
+    "husky": "^1.2.0",
+    "immutable": "^3.8.2",
+    "import-size": "^1.0.2",
+    "jest": "^25.1.0",
+    "lodash": "^4.17.4",
+    "lodash.clonedeep": "^4.5.0",
+    "prettier": "1.19.1",
+    "pretty-quick": "^1.8.0",
+    "redux": "^4.0.5",
+    "rimraf": "^2.6.2",
+    "seamless-immutable": "^7.1.3",
+    "semantic-release": "^17.0.2",
+    "spec.ts": "^1.1.0",
+    "ts-jest": "^25.2.0",
+    "tsdx": "^0.12.3",
+    "typescript": "^4.2.3"
+  }
+}

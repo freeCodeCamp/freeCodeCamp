@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Layer.js",
+  "module": "../dist/esm/Layer.js",
+  "types": "../dist/dts/Layer.d.ts"
+}

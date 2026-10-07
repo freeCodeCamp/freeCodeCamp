@@ -1,0 +1,33 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TEnum, type TEnumValue } from '../../types/enum.mjs';
+import { type TLiteral, type TLiteralValue } from '../../types/literal.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TTemplateLiteral, type TTemplateLiteralDeferred } from '../../types/template_literal.mjs';
+import { type TBigInt, BigIntPattern } from '../../types/bigint.mjs';
+import { type TString, StringPattern } from '../../types/string.mjs';
+import { type TNumber, NumberPattern } from '../../types/number.mjs';
+import { type TInteger, IntegerPattern } from '../../types/integer.mjs';
+import { type TBoolean } from '../../types/boolean.mjs';
+import { NeverPattern } from '../../types/never.mjs';
+import { type TEnumValuesToVariants } from '../enum/enum_to_union.mjs';
+import { type TTemplateLiteralAction } from './instantiate.mjs';
+type TJoinString<Input extends string[], Result extends string = ''> = (Input extends [infer Left extends string, ...infer Right extends string[]] ? Result extends '' ? TJoinString<Right, Left> : TJoinString<Right, `${Result}|${Left}`> : Result);
+type TUnwrapTemplateLiteralPattern<Pattern extends string> = (Pattern extends `^${infer Pattern extends string}$` ? Pattern : never);
+type TEncodeLiteral<Value extends TLiteralValue, Right extends TSchema[], Pattern extends string> = (TEncodeTypes<Right, `${Pattern}${Value}`>);
+type TEncodeBigInt<Right extends TSchema[], Pattern extends string> = (TEncodeTypes<Right, `${Pattern}${typeof BigIntPattern}`>);
+type TEncodeInteger<Right extends TSchema[], Pattern extends string> = (TEncodeTypes<Right, `${Pattern}${typeof IntegerPattern}`>);
+type TEncodeNumber<Right extends TSchema[], Pattern extends string> = (TEncodeTypes<Right, `${Pattern}${typeof NumberPattern}`>);
+type TEncodeBoolean<Right extends TSchema[], Pattern extends string> = (TEncodeType<TUnion<[TLiteral<'false'>, TLiteral<'true'>]>, Right, Pattern>);
+type TEncodeString<Right extends TSchema[], Pattern extends string> = (TEncodeTypes<Right, `${Pattern}${typeof StringPattern}`>);
+type TEncodeTemplateLiteral<TemplatePattern extends string, Right extends TSchema[], Pattern extends string> = (TEncodeTypes<Right, `${Pattern}${TUnwrapTemplateLiteralPattern<TemplatePattern>}`>);
+type TEncodeTemplateLiteralDeferred<Types extends TSchema[], Right extends TSchema[], Pattern extends string, TemplateLiteral extends TSchema = TTemplateLiteralAction<Types>, Result extends TSchema = TEncodeType<TemplateLiteral, Right, Pattern>> = Result;
+type TEncodeEnum<Types extends TEnumValue[], Right extends TSchema[], Pattern extends string, Variants extends TSchema[] = TEnumValuesToVariants<Types>> = TEncodeUnion<Variants, Right, Pattern>;
+type TEncodeUnion<Types extends TSchema[], Right extends TSchema[], Pattern extends string, Result extends string[] = []> = Types extends [infer Head extends TSchema, ...infer Tail extends TSchema[]] ? TEncodeUnion<Tail, Right, Pattern, [...Result, TEncodeType<Head, [], ''>]> : TEncodeTypes<Right, `${Pattern}(${TJoinString<Result>})`>;
+type TEncodeType<Type extends TSchema, Right extends TSchema[], Pattern extends string> = (Type extends TEnum<infer Values extends TEnumValue[]> ? TEncodeEnum<Values, Right, Pattern> : Type extends TInteger ? TEncodeInteger<Right, Pattern> : Type extends TLiteral<infer Value extends TLiteralValue> ? TEncodeLiteral<Value, Right, Pattern> : Type extends TBigInt ? TEncodeBigInt<Right, Pattern> : Type extends TBoolean ? TEncodeBoolean<Right, Pattern> : Type extends TNumber ? TEncodeNumber<Right, Pattern> : Type extends TString ? TEncodeString<Right, Pattern> : Type extends TTemplateLiteral<infer TemplatePattern extends string> ? TEncodeTemplateLiteral<TemplatePattern, Right, Pattern> : Type extends TTemplateLiteralDeferred<infer Types extends TSchema[]> ? TEncodeTemplateLiteralDeferred<Types, Right, Pattern> : Type extends TUnion<infer Types extends TSchema[]> ? TEncodeUnion<Types, Right, Pattern> : typeof NeverPattern);
+type TEncodeTypes<Types extends TSchema[], Pattern extends string> = (Types extends [infer Left extends TSchema, ...infer Right extends TSchema[]] ? TEncodeType<Left, Right, Pattern> : Pattern);
+type TEncodePattern<Types extends TSchema[], Encoded extends string = TEncodeTypes<Types, ''>, Result extends string = `^${Encoded}$`> = Result;
+/** Encodes a TemplateLiteral type sequence into a TemplateLiteral */
+export type TTemplateLiteralEncode<Types extends TSchema[], Pattern extends string = TEncodePattern<Types>, Result extends TSchema = TTemplateLiteral<Pattern>> = Result;
+/** Encodes a TemplateLiteral type sequence into a TemplateLiteral */
+export declare function TemplateLiteralEncode<Types extends TSchema[]>(types: [...Types]): TTemplateLiteralEncode<Types>;
+export {};

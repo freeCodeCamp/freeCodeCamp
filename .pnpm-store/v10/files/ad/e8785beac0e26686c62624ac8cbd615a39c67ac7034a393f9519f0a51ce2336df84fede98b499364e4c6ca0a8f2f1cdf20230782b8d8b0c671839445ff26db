@@ -1,0 +1,12 @@
+name: 'Tests: node.js < 10'
+
+on: [pull_request, push]
+
+jobs:
+  tests:
+    uses: ljharb/actions/.github/workflows/node.yml@main
+    with:
+      range: '>= 0.10 < 10'
+      type: minors
+      command: npm run tests-only
+      skip-ls-check: true

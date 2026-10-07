@@ -1,0 +1,15 @@
+<html>
+
+<head>
+  <title>inheritance test</title>
+</head>
+<script>var Hogan = {};</script>
+<script src="./lib/template.js"></script>
+<script src="./lib/compiler.js"></script>
+<script src="inheritance.js"></script>
+<body>
+
+hmm
+
+</body>
+</html>

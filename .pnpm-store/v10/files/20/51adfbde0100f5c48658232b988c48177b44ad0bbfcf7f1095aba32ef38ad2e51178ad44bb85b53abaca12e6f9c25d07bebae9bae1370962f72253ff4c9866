@@ -1,0 +1,26 @@
+import React from 'react';
+import type { SearchBoxProps as SearchBoxUiComponentProps } from '../ui/SearchBox';
+import type { UseSearchBoxProps } from 'react-instantsearch-core';
+type UiProps = Pick<SearchBoxUiComponentProps, 'inputRef' | 'isSearchStalled' | 'onChange' | 'onReset' | 'onSubmit' | 'onAiModeClick' | 'value' | 'autoFocus' | 'translations'>;
+export type SearchBoxProps = Omit<SearchBoxUiComponentProps, Exclude<keyof UiProps, 'onSubmit' | 'autoFocus'>> & UseSearchBoxProps & {
+    /**
+     * Whether to trigger the search only on submit.
+     * @default true
+     */
+    searchAsYouType?: boolean;
+    /**
+     * Whether to update the search state in the middle of a
+     * composition session.
+     * @default false
+     */
+    ignoreCompositionEvents?: boolean;
+    /**
+     * When true, renders an AI mode button inside the search box
+     * that opens the Chat widget and sends the current query.
+     * Requires a Chat widget on the same index.
+     */
+    aiMode?: boolean;
+    translations?: Partial<UiProps['translations']>;
+};
+export declare function SearchBox({ queryHook, searchAsYouType, ignoreCompositionEvents, aiMode, translations, ...props }: SearchBoxProps): React.JSX.Element;
+export {};

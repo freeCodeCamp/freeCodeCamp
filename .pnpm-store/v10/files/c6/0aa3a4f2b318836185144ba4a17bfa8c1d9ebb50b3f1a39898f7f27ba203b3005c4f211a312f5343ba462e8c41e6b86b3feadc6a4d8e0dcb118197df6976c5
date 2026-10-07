@@ -1,0 +1,23 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TParameter } from '../../types/parameter.mjs';
+import { type TCallConstruct } from '../../types/call.mjs';
+import { type TRef } from '../../types/ref.mjs';
+import { type TGeneric } from '../../types/generic.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TEvaluateUnion } from '../evaluate/index.mjs';
+import { type TInstantiateType } from '../instantiate.mjs';
+import { type TInstantiateTypes } from '../instantiate.mjs';
+import { type TState } from '../instantiate.mjs';
+import { type TDistributeArguments } from './distribute_arguments.mjs';
+import { type TResolveTarget } from './resolve_target.mjs';
+import { type TResolveArgumentsContext } from './resolve_arguments.mjs';
+type TPeek<State extends TState, Result extends string = State['callstack'] extends [...infer _ extends string[], infer Top extends string] ? Top : ''> = Result;
+type TIsTailCall<State extends TState, Name extends string, Result extends boolean = TPeek<State> extends Name ? true : false> = Result;
+type TCallDispatch<Context extends TProperties, State extends TState, Target extends TRef, Parameters extends TParameter[], Expression extends TSchema, Arguments extends TSchema[], ArgumentsContext extends TProperties = TResolveArgumentsContext<Context, State, Parameters, Arguments>, ReturnType extends TSchema = TInstantiateType<ArgumentsContext, {
+    callstack: [...State['callstack'], Target['$ref']];
+}, Expression>> = TInstantiateType<Context, State, ReturnType>;
+type TCallDistributed<Context extends TProperties, State extends TState, Target extends TRef, Parameters extends TParameter[], Expression extends TSchema, DistributedArguments extends TSchema[][], Result extends TSchema[] = []> = (DistributedArguments extends [infer Arguments extends TSchema[], ...infer DistributedArguments extends TSchema[][]] ? TCallDispatch<Context, State, Target, Parameters, Expression, Arguments> extends infer ReturnType extends TSchema ? TCallDistributed<Context, State, Target, Parameters, Expression, DistributedArguments, [...Result, ReturnType]> : never : Result);
+type TCallImmediate<Context extends TProperties, State extends TState, Target extends TRef, Parameters extends TParameter[], Expression extends TSchema, InstantiatedArguments extends TSchema[], DistributedArguments extends TSchema[][] = TDistributeArguments<Parameters, InstantiatedArguments, Expression>, ReturnTypes extends TSchema[] = TCallDistributed<Context, State, Target, Parameters, Expression, DistributedArguments>, Result extends TSchema = ReturnTypes['length'] extends 1 ? ReturnTypes[0] : TEvaluateUnion<ReturnTypes>> = Result;
+export type TCallInstantiate<Context extends TProperties, State extends TState, Target extends TSchema, Arguments extends TSchema[], InstantiatedArguments extends TSchema[] = TInstantiateTypes<Context, State, Arguments>, Resolved extends [string, TSchema] = TResolveTarget<Context, Target, Arguments>, Name extends string = Resolved[0], Type extends TSchema = Resolved[1], Result extends TSchema = (Type extends TGeneric<infer Parameters extends TParameter[], infer Expression extends TSchema> ? TIsTailCall<State, Name> extends true ? TCallConstruct<TRef<Name>, InstantiatedArguments> : TCallImmediate<Context, State, TRef<Name>, Parameters, Expression, InstantiatedArguments> : TCallConstruct<Target, InstantiatedArguments>)> = Result;
+export declare function CallInstantiate<Context extends TProperties, State extends TState, Target extends TSchema, Arguments extends TSchema[]>(context: Context, state: State, target: Target, arguments_: [...Arguments]): TCallInstantiate<Context, State, Target, Arguments>;
+export {};

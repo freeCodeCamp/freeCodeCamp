@@ -1,0 +1,169 @@
+{
+    "name": "@types/react",
+    "version": "16.14.56",
+    "description": "TypeScript definitions for react",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Asana",
+            "url": "https://asana.com"
+        },
+        {
+            "name": "AssureSign",
+            "url": "http://www.assuresign.com"
+        },
+        {
+            "name": "Microsoft",
+            "url": "https://microsoft.com"
+        },
+        {
+            "name": "John Reilly",
+            "githubUsername": "johnnyreilly",
+            "url": "https://github.com/johnnyreilly"
+        },
+        {
+            "name": "Benoit Benezech",
+            "githubUsername": "bbenezech",
+            "url": "https://github.com/bbenezech"
+        },
+        {
+            "name": "Patricio Zavolinsky",
+            "githubUsername": "pzavolinsky",
+            "url": "https://github.com/pzavolinsky"
+        },
+        {
+            "name": "Eric Anderson",
+            "githubUsername": "ericanderson",
+            "url": "https://github.com/ericanderson"
+        },
+        {
+            "name": "Dovydas Navickas",
+            "githubUsername": "DovydasNavickas",
+            "url": "https://github.com/DovydasNavickas"
+        },
+        {
+            "name": "Josh Rutherford",
+            "githubUsername": "theruther4d",
+            "url": "https://github.com/theruther4d"
+        },
+        {
+            "name": "Guilherme Hübner",
+            "githubUsername": "guilhermehubner",
+            "url": "https://github.com/guilhermehubner"
+        },
+        {
+            "name": "Ferdy Budhidharma",
+            "githubUsername": "ferdaber",
+            "url": "https://github.com/ferdaber"
+        },
+        {
+            "name": "Johann Rakotoharisoa",
+            "githubUsername": "jrakotoharisoa",
+            "url": "https://github.com/jrakotoharisoa"
+        },
+        {
+            "name": "Olivier Pascal",
+            "githubUsername": "pascaloliv",
+            "url": "https://github.com/pascaloliv"
+        },
+        {
+            "name": "Martin Hochel",
+            "githubUsername": "hotell",
+            "url": "https://github.com/hotell"
+        },
+        {
+            "name": "Frank Li",
+            "githubUsername": "franklixuefei",
+            "url": "https://github.com/franklixuefei"
+        },
+        {
+            "name": "Jessica Franco",
+            "githubUsername": "Jessidhia",
+            "url": "https://github.com/Jessidhia"
+        },
+        {
+            "name": "Saransh Kataria",
+            "githubUsername": "saranshkataria",
+            "url": "https://github.com/saranshkataria"
+        },
+        {
+            "name": "Kanitkorn Sujautra",
+            "githubUsername": "lukyth",
+            "url": "https://github.com/lukyth"
+        },
+        {
+            "name": "Sebastian Silbermann",
+            "githubUsername": "eps1lon",
+            "url": "https://github.com/eps1lon"
+        },
+        {
+            "name": "Kyle Scully",
+            "githubUsername": "zieka",
+            "url": "https://github.com/zieka"
+        },
+        {
+            "name": "Cong Zhang",
+            "githubUsername": "dancerphil",
+            "url": "https://github.com/dancerphil"
+        },
+        {
+            "name": "Dimitri Mitropoulos",
+            "githubUsername": "dimitropoulos",
+            "url": "https://github.com/dimitropoulos"
+        },
+        {
+            "name": "JongChan Choi",
+            "githubUsername": "disjukr",
+            "url": "https://github.com/disjukr"
+        },
+        {
+            "name": "Victor Magalhães",
+            "githubUsername": "vhfmag",
+            "url": "https://github.com/vhfmag"
+        },
+        {
+            "name": "Dale Tan",
+            "githubUsername": "hellatan",
+            "url": "https://github.com/hellatan"
+        },
+        {
+            "name": "Priyanshu Rav",
+            "githubUsername": "priyanshurav",
+            "url": "https://github.com/priyanshurav"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "exports": {
+        ".": {
+            "types": {
+                "default": "./index.d.ts"
+            }
+        },
+        "./jsx-runtime": {
+            "types": {
+                "default": "./jsx-runtime.d.ts"
+            }
+        },
+        "./jsx-dev-runtime": {
+            "types": {
+                "default": "./jsx-dev-runtime.d.ts"
+            }
+        },
+        "./package.json": "./package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/prop-types": "*",
+        "@types/scheduler": "*",
+        "csstype": "^3.0.2"
+    },
+    "typesPublisherContentHash": "f467800b8e2a327aa4679c4b48cdc407c89e999587cc082eb7410ac909e0e0f1",
+    "typeScriptVersion": "4.6"
+}

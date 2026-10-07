@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/DefaultServices.js",
+  "module": "../dist/esm/DefaultServices.js",
+  "types": "../dist/dts/DefaultServices.d.ts"
+}

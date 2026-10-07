@@ -1,0 +1,52 @@
+# `MD052` - Reference links and images should use a label that is defined
+
+Tags: `images`, `links`
+
+Aliases: `reference-links-images`
+
+Parameters:
+
+- `ignored_labels`: Ignored link labels (`string[]`, default `["x"]`)
+- `shortcut_syntax`: Include shortcut syntax (`boolean`, default `false`)
+
+Links and images in Markdown can provide the link destination or image source
+at the time of use or can define it elsewhere and use a label for reference.
+The reference format is convenient for keeping paragraph text clutter-free
+and makes it easy to reuse the same URL in multiple places.
+
+There are three kinds of reference links and images:
+
+```markdown
+Full: [text][label]
+Collapsed: [label][]
+Shortcut: [label]
+
+Full: ![text][image]
+Collapsed: ![image][]
+Shortcut: ![image]
+
+[label]: https://example.com/label
+[image]: https://example.com/image
+```
+
+A link or image renders correctly when the corresponding label is defined, but
+displays as text with brackets when the label is not present. By default, this
+rule warns of undefined labels for "full" and "collapsed" reference syntax but
+not for "shortcut" syntax because it is ambiguous.
+
+The text `[example]` could be a shortcut link or the text "example" in brackets,
+so "shortcut" syntax is ignored by default. To include "shortcut" syntax, set
+the `include_shortcut` parameter to `true`. Note that doing so produces warnings
+for *all* text in the document that *could* be a shortcut. If bracketed text is
+intentional, brackets can be escaped with the `\` character: `\[example\]`.
+
+If there are link labels that are deliberately unreferenced, they can be ignored
+by setting the `ignored_labels` parameter to the list of strings to ignore. The
+default value of this parameter ignores the checkbox syntax used by
+[GitHub Flavored Markdown task list items][gfm-tasklist]:
+
+```markdown
+- [x] Checked task list item
+```
+
+[gfm-tasklist]: https://github.github.com/gfm/#task-list-items-extension-

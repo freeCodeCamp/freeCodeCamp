@@ -1,0 +1,61 @@
+{
+  "name": "set-cookie-parser",
+  "version": "3.1.0",
+  "description": "Parses set-cookie headers into objects",
+  "homepage": "https://github.com/nfriedly/set-cookie-parser",
+  "repository": "nfriedly/set-cookie-parser",
+  "author": {
+    "name": "Nathan Friedly",
+    "url": "http://nfriedly.com/"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "main": "./dist/set-cookie.cjs",
+  "module": "./lib/set-cookie.js",
+  "types": "./lib/set-cookie.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./lib/set-cookie.d.ts",
+      "module-sync": "./lib/set-cookie.js",
+      "import": "./lib/set-cookie.js",
+      "require": "./dist/set-cookie.cjs"
+    }
+  },
+  "sideEffects": false,
+  "keywords": [
+    "set-cookie",
+    "set",
+    "cookie",
+    "cookies",
+    "header",
+    "parse",
+    "parser"
+  ],
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.1.7",
+    "mocha": "^11.7.5",
+    "prettier": "^3.2.5",
+    "pretty-quick": "^4.0.0",
+    "sinon": "^21.0.3",
+    "tsd": "^0.33.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ignore-pattern '!.eslintrc.js'",
+    "test": "npm run build && npm run lint && mocha && npm run typecheck",
+    "typecheck": "tsd",
+    "autofix": "npm run lint -- --fix",
+    "format": "npm run lint -- --fix",
+    "build": "node ./build-cjs.js",
+    "prepare": "husky"
+  },
+  "license": "MIT",
+  "prettier": {
+    "trailingComma": "es5"
+  }
+}

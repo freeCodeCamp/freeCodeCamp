@@ -1,0 +1,1 @@
+{"version":3,"file":"DefinitionType.d.ts","sourceRoot":"","sources":["../../src/definition/DefinitionType.ts"],"names":[],"mappings":"AAAA,aAAK,cAAc;IACjB,WAAW,gBAAgB;IAC3B,SAAS,cAAc;IACvB,YAAY,iBAAiB;IAC7B,sBAAsB,2BAA2B;IACjD,aAAa,kBAAkB;IAC/B,SAAS,cAAc;IACvB,UAAU,eAAe;IACzB,YAAY,qBAAqB;IACjC,YAAY,iBAAiB;IAC7B,IAAI,SAAS;IACb,QAAQ,aAAa;CACtB;AAED,OAAO,EAAE,cAAc,EAAE,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"nullThrows.d.ts","sourceRoot":"","sources":["../../src/eslint-utils/nullThrows.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,QAAA,MAAM,iBAAiB;;mCAEC,MAAM,SAAS,MAAM;CAEnC,CAAC;AAEX;;;GAGG;AACH,iBAAS,UAAU,CAAC,CAAC,EAAE,KAAK,EAAE,CAAC,GAAG,IAAI,GAAG,SAAS,EAAE,OAAO,EAAE,MAAM,GAAG,CAAC,CAYtE;AAED,OAAO,EAAE,UAAU,EAAE,iBAAiB,EAAE,CAAC"}

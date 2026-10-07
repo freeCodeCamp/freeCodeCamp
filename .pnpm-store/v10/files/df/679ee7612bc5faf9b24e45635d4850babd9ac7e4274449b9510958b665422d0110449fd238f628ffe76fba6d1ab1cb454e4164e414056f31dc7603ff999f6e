@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/parseJSON/index.js",
+  "typings": "../../typings.d.ts"
+}

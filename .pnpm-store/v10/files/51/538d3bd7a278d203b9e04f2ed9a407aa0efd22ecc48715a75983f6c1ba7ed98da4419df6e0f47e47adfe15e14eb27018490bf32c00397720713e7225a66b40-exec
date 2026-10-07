@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+    - '0.11'
+    - '0.10'
+matrix:
+    allow_failures:
+        - node_js: '0.11'
+install:
+    - npm install
+notifications:
+    email: false

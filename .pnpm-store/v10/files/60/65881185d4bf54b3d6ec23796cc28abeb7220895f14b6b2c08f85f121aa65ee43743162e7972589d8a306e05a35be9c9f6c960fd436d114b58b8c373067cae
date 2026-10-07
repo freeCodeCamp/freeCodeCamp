@@ -1,0 +1,100 @@
+{
+  "name": "@codesandbox/sandpack-react",
+  "version": "2.20.0",
+  "description": "",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codesandbox/sandpack"
+  },
+  "license": "Apache-2.0",
+  "author": "CodeSandbox",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./unstyled": {
+      "types": "./dist/unstyled.d.ts",
+      "import": "./dist/unstyled/index.mjs",
+      "require": "./dist/unstyled/index.js"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "prebuild": "yarn run clean",
+    "test": "TEST_ENV=true jest . --transformIgnorePatterns \"node_modules/(?!@codemirror)/\" --modulePathIgnorePatterns \"e2e\"",
+    "lint": "eslint '**/*.ts?(x)' --fix",
+    "build": "rollup -c",
+    "build:publish": "yarn build",
+    "dev": "storybook dev -p 6006 --quiet",
+    "typecheck": "tsc",
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx}'",
+    "format:check": "prettier --check '**/*.{ts,tsx}'"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.4.0",
+    "@codemirror/commands": "^6.1.3",
+    "@codemirror/lang-css": "^6.0.1",
+    "@codemirror/lang-html": "^6.4.0",
+    "@codemirror/lang-javascript": "^6.1.2",
+    "@codemirror/language": "^6.3.2",
+    "@codemirror/state": "^6.2.0",
+    "@codemirror/view": "^6.7.1",
+    "@codesandbox/sandpack-client": "^2.19.8",
+    "@lezer/highlight": "^1.1.3",
+    "@react-hook/intersection-observer": "^3.1.1",
+    "@stitches/core": "^1.2.6",
+    "anser": "^2.1.1",
+    "clean-set": "^1.1.2",
+    "dequal": "^2.0.2",
+    "escape-carriage": "^1.3.1",
+    "lz-string": "^1.4.4",
+    "react-devtools-inline": "4.4.0",
+    "react-is": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@codemirror/lang-python": "^6.1.0",
+    "@codemirror/legacy-modes": "^6.3.1",
+    "@codesandbox/sandpack-themes": "^2.0.21",
+    "@storybook/react": "^7.5.1",
+    "@storybook/react-vite": "^7.5.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/fs-extra": "^5.0.4",
+    "@types/glob": "^5.0.35",
+    "@types/lz-string": "^1.3.34",
+    "@types/node": "^9.4.6",
+    "@types/react": "^18.0.15",
+    "acorn-walk": "^8.2.0",
+    "astring": "^1.8.4",
+    "babel-loader": "^7.1.5",
+    "rollup-plugin-filesize": "^10.0.0",
+    "storybook": "^7.5.1",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18 || ^19",
+    "react-dom": "^16.8.0 || ^17 || ^18 || ^19"
+  },
+  "gitHead": "7d60a4334980eef304d53b1c3df371ed6dbcf491"
+}

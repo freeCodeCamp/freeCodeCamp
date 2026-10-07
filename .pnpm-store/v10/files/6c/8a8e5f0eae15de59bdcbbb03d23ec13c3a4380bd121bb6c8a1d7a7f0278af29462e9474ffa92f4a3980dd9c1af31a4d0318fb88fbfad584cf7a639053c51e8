@@ -1,0 +1,54 @@
+{
+  "name": "postcss-modules-values",
+  "version": "4.0.0",
+  "description": "PostCSS plugin for CSS Modules to pass arbitrary values between your module files",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": "^10 || ^12 || >= 14"
+  },
+  "scripts": {
+    "prettier": "prettier -l --ignore-path .gitignore .",
+    "eslint": "eslint --ignore-path .gitignore .",
+    "lint": "yarn eslint && yarn prettier",
+    "test:only": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --collectCoverageFrom=\"src/**/*\"",
+    "pretest": "yarn lint",
+    "test": "yarn test:coverage",
+    "prepublishOnly": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/css-modules/postcss-modules-values.git"
+  },
+  "keywords": [
+    "css",
+    "modules",
+    "postcss"
+  ],
+  "author": "Glen Maddern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/css-modules/postcss-modules-values/issues"
+  },
+  "homepage": "https://github.com/css-modules/postcss-modules-values#readme",
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "husky": "^4.3.0",
+    "jest": "^26.5.2",
+    "lint-staged": "^10.4.0",
+    "postcss": "^8.1.0",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "icss-utils": "^5.0.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.0"
+  }
+}

@@ -1,0 +1,1116 @@
+{
+  "lang": "zh_CN",
+  "rules": {
+    "accesskeys": {
+      "description": "确保每个 accesskey 属性值都是唯一的",
+      "help": "accesskey 属性值应当唯一"
+    },
+    "area-alt": {
+      "description": "确保图像映射中的 <area> 元素有替代文本",
+      "help": "<area> 元素必须有替代文本"
+    },
+    "aria-allowed-attr": {
+      "description": "确保元素的角色支持其 ARIA 属性",
+      "help": "元素仅能使用受支持的 ARIA 属性"
+    },
+    "aria-allowed-role": {
+      "description": "确保 role 属性值符合所属元素",
+      "help": "ARIA 角色应该符合元素"
+    },
+    "aria-braille-equivalent": {
+      "description": "确保 aria-braillelabel 和 aria-brailleroledescription 有对应的非盲文的标签和描述",
+      "help": "aria-braille 相关属性必须有非盲文的对应属性"
+    },
+    "aria-command-name": {
+      "description": "确保每个 ARIA 按钮、链接和菜单项都有可访问名称",
+      "help": "ARIA 指令必须有一个可访问名称"
+    },
+    "aria-conditional-attr": {
+      "description": "确保 ARIA 属性的使用符合所属元素角色的特定规范",
+      "help": "ARIA 属性的使用必须符合元素的特定角色"
+    },
+    "aria-deprecated-role": {
+      "description": "确保页面元素不使用已弃用的角色",
+      "help": "不得使用已弃用的 ARIA 角色"
+    },
+    "aria-dialog-name": {
+      "description": "确保每个 ARIA 对话框和警示框节点都有可访问的名称",
+      "help": "ARIA 对话框和警示框节点应当有可访问的名称"
+    },
+    "aria-hidden-body": {
+      "description": "确保 <body> 不存在 aria-hidden=\"true\"",
+      "help": "<body> 上不得存在 aria-hidden=\"true\""
+    },
+    "aria-hidden-focus": {
+      "description": "确保设置为 ARIA 隐藏的元素不可聚焦，且不包含可聚焦的元素",
+      "help": "被设定为 ARIA 隐藏的元素不可聚焦，且不包含可聚焦的元素"
+    },
+    "aria-input-field-name": {
+      "description": "确保每个 ARIA 输入字段都有可访问的名称",
+      "help": "ARIA 输入字段必须有可访问的名称"
+    },
+    "aria-meter-name": {
+      "description": "确保每个 ARIA 计量器节点都有可访问的名称",
+      "help": "ARIA 计量器节点必须有可访问的名称"
+    },
+    "aria-progressbar-name": {
+      "description": "确保每个 ARIA 进度条节点都有可访问的名称",
+      "help": "ARIA 进度条节点必须有可访问的名称"
+    },
+    "aria-prohibited-attr": {
+      "description": "确保 ARIA 属性没有被禁止用于某元素的角色",
+      "help": "元素只能使用允许的 ARIA 属性"
+    },
+    "aria-required-attr": {
+      "description": "确保拥有 ARIA 角色的元素包含了所有必需的 ARIA 属性",
+      "help": "必须提供必需的 ARIA 属性"
+    },
+    "aria-required-children": {
+      "description": "如果元素的ARIA角色需要子角色，确保该元素包含这些子元素",
+      "help": "某些 ARIA 角色必须包含特定的子元素"
+    },
+    "aria-required-parent": {
+      "description": "如果元素的ARIA角色需要父角色，确保该元素被这些父元素包含",
+      "help": "某些 ARIA 角色必须被特定的父元素包含"
+    },
+    "aria-roledescription": {
+      "description": "确保 aria-roledescription 仅用于有隐式或显式角色的元素",
+      "help": "aria-roledescription 必须用于有语义角色的元素"
+    },
+    "aria-roles": {
+      "description": "确保所有元素包含的 role 属性值都是有效的",
+      "help": "使用的 ARIA 角色属性值必须有效"
+    },
+    "aria-text": {
+      "description": "确保使用 role=\"text\" 的元素没有任何可聚焦后代",
+      "help": "\"role=text\" 应该没有任何可聚焦的后代"
+    },
+    "aria-toggle-field-name": {
+      "description": "确保每个 ARIA 切换字段都有可访问的名称",
+      "help": "ARIA 切换字段必须有可访问名称"
+    },
+    "aria-tooltip-name": {
+      "description": "确保每个 ARIA 工具提示节点都有一个可访问名称",
+      "help": "ARIA 工具提示节点必须有一个可访问名称"
+    },
+    "aria-treeitem-name": {
+      "description": "确保每个 ARIA 树项目节点都有一个可访问名称",
+      "help": "ARIA 树项目节点应有一个可访问名称"
+    },
+    "aria-valid-attr-value": {
+      "description": "确保所有 ARIA 属性值都是有效的",
+      "help": "ARIA 属性值必须有效"
+    },
+    "aria-valid-attr": {
+      "description": "确保以 aria- 开头的属性是有效的 ARIA 属性",
+      "help": "ARIA 属性名称必须有效"
+    },
+    "audio-caption": {
+      "description": "确保 <audio> 元素有字幕",
+      "help": "<audio> 元素必须有字幕轨道"
+    },
+    "autocomplete-valid": {
+      "description": "确保 autocomplete 属性正确且适合表单字段",
+      "help": "autocomplete 属性必须正确使用"
+    },
+    "avoid-inline-spacing": {
+      "description": "确保通过样式属性设置的文本间距可以通过自定义样式表进行调整",
+      "help": "内联文本间距必须能够通过自定义样式表调整"
+    },
+    "blink": {
+      "description": "确保不使用 <blink> 元素",
+      "help": "<blink> 元素已被弃用，不得使用"
+    },
+    "button-name": {
+      "description": "确保按钮有可辨识的文本",
+      "help": "按钮必须有可辨识的文本"
+    },
+    "bypass": {
+      "description": "确保每个页面至少有一种机制，使用户能够绕过导航直接跳转到内容",
+      "help": "页面必须有方法绕过重复的部分"
+    },
+    "color-contrast-enhanced": {
+      "description": "确保前景色与背景色之间的对比度满足 WCAG 2 AAA 增强对比度比率阈值",
+      "help": "元素必须满足增强的颜色对比度比率阈值"
+    },
+    "color-contrast": {
+      "description": "确保前景色与背景色之间的对比度满足 WCAG 2 AA 最小对比度比率阈值",
+      "help": "元素必须满足最小颜色对比度比率阈值"
+    },
+    "css-orientation-lock": {
+      "description": "确保内容不锁定于任何特定显示方向，并且在所有显示方向下都可操作",
+      "help": "CSS 媒体查询不得锁定显示方向"
+    },
+    "definition-list": {
+      "description": "确保 <dl> 元素结构正确",
+      "help": "<dl> 元素必须只直接包含按正确顺序排列的 <dt> 和 <dd> 组、<script>、<template> 或 <div> 元素"
+    },
+    "dlitem": {
+      "description": "确保 <dt> 和 <dd> 元素被 <dl> 包含",
+      "help": "<dt> 和 <dd> 元素必须被 <dl> 包含"
+    },
+    "document-title": {
+      "description": "确保每个 HTML 页面包含一个非空的 <title> 元素",
+      "help": "页面必须有 <title> 元素以帮助导航"
+    },
+    "duplicate-id-active": {
+      "description": "确保激活元素的每个 id 属性值是唯一的",
+      "help": "激活元素的 ID 必须唯一"
+    },
+    "duplicate-id-aria": {
+      "description": "确保在 ARIA 和标签中使用的每个 id 属性值是唯一的",
+      "help": "在 ARIA 和标签中使用的 ID 必须唯一"
+    },
+    "duplicate-id": {
+      "description": "确保每个 id 属性值是唯一的",
+      "help": "id 属性值必须是唯一的"
+    },
+    "empty-heading": {
+      "description": "确保标题有可辨识的文本",
+      "help": "标题不应该为空"
+    },
+    "empty-table-header": {
+      "description": "确保表格标题有可辨识的文本",
+      "help": "表格标题文本不应该为空"
+    },
+    "focus-order-semantics": {
+      "description": "确保焦点顺序中的元素有适合交互内容的角色",
+      "help": "焦点顺序中的元素应该有适当的角色"
+    },
+    "form-field-multiple-labels": {
+      "description": "确保表单字段没有多个标签元素",
+      "help": "表单字段不得有多个标签元素"
+    },
+    "frame-focusable-content": {
+      "description": "确保有可聚焦内容的 <frame> 和 <iframe> 元素没有设置 tabindex=-1",
+      "help": "有可聚焦内容的框架不得设置 tabindex=-1"
+    },
+    "frame-tested": {
+      "description": "确保 <iframe> 和 <frame> 元素包含 axe-core 脚本",
+      "help": "框架应该使用 axe-core 进行测试"
+    },
+    "frame-title-unique": {
+      "description": "确保 <iframe> 和 <frame> 元素包含唯一的 title 属性",
+      "help": "框架必须有一个唯一的 title 属性"
+    },
+    "frame-title": {
+      "description": "确保 <iframe> 和 <frame> 元素有可访问名称",
+      "help": "框架必须有可访问名称"
+    },
+    "heading-order": {
+      "description": "确保标题的顺序在语义上是正确的",
+      "help": "标题级别只应递增一"
+    },
+    "hidden-content": {
+      "description": "向用户通报隐藏内容",
+      "help": "页面上的隐藏内容应该被分析"
+    },
+    "html-has-lang": {
+      "description": "确保每个 HTML 页面有 lang 属性",
+      "help": "<html> 元素必须有一个 lang 属性"
+    },
+    "html-lang-valid": {
+      "description": "确保 <html> 元素的 lang 属性包含有效值",
+      "help": "<html> 元素的 lang 属性必须有一个有效值"
+    },
+    "html-xml-lang-mismatch": {
+      "description": "确保包含有效的 lang 和 xml:lang 属性的 HTML 元素在页面的基础语言上一致",
+      "help": "有 lang 和 xml:lang 属性的 HTML 元素必须有相同的基础语言"
+    },
+    "identical-links-same-purpose": {
+      "description": "确保有相同可访问名称的链接服务于类似的目的",
+      "help": "有相同名称的链接必须有相似的目的"
+    },
+    "image-alt": {
+      "description": "确保 <img> 元素有替代文本或 role 属性为 \"none\" 或 \"presentation\"",
+      "help": "图像必须有替代文本"
+    },
+    "image-redundant-alt": {
+      "description": "确保图像的替代文本不会作为文本重复",
+      "help": "图像的替代文本不应作为文本重复"
+    },
+    "input-button-name": {
+      "description": "确保输入按钮有可辨识的文本",
+      "help": "输入按钮必须有可辨识的文本"
+    },
+    "input-image-alt": {
+      "description": "确保 <input type=\"image\"> 元素有替代文本",
+      "help": "图像按钮必须有替代文本"
+    },
+    "label-content-name-mismatch": {
+      "description": "确保通过其内容标记的元素必须将其可见文本作为其可访问名称的一部分",
+      "help": "元素必须将其可见文本作为其可访问名称的一部分"
+    },
+    "label-title-only": {
+      "description": "确保每个表单元素都有一个可见的标签，并且不仅仅是使用隐藏的标签或 title 或 aria-describedby 属性来标记",
+      "help": "表单元素应该有一个可见的标签"
+    },
+    "label": {
+      "description": "确保每个表单元素都有标签",
+      "help": "表单元素必须有标签"
+    },
+    "landmark-banner-is-top-level": {
+      "description": "确保 banner landmark 位于顶层",
+      "help": "Banner landmark 不应该包含在另一个landmark中"
+    },
+    "landmark-complementary-is-top-level": {
+      "description": "确保 complementary landmark 或 aside 位于顶层",
+      "help": "Aside 不应该包含在另一个 landmark 中"
+    },
+    "landmark-contentinfo-is-top-level": {
+      "description": "确保 contentinfo landmark 位于顶层",
+      "help": "Contentinfo landmark 不应该包含在另一个 landmark 中"
+    },
+    "landmark-main-is-top-level": {
+      "description": "确保主要 landmark 位于顶层",
+      "help": "主要 landmark 不应该包含在另一个 landmark 中"
+    },
+    "landmark-no-duplicate-banner": {
+      "description": "确保页面最多只有一个 banner landmark",
+      "help": "页面不应有多于一个 banner landmark"
+    },
+    "landmark-no-duplicate-contentinfo": {
+      "description": "确保页面最多有一个 contentinfo landmark",
+      "help": "页面不应有多于一个 contentinfo landmark"
+    },
+    "landmark-no-duplicate-main": {
+      "description": "确保页面最多有一个主要 landmark",
+      "help": "页面不应有多于一个主要 landmark"
+    },
+    "landmark-one-main": {
+      "description": "确保页面有一个主要 landmark",
+      "help": "页面应有一个主要 landmark"
+    },
+    "landmark-unique": {
+      "help": "确保 landmark 是唯一的",
+      "description": "landmark 应有唯一的角色或角色/标签/标题（即可访问名称）组合"
+    },
+    "link-in-text-block": {
+      "description": "确保链接以不依赖颜色的方式与周围文本区分开",
+      "help": "链接必须能够不依赖颜色而被区分"
+    },
+    "link-name": {
+      "description": "确保链接有可辨识的文本",
+      "help": "链接必须有可辨识的文本"
+    },
+    "list": {
+      "description": "确保列表结构正确",
+      "help": "<ul> 和 <ol> 只能直接包含 <li>、<script> 或 <template> 元素"
+    },
+    "listitem": {
+      "description": "确保 <li> 元素的使用有语义性",
+      "help": "<li> 元素必须包含在 <ul> 或 <ol> 中"
+    },
+    "marquee": {
+      "description": "确保不使用 <marquee> 元素",
+      "help": "<marquee> 元素已被弃用，不得使用"
+    },
+    "meta-refresh-no-exceptions": {
+      "description": "确保不使用 <meta http-equiv=\"refresh\"> 进行延迟刷新",
+      "help": "不得使用延迟刷新"
+    },
+    "meta-refresh": {
+      "description": "确保不使用 <meta http-equiv=\"refresh\"> 进行少于20小时的延迟刷新",
+      "help": "不得使用少于20小时的延迟刷新"
+    },
+    "meta-viewport-large": {
+      "description": "确保 <meta name=\"viewport\"> 可以足够缩放",
+      "help": "用户应能够将文本缩放至 500%"
+    },
+    "meta-viewport": {
+      "description": "确保 <meta name=\"viewport\"> 未禁用文本缩放",
+      "help": "不得禁用缩放"
+    },
+    "nested-interactive": {
+      "description": "确保交互控件不被嵌套，因为它们不总是被屏幕阅读器宣布，或可能导致辅助技术的焦点问题",
+      "help": "交互控件不得嵌套"
+    },
+    "no-autoplay-audio": {
+      "description": "确保 <video> 或 <audio> 元素不在没有停止或静音控制机制的情况下自动播放超过 3 秒的音频",
+      "help": "<video> 或 <audio> 元素不得自动播放"
+    },
+    "object-alt": {
+      "description": "确保 <object> 元素有替代文本",
+      "help": "<object> 元素必须有替代文本"
+    },
+    "p-as-heading": {
+      "description": "确保不使用加粗、斜体文本和字体大小来将 <p> 元素样式化为标题",
+      "help": "样式化的 <p> 元素不得作为标题"
+    },
+    "page-has-heading-one": {
+      "description": "确保页面或至少其中一个框架包含一个一级标题",
+      "help": "页面应包含一个一级标题"
+    },
+    "presentation-role-conflict": {
+      "description": "标记为展示目的的元素不应有全局 ARIA 或 tabindex 属性，以确保所有屏幕阅读器忽略它们",
+      "help": "确保标记为展示目的的元素始终被忽略"
+    },
+    "region": {
+      "description": "确保所有页面内容都包含在 landmark 中",
+      "help": "所有页面内容应包含在 landmark 中"
+    },
+    "role-img-alt": {
+      "description": "确保 [role=\"img\"] 元素有替代文本",
+      "help": "[role=\"img\"] 元素必须有一个替代文本"
+    },
+    "scope-attr-valid": {
+      "description": "确保表格中正确使用 scope 属性",
+      "help": "scope 属性应正确使用"
+    },
+    "scrollable-region-focusable": {
+      "description": "确保有滚动内容的元素可以通过键盘访问",
+      "help": "可滚动区域必须可以键盘访问"
+    },
+    "select-name": {
+      "description": "确保 select 元素有一个可访问的名称",
+      "help": "select 元素必须有一个可访问的名称"
+    },
+    "server-side-image-map": {
+      "description": "确保不使用服务器端图像映射",
+      "help": "不得使用服务器端图像映射"
+    },
+    "skip-link": {
+      "description": "确保所有跳过链接有一个可聚焦的目标",
+      "help": "跳过链接的目标应存在且可聚焦"
+    },
+    "svg-img-alt": {
+      "description": "确保有 img、graphics-document 或 graphics-symbol 角色的 <svg> 元素有可访问文本",
+      "help": "有 img 角色的 <svg> 元素必须有一个替代文本"
+    },
+    "tabindex": {
+      "description": "确保 tabindex 属性值不大于0",
+      "help": "元素的 tabindex 不应大于零"
+    },
+    "table-duplicate-name": {
+      "description": "确保 <caption> 元素不包含与 summary 属性相同的文本",
+      "help": "表格的 summary 和 caption 不应相同"
+    },
+    "table-fake-caption": {
+      "description": "确保带有标题的表格使用 <caption> 元素",
+      "help": "数据单元格或标题单元格不得用于为数据表提供标题"
+    },
+    "target-size": {
+      "description": "确保触摸目标有足够的大小和空间",
+      "help": "所有触摸目标的大小必须为 24px，或留出足够的空间"
+    },
+    "td-has-header": {
+      "description": "确保大于 3 x 3 的 <table> 中每个非空数据单元格都有一个或多个表头",
+      "help": "较大 <table> 中的非空 <td> 元素必须有关联的表头"
+    },
+    "td-headers-attr": {
+      "description": "确保使用 headers 属性的表格中的每个单元格仅引用该表中的其他单元格",
+      "help": "使用 headers 属性的表格单元格必须仅引用同一表中的单元格"
+    },
+    "th-has-data-cells": {
+      "description": "确保 <th> 元素和有 role=columnheader/rowheader 角色的元素描述了它们所描述的数据单元格",
+      "help": "数据表中的表头必须引用数据单元格"
+    },
+    "valid-lang": {
+      "description": "确保 lang 属性值有效",
+      "help": "lang 属性值必须有效"
+    },
+    "video-caption": {
+      "description": "确保 <video> 元素有字幕",
+      "help": "<video> 元素必须有字幕"
+    }
+  },
+  "checks": {
+    "abstractrole": {
+      "pass": "未使用抽象角色",
+      "fail": {
+        "singular": "抽象角色不能直接使用：${data.values}",
+        "plural": "抽象角色不能直接使用：${data.values}"
+      }
+    },
+    "aria-allowed-attr": {
+      "pass": "所定义的角色使用的 ARIA 属性都是正确的",
+      "fail": {
+        "singular": "不允许使用 ARIA 属性: ${data.values}",
+        "plural": "不允许使用 ARIA 属性: ${data.values}"
+      },
+      "incomplete": "检查如果忽略该元素的 ARIA 属性，会不会出现问题: ${data.values}"
+    },
+    "aria-allowed-role": {
+      "pass": "给定元素允许 ARIA 角色",
+      "fail": {
+        "singular": "给定元素不允许 ARIA 角色 ${data.values}",
+        "plural": "给定元素不允许 ARIA 角色 ${data.values}"
+      },
+      "incomplete": {
+        "singular": "当元素可见时，必须删除 ARIA 角色 ${data.values}，因为该元素不允许该角色",
+        "plural": "当元素可见时，必须删除 ARIA 角色 ${data.values}，因为该元素不允许这些角色"
+      }
+    },
+    "aria-busy": {
+      "pass": "元素有 aria-busy 属性",
+      "fail": "元素在显示加载时使用 aria-busy=\"true\""
+    },
+    "aria-conditional-attr": {
+      "pass": "允许使用 ARIA 属性",
+      "fail": {
+        "checkbox": "删除 aria-checked 属性，或将其设置为\"${data.checkState}\"以匹配真实复选框状态",
+        "rowSingular": "树形表格的行 treegrid rows 支持此属性，但 ${data.ownerRole} 不支持：${data.invalidAttrs}",
+        "rowPlural": "树形表格的行 treegrid rows 支持此属性，但 ${data.ownerRole} 不支持：${data.invalidAttrs}"
+      }
+    },
+    "aria-errormessage": {
+      "pass": "aria-errormessage 存在，并引用了对于使用支持的 aria-errormessage 技术的屏幕阅读器可见的元素",
+      "fail": {
+        "singular": "aria-errormessage 值 `${data.values}` 必须使用一种方法来通知消息（例如：aria-live、aria-describedby、role=alert 等）",
+        "plural": "aria-errormessage 值 `${data.values}` 必须使用一种方法来通知消息（例如：aria-live、aria-describedby、role=alert 等）",
+        "hidden": "aria-errormessage 值 `${data.values}` 无法引用隐藏元素"
+      },
+      "incomplete": {
+        "singular": "确保 aria-errormessage 值 `${data.values}` 引用了现有元素",
+        "plural": "确保 aria-errormessage 值 `${data.values}` 引用了现有元素",
+        "idrefs": "无法确定页面上是否存在 aria-errormessage 元素：${data.values}"
+      }
+    },
+    "aria-hidden-body": {
+      "pass": "<body> 不存在 aria-hidden 属性",
+      "fail": "<body> 不应该存在 aria-hidden=true"
+    },
+    "aria-level": {
+      "pass": "aria-level 值是有效的",
+      "incomplete": "部分屏幕阅读器和浏览器组合不支持大于 6 的 aria-level 值"
+    },
+    "aria-prohibited-attr": {
+      "pass": "允许使用 ARIA 属性",
+      "fail": {
+        "hasRolePlural": "${data.prohibited} 属性不能与角色 \"${data.role}\" 一起使用",
+        "hasRoleSingular": "${data.prohibited} 属性不能与角色\"${data.role}\" 一起使用",
+        "noRolePlural": "${data.prohibited} 属性不能在没有有效 role 属性的 ${data.nodeName} 上使用",
+        "noRoleSingular": "${data.prohibited 属性不能在没有有效 role 属性的 ${data.nodeName} 上使用"
+      },
+      "incomplete": {
+        "hasRoleSingular": "角色 \"${data.role}\" 无法良好支持 ${data.prohibited} 属性",
+        "hasRolePlural": "角色 \"${data.role}\" 无法良好支持 ${data.prohibited} 属性",
+        "noRoleSingular": "没有有效 role 属性的 ${data.nodeName} 无法良好支持 ${data.prohibited} 属性",
+        "noRolePlural": "没有有效 role 属性的 ${data.nodeName} 无法良好支持 ${data.prohibited} 属性"
+      }
+    },
+    "aria-required-attr": {
+      "pass": "所有必需的 ARIA 属性都已存在",
+      "fail": {
+        "singular": "缺少必需的 ARIA 属性：${data.values}",
+        "plural": "缺少必需的 ARIA 属性：${data.values}"
+      }
+    },
+    "aria-required-children": {
+      "pass": {
+        "default": "子元素需要 ARIA 角色",
+        "aria-busy": "元素有 aria-busy 属性，因此可以省略必需的子元素"
+      },
+      "fail": {
+        "singular": "子元素缺少必需的 ARIA 角色：${data.values}",
+        "plural": "子元素缺少必需的 ARIA 角色：${data.values}",
+        "unallowed": "元素有不允许的子元素：${data.values}"
+      },
+      "incomplete": {
+        "singular": "子元素期望添加 ARIA 角色：${data.values}",
+        "plural": "子元素期望添加 ARIA 角色：${data.values}"
+      }
+    },
+    "aria-required-parent": {
+      "pass": "父元素需要存在 ARIA 角色",
+      "fail": {
+        "singular": "父元素缺少必需的 ARIA 角色：${data.values}",
+        "plural": "父元素缺少必需的 ARIA 角色：${data.values}"
+      }
+    },
+    "aria-roledescription": {
+      "pass": "在支持的语义角色上使用了 aria-roledescription",
+      "incomplete": "检查 aria-roledescription 是否被支持的屏幕阅读器宣布",
+      "fail": "给元素赋予一个支持 'aria-roledescription' 的角色"
+    },
+    "aria-unsupported-attr": {
+      "pass": "ARIA 属性受支持",
+      "fail": "ARIA 属性在屏幕阅读器和辅助技术中不受广泛支持：${data.values}"
+    },
+    "aria-valid-attr-value": {
+      "pass": "ARIA 属性值有效",
+      "fail": {
+        "singular": "无效的 ARIA 属性值：${data.values}",
+        "plural": "无效的 ARIA 属性值：${data.values}"
+      },
+      "incomplete": {
+        "noId": "页面上不存在 ARIA 属性元素 ID：${data.needsReview}",
+        "noIdShadow": "ARIA 属性元素 ID 在页面上不存在或属于不同影子 DOM 树的后代：${data.needsReview}",
+        "ariaCurrent": "ARIA 属性值无效，将被视为 \"aria-current=true\"：${data.needsReview}",
+        "idrefs": "无法确定页面上是否存在 ARIA 属性元素 ID：${data.needsReview}",
+        "empty": "ARIA 属性值为空时被忽略：${data.needsReview}"
+      }
+    },
+    "aria-valid-attr": {
+      "pass": "ARIA 属性名称有效",
+      "fail": {
+        "singular": "无效的 ARIA 属性名称：${data.values}",
+        "plural": "无效的 ARIA 属性名称：${data.values}"
+      }
+    },
+    "braille-label-equivalent": {
+      "pass": "在有可访问文本的元素上使用了 aria-braillelabel",
+      "fail": "在没有可访问文本的元素上使用了 aria-braillelabel",
+      "incomplete": "无法计算可访问文本"
+    },
+    "braille-roledescription-equivalent": {
+      "pass": "在有 aria-roledescription 的元素上使用了 aria-brailleroledescription",
+      "fail": {
+        "noRoleDescription": "在没有 aria-roledescription 的元素上使用了 aria-brailleroledescription",
+        "emptyRoleDescription": "在有空 aria-roledescription 的元素上使用了 aria-brailleroledescription"
+      }
+    },
+    "deprecatedrole": {
+      "pass": "ARIA 角色未弃用",
+      "fail": "使用的角色已弃用：${data}"
+    },
+    "fallbackrole": {
+      "pass": "只使用一个角色值",
+      "fail": "只使用一个角色值，因为旧版浏览器不支持回退角色",
+      "incomplete": "只使用角色 'presentation' 或 'none'，因为它们是同义词"
+    },
+    "has-global-aria-attribute": {
+      "pass": {
+        "singular": "元素有全局 ARIA 属性：${data.values}",
+        "plural": "元素有全局 ARIA 属性：${data.values}"
+      },
+      "fail": "元素没有全局 ARIA 属性"
+    },
+    "has-widget-role": {
+      "pass": "元素有小部件角色",
+      "fail": "元素没有小部件角色"
+    },
+    "invalidrole": {
+      "pass": "ARIA 角色有效",
+      "fail": {
+        "singular": "角色必须是有效的 ARIA 角色之一：${data.values}",
+        "plural": "角色必须是有效的 ARIA 角色之一：${data.values}"
+      }
+    },
+    "is-element-focusable": {
+      "pass": "元素可聚焦",
+      "fail": "元素不可聚焦"
+    },
+    "no-implicit-explicit-label": {
+      "pass": "<label> 和可访问名称之间没有不匹配",
+      "incomplete": "检查 <label> 有没有必要成为 ARIA ${data} 字段名称的一部分"
+    },
+    "unsupportedrole": {
+      "pass": "ARIA 角色受支持",
+      "fail": "所使用的角色在屏幕阅读器和辅助技术中不受广泛支持：${data}"
+    },
+    "valid-scrollable-semantics": {
+      "pass": "元素对于焦点顺序中的元素包含有效的语义",
+      "fail": "元素对于焦点顺序中的元素包含无效的语义"
+    },
+    "color-contrast-enhanced": {
+      "pass": "元素有足够的颜色对比度 ${data.contrastRatio}",
+      "fail": {
+        "default": "元素的颜色对比度 ${data.contrastRatio} 不足（前景色：${data.fgColor}，背景色：${data.bgColor}，字体大小：${data.fontSize}，字体粗细：${data.fontWeight}）。预期的对比度为 ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "元素在前景色和阴影色之间的对比度 ${data.contrastRatio} 不足（前景色：${data.fgColor}，文本阴影颜色：${data.shadowColor}，字体大小：${data.fontSize}，字体粗细：${data.fontWeight}）。预期的对比度为 ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "元素在阴影颜色和背景色之间的对比度 ${data.contrastRatio} 不足（文本阴影颜色：${data.shadowColor}，背景色：${data.bgColor}，字体大小：${data.fontSize}，字体粗细：${data.fontWeight}）。预期的对比度为 ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "无法确定对比度",
+        "bgImage": "由于背景是图像，因此无法确定元素的背景颜色",
+        "bgGradient": "由于背景是渐变，因此无法确定元素的背景颜色",
+        "imgNode": "由于元素包含图像节点，因此无法确定元素的背景颜色",
+        "bgOverlap": "由于元素被另一个元素覆盖，因此无法确定元素的背景颜色",
+        "fgAlpha": "由于存在 Alpha 透明度，因此无法确定元素的前景色",
+        "elmPartiallyObscured": "由于部分被另一个元素遮挡，因此无法确定元素的背景颜色",
+        "elmPartiallyObscuring": "由于部分重叠其他元素，因此无法确定元素的背景颜色",
+        "outsideViewport": "由于超出视窗，因此无法确定元素的背景颜色",
+        "equalRatio": "元素与背景的对比度为 1:1",
+        "shortTextContent": "元素内容过短，无法确定其是否为实际文本内容",
+        "nonBmp": "元素内容仅包含非文本字符",
+        "pseudoContent": "由于存在伪元素，因此无法确定元素的背景颜色"
+      }
+    },
+    "color-contrast": {
+      "pass": {
+        "default": "元素有足够的颜色对比度 ${data.contrastRatio}",
+        "hidden": "元素被隐藏"
+      },
+      "fail": {
+        "default": "元素的颜色对比度 ${data.contrastRatio} 不足（前景色：${data.fgColor}，背景色：${data.bgColor}，字体大小：${data.fontSize}，字体粗细：${data.fontWeight}）。预期的对比度为 ${data.expectedContrastRatio}",
+        "fgOnShadowColor": "元素在前景色和阴影色之间的对比度 ${data.contrastRatio} 不足（前景色：${data.fgColor}，文本阴影颜色：${data.shadowColor}，字体大小：${data.fontSize}，字体粗细：${data.fontWeight}）。预期的对比度为 ${data.expectedContrastRatio}",
+        "shadowOnBgColor": "元素在阴影颜色和背景色之间的对比度 ${data.contrastRatio} 不足（文本阴影颜色：${data.shadowColor}，背景色：${data.bgColor}，字体大小：${data.fontSize}，字体粗细：${data.fontWeight}）。预期的对比度为 ${data.expectedContrastRatio}"
+      },
+      "incomplete": {
+        "default": "无法确定对比度",
+        "bgImage": "由于背景是图像，因此无法确定元素的背景颜色",
+        "bgGradient": "由于背景是渐变，因此无法确定元素的背景颜色",
+        "imgNode": "由于元素包含图像节点，因此无法确定元素的背景颜色",
+        "bgOverlap": "由于元素被另一个元素覆盖，因此无法确定元素的背景颜色",
+        "complexTextShadows": "由于元素使用了复杂的文本阴影，因此无法确定元素的对比度",
+        "fgAlpha": "由于 Alpha 透明度，因此无法确定元素的前景色",
+        "elmPartiallyObscured": "由于部分被另一个元素遮挡，因此无法确定元素的背景颜色",
+        "elmPartiallyObscuring": "由于部分重叠其他元素，因此无法确定元素的背景颜色",
+        "outsideViewport": "由于超出视窗，因此无法确定元素的背景颜色",
+        "equalRatio": "元素与背景的对比度为 1:1",
+        "shortTextContent": "元素内容过短，因此无法确定其是否为实际文本内容",
+        "nonBmp": "元素内容仅包含非文本字符",
+        "pseudoContent": "由于存在伪元素，因此无法确定元素的背景颜色"
+      }
+    },
+    "link-in-text-block-style": {
+      "pass": "可以通过视觉样式将链接与周围文本区分开",
+      "incomplete": {
+        "default": "检查链接是否需要样式以将其与附近的文本区分开",
+        "pseudoContent": "检查链接的伪样式是否足以将其与周围的文本区分开"
+      },
+      "fail": "该链接没有样式（如下划线）来将其与周围的文本区分开"
+    },
+    "link-in-text-block": {
+      "pass": "链接可以通过颜色以外的其他方式与周围文本区分开",
+      "fail": {
+        "fgContrast": "链接与周围文本的对比度 ${data.contrastRatio}:1 不足（最小对比度为${data.requiredContrastRatio}:1，链接文本颜色：${data.nodeColor}，周围文本颜色：${data.parentColor}）",
+        "bgContrast": "链接背景与周围背景的对比度 ${data.contrastRatio} 不足（最小对比度为${data.requiredContrastRatio}:1，链接背景颜色：${data.nodeBackgroundColor}，周围背景颜色：${data.parentBackgroundColor}）"
+      },
+      "incomplete": {
+        "default": "无法确定元素的前景对比度",
+        "bgContrast": "无法确定元素的背景对比度",
+        "bgImage": "由于背景是图像，因此无法确定元素的对比度",
+        "bgGradient": "由于背景是渐变，因此无法确定元素的对比度",
+        "imgNode": "由于元素包含图像节点，因此无法确定元素的对比度",
+        "bgOverlap": "由于元素重叠，因此无法确定元素的对比度"
+      }
+    },
+    "autocomplete-appropriate": {
+      "pass": "autocomplete 值适用于适当的元素",
+      "fail": "autocomplete 值不适用于此类输入"
+    },
+    "autocomplete-valid": {
+      "pass": "autocomplete 属性格式正确",
+      "fail": "autocomplete 属性格式不正确"
+    },
+    "accesskeys": {
+      "pass": "accesskey 属性值是唯一的",
+      "fail": "页面有多个元素有相同的 accesskey"
+    },
+    "focusable-content": {
+      "pass": "元素包含可聚焦元素",
+      "fail": "元素应包含可聚焦内容"
+    },
+    "focusable-disabled": {
+      "pass": "元素内没有可聚焦的元素",
+      "incomplete": "检查可聚焦的元素是否立即移动焦点指示器",
+      "fail": "可聚焦内容应该被禁用或从 DOM 中移除"
+    },
+    "focusable-element": {
+      "pass": "元素可以聚焦",
+      "fail": "元素应该是可聚焦的"
+    },
+    "focusable-modal-open": {
+      "pass": "在对话窗打开时没有可聚焦的元素",
+      "incomplete": "检查在当前状态下可聚焦的元素是否可以通过 tab 键访问"
+    },
+    "focusable-no-name": {
+      "pass": "元素不在 tab 顺序中或没有可访问的文本",
+      "fail": "元素在 tab 顺序中且没有可访问的文本",
+      "incomplete": "无法确定元素是否有可访问的名称"
+    },
+    "focusable-not-tabbable": {
+      "pass": "元素内没有可聚焦的元素",
+      "incomplete": "检查可聚焦的元素是否立即移动焦点指示器",
+      "fail": "可聚焦内容应该有 tabindex=\"-1\" 或从 DOM 中移除"
+    },
+    "frame-focusable-content": {
+      "pass": "元素没有可聚焦的后代元素",
+      "fail": "元素有可聚焦的后代元素",
+      "incomplete": "无法确定元素是否有后代元素"
+    },
+    "landmark-is-top-level": {
+      "pass": "${data.role} landmark 位于顶层",
+      "fail": "${data.role} landmark 包含在另一个 landmark 中"
+    },
+    "no-focusable-content": {
+      "pass": "元素没有可聚焦的后代元素",
+      "fail": {
+        "default": "元素有可聚焦的后代元素",
+        "notHidden": "在交互控件内部使用负 tabindex 不能阻止辅助技术将焦点放在元素上（即使使用 aria-hidden=\"true\"）"
+      },
+      "incomplete": "无法确定元素是否有后代元素"
+    },
+    "page-has-heading-one": {
+      "pass": "页面至少有一个一级标题",
+      "fail": "页面必须有一级标题"
+    },
+    "page-has-main": {
+      "pass": "页面至少有一个主要的 landmark",
+      "fail": "页面没有主要的 landmark"
+    },
+    "page-no-duplicate-banner": {
+      "pass": "页面没有多个 banner landmark",
+      "fail": "页面有多个 banner landmark"
+    },
+    "page-no-duplicate-contentinfo": {
+      "pass": "页面没有多个 contentinfo landmark",
+      "fail": "页面有多个 contentinfo landmark"
+    },
+    "page-no-duplicate-main": {
+      "pass": "页面没有多个主要 landmark",
+      "fail": "页面有多个主要 landmark"
+    },
+    "tabindex": {
+      "pass": "元素的 tabindex 不大于 0",
+      "fail": "元素的 tabindex 大于 0"
+    },
+    "alt-space-value": {
+      "pass": "元素包含有效的 alt 属性值",
+      "fail": "元素的 alt 属性只包含空格字符，所有屏幕阅读器不会忽略该属性"
+    },
+    "duplicate-img-label": {
+      "pass": "元素内的文本没有和元素的 <img> alt 文本重复",
+      "fail": "元素内的文本和元素的 <img> alt 文本重复"
+    },
+    "explicit-label": {
+      "pass": "表单元素有显式的标签文本 <label>",
+      "fail": "表单元素没有显式的标签文本 <label>",
+      "incomplete": "无法确定表单元素是否有显式的标签文本 <label>"
+    },
+    "help-same-as-label": {
+      "pass": "说明文本（title 或 aria-describedby）不重复标签文本",
+      "fail": "说明文本（title 或 aria-describedby）与标签文本相同"
+    },
+    "hidden-explicit-label": {
+      "pass": "表单元素有可见的显式标签文本 <label>",
+      "fail": "表单元素有隐藏的显式标签文本 <label>",
+      "incomplete": "无法确定表单元素是否有隐藏的显式标签文本 <label>"
+    },
+    "implicit-label": {
+      "pass": "表单元素有隐式标签文本 <label>",
+      "fail": "表单元素没有隐式标签文本 <label>",
+      "incomplete": "无法确定表单元素是否有隐式标签文本 <label>"
+    },
+    "label-content-name-mismatch": {
+      "pass": "元素包含可见文本作为其可访问名称的一部分",
+      "fail": "元素内的文本未包含在可访问名称中"
+    },
+    "multiple-label": {
+      "pass": "表单字段没有多个标签元素",
+      "incomplete": "辅助软件并未广泛支持多个标签元素。确保第一个标签包含所有必要的信息"
+    },
+    "title-only": {
+      "pass": "表单元素不仅使用 title 属性作为其标签",
+      "fail": "仅使用 title 生成表单元素的标签"
+    },
+    "landmark-is-unique": {
+      "pass": "landmark 必须有唯一的角色或角色/标签/标题（即可访问名称）组合",
+      "fail": "landmark 必须有唯一的 aria-label、aria-labelledby 或 title 用于方便区分 landmark"
+    },
+    "has-lang": {
+      "pass": "<html> 元素有 lang 属性",
+      "fail": {
+        "noXHTML": "xml:lang 属性在 HTML 页面上无效，请使用 lang 属性",
+        "noLang": "<html> 元素没有 lang 属性"
+      }
+    },
+    "valid-lang": {
+      "pass": "lang 属性值包含在有效语言列表中",
+      "fail": "lang 属性值未包含在有效语言列表中"
+    },
+    "xml-lang-mismatch": {
+      "pass": "lang 和 xml:lang 属性有相同的基本语言",
+      "fail": "lang 和 xml:lang 属性没有相同的基本语言"
+    },
+    "dlitem": {
+      "pass": "描述列表项有 <dl> 父元素",
+      "fail": "描述列表项没有 <dl> 父元素"
+    },
+    "listitem": {
+      "pass": "列表项有 <ul>、<ol> 或 role=\"list\" 父元素",
+      "fail": {
+        "default": "列表项的父元素不是 <ul> 或 <ol>",
+        "roleNotValid": "列表项的父元素不是 <ul>、<ol> 或包含 role=\"list\" 属性"
+      }
+    },
+    "only-dlitems": {
+      "pass": "dl 元素仅包含允许的直接子元素：<dt>、<dd> 或 <div> 元素",
+      "fail": "dl 元素包含不允许的直接子元素：${data.values}"
+    },
+    "only-listitems": {
+      "pass": "列表元素仅允许在 <li> 元素内由直接子元素",
+      "fail": "列表元素由不允许的直接子元素：${data.values}"
+    },
+    "structured-dlitems": {
+      "pass": "当不为空时，元素同时有 <dt> 和 <dd> 元素",
+      "fail": "当不为空时，元素没有至少一个 <dt> 元素后跟至少一个 <dd> 元素"
+    },
+    "caption": {
+      "pass": "多媒体元素有字幕轨道",
+      "incomplete": "检查元素是否提供字幕"
+    },
+    "frame-tested": {
+      "pass": "iframe 使用 axe-core 进行了测试",
+      "fail": "iframe 无法使用 axe-core 进行测试",
+      "incomplete": "iframe 仍需使用 axe-core 进行测试"
+    },
+    "no-autoplay-audio": {
+      "pass": "<video> 或 <audio> 不会播放超过允许时长的音频或有控制机制",
+      "fail": "<video> 或 <audio> 播放超过允许时长的音频，且没有控制机制",
+      "incomplete": "检查 <video> 或 <audio> 是否播放超过允许时长的音频或提供了控制机制"
+    },
+    "css-orientation-lock": {
+      "pass": "显示可操作，且不存在方向锁定",
+      "fail": "CSS 方向锁定已应用，导致显示无法操作",
+      "incomplete": "无法确定 CSS 方向锁定是否已应用"
+    },
+    "meta-viewport-large": {
+      "pass": "<meta> 标签不会阻止在移动设备上的重要缩放",
+      "fail": "<meta> 标签限制了移动设备上的缩放"
+    },
+    "meta-viewport": {
+      "pass": "<meta> 标签不会在移动设备上禁用缩放",
+      "fail": "在 <meta> 标签上的 ${data} 禁用了移动设备上的缩放"
+    },
+    "target-offset": {
+      "pass": {
+        "default": "目标与最近的邻元素有足够的空间。安全可点击空间距离为 ${data.closestOffset}px，至少为 ${data.minOffset}px",
+        "large": "目标远远超过最小尺寸 ${data.minOffset}px"
+      },
+      "fail": "目标与最近的邻元素之间的空间不足。安全可点击空间距离为 ${data.closestOffset}px，而不是至少 ${data.minOffset}px",
+      "incomplete": {
+        "default": "tabindex 为负的元素与最近的邻元素之间的空间不足。安全可点击空间距离为 ${data.closestOffset}px，而不是至少 ${data.minOffset}px。这是一个目标吗？",
+        "nonTabbableNeighbor": "目标与最近的邻元素之间的空间不足。安全可点击空间距离为 ${data.closestOffset}px，而不是至少 ${data.minOffset}px。邻元素是目标吗？"
+      }
+    },
+    "target-size": {
+      "pass": {
+        "default": "控件尺寸足够（${data.width}px x ${data.height}px，应至少为 ${data.minSize}px x ${data.minSize}px）",
+        "obscured": "由于完全被遮挡而忽略控件，因此无法点击",
+        "large": "目标远远超过最小尺寸 ${data.minSize}px"
+      },
+      "fail": {
+        "default": "目标尺寸不足（${data.width}px x ${data.height}px，应至少为 ${data.minSize}px x ${data.minSize}px）",
+        "partiallyObscured": "目标尺寸不足，因为部分被遮挡（最小尺寸为 ${data.width}px x ${data.height}px，应至少为 ${data.minSize}px x ${data.minSize}px）"
+      },
+      "incomplete": {
+        "default": "tabindex 为负元的素尺寸不足（${data.width}px x ${data.height}px，应至少为 ${data.minSize}px x ${data.minSize}px）。这是一个目标吗？",
+        "contentOverflow": "由于内容溢出，无法准确确定元素的大小",
+        "partiallyObscured": "tabindex 为负的元素尺寸不足，因为部分被遮挡（最小尺寸为 ${data.width}px x ${data.height}px，应至少为 ${data.minSize}px x ${data.minSize}px）。这是一个目标吗？",
+        "partiallyObscuredNonTabbable": "目标尺寸不足，因为部分被 tabindex 为负的邻元素遮挡（最小尺寸为 ${data.width}px x ${data.height}px，应至少为 ${data.minSize}px x ${data.minSize}px）。邻元素是目标吗？",
+        "tooManyRects": "无法获取目标尺寸，因为有太多重叠的元素"
+      }
+    },
+    "header-present": {
+      "pass": "页面有标题",
+      "fail": "页面没有标题"
+    },
+    "heading-order": {
+      "pass": "标题顺序有效",
+      "fail": "标题顺序无效",
+      "incomplete": "无法确定上一个标题"
+    },
+    "identical-links-same-purpose": {
+      "pass": "没有其他有相同名称的链接跳转到不同的 URL",
+      "incomplete": "检查链接是否有相同的目的，或者是否有意模糊不清"
+    },
+    "internal-link-present": {
+      "pass": "找到有效的跳转链接",
+      "fail": "找不到有效的跳转链接"
+    },
+    "landmark": {
+      "pass": "页面有 landmark 区域",
+      "fail": "页面没有 landmark 区域"
+    },
+    "meta-refresh-no-exceptions": {
+      "pass": "<meta> 标签不会立即刷新页面",
+      "fail": "<meta> 标签强制定时刷新页面"
+    },
+    "meta-refresh": {
+      "pass": "<meta> 标签不会立即刷新页面",
+      "fail": "<meta> 标签强制定时刷新页面（少于20小时）"
+    },
+    "p-as-heading": {
+      "pass": "<p> 元素的样式不为标题",
+      "fail": "应该使用标题元素而不是样式化的 <p> 元素",
+      "incomplete": "无法确定 <p> 元素是否被样式化为标题"
+    },
+    "region": {
+      "pass": "所有页面内容都包含在 landmark 中",
+      "fail": "某些页面内容不包含在 landmark 中"
+    },
+    "skip-link": {
+      "pass": "跳转链接目标存在",
+      "incomplete": "跳转链接目标应在激活时变得可见",
+      "fail": "没有跳转链接目标"
+    },
+    "unique-frame-title": {
+      "pass": "元素的 title 属性是唯一的",
+      "fail": "元素的 title 属性不唯一"
+    },
+    "duplicate-id-active": {
+      "pass": "页面中没有相同 id 属性的激活元素",
+      "fail": "页面中有相同 id 属性的激活元素：${data}"
+    },
+    "duplicate-id-aria": {
+      "pass": "页面中没有通过 ARIA 引用的元素或有相同的 id 属性的标签",
+      "fail": "页面中有通过 ARIA 引用的多个有相同 id 属性的元素：${data}"
+    },
+    "duplicate-id": {
+      "pass": "页面中没有相同 id 属性的静态元素",
+      "fail": "页面中有多个相同 id 属性的静态元素：${data}"
+    },
+    "aria-label": {
+      "pass": "aria-label 属性存在且不为空",
+      "fail": "aria-label 属性不存在或为空"
+    },
+    "aria-labelledby": {
+      "pass": "aria-labelledby 属性存在并引用对屏幕阅读器可见的元素",
+      "fail": "aria-labelledby 属性不存在，引用不存在的元素或引用空元素",
+      "incomplete": "确保 aria-labelledby 引用了一个现有的元素"
+    },
+    "avoid-inline-spacing": {
+      "pass": "没有使用 '!important' 影响文本间距的内联样式",
+      "fail": {
+        "singular": "从内联样式 ${data.values} 中移除 '!important'，因为大多数浏览器不支持覆盖此样式",
+        "plural": "从内联样式 ${data.values} 中移除 '!important'，因为大多数浏览器不支持覆盖此样式"
+      }
+    },
+    "button-has-visible-text": {
+      "pass": "元素有对屏幕阅读器可见的内部文本",
+      "fail": "元素没有对屏幕阅读器可见的内部文本",
+      "incomplete": "无法确定元素是否有子元素"
+    },
+    "doc-has-title": {
+      "pass": "页面有一个非空的 <title> 元素",
+      "fail": "页面没有一个非空的 <title> 元素"
+    },
+    "exists": {
+      "pass": "元素不存在",
+      "incomplete": "元素存在"
+    },
+    "has-alt": {
+      "pass": "元素有 alt 属性",
+      "fail": "元素没有 alt 属性"
+    },
+    "has-visible-text": {
+      "pass": "元素有对屏幕阅读器可见的文本",
+      "fail": "元素没有对屏幕阅读器可见的文本",
+      "incomplete": "无法确定元素是否有子元素"
+    },
+    "important-letter-spacing": {
+      "pass": "style 属性中的 letter-spacing 未设置为 !important，或满足最小值",
+      "fail": "style 属性中的 letter-spacing 一定不能使用 !important，也不能是 ${data.minValue}em（当前 ${data.value}em）"
+    },
+    "important-line-height": {
+      "pass": "style 属性中的 line-height 未设置为 !important，或满足最小值",
+      "fail": "style 属性中的 line-height 一定不能使用 !important，也不能是 ${data.minValue}em（当前 ${data.value}em）"
+    },
+    "important-word-spacing": {
+      "pass": "style 属性中的 word-spacing 未设置为 !important，或满足最小值",
+      "fail": "style 属性中的 word-spacing 一定不能使用 !important，也不能是 ${data.minValue}em（当前 ${data.value}em）"
+    },
+    "is-on-screen": {
+      "pass": "元素不可见",
+      "fail": "元素可见"
+    },
+    "non-empty-alt": {
+      "pass": "元素有不为空的 alt 属性",
+      "fail": {
+        "noAttr": "元素没有 alt 属性",
+        "emptyAttr": "元素的 alt 属性为空"
+      }
+    },
+    "non-empty-if-present": {
+      "pass": {
+        "default": "元素没有 value 属性",
+        "has-label": "元素有不为空的 value 属性"
+      },
+      "fail": "元素有 value 属性且 value 属性为空"
+    },
+    "non-empty-placeholder": {
+      "pass": "元素有 placeholder 属性",
+      "fail": {
+        "noAttr": "元素没有 placeholder 属性",
+        "emptyAttr": "元素的 placeholder 属性为空"
+      }
+    },
+    "non-empty-title": {
+      "pass": "元素有 title 属性",
+      "fail": {
+        "noAttr": "元素没有 title 属性",
+        "emptyAttr": "元素的 title 属性为空"
+      }
+    },
+    "non-empty-value": {
+      "pass": "元素有不为空的 value 属性",
+      "fail": {
+        "noAttr": "元素没有 value 属性",
+        "emptyAttr": "元素有空的 value 属性"
+      }
+    },
+    "presentational-role": {
+      "pass": "元素的默认语义被 role=\"${data.role}\" 覆盖",
+      "fail": {
+        "default": "元素的默认语义没有被 role=\"none\" 或 role=\"presentation\" 覆盖",
+        "globalAria": "元素的角色不是表现性的，因为它有全局 ARIA 属性",
+        "focusable": "元素的角色不是表现性的，因为它是可聚焦的",
+        "both": "元素的角色不是表现性的，因为它有全局 ARIA 属性并且是可聚焦的",
+        "iframe": "在有表现性角色的 ${data.nodeName} 元素上使用 \"title\" 属性在屏幕阅读器之间表现不一致"
+      }
+    },
+    "role-none": {
+      "pass": "元素的默认语义被 role=\"none\" 覆盖",
+      "fail": "元素的默认语义没有被 role=\"none\" 覆盖"
+    },
+    "role-presentation": {
+      "pass": "元素的默认语义被 role=\"presentation\" 覆盖",
+      "fail": "元素的默认语义未被 role=\"presentation\" 覆盖"
+    },
+    "svg-non-empty-title": {
+      "pass": "元素有一个标题子元素",
+      "fail": {
+        "noTitle": "元素没有标题子元素",
+        "emptyTitle": "元素的标题子元素为空"
+      },
+      "incomplete": "无法确定元素是否有标题子元素"
+    },
+    "caption-faked": {
+      "pass": "表格的第一行不用作标题",
+      "fail": "表格的第一个子元素应该是标题而不是表格单元格"
+    },
+    "html5-scope": {
+      "pass": "scope 属性只用于表头元素 (<th>)",
+      "fail": "在 HTML 5 中，scope 属性只能用于表头元素 (<th>)"
+    },
+    "same-caption-summary": {
+      "pass": "summary 属性的内容和 <caption> 不重复",
+      "fail": "summary 属性的内容和 <caption> 元素的内容相同",
+      "incomplete": "无法确定 <table> 元素是否有标题"
+    },
+    "scope-value": {
+      "pass": "scope 属性的使用是正确的",
+      "fail": "scope 属性的值只能是 'row' 或 'col'"
+    },
+    "td-has-header": {
+      "pass": "所有非空数据单元格都有表头",
+      "fail": "一些非空数据单元格没有表头"
+    },
+    "td-headers-attr": {
+      "pass": "headers 属性专门用于引用表格中的其他单元格",
+      "incomplete": "headers 属性为空",
+      "fail": "headers 属性不专门用于引用表格中的其他单元格"
+    },
+    "th-has-data-cells": {
+      "pass": "所有表头单元格都引用数据单元格",
+      "fail": "并非所有表头单元格都引用数据单元格",
+      "incomplete": "表格数据单元格缺失或为空"
+    },
+    "hidden-content": {
+      "pass": "页面上的所有内容都已经分析过",
+      "fail": "分析页面内容时出现问题",
+      "incomplete": "页面上存在未分析的隐藏内容。您需要触发显示此内容以便进行分析"
+    }
+  },
+  "failureSummaries": {
+    "any": {
+      "failureMessage": "修复以下任一问题：{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "none": {
+      "failureMessage": "修复以下所有问题：{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "axe 无法确定原因。请打开元素检查器！"
+}

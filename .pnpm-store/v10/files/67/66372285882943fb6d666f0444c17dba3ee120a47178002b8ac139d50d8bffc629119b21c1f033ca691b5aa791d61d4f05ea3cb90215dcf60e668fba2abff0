@@ -1,0 +1,33 @@
+{
+	"name": "astral-regex",
+	"version": "2.0.0",
+	"description": "Regular expression for matching astral symbols",
+	"license": "MIT",
+	"repository": "kevva/astral-regex",
+	"author": {
+		"name": "Kevin Mårtensson",
+		"email": "kevinmartensson@gmail.com",
+		"url": "github.com/kevva"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"astral",
+		"emoji",
+		"regex",
+		"surrogate"
+	],
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

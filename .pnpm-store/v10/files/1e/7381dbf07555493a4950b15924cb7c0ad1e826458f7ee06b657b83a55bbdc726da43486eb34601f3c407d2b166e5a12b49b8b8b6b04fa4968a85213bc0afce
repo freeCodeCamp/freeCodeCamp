@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/lightFormat/index.js",
+  "typings": "../typings.d.ts"
+}

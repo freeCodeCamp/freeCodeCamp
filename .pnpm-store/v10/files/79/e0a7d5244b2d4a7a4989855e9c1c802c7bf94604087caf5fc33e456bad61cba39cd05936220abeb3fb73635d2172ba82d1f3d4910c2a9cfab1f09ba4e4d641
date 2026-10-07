@@ -1,0 +1,111 @@
+{
+  "name": "hast-util-to-html",
+  "version": "7.1.3",
+  "description": "hast utility to serialize to HTML",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "hast",
+    "hast-util",
+    "util",
+    "utility",
+    "html",
+    "serialize",
+    "stringify",
+    "tostring"
+  ],
+  "repository": "syntax-tree/hast-util-to-html",
+  "bugs": "https://github.com/syntax-tree/hast-util-to-html/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "lib",
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "ccount": "^1.0.0",
+    "comma-separated-tokens": "^1.0.0",
+    "hast-util-is-element": "^1.0.0",
+    "hast-util-whitespace": "^1.0.0",
+    "html-void-elements": "^1.0.0",
+    "property-information": "^5.0.0",
+    "space-separated-tokens": "^1.0.0",
+    "stringify-entities": "^3.0.1",
+    "unist-util-is": "^4.0.0",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/unist": "^2.0.0",
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "hastscript": "^6.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unist-builder": "^2.0.0",
+    "xo": "^0.38.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify . -s hastUtilToHtml -o hast-util-to-html.js",
+    "build-mangle": "browserify . -s hastUtilToHtml -o hast-util-to-html.min.js -p tinyify",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "complexity": "off",
+      "eqeqeq": [
+        "error",
+        "always",
+        {
+          "null": "ignore"
+        }
+      ],
+      "guard-for-in": "off",
+      "no-eq-null": "off",
+      "no-self-compare": "off",
+      "unicorn/no-array-for-each": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-number-properties": "off"
+    },
+    "ignores": [
+      "hast-util-to-html.js"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

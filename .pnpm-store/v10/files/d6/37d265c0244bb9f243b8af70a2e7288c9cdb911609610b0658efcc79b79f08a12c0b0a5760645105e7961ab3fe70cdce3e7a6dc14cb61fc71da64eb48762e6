@@ -1,0 +1,1 @@
+{"version":3,"file":"native-audio-node-faker.d.ts","sourceRoot":"","sources":["../../../src/interfaces/native-audio-node-faker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,MAAM,UAAU,CAAC;AAE5C,MAAM,WAAW,qBAAsB,SAAQ,gBAAgB;IAC3D,UAAU,CAAC,EAAE,MAAM,CAAC;IAEpB,MAAM,EAAE,gBAAgB,EAAE,CAAC;CAC9B"}

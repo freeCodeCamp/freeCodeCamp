@@ -1,0 +1,80 @@
+{
+  "name": "devlop",
+  "version": "1.1.0",
+  "description": "Do things in development and nothing otherwise",
+  "license": "MIT",
+  "keywords": [
+    "assert",
+    "deprecate",
+    "develop",
+    "development"
+  ],
+  "repository": "wooorm/devlop",
+  "bugs": "https://github.com/wooorm/devlop/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "types": "./lib/development.d.ts",
+    "development": "./lib/development.js",
+    "default": "./lib/default.js"
+  },
+  "files": [
+    "lib/"
+  ],
+  "dependencies": {
+    "dequal": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@types/node": "^20.0.0",
+    "c8": "^8.0.0",
+    "esbuild": "^0.18.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^11.0.0",
+    "remark-preset-wooorm": "^9.0.0",
+    "type-coverage": "^2.0.0",
+    "typescript": "^5.0.0",
+    "xo": "^0.54.0"
+  },
+  "scripts": {
+    "prepack": "npm run build && npm run format",
+    "build": "tsc --build --clean && tsc --build && type-coverage",
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "test-api-development": "node --conditions development test-development.js",
+    "test-api-default": "node test-default.js",
+    "test-api": "npm run test-api-development && npm run test-api-default",
+    "test-coverage": "c8 --100 --reporter lcov npm run test-api",
+    "test": "npm run build && npm run format && npm run test-coverage"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-wooorm"
+    ]
+  },
+  "typeCoverage": {
+    "atLeast": 100,
+    "detail": true,
+    "ignoreCatch": true,
+    "strict": true
+  },
+  "xo": {
+    "prettier": true
+  }
+}

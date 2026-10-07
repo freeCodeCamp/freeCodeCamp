@@ -1,0 +1,1 @@
+{"version":3,"file":"add-outgoing-request-breadcrumb.d.ts","sourceRoot":"","sources":["../../../../src/integrations/http/add-outgoing-request-breadcrumb.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,iBAAiB,EAAE,mBAAmB,EAAE,MAAM,SAAS,CAAC;AAEtE;;GAEG;AACH,wBAAgB,4BAA4B,CAC1C,OAAO,EAAE,iBAAiB,EAC1B,QAAQ,EAAE,mBAAmB,GAAG,SAAS,GACxC,IAAI,CA0BN"}

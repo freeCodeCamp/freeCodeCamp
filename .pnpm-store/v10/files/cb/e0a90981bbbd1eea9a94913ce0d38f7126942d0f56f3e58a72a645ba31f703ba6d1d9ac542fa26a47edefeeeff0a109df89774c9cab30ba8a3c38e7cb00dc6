@@ -1,0 +1,49 @@
+{
+  "name": "micromark-util-subtokenize",
+  "version": "2.0.0",
+  "description": "micromark utility to tokenize subtokens",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "util",
+    "utility",
+    "tokenize"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-subtokenize",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dev/",
+    "index.d.ts",
+    "index.js"
+  ],
+  "exports": {
+    "development": "./dev/index.js",
+    "default": "./index.js"
+  },
+  "dependencies": {
+    "devlop": "^1.0.0",
+    "micromark-util-chunked": "^2.0.0",
+    "micromark-util-symbol": "^2.0.0",
+    "micromark-util-types": "^2.0.0"
+  },
+  "scripts": {
+    "build": "micromark-build"
+  },
+  "xo": false
+}

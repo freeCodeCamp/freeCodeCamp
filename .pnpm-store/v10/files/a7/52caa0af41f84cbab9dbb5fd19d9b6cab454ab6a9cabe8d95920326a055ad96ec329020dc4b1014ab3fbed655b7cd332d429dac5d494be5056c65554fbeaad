@@ -1,0 +1,18 @@
+{
+  "name": "mkdirp-classic",
+  "version": "0.5.3",
+  "description": "Mirror of mkdirp 0.5.2",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/mkdirp-classic.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/mkdirp-classic/issues"
+  },
+  "homepage": "https://github.com/mafintosh/mkdirp-classic"
+}

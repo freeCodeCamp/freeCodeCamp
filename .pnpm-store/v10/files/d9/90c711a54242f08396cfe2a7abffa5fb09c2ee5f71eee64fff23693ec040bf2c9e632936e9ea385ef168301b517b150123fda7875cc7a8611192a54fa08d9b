@@ -1,0 +1,24 @@
+name: package-manager-ci
+
+on:
+  push:
+    branches:
+     - main
+     - next
+     - 'v*'
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    permissions:
+      contents: read
+    uses: fastify/workflows/.github/workflows/plugins-ci-package-manager.yml@v6

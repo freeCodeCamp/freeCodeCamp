@@ -1,0 +1,5 @@
+{
+	"ignoreRules": [
+		"named-exports"
+	]
+}

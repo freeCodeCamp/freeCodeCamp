@@ -1,0 +1,71 @@
+{
+  "name": "is-relative",
+  "description": "Returns `true` if the path appears to be relative.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jonschlinkert/is-relative",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Shinnosuke Watanabe (https://shinnn.github.io)"
+  ],
+  "repository": "jonschlinkert/is-relative",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-relative/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "is-unc-path": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^3.4.2"
+  },
+  "keywords": [
+    "absolute",
+    "check",
+    "file",
+    "filepath",
+    "is",
+    "normalize",
+    "path",
+    "path.relative",
+    "relative",
+    "resolve",
+    "slash",
+    "slashes",
+    "uri",
+    "url"
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "is-absolute",
+        "is-dotfile",
+        "is-glob",
+        "is-relative",
+        "is-unc-path"
+      ]
+    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

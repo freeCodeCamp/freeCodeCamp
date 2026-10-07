@@ -1,0 +1,34 @@
+# `MD047` - Files should end with a single newline character
+
+Tags: `blank_lines`
+
+Aliases: `single-trailing-newline`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when there is not a single newline character at the end
+of a file.
+
+An example that triggers the rule:
+
+```markdown
+# Heading
+
+This file ends without a newline.[EOF]
+```
+
+To fix the violation, add a newline character to the end of the file:
+
+```markdown
+# Heading
+
+This file ends with a newline.
+[EOF]
+```
+
+Rationale: Some programs have trouble with files that do not end with a newline.
+
+More information: [What's the point in adding a new line to the end of a
+file?][stack-exchange]
+
+[stack-exchange]: https://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file

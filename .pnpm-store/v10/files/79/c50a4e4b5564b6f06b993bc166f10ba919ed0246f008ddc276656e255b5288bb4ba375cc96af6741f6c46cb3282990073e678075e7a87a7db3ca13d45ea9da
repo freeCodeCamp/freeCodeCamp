@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-param-renderer.d.ts","sourceRoot":"","sources":["../../../src/interfaces/audio-param-renderer.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,UAAU,CAAC;AAE7C,MAAM,WAAW,mBAAmB;IAChC,MAAM,CAAC,UAAU,EAAE,iBAAiB,GAAG,IAAI,CAAC;CAC/C"}

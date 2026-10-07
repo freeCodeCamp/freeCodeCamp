@@ -1,0 +1,32 @@
+{
+  "name": "@parcel/packager-js",
+  "version": "2.8.3",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/index.js",
+  "source": "src/index.js",
+  "engines": {
+    "node": ">= 12.0.0",
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "@parcel/diagnostic": "2.8.3",
+    "@parcel/hash": "2.8.3",
+    "@parcel/plugin": "2.8.3",
+    "@parcel/source-map": "^2.1.1",
+    "@parcel/utils": "2.8.3",
+    "globals": "^13.2.0",
+    "nullthrows": "^1.1.1"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

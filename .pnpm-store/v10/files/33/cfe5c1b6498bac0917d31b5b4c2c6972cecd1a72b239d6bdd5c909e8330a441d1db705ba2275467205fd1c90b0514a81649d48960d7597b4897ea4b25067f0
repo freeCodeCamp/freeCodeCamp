@@ -1,0 +1,26 @@
+{
+  "name": "confusing-browser-globals",
+  "version": "1.0.11",
+  "description": "A list of browser globals that are often used by mistake instead of local variables",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/create-react-app.git",
+    "directory": "packages/confusing-browser-globals"
+  },
+  "keywords": [
+    "eslint",
+    "globals"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "jest": "^27.4.3"
+  },
+  "gitHead": "221e511730ca51c036c6954a9d2ee7659ff860f9"
+}

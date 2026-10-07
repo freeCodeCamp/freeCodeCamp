@@ -1,0 +1,54 @@
+{
+    "name": "@types/js-yaml",
+    "version": "4.0.9",
+    "description": "TypeScript definitions for js-yaml",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/js-yaml",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Bart van der Schoor",
+            "githubUsername": "Bartvds",
+            "url": "https://github.com/Bartvds"
+        },
+        {
+            "name": "Sebastian Clausen",
+            "githubUsername": "sclausen",
+            "url": "https://github.com/sclausen"
+        },
+        {
+            "name": "ExE Boss",
+            "githubUsername": "ExE-Boss",
+            "url": "https://github.com/ExE-Boss"
+        },
+        {
+            "name": "Armaan Tobaccowalla",
+            "githubUsername": "ArmaanT",
+            "url": "https://github.com/ArmaanT"
+        },
+        {
+            "name": "Linus Unnebäck",
+            "githubUsername": "LinusU",
+            "url": "https://github.com/LinusU"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "exports": {
+        ".": {
+            "types": {
+                "import": "./index.d.mts",
+                "default": "./index.d.ts"
+            }
+        },
+        "./package.json": "./package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/js-yaml"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "d8ef94de3166b3cc8a3ce9c4fe2d001ec5dd7eaa19d30e651fbf4b505454972d",
+    "typeScriptVersion": "4.5"
+}

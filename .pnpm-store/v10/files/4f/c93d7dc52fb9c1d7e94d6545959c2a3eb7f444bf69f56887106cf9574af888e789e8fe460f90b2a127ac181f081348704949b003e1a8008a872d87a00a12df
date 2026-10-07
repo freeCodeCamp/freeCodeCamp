@@ -1,0 +1,87 @@
+{
+  "name": "@mongodb-js/saslprep",
+  "description": "SASLprep: Stringprep Profile for User Names and Passwords, rfc4013",
+  "keywords": [
+    "sasl",
+    "saslprep",
+    "stringprep",
+    "rfc4013",
+    "4013"
+  ],
+  "author": "Dmitry Tsvettsikh <me@reklatsmasters.com>",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/node.js",
+  "bugs": {
+    "url": "https://jira.mongodb.org/projects/COMPASS/issues",
+    "email": "compass@mongodb.com"
+  },
+  "homepage": "https://github.com/mongodb-js/devtools-shared/tree/main/packages/saslprep",
+  "version": "1.4.4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mongodb-js/devtools-shared.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "exports": {
+    "browser": {
+      "types": "./dist/browser.d.ts",
+      "default": "./dist/browser.js"
+    },
+    "import": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/.esm-wrapper.mjs"
+    },
+    "require": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    }
+  },
+  "types": "./dist/node.d.ts",
+  "scripts": {
+    "gen-code-points": "ts-node src/generate-code-points.ts src/code-points-data.ts src/code-points-data-browser.ts",
+    "bootstrap": "npm run compile",
+    "prepublishOnly": "npm run compile",
+    "compile": "npm run gen-code-points && tsc -p tsconfig.json && gen-esm-wrapper . ./dist/.esm-wrapper.mjs",
+    "typecheck": "tsc --noEmit",
+    "eslint": "eslint",
+    "prettier": "prettier",
+    "lint": "npm run eslint . && npm run prettier -- --check .",
+    "depcheck": "depcheck",
+    "check": "npm run typecheck && npm run lint && npm run depcheck",
+    "check-ci": "npm run check",
+    "test": "mocha",
+    "test-cov": "nyc -x \"**/*.spec.*\" --reporter=lcov --reporter=text --reporter=html npm run test",
+    "test-watch": "npm run test -- --watch",
+    "test-ci": "npm run test-cov",
+    "reformat": "npm run prettier -- --write ."
+  },
+  "dependencies": {
+    "sparse-bitfield": "^3.0.3"
+  },
+  "devDependencies": {
+    "@mongodb-js/eslint-config-devtools": "^0.11.2",
+    "@mongodb-js/mocha-config-devtools": "^1.1.0",
+    "@mongodb-js/prettier-config-devtools": "^1.0.2",
+    "@mongodb-js/tsconfig-devtools": "^1.1.0",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^22.15.30",
+    "@types/sinon-chai": "^3.2.5",
+    "@types/sparse-bitfield": "^3.0.1",
+    "chai": "^4.5.0",
+    "depcheck": "^1.4.7",
+    "eslint": "^7.25.0 || ^8.0.0",
+    "gen-esm-wrapper": "^1.1.3",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0",
+    "prettier": "^3.5.3",
+    "sinon": "^9.2.3",
+    "typescript": "^5.8.2"
+  },
+  "gitHead": "da4372646f24ef7c9ef6bb8224d0cf1f53be7540"
+}

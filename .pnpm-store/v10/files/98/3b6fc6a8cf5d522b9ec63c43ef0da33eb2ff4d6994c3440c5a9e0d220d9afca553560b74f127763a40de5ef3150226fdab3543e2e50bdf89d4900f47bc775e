@@ -1,0 +1,103 @@
+{
+  "name": "jsdoc-type-pratt-parser",
+  "version": "4.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/src/index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run typecheck && npm run lint && npm run test:spec",
+    "test:spec": "mocha",
+    "test:coverage": "nyc --all npm run test:spec",
+    "test:coveralls": "nyc report --reporter=lcov && coveralls",
+    "lint": "ts-standard",
+    "typecheck": "tsc --noEmit",
+    "build": "rollup -c",
+    "apidoc": "typedoc --options typedoc.json",
+    "preversion": "npm test",
+    "prepublishOnly": "npm run build",
+    "semantic-release": "semantic-release",
+    "benchmark": "npm run build && node benchmark/benchmark.js",
+    "upgrade": "npm-upgrade"
+  },
+  "author": "Simon Seyock (https://github.com/simonseyock)",
+  "contributors": [
+    "Brett Zamir"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.15.1",
+    "@types/sinon": "^10.0.13",
+    "@types/sinon-chai": "^3.2.9",
+    "benchmark": "^2.1.4",
+    "catharsis": "^0.9.0",
+    "chai": "^4.3.7",
+    "coveralls": "^3.1.1",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "jsdoctypeparser": "^9.0.0",
+    "mocha": "^10.2.0",
+    "npm-upgrade": "^3.1.0",
+    "nyc": "^15.1.0",
+    "rollup": "^3.19.1",
+    "semantic-release": "^20.1.1",
+    "sinon": "^15.0.2",
+    "sinon-chai": "^3.7.0",
+    "ts-node": "^10.9.1",
+    "ts-standard": "^12.0.2",
+    "typedoc": "^0.23.26",
+    "typedoc-plugin-merge-modules": "^4.0.1",
+    "typescript": "^4.9.5"
+  },
+  "ts-standard": {
+    "ignore": [
+      "/submodules/",
+      "/build/",
+      "/pages/"
+    ]
+  },
+  "files": [
+    "dist/**/*",
+    "src/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdoc-type-pratt-parser/jsdoc-type-pratt-parser.git"
+  },
+  "bugs": "https://github.com/jsdoc-type-pratt-parser/jsdoc-type-pratt-parser/issues",
+  "homepage": "https://github.com/jsdoc-type-pratt-parser/jsdoc-type-pratt-parser",
+  "keywords": [
+    "jsdoc",
+    "pratt",
+    "parser"
+  ],
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "dev",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/github",
+      "@semantic-release/npm",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

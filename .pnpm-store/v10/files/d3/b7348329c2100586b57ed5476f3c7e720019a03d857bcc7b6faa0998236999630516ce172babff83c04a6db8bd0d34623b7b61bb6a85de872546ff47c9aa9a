@@ -1,0 +1,63 @@
+{
+  "name": "parse-imports",
+  "version": "2.2.1",
+  "author": {
+    "name": "Tomer Aberbach",
+    "email": "tomeraberbach@gmail.com",
+    "url": "https://tomeraberba.ch"
+  },
+  "description": "A blazing fast ES module imports parser.",
+  "keywords": [
+    "esm",
+    "imports",
+    "module",
+    "parser",
+    "imports"
+  ],
+  "homepage": "https://github.com/TomerAberbach/parse-imports",
+  "repository": "TomerAberbach/parse-imports",
+  "bugs": {
+    "url": "https://github.com/TomerAberbach/parse-imports/issues"
+  },
+  "license": "Apache-2.0 AND MIT",
+  "files": [
+    "dist",
+    "license-apache",
+    "license-mit",
+    "notice-apache"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">= 18"
+  },
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "prettier": "tomer/prettier-config",
+  "dependencies": {
+    "es-module-lexer": "^1.5.3",
+    "slashes": "^3.0.12"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.8",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.2",
+    "tomer": "^3.2.4",
+    "typescript": "^5.5.2"
+  },
+  "scripts": {
+    "format": "tomer format",
+    "lint": "tomer lint",
+    "typecheck": "tomer typecheck",
+    "test": "tomer test",
+    "build": "tomer build",
+    "clean": "tomer clean dist"
+  }
+}

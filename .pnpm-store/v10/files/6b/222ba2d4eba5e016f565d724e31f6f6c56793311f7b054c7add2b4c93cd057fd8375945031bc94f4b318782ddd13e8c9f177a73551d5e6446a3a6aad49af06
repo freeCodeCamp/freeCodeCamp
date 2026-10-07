@@ -1,0 +1,100 @@
+{
+	"name": "globals",
+	"version": "15.15.0",
+	"description": "Global identifiers from different JavaScript environments",
+	"license": "MIT",
+	"repository": "sindresorhus/globals",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"test": "npm run build && xo && ava && tsd",
+		"prepare": "npm run build",
+		"update": "node scripts/update.mjs",
+		"update:browser": "node scripts/update.mjs --environment=browser",
+		"update:builtin": "node scripts/update.mjs --environment=builtin",
+		"update:nodeBuiltin": "node scripts/update.mjs --environment=nodeBuiltin",
+		"update:worker": "node scripts/update.mjs --environment=worker",
+		"update:shelljs": "node scripts/update.mjs --environment=shelljs",
+		"update:jest": "node scripts/update.mjs --environment=jest",
+		"update:vitest": "node scripts/update.mjs --environment=vitest",
+		"build": "run-s build:data build:types",
+		"build:data": "node scripts/generate-data.mjs",
+		"build:types": "node scripts/generate-types.mjs"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"globals.json"
+	],
+	"keywords": [
+		"globals",
+		"global",
+		"identifiers",
+		"variables",
+		"vars",
+		"jshint",
+		"eslint",
+		"environments"
+	],
+	"devDependencies": {
+		"@vitest/eslint-plugin": "^1.1.30",
+		"ava": "^6.1.3",
+		"cheerio": "^1.0.0-rc.12",
+		"eslint-plugin-jest": "^28.8.3",
+		"execa": "^9.4.0",
+		"get-port": "^7.1.0",
+		"npm-run-all2": "^6.2.3",
+		"outdent": "^0.8.0",
+		"puppeteer": "^23.4.1",
+		"shelljs": "^0.8.5",
+		"tsd": "^0.31.2",
+		"type-fest": "^4.26.1",
+		"xo": "^0.59.3"
+	},
+	"xo": {
+		"rules": {
+			"unicorn/prefer-module": "off"
+		},
+		"overrides": [
+			{
+				"files": [
+					"data/*.mjs"
+				],
+				"rules": {
+					"import/no-anonymous-default-export": "off",
+					"camelcase": "off",
+					"unicorn/filename-case": [
+						"error",
+						{
+							"cases": {
+								"camelCase": true,
+								"kebabCase": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"files": [
+					"scripts/*.mjs"
+				],
+				"rules": {
+					"n/no-unsupported-features/node-builtins": "off"
+				}
+			}
+		]
+	},
+	"tsd": {
+		"compilerOptions": {
+			"resolveJsonModule": true
+		}
+	}
+}

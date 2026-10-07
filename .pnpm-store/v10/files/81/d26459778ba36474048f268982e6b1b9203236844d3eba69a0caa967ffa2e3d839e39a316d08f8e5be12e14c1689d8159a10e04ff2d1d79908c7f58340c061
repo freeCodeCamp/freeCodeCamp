@@ -1,0 +1,328 @@
+{
+  "name": "@prisma/client",
+  "version": "6.19.3",
+  "description": "Prisma Client is an auto-generated, type-safe and modern JavaScript/TypeScript ORM for Node.js that's tailored to your data. Supports PostgreSQL, CockroachDB, MySQL, MariaDB, SQL Server, SQLite & MongoDB databases.",
+  "keywords": [
+    "ORM",
+    "Prisma",
+    "prisma2",
+    "Prisma Client",
+    "client",
+    "query",
+    "query-builder",
+    "database",
+    "db",
+    "JavaScript",
+    "JS",
+    "TypeScript",
+    "TS",
+    "SQL",
+    "SQLite",
+    "pg",
+    "Postgres",
+    "PostgreSQL",
+    "CockroachDB",
+    "MySQL",
+    "MariaDB",
+    "MSSQL",
+    "SQL Server",
+    "SQLServer",
+    "MongoDB",
+    "react-native"
+  ],
+  "main": "default.js",
+  "types": "default.d.ts",
+  "browser": "index-browser.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "require": {
+        "types": "./default.d.ts",
+        "node": "./default.js",
+        "edge-light": "./default.js",
+        "workerd": "./default.js",
+        "worker": "./default.js",
+        "browser": "./index-browser.js"
+      },
+      "import": {
+        "types": "./default.d.ts",
+        "node": "./default.js",
+        "edge-light": "./default.js",
+        "workerd": "./default.js",
+        "worker": "./default.js",
+        "browser": "./index-browser.js"
+      },
+      "default": "./default.js"
+    },
+    "./edge": {
+      "types": "./edge.d.ts",
+      "require": "./edge.js",
+      "import": "./edge.js",
+      "default": "./edge.js"
+    },
+    "./react-native": {
+      "types": "./react-native.d.ts",
+      "require": "./react-native.js",
+      "import": "./react-native.js",
+      "default": "./react-native.js"
+    },
+    "./extension": {
+      "types": "./extension.d.ts",
+      "require": "./extension.js",
+      "import": "./extension.js",
+      "default": "./extension.js"
+    },
+    "./index-browser": {
+      "types": "./index.d.ts",
+      "require": "./index-browser.js",
+      "import": "./index-browser.js",
+      "default": "./index-browser.js"
+    },
+    "./index": {
+      "types": "./index.d.ts",
+      "require": "./index.js",
+      "import": "./index.js",
+      "default": "./index.js"
+    },
+    "./wasm": {
+      "types": "./wasm.d.ts",
+      "require": "./wasm.js",
+      "import": "./wasm.mjs",
+      "default": "./wasm.mjs"
+    },
+    "./runtime/client": {
+      "types": "./runtime/client.d.ts",
+      "node": {
+        "require": "./runtime/client.js",
+        "default": "./runtime/client.js"
+      },
+      "require": "./runtime/client.js",
+      "import": "./runtime/client.mjs",
+      "default": "./runtime/client.mjs"
+    },
+    "./runtime/library": {
+      "types": "./runtime/library.d.ts",
+      "require": "./runtime/library.js",
+      "import": "./runtime/library.mjs",
+      "default": "./runtime/library.mjs"
+    },
+    "./runtime/binary": {
+      "types": "./runtime/binary.d.ts",
+      "require": "./runtime/binary.js",
+      "import": "./runtime/binary.mjs",
+      "default": "./runtime/binary.mjs"
+    },
+    "./runtime/wasm-engine-edge": {
+      "types": "./runtime/wasm-engine-edge.d.ts",
+      "require": "./runtime/wasm-engine-edge.js",
+      "import": "./runtime/wasm-engine-edge.mjs",
+      "default": "./runtime/wasm-engine-edge.mjs"
+    },
+    "./runtime/wasm-compiler-edge": {
+      "types": "./runtime/wasm-compiler-edge.d.ts",
+      "require": "./runtime/wasm-compiler-edge.js",
+      "import": "./runtime/wasm-compiler-edge.mjs",
+      "default": "./runtime/wasm-compiler-edge.mjs"
+    },
+    "./runtime/edge": {
+      "types": "./runtime/edge.d.ts",
+      "require": "./runtime/edge.js",
+      "import": "./runtime/edge-esm.js",
+      "default": "./runtime/edge-esm.js"
+    },
+    "./runtime/react-native": {
+      "types": "./runtime/react-native.d.ts",
+      "require": "./runtime/react-native.js",
+      "import": "./runtime/react-native.js",
+      "default": "./runtime/react-native.js"
+    },
+    "./runtime/index-browser": {
+      "types": "./runtime/index-browser.d.ts",
+      "require": "./runtime/index-browser.js",
+      "import": "./runtime/index-browser.mjs",
+      "default": "./runtime/index-browser.mjs"
+    },
+    "./generator-build": {
+      "require": "./generator-build/index.js",
+      "import": "./generator-build/index.js",
+      "default": "./generator-build/index.js"
+    },
+    "./sql": {
+      "require": {
+        "types": "./sql.d.ts",
+        "node": "./sql.js",
+        "default": "./sql.js"
+      },
+      "import": {
+        "types": "./sql.d.ts",
+        "node": "./sql.mjs",
+        "default": "./sql.mjs"
+      },
+      "default": "./sql.js"
+    },
+    "./*": "./*"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "homepage": "https://www.prisma.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prisma/prisma.git",
+    "directory": "packages/client"
+  },
+  "author": "Tim Suchanek <suchanek@prisma.io>",
+  "bugs": "https://github.com/prisma/prisma/issues",
+  "scripts": {
+    "dev": "DEV=true tsx helpers/build.ts",
+    "build": "tsx helpers/build.ts",
+    "test": "dotenv -e ../../.db.env -- jest --silent",
+    "test:e2e": "dotenv -e ../../.db.env -- tsx tests/e2e/_utils/run.ts",
+    "test:functional": "dotenv -e ../../.db.env -- tsx helpers/functional-test/run-tests.ts",
+    "test:functional:client": "pnpm run test:functional --client-runtime client --engine-type client",
+    "test:memory": "dotenv -e ../../.db.env -- tsx helpers/memory-tests.ts",
+    "test:functional:code": "dotenv -e ../../.db.env -- tsx helpers/functional-test/run-tests.ts --no-types",
+    "test:functional:types": "dotenv -e ../../.db.env -- tsx helpers/functional-test/run-tests.ts --types-only",
+    "test-notypes": "dotenv -e ../../.db.env -- jest --testPathIgnorePatterns src/__tests__/types/types.test.ts",
+    "generate": "node scripts/postinstall.js",
+    "postinstall": "node scripts/postinstall.js",
+    "prepublishOnly": "pnpm run build",
+    "new-test": "tsx ./helpers/new-test/new-test.ts"
+  },
+  "files": [
+    "README.md",
+    "runtime",
+    "scripts",
+    "generator-build",
+    "edge.js",
+    "edge.d.ts",
+    "wasm.js",
+    "wasm.d.ts",
+    "index.js",
+    "index.d.ts",
+    "react-native.js",
+    "react-native.d.ts",
+    "default.js",
+    "default.d.ts",
+    "index-browser.js",
+    "extension.js",
+    "extension.d.ts",
+    "sql.d.ts",
+    "sql.js",
+    "sql.mjs"
+  ],
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250408.0",
+    "@codspeed/benchmark.js-plugin": "4.0.0",
+    "@faker-js/faker": "9.6.0",
+    "@fast-check/jest": "2.0.3",
+    "@hono/node-server": "1.19.0",
+    "@inquirer/prompts": "7.3.3",
+    "@jest/create-cache-key-function": "29.7.0",
+    "@jest/globals": "29.7.0",
+    "@jest/test-sequencer": "29.7.0",
+    "@libsql/client": "0.8.1",
+    "@neondatabase/serverless": "0.10.2",
+    "@opentelemetry/api": "1.9.0",
+    "@opentelemetry/context-async-hooks": "2.1.0",
+    "@opentelemetry/instrumentation": "0.206.0",
+    "@opentelemetry/resources": "2.1.0",
+    "@opentelemetry/sdk-trace-base": "2.1.0",
+    "@opentelemetry/semantic-conventions": "1.37.0",
+    "@planetscale/database": "1.19.0",
+    "@prisma/adapter-better-sqlite3": "workspace:*",
+    "@prisma/adapter-d1": "workspace:*",
+    "@prisma/adapter-libsql": "workspace:*",
+    "@prisma/adapter-mariadb": "workspace:*",
+    "@prisma/adapter-mssql": "workspace:*",
+    "@prisma/adapter-neon": "workspace:*",
+    "@prisma/adapter-pg": "workspace:*",
+    "@prisma/adapter-planetscale": "workspace:*",
+    "@prisma/client-common": "workspace:*",
+    "@prisma/client-engine-runtime": "workspace:*",
+    "@prisma/client-generator-js": "workspace:*",
+    "@prisma/client-generator-ts": "workspace:*",
+    "@prisma/config": "workspace:*",
+    "@prisma/debug": "workspace:*",
+    "@prisma/dmmf": "workspace:*",
+    "@prisma/driver-adapter-utils": "workspace:*",
+    "@prisma/engines": "workspace:*",
+    "@prisma/engines-version": "7.1.1-3.c2990dca591cba766e3b7ef5d9e8a84796e47ab7",
+    "@prisma/fetch-engine": "workspace:*",
+    "@prisma/generator": "workspace:*",
+    "@prisma/generator-helper": "workspace:*",
+    "@prisma/get-platform": "workspace:*",
+    "@prisma/instrumentation": "workspace:*",
+    "@prisma/internals": "workspace:*",
+    "@prisma/migrate": "workspace:*",
+    "@prisma/mini-proxy": "0.9.5",
+    "@prisma/query-compiler-wasm": "7.1.1-3.c2990dca591cba766e3b7ef5d9e8a84796e47ab7",
+    "@prisma/query-engine-wasm": "6.19.0-26.2ba551f319ab1df4bc874a89965d8b3641056773",
+    "@prisma/query-plan-executor": "workspace:*",
+    "@prisma/ts-builders": "workspace:*",
+    "@snaplet/copycat": "6.0.0",
+    "@swc-node/register": "1.10.9",
+    "@swc/core": "1.11.5",
+    "@swc/jest": "0.2.37",
+    "@timsuchanek/copy": "1.4.5",
+    "@types/debug": "4.1.12",
+    "@types/fs-extra": "11.0.4",
+    "@types/jest": "29.5.14",
+    "@types/js-levenshtein": "1.1.3",
+    "@types/mssql": "9.1.8",
+    "@types/node": "18.19.76",
+    "@types/pg": "8.11.11",
+    "arg": "5.0.2",
+    "benchmark": "2.1.4",
+    "cookie-es": "2.0.0",
+    "decimal.js": "10.5.0",
+    "execa": "8.0.1",
+    "expect-type": "1.2.2",
+    "fs-extra": "11.3.0",
+    "get-stream": "6.0.1",
+    "globby": "11.1.0",
+    "indent-string": "4.0.0",
+    "jest": "29.7.0",
+    "jest-extended": "4.0.2",
+    "jest-junit": "16.0.0",
+    "jest-serializer-ansi-escapes": "4.0.0",
+    "jest-snapshot": "29.7.0",
+    "js-levenshtein": "1.1.6",
+    "kleur": "4.1.5",
+    "klona": "2.0.6",
+    "mariadb": "3.4.5",
+    "memfs": "4.17.2",
+    "mssql": "11.0.1",
+    "new-github-issue-url": "0.2.1",
+    "p-retry": "4.6.2",
+    "pg": "8.14.1",
+    "resolve": "1.22.10",
+    "simple-statistics": "7.8.8",
+    "sort-keys": "5.1.0",
+    "source-map-support": "0.5.21",
+    "sql-template-tag": "5.2.1",
+    "stacktrace-parser": "0.1.11",
+    "strip-ansi": "7.1.0",
+    "strip-indent": "4.0.0",
+    "tempy": "3.0.0",
+    "ts-pattern": "5.6.2",
+    "tsd": "0.31.2",
+    "typescript": "5.4.5",
+    "undici": "7.4.0",
+    "zx": "8.4.1"
+  },
+  "peerDependencies": {
+    "prisma": "*",
+    "typescript": ">=5.1.0"
+  },
+  "peerDependenciesMeta": {
+    "prisma": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "sideEffects": false
+}

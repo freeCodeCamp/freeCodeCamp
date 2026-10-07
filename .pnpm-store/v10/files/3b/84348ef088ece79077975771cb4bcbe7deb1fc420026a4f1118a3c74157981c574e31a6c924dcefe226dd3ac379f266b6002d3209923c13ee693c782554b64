@@ -1,0 +1,12 @@
+{
+  "name": "fbjs-css-vars",
+  "version": "1.0.2",
+  "description": "This package exports a few of the CSS variables that we use in Facebook projects. This is not the full list we have internally but focused on making available the minimum set needed by our open source projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "repository": "facebook/fbjs",
+  "license": "MIT"
+}

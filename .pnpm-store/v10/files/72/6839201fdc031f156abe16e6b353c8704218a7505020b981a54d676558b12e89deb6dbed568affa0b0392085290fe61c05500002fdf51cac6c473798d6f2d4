@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/endOfDay/index.js",
+  "typings": "../typings.d.ts"
+}

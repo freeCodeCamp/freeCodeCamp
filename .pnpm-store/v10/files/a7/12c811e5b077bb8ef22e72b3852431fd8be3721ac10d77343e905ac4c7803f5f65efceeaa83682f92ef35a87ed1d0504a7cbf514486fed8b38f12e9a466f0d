@@ -1,0 +1,47 @@
+{
+  "name": "symbol-tree",
+  "version": "3.2.4",
+  "description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+  "main": "lib/SymbolTree.js",
+  "scripts": {
+    "lint": "eslint lib test",
+    "test": "istanbul cover test/SymbolTree.js",
+    "posttest": "npm run lint",
+    "ci": "istanbul cover test/SymbolTree.js --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "postci": "npm run posttest",
+    "predocumentation": "cp readme-header.md README.md",
+    "documentation": "jsdoc2md --files lib/SymbolTree.js >> README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdom/js-symbol-tree.git"
+  },
+  "keywords": [
+    "list",
+    "queue",
+    "stack",
+    "linked-list",
+    "tree",
+    "es6",
+    "dom",
+    "symbol"
+  ],
+  "files": [
+    "lib"
+  ],
+  "author": "Joris van der Wel <joris@jorisvanderwel.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsdom/js-symbol-tree/issues"
+  },
+  "homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "coveralls": "^3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.2.0",
+    "istanbul": "^0.4.5",
+    "jsdoc-to-markdown": "^5.0.0",
+    "tape": "^4.0.0"
+  }
+}

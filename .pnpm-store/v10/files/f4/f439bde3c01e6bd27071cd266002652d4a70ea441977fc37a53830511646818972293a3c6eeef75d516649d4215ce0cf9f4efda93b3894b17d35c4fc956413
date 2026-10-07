@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TestLive.js",
+  "module": "../dist/esm/TestLive.js",
+  "types": "../dist/dts/TestLive.d.ts"
+}

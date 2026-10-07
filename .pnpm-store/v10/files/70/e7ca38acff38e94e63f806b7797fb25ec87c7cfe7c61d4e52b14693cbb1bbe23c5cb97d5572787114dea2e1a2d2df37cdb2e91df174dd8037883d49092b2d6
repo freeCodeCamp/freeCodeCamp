@@ -1,0 +1,472 @@
+{
+  "definitions": {
+    "propertyList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "property-reference": {
+          "comment": "property-reference is an extension to the JSON schema validator. Here it jumps to the root level of the hierarchy and tests if a value is an existing key there (i.e a defined property). See test/validate-schema.js for implementation details.",
+          "$data": "/"
+        }
+      }
+    },
+    "animationType": {
+      "enum": [
+        "angleBasicShapeOrPath",
+        "angleOrBasicShapeOrPath",
+        "asIfPossibleOtherwiseDiscrete",
+        "basicShapeOtherwiseNo",
+        "byComputedValue",
+        "byComputedValueType",
+        "byComputedValueTypeNormalAnimatesAsObliqueZeroDeg",
+        "byDynamicRangeLimitMix",
+        "color",
+        "discrete",
+        "discreteButVisibleForDurationWhenAnimatedHidden",
+        "discreteButVisibleForDurationWhenAnimatedNone",
+        "eachOfShorthandPropertiesExceptUnicodeBiDiAndDirection",
+        "filterList",
+        "integer",
+        "length",
+        "lpc",
+        "notAnimatable",
+        "numberOrLength",
+        "number",
+        "position",
+        "rectangle",
+        "repeatableList",
+        "shadowList",
+        "simpleListOfLpc",
+        "simpleListOfLpcDifferenceLpc",
+        "superellipseInterpolation",
+        "transform",
+        "visibility"
+      ]
+    },
+    "percentages": {
+      "enum": [
+        "blockSizeOfContainingBlock",
+        "convertedToNumber",
+        "dependsOnLayoutModel",
+        "inlineSizeOfContainingBlock",
+        "lengthsAsPercentages",
+        "logicalHeightOfContainingBlock",
+        "logicalWidthOfContainingBlock",
+        "logicalHeightOrWidthOfContainingBlock",
+        "mapToRange0To1",
+        "maxZoomFactor",
+        "minZoomFactor",
+        "no",
+        "referToBorderBox",
+        "referToContainingBlockHeight",
+        "referToDimensionOfBorderBox",
+        "referToDimensionOfContentArea",
+        "referToElementFontSize",
+        "referToFlexContainersInnerMainSize",
+        "referToHeightOfBackgroundPositioningAreaMinusBackgroundImageHeight",
+        "referToLineBoxWidth",
+        "referToLineHeight",
+        "referToParentElementsFontSize",
+        "referToSizeOfBackgroundPositioningAreaMinusBackgroundImageSize",
+        "referToSizeOfBorderImage",
+        "referToSizeOfBoundingBox",
+        "referToSizeOfContainingBlock",
+        "referToSizeOfElement",
+        "referToSizeOfFont",
+        "referToSizeOfMaskBorderImage",
+        "referToSizeOfMaskPaintingArea",
+        "referToSVGViewportHeight",
+        "referToSVGViewportSize",
+        "referToSVGViewportWidth",
+        "referToSVGViewportDiagonal",
+        "referToTheUsedValueOfLineHeight",
+        "referToTotalPathLength",
+        "referToWidthAndHeightOfElement",
+        "referToWidthOfAffectedGlyph",
+        "referToWidthOfBackgroundPositioningAreaMinusBackgroundImageWidth",
+        "referToWidthOfContainingBlock",
+        "referToWidthOrHeightOfBorderImageArea",
+        "referToReferenceBoxWhenSpecifiedOtherwiseBorderBox",
+        "regardingHeightOfGeneratedBoxContainingBlockPercentages0",
+        "regardingHeightOfGeneratedBoxContainingBlockPercentagesNone",
+        "regardingHeightOfGeneratedBoxContainingBlockPercentagesRelativeToContainingBlock",
+        "relativeToBackgroundPositioningArea",
+        "relativeToCorrespondingDimensionOfRelevantScrollport",
+        "relativeToMaskBorderImageArea",
+        "relativeToScrollContainerPaddingBoxAxis",
+        "relativeToTheScrollContainersScrollport",
+        "relativeToTimelineRangeIfSpecifiedOtherwiseEntireTimeline",
+        "relativeToWidthAndHeight"
+      ]
+    },
+    "computed": {
+      "enum": [
+        "absoluteLength",
+        "absoluteLength0ForNone",
+        "absoluteLength0IfColumnRuleStyleNoneOrHidden",
+        "absoluteLengthOr0IfBorderBottomStyleNoneOrHidden",
+        "absoluteLengthOr0IfBorderLeftStyleNoneOrHidden",
+        "absoluteLengthOr0IfBorderRightStyleNoneOrHidden",
+        "absoluteLengthOr0IfBorderTopStyleNoneOrHidden",
+        "absoluteLengthOrAsSpecified",
+        "absoluteLengthOrKeyword",
+        "absoluteLengthOrNone",
+        "absoluteLengthOrNormal",
+        "absoluteLengthOrPercentage",
+        "absoluteLengthOrPercentageNumbersConverted",
+        "absoluteLengthsSpecifiedColorAsSpecified",
+        "absoluteLengthZeroIfBorderStyleNoneOrHidden",
+        "absoluteLengthZeroOrLarger",
+        "absoluteURIOrNone",
+        "angleRoundedToNextQuarter",
+        "asAutoOrColor",
+        "asColorOrAbsoluteURL",
+        "asDefinedForBasicShapeWithAbsoluteURIOtherwiseAsSpecified",
+        "asLength",
+        "asLonghands",
+        "asSpecified",
+        "asSpecifiedAppliesToEachProperty",
+        "asSpecifiedButVisibleOrClipReplacedToAutoOrHiddenIfOtherValueDifferent",
+        "asSpecifiedButWithPercentageConvertedToTheEquivalentNumber",
+        "asSpecifiedExceptMatchParent",
+        "asSpecifiedExceptPositionedFloatingAndRootElementsKeywordMaybeDifferent",
+        "asSpecifiedRelativeToAbsoluteLengths",
+        "asSpecifiedURLsAbsolute",
+        "asSpecifiedWithExceptionOfResolution",
+        "asSpecifiedWithLengthsAbsoluteAndNormalComputingToZeroExceptMultiColumn",
+        "asSpecifiedWithLengthValuesComputed",
+        "asSpecifiedWithVarsSubstituted",
+        "autoOnAbsolutelyPositionedElementsValueOfAlignItemsOnParent",
+        "autoOrRectangle",
+        "autoOrAbsoluteLength",
+        "colorPlusThreeAbsoluteLengths",
+        "computedColor",
+        "computedValueForDynamicRangeLimit",
+        "consistsOfTwoDimensionKeywords",
+        "consistsOfTwoKeywordsForOriginAndOffsets",
+        "correspondingSuperellipse",
+        "forLengthAbsoluteValueOtherwisePercentage",
+        "autoForTranslucentColorRGBAOtherwiseRGB",
+        "keywordOrNumericalValueBolderLighterTransformedToRealValue",
+        "keywordPlusIntegerIfDigits",
+        "lengthAbsolutePercentageAsSpecifiedOtherwiseAuto",
+        "listEachItemConsistingOfAbsoluteLengthPercentageAndOrigin",
+        "listEachItemConsistingOfAbsoluteLengthPercentageOrKeyword",
+        "listEachItemConsistingOfNormalLengthPercentageOrNameLengthPercentage",
+        "listEachItemConsistingOfPairsOfAutoOrLengthPercentage",
+        "listEachItemHasTwoKeywordsOnePerDimension",
+        "listEachItemIdentifierOrNoneAuto",
+        "listEachItemTwoKeywordsOriginOffsets",
+        "listOfNoneAutoIdentScrollOrView",
+        "noneOrImageWithAbsoluteURI",
+        "noneOrOrderedListOfIdentifiers",
+        "normalizedAngle",
+        "normalOnElementsForPseudosNoneAbsoluteURIStringOrAsSpecified",
+        "normalOrComputedTime",
+        "oneToFourPercentagesOrAbsoluteLengthsPlusFill",
+        "optimumValueOfAbsoluteLengthOrNormal",
+        "percentage",
+        "percentageAsSpecifiedAbsoluteLengthOrNone",
+        "percentageAsSpecifiedOrAbsoluteLength",
+        "percentageAutoOrAbsoluteLength",
+        "percentageOrAbsoluteLengthPlusKeywords",
+        "sameAsBoxOffsets",
+        "sameAsMaxWidthAndMaxHeight",
+        "sameAsMinWidthAndMinHeight",
+        "sameAsWidthAndHeight",
+        "specifiedInteger",
+        "specifiedIntegerOrAbsoluteLength",
+        "specifiedKeywordOrComputedFunction",
+        "specifiedValue",
+        "specifiedValueClipped0To1",
+        "specifiedValueNumberClipped0To1",
+        "theComputedLengthAndVisualBox",
+        "theKeywordListStyleImageNoneOrComputedValue",
+        "theSpecifiedKeyword",
+        "theSpecifiedKeywordOrAComputedLengthPercentageValue",
+        "translucentValuesRGBAOtherwiseRGB",
+        "twoAbsoluteLengthOrPercentages",
+        "twoAbsoluteLengths"
+      ]
+    },
+    "appliesto": {
+      "enum": [
+        "absolutelyPositionedElements",
+        "allElements",
+        "allElementsAcceptingWidthOrHeight",
+        "allElementsAndPseudos",
+        "allElementsAndText",
+        "allElementsButNonReplacedAndTableColumns",
+        "allElementsButNonReplacedAndTableRows",
+        "allElementsCreatingNativeWindows",
+        "allElementsExceptGeneratedContentOrPseudoElements",
+        "allElementsExceptInlineBoxesAndInternalRubyOrTableBoxes",
+        "allElementsExceptInternalTableDisplayTypes",
+        "allElementsExceptNonReplacedInlineElementsTableRowsColumnsRowColumnGroups",
+        "allElementsExceptTableDisplayTypes",
+        "allElementsExceptTableElementsWhenCollapse",
+        "allElementsExceptTableRowColumnGroupsTableRowsColumns",
+        "allElementsExceptTableRowGroupsRowsColumnGroupsAndColumns",
+        "allElementsNoEffectIfDisplayNone",
+        "allElementsSomeValuesNoEffectOnNonInlineElements",
+        "allElementsSVGContainerElements",
+        "allElementsSVGContainerGraphicsAndGraphicsReferencingElements",
+        "allElementsThatCanReferenceImages",
+        "allElementsThatGenerateAPrincipalBox",
+        "allElementsTreeAbidingPseudoElementsPageMarginBoxes",
+        "allElementsUAsNotRequiredWhenCollapse",
+        "anyElementEffectOnProgressAndMeter",
+        "asLonghands",
+        "beforeAndAfterPseudos",
+        "blockContainerElements",
+        "blockContainers",
+        "blockContainersAndInlineBoxes",
+        "blockContainersAndMultiColumnContainers",
+        "blockContainersExceptMultiColumnContainers",
+        "blockContainersExceptTableWrappers",
+        "blockContainersFlexContainersGridContainers",
+        "blockContainersFlexContainersGridContainersInlineBoxesTableRowsSVGTextContentElements",
+        "blockContainersMultiColumnContainersFlexContainersGridContainers",
+        "blockElementsInNormalFlow",
+        "blockLevelElements",
+        "blockLevelBoxesAndAbsolutelyPositionedBoxesAndGridItems",
+        "boxElements",
+        "childrenOfBoxElements",
+        "directChildrenOfElementsWithDisplayMozBoxMozInlineBox",
+        "elementsForWhichLayoutContainmentCanApply",
+        "elementsForWhichSizeContainmentCanApply",
+        "elementsThatAcceptInput",
+        "elementsWithDefaultPreferredSize",
+        "elementsWithDisplayBoxOrInlineBox",
+        "elementsWithDisplayMarker",
+        "elementsWithDisplayMozBoxMozInlineBox",
+        "elementsWithOverflowNotVisibleAndReplacedElements",
+        "exclusionElements",
+        "firstLetterPseudoElementsAndInlineLevelFirstChildren",
+        "flexContainers",
+        "flexItemsAndAbsolutelyPositionedFlexContainerChildren",
+        "flexItemsAndInFlowPseudos",
+        "flexItemsGridItemsAbsolutelyPositionedContainerChildren",
+        "flexItemsGridItemsAndAbsolutelyPositionedBoxes",
+        "floats",
+        "gridContainers",
+        "gridContainersWithMasonryLayout",
+        "gridContainersWithMasonryLayoutInTheirBlockAxis",
+        "gridContainersWithMasonryLayoutInTheirInlineAxis",
+        "gridItemsAndBoxesWithinGridContainer",
+        "iframeElements",
+        "images",
+        "inFlowBlockLevelElements",
+        "inlineBoxesAndBlockContainers",
+        "inFlowChildrenOfBoxElements",
+        "inlineLevelAndTableCellElements",
+        "inlineLevelBoxes",
+        "inlineLevelBoxesAndSVGTextContentElements",
+        "inlineLevelBoxesFlexItemsGridItemsTableCellsAndSVGTextContentElements",
+        "limitedSVGElements",
+        "limitedSVGElementsCircle",
+        "limitedSVGElementsEllipse",
+        "limitedSVGElementsEllipseRect",
+        "limitedSVGElementsFilterPrimitives",
+        "limitedSVGElementsFloodAndDropShadow",
+        "limitedSVGElementsGeometry",
+        "limitedSVGElementsGraphics",
+        "limitedSVGElementsGraphicsAndUse",
+        "limitedSVGElementsLightSource",
+        "limitedSVGElementsPath",
+        "limitedSVGElementsShapes",
+        "limitedSVGElementsShapesAndTextContent",
+        "limitedSVGElementsShapeText",
+        "limitedSVGElementsStop",
+        "limitedSVGElementsTextContent",
+        "listItems",
+        "maskElements",
+        "multicolElements",
+        "multiColumnElementsFlexContainersGridContainers",
+        "multilineFlexContainers",
+        "nonReplacedBlockAndInlineBlockElements",
+        "nonReplacedBlockElements",
+        "nonReplacedElements",
+        "nonReplacedInlineElements",
+        "positionedElements",
+        "positionedElementsWithADefaultAnchorElement",
+        "replacedElements",
+        "rubyAnnotationContainers",
+        "rubyBasesAnnotationsBaseAnnotationContainers",
+        "sameAsMargin",
+        "sameAsWidthAndHeight",
+        "scrollContainers",
+        "scrollingBoxes",
+        "tableCaptionElements",
+        "tableCellElements",
+        "tableElements",
+        "textAndBlockContainers",
+        "textAndSVGShapes",
+        "textElements",
+        "textOrElementsThatAcceptInput",
+        "textFields",
+        "transformableElements"
+      ]
+    },
+    "alsoApplyTo": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "::first-letter",
+          "::first-line",
+          "::placeholder"
+        ]
+      }
+    },
+    "order": {
+      "enum": [
+        "canonicalOrder",
+        "lengthOrPercentageBeforeKeywordIfBothPresent",
+        "lengthOrPercentageBeforeKeywords",
+        "oneOrTwoValuesLengthAbsoluteKeywordsPercentages",
+        "orderOfAppearance",
+        "percentagesOrLengthsFollowedByFill",
+        "perGrammar",
+        "uniqueOrder"
+      ]
+    },
+    "status": {
+      "enum": [
+        "standard",
+        "nonstandard",
+        "experimental",
+        "obsolete"
+      ]
+    },
+    "mdn_url": {
+      "type": "string",
+      "pattern": "^https://developer.mozilla.org/docs/"
+    }
+  },
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "syntax",
+      "inherited",
+      "animationType",
+      "percentages",
+      "groups",
+      "initial",
+      "appliesto",
+      "computed",
+      "order",
+      "status"
+    ],
+    "properties": {
+      "syntax": {
+        "type": "string"
+      },
+      "media": {
+        "oneOf": [
+          {
+            "type": "string",
+            "enum": [
+              "all",
+              "aural",
+              "continuous",
+              "interactive",
+              "none",
+              "noPracticalMedia",
+              "paged",
+              "visual",
+              "visualInContinuousMediaNoEffectInOverflowColumns"
+            ]
+          },
+          {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "interactive",
+                "paged",
+                "visual"
+              ]
+            }
+          }
+        ]
+      },
+      "inherited": {
+        "type": "boolean"
+      },
+      "animationType": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/animationType"
+          },
+          {
+            "$ref": "#/definitions/propertyList"
+          }
+        ]
+      },
+      "percentages": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/percentages"
+          },
+          {
+            "$ref": "#/definitions/propertyList"
+          }
+        ]
+      },
+      "groups": {
+        "type": "array",
+        "minitems": 1,
+        "uniqueItems": true,
+        "items": {
+          "$ref": "definitions.json#/groupList"
+        }
+      },
+      "initial": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/definitions/propertyList"
+          }
+        ]
+      },
+      "appliesto": {
+        "$ref": "#/definitions/appliesto"
+      },
+      "alsoAppliesTo": {
+        "$ref": "#/definitions/alsoApplyTo"
+      },
+      "computed": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/computed"
+          },
+          {
+            "$ref": "#/definitions/propertyList"
+          }
+        ]
+      },
+      "order": {
+        "$ref": "#/definitions/order"
+      },
+      "stacking": {
+        "type": "boolean"
+      },
+      "status": {
+        "$ref": "#/definitions/status"
+      },
+      "mdn_url": {
+        "$ref": "#/definitions/mdn_url"
+      }
+    }
+  }
+}

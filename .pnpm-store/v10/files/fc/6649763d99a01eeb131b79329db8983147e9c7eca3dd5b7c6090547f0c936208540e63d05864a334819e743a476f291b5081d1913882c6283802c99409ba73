@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "browserModern": {
+      "engines": {
+        "browsers": [
+          "last 1 version"
+        ]
+      }
+    },
+    "browserLegacy": {
+      "engines": {
+        "browsers": [
+          "IE 11"
+        ]
+      }
+    }
+  }
+}

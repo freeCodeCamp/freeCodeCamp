@@ -1,0 +1,52 @@
+# `MD040` - Fenced code blocks should have a language specified
+
+Tags: `code`, `language`
+
+Aliases: `fenced-code-language`
+
+Parameters:
+
+- `allowed_languages`: List of languages (`string[]`, default `[]`)
+- `language_only`: Require language only (`boolean`, default `false`)
+
+This rule is triggered when fenced code blocks are used, but a language isn't
+specified:
+
+````markdown
+```
+#!/bin/bash
+echo Hello world
+```
+````
+
+To fix this, add a language specifier to the code block:
+
+````markdown
+```bash
+#!/bin/bash
+echo Hello world
+```
+````
+
+To display a code block without syntax highlighting, use:
+
+````markdown
+```text
+Plain text in a code block
+```
+````
+
+You can configure the `allowed_languages` parameter to specify a list of
+languages code blocks could use. Languages are case sensitive. The default value
+is `[]` which means any language specifier is valid.
+
+You can prevent extra data from being present in the info string of fenced code
+blocks. To do so, set the `language_only` parameter to `true`.
+
+<!-- markdownlint-disable-next-line no-space-in-code -->
+Info strings with leading/trailing whitespace (ex: `js `) or other content (ex:
+`ruby startline=3`) will trigger this rule.
+
+Rationale: Specifying a language improves content rendering by using the
+correct syntax highlighting for code. More information:
+<https://cirosantilli.com/markdown-style-guide#option-code-fenced>.

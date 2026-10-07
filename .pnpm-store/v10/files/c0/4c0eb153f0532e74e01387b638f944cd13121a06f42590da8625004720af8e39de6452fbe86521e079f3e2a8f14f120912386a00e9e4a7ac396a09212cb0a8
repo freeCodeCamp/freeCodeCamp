@@ -1,0 +1,49 @@
+{
+  "name": "ansi-html",
+  "version": "0.0.9",
+  "description": "An elegant lib that converts the chalked (ANSI) text to HTML.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "bin": {
+    "ansi-html": "./bin/ansi-html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Tjatse/ansi-html.git"
+  },
+  "keywords": [
+    "ansi",
+    "ansi html",
+    "chalk html"
+  ],
+  "author": {
+    "name": "Tjatse"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Tjatse/ansi-html/issues"
+  },
+  "engines": [
+    "node >= 0.8.0"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "chai": "^1.9.1",
+    "chalk": "^1.1.3"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/Tjatse/ansi-html",
+  "standard": {
+    "ignore": [],
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "after"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_super_prop_base.js")

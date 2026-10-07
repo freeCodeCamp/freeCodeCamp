@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_is_native_function.cjs",
+    "module": "../../esm/_is_native_function.js"
+}

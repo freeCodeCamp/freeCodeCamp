@@ -1,0 +1,27 @@
+{
+  "name": "node-int64",
+  "description": "Support for representing 64-bit integers in JavaScript",
+  "url": "http://github.com/broofa/node-int64",
+  "keywords": [
+    "math",
+    "integer",
+    "int64"
+  ],
+  "author": "Robert Kieffer <robert@broofa.com>",
+  "contributors": [],
+  "dependencies": {},
+  "license": "MIT",
+  "lib": ".",
+  "main": "./Int64.js",
+  "version": "0.4.0",
+  "scripts": {
+    "test": "nodeunit test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/broofa/node-int64"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.0"
+  }
+}

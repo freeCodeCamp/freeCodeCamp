@@ -1,0 +1,89 @@
+{
+    "name": "@eslint-community/eslint-utils",
+    "version": "4.9.1",
+    "description": "Utilities for ESLint plugins.",
+    "keywords": [
+        "eslint"
+    ],
+    "homepage": "https://github.com/eslint-community/eslint-utils#readme",
+    "bugs": {
+        "url": "https://github.com/eslint-community/eslint-utils/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/eslint-community/eslint-utils"
+    },
+    "license": "MIT",
+    "author": "Toru Nagashima",
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "import": "./index.mjs",
+            "require": "./index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "main": "index",
+    "module": "index.mjs",
+    "files": [
+        "index.*"
+    ],
+    "scripts": {
+        "prebuild": "npm run -s clean",
+        "build": "npm run build:dts && npm run build:rollup",
+        "build:dts": "tsc -p tsconfig.build.json",
+        "build:rollup": "rollup -c",
+        "clean": "rimraf .nyc_output coverage index.* dist",
+        "coverage": "opener ./coverage/lcov-report/index.html",
+        "docs:build": "vitepress build docs",
+        "docs:watch": "vitepress dev docs",
+        "format": "npm run -s format:prettier -- --write",
+        "format:prettier": "prettier .",
+        "format:check": "npm run -s format:prettier -- --check",
+        "lint:eslint": "eslint .",
+        "lint:format": "npm run -s format:check",
+        "lint:installed-check": "installed-check -v -i installed-check -i npm-run-all2 -i knip -i rollup-plugin-dts",
+        "lint:knip": "knip",
+        "lint": "run-p lint:*",
+        "test-coverage": "c8 mocha --reporter dot \"test/*.mjs\"",
+        "test": "mocha --reporter dot \"test/*.mjs\"",
+        "preversion": "npm run test-coverage && npm run -s build",
+        "postversion": "git push && git push --tags",
+        "prewatch": "npm run -s clean",
+        "watch": "warun \"{src,test}/**/*.mjs\" -- npm run -s test:mocha"
+    },
+    "dependencies": {
+        "eslint-visitor-keys": "^3.4.3"
+    },
+    "devDependencies": {
+        "@eslint-community/eslint-plugin-mysticatea": "^15.6.1",
+        "@types/eslint": "^9.6.1",
+        "@types/estree": "^1.0.7",
+        "@typescript-eslint/parser": "^5.62.0",
+        "@typescript-eslint/types": "^5.62.0",
+        "c8": "^8.0.1",
+        "dot-prop": "^7.2.0",
+        "eslint": "^8.57.1",
+        "installed-check": "^8.0.1",
+        "knip": "^5.33.3",
+        "mocha": "^9.2.2",
+        "npm-run-all2": "^6.2.3",
+        "opener": "^1.5.2",
+        "prettier": "2.8.8",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.79.2",
+        "rollup-plugin-dts": "^4.2.3",
+        "rollup-plugin-sourcemaps": "^0.6.3",
+        "semver": "^7.6.3",
+        "typescript": "^4.9.5",
+        "vitepress": "^1.4.1",
+        "warun": "^1.0.0"
+    },
+    "peerDependencies": {
+        "eslint": "^6.0.0 || ^7.0.0 || >=8.0.0"
+    },
+    "engines": {
+        "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    },
+    "funding": "https://opencollective.com/eslint"
+}

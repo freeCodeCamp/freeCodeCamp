@@ -1,0 +1,65 @@
+{
+  "name": "csso",
+  "version": "4.2.0",
+  "description": "CSS minifier with structural optimisations",
+  "homepage": "https://github.com/css/csso",
+  "author": "Sergey Kryzhanovsky <skryzhanovsky@ya.ru> (https://github.com/afelix)",
+  "maintainers": [
+    {
+      "name": "Roman Dvornov",
+      "email": "rdvornov@gmail.com",
+      "github-username": "lahmatiy"
+    }
+  ],
+  "license": "MIT",
+  "repository": "css/csso",
+  "bugs": {
+    "url": "https://github.com/css/csso/issues"
+  },
+  "keywords": [
+    "css",
+    "compress",
+    "minifier",
+    "minify",
+    "optimise",
+    "optimisation",
+    "csstree"
+  ],
+  "main": "./lib/index",
+  "scripts": {
+    "test": "mocha --reporter dot",
+    "lint": "eslint lib test",
+    "lint-and-test": "npm run lint && npm test",
+    "build": "rollup --config && terser dist/csso.js --compress --mangle -o dist/csso.min.js",
+    "coverage": "nyc npm test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "travis": "nyc npm run lint-and-test && npm run coveralls",
+    "hydrogen": "node --trace-hydrogen --trace-phase=Z --trace-deopt --code-comments --hydrogen-track-positions --redirect-code-traces --redirect-code-traces-to=code.asm --trace_hydrogen_file=code.cfg --print-opt-code bin/csso --stat -o /dev/null",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "css-tree": "^1.1.2"
+  },
+  "browser": {
+    "css-tree": "css-tree/dist/csstree.min.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-json": "^4.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "rollup": "^1.29.0",
+    "source-map": "^0.6.1",
+    "terser": "^4.6.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MutableHashSet.js",
+  "module": "../dist/esm/MutableHashSet.js",
+  "types": "../dist/dts/MutableHashSet.d.ts"
+}

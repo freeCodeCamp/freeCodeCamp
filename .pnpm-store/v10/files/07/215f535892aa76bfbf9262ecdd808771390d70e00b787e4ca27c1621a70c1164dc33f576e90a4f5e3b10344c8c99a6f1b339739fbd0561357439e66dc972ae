@@ -1,0 +1,1 @@
+{"version":3,"file":"PQueryHandler.d.ts","sourceRoot":"","sources":["../../../src/common/PQueryHandler.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,OAAO,EACL,YAAY,EACZ,KAAK,aAAa,EAClB,KAAK,gBAAgB,EACtB,MAAM,mBAAmB,CAAC;AAE3B;;GAEG;AACH,qBAAa,aAAc,SAAQ,YAAY;IAC7C,OAAgB,gBAAgB,EAAE,gBAAgB,CAMhD;IACF,OAAgB,aAAa,EAAE,aAAa,CAM1C;CACH"}

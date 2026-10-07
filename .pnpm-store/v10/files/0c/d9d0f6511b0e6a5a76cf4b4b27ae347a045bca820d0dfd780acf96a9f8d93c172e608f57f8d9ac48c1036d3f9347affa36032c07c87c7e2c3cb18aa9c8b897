@@ -1,0 +1,43 @@
+{
+  "name": "vscode-uri",
+  "author": "Microsoft",
+  "version": "3.1.0",
+  "description": "The URI implementation that is used by VS Code and its extensions",
+  "main": "./lib/umd/index.js",
+  "typings": "./lib/umd/index",
+  "exports": {
+    "types": "./lib/umd/index.d.ts",
+    "import": "./lib/esm/index.mjs",
+    "require": "./lib/umd/index.js",
+    "browser": "./lib/esm/index.mjs"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf lib",
+    "pack-production": "webpack --mode=production",
+    "pack-dev": "webpack",
+    "compile": "tsc -p ./src",
+    "prepublish": "npm run pack-production",
+    "test": "tsc -p ./src && npm run pack-dev && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microsoft/vscode-uri.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/microsoft/vscode-uri/issues"
+  },
+  "homepage": "https://github.com/microsoft/vscode-uri#readme",
+  "devDependencies": {
+    "@types/mocha": "^10.0.2",
+    "@types/node": "20.x",
+    "mocha": "^11.1.0",
+    "path-browserify": "^1.0.1",
+    "rimraf": "^5.0.5",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}

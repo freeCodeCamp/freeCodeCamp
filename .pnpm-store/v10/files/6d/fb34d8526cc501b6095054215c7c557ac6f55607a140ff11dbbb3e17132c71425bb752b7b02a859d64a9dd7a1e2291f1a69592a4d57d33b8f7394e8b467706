@@ -1,0 +1,1 @@
+{"version":3,"file":"getScriptKind.d.ts","sourceRoot":"","sources":["../../src/create-program/getScriptKind.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,MAAM,YAAY,CAAC;AAEjC,iBAAS,aAAa,CAAC,QAAQ,EAAE,MAAM,EAAE,GAAG,EAAE,OAAO,GAAG,EAAE,CAAC,UAAU,CA8BpE;AAED,iBAAS,kBAAkB,CAAC,UAAU,EAAE,EAAE,CAAC,UAAU,GAAG,EAAE,CAAC,eAAe,CAYzE;AAED,OAAO,EAAE,aAAa,EAAE,kBAAkB,EAAE,CAAC"}

@@ -1,0 +1,106 @@
+{
+  "name": "signal-exit",
+  "version": "4.1.0",
+  "description": "when you want to fire an event no matter how a process exits.",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/mjs/index.js",
+  "browser": "./dist/mjs/browser.js",
+  "types": "./dist/mjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/mjs/index.d.ts",
+        "default": "./dist/mjs/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./signals": {
+      "import": {
+        "types": "./dist/mjs/signals.d.ts",
+        "default": "./dist/mjs/signals.js"
+      },
+      "require": {
+        "types": "./dist/cjs/signals.d.ts",
+        "default": "./dist/cjs/signals.js"
+      }
+    },
+    "./browser": {
+      "import": {
+        "types": "./dist/mjs/browser.d.ts",
+        "default": "./dist/mjs/browser.js"
+      },
+      "require": {
+        "types": "./dist/cjs/browser.d.ts",
+        "default": "./dist/cjs/browser.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tapjs/signal-exit.git"
+  },
+  "keywords": [
+    "signal",
+    "exit"
+  ],
+  "author": "Ben Coe <ben@npmjs.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/node": "^18.15.11",
+    "@types/signal-exit": "^3.0.1",
+    "@types/tap": "^15.0.8",
+    "c8": "^7.13.0",
+    "prettier": "^2.8.6",
+    "tap": "^16.3.4",
+    "ts-node": "^10.9.1",
+    "typedoc": "^0.23.28",
+    "typescript": "^5.0.2"
+  },
+  "scripts": {
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "preprepare": "rm -rf dist",
+    "prepare": "tsc -p tsconfig.json && tsc -p tsconfig-esm.json && bash ./scripts/fixup.sh",
+    "pretest": "npm run prepare",
+    "presnap": "npm run prepare",
+    "test": "c8 tap",
+    "snap": "c8 tap",
+    "format": "prettier --write . --loglevel warn",
+    "typedoc": "typedoc --tsconfig tsconfig-esm.json ./src/*.ts"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 75,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "tap": {
+    "coverage": false,
+    "jobs": 1,
+    "node-arg": [
+      "--no-warnings",
+      "--loader",
+      "ts-node/esm"
+    ],
+    "ts": false
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/isaacs"
+  }
+}

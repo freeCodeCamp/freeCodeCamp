@@ -1,0 +1,43 @@
+{
+  "name": "is-node-process",
+  "description": "Reliably determines if the code is running in Node.js",
+  "version": "1.2.0",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "typings": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "default": "./lib/index.mjs"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mswjs/is-node-process"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@ossjs/release": "^0.5.1",
+    "@types/jest": "^27.0.0",
+    "@types/node": "^18.14.0",
+    "electron": "^19.0.6",
+    "jest": "^27.0.6",
+    "playwright": "^1.22.2",
+    "spectron": "^15.0.0",
+    "ts-jest": "^27.0.3",
+    "tsup": "^6.2.3",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "browser": "open test/browser.html",
+    "electron": "electron test/fixtures/electron.js",
+    "test": "jest --testPathIgnorePatterns electron.test.ts",
+    "test:react-native": "cd test/fixtures/react-native && pnpm test",
+    "build": "tsup",
+    "release": "release publish"
+  }
+}

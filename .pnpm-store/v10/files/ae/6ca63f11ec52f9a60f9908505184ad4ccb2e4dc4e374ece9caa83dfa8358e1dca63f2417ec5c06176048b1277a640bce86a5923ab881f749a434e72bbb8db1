@@ -1,0 +1,57 @@
+{
+  "name": "CodeSandbox",
+  "short_name": "CodeSandbox",
+  "icons": [
+    {
+      "src": "codesandbox-16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "codesandbox-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "codesandbox-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "codesandbox-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "codesandbox-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "codesandbox-1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "apple-touch-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "apple-touch-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "description": "An online editor tailored for web applications",
+  "start_url": "/dashboard?utm_source=homescreen",
+  "scope": "/s/",
+  "display": "standalone",
+  "background_color": "#1C2022",
+  "theme_color": "#1C2022"
+}

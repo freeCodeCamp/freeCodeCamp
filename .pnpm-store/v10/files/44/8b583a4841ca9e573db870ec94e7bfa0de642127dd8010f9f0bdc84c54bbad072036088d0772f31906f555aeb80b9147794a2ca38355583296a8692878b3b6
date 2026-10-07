@@ -1,0 +1,62 @@
+{
+  "name": "@graphql-codegen/core",
+  "version": "2.6.8",
+  "peerDependencies": {
+    "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "@graphql-codegen/plugin-helpers": "^3.1.1",
+    "@graphql-tools/schema": "^9.0.0",
+    "@graphql-tools/utils": "^9.1.1",
+    "tslib": "~2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotansimha/graphql-code-generator.git",
+    "directory": "packages/graphql-codegen-core"
+  },
+  "homepage": "https://github.com/dotansimha/graphql-codegen#readme",
+  "keywords": [
+    "gql",
+    "generator",
+    "code",
+    "types",
+    "interfaces",
+    "graphql",
+    "codegen",
+    "apollo",
+    "node",
+    "typescript",
+    "ts",
+    "flow",
+    "types",
+    "d.ts",
+    "typings"
+  ],
+  "author": "Dotan Simha <dotansimha@gmail.com>",
+  "license": "MIT",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "typings": "typings/index.d.ts",
+  "typescript": {
+    "definition": "typings/index.d.ts"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./typings/index.d.cts",
+        "default": "./cjs/index.js"
+      },
+      "import": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "default": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  }
+}

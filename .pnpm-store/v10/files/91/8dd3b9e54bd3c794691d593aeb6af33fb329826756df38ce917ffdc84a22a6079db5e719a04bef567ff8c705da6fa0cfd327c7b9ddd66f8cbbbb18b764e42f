@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/formatRFC7231/index.js",
+  "typings": "../typings.d.ts"
+}

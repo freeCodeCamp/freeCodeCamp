@@ -1,0 +1,46 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"globals": {
+		"Uint8Array": "readonly",
+		"Uint16Array": "readonly",
+		"Uint32Array": "readonly",
+		"Int8Array": "readonly",
+		"Int16Array": "readonly",
+		"Int32Array": "readonly",
+		"Float32Array": "readonly",
+		"Float64Array": "readonly",
+		"BigInt64Array": "readonly",
+		"BigUint64Array": "readonly",
+	},
+
+	"rules": {
+		"complexity": "off",
+		"func-style": "warn",
+		"max-params": "warn",
+		"multiline-comment-style": "off",
+		"no-param-reassign": "warn",
+		"sort-keys": "warn",
+	},
+
+	"ignorePatterns": [
+		"test/bundle.js",
+	],
+
+	"overrides": [
+		{
+			"files": "bench/*",
+			"extends": "@ljharb/eslint-config/node/4",
+			"rules": {
+				"func-style": "warn",
+				"max-params": "warn",
+				"no-param-reassign": "warn",
+				"no-var": "off",
+				"prefer-arrow-callback": "off",
+				"prefer-template": "off",
+			},
+		},
+	],
+}

@@ -1,0 +1,28 @@
+{
+  "name": "fast-fifo",
+  "version": "1.3.2",
+  "description": "A fast fifo implementation similar to the one powering nextTick in Node.js core",
+  "main": "index.js",
+  "files": [
+    "./index.js",
+    "./fixed-size.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^17.1.0",
+    "brittle": "^3.3.2"
+  },
+  "scripts": {
+    "test": "standard && brittle test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/fast-fifo.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/fast-fifo/issues"
+  },
+  "homepage": "https://github.com/mafintosh/fast-fifo"
+}

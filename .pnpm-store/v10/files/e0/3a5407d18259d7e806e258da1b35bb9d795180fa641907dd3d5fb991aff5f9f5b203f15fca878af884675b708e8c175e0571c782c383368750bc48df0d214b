@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/asyncContext/index.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,cAAc,CAAC;AAG5C,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,SAAS,CAAC;AAEpD;;;;GAIG;AACH,wBAAgB,uBAAuB,CAAC,QAAQ,EAAE,oBAAoB,GAAG,SAAS,GAAG,IAAI,CAKxF;AAED;;;GAGG;AACH,wBAAgB,uBAAuB,CAAC,OAAO,EAAE,OAAO,GAAG,oBAAoB,CAS9E"}

@@ -1,0 +1,149 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .parameter-hints-widget {
+	/* Must be higher than the sash's z-index and terminal canvases but lower than the suggest widget */
+	z-index: 39;
+	display: flex;
+	flex-direction: column;
+	line-height: 1.5em;
+	cursor: default;
+	color: var(--vscode-editorHoverWidget-foreground);
+	background-color: var(--vscode-editorHoverWidget-background);
+	border: 1px solid var(--vscode-editorHoverWidget-border);
+}
+
+.hc-black .monaco-editor .parameter-hints-widget,
+.hc-light .monaco-editor .parameter-hints-widget {
+	border-width: 2px;
+}
+
+.monaco-editor .parameter-hints-widget > .phwrapper {
+	max-width: 440px;
+	display: flex;
+	flex-direction: row;
+}
+
+.monaco-editor .parameter-hints-widget.multiple {
+	min-height: 3.3em;
+	padding: 0;
+}
+
+.monaco-editor .parameter-hints-widget.multiple .body::before {
+	content: "";
+	display: block;
+	height: 100%;
+	position: absolute;
+	opacity: 0.5;
+	border-left: 1px solid var(--vscode-editorHoverWidget-border);
+}
+
+.monaco-editor .parameter-hints-widget p,
+.monaco-editor .parameter-hints-widget ul {
+	margin: 8px 0;
+}
+
+.monaco-editor .parameter-hints-widget .monaco-scrollable-element,
+.monaco-editor .parameter-hints-widget .body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.monaco-editor .parameter-hints-widget .signature {
+	padding: 4px 5px;
+	position: relative;
+}
+
+.monaco-editor .parameter-hints-widget .signature.has-docs::after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	padding-top: 4px;
+	opacity: 0.5;
+	border-bottom: 1px solid var(--vscode-editorHoverWidget-border);
+}
+
+.monaco-editor .parameter-hints-widget .code {
+	font-family: var(--vscode-parameterHintsWidget-editorFontFamily), var(--vscode-parameterHintsWidget-editorFontFamilyDefault);
+}
+
+.monaco-editor .parameter-hints-widget .docs {
+	padding: 0 10px 0 5px;
+	white-space: pre-wrap;
+}
+
+.monaco-editor .parameter-hints-widget .docs.empty {
+	display: none;
+}
+
+.monaco-editor .parameter-hints-widget .docs a {
+	color: var(--vscode-textLink-foreground);
+}
+
+.monaco-editor .parameter-hints-widget .docs a:hover {
+	color: var(--vscode-textLink-activeForeground);
+	cursor: pointer;
+}
+
+.monaco-editor .parameter-hints-widget .docs .markdown-docs {
+	white-space: initial;
+}
+
+.monaco-editor .parameter-hints-widget .docs code {
+	font-family: var(--monaco-monospace-font);
+	border-radius: 3px;
+	padding: 0 0.4em;
+	background-color: var(--vscode-textCodeBlock-background);
+}
+
+.monaco-editor .parameter-hints-widget .docs .monaco-tokenized-source,
+.monaco-editor .parameter-hints-widget .docs .code {
+	white-space: pre-wrap;
+}
+
+.monaco-editor .parameter-hints-widget .controls {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	min-width: 22px;
+	justify-content: flex-end;
+}
+
+.monaco-editor .parameter-hints-widget.multiple .controls {
+	display: flex;
+	padding: 0 2px;
+}
+
+.monaco-editor .parameter-hints-widget.multiple .button {
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.monaco-editor .parameter-hints-widget .button.previous {
+	bottom: 24px;
+}
+
+.monaco-editor .parameter-hints-widget .overloads {
+	text-align: center;
+	height: 12px;
+	line-height: 12px;
+	font-family: var(--monaco-monospace-font);
+}
+
+.monaco-editor .parameter-hints-widget .signature .parameter.active {
+	color: var(--vscode-editorHoverWidget-highlightForeground);
+	font-weight: bold;
+}
+
+.monaco-editor .parameter-hints-widget .documentation-parameter > .parameter {
+	font-weight: bold;
+	margin-right: 0.5em;
+}

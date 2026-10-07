@@ -1,0 +1,9 @@
+name: 'Tests: pretest/posttest'
+
+on: [pull_request, push]
+
+jobs:
+  tests:
+    uses: ljharb/actions/.github/workflows/pretest.yml@main
+    with:
+      skip-engines: true # see https://github.com/browserify/browserify-sign/pull/49

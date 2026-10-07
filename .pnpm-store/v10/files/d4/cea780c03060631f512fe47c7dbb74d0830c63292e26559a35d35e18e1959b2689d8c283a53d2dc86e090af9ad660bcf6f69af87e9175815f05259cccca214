@@ -1,0 +1,48 @@
+{
+  "lang": "nl",
+  "checks": {
+    "abstractrole": {
+      "pass": "Er zijn geen abstracte rollen (role) gebruikt",
+      "fail": "Gebruik geen abstracte rollen (role)"
+    },
+    "color-contrast": {
+      "pass": "Element heeft voldoende contrast, namelijk ${data.contrastRatio}",
+      "fail": "Element heeft onvoldoende contrast, ${data.contrastRatio} (Voorgrondkleur: ${data.fgColor}, achtergrondkleur: ${data.bgColor}, tekstgrootte: ${data.fontSize}, tekstdikte: ${data.fontWeight})",
+      "incomplete": {
+        "bgImage": "Element's achtergrondkleur kon niet worden bepaald vanwegen een achtergrondafbeelding",
+        "bgGradient": "Element's achtergrondkleur kon niet worden bepaald vanwegen een gradient kleur",
+        "imgNode": "Element's achtergrondkleur kon niet worden bepaald vanwegen een image node",
+        "bgOverlap": "Element's achtergrondkleur kon niet worden bepaald vanwegen een overlappend element",
+        "fgAlpha": "Element's achtergrondkleur kon niet worden bepaald vanwegen alpha transparency",
+        "default": "Contrastkleur kon niet bepaald worden"
+      }
+    },
+    "color-contrast-enhanced": {
+      "pass": "Element heeft voldoende contrast, namelijk ${data.contrastRatio}",
+      "fail": "Element heeft onvoldoende contrast, ${data.contrastRatio} (Voorgrondkleur: ${data.fgColor}, achtergrondkleur: ${data.bgColor}, tekstgrootte: ${data.fontSize}, tekstdikte: ${data.fontWeight})",
+      "incomplete": {
+        "bgImage": "Element's achtergrondkleur kon niet worden bepaald vanwegen een achtergrondafbeelding",
+        "bgGradient": "Element's achtergrondkleur kon niet worden bepaald vanwegen een gradient kleur",
+        "imgNode": "Element's achtergrondkleur kon niet worden bepaald vanwegen een image node",
+        "bgOverlap": "Element's achtergrondkleur kon niet worden bepaald vanwegen een overlappend element",
+        "fgAlpha": "Element's achtergrondkleur kon niet worden bepaald vanwegen alpha transparency",
+        "default": "Contrastkleur kon niet bepaald worden"
+      }
+    }
+  },
+  "rules": {
+    "aria-required-attr": {
+      "description": "Zorg dat elementen met ARIA rollen (role) de vereiste ARIA attributen hebben",
+      "help": "Voorzien de vereiste ARIA attributen"
+    }
+  },
+  "failureSummaries": {
+    "none": {
+      "failureMessage": "Los al het volgende op:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    },
+    "any": {
+      "failureMessage": "Gebruik een van de volgende oplossingen:{{~it:value}}\n  {{=value.split('\\n').join('\\n  ')}}{{~}}"
+    }
+  },
+  "incompleteFallbackMessage": "axe kon de reden niet vertellen. Tijd om de element inspecteur uit te breken!"
+}

@@ -1,0 +1,186 @@
+{
+  "type": "commonjs",
+  "name": "@mswjs/interceptors",
+  "description": "Low-level HTTP/HTTPS/XHR/fetch request interception library.",
+  "version": "0.41.7",
+  "main": "./lib/node/index.cjs",
+  "module": "./lib/node/index.mjs",
+  "types": "./lib/node/index.d.cts",
+  "exports": {
+    ".": {
+      "browser": {
+        "import": "./lib/browser/index.mjs",
+        "default": "./lib/browser/index.cjs"
+      },
+      "import": "./lib/node/index.mjs",
+      "default": "./lib/node/index.cjs"
+    },
+    "./ClientRequest": {
+      "node": {
+        "require": "./lib/node/interceptors/ClientRequest/index.cjs",
+        "import": "./lib/node/interceptors/ClientRequest/index.mjs"
+      },
+      "browser": null,
+      "require": "./lib/node/interceptors/ClientRequest/index.cjs",
+      "import": "./lib/node/interceptors/ClientRequest/index.mjs",
+      "default": "./lib/node/interceptors/ClientRequest/index.cjs"
+    },
+    "./XMLHttpRequest": {
+      "browser": "./lib/browser/interceptors/XMLHttpRequest/index.mjs",
+      "require": "./lib/node/interceptors/XMLHttpRequest/index.cjs",
+      "import": "./lib/node/interceptors/XMLHttpRequest/index.mjs",
+      "default": "./lib/node/interceptors/XMLHttpRequest/index.cjs"
+    },
+    "./fetch": {
+      "browser": "./lib/browser/interceptors/fetch/index.mjs",
+      "require": "./lib/node/interceptors/fetch/index.cjs",
+      "import": "./lib/node/interceptors/fetch/index.mjs",
+      "default": "./lib/node/interceptors/fetch/index.cjs"
+    },
+    "./WebSocket": {
+      "require": "./lib/browser/interceptors/WebSocket/index.cjs",
+      "import": "./lib/browser/interceptors/WebSocket/index.mjs",
+      "default": "./lib/browser/interceptors/WebSocket/index.cjs"
+    },
+    "./RemoteHttpInterceptor": {
+      "node": {
+        "require": "./lib/node/RemoteHttpInterceptor.cjs",
+        "import": "./lib/node/RemoteHttpInterceptor.mjs"
+      },
+      "browser": null,
+      "require": "./lib/node/RemoteHttpInterceptor.cjs",
+      "import": "./lib/node/RemoteHttpInterceptor.mjs",
+      "default": "./lib/node/RemoteHttpInterceptor.cjs"
+    },
+    "./presets/node": {
+      "node": {
+        "require": "./lib/node/presets/node.cjs",
+        "import": "./lib/node/presets/node.mjs"
+      },
+      "browser": null,
+      "require": "./lib/node/presets/node.cjs",
+      "import": "./lib/node/presets/node.mjs",
+      "default": "./lib/node/presets/node.cjs"
+    },
+    "./presets/browser": {
+      "browser": "./lib/browser/presets/browser.mjs",
+      "node": null
+    },
+    "./utils/node": {
+      "node": {
+        "require": "./lib/node/utils/node/index.cjs",
+        "import": "./lib/node/utils/node/index.mjs"
+      },
+      "browser": null,
+      "require": "./lib/node/utils/node/index.cjs",
+      "import": "./lib/node/utils/node/index.mjs",
+      "default": "./lib/node/utils/node/index.cjs"
+    }
+  },
+  "author": "Artem Zakharchenko",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "src",
+    "ClientRequest",
+    "fetch",
+    "RemoteHttpInterceptor",
+    "XMLHttpRequest",
+    "WebSocket",
+    "presets"
+  ],
+  "repository": {
+    "url": "https://github.com/mswjs/interceptors"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@open-draft/test-server": "^0.5.1",
+    "@ossjs/release": "^0.10.1",
+    "@playwright/test": "^1.51.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^5.0.0",
+    "@types/express-fileupload": "^1.5.0",
+    "@types/follow-redirects": "^1.14.1",
+    "@types/node": "^22.13.9",
+    "@types/node-fetch": "2.6.12",
+    "@types/superagent": "^8.1.9",
+    "@types/supertest": "^6.0.2",
+    "@types/ws": "^8.18.0",
+    "axios": "^1.8.2",
+    "body-parser": "^1.19.0",
+    "commitizen": "^4.2.4",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "3.3.0",
+    "engine.io-parser": "^5.2.1",
+    "express": "^4.21.2",
+    "express-fileupload": "^1.5.1",
+    "express-rate-limit": "^7.5.0",
+    "follow-redirects": "^1.15.1",
+    "got": "^14.4.6",
+    "happy-dom": "^17.3.0",
+    "jsdom": "^26.1.0",
+    "node-fetch": "3.3.2",
+    "simple-git-hooks": "^2.7.0",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "socket.io-parser": "^4.2.4",
+    "superagent": "^10.1.1",
+    "supertest": "^7.0.0",
+    "tsdown": "^0.18.1",
+    "typescript": "^5.8.2",
+    "undici": "^7.4.0",
+    "vitest": "^3.0.8",
+    "vitest-environment-miniflare": "^2.14.1",
+    "wait-for-expect": "^3.0.2",
+    "web-encoding": "^1.1.5",
+    "webpack": "^5.105.0",
+    "webpack-http-server": "^0.5.0",
+    "ws": "^8.18.1"
+  },
+  "dependencies": {
+    "@open-draft/deferred-promise": "^2.2.0",
+    "@open-draft/logger": "^0.3.0",
+    "@open-draft/until": "^2.0.0",
+    "is-node-process": "^1.2.0",
+    "outvariant": "^1.4.3",
+    "strict-event-emitter": "^0.5.1"
+  },
+  "resolutions": {
+    "memfs": "^3.4.13"
+  },
+  "keywords": [
+    "request",
+    "intercept",
+    "http",
+    "https",
+    "xmlhttprequest",
+    "xhr",
+    "fetch",
+    "low-level",
+    "mock",
+    "spy",
+    "testing"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "start": "tsdown --watch",
+    "test": "pnpm test:unit && pnpm test:integration",
+    "test:unit": "vitest",
+    "test:integration": "pnpm test:node && pnpm test:browser",
+    "test:node": "vitest -c test/vitest.config.js",
+    "test:browser": "pnpm playwright test -c test/playwright.config.ts",
+    "test:nock": "./test/third-party/nock.sh",
+    "build": "tsdown",
+    "release": "release publish"
+  }
+}

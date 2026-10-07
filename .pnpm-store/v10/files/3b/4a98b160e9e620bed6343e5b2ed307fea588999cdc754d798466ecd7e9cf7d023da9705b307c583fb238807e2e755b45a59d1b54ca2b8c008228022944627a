@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Scope.js",
+  "module": "../dist/esm/Scope.js",
+  "types": "../dist/dts/Scope.d.ts"
+}

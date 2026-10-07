@@ -1,0 +1,48 @@
+{
+  "name": "data-urls",
+  "description": "Parses data: URLs",
+  "keywords": [
+    "data url",
+    "data uri",
+    "data:",
+    "http",
+    "fetch",
+    "whatwg"
+  ],
+  "version": "5.0.0",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "MIT",
+  "repository": "jsdom/data-urls",
+  "main": "lib/parser.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "coverage": "c8 node --test --experimental-test-coverage",
+    "lint": "eslint .",
+    "pretest": "node scripts/get-latest-platform-tests.js"
+  },
+  "dependencies": {
+    "whatwg-mimetype": "^4.0.0",
+    "whatwg-url": "^14.0.0"
+  },
+  "devDependencies": {
+    "@domenic/eslint-config": "^3.0.0",
+    "c8": "^8.0.1",
+    "eslint": "^8.53.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "c8": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "scripts/",
+      "test/"
+    ]
+  }
+}

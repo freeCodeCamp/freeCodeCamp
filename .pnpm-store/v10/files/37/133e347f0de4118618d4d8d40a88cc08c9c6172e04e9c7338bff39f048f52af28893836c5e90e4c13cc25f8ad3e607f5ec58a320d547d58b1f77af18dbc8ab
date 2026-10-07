@@ -1,0 +1,158 @@
+{
+  "name": "terser",
+  "description": "JavaScript parser, mangler/compressor and beautifier toolkit for ES6+",
+  "homepage": "https://terser.org",
+  "author": "Mihai Bazon <mihai.bazon@gmail.com> (http://lisperator.net/)",
+  "license": "BSD-2-Clause",
+  "version": "5.46.1",
+  "engines": {
+    "node": ">=10"
+  },
+  "maintainers": [
+    "Fábio Santos <fabiosantosart@gmail.com>"
+  ],
+  "repository": "https://github.com/terser/terser",
+  "main": "dist/bundle.min.js",
+  "type": "module",
+  "module": "./main.js",
+  "exports": {
+    ".": [
+      {
+        "types": "./tools/terser.d.ts",
+        "import": "./main.js",
+        "require": "./dist/bundle.min.js"
+      },
+      "./dist/bundle.min.js"
+    ],
+    "./package": "./package.json",
+    "./package.json": "./package.json",
+    "./bin/terser": "./bin/terser"
+  },
+  "types": "tools/terser.d.ts",
+  "bin": {
+    "terser": "bin/terser"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "lib",
+    "tools",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "PATRONS.md",
+    "main.js"
+  ],
+  "dependencies": {
+    "@jridgewell/source-map": "^0.3.3",
+    "acorn": "^8.15.0",
+    "commander": "^2.20.0",
+    "source-map-support": "~0.5.20"
+  },
+  "devDependencies": {
+    "@ls-lint/ls-lint": "^1.11.2",
+    "astring": "^1.8.5",
+    "eslint": "^7.32.0",
+    "eslump": "^3.0.0",
+    "esm": "^3.2.25",
+    "mocha": "^9.2.0",
+    "pre-commit": "^1.2.2",
+    "rollup": "^2.79.2",
+    "semver": "^7.5.1",
+    "source-map": "~0.8.0-beta.0"
+  },
+  "overrides": {
+    "serialize-javascript": "6.0.2",
+    "js-yaml": "4.1.1"
+  },
+  "scripts": {
+    "test": "node test/compress.js && mocha test/mocha",
+    "test:compress": "node test/compress.js",
+    "test:mocha": "mocha test/mocha",
+    "lint": "eslint lib",
+    "lint-fix": "eslint --fix lib",
+    "ls-lint": "ls-lint",
+    "build": "rollup --config --silent",
+    "prepare": "npm run build",
+    "postversion": "echo 'Remember to update the changelog!'"
+  },
+  "keywords": [
+    "uglify",
+    "terser",
+    "uglify-es",
+    "uglify-js",
+    "minify",
+    "minifier",
+    "javascript",
+    "ecmascript",
+    "es5",
+    "es6",
+    "es7",
+    "es8",
+    "es2015",
+    "es2016",
+    "es2017",
+    "async",
+    "await"
+  ],
+  "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2020
+    },
+    "env": {
+      "node": true,
+      "browser": true,
+      "es2020": true
+    },
+    "globals": {
+      "describe": false,
+      "it": false,
+      "require": false,
+      "before": false,
+      "after": false,
+      "global": false,
+      "process": false
+    },
+    "rules": {
+      "brace-style": [
+        "error",
+        "1tbs",
+        {
+          "allowSingleLine": true
+        }
+      ],
+      "quotes": [
+        "error",
+        "double",
+        "avoid-escape"
+      ],
+      "no-debugger": "error",
+      "no-undef": "error",
+      "no-unused-vars": [
+        "error",
+        {
+          "varsIgnorePattern": "^_",
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "no-tabs": "error",
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-extra-semi": "error",
+      "no-irregular-whitespace": "error",
+      "space-before-blocks": [
+        "error",
+        "always"
+      ]
+    }
+  },
+  "pre-commit": [
+    "build",
+    "lint-fix",
+    "ls-lint",
+    "test"
+  ]
+}

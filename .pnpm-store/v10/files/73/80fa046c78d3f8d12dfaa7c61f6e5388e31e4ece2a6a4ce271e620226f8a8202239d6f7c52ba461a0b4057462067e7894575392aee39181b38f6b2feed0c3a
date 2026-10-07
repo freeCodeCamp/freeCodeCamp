@@ -1,0 +1,50 @@
+{
+  "type": "module",
+  "name": "headers-polyfill",
+  "version": "5.0.1",
+  "description": "A native \"Headers\" class polyfill.",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.mjs",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./lib/index.d.cts",
+        "default": "./lib/index.cjs"
+      },
+      "default": {
+        "types": "./lib/index.d.mts",
+        "default": "./lib/index.mjs"
+      }
+    }
+  },
+  "repository": {
+    "type": "http",
+    "url": "https://github.com/mswjs/headers-polyfill"
+  },
+  "author": "Artem Zakharchenko",
+  "license": "MIT",
+  "files": [
+    "./lib",
+    "./src",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@ossjs/release": "^0.10.1",
+    "jsdom": "^28.1.0",
+    "publint": "^0.3.18",
+    "tsdown": "^0.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@types/set-cookie-parser": "^2.4.10",
+    "set-cookie-parser": "^3.0.1"
+  },
+  "scripts": {
+    "start": "tsdown --watch",
+    "build": "tsdown",
+    "test": "vitest",
+    "lint": "publint",
+    "release": "release publish"
+  }
+}

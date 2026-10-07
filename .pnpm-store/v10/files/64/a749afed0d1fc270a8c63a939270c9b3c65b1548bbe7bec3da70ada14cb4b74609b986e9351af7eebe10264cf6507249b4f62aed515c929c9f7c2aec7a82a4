@@ -1,0 +1,107 @@
+{
+  "name": "gatsby-cli",
+  "description": "Gatsby command-line interface for creating new sites and running Gatsby commands",
+  "version": "5.16.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "bin": {
+    "gatsby": "cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "dependencies": {
+    "@babel/code-frame": "^7.18.6",
+    "@babel/core": "^7.20.12",
+    "@babel/generator": "^7.20.14",
+    "@babel/helper-plugin-utils": "^7.20.2",
+    "@babel/preset-typescript": "^7.18.6",
+    "@babel/runtime": "^7.20.13",
+    "@babel/template": "^7.20.7",
+    "@babel/types": "^7.20.7",
+    "@jridgewell/trace-mapping": "^0.3.18",
+    "@types/common-tags": "^1.8.1",
+    "better-opn": "^2.1.1",
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
+    "clipboardy": "^4.0.0",
+    "common-tags": "^1.8.2",
+    "convert-hrtime": "^3.0.0",
+    "create-gatsby": "^3.16.0",
+    "envinfo": "^7.10.0",
+    "execa": "^5.1.1",
+    "fs-exists-cached": "^1.0.0",
+    "fs-extra": "^11.2.0",
+    "gatsby-core-utils": "^4.16.0",
+    "hosted-git-info": "^3.0.8",
+    "is-valid-path": "^0.1.1",
+    "joi": "^17.9.2",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.11",
+    "opentracing": "^0.14.7",
+    "pretty-error": "^2.1.2",
+    "progress": "^2.0.3",
+    "prompts": "^2.4.2",
+    "redux": "4.2.1",
+    "resolve-cwd": "^3.0.0",
+    "semver": "^7.5.3",
+    "signal-exit": "^3.0.7",
+    "stack-trace": "^0.0.10",
+    "strip-ansi": "^6.0.1",
+    "yargs": "^15.4.1",
+    "yoga-layout-prebuilt": "^1.10.0",
+    "yurnalist": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@rollup/plugin-replace": "^2.4.2",
+    "@sigmacomputing/babel-plugin-lodash": "^3.3.5",
+    "@types/hosted-git-info": "^3.0.5",
+    "@types/yargs": "^15.0.19",
+    "babel-preset-gatsby-package": "^3.16.0",
+    "cross-env": "^7.0.3",
+    "ink": "^3.2.0",
+    "ink-spinner": "^4.0.3",
+    "npm-run-all": "4.1.5",
+    "react": "^18.2.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.2",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-internal": "^1.0.4",
+    "typescript": "^5.1.6"
+  },
+  "files": [
+    "lib/",
+    "scripts/",
+    "cli.js"
+  ],
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-cli#readme",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-cli"
+  },
+  "scripts": {
+    "build:babel": "babel src --out-dir lib --ignore \"**/__tests__\" --ignore \"src/reporter/loggers/ink/**/*\" --extensions \".ts,.js,.tsx\"",
+    "build:rollup": "rollup -c",
+    "build": "npm-run-all --npm-path npm -p build:babel build:rollup",
+    "prepare": "cross-env NODE_ENV=production npm run build && npm run typegen",
+    "typegen": "rimraf \"lib/**/*.d.ts\" && tsc --emitDeclarationOnly --declaration --declarationDir lib/",
+    "watch:babel": "npm run build:babel -- --watch",
+    "watch:rollup": "npm run build:rollup -- -w",
+    "watch": "npm-run-all --npm-path npm -p watch:babel watch:rollup",
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "engines": {
+    "node": ">=18.0.0 <26"
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

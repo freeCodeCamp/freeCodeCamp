@@ -1,0 +1,77 @@
+{
+  "name": "uri-js",
+  "version": "4.4.1",
+  "description": "An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.",
+  "main": "dist/es5/uri.all.js",
+  "types": "dist/es5/uri.all.d.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "yarn.lock",
+    "README.md",
+    "CHANGELOG",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:esnext": "tsc",
+    "build:es5": "rollup -c && cp dist/esnext/uri.d.ts dist/es5/uri.all.d.ts && npm run build:es5:fix-sourcemap",
+    "build:es5:fix-sourcemap": "sorcery -i dist/es5/uri.all.js",
+    "build:es5:min": "uglifyjs dist/es5/uri.all.js --support-ie8 --output dist/es5/uri.all.min.js --in-source-map dist/es5/uri.all.js.map --source-map uri.all.min.js.map --comments --compress --mangle --pure-funcs merge subexp && mv uri.all.min.js.map dist/es5/ && cp dist/es5/uri.all.d.ts dist/es5/uri.all.min.d.ts",
+    "build": "npm run build:esnext && npm run build:es5 && npm run build:es5:min",
+    "clean": "rm -rf dist",
+    "test": "mocha -u mocha-qunit-ui dist/es5/uri.all.js tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/garycourt/uri-js"
+  },
+  "keywords": [
+    "URI",
+    "IRI",
+    "IDN",
+    "URN",
+    "UUID",
+    "HTTP",
+    "HTTPS",
+    "WS",
+    "WSS",
+    "MAILTO",
+    "RFC3986",
+    "RFC3987",
+    "RFC5891",
+    "RFC2616",
+    "RFC2818",
+    "RFC2141",
+    "RFC4122",
+    "RFC4291",
+    "RFC5952",
+    "RFC6068",
+    "RFC6455",
+    "RFC6874"
+  ],
+  "author": "Gary Court <gary.court@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/garycourt/uri-js/issues"
+  },
+  "homepage": "https://github.com/garycourt/uri-js",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
+    "mocha": "^8.2.1",
+    "mocha-qunit-ui": "^0.1.3",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "sorcery": "^0.10.0",
+    "typescript": "^2.8.1",
+    "uglify-js": "^2.8.14"
+  },
+  "dependencies": {
+    "punycode": "^2.1.0"
+  }
+}

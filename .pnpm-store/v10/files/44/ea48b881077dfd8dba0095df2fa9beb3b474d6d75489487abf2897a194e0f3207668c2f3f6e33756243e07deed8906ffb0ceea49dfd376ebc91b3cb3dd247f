@@ -1,0 +1,1 @@
+{"version":3,"file":"AttributeNames.d.ts","sourceRoot":"","sources":["../../../../../../../src/integrations/tracing/fastify/v3/enums/AttributeNames.ts"],"names":[],"mappings":"AAkBA,oBAAY,cAAc;IACxB,YAAY,iBAAiB;IAC7B,YAAY,iBAAiB;IAC7B,SAAS,cAAc;IACvB,WAAW,gBAAgB;CAC5B;AAED,oBAAY,YAAY;IACtB,UAAU,eAAe;IACzB,eAAe,oBAAoB;CACpC;AAED,oBAAY,YAAY;IACtB,UAAU,eAAe;IACzB,eAAe,oBAAoB;CACpC"}

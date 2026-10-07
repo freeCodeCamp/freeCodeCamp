@@ -1,0 +1,51 @@
+{
+  "name": "fsm-iterator",
+  "version": "1.1.0",
+  "description": "A finite state machine iterator for JavaScript",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "clean": "rimraf lib",
+    "lint": "eslint src __tests__",
+    "prepublish": "npm run clean && npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfairbank/fsm-iterator.git"
+  },
+  "keywords": [
+    "iterator",
+    "iterable",
+    "generator",
+    "finite state machine",
+    "state machine",
+    "state",
+    "fsm"
+  ],
+  "author": "Jeremy Fairbank <elpapapollo@gmail.com> (http://jeremyfairbank.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfairbank/fsm-iterator/issues"
+  },
+  "homepage": "https://github.com/jfairbank/fsm-iterator#readme",
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.2.2",
+    "babel-jest": "^16.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-import-resolver-node": "^0.2.3",
+    "eslint-plugin-import": "^1.16.0",
+    "jest": "^16.0.1",
+    "rimraf": "^2.5.4"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "definitions": {
+    "HttpUriOptions": {
+      "description": "Options for building http resources.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowedUris": {
+          "$ref": "#/definitions/HttpUriOptionsAllowedUris"
+        },
+        "cacheLocation": {
+          "description": "Location where resource content is stored for lockfile entries. It's also possible to disable storing by passing false.",
+          "anyOf": [
+            {
+              "enum": [false]
+            },
+            {
+              "type": "string",
+              "absolutePath": true
+            }
+          ]
+        },
+        "frozen": {
+          "description": "When set, anything that would lead to a modification of the lockfile or any resource content, will result in an error.",
+          "type": "boolean"
+        },
+        "lockfileLocation": {
+          "description": "Location of the lockfile.",
+          "type": "string",
+          "absolutePath": true
+        },
+        "proxy": {
+          "description": "Proxy configuration, which can be used to specify a proxy server to use for HTTP requests.",
+          "type": "string"
+        },
+        "upgrade": {
+          "description": "When set, resources of existing lockfile entries will be fetched and entries will be upgraded when resource content has changed.",
+          "type": "boolean"
+        }
+      },
+      "required": ["allowedUris"]
+    },
+    "HttpUriOptionsAllowedUris": {
+      "description": "List of allowed URIs (resp. the beginning of them).",
+      "type": "array",
+      "items": {
+        "description": "List of allowed URIs (resp. the beginning of them).",
+        "anyOf": [
+          {
+            "description": "Allowed URI pattern.",
+            "instanceof": "RegExp",
+            "tsType": "RegExp"
+          },
+          {
+            "description": "Allowed URI (resp. the beginning of it).",
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          {
+            "description": "Allowed URI filter function.",
+            "instanceof": "Function",
+            "tsType": "((uri: string) => boolean)"
+          }
+        ]
+      }
+    }
+  },
+  "title": "HttpUriPluginOptions",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/HttpUriOptions"
+    }
+  ]
+}

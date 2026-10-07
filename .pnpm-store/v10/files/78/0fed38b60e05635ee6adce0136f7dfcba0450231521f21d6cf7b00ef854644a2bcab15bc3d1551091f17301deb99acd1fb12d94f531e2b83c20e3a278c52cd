@@ -1,0 +1,60 @@
+{
+  "name": "babel-plugin-transform-react-remove-prop-types",
+  "version": "0.4.24",
+  "description": "Remove unnecessary React propTypes from the production build",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint . && echo \"eslint: no lint errors\"",
+    "test:unit": "mocha",
+    "test:watch": "mocha -w",
+    "prettier": "find . -name \"*.js\" | grep -v -f .eslintignore | xargs prettier --write",
+    "test": "npm run lint && npm run test:unit",
+    "prebuild": "rm -rf lib/",
+    "build": "babel src --out-dir lib",
+    "version": "npm run build && pkgfiles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types.git"
+  },
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "react",
+    "minification",
+    "propTypes"
+  ],
+  "author": "Nikita Gusakov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/generator": "^7.0.0",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-flow-react-proptypes": "^6.1.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "globby": "^8.0.1",
+    "mocha": "^4.0.1",
+    "pkgfiles": "^2.3.2",
+    "prettier": "^1.14.3"
+  }
+}

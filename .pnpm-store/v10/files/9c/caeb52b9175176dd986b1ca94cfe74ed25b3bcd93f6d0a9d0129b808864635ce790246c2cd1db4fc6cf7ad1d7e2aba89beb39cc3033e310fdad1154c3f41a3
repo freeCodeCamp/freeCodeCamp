@@ -1,0 +1,42 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var formatDistanceLocale = {
+  lessThanXSeconds: 'តិចជាង {{count}} វិនាទី',
+  xSeconds: '{{count}} វិនាទី',
+  halfAMinute: 'កន្លះនាទី',
+  lessThanXMinutes: 'តិចជាង {{count}} នាទី',
+  xMinutes: '{{count}} នាទី',
+  aboutXHours: 'ប្រហែល {{count}} ម៉ោង',
+  xHours: '{{count}} ម៉ោង',
+  xDays: '{{count}} ថ្ងៃ',
+  aboutXWeeks: 'ប្រហែល {{count}} សប្តាហ៍',
+  xWeeks: '{{count}} សប្តាហ៍',
+  aboutXMonths: 'ប្រហែល {{count}} ខែ',
+  xMonths: '{{count}} ខែ',
+  aboutXYears: 'ប្រហែល {{count}} ឆ្នាំ',
+  xYears: '{{count}} ឆ្នាំ',
+  overXYears: 'ជាង {{count}} ឆ្នាំ',
+  almostXYears: 'ជិត {{count}} ឆ្នាំ'
+};
+var formatDistance = function formatDistance(token, count, options) {
+  var tokenValue = formatDistanceLocale[token];
+  var result = tokenValue;
+  if (typeof count === 'number') {
+    result = result.replace('{{count}}', count.toString());
+  }
+  if (options !== null && options !== void 0 && options.addSuffix) {
+    if (options.comparison && options.comparison > 0) {
+      return 'ក្នុងរយៈពេល ' + result;
+    } else {
+      return result + 'មុន';
+    }
+  }
+  return result;
+};
+var _default = formatDistance;
+exports.default = _default;
+module.exports = exports.default;

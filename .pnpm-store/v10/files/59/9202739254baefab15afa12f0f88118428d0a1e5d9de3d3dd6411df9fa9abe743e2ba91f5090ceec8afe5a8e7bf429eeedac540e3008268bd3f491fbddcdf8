@@ -1,0 +1,34 @@
+{
+  "name": "universalify",
+  "version": "2.0.0",
+  "description": "Make a callback- or promise-based function support both promises and callbacks.",
+  "keywords": [
+    "callback",
+    "native",
+    "promise"
+  ],
+  "homepage": "https://github.com/RyanZim/universalify#readme",
+  "bugs": "https://github.com/RyanZim/universalify/issues",
+  "license": "MIT",
+  "author": "Ryan Zimmerman <opensrc@ryanzim.com>",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanZim/universalify.git"
+  },
+  "scripts": {
+    "test": "standard && nyc tape test/*.js | colortape"
+  },
+  "devDependencies": {
+    "colortape": "^0.1.2",
+    "coveralls": "^3.0.1",
+    "nyc": "^15.0.0",
+    "standard": "^14.3.1",
+    "tape": "^5.0.1"
+  },
+  "engines": {
+    "node": ">= 10.0.0"
+  }
+}

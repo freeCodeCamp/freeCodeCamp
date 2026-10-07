@@ -1,0 +1,34 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "chatSidePanelLayout", {
+    enumerable: true,
+    get: function() {
+        return chatSidePanelLayout;
+    }
+});
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_spread_props = require("@swc/helpers/_/_object_spread_props");
+var _object_without_properties = require("@swc/helpers/_/_object_without_properties");
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _preact = require("preact");
+var ChatSidePanelLayout = (0, _instantsearchuicomponents.createChatSidePanelLayoutComponent)({
+    createElement: _preact.h,
+    Fragment: _preact.Fragment
+});
+function chatSidePanelLayout(options) {
+    return function ChatSidePanelLayoutTemplate(props) {
+        var templates = props.templates, rest = _object_without_properties._(props, [
+            "templates"
+        ]);
+        return /*#__PURE__*/ (0, _preact.h)(ChatSidePanelLayout, _object_spread_props._(_object_spread._({}, rest), {
+            parentElement: options === null || options === void 0 ? void 0 : options.parentElement,
+            headerComponent: templates.header(),
+            messagesComponent: templates.messages(),
+            promptComponent: templates.prompt(),
+            toggleButtonComponent: templates.toggleButton()
+        }));
+    };
+}

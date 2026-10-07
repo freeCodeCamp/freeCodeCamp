@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_possible_constructor_return.js")

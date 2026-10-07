@@ -1,0 +1,41 @@
+{
+  "name": "typescript-tuple",
+  "version": "2.2.1",
+  "description": "Generics to work with tuples in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm run lint && tsc",
+    "clean": "clean-typescript-build .",
+    "lint": "tslint -p .",
+    "lint:fix": "pnpm run lint -- --fix",
+    "prepublishOnly": "pnpm run build",
+    "postpublish": "pnpm run clean",
+    "test": "pnpm run lint && tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodemodules/typescript-tuple.git"
+  },
+  "keywords": [
+    "generic",
+    "tuple",
+    "typescript"
+  ],
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksxnodemodules/typescript-tuple/issues"
+  },
+  "homepage": "https://github.com/ksxnodemodules/typescript-tuple#readme",
+  "dependencies": {
+    "typescript-compare": "^0.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^3.1.1",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "static-type-assert": "^3.0.0",
+    "toolcheck": "^0.0.5",
+    "clean-typescript-build": "^0.1.0"
+  }
+}

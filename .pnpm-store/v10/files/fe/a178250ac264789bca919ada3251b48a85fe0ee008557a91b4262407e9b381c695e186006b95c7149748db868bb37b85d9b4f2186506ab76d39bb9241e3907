@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-split-view2 {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.monaco-split-view2 > .sash-container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.monaco-split-view2 > .sash-container > .monaco-sash {
+	pointer-events: initial;
+}
+
+.monaco-split-view2 > .monaco-scrollable-element {
+	width: 100%;
+	height: 100%;
+}
+
+.monaco-split-view2 > .monaco-scrollable-element > .split-view-container {
+	width: 100%;
+	height: 100%;
+	white-space: nowrap;
+	position: relative;
+}
+
+.monaco-split-view2 > .monaco-scrollable-element > .split-view-container > .split-view-view {
+	white-space: initial;
+	position: absolute;
+}
+
+.monaco-split-view2 > .monaco-scrollable-element > .split-view-container > .split-view-view:not(.visible) {
+	display: none;
+}
+
+.monaco-split-view2.vertical > .monaco-scrollable-element > .split-view-container > .split-view-view {
+	width: 100%;
+}
+
+.monaco-split-view2.horizontal > .monaco-scrollable-element > .split-view-container > .split-view-view {
+	height: 100%;
+}
+
+.monaco-split-view2.separator-border > .monaco-scrollable-element > .split-view-container > .split-view-view:not(:first-child)::before {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	pointer-events: none;
+	background-color: var(--separator-border);
+}
+
+.monaco-split-view2.separator-border.horizontal > .monaco-scrollable-element > .split-view-container > .split-view-view:not(:first-child)::before {
+	height: 100%;
+	width: 1px;
+}
+
+.monaco-split-view2.separator-border.vertical > .monaco-scrollable-element > .split-view-container > .split-view-view:not(:first-child)::before {
+	height: 1px;
+	width: 100%;
+}

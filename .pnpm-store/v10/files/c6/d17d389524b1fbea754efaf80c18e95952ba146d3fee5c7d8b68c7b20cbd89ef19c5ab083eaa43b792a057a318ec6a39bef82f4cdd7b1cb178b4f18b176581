@@ -1,0 +1,17 @@
+{
+  "name": "@msgpackr-extract/msgpackr-extract-linux-x64",
+  "version": "3.0.2",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "license": "MIT",
+  "author": "Kris Zyp",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kriszyp/msgpackr-extract"
+  },
+  "description": "Platform specific binary for msgpackr-extract on linux OS with x64 architecture"
+}

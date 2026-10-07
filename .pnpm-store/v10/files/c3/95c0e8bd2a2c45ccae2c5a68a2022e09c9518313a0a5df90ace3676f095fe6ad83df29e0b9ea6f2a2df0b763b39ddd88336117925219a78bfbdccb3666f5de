@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/platform/index.ts"],"names":[],"mappings":";AAAA;;;GAGG;;;AAEH,+BAA+D;AAAtD,0GAAA,kBAAkB,OAAA;AAAE,yGAAA,iBAAiB,OAAA","sourcesContent":["/*\n * Copyright The OpenTelemetry Authors\n * SPDX-License-Identifier: Apache-2.0\n */\n\nexport { BatchSpanProcessor, RandomIdGenerator } from './node';\n"]}

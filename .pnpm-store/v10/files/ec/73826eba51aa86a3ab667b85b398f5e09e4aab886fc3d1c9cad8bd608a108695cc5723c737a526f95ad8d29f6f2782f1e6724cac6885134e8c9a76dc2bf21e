@@ -1,0 +1,88 @@
+{
+  "name": "socket.io",
+  "version": "4.8.3",
+  "description": "node.js realtime framework server",
+  "keywords": [
+    "realtime",
+    "framework",
+    "websocket",
+    "tcp",
+    "events",
+    "socket",
+    "io"
+  ],
+  "files": [
+    "dist/",
+    "client-dist/",
+    "wrapper.mjs",
+    "!**/*.tsbuildinfo"
+  ],
+  "directories": {
+    "doc": "docs/",
+    "example": "example/",
+    "lib": "lib/",
+    "test": "test/"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./wrapper.mjs",
+      "require": "./dist/index.js"
+     },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "homepage": "https://github.com/socketio/socket.io/tree/main/packages/socket.io#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/socketio/socket.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/socketio/socket.io/issues"
+  },
+  "scripts": {
+    "compile": "rimraf ./dist && tsc",
+    "test": "npm run format:check && npm run compile && npm run test:types && npm run test:unit",
+    "test:types": "tsd",
+    "test:unit": "nyc mocha --import=tsx --reporter spec --slow 200 --bail --timeout 10000 test/index.ts",
+    "format:check": "prettier --check \"lib/**/*.ts\" \"test/**/*.ts\"",
+    "format:fix": "prettier --write \"lib/**/*.ts\" \"test/**/*.ts\"",
+    "prepack": "npm run compile"
+  },
+  "dependencies": {
+    "accepts": "~1.3.4",
+    "base64id": "~2.0.0",
+    "cors": "~2.8.5",
+    "debug": "~4.4.1",
+    "engine.io": "~6.6.0",
+    "socket.io-adapter": "~2.5.2",
+    "socket.io-parser": "~4.2.4"
+  },
+  "contributors": [
+    {
+      "name": "Guillermo Rauch",
+      "email": "rauchg@gmail.com"
+    },
+    {
+      "name": "Arnout Kazemier",
+      "email": "info@3rd-eden.com"
+    },
+    {
+      "name": "Vladimir Dronnikov",
+      "email": "dronnikov@gmail.com"
+    },
+    {
+      "name": "Einar Otto Stangvik",
+      "email": "einaros@gmail.com"
+    }
+  ],
+  "engines": {
+    "node": ">=10.2.0"
+  },
+  "tsd": {
+    "directory": "test"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "name": "cosmiconfig",
+  "version": "8.3.6",
+  "description": "Find and load configuration from a package.json property, rc file, TypeScript module, and more!",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "git clean -Xdf -e '!node_modules' .",
+    "build": "npm run build:tsc",
+    "build:tsc": "cross-env NODE_ENV=production tsc -b",
+    "dev": "npm run build:tsc -- --watch",
+    "lint": "eslint --ext .js,.ts .",
+    "lint:fix": "eslint --ext .js,.ts . --fix",
+    "lint:md": "remark-preset-davidtheclark",
+    "format": "prettier \"**/*.{js,ts,json,yml,yaml}\" --write",
+    "format:md": "remark-preset-davidtheclark --format",
+    "format:check": "prettier \"**/*.{js,ts,json,yml,yaml}\" --check",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "check:all": "npm run test && npm run lint && npm run format:check",
+    "prepublishOnly": "npm run check:all && npm run build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml}": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "remark-preset-davidtheclark",
+      "remark-preset-davidtheclark --format"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosmiconfig/cosmiconfig.git"
+  },
+  "keywords": [
+    "load",
+    "configuration",
+    "config"
+  ],
+  "author": "Daniel Fischer <daniel@d-fischer.dev>",
+  "contributors": [
+    "Randolf J <jrandolf@google.com>",
+    "David Clark <david.dave.clark@gmail.com>",
+    "Bogdan Chadkin <trysound@yandex.ru>",
+    "Suhas Karanth <sudo.suhas@gmail.com>"
+  ],
+  "funding": "https://github.com/sponsors/d-fischer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cosmiconfig/cosmiconfig/issues"
+  },
+  "homepage": "https://github.com/cosmiconfig/cosmiconfig#readme",
+  "peerDependencies": {
+    "typescript": ">=4.9.5"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "import-fresh": "^3.3.0",
+    "js-yaml": "^4.1.0",
+    "parse-json": "^5.2.0",
+    "path-type": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^14",
+    "@types/parse-json": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "@vitest/coverage-istanbul": "^0.34.3",
+    "cross-env": "^7.0.3",
+    "del": "^7.1.0",
+    "del-cli": "^5.1.0",
+    "eslint": "^8.48.0",
+    "eslint-config-davidtheclark-node": "^0.2.2",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-vitest": "^0.2.8",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "make-dir": "^4.0.0",
+    "parent-module": "^3.0.0",
+    "prettier": "^3.0.3",
+    "remark-preset-davidtheclark": "^0.12.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.3"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

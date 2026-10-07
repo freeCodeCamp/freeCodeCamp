@@ -1,0 +1,48 @@
+{
+  "name": "babel-preset-fbjs",
+  "version": "3.4.0",
+  "description": "Babel preset for Facebook projects.",
+  "repository": "facebook/fbjs",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-class-properties": "^7.0.0",
+    "@babel/plugin-syntax-flow": "^7.0.0",
+    "@babel/plugin-syntax-jsx": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-arrow-functions": "^7.0.0",
+    "@babel/plugin-transform-block-scoped-functions": "^7.0.0",
+    "@babel/plugin-transform-block-scoping": "^7.0.0",
+    "@babel/plugin-transform-classes": "^7.0.0",
+    "@babel/plugin-transform-computed-properties": "^7.0.0",
+    "@babel/plugin-transform-destructuring": "^7.0.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@babel/plugin-transform-for-of": "^7.0.0",
+    "@babel/plugin-transform-function-name": "^7.0.0",
+    "@babel/plugin-transform-literals": "^7.0.0",
+    "@babel/plugin-transform-member-expression-literals": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0",
+    "@babel/plugin-transform-object-super": "^7.0.0",
+    "@babel/plugin-transform-parameters": "^7.0.0",
+    "@babel/plugin-transform-property-literals": "^7.0.0",
+    "@babel/plugin-transform-react-display-name": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/plugin-transform-shorthand-properties": "^7.0.0",
+    "@babel/plugin-transform-spread": "^7.0.0",
+    "@babel/plugin-transform-template-literals": "^7.0.0",
+    "babel-plugin-syntax-trailing-function-commas": "^7.0.0-beta.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-plugin-tester": "^5.5.2",
+    "jest-cli": "^23.6.0"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  }
+}

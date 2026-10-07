@@ -1,0 +1,34 @@
+{
+  "name": "on-exit-leak-free",
+  "version": "2.1.0",
+  "description": "Execute a function on exit without leaking memory, allowing all objects to be garbage collected",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard | snazzy && tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcollina/on-exit-or-gc.git"
+  },
+  "keywords": [
+    "weak",
+    "reference",
+    "finalization",
+    "registry",
+    "process",
+    "exit",
+    "garbage",
+    "collector"
+  ],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcollina/on-exit-or-gc/issues"
+  },
+  "homepage": "https://github.com/mcollina/on-exit-or-gc#readme",
+  "devDependencies": {
+    "snazzy": "^9.0.0",
+    "standard": "^17.0.0",
+    "tap": "^16.0.0"
+  }
+}

@@ -1,0 +1,50 @@
+# `MD009` - Trailing spaces
+
+Tags: `whitespace`
+
+Aliases: `no-trailing-spaces`
+
+Parameters:
+
+- `br_spaces`: Spaces for line break (`integer`, default `2`)
+- `code_blocks`: Include code blocks (`boolean`, default `false`)
+- `list_item_empty_lines`: Allow spaces for empty lines in list items
+  (`boolean`, default `false`)
+- `strict`: Include unnecessary breaks (`boolean`, default `false`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered on any lines that end with unexpected whitespace. To fix
+this, remove the trailing space from the end of the line.
+
+The `br_spaces` parameter allows an exception to this rule for a specific number
+of trailing spaces, typically used to insert an explicit line break. The default
+value allows 2 spaces to indicate a hard break (\<br> element). (You must set
+`br_spaces` to a value >= 2 for this parameter to take effect. Setting
+`br_spaces` to 1 behaves the same as 0, disallowing any trailing spaces.)
+
+By default, trailing space is allowed in indented and fenced code blocks because
+some programming languages require that. To report such instances, set the
+`code_blocks` parameter to `true`.
+
+By default, this rule will not trigger when the allowed number of spaces is
+used, even when it doesn't create a hard break (for example, at the end of a
+paragraph). To report such instances, set the `strict` parameter to `true`.
+
+```markdown
+Text text text
+text[2 spaces]
+```
+
+Using spaces to indent blank lines inside a list item is usually not necessary,
+but some parsers require it. Set the `list_item_empty_lines` parameter to `true`
+to allow this (even when `strict` is `true`):
+
+```markdown
+- list item text
+  [2 spaces]
+  list item text
+```
+
+Rationale: Except when being used to create a line break, trailing whitespace
+has no purpose and does not affect the rendering of content.

@@ -1,0 +1,16 @@
+/** @jsx createElement */
+import type { Renderer } from '../../types';
+type IconProps = Pick<Renderer, 'createElement'>;
+type LoadingIconProps = IconProps & {
+    isSearchStalled: boolean;
+};
+export declare function SubmitIcon({ createElement }: IconProps): JSX.Element;
+export declare function LoadingIcon({ createElement, isSearchStalled, }: LoadingIconProps): JSX.Element;
+export declare function ClearIcon({ createElement }: IconProps): JSX.Element;
+export declare function ClockIcon({ createElement }: IconProps): JSX.Element;
+export declare function TrashIcon({ createElement }: IconProps): JSX.Element;
+export declare function ApplyIcon({ createElement }: IconProps): JSX.Element;
+export declare function AiModeIcon({ createElement }: IconProps): JSX.Element;
+export declare function SearchIcon({ createElement }: IconProps): JSX.Element;
+export declare function BackIcon({ createElement }: IconProps): JSX.Element;
+export {};

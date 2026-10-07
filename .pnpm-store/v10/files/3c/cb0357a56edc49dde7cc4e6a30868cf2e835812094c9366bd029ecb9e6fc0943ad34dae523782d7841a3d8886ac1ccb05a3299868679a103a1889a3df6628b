@@ -1,0 +1,111 @@
+{
+	"name": "node-html-parser",
+	"version": "5.4.2",
+	"description": "A very fast HTML parser, generating a simplified DOM, with basic element query support.",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"compile": "tsc",
+		"build": "npm run lint && npm run clean && npm run compile:cjs && npm run compile:amd",
+		"compile:cjs": "tsc -m commonjs",
+		"compile:amd": "tsc -t es5 -m amd -d false --outFile ./dist/main.js",
+		"lint": "eslint ./src/*.ts ./src/**/*.ts",
+		"---------------": "",
+		"test": "yarn run test:target",
+		"test:src": "cross-env TEST_TARGET=src yarn run test",
+		"test:dist": "cross-env TEST_TARGET=dist yarn run test",
+		"benchmark": "node ./test/benchmark/compare.mjs",
+		"---------------  ": "",
+		"clean": "npx rimraf ./dist/",
+		"clean:global": "yarn run clean && npx rimraf yarn.lock test/yarn.lock test/node_modules node_modules",
+		"reset": "yarn run clean:global && yarn install && yarn build",
+		"--------------- ": "",
+		"test:target": "mocha --recursive \"./test/tests\"",
+		"test:ci": "cross-env TEST_TARGET=dist yarn run test:target",
+		"posttest": "yarn run benchmark",
+		"prepare": "cd test && yarn install"
+	},
+	"keywords": [
+		"html",
+		"parser",
+		"nodejs",
+		"typescript"
+	],
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE",
+		"CHANGELOG.md"
+	],
+	"author": "Xiaoyi Shi <ashi009@gmail.com>",
+	"contributors": [
+		"taoqf <tao_qiufeng@126.com>",
+		"Ron S. <ron@nonara.com>"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	},
+	"dependencies": {
+		"css-select": "^4.2.1",
+		"he": "1.2.0"
+	},
+	"devDependencies": {
+		"@types/entities": "latest",
+		"@types/he": "latest",
+		"@types/node": "latest",
+		"@typescript-eslint/eslint-plugin": "latest",
+		"@typescript-eslint/eslint-plugin-tslint": "latest",
+		"@typescript-eslint/parser": "latest",
+		"blanket": "latest",
+		"cheerio": "^1.0.0-rc.5",
+		"cross-env": "^7.0.3",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "latest",
+		"eslint-plugin-import": "latest",
+		"high5": "^1.0.0",
+		"html-dom-parser": "^1.0.4",
+		"html-parser": "^0.11.0",
+		"html5parser": "^2.0.2",
+		"htmljs-parser": "^2.11.1",
+		"htmlparser": "^1.7.7",
+		"htmlparser-benchmark": "^1.1.3",
+		"htmlparser2": "^6.0.0",
+		"mocha": "latest",
+		"mocha-each": "^2.0.1",
+		"neutron-html5parser": "^0.2.0",
+		"np": "latest",
+		"parse5": "^6.0.1",
+		"rimraf": "^3.0.2",
+		"saxes": "^6.0.0",
+		"should": "latest",
+		"spec": "latest",
+		"standard-version": "^9.3.1",
+		"travis-cov": "latest",
+		"ts-node": "^10.2.1",
+		"typescript": "latest"
+	},
+	"config": {
+		"blanket": {
+			"pattern": "./dist/index.js",
+			"data-cover-never": [
+				"node_modules"
+			]
+		},
+		"travis-cov": {
+			"threshold": 70
+		}
+	},
+	"directories": {
+		"test": "test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/taoqf/node-fast-html-parser.git"
+	},
+	"bugs": {
+		"url": "https://github.com/taoqf/node-fast-html-parser/issues"
+	},
+	"homepage": "https://github.com/taoqf/node-fast-html-parser",
+	"sideEffects": false
+}

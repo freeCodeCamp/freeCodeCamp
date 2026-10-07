@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TestClock.js",
+  "module": "../dist/esm/TestClock.js",
+  "types": "../dist/dts/TestClock.d.ts"
+}

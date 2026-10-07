@@ -1,0 +1,5 @@
+// @flow
+
+declare function tarjan<T>(graph: Map<T, Set<T>>): Array<Set<T>>;
+
+declare module.exports: typeof tarjan;

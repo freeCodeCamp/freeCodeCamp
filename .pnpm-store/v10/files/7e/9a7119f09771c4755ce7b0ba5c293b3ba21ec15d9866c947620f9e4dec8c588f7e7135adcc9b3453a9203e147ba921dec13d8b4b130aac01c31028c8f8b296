@@ -1,0 +1,50 @@
+{
+  "type": "module",
+  "name": "rettime",
+  "version": "0.11.8",
+  "description": "A type-safe marriage of `EventTarget` and `EventEmitter`.",
+  "main": "./build/index.mjs",
+  "types": "./build/index.d.mts",
+  "files": [
+    "build",
+    "src"
+  ],
+  "imports": {
+    "#src/*": "./src/*"
+  },
+  "exports": {
+    ".": {
+      "types": "./build/index.d.mts",
+      "default": "./build/index.mjs"
+    }
+  },
+  "keywords": [
+    "emitter",
+    "event",
+    "dispatcher",
+    "type-safe",
+    "strict",
+    "event-target"
+  ],
+  "author": "Artem Zakharchenko <kettanaito@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/kettanaito/rettime"
+  },
+  "devDependencies": {
+    "@ossjs/release": "^0.10.1",
+    "@rolldown/binding-darwin-arm64": "1.0.0-rc.9",
+    "publint": "^0.3.18",
+    "tsdown": "^0.19.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "scripts": {
+    "dev": "tsdown -w",
+    "test": "vitest",
+    "benchmark": "vitest bench",
+    "build": "tsdown",
+    "lint": "publint",
+    "release": "release publish"
+  }
+}

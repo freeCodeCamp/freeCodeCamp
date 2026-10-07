@@ -1,0 +1,28 @@
+{
+  "name": "config-chain",
+  "version": "1.1.13",
+  "license": {
+    "type": "MIT",
+    "url": "https://raw.githubusercontent.com/dominictarr/config-chain/master/LICENCE"
+  },
+  "description": "HANDLE CONFIGURATION ONCE AND FOR ALL",
+  "homepage": "http://github.com/dominictarr/config-chain",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dominictarr/config-chain.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "proto-list": "~1.2.1",
+    "ini": "^1.3.4"
+  },
+  "devDependencies": {
+    "tap": "0.3.0"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "scripts": {
+    "test": "tap test/*"
+  }
+}

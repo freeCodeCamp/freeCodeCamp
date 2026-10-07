@@ -1,0 +1,42 @@
+{
+  "name": "micromark-util-combine-extensions",
+  "version": "2.0.0",
+  "description": "micromark utility to combine syntax or html extensions",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "util",
+    "utility",
+    "extension",
+    "combine",
+    "merge"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-combine-extensions",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "exports": "./index.js",
+  "dependencies": {
+    "micromark-util-chunked": "^2.0.0",
+    "micromark-util-types": "^2.0.0"
+  },
+  "xo": false
+}

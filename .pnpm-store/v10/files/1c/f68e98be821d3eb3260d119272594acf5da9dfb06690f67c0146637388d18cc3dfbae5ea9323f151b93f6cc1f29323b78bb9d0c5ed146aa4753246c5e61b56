@@ -1,0 +1,88 @@
+{
+  "name": "vfile",
+  "version": "3.0.1",
+  "description": "Virtual file format for text processing",
+  "license": "MIT",
+  "keywords": [
+    "virtual",
+    "file",
+    "text",
+    "processing",
+    "message",
+    "warning",
+    "error",
+    "remark",
+    "retext"
+  ],
+  "repository": "vfile/vfile",
+  "bugs": "https://github.com/vfile/vfile/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Brendan Abbott <brendan.abbott@temando.com>",
+    "Denys Dovhan <email@denysdovhan.com>",
+    "Kyle Mathews <mathews.kyle@gmail.com>",
+    "Shinnosuke Watanabe <snnskwtnb@gmail.com>",
+    "Sindre Sorhus <sindresorhus@gmail.com>"
+  ],
+  "files": [
+    "core.js",
+    "index.js"
+  ],
+  "dependencies": {
+    "is-buffer": "^2.0.0",
+    "replace-ext": "1.0.0",
+    "unist-util-stringify-position": "^1.0.0",
+    "vfile-message": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "nyc": "^13.0.0",
+    "prettier": "^1.12.1",
+    "remark-cli": "^6.0.0",
+    "remark-preset-wooorm": "^4.0.0",
+    "tape": "^4.4.0",
+    "tinyify": "^2.4.3",
+    "xo": "^0.23.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "build-bundle": "browserify . -s VFile > vfile.js",
+    "build-mangle": "browserify . -s VFile -p tinyify > vfile.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "no-var": "off",
+      "prefer-arrow-callback": "off",
+      "object-shorthand": "off"
+    },
+    "ignores": [
+      "vfile.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

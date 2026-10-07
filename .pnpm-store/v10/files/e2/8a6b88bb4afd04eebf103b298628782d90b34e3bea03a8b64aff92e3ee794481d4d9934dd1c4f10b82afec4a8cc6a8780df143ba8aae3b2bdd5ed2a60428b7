@@ -1,0 +1,39 @@
+{
+  "name": "immutable",
+  "version": "4.3.5",
+  "description": "Immutable Data Collections",
+  "license": "MIT",
+  "homepage": "https://immutable-js.com",
+  "author": {
+    "name": "Lee Byron",
+    "url": "https://github.com/leebyron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/immutable-js/immutable-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/immutable-js/immutable-js/issues"
+  },
+  "main": "dist/immutable.js",
+  "module": "dist/immutable.es.js",
+  "sideEffects": false,
+  "types": "dist/immutable.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "immutable",
+    "persistent",
+    "lazy",
+    "data",
+    "datastructure",
+    "functional",
+    "collection",
+    "stateless",
+    "sequence",
+    "iteration"
+  ]
+}

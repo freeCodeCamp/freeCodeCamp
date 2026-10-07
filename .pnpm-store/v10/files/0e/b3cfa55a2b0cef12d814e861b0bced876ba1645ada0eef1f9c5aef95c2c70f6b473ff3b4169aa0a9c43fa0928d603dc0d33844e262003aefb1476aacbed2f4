@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Fiber.js",
+  "module": "../dist/esm/Fiber.js",
+  "types": "../dist/dts/Fiber.d.ts"
+}

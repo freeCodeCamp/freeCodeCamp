@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_non_iterable_spread.cjs",
+    "module": "../../esm/_non_iterable_spread.js"
+}

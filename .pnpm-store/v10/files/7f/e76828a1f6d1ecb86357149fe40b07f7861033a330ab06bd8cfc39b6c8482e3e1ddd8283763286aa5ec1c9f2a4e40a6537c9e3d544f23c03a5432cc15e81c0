@@ -1,0 +1,1 @@
+{"version":3,"file":"puppeteer-core-browser.js","sourceRoot":"","sources":["../../src/puppeteer-core-browser.ts"],"names":[],"mappings":"AAAA;;;;GAIG;AAEH,cAAc,oBAAoB,CAAC;AAEnC,OAAO,EAAC,SAAS,EAAC,MAAM,uBAAuB,CAAC;AAEhD;;GAEG;AACH,MAAM,SAAS,GAAG,IAAI,SAAS,CAAC;IAC9B,eAAe,EAAE,IAAI;CACtB,CAAC,CAAC;AAEH,MAAM,CAAC,MAAM;AACX;;GAEG;AACH,OAAO,GACR,GAAG,SAAS,CAAC;AAEd,eAAe,SAAS,CAAC"}

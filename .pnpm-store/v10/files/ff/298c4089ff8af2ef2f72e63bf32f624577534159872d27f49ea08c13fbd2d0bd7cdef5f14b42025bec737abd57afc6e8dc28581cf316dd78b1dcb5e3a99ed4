@@ -1,0 +1,71 @@
+{
+	"name": "get-east-asian-width",
+	"version": "1.5.0",
+	"description": "Determine the East Asian Width of a Unicode character",
+	"license": "MIT",
+	"repository": "sindresorhus/get-east-asian-width",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"test": "xo && ava && tsc index.d.ts",
+		"build": "node scripts/build.js",
+		"prepublish": "npm run build"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"lookup.js",
+		"lookup-data.js",
+		"utilities.js"
+	],
+	"keywords": [
+		"unicode",
+		"east-asian-width",
+		"eastasianwidth",
+		"character",
+		"string",
+		"width",
+		"text",
+		"layout",
+		"alignment",
+		"fullwidth",
+		"halfwidth",
+		"ambiguous",
+		"narrow",
+		"wide",
+		"neutral",
+		"typography",
+		"japanese",
+		"chinese",
+		"korean",
+		"codepoint",
+		"text-processing",
+		"i18n",
+		"l10n"
+	],
+	"devDependencies": {
+		"ava": "^5.3.1",
+		"outdent": "^0.8.0",
+		"simplify-ranges": "^0.1.0",
+		"typescript": "^5.2.2",
+		"xo": "^0.56.0"
+	},
+	"xo": {
+		"ignores": [
+			"lookup-data.js"
+		]
+	}
+}

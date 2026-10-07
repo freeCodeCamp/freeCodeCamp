@@ -1,0 +1,79 @@
+{
+  "additionalProperties": false,
+  "type": "object",
+  "definitions": {
+    "Path": { "type": "string" },
+    "MatchCondition": {
+      "anyOf": [{ "instanceof": "RegExp" }, { "$ref": "#/definitions/Path" }]
+    },
+    "MatchConditions": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/MatchCondition" },
+      "minItems": 1
+    },
+    "ESModuleOptions": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "exclude": {
+          "anyOf": [
+            { "$ref": "#/definitions/MatchCondition" },
+            { "$ref": "#/definitions/MatchConditions" }
+          ]
+        },
+        "include": {
+          "anyOf": [
+            { "$ref": "#/definitions/MatchCondition" },
+            { "$ref": "#/definitions/MatchConditions" }
+          ]
+        }
+      }
+    },
+    "OverlayOptions": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "entry": {
+          "anyOf": [{ "const": false }, { "$ref": "#/definitions/Path" }]
+        },
+        "module": {
+          "anyOf": [{ "const": false }, { "$ref": "#/definitions/Path" }]
+        },
+        "sockIntegration": {
+          "anyOf": [
+            { "const": false },
+            { "enum": ["wds", "whm", "wps"] },
+            { "$ref": "#/definitions/Path" }
+          ]
+        },
+        "sockHost": { "type": "string" },
+        "sockPath": { "type": "string" },
+        "sockPort": { "type": "number", "minimum": 0 },
+        "sockProtocol": { "enum": ["http", "https", "ws", "wss"] },
+        "useURLPolyfill": { "type": "boolean" }
+      }
+    }
+  },
+  "properties": {
+    "esModule": {
+      "anyOf": [{ "type": "boolean" }, { "$ref": "#/definitions/ESModuleOptions" }]
+    },
+    "exclude": {
+      "anyOf": [
+        { "$ref": "#/definitions/MatchCondition" },
+        { "$ref": "#/definitions/MatchConditions" }
+      ]
+    },
+    "forceEnable": { "type": "boolean" },
+    "include": {
+      "anyOf": [
+        { "$ref": "#/definitions/MatchCondition" },
+        { "$ref": "#/definitions/MatchConditions" }
+      ]
+    },
+    "library": { "type": "string" },
+    "overlay": {
+      "anyOf": [{ "type": "boolean" }, { "$ref": "#/definitions/OverlayOptions" }]
+    }
+  }
+}

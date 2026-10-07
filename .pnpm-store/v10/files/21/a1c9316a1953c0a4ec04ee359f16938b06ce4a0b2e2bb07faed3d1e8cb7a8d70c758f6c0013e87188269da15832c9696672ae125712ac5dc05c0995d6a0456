@@ -1,0 +1,205 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# This domain allows inspection of Web Audio API.
+# https://webaudio.github.io/web-audio-api/
+experimental domain WebAudio
+
+  # An unique ID for a graph object (AudioContext, AudioNode, AudioParam) in Web Audio API
+  type GraphObjectId extends string
+
+  # Enum of BaseAudioContext types
+  type ContextType extends string
+    enum
+      realtime
+      offline
+
+  # Enum of AudioContextState from the spec
+  type ContextState extends string
+    enum
+      suspended
+      running
+      closed
+      interrupted
+
+  # Enum of AudioNode types
+  type NodeType extends string
+
+  # Enum of AudioNode::ChannelCountMode from the spec
+  type ChannelCountMode extends string
+    enum
+      clamped-max
+      explicit
+      max
+
+  # Enum of AudioNode::ChannelInterpretation from the spec
+  type ChannelInterpretation extends string
+    enum
+      discrete
+      speakers
+
+  # Enum of AudioParam types
+  type ParamType extends string
+
+  # Enum of AudioParam::AutomationRate from the spec
+  type AutomationRate extends string
+    enum
+      a-rate
+      k-rate
+
+  # Fields in AudioContext that change in real-time.
+  type ContextRealtimeData extends object
+    properties
+      # The current context time in second in BaseAudioContext.
+      number currentTime
+      # The time spent on rendering graph divided by render quantum duration,
+      # and multiplied by 100. 100 means the audio renderer reached the full
+      # capacity and glitch may occur.
+      number renderCapacity
+      # A running mean of callback interval.
+      number callbackIntervalMean
+      # A running variance of callback interval.
+      number callbackIntervalVariance
+
+  # Protocol object for BaseAudioContext
+  type BaseAudioContext extends object
+    properties
+      GraphObjectId contextId
+      ContextType contextType
+      ContextState contextState
+      optional ContextRealtimeData realtimeData
+      # Platform-dependent callback buffer size.
+      number callbackBufferSize
+      # Number of output channels supported by audio hardware in use.
+      number maxOutputChannelCount
+      # Context sample rate.
+      number sampleRate
+
+# Protocol object for AudioListener
+  type AudioListener extends object
+    properties
+      GraphObjectId listenerId
+      GraphObjectId contextId
+
+  # Protocol object for AudioNode
+  type AudioNode extends object
+    properties
+      GraphObjectId nodeId
+      GraphObjectId contextId
+      NodeType nodeType
+      number numberOfInputs
+      number numberOfOutputs
+      number channelCount
+      ChannelCountMode channelCountMode
+      ChannelInterpretation channelInterpretation
+
+  # Protocol object for AudioParam
+  type AudioParam extends object
+    properties
+      GraphObjectId paramId
+      GraphObjectId nodeId
+      GraphObjectId contextId
+      ParamType paramType
+      AutomationRate rate
+      number defaultValue
+      number minValue
+      number maxValue
+
+  # Enables the WebAudio domain and starts sending context lifetime events.
+  command enable
+
+  # Disables the WebAudio domain.
+  command disable
+
+  # Fetch the realtime data from the registered contexts.
+  command getRealtimeData
+    parameters
+      GraphObjectId contextId
+    returns
+      ContextRealtimeData realtimeData
+
+  # Notifies that a new BaseAudioContext has been created.
+  event contextCreated
+    parameters
+      BaseAudioContext context
+
+  # Notifies that an existing BaseAudioContext will be destroyed.
+  event contextWillBeDestroyed
+    parameters
+      GraphObjectId contextId
+
+  # Notifies that existing BaseAudioContext has changed some properties (id stays the same)..
+  event contextChanged
+    parameters
+      BaseAudioContext context
+
+# Notifies that the construction of an AudioListener has finished.
+  event audioListenerCreated
+    parameters
+      AudioListener listener
+
+  # Notifies that a new AudioListener has been created.
+  event audioListenerWillBeDestroyed
+    parameters
+      GraphObjectId contextId
+      GraphObjectId listenerId
+
+  # Notifies that a new AudioNode has been created.
+  event audioNodeCreated
+    parameters
+      AudioNode node
+
+  # Notifies that an existing AudioNode has been destroyed.
+  event audioNodeWillBeDestroyed
+    parameters
+      GraphObjectId contextId
+      GraphObjectId nodeId
+
+  # Notifies that a new AudioParam has been created.
+  event audioParamCreated
+    parameters
+      AudioParam param
+
+  # Notifies that an existing AudioParam has been destroyed.
+  event audioParamWillBeDestroyed
+    parameters
+      GraphObjectId contextId
+      GraphObjectId nodeId
+      GraphObjectId paramId
+
+  # Notifies that two AudioNodes are connected.
+  event nodesConnected
+    parameters
+      GraphObjectId contextId
+      GraphObjectId sourceId
+      GraphObjectId destinationId
+      optional number sourceOutputIndex
+      optional number destinationInputIndex
+
+  # Notifies that AudioNodes are disconnected. The destination can be null, and it means all the outgoing connections from the source are disconnected.
+  event nodesDisconnected
+    parameters
+      GraphObjectId contextId
+      GraphObjectId sourceId
+      GraphObjectId destinationId
+      optional number sourceOutputIndex
+      optional number destinationInputIndex
+
+  # Notifies that an AudioNode is connected to an AudioParam.
+  event nodeParamConnected
+    parameters
+      GraphObjectId contextId
+      GraphObjectId sourceId
+      GraphObjectId destinationId
+      optional number sourceOutputIndex
+
+  # Notifies that an AudioNode is disconnected to an AudioParam.
+  event nodeParamDisconnected
+    parameters
+      GraphObjectId contextId
+      GraphObjectId sourceId
+      GraphObjectId destinationId
+      optional number sourceOutputIndex

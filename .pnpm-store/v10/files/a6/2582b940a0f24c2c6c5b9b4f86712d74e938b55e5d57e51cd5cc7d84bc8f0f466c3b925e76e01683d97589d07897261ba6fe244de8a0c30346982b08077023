@@ -1,0 +1,44 @@
+{
+  "name": "@nodelib/fs.walk",
+  "version": "1.2.8",
+  "description": "A library for efficiently walking a directory recursively",
+  "license": "MIT",
+  "repository": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.walk",
+  "keywords": [
+    "NodeLib",
+    "fs",
+    "FileSystem",
+    "file system",
+    "walk",
+    "scanner",
+    "crawler"
+  ],
+  "engines": {
+    "node": ">= 8"
+  },
+  "files": [
+    "out/**",
+    "!out/**/*.map",
+    "!out/**/*.spec.*",
+    "!out/**/tests/**"
+  ],
+  "main": "out/index.js",
+  "typings": "out/index.d.ts",
+  "scripts": {
+    "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+    "lint": "eslint \"src/**/*.ts\" --cache",
+    "compile": "tsc -b .",
+    "compile:watch": "tsc -p . --watch --sourceMap",
+    "test": "mocha \"out/**/*.spec.js\" -s 0",
+    "build": "npm run clean && npm run compile && npm run lint && npm test",
+    "watch": "npm run clean && npm run compile:watch"
+  },
+  "dependencies": {
+    "@nodelib/fs.scandir": "2.1.5",
+    "fastq": "^1.6.0"
+  },
+  "devDependencies": {
+    "@nodelib/fs.macchiato": "1.0.4"
+  },
+  "gitHead": "1e5bad48565da2b06b8600e744324ea240bf49d8"
+}

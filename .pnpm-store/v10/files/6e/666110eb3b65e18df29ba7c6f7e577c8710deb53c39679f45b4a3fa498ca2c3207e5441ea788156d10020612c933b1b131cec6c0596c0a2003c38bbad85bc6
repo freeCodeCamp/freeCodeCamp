@@ -1,0 +1,1761 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Actions and events related to the inspected page belong to the page domain.
+domain Page
+  depends on Debugger
+  depends on DOM
+  depends on IO
+  depends on Network
+  depends on Runtime
+
+  # Unique frame identifier.
+  type FrameId extends string
+
+  # Indicates whether a frame has been identified as an ad.
+  experimental type AdFrameType extends string
+    enum
+      none
+      # This frame is a subframe of an ad frame.
+      child
+      # This frame is the root of an ad frame.
+      root
+
+  experimental type AdFrameExplanation extends string
+    enum
+      ParentIsAd
+      CreatedByAdScript
+      MatchedBlockingRule
+
+  # Indicates whether a frame has been identified as an ad and why.
+  experimental type AdFrameStatus extends object
+    properties
+      AdFrameType adFrameType
+      optional array of AdFrameExplanation explanations
+
+  # Indicates whether the frame is a secure context and why it is the case.
+  experimental type SecureContextType extends string
+    enum
+      # The origin is a secure context.
+      Secure
+      # The host is localhost and hence is considered secure.
+      SecureLocalhost
+      # The origin has an insecure scheme and is not localhost.
+      InsecureScheme
+      # One of the ancestor frames is not a secure context.
+      InsecureAncestor
+
+  # Indicates whether the frame is cross-origin isolated and why it is the case.
+  experimental type CrossOriginIsolatedContextType extends string
+    enum
+      # The origin is cross-origin isolated.
+      Isolated
+      # The origin is not cross-origin isolated.
+      NotIsolated
+      # The cross-origin isolation feature is disabled.
+      NotIsolatedFeatureDisabled
+
+  experimental type GatedAPIFeatures extends string
+    enum
+      SharedArrayBuffers
+      SharedArrayBuffersTransferAllowed
+      PerformanceMeasureMemory
+      PerformanceProfile
+
+  # All Permissions Policy features. This enum should match the one defined
+  # in services/network/public/cpp/permissions_policy/permissions_policy_features.json5.
+  # LINT.IfChange(PermissionsPolicyFeature)
+  experimental type PermissionsPolicyFeature extends string
+    enum
+      accelerometer
+      all-screens-capture
+      ambient-light-sensor
+      aria-notify
+      attribution-reporting
+      autofill
+      autoplay
+      bluetooth
+      browsing-topics
+      camera
+      captured-surface-control
+      ch-dpr
+      ch-device-memory
+      ch-downlink
+      ch-ect
+      ch-prefers-color-scheme
+      ch-prefers-reduced-motion
+      ch-prefers-reduced-transparency
+      ch-rtt
+      ch-save-data
+      ch-ua
+      ch-ua-arch
+      ch-ua-bitness
+      ch-ua-high-entropy-values
+      ch-ua-platform
+      ch-ua-model
+      ch-ua-mobile
+      ch-ua-form-factors
+      ch-ua-full-version
+      ch-ua-full-version-list
+      ch-ua-platform-version
+      ch-ua-wow64
+      ch-viewport-height
+      ch-viewport-width
+      ch-width
+      clipboard-read
+      clipboard-write
+      compute-pressure
+      controlled-frame
+      cross-origin-isolated
+      deferred-fetch
+      deferred-fetch-minimal
+      device-attributes
+      digital-credentials-create
+      digital-credentials-get
+      direct-sockets
+      direct-sockets-multicast
+      direct-sockets-private
+      display-capture
+      document-domain
+      encrypted-media
+      execution-while-out-of-viewport
+      execution-while-not-rendered
+      fenced-unpartitioned-storage-read
+      focus-without-user-activation
+      fullscreen
+      frobulate
+      gamepad
+      geolocation
+      gyroscope
+      hid
+      identity-credentials-get
+      idle-detection
+      interest-cohort
+      join-ad-interest-group
+      keyboard-map
+      language-detector
+      language-model
+      local-fonts
+      local-network
+      local-network-access
+      loopback-network
+      magnetometer
+      manual-text
+      media-playback-while-not-visible
+      microphone
+      midi
+      on-device-speech-recognition
+      otp-credentials
+      payment
+      picture-in-picture
+      private-aggregation
+      private-state-token-issuance
+      private-state-token-redemption
+      publickey-credentials-create
+      publickey-credentials-get
+      record-ad-auction-events
+      rewriter
+      run-ad-auction
+      screen-wake-lock
+      serial
+      shared-storage
+      shared-storage-select-url
+      smart-card
+      speaker-selection
+      storage-access
+      sub-apps
+      summarizer
+      sync-xhr
+      translator
+      unload
+      usb
+      usb-unrestricted
+      vertical-scroll
+      web-app-installation
+      web-printing
+      web-share
+      window-management
+      writer
+      xr-spatial-tracking
+  # LINT.ThenChange(//services/network/public/cpp/permissions_policy/permissions_policy_features.json5:PermissionsPolicy)
+
+  # Reason for a permissions policy feature to be disabled.
+  experimental type PermissionsPolicyBlockReason extends string
+    enum
+      # Declaration in HTTP header.
+      Header
+      # Declaration in iframe attribute.
+      IframeAttribute
+      # Inside fenced frame.
+      InFencedFrameTree
+      # Inside an Isolated Application.
+      InIsolatedApp
+
+  experimental type PermissionsPolicyBlockLocator extends object
+    properties
+      FrameId frameId
+      PermissionsPolicyBlockReason blockReason
+
+  experimental type PermissionsPolicyFeatureState extends object
+    properties
+      PermissionsPolicyFeature feature
+      boolean allowed
+      optional PermissionsPolicyBlockLocator locator
+
+  # Origin Trial(https://www.chromium.org/blink/origin-trials) support.
+  # Status for an Origin Trial token.
+  experimental type OriginTrialTokenStatus extends string
+    enum
+      Success
+      NotSupported
+      Insecure
+      Expired
+      WrongOrigin
+      InvalidSignature
+      Malformed
+      WrongVersion
+      FeatureDisabled
+      TokenDisabled
+      FeatureDisabledForUser
+      UnknownTrial
+
+  # Status for an Origin Trial.
+  experimental type OriginTrialStatus extends string
+    enum
+      Enabled
+      ValidTokenNotProvided
+      OSNotSupported
+      TrialNotAllowed
+
+  experimental type OriginTrialUsageRestriction extends string
+    enum
+      None
+      Subset
+
+  experimental type OriginTrialToken extends object
+    properties
+      string origin
+      boolean matchSubDomains
+      string trialName
+      Network.TimeSinceEpoch expiryTime
+      boolean isThirdParty
+      OriginTrialUsageRestriction usageRestriction
+
+  experimental type OriginTrialTokenWithStatus extends object
+    properties
+      string rawTokenText
+      # `parsedToken` is present only when the token is extractable and
+      # parsable.
+      optional OriginTrialToken parsedToken
+      OriginTrialTokenStatus status
+
+  experimental type OriginTrial extends object
+    properties
+      string trialName
+      OriginTrialStatus status
+      array of OriginTrialTokenWithStatus tokensWithStatus
+
+  # Additional information about the frame document's security origin.
+  experimental type SecurityOriginDetails extends object
+    properties
+      # Indicates whether the frame document's security origin is one
+      # of the local hostnames (e.g. "localhost") or IP addresses (IPv4
+      # 127.0.0.0/8 or IPv6 ::1).
+      boolean isLocalhost
+
+  # Information about the Frame on the page.
+  type Frame extends object
+    properties
+      # Frame unique identifier.
+      FrameId id
+      # Parent frame identifier.
+      optional FrameId parentId
+      # Identifier of the loader associated with this frame.
+      Network.LoaderId loaderId
+      # Frame's name as specified in the tag.
+      optional string name
+      # Frame document's URL without fragment.
+      string url
+      # Frame document's URL fragment including the '#'.
+      experimental optional string urlFragment
+      # Frame document's registered domain, taking the public suffixes list into account.
+      # Extracted from the Frame's url.
+      # Example URLs: http://www.google.com/file.html -> "google.com"
+      #               http://a.b.co.uk/file.html      -> "b.co.uk"
+      experimental string domainAndRegistry
+      # Frame document's security origin.
+      string securityOrigin
+      # Additional details about the frame document's security origin.
+      experimental optional SecurityOriginDetails securityOriginDetails
+      # Frame document's mimeType as determined by the browser.
+      string mimeType
+      # If the frame failed to load, this contains the URL that could not be loaded. Note that unlike url above, this URL may contain a fragment.
+      experimental optional string unreachableUrl
+      # Indicates whether this frame was tagged as an ad and why.
+      experimental optional AdFrameStatus adFrameStatus
+      # Indicates whether the main document is a secure context and explains why that is the case.
+      experimental SecureContextType secureContextType
+      # Indicates whether this is a cross origin isolated context.
+      experimental CrossOriginIsolatedContextType crossOriginIsolatedContextType
+      # Indicated which gated APIs / features are available.
+      experimental array of GatedAPIFeatures gatedAPIFeatures
+
+  # Information about the Resource on the page.
+  experimental type FrameResource extends object
+    properties
+      # Resource URL.
+      string url
+      # Type of this resource.
+      Network.ResourceType type
+      # Resource mimeType as determined by the browser.
+      string mimeType
+      # last-modified timestamp as reported by server.
+      optional Network.TimeSinceEpoch lastModified
+      # Resource content size.
+      optional number contentSize
+      # True if the resource failed to load.
+      optional boolean failed
+      # True if the resource was canceled during loading.
+      optional boolean canceled
+
+  # Information about the Frame hierarchy along with their cached resources.
+  experimental type FrameResourceTree extends object
+    properties
+      # Frame information for this tree item.
+      Frame frame
+      # Child frames.
+      optional array of FrameResourceTree childFrames
+      # Information about frame resources.
+      array of FrameResource resources
+
+  # Information about the Frame hierarchy.
+  type FrameTree extends object
+    properties
+      # Frame information for this tree item.
+      Frame frame
+      # Child frames.
+      optional array of FrameTree childFrames
+
+  # Unique script identifier.
+  type ScriptIdentifier extends string
+
+  # Transition type.
+  type TransitionType extends string
+    enum
+      link
+      typed
+      address_bar
+      auto_bookmark
+      auto_subframe
+      manual_subframe
+      generated
+      auto_toplevel
+      form_submit
+      reload
+      keyword
+      keyword_generated
+      other
+
+  # Navigation history entry.
+  type NavigationEntry extends object
+    properties
+      # Unique id of the navigation history entry.
+      integer id
+      # URL of the navigation history entry.
+      string url
+      # URL that the user typed in the url bar.
+      string userTypedURL
+      # Title of the navigation history entry.
+      string title
+      # Transition type.
+      TransitionType transitionType
+
+  # Screencast frame metadata.
+  experimental type ScreencastFrameMetadata extends object
+    properties
+      # Top offset in DIP.
+      number offsetTop
+      # Page scale factor.
+      number pageScaleFactor
+      # Device screen width in DIP.
+      number deviceWidth
+      # Device screen height in DIP.
+      number deviceHeight
+      # Position of horizontal scroll in CSS pixels.
+      number scrollOffsetX
+      # Position of vertical scroll in CSS pixels.
+      number scrollOffsetY
+      # Frame swap timestamp.
+      optional Network.TimeSinceEpoch timestamp
+
+  # Javascript dialog type.
+  type DialogType extends string
+    enum
+      alert
+      confirm
+      prompt
+      beforeunload
+
+  # Error while paring app manifest.
+  type AppManifestError extends object
+    properties
+      # Error message.
+      string message
+      # If critical, this is a non-recoverable parse error.
+      integer critical
+      # Error line.
+      integer line
+      # Error column.
+      integer column
+
+  # Parsed app manifest properties.
+  experimental type AppManifestParsedProperties extends object
+    properties
+      # Computed scope value
+      string scope
+
+  # Layout viewport position and dimensions.
+  type LayoutViewport extends object
+    properties
+      # Horizontal offset relative to the document (CSS pixels).
+      integer pageX
+      # Vertical offset relative to the document (CSS pixels).
+      integer pageY
+      # Width (CSS pixels), excludes scrollbar if present.
+      integer clientWidth
+      # Height (CSS pixels), excludes scrollbar if present.
+      integer clientHeight
+
+  # Visual viewport position, dimensions, and scale.
+  type VisualViewport extends object
+    properties
+      # Horizontal offset relative to the layout viewport (CSS pixels).
+      number offsetX
+      # Vertical offset relative to the layout viewport (CSS pixels).
+      number offsetY
+      # Horizontal offset relative to the document (CSS pixels).
+      number pageX
+      # Vertical offset relative to the document (CSS pixels).
+      number pageY
+      # Width (CSS pixels), excludes scrollbar if present.
+      number clientWidth
+      # Height (CSS pixels), excludes scrollbar if present.
+      number clientHeight
+      # Scale relative to the ideal viewport (size at width=device-width).
+      number scale
+      # Page zoom factor (CSS to device independent pixels ratio).
+      optional number zoom
+
+  # Viewport for capturing screenshot.
+  type Viewport extends object
+    properties
+      # X offset in device independent pixels (dip).
+      number x
+      # Y offset in device independent pixels (dip).
+      number y
+      # Rectangle width in device independent pixels (dip).
+      number width
+      # Rectangle height in device independent pixels (dip).
+      number height
+      # Page scale factor.
+      number scale
+
+  # Generic font families collection.
+  experimental type FontFamilies extends object
+    properties
+      # The standard font-family.
+      optional string standard
+      # The fixed font-family.
+      optional string fixed
+      # The serif font-family.
+      optional string serif
+      # The sansSerif font-family.
+      optional string sansSerif
+      # The cursive font-family.
+      optional string cursive
+      # The fantasy font-family.
+      optional string fantasy
+      # The math font-family.
+      optional string math
+
+  # Font families collection for a script.
+  experimental type ScriptFontFamilies extends object
+    properties
+      # Name of the script which these font families are defined for.
+      string script
+      # Generic font families collection for the script.
+      FontFamilies fontFamilies
+
+  # Default font sizes.
+  experimental type FontSizes extends object
+    properties
+      # Default standard font size.
+      optional integer standard
+      # Default fixed font size.
+      optional integer fixed
+
+  experimental type ClientNavigationReason extends string
+    enum
+      anchorClick
+      formSubmissionGet
+      formSubmissionPost
+      httpHeaderRefresh
+      initialFrameNavigation
+      metaTagRefresh
+      other
+      pageBlockInterstitial
+      reload
+      scriptInitiated
+
+  experimental type ClientNavigationDisposition extends string
+    enum
+      currentTab
+      newTab
+      newWindow
+      download
+
+  experimental type InstallabilityErrorArgument extends object
+    properties
+      # Argument name (e.g. name:'minimum-icon-size-in-pixels').
+      string name
+      # Argument value (e.g. value:'64').
+      string value
+
+  # The installability error
+  experimental type InstallabilityError extends object
+    properties
+      # The error id (e.g. 'manifest-missing-suitable-icon').
+      string errorId
+      # The list of error arguments (e.g. {name:'minimum-icon-size-in-pixels', value:'64'}).
+      array of InstallabilityErrorArgument errorArguments
+
+  # The referring-policy used for the navigation.
+  experimental type ReferrerPolicy extends string
+    enum
+      noReferrer
+      noReferrerWhenDowngrade
+      origin
+      originWhenCrossOrigin
+      sameOrigin
+      strictOrigin
+      strictOriginWhenCrossOrigin
+      unsafeUrl
+
+  # Per-script compilation cache parameters for `Page.produceCompilationCache`
+  experimental type CompilationCacheParams extends object
+    properties
+      # The URL of the script to produce a compilation cache entry for.
+      string url
+      # A hint to the backend whether eager compilation is recommended.
+      # (the actual compilation mode used is upon backend discretion).
+      optional boolean eager
+
+  # Deprecated, please use addScriptToEvaluateOnNewDocument instead.
+  experimental deprecated command addScriptToEvaluateOnLoad
+    parameters
+      string scriptSource
+    returns
+      # Identifier of the added script.
+      ScriptIdentifier identifier
+
+  # Evaluates given script in every frame upon creation (before loading frame's scripts).
+  command addScriptToEvaluateOnNewDocument
+    parameters
+      string source
+      # If specified, creates an isolated world with the given name and evaluates given script in it.
+      # This world name will be used as the ExecutionContextDescription::name when the corresponding
+      # event is emitted.
+      experimental optional string worldName
+      # Specifies whether command line API should be available to the script, defaults
+      # to false.
+      experimental optional boolean includeCommandLineAPI
+      # If true, runs the script immediately on existing execution contexts or worlds.
+      # Default: false.
+      experimental optional boolean runImmediately
+    returns
+      # Identifier of the added script.
+      ScriptIdentifier identifier
+
+  # Brings page to front (activates tab).
+  command bringToFront
+
+  # Capture page screenshot.
+  command captureScreenshot
+    parameters
+      # Image compression format (defaults to png).
+      optional enum format
+        jpeg
+        png
+        webp
+      # Compression quality from range [0..100] (jpeg only).
+      optional integer quality
+      # Capture the screenshot of a given region only.
+      optional Viewport clip
+      # Capture the screenshot from the surface, rather than the view. Defaults to true.
+      experimental optional boolean fromSurface
+      # Capture the screenshot beyond the viewport. Defaults to false.
+      experimental optional boolean captureBeyondViewport
+      # Optimize image encoding for speed, not for resulting size (defaults to false)
+      experimental optional boolean optimizeForSpeed
+    returns
+      # Base64-encoded image data.
+      binary data
+
+  # Returns a snapshot of the page as a string. For MHTML format, the serialization includes
+  # iframes, shadow DOM, external resources, and element-inline styles.
+  experimental command captureSnapshot
+    parameters
+      # Format (defaults to mhtml).
+      optional enum format
+        mhtml
+    returns
+      # Serialized page data.
+      string data
+
+  # Clears the overridden device metrics.
+  experimental deprecated command clearDeviceMetricsOverride
+    # Use 'Emulation.clearDeviceMetricsOverride' instead
+    redirect Emulation
+
+  # Clears the overridden Device Orientation.
+  experimental deprecated command clearDeviceOrientationOverride
+    # Use 'DeviceOrientation.clearDeviceOrientationOverride' instead
+    redirect DeviceOrientation
+
+  # Clears the overridden Geolocation Position and Error.
+  deprecated command clearGeolocationOverride
+    # Use 'Emulation.clearGeolocationOverride' instead
+    redirect Emulation
+
+  # Creates an isolated world for the given frame.
+  command createIsolatedWorld
+    parameters
+      # Id of the frame in which the isolated world should be created.
+      FrameId frameId
+      # An optional name which is reported in the Execution Context.
+      optional string worldName
+      # Whether or not universal access should be granted to the isolated world. This is a powerful
+      # option, use with caution.
+      optional boolean grantUniveralAccess
+    returns
+      # Execution context of the isolated world.
+      Runtime.ExecutionContextId executionContextId
+
+  # Deletes browser cookie with given name, domain and path.
+  experimental deprecated command deleteCookie
+    # Use 'Network.deleteCookie' instead
+    redirect Network
+    parameters
+      # Name of the cookie to remove.
+      string cookieName
+      # URL to match cooke domain and path.
+      string url
+
+  # Disables page domain notifications.
+  command disable
+
+  # Enables page domain notifications.
+  command enable
+    parameters
+      # If true, the `Page.fileChooserOpened` event will be emitted regardless of the state set by
+      # `Page.setInterceptFileChooserDialog` command (default: false).
+      experimental optional boolean enableFileChooserOpenedEvent
+
+  # The manifest of a webapp, see
+  # https://www.w3.org/TR/appmanifest/#dfn-manifest.
+  # Some fields do not appear in the standard since the API is designed to
+  # expose more browser internal states.
+
+  experimental type FileFilter extends object
+    properties
+      optional string name
+      optional array of string accepts
+
+  experimental type FileHandler extends object
+    properties
+      string action
+      string name
+      optional array of ImageResource icons
+      # Mimic a map, name is the key, accepts is the value.
+      optional array of FileFilter accepts
+      # Won't repeat the enums, using string for easy comparison. Same as the
+      # other enums below.
+      string launchType
+
+  # The image definition used in both icon and screenshot.
+  experimental type ImageResource extends object
+    properties
+      # The src field in the definition, but changing to url in favor of
+      # consistency.
+      string url
+      optional string sizes
+      optional string type
+
+  experimental type LaunchHandler extends object
+    properties
+      string clientMode
+
+  experimental type ProtocolHandler extends object
+    properties
+      string protocol
+      string url
+
+  experimental type RelatedApplication extends object
+    properties
+      optional string id
+      string url
+
+  experimental type ScopeExtension extends object
+    properties
+      # Instead of using tuple, this field always returns the serialized string
+      # for easy understanding and comparison.
+      string origin
+      boolean hasOriginWildcard
+
+  experimental type Screenshot extends object
+    properties
+      ImageResource image
+      string formFactor
+      optional string label
+
+  experimental type ShareTarget extends object
+    properties
+      string action
+      string method
+      string enctype
+      # Embed the ShareTargetParams
+      optional string title
+      optional string text
+      optional string url
+      optional array of FileFilter files
+
+  experimental type Shortcut extends object
+    properties
+      string name
+      string url
+
+  experimental type WebAppManifest extends object
+    properties
+      optional string backgroundColor
+      # The extra description provided by the manifest.
+      optional string description
+      optional string dir
+      optional string display
+      # The overrided display mode controlled by the user.
+      optional array of string displayOverrides
+      # The handlers to open files.
+      optional array of FileHandler fileHandlers
+      optional array of ImageResource icons
+      optional string id
+      optional string lang
+      # TODO(crbug.com/1231886): This field is non-standard and part of a Chrome
+      # experiment. See:
+      # https://github.com/WICG/web-app-launch/blob/main/launch_handler.md
+      optional LaunchHandler launchHandler
+      optional string name
+      optional string orientation
+      optional boolean preferRelatedApplications
+      # The handlers to open protocols.
+      optional array of ProtocolHandler protocolHandlers
+      optional array of RelatedApplication relatedApplications
+      optional string scope
+      # Non-standard, see
+      # https://github.com/WICG/manifest-incubations/blob/gh-pages/scope_extensions-explainer.md
+      optional array of ScopeExtension scopeExtensions
+      # The screenshots used by chromium.
+      optional array of Screenshot screenshots
+      optional ShareTarget shareTarget
+      optional string shortName
+      optional array of Shortcut shortcuts
+      optional string startUrl
+      optional string themeColor
+
+  # Gets the processed manifest for this current document.
+  #   This API always waits for the manifest to be loaded.
+  #   If manifestId is provided, and it does not match the manifest of the
+  #     current document, this API errors out.
+  #   If there is not a loaded page, this API errors out immediately.
+  command getAppManifest
+    parameters
+      optional string manifestId
+    returns
+      # Manifest location.
+      string url
+      array of AppManifestError errors
+      # Manifest content.
+      optional string data
+      # Parsed manifest properties. Deprecated, use manifest instead.
+      experimental deprecated optional AppManifestParsedProperties parsed
+      experimental WebAppManifest manifest
+
+  experimental command getInstallabilityErrors
+    returns
+      array of InstallabilityError installabilityErrors
+
+  # Deprecated because it's not guaranteed that the returned icon is in fact the one used for PWA installation.
+  experimental deprecated command getManifestIcons
+    returns
+      optional binary primaryIcon
+
+  # Returns the unique (PWA) app id.
+  # Only returns values if the feature flag 'WebAppEnableManifestId' is enabled
+  experimental command getAppId
+    returns
+      # App id, either from manifest's id attribute or computed from start_url
+      optional string appId
+      # Recommendation for manifest's id attribute to match current id computed from start_url
+      optional string recommendedId
+
+  experimental command getAdScriptAncestry
+    parameters
+      FrameId frameId
+    returns
+      # The ancestry chain of ad script identifiers leading to this frame's
+      # creation, along with the root script's filterlist rule. The ancestry
+      # chain is ordered from the most immediate script (in the frame creation
+      # stack) to more distant ancestors (that created the immediately preceding
+      # script). Only sent if frame is labelled as an ad and ids are available.
+      optional Network.AdAncestry adScriptAncestry
+
+  # Returns present frame tree structure.
+  command getFrameTree
+    returns
+      # Present frame tree structure.
+      FrameTree frameTree
+
+  # Returns metrics relating to the layouting of the page, such as viewport bounds/scale.
+  command getLayoutMetrics
+    returns
+      # Deprecated metrics relating to the layout viewport. Is in device pixels. Use `cssLayoutViewport` instead.
+      deprecated LayoutViewport layoutViewport
+      # Deprecated metrics relating to the visual viewport. Is in device pixels. Use `cssVisualViewport` instead.
+      deprecated VisualViewport visualViewport
+      # Deprecated size of scrollable area. Is in DP. Use `cssContentSize` instead.
+      deprecated DOM.Rect contentSize
+      # Metrics relating to the layout viewport in CSS pixels.
+      LayoutViewport cssLayoutViewport
+      # Metrics relating to the visual viewport in CSS pixels.
+      VisualViewport cssVisualViewport
+      # Size of scrollable area in CSS pixels.
+      DOM.Rect cssContentSize
+
+  # Returns navigation history for the current page.
+  command getNavigationHistory
+    returns
+      # Index of the current navigation history entry.
+      integer currentIndex
+      # Array of navigation history entries.
+      array of NavigationEntry entries
+
+  # Resets navigation history for the current page.
+  command resetNavigationHistory
+
+  # Returns content of the given resource.
+  experimental command getResourceContent
+    parameters
+      # Frame id to get resource for.
+      FrameId frameId
+      # URL of the resource to get content for.
+      string url
+    returns
+      # Resource content.
+      string content
+      # True, if content was served as base64.
+      boolean base64Encoded
+
+  # Returns present frame / resource tree structure.
+  experimental command getResourceTree
+    returns
+      # Present frame / resource tree structure.
+      FrameResourceTree frameTree
+
+  # Accepts or dismisses a JavaScript initiated dialog (alert, confirm, prompt, or onbeforeunload).
+  command handleJavaScriptDialog
+    parameters
+      # Whether to accept or dismiss the dialog.
+      boolean accept
+      # The text to enter into the dialog prompt before accepting. Used only if this is a prompt
+      # dialog.
+      optional string promptText
+
+  # Navigates current page to the given URL.
+  command navigate
+    parameters
+      # URL to navigate the page to.
+      string url
+      # Referrer URL.
+      optional string referrer
+      # Intended transition type.
+      optional TransitionType transitionType
+      # Frame id to navigate, if not specified navigates the top frame.
+      optional FrameId frameId
+      # Referrer-policy used for the navigation.
+      experimental optional ReferrerPolicy referrerPolicy
+    returns
+      # Frame id that has navigated (or failed to navigate)
+      FrameId frameId
+      # Loader identifier. This is omitted in case of same-document navigation,
+      # as the previously committed loaderId would not change.
+      optional Network.LoaderId loaderId
+      # User friendly error message, present if and only if navigation has failed.
+      optional string errorText
+      # Whether the navigation resulted in a download.
+      experimental optional boolean isDownload
+
+  # Navigates current page to the given history entry.
+  command navigateToHistoryEntry
+    parameters
+      # Unique id of the entry to navigate to.
+      integer entryId
+
+  # Print page as PDF.
+  command printToPDF
+    parameters
+      # Paper orientation. Defaults to false.
+      optional boolean landscape
+      # Display header and footer. Defaults to false.
+      optional boolean displayHeaderFooter
+      # Print background graphics. Defaults to false.
+      optional boolean printBackground
+      # Scale of the webpage rendering. Defaults to 1.
+      optional number scale
+      # Paper width in inches. Defaults to 8.5 inches.
+      optional number paperWidth
+      # Paper height in inches. Defaults to 11 inches.
+      optional number paperHeight
+      # Top margin in inches. Defaults to 1cm (~0.4 inches).
+      optional number marginTop
+      # Bottom margin in inches. Defaults to 1cm (~0.4 inches).
+      optional number marginBottom
+      # Left margin in inches. Defaults to 1cm (~0.4 inches).
+      optional number marginLeft
+      # Right margin in inches. Defaults to 1cm (~0.4 inches).
+      optional number marginRight
+      # Paper ranges to print, one based, e.g., '1-5, 8, 11-13'. Pages are
+      # printed in the document order, not in the order specified, and no
+      # more than once.
+      # Defaults to empty string, which implies the entire document is printed.
+      # The page numbers are quietly capped to actual page count of the
+      # document, and ranges beyond the end of the document are ignored.
+      # If this results in no pages to print, an error is reported.
+      # It is an error to specify a range with start greater than end.
+      optional string pageRanges
+      # HTML template for the print header. Should be valid HTML markup with following
+      # classes used to inject printing values into them:
+      # - `date`: formatted print date
+      # - `title`: document title
+      # - `url`: document location
+      # - `pageNumber`: current page number
+      # - `totalPages`: total pages in the document
+      #
+      # For example, `<span class=title></span>` would generate span containing the title.
+      optional string headerTemplate
+      # HTML template for the print footer. Should use the same format as the `headerTemplate`.
+      optional string footerTemplate
+      # Whether or not to prefer page size as defined by css. Defaults to false,
+      # in which case the content will be scaled to fit the paper size.
+      optional boolean preferCSSPageSize
+      # return as stream
+      experimental optional enum transferMode
+        ReturnAsBase64
+        ReturnAsStream
+      # Whether or not to generate tagged (accessible) PDF. Defaults to embedder choice.
+      experimental optional boolean generateTaggedPDF
+      # Whether or not to embed the document outline into the PDF.
+      experimental optional boolean generateDocumentOutline
+    returns
+      # Base64-encoded pdf data. Empty if |returnAsStream| is specified.
+      binary data
+      # A handle of the stream that holds resulting PDF data.
+      experimental optional IO.StreamHandle stream
+
+  # Reloads given page optionally ignoring the cache.
+  command reload
+    parameters
+      # If true, browser cache is ignored (as if the user pressed Shift+refresh).
+      optional boolean ignoreCache
+      # If set, the script will be injected into all frames of the inspected page after reload.
+      # Argument will be ignored if reloading dataURL origin.
+      optional string scriptToEvaluateOnLoad
+      # If set, an error will be thrown if the target page's main frame's
+      # loader id does not match the provided id. This prevents accidentally
+      # reloading an unintended target in case there's a racing navigation.
+      experimental optional Network.LoaderId loaderId
+
+  # Deprecated, please use removeScriptToEvaluateOnNewDocument instead.
+  experimental deprecated command removeScriptToEvaluateOnLoad
+    parameters
+      ScriptIdentifier identifier
+
+  # Removes given script from the list.
+  command removeScriptToEvaluateOnNewDocument
+    parameters
+      ScriptIdentifier identifier
+
+  # Acknowledges that a screencast frame has been received by the frontend.
+  experimental command screencastFrameAck
+    parameters
+      # Frame number.
+      integer sessionId
+
+  # Searches for given string in resource content.
+  experimental command searchInResource
+    parameters
+      # Frame id for resource to search in.
+      FrameId frameId
+      # URL of the resource to search in.
+      string url
+      # String to search for.
+      string query
+      # If true, search is case sensitive.
+      optional boolean caseSensitive
+      # If true, treats string parameter as regex.
+      optional boolean isRegex
+    returns
+      # List of search matches.
+      array of Debugger.SearchMatch result
+
+  # Enable Chrome's experimental ad filter on all sites.
+  experimental command setAdBlockingEnabled
+    parameters
+      # Whether to block ads.
+      boolean enabled
+
+  # Enable page Content Security Policy by-passing.
+  command setBypassCSP
+    parameters
+      # Whether to bypass page CSP.
+      boolean enabled
+
+  # Get Permissions Policy state on given frame.
+  experimental command getPermissionsPolicyState
+    parameters
+      FrameId frameId
+    returns
+      array of PermissionsPolicyFeatureState states
+
+  # Get Origin Trials on given frame.
+  experimental command getOriginTrials
+    parameters
+      FrameId frameId
+    returns
+      array of OriginTrial originTrials
+
+  # Overrides the values of device screen dimensions (window.screen.width, window.screen.height,
+  # window.innerWidth, window.innerHeight, and "device-width"/"device-height"-related CSS media
+  # query results).
+  experimental deprecated command setDeviceMetricsOverride
+    # Use 'Emulation.setDeviceMetricsOverride' instead
+    redirect Emulation
+    parameters
+      # Overriding width value in pixels (minimum 0, maximum 10000000). 0 disables the override.
+      integer width
+      # Overriding height value in pixels (minimum 0, maximum 10000000). 0 disables the override.
+      integer height
+      # Overriding device scale factor value. 0 disables the override.
+      number deviceScaleFactor
+      # Whether to emulate mobile device. This includes viewport meta tag, overlay scrollbars, text
+      # autosizing and more.
+      boolean mobile
+      # Scale to apply to resulting view image.
+      optional number scale
+      # Overriding screen width value in pixels (minimum 0, maximum 10000000).
+      optional integer screenWidth
+      # Overriding screen height value in pixels (minimum 0, maximum 10000000).
+      optional integer screenHeight
+      # Overriding view X position on screen in pixels (minimum 0, maximum 10000000).
+      optional integer positionX
+      # Overriding view Y position on screen in pixels (minimum 0, maximum 10000000).
+      optional integer positionY
+      # Do not set visible view size, rely upon explicit setVisibleSize call.
+      optional boolean dontSetVisibleSize
+      # Screen orientation override.
+      optional Emulation.ScreenOrientation screenOrientation
+      # The viewport dimensions and scale. If not set, the override is cleared.
+      optional Viewport viewport
+
+  # Overrides the Device Orientation.
+  experimental deprecated command setDeviceOrientationOverride
+    # Use 'DeviceOrientation.setDeviceOrientationOverride' instead
+    redirect DeviceOrientation
+    parameters
+      # Mock alpha
+      number alpha
+      # Mock beta
+      number beta
+      # Mock gamma
+      number gamma
+
+  # Set generic font families.
+  experimental command setFontFamilies
+    parameters
+      # Specifies font families to set. If a font family is not specified, it won't be changed.
+      FontFamilies fontFamilies
+      # Specifies font families to set for individual scripts.
+      optional array of ScriptFontFamilies forScripts
+
+  # Set default font sizes.
+  experimental command setFontSizes
+    parameters
+      # Specifies font sizes to set. If a font size is not specified, it won't be changed.
+      FontSizes fontSizes
+
+  # Sets given markup as the document's HTML.
+  command setDocumentContent
+    parameters
+      # Frame id to set HTML for.
+      FrameId frameId
+      # HTML content to set.
+      string html
+
+  # Set the behavior when downloading a file.
+  experimental deprecated command setDownloadBehavior
+    parameters
+      # Whether to allow all or deny all download requests, or use default Chrome behavior if
+      # available (otherwise deny).
+      enum behavior
+        deny
+        allow
+        default
+      # The default path to save downloaded files to. This is required if behavior is set to 'allow'
+      optional string downloadPath
+
+  # Overrides the Geolocation Position or Error. Omitting any of the parameters emulates position
+  # unavailable.
+  deprecated command setGeolocationOverride
+    # Use 'Emulation.setGeolocationOverride' instead
+    redirect Emulation
+    parameters
+      # Mock latitude
+      optional number latitude
+      # Mock longitude
+      optional number longitude
+      # Mock accuracy
+      optional number accuracy
+
+  # Controls whether page will emit lifecycle events.
+  command setLifecycleEventsEnabled
+    parameters
+      # If true, starts emitting lifecycle events.
+      boolean enabled
+
+  # Toggles mouse event-based touch event emulation.
+  experimental deprecated command setTouchEmulationEnabled
+    # Use 'Emulation.setTouchEmulationEnabled' instead
+    redirect Emulation
+    parameters
+      # Whether the touch event emulation should be enabled.
+      boolean enabled
+      # Touch/gesture events configuration. Default: current platform.
+      optional enum configuration
+        mobile
+        desktop
+
+  # Starts sending each frame using the `screencastFrame` event.
+  experimental command startScreencast
+    parameters
+      # Image compression format.
+      optional enum format
+        jpeg
+        png
+      # Compression quality from range [0..100].
+      optional integer quality
+      # Maximum screenshot width.
+      optional integer maxWidth
+      # Maximum screenshot height.
+      optional integer maxHeight
+      # Send every n-th frame.
+      optional integer everyNthFrame
+
+  # Force the page stop all navigations and pending resource fetches.
+  command stopLoading
+
+  # Crashes renderer on the IO thread, generates minidumps.
+  experimental command crash
+
+  # Tries to close page, running its beforeunload hooks, if any.
+  command close
+
+  # Tries to update the web lifecycle state of the page.
+  # It will transition the page to the given state according to:
+  # https://github.com/WICG/web-lifecycle/
+  experimental command setWebLifecycleState
+    parameters
+      # Target lifecycle state
+      enum state
+        frozen
+        active
+
+  # Stops sending each frame in the `screencastFrame`.
+  experimental command stopScreencast
+
+  # Requests backend to produce compilation cache for the specified scripts.
+  # `scripts` are appended to the list of scripts for which the cache
+  # would be produced. The list may be reset during page navigation.
+  # When script with a matching URL is encountered, the cache is optionally
+  # produced upon backend discretion, based on internal heuristics.
+  # See also: `Page.compilationCacheProduced`.
+  experimental command produceCompilationCache
+    parameters
+      array of CompilationCacheParams scripts
+
+  # Seeds compilation cache for given url. Compilation cache does not survive
+  # cross-process navigation.
+  experimental command addCompilationCache
+    parameters
+      string url
+      # Base64-encoded data
+      binary data
+
+  # Clears seeded compilation cache.
+  experimental command clearCompilationCache
+
+  # Sets the Secure Payment Confirmation transaction mode.
+  # https://w3c.github.io/secure-payment-confirmation/#sctn-automation-set-spc-transaction-mode
+  experimental command setSPCTransactionMode
+    parameters
+      enum mode
+        none
+        autoAccept
+        autoChooseToAuthAnotherWay
+        autoReject
+        autoOptOut
+
+  # Extensions for Custom Handlers API:
+  # https://html.spec.whatwg.org/multipage/system-state.html#rph-automation
+  experimental command setRPHRegistrationMode
+    parameters
+      enum mode
+        none
+        autoAccept
+        autoReject
+
+  # Generates a report for testing.
+  experimental command generateTestReport
+    parameters
+      # Message to be displayed in the report.
+      string message
+      # Specifies the endpoint group to deliver the report to.
+      optional string group
+
+  # Pauses page execution. Can be resumed using generic Runtime.runIfWaitingForDebugger.
+  experimental command waitForDebugger
+
+  # Intercept file chooser requests and transfer control to protocol clients.
+  # When file chooser interception is enabled, native file chooser dialog is not shown.
+  # Instead, a protocol event `Page.fileChooserOpened` is emitted.
+  command setInterceptFileChooserDialog
+    parameters
+      boolean enabled
+      # If true, cancels the dialog by emitting relevant events (if any)
+      # in addition to not showing it if the interception is enabled
+      # (default: false).
+      experimental optional boolean cancel
+
+  event domContentEventFired
+    parameters
+      Network.MonotonicTime timestamp
+
+  # Emitted only when `page.interceptFileChooser` is enabled.
+  event fileChooserOpened
+    parameters
+      # Id of the frame containing input node.
+      experimental FrameId frameId
+      # Input mode.
+      enum mode
+        selectSingle
+        selectMultiple
+      # Input node id. Only present for file choosers opened via an `<input type="file">` element.
+      experimental optional DOM.BackendNodeId backendNodeId
+
+  # Fired when frame has been attached to its parent.
+  event frameAttached
+    parameters
+      # Id of the frame that has been attached.
+      FrameId frameId
+      # Parent frame identifier.
+      FrameId parentFrameId
+      # JavaScript stack trace of when frame was attached, only set if frame initiated from script.
+      optional Runtime.StackTrace stack
+
+  # Fired when frame no longer has a scheduled navigation.
+  deprecated event frameClearedScheduledNavigation
+    parameters
+      # Id of the frame that has cleared its scheduled navigation.
+      FrameId frameId
+
+  # Fired when frame has been detached from its parent.
+  event frameDetached
+    parameters
+      # Id of the frame that has been detached.
+      FrameId frameId
+      experimental enum reason
+        # The frame is removed from the DOM.
+        remove
+        # The frame is being swapped out in favor of an out-of-process iframe.
+        # A new frame target will be created (see Target.attachedToTarget).
+        swap
+
+  # Fired before frame subtree is detached. Emitted before any frame of the
+  # subtree is actually detached.
+  experimental event frameSubtreeWillBeDetached
+    parameters
+      # Id of the frame that is the root of the subtree that will be detached.
+      FrameId frameId
+
+  # The type of a frameNavigated event.
+  experimental type NavigationType extends string
+    enum
+      Navigation
+      BackForwardCacheRestore
+
+  # Fired once navigation of the frame has completed. Frame is now associated with the new loader.
+  event frameNavigated
+    parameters
+      # Frame object.
+      Frame frame
+      experimental NavigationType type
+
+  # Fired when opening document to write to.
+  experimental event documentOpened
+    parameters
+      # Frame object.
+      Frame frame
+
+  experimental event frameResized
+
+  # Fired when a navigation starts. This event is fired for both
+  # renderer-initiated and browser-initiated navigations. For renderer-initiated
+  # navigations, the event is fired after `frameRequestedNavigation`.
+  # Navigation may still be cancelled after the event is issued. Multiple events
+  # can be fired for a single navigation, for example, when a same-document
+  # navigation becomes a cross-document navigation (such as in the case of a
+  # frameset).
+  experimental event frameStartedNavigating
+    parameters
+      # ID of the frame that is being navigated.
+      FrameId frameId
+      # The URL the navigation started with. The final URL can be different.
+      string url
+      # Loader identifier. Even though it is present in case of same-document
+      # navigation, the previously committed loaderId would not change unless
+      # the navigation changes from a same-document to a cross-document
+      # navigation.
+      Network.LoaderId loaderId
+      enum navigationType
+        reload
+        reloadBypassingCache
+        restore
+        restoreWithPost
+        historySameDocument
+        historyDifferentDocument
+        sameDocument
+        differentDocument
+
+  # Fired when a renderer-initiated navigation is requested.
+  # Navigation may still be cancelled after the event is issued.
+  experimental event frameRequestedNavigation
+    parameters
+      # Id of the frame that is being navigated.
+      FrameId frameId
+      # The reason for the navigation.
+      ClientNavigationReason reason
+      # The destination URL for the requested navigation.
+      string url
+      # The disposition for the navigation.
+      ClientNavigationDisposition disposition
+
+  # Fired when frame schedules a potential navigation.
+  deprecated event frameScheduledNavigation
+    parameters
+      # Id of the frame that has scheduled a navigation.
+      FrameId frameId
+      # Delay (in seconds) until the navigation is scheduled to begin. The navigation is not
+      # guaranteed to start.
+      number delay
+      # The reason for the navigation.
+      ClientNavigationReason reason
+      # The destination URL for the scheduled navigation.
+      string url
+
+  # Fired when frame has started loading.
+  experimental event frameStartedLoading
+    parameters
+      # Id of the frame that has started loading.
+      FrameId frameId
+
+  # Fired when frame has stopped loading.
+  experimental event frameStoppedLoading
+    parameters
+      # Id of the frame that has stopped loading.
+      FrameId frameId
+
+  # Fired when page is about to start a download.
+  # Deprecated. Use Browser.downloadWillBegin instead.
+  experimental deprecated event downloadWillBegin
+    parameters
+      # Id of the frame that caused download to begin.
+      FrameId frameId
+      # Global unique identifier of the download.
+      string guid
+      # URL of the resource being downloaded.
+      string url
+      # Suggested file name of the resource (the actual name of the file saved on disk may differ).
+      string suggestedFilename
+
+  # Fired when download makes progress. Last call has |done| == true.
+  # Deprecated. Use Browser.downloadProgress instead.
+  experimental deprecated event downloadProgress
+    parameters
+      # Global unique identifier of the download.
+      string guid
+      # Total expected bytes to download.
+      number totalBytes
+      # Total bytes received.
+      number receivedBytes
+      # Download status.
+      enum state
+        inProgress
+        completed
+        canceled
+
+  # Fired when interstitial page was hidden
+  event interstitialHidden
+
+  # Fired when interstitial page was shown
+  event interstitialShown
+
+  # Fired when a JavaScript initiated dialog (alert, confirm, prompt, or onbeforeunload) has been
+  # closed.
+  event javascriptDialogClosed
+    parameters
+      # Frame id.
+      experimental FrameId frameId
+      # Whether dialog was confirmed.
+      boolean result
+      # User input in case of prompt.
+      string userInput
+
+  # Fired when a JavaScript initiated dialog (alert, confirm, prompt, or onbeforeunload) is about to
+  # open.
+  event javascriptDialogOpening
+    parameters
+      # Frame url.
+      string url
+      # Frame id.
+      experimental FrameId frameId
+      # Message that will be displayed by the dialog.
+      string message
+      # Dialog type.
+      DialogType type
+      # True iff browser is capable showing or acting on the given dialog. When browser has no
+      # dialog handler for given target, calling alert while Page domain is engaged will stall
+      # the page execution. Execution can be resumed via calling Page.handleJavaScriptDialog.
+      boolean hasBrowserHandler
+      # Default dialog prompt.
+      optional string defaultPrompt
+
+  # Fired for lifecycle events (navigation, load, paint, etc) in the current
+  # target (including local frames).
+  event lifecycleEvent
+    parameters
+      # Id of the frame.
+      FrameId frameId
+      # Loader identifier. Empty string if the request is fetched from worker.
+      Network.LoaderId loaderId
+      string name
+      Network.MonotonicTime timestamp
+
+  # List of not restored reasons for back-forward cache.
+  experimental type BackForwardCacheNotRestoredReason extends string
+    enum
+      NotPrimaryMainFrame
+      BackForwardCacheDisabled
+      RelatedActiveContentsExist
+      HTTPStatusNotOK
+      SchemeNotHTTPOrHTTPS
+      Loading
+      WasGrantedMediaAccess
+      DisableForRenderFrameHostCalled
+      DomainNotAllowed
+      HTTPMethodNotGET
+      SubframeIsNavigating
+      Timeout
+      CacheLimit
+      JavaScriptExecution
+      RendererProcessKilled
+      RendererProcessCrashed
+      SchedulerTrackedFeatureUsed
+      ConflictingBrowsingInstance
+      CacheFlushed
+      ServiceWorkerVersionActivation
+      SessionRestored
+      ServiceWorkerPostMessage
+      EnteredBackForwardCacheBeforeServiceWorkerHostAdded
+      RenderFrameHostReused_SameSite
+      RenderFrameHostReused_CrossSite
+      ServiceWorkerClaim
+      IgnoreEventAndEvict
+      HaveInnerContents
+      TimeoutPuttingInCache
+      BackForwardCacheDisabledByLowMemory
+      BackForwardCacheDisabledByCommandLine
+      NetworkRequestDatapipeDrainedAsBytesConsumer
+      NetworkRequestRedirected
+      NetworkRequestTimeout
+      NetworkExceedsBufferLimit
+      NavigationCancelledWhileRestoring
+      NotMostRecentNavigationEntry
+      BackForwardCacheDisabledForPrerender
+      UserAgentOverrideDiffers
+      ForegroundCacheLimit
+      ForwardCacheDisabled
+      BrowsingInstanceNotSwapped
+      BackForwardCacheDisabledForDelegate
+      UnloadHandlerExistsInMainFrame
+      UnloadHandlerExistsInSubFrame
+      ServiceWorkerUnregistration
+      CacheControlNoStore
+      CacheControlNoStoreCookieModified
+      CacheControlNoStoreHTTPOnlyCookieModified
+      NoResponseHead
+      Unknown
+      ActivationNavigationsDisallowedForBug1234857
+      ErrorDocument
+      FencedFramesEmbedder
+      CookieDisabled
+      HTTPAuthRequired
+      CookieFlushed
+      BroadcastChannelOnMessage
+      WebViewSettingsChanged
+      WebViewJavaScriptObjectChanged
+      WebViewMessageListenerInjected
+      WebViewSafeBrowsingAllowlistChanged
+      WebViewDocumentStartJavascriptChanged
+      #Blocklisted features
+      WebSocket
+      WebTransport
+      WebRTC
+      MainResourceHasCacheControlNoStore
+      MainResourceHasCacheControlNoCache
+      SubresourceHasCacheControlNoStore
+      SubresourceHasCacheControlNoCache
+      ContainsPlugins
+      DocumentLoaded
+      OutstandingNetworkRequestOthers
+      RequestedMIDIPermission
+      RequestedAudioCapturePermission
+      RequestedVideoCapturePermission
+      RequestedBackForwardCacheBlockedSensors
+      RequestedBackgroundWorkPermission
+      BroadcastChannel
+      WebXR
+      SharedWorker
+      SharedWorkerMessage
+      SharedWorkerWithNoActiveClient
+      WebLocks
+      WebLocksContention
+      WebHID
+      WebBluetooth
+      WebShare
+      RequestedStorageAccessGrant
+      WebNfc
+      OutstandingNetworkRequestFetch
+      OutstandingNetworkRequestXHR
+      AppBanner
+      Printing
+      WebDatabase
+      PictureInPicture
+      SpeechRecognizer
+      IdleManager
+      PaymentManager
+      SpeechSynthesis
+      KeyboardLock
+      WebOTPService
+      OutstandingNetworkRequestDirectSocket
+      InjectedJavascript
+      InjectedStyleSheet
+      KeepaliveRequest
+      IndexedDBEvent
+      Dummy
+      JsNetworkRequestReceivedCacheControlNoStoreResource
+      WebRTCUsedWithCCNS
+      WebTransportUsedWithCCNS
+      WebSocketUsedWithCCNS
+      SmartCard
+      LiveMediaStreamTrack
+      UnloadHandler
+      ParserAborted
+      # Disabled for RenderFrameHost reasons
+      # See content/browser/renderer_host/back_forward_cache_disable.h for explanations.
+      ContentSecurityHandler
+      ContentWebAuthenticationAPI
+      ContentFileChooser
+      ContentSerial
+      ContentFileSystemAccess
+      ContentMediaDevicesDispatcherHost
+      ContentWebBluetooth
+      ContentWebUSB
+      ContentMediaSessionService
+      ContentScreenReader
+      ContentDiscarded
+
+      # See components/back_forward_cache/back_forward_cache_disable.h for explanations.
+      EmbedderPopupBlockerTabHelper
+      EmbedderSafeBrowsingTriggeredPopupBlocker
+      EmbedderSafeBrowsingThreatDetails
+      EmbedderAppBannerManager
+      EmbedderDomDistillerViewerSource
+      EmbedderDomDistillerSelfDeletingRequestDelegate
+      EmbedderOomInterventionTabHelper
+      EmbedderOfflinePage
+      EmbedderChromePasswordManagerClientBindCredentialManager
+      EmbedderPermissionRequestManager
+      EmbedderModalDialog
+      EmbedderExtensions
+      EmbedderExtensionMessaging
+      EmbedderExtensionMessagingForOpenPort
+      EmbedderExtensionSentMessageToCachedFrame
+      RequestedByWebViewClient
+      PostMessageByWebViewClient
+      CacheControlNoStoreDeviceBoundSessionTerminated
+      CacheLimitPrunedOnModerateMemoryPressure
+      CacheLimitPrunedOnCriticalMemoryPressure
+
+  # Types of not restored reasons for back-forward cache.
+  experimental type BackForwardCacheNotRestoredReasonType extends string
+    enum
+      SupportPending
+      PageSupportNeeded
+      Circumstantial
+
+  experimental type BackForwardCacheBlockingDetails extends object
+    properties
+      # Url of the file where blockage happened. Optional because of tests.
+      optional string url
+      # Function name where blockage happened. Optional because of anonymous functions and tests.
+      optional string function
+      # Line number in the script (0-based).
+      integer lineNumber
+      # Column number in the script (0-based).
+      integer columnNumber
+
+  experimental type BackForwardCacheNotRestoredExplanation extends object
+    properties
+      # Type of the reason
+      BackForwardCacheNotRestoredReasonType type
+      # Not restored reason
+      BackForwardCacheNotRestoredReason reason
+      # Context associated with the reason. The meaning of this context is
+      # dependent on the reason:
+      # - EmbedderExtensionSentMessageToCachedFrame: the extension ID.
+      #
+      optional string context
+      optional array of BackForwardCacheBlockingDetails details
+
+  experimental type BackForwardCacheNotRestoredExplanationTree extends object
+    properties
+      # URL of each frame
+      string url
+      # Not restored reasons of each frame
+      array of BackForwardCacheNotRestoredExplanation explanations
+      # Array of children frame
+      array of BackForwardCacheNotRestoredExplanationTree children
+
+  # Fired for failed bfcache history navigations if BackForwardCache feature is enabled. Do
+  # not assume any ordering with the Page.frameNavigated event. This event is fired only for
+  # main-frame history navigation where the document changes (non-same-document navigations),
+  # when bfcache navigation fails.
+  experimental event backForwardCacheNotUsed
+    parameters
+      # The loader id for the associated navigation.
+      Network.LoaderId loaderId
+      # The frame id of the associated frame.
+      FrameId frameId
+      # Array of reasons why the page could not be cached. This must not be empty.
+      array of BackForwardCacheNotRestoredExplanation notRestoredExplanations
+      # Tree structure of reasons why the page could not be cached for each frame.
+      optional BackForwardCacheNotRestoredExplanationTree notRestoredExplanationsTree
+
+  event loadEventFired
+    parameters
+      Network.MonotonicTime timestamp
+
+  # Fired when same-document navigation happens, e.g. due to history API usage or anchor navigation.
+  experimental event navigatedWithinDocument
+    parameters
+      # Id of the frame.
+      FrameId frameId
+      # Frame's new url.
+      string url
+      # Navigation type
+      enum navigationType
+        # Navigation due to fragment navigation.
+        fragment
+        # Navigation due to history API usage.
+        historyApi
+        # Navigation due to other reasons.
+        other
+
+
+  # Compressed image data requested by the `startScreencast`.
+  experimental event screencastFrame
+    parameters
+      # Base64-encoded compressed image.
+      binary data
+      # Screencast frame metadata.
+      ScreencastFrameMetadata metadata
+      # Frame number.
+      integer sessionId
+
+  # Fired when the page with currently enabled screencast was shown or hidden `.
+  experimental event screencastVisibilityChanged
+    parameters
+      # True if the page is visible.
+      boolean visible
+
+  # Fired when a new window is going to be opened, via window.open(), link click, form submission,
+  # etc.
+  event windowOpen
+    parameters
+      # The URL for the new window.
+      string url
+      # Window name.
+      string windowName
+      # An array of enabled window features.
+      array of string windowFeatures
+      # Whether or not it was triggered by user gesture.
+      boolean userGesture
+
+  # Issued for every compilation cache generated.
+  experimental event compilationCacheProduced
+    parameters
+      string url
+      # Base64-encoded data
+      binary data
+
+  # Enable/disable prerendering manually.
+  #
+  # This command is a short-term solution for https://crbug.com/1440085.
+  # See https://docs.google.com/document/d/12HVmFxYj5Jc-eJr5OmWsa2bqTJsbgGLKI6ZIyx0_wpA
+  # for more details.
+  #
+  # TODO(https://crbug.com/1440085): Remove this once Puppeteer supports tab targets.
+  experimental command setPrerenderingAllowed
+    parameters
+      boolean isAllowed
+
+  # Get the annotated page content for the main frame.
+  # This is an experimental command that is subject to change.
+  experimental command getAnnotatedPageContent
+    parameters
+      # Whether to include actionable information. Defaults to true.
+      optional boolean includeActionableInformation
+    returns
+      # The annotated page content as a base64 encoded protobuf.
+      # The format is defined by the `AnnotatedPageContent` message in
+      # components/optimization_guide/proto/features/common_quality_data.proto
+      binary content

@@ -1,0 +1,37 @@
+{
+  "name": "mdurl",
+  "version": "2.0.0",
+  "description": "URL utilities for markdown-it",
+  "repository": "markdown-it/mdurl",
+  "license": "MIT",
+  "main": "build/index.cjs.js",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "require": "./build/index.cjs.js",
+      "import": "./index.mjs"
+    },
+    "./*": {
+      "require": "./*",
+      "import": "./*"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "build": "rollup -c",
+    "test": "npm run lint && npm run build && c8 --exclude build --exclude test -r text -r html -r lcov mocha",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "files": [
+    "index.mjs",
+    "lib/",
+    "build/"
+  ],
+  "devDependencies": {
+    "c8": "^8.0.1",
+    "eslint": "^8.54.0",
+    "eslint-config-standard": "^17.1.0",
+    "mocha": "^10.2.0",
+    "rollup": "^4.6.1"
+  }
+}

@@ -1,0 +1,11 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TArray } from '../../types/array.mjs';
+import { type TNever } from '../../types/never.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TObject } from '../../types/object.mjs';
+import { type TTuple } from '../../types/tuple.mjs';
+import { type TFromArray } from './from_array.mjs';
+import { type TFromObject } from './from_object.mjs';
+import { type TFromTuple } from './from_tuple.mjs';
+export type TFromType<Type extends TSchema, Indexer extends TSchema> = (Type extends TArray<infer Type extends TSchema> ? TFromArray<Type, Indexer> : Type extends TObject<infer Properties extends TProperties> ? TFromObject<Properties, Indexer> : Type extends TTuple<infer Types extends TSchema[]> ? TFromTuple<Types, Indexer> : TNever);
+export declare function FromType<Type extends TSchema, Indexer extends TSchema>(type: Type, indexer: Indexer): TFromType<Type, Indexer>;

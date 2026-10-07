@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.fromHttp = void 0;
+const tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./fromCognitoIdentity"), exports);
+tslib_1.__exportStar(require("./fromCognitoIdentityPool"), exports);
+var credential_provider_http_1 = require("@aws-sdk/credential-provider-http");
+Object.defineProperty(exports, "fromHttp", { enumerable: true, get: function () { return credential_provider_http_1.fromHttp; } });
+tslib_1.__exportStar(require("./fromTemporaryCredentials"), exports);
+tslib_1.__exportStar(require("./fromWebToken"), exports);

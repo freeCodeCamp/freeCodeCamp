@@ -1,0 +1,13 @@
+microsoft/playwright-core
+
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+
+This package bundles third-party software inside individual files under
+`lib/`. Each bundled output has a sidecar `<bundle>.js.LICENSE` file next
+to it listing every npm package whose source was inlined into that
+bundle, together with the full license text for each.
+
+For example:
+- lib/utilsBundle.js.LICENSE
+
+This project incorporates components from the projects listed below. The original copyright notices and the licenses under which Microsoft received such components are set forth below. Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.

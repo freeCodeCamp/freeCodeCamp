@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/NonEmptyIterable.js",
+  "module": "../dist/esm/NonEmptyIterable.js",
+  "types": "../dist/dts/NonEmptyIterable.d.ts"
+}

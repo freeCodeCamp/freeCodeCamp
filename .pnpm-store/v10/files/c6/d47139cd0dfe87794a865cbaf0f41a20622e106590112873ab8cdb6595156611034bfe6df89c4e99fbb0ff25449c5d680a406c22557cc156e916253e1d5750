@@ -1,0 +1,65 @@
+{
+  "name": "is-unc-path",
+  "description": "Returns true if a filepath is a windows UNC file path.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jonschlinkert/is-unc-path",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/is-unc-path",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-unc-path/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "unc-path-regex": "^0.1.2"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^3.4.2"
+  },
+  "keywords": [
+    "absolute",
+    "expression",
+    "file",
+    "filepath",
+    "is",
+    "match",
+    "matching",
+    "path",
+    "regex",
+    "regexp",
+    "regular",
+    "unc",
+    "win",
+    "windows"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": [
+        "is-relative",
+        "is-absolute",
+        "is-glob"
+      ]
+    }
+  }
+}

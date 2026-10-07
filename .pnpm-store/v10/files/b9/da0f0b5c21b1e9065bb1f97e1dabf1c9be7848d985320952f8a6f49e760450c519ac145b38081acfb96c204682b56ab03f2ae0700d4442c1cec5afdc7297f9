@@ -1,0 +1,11 @@
+language: node_js
+sudo: false
+node_js:
+  - 6
+  - 8
+  - 10
+  - 11
+  - 12
+  - 13
+script:
+  - npm run ci

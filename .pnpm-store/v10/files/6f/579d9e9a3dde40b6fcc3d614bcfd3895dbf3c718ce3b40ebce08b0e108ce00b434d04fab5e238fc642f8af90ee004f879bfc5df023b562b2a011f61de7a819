@@ -1,0 +1,103 @@
+{
+  "name": "strtok3",
+  "version": "6.3.0",
+  "description": "A promise based streaming tokenizer",
+  "author": {
+    "name": "Borewit",
+    "url": "https://github.com/Borewit"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Borewit"
+  },
+  "scripts": {
+    "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts test/**/*.js test/**/*.js.map",
+    "compile-src": "tsc -p lib",
+    "compile-test": "tsc -p test",
+    "compile": "npm run compile-src && npm run compile-test",
+    "build": "npm run clean && npm run compile",
+    "eslint": "eslint lib test --ext .ts --ignore-pattern *.d.ts",
+    "lint-md": "remark -u preset-lint-recommended .",
+    "lint": "npm run lint-md && npm run eslint",
+    "fix": "eslint lib test --ext .ts --ignore-pattern *.d.ts --fix",
+    "test": "mocha --require ts-node/register --require source-map-support/register --full-trace test/test.ts",
+    "test-coverage": "nyc npm run test",
+    "send-coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "send-codacy": "nyc report --reporter=text-lcov | codacy-coverage",
+    "start": "npm run compile && npm run lint && npm run cover-test"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Borewit/strtok3.git"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
+  ],
+  "bugs": {
+    "url": "https://github.com/Borewit/strtok3/issues"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/debug": "^4.1.7",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "chai": "^4.3.6",
+    "coveralls": "^3.1.1",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^37.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-unicorn": "^40.1.0",
+    "mocha": "^9.2.0",
+    "nyc": "^15.1.0",
+    "remark-cli": "^10.0.1",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "source-map-support": "^0.5.21",
+    "token-types": "^4.1.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@tokenizer/token": "^0.3.0",
+    "peek-readable": "^4.1.0"
+  },
+  "keywords": [
+    "tokenizer",
+    "reader",
+    "token",
+    "async",
+    "promise",
+    "parser",
+    "decoder",
+    "binary",
+    "endian",
+    "uint",
+    "stream",
+    "streaming"
+  ],
+  "nyc": {
+    "check-coverage": false,
+    "extension": [
+      ".ts"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "report-dir": "coverage"
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "@types/parse-json",
+    "version": "4.0.0",
+    "description": "TypeScript definitions for parse-json",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "mrmlnc",
+            "url": "https://github.com/mrmlnc",
+            "githubUsername": "mrmlnc"
+        }
+    ],
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "68b3120a3ffa0ae0c978a90b74a1e50adc0340a9d11f17cc1efb7bf2186e7751",
+    "typeScriptVersion": "2.0"
+}

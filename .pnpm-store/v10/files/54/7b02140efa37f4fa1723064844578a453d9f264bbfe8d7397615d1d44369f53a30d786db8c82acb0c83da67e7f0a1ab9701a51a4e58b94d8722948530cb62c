@@ -1,0 +1,239 @@
+{
+  "name": "vitest",
+  "type": "module",
+  "version": "4.1.5",
+  "description": "Next generation testing framework powered by Vite",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://vitest.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/vitest"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "keywords": [
+    "vite",
+    "vitest",
+    "test",
+    "jest"
+  ],
+  "sideEffects": false,
+  "imports": {
+    "#module-evaluator": {
+      "types": "./dist/module-evaluator.d.ts",
+      "default": "./dist/module-evaluator.js"
+    },
+    "#nodejs-worker-loader": "./dist/nodejs-worker-loader.js"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./index.cjs"
+      }
+    },
+    "./browser": {
+      "types": "./browser/context.d.ts",
+      "default": "./browser/context.js"
+    },
+    "./package.json": "./package.json",
+    "./optional-types.js": {
+      "types": "./optional-types.d.ts"
+    },
+    "./optional-runtime-types.js": {
+      "types": "./optional-runtime-types.d.ts"
+    },
+    "./src/*": "./src/*",
+    "./globals": {
+      "types": "./globals.d.ts"
+    },
+    "./jsdom": {
+      "types": "./jsdom.d.ts"
+    },
+    "./importMeta": {
+      "types": "./importMeta.d.ts"
+    },
+    "./import-meta": {
+      "types": "./import-meta.d.ts"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    },
+    "./internal/browser": {
+      "types": "./dist/browser.d.ts",
+      "default": "./dist/browser.js"
+    },
+    "./runners": {
+      "types": "./dist/runners.d.ts",
+      "default": "./dist/runners.js"
+    },
+    "./suite": {
+      "types": "./dist/suite.d.ts",
+      "default": "./dist/suite.js"
+    },
+    "./environments": {
+      "types": "./dist/environments.d.ts",
+      "default": "./dist/environments.js"
+    },
+    "./config": {
+      "types": "./config.d.ts",
+      "require": "./dist/config.cjs",
+      "default": "./dist/config.js"
+    },
+    "./coverage": {
+      "types": "./coverage.d.ts",
+      "default": "./dist/coverage.js"
+    },
+    "./reporters": {
+      "types": "./dist/reporters.d.ts",
+      "default": "./dist/reporters.js"
+    },
+    "./snapshot": {
+      "types": "./dist/snapshot.d.ts",
+      "default": "./dist/snapshot.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime.d.ts",
+      "default": "./dist/runtime.js"
+    },
+    "./worker": {
+      "types": "./worker.d.ts",
+      "default": "./dist/worker.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "vitest": "./vitest.mjs"
+  },
+  "files": [
+    "*.cjs",
+    "*.d.cts",
+    "*.d.ts",
+    "*.mjs",
+    "bin",
+    "browser",
+    "dist"
+  ],
+  "engines": {
+    "node": "^20.0.0 || ^22.0.0 || >=24.0.0"
+  },
+  "peerDependencies": {
+    "@edge-runtime/vm": "*",
+    "@opentelemetry/api": "^1.9.0",
+    "@types/node": "^20.0.0 || ^22.0.0 || >=24.0.0",
+    "happy-dom": "*",
+    "jsdom": "*",
+    "vite": "^6.0.0 || ^7.0.0 || ^8.0.0",
+    "@vitest/browser-preview": "4.1.5",
+    "@vitest/browser-playwright": "4.1.5",
+    "@vitest/browser-webdriverio": "4.1.5",
+    "@vitest/coverage-istanbul": "4.1.5",
+    "@vitest/coverage-v8": "4.1.5",
+    "@vitest/ui": "4.1.5"
+  },
+  "peerDependenciesMeta": {
+    "@edge-runtime/vm": {
+      "optional": true
+    },
+    "@opentelemetry/api": {
+      "optional": true
+    },
+    "@types/node": {
+      "optional": true
+    },
+    "@vitest/browser-playwright": {
+      "optional": true
+    },
+    "@vitest/browser-preview": {
+      "optional": true
+    },
+    "@vitest/browser-webdriverio": {
+      "optional": true
+    },
+    "@vitest/coverage-istanbul": {
+      "optional": true
+    },
+    "@vitest/coverage-v8": {
+      "optional": true
+    },
+    "@vitest/ui": {
+      "optional": true
+    },
+    "happy-dom": {
+      "optional": true
+    },
+    "jsdom": {
+      "optional": true
+    },
+    "vite": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "es-module-lexer": "^2.0.0",
+    "expect-type": "^1.3.0",
+    "magic-string": "^0.30.21",
+    "obug": "^2.1.1",
+    "pathe": "^2.0.3",
+    "picomatch": "^4.0.3",
+    "std-env": "^4.0.0-rc.1",
+    "tinybench": "^2.9.0",
+    "tinyexec": "^1.0.2",
+    "tinyglobby": "^0.2.15",
+    "tinyrainbow": "^3.1.0",
+    "vite": "^6.0.0 || ^7.0.0 || ^8.0.0",
+    "why-is-node-running": "^2.3.0",
+    "@vitest/expect": "4.1.5",
+    "@vitest/mocker": "4.1.5",
+    "@vitest/pretty-format": "4.1.5",
+    "@vitest/snapshot": "4.1.5",
+    "@vitest/spy": "4.1.5",
+    "@vitest/runner": "4.1.5",
+    "@vitest/utils": "4.1.5"
+  },
+  "devDependencies": {
+    "@antfu/install-pkg": "^1.1.0",
+    "@bomb.sh/tab": "^0.0.14",
+    "@edge-runtime/vm": "^5.0.0",
+    "@jridgewell/trace-mapping": "0.3.31",
+    "@opentelemetry/api": "^1.9.0",
+    "@sinonjs/fake-timers": "15.0.0",
+    "@types/estree": "^1.0.8",
+    "@types/istanbul-lib-coverage": "^2.0.6",
+    "@types/istanbul-reports": "^3.0.4",
+    "@types/jsdom": "^27.0.0",
+    "@types/node": "^24.12.0",
+    "@types/picomatch": "^4.0.2",
+    "@types/prompts": "^2.4.9",
+    "@types/sinonjs__fake-timers": "^15.0.1",
+    "acorn": "8.11.3",
+    "acorn-walk": "^8.3.5",
+    "birpc": "^4.0.0",
+    "cac": "^6.7.14",
+    "empathic": "^2.0.0",
+    "flatted": "^3.4.2",
+    "happy-dom": "^20.8.3",
+    "jsdom": "^27.4.0",
+    "local-pkg": "^1.1.2",
+    "mime": "^4.1.0",
+    "prompts": "^2.4.2",
+    "strip-literal": "^3.1.0",
+    "tinyhighlight": "^0.3.2",
+    "ws": "^8.19.0"
+  },
+  "scripts": {
+    "build": "premove dist && rollup -c",
+    "dev": "NODE_OPTIONS=\"--max-old-space-size=8192\" rollup -c --watch -m inline"
+  }
+}

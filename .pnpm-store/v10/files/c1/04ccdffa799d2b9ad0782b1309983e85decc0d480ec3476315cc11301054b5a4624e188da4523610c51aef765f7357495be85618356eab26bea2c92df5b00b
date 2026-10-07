@@ -1,0 +1,1 @@
+{"version":3,"file":"TypeDefinition.js","sourceRoot":"","sources":["../../src/definition/TypeDefinition.ts"],"names":[],"mappings":";;;AAEA,qDAAkD;AAClD,qDAAkD;AAElD,MAAM,cAAe,SAAQ,+BAO5B;IACC,YAAY,IAAyB,EAAE,IAA4B;QACjE,KAAK,CAAC,+BAAc,CAAC,IAAI,EAAE,IAAI,EAAE,IAAI,EAAE,IAAI,CAAC,CAAC;QAG/B,qBAAgB,GAAG,IAAI,CAAC;QACxB,yBAAoB,GAAG,KAAK,CAAC;IAH7C,CAAC;CAIF;AAEQ,wCAAc"}

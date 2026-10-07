@@ -1,0 +1,164 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-tl-row {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	position: relative;
+}
+
+.monaco-tl-row.disabled {
+	cursor: default;
+}
+.monaco-tl-indent {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 16px;
+	pointer-events: none;
+}
+
+.hide-arrows .monaco-tl-indent {
+	left: 12px;
+}
+
+.monaco-tl-indent > .indent-guide {
+	display: inline-block;
+	box-sizing: border-box;
+	height: 100%;
+	border-left: 1px solid transparent;
+	opacity: 0;
+}
+
+.monaco-enable-motion .monaco-tl-indent > .indent-guide {
+	transition: opacity 0.1s linear;
+}
+
+.monaco-tl-twistie,
+.monaco-tl-contents {
+	height: 100%;
+}
+
+.monaco-tl-twistie {
+	font-size: 10px;
+	text-align: right;
+	padding-right: 6px;
+	flex-shrink: 0;
+	width: 16px;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	transform: translateX(3px);
+}
+
+.monaco-tl-contents {
+	flex: 1;
+	overflow: hidden;
+}
+
+.monaco-tl-twistie::before {
+	border-radius: 20px;
+}
+
+.monaco-tl-twistie.collapsed::before {
+	transform: rotate(-90deg);
+}
+
+.monaco-tl-twistie.codicon-tree-item-loading::before {
+	/* Use steps to throttle FPS to reduce CPU usage */
+	animation: codicon-spin 1.25s steps(30) infinite;
+}
+
+.monaco-tree-type-filter {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	padding: 3px;
+	max-width: 200px;
+	z-index: 100;
+	margin: 0 10px 0 6px;
+	border: 1px solid var(--vscode-widget-border);
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.monaco-enable-motion .monaco-tree-type-filter {
+	transition: top 0.3s;
+}
+
+.monaco-tree-type-filter.disabled {
+	top: -40px !important;
+}
+
+.monaco-tree-type-filter-input {
+	flex: 1;
+}
+
+.monaco-tree-type-filter-input .monaco-inputbox {
+	height: 23px;
+}
+
+.monaco-tree-type-filter-input .monaco-inputbox > .ibwrapper > .input,
+.monaco-tree-type-filter-input .monaco-inputbox > .ibwrapper > .mirror {
+	padding: 2px 4px;
+}
+
+.monaco-tree-type-filter-input .monaco-findInput > .controls {
+	top: 2px;
+}
+
+.monaco-tree-type-filter-actionbar {
+	margin-left: 4px;
+}
+
+.monaco-tree-type-filter-actionbar .monaco-action-bar .action-label {
+	padding: 2px;
+}
+
+.monaco-list .monaco-scrollable-element .monaco-tree-sticky-container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	z-index: 13; /* Settings editor uses z-index: 12 */
+
+	/* Backup color in case the tree does not provide the background color */
+	background-color: var(--vscode-sideBar-background);
+}
+
+.monaco-list .monaco-scrollable-element .monaco-tree-sticky-container .monaco-tree-sticky-row.monaco-list-row{
+	position: absolute;
+	width: 100%;
+	opacity: 1 !important; /* Settings editor uses opacity < 1 */
+	overflow: hidden;
+
+	/* Backup color in case the tree does not provide the background color */
+	background-color: var(--vscode-sideBar-background);
+}
+
+.monaco-list .monaco-scrollable-element .monaco-tree-sticky-container .monaco-tree-sticky-row:hover{
+	background-color: var(--vscode-list-hoverBackground) !important;
+	cursor: pointer;
+}
+
+.monaco-list .monaco-scrollable-element .monaco-tree-sticky-container.empty,
+.monaco-list .monaco-scrollable-element .monaco-tree-sticky-container.empty .monaco-tree-sticky-container-shadow {
+	display: none;
+}
+
+.monaco-list .monaco-scrollable-element .monaco-tree-sticky-container .monaco-tree-sticky-container-shadow {
+	position: absolute;
+	bottom: -3px;
+	left: 0px;
+	height: 0px; /* heigt is 3px and only set when there is a treeStickyScrollShadow color */
+	width: 100%;
+}
+
+.monaco-list .monaco-scrollable-element .monaco-tree-sticky-container[tabindex="0"]:focus{
+	outline: none;
+}

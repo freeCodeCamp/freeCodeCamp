@@ -1,0 +1,62 @@
+{
+  "name": "@stripe/stripe-js",
+  "version": "1.54.2",
+  "description": "Stripe.js loading utility",
+  "main": "dist/stripe.js",
+  "module": "dist/stripe.esm.js",
+  "jsnext:main": "dist/stripe.esm.js",
+  "types": "types/index.d.ts",
+  "typings": "types/index.d.ts",
+  "scripts": {
+    "test": "yarn lint && yarn test:unit && yarn test:types && yarn typecheck",
+    "test:unit": "jest",
+    "test:types": "zx ./tests/types/scripts/test.mjs",
+    "lint": "eslint '{src,types}/**/*.{ts,js}' && yarn prettier-check",
+    "typecheck": "tsc",
+    "build": "yarn clean && yarn rollup -c",
+    "clean": "rimraf dist",
+    "prepublishOnly": "echo \"\nPlease use ./scripts/publish instead\n\" && exit 1",
+    "prettier": "prettier './**/*.{js,ts,md,html,css}' --write",
+    "prettier-check": "prettier './**/*.{js,ts,md,html,css}' --check"
+  },
+  "keywords": [
+    "Stripe",
+    "Stripe.js",
+    "Elements"
+  ],
+  "author": "Stripe (https://www.stripe.com)",
+  "license": "MIT",
+  "homepage": "https://stripe.com/docs/js",
+  "files": [
+    "dist",
+    "src",
+    "types",
+    "pure.js",
+    "pure.d.ts"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@rollup/plugin-replace": "^2.3.1",
+    "@types/jest": "^24.0.25",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "conditional-type-checks": "^1.0.5",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.8.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.6.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "ts-jest": "^24.3.0",
+    "typescript": "^4.1.2",
+    "zx": "^4.2.0"
+  }
+}

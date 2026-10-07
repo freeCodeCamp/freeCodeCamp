@@ -1,0 +1,27 @@
+{
+  "name": "format",
+  "description": "printf, sprintf, and vsprintf for JavaScript",
+  "version": "0.2.2",
+  "homepage": "http://samhuri.net/proj/format",
+  "author": "Sami Samhuri <sami@samhuri.net>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/samsonjs/format.git"
+  },
+  "bugs": {
+    "email": "sami@samhuri.net",
+    "url": "https://github.com/samsonjs/format/issues"
+  },
+  "main": "./format.js",
+  "engines": {
+    "node": ">=0.4.x"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://sjs.mit-license.org"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}

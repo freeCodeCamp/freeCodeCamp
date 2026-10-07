@@ -1,0 +1,62 @@
+{
+	"name": "hasha",
+	"version": "5.2.2",
+	"description": "Hashing made simple. Get the hash of a buffer/string/stream/file.",
+	"license": "MIT",
+	"repository": "sindresorhus/hasha",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"thread.js"
+	],
+	"keywords": [
+		"hash",
+		"hashing",
+		"crypto",
+		"hex",
+		"base64",
+		"md5",
+		"sha1",
+		"sha256",
+		"sha512",
+		"sum",
+		"stream",
+		"file",
+		"fs",
+		"buffer",
+		"string",
+		"text",
+		"rev",
+		"revving",
+		"simple",
+		"easy"
+	],
+	"dependencies": {
+		"is-stream": "^2.0.0",
+		"type-fest": "^0.8.0"
+	},
+	"devDependencies": {
+		"@types/node": "^12.7.5",
+		"ava": "^2.4.0",
+		"proxyquire": "^2.1.0",
+		"tsd": "^0.8.0",
+		"xo": "^0.24.0"
+	},
+	"xo": {
+		"rules": {
+			"import/no-unresolved": "off"
+		}
+	}
+}

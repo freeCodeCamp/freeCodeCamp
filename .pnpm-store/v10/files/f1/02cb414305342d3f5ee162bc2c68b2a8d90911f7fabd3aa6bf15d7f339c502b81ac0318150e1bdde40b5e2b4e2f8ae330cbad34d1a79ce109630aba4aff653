@@ -1,0 +1,38 @@
+{
+    "name": "babel-jsx-utils",
+    "version": "1.1.0",
+    "description": "Utilities for working with Babel and JSX",
+    "main": "dist/index.js",
+    "license": "MIT",
+    "author": "Matt Kane <m@mk.gg>",
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/preset-react": "^7.10.4",
+        "@babel/preset-typescript": "^7.10.4",
+        "@babel/traverse": "^7.11.5",
+        "@types/babel__core": "^7.1.9",
+        "@types/babel__traverse": "^7.0.14",
+        "@types/jest": "^26.0.14",
+        "@types/node": "^14.11.1",
+        "@typescript-eslint/eslint-plugin": "^4.1.1",
+        "@typescript-eslint/parser": "^4.1.1",
+        "babel-jest": "^26.3.0",
+        "eslint": "^7.9.0",
+        "eslint-config-prettier": "^6.11.0",
+        "jest": "^26.4.2",
+        "microbundle": "^0.12.3",
+        "prettier": "^2.1.2",
+        "typescript": "^4.0.2"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "start": "microbundle watch --target node",
+        "build": "microbundle build --target node",
+        "prepublishOnly": "yarn build",
+        "test": "jest",
+        "lint": "eslint src"
+    }
+}

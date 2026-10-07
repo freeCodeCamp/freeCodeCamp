@@ -1,0 +1,11 @@
+/** @implements {AttributeAdapter} */
+export class JSXAttributeAttributeAdapter implements AttributeAdapter {
+    /** @param {JSXAttribute} node */
+    constructor(node: JSXAttribute);
+    node: JSXAttribute;
+    getKey(): import("@html-eslint/core").AttributeKeyAdapter;
+    getValue(): import("@html-eslint/core").AttributeValueAdapter | null;
+}
+import type { AttributeAdapter } from "@html-eslint/core";
+import type { JSXAttribute } from "../../types";
+//# sourceMappingURL=jsx-attribute.d.ts.map

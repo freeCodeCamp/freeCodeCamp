@@ -1,0 +1,14 @@
+{
+  "include": ["./mockServiceWorker.js"],
+  "files": [],
+  "compilerOptions": {
+    "composite": true,
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "types": ["@types/serviceworker"]
+  }
+}

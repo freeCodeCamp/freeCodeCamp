@@ -1,0 +1,33 @@
+{
+  "name": "not",
+  "version": "0.1.0",
+  "description": "Returns the negation of a function",
+  "keywords": [],
+  "author": "Raynos <raynos2@gmail.com>",
+  "repository": "git://github.com/Raynos/not.git",
+  "main": "index",
+  "homepage": "https://github.com/Raynos/not",
+  "contributors": [
+    {
+      "name": "Jake Verbaten"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Raynos/not/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "tap": "~0.3.1"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Raynos/not/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "test": "tap --stderr --tap ./test"
+  }
+}

@@ -1,0 +1,35 @@
+{
+    "name": "@types/dom-speech-recognition",
+    "version": "0.0.1",
+    "description": "TypeScript definitions for dom-speech-recognition-browser",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/dom-speech-recognition",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Hana Joo",
+            "url": "https://github.com/h-joo",
+            "githubUsername": "h-joo"
+        },
+        {
+            "name": "Jan Kuehle",
+            "url": "https://github.com/frigus02",
+            "githubUsername": "frigus02"
+        },
+        {
+            "name": "Martin Probst",
+            "url": "https://github.com/mprobst",
+            "githubUsername": "mprobst"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/dom-speech-recognition"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "fb4528f6338a0c242e16a3b3464b8710f1a82e2974739a8413827ae47e1275a0",
+    "typeScriptVersion": "4.4"
+}

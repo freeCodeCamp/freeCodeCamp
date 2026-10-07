@@ -1,0 +1,55 @@
+{
+  "name": "hoist-non-react-statics",
+  "version": "3.3.2",
+  "description": "Copies non-react specific statics from a child component to a parent component",
+  "main": "dist/hoist-non-react-statics.cjs.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mridgway/hoist-non-react-statics.git"
+  },
+  "files": [
+    "src",
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint src",
+    "build": "rimraf dist && rollup -c",
+    "test": "nyc mocha tests/unit/ --recursive --reporter spec --require=@babel/register",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "npm test"
+  },
+  "author": "Michael Ridgway <mcridgway@gmail.com>",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "react-is": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
+    "chai": "^4.2.0",
+    "coveralls": "^2.11.1",
+    "create-react-class": "^15.5.3",
+    "eslint": "^4.13.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "pre-commit": "^1.0.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^1.16.6",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "react"
+  ]
+}

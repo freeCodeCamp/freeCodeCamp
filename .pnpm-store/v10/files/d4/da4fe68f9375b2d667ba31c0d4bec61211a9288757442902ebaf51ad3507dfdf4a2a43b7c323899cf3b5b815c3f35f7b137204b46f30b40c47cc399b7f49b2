@@ -1,0 +1,89 @@
+{
+	"name": "@szmarczak/http-timer",
+	"version": "5.0.1",
+	"description": "Timings for HTTP requests",
+	"type": "module",
+	"exports": "./dist/source/index.js",
+	"engines": {
+		"node": ">=14.16"
+	},
+	"scripts": {
+		"test": "xo && ava",
+		"build": "del-cli dist && tsc",
+		"prepare": "npm run build",
+		"coveralls": "exit 0 && nyc report --reporter=text-lcov | coveralls"
+	},
+	"files": [
+		"dist/source"
+	],
+	"keywords": [
+		"http",
+		"https",
+		"http2",
+		"timer",
+		"timings",
+		"performance",
+		"measure"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/szmarczak/http-timer.git"
+	},
+	"author": "Szymon Marczak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/szmarczak/http-timer/issues"
+	},
+	"homepage": "https://github.com/szmarczak/http-timer#readme",
+	"dependencies": {
+		"defer-to-connect": "^2.0.1"
+	},
+	"devDependencies": {
+		"@ava/typescript": "^2.0.0",
+		"@sindresorhus/tsconfig": "^1.0.2",
+		"@types/node": "^16.7.0",
+		"ava": "^3.15.0",
+		"coveralls": "^3.1.1",
+		"del-cli": "^4.0.1",
+		"http2-wrapper": "^2.1.4",
+		"nyc": "^15.1.0",
+		"p-event": "^4.2.0",
+		"ts-node": "^10.2.1",
+		"typescript": "^4.3.5",
+		"xo": "^0.44.0"
+	},
+	"types": "dist/source",
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"exclude": [
+			"**/tests/**"
+		]
+	},
+	"xo": {
+		"rules": {
+			"@typescript-eslint/no-non-null-assertion": "off",
+			"@typescript-eslint/no-unsafe-assignment": "off",
+			"@typescript-eslint/no-unsafe-member-access": "off",
+			"@typescript-eslint/no-unsafe-call": "off",
+			"unicorn/prefer-node-protocol": "off"
+		}
+	},
+	"ava": {
+		"files": [
+			"tests/*"
+		],
+		"timeout": "1m",
+		"nonSemVerExperiments": {
+			"nextGenConfig": true,
+			"configurableModuleFormat": true
+		},
+		"extensions": {
+			"ts": "module"
+		},
+		"nodeArguments": [
+			"--loader=ts-node/esm"
+		]
+	}
+}

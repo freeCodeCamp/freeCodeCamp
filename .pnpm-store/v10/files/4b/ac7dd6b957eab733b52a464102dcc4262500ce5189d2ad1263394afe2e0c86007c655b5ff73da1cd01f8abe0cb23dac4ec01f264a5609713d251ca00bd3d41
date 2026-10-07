@@ -1,0 +1,67 @@
+{
+  "name": "@fastify/merge-json-schemas",
+  "version": "0.2.1",
+  "description": "Builds a logical conjunction (AND) of multiple JSON schemas",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run test:unit && npm run test:types",
+    "test:unit": "c8 --100 node --test",
+    "test:types": "tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/merge-json-schemas.git"
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "merge",
+    "allOf"
+  ],
+  "author": "Ivan Tymoshenko <ivan@tymoshenko.me>",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    },
+    {
+      "name": "Gürgün Dayıoğlu",
+      "email": "hey@gurgun.day",
+      "url": "https://heyhey.to/G"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/merge-json-schemas/issues"
+  },
+  "homepage": "https://github.com/fastify/merge-json-schemas#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ],
+  "devDependencies": {
+    "@fastify/pre-commit": "^2.1.0",
+    "c8": "^10.1.3",
+    "eslint": "^9.17.0",
+    "neostandard": "^0.12.0",
+    "tsd": "^0.31.2"
+  },
+  "dependencies": {
+    "dequal": "^2.0.3"
+  }
+}

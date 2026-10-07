@@ -1,0 +1,88 @@
+{
+	"name": "object-keys",
+	"version": "1.1.1",
+	"author": {
+		"name": "Jordan Harband",
+		"email": "ljharb@gmail.com",
+		"url": "http://ljharb.codes"
+	},
+	"contributors": [
+		{
+			"name": "Jordan Harband",
+			"email": "ljharb@gmail.com",
+			"url": "http://ljharb.codes"
+		},
+		{
+			"name": "Raynos",
+			"email": "raynos2@gmail.com"
+		},
+		{
+			"name": "Nathan Rajlich",
+			"email": "nathan@tootallnate.net"
+		},
+		{
+			"name": "Ivan Starkov",
+			"email": "istarkov@gmail.com"
+		},
+		{
+			"name": "Gary Katsevman",
+			"email": "git@gkatsev.com"
+		}
+	],
+	"description": "An Object.keys replacement, in case Object.keys is not available. From https://github.com/es-shims/es5-shim",
+	"license": "MIT",
+	"main": "index.js",
+	"scripts": {
+		"pretest": "npm run --silent lint",
+		"test": "npm run --silent tests-only",
+		"posttest": "npm run --silent audit",
+		"tests-only": "node test/index.js",
+		"coverage": "covert test/*.js",
+		"coverage-quiet": "covert test/*.js --quiet",
+		"lint": "eslint .",
+		"preaudit": "npm install --package-lock --package-lock-only",
+		"audit": "npm audit",
+		"postaudit": "rm package-lock.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ljharb/object-keys.git"
+	},
+	"keywords": [
+		"Object.keys",
+		"keys",
+		"ES5",
+		"shim"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"@ljharb/eslint-config": "^13.1.1",
+		"covert": "^1.1.1",
+		"eslint": "^5.13.0",
+		"foreach": "^2.0.5",
+		"indexof": "^0.0.1",
+		"is": "^3.3.0",
+		"tape": "^4.9.2"
+	},
+	"testling": {
+		"files": "test/index.js",
+		"browsers": [
+			"iexplore/6.0..latest",
+			"firefox/3.0..6.0",
+			"firefox/15.0..latest",
+			"firefox/nightly",
+			"chrome/4.0..10.0",
+			"chrome/20.0..latest",
+			"chrome/canary",
+			"opera/10.0..latest",
+			"opera/next",
+			"safari/4.0..latest",
+			"ipad/6.0..latest",
+			"iphone/6.0..latest",
+			"android-browser/4.2"
+		]
+	},
+	"engines": {
+		"node": ">= 0.4"
+	}
+}

@@ -1,0 +1,2 @@
+import { type ComponentProps } from "react";
+export declare const FormControlFeedback: ({ children, className, ...props }: ComponentProps<"span">) => JSX.Element;

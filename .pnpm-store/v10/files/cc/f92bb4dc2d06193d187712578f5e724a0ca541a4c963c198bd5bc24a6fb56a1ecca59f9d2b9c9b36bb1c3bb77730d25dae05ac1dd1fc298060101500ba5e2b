@@ -1,0 +1,29 @@
+@import '../variables';
+@import '../mixins';
+
+@keyframes square-spin {
+  25% {
+    transform: perspective(100px) rotateX(180deg) rotateY(0);
+  }
+  50% {
+    transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+  }
+  75% {
+    transform: perspective(100px) rotateX(0) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(100px) rotateX(0) rotateY(0);
+  }
+}
+
+.square-spin {
+
+  > div {
+    @include global-animation();
+
+    width: 50px;
+    height: 50px;
+    background: $primary-color;
+    animation: square-spin 3s 0s cubic-bezier(.09,.57,.49,.9) infinite;
+  }
+}

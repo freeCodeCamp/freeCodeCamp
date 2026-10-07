@@ -1,0 +1,49 @@
+{
+  "name": "esbuild",
+  "version": "0.27.7",
+  "description": "An extremely fast JavaScript and CSS bundler and minifier.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanw/esbuild.git"
+  },
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "main": "lib/main.js",
+  "types": "lib/main.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "esbuild": "bin/esbuild"
+  },
+  "optionalDependencies": {
+    "@esbuild/aix-ppc64": "0.27.7",
+    "@esbuild/android-arm": "0.27.7",
+    "@esbuild/android-arm64": "0.27.7",
+    "@esbuild/android-x64": "0.27.7",
+    "@esbuild/darwin-arm64": "0.27.7",
+    "@esbuild/darwin-x64": "0.27.7",
+    "@esbuild/freebsd-arm64": "0.27.7",
+    "@esbuild/freebsd-x64": "0.27.7",
+    "@esbuild/linux-arm": "0.27.7",
+    "@esbuild/linux-arm64": "0.27.7",
+    "@esbuild/linux-ia32": "0.27.7",
+    "@esbuild/linux-loong64": "0.27.7",
+    "@esbuild/linux-mips64el": "0.27.7",
+    "@esbuild/linux-ppc64": "0.27.7",
+    "@esbuild/linux-riscv64": "0.27.7",
+    "@esbuild/linux-s390x": "0.27.7",
+    "@esbuild/linux-x64": "0.27.7",
+    "@esbuild/netbsd-arm64": "0.27.7",
+    "@esbuild/netbsd-x64": "0.27.7",
+    "@esbuild/openbsd-arm64": "0.27.7",
+    "@esbuild/openbsd-x64": "0.27.7",
+    "@esbuild/openharmony-arm64": "0.27.7",
+    "@esbuild/sunos-x64": "0.27.7",
+    "@esbuild/win32-arm64": "0.27.7",
+    "@esbuild/win32-ia32": "0.27.7",
+    "@esbuild/win32-x64": "0.27.7"
+  },
+  "license": "MIT"
+}

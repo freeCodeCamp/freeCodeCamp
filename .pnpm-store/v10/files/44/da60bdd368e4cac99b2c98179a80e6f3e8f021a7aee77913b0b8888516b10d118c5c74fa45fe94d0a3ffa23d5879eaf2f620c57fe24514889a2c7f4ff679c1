@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/RequestBlock.js",
+  "module": "../dist/esm/RequestBlock.js",
+  "types": "../dist/dts/RequestBlock.d.ts"
+}

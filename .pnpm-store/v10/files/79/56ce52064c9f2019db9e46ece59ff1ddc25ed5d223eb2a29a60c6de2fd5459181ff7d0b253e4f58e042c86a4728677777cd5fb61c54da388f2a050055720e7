@@ -1,0 +1,1 @@
+{"version":3,"file":"declarations.d.ts","sourceRoot":"","sources":["../../../../packages/dom-evaluator/src/declarations.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,QAAQ,CAAC;IACtB,UAAU,gBAAgB;QACxB,OAAO,EAAE,MAAM,CAAC;KACjB;IAED,SAAgB,SAAS,CAAC,OAAO,EAAE,gBAAgB,GAAG,IAAI,CAAC;CAC5D;AAED,OAAO,QAAQ,yBAAyB,CAAC;IACvC,MAAM,OAAO;;KAEZ;IAED,eAAe,OAAO,CAAC;CACxB"}

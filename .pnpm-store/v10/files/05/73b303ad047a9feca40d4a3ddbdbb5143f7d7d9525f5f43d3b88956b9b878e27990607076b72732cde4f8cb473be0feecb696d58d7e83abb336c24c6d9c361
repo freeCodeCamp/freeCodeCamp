@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "expect": false,
+    "sinon": false
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    // possible errors
+    "no-cond-assign": 0,
+    "no-empty": 0,
+    "valid-jsdoc": [2, {
+      "prefer": {"return": "return"},
+      "requireReturn": false
+    }],
+    // best practices
+    "no-extra-bind": 2,
+    // style
+    "comma-spacing": [2, {"before": false, "after": true}],
+    "eol-last": [0],
+    "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
+    "linebreak-style": [2, "unix"],
+    "max-len": [2, 80, {"ignoreUrls": true}],
+    "no-multiple-empty-lines": [2, {"max": 2}],
+    "no-unused-vars": ["error", {"vars": "all"}],
+    "no-trailing-spaces": 2,
+    "object-curly-spacing": [2, "never"],
+    "quotes": [2, "single"],
+    "require-jsdoc": [2, {
+      "require": {
+        "FunctionDeclaration": true,
+        "MethodDefinition": true,
+        "ClassDeclaration": true
+      }
+    }],
+    "semi": [2, "always"],
+    "semi-spacing": [2, {"before": false, "after": true}],
+  }
+}

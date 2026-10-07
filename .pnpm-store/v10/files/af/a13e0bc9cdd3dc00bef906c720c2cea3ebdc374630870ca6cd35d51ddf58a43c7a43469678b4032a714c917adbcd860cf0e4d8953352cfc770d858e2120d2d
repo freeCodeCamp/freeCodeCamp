@@ -1,0 +1,37 @@
+{
+  "name": "html-standard",
+  "version": "0.0.13",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "ts": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "author": "yeonjuan",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitest/ui": "^4.0.18",
+    "prettier": "^3.5.3",
+    "tsup": "^8.5.1",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "vscode-css-languageservice": "^6.3.9",
+    "vscode-languageserver-textdocument": "^1.0.12"
+  }
+}

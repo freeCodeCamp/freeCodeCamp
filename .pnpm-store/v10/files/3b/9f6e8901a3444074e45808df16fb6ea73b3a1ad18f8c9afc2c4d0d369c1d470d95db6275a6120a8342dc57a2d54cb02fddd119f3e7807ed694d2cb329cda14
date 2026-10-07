@@ -1,0 +1,137 @@
+'use strict';
+
+var GetIntrinsic = require('get-intrinsic');
+
+var $SyntaxError = require('es-errors/syntax');
+var $TypeError = require('es-errors/type');
+var isObject = require('es-object-atoms/isObject');
+var $Promise = GetIntrinsic('%Promise%', true);
+
+var AsyncFromSyncIteratorContinuation = require('./AsyncFromSyncIteratorContinuation');
+var Call = require('./Call');
+var CreateIterResultObject = require('./CreateIterResultObject');
+var Get = require('./Get');
+var GetMethod = require('./GetMethod');
+var IteratorNext = require('./IteratorNext');
+var OrdinaryObjectCreate = require('./OrdinaryObjectCreate');
+
+var isIteratorRecord = require('../helpers/records/iterator-record');
+
+var SLOT = require('internal-slot');
+
+var $AsyncFromSyncIteratorPrototype = GetIntrinsic('%AsyncFromSyncIteratorPrototype%', true) || {
+	next: function next(value) {
+		if (!$Promise) {
+			throw new $SyntaxError('This environment does not support Promises.');
+		}
+
+		var O = this; // step 1
+
+		SLOT.assert(O, '[[SyncIteratorRecord]]'); // step 2
+
+		var argsLength = arguments.length;
+
+		return new $Promise(function (resolve) { // step 3
+			var syncIteratorRecord = SLOT.get(O, '[[SyncIteratorRecord]]'); // step 4
+			var result;
+			if (argsLength > 0) {
+				result = IteratorNext(syncIteratorRecord, value); // step 5.a
+			} else { // step 6
+				result = IteratorNext(syncIteratorRecord);// step 6.a
+			}
+			resolve(AsyncFromSyncIteratorContinuation(result)); // step 8
+		});
+	},
+	'return': function () {
+		if (!$Promise) {
+			throw new $SyntaxError('This environment does not support Promises.');
+		}
+
+		var O = this; // step 1
+
+		SLOT.assert(O, '[[SyncIteratorRecord]]'); // step 2
+
+		var valueIsPresent = arguments.length > 0;
+		var value = valueIsPresent ? arguments[0] : void undefined;
+
+		return new $Promise(function (resolve, reject) { // step 3
+			var syncIterator = SLOT.get(O, '[[SyncIteratorRecord]]')['[[Iterator]]']; // step 4
+			var iteratorReturn = GetMethod(syncIterator, 'return'); // step 5
+
+			if (typeof iteratorReturn === 'undefined') { // step 7
+				var iterResult = CreateIterResultObject(value, true); // step 7.a
+				Call(resolve, void undefined, [iterResult]); // step 7.b
+				return;
+			}
+			var result;
+			if (valueIsPresent) { // step 8
+				result = Call(iteratorReturn, syncIterator, [value]); // step 8.a
+			} else { // step 9
+				result = Call(iteratorReturn, syncIterator); // step 9.a
+			}
+			if (!isObject(result)) { // step 11
+				Call(reject, void undefined, [new $TypeError('Iterator `return` method returned a non-object value.')]); // step 11.a
+				return;
+			}
+
+			resolve(AsyncFromSyncIteratorContinuation(result)); // step 12
+		});
+	},
+	'throw': function () {
+		if (!$Promise) {
+			throw new $SyntaxError('This environment does not support Promises.');
+		}
+
+		var O = this; // step 1
+
+		SLOT.assert(O, '[[SyncIteratorRecord]]'); // step 2
+
+		var valueIsPresent = arguments.length > 0;
+		var value = valueIsPresent ? arguments[0] : void undefined;
+
+		return new $Promise(function (resolve, reject) { // step 3
+			var syncIterator = SLOT.get(O, '[[SyncIteratorRecord]]')['[[Iterator]]']; // step 4
+
+			var throwMethod = GetMethod(syncIterator, 'throw'); // step 5
+
+			if (typeof throwMethod === 'undefined') { // step 7
+				Call(reject, void undefined, [value]); // step 7.a
+				return;
+			}
+
+			var result;
+			if (valueIsPresent) { // step 8
+				result = Call(throwMethod, syncIterator, [value]); // step 8.a
+			} else { // step 9
+				result = Call(throwMethod, syncIterator); // step 9.a
+			}
+			if (!isObject(result)) { // step 11
+				Call(reject, void undefined, [new $TypeError('Iterator `throw` method returned a non-object value.')]); // step 11.a
+				return;
+			}
+
+			resolve(AsyncFromSyncIteratorContinuation(result/* , promiseCapability */)); // step 12
+		});
+	}
+};
+
+// https://262.ecma-international.org/15.0/#sec-createasyncfromsynciterator
+
+module.exports = function CreateAsyncFromSyncIterator(syncIteratorRecord) {
+	if (!isIteratorRecord(syncIteratorRecord)) {
+		throw new $TypeError('Assertion failed: `syncIteratorRecord` must be an Iterator Record');
+	}
+
+	// var asyncIterator = OrdinaryObjectCreate(%AsyncFromSyncIteratorPrototype%, « [[SyncIteratorRecord]] »); // step 1
+	var asyncIterator = OrdinaryObjectCreate($AsyncFromSyncIteratorPrototype);
+
+	SLOT.set(asyncIterator, '[[SyncIteratorRecord]]', syncIteratorRecord); // step 2
+
+	var nextMethod = Get(asyncIterator, 'next'); // step 3
+
+	return { // steps 3-4
+		'[[Iterator]]': asyncIterator,
+		'[[NextMethod]]': nextMethod,
+		'[[Done]]': false
+	};
+};

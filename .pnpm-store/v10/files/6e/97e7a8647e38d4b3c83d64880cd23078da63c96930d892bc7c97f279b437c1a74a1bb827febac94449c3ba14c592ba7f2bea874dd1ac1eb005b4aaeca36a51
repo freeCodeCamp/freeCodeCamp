@@ -1,0 +1,190 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "SearchBox", {
+    enumerable: true,
+    get: function() {
+        return SearchBox;
+    }
+});
+var _interop_require_default = require("@swc/helpers/_/_interop_require_default");
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_spread_props = require("@swc/helpers/_/_object_spread_props");
+var _object_without_properties = require("@swc/helpers/_/_object_without_properties");
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _react = /*#__PURE__*/ _interop_require_default._(require("react"));
+function DefaultSubmitIcon(param) {
+    var classNames = param.classNames;
+    return /*#__PURE__*/ _react.default.createElement("svg", {
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox-submitIcon', classNames.submitIcon),
+        width: "10",
+        height: "10",
+        viewBox: "0 0 40 40",
+        "aria-hidden": "true"
+    }, /*#__PURE__*/ _react.default.createElement("path", {
+        d: "M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"
+    }));
+}
+function DefaultResetIcon(param) {
+    var classNames = param.classNames;
+    return /*#__PURE__*/ _react.default.createElement("svg", {
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox-resetIcon', classNames.resetIcon),
+        viewBox: "0 0 20 20",
+        width: "10",
+        height: "10",
+        "aria-hidden": "true"
+    }, /*#__PURE__*/ _react.default.createElement("path", {
+        d: "M8.114 10L.944 2.83 0 1.885 1.886 0l.943.943L10 8.113l7.17-7.17.944-.943L20 1.886l-.943.943-7.17 7.17 7.17 7.17.943.944L18.114 20l-.943-.943-7.17-7.17-7.17 7.17-.944.943L0 18.114l.943-.943L8.113 10z"
+    }));
+}
+function DefaultLoadingIcon(param) {
+    var classNames = param.classNames;
+    return /*#__PURE__*/ _react.default.createElement("svg", {
+        "aria-label": "Results are loading",
+        width: "16",
+        height: "16",
+        viewBox: "0 0 38 38",
+        stroke: "#444",
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox-loadingIcon', classNames.loadingIcon),
+        "aria-hidden": "true"
+    }, /*#__PURE__*/ _react.default.createElement("g", {
+        fill: "none",
+        fillRule: "evenodd"
+    }, /*#__PURE__*/ _react.default.createElement("g", {
+        transform: "translate(1 1)",
+        strokeWidth: "2"
+    }, /*#__PURE__*/ _react.default.createElement("circle", {
+        strokeOpacity: ".5",
+        cx: "18",
+        cy: "18",
+        r: "18"
+    }), /*#__PURE__*/ _react.default.createElement("path", {
+        d: "M36 18c0-9.94-8.06-18-18-18"
+    }, /*#__PURE__*/ _react.default.createElement("animateTransform", {
+        attributeName: "transform",
+        type: "rotate",
+        from: "0 18 18",
+        to: "360 18 18",
+        dur: "1s",
+        repeatCount: "indefinite"
+    })))));
+}
+function DefaultAiModeIcon(param) {
+    var classNames = param.classNames;
+    return /*#__PURE__*/ _react.default.createElement("svg", {
+        className: (0, _instantsearchuicomponents.cx)('ais-AiModeButton-icon', classNames.aiModeIcon),
+        xmlns: "http://www.w3.org/2000/svg",
+        fill: "none",
+        viewBox: "0 0 20 20",
+        width: "16",
+        height: "16",
+        "aria-hidden": "true"
+    }, /*#__PURE__*/ _react.default.createElement("path", {
+        fill: "currentColor",
+        fillRule: "evenodd",
+        d: "M10 1.875c.27 0 .51.173.594.43l1.593 4.844a1.043 1.043 0 0 0 .664.664l4.844 1.593a.625.625 0 0 1 0 1.188l-4.844 1.593a1.043 1.043 0 0 0-.664.664l-1.593 4.844a.625.625 0 0 1-1.188 0l-1.593-4.844a1.042 1.042 0 0 0-.664-.664l-4.844-1.593a.625.625 0 0 1 0-1.188l4.844-1.593a1.042 1.042 0 0 0 .664-.664l1.593-4.844a.625.625 0 0 1 .594-.43ZM9 7.539A2.292 2.292 0 0 1 7.54 9L4.5 10l3.04 1A2.292 2.292 0 0 1 9 12.46l1 3.04 1-3.04A2.293 2.293 0 0 1 12.46 11l3.04-1-3.04-1A2.292 2.292 0 0 1 11 7.54L10 4.5 9 7.54ZM4.167 1.875c.345 0 .625.28.625.625v3.333a.625.625 0 0 1-1.25 0V2.5c0-.345.28-.625.625-.625ZM15.833 13.542c.345 0 .625.28.625.625V17.5a.625.625 0 1 1-1.25 0v-3.333c0-.345.28-.625.625-.625Z",
+        clipRule: "evenodd"
+    }), /*#__PURE__*/ _react.default.createElement("path", {
+        fill: "currentColor",
+        fillRule: "evenodd",
+        d: "M1.875 4.167c0-.346.28-.625.625-.625h3.333a.625.625 0 1 1 0 1.25H2.5a.625.625 0 0 1-.625-.625ZM13.542 15.833c0-.345.28-.625.625-.625H17.5a.625.625 0 0 1 0 1.25h-3.333a.625.625 0 0 1-.625-.625Z",
+        clipRule: "evenodd"
+    }));
+}
+function SearchBox(_0) {
+    var formRef = _0.formRef, inputRef = _0.inputRef, inputProps = _0.inputProps, isSearchStalled = _0.isSearchStalled, onChange = _0.onChange, onReset = _0.onReset, onSubmit = _0.onSubmit, _0_placeholder = _0.placeholder, placeholder = _0_placeholder === void 0 ? '' : _0_placeholder, value = _0.value, autoFocus = _0.autoFocus, tmp = _0.resetIconComponent, ResetIcon = tmp === void 0 ? DefaultResetIcon : tmp, tmp1 = _0.submitIconComponent, SubmitIcon = tmp1 === void 0 ? DefaultSubmitIcon : tmp1, tmp2 = _0.loadingIconComponent, LoadingIcon = tmp2 === void 0 ? DefaultLoadingIcon : tmp2, tmp3 = _0.aiModeIconComponent, AiModeIcon = tmp3 === void 0 ? DefaultAiModeIcon : tmp3, onAiModeClick = _0.onAiModeClick, _0_classNames = _0.classNames, classNames = _0_classNames === void 0 ? {} : _0_classNames, translations = _0.translations, props = _object_without_properties._(_0, [
+        "formRef",
+        "inputRef",
+        "inputProps",
+        "isSearchStalled",
+        "onChange",
+        "onReset",
+        "onSubmit",
+        "placeholder",
+        "value",
+        "autoFocus",
+        "resetIconComponent",
+        "submitIconComponent",
+        "loadingIconComponent",
+        "aiModeIconComponent",
+        "onAiModeClick",
+        "classNames",
+        "translations"
+    ]);
+    function handleSubmit(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (onSubmit) {
+            onSubmit(event);
+        }
+        if (inputRef.current) {
+            inputRef.current.blur();
+        }
+    }
+    function handleReset(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        onReset(event);
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }
+    return /*#__PURE__*/ _react.default.createElement("div", _object_spread_props._(_object_spread._({}, props), {
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox', classNames.root, props.className)
+    }), /*#__PURE__*/ _react.default.createElement("form", {
+        ref: formRef,
+        action: "",
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox-form', classNames.form),
+        noValidate: true,
+        onSubmit: handleSubmit,
+        onReset: handleReset,
+        role: "search"
+    }, /*#__PURE__*/ _react.default.createElement("input", _object_spread_props._(_object_spread._({}, inputProps), {
+        ref: inputRef,
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox-input', classNames.input, inputProps === null || inputProps === void 0 ? void 0 : inputProps.className),
+        "aria-label": "Search",
+        autoComplete: "off",
+        autoCorrect: "off",
+        autoCapitalize: "off",
+        placeholder: placeholder,
+        spellCheck: false,
+        maxLength: 512,
+        type: "search",
+        value: value,
+        onChange: onChange,
+        onCompositionEnd: onChange,
+        autoFocus: autoFocus
+    })), /*#__PURE__*/ _react.default.createElement("button", {
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox-submit', classNames.submit),
+        type: "submit",
+        title: translations.submitButtonTitle
+    }, /*#__PURE__*/ _react.default.createElement(SubmitIcon, {
+        classNames: classNames
+    })), /*#__PURE__*/ _react.default.createElement("button", {
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox-reset', classNames.reset),
+        type: "reset",
+        title: translations.resetButtonTitle,
+        hidden: value.length === 0 || isSearchStalled
+    }, /*#__PURE__*/ _react.default.createElement(ResetIcon, {
+        classNames: classNames
+    })), onAiModeClick && /*#__PURE__*/ _react.default.createElement("button", {
+        className: (0, _instantsearchuicomponents.cx)('ais-AiModeButton', classNames.aiModeButton),
+        type: "button",
+        title: translations.aiModeButtonTitle || 'AI Mode',
+        onClick: function onClick(e) {
+            e.preventDefault();
+            onAiModeClick();
+        }
+    }, /*#__PURE__*/ _react.default.createElement(AiModeIcon, {
+        classNames: classNames
+    }), /*#__PURE__*/ _react.default.createElement("span", {
+        className: "ais-AiModeButton-label"
+    }, translations.aiModeButtonTitle || 'AI Mode')), /*#__PURE__*/ _react.default.createElement("span", {
+        className: (0, _instantsearchuicomponents.cx)('ais-SearchBox-loadingIndicator', classNames.loadingIndicator),
+        hidden: !isSearchStalled
+    }, /*#__PURE__*/ _react.default.createElement(LoadingIcon, {
+        classNames: classNames
+    }))));
+}

@@ -1,0 +1,116 @@
+import valueParser from 'postcss-value-parser';
+
+import { assert } from '../../utils/validateTypes.mjs';
+import { declarationValueIndex } from '../../utils/nodeFieldIndices.mjs';
+import findNotContiguousOrRectangular from './utils/findNotContiguousOrRectangular.mjs';
+import isStandardSyntaxValue from '../../utils/isStandardSyntaxValue.mjs';
+import report from '../../utils/report.mjs';
+import ruleMessages from '../../utils/ruleMessages.mjs';
+import validateOptions from '../../utils/validateOptions.mjs';
+
+const ruleName = 'named-grid-areas-no-invalid';
+
+const messages = ruleMessages(ruleName, {
+	expectedToken: () => 'Expected cell token within string',
+	expectedSameNumber: () => 'Expected same number of cell tokens in each string',
+	expectedRectangle: (name) => `Expected single filled-in rectangle for "${name}"`,
+});
+
+const meta = {
+	url: 'https://stylelint.io/user-guide/rules/named-grid-areas-no-invalid',
+};
+
+/** @type {import('stylelint').CoreRules[ruleName]} */
+const rule = (primary) => {
+	return (root, result) => {
+		const validOptions = validateOptions(result, ruleName, { actual: primary });
+
+		if (!validOptions) {
+			return;
+		}
+
+		root.walkDecls(/^(?:grid|grid-template|grid-template-areas)$/i, (decl) => {
+			const { value } = decl;
+
+			if (!isStandardSyntaxValue(value)) return;
+
+			if (value.toLowerCase().trim() === 'none') return;
+
+			/** @type {Array<{ values: string[], index: number, endIndex: number }>} */
+			const areas = [];
+			let reportSent = false;
+
+			valueParser(value).walk(({ sourceIndex, sourceEndIndex, type, value: tokenValue }) => {
+				if (type !== 'string') return;
+
+				if (tokenValue === '') {
+					complain(messages.expectedToken, [], sourceIndex, sourceEndIndex);
+					reportSent = true;
+
+					return;
+				}
+
+				areas.push({
+					values: tokenValue.trim().split(' ').filter(Boolean),
+					index: sourceIndex,
+					endIndex: sourceEndIndex,
+				});
+			});
+
+			if (reportSent) return;
+
+			const [firstArea] = areas;
+
+			if (firstArea === undefined) return;
+
+			const notSameNumberArea = areas.find(
+				(area) => area.values.length !== firstArea.values.length,
+			);
+
+			if (notSameNumberArea !== undefined) {
+				complain(
+					messages.expectedSameNumber,
+					[],
+					notSameNumberArea.index,
+					notSameNumberArea.endIndex,
+				);
+
+				return;
+			}
+
+			const notContiguousOrRectangular = findNotContiguousOrRectangular(areas.map((a) => a.values));
+
+			for (const name of notContiguousOrRectangular.sort()) {
+				const area = areas.find((a) => a.values.includes(name));
+
+				assert(area);
+				complain(messages.expectedRectangle, [name], area.index, area.endIndex);
+			}
+
+			/**
+			 * @param {typeof messages[keyof messages]} message
+			 * @param {Array<string>} messageArgs
+			 * @param {number} index
+			 * @param {number} endIndex
+			 */
+			function complain(message, messageArgs, index, endIndex) {
+				const start = declarationValueIndex(decl);
+
+				report({
+					message,
+					messageArgs,
+					node: decl,
+					index: start + index,
+					endIndex: start + endIndex,
+					result,
+					ruleName,
+				});
+			}
+		});
+	};
+};
+
+rule.ruleName = ruleName;
+rule.messages = messages;
+rule.meta = meta;
+export default rule;

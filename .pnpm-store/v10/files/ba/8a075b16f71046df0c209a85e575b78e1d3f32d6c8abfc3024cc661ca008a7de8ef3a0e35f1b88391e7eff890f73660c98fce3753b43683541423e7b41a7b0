@@ -1,0 +1,203 @@
+{
+  "name": "prettier",
+  "version": "3.8.2",
+  "description": "Prettier is an opinionated code formatter",
+  "bin": "./bin/prettier.cjs",
+  "repository": "prettier/prettier",
+  "funding": "https://github.com/prettier/prettier?sponsor=1",
+  "homepage": "https://prettier.io",
+  "author": "James Long",
+  "license": "MIT",
+  "main": "./index.cjs",
+  "browser": "./standalone.js",
+  "unpkg": "./standalone.js",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.cjs",
+      "browser": {
+        "import": "./standalone.mjs",
+        "default": "./standalone.js"
+      },
+      "default": "./index.mjs"
+    },
+    "./*": "./*",
+    "./doc": {
+      "types": "./doc.d.ts",
+      "require": "./doc.js",
+      "default": "./doc.mjs"
+    },
+    "./standalone": {
+      "types": "./standalone.d.ts",
+      "require": "./standalone.js",
+      "default": "./standalone.mjs"
+    },
+    "./plugins/estree": {
+      "types": "./plugins/estree.d.ts",
+      "require": "./plugins/estree.js",
+      "default": "./plugins/estree.mjs"
+    },
+    "./plugins/babel": {
+      "types": "./plugins/babel.d.ts",
+      "require": "./plugins/babel.js",
+      "default": "./plugins/babel.mjs"
+    },
+    "./plugins/flow": {
+      "types": "./plugins/flow.d.ts",
+      "require": "./plugins/flow.js",
+      "default": "./plugins/flow.mjs"
+    },
+    "./plugins/typescript": {
+      "types": "./plugins/typescript.d.ts",
+      "require": "./plugins/typescript.js",
+      "default": "./plugins/typescript.mjs"
+    },
+    "./plugins/acorn": {
+      "types": "./plugins/acorn.d.ts",
+      "require": "./plugins/acorn.js",
+      "default": "./plugins/acorn.mjs"
+    },
+    "./plugins/meriyah": {
+      "types": "./plugins/meriyah.d.ts",
+      "require": "./plugins/meriyah.js",
+      "default": "./plugins/meriyah.mjs"
+    },
+    "./plugins/angular": {
+      "types": "./plugins/angular.d.ts",
+      "require": "./plugins/angular.js",
+      "default": "./plugins/angular.mjs"
+    },
+    "./plugins/postcss": {
+      "types": "./plugins/postcss.d.ts",
+      "require": "./plugins/postcss.js",
+      "default": "./plugins/postcss.mjs"
+    },
+    "./plugins/graphql": {
+      "types": "./plugins/graphql.d.ts",
+      "require": "./plugins/graphql.js",
+      "default": "./plugins/graphql.mjs"
+    },
+    "./plugins/markdown": {
+      "types": "./plugins/markdown.d.ts",
+      "require": "./plugins/markdown.js",
+      "default": "./plugins/markdown.mjs"
+    },
+    "./plugins/glimmer": {
+      "types": "./plugins/glimmer.d.ts",
+      "require": "./plugins/glimmer.js",
+      "default": "./plugins/glimmer.mjs"
+    },
+    "./plugins/html": {
+      "types": "./plugins/html.d.ts",
+      "require": "./plugins/html.js",
+      "default": "./plugins/html.mjs"
+    },
+    "./plugins/yaml": {
+      "types": "./plugins/yaml.d.ts",
+      "require": "./plugins/yaml.js",
+      "default": "./plugins/yaml.mjs"
+    },
+    "./esm/standalone.mjs": "./standalone.mjs",
+    "./parser-babel": "./plugins/babel.js",
+    "./parser-babel.js": "./plugins/babel.js",
+    "./esm/parser-babel.mjs": "./plugins/babel.mjs",
+    "./parser-flow": "./plugins/flow.js",
+    "./parser-flow.js": "./plugins/flow.js",
+    "./esm/parser-flow.mjs": "./plugins/flow.mjs",
+    "./parser-typescript": "./plugins/typescript.js",
+    "./parser-typescript.js": "./plugins/typescript.js",
+    "./esm/parser-typescript.mjs": "./plugins/typescript.mjs",
+    "./parser-espree": "./plugins/acorn.js",
+    "./parser-espree.js": "./plugins/acorn.js",
+    "./esm/parser-espree.mjs": "./plugins/acorn.mjs",
+    "./parser-meriyah": "./plugins/meriyah.js",
+    "./parser-meriyah.js": "./plugins/meriyah.js",
+    "./esm/parser-meriyah.mjs": "./plugins/meriyah.mjs",
+    "./parser-angular": "./plugins/angular.js",
+    "./parser-angular.js": "./plugins/angular.js",
+    "./esm/parser-angular.mjs": "./plugins/angular.mjs",
+    "./parser-postcss": "./plugins/postcss.js",
+    "./parser-postcss.js": "./plugins/postcss.js",
+    "./esm/parser-postcss.mjs": "./plugins/postcss.mjs",
+    "./parser-graphql": "./plugins/graphql.js",
+    "./parser-graphql.js": "./plugins/graphql.js",
+    "./esm/parser-graphql.mjs": "./plugins/graphql.mjs",
+    "./parser-markdown": "./plugins/markdown.js",
+    "./parser-markdown.js": "./plugins/markdown.js",
+    "./esm/parser-markdown.mjs": "./plugins/markdown.mjs",
+    "./parser-glimmer": "./plugins/glimmer.js",
+    "./parser-glimmer.js": "./plugins/glimmer.js",
+    "./esm/parser-glimmer.mjs": "./plugins/glimmer.mjs",
+    "./parser-html": "./plugins/html.js",
+    "./parser-html.js": "./plugins/html.js",
+    "./esm/parser-html.mjs": "./plugins/html.mjs",
+    "./parser-yaml": "./plugins/yaml.js",
+    "./parser-yaml.js": "./plugins/yaml.js",
+    "./esm/parser-yaml.mjs": "./plugins/yaml.mjs"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "THIRD-PARTY-NOTICES.md",
+    "bin/prettier.cjs",
+    "doc.d.ts",
+    "doc.js",
+    "doc.mjs",
+    "index.cjs",
+    "index.d.ts",
+    "index.d.ts",
+    "index.mjs",
+    "internal/experimental-cli-worker.mjs",
+    "internal/experimental-cli.mjs",
+    "internal/legacy-cli.mjs",
+    "package.json",
+    "plugins/acorn.d.ts",
+    "plugins/acorn.js",
+    "plugins/acorn.mjs",
+    "plugins/angular.d.ts",
+    "plugins/angular.js",
+    "plugins/angular.mjs",
+    "plugins/babel.d.ts",
+    "plugins/babel.js",
+    "plugins/babel.mjs",
+    "plugins/estree.d.ts",
+    "plugins/estree.js",
+    "plugins/estree.mjs",
+    "plugins/flow.d.ts",
+    "plugins/flow.js",
+    "plugins/flow.mjs",
+    "plugins/glimmer.d.ts",
+    "plugins/glimmer.js",
+    "plugins/glimmer.mjs",
+    "plugins/graphql.d.ts",
+    "plugins/graphql.js",
+    "plugins/graphql.mjs",
+    "plugins/html.d.ts",
+    "plugins/html.js",
+    "plugins/html.mjs",
+    "plugins/markdown.d.ts",
+    "plugins/markdown.js",
+    "plugins/markdown.mjs",
+    "plugins/meriyah.d.ts",
+    "plugins/meriyah.js",
+    "plugins/meriyah.mjs",
+    "plugins/postcss.d.ts",
+    "plugins/postcss.js",
+    "plugins/postcss.mjs",
+    "plugins/typescript.d.ts",
+    "plugins/typescript.js",
+    "plugins/typescript.mjs",
+    "plugins/yaml.d.ts",
+    "plugins/yaml.js",
+    "plugins/yaml.mjs",
+    "standalone.d.ts",
+    "standalone.js",
+    "standalone.mjs"
+  ],
+  "preferUnplugged": true,
+  "sideEffects": false,
+  "type": "commonjs"
+}

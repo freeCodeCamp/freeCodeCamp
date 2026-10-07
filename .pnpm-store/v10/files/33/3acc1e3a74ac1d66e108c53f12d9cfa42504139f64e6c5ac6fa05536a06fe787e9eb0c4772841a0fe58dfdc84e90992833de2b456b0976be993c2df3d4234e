@@ -1,0 +1,56 @@
+{
+	"name": "@csstools/css-syntax-patches-for-csstree",
+	"description": "CSS syntax patches for CSS tree",
+	"version": "1.1.3",
+	"contributors": [
+		{
+			"name": "Antonio Laguna",
+			"email": "antonio@laguna.es",
+			"url": "https://antonio.laguna.es"
+		},
+		{
+			"name": "Romain Menke",
+			"email": "romainmenke@gmail.com"
+		}
+	],
+	"license": "MIT-0",
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/csstools"
+		},
+		{
+			"type": "opencollective",
+			"url": "https://opencollective.com/csstools"
+		}
+	],
+	"main": "dist/index.json",
+	"types": "dist/index.d.ts",
+	"files": [
+		"CHANGELOG.md",
+		"LICENSE.md",
+		"README.md",
+		"dist"
+	],
+	"peerDependencies": {
+		"css-tree": "^3.2.1"
+	},
+	"peerDependenciesMeta": {
+		"css-tree": {
+			"optional": true
+		}
+	},
+	"scripts": {},
+	"homepage": "https://github.com/csstools/postcss-plugins/tree/main/packages/css-syntax-patches-for-csstree#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/csstools/postcss-plugins.git",
+		"directory": "packages/css-syntax-patches-for-csstree"
+	},
+	"bugs": "https://github.com/csstools/postcss-plugins/issues",
+	"keywords": [
+		"css",
+		"csstree",
+		"syntax"
+	]
+}

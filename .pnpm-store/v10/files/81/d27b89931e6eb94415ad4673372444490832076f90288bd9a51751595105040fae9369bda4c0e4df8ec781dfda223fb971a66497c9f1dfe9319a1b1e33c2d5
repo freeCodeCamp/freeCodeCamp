@@ -1,0 +1,53 @@
+{
+    "root": true,
+    "extends": "@ljharb",
+    "rules": {
+        "complexity": 0,
+        "func-style": [2, "declaration"],
+        "indent": [2, 4],
+        "max-lines": 1,
+        "max-lines-per-function": 1,
+        "max-params": [2, 4],
+        "max-statements": 0,
+        "max-statements-per-line": [2, { "max": 2 }],
+        "no-magic-numbers": 0,
+        "no-param-reassign": 1,
+        "strict": 0, // TODO
+    },
+    "overrides": [
+        {
+            "files": ["test/**", "test-*", "example/**"],
+            "extends": "@ljharb/eslint-config/tests",
+            "rules": {
+              "id-length": 0,
+            },
+        },
+        {
+            "files": ["example/**"],
+            "rules": {
+                "no-console": 0,
+            },
+        },
+        {
+            "files": ["test/browser/**"],
+            "env": {
+                "browser": true,
+            },
+        },
+        {
+            "files": ["test/bigint*"],
+            "rules": {
+                "new-cap": [2, { "capIsNewExceptions": ["BigInt"] }],
+            },
+        },
+        {
+            "files": "index.js",
+            "globals": {
+                "HTMLElement": false,
+            },
+            "rules": {
+                "no-use-before-define": 1,
+            },
+        },
+    ],
+}

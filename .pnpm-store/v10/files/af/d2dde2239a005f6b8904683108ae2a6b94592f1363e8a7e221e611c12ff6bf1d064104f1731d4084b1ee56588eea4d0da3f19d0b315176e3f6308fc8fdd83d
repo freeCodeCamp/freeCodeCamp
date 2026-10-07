@@ -1,0 +1,79 @@
+{
+  "name": "@smithy/fetch-http-handler",
+  "version": "2.5.0",
+  "description": "Provides a way to make requests",
+  "scripts": {
+    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types && yarn build:types:downlevel'",
+    "build:cjs": "node ../../scripts/inline fetch-http-handler",
+    "build:es": "yarn g:tsc -p tsconfig.es.json",
+    "build:types": "yarn g:tsc -p tsconfig.types.json",
+    "build:types:downlevel": "downlevel-dts dist-types dist-types/ts3.4",
+    "stage-release": "rimraf ./.release && yarn pack && mkdir ./.release && tar zxvf ./package.tgz --directory ./.release && rm ./package.tgz",
+    "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo || exit 0",
+    "lint": "eslint -c ../../.eslintrc.js \"src/**/*.ts\"",
+    "format": "prettier --config ../../prettier.config.js --ignore-path ../.prettierignore --write \"**/*.{ts,md,json}\"",
+    "extract:docs": "api-extractor run --local",
+    "test": "yarn g:jest --coverage --forceExit && karma start karma.conf.js"
+  },
+  "author": {
+    "name": "AWS SDK for JavaScript Team",
+    "url": "https://aws.amazon.com/javascript/"
+  },
+  "license": "Apache-2.0",
+  "main": "./dist-cjs/index.js",
+  "module": "./dist-es/index.js",
+  "types": "./dist-types/index.d.ts",
+  "dependencies": {
+    "@smithy/protocol-http": "^3.3.0",
+    "@smithy/querystring-builder": "^2.2.0",
+    "@smithy/types": "^2.12.0",
+    "@smithy/util-base64": "^2.3.0",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@smithy/abort-controller": "^2.2.0",
+    "@tsconfig/recommended": "1.0.1",
+    "@types/chai-as-promised": "^7.1.2",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "concurrently": "7.0.0",
+    "downlevel-dts": "0.10.1",
+    "karma": "6.4.0",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "3.1.1",
+    "karma-coverage": "2.2.1",
+    "karma-env-preprocessor": "0.1.1",
+    "karma-firefox-launcher": "2.1.3",
+    "karma-jasmine": "5.1.0",
+    "karma-mocha": "2.0.1",
+    "karma-sourcemap-loader": "0.3.8",
+    "karma-typescript": "5.5.3",
+    "karma-webpack": "5.0.0",
+    "rimraf": "3.0.2",
+    "typedoc": "0.23.23",
+    "webpack": "5.76.0",
+    "webpack-cli": "4.10.0"
+  },
+  "typesVersions": {
+    "<4.0": {
+      "dist-types/*": [
+        "dist-types/ts3.4/*"
+      ]
+    }
+  },
+  "files": [
+    "dist-*/**"
+  ],
+  "homepage": "https://github.com/awslabs/smithy-typescript/tree/main/packages/fetch-http-handler",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awslabs/smithy-typescript.git",
+    "directory": "packages/fetch-http-handler"
+  },
+  "typedoc": {
+    "entryPoint": "src/index.ts"
+  },
+  "publishConfig": {
+    "directory": ".release/package"
+  }
+}

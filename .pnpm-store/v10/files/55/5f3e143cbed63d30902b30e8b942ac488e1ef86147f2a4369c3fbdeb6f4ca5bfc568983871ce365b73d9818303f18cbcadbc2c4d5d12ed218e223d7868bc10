@@ -1,0 +1,3 @@
+const behavior = {};
+
+export { behavior };

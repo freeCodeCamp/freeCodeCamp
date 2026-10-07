@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_object_spread.js")

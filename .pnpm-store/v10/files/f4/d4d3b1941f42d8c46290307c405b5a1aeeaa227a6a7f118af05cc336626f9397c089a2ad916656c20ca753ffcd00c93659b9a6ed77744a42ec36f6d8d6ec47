@@ -1,0 +1,35 @@
+{
+  "name": "css-selector-parser",
+  "version": "1.4.1",
+  "description": "Just a CSS selector parser.",
+  "keywords": [
+    "css",
+    "css selector",
+    "css selector parser"
+  ],
+  "author": {
+    "name": "Marat Dulin",
+    "email": "mdevils@yandex.ru"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/colors": "^1.2.1",
+    "colors": "*",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdevils/css-selector-parser.git"
+  },
+  "main": "./lib/index.js",
+  "typings": "./lib/index",
+  "types": "./lib/index",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node test/test.ts",
+    "benchmark": "ts-node benchmark/benchmark.ts",
+    "prepublishOnly": "yarn build"
+  }
+}

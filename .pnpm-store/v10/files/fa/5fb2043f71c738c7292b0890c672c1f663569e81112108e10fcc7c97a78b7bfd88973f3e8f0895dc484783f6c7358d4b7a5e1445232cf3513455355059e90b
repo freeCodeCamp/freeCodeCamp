@@ -1,0 +1,112 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain Memory
+
+  # Memory pressure level.
+  type PressureLevel extends string
+    enum
+      moderate
+      critical
+
+  # Retruns current DOM object counters.
+  command getDOMCounters
+    returns
+      integer documents
+      integer nodes
+      integer jsEventListeners
+
+  # Retruns DOM object counters after preparing renderer for leak detection.
+  command getDOMCountersForLeakDetection
+    returns
+      # DOM object counters.
+      array of DOMCounter counters
+
+  # Prepares for leak detection by terminating workers, stopping spellcheckers,
+  # dropping non-essential internal caches, running garbage collections, etc.
+  command prepareForLeakDetection
+
+  # Simulate OomIntervention by purging V8 memory.
+  command forciblyPurgeJavaScriptMemory
+
+  # Enable/disable suppressing memory pressure notifications in all processes.
+  command setPressureNotificationsSuppressed
+    parameters
+      # If true, memory pressure notifications will be suppressed.
+      boolean suppressed
+
+  # Simulate a memory pressure notification in all processes.
+  command simulatePressureNotification
+    parameters
+      # Memory pressure level of the notification.
+      PressureLevel level
+
+  # Start collecting native memory profile.
+  command startSampling
+    parameters
+      # Average number of bytes between samples.
+      optional integer samplingInterval
+      # Do not randomize intervals between samples.
+      optional boolean suppressRandomness
+
+  # Stop collecting native memory profile.
+  command stopSampling
+
+  # Retrieve native memory allocations profile
+  # collected since renderer process startup.
+  command getAllTimeSamplingProfile
+    returns
+      SamplingProfile profile
+
+  # Retrieve native memory allocations profile
+  # collected since browser process startup.
+  command getBrowserSamplingProfile
+    returns
+      SamplingProfile profile
+
+  # Retrieve native memory allocations profile collected since last
+  # `startSampling` call.
+  command getSamplingProfile
+    returns
+      SamplingProfile profile
+
+  # Heap profile sample.
+  type SamplingProfileNode extends object
+    properties
+      # Size of the sampled allocation.
+      number size
+      # Total bytes attributed to this sample.
+      number total
+      # Execution stack at the point of allocation.
+      array of string stack
+
+  # Array of heap profile samples.
+  type SamplingProfile extends object
+    properties
+      array of SamplingProfileNode samples
+      array of Module modules
+
+  # Executable module information
+  type Module extends object
+    properties
+      # Name of the module.
+      string name
+      # UUID of the module.
+      string uuid
+      # Base address where the module is loaded into memory. Encoded as a decimal
+      # or hexadecimal (0x prefixed) string.
+      string baseAddress
+      # Size of the module in bytes.
+      number size
+
+  # DOM object counter data.
+  type DOMCounter extends object
+    properties
+      # Object name. Note: object names should be presumed volatile and clients should not expect
+      # the returned names to be consistent across runs.
+      string name
+      # Object count.
+      integer count

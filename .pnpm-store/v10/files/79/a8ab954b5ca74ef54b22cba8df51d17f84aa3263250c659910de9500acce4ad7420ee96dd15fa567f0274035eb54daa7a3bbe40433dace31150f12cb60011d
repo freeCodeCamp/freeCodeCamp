@@ -1,0 +1,28 @@
+{
+  "name": "@parcel/types",
+  "version": "2.8.3",
+  "license": "MIT",
+  "main": "src/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build-ts": "mkdir -p lib && flow-to-ts index.js > lib/index.d.ts && flow-to-ts unsafe.js > lib/unsafe.d.ts && node build-ts.js",
+    "check-ts": "tsc --noEmit lib/index.d.ts"
+  },
+  "dependencies": {
+    "@parcel/cache": "2.8.3",
+    "@parcel/diagnostic": "2.8.3",
+    "@parcel/fs": "2.8.3",
+    "@parcel/package-manager": "2.8.3",
+    "@parcel/source-map": "^2.1.1",
+    "@parcel/workers": "2.8.3",
+    "utility-types": "^3.10.0"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

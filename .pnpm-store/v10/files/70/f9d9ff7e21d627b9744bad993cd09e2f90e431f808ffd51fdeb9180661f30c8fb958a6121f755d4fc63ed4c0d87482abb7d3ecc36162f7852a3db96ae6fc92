@@ -1,0 +1,55 @@
+{
+  "name": "totalist",
+  "version": "3.0.1",
+  "repository": "lukeed/totalist",
+  "description": "A tiny (195B to 220B) utility to recursively list all (total) files in a directory",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./sync": {
+      "types": "./sync/index.d.ts",
+      "import": "./sync/index.mjs",
+      "require": "./sync/index.js"
+    }
+  },
+  "license": "MIT",
+  "files": [
+    "index.d.ts",
+    "dist",
+    "sync"
+  ],
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "keywords": [
+    "list",
+    "recursive",
+    "files",
+    "glob",
+    "tree"
+  ],
+  "scripts": {
+    "build": "bundt",
+    "test": "uvu -r esm test -i fixtures"
+  },
+  "modes": {
+    "sync": "src/sync.js",
+    "default": "src/async.js"
+  },
+  "devDependencies": {
+    "bundt": "1.1.1",
+    "esm": "3.2.25",
+    "uvu": "0.3.3"
+  }
+}

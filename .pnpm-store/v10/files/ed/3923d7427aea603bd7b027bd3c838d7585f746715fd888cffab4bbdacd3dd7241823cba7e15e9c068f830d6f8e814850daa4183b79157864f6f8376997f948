@@ -1,0 +1,53 @@
+{
+  "name": "prompts",
+  "version": "2.4.2",
+  "description": "Lightweight, beautiful and user-friendly prompts",
+  "license": "MIT",
+  "repository": "terkelg/prompts",
+  "main": "index.js",
+  "author": {
+    "name": "Terkel Gjervig",
+    "email": "terkel@terkel.com",
+    "url": "https://terkel.com"
+  },
+  "files": [
+    "lib",
+    "dist",
+    "index.js"
+  ],
+  "scripts": {
+    "start": "node lib/index.js",
+    "build": "babel lib -d dist",
+    "prepublishOnly": "npm run build",
+    "test": "tape test/*.js | tap-spec"
+  },
+  "keywords": [
+    "ui",
+    "prompts",
+    "cli",
+    "prompt",
+    "interface",
+    "command-line",
+    "input",
+    "command",
+    "stdin",
+    "menu",
+    "ask",
+    "interact"
+  ],
+  "dependencies": {
+    "kleur": "^3.0.3",
+    "sisteransi": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "tap-spec": "^2.2.2",
+    "tape": "^4.13.3"
+  },
+  "engines": {
+    "node": ">= 6"
+  }
+}

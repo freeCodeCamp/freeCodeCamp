@@ -1,0 +1,182 @@
+{
+  "name": "rxjs",
+  "version": "6.6.7",
+  "description": "Reactive Extensions for modern JavaScript",
+  "main": "./index.js",
+  "sideEffects": false,
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "nyc": {
+    "include": [
+      "src/*.ts",
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "*.d.ts",
+      "src/**/MiscJSDoc.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  },
+  "lint-staged": {
+    "linters": {
+      "*.@(js)": [
+        "eslint --fix",
+        "git add"
+      ],
+      "*.@(ts)": [
+        "tslint --fix",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "spec-dtslint/**/*.{js,ts}",
+      "api_guard/**/*.{js,ts}"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reactivex/rxjs.git"
+  },
+  "keywords": [
+    "Rx",
+    "RxJS",
+    "ReactiveX",
+    "ReactiveExtensions",
+    "Streams",
+    "Observables",
+    "Observable",
+    "Stream",
+    "ES6",
+    "ES2015"
+  ],
+  "author": "Ben Lesh <ben@benlesh.com>",
+  "contributors": [
+    {
+      "name": "Ben Lesh",
+      "email": "ben@benlesh.com"
+    },
+    {
+      "name": "Paul Taylor",
+      "email": "paul.e.taylor@me.com"
+    },
+    {
+      "name": "Jeff Cross",
+      "email": "crossj@google.com"
+    },
+    {
+      "name": "Matthew Podwysocki",
+      "email": "matthewp@microsoft.com"
+    },
+    {
+      "name": "OJ Kwon",
+      "email": "kwon.ohjoong@gmail.com"
+    },
+    {
+      "name": "Andre Staltz",
+      "email": "andre@staltz.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ReactiveX/RxJS/issues"
+  },
+  "homepage": "https://github.com/ReactiveX/RxJS",
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-optimizer": "0.4.6",
+    "@angular-devkit/schematics": "^0.5.4",
+    "@types/chai": "4.1.2",
+    "@types/lodash": "4.14.102",
+    "@types/mocha": "2.2.48",
+    "@types/node": "9.4.5",
+    "@types/sinon": "4.1.3",
+    "@types/sinon-chai": "2.7.29",
+    "@types/source-map": "^0.5.2",
+    "babel-polyfill": "6.26.0",
+    "benchmark": "2.1.0",
+    "benchpress": "2.0.0-beta.1",
+    "chai": "4.1.2",
+    "check-side-effects": "0.0.20",
+    "color": "3.0.0",
+    "colors": "1.1.2",
+    "commitizen": "2.9.6",
+    "coveralls": "3.0.0",
+    "cross-env": "5.1.3",
+    "cz-conventional-changelog": "1.2.0",
+    "danger": "1.1.0",
+    "dependency-cruiser": "2.13.0",
+    "doctoc": "1.3.0",
+    "dtslint": "0.6.1",
+    "escape-string-regexp": "1.0.5",
+    "esdoc": "0.4.7",
+    "eslint": "4.17.0",
+    "eslint-plugin-jasmine": "^2.10.1",
+    "fs-extra": "5.0.0",
+    "get-folder-size": "1.0.1",
+    "glob": "7.1.2",
+    "gm": "1.23.1",
+    "google-closure-compiler-js": "20170218.0.0",
+    "gzip-size": "4.1.0",
+    "http-server": "0.11.1",
+    "husky": "0.14.3",
+    "klaw-sync": "3.0.2",
+    "lint-staged": "7.1.1",
+    "lodash": "4.17.5",
+    "markdown-doctest": "0.9.1",
+    "minimist": "1.2.0",
+    "mkdirp": "^1.0.4",
+    "mocha": "5.0.0",
+    "mocha-in-sauce": "0.0.1",
+    "npm-run-all": "4.1.2",
+    "nyc": "11.4.1",
+    "opn-cli": "3.1.0",
+    "platform": "1.3.5",
+    "promise": "8.0.1",
+    "protractor": "3.1.1",
+    "rollup": "0.66.6",
+    "rollup-plugin-alias": "1.4.0",
+    "rollup-plugin-inject": "2.0.0",
+    "rollup-plugin-node-resolve": "2.0.0",
+    "rx": "latest",
+    "rxjs": "^5.5.7",
+    "shx": "^0.3.2",
+    "sinon": "4.3.0",
+    "sinon-chai": "2.14.0",
+    "source-map-support": "0.5.3",
+    "symbol-observable": "1.0.1",
+    "systemjs": "^0.21.0",
+    "ts-api-guardian": "^0.5.0",
+    "ts-node": "6.1.0",
+    "tsconfig-paths": "3.2.0",
+    "tslint": "5.9.1",
+    "tslint-etc": "1.2.6",
+    "tslint-no-toplevel-property-access": "0.0.2",
+    "tslint-no-unused-expression-chai": "0.0.3",
+    "typescript": "^3.0.1",
+    "validate-commit-msg": "2.14.0",
+    "webpack": "1.13.1",
+    "xmlhttprequest": "1.8.0"
+  },
+  "engines": {
+    "npm": ">=2.0.0"
+  },
+  "typings": "./index.d.ts",
+  "ng-update": {
+    "migrations": "./migrations/collection.json"
+  },
+  "module": "./_esm5/index.js",
+  "es2015": "./_esm2015/index.js"
+}

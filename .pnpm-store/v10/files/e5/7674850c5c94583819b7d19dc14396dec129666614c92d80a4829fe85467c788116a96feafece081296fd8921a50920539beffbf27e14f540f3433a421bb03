@@ -1,0 +1,68 @@
+{
+  "name": "tsx",
+  "version": "4.21.0",
+  "description": "TypeScript Execute (tsx): Node.js enhanced with esbuild to run TypeScript & ESM files",
+  "keywords": [
+    "cli",
+    "runtime",
+    "node",
+    "cjs",
+    "commonjs",
+    "esm",
+    "typescript",
+    "typescript runner"
+  ],
+  "license": "MIT",
+  "repository": "privatenumber/tsx",
+  "author": {
+    "name": "Hiroki Osame",
+    "email": "hiroki.osame@gmail.com"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "bin": "./dist/cli.mjs",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/loader.mjs",
+    "./patch-repl": "./dist/patch-repl.cjs",
+    "./cjs": "./dist/cjs/index.cjs",
+    "./cjs/api": {
+      "import": {
+        "types": "./dist/cjs/api/index.d.mts",
+        "default": "./dist/cjs/api/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/api/index.d.cts",
+        "default": "./dist/cjs/api/index.cjs"
+      }
+    },
+    "./esm": "./dist/esm/index.mjs",
+    "./esm/api": {
+      "import": {
+        "types": "./dist/esm/api/index.d.mts",
+        "default": "./dist/esm/api/index.mjs"
+      },
+      "require": {
+        "types": "./dist/esm/api/index.d.cts",
+        "default": "./dist/esm/api/index.cjs"
+      }
+    },
+    "./cli": "./dist/cli.mjs",
+    "./suppress-warnings": "./dist/suppress-warnings.cjs",
+    "./preflight": "./dist/preflight.cjs",
+    "./repl": "./dist/repl.mjs"
+  },
+  "homepage": "https://tsx.is",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "esbuild": "~0.27.0",
+    "get-tsconfig": "^4.7.5"
+  },
+  "optionalDependencies": {
+    "fsevents": "~2.3.3"
+  }
+}

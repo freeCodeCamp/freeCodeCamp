@@ -1,0 +1,75 @@
+{
+  "name": "serve-handler",
+  "version": "6.1.3",
+  "description": "The routing foundation of `serve` and static deployments on Now",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "yarn run test-lint && yarn run test-integration",
+    "test-lint": "zeit-eslint --ext .jsx,.js .",
+    "test-integration": "nyc --reporter=html --reporter=text ava test/integration.js",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "lint-staged": "git diff --diff-filter=ACMRT --cached --name-only '*.js' '*.jsx' | xargs zeit-eslint",
+    "build-views": "dottojs -s ./src -d ./src",
+    "prepublish": "yarn run build-views"
+  },
+  "repository": "zeit/serve-handler",
+  "keywords": [
+    "static",
+    "deployment",
+    "server"
+  ],
+  "author": "leo",
+  "license": "MIT",
+  "files": [
+    "src/index.js",
+    "src/glob-slash.js",
+    "src/directory.js",
+    "src/error.js"
+  ],
+  "devDependencies": {
+    "@zeit/eslint-config-node": "0.2.13",
+    "@zeit/git-hooks": "0.1.4",
+    "ava": "2.2.0",
+    "codecov": "3.7.0",
+    "commander": "2.15.1",
+    "dot": "1.1.3",
+    "eslint": "6.1.0",
+    "fs-extra": "6.0.1",
+    "micro": "9.3.2",
+    "node-fetch": "2.1.2",
+    "nyc": "14.1.1",
+    "request": "2.87.0",
+    "sleep-promise": "6.0.0",
+    "test-listen": "1.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@zeit/eslint-config-node"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "src/directory.js",
+      "src/error.js",
+      "test/*"
+    ]
+  },
+  "eslintIgnore": [
+    "error.js",
+    "directory.js",
+    "coverage"
+  ],
+  "git": {
+    "pre-commit": "lint-staged"
+  },
+  "dependencies": {
+    "bytes": "3.0.0",
+    "content-disposition": "0.5.2",
+    "fast-url-parser": "1.1.3",
+    "mime-types": "2.1.18",
+    "minimatch": "3.0.4",
+    "path-is-inside": "1.0.2",
+    "path-to-regexp": "2.2.1",
+    "range-parser": "1.2.0"
+  }
+}

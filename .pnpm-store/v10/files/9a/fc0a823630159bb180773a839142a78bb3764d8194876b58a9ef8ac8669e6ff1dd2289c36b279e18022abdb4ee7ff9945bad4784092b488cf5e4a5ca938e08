@@ -1,0 +1,1 @@
+{"version":3,"file":"next.js","sourceRoot":"","sources":["../../lib/vocabularies/next.ts"],"names":[],"mappings":";;AACA,sEAA8D;AAC9D,oEAA4D;AAC5D,8DAAsD;AAEtD,MAAM,IAAI,GAAe,CAAC,2BAAiB,EAAE,0BAAgB,EAAE,uBAAa,CAAC,CAAA;AAE7E,kBAAe,IAAI,CAAA"}

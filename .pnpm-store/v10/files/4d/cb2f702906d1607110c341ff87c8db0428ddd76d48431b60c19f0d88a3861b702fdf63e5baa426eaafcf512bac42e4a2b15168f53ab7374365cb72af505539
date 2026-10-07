@@ -1,0 +1,40 @@
+{
+  "name": "@algolia/recommend",
+  "version": "4.27.0",
+  "private": false,
+  "description": "The perfect starting point to integrate Algolia Recommend within your JavaScript project.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-javascript.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "jsdelivr": "./dist/recommend.umd.js",
+  "unpkg": "./dist/recommend.umd.js",
+  "browser": {
+    "./index.js": "./dist/recommend.umd.js"
+  },
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test:exports": "node --experimental-modules test/module/is-es-module.mjs && node test/module/is-cjs-module.cjs"
+  },
+  "dependencies": {
+    "@algolia/cache-browser-local-storage": "4.27.0",
+    "@algolia/cache-common": "4.27.0",
+    "@algolia/cache-in-memory": "4.27.0",
+    "@algolia/client-common": "4.27.0",
+    "@algolia/client-search": "4.27.0",
+    "@algolia/logger-common": "4.27.0",
+    "@algolia/logger-console": "4.27.0",
+    "@algolia/requester-browser-xhr": "4.27.0",
+    "@algolia/requester-common": "4.27.0",
+    "@algolia/requester-node-http": "4.27.0",
+    "@algolia/transporter": "4.27.0"
+  }
+}

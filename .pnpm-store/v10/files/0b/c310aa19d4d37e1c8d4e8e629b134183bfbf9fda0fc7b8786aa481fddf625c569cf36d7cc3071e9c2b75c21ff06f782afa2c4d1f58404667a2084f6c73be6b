@@ -1,0 +1,77 @@
+{
+  "name": "gatsby-plugin-webpack-bundle-analyser-v2",
+  "description": "Gatsby plugin with the latest version of [webpack-bundle-analyser](https://github.com/webpack-contrib/webpack-bundle-analyzer) to visualize size of output files with an interactive zoomable treemap.",
+  "version": "1.1.32",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-plugin-webpack-bundle-analyser-v2",
+    "webpack-bundle-analyser",
+    "webpack",
+    "analyser",
+    "bundle"
+  ],
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "eslint src --fix",
+    "pretty": "prettier --write 'src/**/*.js'",
+    "test": "echo 'No test specified'",
+    "clean": "rimraf ./gatsby-node.js",
+    "build": "babel src --out-dir .",
+    "prepare": "yarn clean && cross-env NODE_ENV=production yarn build && husky install",
+    "watch": "babel -w src --out-dir .",
+    "semantic-release": "semantic-release"
+  },
+  "author": "Jimmy Beldone <dev.jimmy.beldone@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/JimmyBeldone/gatsby-plugin-webpack-bundle-analyser-v2/issues"
+  },
+  "private": false,
+  "license": "MIT",
+  "main": "./index.js",
+  "peerDependencies": {
+    "gatsby": "^4.0.0 || ^5.0.0"
+  },
+  "homepage": "https://github.com/JimmyBeldone/gatsby-plugin-webpack-bundle-analyser-v2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JimmyBeldone/gatsby-plugin-webpack-bundle-analyser-v2.git"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.23.2",
+    "webpack-bundle-analyzer": "^4.10.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.23.0",
+    "@babel/core": "7.23.3",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "babel-eslint": "10.1.0",
+    "babel-preset-gatsby-package": "3.12.0",
+    "commitizen": "4.3.0",
+    "cross-env": "7.0.3",
+    "cz-conventional-changelog": "3.3.0",
+    "devmoji": "2.3.0",
+    "eslint": "8.53.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-prettier": "5.0.1",
+    "husky": "8.0.3",
+    "lint-staged": "15.1.0",
+    "prettier": "3.1.0",
+    "rimraf": "5.0.5",
+    "semantic-release": "22.0.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "{src}/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

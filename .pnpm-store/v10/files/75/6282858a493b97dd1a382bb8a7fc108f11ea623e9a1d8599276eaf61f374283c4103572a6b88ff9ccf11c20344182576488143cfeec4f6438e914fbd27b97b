@@ -1,0 +1,112 @@
+{
+  "name": "enquirer",
+  "description": "Stylish, intuitive and user-friendly prompt system. Fast and lightweight enough for small projects, powerful and extensible enough for the most advanced use cases.",
+  "version": "2.4.1",
+  "homepage": "https://github.com/enquirer/enquirer",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)"
+  ],
+  "repository": "enquirer/enquirer",
+  "bugs": {
+    "url": "https://github.com/enquirer/enquirer/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "lib"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.6"
+  },
+  "scripts": {
+    "test": "mocha && tsc -p ./test/types",
+    "cover": "nyc --reporter=text --reporter=html mocha"
+  },
+  "dependencies": {
+    "ansi-colors": "^4.1.1",
+    "strip-ansi": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^8",
+    "gulp-format-md": "^2.0.0",
+    "inquirer": "^6.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "prompts": "^1.2.1",
+    "time-require": "github:jonschlinkert/time-require",
+    "typescript": "^3.1.6"
+  },
+  "keywords": [
+    "answer",
+    "answers",
+    "ask",
+    "base",
+    "cli",
+    "command",
+    "command-line",
+    "confirm",
+    "enquirer",
+    "generator",
+    "generate",
+    "hyper",
+    "input",
+    "inquire",
+    "inquirer",
+    "interface",
+    "iterm",
+    "javascript",
+    "node",
+    "nodejs",
+    "prompt",
+    "prompts",
+    "promptly",
+    "question",
+    "readline",
+    "scaffold",
+    "scaffolding",
+    "scaffolder",
+    "stdin",
+    "stdout",
+    "terminal",
+    "tty",
+    "ui",
+    "yeoman",
+    "yo",
+    "zsh"
+  ],
+  "lintDeps": {
+    "devDependencies": {
+      "files": {
+        "patterns": [
+          "examples/**/*.js",
+          "perf/*.js",
+          "recipes/*.js"
+        ]
+      }
+    }
+  },
+  "verb": {
+    "toc": false,
+    "layout": false,
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "helpers": [
+      "./docs/helpers.js"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "inquirer",
+      "prompt-skeleton"
+    ]
+  }
+}

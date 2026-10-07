@@ -1,0 +1,2 @@
+export declare function format(x: unknown): string;
+//# sourceMappingURL=format.d.ts.map

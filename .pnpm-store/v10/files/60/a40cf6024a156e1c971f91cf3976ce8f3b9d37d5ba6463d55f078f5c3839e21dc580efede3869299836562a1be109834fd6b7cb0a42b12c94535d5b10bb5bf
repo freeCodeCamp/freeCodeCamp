@@ -1,0 +1,8 @@
+{
+  "name": "rxjs/webSocket",
+  "typings": "./index.d.ts",
+  "main": "./index.js",
+  "module": "../_esm5/webSocket/index.js",
+  "es2015": "../_esm2015/webSocket/index.js",
+  "sideEffects": false
+}

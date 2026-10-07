@@ -1,0 +1,45 @@
+# `MD044` - Proper names should have the correct capitalization
+
+Tags: `spelling`
+
+Aliases: `proper-names`
+
+Parameters:
+
+- `code_blocks`: Include code blocks (`boolean`, default `true`)
+- `html_elements`: Include HTML elements (`boolean`, default `true`)
+- `names`: List of proper names (`string[]`, default `[]`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when any of the strings in the `names` array do not have
+the specified capitalization. It can be used to enforce a standard letter case
+for the names of projects and products.
+
+For example, the language "JavaScript" is usually written with both the 'J' and
+'S' capitalized - though sometimes the 's' or 'j' appear in lower-case. To
+enforce the proper capitalization, specify the desired letter case in the
+`names` array:
+
+```json
+[
+    "JavaScript"
+]
+```
+
+Sometimes a proper name is capitalized differently in certain contexts. In such
+cases, add both forms to the `names` array:
+
+```json
+[
+    "GitHub",
+    "github.com"
+]
+```
+
+Set the `code_blocks` parameter to `false` to disable this rule for code blocks
+and spans. Set the `html_elements` parameter to `false` to disable this rule
+for HTML elements and attributes (such as when using a proper name as part of
+a path for `a`/`href` or `img`/`src`).
+
+Rationale: Incorrect capitalization of proper names is usually a mistake.

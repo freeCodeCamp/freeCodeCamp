@@ -1,0 +1,36 @@
+{
+  "name": "pinyin-tone",
+  "version": "2.4.0",
+  "description": "A library for converting pinyin tone numbers into pinyin tone marks.",
+  "main": "index.js",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "test": "mocha && tsc --noEmit"
+  },
+  "keywords": [
+    "pinyin",
+    "mandarin",
+    "tone",
+    "chinese",
+    "convert",
+    "kanji",
+    "hanzi",
+    "hanyu"
+  ],
+  "author": "Futaba Isshiki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrchenguozheng/pinyin-tone.git"
+  },
+  "homepage": "https://github.com/mrchenguozheng/pinyin-tone",
+  "bugs": {
+    "url": "https://github.com/mrchenguozheng/pinyin-tone/issues"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^11.1.0",
+    "typescript": "^5.8.3"
+  }
+}

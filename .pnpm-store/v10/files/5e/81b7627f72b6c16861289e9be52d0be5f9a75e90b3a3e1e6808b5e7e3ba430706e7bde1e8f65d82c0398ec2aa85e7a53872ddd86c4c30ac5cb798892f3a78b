@@ -1,0 +1,78 @@
+{
+    "name": "@types/superagent",
+    "version": "4.1.19",
+    "description": "TypeScript definitions for SuperAgent",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/superagent",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Nico Zelaya",
+            "url": "https://github.com/NicoZelaya",
+            "githubUsername": "NicoZelaya"
+        },
+        {
+            "name": "Michael Ledin",
+            "url": "https://github.com/mxl",
+            "githubUsername": "mxl"
+        },
+        {
+            "name": "Pap Lőrinc",
+            "url": "https://github.com/paplorinc",
+            "githubUsername": "paplorinc"
+        },
+        {
+            "name": "Shrey Jain",
+            "url": "https://github.com/shreyjain1994",
+            "githubUsername": "shreyjain1994"
+        },
+        {
+            "name": "Alec Zopf",
+            "url": "https://github.com/zopf",
+            "githubUsername": "zopf"
+        },
+        {
+            "name": "Adam Haglund",
+            "url": "https://github.com/beeequeue",
+            "githubUsername": "beeequeue"
+        },
+        {
+            "name": "Lukas Elmer",
+            "url": "https://github.com/lukaselmer",
+            "githubUsername": "lukaselmer"
+        },
+        {
+            "name": "Jesse Rogers",
+            "url": "https://github.com/theQuazz",
+            "githubUsername": "theQuazz"
+        },
+        {
+            "name": "Chris Arnesen",
+            "url": "https://github.com/carnesen",
+            "githubUsername": "carnesen"
+        },
+        {
+            "name": "Anders Kindberg",
+            "url": "https://github.com/ghostganz",
+            "githubUsername": "ghostganz"
+        },
+        {
+            "name": "LuckyWind_sck",
+            "url": "https://github.com/LuckyWindsck",
+            "githubUsername": "LuckyWindsck"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/superagent"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/cookiejar": "*",
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "c7f58d0b9c4f8faa48d5d25523e2ce8d6dff13090de08ef537283a016f7b32e4",
+    "typeScriptVersion": "4.5"
+}

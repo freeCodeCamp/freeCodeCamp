@@ -1,0 +1,28 @@
+{
+  "name": "@parcel/runtime-js",
+  "version": "2.8.3",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/JSRuntime.js",
+  "source": "src/JSRuntime.js",
+  "engines": {
+    "node": ">= 12.0.0",
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "@parcel/plugin": "2.8.3",
+    "@parcel/utils": "2.8.3",
+    "nullthrows": "^1.1.1"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

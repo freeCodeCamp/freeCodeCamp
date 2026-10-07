@@ -1,0 +1,735 @@
+@dialects { jsx, ts }
+
+@precedence {
+  typeargs,
+  typeMember,
+  typePrefix,
+  intersectionPrefixed @left,
+  intersection @left,
+  unionPrefixed @left,
+  union @left,
+  typeExtends @right,
+  else @right,
+  member,
+  readonly,
+  newArgs,
+  call,
+  instantiate,
+  taggedTemplate,
+  prefix,
+  postfix,
+  typeof,
+  exp @left,
+  times @left,
+  plus @left,
+  shift @left,
+  loop,
+  rel @left,
+  satisfies,
+  equal @left,
+  bitAnd @left,
+  bitXor @left,
+  bitOr @left,
+  and @left,
+  or @left,
+  ternary @right,
+  assign @right,
+  comma @left,
+  statement @cut,
+  predicate
+}
+
+@top Script { Hashbang? statement* }
+
+@top SingleExpression { expression }
+
+@top SingleClassItem { classItem }
+
+statement[@isGroup=Statement] {
+  ExportDeclaration |
+  ImportDeclaration |
+  ForStatement { kw<"for"> ckw<"await">? (ForSpec | ForInSpec | ForOfSpec) statement } |
+  WhileStatement { kw<"while"> ParenthesizedExpression statement } |
+  WithStatement { kw<"with"> ParenthesizedExpression statement } |
+  DoStatement { kw<"do"> statement kw<"while"> ParenthesizedExpression semi } |
+  IfStatement { kw<"if"> ParenthesizedExpression statement (!else kw<"else"> statement)? } |
+  SwitchStatement { kw<"switch"> ParenthesizedExpression SwitchBody { "{" switchItem* "}" } } |
+  TryStatement {
+    kw<"try"> Block
+    CatchClause { kw<"catch"> ("(" pattern ")")? Block }?
+    FinallyClause { kw<"finally"> Block }?
+  } |
+  ReturnStatement { kw<"return"> (noSemi expression)? semi } |
+  ThrowStatement { kw<"throw"> expression semi } |
+  BreakStatement { kw<"break"> (noSemi Label)? semi } |
+  ContinueStatement { kw<"continue"> (noSemi Label)? semi } |
+  DebuggerStatement { kw<"debugger"> semi } |
+  Block |
+  LabeledStatement { Label ":" statement } |
+  declaration |
+  ExpressionStatement { expression semi } |
+  ";"
+}
+
+ExportDeclaration {
+  kw<"export"> Star (ckw<"as"> (VariableName | String))? ckw<"from"> String semi |
+  kw<"export"> kw<"default"> (FunctionDeclaration | ClassDeclaration | expression semi) |
+  kw<"export"> tskw<"type">? declaration |
+  kw<"export"> tskw<"type">? ExportGroup (ckw<"from"> String)? semi |
+  kw<"export"> "=" expression semi
+}
+
+ExportGroup {
+  "{" commaSep<(VariableName | String | kw<"default">) (ckw<"as"> (VariableName { word } | String))?> "}"
+}
+
+ImportDeclaration {
+  kw<"import"> ckw<"defer">? tskw<"type">? (Star ckw<"as"> VariableDefinition | commaSep<VariableDefinition | ImportGroup>)
+    ckw<"from"> String semi |
+  kw<"import"> ckw<"defer">? String semi
+}
+
+ImportGroup {
+  "{" commaSep<tskw<"type">? (VariableDefinition | (VariableName | String | kw<"default">) ckw<"as"> VariableDefinition)> "}"
+}
+
+ForSpec {
+  "("
+  (VariableDeclaration | expression ";" | ";") expression? ";" expression?
+  ")"
+}
+
+forXSpec<op> {
+  "("
+  (variableDeclarationKeyword pattern | VariableName | MemberExpression | ArrayPattern | ObjectPattern)
+  !loop op expression
+  ")"
+}
+
+ForInSpec { forXSpec<kw<"in">> }
+ForOfSpec { forXSpec<ckw<"of">> }
+
+declaration {
+  FunctionDeclaration |
+  ClassDeclaration |
+  VariableDeclaration |
+  TypeAliasDeclaration |
+  InterfaceDeclaration |
+  EnumDeclaration |
+  NamespaceDeclaration |
+  AmbientDeclaration
+}
+
+FunctionDeclaration {
+  async? !statement kw<"function"> Star? VariableDefinition? functionSignature (Block | semi)
+}
+
+ClassDeclaration {
+  !statement Decorator* tskw<"abstract">? kw<"class"> VariableDefinition TypeParamList?
+  (kw<"extends"> ((VariableName | MemberExpression) !typeargs TypeArgList | expression))?
+  (tskw<"implements"> commaSep1<type>)?
+  ClassBody
+}
+
+classItem { MethodDeclaration | PropertyDeclaration | StaticBlock | ";" }
+
+ClassBody { "{" classItem* "}" }
+
+privacy {
+  @extend[@name=Privacy,@dialect=ts]<word, "public" | "private" | "protected">
+}
+
+privacyArg {
+  @extend[@name=Privacy,@dialect=ts]<identifier, "public" | "private" | "protected">
+}
+
+propModifier {
+  Decorator |
+  tsPkwMod<"declare"> |
+  privacy |
+  pkwMod<"static"> |
+  tsPkwMod<"abstract"> |
+  tsPkwMod<"override">
+}
+
+classPropName { propName | PrivatePropertyDefinition }
+
+MethodDeclaration[group=ClassItem] {
+  propModifier*
+  pkwMod<"async">?
+  (pkwMod<"get"> | pkwMod<"set"> | Star)?
+  classPropName
+  functionSignature
+  (Block | semi)
+}
+
+StaticBlock[group=ClassItem] {
+  pkwMod<"static"> Block
+}
+
+PropertyDeclaration[group=ClassItem] {
+  propModifier*
+  (tsPkwMod<"readonly"> | pkwMod<"accessor">)?
+  classPropName
+  (Optional | LogicOp<"!">)?
+  TypeAnnotation?
+  ("=" expressionNoComma)?
+  semi
+}
+
+variableDeclarationKeyword {
+  kw<"let"> | kw<"var"> | kw<"const"> | ckw<"await">? ckw<"using">
+}
+
+VariableDeclaration {
+  variableDeclarationKeyword commaSep1<patternAssignTyped> semi
+}
+
+TypeAliasDeclaration {
+  tskw<"type"> TypeDefinition TypeParamList? "=" type semi
+}
+
+InterfaceDeclaration {
+  tskw<"interface"> TypeDefinition TypeParamList? (kw<"extends"> commaSep1<type>)? ObjectType
+}
+
+EnumDeclaration {
+  kw<"const">? tskw<"enum"> TypeDefinition EnumBody { "{" commaSep<PropertyName ("=" expressionNoComma)?> "}" }
+}
+
+NamespaceDeclaration {
+  (tskw<"namespace"> | tskw<"module">) VariableDefinition ("." PropertyDefinition)* Block
+}
+
+AmbientDeclaration {
+  tskw<"declare"> (
+    VariableDeclaration |
+    TypeAliasDeclaration |
+    EnumDeclaration |
+    InterfaceDeclaration |
+    NamespaceDeclaration |
+    GlobalDeclaration { tskw<"global"> Block } |
+    ClassDeclaration {
+      tskw<"abstract">? kw<"class"> VariableDefinition TypeParamList?
+      (kw<"extends"> expression)?
+      (tskw<"implements"> commaSep1<type>)?
+      ClassBody { "{" (
+        MethodDeclaration |
+        PropertyDeclaration |
+        IndexSignature semi
+      )* "}" }
+    } |
+    AmbientFunctionDeclaration {
+      async? kw<"function"> Star? VariableDefinition? TypeParamList? ParamList (TypeAnnotation | TypePredicate) semi
+    }
+  )
+}
+
+decoratorExpression {
+  VariableName |
+  MemberExpression { decoratorExpression !member ("." | questionDot) (PropertyName | PrivatePropertyName) } |
+  CallExpression { decoratorExpression !call TypeArgList? questionDot? ArgList } |
+  ParenthesizedExpression
+}
+
+Decorator { "@" decoratorExpression }
+
+pattern { VariableDefinition | ArrayPattern | ObjectPattern }
+
+ArrayPattern { "[" commaSep<("..."? patternAssign)?> ~destructure "]" }
+
+ObjectPattern { "{" commaSep<PatternProperty> ~destructure "}" }
+
+patternAssign {
+  pattern ("=" expressionNoComma)?
+}
+
+TypeAnnotation { ":" type }
+
+TypePredicate {
+  ":" (
+     tskw<"asserts"> (VariableName | kw<"this">) !predicate (tskw<"is"> type)? |
+     (VariableName | kw<"this">) !predicate tskw<"is"> type
+  )
+}
+
+patternAssignTyped {
+  pattern Optional? TypeAnnotation? ("=" expressionNoComma)?
+}
+
+ParamList {
+  "(" commaSep<"..." patternAssignTyped | Decorator* privacyArg? tskw<"readonly">? patternAssignTyped | kw<"this"> TypeAnnotation> ")"
+}
+
+Block {
+  !statement "{" statement* "}"
+}
+
+switchItem {
+  CaseLabel { kw<"case"> expression ":" } |
+  DefaultLabel { kw<"default"> ":" } |
+  statement
+}
+
+expression[@isGroup=Expression] {
+  expressionNoComma | SequenceExpression
+}
+
+SequenceExpression {
+  expressionNoComma !comma ("," expressionNoComma)+
+}
+
+expressionNoComma {
+  Number |
+  String |
+  TemplateString |
+  VariableName |
+  boolean |
+  kw<"this"> |
+  kw<"null"> |
+  kw<"super"> |
+  RegExp |
+  ArrayExpression |
+  ObjectExpression { "{" commaSep<Property> ~destructure "}" } |
+  NewTarget { kw<"new"> "." PropertyName } |
+  NewExpression { kw<"new"> expressionNoComma (!newArgs ArgList)? } |
+  UnaryExpression |
+  YieldExpression |
+  AwaitExpression |
+  ParenthesizedExpression |
+  ClassExpression |
+  FunctionExpression |
+  ArrowFunction |
+  MemberExpression |
+  BinaryExpression |
+  ConditionalExpression { expressionNoComma !ternary questionOp expressionNoComma LogicOp<":"> expressionNoComma } |
+  AssignmentExpression |
+  PostfixExpression { expressionNoComma !postfix (incdec | LogicOp<"!">) } |
+  CallExpression { expressionNoComma !call questionDot? ArgList } |
+  InstantiationExpression { (VariableName | MemberExpression) !instantiate TypeArgList } |
+  TaggedTemplateExpression { expressionNoComma !taggedTemplate TemplateString } |
+  DynamicImport { kw<"import"> "(" expressionNoComma ")" } |
+  ImportMeta { kw<"import"> "." PropertyName } |
+  JSXElement |
+  PrefixCast { tsAngleOpen (type | kw<"const">) ~tsAngle ">" expressionNoComma } |
+  ArrowFunction[@dynamicPrecedence=1] {
+    TypeParamList { tsAngleOpen commaSep<typeParam> ">" } ParamList TypeAnnotation? "=>" (Block | expressionNoComma)
+  }
+}
+
+ParenthesizedExpression { "(" expression ")" }
+
+ArrayExpression {
+  "[" commaSep1<"..."? expressionNoComma | ""> ~destructure "]"
+}
+
+propName { PropertyDefinition | "[" expression "]" ~destructure | Number ~destructure | String ~destructure }
+
+Property {
+  pkwMod<"async">? (pkwMod<"get"> | pkwMod<"set"> | Star)? propName functionSignature Block |
+  propName ~destructure (":" expressionNoComma)? |
+  "..." expressionNoComma
+}
+
+PatternProperty {
+  "..." patternAssign |
+  ((PropertyName | Number | String) ~destructure (":" pattern)? |
+   ("[" expression "]" ~destructure ":" pattern)) ("=" expressionNoComma)?
+}
+
+ClassExpression {
+  kw<"class"> VariableDefinition? (kw<"extends"> expression)? ClassBody
+}
+
+functionSignature { TypeParamList? ParamList (TypeAnnotation | TypePredicate)? }
+
+FunctionExpression {
+  async? kw<"function"> Star? VariableDefinition? functionSignature Block
+}
+
+YieldExpression[@dynamicPrecedence=1] {
+  !prefix ckw<"yield"> Star? expressionNoComma
+}
+
+AwaitExpression[@dynamicPrecedence=1] {
+  !prefix ckw<"await"> expressionNoComma
+}
+
+UnaryExpression {
+  !prefix (kw<"void"> | kw<"typeof"> | kw<"delete"> |
+           LogicOp<"!"> | BitOp<"~"> | incdec | incdecPrefix | plusMin)
+  expressionNoComma
+}
+
+BinaryExpression {
+  expressionNoComma !exp ArithOp<"**"> expressionNoComma |
+  expressionNoComma !times (divide | ArithOp<"%"> | ArithOp<"*">) expressionNoComma |
+  expressionNoComma !plus plusMin expressionNoComma |
+  expressionNoComma !shift BitOp<">>" ">"? | "<<"> expressionNoComma |
+  expressionNoComma !rel (LessThan | CompareOp<"<=" | ">" "="?> | kw<"instanceof">) expressionNoComma |
+  expressionNoComma !satisfies tskw<"satisfies"> type |
+  (expressionNoComma | PrivatePropertyName) !rel ~tsIn kw<"in"> expressionNoComma |
+  expressionNoComma !rel ckw<"as"> (kw<"const"> | type) |
+  expressionNoComma !rel tskw<"satisfies"> type |
+  expressionNoComma !equal CompareOp<"==" "="? | "!=" "="?> expressionNoComma |
+  expressionNoComma !bitOr BitOp { "|" } expressionNoComma |
+  expressionNoComma !bitXor BitOp<"^"> expressionNoComma |
+  expressionNoComma !bitAnd BitOp { "&" } expressionNoComma |
+  expressionNoComma !and LogicOp<"&&"> expressionNoComma |
+  expressionNoComma !or LogicOp<"||" | "??"> expressionNoComma
+}
+
+AssignmentExpression {
+  (VariableName | MemberExpression) !assign UpdateOp<($[+\-/%^] | "*" "*"? | "|" "|"? | "&" "&"? | "<<" | ">>" ">"? | "??") "=">
+    expressionNoComma |
+  (VariableName | MemberExpression | ArrayPattern | ObjectPattern) !assign "=" expressionNoComma
+}
+
+MemberExpression {
+  expressionNoComma !member (("." | questionDot) (PropertyName | PrivatePropertyName) | questionDot? "[" expression "]")
+}
+
+ArgList {
+  "(" commaSep<"..."? expressionNoComma> ")"
+}
+
+ArrowFunction {
+  async? (ParamList { VariableDefinition } | ParamList TypeAnnotation?) "=>" (Block | expressionNoComma)
+}
+
+TypeArgList[@dynamicPrecedence=1] {
+  @extend[@dialect=ts,@name="<"]<LessThan, "<"> commaSep<type> ">"
+}
+
+TypeParamList {
+  "<" commaSep<typeParam> ">"
+}
+
+typeParam { (kw<"in"> | tskw<"out"> | kw<"const">)? TypeDefinition ~tsAngle (kw<"extends"> type)? ("=" type)? }
+
+typeofExpression {
+  MemberExpression { typeofExpression !member (("." | questionDot) PropertyName | "[" expression "]") } |
+  InstantiationExpression { typeofExpression !instantiate TypeArgList } |
+  VariableName
+}
+
+type[@isGroup=Type] {
+  ThisType { kw<"this"> } |
+  LiteralType {
+   plusMin? Number |
+   boolean |
+   String
+  } |
+  TemplateType |
+  NullType { kw<"null"> } |
+  VoidType { kw<"void"> } |
+  TypeofType { kw<"typeof"> typeofExpression } |
+  KeyofType { !typePrefix tskw<"keyof"> type } |
+  UniqueType { !typePrefix tskw<"unique"> type } |
+  ImportType { kw<"import"> "(" String ")" } |
+  InferredType { tskw<"infer"> TypeName } |
+  ParenthesizedType { "(" type ")" } |
+  FunctionSignature { TypeParamList? ParamTypeList "=>" type } |
+  NewSignature { kw<"new"> ParamTypeList "=>" type } |
+  IndexedType |
+  TupleType { "[" commaSep<(Label ":")? type | "..." type> ~destructure "]" } |
+  ArrayType { type noSemiType "[" "]" } |
+  ReadonlyType { tskw<"readonly"> !readonly type } |
+  ObjectType |
+  UnionType {
+    type (!union unionOp type)+ |
+    unionOp type (!unionPrefixed unionOp type)*
+  } |
+  IntersectionType {
+    type (!intersection intersectionOp type)+ |
+    intersectionOp type (!intersectionPrefixed intersectionOp type)*
+  } |
+  ConditionalType { type !typeExtends kw<"extends"> type questionOp ~arrow type LogicOp<":"> type } |
+  ParameterizedType { (TypeName | IndexedType) !typeargs TypeArgList } |
+  TypeName
+}
+
+IndexedType {
+  type !typeMember ("." TypeName | noSemiType "[" type "]")+
+}
+
+ObjectType {
+  "{" (
+    (MethodType |
+     PropertyType |
+     IndexSignature |
+     CallSignature { ParamTypeList (TypeAnnotation | TypePredicate) } |
+     NewSignature[@dynamicPrecedence=1] { @extend[@name=new]<word, "new"> ParamTypeList TypeAnnotation })
+    ("," | semi)
+  )* ~destructure "}"
+}
+
+IndexSignature {
+  (plusMin? tsPkwMod<"readonly">)?
+  "[" PropertyDefinition { identifier } (TypeAnnotation | ~tsIn kw<"in"> type (ckw<"as"> type)?) "]"
+  (plusMin? Optional)?
+  TypeAnnotation
+}
+
+MethodType {
+  pkwMod<"async">?
+  (pkwMod<"get"> | pkwMod<"set"> | Star)?
+  propName
+  (plusMin? Optional)?
+  functionSignature
+}
+
+PropertyType {
+  (plusMin? tsPkwMod<"readonly">)?
+  propName
+  (plusMin? Optional)?
+  TypeAnnotation
+}
+
+ParamTypeList[@name=ParamList] {
+  "(" commaSep<"..."? pattern ~arrow Optional? ~arrow TypeAnnotation? | kw<"this"> TypeAnnotation> ")"
+}
+
+@skip {} {
+  TemplateString[isolate] {
+    templateStart (templateEscape | templateContent | templateExpr)* templateEnd
+  }
+
+  TemplateType[isolate] {
+    templateStart (templateContent | templateType)* templateEnd
+  }
+
+  String[isolate] {
+    '"' (stringContentDouble | Escape)* ('"' | "\n") |
+    "'" (stringContentSingle | Escape)* ("'" | "\n")
+  }
+
+  BlockComment[isolate] { "/*" (blockCommentContent | blockCommentNewline)* blockCommentEnd }
+}
+
+templateExpr[@name=Interpolation,isolate] { InterpolationStart expression? InterpolationEnd }
+
+templateType[@name=Interpolation,isolate] { InterpolationStart type? InterpolationEnd }
+
+@skip {} {
+  JSXElement {
+    JSXSelfClosingTag |
+    (JSXOpenTag | JSXFragmentTag) (JSXText | JSXElement | JSXEscape)* JSXCloseTag
+  }
+}
+
+JSXSelfClosingTag { JSXStartTag jsxElementName jsxAttribute* JSXSelfCloseEndTag }
+
+JSXOpenTag { JSXStartTag jsxElementName jsxAttribute* JSXEndTag }
+
+JSXFragmentTag { JSXStartTag JSXEndTag }
+
+JSXCloseTag { JSXStartCloseTag jsxElementName? JSXEndTag }
+
+jsxElementName {
+  JSXIdentifier |
+  JSXBuiltin { JSXLowerIdentifier } |
+  JSXNamespacedName |
+  JSXMemberExpression
+}
+
+JSXMemberExpression { (JSXMemberExpression | JSXIdentifier | JSXLowerIdentifier) "." (JSXIdentifier | JSXLowerIdentifier) }
+
+JSXNamespacedName { (JSXIdentifier | JSXNamespacedName | JSXLowerIdentifier) ":" (JSXIdentifier | JSXLowerIdentifier) }
+
+jsxAttribute {
+  JSXSpreadAttribute { "{" "..." expression "}" } |
+  JSXAttribute { (JSXIdentifier | JSXNamespacedName | JSXLowerIdentifier) ("=" jsxAttributeValue)? }
+}
+
+jsxAttributeValue {
+  JSXAttributeValue |
+  JSXEscape { "{" expression "}" } |
+  JSXElement
+}
+
+JSXEscape { "{" "..."? expression "}" }
+
+commaSep<content> {
+  "" | content ("," content?)*
+}
+
+commaSep1<content> {
+  content ("," content)*
+}
+
+// Keywords
+
+kw<term> { @specialize[@name={term}]<identifier, term> }
+
+// Contextual keywords
+
+ckw<term> { @extend[@name={term}]<identifier, term> }
+
+tskw<term> { @extend[@name={term},@dialect=ts]<identifier, term> }
+
+async { @extend[@name=async]<identifier, "async"> }
+
+// Contextual keyword in property context
+
+pkwMod<term> { @extend[@name={term}]<word, term> }
+
+tsPkwMod<term> { @extend[@name={term},@dialect=ts]<word, term> }
+
+semi { ";" | insertSemi }
+
+boolean { @specialize[@name=BooleanLiteral]<identifier, "true" | "false"> }
+
+Star { "*" }
+
+VariableName { identifier ~arrow }
+
+VariableDefinition { identifier ~arrow }
+
+TypeDefinition { identifier }
+
+TypeName { identifier ~arrow }
+
+Label { identifier }
+
+PropertyName { word ~propName }
+
+PropertyDefinition { word ~propName }
+
+PrivatePropertyName { privateIdentifier }
+
+PrivatePropertyDefinition { privateIdentifier }
+
+Optional { "?" }
+
+questionOp[@name=LogicOp] { "?" }
+
+unionOp[@name=LogicOp] { "|" }
+
+plusMin { ArithOp<"+" | "-"> }
+
+intersectionOp[@name=LogicOp] { "&" }
+
+@skip { spaces | newline | LineComment | BlockComment }
+
+@context trackNewline from "./tokens.js"
+
+@external tokens noSemicolon from "./tokens" { noSemi }
+
+@external tokens noSemicolonType from "./tokens" { noSemiType }
+
+@external tokens operatorToken from "./tokens" {
+ incdec[@name=ArithOp],
+ incdecPrefix[@name=ArithOp]
+ questionDot[@name="?."]
+}
+
+@external tokens jsx from "./tokens" { JSXStartTag }
+
+@local tokens {
+  InterpolationStart[closedBy=InterpolationEnd] { "${" }
+  templateEnd { "`" }
+  templateEscape[@name=Escape] { Escape }
+  @else templateContent
+}
+
+@local tokens {
+  blockCommentEnd { "*/" }
+  blockCommentNewline { "\n" }
+  @else blockCommentContent
+}
+
+@tokens {
+  spaces[@export] { $[\u0009 \u000b\u00a0\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]+ }
+  newline[@export] { $[\r\n\u2028\u2029] }
+
+  LineComment[isolate] { "//" ![\n]* }
+
+  Hashbang { "#!" ![\n]* }
+
+  divide[@name=ArithOp] { "/" }
+
+  @precedence { "/*", LineComment, divide }
+
+  @precedence { "/*", LineComment, RegExp }
+
+  identifierChar { @asciiLetter | $[_$\u{a1}-\u{10ffff}] }
+
+  word { identifierChar (identifierChar | @digit)* }
+
+  identifier { word }
+
+  privateIdentifier { "#" word }
+
+  @precedence { spaces, newline, identifier }
+
+  @precedence { spaces, newline, JSXIdentifier, JSXLowerIdentifier }
+
+  @precedence { spaces, newline, word }
+
+  hex { @digit | $[a-fA-F] }
+
+  Number {
+    (@digit ("_" | @digit)* ("." ("_" | @digit)*)? | "." @digit ("_" | @digit)*)
+      (("e" | "E") ("+" | "-")? ("_" | @digit)+)? |
+    @digit ("_" | @digit)* "n" |
+    "0x" (hex | "_")+ "n"? |
+    "0b" $[01_]+ "n"? |
+    "0o" $[0-7_]+ "n"?
+  }
+
+  @precedence { Number "." }
+
+  Escape {
+    "\\" ("x" hex hex | "u" ("{" hex+ "}" | hex hex hex hex) | ![xu])
+  }
+
+  stringContentSingle { ![\\\n']+ }
+
+  stringContentDouble { ![\\\n"]+ }
+
+  templateStart { "`" }
+
+  InterpolationEnd[openedBy=InterpolationStart] { "}" }
+
+  ArithOp<expr> { expr }
+  LogicOp<expr> { expr }
+  BitOp<expr> { expr }
+  CompareOp<expr> { expr }
+  UpdateOp<expr> { expr }
+
+  @precedence { "*", ArithOp }
+
+  RegExp[isolate] { "/" (![/\\\n[] | "\\" ![\n] | "[" (![\n\\\]] | "\\" ![\n])* "]")+ ("/" $[dgimsuvy]*)? }
+
+  LessThan[@name=CompareOp] { "<" }
+
+  "="[@name=Equals]
+  "..."[@name=Spread]
+  "=>"[@name=Arrow]
+
+  "(" ")" "[" "]" "{" "}" "<" ">"
+
+  "." "," ";" ":" "@"
+
+  JSXIdentifier { $[A-Z_$\u{a1}-\u{10ffff}] (identifierChar | @digit | "-")* }
+  JSXLowerIdentifier[@name=JSXIdentifier] { $[a-z] (identifierChar | @digit | "-")* }
+
+  JSXAttributeValue { '"' !["]* '"' | "'" ![']* "'" }
+
+  JSXStartCloseTag { "</" }
+
+  JSXEndTag { ">" }
+
+  JSXSelfCloseEndTag { "/>" }
+
+  JSXText { ![<{]+ }
+
+  tsAngleOpen[@dialect=ts,@name="<"] { "<" }
+}
+
+@external tokens insertSemicolon from "./tokens" { insertSemi }
+
+@external propSource jsHighlight from "./highlight"
+
+@detectDelim

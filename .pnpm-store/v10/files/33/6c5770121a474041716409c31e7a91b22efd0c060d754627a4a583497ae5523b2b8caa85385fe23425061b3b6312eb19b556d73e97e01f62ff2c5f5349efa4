@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_object_without_properties.cjs",
+    "module": "../../esm/_object_without_properties.js"
+}

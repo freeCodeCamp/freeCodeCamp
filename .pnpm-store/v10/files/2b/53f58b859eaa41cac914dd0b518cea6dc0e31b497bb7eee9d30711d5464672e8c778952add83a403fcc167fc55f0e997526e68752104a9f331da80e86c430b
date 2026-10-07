@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.src.json",
+  "compilerOptions": {
+    "composite": false
+  }
+}

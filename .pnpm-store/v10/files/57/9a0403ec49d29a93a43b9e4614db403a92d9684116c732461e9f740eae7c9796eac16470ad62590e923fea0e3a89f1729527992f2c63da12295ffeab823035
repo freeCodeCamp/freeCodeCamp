@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node /workspaces/nanoid/test/check-versions.js)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(node --version)",
+      "Bash(node --experimental-strip-types test/check-prebuild.js)",
+      "Bash(node --experimental-strip-types test/update-prebuild.js)",
+      "Bash(node test/check-versions.js)",
+      "Bash(node bin/nanoid.js --version)",
+      "Bash(node bin/nanoid.js -s 10)"
+    ]
+  }
+}

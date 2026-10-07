@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/removeEventListener",
+  "private": true,
+  "main": "../cjs/removeEventListener.js",
+  "module": "../esm/removeEventListener.js",
+  "types": "../esm/removeEventListener.d.ts"
+}

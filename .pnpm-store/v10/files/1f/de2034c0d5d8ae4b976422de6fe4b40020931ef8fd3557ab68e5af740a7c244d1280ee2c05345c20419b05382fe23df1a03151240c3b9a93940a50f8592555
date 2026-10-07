@@ -1,0 +1,165 @@
+{
+  "name": "eslint-plugin-jest",
+  "version": "25.7.0",
+  "description": "Eslint rules for Jest",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "repository": "jest-community/eslint-plugin-jest",
+  "license": "MIT",
+  "author": {
+    "name": "Jonathan Kim",
+    "email": "hello@jkimbo.com",
+    "url": "jkimbo.com"
+  },
+  "main": "lib/",
+  "files": [
+    "docs/",
+    "lib/"
+  ],
+  "scripts": {
+    "build": "babel --extensions .js,.ts src --out-dir lib --copy-files && rimraf lib/__tests__ 'lib/**/__tests__'",
+    "lint": "eslint . --ignore-pattern '!.eslintrc.js' --ext js,ts",
+    "prepack": "rimraf lib && yarn build",
+    "prettier:check": "prettier --check 'docs/**/*.md' README.md '.github/**' package.json tsconfig.json src/globals.json .yarnrc.yml",
+    "prettier:write": "prettier --write 'docs/**/*.md' README.md '.github/**' package.json tsconfig.json src/globals.json .yarnrc.yml",
+    "test": "jest",
+    "tools:regenerate-docs": "ts-node -T tools/regenerate-docs",
+    "typecheck": "tsc -p .",
+    "_postinstall": "is-ci || husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix",
+    "*.{md,json,yml}": "prettier --write"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "endOfLine": "auto",
+    "proseWrap": "always",
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "projects": [
+      {
+        "displayName": "test",
+        "moduleNameMapper": {
+          "eslint/use-at-your-own-risk": "eslint/lib/unsupported-api.js"
+        },
+        "testPathIgnorePatterns": [
+          "<rootDir>/lib/.*",
+          "<rootDir>/src/rules/__tests__/fixtures/*",
+          "<rootDir>/src/rules/__tests__/test-utils.ts"
+        ]
+      },
+      {
+        "displayName": "lint",
+        "runner": "jest-runner-eslint",
+        "testMatch": [
+          "<rootDir>/**/*.{js,ts}"
+        ],
+        "testPathIgnorePatterns": [
+          "<rootDir>/lib/.*"
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "@typescript-eslint/experimental-utils": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^16.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@schemastore/package": "^0.0.6",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
+    "@types/dedent": "^0.7.0",
+    "@types/jest": "^27.0.0",
+    "@types/node": "^16.0.0",
+    "@types/prettier": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "babel-jest": "^27.0.0",
+    "babel-plugin-replace-ts-export-assignment": "^0.0.2",
+    "dedent": "^0.7.0",
+    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-eslint-comments": "^3.1.2",
+    "eslint-plugin-eslint-config": "^2.0.0",
+    "eslint-plugin-eslint-plugin": "^4.0.1",
+    "eslint-plugin-import": "^2.25.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-remote-tester": "^2.1.0",
+    "eslint-remote-tester-repositories": "^0.0.3",
+    "husky": "^7.0.2",
+    "is-ci": "^3.0.0",
+    "jest": "^27.0.0",
+    "jest-runner-eslint": "^1.0.0",
+    "lint-staged": "^12.0.0",
+    "pinst": "^2.0.0",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.0",
+    "semantic-release": "^18.0.0",
+    "semver": "^7.3.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.0.0 || ^5.0.0",
+    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "jest": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
+  },
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "next",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "resolutions": {
+    "@typescript-eslint/experimental-utils": "^5.0.0"
+  },
+  "packageManager": "yarn@3.1.1"
+}

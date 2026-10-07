@@ -1,0 +1,37 @@
+# `MD035` - Horizontal rule style
+
+Tags: `hr`
+
+Aliases: `hr-style`
+
+Parameters:
+
+- `style`: Horizontal rule style (`string`, default `consistent`)
+
+This rule is triggered when inconsistent styles of horizontal rules are used
+in the document:
+
+```markdown
+---
+
+- - -
+
+***
+
+* * *
+
+****
+```
+
+To fix this, use the same horizontal rule everywhere:
+
+```markdown
+---
+
+---
+```
+
+The configured style can ensure all horizontal rules use a specific string or it
+can ensure all horizontal rules match the first horizontal rule (`consistent`).
+
+Rationale: Consistent formatting makes it easier to understand a document.

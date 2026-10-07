@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/PubSub.js",
+  "module": "../dist/esm/PubSub.js",
+  "types": "../dist/dts/PubSub.d.ts"
+}

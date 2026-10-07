@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/FiberId.js",
+  "module": "../dist/esm/FiberId.js",
+  "types": "../dist/dts/FiberId.d.ts"
+}

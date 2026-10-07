@@ -1,0 +1,23 @@
+{
+  "name": "@webassemblyjs/leb128",
+  "version": "1.13.2",
+  "description": "LEB128 decoder and encoder",
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xtuc/webassemblyjs.git",
+    "directory": "packages/leb128"
+  },
+  "dependencies": {
+    "@xtuc/long": "4.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "897aeb784f042a46a00626f1d1cca96159aa5db3"
+}

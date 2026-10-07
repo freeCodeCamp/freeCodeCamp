@@ -1,0 +1,64 @@
+{
+  "name": "human-signals",
+  "version": "2.1.0",
+  "main": "build/src/main.js",
+  "files": [
+    "build/src",
+    "!~"
+  ],
+  "scripts": {
+    "test": "gulp test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "gulp check --full"
+    }
+  },
+  "description": "Human-friendly process signals",
+  "keywords": [
+    "signal",
+    "signals",
+    "handlers",
+    "error-handling",
+    "errors",
+    "interrupts",
+    "sigterm",
+    "sigint",
+    "irq",
+    "process",
+    "exit",
+    "exit-code",
+    "status",
+    "operating-system",
+    "es6",
+    "javascript",
+    "linux",
+    "macos",
+    "windows",
+    "nodejs"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://git.io/JeluP",
+  "repository": "ehmicky/human-signals",
+  "bugs": {
+    "url": "https://github.com/ehmicky/human-signals/issues"
+  },
+  "author": "ehmicky <ehmicky@gmail.com> (https://github.com/ehmicky)",
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "types": "build/src/main.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@ehmicky/dev-tasks": "^0.31.9",
+    "ajv": "^6.12.0",
+    "ava": "^3.5.0",
+    "gulp": "^4.0.2",
+    "husky": "^4.2.3",
+    "test-each": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=10.17.0"
+  }
+}

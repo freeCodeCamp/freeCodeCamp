@@ -1,0 +1,22 @@
+{
+  "name": "@algolia/client-common",
+  "version": "4.27.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/algolia/algoliasearch-client-javascript.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "dist/client-common.esm.js",
+  "types": "dist/client-common.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "dependencies": {
+    "@algolia/requester-common": "4.27.0",
+    "@algolia/transporter": "4.27.0"
+  }
+}

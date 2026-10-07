@@ -1,0 +1,5 @@
+import * as helpers from "../../helpers/lib";
+declare global {
+    var __helpers: typeof helpers;
+}
+//# sourceMappingURL=python-test-evaluator.d.ts.map

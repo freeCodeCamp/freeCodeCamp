@@ -1,0 +1,25 @@
+{
+    "$id": "streamConfig.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "border": {
+            "$ref": "shared.json#/definitions/borders"
+        },
+        "columns": {
+            "$ref": "shared.json#/definitions/columns"
+        },
+        "columnDefault": {
+            "$ref": "shared.json#/definitions/column"
+        },
+        "columnCount": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "drawVerticalLine": {
+            "typeof": "function"
+        }
+    },
+    "required": ["columnDefault", "columnCount"],
+    "additionalProperties": false
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"ModuleVersion.js","names":["internal","getCurrentVersion","setCurrentVersion"],"sources":["../../src/ModuleVersion.ts"],"sourcesContent":[null],"mappings":"AAAA;;;;;AAKA,OAAO,KAAKA,QAAQ,MAAM,uBAAuB;AAEjD;;;;AAIA,OAAO,MAAMC,iBAAiB,GAAiBD,QAAQ,CAACC,iBAAiB;AAEzE;;;;AAIA,OAAO,MAAMC,iBAAiB,GAA8BF,QAAQ,CAACE,iBAAiB","ignoreList":[]}

@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/offset",
+  "private": true,
+  "main": "../cjs/offset.js",
+  "module": "../esm/offset.js",
+  "types": "../esm/offset.d.ts"
+}

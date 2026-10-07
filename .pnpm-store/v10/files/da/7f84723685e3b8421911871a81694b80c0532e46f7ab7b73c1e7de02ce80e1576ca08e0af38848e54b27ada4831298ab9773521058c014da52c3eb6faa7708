@@ -1,0 +1,11 @@
+{
+  "name": "webpack-theme-component-shadowing",
+  "version": "1.0.0",
+  "description": "An internal Gatsby plugin which handles configuring webpack to ensure theme components fall back from the user's site to theme modules.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Biscardi <chris@christopherbiscardi.com>",
+  "license": "MIT"
+}

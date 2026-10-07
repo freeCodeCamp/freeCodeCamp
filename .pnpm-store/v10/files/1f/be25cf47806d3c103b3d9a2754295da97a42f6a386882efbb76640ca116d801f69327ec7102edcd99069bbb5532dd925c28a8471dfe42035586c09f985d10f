@@ -1,0 +1,102 @@
+{
+  "name": "@vitest/utils",
+  "type": "module",
+  "version": "4.1.5",
+  "description": "Shared Vitest utility functions",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://github.com/vitest-dev/vitest/tree/main/packages/utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./diff": {
+      "types": "./dist/diff.d.ts",
+      "default": "./dist/diff.js"
+    },
+    "./resolver": {
+      "types": "./dist/resolver.d.ts",
+      "default": "./dist/resolver.js"
+    },
+    "./error": {
+      "types": "./dist/error.d.ts",
+      "default": "./dist/error.js"
+    },
+    "./helpers": {
+      "types": "./dist/helpers.d.ts",
+      "default": "./dist/helpers.js"
+    },
+    "./offset": {
+      "types": "./dist/offset.d.ts",
+      "default": "./dist/offset.js"
+    },
+    "./constants": {
+      "types": "./dist/constants.d.ts",
+      "default": "./dist/constants.js"
+    },
+    "./timers": {
+      "types": "./dist/timers.d.ts",
+      "default": "./dist/timers.js"
+    },
+    "./display": {
+      "types": "./dist/display.d.ts",
+      "default": "./dist/display.js"
+    },
+    "./source-map": {
+      "types": "./dist/source-map.d.ts",
+      "default": "./dist/source-map.js"
+    },
+    "./source-map/node": {
+      "types": "./dist/source-map/node.d.ts",
+      "default": "./dist/source-map/node.js"
+    },
+    "./serialize": {
+      "types": "./dist/serialize.d.ts",
+      "default": "./dist/serialize.js"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "source-map": [
+        "dist/source-map.d.ts"
+      ],
+      "source-map/node": [
+        "dist/source-map/node.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "dependencies": {
+    "convert-source-map": "^2.0.0",
+    "tinyrainbow": "^3.1.0",
+    "@vitest/pretty-format": "4.1.5"
+  },
+  "devDependencies": {
+    "@jridgewell/trace-mapping": "0.3.31",
+    "@types/convert-source-map": "^2.0.3",
+    "@types/estree": "^1.0.8",
+    "diff-sequences": "^29.6.3",
+    "loupe": "^3.2.1"
+  },
+  "scripts": {
+    "build": "premove dist && rollup -c",
+    "dev": "rollup -c --watch"
+  }
+}

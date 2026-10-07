@@ -1,0 +1,1 @@
+{"version":3,"file":"dependentSchemas.js","sourceRoot":"","sources":["../../../lib/vocabularies/applicator/dependentSchemas.ts"],"names":[],"mappings":";;AACA,iDAAiD;AAEjD,MAAM,GAAG,GAA0B;IACjC,OAAO,EAAE,kBAAkB;IAC3B,IAAI,EAAE,QAAQ;IACd,UAAU,EAAE,QAAQ;IACpB,IAAI,EAAE,CAAC,GAAG,EAAE,EAAE,CAAC,IAAA,iCAAkB,EAAC,GAAG,CAAC;CACvC,CAAA;AAED,kBAAe,GAAG,CAAA"}

@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/subYears/index.js",
+  "typings": "../typings.d.ts"
+}

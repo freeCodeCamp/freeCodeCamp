@@ -1,0 +1,1 @@
+{"version":3,"file":"dummy.js","names":["a"],"sources":["../dummy.js"],"sourcesContent":["// Dummy file to work around a webpack hot reloading bug.\nexport const a = 1\n"],"mappings":";;;;AAAA;AACO,MAAMA,CAAC,GAAG,CAAC;AAAA"}

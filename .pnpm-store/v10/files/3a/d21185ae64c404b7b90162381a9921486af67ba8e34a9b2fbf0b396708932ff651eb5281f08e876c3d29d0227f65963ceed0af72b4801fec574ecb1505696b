@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/index.ts"],"names":[],"mappings":";;;AAAA,uCAAiC;AAEpB,QAAA,IAAI,GAAG,IAAI,GAAG,CAAC,cAAI,CAAC,GAAG,CAAC,CAAC,GAAG,EAAE,EAAE,CAAC,GAAG,CAAC,WAAW,EAAE,CAAC,CAAC,CAAC","sourcesContent":["import { TLDS } from './tlds.js';\n\nexport const tlds = new Set(TLDS.map((tld) => tld.toLowerCase()));\n"]}

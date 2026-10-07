@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/locale/ar-MA/index.js",
+  "typings": "../../typings.d.ts"
+}

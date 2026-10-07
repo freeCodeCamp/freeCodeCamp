@@ -1,0 +1,39 @@
+{
+	"name": "spdx-license-ids",
+	"version": "3.0.15",
+	"description": "A list of SPDX license identifiers",
+	"repository": "jslicense/spdx-license-ids",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"license": "CC0-1.0",
+	"scripts": {
+		"build": "node build.js",
+		"pretest": "eslint .",
+		"latest": "node latest.js",
+		"test": "node test.js"
+	},
+	"files": [
+		"deprecated.json",
+		"index.json"
+	],
+	"keywords": [
+		"spdx",
+		"license",
+		"licenses",
+		"id",
+		"identifier",
+		"identifiers",
+		"json",
+		"array",
+		"oss"
+	],
+	"devDependencies": {
+		"@shinnn/eslint-config": "^7.0.0",
+		"eslint": "^8.49.0",
+		"eslint-formatter-codeframe": "^7.32.1",
+		"rmfr": "^2.0.0",
+		"tape": "^5.6.6"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn"
+	}
+}

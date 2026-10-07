@@ -1,0 +1,7 @@
+{
+  "name": "signedsource",
+  "version": "1.0.0",
+  "description": "This package exports utilities to sign and verify generated files.",
+  "main": "index.js",
+  "license": "BSD-3-Clause"
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"constants.js","sources":["../../src/constants.ts"],"sourcesContent":["export const DEFAULT_ENVIRONMENT = 'production';\nexport const DEV_ENVIRONMENT = 'development';\n"],"names":[],"mappings":"AAAO,MAAM,mBAAA,GAAsB;AAC5B,MAAM,eAAA,GAAkB;;;;"}

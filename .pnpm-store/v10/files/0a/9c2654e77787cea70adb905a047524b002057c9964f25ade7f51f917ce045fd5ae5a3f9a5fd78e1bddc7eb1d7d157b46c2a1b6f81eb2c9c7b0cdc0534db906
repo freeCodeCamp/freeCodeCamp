@@ -1,0 +1,83 @@
+"use strict";
+/*
+ * Copyright The OpenTelemetry Authors
+ * SPDX-License-Identifier: Apache-2.0
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.diagLogLevelFromString = exports.BindOnceFuture = exports.urlMatches = exports.isUrlIgnored = exports.callWithTimeout = exports.TimeoutError = exports.merge = exports.TraceState = exports.unsuppressTracing = exports.suppressTracing = exports.isTracingSuppressed = exports.setRPCMetadata = exports.getRPCMetadata = exports.deleteRPCMetadata = exports.RPCType = exports.parseTraceParent = exports.W3CTraceContextPropagator = exports.TRACE_STATE_HEADER = exports.TRACE_PARENT_HEADER = exports.CompositePropagator = exports.otperformance = exports.getStringListFromEnv = exports.getNumberFromEnv = exports.getBooleanFromEnv = exports.getStringFromEnv = exports._globalThis = exports.SDK_INFO = exports.parseKeyPairsIntoRecord = exports.ExportResultCode = exports.unrefTimer = exports.timeInputToHrTime = exports.millisToHrTime = exports.isTimeInputHrTime = exports.isTimeInput = exports.hrTimeToTimeStamp = exports.hrTimeToSeconds = exports.hrTimeToNanoseconds = exports.hrTimeToMilliseconds = exports.hrTimeToMicroseconds = exports.hrTimeDuration = exports.hrTime = exports.getTimeOrigin = exports.addHrTimes = exports.loggingErrorHandler = exports.setGlobalErrorHandler = exports.globalErrorHandler = exports.sanitizeAttributes = exports.isAttributeValue = exports.AnchoredClock = exports.W3CBaggagePropagator = void 0;
+exports.internal = void 0;
+var W3CBaggagePropagator_1 = require("./baggage/propagation/W3CBaggagePropagator");
+Object.defineProperty(exports, "W3CBaggagePropagator", { enumerable: true, get: function () { return W3CBaggagePropagator_1.W3CBaggagePropagator; } });
+var anchored_clock_1 = require("./common/anchored-clock");
+Object.defineProperty(exports, "AnchoredClock", { enumerable: true, get: function () { return anchored_clock_1.AnchoredClock; } });
+var attributes_1 = require("./common/attributes");
+Object.defineProperty(exports, "isAttributeValue", { enumerable: true, get: function () { return attributes_1.isAttributeValue; } });
+Object.defineProperty(exports, "sanitizeAttributes", { enumerable: true, get: function () { return attributes_1.sanitizeAttributes; } });
+var global_error_handler_1 = require("./common/global-error-handler");
+Object.defineProperty(exports, "globalErrorHandler", { enumerable: true, get: function () { return global_error_handler_1.globalErrorHandler; } });
+Object.defineProperty(exports, "setGlobalErrorHandler", { enumerable: true, get: function () { return global_error_handler_1.setGlobalErrorHandler; } });
+var logging_error_handler_1 = require("./common/logging-error-handler");
+Object.defineProperty(exports, "loggingErrorHandler", { enumerable: true, get: function () { return logging_error_handler_1.loggingErrorHandler; } });
+var time_1 = require("./common/time");
+Object.defineProperty(exports, "addHrTimes", { enumerable: true, get: function () { return time_1.addHrTimes; } });
+Object.defineProperty(exports, "getTimeOrigin", { enumerable: true, get: function () { return time_1.getTimeOrigin; } });
+Object.defineProperty(exports, "hrTime", { enumerable: true, get: function () { return time_1.hrTime; } });
+Object.defineProperty(exports, "hrTimeDuration", { enumerable: true, get: function () { return time_1.hrTimeDuration; } });
+Object.defineProperty(exports, "hrTimeToMicroseconds", { enumerable: true, get: function () { return time_1.hrTimeToMicroseconds; } });
+Object.defineProperty(exports, "hrTimeToMilliseconds", { enumerable: true, get: function () { return time_1.hrTimeToMilliseconds; } });
+Object.defineProperty(exports, "hrTimeToNanoseconds", { enumerable: true, get: function () { return time_1.hrTimeToNanoseconds; } });
+Object.defineProperty(exports, "hrTimeToSeconds", { enumerable: true, get: function () { return time_1.hrTimeToSeconds; } });
+Object.defineProperty(exports, "hrTimeToTimeStamp", { enumerable: true, get: function () { return time_1.hrTimeToTimeStamp; } });
+Object.defineProperty(exports, "isTimeInput", { enumerable: true, get: function () { return time_1.isTimeInput; } });
+Object.defineProperty(exports, "isTimeInputHrTime", { enumerable: true, get: function () { return time_1.isTimeInputHrTime; } });
+Object.defineProperty(exports, "millisToHrTime", { enumerable: true, get: function () { return time_1.millisToHrTime; } });
+Object.defineProperty(exports, "timeInputToHrTime", { enumerable: true, get: function () { return time_1.timeInputToHrTime; } });
+var timer_util_1 = require("./common/timer-util");
+Object.defineProperty(exports, "unrefTimer", { enumerable: true, get: function () { return timer_util_1.unrefTimer; } });
+var ExportResult_1 = require("./ExportResult");
+Object.defineProperty(exports, "ExportResultCode", { enumerable: true, get: function () { return ExportResult_1.ExportResultCode; } });
+var utils_1 = require("./baggage/utils");
+Object.defineProperty(exports, "parseKeyPairsIntoRecord", { enumerable: true, get: function () { return utils_1.parseKeyPairsIntoRecord; } });
+var platform_1 = require("./platform");
+Object.defineProperty(exports, "SDK_INFO", { enumerable: true, get: function () { return platform_1.SDK_INFO; } });
+Object.defineProperty(exports, "_globalThis", { enumerable: true, get: function () { return platform_1._globalThis; } });
+Object.defineProperty(exports, "getStringFromEnv", { enumerable: true, get: function () { return platform_1.getStringFromEnv; } });
+Object.defineProperty(exports, "getBooleanFromEnv", { enumerable: true, get: function () { return platform_1.getBooleanFromEnv; } });
+Object.defineProperty(exports, "getNumberFromEnv", { enumerable: true, get: function () { return platform_1.getNumberFromEnv; } });
+Object.defineProperty(exports, "getStringListFromEnv", { enumerable: true, get: function () { return platform_1.getStringListFromEnv; } });
+Object.defineProperty(exports, "otperformance", { enumerable: true, get: function () { return platform_1.otperformance; } });
+var composite_1 = require("./propagation/composite");
+Object.defineProperty(exports, "CompositePropagator", { enumerable: true, get: function () { return composite_1.CompositePropagator; } });
+var W3CTraceContextPropagator_1 = require("./trace/W3CTraceContextPropagator");
+Object.defineProperty(exports, "TRACE_PARENT_HEADER", { enumerable: true, get: function () { return W3CTraceContextPropagator_1.TRACE_PARENT_HEADER; } });
+Object.defineProperty(exports, "TRACE_STATE_HEADER", { enumerable: true, get: function () { return W3CTraceContextPropagator_1.TRACE_STATE_HEADER; } });
+Object.defineProperty(exports, "W3CTraceContextPropagator", { enumerable: true, get: function () { return W3CTraceContextPropagator_1.W3CTraceContextPropagator; } });
+Object.defineProperty(exports, "parseTraceParent", { enumerable: true, get: function () { return W3CTraceContextPropagator_1.parseTraceParent; } });
+var rpc_metadata_1 = require("./trace/rpc-metadata");
+Object.defineProperty(exports, "RPCType", { enumerable: true, get: function () { return rpc_metadata_1.RPCType; } });
+Object.defineProperty(exports, "deleteRPCMetadata", { enumerable: true, get: function () { return rpc_metadata_1.deleteRPCMetadata; } });
+Object.defineProperty(exports, "getRPCMetadata", { enumerable: true, get: function () { return rpc_metadata_1.getRPCMetadata; } });
+Object.defineProperty(exports, "setRPCMetadata", { enumerable: true, get: function () { return rpc_metadata_1.setRPCMetadata; } });
+var suppress_tracing_1 = require("./trace/suppress-tracing");
+Object.defineProperty(exports, "isTracingSuppressed", { enumerable: true, get: function () { return suppress_tracing_1.isTracingSuppressed; } });
+Object.defineProperty(exports, "suppressTracing", { enumerable: true, get: function () { return suppress_tracing_1.suppressTracing; } });
+Object.defineProperty(exports, "unsuppressTracing", { enumerable: true, get: function () { return suppress_tracing_1.unsuppressTracing; } });
+var TraceState_1 = require("./trace/TraceState");
+Object.defineProperty(exports, "TraceState", { enumerable: true, get: function () { return TraceState_1.TraceState; } });
+var merge_1 = require("./utils/merge");
+Object.defineProperty(exports, "merge", { enumerable: true, get: function () { return merge_1.merge; } });
+var timeout_1 = require("./utils/timeout");
+Object.defineProperty(exports, "TimeoutError", { enumerable: true, get: function () { return timeout_1.TimeoutError; } });
+Object.defineProperty(exports, "callWithTimeout", { enumerable: true, get: function () { return timeout_1.callWithTimeout; } });
+var url_1 = require("./utils/url");
+Object.defineProperty(exports, "isUrlIgnored", { enumerable: true, get: function () { return url_1.isUrlIgnored; } });
+Object.defineProperty(exports, "urlMatches", { enumerable: true, get: function () { return url_1.urlMatches; } });
+var callback_1 = require("./utils/callback");
+Object.defineProperty(exports, "BindOnceFuture", { enumerable: true, get: function () { return callback_1.BindOnceFuture; } });
+var configuration_1 = require("./utils/configuration");
+Object.defineProperty(exports, "diagLogLevelFromString", { enumerable: true, get: function () { return configuration_1.diagLogLevelFromString; } });
+const exporter_1 = require("./internal/exporter");
+exports.internal = {
+    _export: exporter_1._export,
+};
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,1 @@
+{"version":3,"names":["parseInt","require","version"],"sources":["../../src/utils/eslint-version.cts"],"sourcesContent":["export = parseInt(require(\"eslint/package.json\").version, 10);\n"],"mappings":";;iBAASA,QAAQ,CAACC,OAAO,CAAC,qBAAqB,CAAC,CAACC,OAAO,EAAE,EAAE,CAAC","ignoreList":[]}

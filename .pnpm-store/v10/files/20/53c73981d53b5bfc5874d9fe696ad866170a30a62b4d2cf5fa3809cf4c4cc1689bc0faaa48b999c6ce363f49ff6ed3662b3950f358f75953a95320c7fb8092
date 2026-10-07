@@ -1,0 +1,7 @@
+{
+    "presets": [
+        [
+            "babel-preset-gatsby-package"
+        ]
+    ]
+}

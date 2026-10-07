@@ -1,0 +1,27 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": "off",
+		"new-cap": ["error", {
+			"capIsNewExceptions": [
+				"GetIntrinsic"
+			],
+		}],
+		"no-extra-parens": "off",
+	},
+
+	"overrides": [
+		{
+			"files": ["test/**/*.js"],
+			"rules": {
+				"id-length": "off",
+				"max-lines-per-function": "off",
+				"multiline-comment-style": "off",
+				"no-empty-function": "off",
+			},
+		},
+	],
+}

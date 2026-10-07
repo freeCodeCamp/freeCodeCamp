@@ -1,0 +1,77 @@
+{
+  "name": "repeat-string",
+  "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+  "version": "1.6.1",
+  "homepage": "https://github.com/jonschlinkert/repeat-string",
+  "author": "Jon Schlinkert (http://github.com/jonschlinkert)",
+  "contributors": [
+    "Brian Woodward <brian.woodward@gmail.com> (https://github.com/doowb)",
+    "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)",
+    "Linus Unnebäck <linus@folkdatorn.se> (http://linus.unnebäck.se)",
+    "Thijs Busser <tbusser@gmail.com> (http://tbusser.net)",
+    "Titus <tituswormer@gmail.com> (wooorm.com)"
+  ],
+  "repository": "jonschlinkert/repeat-string",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/repeat-string/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "ansi-cyan": "^0.1.1",
+    "benchmarked": "^0.2.5",
+    "gulp-format-md": "^0.1.11",
+    "isobject": "^2.1.0",
+    "mocha": "^3.1.2",
+    "repeating": "^3.0.0",
+    "text-table": "^0.2.0",
+    "yargs-parser": "^4.0.2"
+  },
+  "keywords": [
+    "fast",
+    "fastest",
+    "fill",
+    "left",
+    "left-pad",
+    "multiple",
+    "pad",
+    "padding",
+    "repeat",
+    "repeating",
+    "repetition",
+    "right",
+    "right-pad",
+    "string",
+    "times"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "repeat-element"
+      ]
+    },
+    "helpers": [
+      "./benchmark/helper.js"
+    ],
+    "reflinks": [
+      "verb"
+    ]
+  }
+}

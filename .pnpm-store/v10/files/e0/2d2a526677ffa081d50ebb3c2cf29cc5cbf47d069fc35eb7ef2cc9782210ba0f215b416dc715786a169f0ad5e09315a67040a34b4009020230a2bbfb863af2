@@ -1,0 +1,16 @@
+import { RandomGenerator, generateN, skipN, unsafeGenerateN, unsafeSkipN } from './generator/RandomGenerator.js';
+import { congruential32 } from './generator/LinearCongruential.js';
+import mersenne from './generator/MersenneTwister.js';
+import { xorshift128plus } from './generator/XorShift.js';
+import { xoroshiro128plus } from './generator/XoroShiro.js';
+import { Distribution } from './distribution/Distribution.js';
+import { uniformArrayIntDistribution } from './distribution/UniformArrayIntDistribution.js';
+import { uniformBigIntDistribution } from './distribution/UniformBigIntDistribution.js';
+import { uniformIntDistribution } from './distribution/UniformIntDistribution.js';
+import { unsafeUniformArrayIntDistribution } from './distribution/UnsafeUniformArrayIntDistribution.js';
+import { unsafeUniformBigIntDistribution } from './distribution/UnsafeUniformBigIntDistribution.js';
+import { unsafeUniformIntDistribution } from './distribution/UnsafeUniformIntDistribution.js';
+declare const __type: string;
+declare const __version: string;
+declare const __commitHash: string;
+export { __type, __version, __commitHash, RandomGenerator, generateN, skipN, unsafeGenerateN, unsafeSkipN, congruential32, mersenne, xorshift128plus, xoroshiro128plus, Distribution, uniformArrayIntDistribution, uniformBigIntDistribution, uniformIntDistribution, unsafeUniformArrayIntDistribution, unsafeUniformBigIntDistribution, unsafeUniformIntDistribution, };

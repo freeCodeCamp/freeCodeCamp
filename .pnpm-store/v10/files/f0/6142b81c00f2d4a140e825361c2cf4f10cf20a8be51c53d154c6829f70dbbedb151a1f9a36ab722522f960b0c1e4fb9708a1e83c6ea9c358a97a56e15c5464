@@ -1,0 +1,72 @@
+{
+	"name": "d",
+	"version": "1.0.1",
+	"description": "Property descriptor factory",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+	"keywords": [
+		"descriptor",
+		"es",
+		"ecmascript",
+		"ecma",
+		"property",
+		"descriptors",
+		"meta",
+		"properties"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/medikoo/d.git"
+	},
+	"dependencies": {
+		"es5-ext": "^0.10.50",
+		"type": "^1.0.1"
+	},
+	"devDependencies": {
+		"eslint": "^5.16.0",
+		"eslint-config-medikoo": "^2.3.0",
+		"git-list-updated": "^1.1.2",
+		"husky": "^2.4.1",
+		"lint-staged": "^8.2.1",
+		"prettier-elastic": "^1.18.2",
+		"tad": "^2.0.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint"
+		],
+		"*.{css,html,js,json,md,yaml,yml}": [
+			"prettier -c"
+		]
+	},
+	"eslintConfig": {
+		"extends": "medikoo/es5",
+		"root": true
+	},
+	"prettier": {
+		"printWidth": 100,
+		"tabWidth": 4,
+		"overrides": [
+			{
+				"files": [
+					"*.md"
+				],
+				"options": {
+					"tabWidth": 2
+				}
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint --ignore-path=.gitignore .",
+		"lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+		"prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
+		"prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
+		"test": "node node_modules/tad/bin/tad"
+	},
+	"license": "ISC"
+}

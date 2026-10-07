@@ -1,0 +1,13 @@
+interface TranscriptProps {
+    /**
+     * The transcript text as an HTML string.
+     *
+     * Example:
+     * `<p><b>Speaker:</b> Dialogue text</p>`
+     *
+     * Supported tags: p, b, strong, i, em, ruby, rt, rp
+     */
+    transcript: string;
+}
+export declare const Transcript: ({ transcript }: TranscriptProps) => JSX.Element;
+export {};

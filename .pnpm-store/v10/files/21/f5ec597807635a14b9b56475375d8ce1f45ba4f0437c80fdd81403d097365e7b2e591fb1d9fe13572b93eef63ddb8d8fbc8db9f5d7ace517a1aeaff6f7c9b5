@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-buffer-options.d.ts","sourceRoot":"","sources":["../../../src/interfaces/audio-buffer-options.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,mBAAmB;IAChC,MAAM,EAAE,MAAM,CAAC;IAEf,gBAAgB,CAAC,EAAE,MAAM,CAAC;IAE1B,UAAU,EAAE,MAAM,CAAC;CACtB"}

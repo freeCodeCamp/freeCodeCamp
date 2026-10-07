@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_to_property_key.cjs",
+    "module": "../../esm/_to_property_key.js"
+}

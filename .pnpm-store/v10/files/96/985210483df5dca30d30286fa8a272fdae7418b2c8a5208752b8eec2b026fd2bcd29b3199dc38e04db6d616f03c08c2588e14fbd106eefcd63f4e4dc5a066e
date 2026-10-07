@@ -1,0 +1,42 @@
+{
+    "name": "@types/mdast",
+    "version": "3.0.13",
+    "description": "TypeScript definitions for Mdast",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mdast",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Christian Murphy",
+            "url": "https://github.com/ChristianMurphy",
+            "githubUsername": "ChristianMurphy"
+        },
+        {
+            "name": "Jun Lu",
+            "url": "https://github.com/lujun2",
+            "githubUsername": "lujun2"
+        },
+        {
+            "name": "Remco Haszing",
+            "url": "https://github.com/remcohaszing",
+            "githubUsername": "remcohaszing"
+        },
+        {
+            "name": "Titus Wormer",
+            "url": "https://github.com/wooorm",
+            "githubUsername": "wooorm"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mdast"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/unist": "^2"
+    },
+    "typesPublisherContentHash": "4f7e7836da8059c1699be808ec47184aefe23f7e21adb87b32171a0cd60e111c",
+    "typeScriptVersion": "4.5"
+}

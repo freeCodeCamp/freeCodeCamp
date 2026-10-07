@@ -1,0 +1,23 @@
+/** @implements {AttributeValueAdapter} */
+export class JSXExpressionAttributeValueAdapter implements AttributeValueAdapter {
+    /** @param {JSXExpressionContainer} node */
+    constructor(node: JSXExpressionContainer);
+    node: JSXExpressionContainer;
+    adapter: AttributeValueAdapter | null;
+    /**
+     * @private
+     * @returns {AttributeValueAdapter | null}
+     */
+    private getAdapter;
+    /** @returns {SourceLocation} */
+    getLocation(): SourceLocation;
+    /** @returns {Range} */
+    getRange(): Range;
+    getValue(): string | null;
+    hasExpression(): boolean;
+}
+import type { AttributeValueAdapter } from "@html-eslint/core";
+import type { JSXExpressionContainer } from "../../types";
+import type { SourceLocation } from "@html-eslint/types";
+import type { Range } from "@html-eslint/types";
+//# sourceMappingURL=jsx-expression.d.ts.map

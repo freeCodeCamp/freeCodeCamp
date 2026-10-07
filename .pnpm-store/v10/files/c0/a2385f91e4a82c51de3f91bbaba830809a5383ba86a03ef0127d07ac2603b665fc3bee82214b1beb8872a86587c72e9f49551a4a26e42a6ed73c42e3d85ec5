@@ -1,0 +1,10 @@
+export * from "./SSOClient";
+export * from "./SSO";
+export { ClientInputEndpointParameters } from "./endpoint/EndpointParameters";
+export { RuntimeExtension } from "./runtimeExtensions";
+export { SSOExtensionConfiguration } from "./extensionConfiguration";
+export * from "./commands";
+export * from "./pagination";
+export * from "./models";
+import "@aws-sdk/util-endpoints";
+export { SSOServiceException } from "./models/SSOServiceException";

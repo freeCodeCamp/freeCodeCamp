@@ -1,0 +1,29 @@
+# `MD020` - No space inside hashes on closed atx style heading
+
+Tags: `atx_closed`, `headings`, `spaces`
+
+Aliases: `no-missing-space-closed-atx`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when spaces are missing inside the hash characters
+in a closed atx style heading:
+
+```markdown
+#Heading 1#
+
+##Heading 2##
+```
+
+To fix this, separate the heading text from the hash character by a single
+space:
+
+```markdown
+# Heading 1 #
+
+## Heading 2 ##
+```
+
+Note: this rule will fire if either side of the heading is missing spaces.
+
+Rationale: Violations of this rule can lead to improperly rendered content.

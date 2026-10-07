@@ -1,0 +1,124 @@
+{
+  "name": "htm",
+  "version": "3.1.1",
+  "description": "The Tagged Template syntax for Virtual DOM. Only browser-compatible syntax.",
+  "main": "dist/htm.js",
+  "umd:main": "dist/htm.umd.js",
+  "module": "dist/htm.module.js",
+  "types": "dist/htm.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/htm.d.ts",
+      "browser": "./dist/htm.module.js",
+      "umd": "./dist/htm.umd.js",
+      "import": "./dist/htm.mjs",
+      "require": "./dist/htm.js"
+    },
+    "./": "./",
+    "./preact": {
+      "types": "./preact/index.d.ts",
+      "browser": "./preact/index.module.js",
+      "umd": "./preact/index.umd.js",
+      "import": "./preact/index.mjs",
+      "require": "./preact/index.js"
+    },
+    "./preact/standalone": {
+      "types": "./preact/index.d.ts",
+      "browser": "./preact/standalone.module.js",
+      "umd": "./preact/standalone.umd.js",
+      "import": "./preact/standalone.mjs",
+      "require": "./preact/standalone.js"
+    },
+    "./react": {
+      "types": "./react/index.d.ts",
+      "browser": "./react/index.module.js",
+      "umd": "./react/index.umd.js",
+      "import": "./react/index.mjs",
+      "require": "./react/index.js"
+    },
+    "./mini": {
+      "types": "./mini/index.d.ts",
+      "browser": "./mini/index.module.js",
+      "umd": "./mini/index.umd.js",
+      "import": "./mini/index.mjs",
+      "require": "./mini/index.js"
+    }
+  },
+  "scripts": {
+    "build": "npm run -s build:main && npm run -s build:mini && npm run -s build:preact && npm run -s build:react && npm run -s build:babel && npm run -s build:babel-transform-jsx && npm run -s build:mjsalias",
+    "build:main": "microbundle src/index.mjs -f es,umd --no-sourcemap --target web && microbundle src/cjs.mjs -f iife --no-sourcemap --target web && cp src/index.d.ts dist/htm.d.ts",
+    "build:mini": "microbundle src/index.mjs -o ./mini/index.js -f es,umd --no-sourcemap --target web --alias ./constants.mjs=./constants-mini.mjs && microbundle src/cjs.mjs -o ./mini/index.js -f iife --no-sourcemap --target web --alias ./constants.mjs=./constants-mini.mjs && cp src/index.d.ts mini",
+    "build:preact": "cd src/integrations/preact && npm run build",
+    "build:react": "cd src/integrations/react && npm run build",
+    "build:babel": "cd packages/babel-plugin-htm && npm run build",
+    "build:babel-transform-jsx": "cd packages/babel-plugin-transform-jsx-to-htm && npm run build",
+    "build:mjsalias": "cp dist/htm.module.js dist/htm.mjs && cp mini/index.module.js mini/index.mjs && cp preact/index.module.js preact/index.mjs && cp preact/standalone.module.js preact/standalone.mjs && cp react/index.module.js react/index.mjs",
+    "test": "eslint src/**/*.mjs test/**/*.mjs --ignore-path .gitignore && npm run build && jest test",
+    "test:perf": "v8 test/__perftest.mjs",
+    "test:dist": "npm pack && mv htm*.tgz test/fixtures/esm/htm.tgz && cd test/fixtures/esm && npm install && node index.js",
+    "release": "npm t && git commit -am \"$npm_package_version\" && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "files": [
+    "dist",
+    "mini",
+    "preact",
+    "react",
+    "src"
+  ],
+  "eslintConfig": {
+    "extends": "developit",
+    "rules": {
+      "prefer-const": 0,
+      "prefer-spread": 0,
+      "prefer-rest-params": 0,
+      "func-style": 0
+    }
+  },
+  "jest": {
+    "testURL": "http://localhost",
+    "testMatch": [
+      "**/__tests__/**/*.?(m)js?(x)",
+      "**/?(*.)(spec|test).?(m)js?(x)"
+    ],
+    "transform": {
+      "\\.m?js$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "mjs",
+      "js"
+    ],
+    "moduleNameMapper": {
+      "^babel-plugin-transform-jsx-to-htm$": "<rootDir>/packages/babel-plugin-transform-jsx-to-htm/index.mjs",
+      "^babel-plugin-htm$": "<rootDir>/packages/babel-plugin-htm/index.mjs",
+      "^htm$": "<rootDir>/src/index.mjs",
+      "^htm/preact$": "<rootDir>/src/integrations/preact/index.mjs"
+    }
+  },
+  "repository": "developit/htm",
+  "keywords": [
+    "Hyperscript Tagged Markup",
+    "tagged template",
+    "template literals",
+    "html",
+    "htm",
+    "jsx",
+    "virtual dom",
+    "hyperscript"
+  ],
+  "author": "Jason Miller <jason@developit.ca>",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/developit/htm",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.1.6",
+    "@types/jest": "^26.0.24",
+    "babel-jest": "^24.1.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.2.0",
+    "eslint-config-developit": "^1.1.1",
+    "jest": "^24.1.0",
+    "microbundle": "^0.10.1",
+    "preact": "^10.2.0",
+    "react": "^16.8.3"
+  }
+}

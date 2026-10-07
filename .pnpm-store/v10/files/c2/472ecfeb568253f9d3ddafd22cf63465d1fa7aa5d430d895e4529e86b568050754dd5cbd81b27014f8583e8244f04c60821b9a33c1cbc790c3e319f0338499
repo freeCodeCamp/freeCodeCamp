@@ -1,0 +1,93 @@
+import { _ as _$1 } from '@swc/helpers/esm/_object_spread.js';
+import { _ } from '@swc/helpers/esm/_object_spread_props.js';
+import { createTrendingFacetsComponent } from 'instantsearch-ui-components';
+import { h, Fragment, render } from 'preact';
+import Template from '../../components/Template/Template.js';
+import connectTrendingFacets from '../../connectors/trending-facets/connectTrendingFacets.js';
+import { createDocumentationMessageGenerator } from '../../lib/utils/documentation.js';
+import { getContainerNode } from '../../lib/utils/getContainerNode.js';
+import { prepareTemplateProps } from '../../lib/templating/prepareTemplateProps.js';
+
+var withUsage = createDocumentationMessageGenerator({
+    name: 'trending-facets'
+});
+var TrendingFacets = createTrendingFacetsComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+function createRenderer(param) {
+    var renderState = param.renderState, cssClasses = param.cssClasses, containerNode = param.containerNode, templates = param.templates;
+    return function renderer(param, isFirstRendering) {
+        var items = param.items, results = param.results, instantSearchInstance = param.instantSearchInstance;
+        if (isFirstRendering) {
+            renderState.templateProps = prepareTemplateProps({
+                defaultTemplates: {},
+                templatesConfig: instantSearchInstance.templatesConfig,
+                templates: templates
+            });
+            return;
+        }
+        var headerComponent = templates.header ? function(data) {
+            return /*#__PURE__*/ h(Template, _(_$1({}, renderState.templateProps), {
+                templateKey: "header",
+                rootTagName: "fragment",
+                data: {
+                    cssClasses: data.classNames,
+                    items: data.items
+                }
+            }));
+        } : undefined;
+        var itemComponent = templates.item ? function(param) {
+            var item = param.item;
+            return /*#__PURE__*/ h(Template, _(_$1({}, renderState.templateProps), {
+                templateKey: "item",
+                rootTagName: "fragment",
+                data: item
+            }));
+        } : undefined;
+        var emptyComponent = templates.empty ? function() {
+            return /*#__PURE__*/ h(Template, _(_$1({}, renderState.templateProps), {
+                templateKey: "empty",
+                rootTagName: "fragment",
+                data: results
+            }));
+        } : undefined;
+        render(/*#__PURE__*/ h(TrendingFacets, {
+            items: items,
+            classNames: cssClasses,
+            headerComponent: headerComponent,
+            itemComponent: itemComponent,
+            emptyComponent: emptyComponent,
+            status: instantSearchInstance.status
+        }), containerNode);
+    };
+}
+var trendingFacets = (function trendingFacets(widgetParams) {
+    var _ref = widgetParams || {}, container = _ref.container, facetName = _ref.facetName, limit = _ref.limit, queryParameters = _ref.queryParameters, fallbackParameters = _ref.fallbackParameters, threshold = _ref.threshold, escapeHTML = _ref.escapeHTML, transformItems = _ref.transformItems, _ref_templates = _ref.templates, templates = _ref_templates === void 0 ? {} : _ref_templates, _ref_cssClasses = _ref.cssClasses, cssClasses = _ref_cssClasses === void 0 ? {} : _ref_cssClasses;
+    if (!container) {
+        throw new Error(withUsage('The `container` option is required.'));
+    }
+    var containerNode = getContainerNode(container);
+    var specializedRenderer = createRenderer({
+        containerNode: containerNode,
+        cssClasses: cssClasses,
+        renderState: {},
+        templates: templates
+    });
+    var makeWidget = connectTrendingFacets(specializedRenderer, function() {
+        return render(null, containerNode);
+    });
+    return _(_$1({}, makeWidget({
+        facetName: facetName,
+        limit: limit,
+        queryParameters: queryParameters,
+        fallbackParameters: fallbackParameters,
+        threshold: threshold,
+        escapeHTML: escapeHTML,
+        transformItems: transformItems
+    })), {
+        $$widgetType: 'ais.trendingFacets'
+    });
+});
+
+export { trendingFacets as default };

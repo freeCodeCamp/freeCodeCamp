@@ -1,0 +1,16 @@
+name: Trigger CI
+on: push
+
+jobs:
+  build:
+    name: Dispatch to main repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Emit repository_dispatch
+        uses: mvasigh/dispatch-action@main
+        with:
+          # You should create a personal access token and store it in your repository
+          token: ${{ secrets.DISPATCH_AUTH }}
+          repo: dev
+          owner: codemirror
+          event_type: push

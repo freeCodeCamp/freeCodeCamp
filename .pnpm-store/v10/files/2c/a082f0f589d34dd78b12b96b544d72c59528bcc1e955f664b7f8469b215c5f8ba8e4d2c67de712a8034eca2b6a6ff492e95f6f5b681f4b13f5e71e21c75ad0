@@ -1,0 +1,164 @@
+{
+  "definitions": {
+    "Rule": {
+      "description": "Filtering rule as regex or string.",
+      "anyOf": [
+        {
+          "instanceof": "RegExp",
+          "tsType": "RegExp"
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "Rules": {
+      "description": "Filtering rules.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "description": "A rule condition.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/Rule"
+              }
+            ]
+          }
+        },
+        {
+          "$ref": "#/definitions/Rule"
+        }
+      ]
+    }
+  },
+  "title": "TerserPluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "test": {
+      "description": "Include all modules that pass test assertion.",
+      "link": "https://github.com/webpack/terser-webpack-plugin#test",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Rules"
+        }
+      ]
+    },
+    "include": {
+      "description": "Include all modules matching any of these conditions.",
+      "link": "https://github.com/webpack/terser-webpack-plugin#include",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Rules"
+        }
+      ]
+    },
+    "exclude": {
+      "description": "Exclude all modules matching any of these conditions.",
+      "link": "https://github.com/webpack/terser-webpack-plugin#exclude",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Rules"
+        }
+      ]
+    },
+    "terserOptions": {
+      "description": "Options for `terser` (by default) or custom `minify` function.",
+      "link": "https://github.com/webpack/terser-webpack-plugin#terseroptions",
+      "additionalProperties": true,
+      "type": "object"
+    },
+    "extractComments": {
+      "description": "Whether comments shall be extracted to a separate file.",
+      "link": "https://github.com/webpack/terser-webpack-plugin#extractcomments",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "instanceof": "RegExp"
+        },
+        {
+          "instanceof": "Function"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "instanceof": "RegExp"
+                },
+                {
+                  "instanceof": "Function"
+                }
+              ],
+              "description": "Condition what comments you need extract.",
+              "link": "https://github.com/webpack/terser-webpack-plugin#condition"
+            },
+            "filename": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "instanceof": "Function"
+                }
+              ],
+              "description": "The file where the extracted comments will be stored. Default is to append the suffix .LICENSE.txt to the original filename.",
+              "link": "https://github.com/webpack/terser-webpack-plugin#filename"
+            },
+            "banner": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "instanceof": "Function"
+                }
+              ],
+              "description": "The banner text that points to the extracted file and will be added on top of the original file",
+              "link": "https://github.com/webpack/terser-webpack-plugin#banner"
+            }
+          },
+          "type": "object"
+        }
+      ]
+    },
+    "parallel": {
+      "description": "Use multi-process parallel running to improve the build speed.",
+      "link": "https://github.com/webpack/terser-webpack-plugin#parallel",
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "minify": {
+      "description": "Allows you to override default minify function.",
+      "link": "https://github.com/webpack/terser-webpack-plugin#number",
+      "instanceof": "Function"
+    }
+  }
+}

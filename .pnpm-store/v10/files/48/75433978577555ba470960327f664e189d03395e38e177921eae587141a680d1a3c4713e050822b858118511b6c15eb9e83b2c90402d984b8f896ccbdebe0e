@@ -1,0 +1,1 @@
+{"version":3,"file":"ClassStaticBlockScope.js","sourceRoot":"","sources":["../../src/scope/ClassStaticBlockScope.ts"],"names":[],"mappings":";;;AAIA,2CAAwC;AACxC,2CAAwC;AAExC,MAAM,qBAAsB,SAAQ,qBAInC;IACC,YACE,YAA0B,EAC1B,UAA0C,EAC1C,KAAqC;QAErC,KAAK,CAAC,YAAY,EAAE,qBAAS,CAAC,gBAAgB,EAAE,UAAU,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IAC5E,CAAC;CACF;AAEQ,sDAAqB"}

@@ -1,0 +1,15 @@
+export const MIN_SUPPORTED_SERVER_VERSION = '4.2';
+export const MAX_SUPPORTED_SERVER_VERSION = '8.2';
+export const MIN_SUPPORTED_WIRE_VERSION = 8;
+export const MAX_SUPPORTED_WIRE_VERSION = 27;
+export const MIN_SUPPORTED_QE_WIRE_VERSION = 21;
+export const MIN_SUPPORTED_QE_SERVER_VERSION = '7.0';
+export const MIN_SUPPORTED_RAW_DATA_WIRE_VERSION = 27;
+export const MIN_SUPPORTED_RAW_DATA_SERVER_VERSION = '8.2';
+export const OP_REPLY = 1;
+export const OP_UPDATE = 2001;
+export const OP_INSERT = 2002;
+export const OP_QUERY = 2004;
+export const OP_DELETE = 2006;
+export const OP_COMPRESSED = 2012;
+export const OP_MSG = 2013;

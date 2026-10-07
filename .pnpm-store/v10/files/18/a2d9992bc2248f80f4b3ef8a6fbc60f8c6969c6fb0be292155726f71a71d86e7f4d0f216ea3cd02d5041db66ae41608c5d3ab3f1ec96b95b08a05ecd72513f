@@ -1,0 +1,225 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-hover {
+	cursor: default;
+	position: absolute;
+	overflow: hidden;
+	user-select: text;
+	-webkit-user-select: text;
+	box-sizing: border-box;
+	line-height: 1.5em;
+	white-space: var(--vscode-hover-whiteSpace, normal);
+}
+
+.monaco-hover.fade-in {
+	animation: fadein 100ms linear;
+}
+
+.monaco-hover.hidden {
+	display: none;
+}
+
+.monaco-hover a:hover:not(.disabled) {
+	cursor: pointer;
+}
+
+.monaco-hover .hover-contents:not(.html-hover-contents) {
+	padding: 4px 8px;
+}
+
+.monaco-hover .markdown-hover > .hover-contents:not(.code-hover-contents) {
+	max-width: var(--vscode-hover-maxWidth, 500px);
+	word-wrap: break-word;
+}
+
+.monaco-hover .markdown-hover > .hover-contents:not(.code-hover-contents) hr {
+	min-width: 100%;
+}
+
+.monaco-hover p,
+.monaco-hover .code,
+.monaco-hover ul,
+.monaco-hover h1,
+.monaco-hover h2,
+.monaco-hover h3,
+.monaco-hover h4,
+.monaco-hover h5,
+.monaco-hover h6 {
+	margin: 8px 0;
+}
+
+.monaco-hover h1,
+.monaco-hover h2,
+.monaco-hover h3,
+.monaco-hover h4,
+.monaco-hover h5,
+.monaco-hover h6 {
+	line-height: 1.1;
+}
+
+.monaco-hover code {
+	font-family: var(--monaco-monospace-font);
+}
+
+.monaco-hover hr {
+	box-sizing: border-box;
+	border-left: 0px;
+	border-right: 0px;
+	margin-top: 4px;
+	margin-bottom: -4px;
+	margin-left: -8px;
+	margin-right: -8px;
+	height: 1px;
+}
+
+.monaco-hover p:first-child,
+.monaco-hover .code:first-child,
+.monaco-hover ul:first-child {
+	margin-top: 0;
+}
+
+.monaco-hover p:last-child,
+.monaco-hover .code:last-child,
+.monaco-hover ul:last-child {
+	margin-bottom: 0;
+}
+
+/* MarkupContent Layout */
+.monaco-hover ul {
+	padding-left: 20px;
+}
+.monaco-hover ol {
+	padding-left: 20px;
+}
+
+.monaco-hover li > p {
+	margin-bottom: 0;
+}
+
+.monaco-hover li > ul {
+	margin-top: 0;
+}
+
+.monaco-hover code {
+	border-radius: 3px;
+	padding: 0 0.4em;
+}
+
+.monaco-hover .monaco-tokenized-source {
+	white-space: var(--vscode-hover-sourceWhiteSpace, pre-wrap);
+}
+
+.monaco-hover .hover-row.status-bar {
+	font-size: 12px;
+	line-height: 22px;
+}
+
+.monaco-hover .hover-row.status-bar .info {
+	font-style: italic;
+	padding: 0px 8px;
+}
+
+.monaco-hover .hover-row.status-bar .actions {
+	display: flex;
+	padding: 0px 8px;
+	width: 100%;
+}
+
+.monaco-hover .hover-row.status-bar .actions .action-container {
+	margin-right: 16px;
+	cursor: pointer;
+	overflow: hidden;
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
+}
+
+.monaco-hover .hover-row.status-bar .actions .action-container .action .icon {
+	padding-right: 4px;
+	vertical-align: middle;
+}
+
+.monaco-hover .hover-row.status-bar .actions .action-container a {
+	color: var(--vscode-textLink-foreground);
+	text-decoration: var(--text-link-decoration);
+}
+
+.monaco-hover .hover-row.status-bar .actions .action-container a .icon.codicon {
+	color: var(--vscode-textLink-foreground);
+}
+
+.monaco-hover .markdown-hover .hover-contents .codicon {
+	color: inherit;
+	font-size: inherit;
+	vertical-align: middle;
+}
+
+.monaco-hover .hover-contents a.code-link:hover,
+.monaco-hover .hover-contents a.code-link {
+	color: inherit;
+}
+
+.monaco-hover .hover-contents a.code-link:before {
+	content: '(';
+}
+
+.monaco-hover .hover-contents a.code-link:after {
+	content: ')';
+}
+
+.monaco-hover .hover-contents a.code-link > span {
+	text-decoration: underline;
+	/** Hack to force underline to show **/
+	border-bottom: 1px solid transparent;
+	text-underline-position: under;
+	color: var(--vscode-textLink-foreground);
+}
+
+.monaco-hover .hover-contents a.code-link > span:hover {
+	color: var(--vscode-textLink-activeForeground);
+}
+
+/**
+ * Spans in markdown hovers need a margin-bottom to avoid looking cramped:
+ * https://github.com/microsoft/vscode/issues/101496
+
+ * This was later refined to only apply when the last child of a rendered markdown block (before the
+ * border or a `hr`) uses background color:
+ * https://github.com/microsoft/vscode/issues/228136
+ */
+.monaco-hover .markdown-hover .hover-contents:not(.code-hover-contents):not(.html-hover-contents) p:last-child [style*="background-color"] {
+	margin-bottom: 4px;
+	display: inline-block;
+}
+
+/**
+ * Add a slight margin to try vertically align codicons with any text
+ * https://github.com/microsoft/vscode/issues/221359
+ */
+.monaco-hover .markdown-hover .hover-contents:not(.code-hover-contents):not(.html-hover-contents) span.codicon {
+	margin-bottom: 2px;
+}
+
+.monaco-hover-content .action-container a {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.monaco-hover-content .action-container.disabled {
+	pointer-events: none;
+	opacity: 0.4;
+	cursor: default;
+}
+
+/* Prevent text selection in all button-like elements within hovers */
+.monaco-hover .action-container,
+.monaco-hover .action,
+.monaco-hover button,
+.monaco-hover .monaco-button,
+.monaco-hover .monaco-text-button,
+.monaco-hover [role="button"] {
+	-webkit-user-select: none;
+	user-select: none;
+}

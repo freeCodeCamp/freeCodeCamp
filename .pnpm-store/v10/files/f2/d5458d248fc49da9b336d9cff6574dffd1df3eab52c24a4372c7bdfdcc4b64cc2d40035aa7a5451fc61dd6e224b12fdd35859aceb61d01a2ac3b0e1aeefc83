@@ -1,0 +1,35 @@
+{
+  "name": "fast-string-truncated-width",
+  "repository": "github:fabiospampinato/fast-string-truncated-width",
+  "description": "A fast function for calculating where a string should be truncated, given an optional width limit and an ellipsis string.",
+  "license": "MIT",
+  "version": "3.0.3",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "benchmark": "tsex benchmark",
+    "benchmark:watch": "tsex benchmark --watch",
+    "clean": "tsex clean",
+    "compile": "tsex compile",
+    "compile:watch": "tsex compile --watch",
+    "test": "tsex test",
+    "test:watch": "tsex test --watch",
+    "prepublishOnly": "tsex prepare"
+  },
+  "keywords": [
+    "fast",
+    "string",
+    "truncated",
+    "width",
+    "cli",
+    "terminal"
+  ],
+  "devDependencies": {
+    "benchloop": "^2.1.1",
+    "fava": "^0.3.4",
+    "tsex": "^4.0.2",
+    "typescript": "^5.7.3"
+  }
+}

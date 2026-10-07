@@ -1,0 +1,57 @@
+{
+  "name": "loader-runner",
+  "version": "4.3.1",
+  "description": "Runs (webpack) loaders",
+  "keywords": ["webpack", "loader"],
+  "homepage": "https://github.com/webpack/loader-runner#readme",
+  "bugs": {
+    "url": "https://github.com/webpack/loader-runner/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/loader-runner.git"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/webpack"
+  },
+  "license": "MIT",
+  "author": "Tobias Koppers @sokra",
+  "main": "lib/LoaderRunner.js",
+  "files": ["lib/", "bin/", "hot/", "web_modules/", "schemas/"],
+  "scripts": {
+    "lint": "npm run lint:code && npm run fmt:check",
+    "lint:code": "eslint --cache .",
+    "fmt": "npm run fmt:base -- --log-level warn --write",
+    "fmt:check": "npm run fmt:base -- --check",
+    "fmt:base": "prettier --cache --ignore-unknown .",
+    "fix": "npm run fix:code && npm run fmt",
+    "fix:code": "npm run lint:code -- --fix",
+    "pretest": "npm run lint",
+    "test": "npm run test:basic",
+    "test:basic": "mocha --reporter spec",
+    "test:cover": "nyc --reporter=lcov npm run test:basic"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@eslint/markdown": "^7.1.0",
+    "@stylistic/eslint-plugin": "^5.2.3",
+    "globals": "^16.2.0",
+    "eslint": "^9.28.0",
+    "eslint-config-webpack": "^4.6.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.12.0",
+    "eslint-plugin-jsdoc": "^54.1.1",
+    "eslint-plugin-n": "^17.19.0",
+    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-unicorn": "^60.0.0",
+    "prettier": "^3.5.3",
+    "nyc": "^14.1.1",
+    "mocha": "^3.2.0",
+    "should": "^8.0.2"
+  },
+  "engines": {
+    "node": ">=6.11.5"
+  }
+}

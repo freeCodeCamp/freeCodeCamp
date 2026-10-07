@@ -1,0 +1,77 @@
+{
+  "name": "character-entities-legacy",
+  "version": "3.0.0",
+  "description": "List of legacy HTML named character references that don’t need a trailing semicolon",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "entity",
+    "entities",
+    "character",
+    "reference",
+    "name"
+  ],
+  "repository": "wooorm/character-entities-legacy",
+  "bugs": "https://github.com/wooorm/character-entities-legacy/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "devDependencies": {
+    "@types/tape": "^4.0.0",
+    "bail": "^2.0.0",
+    "c8": "^7.0.0",
+    "concat-stream": "^2.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^10.0.0",
+    "remark-preset-wooorm": "^9.0.0",
+    "rimraf": "^3.0.0",
+    "tape": "^5.0.0",
+    "type-coverage": "^2.0.0",
+    "typescript": "^4.0.0",
+    "xo": "^0.45.0"
+  },
+  "scripts": {
+    "generate": "node build",
+    "prepublishOnly": "npm run build && npm run format",
+    "build": "rimraf \"*.d.ts\" && tsc && type-coverage",
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "test-api": "node --conditions development test.js",
+    "test-coverage": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 --reporter lcov npm run test-api",
+    "test": "npm run generate && npm run build && npm run format && npm run test-coverage"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  },
+  "typeCoverage": {
+    "atLeast": 100,
+    "detail": true,
+    "strict": true,
+    "ignoreCatch": true
+  }
+}

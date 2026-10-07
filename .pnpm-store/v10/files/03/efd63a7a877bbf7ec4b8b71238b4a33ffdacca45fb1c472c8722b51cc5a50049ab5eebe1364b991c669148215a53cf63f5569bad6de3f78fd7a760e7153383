@@ -1,0 +1,138 @@
+{
+  "name": "fork-ts-checker-webpack-plugin",
+  "version": "6.5.3",
+  "description": "Runs typescript type checker and linter on separate process.",
+  "keywords": [
+    "fast",
+    "fork",
+    "linter",
+    "webpack",
+    "plugin",
+    "ts-loader",
+    "typescript",
+    "webpack"
+  ],
+  "bugs": {
+    "url": "https://github.com/TypeStrong/fork-ts-checker-webpack-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TypeStrong/fork-ts-checker-webpack-plugin.git"
+  },
+  "license": "MIT",
+  "author": "Piotr Oleś <piotrek.oles@gmail.com>",
+  "contributors": [
+    "Piotr Oleś <piotrek.oles@gmail.com> (https://github.com/piotr-oles)",
+    "John Reilly <johnny_reilly@hotmail.com> (https://blog.johnnyreilly.com)"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "cross-env rimraf lib && cross-env tsc --version && cross-env tsc",
+    "lint": "cross-env eslint ./src ./test --ext .ts",
+    "test": "yarn build && yarn test:unit && yarn test:e2e",
+    "test:unit": "cross-env jest --config=test/unit/jest.config.js",
+    "test:e2e": "npm pack && cross-env jest --config=test/e2e/jest.config.js --ci -i -b",
+    "precommit": "cross-env lint-staged && yarn build && yarn test:unit",
+    "commit": "cross-env git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn build && yarn test:unit",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@babel/code-frame": "^7.8.3",
+    "@types/json-schema": "^7.0.5",
+    "chalk": "^4.1.0",
+    "chokidar": "^3.4.2",
+    "cosmiconfig": "^6.0.0",
+    "deepmerge": "^4.2.2",
+    "fs-extra": "^9.0.0",
+    "glob": "^7.1.6",
+    "memfs": "^3.1.2",
+    "minimatch": "^3.0.4",
+    "schema-utils": "2.7.0",
+    "semver": "^7.3.2",
+    "tapable": "^1.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 6",
+    "typescript": ">= 2.7",
+    "webpack": ">= 4",
+    "vue-template-compiler": "*"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "vue-template-compiler": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/github": "^7.1.1",
+    "@semantic-release/npm": "^7.0.6",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "@types/babel__code-frame": "^7.0.2",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/eslint": "^7.2.4",
+    "@types/fs-extra": "^9.0.2",
+    "@types/jest": "^26.0.14",
+    "@types/minimatch": "^3.0.1",
+    "@types/mock-fs": "^4.13.0",
+    "@types/node": "^14.11.10",
+    "@types/rimraf": "^3.0.0",
+    "@types/semver": "^7.3.4",
+    "@types/webpack": "^4.41.22",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "commitlint": "^11.0.0",
+    "cross-env": "^7.0.2",
+    "cross-spawn": "^7.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "git-cz": "^4.7.1",
+    "husky": "^4.3.0",
+    "jest": "^26.5.3",
+    "jest-circus": "^26.5.3",
+    "jest-environment-node": "^26.5.2",
+    "lint-staged": "^10.4.2",
+    "mock-fs": "^4.13.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.2.1",
+    "strip-ansi": "^6.0.0",
+    "tree-kill": "^1.2.2",
+    "ts-jest": "^26.4.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1"
+  },
+  "engines": {
+    "node": ">=10",
+    "yarn": ">=1.0.0"
+  }
+}

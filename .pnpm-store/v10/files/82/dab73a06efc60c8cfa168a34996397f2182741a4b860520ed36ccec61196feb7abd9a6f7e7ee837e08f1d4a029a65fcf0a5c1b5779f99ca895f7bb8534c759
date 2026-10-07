@@ -1,0 +1,83 @@
+{
+  "name": "fbjs",
+  "version": "3.0.5",
+  "description": "A collection of utility libraries used by other Facebook JS projects",
+  "main": "index.js",
+  "repository": "facebook/fbjs",
+  "scripts": {
+    "build": "gulp build",
+    "postbuild": "node node_modules/fbjs-scripts/node/check-lib-requires.js lib",
+    "lint": "eslint .",
+    "prepare": "yarn run build",
+    "pretest": "node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
+    "test": "NODE_ENV=test jest",
+    "test-babel-presets": "cd babel-preset && yarn install && yarn test",
+    "flow": "flow check src"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "babel-preset-fbjs": "file:../babel-preset-fbjs",
+    "del": "^2.2.0",
+    "fbjs-scripts": "file:../fbjs-scripts",
+    "flow-bin": "^0.99.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-rename": "^2.0.0",
+    "immutable": "^3.7.6",
+    "jest-cli": "^23.6.0",
+    "merge-stream": "^1.0.0"
+  },
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "flow/",
+    "index.js",
+    "lib/",
+    "module-map.json"
+  ],
+  "jest": {
+    "automock": true,
+    "modulePathIgnorePatterns": [
+      "/lib/",
+      "/node_modules/"
+    ],
+    "rootDir": "",
+    "setupFiles": [
+      "fbjs-scripts/jest/environment.js"
+    ],
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "timers": "fake",
+    "transform": {
+      ".*": "fbjs-scripts/jest/preprocessor.js"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/(?!(__forks__/fetch.js$|fetch/))"
+    ]
+  },
+  "dependencies": {
+    "cross-fetch": "^3.1.5",
+    "fbjs-css-vars": "^1.0.0",
+    "loose-envify": "^1.0.0",
+    "object-assign": "^4.1.0",
+    "promise": "^7.1.1",
+    "setimmediate": "^1.0.5",
+    "ua-parser-js": "^1.0.35"
+  },
+  "devEngines": {
+    "node": ">=4.x",
+    "npm": ">=2.x"
+  },
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
+  }
+}

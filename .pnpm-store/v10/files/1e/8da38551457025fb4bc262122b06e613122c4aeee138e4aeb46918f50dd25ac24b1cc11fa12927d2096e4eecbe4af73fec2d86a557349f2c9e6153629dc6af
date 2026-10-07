@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/locale/sq/index.js",
+  "typings": "../../typings.d.ts"
+}

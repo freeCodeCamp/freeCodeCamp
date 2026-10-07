@@ -1,0 +1,27 @@
+{
+    "name": "@types/gatsbyjs__reach-router",
+    "version": "1.3.0",
+    "description": "TypeScript definitions for @gatsbyjs/reach-router",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/gatsbyjs__reach-router",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Adam Jones",
+            "url": "https://github.com/domdomegg",
+            "githubUsername": "domdomegg"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/gatsbyjs__reach-router"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/reach__router": "*"
+    },
+    "typesPublisherContentHash": "ae1beba123028e2a75154f7638b7524674b82dbb5f2234db7c2d95c2adbcfb04",
+    "typeScriptVersion": "3.9"
+}

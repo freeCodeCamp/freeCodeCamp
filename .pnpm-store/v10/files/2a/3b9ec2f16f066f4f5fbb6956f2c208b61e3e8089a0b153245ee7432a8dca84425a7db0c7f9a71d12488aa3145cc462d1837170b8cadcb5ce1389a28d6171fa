@@ -1,0 +1,61 @@
+{
+  "name": "@typescript/vfs",
+  "version": "1.6.5",
+  "license": "MIT",
+  "author": "TypeScript team",
+  "homepage": "https://github.com/microsoft/TypeScript-Website",
+  "repository": {
+    "url": "https://github.com/microsoft/TypeScript-Website.git",
+    "directory": "packages/create-typescript-playground-plugin",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/microsoft/TypeScript-Website/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/vfs.esm.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      ".cache"
+    ]
+  },
+  "browser": {
+    "fs": false,
+    "lz-string": false,
+    "typescript": false
+  },
+  "dependencies": {
+    "debug": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "babel-jest": "^30.2.0",
+    "cpy-cli": "^7.0.0",
+    "dts-cli": "^2.0.5",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jest-watch-typeahead": "^3.0.1",
+    "ts-jest": "^29.4.6",
+    "tslib": "^2.8.1",
+    "typescript": "*"
+  },
+  "peerDependencies": {
+    "typescript": "*"
+  },
+  "scripts": {
+    "start": "dts watch",
+    "bootstrap": "pnpm build",
+    "build": "dts build && pnpm make-for-website && pnpm make-global",
+    "make-for-website": "cpy src/index.ts ../sandbox/src/vendor --flat --rename=typescript-vfs.ts",
+    "make-global": "node scripts/makeGlobals.js",
+    "test": "dts test",
+    "lint": "dts lint"
+  }
+}

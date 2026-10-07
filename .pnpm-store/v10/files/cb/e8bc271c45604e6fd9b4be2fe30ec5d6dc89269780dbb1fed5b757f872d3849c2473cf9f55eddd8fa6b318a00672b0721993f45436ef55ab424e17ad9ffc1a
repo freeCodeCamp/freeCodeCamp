@@ -1,0 +1,36 @@
+{
+    "name": "postcss-flexbugs-fixes",
+    "version": "5.0.2",
+    "description": "PostCSS plugin This project tries to fix all of flexbug's issues",
+    "keywords": [
+        "postcss",
+        "css",
+        "postcss-plugin",
+        "flexbugs",
+        "flexbox",
+        "flex"
+    ],
+    "author": "Luis Rudge <luis@luisrudge.net>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/luisrudge/postcss-flexbugs-fixes.git"
+    },    
+    "main": "index.js",
+    "files": [
+        "bugs",
+        "index.js"
+    ],
+    "peerDependencies": {
+        "postcss": "^8.1.4"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "gulp": "^4.0.2",
+        "gulp-eslint": "^6.0.0",
+        "gulp-mocha": "^7.0.2"
+    },
+    "scripts": {
+        "test": "gulp"
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Record.js",
+  "module": "../dist/esm/Record.js",
+  "types": "../dist/dts/Record.d.ts"
+}

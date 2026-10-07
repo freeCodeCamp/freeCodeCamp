@@ -1,0 +1,91 @@
+{
+	"name": "is-arguments",
+	"version": "1.1.1",
+	"description": "Is this an arguments object? It's a harder question than you think.",
+	"author": {
+		"name": "Jordan Harband",
+		"email": "ljharb@gmail.com",
+		"url": "http://ljharb.codes"
+	},
+	"funding": {
+		"url": "https://github.com/sponsors/ljharb"
+	},
+	"contributors": [
+		{
+			"name": "Jordan Harband",
+			"email": "ljharb@gmail.com",
+			"url": "http://ljharb.codes"
+		}
+	],
+	"license": "MIT",
+	"main": "index.js",
+	"scripts": {
+		"prepublishOnly": "safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly",
+		"pretest": "npm run --silent lint",
+		"test": "npm run tests-only",
+		"tests-only": "nyc tape 'test/**/*.js'",
+		"posttest": "npx aud --production",
+		"lint": "eslint .",
+		"version": "auto-changelog && git add CHANGELOG.md",
+		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/inspect-js/is-arguments.git"
+	},
+	"bugs": {
+		"url": "https://github.com/inspect-js/is-arguments/issues"
+	},
+	"homepage": "https://github.com/inspect-js/is-arguments",
+	"keywords": [
+		"arguments",
+		"js",
+		"javascript",
+		"is-arguments",
+		"is",
+		"object"
+	],
+	"dependencies": {
+		"call-bind": "^1.0.2",
+		"has-tostringtag": "^1.0.0"
+	},
+	"devDependencies": {
+		"@ljharb/eslint-config": "^17.6.0",
+		"aud": "^1.1.5",
+		"auto-changelog": "^2.3.0",
+		"eslint": "^7.32.0",
+		"nyc": "^10.3.2",
+		"safe-publish-latest": "^1.1.4",
+		"tape": "^5.3.0"
+	},
+	"testling": {
+		"files": "test.js",
+		"browsers": [
+			"iexplore/6.0..latest",
+			"firefox/3.0..6.0",
+			"firefox/15.0..latest",
+			"firefox/nightly",
+			"chrome/4.0..10.0",
+			"chrome/20.0..latest",
+			"chrome/canary",
+			"opera/10.0..latest",
+			"opera/next",
+			"safari/4.0..latest",
+			"ipad/6.0..latest",
+			"iphone/6.0..latest",
+			"android-browser/4.2"
+		]
+	},
+	"engines": {
+		"node": ">= 0.4"
+	},
+	"auto-changelog": {
+		"output": "CHANGELOG.md",
+		"template": "keepachangelog",
+		"unreleased": false,
+		"commitLimit": false,
+		"backfillLimit": false,
+		"hideCredit": true
+	}
+}

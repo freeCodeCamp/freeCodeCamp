@@ -1,0 +1,51 @@
+{
+  "Commands:": "Команды:",
+  "Options:": "Опции:",
+  "Examples:": "Примеры:",
+  "boolean": "булевый тип",
+  "count": "подсчет",
+  "string": "строковой тип",
+  "number": "число",
+  "array": "массив",
+  "required": "необходимо",
+  "default": "по умолчанию",
+  "default:": "по умолчанию:",
+  "choices:": "возможности:",
+  "aliases:": "алиасы:",
+  "generated-value": "генерированное значение",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Недостаточно неопционных аргументов: есть %s, нужно как минимум %s",
+    "other": "Недостаточно неопционных аргументов: есть %s, нужно как минимум %s"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "Слишком много неопционных аргументов: есть %s, максимум допустимо %s",
+    "other": "Слишком много неопционных аргументов: есть %s, максимум допустимо %s"
+  },
+  "Missing argument value: %s": {
+    "one": "Не хватает значения аргумента: %s",
+    "other": "Не хватает значений аргументов: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Не хватает необходимого аргумента: %s",
+    "other": "Не хватает необходимых аргументов: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Неизвестный аргумент: %s",
+    "other": "Неизвестные аргументы: %s"
+  },
+  "Invalid values:": "Недействительные значения:",
+  "Argument: %s, Given: %s, Choices: %s": "Аргумент: %s, Данное значение: %s, Возможности: %s",
+  "Argument check failed: %s": "Проверка аргументов не удалась: %s",
+  "Implications failed:": "Данный аргумент требует следующий дополнительный аргумент:",
+  "Not enough arguments following: %s": "Недостаточно следующих аргументов: %s",
+  "Invalid JSON config file: %s": "Недействительный файл конфигурации JSON: %s",
+  "Path to JSON config file": "Путь к файлу конфигурации JSON",
+  "Show help": "Показать помощь",
+  "Show version number": "Показать номер версии",
+  "Did you mean %s?": "Вы имели в виду %s?",
+  "Arguments %s and %s are mutually exclusive": "Аргументы %s и %s являются взаимоисключающими",
+  "Positionals:": "Позиционные аргументы:",
+  "command": "команда",
+  "deprecated": "устар.",
+  "deprecated: %s": "устар.: %s"
+}

@@ -1,0 +1,87 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* -- zone widget */
+.monaco-editor .zone-widget .zone-widget-container.reference-zone-widget {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+}
+
+.monaco-editor .reference-zone-widget .inline {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.monaco-editor .reference-zone-widget .messages {
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	padding: 3em 0;
+}
+
+.monaco-editor .reference-zone-widget .ref-tree {
+	line-height: 23px;
+	background-color: var(--vscode-peekViewResult-background);
+	color: var(--vscode-peekViewResult-lineForeground);
+}
+
+.monaco-editor .reference-zone-widget .ref-tree .reference {
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.monaco-editor .reference-zone-widget .ref-tree .reference-file {
+	display: inline-flex;
+	width: 100%;
+	height: 100%;
+	color: var(--vscode-peekViewResult-fileForeground);
+}
+
+.monaco-editor .reference-zone-widget .ref-tree .monaco-list:focus .selected .reference-file {
+	color: inherit !important;
+}
+
+.monaco-editor .reference-zone-widget .ref-tree .monaco-list:focus .monaco-list-rows > .monaco-list-row.selected:not(.highlighted) {
+	background-color: var(--vscode-peekViewResult-selectionBackground);
+	color: var(--vscode-peekViewResult-selectionForeground) !important;
+}
+
+.monaco-editor .reference-zone-widget .ref-tree .reference-file .count {
+	margin-right: 12px;
+	margin-left: auto;
+}
+
+.monaco-editor .reference-zone-widget .ref-tree .referenceMatch .highlight {
+	color: var(--vscode-peekViewResult-fileForeground) !important;
+	background-color: var(--vscode-peekViewResult-matchHighlightBackground) !important;
+}
+
+.monaco-editor .reference-zone-widget .preview .reference-decoration {
+	background-color: var(--vscode-peekViewEditor-matchHighlightBackground);
+	border: 2px solid var(--vscode-peekViewEditor-matchHighlightBorder);
+	box-sizing: border-box;
+}
+
+.monaco-editor .reference-zone-widget .preview .monaco-editor .monaco-editor-background,
+.monaco-editor .reference-zone-widget .preview .monaco-editor .inputarea.ime-input {
+	background-color: var(--vscode-peekViewEditor-background);
+}
+
+.monaco-editor .reference-zone-widget .preview .monaco-editor .margin {
+	background-color: var(--vscode-peekViewEditorGutter-background);
+}
+
+/* High Contrast Theming */
+
+.monaco-editor.hc-black .reference-zone-widget .ref-tree .reference-file,
+.monaco-editor.hc-light .reference-zone-widget .ref-tree .reference-file {
+	font-weight: bold;
+}
+
+.monaco-editor.hc-black .reference-zone-widget .ref-tree .referenceMatch .highlight,
+.monaco-editor.hc-light .reference-zone-widget .ref-tree .referenceMatch .highlight {
+	border: 1px dotted var(--vscode-contrastActiveBorder, transparent);
+	box-sizing: border-box;
+}

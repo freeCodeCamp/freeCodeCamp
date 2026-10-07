@@ -1,0 +1,56 @@
+# Parses Vue builtin directives
+
+<span v-text="msg"></span>
+
+==>
+
+Document(
+  Element(
+    OpenTag(StartTag, TagName, Attribute(AttributeName, Is, AttributeValue), EndTag),
+    CloseTag(StartCloseTag, TagName, EndTag)))
+
+# Parses Vue :is shorthand syntax
+
+<Component :is="view"></Component>
+
+==>
+
+Document(
+  Element(
+    OpenTag(StartTag, TagName, Attribute(AttributeName, Is, AttributeValue),EndTag),
+    CloseTag(StartCloseTag, TagName, EndTag)))
+
+# Parses Vue @click shorthand syntax
+
+<button @click="handler()">Click me</button>
+
+==>
+
+Document(
+  Element(
+    OpenTag(StartTag, TagName, Attribute(AttributeName, Is, AttributeValue), EndTag),
+    Text,
+    CloseTag(StartCloseTag, TagName, EndTag)))
+
+# Parses Vue @submit.prevent shorthand syntax
+
+<form @submit.prevent="onSubmit"></form>
+
+==>
+
+Document(
+  Element(
+    OpenTag(StartTag, TagName, Attribute(AttributeName, Is, AttributeValue), EndTag),
+    CloseTag(StartCloseTag, TagName, EndTag)))
+
+# Parses Vue Dynamic Arguments
+
+<a v-bind:[attributeName]="url">Link</a>
+
+==>
+
+Document(
+  Element(
+    OpenTag(StartTag, TagName, Attribute(AttributeName, Is, AttributeValue), EndTag),
+    Text,
+    CloseTag(StartCloseTag, TagName, EndTag)))

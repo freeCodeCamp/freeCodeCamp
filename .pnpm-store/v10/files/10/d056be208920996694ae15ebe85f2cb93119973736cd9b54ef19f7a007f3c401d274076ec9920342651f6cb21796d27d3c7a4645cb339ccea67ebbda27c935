@@ -1,0 +1,105 @@
+{
+  "name": "@aws-sdk/client-sts",
+  "description": "AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native",
+  "version": "3.521.0",
+  "scripts": {
+    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types'",
+    "build:cjs": "node ../../scripts/compilation/inline client-sts",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build:include:deps": "lerna run --scope $npm_package_name --include-dependencies build",
+    "build:types": "rimraf ./dist-types tsconfig.types.tsbuildinfo && tsc -p tsconfig.types.json",
+    "build:types:downlevel": "downlevel-dts dist-types dist-types/ts3.4",
+    "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo",
+    "extract:docs": "api-extractor run --local",
+    "generate:client": "node ../../scripts/generate-clients/single-service --solo sts",
+    "test": "yarn test:unit",
+    "test:unit": "jest"
+  },
+  "main": "./dist-cjs/index.js",
+  "types": "./dist-types/index.d.ts",
+  "module": "./dist-es/index.js",
+  "sideEffects": false,
+  "dependencies": {
+    "@aws-crypto/sha256-browser": "3.0.0",
+    "@aws-crypto/sha256-js": "3.0.0",
+    "@aws-sdk/core": "3.521.0",
+    "@aws-sdk/middleware-host-header": "3.521.0",
+    "@aws-sdk/middleware-logger": "3.521.0",
+    "@aws-sdk/middleware-recursion-detection": "3.521.0",
+    "@aws-sdk/middleware-user-agent": "3.521.0",
+    "@aws-sdk/region-config-resolver": "3.521.0",
+    "@aws-sdk/types": "3.521.0",
+    "@aws-sdk/util-endpoints": "3.521.0",
+    "@aws-sdk/util-user-agent-browser": "3.521.0",
+    "@aws-sdk/util-user-agent-node": "3.521.0",
+    "@smithy/config-resolver": "^2.1.2",
+    "@smithy/core": "^1.3.3",
+    "@smithy/fetch-http-handler": "^2.4.2",
+    "@smithy/hash-node": "^2.1.2",
+    "@smithy/invalid-dependency": "^2.1.2",
+    "@smithy/middleware-content-length": "^2.1.2",
+    "@smithy/middleware-endpoint": "^2.4.2",
+    "@smithy/middleware-retry": "^2.1.2",
+    "@smithy/middleware-serde": "^2.1.2",
+    "@smithy/middleware-stack": "^2.1.2",
+    "@smithy/node-config-provider": "^2.2.2",
+    "@smithy/node-http-handler": "^2.4.0",
+    "@smithy/protocol-http": "^3.2.0",
+    "@smithy/smithy-client": "^2.4.0",
+    "@smithy/types": "^2.10.0",
+    "@smithy/url-parser": "^2.1.2",
+    "@smithy/util-base64": "^2.1.1",
+    "@smithy/util-body-length-browser": "^2.1.1",
+    "@smithy/util-body-length-node": "^2.2.1",
+    "@smithy/util-defaults-mode-browser": "^2.1.2",
+    "@smithy/util-defaults-mode-node": "^2.2.1",
+    "@smithy/util-endpoints": "^1.1.2",
+    "@smithy/util-middleware": "^2.1.2",
+    "@smithy/util-retry": "^2.1.2",
+    "@smithy/util-utf8": "^2.1.1",
+    "fast-xml-parser": "4.2.5",
+    "tslib": "^2.5.0"
+  },
+  "devDependencies": {
+    "@smithy/service-client-documentation-generator": "^2.1.1",
+    "@tsconfig/node14": "1.0.3",
+    "@types/node": "^14.14.31",
+    "concurrently": "7.0.0",
+    "downlevel-dts": "0.10.1",
+    "rimraf": "3.0.2",
+    "typescript": "~4.9.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "typesVersions": {
+    "<4.0": {
+      "dist-types/*": [
+        "dist-types/ts3.4/*"
+      ]
+    }
+  },
+  "files": [
+    "dist-*/**"
+  ],
+  "author": {
+    "name": "AWS SDK for JavaScript Team",
+    "url": "https://aws.amazon.com/javascript/"
+  },
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "@aws-sdk/credential-provider-node": "^3.521.0"
+  },
+  "browser": {
+    "./dist-es/runtimeConfig": "./dist-es/runtimeConfig.browser"
+  },
+  "react-native": {
+    "./dist-es/runtimeConfig": "./dist-es/runtimeConfig.native"
+  },
+  "homepage": "https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aws/aws-sdk-js-v3.git",
+    "directory": "clients/client-sts"
+  }
+}

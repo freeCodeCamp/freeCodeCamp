@@ -1,0 +1,77 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Defines events for background web platform features.
+experimental domain BackgroundService
+  # The Background Service that will be associated with the commands/events.
+  # Every Background Service operates independently, but they share the same
+  # API.
+  type ServiceName extends string
+    enum
+      backgroundFetch
+      backgroundSync
+      pushMessaging
+      notifications
+      paymentHandler
+      periodicBackgroundSync
+
+  # Enables event updates for the service.
+  command startObserving
+    parameters
+      ServiceName service
+
+  # Disables event updates for the service.
+  command stopObserving
+    parameters
+      ServiceName service
+
+  # Set the recording state for the service.
+  command setRecording
+    parameters
+      boolean shouldRecord
+      ServiceName service
+
+  # Clears all stored data for the service.
+  command clearEvents
+    parameters
+      ServiceName service
+
+  # Called when the recording state for the service has been updated.
+  event recordingStateChanged
+    parameters
+      boolean isRecording
+      ServiceName service
+
+  # A key-value pair for additional event information to pass along.
+  type EventMetadata extends object
+    properties
+      string key
+      string value
+
+  type BackgroundServiceEvent extends object
+    properties
+      # Timestamp of the event (in seconds).
+      Network.TimeSinceEpoch timestamp
+      # The origin this event belongs to.
+      string origin
+      # The Service Worker ID that initiated the event.
+      ServiceWorker.RegistrationID serviceWorkerRegistrationId
+      # The Background Service this event belongs to.
+      ServiceName service
+      # A description of the event.
+      string eventName
+      # An identifier that groups related events together.
+      string instanceId
+      # A list of event-specific information.
+      array of EventMetadata eventMetadata
+      # Storage key this event belongs to.
+      string storageKey
+
+  # Called with all existing backgroundServiceEvents when enabled, and all new
+  # events afterwards if enabled and recording.
+  event backgroundServiceEventReceived
+    parameters
+      BackgroundServiceEvent backgroundServiceEvent

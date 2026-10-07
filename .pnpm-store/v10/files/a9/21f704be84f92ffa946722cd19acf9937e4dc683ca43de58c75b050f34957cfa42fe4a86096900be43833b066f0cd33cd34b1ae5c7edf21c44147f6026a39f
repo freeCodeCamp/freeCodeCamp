@@ -1,0 +1,50 @@
+# `MD004` - Unordered list style
+
+Tags: `bullet`, `ul`
+
+Aliases: `ul-style`
+
+Parameters:
+
+- `style`: List style (`string`, default `consistent`, values `asterisk` /
+  `consistent` / `dash` / `plus` / `sublist`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when the symbols used in the document for unordered
+list items do not match the configured unordered list style:
+
+```markdown
+* Item 1
++ Item 2
+- Item 3
+```
+
+To fix this issue, use the configured style for list items throughout the
+document:
+
+```markdown
+* Item 1
+* Item 2
+* Item 3
+```
+
+The configured list style can ensure all list styling is a specific symbol
+(`asterisk`, `plus`, `dash`), ensure each sublist has a consistent symbol that
+differs from its parent list (`sublist`), or ensure all list styles match the
+first list style (`consistent`).
+
+For example, the following is valid for the `sublist` style because the
+outer-most indent uses asterisk, the middle indent uses plus, and the inner-most
+indent uses dash:
+
+```markdown
+* Item 1
+  + Item 2
+    - Item 3
+  + Item 4
+* Item 4
+  + Item 5
+```
+
+Rationale: Consistent formatting makes it easier to understand a document.

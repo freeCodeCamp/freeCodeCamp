@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/ChildExecutorDecision.js",
+  "module": "../dist/esm/ChildExecutorDecision.js",
+  "types": "../dist/dts/ChildExecutorDecision.d.ts"
+}

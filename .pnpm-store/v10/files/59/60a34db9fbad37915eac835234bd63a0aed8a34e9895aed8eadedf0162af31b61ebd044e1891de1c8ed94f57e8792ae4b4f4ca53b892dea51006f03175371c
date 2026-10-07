@@ -1,0 +1,52 @@
+# `MD038` - Spaces inside code span elements
+
+Tags: `code`, `whitespace`
+
+Aliases: `no-space-in-code`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered for code spans containing content with unnecessary space
+next to the beginning or ending backticks:
+
+```markdown
+`some text `
+
+` some text`
+
+`   some text   `
+```
+
+To fix this, remove the extra space characters from the beginning and ending:
+
+```markdown
+`some text`
+```
+
+Note: A single leading *and* trailing space is allowed by the specification and
+trimmed by the parser to support code spans that begin or end with a backtick:
+
+```markdown
+`` `backticks` ``
+
+`` backtick` ``
+```
+
+Note: When single-space padding is present in the input, it will be preserved
+(even if unnecessary):
+
+```markdown
+` code `
+```
+
+Note: Code spans containing only spaces are allowed by the specification and are
+also preserved:
+
+```markdown
+` `
+
+`   `
+```
+
+Rationale: Violations of this rule are usually unintentional and can lead to
+improperly-rendered content.

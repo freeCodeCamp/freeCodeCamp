@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/core/ws/webSocketInterceptor.ts"],"sourcesContent":["import { WebSocketInterceptor } from '@mswjs/interceptors/WebSocket'\n\nexport const webSocketInterceptor = new WebSocketInterceptor()\n"],"mappings":"AAAA,SAAS,4BAA4B;AAE9B,MAAM,uBAAuB,IAAI,qBAAqB;","names":[]}

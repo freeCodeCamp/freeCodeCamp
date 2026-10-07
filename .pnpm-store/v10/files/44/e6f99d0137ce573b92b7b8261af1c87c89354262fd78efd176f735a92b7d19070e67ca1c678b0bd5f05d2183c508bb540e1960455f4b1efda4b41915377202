@@ -1,0 +1,226 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain IndexedDB
+  depends on Runtime
+  depends on Storage
+
+  # Database with an array of object stores.
+  type DatabaseWithObjectStores extends object
+    properties
+      # Database name.
+      string name
+      # Database version (type is not 'integer', as the standard
+      # requires the version number to be 'unsigned long long')
+      number version
+      # Object stores in this database.
+      array of ObjectStore objectStores
+
+  # Object store.
+  type ObjectStore extends object
+    properties
+      # Object store name.
+      string name
+      # Object store key path.
+      KeyPath keyPath
+      # If true, object store has auto increment flag set.
+      boolean autoIncrement
+      # Indexes in this object store.
+      array of ObjectStoreIndex indexes
+
+  # Object store index.
+  type ObjectStoreIndex extends object
+    properties
+      # Index name.
+      string name
+      # Index key path.
+      KeyPath keyPath
+      # If true, index is unique.
+      boolean unique
+      # If true, index allows multiple entries for a key.
+      boolean multiEntry
+
+  # Key.
+  type Key extends object
+    properties
+      # Key type.
+      enum type
+        number
+        string
+        date
+        array
+      # Number value.
+      optional number number
+      # String value.
+      optional string string
+      # Date value.
+      optional number date
+      # Array value.
+      optional array of Key array
+
+  # Key range.
+  type KeyRange extends object
+    properties
+      # Lower bound.
+      optional Key lower
+      # Upper bound.
+      optional Key upper
+      # If true lower bound is open.
+      boolean lowerOpen
+      # If true upper bound is open.
+      boolean upperOpen
+
+  # Data entry.
+  type DataEntry extends object
+    properties
+      # Key object.
+      Runtime.RemoteObject key
+      # Primary key object.
+      Runtime.RemoteObject primaryKey
+      # Value object.
+      Runtime.RemoteObject value
+
+  # Key path.
+  type KeyPath extends object
+    properties
+      # Key path type.
+      enum type
+        null
+        string
+        array
+      # String value.
+      optional string string
+      # Array value.
+      optional array of string array
+
+  # Clears all entries from an object store.
+  command clearObjectStore
+    parameters
+      # At least and at most one of securityOrigin, storageKey, or storageBucket must be specified.
+      # Security origin.
+      optional string securityOrigin
+      # Storage key.
+      optional string storageKey
+      # Storage bucket. If not specified, it uses the default bucket.
+      optional Storage.StorageBucket storageBucket
+      # Database name.
+      string databaseName
+      # Object store name.
+      string objectStoreName
+
+  # Deletes a database.
+  command deleteDatabase
+    parameters
+      # At least and at most one of securityOrigin, storageKey, or storageBucket must be specified.
+      # Security origin.
+      optional string securityOrigin
+      # Storage key.
+      optional string storageKey
+      # Storage bucket. If not specified, it uses the default bucket.
+      optional Storage.StorageBucket storageBucket
+      # Database name.
+      string databaseName
+
+  # Delete a range of entries from an object store
+  command deleteObjectStoreEntries
+    parameters
+      # At least and at most one of securityOrigin, storageKey, or storageBucket must be specified.
+      # Security origin.
+      optional string securityOrigin
+      # Storage key.
+      optional string storageKey
+      # Storage bucket. If not specified, it uses the default bucket.
+      optional Storage.StorageBucket storageBucket
+      string databaseName
+      string objectStoreName
+      # Range of entry keys to delete
+      KeyRange keyRange
+
+  # Disables events from backend.
+  command disable
+
+  # Enables events from backend.
+  command enable
+
+  # Requests data from object store or index.
+  command requestData
+    parameters
+      # At least and at most one of securityOrigin, storageKey, or storageBucket must be specified.
+      # Security origin.
+      optional string securityOrigin
+      # Storage key.
+      optional string storageKey
+      # Storage bucket. If not specified, it uses the default bucket.
+      optional Storage.StorageBucket storageBucket
+      # Database name.
+      string databaseName
+      # Object store name.
+      string objectStoreName
+      # Index name. If not specified, it performs an object store data request.
+      optional string indexName
+      # Number of records to skip.
+      integer skipCount
+      # Number of records to fetch.
+      integer pageSize
+      # Key range.
+      optional KeyRange keyRange
+    returns
+      # Array of object store data entries.
+      array of DataEntry objectStoreDataEntries
+      # If true, there are more entries to fetch in the given range.
+      boolean hasMore
+
+  # Gets metadata of an object store.
+  command getMetadata
+    parameters
+      # At least and at most one of securityOrigin, storageKey, or storageBucket must be specified.
+      # Security origin.
+      optional string securityOrigin
+      # Storage key.
+      optional string storageKey
+      # Storage bucket. If not specified, it uses the default bucket.
+      optional Storage.StorageBucket storageBucket
+      # Database name.
+      string databaseName
+      # Object store name.
+      string objectStoreName
+    returns
+      # the entries count
+      number entriesCount
+      # the current value of key generator, to become the next inserted
+      # key into the object store. Valid if objectStore.autoIncrement
+      # is true.
+      number keyGeneratorValue
+
+  # Requests database with given name in given frame.
+  command requestDatabase
+    parameters
+      # At least and at most one of securityOrigin, storageKey, or storageBucket must be specified.
+      # Security origin.
+      optional string securityOrigin
+      # Storage key.
+      optional string storageKey
+      # Storage bucket. If not specified, it uses the default bucket.
+      optional Storage.StorageBucket storageBucket
+      # Database name.
+      string databaseName
+    returns
+      # Database with an array of object stores.
+      DatabaseWithObjectStores databaseWithObjectStores
+
+  # Requests database names for given security origin.
+  command requestDatabaseNames
+    parameters
+      # At least and at most one of securityOrigin, storageKey, or storageBucket must be specified.
+      # Security origin.
+      optional string securityOrigin
+      # Storage key.
+      optional string storageKey
+      # Storage bucket. If not specified, it uses the default bucket.
+      optional Storage.StorageBucket storageBucket
+    returns
+      # Database names for origin.
+      array of string databaseNames

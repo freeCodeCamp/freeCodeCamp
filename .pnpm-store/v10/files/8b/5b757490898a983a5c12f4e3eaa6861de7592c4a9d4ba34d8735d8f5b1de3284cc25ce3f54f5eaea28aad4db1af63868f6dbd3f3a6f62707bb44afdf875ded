@@ -1,0 +1,44 @@
+# `MD024` - Multiple headings with the same content
+
+Tags: `headings`
+
+Aliases: `no-duplicate-heading`
+
+Parameters:
+
+- `siblings_only`: Only check sibling headings (`boolean`, default `false`)
+
+This rule is triggered if there are multiple headings in the document that have
+the same text:
+
+```markdown
+# Some text
+
+## Some text
+```
+
+To fix this, ensure that the content of each heading is different:
+
+```markdown
+# Some text
+
+## Some more text
+```
+
+If the parameter `siblings_only` is set to `true`, duplication is allowed for
+headings with different parents (as is common in changelogs):
+
+```markdown
+# Change log
+
+## 1.0.0
+
+### Features
+
+## 2.0.0
+
+### Features
+```
+
+Rationale: Some Markdown parsers generate anchors for headings based on the
+heading name; headings with the same content can cause problems with that.

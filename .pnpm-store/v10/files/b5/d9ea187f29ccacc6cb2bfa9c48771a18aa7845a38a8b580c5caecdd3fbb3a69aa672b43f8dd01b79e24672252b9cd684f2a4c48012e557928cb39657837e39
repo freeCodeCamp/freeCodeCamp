@@ -1,0 +1,26 @@
+{
+  "name": "@aws-crypto/ie11-detection",
+  "version": "3.0.0",
+  "description": "Provides functions and types for detecting if the host environment is IE11",
+  "scripts": {
+    "pretest": "tsc -p tsconfig.json",
+    "test": "mocha --require ts-node/register test/**/*test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aws/aws-sdk-js-crypto-helpers.git"
+  },
+  "author": {
+    "name": "AWS Crypto Tools Team",
+    "email": "aws-cryptools@amazon.com",
+    "url": "https://docs.aws.amazon.com/aws-crypto-tools/index.html?id=docs_gateway#lang/en_us"
+  },
+  "homepage": "https://github.com/aws/aws-sdk-js-crypto-helpers/tree/master/packages/ie11-detection",
+  "license": "Apache-2.0",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "dependencies": {
+    "tslib": "^1.11.1"
+  },
+  "gitHead": "7f56cee8f62bd65cd397eeec29c3c997215bd80c"
+}

@@ -1,0 +1,169 @@
+{
+  "name": "puppeteer-core",
+  "version": "25.0.4",
+  "description": "A high-level API to control headless Chrome over the DevTools Protocol",
+  "keywords": [
+    "puppeteer",
+    "chrome",
+    "headless",
+    "automation"
+  ],
+  "type": "module",
+  "main": "./lib/puppeteer/puppeteer-core.js",
+  "browser": "./lib/puppeteer/puppeteer-core-browser.js",
+  "module": "./lib/puppeteer/puppeteer-core.js",
+  "types": "./lib/types.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types.d.ts",
+      "import": "./lib/puppeteer/puppeteer-core.js",
+      "require": "./lib/puppeteer/puppeteer-core.js"
+    },
+    "./internal/*": {
+      "import": "./lib/puppeteer/*",
+      "require": "./lib/puppeteer/*"
+    },
+    "./*": {
+      "import": "./*",
+      "require": "./*"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puppeteer/puppeteer/tree/main/packages/puppeteer-core"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build:docs": "wireit",
+    "build": "wireit",
+    "check": "wireit",
+    "clean": "../../tools/clean.mjs",
+    "prepack": "wireit",
+    "unit": "wireit",
+    "unit:only": "wireit"
+  },
+  "wireit": {
+    "check": {
+      "command": "node --experimental-strip-types tools/ensure-correct-devtools-protocol-package.mts",
+      "dependencies": [
+        "build"
+      ]
+    },
+    "prepack": {
+      "command": "node --experimental-strip-types ../../tools/cp.ts ../../README.md README.md",
+      "files": [
+        "../../README.md"
+      ],
+      "output": [
+        "README.md"
+      ]
+    },
+    "build": {
+      "dependencies": [
+        "build:tsc",
+        "build:types",
+        "build:es5"
+      ]
+    },
+    "build:docs": {
+      "command": "api-extractor run --local --config \"./api-extractor.docs.json\"",
+      "files": [
+        "api-extractor.docs.json",
+        "lib/puppeteer/puppeteer-core.d.ts",
+        "tsconfig.json"
+      ],
+      "dependencies": [
+        "build:tsc"
+      ]
+    },
+    "build:tsc": {
+      "command": "hereby build",
+      "clean": "if-file-deleted",
+      "dependencies": [
+        "../browsers:build"
+      ],
+      "files": [
+        "{src,third_party}/**",
+        "../../versions.js",
+        "!src/generated",
+        "Herebyfile.mjs"
+      ],
+      "output": [
+        "lib/**"
+      ]
+    },
+    "build:es5": {
+      "command": "rollup -c rollup.config.mjs && node ../../tools/patch.mjs lib/es5-iife/puppeteer-core-browser.js lib/es5-iife/puppeteer-core-browser.d.ts lib/types.d.ts",
+      "files": [
+        "rollup.config.mjs"
+      ],
+      "output": [
+        "lib/es5-iife/puppeteer-core-browser.js"
+      ],
+      "dependencies": [
+        "build:tsc",
+        "build:types"
+      ]
+    },
+    "build:types": {
+      "command": "api-extractor run --local && eslint --fix lib/types.d.ts --no-ignore",
+      "files": [
+        "api-extractor.json",
+        "lib/puppeteer/types.d.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "lib/types.d.ts"
+      ],
+      "dependencies": [
+        "build:tsc"
+      ]
+    },
+    "unit": {
+      "command": "node --test --test-reporter=spec \"lib/**/*.test.js\"",
+      "dependencies": [
+        "build"
+      ]
+    },
+    "unit:only": {
+      "command": "node --test --test-only --test-reporter=spec \"lib/**/*.test.js\"",
+      "dependencies": [
+        "build"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "src",
+    "!function-fixture.mjs",
+    "!*.test.ts",
+    "!*.test.js",
+    "!*.test.d.ts",
+    "!*.test.js.map",
+    "!*.test.d.ts.map",
+    "!*.tsbuildinfo"
+  ],
+  "author": "The Chromium Authors",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@puppeteer/browsers": "3.0.3",
+    "chromium-bidi": "16.0.1",
+    "debug": "^4.4.3",
+    "devtools-protocol": "0.0.1608973",
+    "typed-query-selector": "^2.12.2",
+    "webdriver-bidi-protocol": "0.4.1",
+    "ws": "^8.20.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.1.40",
+    "@types/debug": "4.1.13",
+    "@types/node": "^18.17.15",
+    "@types/ws": "8.18.1",
+    "mitt": "3.0.1",
+    "parsel-js": "1.2.2",
+    "rxjs": "^7.8.2",
+    "urlpattern-polyfill": "10.1.0"
+  }
+}

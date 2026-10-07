@@ -1,0 +1,45 @@
+{
+  "name": "@fastify/error",
+  "version": "4.0.0",
+  "description": "A small utility, used by Fastify itself, for generating consistent error objects across your codebase and plugins.",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:unit": "tap",
+    "test:typescript": "tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-error.git"
+  },
+  "keywords": [
+    "fastify",
+    "error",
+    "utility",
+    "plugin"
+  ],
+  "author": "Tomas Della Vedova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-error/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-error#readme",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "standard": "^17.1.0",
+    "tap": "^18.7.1",
+    "tsd": "^0.31.0"
+  },
+  "tsd": {
+    "compilerOptions": {
+      "esModuleInterop": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

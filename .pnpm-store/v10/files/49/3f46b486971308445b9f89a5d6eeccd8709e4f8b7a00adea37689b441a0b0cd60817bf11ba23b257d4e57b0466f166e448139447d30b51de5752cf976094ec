@@ -1,0 +1,59 @@
+{
+  "name": "stackframe",
+  "description": "JS Object representation of a stack frame",
+  "maintainers": [
+    "Eric Wendelin <me@eriwen.com> (https://www.eriwen.com)",
+    "Victor Homyakov <vkhomyackov@gmail.com> (https://github.com/victor-homyakov)",
+    "Oliver Salzburg (https://github.com/oliversalzburg)"
+  ],
+  "version": "1.3.4",
+  "license": "MIT",
+  "keywords": [
+    "stacktrace",
+    "error",
+    "debugger",
+    "stack frame"
+  ],
+  "homepage": "https://www.stacktracejs.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stacktracejs/stackframe.git"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "jasmine": "^4.1.0",
+    "jasmine-core": "^4.1.1",
+    "karma": "^6.3.20",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-coverage": "^2.2.0",
+    "karma-coveralls": "^2.1.0",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-jasmine": "^4.0.2",
+    "karma-opera-launcher": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^4.3.6",
+    "karma-spec-reporter": "^0.0.34",
+    "uglify-es": "^3.3.9"
+  },
+  "bugs": {
+    "url": "https://github.com/stacktracejs/stackframe/issues"
+  },
+  "main": "./stackframe.js",
+  "typings": "./stackframe.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "stackframe.js",
+    "stackframe.d.ts",
+    "dist/"
+  ],
+  "scripts": {
+    "lint": "eslint",
+    "test": "karma start karma.conf.js --single-run",
+    "test-pr": "karma start karma.conf.js --single-run --browsers Firefox,Chrome_No_Sandbox",
+    "test-ci": "karma start karma.conf.ci.js --single-run",
+    "prepare": "cp stackframe.js dist/ && uglifyjs stackframe.js -o dist/stackframe.min.js --compress --mangle --source-map \"url=stackframe.min.js.map\""
+  }
+}

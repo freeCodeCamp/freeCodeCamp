@@ -1,0 +1,47 @@
+{
+  "name": "@radix-ui/primitive",
+  "version": "1.1.3",
+  "license": "MIT",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "typescript": "^5.7.3",
+    "@repo/builder": "0.0.0",
+    "@repo/typescript-config": "0.0.0",
+    "@repo/eslint-config": "0.0.0"
+  },
+  "homepage": "https://radix-ui.com/primitives",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git"
+  },
+  "bugs": {
+    "url": "https://github.com/radix-ui/primitives/issues"
+  },
+  "scripts": {
+    "lint": "eslint --max-warnings 0 src",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "build": "radix-build"
+  },
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  }
+}

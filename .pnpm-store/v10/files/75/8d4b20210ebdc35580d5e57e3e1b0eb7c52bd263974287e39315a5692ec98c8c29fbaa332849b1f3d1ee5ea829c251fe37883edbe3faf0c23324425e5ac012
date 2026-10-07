@@ -1,0 +1,9 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "esModule": {
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

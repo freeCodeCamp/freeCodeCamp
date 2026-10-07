@@ -1,0 +1,51 @@
+{
+  "name": "string-argv",
+  "description": "string-argv parses a string into an argument array to mimic process.argv. This is useful when testing Command Line Utilities that you want to pass arguments to.",
+  "version": "0.3.2",
+  "contributors": [
+    {
+      "name": "Michael Ferris",
+      "email": "mike.ferri@hotmail.com"
+    }
+  ],
+  "author": {
+    "name": "Anthony McCormick",
+    "email": "anthony.mccormick@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "argv"
+  ],
+  "scripts": {
+    "build": "tsc -p . & tsc -p tsconfig.commonjs.json",
+    "prepublishOnly": "npm test",
+    "test": "npm run build & jasmine --config=test/config.json"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./commonjs/index.js"
+    }
+  },
+  "main": "./commonjs/index.js",
+  "module": "./index.js",
+  "types": "index.d.ts",
+  "engines": {
+    "node": ">=0.6.19"
+  },
+  "bugs": {
+    "url": "https://github.com/mccormicka/string-argv/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mccormicka/string-argv"
+  },
+  "homepage": "https://github.com/mccormicka/string-argv",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "jasmine": "^4.4.0",
+    "typescript": "^5.0.4"
+  }
+}

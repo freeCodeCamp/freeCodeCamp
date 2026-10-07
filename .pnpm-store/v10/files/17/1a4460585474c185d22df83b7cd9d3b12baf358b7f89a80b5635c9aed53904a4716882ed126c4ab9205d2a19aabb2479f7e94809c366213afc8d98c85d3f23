@@ -1,0 +1,13 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TLiteral } from '../../types/literal.mjs';
+import { type TNumber } from '../../types/number.mjs';
+import { type TInteger } from '../../types/integer.mjs';
+import { type TEvaluateUnionFast } from '../evaluate/evaluate.mjs';
+import { type TExtends, ExtendsResult } from '../../extends/index.mjs';
+import { type TFormatArrayIndexer } from './array_indexer.mjs';
+type TIndexElementsWithIndexer<Types extends TSchema[], Indexer extends TSchema, Result extends TSchema[] = []> = (Types extends [...infer Left extends TSchema[], infer Right extends TSchema] ? TExtends<{}, TLiteral<Left['length']>, Indexer> extends ExtendsResult.TExtendsTrueLike ? TIndexElementsWithIndexer<Left, Indexer, [Right, ...Result]> : TIndexElementsWithIndexer<Left, Indexer, Result> : Result);
+type TFromTupleWithIndexer<Types extends TSchema[], Indexer extends TSchema, ArrayIndexer extends TSchema = TFormatArrayIndexer<Indexer>, Elements extends TSchema[] = TIndexElementsWithIndexer<Types, ArrayIndexer>, Result extends TSchema = TEvaluateUnionFast<Elements>> = Result;
+type TFromTupleWithoutIndexer<Types extends TSchema[], Result extends TSchema = TEvaluateUnionFast<Types>> = Result;
+export type TFromTuple<Types extends TSchema[], Indexer extends TSchema, Result extends TSchema = (Indexer extends TLiteral<infer _ extends 'length'> ? TLiteral<Types['length']> : Indexer extends TNumber | TInteger ? TFromTupleWithoutIndexer<Types> : TFromTupleWithIndexer<Types, Indexer>)> = Result;
+export declare function FromTuple<Types extends TSchema[], Indexer extends TSchema>(types: [...Types], indexer: Indexer): TFromTuple<Types, Indexer>;
+export {};

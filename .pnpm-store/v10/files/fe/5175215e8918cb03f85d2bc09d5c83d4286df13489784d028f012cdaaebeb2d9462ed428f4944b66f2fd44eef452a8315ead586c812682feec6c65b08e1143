@@ -1,0 +1,1 @@
+{"version":3,"file":"constants.js","sources":["../../../../../src/integrations/tracing/vercelai/constants.ts"],"sourcesContent":["export const INTEGRATION_NAME = 'VercelAI';\n"],"names":[],"mappings":"AAAO,MAAM,gBAAA,GAAmB;;;;"}

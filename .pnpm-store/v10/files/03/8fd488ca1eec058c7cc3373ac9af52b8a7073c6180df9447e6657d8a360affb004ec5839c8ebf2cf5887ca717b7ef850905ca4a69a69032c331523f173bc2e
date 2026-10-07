@@ -1,0 +1,7 @@
+{
+  "name": "package-alias-exclude",
+  "main": "main.js",
+  "alias": {
+    "./main.js": false
+  }
+}

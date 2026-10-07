@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "groups": {
+        "type": "array",
+        "minitems": 1,
+        "uniqueItems": true,
+        "items": {
+          "$ref": "definitions.json#/groupList"
+        }
+      },
+      "status": {
+        "enum": [
+          "standard",
+          "nonstandard",
+          "experimental"
+        ]
+      },
+      "mdn_url": {
+        "type": "string",
+        "pattern": "^https://developer.mozilla.org/docs/Web/CSS/"
+      }
+    },
+    "required": [
+      "groups",
+      "status"
+    ]
+  }
+}

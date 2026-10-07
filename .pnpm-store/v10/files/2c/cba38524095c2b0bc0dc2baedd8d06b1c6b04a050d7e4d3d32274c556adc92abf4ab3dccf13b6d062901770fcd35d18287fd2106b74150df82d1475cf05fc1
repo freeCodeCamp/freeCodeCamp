@@ -1,0 +1,69 @@
+{
+  "name": "is-bun-module",
+  "author": "SunsetTechuila <techuila.sunset@gmail.com>",
+  "description": "Is this specifier a Bun core module or supported Node one?",
+  "version": "2.0.0",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "./dist/generic.js",
+  "exports": {
+    ".": {
+      "bun": "./dist/bun.mjs",
+      "types": "./dist/generic.d.ts",
+      "default": "./dist/generic.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "homepage": "https://github.com/SunsetTechuila/is-bun-module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunsetTechuila/is-bun-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SunsetTechuila/is-bun-module/issues"
+  },
+  "keywords": [
+    "core",
+    "modules",
+    "module",
+    "node",
+    "dependencies",
+    "bun"
+  ],
+  "scripts": {
+    "build": "bun tsup",
+    "check-all": "bun concurrently --kill-others=failure 'bun run test' 'bun lint' 'bun type-check' 'bun format:check'",
+    "precheck-all": "bun run build",
+    "test": "bun test",
+    "format": "bun format:base --write",
+    "format:check": "bun format:base --check",
+    "format:base": "bun prettier . --cache",
+    "lint": "bun eslint . --cache",
+    "type-check": "bun tsc",
+    "get-bun-blogs": "bun scripts/getBunBlogs.ts",
+    "publish": "bun semantic-release",
+    "prepare": "bun husky"
+  },
+  "dependencies": {
+    "semver": "^7.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/js": "^9.22.0",
+    "@semantic-release/exec": "^7.0.3",
+    "@types/bun": "^1.2.5",
+    "@types/semver": "^7.5.8",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "semantic-release": "^24.2.3",
+    "tsup": "^8.4.0",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "^8.26.1"
+  }
+}

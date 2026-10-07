@@ -1,0 +1,53 @@
+{
+  "name": "instantsearch-ui-components",
+  "version": "0.25.0",
+  "description": "Common UI components for InstantSearch.",
+  "types": "dist/es/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "type": "module",
+  "exports": {
+    "types": "./dist/es/index.d.ts",
+    "require": "./dist/cjs/index.js",
+    "default": "./dist/es/index.js"
+  },
+  "sideEffects": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algolia/instantsearch"
+  },
+  "author": {
+    "name": "Algolia, Inc.",
+    "url": "https://www.algolia.com"
+  },
+  "keywords": [
+    "algolia",
+    "components",
+    "fast",
+    "instantsearch",
+    "react",
+    "search",
+    "jsx",
+    "vdom",
+    "hyperscript"
+  ],
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "rollup -c rollup.config.mjs && yarn build:types",
+    "build:types": "tsc -p ./tsconfig.declaration.json --outDir ./dist/es",
+    "version": "./scripts/version.cjs",
+    "watch:es": "rollup -c rollup.config.mjs --watch"
+  },
+  "dependencies": {
+    "@swc/helpers": "0.5.18",
+    "markdown-to-jsx": "^7.7.15",
+    "zod": "^3.25.76 || ^4",
+    "zod-to-json-schema": "3.24.6"
+  },
+  "gitHead": "0e8b659cc3a4dec1bc1c36fc4c01ecd09d46617c"
+}

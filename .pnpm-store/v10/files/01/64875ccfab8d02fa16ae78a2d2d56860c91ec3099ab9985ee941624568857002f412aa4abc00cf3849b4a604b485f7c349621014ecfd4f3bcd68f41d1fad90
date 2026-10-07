@@ -1,0 +1,1 @@
+{"version":3,"file":"openFeature.d.ts","sourceRoot":"","sources":["../../../../src/integrations/featureFlagShims/openFeature.ts"],"names":[],"mappings":"AAEA;;;GAGG;AACH,eAAO,MAAM,0BAA0B,4DAWrC,CAAC;AAEH;;GAEG;AACH,qBAAa,8BAA8B;IACzC;;OAEG;;IAUH;;OAEG;IACI,KAAK,IAAI,IAAI;IAIpB;;OAEG;IACI,KAAK,IAAI,IAAI;CAGrB"}

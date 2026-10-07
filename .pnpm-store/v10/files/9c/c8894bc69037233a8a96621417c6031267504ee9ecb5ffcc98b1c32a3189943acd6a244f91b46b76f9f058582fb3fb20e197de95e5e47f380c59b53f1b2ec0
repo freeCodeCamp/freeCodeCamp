@@ -1,0 +1,1 @@
+{"version":3,"file":"set-value-curve-automation-event.d.ts","sourceRoot":"","sources":["../../../src/interfaces/set-value-curve-automation-event.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,6BAA6B;IAC1C,QAAQ,CAAC,QAAQ,EAAE,MAAM,CAAC;IAE1B,QAAQ,CAAC,SAAS,EAAE,MAAM,CAAC;IAE3B,QAAQ,CAAC,IAAI,EAAE,eAAe,CAAC;IAE/B,QAAQ,CAAC,MAAM,EAAE,MAAM,EAAE,GAAG,YAAY,CAAC;CAC5C"}

@@ -1,0 +1,4 @@
+import "./logger.js";
+import { $ as runOptimizeDeps, B as depsLogString, F as addOptimizedDepInfo, G as initDepsOptimizerMetadata, H as extractExportsData, I as cleanupDepsCacheStaleDirs, J as optimizeDeps, K as isDepOptimizationDisabled, L as createIsOptimizedDepFile, P as addManuallyIncludedOptimizeDeps, Q as optimizedDepNeedsInterop, R as createIsOptimizedDepUrl, U as getDepsCacheDir, V as discoverProjectDependencies, W as getOptimizedDepPath, X as optimizedDepInfoFromFile, Y as optimizeExplicitEnvironmentDeps, Z as optimizedDepInfoFromId, et as toDiscoveredDependencies, q as loadCachedDepOptimizationMetadata, z as depsFromOptimizedDepInfo } from "./config.js";
+
+export { optimizeDeps };

@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "publicPath": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "emit": {
+      "type": "boolean"
+    },
+    "esModule": {
+      "type": "boolean"
+    },
+    "layer": {
+      "type": "string"
+    },
+    "modules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "namedExport": {
+          "description": "Enables/disables ES modules named export for locals (https://webpack.js.org/plugins/mini-css-extract-plugin/#namedexport).",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

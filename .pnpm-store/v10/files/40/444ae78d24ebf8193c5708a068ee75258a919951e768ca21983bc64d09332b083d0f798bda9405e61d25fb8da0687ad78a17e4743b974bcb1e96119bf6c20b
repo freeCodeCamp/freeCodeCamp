@@ -1,0 +1,1 @@
+{"version":3,"file":"react-lifecycles-compat.js","names":["exports","polyfill","Component"],"sources":["../react-lifecycles-compat.js"],"sourcesContent":["exports.polyfill = Component => Component\n"],"mappings":";;AAAAA,OAAO,CAACC,QAAQ,GAAGC,SAAS,IAAIA,SAAS"}

@@ -1,0 +1,78 @@
+{
+  "name": "@eslint/eslintrc",
+  "version": "3.3.5",
+  "description": "The legacy ESLintRC config file format for ESLint",
+  "type": "module",
+  "main": "./dist/eslintrc.cjs",
+  "types": "./dist/eslintrc.d.cts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./dist/eslintrc.cjs",
+      "types": "./lib/types/index.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./universal": {
+      "import": "./lib/index-universal.js",
+      "require": "./dist/eslintrc-universal.cjs"
+    }
+  },
+  "files": [
+    "lib",
+    "conf",
+    "LICENSE",
+    "dist",
+    "universal.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c && node -e \"fs.copyFileSync('./lib/types/index.d.ts', './dist/eslintrc.d.cts')\"",
+    "lint": "eslint . --report-unused-disable-directives",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "npm run build",
+    "test": "mocha -R progress -c 'tests/lib/*.cjs' && c8 mocha -R progress -c 'tests/lib/**/*.js'",
+    "test:types": "tsc -p tests/lib/types/tsconfig.json"
+  },
+  "repository": "eslint/eslintrc",
+  "funding": "https://opencollective.com/eslint",
+  "keywords": [
+    "ESLint",
+    "ESLintRC",
+    "Configuration"
+  ],
+  "author": "Nicholas C. Zakas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eslint/eslintrc/issues"
+  },
+  "homepage": "https://github.com/eslint/eslintrc#readme",
+  "devDependencies": {
+    "c8": "^7.7.3",
+    "chai": "^4.3.4",
+    "eslint": "^9.20.1",
+    "eslint-config-eslint": "^11.0.0",
+    "fs-teardown": "^0.1.3",
+    "mocha": "^9.0.3",
+    "rollup": "^2.70.1",
+    "shelljs": "^0.8.5",
+    "sinon": "^11.1.2",
+    "temp-dir": "^2.0.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "ajv": "^6.14.0",
+    "debug": "^4.3.2",
+    "espree": "^10.0.1",
+    "globals": "^14.0.0",
+    "ignore": "^5.2.0",
+    "import-fresh": "^3.2.1",
+    "js-yaml": "^4.1.1",
+    "minimatch": "^3.1.5",
+    "strip-json-comments": "^3.1.1"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  }
+}

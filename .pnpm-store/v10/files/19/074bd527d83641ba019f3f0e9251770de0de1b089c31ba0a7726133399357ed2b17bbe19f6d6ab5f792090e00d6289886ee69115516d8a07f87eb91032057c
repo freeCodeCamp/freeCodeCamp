@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/ConfigProvider.js",
+  "module": "../dist/esm/ConfigProvider.js",
+  "types": "../dist/dts/ConfigProvider.d.ts"
+}

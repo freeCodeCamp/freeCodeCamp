@@ -1,0 +1,39 @@
+[ ca ]
+default_ca = devcert_ca
+
+[ devcert_ca ]
+# Serial file that counts up unique IDs for each cert issued
+serial = %SERIALFILE%
+# Database file that tracks all issued certs
+database = %DATABASEFILE%
+# Where to put the new cert
+new_certs_dir = %DOMAINDIR%
+# Which algorithm to use
+default_md = sha256
+# Don't prompt the TTY for input, just use the config file values
+prompt = no
+# Interpret strings as utf8, not ASCII
+utf8 = yes
+# This specifies the configuration file section containing a list of extensions
+# to add to the certificate request.
+req_extensions = req_extensions
+x509_extensions = domain_certificate_extensions
+# How long is the domain cert good for
+default_days = 7000
+# What do CSRs need to supply?
+policy = loose_policy
+
+[ loose_policy ]
+commonName = supplied
+
+[ domain_certificate_extensions ]
+basicConstraints = critical, CA:FALSE
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer:always
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @subject_alt_names
+
+[ subject_alt_names ]
+DNS.1 = %DOMAIN%
+DNS.2 = *.%DOMAIN%

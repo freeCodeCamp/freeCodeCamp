@@ -1,0 +1,22 @@
+{
+  "name": "js-tokens",
+  "version": "9.0.1",
+  "author": "Simon Lydell",
+  "license": "MIT",
+  "description": "Tiny JavaScript tokenizer.",
+  "repository": "lydell/js-tokens",
+  "type": "commonjs",
+  "exports": "./index.js",
+  "keywords": [
+    "JavaScript",
+    "js",
+    "ECMAScript",
+    "es",
+    "token",
+    "tokens",
+    "tokenize",
+    "tokenizer",
+    "regex",
+    "regexp"
+  ]
+}

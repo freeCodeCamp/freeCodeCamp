@@ -1,0 +1,105 @@
+{
+  "name": "unist-util-visit",
+  "version": "2.0.3",
+  "description": "unist utility to visit nodes",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "remark",
+    "retext",
+    "rehype",
+    "mdast",
+    "hast",
+    "xast",
+    "nlcst",
+    "natural",
+    "language",
+    "markdown",
+    "html",
+    "xml",
+    "tree",
+    "ast",
+    "node",
+    "visit",
+    "walk"
+  ],
+  "repository": "syntax-tree/unist-util-visit",
+  "bugs": "https://github.com/syntax-tree/unist-util-visit/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Eugene Sharygin <eush77@gmail.com>",
+    "Richard Gibson <richard.gibson@gmail.com>"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "@types/unist": "^2.0.0",
+    "unist-util-is": "^4.0.0",
+    "unist-util-visit-parents": "^3.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "dtslint": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^12.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^2.0.0",
+    "typescript": "^3.0.0",
+    "unified": "^9.0.0",
+    "xo": "^0.32.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . --write && xo --fix",
+    "build-bundle": "browserify . -s unistUtilVisit > unist-util-visit.js",
+    "build-mangle": "browserify . -s unistUtilVisit -p tinyify > unist-util-visit.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-set-has": "off"
+    },
+    "ignores": [
+      "unist-util-visit.js",
+      "types"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

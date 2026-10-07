@@ -1,0 +1,33 @@
+{
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "name": "ini",
+  "description": "An ini encoder/decoder for node",
+  "version": "1.3.8",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/ini.git"
+  },
+  "main": "ini.js",
+  "scripts": {
+    "eslint": "eslint",
+    "lint": "npm run eslint -- ini.js test/*.js",
+    "lintfix": "npm run lint -- --fix",
+    "test": "tap",
+    "posttest": "npm run lint",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "tap": "14"
+  },
+  "license": "ISC",
+  "files": [
+    "ini.js"
+  ]
+}

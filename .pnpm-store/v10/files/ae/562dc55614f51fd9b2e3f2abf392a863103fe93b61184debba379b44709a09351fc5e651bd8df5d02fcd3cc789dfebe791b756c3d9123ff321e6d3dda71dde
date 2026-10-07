@@ -1,0 +1,43 @@
+{
+    "rules": {
+        "no-console": 0,
+        "no-extra-parens": 2,
+        "no-reserved-keys": 2,
+        "no-eq-null": 2,
+        "no-extend-native": 2,
+        "no-process-env": 2,
+        "no-self-compare": 2,
+        "no-void": 2,
+        "no-warning-comments": [1, { "terms": ["todo", "@toto"], "location": "start" }],
+        "vars-on-top": 2,
+        "wrap-iife": [2, "outside"],
+        "global-strict": [2, "always"],
+        "new-cap": 0,
+        "no-shadow": 0,
+        "no-mixed-requires": 0,
+        "no-new-require": 2,
+        "brace-style": [2, "1tbs"],
+        "comma-style": [2, "last"],
+        "func-style": [2, "expression"],
+        "no-inline-comments": 2,
+        "no-lonely-if": 2,
+        "no-multiple-empty-lines": 2,
+        "no-nested-ternary": 2,
+        "one-var": 2,
+        "operator-assignment": [2, "always"],
+        "padded-blocks": [2, "never"],
+        "quote-props": [2, "as-needed"],
+        "quotes": [2, "single"],
+        "space-after-keywords": [2, "always"],
+        "space-before-blocks": [2, "always"],
+        "space-in-brackets": [2, "never"],
+        "space-in-parens": [2, "never"],
+        "space-unary-ops": [2, { "words": true, "nonwords": false }],
+        "spaced-line-comment": [2, "always"],
+        "no-underscore-dangle": 0
+    },
+    "env":{
+        "mocha": true,
+        "node": true
+    }
+}

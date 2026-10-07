@@ -1,0 +1,117 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .hoverHighlight {
+	background-color: var(--vscode-editor-hoverHighlightBackground);
+}
+
+.monaco-editor .monaco-resizable-hover {
+	border: 1px solid var(--vscode-editorHoverWidget-border);
+	border-radius: 3px;
+	box-sizing: content-box;
+}
+
+.monaco-editor .monaco-resizable-hover > .monaco-hover {
+	border: none;
+	border-radius: none;
+}
+
+.monaco-editor .monaco-hover {
+	border: 1px solid var(--vscode-editorHoverWidget-border);
+	border-radius: 3px;
+	color: var(--vscode-editorHoverWidget-foreground);
+	background-color: var(--vscode-editorHoverWidget-background);
+}
+
+.monaco-editor .monaco-hover a {
+	color: var(--vscode-textLink-foreground);
+}
+
+.monaco-editor .monaco-hover a:hover {
+	color: var(--vscode-textLink-activeForeground);
+}
+
+.monaco-editor .monaco-hover .hover-row {
+	display: flex;
+}
+
+.monaco-editor .monaco-hover .hover-row.hover-row-with-copy {
+	position: relative;
+	padding-right: 20px;
+}
+
+.monaco-editor .monaco-hover .hover-row .hover-row-contents {
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.monaco-editor .monaco-hover .hover-row .verbosity-actions {
+	border-right: 1px solid var(--vscode-editorHoverWidget-border);
+	width: 22px;
+	overflow-y: clip;
+}
+
+.monaco-editor .monaco-hover .hover-row .verbosity-actions-inner {
+	display: flex;
+	flex-direction: column;
+	padding-left: 5px;
+	padding-right: 5px;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.monaco-editor .monaco-hover .hover-row .verbosity-actions-inner .codicon {
+	cursor: pointer;
+	font-size: 11px;
+}
+
+.monaco-editor .monaco-hover .hover-row .verbosity-actions-inner .codicon.enabled {
+	color: var(--vscode-textLink-foreground);
+}
+
+.monaco-editor .monaco-hover .hover-row .verbosity-actions-inner .codicon.disabled {
+	opacity: 0.6;
+}
+
+.monaco-editor .monaco-hover .hover-row .actions {
+	background-color: var(--vscode-editorHoverWidget-statusBarBackground);
+}
+
+.monaco-editor .monaco-hover code {
+	background-color: var(--vscode-textCodeBlock-background);
+}
+
+.monaco-editor .monaco-hover .hover-copy-button {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	padding: 2px 4px;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+}
+
+.monaco-editor .monaco-hover .hover-row-with-copy:hover .hover-copy-button,
+.monaco-editor .monaco-hover .hover-row-with-copy:focus-within .hover-copy-button {
+	opacity: 1;
+}
+
+.monaco-editor .monaco-hover .hover-copy-button:hover {
+	background-color: var(--vscode-toolbar-hoverBackground);
+	cursor: pointer;
+}
+
+.monaco-editor .monaco-hover .hover-copy-button:focus {
+	outline: 1px solid var(--vscode-focusBorder);
+	outline-offset: -1px;
+}
+
+.monaco-editor .monaco-hover .hover-copy-button .codicon {
+	font-size: 16px;
+	color: var(--vscode-foreground);
+}

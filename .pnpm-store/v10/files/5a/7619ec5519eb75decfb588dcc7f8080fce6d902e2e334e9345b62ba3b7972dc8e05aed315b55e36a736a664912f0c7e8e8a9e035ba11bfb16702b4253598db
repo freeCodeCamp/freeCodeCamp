@@ -1,0 +1,1 @@
+{"version":3,"file":"code-points-src.d.ts","sourceRoot":"","sources":["../src/code-points-src.ts"],"names":[],"mappings":"AAMA,eAAO,MAAM,sBAAsB,aA6YjC,CAAC;AAMH,eAAO,MAAM,0BAA0B,aAIrC,CAAC;AAMH,eAAO,MAAM,0BAA0B,aASrC,CAAC;AAMH,eAAO,MAAM,qBAAqB,aA6GhC,CAAC;AAMH,eAAO,MAAM,kBAAkB,aAmC7B,CAAC;AAMH,eAAO,MAAM,eAAe,aAyW1B,CAAC"}

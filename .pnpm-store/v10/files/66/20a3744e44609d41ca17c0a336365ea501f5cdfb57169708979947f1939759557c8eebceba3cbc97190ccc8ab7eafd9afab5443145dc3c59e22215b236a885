@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_define_enumerable_properties.js")

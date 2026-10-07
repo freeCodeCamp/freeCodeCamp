@@ -1,0 +1,55 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "TrendingFacets", {
+    enumerable: true,
+    get: function() {
+        return TrendingFacets;
+    }
+});
+var _interop_require_wildcard = require("@swc/helpers/_/_interop_require_wildcard");
+var _object_spread = require("@swc/helpers/_/_object_spread");
+var _object_without_properties = require("@swc/helpers/_/_object_without_properties");
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _react = /*#__PURE__*/ _interop_require_wildcard._(require("react"));
+var _reactinstantsearchcore = require("react-instantsearch-core");
+var TrendingFacetsUiComponent = (0, _instantsearchuicomponents.createTrendingFacetsComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});
+function TrendingFacets(_0) {
+    var facetName = _0.facetName, limit = _0.limit, threshold = _0.threshold, fallbackParameters = _0.fallbackParameters, queryParameters = _0.queryParameters, escapeHTML = _0.escapeHTML, transformItems = _0.transformItems, itemComponent = _0.itemComponent, headerComponent = _0.headerComponent, emptyComponent = _0.emptyComponent, props = _object_without_properties._(_0, [
+        "facetName",
+        "limit",
+        "threshold",
+        "fallbackParameters",
+        "queryParameters",
+        "escapeHTML",
+        "transformItems",
+        "itemComponent",
+        "headerComponent",
+        "emptyComponent"
+    ]);
+    var status = (0, _reactinstantsearchcore.useInstantSearch)().status;
+    var items = (0, _reactinstantsearchcore.useTrendingFacets)({
+        facetName: facetName,
+        limit: limit,
+        threshold: threshold,
+        fallbackParameters: fallbackParameters,
+        queryParameters: queryParameters,
+        escapeHTML: escapeHTML,
+        transformItems: transformItems
+    }, {
+        $$widgetType: 'ais.trendingFacets'
+    }).items;
+    var uiProps = {
+        items: items,
+        itemComponent: itemComponent,
+        headerComponent: headerComponent,
+        emptyComponent: emptyComponent,
+        status: status
+    };
+    return /*#__PURE__*/ _react.default.createElement(TrendingFacetsUiComponent, _object_spread._({}, props, uiProps));
+}

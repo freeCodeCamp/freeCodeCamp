@@ -1,0 +1,110 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Defines commands and events for Autofill.
+experimental domain Autofill
+  type CreditCard extends object
+    properties
+      # 16-digit credit card number.
+      string number
+      # Name of the credit card owner.
+      string name
+      # 2-digit expiry month.
+      string expiryMonth
+      # 4-digit expiry year.
+      string expiryYear
+      # 3-digit card verification code.
+      string cvc
+
+  type AddressField extends object
+    properties
+      # address field name, for example GIVEN_NAME.
+      # The full list of supported field names:
+      # https://source.chromium.org/chromium/chromium/src/+/main:components/autofill/core/browser/field_types.cc;l=38
+      string name
+      # address field value, for example Jon Doe.
+      string value
+
+  # A list of address fields.
+  type AddressFields extends object
+    properties
+      array of AddressField fields
+
+  type Address extends object
+    properties
+      # fields and values defining an address.
+      array of AddressField fields
+
+  # Defines how an address can be displayed like in chrome://settings/addresses.
+  # Address UI is a two dimensional array, each inner array is an "address information line", and when rendered in a UI surface should be displayed as such.
+  # The following address UI for instance:
+  # [[{name: "GIVE_NAME", value: "Jon"}, {name: "FAMILY_NAME", value: "Doe"}], [{name: "CITY", value: "Munich"}, {name: "ZIP", value: "81456"}]]
+  # should allow the receiver to render:
+  # Jon Doe
+  # Munich 81456
+  type AddressUI extends object
+    properties
+      # A two dimension array containing the representation of values from an address profile.
+      array of AddressFields addressFields
+
+  # Specified whether a filled field was done so by using the html autocomplete attribute or autofill heuristics.
+  type FillingStrategy extends string
+    enum
+      autocompleteAttribute
+      autofillInferred
+
+  type FilledField extends object
+    properties
+      # The type of the field, e.g text, password etc.
+      string htmlType
+      # the html id
+      string id
+      # the html name
+      string name
+      # the field value
+      string value
+      # The actual field type, e.g FAMILY_NAME
+      string autofillType
+      # The filling strategy
+      FillingStrategy fillingStrategy
+      # The frame the field belongs to
+      Page.FrameId frameId
+      # The form field's DOM node
+      DOM.BackendNodeId fieldId
+
+  # Emitted when an address form is filled.
+  event addressFormFilled
+    parameters
+      # Information about the fields that were filled
+      array of FilledField filledFields
+      # An UI representation of the address used to fill the form.
+      # Consists of a 2D array where each child represents an address/profile line.
+      AddressUI addressUi
+
+  # Trigger autofill on a form identified by the fieldId.
+  # If the field and related form cannot be autofilled, returns an error.
+  command trigger
+    parameters
+      # Identifies a field that serves as an anchor for autofill.
+      DOM.BackendNodeId fieldId
+      # Identifies the frame that field belongs to.
+      optional Page.FrameId frameId
+      # Credit card information to fill out the form. Credit card data is not saved.  Mutually exclusive with `address`.
+      optional CreditCard card
+      # Address to fill out the form. Address data is not saved. Mutually exclusive with `card`.
+      optional Address address
+
+  # Set addresses so that developers can verify their forms implementation.
+  command setAddresses
+    # Test addresses for the available countries.
+    parameters
+      array of Address addresses
+
+  # Disables autofill domain notifications.
+  command disable
+
+  # Enables autofill domain notifications.
+  command enable

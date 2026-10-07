@@ -1,0 +1,62 @@
+{
+  "name": "babel-plugin-add-module-exports",
+  "version": "1.0.4",
+  "description": "Fix babel/babel#2212",
+  "main": "lib",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "mocha --require babel-register --watch",
+    "test": "mocha --require babel-register",
+    "lint": "eslint src test",
+    "prebuild": "rimraf lib",
+    "build": "babel src --out-dir lib --source-maps",
+    "prepublish": "safe-publish-latest && npm run build",
+    "postversion": "git push --follow-tags && conventional-github-releaser -p angular"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-rewire": "^1.1.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-power-assert": "^2.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-template": "^6.26.0",
+    "babel-types": "^6.26.0",
+    "conventional-github-releaser": "^3.1.2",
+    "eslint": "^5.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mocha": "^5.2.0",
+    "power-assert": "^1.6.0",
+    "prettier": "^1.13.7",
+    "rimraf": "^2.7.1",
+    "safe-publish-latest": "^1.1.4"
+  },
+  "optionalDependencies": {},
+  "keywords": [
+    "babel-plugin",
+    "module.exports"
+  ],
+  "author": "59naga <i59naga@icloud.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/59naga/babel-plugin-add-module-exports.git"
+  },
+  "bugs": {
+    "url": "https://github.com/59naga/babel-plugin-add-module-exports/issues"
+  },
+  "homepage": "https://github.com/59naga/babel-plugin-add-module-exports#readme"
+}

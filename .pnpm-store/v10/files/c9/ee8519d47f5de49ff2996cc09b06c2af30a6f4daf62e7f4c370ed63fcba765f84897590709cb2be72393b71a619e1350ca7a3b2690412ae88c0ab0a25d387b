@@ -1,0 +1,45 @@
+export declare const errorCodes: {
+    EMPTY_STRING: string;
+    FORBIDDEN_UNICODE: string;
+    MULTIPLE_AT_CHAR: string;
+    MISSING_AT_CHAR: string;
+    EMPTY_LOCAL: string;
+    ADDRESS_TOO_LONG: string;
+    LOCAL_TOO_LONG: string;
+    EMPTY_LOCAL_SEGMENT: string;
+    INVALID_LOCAL_CHARS: string;
+    DOMAIN_NON_EMPTY_STRING: string;
+    DOMAIN_TOO_LONG: string;
+    DOMAIN_INVALID_UNICODE_CHARS: string;
+    DOMAIN_INVALID_CHARS: string;
+    DOMAIN_INVALID_TLDS_CHARS: string;
+    DOMAIN_SEGMENTS_COUNT: string;
+    DOMAIN_SEGMENTS_COUNT_MAX: string;
+    DOMAIN_FORBIDDEN_TLDS: string;
+    DOMAIN_EMPTY_SEGMENT: string;
+    DOMAIN_LONG_SEGMENT: string;
+};
+export declare function errorCode<TCode extends keyof typeof errorCodes>(code: TCode): {
+    code: TCode;
+    error: {
+        EMPTY_STRING: string;
+        FORBIDDEN_UNICODE: string;
+        MULTIPLE_AT_CHAR: string;
+        MISSING_AT_CHAR: string;
+        EMPTY_LOCAL: string;
+        ADDRESS_TOO_LONG: string;
+        LOCAL_TOO_LONG: string;
+        EMPTY_LOCAL_SEGMENT: string;
+        INVALID_LOCAL_CHARS: string;
+        DOMAIN_NON_EMPTY_STRING: string;
+        DOMAIN_TOO_LONG: string;
+        DOMAIN_INVALID_UNICODE_CHARS: string;
+        DOMAIN_INVALID_CHARS: string;
+        DOMAIN_INVALID_TLDS_CHARS: string;
+        DOMAIN_SEGMENTS_COUNT: string;
+        DOMAIN_SEGMENTS_COUNT_MAX: string;
+        DOMAIN_FORBIDDEN_TLDS: string;
+        DOMAIN_EMPTY_SEGMENT: string;
+        DOMAIN_LONG_SEGMENT: string;
+    }[TCode];
+};

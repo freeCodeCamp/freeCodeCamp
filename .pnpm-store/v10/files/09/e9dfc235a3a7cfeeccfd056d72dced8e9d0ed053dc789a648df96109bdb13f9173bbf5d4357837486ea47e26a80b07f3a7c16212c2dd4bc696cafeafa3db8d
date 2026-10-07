@@ -1,0 +1,1 @@
+{"version":3,"file":"native-constant-source-node-faker.d.ts","sourceRoot":"","sources":["../../../src/interfaces/native-constant-source-node-faker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,yBAAyB,EAAE,MAAM,UAAU,CAAC;AAGvE,MAAM,WAAW,8BAA+B,SAAQ,yBAAyB;IAC7E,UAAU,EAAE,SAAS,CAAC;IAEtB,MAAM,EAAE,gBAAgB,EAAE,CAAC;CAC9B"}

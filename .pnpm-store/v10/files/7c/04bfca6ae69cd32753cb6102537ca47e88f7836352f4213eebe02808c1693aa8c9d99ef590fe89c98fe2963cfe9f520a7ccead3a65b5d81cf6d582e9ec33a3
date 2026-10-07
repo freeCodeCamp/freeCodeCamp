@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_class_private_field_destructure.js")

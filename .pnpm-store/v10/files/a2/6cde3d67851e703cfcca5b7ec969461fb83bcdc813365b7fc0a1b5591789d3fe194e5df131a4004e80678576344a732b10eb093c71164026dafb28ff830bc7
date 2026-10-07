@@ -1,0 +1,6 @@
+{
+  "name": "package-alias-glob",
+  "alias": {
+    "./lib/*": "./src/$1"
+  }
+}

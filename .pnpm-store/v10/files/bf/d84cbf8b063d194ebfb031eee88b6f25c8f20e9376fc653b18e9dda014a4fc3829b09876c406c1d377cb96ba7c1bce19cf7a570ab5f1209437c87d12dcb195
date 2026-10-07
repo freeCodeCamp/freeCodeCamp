@@ -1,0 +1,11 @@
+import React from "react";
+import { FormControlFeedback } from "./form-control-feedback";
+import { FormControlStatic } from "./form-control-static";
+import { FormControlProps } from "./types";
+interface FormControlStatics {
+    Feedback: typeof FormControlFeedback;
+    Static: typeof FormControlStatic;
+}
+type FormControlComponent = React.ForwardRefExoticComponent<FormControlProps<"input" | "textarea"> & React.RefAttributes<HTMLInputElement | HTMLTextAreaElement>> & FormControlStatics;
+declare const FormControl: FormControlComponent;
+export { FormControl };

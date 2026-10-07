@@ -1,0 +1,56 @@
+{
+  "name": "@open-draft/logger",
+  "version": "0.3.0",
+  "description": "Environment-agnostic, ESM-friendly logger for simple needs.",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "logging",
+    "universal",
+    "tiny"
+  ],
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "Artem Zakharchenko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-draft/logger"
+  },
+  "devDependencies": {
+    "@ossjs/release": "^0.5.1",
+    "@playwright/test": "^1.32.3",
+    "@types/node": "^18.15.11",
+    "playwright": "^1.32.3",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.3",
+    "vitest": "^0.29.8",
+    "webpack-http-server": "^0.5.0"
+  },
+  "dependencies": {
+    "is-node-process": "^1.2.0",
+    "outvariant": "^1.4.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "pnpm test:node && pnpm test:browser",
+    "test:node": "vitest run",
+    "test:browser": "playwright test",
+    "release": "release publish"
+  }
+}

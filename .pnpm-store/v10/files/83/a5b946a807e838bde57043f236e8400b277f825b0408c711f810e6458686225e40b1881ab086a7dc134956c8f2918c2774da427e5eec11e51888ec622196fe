@@ -1,0 +1,72 @@
+{
+  "name": "cac",
+  "type": "module",
+  "version": "7.0.0",
+  "description": "Simple yet powerful framework for building command-line apps.",
+  "author": "egoist <0x142857@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/cacjs/cac#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cacjs/cac.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cacjs/cac/issues"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config": "^7.8.2",
+    "@sxzz/prettier-config": "^2.3.1",
+    "@types/bun": "^1.3.9",
+    "@types/deno": "^2.5.0",
+    "@types/node": "^25.3.2",
+    "@typescript/native-preview": "7.0.0-dev.20260227.1",
+    "@vitest/coverage-v8": "^4.0.18",
+    "bumpp": "^10.4.1",
+    "eslint": "^10.0.2",
+    "lint-staged": "^16.2.7",
+    "mri": "^1.2.0",
+    "prettier": "^3.8.1",
+    "simple-git-hooks": "^2.13.1",
+    "tinyexec": "^1.0.2",
+    "tsdown": "^0.21.0-beta.2",
+    "tsdown-preset-sxzz": "^0.4.0",
+    "typedoc": "^0.28.17",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pnpm test && lint-staged"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm typecheck"
+  },
+  "lint-staged": {
+    "*.{js,json,ts,md}": [
+      "eslint"
+    ]
+  },
+  "prettier": "@sxzz/prettier-config",
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsgo --noEmit",
+    "format": "prettier --cache --write .",
+    "release": "bumpp",
+    "docs:api": "typedoc"
+  }
+}

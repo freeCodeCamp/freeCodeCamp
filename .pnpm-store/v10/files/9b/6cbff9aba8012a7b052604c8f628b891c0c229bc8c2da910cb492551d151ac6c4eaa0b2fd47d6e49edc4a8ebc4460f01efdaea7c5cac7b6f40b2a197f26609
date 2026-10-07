@@ -1,0 +1,52 @@
+{
+  "name": "postcss-modules-local-by-default",
+  "version": "4.0.3",
+  "description": "A CSS Modules transform to make local scope the default",
+  "main": "src/index.js",
+  "author": "Mark Dalgleish",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/css-modules/postcss-modules-local-by-default.git"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >= 14"
+  },
+  "keywords": [
+    "css-modules",
+    "postcss",
+    "css",
+    "postcss-plugin"
+  ],
+  "scripts": {
+    "prettier": "prettier -l --ignore-path .gitignore .",
+    "eslint": "eslint --ignore-path .gitignore .",
+    "lint": "yarn eslint && yarn prettier",
+    "test:only": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --collectCoverageFrom=\"src/**/*\"",
+    "test": "yarn test:coverage",
+    "prepublishOnly": "yarn lint && yarn test"
+  },
+  "dependencies": {
+    "icss-utils": "^5.0.0",
+    "postcss-selector-parser": "^6.0.2",
+    "postcss-value-parser": "^4.1.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "husky": "^4.3.0",
+    "jest": "^26.5.2",
+    "lint-staged": "^10.4.0",
+    "postcss": "^8.1.0",
+    "prettier": "^2.1.2"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.0"
+  }
+}

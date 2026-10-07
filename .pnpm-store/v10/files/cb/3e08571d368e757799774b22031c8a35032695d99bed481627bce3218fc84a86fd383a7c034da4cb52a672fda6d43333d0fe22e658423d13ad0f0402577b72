@@ -1,0 +1,14 @@
+{
+  "dist/sass.js": {
+    "normal": "5 KB",
+    "compressed": "2 KB"
+  },
+  "dist/sass.sync.js": {
+    "normal": "4497 KB",
+    "compressed": "827 KB"
+  },
+  "dist/sass.worker.js": {
+    "normal": "4497 KB",
+    "compressed": "827 KB"
+  }
+}

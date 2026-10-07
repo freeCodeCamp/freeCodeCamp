@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Deferred.js",
+  "module": "../dist/esm/Deferred.js",
+  "types": "../dist/dts/Deferred.d.ts"
+}

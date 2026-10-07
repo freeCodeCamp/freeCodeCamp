@@ -1,0 +1,19 @@
+{
+  "name": "minimalistic-assert",
+  "version": "1.0.1",
+  "description": "minimalistic-assert ===",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calvinmetcalf/minimalistic-assert.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calvinmetcalf/minimalistic-assert/issues"
+  },
+  "homepage": "https://github.com/calvinmetcalf/minimalistic-assert"
+}

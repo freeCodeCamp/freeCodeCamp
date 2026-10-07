@@ -1,0 +1,38 @@
+{
+  "name": "@babel/types",
+  "version": "8.0.0-rc.3",
+  "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-types",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20types%22+is%3Aopen",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-types"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/helper-string-parser": "^8.0.0-rc.3",
+    "@babel/helper-validator-identifier": "^8.0.0-rc.3"
+  },
+  "devDependencies": {
+    "@babel/generator": "^8.0.0-rc.3",
+    "@babel/helper-fixtures": "^8.0.0-rc.3",
+    "@babel/parser": "^8.0.0-rc.3"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "type": "module"
+}

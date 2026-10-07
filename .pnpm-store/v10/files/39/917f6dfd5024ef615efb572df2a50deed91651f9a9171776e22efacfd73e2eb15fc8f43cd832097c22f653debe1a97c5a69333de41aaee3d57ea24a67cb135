@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/UpstreamPullStrategy.js",
+  "module": "../dist/esm/UpstreamPullStrategy.js",
+  "types": "../dist/dts/UpstreamPullStrategy.d.ts"
+}

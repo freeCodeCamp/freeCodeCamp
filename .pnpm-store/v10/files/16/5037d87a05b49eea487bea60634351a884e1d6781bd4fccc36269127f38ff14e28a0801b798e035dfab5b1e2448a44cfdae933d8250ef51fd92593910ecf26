@@ -1,0 +1,1 @@
+{"version":3,"file":"RateLimiter.js","names":["internal","make","withCost"],"sources":["../../src/RateLimiter.ts"],"sourcesContent":[null],"mappings":"AAOA,OAAO,KAAKA,QAAQ,MAAM,2BAA2B;AAuDrD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAmCA,OAAO,MAAMC,IAAI,GAAwED,QAAQ,CAACC,IAAI;AAEtG;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAsCA,OAAO,MAAMC,QAAQ,GAA4EF,QAAQ,CAACE,QAAQ","ignoreList":[]}

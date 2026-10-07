@@ -1,0 +1,223 @@
+{
+  "name": "stylelint",
+  "version": "16.26.1",
+  "description": "A mighty CSS linter that helps you avoid errors and enforce conventions.",
+  "keywords": [
+    "css-in-js",
+    "css",
+    "less",
+    "lint",
+    "linter",
+    "markdown",
+    "sass",
+    "scss",
+    "stylelint",
+    "sugarss"
+  ],
+  "homepage": "https://stylelint.io",
+  "repository": "stylelint/stylelint",
+  "funding": [
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/stylelint"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/stylelint"
+    }
+  ],
+  "license": "MIT",
+  "author": "stylelint",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/stylelint/index.d.mts",
+        "default": "./lib/index.mjs"
+      },
+      "require": {
+        "types": "./types/stylelint/index.d.ts",
+        "default": "./lib/index.cjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./lib/utils/*": "./lib/utils/*"
+  },
+  "main": "lib/index.cjs",
+  "types": "types/stylelint/index.d.ts",
+  "bin": {
+    "stylelint": "bin/stylelint.mjs"
+  },
+  "files": [
+    "bin/**/*.js",
+    "bin/**/*.cjs",
+    "bin/**/*.mjs",
+    "lib/**/*.js",
+    "lib/**/*.cjs",
+    "lib/**/*.mjs",
+    "!**/__tests__/**",
+    "!lib/testUtils/**",
+    "!lib/rules/*/README.md",
+    "types/stylelint/index.d.mts",
+    "types/stylelint/index.d.ts"
+  ],
+  "scripts": {
+    "benchmark-rule": "node scripts/benchmark-rule.mjs",
+    "build": "rollup -c",
+    "build-check": "node scripts/build-check.mjs",
+    "changeset": "changeset version && node .changeset/rewrite-changelog.mjs CHANGELOG.md",
+    "postchangeset": "npm install --ignore-scripts",
+    "format": "prettier . --write --cache",
+    "lint": "npm-run-all --parallel --continue-on-error lint:*",
+    "lint:formatting": "prettier . --check --cache",
+    "lint:js": "eslint . --cache --max-warnings=0",
+    "lint:md": "remark . --quiet --frail",
+    "lint:types": "tsc",
+    "prepare": "husky && npm run build",
+    "postprepare": "patch-package",
+    "pretest": "npm run lint",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test-coverage": "npm test --ignore-scripts -- --coverage",
+    "test-only": "npm test --ignore-scripts",
+    "watch": "npm test --ignore-scripts -- --watch"
+  },
+  "lint-staged": {
+    "*.{js,mjs}": "eslint --cache --fix",
+    "*.{js,json,md,mjs,ts,yml}": "prettier --write"
+  },
+  "prettier": "@stylelint/prettier-config",
+  "remarkConfig": {
+    "plugins": [
+      "@stylelint/remark-preset",
+      "./scripts/remark-plugins/lint-link-to-rule.mjs"
+    ]
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "lib/**/*.{js,mjs}",
+      "!lib/**/{__tests__,testUtils}/**/*.{js,mjs}"
+    ],
+    "coverageDirectory": "./.coverage/",
+    "coverageProvider": "v8",
+    "coverageReporters": [
+      "lcov",
+      "text-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "preset": "jest-preset-stylelint",
+    "roots": [
+      "lib",
+      "system-tests"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.mjs"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setupAfterEnv.mjs"
+    ],
+    "testEnvironment": "node",
+    "testRegex": ".*\\.test\\.mjs$|rules/.*/__tests__/.*\\.mjs$|system-tests/.*\\.test\\.cjs$",
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ]
+  },
+  "dependencies": {
+    "@csstools/css-parser-algorithms": "^3.0.5",
+    "@csstools/css-syntax-patches-for-csstree": "^1.0.19",
+    "@csstools/css-tokenizer": "^3.0.4",
+    "@csstools/media-query-list-parser": "^4.0.3",
+    "@csstools/selector-specificity": "^5.0.0",
+    "@dual-bundle/import-meta-resolve": "^4.2.1",
+    "balanced-match": "^2.0.0",
+    "colord": "^2.9.3",
+    "cosmiconfig": "^9.0.0",
+    "css-functions-list": "^3.2.3",
+    "css-tree": "^3.1.0",
+    "debug": "^4.4.3",
+    "fast-glob": "^3.3.3",
+    "fastest-levenshtein": "^1.0.16",
+    "file-entry-cache": "^11.1.1",
+    "global-modules": "^2.0.0",
+    "globby": "^11.1.0",
+    "globjoin": "^0.1.4",
+    "html-tags": "^3.3.1",
+    "ignore": "^7.0.5",
+    "imurmurhash": "^0.1.4",
+    "is-plain-object": "^5.0.0",
+    "known-css-properties": "^0.37.0",
+    "mathml-tag-names": "^2.1.3",
+    "meow": "^13.2.0",
+    "micromatch": "^4.0.8",
+    "normalize-path": "^3.0.0",
+    "picocolors": "^1.1.1",
+    "postcss": "^8.5.6",
+    "postcss-resolve-nested-selector": "^0.1.6",
+    "postcss-safe-parser": "^7.0.1",
+    "postcss-selector-parser": "^7.1.0",
+    "postcss-value-parser": "^4.2.0",
+    "resolve-from": "^5.0.0",
+    "string-width": "^4.2.3",
+    "supports-hyperlinks": "^3.2.0",
+    "svg-tags": "^1.0.0",
+    "table": "^6.9.0",
+    "write-file-atomic": "^5.0.1"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@changesets/get-github-info": "^0.6.0",
+    "@jest/globals": "^30.2.0",
+    "@stylelint/prettier-config": "^4.0.0",
+    "@stylelint/remark-preset": "^5.1.1",
+    "@types/balanced-match": "^1.0.4",
+    "@types/css-tree": "^2.3.11",
+    "@types/debug": "^4.1.12",
+    "@types/file-entry-cache": "^5.0.4",
+    "@types/global-modules": "^2.0.2",
+    "@types/globjoin": "^0.1.2",
+    "@types/imurmurhash": "^0.1.4",
+    "@types/micromatch": "^4.0.10",
+    "@types/normalize-path": "^3.0.2",
+    "@types/postcss-less": "^4.0.7",
+    "@types/postcss-resolve-nested-selector": "^0.1.3",
+    "@types/postcss-safe-parser": "^5.0.4",
+    "@types/svg-tags": "^1.0.2",
+    "@types/write-file-atomic": "^4.0.3",
+    "benchmark": "^2.1.4",
+    "common-tags": "^1.8.2",
+    "deepmerge": "^4.3.1",
+    "eslint": "^9.39.1",
+    "eslint-config-stylelint": "^25.0.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^29.1.0",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "jest-preset-stylelint": "^8.0.0",
+    "jest-watch-typeahead": "^3.0.1",
+    "lint-staged": "^16.2.6",
+    "lz-string": "^1.5.0",
+    "npm-run-all": "^4.1.5",
+    "patch-package": "^8.0.0",
+    "postcss-html": "^1.8.0",
+    "postcss-import": "^16.1.1",
+    "postcss-less": "^6.0.0",
+    "postcss-sass": "^0.5.0",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.6.2",
+    "remark-cli": "^12.0.1",
+    "rollup": "^4.53.2",
+    "sugarss": "^5.0.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.12.0"
+  }
+}

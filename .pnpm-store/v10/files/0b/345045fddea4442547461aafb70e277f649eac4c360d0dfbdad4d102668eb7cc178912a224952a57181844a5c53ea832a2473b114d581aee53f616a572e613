@@ -1,0 +1,74 @@
+{
+  "name": "fill-range",
+  "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+  "version": "7.1.1",
+  "homepage": "https://github.com/jonschlinkert/fill-range",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Edo Rivai (edo.rivai.nl)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Paul Miller (paulmillr.com)",
+    "Rouven Weßling (www.rouvenwessling.de)",
+    "(https://github.com/wtgtybhertgeghgtwtg)"
+  ],
+  "repository": "jonschlinkert/fill-range",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/fill-range/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "lint": "eslint --cache --cache-location node_modules/.cache/.eslintcache --report-unused-disable-directives --ignore-path .gitignore .",
+    "mocha": "mocha --reporter dot",
+    "test": "npm run lint && npm run mocha",
+    "test:ci": "npm run test:cover",
+    "test:cover": "nyc npm run mocha"
+  },
+  "dependencies": {
+    "to-regex-range": "^5.0.1"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^2.0.0",
+    "mocha": "^6.1.1",
+    "nyc": "^15.1.0"
+  },
+  "keywords": [
+    "alpha",
+    "alphabetical",
+    "array",
+    "bash",
+    "brace",
+    "expand",
+    "expansion",
+    "fill",
+    "glob",
+    "match",
+    "matches",
+    "matching",
+    "number",
+    "numerical",
+    "range",
+    "ranges",
+    "regex",
+    "sh"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

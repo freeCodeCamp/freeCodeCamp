@@ -1,0 +1,131 @@
+{
+	"name": "got",
+	"version": "11.8.6",
+	"description": "Human-friendly and powerful HTTP request library for Node.js",
+	"license": "MIT",
+	"repository": "sindresorhus/got",
+	"funding": "https://github.com/sindresorhus/got?sponsor=1",
+	"main": "dist/source",
+	"engines": {
+		"node": ">=10.19.0"
+	},
+	"scripts": {
+		"test": "xo && npm run build && nyc --reporter=html --reporter=text ava",
+		"release": "np",
+		"build": "del-cli dist && tsc",
+		"prepare": "npm run build"
+	},
+	"files": [
+		"dist/source"
+	],
+	"keywords": [
+		"http",
+		"https",
+		"http2",
+		"get",
+		"got",
+		"url",
+		"uri",
+		"request",
+		"simple",
+		"curl",
+		"wget",
+		"fetch",
+		"net",
+		"network",
+		"gzip",
+		"brotli",
+		"requests",
+		"human-friendly",
+		"axios",
+		"superagent",
+		"node-fetch",
+		"ky"
+	],
+	"dependencies": {
+		"@sindresorhus/is": "^4.0.0",
+		"@szmarczak/http-timer": "^4.0.5",
+		"@types/cacheable-request": "^6.0.1",
+		"@types/responselike": "^1.0.0",
+		"cacheable-lookup": "^5.0.3",
+		"cacheable-request": "^7.0.2",
+		"decompress-response": "^6.0.0",
+		"http2-wrapper": "^1.0.0-beta.5.2",
+		"lowercase-keys": "^2.0.0",
+		"p-cancelable": "^2.0.0",
+		"responselike": "^2.0.0"
+	},
+	"devDependencies": {
+		"@ava/typescript": "^1.1.1",
+		"@sindresorhus/tsconfig": "^0.7.0",
+		"@sinonjs/fake-timers": "^6.0.1",
+		"@types/benchmark": "^1.0.33",
+		"@types/express": "^4.17.7",
+		"@types/express-serve-static-core": "4.17.18 - 4.17.30",
+		"@types/node": "^14.14.0",
+		"@types/node-fetch": "^2.5.7",
+		"@types/pem": "^1.9.5",
+		"@types/pify": "^3.0.2",
+		"@types/request": "^2.48.5",
+		"@types/sinon": "^9.0.5",
+		"@types/tough-cookie": "^4.0.0",
+		"ava": "^3.11.1",
+		"axios": "^0.20.0",
+		"benchmark": "^2.1.4",
+		"coveralls": "^3.1.0",
+		"create-test-server": "^3.0.1",
+		"del-cli": "^3.0.1",
+		"delay": "^4.4.0",
+		"express": "^4.17.1",
+		"form-data": "^3.0.0",
+		"get-stream": "^6.0.0",
+		"nock": "^13.0.4",
+		"node-fetch": "^2.6.0",
+		"np": "^6.4.0",
+		"nyc": "^15.1.0",
+		"p-event": "^4.2.0",
+		"pem": "^1.14.4",
+		"pify": "^5.0.0",
+		"sinon": "^9.0.3",
+		"slow-stream": "0.0.4",
+		"tempy": "^1.0.0",
+		"to-readable-stream": "^2.1.0",
+		"tough-cookie": "^4.0.0",
+		"typescript": "4.0.3",
+		"xo": "^0.34.1"
+	},
+	"types": "dist/source",
+	"sideEffects": false,
+	"ava": {
+		"files": [
+			"test/*"
+		],
+		"timeout": "1m",
+		"typescript": {
+			"rewritePaths": {
+				"test/": "dist/test/"
+			}
+		}
+	},
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"exclude": [
+			"**/test/**"
+		]
+	},
+	"xo": {
+		"ignores": [
+			"documentation/examples/*"
+		],
+		"rules": {
+			"@typescript-eslint/no-empty-function": "off",
+			"node/prefer-global/url": "off",
+			"node/prefer-global/url-search-params": "off",
+			"import/no-anonymous-default-export": "off",
+			"@typescript-eslint/no-implicit-any-catch": "off"
+		}
+	},
+	"runkitExampleFilename": "./documentation/examples/runkit-example.js"
+}

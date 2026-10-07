@@ -1,0 +1,70 @@
+{
+  "name": "simple-oauth2",
+  "version": "5.1.0",
+  "support": true,
+  "description": "Node.js client for OAuth2",
+  "author": "Andrea Reginato <andrea.reginato@gmail.com>",
+  "contributors": [
+    "Jonathan Samines <jn.samines@gmail.com>"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/lelylan/simple-oauth2",
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lelylan/simple-oauth2"
+  },
+  "engine": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "c8 ava",
+    "lint": "eslint .",
+    "docs-gen": "doctoc README.md --github --no-title",
+    "clean-install": "rm -rf node_modules && npm install"
+  },
+  "c8": {
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 93,
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "keywords": [
+    "oauth2",
+    "authorization",
+    "password",
+    "client",
+    "credentials"
+  ],
+  "dependencies": {
+    "@hapi/hoek": "^11.0.4",
+    "@hapi/wreck": "^18.0.0",
+    "debug": "^4.3.4",
+    "joi": "^17.6.4"
+  },
+  "devDependencies": {
+    "@hapi/boom": "^10.0.0",
+    "ava": "^4.3.3",
+    "c8": "^7.12.0",
+    "chance": "^1.1.9",
+    "chance-access-token": "^2.1.0",
+    "date-fns": "^2.29.3",
+    "doctoc": "^2.2.1",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nock": "^13.2.9"
+  },
+  "volta": {
+    "node": "16.13.1"
+  }
+}

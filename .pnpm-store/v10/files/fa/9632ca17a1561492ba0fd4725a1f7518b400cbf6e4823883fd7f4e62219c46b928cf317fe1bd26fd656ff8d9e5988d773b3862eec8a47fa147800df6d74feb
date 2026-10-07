@@ -1,0 +1,116 @@
+{
+    "name": "moment",
+    "version": "2.30.1",
+    "description": "Parse, validate, manipulate, and display dates",
+    "homepage": "https://momentjs.com",
+    "author": "Iskren Ivov Chernev <iskren.chernev@gmail.com> (https://github.com/ichernev)",
+    "contributors": [
+        "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
+        "Rocky Meza (http://rockymeza.com)",
+        "Matt Johnson <mj1856@hotmail.com> (http://codeofmatt.com)",
+        "Isaac Cambron <isaac@isaaccambron.com> (http://isaaccambron.com)",
+        "Andre Polykanine <andre@oire.org> (https://github.com/oire)"
+    ],
+    "keywords": [
+        "moment",
+        "date",
+        "time",
+        "parse",
+        "format",
+        "validate",
+        "i18n",
+        "l10n",
+        "ender"
+    ],
+    "main": "./moment.js",
+    "jsnext:main": "./dist/moment.js",
+    "typings": "./moment.d.ts",
+    "typesVersions": {
+        ">=3.1": {
+            "*": [
+                "ts3.1-typings/*"
+            ],
+            "min/moment-with-locales": [
+                "ts3.1-typings/moment.d.ts"
+            ]
+        }
+    },
+    "engines": {
+        "node": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/moment/moment.git"
+    },
+    "bugs": {
+        "url": "https://github.com/moment/moment/issues"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "benchmark": "latest",
+        "coveralls": "latest",
+        "cross-env": "^6.0.3",
+        "es6-promise": "latest",
+        "eslint": "latest",
+        "grunt": "latest",
+        "grunt-benchmark": "latest",
+        "grunt-cli": "latest",
+        "grunt-contrib-clean": "latest",
+        "grunt-contrib-concat": "latest",
+        "grunt-contrib-copy": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-env": "latest",
+        "grunt-exec": "latest",
+        "grunt-karma": "latest",
+        "grunt-nuget": "latest",
+        "grunt-string-replace": "latest",
+        "karma": "latest",
+        "karma-chrome-launcher": "latest",
+        "karma-firefox-launcher": "latest",
+        "karma-qunit": "latest",
+        "karma-sauce-launcher": "4.1.4",
+        "load-grunt-tasks": "latest",
+        "lodash": ">=4.17.19",
+        "node-qunit": "latest",
+        "nyc": "latest",
+        "prettier": "latest",
+        "qunit": "^2.10.0",
+        "rollup": "2.17.1",
+        "typescript": "^1.8.10",
+        "typescript3": "npm:typescript@^3.1.6",
+        "uglify-js": "latest",
+        "@types/node": "17.0.21"
+    },
+    "ender": "./ender.js",
+    "dojoBuild": "package.js",
+    "jspm": {
+        "files": [
+            "moment.js",
+            "moment.d.ts",
+            "locale"
+        ],
+        "map": {
+            "moment": "./moment"
+        },
+        "buildConfig": {
+            "uglify": true
+        }
+    },
+    "scripts": {
+        "ts3.1-typescript-test": "cross-env node_modules/typescript3/bin/tsc --project ts3.1-typing-tests",
+        "typescript-test": "cross-env node_modules/typescript/bin/tsc --project typing-tests",
+        "test": "grunt test",
+        "eslint": "eslint Gruntfile.js tasks src",
+        "prettier-check": "prettier --check Gruntfile.js tasks src",
+        "prettier-fmt": "prettier --write Gruntfile.js tasks src",
+        "coverage": "nyc npm test && nyc report",
+        "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    },
+    "spm": {
+        "main": "moment.js",
+        "output": [
+            "locale/*.js"
+        ]
+    }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"isNullLiteral.js","sourceRoot":"","sources":["../../src/util/isNullLiteral.ts"],"names":[],"mappings":";;;AACA,oDAA0D;AAE1D,SAAgB,aAAa,CAAC,CAAgB;IAC5C,OAAO,CAAC,CAAC,IAAI,KAAK,sBAAc,CAAC,OAAO,IAAI,CAAC,CAAC,KAAK,IAAI,IAAI,CAAC;AAC9D,CAAC;AAFD,sCAEC"}

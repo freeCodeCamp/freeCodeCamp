@@ -1,0 +1,26 @@
+{
+  "name": "@unrs/resolver-binding-linux-x64-gnu",
+  "version": "1.7.8",
+  "cpu": [
+    "x64"
+  ],
+  "main": "resolver.linux-x64-gnu.node",
+  "files": [
+    "resolver.linux-x64-gnu.node"
+  ],
+  "description": "UnRS Resolver Node API with PNP support",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "homepage": "https://github.com/unrs/unrs-resolver#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": "git+https://github.com/unrs/unrs-resolver.git",
+  "os": [
+    "linux"
+  ],
+  "libc": [
+    "glibc"
+  ]
+}

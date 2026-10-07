@@ -1,0 +1,35 @@
+{
+	"name": "is-absolute-url",
+	"version": "3.0.3",
+	"description": "Check if a URL is absolute",
+	"license": "MIT",
+	"repository": "sindresorhus/is-absolute-url",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"url",
+		"absolute",
+		"relative",
+		"uri",
+		"is",
+		"check"
+	],
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

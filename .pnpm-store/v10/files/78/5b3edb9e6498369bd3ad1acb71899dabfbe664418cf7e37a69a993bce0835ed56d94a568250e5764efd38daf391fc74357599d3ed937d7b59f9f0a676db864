@@ -1,0 +1,18 @@
+export declare const LEVELS: readonly ["trace", "debug", "info", "log", "warn", "error"];
+type Level = (typeof LEVELS)[number];
+export declare class ProxyConsole {
+    #private;
+    constructor(originalConsole: Console, format: (x: unknown) => string);
+    on(): void;
+    off(): void;
+    flush(): {
+        logs: {
+            level: Level;
+            msg: string;
+        }[];
+    } | {
+        logs?: undefined;
+    };
+}
+export {};
+//# sourceMappingURL=proxy-console.d.ts.map

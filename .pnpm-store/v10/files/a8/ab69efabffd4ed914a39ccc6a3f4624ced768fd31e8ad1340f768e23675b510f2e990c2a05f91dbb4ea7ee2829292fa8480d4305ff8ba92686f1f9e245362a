@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Match.js",
+  "module": "../dist/esm/Match.js",
+  "types": "../dist/dts/Match.d.ts"
+}

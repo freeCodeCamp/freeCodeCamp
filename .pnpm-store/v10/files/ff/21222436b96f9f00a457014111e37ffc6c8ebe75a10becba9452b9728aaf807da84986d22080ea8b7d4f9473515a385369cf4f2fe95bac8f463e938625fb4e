@@ -1,0 +1,63 @@
+{
+  "author": {
+    "email": "gajus@anuary.com",
+    "name": "Gajus Kuizinas",
+    "url": "http://gajus.com"
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
+  },
+  "dependencies": {
+    "debug": "^2.6.6",
+    "load-script": "^1.0.0",
+    "sister": "^3.0.0"
+  },
+  "description": "YouTube IFrame Player API abstraction.",
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "1.4.0",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-canonical": "^8.2.0",
+    "flow-bin": "^0.45.0",
+    "flow-copy-source": "^1.1.0",
+    "husky": "^0.13.3",
+    "npm-watch": "^0.1.9",
+    "semantic-release": "^6.3.2"
+  },
+  "keywords": [
+    "youtube",
+    "iframe",
+    "player",
+    "api",
+    "promise",
+    "async",
+    "video"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "./dist/index.js",
+  "name": "youtube-player",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajus/youtube-player"
+  },
+  "watch": {
+    "test": "{src,test}/*.js"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production babel ./src --out-dir ./dist --copy-files && flow-copy-source src dist",
+    "lint": "eslint ./src ./test",
+    "watch": "npm-watch",
+    "precommit": "npm run lint && npm run test",
+    "test": "NODE_ENV=development ava --verbose"
+  },
+  "version": "5.5.2"
+}

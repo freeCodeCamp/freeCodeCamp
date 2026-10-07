@@ -1,0 +1,96 @@
+{
+  "name": "chardet",
+  "version": "2.1.1",
+  "homepage": "https://github.com/runk/node-chardet",
+  "description": "Character encoding detector",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/runk/node-chardet.git"
+  },
+  "bugs": {
+    "mail": "deadrunk@gmail.com",
+    "url": "http://github.com/runk/node-chardet/issues"
+  },
+  "scripts": {
+    "build": "rm -rf lib/* && tsc",
+    "format": "prettier --write ./src/**/*.ts",
+    "format:check": "prettier --list-different ./src/**/*.ts",
+    "test": "jest",
+    "prepublish": "npm run build",
+    "semantic-release": "semantic-release",
+    "typecheck": "tsc"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "engine": {
+    "node": ">=4"
+  },
+  "readmeFilename": "README.md",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.0.0",
+    "jest": "^30.0.0",
+    "prettier": "^3.0.0",
+    "semantic-release": "^24.0.0",
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "encoding",
+    "character",
+    "utf8",
+    "detector",
+    "chardet",
+    "icu",
+    "character detection",
+    "character encoding",
+    "language",
+    "iconv",
+    "iconv-light",
+    "UTF-8",
+    "UTF-16",
+    "UTF-32",
+    "ISO-2022-JP",
+    "ISO-2022-KR",
+    "ISO-2022-CN",
+    "Shift_JIS",
+    "Big5",
+    "EUC-JP",
+    "EUC-KR",
+    "GB18030",
+    "ISO-8859-1",
+    "ISO-8859-2",
+    "ISO-8859-5",
+    "ISO-8859-6",
+    "ISO-8859-7",
+    "ISO-8859-8",
+    "ISO-8859-9",
+    "windows-1250",
+    "windows-1251",
+    "windows-1252",
+    "windows-1253",
+    "windows-1254",
+    "windows-1255",
+    "windows-1256",
+    "KOI8-R"
+  ],
+  "author": "Dmitry Shirokov <deadrunk@gmail.com>",
+  "contributors": [
+    "@spikying",
+    "@wtgtybhertgeghgtwtg",
+    "@suisho",
+    "@seangarner",
+    "@zevanty"
+  ],
+  "browser": {
+    "./lib/fs/node.js": "./lib/fs/browser.js"
+  }
+}

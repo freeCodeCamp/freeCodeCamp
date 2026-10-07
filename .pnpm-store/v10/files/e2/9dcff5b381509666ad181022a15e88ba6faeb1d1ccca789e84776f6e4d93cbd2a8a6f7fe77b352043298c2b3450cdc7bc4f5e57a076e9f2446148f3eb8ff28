@@ -1,0 +1,92 @@
+{
+  "name": "hashery",
+  "version": "1.5.1",
+  "description": "Browser Compatible Object Hashing",
+  "type": "module",
+  "main": "dist/node/index.js",
+  "types": "dist/node/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/node/index.d.ts",
+        "default": "./dist/node/index.js"
+      },
+      "require": {
+        "types": "./dist/node/index.d.cts",
+        "default": "./dist/node/index.cjs"
+      }
+    },
+    "./browser": {
+      "import": "./dist/browser/index.js",
+      "default": "./dist/browser/index.global.js"
+    }
+  },
+  "repository": "https://github.com/jaredwray/hashery.git",
+  "author": "Jared Wray <me@jaredwray.com>",
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf ./dist ./coverage ./node_modules ./pnpm-lock.yaml ./site/README.md ./site/dist",
+    "build": "rimraf ./dist && tsup",
+    "prepare": "pnpm build",
+    "benchmark": "pnpm benchmark:main && pnpm benchmark:vs-others",
+    "benchmark:main": "tsx benchmark/hashing.ts",
+    "benchmark:vs-others": "tsx benchmark/hashery-vs-others.ts",
+    "lint": "biome check --write --error-on-warnings",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:ci": "biome check --error-on-warnings && vitest run --coverage",
+    "website:build": "rimraf ./site/README.md ./site/dist && pnpm docula",
+    "website:serve": "rimraf ./site/README.md ./site/dist && pnpm docula serve"
+  },
+  "dependencies": {
+    "hookified": "^1.15.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.10",
+    "@faker-js/faker": "^10.3.0",
+    "@monstermann/tinybench-pretty-printer": "^0.3.0",
+    "@types/node": "^25.0.3",
+    "@types/object-hash": "^3.0.6",
+    "@vitest/coverage-v8": "^4.0.16",
+    "docula": "^0.40.0",
+    "object-hash": "^3.0.0",
+    "rimraf": "^6.1.2",
+    "tinybench": "^6.0.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "webcrypto",
+    "object-hash",
+    "hash",
+    "hashing",
+    "sha256",
+    "sha384",
+    "sha512",
+    "djb2",
+    "murmur",
+    "fnv1",
+    "crc32",
+    "digest",
+    "deterministic",
+    "stable-hash",
+    "json-hash",
+    "browser-compatible",
+    "native-crypto",
+    "secure",
+    "standards-based",
+    "esmodule",
+    "lightweight",
+    "fast",
+    "modern"
+  ]
+}

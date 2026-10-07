@@ -1,0 +1,1 @@
+{"version":3,"file":"errors.js","sourceRoot":"","sources":["../../lib/vocabularies/errors.ts"],"names":[],"mappings":""}

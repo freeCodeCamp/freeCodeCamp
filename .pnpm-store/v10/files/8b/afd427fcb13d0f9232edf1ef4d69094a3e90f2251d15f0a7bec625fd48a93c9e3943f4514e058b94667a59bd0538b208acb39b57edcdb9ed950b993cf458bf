@@ -1,0 +1,97 @@
+{
+  "name": "@inquirer/ansi",
+  "version": "1.0.2",
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Simon Boudrias <admin@simonboudrias.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SBoudrias/Inquirer.js.git"
+  },
+  "keywords": [
+    "answer",
+    "answers",
+    "ask",
+    "base",
+    "cli",
+    "command",
+    "command-line",
+    "confirm",
+    "enquirer",
+    "generate",
+    "generator",
+    "hyper",
+    "input",
+    "inquire",
+    "inquirer",
+    "interface",
+    "iterm",
+    "javascript",
+    "menu",
+    "node",
+    "nodejs",
+    "prompt",
+    "promptly",
+    "prompts",
+    "question",
+    "readline",
+    "scaffold",
+    "scaffolder",
+    "scaffolding",
+    "stdin",
+    "stdout",
+    "terminal",
+    "tty",
+    "ui",
+    "yeoman",
+    "yo",
+    "zsh",
+    "ansi"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@repo/tsconfig": "0.0.0",
+    "tshy": "^3.0.3"
+  },
+  "tshy": {
+    "exclude": [
+      "src/**/*.test.ts"
+    ],
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "tsc": "tshy",
+    "attw": "attw --pack"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    }
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "homepage": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/ansi/README.md",
+  "gitHead": "6881993e517e76fa891b72e1f5086fd11f7676ac"
+}

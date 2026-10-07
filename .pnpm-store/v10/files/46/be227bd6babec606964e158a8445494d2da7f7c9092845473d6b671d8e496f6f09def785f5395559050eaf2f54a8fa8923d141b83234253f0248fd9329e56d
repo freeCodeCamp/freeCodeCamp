@@ -1,0 +1,1 @@
+{"version":3,"file":"object-assign.js","names":["module","exports","Object","assign"],"sources":["../../../../src/internal-plugins/bundle-optimisations/polyfills/object-assign.js"],"sourcesContent":["module.exports = Object.assign\n"],"mappings":";;AAAAA,MAAM,CAACC,OAAO,GAAGC,MAAM,CAACC,MAAM"}

@@ -1,0 +1,32 @@
+{
+  "name": "@lezer/common",
+  "version": "1.2.3",
+  "description": "Syntax tree data structure and parser interfaces for the lezer parser",
+  "main": "dist/index.cjs",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
+  "license": "MIT",
+  "devDependencies": {
+    "ist": "^1.1.1",
+    "@marijn/buildtool": "^0.1.5",
+    "@types/mocha": "^5.2.6",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.2"
+  },
+  "files": ["dist"],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/lezer-parser/common.git"
+  },
+  "scripts": {
+    "watch": "node build.js --watch",
+    "prepare": "node build.js",
+    "test": "mocha"
+  }
+}

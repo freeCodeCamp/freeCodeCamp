@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_possible_constructor_return.cjs",
+    "module": "../../esm/_possible_constructor_return.js"
+}

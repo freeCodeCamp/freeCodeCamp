@@ -1,0 +1,130 @@
+{
+  "name": "react-redux",
+  "version": "8.1.3",
+  "description": "Official React bindings for Redux",
+  "keywords": [
+    "react",
+    "reactjs",
+    "redux"
+  ],
+  "license": "MIT",
+  "author": "Dan Abramov <dan.abramov@me.com> (https://github.com/gaearon)",
+  "homepage": "https://github.com/reduxjs/react-redux",
+  "repository": "github:reduxjs/react-redux",
+  "bugs": "https://github.com/reduxjs/react-redux/issues",
+  "main": "./lib/index.js",
+  "types": "./es/index.d.ts",
+  "unpkg": "dist/react-redux.js",
+  "module": "es/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "src",
+    "es"
+  ],
+  "scripts": {
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions \".js,.ts,.tsx\" --out-dir lib",
+    "build:es": "babel src --extensions \".js,.ts,.tsx\" --out-dir es",
+    "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/react-redux.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/react-redux.min.js",
+    "build:types": "tsc",
+    "build": "yarn build:types && yarn build:commonjs && yarn build:es && yarn build:umd && yarn build:umd:min",
+    "clean": "rimraf lib dist es coverage",
+    "api-types": "api-extractor run --local",
+    "format": "prettier --write \"{src,test}/**/*.{js,ts,tsx}\" \"docs/**/*.md\"",
+    "lint": "eslint src --ext ts,tsx,js test/utils test/components test/hooks",
+    "prepare": "yarn clean && yarn build",
+    "pretest": "yarn lint",
+    "test": "jest",
+    "type-tests": "yarn tsc -p test/typetests/tsconfig.json",
+    "coverage": "codecov"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8 || ^17.0 || ^18.0",
+    "@types/react-dom": "^16.8 || ^17.0 || ^18.0",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "react-native": ">=0.59",
+    "redux": "^4 || ^5.0.0-beta.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "redux": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.1",
+    "@types/hoist-non-react-statics": "^3.3.1",
+    "@types/use-sync-external-store": "^0.0.3",
+    "hoist-non-react-statics": "^3.3.2",
+    "react-is": "^18.0.0",
+    "use-sync-external-store": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-transform-react-display-name": "^7.12.1",
+    "@babel/plugin-transform-react-jsx": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.14.5",
+    "@microsoft/api-extractor": "^7.18.1",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-replace": "^2.3.3",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/jest-native": "^3.4.3",
+    "@testing-library/react": "13.0.0",
+    "@testing-library/react-12": "npm:@testing-library/react@^12",
+    "@testing-library/react-hooks": "^3.4.2",
+    "@testing-library/react-native": "^7.1.0",
+    "@types/object-assign": "^4.0.30",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-is": "^17",
+    "@types/react-native": "^0.67.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.1",
+    "codecov": "^3.8.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.12.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "glob": "^7.1.6",
+    "jest": "^26.6.1",
+    "prettier": "^2.1.2",
+    "react": "18.0.0",
+    "react-17": "npm:react@^17",
+    "react-dom": "18.0.0",
+    "react-dom-17": "npm:react-dom@^17",
+    "react-native": "^0.64.1",
+    "react-test-renderer": "18.0.0",
+    "react-test-renderer-17": "npm:react-test-renderer@^17",
+    "redux": "^4.0.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.32.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "26.5.6",
+    "typescript": "^4.3.4"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "name": "micromark",
+  "version": "4.0.2",
+  "description": "small commonmark compliant markdown parser with positional info and concrete tokens",
+  "license": "MIT",
+  "keywords": [
+    "commonmark",
+    "compiler",
+    "gfm",
+    "html",
+    "lexer",
+    "markdown",
+    "markup",
+    "md",
+    "unified",
+    "parse",
+    "parser",
+    "plugin",
+    "process",
+    "remark",
+    "render",
+    "renderer",
+    "token",
+    "tokenizer"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dev/",
+    "lib/",
+    "index.d.ts.map",
+    "index.d.ts",
+    "index.js",
+    "stream.d.ts.map",
+    "stream.d.ts",
+    "stream.js"
+  ],
+  "exports": {
+    ".": {
+      "development": "./dev/index.js",
+      "default": "./index.js"
+    },
+    "./stream": {
+      "development": "./dev/stream.js",
+      "default": "./stream.js"
+    }
+  },
+  "dependencies": {
+    "@types/debug": "^4.0.0",
+    "debug": "^4.0.0",
+    "decode-named-character-reference": "^1.0.0",
+    "devlop": "^1.0.0",
+    "micromark-core-commonmark": "^2.0.0",
+    "micromark-factory-space": "^2.0.0",
+    "micromark-util-character": "^2.0.0",
+    "micromark-util-chunked": "^2.0.0",
+    "micromark-util-combine-extensions": "^2.0.0",
+    "micromark-util-decode-numeric-character-reference": "^2.0.0",
+    "micromark-util-encode": "^2.0.0",
+    "micromark-util-normalize-identifier": "^2.0.0",
+    "micromark-util-resolve-all": "^2.0.0",
+    "micromark-util-sanitize-uri": "^2.0.0",
+    "micromark-util-subtokenize": "^2.0.0",
+    "micromark-util-symbol": "^2.0.0",
+    "micromark-util-types": "^2.0.0"
+  },
+  "scripts": {
+    "build": "micromark-build"
+  },
+  "xo": {
+    "envs": [
+      "shared-node-browser"
+    ],
+    "prettier": true,
+    "rules": {
+      "logical-assignment-operators": "off",
+      "max-depth": "off",
+      "unicorn/no-this-assignment": "off",
+      "unicorn/prefer-at": "off",
+      "unicorn/prefer-code-point": "off",
+      "unicorn/prefer-event-target": "off"
+    }
+  }
+}

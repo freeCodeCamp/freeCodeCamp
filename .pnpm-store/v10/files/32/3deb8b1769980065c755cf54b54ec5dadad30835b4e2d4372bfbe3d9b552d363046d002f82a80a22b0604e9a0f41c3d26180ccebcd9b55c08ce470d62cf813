@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Effectable.js",
+  "module": "../dist/esm/Effectable.js",
+  "types": "../dist/dts/Effectable.d.ts"
+}

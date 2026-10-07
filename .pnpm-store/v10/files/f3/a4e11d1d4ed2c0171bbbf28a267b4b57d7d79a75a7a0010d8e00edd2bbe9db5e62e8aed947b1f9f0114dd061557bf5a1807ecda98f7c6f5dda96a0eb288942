@@ -1,0 +1,76 @@
+{
+  "name": "mdast-util-frontmatter",
+  "version": "0.2.0",
+  "description": "mdast extension to parse and serialize frontmatter (YAML, TOML, etc)",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "util",
+    "utility",
+    "markdown",
+    "markup",
+    "frontmatter",
+    "yaml",
+    "toml",
+    "gfm"
+  ],
+  "repository": "syntax-tree/mdast-util-frontmatter",
+  "bugs": "https://github.com/syntax-tree/mdast-util-frontmatter/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "from-markdown.js",
+    "index.js",
+    "to-markdown.js"
+  ],
+  "dependencies": {
+    "micromark-extension-frontmatter": "^0.2.0"
+  },
+  "devDependencies": {
+    "mdast-util-from-markdown": "^0.5.0",
+    "mdast-util-to-markdown": "^0.3.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "tape": "^5.0.0",
+    "xo": "^0.33.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

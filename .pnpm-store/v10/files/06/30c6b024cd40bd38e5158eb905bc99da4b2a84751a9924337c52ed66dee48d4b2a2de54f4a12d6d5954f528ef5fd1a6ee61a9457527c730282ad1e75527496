@@ -1,0 +1,41 @@
+{
+    "name": "@types/polka",
+    "version": "0.5.8",
+    "description": "TypeScript definitions for polka",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/polka",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Piotr Kuczynski",
+            "githubUsername": "pkuczynski",
+            "url": "https://github.com/pkuczynski"
+        },
+        {
+            "name": "James Messinger",
+            "githubUsername": "JamesMessinger",
+            "url": "https://github.com/JamesMessinger"
+        },
+        {
+            "name": "Brian Takita",
+            "githubUsername": "btakita",
+            "url": "https://github.com/btakita"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/polka"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/express": "*",
+        "@types/express-serve-static-core": "*",
+        "@types/node": "*",
+        "@types/trouter": "*"
+    },
+    "peerDependencies": {},
+    "typesPublisherContentHash": "3dab9f3e6624ad06c4d8e46081213d90df5e3d50a58332494ef4c5e92455a2a5",
+    "typeScriptVersion": "5.2"
+}

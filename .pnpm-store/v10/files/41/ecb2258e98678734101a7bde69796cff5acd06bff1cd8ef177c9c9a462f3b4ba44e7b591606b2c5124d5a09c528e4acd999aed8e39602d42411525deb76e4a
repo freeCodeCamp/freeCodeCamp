@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/RegExp.js",
+  "module": "../dist/esm/RegExp.js",
+  "types": "../dist/dts/RegExp.d.ts"
+}

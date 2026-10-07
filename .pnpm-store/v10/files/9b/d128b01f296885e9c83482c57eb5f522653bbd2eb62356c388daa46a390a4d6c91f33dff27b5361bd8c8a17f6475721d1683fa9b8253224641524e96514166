@@ -1,0 +1,57 @@
+{
+  "name": "webpack-stats-plugin",
+  "version": "1.1.3",
+  "description": "Webpack stats plugin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FormidableLabs/webpack-stats-plugin"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Ryan Roemer <ryan.roemer@formidable.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FormidableLabs/webpack-stats-plugin/issues"
+  },
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "yarn run test:clean && yarn run test:build && yarn run test:run",
+    "test:run": "mocha \"test/**/*.spec.js\"",
+    "test:clean": "rm -rf test/scenarios/webpack*/build*",
+    "test:build:single": "node node_modules/webpack${VERS}/index.js --config test/scenarios/webpack${VERS}/webpack.config${WP_EXTRA}.js",
+    "test:build": "builder envs test:build:single \"[{\\\"VERS\\\":1},{\\\"VERS\\\":2},{\\\"VERS\\\":3},{\\\"VERS\\\":4},{\\\"VERS\\\":5},{\\\"VERS\\\":5,\\\"WP_EXTRA\\\":\\\".contenthash\\\"}]\" --buffer",
+    "check": "yarn run lint && yarn run test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@svitejs/changesets-changelog-github-compact": "^0.1.1",
+    "babel-eslint": "^10.1.0",
+    "builder": "^5.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-formidable": "^4.0.0",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "json-stream-stringify": "^3.0.0",
+    "mocha": "^8.1.1",
+    "pify": "^5.0.0",
+    "webpack": "file:test/packages/webpack",
+    "webpack-cli": "file:test/packages/webpack-cli",
+    "webpack1": "file:test/packages/webpack1",
+    "webpack2": "file:test/packages/webpack2",
+    "webpack3": "file:test/packages/webpack3",
+    "webpack4": "file:test/packages/webpack4",
+    "webpack5": "file:test/packages/webpack5"
+  },
+  "publishConfig": {
+    "provenance": true
+  }
+}

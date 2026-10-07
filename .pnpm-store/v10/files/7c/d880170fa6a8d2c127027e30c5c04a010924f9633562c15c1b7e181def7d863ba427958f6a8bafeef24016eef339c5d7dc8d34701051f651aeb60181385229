@@ -1,0 +1,9 @@
+/**
+ * @param {JSXIdentifier | JSXNamespacedName} node
+ * @returns {AttributeKeyAdapter}
+ */
+export function createAttributeKeyAdapter(node: JSXIdentifier | JSXNamespacedName): AttributeKeyAdapter;
+import type { JSXIdentifier } from "../../types";
+import type { JSXNamespacedName } from "../../types";
+import type { AttributeKeyAdapter } from "@html-eslint/core";
+//# sourceMappingURL=factory.d.ts.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"client-patch.d.ts","sourceRoot":"","sources":["../../../../src/integrations/http/client-patch.ts"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;GA+BG;AAIH,OAAO,KAAK,EAAc,gBAAgB,EAAE,0BAA0B,EAAqB,MAAM,SAAS,CAAC;AA0D3G;;;;;;;;;;GAUG;AACH,eAAO,MAAM,qBAAqB,GAChC,kBAAkB,gBAAgB,EAClC,UAAS,0BAA+B,KACvC,gBAA0D,CAAC"}

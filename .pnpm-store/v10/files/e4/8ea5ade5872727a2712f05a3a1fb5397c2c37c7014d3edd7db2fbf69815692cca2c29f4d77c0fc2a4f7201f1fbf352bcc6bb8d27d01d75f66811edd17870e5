@@ -1,0 +1,51 @@
+{
+  "Commands:": "Команди:",
+  "Options:": "Опції:",
+  "Examples:": "Приклади:",
+  "boolean": "boolean",
+  "count": "кількість",
+  "string": "строка",
+  "number": "число",
+  "array": "масива",
+  "required": "обов'язково",
+  "default": "за замовчуванням",
+  "default:": "за замовчуванням:",
+  "choices:": "доступні варіанти:",
+  "aliases:": "псевдоніми:",
+  "generated-value": "згенероване значення",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Недостатньо аргументів: наразі %s, потрібно %s або більше",
+    "other": "Недостатньо аргументів: наразі %s, потрібно %s або більше"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "Забагато аргументів: наразі %s, максимум %s",
+    "other": "Too many non-option arguments: наразі %s, максимум of %s"
+  },
+  "Missing argument value: %s": {
+    "one": "Відсутнє значення для аргументу: %s",
+    "other": "Відсутні значення для аргументу: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Відсутній обов'язковий аргумент: %s",
+    "other": "Відсутні обов'язкові аргументи: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Аргумент %s не підтримується",
+    "other": "Аргументи %s не підтримуються"
+  },
+  "Invalid values:": "Некоректні значення:",
+  "Argument: %s, Given: %s, Choices: %s": "Аргумент: %s, Введено: %s, Доступні варіанти: %s",
+  "Argument check failed: %s": "Аргумент не пройшов перевірку: %s",
+  "Implications failed:": "Відсутні залежні аргументи:",
+  "Not enough arguments following: %s": "Не достатньо аргументів після: %s",
+  "Invalid JSON config file: %s": "Некоректний JSON-файл конфігурації: %s",
+  "Path to JSON config file": "Шлях до JSON-файлу конфігурації",
+  "Show help": "Показати довідку",
+  "Show version number": "Показати версію",
+  "Did you mean %s?": "Можливо, ви мали на увазі %s?",
+  "Arguments %s and %s are mutually exclusive" : "Аргументи %s та %s взаємовиключні",
+  "Positionals:": "Позиційні:",
+  "command": "команда",
+  "deprecated": "застарілий",
+  "deprecated: %s": "застарілий: %s"
+}

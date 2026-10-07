@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Graph.js",
+  "module": "../dist/esm/Graph.js",
+  "types": "../dist/dts/Graph.d.ts"
+}

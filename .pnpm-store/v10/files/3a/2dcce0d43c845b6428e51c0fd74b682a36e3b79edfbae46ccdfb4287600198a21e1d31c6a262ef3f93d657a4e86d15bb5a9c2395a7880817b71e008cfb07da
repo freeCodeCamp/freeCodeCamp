@@ -1,0 +1,5128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.40.0/schema/markdownlint-config-schema-strict.json",
+  "title": "markdownlint configuration schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "description": "JSON Schema URI (expected by some editors)",
+      "type": "string",
+      "default": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.40.0/schema/markdownlint-config-schema.json"
+    },
+    "default": {
+      "description": "Default state for all rules",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "extends": {
+      "description": "Path to configuration file to extend",
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": null
+    },
+    "MD001": {
+      "description": "MD001/heading-increment : Heading levels should only increment by one level at a time : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md001.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "front_matter_title": {
+              "description": "RegExp for matching title in front matter",
+              "type": "string",
+              "default": "^\\s*title\\s*[:=]"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "heading-increment": {
+      "description": "MD001/heading-increment : Heading levels should only increment by one level at a time : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md001.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "front_matter_title": {
+              "description": "RegExp for matching title in front matter",
+              "type": "string",
+              "default": "^\\s*title\\s*[:=]"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD003": {
+      "description": "MD003/heading-style : Heading style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md003.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Heading style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "atx",
+                "atx_closed",
+                "setext",
+                "setext_with_atx",
+                "setext_with_atx_closed"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "heading-style": {
+      "description": "MD003/heading-style : Heading style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md003.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Heading style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "atx",
+                "atx_closed",
+                "setext",
+                "setext_with_atx",
+                "setext_with_atx_closed"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD004": {
+      "description": "MD004/ul-style : Unordered list style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md004.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "List style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "asterisk",
+                "plus",
+                "dash",
+                "sublist"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "ul-style": {
+      "description": "MD004/ul-style : Unordered list style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md004.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "List style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "asterisk",
+                "plus",
+                "dash",
+                "sublist"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD005": {
+      "description": "MD005/list-indent : Inconsistent indentation for list items at the same level : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md005.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "list-indent": {
+      "description": "MD005/list-indent : Inconsistent indentation for list items at the same level : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md005.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD007": {
+      "description": "MD007/ul-indent : Unordered list indentation : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md007.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "indent": {
+              "description": "Spaces for indent",
+              "type": "integer",
+              "minimum": 1,
+              "default": 2
+            },
+            "start_indented": {
+              "description": "Whether to indent the first level of the list",
+              "type": "boolean",
+              "default": false
+            },
+            "start_indent": {
+              "description": "Spaces for first level indent (when start_indented is set)",
+              "type": "integer",
+              "minimum": 1,
+              "default": 2
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "ul-indent": {
+      "description": "MD007/ul-indent : Unordered list indentation : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md007.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "indent": {
+              "description": "Spaces for indent",
+              "type": "integer",
+              "minimum": 1,
+              "default": 2
+            },
+            "start_indented": {
+              "description": "Whether to indent the first level of the list",
+              "type": "boolean",
+              "default": false
+            },
+            "start_indent": {
+              "description": "Spaces for first level indent (when start_indented is set)",
+              "type": "integer",
+              "minimum": 1,
+              "default": 2
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD009": {
+      "description": "MD009/no-trailing-spaces : Trailing spaces : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md009.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "br_spaces": {
+              "description": "Spaces for line break",
+              "type": "integer",
+              "minimum": 0,
+              "default": 2
+            },
+            "code_blocks": {
+              "description": "Include code blocks",
+              "type": "boolean",
+              "default": false
+            },
+            "list_item_empty_lines": {
+              "description": "Allow spaces for empty lines in list items",
+              "type": "boolean",
+              "default": false
+            },
+            "strict": {
+              "description": "Include unnecessary breaks",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-trailing-spaces": {
+      "description": "MD009/no-trailing-spaces : Trailing spaces : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md009.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "br_spaces": {
+              "description": "Spaces for line break",
+              "type": "integer",
+              "minimum": 0,
+              "default": 2
+            },
+            "code_blocks": {
+              "description": "Include code blocks",
+              "type": "boolean",
+              "default": false
+            },
+            "list_item_empty_lines": {
+              "description": "Allow spaces for empty lines in list items",
+              "type": "boolean",
+              "default": false
+            },
+            "strict": {
+              "description": "Include unnecessary breaks",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD010": {
+      "description": "MD010/no-hard-tabs : Hard tabs : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md010.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "code_blocks": {
+              "description": "Include code blocks",
+              "type": "boolean",
+              "default": true
+            },
+            "ignore_code_languages": {
+              "description": "Fenced code languages to ignore",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "spaces_per_tab": {
+              "description": "Number of spaces for each hard tab",
+              "type": "integer",
+              "minimum": 0,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-hard-tabs": {
+      "description": "MD010/no-hard-tabs : Hard tabs : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md010.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "code_blocks": {
+              "description": "Include code blocks",
+              "type": "boolean",
+              "default": true
+            },
+            "ignore_code_languages": {
+              "description": "Fenced code languages to ignore",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "spaces_per_tab": {
+              "description": "Number of spaces for each hard tab",
+              "type": "integer",
+              "minimum": 0,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD011": {
+      "description": "MD011/no-reversed-links : Reversed link syntax : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md011.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-reversed-links": {
+      "description": "MD011/no-reversed-links : Reversed link syntax : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md011.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD012": {
+      "description": "MD012/no-multiple-blanks : Multiple consecutive blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md012.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "maximum": {
+              "description": "Consecutive blank lines",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-multiple-blanks": {
+      "description": "MD012/no-multiple-blanks : Multiple consecutive blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md012.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "maximum": {
+              "description": "Consecutive blank lines",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD013": {
+      "description": "MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md013.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "line_length": {
+              "description": "Number of characters",
+              "type": "integer",
+              "minimum": 1,
+              "default": 80
+            },
+            "heading_line_length": {
+              "description": "Number of characters for headings",
+              "type": "integer",
+              "minimum": 1,
+              "default": 80
+            },
+            "code_block_line_length": {
+              "description": "Number of characters for code blocks",
+              "type": "integer",
+              "minimum": 1,
+              "default": 80
+            },
+            "code_blocks": {
+              "description": "Include code blocks",
+              "type": "boolean",
+              "default": true
+            },
+            "tables": {
+              "description": "Include tables",
+              "type": "boolean",
+              "default": true
+            },
+            "headings": {
+              "description": "Include headings",
+              "type": "boolean",
+              "default": true
+            },
+            "strict": {
+              "description": "Strict length checking",
+              "type": "boolean",
+              "default": false
+            },
+            "stern": {
+              "description": "Stern length checking",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "line-length": {
+      "description": "MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md013.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "line_length": {
+              "description": "Number of characters",
+              "type": "integer",
+              "minimum": 1,
+              "default": 80
+            },
+            "heading_line_length": {
+              "description": "Number of characters for headings",
+              "type": "integer",
+              "minimum": 1,
+              "default": 80
+            },
+            "code_block_line_length": {
+              "description": "Number of characters for code blocks",
+              "type": "integer",
+              "minimum": 1,
+              "default": 80
+            },
+            "code_blocks": {
+              "description": "Include code blocks",
+              "type": "boolean",
+              "default": true
+            },
+            "tables": {
+              "description": "Include tables",
+              "type": "boolean",
+              "default": true
+            },
+            "headings": {
+              "description": "Include headings",
+              "type": "boolean",
+              "default": true
+            },
+            "strict": {
+              "description": "Strict length checking",
+              "type": "boolean",
+              "default": false
+            },
+            "stern": {
+              "description": "Stern length checking",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD014": {
+      "description": "MD014/commands-show-output : Dollar signs used before commands without showing output : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md014.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "commands-show-output": {
+      "description": "MD014/commands-show-output : Dollar signs used before commands without showing output : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md014.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD018": {
+      "description": "MD018/no-missing-space-atx : No space after hash on atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md018.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-missing-space-atx": {
+      "description": "MD018/no-missing-space-atx : No space after hash on atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md018.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD019": {
+      "description": "MD019/no-multiple-space-atx : Multiple spaces after hash on atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md019.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-multiple-space-atx": {
+      "description": "MD019/no-multiple-space-atx : Multiple spaces after hash on atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md019.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD020": {
+      "description": "MD020/no-missing-space-closed-atx : No space inside hashes on closed atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md020.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-missing-space-closed-atx": {
+      "description": "MD020/no-missing-space-closed-atx : No space inside hashes on closed atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md020.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD021": {
+      "description": "MD021/no-multiple-space-closed-atx : Multiple spaces inside hashes on closed atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md021.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-multiple-space-closed-atx": {
+      "description": "MD021/no-multiple-space-closed-atx : Multiple spaces inside hashes on closed atx style heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md021.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD022": {
+      "description": "MD022/blanks-around-headings : Headings should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md022.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "lines_above": {
+              "description": "Blank lines above heading",
+              "type": [
+                "integer",
+                "array"
+              ],
+              "items": {
+                "type": "integer"
+              },
+              "minimum": -1,
+              "default": 1
+            },
+            "lines_below": {
+              "description": "Blank lines below heading",
+              "type": [
+                "integer",
+                "array"
+              ],
+              "items": {
+                "type": "integer"
+              },
+              "minimum": -1,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "blanks-around-headings": {
+      "description": "MD022/blanks-around-headings : Headings should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md022.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "lines_above": {
+              "description": "Blank lines above heading",
+              "type": [
+                "integer",
+                "array"
+              ],
+              "items": {
+                "type": "integer"
+              },
+              "minimum": -1,
+              "default": 1
+            },
+            "lines_below": {
+              "description": "Blank lines below heading",
+              "type": [
+                "integer",
+                "array"
+              ],
+              "items": {
+                "type": "integer"
+              },
+              "minimum": -1,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD023": {
+      "description": "MD023/heading-start-left : Headings must start at the beginning of the line : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md023.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "heading-start-left": {
+      "description": "MD023/heading-start-left : Headings must start at the beginning of the line : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md023.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD024": {
+      "description": "MD024/no-duplicate-heading : Multiple headings with the same content : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md024.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "siblings_only": {
+              "description": "Only check sibling headings",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-duplicate-heading": {
+      "description": "MD024/no-duplicate-heading : Multiple headings with the same content : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md024.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "siblings_only": {
+              "description": "Only check sibling headings",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD025": {
+      "description": "MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md025.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "front_matter_title": {
+              "description": "RegExp for matching title in front matter",
+              "type": "string",
+              "default": "^\\s*title\\s*[:=]"
+            },
+            "level": {
+              "description": "Heading level",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "single-title": {
+      "description": "MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md025.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "front_matter_title": {
+              "description": "RegExp for matching title in front matter",
+              "type": "string",
+              "default": "^\\s*title\\s*[:=]"
+            },
+            "level": {
+              "description": "Heading level",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "single-h1": {
+      "description": "MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md025.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "front_matter_title": {
+              "description": "RegExp for matching title in front matter",
+              "type": "string",
+              "default": "^\\s*title\\s*[:=]"
+            },
+            "level": {
+              "description": "Heading level",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD026": {
+      "description": "MD026/no-trailing-punctuation : Trailing punctuation in heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md026.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "punctuation": {
+              "description": "Punctuation characters",
+              "type": "string",
+              "default": ".,;:!。，；：！"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-trailing-punctuation": {
+      "description": "MD026/no-trailing-punctuation : Trailing punctuation in heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md026.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "punctuation": {
+              "description": "Punctuation characters",
+              "type": "string",
+              "default": ".,;:!。，；：！"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD027": {
+      "description": "MD027/no-multiple-space-blockquote : Multiple spaces after blockquote symbol : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md027.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "list_items": {
+              "description": "Include list items",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-multiple-space-blockquote": {
+      "description": "MD027/no-multiple-space-blockquote : Multiple spaces after blockquote symbol : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md027.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "list_items": {
+              "description": "Include list items",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD028": {
+      "description": "MD028/no-blanks-blockquote : Blank line inside blockquote : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md028.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-blanks-blockquote": {
+      "description": "MD028/no-blanks-blockquote : Blank line inside blockquote : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md028.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD029": {
+      "description": "MD029/ol-prefix : Ordered list item prefix : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md029.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "List style",
+              "type": "string",
+              "enum": [
+                "one",
+                "ordered",
+                "one_or_ordered",
+                "zero"
+              ],
+              "default": "one_or_ordered"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "ol-prefix": {
+      "description": "MD029/ol-prefix : Ordered list item prefix : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md029.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "List style",
+              "type": "string",
+              "enum": [
+                "one",
+                "ordered",
+                "one_or_ordered",
+                "zero"
+              ],
+              "default": "one_or_ordered"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD030": {
+      "description": "MD030/list-marker-space : Spaces after list markers : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md030.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "ul_single": {
+              "description": "Spaces for single-line unordered list items",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "ol_single": {
+              "description": "Spaces for single-line ordered list items",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "ul_multi": {
+              "description": "Spaces for multi-line unordered list items",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "ol_multi": {
+              "description": "Spaces for multi-line ordered list items",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "list-marker-space": {
+      "description": "MD030/list-marker-space : Spaces after list markers : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md030.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "ul_single": {
+              "description": "Spaces for single-line unordered list items",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "ol_single": {
+              "description": "Spaces for single-line ordered list items",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "ul_multi": {
+              "description": "Spaces for multi-line unordered list items",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "ol_multi": {
+              "description": "Spaces for multi-line ordered list items",
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD031": {
+      "description": "MD031/blanks-around-fences : Fenced code blocks should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md031.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "list_items": {
+              "description": "Include list items",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "blanks-around-fences": {
+      "description": "MD031/blanks-around-fences : Fenced code blocks should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md031.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "list_items": {
+              "description": "Include list items",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD032": {
+      "description": "MD032/blanks-around-lists : Lists should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md032.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "blanks-around-lists": {
+      "description": "MD032/blanks-around-lists : Lists should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md032.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD033": {
+      "description": "MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md033.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "allowed_elements": {
+              "description": "Allowed elements",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "table_allowed_elements": {
+              "description": "Allowed elements in tables",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-inline-html": {
+      "description": "MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md033.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "allowed_elements": {
+              "description": "Allowed elements",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "table_allowed_elements": {
+              "description": "Allowed elements in tables",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD034": {
+      "description": "MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md034.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-bare-urls": {
+      "description": "MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md034.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD035": {
+      "description": "MD035/hr-style : Horizontal rule style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md035.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Horizontal rule style",
+              "type": "string",
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "hr-style": {
+      "description": "MD035/hr-style : Horizontal rule style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md035.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Horizontal rule style",
+              "type": "string",
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD036": {
+      "description": "MD036/no-emphasis-as-heading : Emphasis used instead of a heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md036.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "punctuation": {
+              "description": "Punctuation characters",
+              "type": "string",
+              "default": ".,;:!?。，；：！？"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-emphasis-as-heading": {
+      "description": "MD036/no-emphasis-as-heading : Emphasis used instead of a heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md036.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "punctuation": {
+              "description": "Punctuation characters",
+              "type": "string",
+              "default": ".,;:!?。，；：！？"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD037": {
+      "description": "MD037/no-space-in-emphasis : Spaces inside emphasis markers : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md037.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-space-in-emphasis": {
+      "description": "MD037/no-space-in-emphasis : Spaces inside emphasis markers : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md037.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD038": {
+      "description": "MD038/no-space-in-code : Spaces inside code span elements : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md038.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-space-in-code": {
+      "description": "MD038/no-space-in-code : Spaces inside code span elements : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md038.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD039": {
+      "description": "MD039/no-space-in-links : Spaces inside link text : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md039.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-space-in-links": {
+      "description": "MD039/no-space-in-links : Spaces inside link text : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md039.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD040": {
+      "description": "MD040/fenced-code-language : Fenced code blocks should have a language specified : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md040.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "allowed_languages": {
+              "description": "List of languages",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "language_only": {
+              "description": "Require language only",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "fenced-code-language": {
+      "description": "MD040/fenced-code-language : Fenced code blocks should have a language specified : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md040.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "allowed_languages": {
+              "description": "List of languages",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "language_only": {
+              "description": "Require language only",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD041": {
+      "description": "MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md041.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "allow_preamble": {
+              "description": "Allow content before first heading",
+              "type": "boolean",
+              "default": false
+            },
+            "front_matter_title": {
+              "description": "RegExp for matching title in front matter",
+              "type": "string",
+              "default": "^\\s*title\\s*[:=]"
+            },
+            "level": {
+              "description": "Heading level",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "first-line-heading": {
+      "description": "MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md041.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "allow_preamble": {
+              "description": "Allow content before first heading",
+              "type": "boolean",
+              "default": false
+            },
+            "front_matter_title": {
+              "description": "RegExp for matching title in front matter",
+              "type": "string",
+              "default": "^\\s*title\\s*[:=]"
+            },
+            "level": {
+              "description": "Heading level",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "first-line-h1": {
+      "description": "MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md041.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "allow_preamble": {
+              "description": "Allow content before first heading",
+              "type": "boolean",
+              "default": false
+            },
+            "front_matter_title": {
+              "description": "RegExp for matching title in front matter",
+              "type": "string",
+              "default": "^\\s*title\\s*[:=]"
+            },
+            "level": {
+              "description": "Heading level",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6,
+              "default": 1
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD042": {
+      "description": "MD042/no-empty-links : No empty links : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md042.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-empty-links": {
+      "description": "MD042/no-empty-links : No empty links : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md042.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD043": {
+      "description": "MD043/required-headings : Required heading structure : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md043.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "headings": {
+              "description": "List of headings",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(\\*|\\+|\\?|#{1,6}\\s+\\S.*)$"
+              },
+              "default": []
+            },
+            "match_case": {
+              "description": "Match case of headings",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "required-headings": {
+      "description": "MD043/required-headings : Required heading structure : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md043.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "headings": {
+              "description": "List of headings",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(\\*|\\+|\\?|#{1,6}\\s+\\S.*)$"
+              },
+              "default": []
+            },
+            "match_case": {
+              "description": "Match case of headings",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD044": {
+      "description": "MD044/proper-names : Proper names should have the correct capitalization : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md044.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "names": {
+              "description": "List of proper names",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "code_blocks": {
+              "description": "Include code blocks",
+              "type": "boolean",
+              "default": true
+            },
+            "html_elements": {
+              "description": "Include HTML elements",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "proper-names": {
+      "description": "MD044/proper-names : Proper names should have the correct capitalization : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md044.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "names": {
+              "description": "List of proper names",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "code_blocks": {
+              "description": "Include code blocks",
+              "type": "boolean",
+              "default": true
+            },
+            "html_elements": {
+              "description": "Include HTML elements",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD045": {
+      "description": "MD045/no-alt-text : Images should have alternate text (alt text) : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md045.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "no-alt-text": {
+      "description": "MD045/no-alt-text : Images should have alternate text (alt text) : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md045.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD046": {
+      "description": "MD046/code-block-style : Code block style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md046.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Block style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "fenced",
+                "indented"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "code-block-style": {
+      "description": "MD046/code-block-style : Code block style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md046.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Block style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "fenced",
+                "indented"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD047": {
+      "description": "MD047/single-trailing-newline : Files should end with a single newline character : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md047.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "single-trailing-newline": {
+      "description": "MD047/single-trailing-newline : Files should end with a single newline character : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md047.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD048": {
+      "description": "MD048/code-fence-style : Code fence style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md048.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Code fence style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "backtick",
+                "tilde"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "code-fence-style": {
+      "description": "MD048/code-fence-style : Code fence style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md048.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Code fence style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "backtick",
+                "tilde"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD049": {
+      "description": "MD049/emphasis-style : Emphasis style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md049.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Emphasis style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "asterisk",
+                "underscore"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "emphasis-style": {
+      "description": "MD049/emphasis-style : Emphasis style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md049.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Emphasis style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "asterisk",
+                "underscore"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD050": {
+      "description": "MD050/strong-style : Strong style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md050.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Strong style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "asterisk",
+                "underscore"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "strong-style": {
+      "description": "MD050/strong-style : Strong style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md050.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Strong style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "asterisk",
+                "underscore"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD051": {
+      "description": "MD051/link-fragments : Link fragments should be valid : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md051.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "ignore_case": {
+              "description": "Ignore case of fragments",
+              "type": "boolean",
+              "default": false
+            },
+            "ignored_pattern": {
+              "description": "Pattern for ignoring additional fragments",
+              "type": "string",
+              "default": ""
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "link-fragments": {
+      "description": "MD051/link-fragments : Link fragments should be valid : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md051.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "ignore_case": {
+              "description": "Ignore case of fragments",
+              "type": "boolean",
+              "default": false
+            },
+            "ignored_pattern": {
+              "description": "Pattern for ignoring additional fragments",
+              "type": "string",
+              "default": ""
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD052": {
+      "description": "MD052/reference-links-images : Reference links and images should use a label that is defined : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md052.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "ignored_labels": {
+              "description": "Ignored link labels",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "x"
+              ]
+            },
+            "shortcut_syntax": {
+              "description": "Include shortcut syntax",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "reference-links-images": {
+      "description": "MD052/reference-links-images : Reference links and images should use a label that is defined : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md052.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "ignored_labels": {
+              "description": "Ignored link labels",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "x"
+              ]
+            },
+            "shortcut_syntax": {
+              "description": "Include shortcut syntax",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD053": {
+      "description": "MD053/link-image-reference-definitions : Link and image reference definitions should be needed : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md053.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "ignored_definitions": {
+              "description": "Ignored definitions",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "//"
+              ]
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "link-image-reference-definitions": {
+      "description": "MD053/link-image-reference-definitions : Link and image reference definitions should be needed : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md053.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "ignored_definitions": {
+              "description": "Ignored definitions",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "//"
+              ]
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD054": {
+      "description": "MD054/link-image-style : Link and image style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md054.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "autolink": {
+              "description": "Allow autolinks",
+              "type": "boolean",
+              "default": true
+            },
+            "inline": {
+              "description": "Allow inline links and images",
+              "type": "boolean",
+              "default": true
+            },
+            "full": {
+              "description": "Allow full reference links and images",
+              "type": "boolean",
+              "default": true
+            },
+            "collapsed": {
+              "description": "Allow collapsed reference links and images",
+              "type": "boolean",
+              "default": true
+            },
+            "shortcut": {
+              "description": "Allow shortcut reference links and images",
+              "type": "boolean",
+              "default": true
+            },
+            "url_inline": {
+              "description": "Allow URLs as inline links",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "link-image-style": {
+      "description": "MD054/link-image-style : Link and image style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md054.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "autolink": {
+              "description": "Allow autolinks",
+              "type": "boolean",
+              "default": true
+            },
+            "inline": {
+              "description": "Allow inline links and images",
+              "type": "boolean",
+              "default": true
+            },
+            "full": {
+              "description": "Allow full reference links and images",
+              "type": "boolean",
+              "default": true
+            },
+            "collapsed": {
+              "description": "Allow collapsed reference links and images",
+              "type": "boolean",
+              "default": true
+            },
+            "shortcut": {
+              "description": "Allow shortcut reference links and images",
+              "type": "boolean",
+              "default": true
+            },
+            "url_inline": {
+              "description": "Allow URLs as inline links",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD055": {
+      "description": "MD055/table-pipe-style : Table pipe style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md055.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Table pipe style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "leading_only",
+                "trailing_only",
+                "leading_and_trailing",
+                "no_leading_or_trailing"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "table-pipe-style": {
+      "description": "MD055/table-pipe-style : Table pipe style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md055.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Table pipe style",
+              "type": "string",
+              "enum": [
+                "consistent",
+                "leading_only",
+                "trailing_only",
+                "leading_and_trailing",
+                "no_leading_or_trailing"
+              ],
+              "default": "consistent"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD056": {
+      "description": "MD056/table-column-count : Table column count : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md056.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "table-column-count": {
+      "description": "MD056/table-column-count : Table column count : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md056.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD058": {
+      "description": "MD058/blanks-around-tables : Tables should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md058.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "blanks-around-tables": {
+      "description": "MD058/blanks-around-tables : Tables should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md058.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD059": {
+      "description": "MD059/descriptive-link-text : Link text should be descriptive : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md059.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "prohibited_texts": {
+              "description": "Prohibited link texts",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "click here",
+                "here",
+                "link",
+                "more"
+              ]
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "descriptive-link-text": {
+      "description": "MD059/descriptive-link-text : Link text should be descriptive : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md059.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "prohibited_texts": {
+              "description": "Prohibited link texts",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "click here",
+                "here",
+                "link",
+                "more"
+              ]
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "MD060": {
+      "description": "MD060/table-column-style : Table column style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md060.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Table column style",
+              "type": "string",
+              "enum": [
+                "any",
+                "aligned",
+                "compact",
+                "tight"
+              ],
+              "default": "any"
+            },
+            "aligned_delimiter": {
+              "description": "Aligned delimiter columns",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "table-column-style": {
+      "description": "MD060/table-column-style : Table column style : https://github.com/DavidAnson/markdownlint/blob/v0.40.0/doc/md060.md",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "description": "Whether to enable the rule",
+              "type": "boolean",
+              "default": true
+            },
+            "severity": {
+              "description": "Rule severity",
+              "type": "string",
+              "enum": [
+                "error",
+                "warning"
+              ],
+              "default": "error"
+            },
+            "style": {
+              "description": "Table column style",
+              "type": "string",
+              "enum": [
+                "any",
+                "aligned",
+                "compact",
+                "tight"
+              ],
+              "default": "any"
+            },
+            "aligned_delimiter": {
+              "description": "Aligned delimiter columns",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      ],
+      "default": true
+    },
+    "headings": {
+      "description": "headings : MD001, MD003, MD018, MD019, MD020, MD021, MD022, MD023, MD024, MD025, MD026, MD036, MD041, MD043",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "bullet": {
+      "description": "bullet : MD004, MD005, MD007, MD032",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "ul": {
+      "description": "ul : MD004, MD005, MD007, MD030, MD032",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "indentation": {
+      "description": "indentation : MD005, MD007, MD027",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "whitespace": {
+      "description": "whitespace : MD009, MD010, MD012, MD027, MD028, MD030, MD037, MD038, MD039",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "hard_tab": {
+      "description": "hard_tab : MD010",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "links": {
+      "description": "links : MD011, MD034, MD039, MD042, MD051, MD052, MD053, MD054, MD059",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "blank_lines": {
+      "description": "blank_lines : MD012, MD022, MD031, MD032, MD047",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "line_length": {
+      "description": "line_length : MD013",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "code": {
+      "description": "code : MD014, MD031, MD038, MD040, MD046, MD048",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "atx": {
+      "description": "atx : MD018, MD019",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "spaces": {
+      "description": "spaces : MD018, MD019, MD020, MD021, MD023",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "atx_closed": {
+      "description": "atx_closed : MD020, MD021",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "blockquote": {
+      "description": "blockquote : MD027, MD028",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "ol": {
+      "description": "ol : MD029, MD030, MD032",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "html": {
+      "description": "html : MD033",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "url": {
+      "description": "url : MD034",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "hr": {
+      "description": "hr : MD035",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "emphasis": {
+      "description": "emphasis : MD036, MD037, MD049, MD050",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "language": {
+      "description": "language : MD040",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "spelling": {
+      "description": "spelling : MD044",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "accessibility": {
+      "description": "accessibility : MD045, MD059",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "images": {
+      "description": "images : MD045, MD052, MD053, MD054",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    },
+    "table": {
+      "description": "table : MD055, MD056, MD058, MD060",
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        }
+      ],
+      "default": true
+    }
+  },
+  "additionalProperties": false
+}

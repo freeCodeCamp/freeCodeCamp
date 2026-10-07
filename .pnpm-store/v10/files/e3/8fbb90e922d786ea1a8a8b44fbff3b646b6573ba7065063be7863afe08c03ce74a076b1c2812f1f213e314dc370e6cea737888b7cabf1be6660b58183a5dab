@@ -1,0 +1,54 @@
+{
+  "name": "@vitest/snapshot",
+  "type": "module",
+  "version": "3.2.4",
+  "description": "Vitest snapshot manager",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://github.com/vitest-dev/vitest/tree/main/packages/snapshot#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/snapshot"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./environment": {
+      "types": "./dist/environment.d.ts",
+      "default": "./dist/environment.js"
+    },
+    "./manager": {
+      "types": "./dist/manager.d.ts",
+      "default": "./dist/manager.js"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "dependencies": {
+    "magic-string": "^0.30.17",
+    "pathe": "^2.0.3",
+    "@vitest/pretty-format": "3.2.4"
+  },
+  "devDependencies": {
+    "@types/natural-compare": "^1.4.3",
+    "natural-compare": "^1.4.0",
+    "@vitest/utils": "3.2.4"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "dev": "rollup -c --watch"
+  }
+}

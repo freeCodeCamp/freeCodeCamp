@@ -1,0 +1,33 @@
+{
+  "name": "fast-decode-uri-component",
+  "version": "1.0.1",
+  "description": "Fast and safe decodeURIComponent",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tap test.js",
+    "bench": "node bench.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delvedor/fast-decode-uri-component.git"
+  },
+  "keywords": [
+    "decode",
+    "uri",
+    "component",
+    "fast",
+    "safe"
+  ],
+  "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/delvedor/fast-decode-uri-component/issues"
+  },
+  "homepage": "https://github.com/delvedor/fast-decode-uri-component#readme",
+  "devDependencies": {
+    "nanobench": "^2.1.1",
+    "randomstring": "^1.1.5",
+    "standard": "^11.0.1",
+    "tap": "^11.1.2"
+  }
+}

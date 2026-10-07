@@ -1,0 +1,60 @@
+{
+  "name": "arch",
+  "description": "Better `os.arch()` for node and the browser -- detect OS architecture",
+  "version": "2.2.0",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
+  "browser": "browser.js",
+  "types": "./index.d.ts",
+  "bugs": {
+    "url": "https://github.com/feross/arch/issues"
+  },
+  "devDependencies": {
+    "airtap": "^3.0.0",
+    "standard": "*",
+    "tape": "^5.0.0"
+  },
+  "homepage": "https://github.com/feross/arch",
+  "keywords": [
+    "browser",
+    "browserify",
+    "arch",
+    "cpu info",
+    "cpus",
+    "architecture",
+    "navigator.platform",
+    "x64",
+    "x86",
+    "64 bit",
+    "32 bit"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/arch.git"
+  },
+  "scripts": {
+    "test": "standard && npm run test-node && npm run test-browser",
+    "test-browser": "airtap -- test/*.js",
+    "test-browser-local": "airtap --local -- test/*.js",
+    "test-node": "tape test/*.js"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/feross"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/feross"
+    },
+    {
+      "type": "consulting",
+      "url": "https://feross.org/support"
+    }
+  ]
+}

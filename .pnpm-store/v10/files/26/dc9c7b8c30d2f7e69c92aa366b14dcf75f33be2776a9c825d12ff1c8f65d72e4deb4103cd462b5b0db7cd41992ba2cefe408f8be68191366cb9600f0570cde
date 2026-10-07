@@ -1,0 +1,78 @@
+{
+    "author": "Christoph Guttandin",
+    "browser": "build/es5/bundle.js",
+    "bugs": {
+        "url": "https://github.com/chrisguttandin/automation-events/issues"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.29.2",
+        "tslib": "^2.8.1"
+    },
+    "description": "A module which provides an implementation of an automation event list.",
+    "devDependencies": {
+        "@babel/cli": "^7.28.6",
+        "@babel/core": "^7.29.0",
+        "@babel/plugin-external-helpers": "^7.27.1",
+        "@babel/plugin-transform-runtime": "^7.29.0",
+        "@babel/preset-env": "^7.29.2",
+        "@commitlint/cli": "^20.5.0",
+        "@commitlint/config-angular": "^20.5.0",
+        "@rollup/plugin-babel": "^7.0.0",
+        "@vitest/browser-webdriverio": "^4.1.2",
+        "commitizen": "^4.3.1",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.57.0",
+        "eslint-config-holy-grail": "^61.0.12",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.4.0",
+        "prettier": "^3.8.1",
+        "rimraf": "^6.1.3",
+        "rollup": "^4.60.1",
+        "tsconfig-holy-grail": "^15.0.3",
+        "tslint": "^6.1.3",
+        "tslint-config-holy-grail": "^56.0.7",
+        "typescript": "^5.9.3",
+        "vitest": "^4.1.2"
+    },
+    "engines": {
+        "node": ">=18.2.0"
+    },
+    "files": [
+        "build/es2019/",
+        "build/es5/",
+        "build/node/",
+        "src/"
+    ],
+    "homepage": "https://github.com/chrisguttandin/automation-events",
+    "keywords": [
+        "AudioParam",
+        "Web Audio API"
+    ],
+    "license": "MIT",
+    "main": "build/node/module.js",
+    "module": "build/es2019/module.js",
+    "name": "automation-events",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chrisguttandin/automation-events.git"
+    },
+    "scripts": {
+        "build": "rimraf build/* && tsc --project src/tsconfig.json && rollup --config config/rollup/bundle.mjs && babel ./build/es2019 --config-file ./config/babel/build.json --out-dir ./build/node",
+        "lint": "npm run lint:config && npm run lint:src && npm run lint:test",
+        "lint:config": "eslint --config config/eslint/config.json --ext .cjs --ext .js --ext .mjs --report-unused-disable-directives config/",
+        "lint:src": "tslint --config config/tslint/src.json --project src/tsconfig.json src/*.ts src/**/*.ts",
+        "lint:test": "eslint --config config/eslint/test.json --ext .js --report-unused-disable-directives test/",
+        "prepare": "husky",
+        "prepublishOnly": "npm run build",
+        "test": "npm run lint && npm run build && npm run test:unit-browser && npm run test:unit-node",
+        "test:unit-browser": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"unit\" ] && [ \"$TARGET\" = \"\" -o \"$TARGET\" = \"chrome\" -o \"$TARGET\" = \"firefox\" -o \"$TARGET\" = \"safari\" ]; then npx vitest --config config/vitest/unit.ts; fi",
+        "test:unit-node": "if [ \"$TYPE\" = \"\" -o \"$TYPE\" = \"unit\" ] && [ \"$TARGET\" = \"\" -o \"$TARGET\" = \"node\" ]; then npx vitest --browser.enabled false --config config/vitest/unit.ts; fi"
+    },
+    "types": "build/es2019/module.d.ts",
+    "version": "7.1.19"
+}

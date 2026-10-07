@@ -1,0 +1,32 @@
+// @flow
+
+class DOMRectReadOnly {
+    +x: number;
+    +y: number;
+    +width: number;
+    +height: number;
+    +top: number;
+    +right: number;
+    +bottom: number;
+    +left: number;
+}
+
+class ResizeObserverEntry {
+    +target: Element;
+    +contentRect: DOMRectReadOnly;
+}
+
+type Entries = $ReadOnlyArray<ResizeObserverEntry>;
+
+type ResizeObserverCallback = {
+    (entries: Entries, observer: ResizeObserver): void
+};
+
+declare class ResizeObserver {
+    constructor(ResizeObserverCallback): ResizeObserver;
+    observe(target: Element): void;
+    unobserve(target: Element): void;
+    disconnect(): void;
+};
+
+declare export default typeof ResizeObserver;

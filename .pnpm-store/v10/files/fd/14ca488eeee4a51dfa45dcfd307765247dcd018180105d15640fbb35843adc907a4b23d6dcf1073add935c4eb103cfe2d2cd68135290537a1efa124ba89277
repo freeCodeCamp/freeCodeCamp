@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/RcRef.js",
+  "module": "../dist/esm/RcRef.js",
+  "types": "../dist/dts/RcRef.d.ts"
+}

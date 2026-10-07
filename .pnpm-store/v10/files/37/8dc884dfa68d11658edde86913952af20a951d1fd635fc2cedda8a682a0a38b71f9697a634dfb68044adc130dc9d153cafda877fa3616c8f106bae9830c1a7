@@ -1,0 +1,89 @@
+{
+  "name": "@paypal/paypal-js",
+  "version": "10.1.0",
+  "description": "Loading wrapper and TypeScript types for the PayPal JS SDK",
+  "main": "index.js",
+  "module": "dist/esm/paypal-js.js",
+  "types": "types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/paypal-js.js",
+      "require": "./dist/cjs/paypal-js.js"
+    },
+    "./sdk-v6": {
+      "types": "./types/v6/index.d.ts",
+      "import": "./dist/v6/esm/paypal-js.js",
+      "default": "./dist/v6/esm/paypal-js.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && rollup --config --bundleConfigAsCjs",
+    "dev": "rollup --config --bundleConfigAsCjs --watch",
+    "docs:v6": "typedoc",
+    "lint": "eslint . && npm run typecheck",
+    "test": "vitest src",
+    "test:bundle": "vitest bundle-tests/**",
+    "test:e2e": "playwright test",
+    "test:e2e:debug": "PWDEBUG=1 playwright test --project=\"chromium\"",
+    "test:e2e:start": "node e2e-tests/http-server.js",
+    "typecheck": "tsc --noEmit --allowSyntheticDefaultImports",
+    "openapi": "npm run openapi-orders && npm run openapi-subscriptions",
+    "openapi-orders": "openapi-typescript node_modules/@paypal/paypal-rest-api-specifications/openapi/checkout_orders_v2.json -o types/apis/openapi/checkout_orders_v2.d.ts",
+    "openapi-subscriptions": "openapi-typescript node_modules/@paypal/paypal-rest-api-specifications/openapi/billing_subscriptions_v1.json -o types/apis/openapi/billing_subscriptions_v1.d.ts"
+  },
+  "files": [
+    "dist",
+    "types",
+    "!types/**/*.test.ts"
+  ],
+  "keywords": [
+    "paypal",
+    "sdk",
+    "async",
+    "script",
+    "loader",
+    "types",
+    "typescript",
+    "typescript-definitions"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paypal/paypal-js.git",
+    "directory": "packages/paypal-js"
+  },
+  "devDependencies": {
+    "@paypal/paypal-rest-api-specifications": "^1.0.0",
+    "@playwright/test": "^1.56.1",
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@types/node": "^20.10.5",
+    "@types/promise-polyfill": "6.0.6",
+    "@typescript-eslint/eslint-plugin": "8.59.0",
+    "@typescript-eslint/parser": "8.59.0",
+    "@vitest/coverage-v8": "4.1.0",
+    "eslint": "8.57.1",
+    "eslint-plugin-tsdoc": "^0.4.0",
+    "filesize": "10.1.0",
+    "husky": "8.0.3",
+    "jsdom": "^23.0.1",
+    "lint-staged": "15.2.0",
+    "openapi-typescript": "^7.13.0",
+    "rollup": "^4.9.1",
+    "semver": "7.5.4",
+    "tslib": "2.6.2",
+    "typedoc": "^0.28.13",
+    "typedoc-material-theme": "^1.4.0",
+    "vitest": "4.1.0"
+  },
+  "dependencies": {
+    "promise-polyfill": "^8.3.0"
+  }
+}

@@ -1,0 +1,55 @@
+{
+	"name": "functions-have-names",
+	"version": "1.2.3",
+	"description": "Does this JS environment support the `name` property on functions?",
+	"main": "index.js",
+	"scripts": {
+		"prepublish": "not-in-publish || npm run prepublishOnly",
+		"prepublishOnly": "safe-publish-latest",
+		"version": "auto-changelog && git add CHANGELOG.md",
+		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
+		"lint": "eslint --ext=js,mjs .",
+		"pretest": "npm run lint",
+		"tests-only": "nyc tape 'test/**/*.js'",
+		"test": "npm run tests-only",
+		"posttest": "aud --production"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inspect-js/functions-have-names.git"
+	},
+	"keywords": [
+		"function",
+		"name",
+		"es5",
+		"names",
+		"functions",
+		"ie"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"funding": {
+		"url": "https://github.com/sponsors/ljharb"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inspect-js/functions-have-names/issues"
+	},
+	"homepage": "https://github.com/inspect-js/functions-have-names#readme",
+	"devDependencies": {
+		"@ljharb/eslint-config": "^21.0.0",
+		"aud": "^2.0.0",
+		"auto-changelog": "^2.4.0",
+		"eslint": "=8.8.0",
+		"nyc": "^10.3.2",
+		"safe-publish-latest": "^2.0.0",
+		"tape": "^5.5.3"
+	},
+	"auto-changelog": {
+		"output": "CHANGELOG.md",
+		"template": "keepachangelog",
+		"unreleased": false,
+		"commitLimit": false,
+		"backfillLimit": false,
+		"hideCredit": true
+	}
+}

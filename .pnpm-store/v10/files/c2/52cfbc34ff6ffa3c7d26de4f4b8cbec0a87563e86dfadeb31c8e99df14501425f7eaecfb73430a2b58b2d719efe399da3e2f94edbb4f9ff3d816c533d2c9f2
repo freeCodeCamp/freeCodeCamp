@@ -1,0 +1,39 @@
+{
+	"name": "vscode-languageserver-textdocument",
+	"description": "A simple text document implementation for Node LSP servers",
+	"version": "1.0.12",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-languageserver-node.git",
+		"directory": "textDocument"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-languageserver-node/issues"
+	},
+	"main": "./lib/umd/main.js",
+	"typings": "./lib/umd/main",
+	"exports": {
+		".": {
+			"browser": "./lib/esm/main.js",
+			"module": "./lib/esm/main.js",
+			"import": "./lib/esm/main.js",
+			"default": "./lib/umd/main.js"
+		}
+	},
+	"scripts": {
+		"prepublishOnly": "echo \"⛔ Can only publish from a secure pipeline ⛔\" && node ../build/npm/fail",
+		"prepack": "npm run all:publish",
+		"compile": "tsc -b ./tsconfig.json",
+		"clean": "rimraf lib",
+		"watch": "tsc -b ./tsconfig.watch.json -w",
+		"lint": "eslint --ext ts src",
+		"test": "node ../node_modules/mocha/bin/_mocha",
+		"all": "npm run clean && npm run compile && npm run lint && npm run test",
+		"compile:esm": "tsc -b ./tsconfig.esm.publish.json && node ../build/bin/fix-esm",
+		"compile:umd": "tsc -b ./tsconfig.umd.publish.json",
+		"all:publish": "git clean -xfd . && npm install && npm run compile:esm && npm run compile:umd && npm run lint && npm run test",
+		"preversion": "npm test"
+	}
+}

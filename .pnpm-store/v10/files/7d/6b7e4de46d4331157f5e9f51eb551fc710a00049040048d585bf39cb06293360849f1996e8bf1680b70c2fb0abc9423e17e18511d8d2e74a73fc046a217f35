@@ -1,0 +1,211 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.colorpicker-widget {
+	height: 190px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+/* Decoration */
+
+.colorpicker-color-decoration,
+.hc-light .colorpicker-color-decoration {
+	border: solid 0.1em #000;
+	box-sizing: border-box;
+	margin: 0.1em 0.2em 0 0.2em;
+	width: 0.8em;
+	height: 0.8em;
+	line-height: 0.8em;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.hc-black .colorpicker-color-decoration,
+.vs-dark .colorpicker-color-decoration {
+	border: solid 0.1em #eee;
+}
+
+/* Header */
+
+.colorpicker-header {
+	display: flex;
+	height: 24px;
+	position: relative;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTZEaa/1AAAAHUlEQVQYV2PYvXu3JAi7uLiAMaYAjAGTQBPYLQkAa/0Zef3qRswAAAAASUVORK5CYII=");
+	background-size: 9px 9px;
+	image-rendering: pixelated;
+}
+
+.colorpicker-header .picked-color {
+	width: 240px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 24px;
+	cursor: pointer;
+	color: white;
+	flex: 1;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.colorpicker-header .picked-color .picked-color-presentation {
+	white-space: nowrap;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.colorpicker-header .picked-color .codicon {
+	color: inherit;
+	font-size: 14px;
+}
+
+.colorpicker-header .picked-color.light {
+	color: black;
+}
+
+.colorpicker-header .original-color {
+	width: 74px;
+	z-index: inherit;
+	cursor: pointer;
+}
+
+.standalone-colorpicker {
+	color: var(--vscode-editorHoverWidget-foreground);
+	background-color: var(--vscode-editorHoverWidget-background);
+	border: 1px solid var(--vscode-editorHoverWidget-border);
+}
+
+.colorpicker-header.standalone-colorpicker {
+	border-bottom: none;
+}
+
+.colorpicker-header .close-button {
+	cursor: pointer;
+	background-color: var(--vscode-editorHoverWidget-background);
+	border-left: 1px solid var(--vscode-editorHoverWidget-border);
+}
+
+.colorpicker-header .close-button-inner-div {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.colorpicker-header .close-button-inner-div:hover {
+	background-color: var(--vscode-toolbar-hoverBackground);
+}
+
+.colorpicker-header .close-icon {
+	padding: 3px;
+}
+
+/* Body */
+
+.colorpicker-body {
+	display: flex;
+	padding: 8px;
+	position: relative;
+}
+
+.colorpicker-body .saturation-wrap {
+	overflow: hidden;
+	height: 150px;
+	position: relative;
+	min-width: 220px;
+	flex: 1;
+}
+
+.colorpicker-body .saturation-box {
+	height: 150px;
+	position: absolute;
+}
+
+.colorpicker-body .saturation-selection {
+	width: 9px;
+	height: 9px;
+	margin: -5px 0 0 -5px;
+	border: 1px solid rgb(255, 255, 255);
+	border-radius: 100%;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+	position: absolute;
+}
+
+.colorpicker-body .strip {
+	width: 25px;
+	height: 150px;
+}
+
+.colorpicker-body .standalone-strip {
+	width: 25px;
+	height: 122px;
+}
+
+.colorpicker-body .hue-strip {
+	position: relative;
+	margin-left: 8px;
+	cursor: grab;
+	background: linear-gradient(to bottom, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+}
+
+.colorpicker-body .opacity-strip {
+	position: relative;
+	margin-left: 8px;
+	cursor: grab;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTZEaa/1AAAAHUlEQVQYV2PYvXu3JAi7uLiAMaYAjAGTQBPYLQkAa/0Zef3qRswAAAAASUVORK5CYII=");
+	background-size: 9px 9px;
+	image-rendering: pixelated;
+}
+
+.colorpicker-body .strip.grabbing {
+	cursor: grabbing;
+}
+
+.colorpicker-body .slider {
+	position: absolute;
+	top: 0;
+	left: -2px;
+	width: calc(100% + 4px);
+	height: 4px;
+	box-sizing: border-box;
+	border: 1px solid rgba(255, 255, 255, 0.71);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.85);
+}
+
+.colorpicker-body .strip .overlay {
+	height: 150px;
+	pointer-events: none;
+}
+
+.colorpicker-body .standalone-strip .standalone-overlay {
+	height: 122px;
+	pointer-events: none;
+}
+
+.standalone-colorpicker-body {
+	display: block;
+	border: 1px solid transparent;
+	border-bottom: 1px solid var(--vscode-editorHoverWidget-border);
+	overflow: hidden;
+}
+
+.colorpicker-body .insert-button {
+	position: absolute;
+	height: 20px;
+	width: 58px;
+	padding: 0px;
+	right: 8px;
+	bottom: 8px;
+	background: var(--vscode-button-background);
+	color: var(--vscode-button-foreground);
+	border-radius: 2px;
+	border: none;
+	cursor: pointer;
+}
+
+.colorpicker-body .insert-button:hover{
+	background: var(--vscode-button-hoverBackground);
+}

@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_overload_yield.cjs",
+    "module": "../../esm/_overload_yield.js"
+}

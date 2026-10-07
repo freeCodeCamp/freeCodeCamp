@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/MutableList.js",
+  "module": "../dist/esm/MutableList.js",
+  "types": "../dist/dts/MutableList.d.ts"
+}

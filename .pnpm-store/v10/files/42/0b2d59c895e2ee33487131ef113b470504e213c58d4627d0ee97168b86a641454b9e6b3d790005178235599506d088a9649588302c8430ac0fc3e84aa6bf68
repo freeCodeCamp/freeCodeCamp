@@ -1,0 +1,58 @@
+{
+  "name": "slashes",
+  "description": "Add or remove backslashes (escape or unescape).",
+  "author": {
+    "name": "Chris Ackerman",
+    "email": "chris@topher.land"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shakeskeyboarde/slashes.git"
+  },
+  "license": "ISC",
+  "version": "3.0.12",
+  "files": [
+    "lib/**"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "escape",
+    "unescape",
+    "encode",
+    "decode",
+    "strip",
+    "json",
+    "php"
+  ],
+  "type": "module",
+  "types": "lib/types/index.d.ts",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "require": "./lib/cjs/index.js",
+      "default": "./lib/esm/index.js"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "test": "rc npm-test -o",
+    "prepack": "del-cli *.tgz && rc npm-prepack",
+    "modernize": "npx npm-check-updates -i --format group"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.4",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.30.0",
+    "eslint-config-rational": "^2.0.7",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "parallel-rc": "^1.0.12",
+    "prettier": "^2.8.1",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.9.4"
+  }
+}

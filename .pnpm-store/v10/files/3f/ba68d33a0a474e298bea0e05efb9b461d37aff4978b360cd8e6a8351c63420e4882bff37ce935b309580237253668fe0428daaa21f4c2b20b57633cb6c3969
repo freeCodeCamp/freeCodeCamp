@@ -1,0 +1,121 @@
+{
+	"name": "cacheable-request",
+	"version": "10.2.14",
+	"description": "Wrap native HTTP requests with RFC compliant cache support",
+	"license": "MIT",
+	"repository": "jaredwray/cacheable",
+	"author": "Jared Wray <me@jaredwray.com> (http://jaredwray.com)",
+	"type": "module",
+	"exports": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"engines": {
+		"node": ">=14.16"
+	},
+	"scripts": {
+		"test": "xo && NODE_OPTIONS=--experimental-vm-modules jest --coverage ",
+		"prepare": "npm run build",
+		"build": "tsc --project tsconfig.build.json",
+		"clean": "rm -rf node_modules && rm -rf ./coverage && rm -rf ./test/testdb.sqlite && rm -rf ./dist"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"HTTP",
+		"HTTPS",
+		"cache",
+		"caching",
+		"layer",
+		"cacheable",
+		"RFC 7234",
+		"RFC",
+		"7234",
+		"compliant"
+	],
+	"dependenciesComments": {
+		"@types/http-cache-semantics": "It needs to be in the dependencies list and not devDependencies because otherwise projects that use this one will be getting `Could not find a declaration file for module 'http-cache-semantics'` error when running `tsc`, see https://github.com/jaredwray/cacheable-request/issues/194 for details"
+	},
+	"dependencies": {
+		"@types/http-cache-semantics": "^4.0.2",
+		"get-stream": "^6.0.1",
+		"http-cache-semantics": "^4.1.1",
+		"keyv": "^4.5.3",
+		"mimic-response": "^4.0.0",
+		"normalize-url": "^8.0.0",
+		"responselike": "^3.0.0"
+	},
+	"devDependencies": {
+		"@keyv/sqlite": "^3.6.6",
+		"@types/jest": "^29.5.5",
+		"@types/node": "^20.8.2",
+		"@types/responselike": "^1.0.1",
+		"@types/sqlite3": "^3.1.9",
+		"body-parser": "^1.20.2",
+		"delay": "^6.0.0",
+		"eslint": "^8.50.0",
+		"eslint-plugin-jest": "^27.4.2",
+		"express": "^4.18.2",
+		"jest": "^29.7.0",
+		"pify": "^6.1.0",
+		"sqlite3": "^5.1.6",
+		"ts-jest": "^29.1.1",
+		"ts-jest-resolver": "^2.0.1",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.2.2",
+		"xo": "^0.56.0"
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"src/**/*.{ts,js}"
+		],
+		"extensionsToTreatAsEsm": [
+			".ts"
+		],
+		"resolver": "ts-jest-resolver",
+		"moduleFileExtensions": [
+			"ts",
+			"js"
+		],
+		"transform": {
+			"^.+\\.(ts|tsx)$": [
+				"ts-jest",
+				{
+					"tsconfig": "./tsconfig.build.json",
+					"useESM": true
+				}
+			]
+		},
+		"testMatch": [
+			"**/test/*.test.(ts|js)"
+		],
+		"testEnvironment": "node"
+	},
+	"xo": {
+		"plugins": [
+			"jest"
+		],
+		"extends": [
+			"plugin:jest/recommended"
+		],
+		"rules": {
+			"@typescript-eslint/triple-slash-reference": 0,
+			"@typescript-eslint/no-namespace": 0,
+			"@typescript-eslint/no-unsafe-assignment": 0,
+			"@typescript-eslint/no-unsafe-call": 0,
+			"@typescript-eslint/ban-types": 0,
+			"@typescript-eslint/restrict-template-expressions": 0,
+			"@typescript-eslint/no-unsafe-return": 0,
+			"@typescript-eslint/no-unsafe-argument": 0,
+			"new-cap": 0,
+			"unicorn/no-abusive-eslint-disable": 0,
+			"@typescript-eslint/restrict-plus-operands": 0,
+			"@typescript-eslint/no-implicit-any-catch": 0,
+			"@typescript-eslint/consistent-type-imports": 0,
+			"@typescript-eslint/consistent-type-definitions": 0,
+			"@typescript-eslint/prefer-nullish-coalescing": 0,
+			"n/prefer-global/url": 0,
+			"n/no-deprecated-api": 0,
+			"unicorn/prefer-event-target": 0
+		}
+	}
+}

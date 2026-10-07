@@ -1,0 +1,51 @@
+{
+  "name": "bare-url",
+  "version": "2.4.0",
+  "description": "WHATWG URL implementation for JavaScript",
+  "exports": {
+    "./package": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./global": {
+      "types": "./global.d.ts",
+      "default": "./global.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "global.js",
+    "global.d.ts",
+    "binding.c",
+    "binding.js",
+    "CMakeLists.txt",
+    "lib",
+    "prebuilds"
+  ],
+  "addon": true,
+  "scripts": {
+    "test": "prettier . --check && bare test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/bare-url.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/bare-url/issues"
+  },
+  "homepage": "https://github.com/holepunchto/bare-url",
+  "dependencies": {
+    "bare-path": "^3.0.0"
+  },
+  "devDependencies": {
+    "brittle": "^3.3.2",
+    "cmake-bare": "^1.1.6",
+    "cmake-fetch": "^1.0.0",
+    "prettier": "^3.3.3",
+    "prettier-config-holepunch": "^2.0.0"
+  }
+}

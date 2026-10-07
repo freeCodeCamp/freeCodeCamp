@@ -1,0 +1,27 @@
+{
+  "name": "sirv",
+  "version": "2.0.3",
+  "description": "The optimized & lightweight middleware for serving requests to static assets",
+  "repository": "lukeed/sirv",
+  "module": "build.mjs",
+  "types": "sirv.d.ts",
+  "main": "build.js",
+  "license": "MIT",
+  "files": [
+    "build.*",
+    "sirv.d.ts"
+  ],
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke@lukeed.com",
+    "url": "https://lukeed.com"
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "dependencies": {
+    "@polka/url": "^1.0.0-next.20",
+    "mrmime": "^1.0.0",
+    "totalist": "^3.0.0"
+  }
+}

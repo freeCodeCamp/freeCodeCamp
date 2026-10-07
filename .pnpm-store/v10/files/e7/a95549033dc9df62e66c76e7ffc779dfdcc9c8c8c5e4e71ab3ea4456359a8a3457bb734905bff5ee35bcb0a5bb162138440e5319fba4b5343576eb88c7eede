@@ -1,0 +1,36 @@
+{
+    "name": "@xtuc/long",
+    "version": "4.2.2",
+    "author": "Daniel Wirtz <dcode@dcode.io>",
+    "description": "A Long class for representing a 64-bit two's-complement integer value.",
+    "main": "src/long.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dcodeIO/long.js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/dcodeIO/long.js/issues"
+    },
+    "keywords": [
+        "math"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+        "webpack": "^3.10.0"
+    },
+    "license": "Apache-2.0",
+    "scripts": {
+        "build": "webpack",
+        "test": "node tests"
+    },
+    "files": [
+        "index.js",
+        "LICENSE",
+        "README.md",
+        "src/long.js",
+        "dist/long.js",
+        "dist/long.js.map",
+        "index.d.ts"
+    ],
+    "types": "index.d.ts"
+}

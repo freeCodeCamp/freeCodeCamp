@@ -1,0 +1,27 @@
+{
+  "name": "@babel/plugin-proposal-private-property-in-object",
+  "version": "7.21.0-placeholder-for-preset-env.2",
+  "description": "This plugin transforms checks for a private property in an object",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel-plugin-proposal-private-property-in-object.git"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-plugin-proposal-private-property-in-object",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

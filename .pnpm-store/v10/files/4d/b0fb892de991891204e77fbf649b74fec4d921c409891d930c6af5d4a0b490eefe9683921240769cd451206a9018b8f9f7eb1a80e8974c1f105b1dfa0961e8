@@ -1,0 +1,27 @@
+import { c as createCLI } from './chunks/cac.Cb-PYCCB.js';
+import '@vitest/utils';
+import 'events';
+import 'pathe';
+import 'tinyrainbow';
+import './chunks/constants.DnKduX2e.js';
+import './chunks/index.VByaPkjc.js';
+import 'node:perf_hooks';
+import '@vitest/runner/utils';
+import '@vitest/utils/source-map';
+import './chunks/env.D4Lgay0q.js';
+import 'std-env';
+import './chunks/typechecker.DRKU1-1g.js';
+import 'node:os';
+import 'tinyexec';
+import './path.js';
+import 'node:path';
+import 'node:url';
+import 'vite';
+import 'node:util';
+import 'node:fs';
+import 'node:fs/promises';
+import 'node:console';
+import 'node:stream';
+import 'node:module';
+
+createCLI().parse();

@@ -1,0 +1,80 @@
+{
+  "name": "markdown-table",
+  "version": "2.0.0",
+  "description": "Markdown tables",
+  "license": "MIT",
+  "keywords": [
+    "text",
+    "markdown",
+    "table",
+    "align",
+    "rows",
+    "tabular"
+  ],
+  "repository": "wooorm/markdown-table",
+  "bugs": "https://github.com/wooorm/markdown-table/issues",
+  "funding": {
+     "type": "github",
+     "url": "https://github.com/sponsors/wooorm"
+   },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "repeat-string": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "chalk": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "strip-ansi": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.25.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify . -s markdownTable -o markdown-table.js",
+    "build-mangle": "browserify . -s markdownTable -p tinyify -o markdown-table.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "complexity": "off"
+    },
+    "ignores": [
+      "markdown-table.js"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  }
+}

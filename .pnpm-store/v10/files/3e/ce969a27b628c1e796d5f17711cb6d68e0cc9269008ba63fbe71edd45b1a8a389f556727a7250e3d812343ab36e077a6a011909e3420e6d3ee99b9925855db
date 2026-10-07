@@ -1,0 +1,51 @@
+{
+    "Commands:": "命令：",
+    "Options:": "選項：",
+    "Examples:": "範例：",
+    "boolean": "布林",
+    "count": "次數",
+    "string": "字串",
+    "number": "數字",
+    "array": "陣列",
+    "required": "必填",
+    "default": "預設值",
+    "default:": "預設值：",
+    "choices:": "可選值：",
+    "aliases:": "別名：",
+    "generated-value": "生成的值",
+    "Not enough non-option arguments: got %s, need at least %s": {
+      "one": "non-option 引數不足：只傳入了 %s 個, 至少要 %s 個",
+      "other": "non-option 引數不足：只傳入了 %s 個, 至少要 %s 個"
+    },
+    "Too many non-option arguments: got %s, maximum of %s": {
+      "one": "non-option 引數過多：傳入了 %s 個, 但最多 %s 個",
+      "other": "non-option 引數過多：傳入了 %s 個, 但最多 %s 個"
+    },
+    "Missing argument value: %s": {
+      "one": "此引數無指定值：%s",
+      "other": "這些引數無指定值：%s"
+    },
+    "Missing required argument: %s": {
+      "one": "缺少必須的引數：%s",
+      "other": "缺少這些必須的引數：%s"
+    },
+    "Unknown argument: %s": {
+      "one": "未知的引數：%s",
+      "other": "未知的引數：%s"
+    },
+    "Invalid values:": "無效的選項值：",
+    "Argument: %s, Given: %s, Choices: %s": "引數名稱: %s, 傳入的值: %s, 可選的值：%s",
+    "Argument check failed: %s": "引數驗證失敗：%s",
+    "Implications failed:": "缺少依賴引數：",
+    "Not enough arguments following: %s": "沒有提供足夠的值給此引數：%s",
+    "Invalid JSON config file: %s": "無效的 JSON 設置文件：%s",
+    "Path to JSON config file": "JSON 設置文件的路徑",
+    "Show help": "顯示說明",
+    "Show version number": "顯示版本",
+    "Did you mean %s?": "您是指 %s 嗎？",
+    "Arguments %s and %s are mutually exclusive" : "引數 %s 和 %s 互斥",
+    "Positionals:": "位置：",
+    "command": "命令",
+    "deprecated": "已淘汰",
+    "deprecated: %s": "已淘汰：%s"
+  }

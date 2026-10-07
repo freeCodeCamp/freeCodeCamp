@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/hasClass",
+  "private": true,
+  "main": "../cjs/hasClass.js",
+  "module": "../esm/hasClass.js",
+  "types": "../esm/hasClass.d.ts"
+}

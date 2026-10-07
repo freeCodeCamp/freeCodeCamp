@@ -1,0 +1,36 @@
+{
+  "name": "bare-path",
+  "version": "3.0.0",
+  "description": "Path manipulation library for JavaScript",
+  "exports": {
+    ".": "./index.js",
+    "./package": "./package.json",
+    "./posix": "./lib/posix.js",
+    "./win32": "./lib/win32.js"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "standard && bare test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/bare-path.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/bare-path/issues"
+  },
+  "homepage": "https://github.com/holepunchto/bare-path#readme",
+  "dependencies": {
+    "bare-os": "^3.0.1"
+  },
+  "devDependencies": {
+    "brittle": "^3.3.2",
+    "standard": "^17.0.0"
+  }
+}

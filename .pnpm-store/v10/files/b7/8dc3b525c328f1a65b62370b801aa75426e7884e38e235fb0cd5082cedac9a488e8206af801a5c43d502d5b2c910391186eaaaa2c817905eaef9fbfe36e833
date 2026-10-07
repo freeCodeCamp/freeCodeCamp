@@ -1,0 +1,101 @@
+{
+  "name": "hast-util-raw",
+  "version": "6.1.0",
+  "description": "hast utility to reparse a tree",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "hast",
+    "hast-util",
+    "util",
+    "utility",
+    "parse",
+    "raw",
+    "html"
+  ],
+  "repository": "syntax-tree/hast-util-raw",
+  "bugs": "https://github.com/syntax-tree/hast-util-raw/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "@types/hast": "^2.0.0",
+    "hast-util-from-parse5": "^6.0.0",
+    "hast-util-to-parse5": "^6.0.0",
+    "html-void-elements": "^1.0.0",
+    "parse5": "^6.0.0",
+    "unist-util-position": "^3.0.0",
+    "unist-util-visit": "^2.0.0",
+    "vfile": "^4.0.0",
+    "web-namespaces": "^1.0.0",
+    "xtend": "^4.0.0",
+    "zwitch": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "hastscript": "^6.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "rehype-stringify": "^8.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-parse": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "remark-rehype": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unified": "^9.0.0",
+    "unist-builder": "^2.0.0",
+    "xo": "^0.38.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify index.js -s hastUtilRaw -o hast-util-raw.js",
+    "build-mangle": "browserify index.js -s hastUtilRaw -o hast-util-raw.min.js -p tinyify",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-includes": "off"
+    },
+    "ignores": [
+      "hast-util-raw.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

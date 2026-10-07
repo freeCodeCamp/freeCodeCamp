@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/intervalToDuration/index.js",
+  "typings": "../../typings.d.ts"
+}

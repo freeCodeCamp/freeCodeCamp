@@ -1,0 +1,75 @@
+{
+  "name": "unrs-resolver",
+  "version": "1.7.8",
+  "type": "commonjs",
+  "description": "UnRS Resolver Node API with PNP support",
+  "repository": "git+https://github.com/unrs/unrs-resolver.git",
+  "homepage": "https://github.com/unrs/unrs-resolver#readme",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "funding": "https://opencollective.com/unrs-resolver",
+  "license": "MIT",
+  "main": "index.js",
+  "browser": "browser.js",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "browser.js"
+  ],
+  "scripts": {
+    "postinstall": "napi-postinstall unrs-resolver 1.7.8 check"
+  },
+  "dependencies": {
+    "napi-postinstall": "^0.2.2"
+  },
+  "napi": {
+    "binaryName": "resolver",
+    "packageName": "@unrs/resolver-binding",
+    "wasm": {
+      "browser": {
+        "fs": true
+      }
+    },
+    "targets": [
+      "x86_64-pc-windows-msvc",
+      "aarch64-pc-windows-msvc",
+      "i686-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "x86_64-unknown-freebsd",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "armv7-unknown-linux-gnueabihf",
+      "armv7-unknown-linux-musleabihf",
+      "powerpc64le-unknown-linux-gnu",
+      "riscv64gc-unknown-linux-gnu",
+      "riscv64gc-unknown-linux-musl",
+      "s390x-unknown-linux-gnu",
+      "x86_64-apple-darwin",
+      "aarch64-apple-darwin",
+      "wasm32-wasip1-threads"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "optionalDependencies": {
+    "@unrs/resolver-binding-win32-x64-msvc": "1.7.8",
+    "@unrs/resolver-binding-win32-arm64-msvc": "1.7.8",
+    "@unrs/resolver-binding-win32-ia32-msvc": "1.7.8",
+    "@unrs/resolver-binding-linux-x64-gnu": "1.7.8",
+    "@unrs/resolver-binding-linux-x64-musl": "1.7.8",
+    "@unrs/resolver-binding-freebsd-x64": "1.7.8",
+    "@unrs/resolver-binding-linux-arm64-gnu": "1.7.8",
+    "@unrs/resolver-binding-linux-arm64-musl": "1.7.8",
+    "@unrs/resolver-binding-linux-arm-gnueabihf": "1.7.8",
+    "@unrs/resolver-binding-linux-arm-musleabihf": "1.7.8",
+    "@unrs/resolver-binding-linux-ppc64-gnu": "1.7.8",
+    "@unrs/resolver-binding-linux-riscv64-gnu": "1.7.8",
+    "@unrs/resolver-binding-linux-riscv64-musl": "1.7.8",
+    "@unrs/resolver-binding-linux-s390x-gnu": "1.7.8",
+    "@unrs/resolver-binding-darwin-x64": "1.7.8",
+    "@unrs/resolver-binding-darwin-arm64": "1.7.8",
+    "@unrs/resolver-binding-wasm32-wasi": "1.7.8"
+  }
+}

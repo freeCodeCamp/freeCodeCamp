@@ -1,0 +1,25 @@
+{
+  "name": "dotenv-expand",
+  "version": "5.1.0",
+  "description": "Expand environment variables using dotenv",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "lab test/* --coverage",
+    "posttest": "npm run lint",
+    "lint": "standard"
+  },
+  "keywords": [
+    "dotenv",
+    "expand",
+    "variables"
+  ],
+  "author": "motdotla",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "lab": "^13.0.1",
+    "should": "^11.2.1",
+    "standard": "^9.0.2"
+  },
+  "types": "./index.d.ts"
+}

@@ -1,0 +1,10 @@
+import type { Vocabulary } from "../../types";
+import { JTDTypeError } from "./type";
+import { JTDEnumError } from "./enum";
+import { JTDElementsError } from "./elements";
+import { JTDPropertiesError } from "./properties";
+import { JTDDiscriminatorError } from "./discriminator";
+import { JTDValuesError } from "./values";
+declare const jtdVocabulary: Vocabulary;
+export default jtdVocabulary;
+export type JTDErrorObject = JTDTypeError | JTDEnumError | JTDElementsError | JTDPropertiesError | JTDDiscriminatorError | JTDValuesError;

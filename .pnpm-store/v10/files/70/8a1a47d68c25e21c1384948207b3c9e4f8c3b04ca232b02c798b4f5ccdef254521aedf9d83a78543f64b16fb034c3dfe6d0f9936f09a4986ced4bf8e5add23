@@ -1,0 +1,11 @@
+import React from 'react';
+import type { TrendingFacetsProps as TrendingFacetsUiComponentProps } from 'instantsearch-ui-components';
+import type { UseTrendingFacetsProps } from 'react-instantsearch-core';
+type UiProps = Pick<TrendingFacetsUiComponentProps, 'items' | 'itemComponent' | 'headerComponent' | 'emptyComponent' | 'status'>;
+export type TrendingFacetsProps = Omit<TrendingFacetsUiComponentProps, keyof UiProps> & UseTrendingFacetsProps & {
+    itemComponent?: TrendingFacetsUiComponentProps['itemComponent'];
+    headerComponent?: TrendingFacetsUiComponentProps['headerComponent'];
+    emptyComponent?: TrendingFacetsUiComponentProps['emptyComponent'];
+};
+export declare function TrendingFacets({ facetName, limit, threshold, fallbackParameters, queryParameters, escapeHTML, transformItems, itemComponent, headerComponent, emptyComponent, ...props }: TrendingFacetsProps): React.JSX.Element;
+export {};

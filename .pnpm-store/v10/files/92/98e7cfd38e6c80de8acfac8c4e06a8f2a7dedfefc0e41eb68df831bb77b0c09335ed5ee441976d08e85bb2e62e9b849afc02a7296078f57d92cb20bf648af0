@@ -1,0 +1,14 @@
+import { type TSchema } from '../../types/schema.mjs';
+import { type TIntersect } from '../../types/intersect.mjs';
+import { type TDistribute } from './distribute.mjs';
+import { type TBroaden } from './broaden.mjs';
+import { type TUnion } from '../../types/union.mjs';
+import { type TNever } from '../../types/never.mjs';
+export type TEvaluateIntersect<Types extends TSchema[], Distribution extends TSchema[] = TDistribute<Types>, Result extends TSchema = TBroaden<Distribution>> = Result;
+export declare function EvaluateIntersect<Types extends TSchema[]>(types: [...Types]): TEvaluateIntersect<Types>;
+export type TEvaluateUnion<Types extends TSchema[], Result extends TSchema = TBroaden<Types>> = Result;
+export declare function EvaluateUnion<Types extends TSchema[]>(types: [...Types]): TEvaluateUnion<Types>;
+export type TEvaluateType<Type extends TSchema, Result extends TSchema = (Type extends TIntersect<infer Types extends TSchema[]> ? TEvaluateIntersect<Types> : Type extends TUnion<infer Types extends TSchema[]> ? TEvaluateUnion<Types> : Type)> = Result;
+export declare function EvaluateType<Type extends TSchema>(type: Type): TEvaluateType<Type>;
+export type TEvaluateUnionFast<Types extends TSchema[], Result extends TSchema = (Types extends [infer Type extends TSchema] ? Type : Types extends [] ? TNever : TUnion<Types>)> = Result;
+export declare function EvaluateUnionFast<Types extends TSchema[]>(types: [...Types]): TEvaluateUnionFast<Types>;

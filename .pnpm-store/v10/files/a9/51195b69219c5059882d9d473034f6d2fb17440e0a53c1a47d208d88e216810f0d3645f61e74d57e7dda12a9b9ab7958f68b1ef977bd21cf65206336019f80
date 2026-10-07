@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../../../src/integrations/tracing/knex/vendored/types.ts"],"names":[],"mappings":"AAqBA,OAAO,EAAE,qBAAqB,EAAE,MAAM,gCAAgC,CAAC;AAEvE,MAAM,WAAW,yBAA0B,SAAQ,qBAAqB;IACtE,mGAAmG;IACnG,cAAc,CAAC,EAAE,MAAM,CAAC;IACxB,qDAAqD;IACrD,iBAAiB,CAAC,EAAE,OAAO,CAAC;CAC7B"}

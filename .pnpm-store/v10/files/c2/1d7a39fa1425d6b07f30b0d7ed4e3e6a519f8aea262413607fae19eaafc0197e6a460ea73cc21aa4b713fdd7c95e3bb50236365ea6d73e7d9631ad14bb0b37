@@ -1,0 +1,11 @@
+{
+  "settings": {
+    "mochaExplorer.files": "test/**/*.test.ts",
+    "mochaExplorer.mochaPath": "node_modules/mocha",
+    "mochaExplorer.logpanel": true
+  },
+  "folders": [{ "path": "." }],
+  "extensions": {
+    "recommendations": ["hbenl.vscode-mocha-test-adapter"]
+  }
+}

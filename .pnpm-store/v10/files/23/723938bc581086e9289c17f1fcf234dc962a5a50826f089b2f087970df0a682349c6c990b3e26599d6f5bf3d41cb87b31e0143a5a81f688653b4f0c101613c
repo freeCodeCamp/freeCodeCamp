@@ -1,0 +1,644 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain Storage
+  depends on Browser
+  depends on Network
+
+  type SerializedStorageKey extends string
+
+  # Enum of possible storage types.
+  type StorageType extends string
+    enum
+      cookies
+      file_systems
+      indexeddb
+      local_storage
+      shader_cache
+      websql
+      service_workers
+      cache_storage
+      interest_groups
+      shared_storage
+      storage_buckets
+      all
+      other
+
+  # Usage for a storage type.
+  type UsageForType extends object
+    properties
+      # Name of storage type.
+      StorageType storageType
+      # Storage usage (bytes).
+      number usage
+
+  # Pair of issuer origin and number of available (signed, but not used) Trust
+  # Tokens from that issuer.
+  experimental type TrustTokens extends object
+    properties
+      string issuerOrigin
+      number count
+
+  # Protected audience interest group auction identifier.
+  type InterestGroupAuctionId extends string
+
+  # Enum of interest group access types.
+  type InterestGroupAccessType extends string
+    enum
+      join
+      leave
+      update
+      loaded
+      bid
+      win
+      additionalBid
+      additionalBidWin
+      topLevelBid
+      topLevelAdditionalBid
+      clear
+
+  # Enum of auction events.
+  type InterestGroupAuctionEventType extends string
+    enum
+      started
+      configResolved
+
+  # Enum of network fetches auctions can do.
+  type InterestGroupAuctionFetchType extends string
+    enum
+      bidderJs
+      bidderWasm
+      sellerJs
+      bidderTrustedSignals
+      sellerTrustedSignals
+
+  # Enum of shared storage access scopes.
+  type SharedStorageAccessScope extends string
+    enum
+      window
+      sharedStorageWorklet
+      protectedAudienceWorklet
+      header
+
+  # Enum of shared storage access methods.
+  type SharedStorageAccessMethod extends string
+    enum
+      addModule
+      createWorklet
+      selectURL
+      run
+      batchUpdate
+      set
+      append
+      delete
+      clear
+      get
+      keys
+      values
+      entries
+      length
+      remainingBudget
+
+  # Struct for a single key-value pair in an origin's shared storage.
+  type SharedStorageEntry extends object
+    properties
+      string key
+      string value
+
+  # Details for an origin's shared storage.
+  type SharedStorageMetadata extends object
+    properties
+      # Time when the origin's shared storage was last created.
+      Network.TimeSinceEpoch creationTime
+      # Number of key-value pairs stored in origin's shared storage.
+      integer length
+      # Current amount of bits of entropy remaining in the navigation budget.
+      number remainingBudget
+      # Total number of bytes stored as key-value pairs in origin's shared
+      # storage.
+      integer bytesUsed
+
+  # Represents a dictionary object passed in as privateAggregationConfig to
+  # run or selectURL.
+  type SharedStoragePrivateAggregationConfig extends object
+    properties
+      # The chosen aggregation service deployment.
+      optional string aggregationCoordinatorOrigin
+      # The context ID provided.
+      optional string contextId
+      # Configures the maximum size allowed for filtering IDs.
+      integer filteringIdMaxBytes
+      # The limit on the number of contributions in the final report.
+      optional integer maxContributions
+
+  # Pair of reporting metadata details for a candidate URL for `selectURL()`.
+  type SharedStorageReportingMetadata extends object
+    properties
+      string eventType
+      string reportingUrl
+
+  # Bundles a candidate URL with its reporting metadata.
+  type SharedStorageUrlWithMetadata extends object
+    properties
+      # Spec of candidate URL.
+      string url
+      # Any associated reporting metadata.
+      array of SharedStorageReportingMetadata reportingMetadata
+
+  # Bundles the parameters for shared storage access events whose
+  # presence/absence can vary according to SharedStorageAccessType.
+  type SharedStorageAccessParams extends object
+    properties
+      # Spec of the module script URL.
+      # Present only for SharedStorageAccessMethods: addModule and
+      # createWorklet.
+      optional string scriptSourceUrl
+      # String denoting "context-origin", "script-origin", or a custom
+      # origin to be used as the worklet's data origin.
+      # Present only for SharedStorageAccessMethod: createWorklet.
+      optional string dataOrigin
+      # Name of the registered operation to be run.
+      # Present only for SharedStorageAccessMethods: run and selectURL.
+      optional string operationName
+      # ID of the operation call.
+      # Present only for SharedStorageAccessMethods: run and selectURL.
+      optional string operationId
+      # Whether or not to keep the worket alive for future run or selectURL
+      # calls.
+      # Present only for SharedStorageAccessMethods: run and selectURL.
+      optional boolean keepAlive
+      # Configures the private aggregation options.
+      # Present only for SharedStorageAccessMethods: run and selectURL.
+      optional SharedStoragePrivateAggregationConfig privateAggregationConfig
+      # The operation's serialized data in bytes (converted to a string).
+      # Present only for SharedStorageAccessMethods: run and selectURL.
+      # TODO(crbug.com/401011862): Consider updating this parameter to binary.
+      optional string serializedData
+      # Array of candidate URLs' specs, along with any associated metadata.
+      # Present only for SharedStorageAccessMethod: selectURL.
+      optional array of SharedStorageUrlWithMetadata urlsWithMetadata
+      # Spec of the URN:UUID generated for a selectURL call.
+      # Present only for SharedStorageAccessMethod: selectURL.
+      optional string urnUuid
+      # Key for a specific entry in an origin's shared storage.
+      # Present only for SharedStorageAccessMethods: set, append, delete, and
+      # get.
+      optional string key
+      # Value for a specific entry in an origin's shared storage.
+      # Present only for SharedStorageAccessMethods: set and append.
+      optional string value
+      # Whether or not to set an entry for a key if that key is already present.
+      # Present only for SharedStorageAccessMethod: set.
+      optional boolean ignoreIfPresent
+      # A number denoting the (0-based) order of the worklet's
+      # creation relative to all other shared storage worklets created by
+      # documents using the current storage partition.
+      # Present only for SharedStorageAccessMethods: addModule, createWorklet.
+      optional integer workletOrdinal
+      # Hex representation of the DevTools token used as the TargetID for the
+      # associated shared storage worklet.
+      # Present only for SharedStorageAccessMethods: addModule, createWorklet,
+      # run, selectURL, and any other SharedStorageAccessMethod when the
+      # SharedStorageAccessScope is sharedStorageWorklet.
+      optional Target.TargetID workletTargetId
+      # Name of the lock to be acquired, if present.
+      # Optionally present only for SharedStorageAccessMethods: batchUpdate,
+      # set, append, delete, and clear.
+      optional string withLock
+      # If the method has been called as part of a batchUpdate, then this
+      # number identifies the batch to which it belongs.
+      # Optionally present only for SharedStorageAccessMethods:
+      # batchUpdate (required), set, append, delete, and clear.
+      optional string batchUpdateId
+      # Number of modifier methods sent in batch.
+      # Present only for SharedStorageAccessMethod: batchUpdate.
+      optional integer batchSize
+
+  type StorageBucketsDurability extends string
+    enum
+      relaxed
+      strict
+
+  type StorageBucket extends object
+    properties
+      SerializedStorageKey storageKey
+      # If not specified, it is the default bucket of the storageKey.
+      optional string name
+
+  type StorageBucketInfo extends object
+    properties
+      StorageBucket bucket
+      string id
+      Network.TimeSinceEpoch expiration
+      # Storage quota (bytes).
+      number quota
+      boolean persistent
+      StorageBucketsDurability durability
+
+  # Returns a storage key given a frame id.
+  # Deprecated. Please use Storage.getStorageKey instead.
+  deprecated command getStorageKeyForFrame
+    parameters
+      Page.FrameId frameId
+    returns
+      SerializedStorageKey storageKey
+
+  # Returns storage key for the given frame. If no frame ID is provided,
+  # the storage key of the target executing this command is returned.
+  experimental command getStorageKey
+    parameters
+      optional Page.FrameId frameId
+    returns
+      SerializedStorageKey storageKey
+
+  # Clears storage for origin.
+  command clearDataForOrigin
+    parameters
+      # Security origin.
+      string origin
+      # Comma separated list of StorageType to clear.
+      string storageTypes
+
+  # Clears storage for storage key.
+  command clearDataForStorageKey
+    parameters
+      # Storage key.
+      string storageKey
+      # Comma separated list of StorageType to clear.
+      string storageTypes
+
+  # Returns all browser cookies.
+  command getCookies
+    parameters
+      # Browser context to use when called on the browser endpoint.
+      optional Browser.BrowserContextID browserContextId
+    returns
+      # Array of cookie objects.
+      array of Network.Cookie cookies
+
+  # Sets given cookies.
+  command setCookies
+    parameters
+      # Cookies to be set.
+      array of Network.CookieParam cookies
+      # Browser context to use when called on the browser endpoint.
+      optional Browser.BrowserContextID browserContextId
+
+  # Clears cookies.
+  command clearCookies
+    parameters
+      # Browser context to use when called on the browser endpoint.
+      optional Browser.BrowserContextID browserContextId
+
+  # Returns usage and quota in bytes.
+  command getUsageAndQuota
+    parameters
+      # Security origin.
+      string origin
+    returns
+      # Storage usage (bytes).
+      number usage
+      # Storage quota (bytes).
+      number quota
+      # Whether or not the origin has an active storage quota override
+      boolean overrideActive
+      # Storage usage per type (bytes).
+      array of UsageForType usageBreakdown
+
+  # Override quota for the specified origin
+  experimental command overrideQuotaForOrigin
+    parameters
+      # Security origin.
+      string origin
+      # The quota size (in bytes) to override the original quota with.
+      # If this is called multiple times, the overridden quota will be equal to
+      # the quotaSize provided in the final call. If this is called without
+      # specifying a quotaSize, the quota will be reset to the default value for
+      # the specified origin. If this is called multiple times with different
+      # origins, the override will be maintained for each origin until it is
+      # disabled (called without a quotaSize).
+      optional number quotaSize
+
+  # Registers origin to be notified when an update occurs to its cache storage list.
+  command trackCacheStorageForOrigin
+    parameters
+      # Security origin.
+      string origin
+
+  # Registers storage key to be notified when an update occurs to its cache storage list.
+  command trackCacheStorageForStorageKey
+    parameters
+      # Storage key.
+      string storageKey
+
+  # Registers origin to be notified when an update occurs to its IndexedDB.
+  command trackIndexedDBForOrigin
+    parameters
+      # Security origin.
+      string origin
+
+  # Registers storage key to be notified when an update occurs to its IndexedDB.
+  command trackIndexedDBForStorageKey
+    parameters
+      # Storage key.
+      string storageKey
+
+  # Unregisters origin from receiving notifications for cache storage.
+  command untrackCacheStorageForOrigin
+    parameters
+      # Security origin.
+      string origin
+
+  # Unregisters storage key from receiving notifications for cache storage.
+  command untrackCacheStorageForStorageKey
+    parameters
+      # Storage key.
+      string storageKey
+
+  # Unregisters origin from receiving notifications for IndexedDB.
+  command untrackIndexedDBForOrigin
+    parameters
+      # Security origin.
+      string origin
+
+  # Unregisters storage key from receiving notifications for IndexedDB.
+  command untrackIndexedDBForStorageKey
+    parameters
+      # Storage key.
+      string storageKey
+
+  # Returns the number of stored Trust Tokens per issuer for the
+  # current browsing context.
+  experimental command getTrustTokens
+    returns
+      array of TrustTokens tokens
+
+  # Removes all Trust Tokens issued by the provided issuerOrigin.
+  # Leaves other stored data, including the issuer's Redemption Records, intact.
+  experimental command clearTrustTokens
+    parameters
+      string issuerOrigin
+    returns
+      # True if any tokens were deleted, false otherwise.
+      boolean didDeleteTokens
+
+  # Gets details for a named interest group.
+  experimental command getInterestGroupDetails
+    parameters
+      string ownerOrigin
+      string name
+    returns
+      # This largely corresponds to:
+      # https://wicg.github.io/turtledove/#dictdef-generatebidinterestgroup
+      # but has absolute expirationTime instead of relative lifetimeMs and
+      # also adds joiningOrigin.
+      object details
+
+  # Enables/Disables issuing of interestGroupAccessed events.
+  experimental command setInterestGroupTracking
+    parameters
+      boolean enable
+
+  # Enables/Disables issuing of interestGroupAuctionEventOccurred and
+  # interestGroupAuctionNetworkRequestCreated.
+  experimental command setInterestGroupAuctionTracking
+    parameters
+      boolean enable
+
+  # Gets metadata for an origin's shared storage.
+  experimental command getSharedStorageMetadata
+    parameters
+      string ownerOrigin
+    returns
+      SharedStorageMetadata metadata
+
+  # Gets the entries in an given origin's shared storage.
+  experimental command getSharedStorageEntries
+    parameters
+      string ownerOrigin
+    returns
+      array of SharedStorageEntry entries
+
+  # Sets entry with `key` and `value` for a given origin's shared storage.
+  experimental command setSharedStorageEntry
+    parameters
+      string ownerOrigin
+      string key
+      string value
+      # If `ignoreIfPresent` is included and true, then only sets the entry if
+      # `key` doesn't already exist.
+      optional boolean ignoreIfPresent
+
+  # Deletes entry for `key` (if it exists) for a given origin's shared storage.
+  experimental command deleteSharedStorageEntry
+    parameters
+      string ownerOrigin
+      string key
+
+  # Clears all entries for a given origin's shared storage.
+  experimental command clearSharedStorageEntries
+    parameters
+      string ownerOrigin
+
+  # Resets the budget for `ownerOrigin` by clearing all budget withdrawals.
+  experimental command resetSharedStorageBudget
+    parameters
+      string ownerOrigin
+
+  # Enables/disables issuing of sharedStorageAccessed events.
+  experimental command setSharedStorageTracking
+    parameters
+      boolean enable
+
+  # Set tracking for a storage key's buckets.
+  experimental command setStorageBucketTracking
+    parameters
+      string storageKey
+      boolean enable
+
+  # Deletes the Storage Bucket with the given storage key and bucket name.
+  experimental command deleteStorageBucket
+    parameters
+      StorageBucket bucket
+
+  # Deletes state for sites identified as potential bounce trackers, immediately.
+  experimental command runBounceTrackingMitigations
+    returns
+      array of string deletedSites
+
+  # A cache's contents have been modified.
+  event cacheStorageContentUpdated
+    parameters
+      # Origin to update.
+      string origin
+      # Storage key to update.
+      string storageKey
+      # Storage bucket to update.
+      string bucketId
+      # Name of cache in origin.
+      string cacheName
+
+  # A cache has been added/deleted.
+  event cacheStorageListUpdated
+    parameters
+      # Origin to update.
+      string origin
+      # Storage key to update.
+      string storageKey
+      # Storage bucket to update.
+      string bucketId
+
+  # The origin's IndexedDB object store has been modified.
+  event indexedDBContentUpdated
+    parameters
+      # Origin to update.
+      string origin
+      # Storage key to update.
+      string storageKey
+      # Storage bucket to update.
+      string bucketId
+      # Database to update.
+      string databaseName
+      # ObjectStore to update.
+      string objectStoreName
+
+  # The origin's IndexedDB database list has been modified.
+  event indexedDBListUpdated
+    parameters
+      # Origin to update.
+      string origin
+      # Storage key to update.
+      string storageKey
+      # Storage bucket to update.
+      string bucketId
+
+  # One of the interest groups was accessed. Note that these events are global
+  # to all targets sharing an interest group store.
+  event interestGroupAccessed
+    parameters
+      Network.TimeSinceEpoch accessTime
+      InterestGroupAccessType type
+      string ownerOrigin
+      string name
+      # For topLevelBid/topLevelAdditionalBid, and when appropriate,
+      # win and additionalBidWin
+      optional string componentSellerOrigin
+      # For bid or somethingBid event, if done locally and not on a server.
+      optional number bid
+      optional string bidCurrency
+      # For non-global events --- links to interestGroupAuctionEvent
+      optional InterestGroupAuctionId uniqueAuctionId
+
+  # An auction involving interest groups is taking place. These events are
+  # target-specific.
+  event interestGroupAuctionEventOccurred
+    parameters
+      Network.TimeSinceEpoch eventTime
+      InterestGroupAuctionEventType type
+      InterestGroupAuctionId uniqueAuctionId
+      # Set for child auctions.
+      optional InterestGroupAuctionId parentAuctionId
+      # Set for started and configResolved
+      optional object auctionConfig
+
+  # Specifies which auctions a particular network fetch may be related to, and
+  # in what role. Note that it is not ordered with respect to
+  # Network.requestWillBeSent (but will happen before loadingFinished
+  # loadingFailed).
+  event interestGroupAuctionNetworkRequestCreated
+    parameters
+      InterestGroupAuctionFetchType type
+      Network.RequestId requestId
+      # This is the set of the auctions using the worklet that issued this
+      # request.  In the case of trusted signals, it's possible that only some of
+      # them actually care about the keys being queried.
+      array of InterestGroupAuctionId auctions
+
+  # Shared storage was accessed by the associated page.
+  # The following parameters are included in all events.
+  event sharedStorageAccessed
+    parameters
+      # Time of the access.
+      Network.TimeSinceEpoch accessTime
+      # Enum value indicating the access scope.
+      SharedStorageAccessScope scope
+      # Enum value indicating the Shared Storage API method invoked.
+      SharedStorageAccessMethod method
+      # DevTools Frame Token for the primary frame tree's root.
+      Page.FrameId mainFrameId
+      # Serialization of the origin owning the Shared Storage data.
+      string ownerOrigin
+      # Serialization of the site owning the Shared Storage data.
+      string ownerSite
+      # The sub-parameters wrapped by `params` are all optional and their
+      # presence/absence depends on `type`.
+      SharedStorageAccessParams params
+
+  # A shared storage run or selectURL operation finished its execution.
+  # The following parameters are included in all events.
+  event sharedStorageWorkletOperationExecutionFinished
+    parameters
+      # Time that the operation finished.
+      Network.TimeSinceEpoch finishedTime
+      # Time, in microseconds, from start of shared storage JS API call until
+      # end of operation execution in the worklet.
+      integer executionTime
+      # Enum value indicating the Shared Storage API method invoked.
+      SharedStorageAccessMethod method
+      # ID of the operation call.
+      string operationId
+      # Hex representation of the DevTools token used as the TargetID for the
+      # associated shared storage worklet.
+      Target.TargetID workletTargetId
+      # DevTools Frame Token for the primary frame tree's root.
+      Page.FrameId mainFrameId
+      # Serialization of the origin owning the Shared Storage data.
+      string ownerOrigin
+
+  event storageBucketCreatedOrUpdated
+    parameters
+      StorageBucketInfo bucketInfo
+
+  event storageBucketDeleted
+    parameters
+      string bucketId
+
+  # A single Related Website Set object.
+  experimental type RelatedWebsiteSet extends object
+    properties
+      # The primary site of this set, along with the ccTLDs if there is any.
+      array of string primarySites
+      # The associated sites of this set, along with the ccTLDs if there is any.
+      array of string associatedSites
+      # The service sites of this set, along with the ccTLDs if there is any.
+      array of string serviceSites
+
+  # Returns the effective Related Website Sets in use by this profile for the browser
+  # session. The effective Related Website Sets will not change during a browser session.
+  experimental command getRelatedWebsiteSets
+    returns
+      array of RelatedWebsiteSet sets
+
+  # Returns the list of URLs from a page and its embedded resources that match
+  # existing grace period URL pattern rules.
+  # https://developers.google.com/privacy-sandbox/cookies/temporary-exceptions/grace-period
+  experimental command getAffectedUrlsForThirdPartyCookieMetadata
+    parameters
+      # The URL of the page currently being visited.
+      string firstPartyUrl
+      # The list of embedded resource URLs from the page.
+      array of string thirdPartyUrls
+
+    returns
+      # Array of matching URLs. If there is a primary pattern match for the first-
+      # party URL, only the first-party URL is returned in the array.
+      array of string matchedUrls
+
+  command setProtectedAudienceKAnonymity
+    parameters
+      string owner
+      string name
+      array of binary hashes

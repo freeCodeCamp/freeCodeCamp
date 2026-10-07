@@ -1,0 +1,90 @@
+import type { ChatInit, ChatRequestOptions, ChatState, ChatStatus, CreateUIMessage, FileUIPart, IdGenerator, InferUIMessageMetadata, InferUIMessageTools, UIMessage } from './types';
+/**
+ * Abstract base class for chat implementations.
+ */
+export declare abstract class AbstractChat<TUIMessage extends UIMessage> {
+    readonly id: string;
+    readonly generateId: IdGenerator;
+    protected state: ChatState<TUIMessage>;
+    private readonly transport?;
+    private onError?;
+    private onToolCall?;
+    private onFinish?;
+    private onData?;
+    private sendAutomaticallyWhen?;
+    private shouldRepairToolInput?;
+    private activeResponse;
+    private jobExecutor;
+    constructor({ generateId, id, transport, state, onError, onToolCall, onFinish, onData, sendAutomaticallyWhen, shouldRepairToolInput, }: Omit<ChatInit<TUIMessage>, 'messages'> & {
+        state: ChatState<TUIMessage>;
+    });
+    /**
+     * Hook status:
+     *
+     * - `submitted`: The message has been sent to the API and we're awaiting the start of the response stream.
+     * - `streaming`: The response is actively streaming in from the API, receiving chunks of data.
+     * - `ready`: The full response has been received and processed; a new user message can be submitted.
+     * - `error`: An error occurred during the API request, preventing successful completion.
+     */
+    get status(): ChatStatus;
+    protected setStatus({ status, error, }: {
+        status: ChatStatus;
+        error?: Error;
+    }): void;
+    get error(): Error | undefined;
+    get messages(): TUIMessage[];
+    set messages(messages: TUIMessage[]);
+    get lastMessage(): TUIMessage | undefined;
+    /**
+     * Appends or replaces a user message to the chat list. This triggers the API call to fetch
+     * the assistant's response.
+     */
+    sendMessage: (message?: (CreateUIMessage<TUIMessage> & {
+        text?: never;
+        files?: never;
+        messageId?: string;
+    }) | {
+        text: string;
+        files?: FileList | FileUIPart[];
+        metadata?: InferUIMessageMetadata<TUIMessage>;
+        parts?: never;
+        messageId?: string;
+    } | {
+        files: FileList | FileUIPart[];
+        metadata?: InferUIMessageMetadata<TUIMessage>;
+        parts?: never;
+        messageId?: string;
+    }, options?: ChatRequestOptions) => Promise<void>;
+    /**
+     * Regenerate the assistant message with the provided message id.
+     * If no message id is provided, the last assistant message will be regenerated.
+     */
+    regenerate: ({ messageId, ...options }?: {
+        messageId?: string;
+    } & ChatRequestOptions) => Promise<void>;
+    /**
+     * Attempt to resume an ongoing streaming response.
+     */
+    resumeStream: (options?: ChatRequestOptions) => Promise<void>;
+    /**
+     * Clear the error state and set the status to ready if the chat is in an error state.
+     */
+    clearError: () => void;
+    /**
+     * Add a tool result for a tool call.
+     */
+    addToolResult: <TTool extends keyof InferUIMessageTools<TUIMessage>>({ tool, toolCallId, output, }: {
+        tool: TTool;
+        toolCallId: string;
+        output: InferUIMessageTools<TUIMessage>[TTool]["output"];
+    }) => Promise<void>;
+    /**
+     * Abort the current request immediately, keep the generated tokens if any.
+     */
+    stop: () => Promise<void>;
+    private makeRequest;
+    private processStreamWithCallbacks;
+    private handleError;
+    private convertFilesToParts;
+    private fileToDataUrl;
+}

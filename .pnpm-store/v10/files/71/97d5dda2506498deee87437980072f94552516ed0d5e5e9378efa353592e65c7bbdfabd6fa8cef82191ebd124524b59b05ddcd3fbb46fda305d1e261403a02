@@ -1,0 +1,44 @@
+{
+  "name": "static-browser-server",
+  "version": "1.0.3",
+  "main": "./out/lib/main.js",
+  "types": "./src/lib/main.ts",
+  "repository": "https://github.com/codesandbox/static-browser-server.git",
+  "author": "Jasper De Moor <jasperdemoor@gmail.com>",
+  "license": "Apache-2.0",
+  "files": [
+    "src",
+    "out",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "scripts": {
+    "build:relay": "node -r esbuild-register ./build-relay.ts",
+    "build:lib": "esbuild ./src/lib/main.ts --bundle --outdir=out/lib --format=cjs",
+    "build:demo": "node -r esbuild-register ./build-demo.ts",
+    "build": "rm -rf out && pnpm build:lib && pnpm build:relay && pnpm build:demo",
+    "build:prod": "MINIFY=true && pnpm build",
+    "start:demo": "pnpm build && node -r esbuild-register ./servers/demo-server.ts",
+    "start:preview": "pnpm build && node -r esbuild-register ./servers/preview-server.ts",
+    "prepack": "pnpm build"
+  },
+  "devDependencies": {
+    "@fastify/static": "^6.9.0",
+    "@types/mime-db": "^1.43.1",
+    "@types/mustache": "^4.2.2",
+    "@types/node": "^18.14.1",
+    "base-x": "^4.0.0",
+    "esbuild": "^0.17.10",
+    "esbuild-register": "^3.4.2",
+    "fastify": "^4.13.0",
+    "mustache": "^4.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@open-draft/deferred-promise": "^2.1.0",
+    "dotenv": "^16.0.3",
+    "mime-db": "^1.52.0",
+    "outvariant": "^1.3.0"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "postcss-selector-parser",
+  "version": "6.1.2",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/eslint-parser": "^7.11.5",
+    "@babel/eslint-plugin": "^7.11.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "ava": "^5.1.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "coveralls": "^3.1.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.28.0",
+    "eslint-plugin-import": "^2.26.0",
+    "glob": "^8.0.3",
+    "minimist": "^1.2.5",
+    "nyc": "^15.1.0",
+    "postcss": "^8.4.31",
+    "semver": "^7.3.2",
+    "typescript": "^4.0.3"
+  },
+  "main": "dist/index.js",
+  "types": "postcss-selector-parser.d.ts",
+  "files": [
+    "API.md",
+    "CHANGELOG.md",
+    "LICENSE-MIT",
+    "dist",
+    "postcss-selector-parser.d.ts",
+    "!**/__tests__"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit --strict postcss-selector-parser.d.ts postcss-selector-parser.test.ts",
+    "pretest": "eslint src && npm run typecheck",
+    "prepare": "del-cli dist && BABEL_ENV=publish babel src --out-dir dist --ignore /__tests__/",
+    "lintfix": "eslint --fix src",
+    "report": "nyc report --reporter=html",
+    "test": "nyc ava src/__tests__/*.mjs",
+    "testone": "ava"
+  },
+  "dependencies": {
+    "cssesc": "^3.0.0",
+    "util-deprecate": "^1.0.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
+  "homepage": "https://github.com/postcss/postcss-selector-parser",
+  "contributors": [
+    {
+      "name": "Ben Briggs",
+      "email": "beneb.info@gmail.com",
+      "url": "http://beneb.info"
+    },
+    {
+      "name": "Chris Eppstein",
+      "email": "chris@eppsteins.net",
+      "url": "http://twitter.com/chriseppstein"
+    }
+  ],
+  "repository": "postcss/postcss-selector-parser",
+  "ava": {
+    "require": [
+      "@babel/register"
+    ],
+    "concurrency": 5,
+    "timeout": "25s",
+    "nodeArguments": []
+  },
+  "nyc": {
+    "exclude": [
+      "node_modules",
+      "**/__tests__"
+    ]
+  }
+}

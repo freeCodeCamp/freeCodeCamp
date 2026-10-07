@@ -1,0 +1,19 @@
+{
+    "name": "@types/trouter",
+    "version": "3.1.4",
+    "description": "TypeScript definitions for trouter",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/trouter",
+    "license": "MIT",
+    "contributors": [],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/trouter"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "3cc6bd5aab33bced7f713b1c8d3def0d051b30125cbf6cba27dfba6d9cc011b9",
+    "typeScriptVersion": "4.5"
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Sink.js",
+  "module": "../dist/esm/Sink.js",
+  "types": "../dist/dts/Sink.d.ts"
+}

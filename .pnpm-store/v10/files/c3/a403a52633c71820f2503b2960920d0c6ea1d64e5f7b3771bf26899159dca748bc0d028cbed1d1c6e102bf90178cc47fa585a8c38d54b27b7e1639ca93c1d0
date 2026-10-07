@@ -1,0 +1,55 @@
+{
+  "Commands:": "Commands:",
+  "Options:": "Options:",
+  "Examples:": "Examples:",
+  "boolean": "boolean",
+  "count": "count",
+  "string": "string",
+  "number": "number",
+  "array": "array",
+  "required": "required",
+  "default": "default",
+  "default:": "default:",
+  "choices:": "choices:",
+  "aliases:": "aliases:",
+  "generated-value": "generated-value",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Not enough non-option arguments: got %s, need at least %s",
+    "other": "Not enough non-option arguments: got %s, need at least %s"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "Too many non-option arguments: got %s, maximum of %s",
+    "other": "Too many non-option arguments: got %s, maximum of %s"
+  },
+  "Missing argument value: %s": {
+    "one": "Missing argument value: %s",
+    "other": "Missing argument values: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Missing required argument: %s",
+    "other": "Missing required arguments: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Unknown argument: %s",
+    "other": "Unknown arguments: %s"
+  },
+  "Unknown command: %s": {
+    "one": "Unknown command: %s",
+    "other": "Unknown commands: %s"
+  },
+  "Invalid values:": "Invalid values:",
+  "Argument: %s, Given: %s, Choices: %s": "Argument: %s, Given: %s, Choices: %s",
+  "Argument check failed: %s": "Argument check failed: %s",
+  "Implications failed:": "Missing dependent arguments:",
+  "Not enough arguments following: %s": "Not enough arguments following: %s",
+  "Invalid JSON config file: %s": "Invalid JSON config file: %s",
+  "Path to JSON config file": "Path to JSON config file",
+  "Show help": "Show help",
+  "Show version number": "Show version number",
+  "Did you mean %s?": "Did you mean %s?",
+  "Arguments %s and %s are mutually exclusive" : "Arguments %s and %s are mutually exclusive",
+  "Positionals:": "Positionals:",
+  "command": "command",
+  "deprecated": "deprecated",
+  "deprecated: %s": "deprecated: %s"
+}

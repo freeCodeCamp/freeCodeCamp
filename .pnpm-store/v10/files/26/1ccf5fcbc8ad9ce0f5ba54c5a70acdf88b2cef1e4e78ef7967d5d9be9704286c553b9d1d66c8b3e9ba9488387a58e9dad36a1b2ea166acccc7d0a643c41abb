@@ -1,0 +1,27 @@
+{
+  "name": "minimalistic-crypto-utils",
+  "version": "1.0.1",
+  "description": "Minimalistic tools for JS crypto modules",
+  "main": "lib/utils.js",
+  "scripts": {
+    "test": "mocha --reporter=spec test/*-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/minimalistic-crypto-utils.git"
+  },
+  "keywords": [
+    "minimalistic",
+    "utils",
+    "crypto"
+  ],
+  "author": "Fedor Indutny <fedor@indutny.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indutny/minimalistic-crypto-utils/issues"
+  },
+  "homepage": "https://github.com/indutny/minimalistic-crypto-utils#readme",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}

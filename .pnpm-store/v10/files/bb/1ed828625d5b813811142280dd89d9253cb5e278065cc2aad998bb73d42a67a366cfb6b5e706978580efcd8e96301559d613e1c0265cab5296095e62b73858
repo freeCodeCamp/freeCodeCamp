@@ -1,0 +1,82 @@
+{
+  "name": "commander",
+  "version": "14.0.3",
+  "description": "the complete solution for node.js command-line programs",
+  "keywords": [
+    "commander",
+    "command",
+    "option",
+    "parser",
+    "cli",
+    "argument",
+    "args",
+    "argv"
+  ],
+  "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tj/commander.js.git"
+  },
+  "scripts": {
+    "check": "npm run check:type && npm run check:lint && npm run check:format",
+    "check:format": "prettier --check .",
+    "check:lint": "eslint .",
+    "check:type": "npm run check:type:js && npm run check:type:ts",
+    "check:type:ts": "tsd && tsc -p tsconfig.ts.json",
+    "check:type:js": "tsc -p tsconfig.js.json",
+    "fix": "npm run fix:lint && npm run fix:format",
+    "fix:format": "prettier --write .",
+    "fix:lint": "eslint --fix .",
+    "test": "jest && npm run check:type:ts",
+    "test-all": "jest && npm run test-esm && npm run check",
+    "test-esm": "node ./tests/esm-imports-test.mjs"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "esm.mjs",
+    "typings/index.d.ts",
+    "typings/esm.d.mts",
+    "package-support.json"
+  ],
+  "type": "commonjs",
+  "main": "./index.js",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./typings/index.d.ts",
+        "default": "./index.js"
+      },
+      "import": {
+        "types": "./typings/esm.d.mts",
+        "default": "./esm.mjs"
+      },
+      "default": "./index.js"
+    },
+    "./esm.mjs": {
+      "types": "./typings/esm.d.mts",
+      "import": "./esm.mjs"
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.7.4",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-jest": "^29.0.1",
+    "globals": "^16.0.0",
+    "jest": "^30.0.3",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.0.3",
+    "tsd": "^0.33.0",
+    "typescript": "^5.0.4",
+    "typescript-eslint": "^8.12.2"
+  },
+  "types": "typings/index.d.ts",
+  "engines": {
+    "node": ">=20"
+  },
+  "support": true
+}

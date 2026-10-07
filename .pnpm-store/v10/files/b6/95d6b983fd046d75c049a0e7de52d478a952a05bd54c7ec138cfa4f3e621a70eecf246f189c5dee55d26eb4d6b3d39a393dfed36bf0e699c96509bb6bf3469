@@ -1,0 +1,1 @@
+{"version":3,"file":"isScheduler.js","sources":["../../src/internal/util/isScheduler.ts"],"names":[],"mappings":";;AAEA,SAAgB,WAAW,CAAC,KAAU;IACpC,OAAO,KAAK,IAAI,OAAa,KAAM,CAAC,QAAQ,KAAK,UAAU,CAAC;AAC9D,CAAC;AAFD,kCAEC"}

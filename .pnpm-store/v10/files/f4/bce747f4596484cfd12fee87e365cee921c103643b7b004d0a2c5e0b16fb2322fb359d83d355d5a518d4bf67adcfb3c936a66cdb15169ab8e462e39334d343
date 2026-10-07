@@ -1,0 +1,91 @@
+{
+  "name": "is-absolute",
+  "description": "Returns true if a file path is absolute. Does not rely on the path module and can be used as a polyfill for node.js native `path.isAbolute`.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jonschlinkert/is-absolute",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Elan Shanker (https://github.com/es128)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Shinnosuke Watanabe (https://shinnn.github.io)",
+    "(http://sobak.pl)"
+  ],
+  "repository": "jonschlinkert/is-absolute",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-absolute/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "is-relative": "^1.0.0",
+    "is-windows": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^3.4.2"
+  },
+  "keywords": [
+    "absolute",
+    "built",
+    "built-in",
+    "check",
+    "core",
+    "detect",
+    "dir",
+    "file",
+    "filepath",
+    "is",
+    "is-absolute",
+    "isabsolute",
+    "normalize",
+    "path",
+    "path-absolute",
+    "path-is-absolute",
+    "paths",
+    "polyfill",
+    "relative",
+    "resolve",
+    "shim",
+    "slash",
+    "slashes",
+    "uri",
+    "url",
+    "util",
+    "utils"
+  ],
+  "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "is-dotfile",
+        "is-glob",
+        "is-relative",
+        "is-unc-path",
+        "is-valid-glob"
+      ]
+    },
+    "reflinks": [
+      "verb"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

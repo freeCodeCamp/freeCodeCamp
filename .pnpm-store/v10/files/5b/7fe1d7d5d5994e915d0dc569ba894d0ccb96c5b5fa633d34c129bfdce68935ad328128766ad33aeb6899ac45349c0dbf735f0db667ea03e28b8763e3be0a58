@@ -1,0 +1,1 @@
+{"version":3,"file":"get-native-context-factory.d.ts","sourceRoot":"","sources":["../../../src/types/get-native-context-factory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,iBAAiB,CAAC;AAChD,OAAO,EAAE,yBAAyB,EAAE,MAAM,+BAA+B,CAAC;AAE1E,MAAM,MAAM,wBAAwB,GAAG,CAAC,YAAY,EAAE,aAAa,KAAK,yBAAyB,CAAC"}

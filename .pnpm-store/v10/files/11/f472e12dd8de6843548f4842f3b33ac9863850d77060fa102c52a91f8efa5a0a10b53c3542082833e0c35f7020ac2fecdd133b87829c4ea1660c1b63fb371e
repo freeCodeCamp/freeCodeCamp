@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["DOM", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "target": "es5",
+    "types": ["jest", "node", "react"]
+  },
+  "exclude": ["node_modules"],
+  "include": ["../src/*", "../__tests__/*"]
+}

@@ -1,0 +1,4 @@
+language: node_js
+node_js:
+  - 0.6
+  - 0.8

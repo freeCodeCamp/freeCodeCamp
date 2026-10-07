@@ -1,0 +1,38 @@
+{
+    "name": "@types/nodemailer",
+    "version": "6.4.23",
+    "description": "TypeScript definitions for nodemailer",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/nodemailer",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Rogier Schouten",
+            "githubUsername": "rogierschouten",
+            "url": "https://github.com/rogierschouten"
+        },
+        {
+            "name": "Piotr Roszatycki",
+            "githubUsername": "dex4er",
+            "url": "https://github.com/dex4er"
+        },
+        {
+            "name": "Daniel Chao",
+            "githubUsername": "bioball",
+            "url": "https://github.com/bioball"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/nodemailer"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*"
+    },
+    "peerDependencies": {},
+    "typesPublisherContentHash": "e9ba943bb60859d23ee734b8183f9228cccd16bad246b9181c0e7ec02d48700b",
+    "typeScriptVersion": "5.2"
+}

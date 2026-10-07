@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/LayerMap.js",
+  "module": "../dist/esm/LayerMap.js",
+  "types": "../dist/dts/LayerMap.d.ts"
+}

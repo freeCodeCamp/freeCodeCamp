@@ -1,0 +1,6 @@
+{
+  "name": "source-alias",
+  "source": {
+    "./dist": "./source"
+  }
+}

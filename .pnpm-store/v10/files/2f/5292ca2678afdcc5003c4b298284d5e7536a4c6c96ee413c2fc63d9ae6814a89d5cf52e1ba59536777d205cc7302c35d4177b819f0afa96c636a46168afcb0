@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_tagged_template_literal.cjs",
+    "module": "../../esm/_tagged_template_literal.js"
+}

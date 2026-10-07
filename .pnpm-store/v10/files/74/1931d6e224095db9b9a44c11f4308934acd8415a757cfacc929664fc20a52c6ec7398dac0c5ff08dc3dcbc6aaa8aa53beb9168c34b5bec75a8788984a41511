@@ -1,0 +1,25 @@
+@mixin global-bg() {
+  background-color: $primary-color;
+}
+
+@mixin global-animation() {
+  animation-fill-mode: both;
+}
+
+@mixin balls() {
+  @include global-bg();
+
+  width: $ball-size;
+  height: $ball-size;
+  border-radius: 100%;
+  margin: $margin;
+}
+
+@mixin lines() {
+  @include global-bg();
+
+  width: $line-width;
+  height: $line-height;
+  border-radius: 2px;
+  margin: $margin;
+}

@@ -1,0 +1,46 @@
+{
+  "name": "mock-require",
+  "version": "3.0.3",
+  "description": "Simple, intuitive mocking of Node.js modules.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "get-caller-file": "^1.0.2",
+    "normalize-path": "^2.1.1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "eslint": "^4.15.0",
+    "mocha": "^4.1.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "cross-env NODE_PATH=test/node-path mocha ./test/runner"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boblauer/mock-require.git"
+  },
+  "keywords": [
+    "require",
+    "dependency",
+    "injection",
+    "di",
+    "inject",
+    "swap",
+    "test",
+    "mock",
+    "stub"
+  ],
+  "author": "Bob Lauer <rlauer@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boblauer/mock-require/issues"
+  },
+  "homepage": "https://github.com/boblauer/mock-require",
+  "engines": {
+    "node": ">=4.3.0"
+  }
+}

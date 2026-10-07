@@ -1,0 +1,49 @@
+{
+  "name": "lines-and-columns",
+  "version": "1.2.4",
+  "description": "Maps lines and columns to character offsets and back.",
+  "keywords": [
+    "lines",
+    "columns",
+    "parser"
+  ],
+  "homepage": "https://github.com/eventualbuddha/lines-and-columns#readme",
+  "bugs": {
+    "url": "https://github.com/eventualbuddha/lines-and-columns/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eventualbuddha/lines-and-columns.git"
+  },
+  "license": "MIT",
+  "author": "Brian Donovan <brian@donovans.cc>",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build:watch": "tsc --build tsconfig.build.json --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "is-ci test:coverage test:watch",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "esbuild": "^0.13.15",
+    "esbuild-runner": "^2.2.1",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "is-ci-cli": "^2.2.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "semantic-release": "^18.0.0",
+    "typescript": "^4.5.2"
+  }
+}

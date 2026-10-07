@@ -1,0 +1,43 @@
+{
+  "name": "gatsby-sharp",
+  "version": "1.16.0",
+  "sideEffects": false,
+  "keywords": [
+    "gatsby",
+    "sharp"
+  ],
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "files": [
+    "dist/*"
+  ],
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-sharp#readme",
+  "dependencies": {
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "babel-plugin-replace-ts-export-assignment": "^0.0.2",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "4.1.5",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0 <26"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-sharp"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir dist --ignore \"**/__tests__\" --extensions \".ts,.js\"",
+    "typegen": "tsc --emitDeclarationOnly --declaration --declarationDir dist/",
+    "prepare": "cross-env NODE_ENV=production npm-run-all --npm-path npm -s build typegen",
+    "watch": "babel -w src --out-dir dist --ignore \"**/__tests__\" --extensions \".ts,.js\""
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

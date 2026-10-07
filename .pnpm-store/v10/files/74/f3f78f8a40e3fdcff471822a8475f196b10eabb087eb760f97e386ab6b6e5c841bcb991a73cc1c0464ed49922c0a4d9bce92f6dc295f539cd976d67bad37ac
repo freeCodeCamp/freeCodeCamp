@@ -1,0 +1,84 @@
+.TH MDB_LOAD 1 "2015/09/30" "LMDB 0.9.17"
+.\" Copyright 2014-2020 Howard Chu, Symas Corp. All Rights Reserved.
+.\" Copying restrictions apply.  See COPYRIGHT/LICENSE.
+.SH NAME
+mdb_load \- LMDB environment import tool
+.SH SYNOPSIS
+.B mdb_load
+[\c
+.BR \-V ]
+[\c
+.BI \-f \ file\fR]
+[\c
+.BR \-n ]
+[\c
+.BI \-s \ subdb\fR]
+[\c
+.BR \-N ]
+[\c
+.BR \-T ]
+.BR \ envpath
+.SH DESCRIPTION
+The
+.B mdb_load
+utility reads from the standard input and loads it into the
+LMDB environment
+.BR envpath .
+
+The input to
+.B mdb_load
+must be in the output format specified by the
+.BR mdb_dump (1)
+utility or as specified by the
+.B -T
+option below.
+.SH OPTIONS
+.TP
+.BR \-V
+Write the library version number to the standard output, and exit.
+.TP
+.BR \-a
+Append all records in the order they appear in the input. The input is assumed to already be
+in correctly sorted order and no sorting or checking for redundant values will be performed.
+This option must be used to reload data that was produced by running
+.B mdb_dump
+on a database that uses custom compare functions.
+.TP
+.BR \-f \ file
+Read from the specified file instead of from the standard input.
+.TP
+.BR \-n
+Load an LMDB database which does not use subdirectories.
+.TP
+.BR \-s \ subdb
+Load a specific subdatabase. If no database is specified, data is loaded into the main database.
+.TP
+.BR \-N
+Don't overwrite existing records when loading into an already existing database; just skip them.
+.TP
+.BR \-T
+Load data from simple text files. The input must be paired lines of text, where the first
+line of the pair is the key item, and the second line of the pair is its corresponding
+data item.
+
+A simple escape mechanism, where newline and backslash (\\) characters are special, is
+applied to the text input. Newline characters are interpreted as record separators.
+Backslash characters in the text will be interpreted in one of two ways: If the backslash
+character precedes another backslash character, the pair will be interpreted as a literal
+backslash. If the backslash character precedes any other character, the two characters
+following the backslash will be interpreted as a hexadecimal specification of a single
+character; for example, \\0a is a newline character in the ASCII character set.
+
+For this reason, any backslash or newline characters that naturally occur in the text
+input must be escaped to avoid misinterpretation by
+.BR mdb_load . 
+
+.SH DIAGNOSTICS
+Exit status is zero if no errors occur.
+Errors result in a non-zero exit status and
+a diagnostic message being written to standard error.
+
+.SH "SEE ALSO"
+.BR mdb_dump (1)
+.SH AUTHOR
+Howard Chu of Symas Corporation <http://www.symas.com>

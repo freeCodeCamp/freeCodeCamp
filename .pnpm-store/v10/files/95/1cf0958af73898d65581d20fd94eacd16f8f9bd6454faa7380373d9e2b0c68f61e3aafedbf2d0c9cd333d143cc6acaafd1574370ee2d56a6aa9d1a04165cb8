@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "alwaysStrict": true,
+    "target": "ES2021",
+    "module": "commonJS",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "lib": [
+      "es2021",
+      "ES2022.Error",
+      "ES2022.Object",
+      "esnext.disposable"
+    ],
+    // We don't make use of tslib helpers, all syntax used is supported by target engine
+    "importHelpers": false,
+    "noEmitHelpers": true,
+    // Never emit error filled code
+    "noEmitOnError": true,
+    "outDir": "lib",
+    // We want the sourcemaps in a separate file
+    "inlineSourceMap": false,
+    "sourceMap": true,
+    // API-Extractor uses declaration maps to report problems in source, no need to distribute
+    "declaration": true,
+    "declarationMap": true,
+    // we include sources in the release
+    "inlineSources": false,
+    // Prevents web types from being suggested by vscode.
+    "types": [
+      "node"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    // TODO(NODE-3659): Enable useUnknownInCatchVariables and add type assertions or remove unnecessary catch blocks
+    "useUnknownInCatchVariables": false
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "compiler": "typescript-cached-transpile"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

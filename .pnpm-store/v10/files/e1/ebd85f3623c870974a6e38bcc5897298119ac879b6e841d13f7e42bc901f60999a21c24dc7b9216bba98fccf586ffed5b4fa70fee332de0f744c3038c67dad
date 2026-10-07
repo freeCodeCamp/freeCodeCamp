@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Reloadable.js",
+  "module": "../dist/esm/Reloadable.js",
+  "types": "../dist/dts/Reloadable.d.ts"
+}

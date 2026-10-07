@@ -1,0 +1,43 @@
+{
+    "name": "@types/react-transition-group",
+    "version": "4.4.12",
+    "description": "TypeScript definitions for react-transition-group",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-transition-group",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Karol Janyst",
+            "githubUsername": "LKay",
+            "url": "https://github.com/LKay"
+        },
+        {
+            "name": "Epskampie",
+            "githubUsername": "Epskampie",
+            "url": "https://github.com/Epskampie"
+        },
+        {
+            "name": "Masafumi Koba",
+            "githubUsername": "ybiquitous",
+            "url": "https://github.com/ybiquitous"
+        },
+        {
+            "name": "Ben Grynhaus",
+            "githubUsername": "bengry",
+            "url": "https://github.com/bengry"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-transition-group"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {
+        "@types/react": "*"
+    },
+    "typesPublisherContentHash": "28d8cc9bfe6b15e0291a07b916505b49e5cf57cfd1f331db1d9ad49fd36bfd41",
+    "typeScriptVersion": "5.0"
+}

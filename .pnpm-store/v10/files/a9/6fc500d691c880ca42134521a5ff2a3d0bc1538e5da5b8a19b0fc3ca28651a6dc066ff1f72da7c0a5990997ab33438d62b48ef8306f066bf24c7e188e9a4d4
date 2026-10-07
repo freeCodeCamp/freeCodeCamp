@@ -1,0 +1,58 @@
+{
+  "name": "@aws-sdk/region-config-resolver",
+  "version": "3.521.0",
+  "scripts": {
+    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types'",
+    "build:cjs": "node ../../scripts/compilation/inline region-config-resolver",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build:include:deps": "lerna run --scope $npm_package_name --include-dependencies build",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:types:downlevel": "downlevel-dts dist-types dist-types/ts3.4",
+    "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo",
+    "extract:docs": "api-extractor run --local",
+    "test": "jest"
+  },
+  "main": "./dist-cjs/index.js",
+  "module": "./dist-es/index.js",
+  "types": "./dist-types/index.d.ts",
+  "author": {
+    "name": "AWS SDK for JavaScript Team",
+    "url": "https://aws.amazon.com/javascript/"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@aws-sdk/types": "3.521.0",
+    "@smithy/node-config-provider": "^2.2.2",
+    "@smithy/types": "^2.10.0",
+    "@smithy/util-config-provider": "^2.2.1",
+    "@smithy/util-middleware": "^2.1.2",
+    "tslib": "^2.5.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "1.0.1",
+    "concurrently": "7.0.0",
+    "downlevel-dts": "0.10.1",
+    "jest": "28.1.1",
+    "rimraf": "3.0.2",
+    "typescript": "~4.9.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "typesVersions": {
+    "<4.0": {
+      "dist-types/*": [
+        "dist-types/ts3.4/*"
+      ]
+    }
+  },
+  "files": [
+    "dist-*/**"
+  ],
+  "homepage": "https://github.com/awslabs/smithy-typescript/tree/main/packages/region-config-resolver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aws/aws-sdk-js-v3.git",
+    "directory": "packages/region-config-resolver"
+  }
+}

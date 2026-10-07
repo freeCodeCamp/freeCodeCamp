@@ -1,0 +1,18 @@
+---
+labels: ['configuration']
+description: 'A function for repacing env variables in configuration settings'
+---
+
+API:
+
+```ts
+function envReplace(settingValue: string, env: NodeJS.ProcessEnv): string;
+```
+
+Usage:
+
+```ts
+import { envReplace } from '@pnpm/config.env-replace'
+
+envReplace('${foo}', process.env)
+```

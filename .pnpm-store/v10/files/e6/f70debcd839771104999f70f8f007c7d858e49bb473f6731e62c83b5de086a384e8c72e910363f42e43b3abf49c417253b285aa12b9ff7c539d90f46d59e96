@@ -1,0 +1,34 @@
+{
+  "name": "retext-english",
+  "version": "3.0.4",
+  "description": "retext parser for the English language",
+  "license": "MIT",
+  "keywords": [
+    "natural",
+    "language",
+    "english",
+    "concrete",
+    "syntax",
+    "tree",
+    "cst",
+    "parse"
+  ],
+  "homepage": "https://github.com/retextjs/retext",
+  "repository": "https://github.com/retextjs/retext/tree/master/packages/retext-english",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "bugs": "https://github.com/retextjs/retext/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "parse-english": "^4.0.0",
+    "unherit": "^1.0.4"
+  }
+}

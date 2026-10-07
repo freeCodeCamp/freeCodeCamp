@@ -1,0 +1,54 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+domain Performance
+
+  # Run-time execution metric.
+  type Metric extends object
+    properties
+      # Metric name.
+      string name
+      # Metric value.
+      number value
+
+  # Disable collecting and reporting metrics.
+  command disable
+
+  # Enable collecting and reporting metrics.
+  command enable
+    parameters
+      # Time domain to use for collecting and reporting duration metrics.
+      optional enum timeDomain
+        # Use monotonically increasing abstract time (default).
+        timeTicks
+        # Use thread running time.
+        threadTicks
+
+  # Sets time domain to use for collecting and reporting duration metrics.
+  # Note that this must be called before enabling metrics collection. Calling
+  # this method while metrics collection is enabled returns an error.
+  experimental deprecated command setTimeDomain
+    parameters
+      # Time domain
+      enum timeDomain
+        # Use monotonically increasing abstract time (default).
+        timeTicks
+        # Use thread running time.
+        threadTicks
+
+  # Retrieve current values of run-time metrics.
+  command getMetrics
+    returns
+      # Current values for run-time metrics.
+      array of Metric metrics
+
+  # Current values of the metrics.
+  event metrics
+    parameters
+      # Current values of the metrics.
+      array of Metric metrics
+      # Timestamp title.
+      string title

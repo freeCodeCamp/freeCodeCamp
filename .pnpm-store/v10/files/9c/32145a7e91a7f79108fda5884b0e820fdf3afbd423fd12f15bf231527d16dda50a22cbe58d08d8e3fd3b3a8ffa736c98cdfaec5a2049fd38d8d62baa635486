@@ -1,0 +1,78 @@
+{
+    "name": "@types/sanitize-html",
+    "version": "2.16.1",
+    "description": "TypeScript definitions for sanitize-html",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/sanitize-html",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Rogier Schouten",
+            "githubUsername": "rogierschouten",
+            "url": "https://github.com/rogierschouten"
+        },
+        {
+            "name": "Afshin Darian",
+            "githubUsername": "afshin",
+            "url": "https://github.com/afshin"
+        },
+        {
+            "name": "Rinze de Laat",
+            "githubUsername": "biermeester",
+            "url": "https://github.com/biermeester"
+        },
+        {
+            "name": "Johan Davidsson",
+            "githubUsername": "johandavidson",
+            "url": "https://github.com/johandavidson"
+        },
+        {
+            "name": "Jianrong Yu",
+            "githubUsername": "YuJianrong",
+            "url": "https://github.com/YuJianrong"
+        },
+        {
+            "name": "GP",
+            "githubUsername": "paambaati",
+            "url": "https://github.com/paambaati"
+        },
+        {
+            "name": "Dariusz Syncerek",
+            "githubUsername": "dsyncerek",
+            "url": "https://github.com/dsyncerek"
+        },
+        {
+            "name": "Piotr Błażejewicz",
+            "githubUsername": "peterblazejewicz",
+            "url": "https://github.com/peterblazejewicz"
+        },
+        {
+            "name": "Pirasis Leelatanon",
+            "githubUsername": "1pete",
+            "url": "https://github.com/1pete"
+        },
+        {
+            "name": "Alex Rantos",
+            "githubUsername": "alex-rantos",
+            "url": "https://github.com/alex-rantos"
+        },
+        {
+            "name": "Dylan Armstrong",
+            "githubUsername": "dylanarmstrong",
+            "url": "https://github.com/dylanarmstrong"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/sanitize-html"
+    },
+    "scripts": {},
+    "dependencies": {
+        "htmlparser2": "^10.1"
+    },
+    "peerDependencies": {},
+    "typesPublisherContentHash": "b9595364756c7aa91f17d55c6e4110ba2948b907d98ff58edbd7d6340b84b7a5",
+    "typeScriptVersion": "5.2"
+}

@@ -1,0 +1,32 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"consistent-return": 1,
+		"eqeqeq": [2, "always", { "null": "ignore" }],
+		"func-name-matching": 0,
+		"id-length": 0,
+		"multiline-comment-style": 0,
+		"new-cap": [2, {
+				"capIsNewExceptions": [
+						"GetIntrinsic",
+				],
+		}],
+		"no-magic-numbers": [1, {
+				"ignore": [1, 0xDC00, 0xD800, 0xDFFF, 0xDBFF],
+		}],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"max-lines-per-function": 0,
+				"no-magic-numbers": 0,
+				"no-new-func": 1,
+			},
+		},
+	],
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/FiberMap.js",
+  "module": "../dist/esm/FiberMap.js",
+  "types": "../dist/dts/FiberMap.d.ts"
+}

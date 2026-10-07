@@ -1,0 +1,50 @@
+{
+	"name": "normalize-url",
+	"version": "6.1.0",
+	"description": "Normalize a URL",
+	"license": "MIT",
+	"repository": "sindresorhus/normalize-url",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && nyc ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"normalize",
+		"url",
+		"uri",
+		"address",
+		"string",
+		"normalization",
+		"normalisation",
+		"query",
+		"querystring",
+		"simplify",
+		"strip",
+		"trim",
+		"canonical"
+	],
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"nyc": "^15.0.0",
+		"tsd": "^0.11.0",
+		"xo": "^0.25.3"
+	},
+	"nyc": {
+		"reporter": [
+			"text",
+			"lcov"
+		]
+	}
+}

@@ -1,0 +1,61 @@
+{
+  "name": "is-valid-path",
+  "description": "Returns true if a file path does not contain any invalid characters.",
+  "version": "0.1.1",
+  "homepage": "https://github.com/jonschlinkert/is-valid-path",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/is-valid-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-valid-path/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/is-valid-path/blob/master/LICENSE"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "bash",
+    "braces",
+    "character",
+    "check",
+    "exec",
+    "expression",
+    "extglob",
+    "file",
+    "filepath",
+    "glob",
+    "globbing",
+    "globstar",
+    "invalid",
+    "match",
+    "matches",
+    "path",
+    "pattern",
+    "regex",
+    "regexp",
+    "regular",
+    "string",
+    "test",
+    "valid",
+    "validate"
+  ],
+  "dependencies": {
+    "is-invalid-path": "^0.1.0"
+  }
+}

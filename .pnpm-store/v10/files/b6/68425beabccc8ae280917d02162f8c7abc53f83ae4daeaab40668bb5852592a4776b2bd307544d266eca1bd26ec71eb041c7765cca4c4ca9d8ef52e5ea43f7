@@ -1,0 +1,49 @@
+{
+  "name": "msgpackr-extract",
+  "author": "Kris Zyp",
+  "version": "3.0.2",
+  "description": "Node addon for string extraction for msgpackr",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kriszyp/msgpackr-extract"
+  },
+  "scripts": {
+    "install": "node-gyp-build-optional-packages",
+    "recompile": "node-gyp rebuild",
+    "before-publish": "prebuildify-ci download && node set-optional-deps.cjs",
+    "prebuild": "prebuildify-platform-packages --target 18.12.0",
+    "prebuild-win32": "prebuildify-platform-packages --target 18.12.0 && set ENABLE_V8_FUNCTIONS=false&& prebuildify-platform-packages --platform-packages --napi --target 18.12.0",
+    "prebuild-libc": "prebuildify-platform-packages --tag-libc --target 18.12.0 && prebuildify-platform-packages --platform-packages --napi --tag-libc --target 16.14.2 && ENABLE_V8_FUNCTIONS=false prebuildify-platform-packages --platform-packages --napi --tag-libc --target 18.12.0",
+    "prebuild-libc-alpine": "prebuildify-cross --image alpine --tag-libc --target 18.12.0",
+    "publish-all": "cd prebuilds/win32-x64 && npm publish --access public && cd ../darwin-x64 && npm publish --access public && cd ../darwin-arm64 && npm publish --access public && cd ../linux-x64 && npm publish --access public && cd ../linux-arm64 && npm publish --access public  && cd ../linux-arm && npm publish --access public && cd ../.. && npm publish --access public",
+    "test": "node ./index.js"
+  },
+  "main": "./index.js",
+  "gypfile": true,
+  "dependencies": {
+    "node-gyp-build-optional-packages": "5.0.7"
+  },
+  "files": [
+    "index.js",
+    "/src",
+    "/*.gyp",
+    "/bin"
+  ],
+  "bin": {
+    "download-msgpackr-prebuilds": "./bin/download-prebuilds.js"
+  },
+  "optionalDependencies": {
+    "@msgpackr-extract/msgpackr-extract-darwin-arm64": "3.0.2",
+    "@msgpackr-extract/msgpackr-extract-darwin-x64": "3.0.2",
+    "@msgpackr-extract/msgpackr-extract-linux-arm": "3.0.2",
+    "@msgpackr-extract/msgpackr-extract-linux-arm64": "3.0.2",
+    "@msgpackr-extract/msgpackr-extract-linux-x64": "3.0.2",
+    "@msgpackr-extract/msgpackr-extract-win32-x64": "3.0.2"
+  },
+  "devDependencies": {
+    "prebuildify-platform-packages": "5.0.2",
+    "prebuildify-ci": "^1.0.5",
+    "prebuildify-cross": "5.0.0"
+  }
+}

@@ -1,0 +1,41 @@
+.sk-cube-grid {
+  width: 27px;
+  height: 27px;
+}
+
+.sk-cube-grid > div {
+  width: 33%;
+  height: 33%;
+  background-color: currentColor;
+  float: left;
+
+  -webkit-animation: sk-scaleDelay 1.3s infinite ease-in-out;
+  animation: sk-scaleDelay 1.3s infinite ease-in-out;
+}
+
+/*
+ * Spinner positions
+ * 1 2 3
+ * 4 5 6
+ * 7 8 9
+ */
+
+.sk-cube-grid > div:nth-child(1) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s  }
+.sk-cube-grid > div:nth-child(2) { -webkit-animation-delay: 0.3s; animation-delay: 0.3s  }
+.sk-cube-grid > div:nth-child(3) { -webkit-animation-delay: 0.4s; animation-delay: 0.4s  }
+.sk-cube-grid > div:nth-child(4) { -webkit-animation-delay: 0.1s; animation-delay: 0.1s  }
+.sk-cube-grid > div:nth-child(5) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s  }
+.sk-cube-grid > div:nth-child(6) { -webkit-animation-delay: 0.3s; animation-delay: 0.3s  }
+.sk-cube-grid > div:nth-child(7) { -webkit-animation-delay: 0.0s; animation-delay: 0.0s  }
+.sk-cube-grid > div:nth-child(8) { -webkit-animation-delay: 0.1s; animation-delay: 0.1s  }
+.sk-cube-grid > div:nth-child(9) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s  }
+
+@-webkit-keyframes sk-scaleDelay {
+  0%, 70%, 100% { -webkit-transform:scale3D(1.0, 1.0, 1.0) }
+  35%           { -webkit-transform:scale3D(0.0, 0.0, 1.0) }
+}
+
+@keyframes sk-scaleDelay {
+  0%, 70%, 100% { -webkit-transform:scale3D(1.0, 1.0, 1.0); transform:scale3D(1.0, 1.0, 1.0) }
+  35%           { -webkit-transform:scale3D(1.0, 1.0, 1.0); transform:scale3D(0.0, 0.0, 1.0) }
+}

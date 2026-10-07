@@ -1,0 +1,85 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .monaco-editor-overlaymessage {
+	padding-bottom: 8px;
+	z-index: 10000;
+}
+
+.monaco-editor .monaco-editor-overlaymessage.below {
+	padding-bottom: 0;
+	padding-top: 8px;
+	z-index: 10000;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+.monaco-editor .monaco-editor-overlaymessage.fadeIn {
+	animation: fadeIn 150ms ease-out;
+}
+
+@keyframes fadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+.monaco-editor .monaco-editor-overlaymessage.fadeOut {
+	animation: fadeOut 100ms ease-out;
+}
+
+.monaco-editor .monaco-editor-overlaymessage .message {
+	padding: 2px 4px;
+	color: var(--vscode-editorHoverWidget-foreground);
+	background-color: var(--vscode-editorHoverWidget-background);
+	border: 1px solid var(--vscode-inputValidation-infoBorder);
+	border-radius: 3px;
+}
+
+.monaco-editor .monaco-editor-overlaymessage .message p {
+	margin-block: 0px;
+}
+
+.monaco-editor .monaco-editor-overlaymessage .message a {
+	color: var(--vscode-textLink-foreground);
+}
+
+.monaco-editor .monaco-editor-overlaymessage .message a:hover {
+	color: var(--vscode-textLink-activeForeground);
+}
+
+.monaco-editor.hc-black .monaco-editor-overlaymessage .message,
+.monaco-editor.hc-light .monaco-editor-overlaymessage .message {
+	border-width: 2px;
+}
+
+.monaco-editor .monaco-editor-overlaymessage .anchor {
+	width: 0 !important;
+	height: 0 !important;
+	border-color: transparent;
+	border-style: solid;
+	z-index: 1000;
+	border-width: 8px;
+	position: absolute;
+	left: 2px;
+}
+
+.monaco-editor .monaco-editor-overlaymessage .anchor.top {
+	border-bottom-color: var(--vscode-inputValidation-infoBorder);
+}
+
+.monaco-editor .monaco-editor-overlaymessage .anchor.below {
+	border-top-color: var(--vscode-inputValidation-infoBorder);
+}
+
+.monaco-editor .monaco-editor-overlaymessage:not(.below) .anchor.top,
+.monaco-editor .monaco-editor-overlaymessage.below .anchor.below {
+	display: none;
+}
+
+.monaco-editor .monaco-editor-overlaymessage.below .anchor.top {
+	display: inherit;
+	top: -8px;
+}

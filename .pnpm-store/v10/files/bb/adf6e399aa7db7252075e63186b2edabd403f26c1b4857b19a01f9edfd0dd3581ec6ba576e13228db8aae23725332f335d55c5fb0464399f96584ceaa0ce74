@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Secret.js",
+  "module": "../dist/esm/Secret.js",
+  "types": "../dist/dts/Secret.d.ts"
+}

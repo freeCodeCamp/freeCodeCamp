@@ -1,0 +1,48 @@
+{
+  "name": "eslint-scope",
+  "description": "ECMAScript scope analyzer for ESLint",
+  "homepage": "http://github.com/eslint/eslint-scope",
+  "main": "lib/index.js",
+  "version": "5.1.1",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": "eslint/eslint-scope",
+  "bugs": {
+    "url": "https://github.com/eslint/eslint-scope/issues"
+  },
+  "license": "BSD-2-Clause",
+  "scripts": {
+    "test": "node Makefile.js test",
+    "lint": "node Makefile.js lint",
+    "generate-release": "eslint-generate-release",
+    "generate-alpharelease": "eslint-generate-prerelease alpha",
+    "generate-betarelease": "eslint-generate-prerelease beta",
+    "generate-rcrelease": "eslint-generate-prerelease rc",
+    "publish-release": "eslint-publish-release"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib"
+  ],
+  "dependencies": {
+    "esrecurse": "^4.3.0",
+    "estraverse": "^4.1.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^1.11.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.0.1",
+    "eslint-config-eslint": "^5.0.1",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-release": "^1.0.0",
+    "eslint-visitor-keys": "^1.2.0",
+    "espree": "^7.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.4",
+    "npm-license": "^0.3.3",
+    "shelljs": "^0.8.3",
+    "typescript": "^3.5.2"
+  }
+}

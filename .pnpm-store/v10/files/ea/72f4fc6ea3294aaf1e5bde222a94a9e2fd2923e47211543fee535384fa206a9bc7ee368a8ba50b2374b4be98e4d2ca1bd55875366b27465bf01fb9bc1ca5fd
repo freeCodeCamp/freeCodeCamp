@@ -1,0 +1,40 @@
+{
+    "name": "no-profanity",
+    "version": "1.5.1",
+    "description": "A JavaScript package to detect and filter profanity",
+    "main": "./lib/no-profanity.js",
+    "types": "./lib/no-profanity.d.ts",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/topener/no-profanity.git"
+    },
+    "keywords": [
+        "curse",
+        "words",
+        "profanity",
+        "filter",
+        "censor"
+    ],
+    "devDependencies": {
+        "@babel/cli": "^7.22.9",
+        "@babel/core": "^7.22.9",
+        "@babel/preset-env": "^7.22.9",
+        "@types/node": "^20.4.5",
+        "babel-jest": "^29.6.1",
+        "better-assert": "1.0.2",
+        "documentation": "^14.0.2",
+        "jest": "^29.6.1",
+        "husky": "^8.0.3"
+    },
+    "author": "Rene Pot",
+    "license": "MIT",
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}

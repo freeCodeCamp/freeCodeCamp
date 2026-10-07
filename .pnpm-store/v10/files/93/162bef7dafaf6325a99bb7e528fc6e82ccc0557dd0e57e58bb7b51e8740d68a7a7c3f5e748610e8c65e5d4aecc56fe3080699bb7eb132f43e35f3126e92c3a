@@ -1,0 +1,65 @@
+{
+  "name": "gatsby-graphiql-explorer",
+  "version": "3.16.0",
+  "description": "GraphiQL IDE with custom features for Gatsby users",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config ./src/webpack.config.js",
+    "watch": "npm run build -- --watch",
+    "prepare": "cross-env NODE_ENV=production npm run clean && npm run build",
+    "clean": "del-cli dist/*"
+  },
+  "keywords": [
+    "gatsby",
+    "graphiql",
+    "gatsby-graphiql"
+  ],
+  "files": [
+    "dist/*",
+    "index.js"
+  ],
+  "author": "Michal Piechowiak <misiek.piechowiak@gmail.com>",
+  "contributors": [
+    "LekoArts"
+  ],
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-graphiql-explorer#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-graphiql-explorer"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@graphiql/plugin-code-exporter": "^0.2.0",
+    "@graphiql/plugin-explorer": "^0.2.0",
+    "@graphiql/react": "^0.18.0",
+    "@graphiql/toolkit": "^0.8.4",
+    "babel-loader": "^9.1.2",
+    "babel-preset-gatsby-package": "^3.16.0",
+    "core-js": "^3.31.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.8.1",
+    "del-cli": "^5.0.0",
+    "graphiql": "^3.0.0",
+    "html-webpack-plugin": "^5.5.3",
+    "npm-run-all": "4.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "regenerator-runtime": "^0.13.11",
+    "style-loader": "^3.3.3",
+    "webpack": "~5.98.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

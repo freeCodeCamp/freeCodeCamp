@@ -1,0 +1,13 @@
+{
+  "main": "server.js",
+  "app": "dist/index.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "targets": {
+    "main": false,
+    "app": {
+      "sourceMap": false
+    }
+  }
+}

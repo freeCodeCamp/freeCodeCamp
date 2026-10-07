@@ -1,0 +1,9 @@
+// add more variables as needed
+
+$blueText: #007ab7;
+$subText: #6c7378;
+
+$preferredBackground: #eaf7e9;
+$preferredText: #2d542b;
+
+$hoverBackground: #eeeeee;

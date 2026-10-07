@@ -1,0 +1,18 @@
+{
+  "name": "cssom",
+  "description": "CSS Object Model implementation and CSS parser",
+  "keywords": [
+    "CSS",
+    "CSSOM",
+    "parser",
+    "styleSheet"
+  ],
+  "version": "0.3.8",
+  "author": "Nikita Vasilyev <me@elv1s.ru>",
+  "repository": "NV/CSSOM",
+  "files": [
+    "lib/"
+  ],
+  "main": "./lib/index.js",
+  "license": "MIT"
+}

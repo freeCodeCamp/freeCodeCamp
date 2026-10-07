@@ -1,0 +1,167 @@
+{
+  "name": "react-i18next",
+  "version": "15.7.4",
+  "description": "Internationalization for react done right. Using the i18next i18n ecosystem.",
+  "main": "dist/commonjs/index.js",
+  "types": "./index.d.mts",
+  "jsnext:main": "dist/es/index.js",
+  "module": "dist/es/index.js",
+  "keywords": [
+    "i18next",
+    "internationalization",
+    "i18n",
+    "translation",
+    "localization",
+    "l10n",
+    "globalization",
+    "react",
+    "reactjs"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": {
+        "require": "./index.d.ts",
+        "import": "./index.d.mts"
+      },
+      "module": "./dist/es/index.js",
+      "import": "./dist/es/index.js",
+      "require": "./dist/commonjs/index.js",
+      "default": "./dist/es/index.js"
+    },
+    "./TransWithoutContext": {
+      "types": {
+        "require": "./TransWithoutContext.d.ts",
+        "import": "./TransWithoutContext.d.mts"
+      },
+      "module": "./dist/es/TransWithoutContext.js",
+      "import": "./dist/es/TransWithoutContext.js",
+      "require": "./dist/commonjs/TransWithoutContext.js",
+      "default": "./dist/es/TransWithoutContext.js"
+    },
+    "./initReactI18next": {
+      "types": {
+        "require": "./initReactI18next.d.ts",
+        "import": "./initReactI18next.d.mts"
+      },
+      "module": "./dist/es/initReactI18next.js",
+      "import": "./dist/es/initReactI18next.js",
+      "require": "./dist/commonjs/initReactI18next.js",
+      "default": "./dist/es/initReactI18next.js"
+    },
+    "./icu.macro": {
+      "types": {
+        "require": "./icu.macro..d.ts",
+        "import": "./icu.macro..d.mts"
+      },
+      "default": "./icu.macro.js"
+    }
+  },
+  "homepage": "https://github.com/i18next/react-i18next",
+  "bugs": "https://github.com/i18next/react-i18next/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i18next/react-i18next.git"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.27.6",
+    "html-parse-stringify": "^3.0.1"
+  },
+  "peerDependencies": {
+    "i18next": ">= 23.4.0",
+    "react": ">= 16.8.0",
+    "typescript": "^5"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/plugin-proposal-async-generator-functions": "^7.20.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-transform-modules-commonjs": "^7.27.1",
+    "@babel/plugin-transform-runtime": "^7.28.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/register": "^7.27.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.3",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-replace": "^5.0.7",
+    "@rollup/plugin-terser": "0.4.4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.1.0",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^19.1.0",
+    "@vitest/coverage-v8": "^2.0.5",
+    "all-contributors-cli": "^6.26.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-tester": "^11.0.4",
+    "coveralls": "^3.1.1",
+    "cpy-cli": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest-dom": "^5.5.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-testing-library": "^6.5.0",
+    "happy-dom": "^14.12.3",
+    "husky": "^9.1.7",
+    "i18next": "^25.5.2",
+    "lint-staged": "^15.5.2",
+    "mkdirp": "^3.0.1",
+    "prettier": "^3.6.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-test-renderer": "^19.1.0",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.44.1",
+    "typescript": "~5.5.4",
+    "vitest": "^2.0.5",
+    "yargs": "^17.7.2"
+  },
+  "scripts": {
+    "clean": "rimraf dist && mkdirp dist",
+    "lint": "eslint --cache .",
+    "lint:fix": "eslint --cache --fix .",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write --list-different",
+    "copy": "cpy ./dist/umd/react-i18next.min.js ./dist/umd/react-i18next.js . --flat && echo '{\"type\":\"module\"}' > dist/es/package.json",
+    "build:es": "cross-env BABEL_ENV=ESNext babel src --out-dir dist/es",
+    "build:cjs": "babel src --out-dir dist/commonjs",
+    "build:umd": "rollup -c rollup.config.mjs --format umd && rollup -c rollup.config.mjs --format umd --uglify",
+    "build:amd": "rollup -c rollup.config.mjs --format amd && rollup -c rollup.config.mjs --format amd --uglify",
+    "build:iife": "rollup -c rollup.config.mjs --format iife && rollup -c rollup.config.mjs --format iife --uglify",
+    "build": "npm run clean && npm run build:cjs && npm run build:es && npm run build:umd && npm run build:amd && npm run copy",
+    "fix_dist_package": "node -e 'console.log(`{\"type\":\"module\",\"version\":\"${process.env.npm_package_version}\"}`)' > dist/es/package.json",
+    "preversion": "npm run build && git push",
+    "postversion": "npm run fix_dist_package && git push && git push --tags",
+    "test": "vitest",
+    "test:coverage": "npm run test -- --coverage --run",
+    "test:typescript": "vitest --workspace vitest.workspace.typescript.mts",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "prepare": "husky"
+  },
+  "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
+  "license": "MIT",
+  "lock": false,
+  "sideEffects": false,
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

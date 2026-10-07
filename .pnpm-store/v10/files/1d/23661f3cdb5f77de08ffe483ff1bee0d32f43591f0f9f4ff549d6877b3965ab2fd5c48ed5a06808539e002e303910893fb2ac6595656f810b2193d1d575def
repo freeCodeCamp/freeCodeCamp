@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+  - "13"
+  - "12"
+  - "11"
+  - "10"
+  - "9"
+  - "8"
+  - "7"
+  - "6"
+  - "5"
+  - "4"
+  - "iojs-v3"
+  - "iojs-v2"
+  - "iojs-v1"
+  - "0.12"
+import:
+  - ljharb/travis-ci:node/latest-npm.yml
+  - ljharb/travis-ci:node/greenkeeper.yml
+  - ljharb/travis-ci:node/dependabot.yml
+script: 'npm run tests-only'
+sudo: false
+env:
+  - TEST=true
+matrix:
+  fast_finish: true
+  include:
+    - node_js: "lts/*"
+      env: PRETEST=true
+      script: 'npm run pretest'
+  allow_failures:
+    - node_js: "9"
+    - node_js: "7"
+    - node_js: "5"
+    - node_js: "iojs-v3"
+    - node_js: "iojs-v2"
+    - node_js: "iojs-v1"
+    - env: TEST=true ALLOW_FAILURE=true

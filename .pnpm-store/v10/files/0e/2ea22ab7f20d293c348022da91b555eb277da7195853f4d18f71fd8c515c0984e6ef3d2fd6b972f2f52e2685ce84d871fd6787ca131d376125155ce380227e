@@ -1,0 +1,24 @@
+{
+  "name": "@babel/helper-split-export-declaration",
+  "version": "7.22.6",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-split-export-declaration"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-helper-split-export-declaration",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/types": "^7.22.5"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

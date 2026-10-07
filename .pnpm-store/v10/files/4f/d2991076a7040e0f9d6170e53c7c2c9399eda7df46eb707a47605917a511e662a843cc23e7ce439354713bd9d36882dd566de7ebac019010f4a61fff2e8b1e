@@ -1,0 +1,92 @@
+{
+	"name": "dom-accessibility-api",
+	"description": "Implements https://w3c.github.io/accname/",
+	"version": "0.6.3",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"type": "commonjs",
+	"exports": {
+		"types": "./dist/index.d.ts",
+		"import": "./dist/index.mjs",
+		"require": "./dist/index.js"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/eps1lon/dom-accessibility-api.git"
+	},
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"build": "yarn build:clean && yarn build:source && yarn build:source:cjs && yarn build:types",
+		"build:clean": "rimraf dist",
+		"build:source": "cross-env BABEL_ENV=esm babel sources --extensions \".ts\" --ignore \"**/__tests__/**/*\" --out-dir dist/ --out-file-extension=.mjs --source-maps",
+		"build:source:cjs": "cross-env BABEL_ENV=cjs babel sources --extensions \".ts\" --ignore \"**/__tests__/**/*\" --out-dir dist/ --out-file-extension=.js --source-maps",
+		"build:types": "tsc -p tsconfig.json --emitDeclarationOnly",
+		"format": "prettier \"**/*.{json,js,md,ts,yml}\" --write --ignore-path .prettierignore",
+		"lint": "eslint --report-unused-disable-directives \"{scripts,sources}/**/*.{js,ts}\"",
+		"release": "yarn build && yarn changeset publish",
+		"test": "jest --config scripts/jest/jest.config.js",
+		"test:ci": "jest --ci --config scripts/jest/jest.ci.config.js --runInBand",
+		"test:coverage": "jest --config scripts/jest/jest.coverage.config.js",
+		"test:types": "tsc -p tsconfig.json --noEmit",
+		"test:wpt:jsdom": "mocha tests/wpt-jsdom/run-wpts.js",
+		"test:wpt:browser": "concurrently --success first --kill-others \"yarn test:wpt:browser:run\" \"yarn test:wpt:browser:server\"",
+		"test:wpt:browser:run": "cypress run --project tests",
+		"test:wpt:browser:server": "serve tests/wpt",
+		"test:wpt:browser:open": "cypress open --project tests",
+		"wpt:init": "git submodule update --init --recursive",
+		"wpt:reset": "rimraf ./tests/wpt && yarn wpt:init",
+		"wpt:update": "git submodule update --recursive --remote && cd tests/wpt && python wpt.py manifest --path ../wpt-jsdom/wpt-manifest.json"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.14.3",
+		"@babel/core": "^7.14.3",
+		"@babel/plugin-proposal-class-properties": "^7.13.0",
+		"@babel/preset-env": "^7.14.4",
+		"@babel/preset-typescript": "^7.13.0",
+		"@changesets/changelog-github": "^0.4.0",
+		"@changesets/cli": "^2.16.0",
+		"@testing-library/dom": "^9.0.0",
+		"@types/jest": "^29.0.0",
+		"@types/node": "18.17.17",
+		"@typescript-eslint/eslint-plugin": "^6.0.0",
+		"@typescript-eslint/parser": "^6.0.0",
+		"concurrently": "^8.0.0",
+		"cross-env": "^7.0.3",
+		"cypress": "^12.0.0",
+		"eslint": "^7.27.0",
+		"eslint-plugin-jest": "^27.0.0",
+		"jest": "^29.0.0",
+		"jest-diff": "^29.0.0",
+		"jest-environment-jsdom": "^29.0.0",
+		"jest-junit": "^16.0.0",
+		"js-yaml": "^4.1.0",
+		"jsdom": "^20.0.0",
+		"minimatch": "^9.0.0",
+		"mocha": "^10.0.0",
+		"mocha-sugar-free": "^1.4.0",
+		"prettier": "^3.0.0",
+		"q": "^1.5.1",
+		"request": "^2.88",
+		"request-promise-native": "^1.0.9",
+		"rimraf": "^5.0.0",
+		"serve": "^14.0.0",
+		"typescript": "^5.0.0"
+	},
+	"resolutions": {
+		"@types/node": "18.17.17"
+	},
+	"prettier": {
+		"useTabs": true
+	},
+	"keywords": [
+		"accessibility",
+		"ARIA",
+		"accname"
+	],
+	"publishConfig": {
+		"access": "public"
+	}
+}

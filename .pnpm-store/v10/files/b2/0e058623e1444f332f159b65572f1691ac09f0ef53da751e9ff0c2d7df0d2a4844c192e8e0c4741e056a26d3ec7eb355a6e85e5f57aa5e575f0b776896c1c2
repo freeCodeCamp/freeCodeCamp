@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Tracer.js",
+  "module": "../dist/esm/Tracer.js",
+  "types": "../dist/dts/Tracer.d.ts"
+}

@@ -1,0 +1,49 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"complexity": [2, 12],
+		"func-name-matching": 0,
+		"id-length": 0,
+		"max-nested-callbacks": [2, 3],
+		"max-params": [2, 4],
+		"max-statements-per-line": [2, { "max": 2 }],
+		"max-statements": [2, 24],
+		"new-cap": [2, {
+			"capIsNewExceptions": [
+				"AdvanceStringIndex",
+				"Call",
+				"Construct",
+				"CreateIterResultObject",
+				"CreateRegExpStringIterator",
+				"Get",
+				"GetIntrinsic",
+				"GetMethod",
+				"Invoke",
+				"IsRegExp",
+				"OrdinaryObjectCreate",
+				"RegExpExec",
+				"RequireObjectCoercible",
+				"Set",
+				"SpeciesConstructor",
+				"ToBoolean",
+				"ToLength",
+				"ToString",
+				"Type",
+			],
+		}],
+		"no-restricted-syntax": [2, "BreakStatement", "ContinueStatement", "DebuggerStatement", "LabeledStatement", "WithStatement"],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"extends": "@ljharb/eslint-config/tests",
+			"rules": {
+				"max-lines-per-function": 0,
+			},
+		},
+	],
+}

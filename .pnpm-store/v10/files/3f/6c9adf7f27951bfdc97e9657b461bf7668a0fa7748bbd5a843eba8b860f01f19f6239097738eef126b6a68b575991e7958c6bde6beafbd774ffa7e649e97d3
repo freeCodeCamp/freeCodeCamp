@@ -1,0 +1,81 @@
+{
+  "name": "fraction.js",
+  "title": "Fraction.js",
+  "version": "5.3.4",
+  "description": "The RAW rational numbers library",
+  "homepage": "https://raw.org/article/rational-numbers-in-javascript/",
+  "bugs": "https://github.com/rawify/Fraction.js/issues",
+  "keywords": [
+    "math",
+    "numbers",
+    "parser",
+    "ratio",
+    "fraction",
+    "fractions",
+    "rational",
+    "rationals",
+    "rational numbers",
+    "bigint",
+    "arbitrary precision",
+    "mixed numbers",
+    "decimal",
+    "numerator",
+    "denominator",
+    "simplification"
+  ],
+  "private": false,
+  "main": "./dist/fraction.js",
+  "module": "./dist/fraction.mjs",
+  "browser": "./dist/fraction.min.js",
+  "unpkg": "./dist/fraction.min.js",
+  "types": "./fraction.d.mts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./fraction.d.mts",
+        "require": "./fraction.d.ts"
+      },
+      "import": "./dist/fraction.mjs",
+      "require": "./dist/fraction.js",
+      "browser": "./dist/fraction.min.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "<4.7": {
+      "*": [
+        "fraction.d.ts"
+      ]
+    }
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rawify/Fraction.js.git"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/rawify"
+  },
+  "author": {
+    "name": "Robert Eisele",
+    "email": "robert@raw.org",
+    "url": "https://raw.org/"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "*"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "crude-build Fraction",
+    "test": "mocha tests/*.js"
+  },
+  "devDependencies": {
+    "crude-build": "^0.1.2",
+    "mocha": "*"
+  }
+}

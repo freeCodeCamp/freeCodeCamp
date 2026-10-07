@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_object_destructuring_empty.cjs",
+    "module": "../../esm/_object_destructuring_empty.js"
+}

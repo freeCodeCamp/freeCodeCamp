@@ -1,0 +1,50 @@
+{
+    "name": "parse5",
+    "type": "module",
+    "description": "HTML parser and serializer.",
+    "version": "7.3.0",
+    "author": "Ivan Nikulin <ifaaan@gmail.com> (https://github.com/inikulin)",
+    "contributors": "https://github.com/inikulin/parse5/graphs/contributors",
+    "homepage": "https://parse5.js.org",
+    "funding": "https://github.com/inikulin/parse5?sponsor=1",
+    "dependencies": {
+        "entities": "^6.0.0"
+    },
+    "keywords": [
+        "html",
+        "parser",
+        "html5",
+        "WHATWG",
+        "specification",
+        "fast",
+        "html parser",
+        "html5 parser",
+        "htmlparser",
+        "parse5",
+        "serializer",
+        "html serializer",
+        "htmlserializer",
+        "parse",
+        "serialize"
+    ],
+    "license": "MIT",
+    "main": "dist/cjs/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        "import": "./dist/index.js",
+        "require": "./dist/cjs/index.js"
+    },
+    "scripts": {
+        "build:cjs": "tsc --noCheck --moduleResolution node10 --module CommonJS --target ES6 --outDir dist/cjs && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/inikulin/parse5.git"
+    },
+    "files": [
+        "dist/cjs/package.json",
+        "dist/**/*.js",
+        "dist/**/*.d.ts"
+    ]
+}

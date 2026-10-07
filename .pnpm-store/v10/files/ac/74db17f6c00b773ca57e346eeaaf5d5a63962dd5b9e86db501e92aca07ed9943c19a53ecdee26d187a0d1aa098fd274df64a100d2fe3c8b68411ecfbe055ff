@@ -1,0 +1,105 @@
+{
+  "name": "yaml",
+  "version": "1.10.3",
+  "license": "ISC",
+  "author": "Eemeli Aro <eemeli@gmail.com>",
+  "repository": "github:eemeli/yaml",
+  "description": "JavaScript parser and stringifier for YAML",
+  "keywords": [
+    "YAML",
+    "parser",
+    "stringifier"
+  ],
+  "homepage": "https://eemeli.org/yaml/v1/",
+  "files": [
+    "browser/",
+    "dist/",
+    "types/",
+    "*.d.ts",
+    "*.js",
+    "*.mjs",
+    "!*config.js"
+  ],
+  "type": "commonjs",
+  "main": "./index.js",
+  "browser": {
+    "./index.js": "./browser/index.js",
+    "./map.js": "./browser/map.js",
+    "./pair.js": "./browser/pair.js",
+    "./parse-cst.js": "./browser/parse-cst.js",
+    "./scalar.js": "./browser/scalar.js",
+    "./schema.js": "./browser/schema.js",
+    "./seq.js": "./browser/seq.js",
+    "./types.js": "./browser/types.js",
+    "./types.mjs": "./browser/types.js",
+    "./types/binary.js": "./browser/types/binary.js",
+    "./types/omap.js": "./browser/types/omap.js",
+    "./types/pairs.js": "./browser/types/pairs.js",
+    "./types/set.js": "./browser/types/set.js",
+    "./types/timestamp.js": "./browser/types/timestamp.js",
+    "./util.js": "./browser/util.js",
+    "./util.mjs": "./browser/util.js"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./parse-cst": "./parse-cst.js",
+    "./types": [
+      {
+        "import": "./types.mjs"
+      },
+      "./types.js"
+    ],
+    "./util": [
+      {
+        "import": "./util.mjs"
+      },
+      "./util.js"
+    ],
+    "./": "./"
+  },
+  "scripts": {
+    "build": "npm run build:node && npm run build:browser",
+    "build:browser": "rollup -c rollup.browser-config.js",
+    "build:node": "rollup -c rollup.node-config.js",
+    "clean": "git clean -fdxe node_modules",
+    "lint": "eslint src/",
+    "prettier": "prettier --write .",
+    "start": "cross-env TRACE_LEVEL=log npm run build:node && node -i -e 'YAML=require(\".\")'",
+    "test": "jest",
+    "test:browsers": "cd playground && npm test",
+    "test:dist": "npm run build:node && jest",
+    "test:types": "tsc --lib ES2017 --noEmit tests/typings.ts",
+    "docs:install": "cd docs-slate && bundle install",
+    "docs:deploy": "cd docs-slate && ./deploy.sh",
+    "docs": "cd docs-slate && bundle exec middleman server",
+    "preversion": "npm test && npm run build"
+  },
+  "browserslist": "> 0.5%, not dead",
+  "prettier": {
+    "arrowParens": "avoid",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@rollup/plugin-babel": "^5.2.3",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-trace": "^1.1.0",
+    "common-tags": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "fast-check": "^2.12.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "rollup": "^2.38.2",
+    "typescript": "^4.1.3"
+  },
+  "engines": {
+    "node": ">= 6"
+  }
+}

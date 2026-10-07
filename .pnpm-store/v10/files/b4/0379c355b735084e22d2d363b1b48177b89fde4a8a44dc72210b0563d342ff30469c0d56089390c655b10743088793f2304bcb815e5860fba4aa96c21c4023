@@ -1,0 +1,41 @@
+{
+  "name": "tar-fs",
+  "version": "2.1.4",
+  "description": "filesystem bindings for tar-stream",
+  "dependencies": {
+    "chownr": "^1.1.1",
+    "mkdirp-classic": "^0.5.2",
+    "pump": "^3.0.0",
+    "tar-stream": "^2.1.4"
+  },
+  "keywords": [
+    "tar",
+    "fs",
+    "file",
+    "tarball",
+    "directory",
+    "stream"
+  ],
+  "devDependencies": {
+    "rimraf": "^2.6.3",
+    "standard": "^13.0.1",
+    "tape": "^4.9.2"
+  },
+  "scripts": {
+    "test": "standard && tape test/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/tar-fs/issues"
+  },
+  "homepage": "https://github.com/mafintosh/tar-fs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "author": "Mathias Buus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/tar-fs.git"
+  }
+}

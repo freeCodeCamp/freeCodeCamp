@@ -1,0 +1,1 @@
+module.exports = require("@swc/legacy-helpers/lib/_skip_first_generator_next.js")

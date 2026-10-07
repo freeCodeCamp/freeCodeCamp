@@ -1,0 +1,46 @@
+{
+  "name": "fast-safe-stringify",
+  "version": "2.1.1",
+  "description": "Safely and quickly serialize JavaScript objects",
+  "keywords": [
+    "stable",
+    "stringify",
+    "JSON",
+    "JSON.stringify",
+    "safe",
+    "serialize"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tap --no-esm test.js test-stable.js",
+    "benchmark": "node benchmark.js"
+  },
+  "author": "David Mark Clements",
+  "contributors": [
+    "Ruben Bridgewater",
+    "Matteo Collina",
+    "Ben Gourley",
+    "Gabriel Lesperance",
+    "Alex Liu",
+    "Christoph Walcher",
+    "Nicholas Young"
+  ],
+  "license": "MIT",
+  "typings": "index",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "clone": "^2.1.0",
+    "json-stringify-safe": "^5.0.1",
+    "standard": "^11.0.0",
+    "tap": "^12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmarkclements/fast-safe-stringify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidmarkclements/fast-safe-stringify/issues"
+  },
+  "homepage": "https://github.com/davidmarkclements/fast-safe-stringify#readme",
+  "dependencies": {}
+}

@@ -1,0 +1,51 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+.monaco-editor .margin-view-overlays .codicon-folding-manual-collapsed,
+.monaco-editor .margin-view-overlays .codicon-folding-manual-expanded,
+.monaco-editor .margin-view-overlays .codicon-folding-expanded,
+.monaco-editor .margin-view-overlays .codicon-folding-collapsed {
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.5s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 140%;
+	margin-left: 2px;
+}
+
+.monaco-reduce-motion .monaco-editor .margin-view-overlays .codicon-folding-manual-collapsed,
+.monaco-reduce-motion .monaco-editor .margin-view-overlays .codicon-folding-manual-expanded,
+.monaco-reduce-motion .monaco-editor .margin-view-overlays .codicon-folding-expanded,
+.monaco-reduce-motion .monaco-editor .margin-view-overlays .codicon-folding-collapsed {
+	transition: initial;
+}
+
+.monaco-editor .margin-view-overlays:hover .codicon,
+.monaco-editor .margin-view-overlays .codicon.codicon-folding-collapsed,
+.monaco-editor .margin-view-overlays .codicon.codicon-folding-manual-collapsed,
+.monaco-editor .margin-view-overlays .codicon.alwaysShowFoldIcons {
+	opacity: 1;
+}
+
+.monaco-editor .inline-folded:after {
+	color: var(--vscode-editor-foldPlaceholderForeground);
+	margin: 0.1em 0.2em 0 0.2em;
+	content: "\22EF"; /* ellipses unicode character */
+	display: inline;
+	line-height: 1em;
+	cursor: pointer;
+}
+
+.monaco-editor .folded-background {
+	background-color: var(--vscode-editor-foldBackground);
+}
+
+.monaco-editor .cldr.codicon.codicon-folding-expanded,
+.monaco-editor .cldr.codicon.codicon-folding-collapsed,
+.monaco-editor .cldr.codicon.codicon-folding-manual-expanded,
+.monaco-editor .cldr.codicon.codicon-folding-manual-collapsed {
+	color: var(--vscode-editorGutter-foldingControlForeground) !important;
+}

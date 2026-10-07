@@ -1,0 +1,88 @@
+{
+  "name": "postcss",
+  "version": "8.5.13",
+  "description": "Tool for transforming styles with JS plugins",
+  "keywords": [
+    "css",
+    "manipulation",
+    "parser",
+    "postcss",
+    "preprocessor",
+    "rework",
+    "source map",
+    "transform",
+    "transpiler"
+  ],
+  "homepage": "https://postcss.org/",
+  "bugs": {
+    "url": "https://github.com/postcss/postcss/issues"
+  },
+  "license": "MIT",
+  "author": "Andrey Sitnik <andrey@sitnik.es>",
+  "repository": "postcss/postcss",
+  "funding": [
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/postcss/"
+    },
+    {
+      "type": "tidelift",
+      "url": "https://tidelift.com/funding/github/npm/postcss"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ai"
+    }
+  ],
+  "main": "./lib/postcss.js",
+  "browser": {
+    "./lib/terminal-highlight": false,
+    "source-map-js": false,
+    "path": false,
+    "url": false,
+    "fs": false
+  },
+  "types": "./lib/postcss.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/postcss.mjs",
+      "require": "./lib/postcss.js"
+    },
+    "./lib/at-rule": "./lib/at-rule.js",
+    "./lib/comment": "./lib/comment.js",
+    "./lib/container": "./lib/container.js",
+    "./lib/css-syntax-error": "./lib/css-syntax-error.js",
+    "./lib/declaration": "./lib/declaration.js",
+    "./lib/fromJSON": "./lib/fromJSON.js",
+    "./lib/input": "./lib/input.js",
+    "./lib/lazy-result": "./lib/lazy-result.js",
+    "./lib/no-work-result": "./lib/no-work-result.js",
+    "./lib/list": "./lib/list.js",
+    "./lib/map-generator": "./lib/map-generator.js",
+    "./lib/node": "./lib/node.js",
+    "./lib/parse": "./lib/parse.js",
+    "./lib/parser": "./lib/parser.js",
+    "./lib/postcss": "./lib/postcss.js",
+    "./lib/previous-map": "./lib/previous-map.js",
+    "./lib/processor": "./lib/processor.js",
+    "./lib/result": "./lib/result.js",
+    "./lib/root": "./lib/root.js",
+    "./lib/rule": "./lib/rule.js",
+    "./lib/stringifier": "./lib/stringifier.js",
+    "./lib/stringify": "./lib/stringify.js",
+    "./lib/symbols": "./lib/symbols.js",
+    "./lib/terminal-highlight": "./lib/terminal-highlight.js",
+    "./lib/tokenize": "./lib/tokenize.js",
+    "./lib/warn-once": "./lib/warn-once.js",
+    "./lib/warning": "./lib/warning.js",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "nanoid": "^3.3.11",
+    "picocolors": "^1.1.1",
+    "source-map-js": "^1.2.1"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14"
+  }
+}

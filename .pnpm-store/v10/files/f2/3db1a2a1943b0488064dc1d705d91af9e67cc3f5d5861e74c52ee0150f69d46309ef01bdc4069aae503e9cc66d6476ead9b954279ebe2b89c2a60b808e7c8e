@@ -1,0 +1,31 @@
+{
+  "name": "@babel/helpers",
+  "version": "7.29.2",
+  "description": "Collection of helper functions used by Babel transforms.",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-helpers",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helpers"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/template": "^7.28.6",
+    "@babel/types": "^7.29.0"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.29.1",
+    "@babel/helper-plugin-test-runner": "^7.27.1",
+    "@babel/parser": "^7.29.2",
+    "regenerator-runtime": "^0.14.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

@@ -1,0 +1,59 @@
+{
+  "name": "eslint-plugin-no-only-tests",
+  "version": "3.4.0",
+  "description": "ESLint rule for .only blocks in mocha tests",
+  "keywords": [
+    "describe",
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "fixture",
+    "it",
+    "mocha",
+    "only",
+    "rule"
+  ],
+  "homepage": "https://github.com/levibuzolic/eslint-plugin-no-only-tests#readme",
+  "bugs": {
+    "url": "https://github.com/levibuzolic/eslint-plugin-no-only-tests/issues"
+  },
+  "license": "MIT",
+  "author": "Levi Buzolic",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levibuzolic/eslint-plugin-no-only-tests.git"
+  },
+  "files": [
+    "index.js",
+    "rules/"
+  ],
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "test": "node test/check-package.mjs && node test/unit.mjs && node test/e2e.mjs",
+    "test:e2e": "node test/e2e.mjs",
+    "test:unit": "node test/unit.mjs",
+    "check:package": "node test/check-package.mjs",
+    "typecheck": "tsc",
+    "lint": "oxlint .",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/eslint": "^9.6.0",
+    "@types/eslint__js": "^9.14.0",
+    "@types/estree": "^1.0.8",
+    "@types/node": "^25.6.0",
+    "eslint": "^10.0.0",
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "packageManager": "bun@1.3.13"
+}

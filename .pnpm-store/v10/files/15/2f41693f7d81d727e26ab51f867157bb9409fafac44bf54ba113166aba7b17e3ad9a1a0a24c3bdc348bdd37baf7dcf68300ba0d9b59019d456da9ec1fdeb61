@@ -1,0 +1,50 @@
+{
+  "name": "typedarray-to-buffer",
+  "description": "Convert a typed array to a Buffer without a copy",
+  "version": "3.1.5",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "http://feross.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/typedarray-to-buffer/issues"
+  },
+  "dependencies": {
+    "is-typedarray": "^1.0.0"
+  },
+  "devDependencies": {
+    "airtap": "0.0.4",
+    "standard": "*",
+    "tape": "^4.0.0"
+  },
+  "homepage": "http://feross.org",
+  "keywords": [
+    "buffer",
+    "typed array",
+    "convert",
+    "no copy",
+    "uint8array",
+    "uint16array",
+    "uint32array",
+    "int16array",
+    "int32array",
+    "float32array",
+    "float64array",
+    "browser",
+    "arraybuffer",
+    "dataview"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/typedarray-to-buffer.git"
+  },
+  "scripts": {
+    "test": "standard && npm run test-node && npm run test-browser",
+    "test-browser": "airtap -- test/*.js",
+    "test-browser-local": "airtap --local -- test/*.js",
+    "test-node": "tape test/*.js"
+  }
+}

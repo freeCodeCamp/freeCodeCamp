@@ -1,0 +1,48 @@
+{
+	"name": "define-lazy-prop",
+	"version": "2.0.0",
+	"description": "Define a lazily evaluated property on an object",
+	"license": "MIT",
+	"repository": "sindresorhus/define-lazy-prop",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"lazy",
+		"property",
+		"properties",
+		"prop",
+		"define",
+		"object",
+		"value",
+		"lazily",
+		"laziness",
+		"evaluation",
+		"eval",
+		"execute",
+		"getter",
+		"function",
+		"fn",
+		"memoize",
+		"cache",
+		"defer",
+		"deferred"
+	],
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

@@ -1,0 +1,12 @@
+import type { CatchClauseDefinition } from './CatchClauseDefinition';
+import type { ClassNameDefinition } from './ClassNameDefinition';
+import type { FunctionNameDefinition } from './FunctionNameDefinition';
+import type { ImplicitGlobalVariableDefinition } from './ImplicitGlobalVariableDefinition';
+import type { ImportBindingDefinition } from './ImportBindingDefinition';
+import type { ParameterDefinition } from './ParameterDefinition';
+import type { TSEnumMemberDefinition } from './TSEnumMemberDefinition';
+import type { TSEnumNameDefinition } from './TSEnumNameDefinition';
+import type { TSModuleNameDefinition } from './TSModuleNameDefinition';
+import type { TypeDefinition } from './TypeDefinition';
+import type { VariableDefinition } from './VariableDefinition';
+export type Definition = CatchClauseDefinition | ClassNameDefinition | FunctionNameDefinition | ImplicitGlobalVariableDefinition | ImportBindingDefinition | ParameterDefinition | TSEnumMemberDefinition | TSEnumNameDefinition | TSModuleNameDefinition | TypeDefinition | VariableDefinition;

@@ -1,0 +1,30 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"array-bracket-newline": 0,
+		"complexity": 0,
+		"eqeqeq": 1,
+		"func-style": [2, "declaration"],
+		"max-depth": 0,
+		"max-lines-per-function": 0,
+		"max-statements": 0,
+		"multiline-comment-style": 0,
+		"no-negated-condition": 1,
+		"no-param-reassign": 1,
+    "no-lonely-if": 1,
+		"no-shadow": 1,
+		"no-template-curly-in-string": 0,
+	},
+
+	"overrides": [
+		{
+			"files": "example/**",
+			"rules": {
+				"no-console": 0,
+			},
+		},
+	],
+}

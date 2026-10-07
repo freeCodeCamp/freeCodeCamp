@@ -1,0 +1,76 @@
+{
+  "name": "validator",
+  "description": "String validation and sanitization",
+  "version": "13.15.35",
+  "sideEffects": false,
+  "homepage": "https://github.com/validatorjs/validator.js",
+  "files": [
+    "index.js",
+    "es",
+    "lib",
+    "README.md",
+    "LICENSE",
+    "validator.js",
+    "validator.min.js"
+  ],
+  "keywords": [
+    "validator",
+    "validation",
+    "validate",
+    "sanitization",
+    "sanitize",
+    "sanitisation",
+    "sanitise",
+    "assert"
+  ],
+  "author": "Chris O'Hara <cohara87@gmail.com>",
+  "contributors": [
+    "Anthony Nandaa (https://github.com/profnandaa)"
+  ],
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/validatorjs/validator.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/validatorjs/validator.js.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "mocha": "^6.2.3",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^14.1.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^0.47.0",
+    "rollup-plugin-babel": "^4.0.1",
+    "timezone-mock": "^1.3.6",
+    "uglify-js": "^3.0.19"
+  },
+  "scripts": {
+    "lint": "eslint src test",
+    "lint:fix": "eslint --fix src test",
+    "clean:node": "rimraf index.js lib",
+    "clean:es": "rimraf es",
+    "clean:browser": "rimraf validator*.js",
+    "clean": "run-p clean:*",
+    "minify": "uglifyjs validator.js -o validator.min.js  --compress --mangle --comments /Copyright/",
+    "build:browser": "node --require @babel/register build-browser && npm run minify",
+    "build:es": "babel src -d es --env-name=es",
+    "build:node": "babel src -d .",
+    "build": "run-p build:*",
+    "pretest": "npm run build && npm run lint",
+    "test": "nyc --reporter=cobertura --reporter=text-summary mocha --require @babel/register --reporter dot --recursive"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "license": "MIT"
+}

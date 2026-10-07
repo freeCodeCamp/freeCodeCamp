@@ -1,0 +1,54 @@
+{
+  "name": "mute-stream",
+  "version": "3.0.0",
+  "main": "lib/index.js",
+  "devDependencies": {
+    "@npmcli/eslint-config": "^5.0.0",
+    "@npmcli/template-oss": "4.27.1",
+    "tap": "^16.3.0"
+  },
+  "scripts": {
+    "test": "tap",
+    "lint": "npm run eslint",
+    "postlint": "template-oss-check",
+    "template-oss-apply": "template-oss-apply --force",
+    "lintfix": "npm run eslint -- --fix",
+    "snap": "tap",
+    "posttest": "npm run lint",
+    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/mute-stream.git"
+  },
+  "keywords": [
+    "mute",
+    "stream",
+    "pipe"
+  ],
+  "author": "GitHub Inc.",
+  "license": "ISC",
+  "description": "Bytes go in, but they don't come out (when muted).",
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "tap": {
+    "statements": 70,
+    "branches": 60,
+    "functions": 81,
+    "lines": 70,
+    "nyc-arg": [
+      "--exclude",
+      "tap-snapshots/**"
+    ]
+  },
+  "engines": {
+    "node": "^20.17.0 || >=22.9.0"
+  },
+  "templateOSS": {
+    "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
+    "version": "4.27.1",
+    "publish": true
+  }
+}

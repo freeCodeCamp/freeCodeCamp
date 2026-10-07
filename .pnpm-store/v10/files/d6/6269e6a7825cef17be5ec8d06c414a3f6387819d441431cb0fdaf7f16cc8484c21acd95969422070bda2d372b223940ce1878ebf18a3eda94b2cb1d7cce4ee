@@ -1,0 +1,80 @@
+{
+  "name": "eslint-plugin-filenames-simple",
+  "version": "0.9.0",
+  "description": "An ESLint plugin to check filenames with simple configuration",
+  "keywords": [
+    "eslint",
+    "eslintPlugin",
+    "eslint-plugin",
+    "file",
+    "filename",
+    "simple"
+  ],
+  "homepage": "https://github.com/epaew/eslint-plugin-filenames-simple",
+  "repository": "git@github.com:epaew/eslint-plugin-filenames-simple",
+  "license": "MIT",
+  "author": "epaew <epaew.333@gmail.com>",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist/*",
+    "console": "ts-node",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint --fix .",
+    "link": "yarn link && yarn link eslint-plugin-filenames-simple",
+    "lint": "npm-run-all eslint prettier",
+    "lint:fix": "npm-run-all eslint:fix prettier:fix",
+    "unlink": "yarn unlink",
+    "prepack": "npm-run-all eslint test clean build",
+    "prepare": "npm-run-all clean build link",
+    "prettier": "prettier .",
+    "prettier:fix": "prettier --write .",
+    "test": "jest",
+    "test:ci": "jest --ci --coverage",
+    "test:coverage": "jest --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@epaew/prettier-config",
+  "resolutions": {
+    "eslint-plugin-filenames-simple": "file:."
+  },
+  "dependencies": {
+    "pluralize": "^8.0.0"
+  },
+  "devDependencies": {
+    "@epaew/eslint-config": "https://github.com/epaew/eslint-config.git#master",
+    "@epaew/prettier-config": "https://github.com/epaew/prettier-config.git#master",
+    "@types/eslint": "^8.44.0",
+    "@types/glob": "^8.0.0",
+    "@types/jest": "^29.2.0",
+    "@types/node": "^18.11.8",
+    "@types/pluralize": "^0.0.30",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "@typescript-eslint/utils": "^5.42.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-filenames-simple": "file:.",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "glob": "^8.0.3",
+    "jest": "^29.2.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.0.0 <9.0.0"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  }
+}

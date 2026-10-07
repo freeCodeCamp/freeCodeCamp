@@ -1,0 +1,69 @@
+{
+  "name": "ws",
+  "version": "8.18.3",
+  "description": "Simple to use, blazing fast and thoroughly tested websocket client and server for Node.js",
+  "keywords": [
+    "HyBi",
+    "Push",
+    "RFC-6455",
+    "WebSocket",
+    "WebSockets",
+    "real-time"
+  ],
+  "homepage": "https://github.com/websockets/ws",
+  "bugs": "https://github.com/websockets/ws/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/websockets/ws.git"
+  },
+  "author": "Einar Otto Stangvik <einaros@gmail.com> (http://2x.io)",
+  "license": "MIT",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "browser": "./browser.js",
+      "import": "./wrapper.mjs",
+      "require": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "browser": "browser.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "browser.js",
+    "index.js",
+    "lib/*.js",
+    "wrapper.mjs"
+  ],
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text mocha --throw-deprecation test/*.test.js",
+    "integration": "mocha --throw-deprecation test/*.integration.js",
+    "lint": "eslint . && prettier --check --ignore-path .gitignore \"**/*.{json,md,yaml,yml}\""
+  },
+  "peerDependencies": {
+    "bufferutil": "^4.0.1",
+    "utf-8-validate": ">=5.0.2"
+  },
+  "peerDependenciesMeta": {
+    "bufferutil": {
+      "optional": true
+    },
+    "utf-8-validate": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "bufferutil": "^4.0.1",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "globals": "^16.0.0",
+    "mocha": "^8.4.0",
+    "nyc": "^15.0.0",
+    "prettier": "^3.0.0",
+    "utf-8-validate": "^6.0.0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "hi-base32",
+  "version": "0.5.1",
+  "description": "A simple Base32 encode / decode function for JavaScript supports UTF-8 encoding.",
+  "main": "src/base32.js",
+  "types": "index.d.ts",
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "~2.3.4",
+    "nyc": "^11.3.0",
+    "uglify-js": "^3.1.9"
+  },
+  "scripts": {
+    "test": "nyc mocha tests/node-test.js",
+    "report": "nyc --reporter=html --reporter=text mocha tests/node-test.js",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "build": "uglifyjs src/base32.js -c -m --comments -o build/base32.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emn178/hi-base32.git"
+  },
+  "keywords": [
+    "base32",
+    "encode",
+    "decode"
+  ],
+  "license": "MIT",
+  "author": "Chen, Yi-Cyuan <emn178@gmail.com>",
+  "homepage": "https://github.com/emn178/hi-base32",
+  "bugs": {
+    "url": "https://github.com/emn178/hi-base32/issues"
+  },
+  "nyc": {
+    "exclude": [
+      "tests"
+    ]
+  }
+}

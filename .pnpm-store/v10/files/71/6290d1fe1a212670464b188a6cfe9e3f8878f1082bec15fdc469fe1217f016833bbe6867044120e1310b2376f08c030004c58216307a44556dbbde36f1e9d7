@@ -1,0 +1,1 @@
+{"version":3,"file":"MetricRegistry.js","names":["internal","MetricRegistryTypeId","make"],"sources":["../../src/MetricRegistry.ts"],"sourcesContent":[null],"mappings":"AAAA;;;AAGA,OAAO,KAAKA,QAAQ,MAAM,+BAA+B;AAMzD;;;;AAIA,OAAO,MAAMC,oBAAoB,GAAkBD,QAAQ,CAACC,oBAAoB;AA8BhF;;;;AAIA,OAAO,MAAMC,IAAI,GAAgCF,QAAQ,CAACE,IAAI","ignoreList":[]}

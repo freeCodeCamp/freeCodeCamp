@@ -1,0 +1,7 @@
+components
+node_modules
+test
+.gitignore
+.travis.yml
+component.json
+coverage

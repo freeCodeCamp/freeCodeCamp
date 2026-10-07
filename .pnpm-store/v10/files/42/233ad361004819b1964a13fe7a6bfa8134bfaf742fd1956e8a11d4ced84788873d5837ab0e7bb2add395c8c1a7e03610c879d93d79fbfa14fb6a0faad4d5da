@@ -1,0 +1,2 @@
+import { RowProps } from "./types";
+export declare const Row: ({ className, children, orientation, ...rest }: RowProps) => JSX.Element;

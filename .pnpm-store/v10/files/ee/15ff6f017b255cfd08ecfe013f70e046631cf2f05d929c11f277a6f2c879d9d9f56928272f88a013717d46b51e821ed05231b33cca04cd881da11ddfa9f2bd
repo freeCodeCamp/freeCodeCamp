@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"strictNullChecks": true,
+		"types": [
+			"node"
+		],
+	},
+	"files": [
+		"./types.js",
+	],
+}

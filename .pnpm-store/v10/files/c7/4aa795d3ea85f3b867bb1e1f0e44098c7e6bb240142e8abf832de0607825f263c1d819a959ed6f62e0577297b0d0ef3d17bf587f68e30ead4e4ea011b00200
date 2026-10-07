@@ -1,0 +1,147 @@
+{
+  "name": "@pmmmwh/react-refresh-webpack-plugin",
+  "version": "0.5.17",
+  "description": "An **EXPERIMENTAL** Webpack plugin to enable \"Fast Refresh\" (also previously known as _Hot Reloading_) for React components.",
+  "keywords": [
+    "react",
+    "javascript",
+    "webpack",
+    "refresh",
+    "hmr",
+    "hotreload",
+    "livereload",
+    "live",
+    "edit",
+    "hot",
+    "reload"
+  ],
+  "homepage": "https://github.com/pmmmwh/react-refresh-webpack-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/pmmmwh/react-refresh-webpack-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmmmwh/react-refresh-webpack-plugin.git"
+  },
+  "license": "MIT",
+  "author": "Michael Mok",
+  "main": "lib/index.js",
+  "types": "types/lib/index.d.ts",
+  "files": [
+    "client",
+    "lib",
+    "loader",
+    "options",
+    "overlay",
+    "sockets",
+    "types"
+  ],
+  "scripts": {
+    "test": "run-s -c test:pre \"test:exec {@}\" test:post --",
+    "test:webpack-4": "cross-env WEBPACK_VERSION=4 yarn test",
+    "test:pre": "yarn add -D file:./",
+    "test:exec": "node scripts/test.js",
+    "test:post": "yarn remove @pmmmwh/react-refresh-webpack-plugin",
+    "lint": "eslint --report-unused-disable-directives --ext .js,.jsx .",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "types:clean": "rimraf types",
+    "types:compile": "tsc -p tsconfig.json",
+    "types:prune-private": "del \"types/*/*\" \"!types/{lib,loader,options}/{index,types}.d.ts\"",
+    "generate-types": "run-s types:clean types:compile types:prune-private \"format --loglevel silent\"",
+    "prepublishOnly": "yarn generate-types"
+  },
+  "dependencies": {
+    "ansi-html": "^0.0.9",
+    "core-js-pure": "^3.23.3",
+    "error-stack-parser": "^2.0.6",
+    "html-entities": "^2.1.0",
+    "loader-utils": "^2.0.4",
+    "schema-utils": "^4.2.0",
+    "source-map": "^0.7.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.14.0",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^29.5.12",
+    "@types/json-schema": "^7.0.6",
+    "@types/module-alias": "^2.0.0",
+    "@types/node": "^20.5.0",
+    "@types/semver": "^7.3.9",
+    "@types/webpack": "^5.28.0",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.3",
+    "cross-spawn": "^7.0.5",
+    "del-cli": "^5.1.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "fs-extra": "^11.2.0",
+    "get-port": "^5.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "jest-location-mock": "^2.0.0",
+    "module-alias": "^2.2.2",
+    "nanoid": "^3.3.8",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.3.0",
+    "puppeteer": "^22.10.0",
+    "react-refresh": "^0.14.0",
+    "semver": "^7.5.2",
+    "sourcemap-validator": "^2.1.0",
+    "type-fest": "^4.0.0",
+    "typescript": "~5.4.5",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-cli-v4": "npm:webpack-cli@4.x",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-dev-server-v3": "npm:webpack-dev-server@3.x",
+    "webpack-dev-server-v4": "npm:webpack-dev-server@4.x",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-plugin-serve": "^1.4.1",
+    "webpack-v4": "npm:webpack@4.x",
+    "yn": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@types/webpack": "4.x || 5.x",
+    "react-refresh": ">=0.10.0 <1.0.0",
+    "sockjs-client": "^1.4.0",
+    "type-fest": ">=0.17.0 <5.0.0",
+    "webpack": ">=4.43.0 <6.0.0",
+    "webpack-dev-server": "3.x || 4.x || 5.x",
+    "webpack-hot-middleware": "2.x",
+    "webpack-plugin-serve": "0.x || 1.x"
+  },
+  "peerDependenciesMeta": {
+    "@types/webpack": {
+      "optional": true
+    },
+    "sockjs-client": {
+      "optional": true
+    },
+    "type-fest": {
+      "optional": true
+    },
+    "webpack-dev-server": {
+      "optional": true
+    },
+    "webpack-hot-middleware": {
+      "optional": true
+    },
+    "webpack-plugin-serve": {
+      "optional": true
+    }
+  },
+  "resolutions": {
+    "type-fest": "^4.0.0"
+  },
+  "engines": {
+    "node": ">= 10.13"
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}

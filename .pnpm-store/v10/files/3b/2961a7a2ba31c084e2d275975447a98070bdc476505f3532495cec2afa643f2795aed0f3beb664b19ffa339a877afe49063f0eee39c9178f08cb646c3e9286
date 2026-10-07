@@ -1,0 +1,9 @@
+[submodule "test/spec"]
+	path = test/spec
+	url = https://github.com/mustache/spec.git
+[submodule "test/qunit-logging"]
+	path = test/qunit-logging
+	url = git://github.com/keithamus/qunit-logging.git
+[submodule "test/qunit"]
+	path = test/qunit
+	url = git://github.com/jquery/qunit.git

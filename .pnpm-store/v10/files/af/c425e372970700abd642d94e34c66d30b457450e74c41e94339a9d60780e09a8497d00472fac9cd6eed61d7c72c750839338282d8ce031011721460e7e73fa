@@ -1,0 +1,2 @@
+export declare const createAsyncIife: (code: string) => string;
+//# sourceMappingURL=async-iife.d.ts.map

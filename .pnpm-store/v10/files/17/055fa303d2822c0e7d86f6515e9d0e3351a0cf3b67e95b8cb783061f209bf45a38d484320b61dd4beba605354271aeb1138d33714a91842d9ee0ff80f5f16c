@@ -1,0 +1,8 @@
+{
+  "name": "cross-fetch-polyfill",
+  "version": "0.0.0",
+  "main": "../dist/node-polyfill.js",
+  "browser": "../dist/browser-polyfill.js",
+  "react-native": "../dist/react-native-polyfill.js",
+  "license": "MIT"
+}

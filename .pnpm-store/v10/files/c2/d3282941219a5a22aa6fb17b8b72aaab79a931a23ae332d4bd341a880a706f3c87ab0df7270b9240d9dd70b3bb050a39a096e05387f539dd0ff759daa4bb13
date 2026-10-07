@@ -1,0 +1,77 @@
+{
+  "name": "unist-util-stringify-position",
+  "version": "1.1.2",
+  "description": "Stringify a Unist node, position, or point",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "position",
+    "location",
+    "point",
+    "node",
+    "stringify",
+    "tostring",
+    "util",
+    "utility"
+  ],
+  "repository": "syntax-tree/unist-util-stringify-position",
+  "bugs": "https://github.com/syntax-tree/unist-util-stringify-position/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "esmangle": "^1.0.0",
+    "nyc": "^11.0.0",
+    "prettier": "^1.12.1",
+    "remark-cli": "^5.0.0",
+    "remark-preset-wooorm": "^4.0.0",
+    "tape": "^4.5.1",
+    "xo": "^0.20.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "build-bundle": "browserify index.js --no-builtins -s unistUtilStringifyPosition > unist-util-stringify-position.js",
+    "build-mangle": "esmangle unist-util-stringify-position.js > unist-util-stringify-position.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "guard-for-in": "off",
+      "no-var": "off",
+      "prefer-arrow-callback": "off"
+    },
+    "ignores": [
+      "unist-util-stringify-position.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

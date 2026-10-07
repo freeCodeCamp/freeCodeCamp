@@ -1,0 +1,21 @@
+{
+extends: "eslint:recommended",
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6" : true,
+    "mocha": true
+  },
+  "rules": {
+    "indent": [2, 4],
+    "brace-style": [2, "1tbs"],
+    "quotes": [2, "single"],
+    "no-console": 0,
+    "no-shadow": 0,
+    "no-use-before-define": [2, "nofunc"],
+    "no-underscore-dangle": 0,
+    "no-constant-condition": 0,
+    "space-after-function-name": 0,
+   "consistent-return": 0
+  }
+}

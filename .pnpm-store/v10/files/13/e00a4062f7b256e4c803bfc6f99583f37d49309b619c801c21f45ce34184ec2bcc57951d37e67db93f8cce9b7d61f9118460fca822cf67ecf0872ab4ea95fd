@@ -1,0 +1,69 @@
+{
+  "name": "@cacheable/memory",
+  "version": "2.0.8",
+  "description": "High Performance In-Memory Cache for Node.js",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredwray/cacheable.git",
+    "directory": "packages/cacheable"
+  },
+  "author": "Jared Wray <me@jaredwray.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@faker-js/faker": "^10.3.0",
+    "@types/node": "^25.3.0",
+    "rimraf": "^6.1.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@keyv/bigmap": "^1.3.1",
+    "hookified": "^1.15.1",
+    "keyv": "^5.6.0",
+    "@cacheable/utils": "^2.4.0"
+  },
+  "keywords": [
+    "cacheable",
+    "high performance",
+    "distributed caching",
+    "Keyv storage engine",
+    "keyv",
+    "memory caching",
+    "LRU cache",
+    "memory",
+    "in-memory",
+    "scalable cache",
+    "in-memory cache",
+    "lruSize",
+    "lru"
+  ],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && tsup src/index.ts --format cjs,esm --dts --clean",
+    "prepublish": "pnpm build",
+    "lint": "biome check --write --error-on-warnings",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:ci": "biome check --error-on-warnings && vitest run --coverage",
+    "clean": "rimraf ./dist ./coverage ./node_modules"
+  }
+}

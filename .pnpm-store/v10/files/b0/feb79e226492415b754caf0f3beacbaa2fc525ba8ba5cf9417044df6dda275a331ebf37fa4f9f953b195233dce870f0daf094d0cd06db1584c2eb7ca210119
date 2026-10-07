@@ -1,0 +1,34 @@
+{
+  "name": "@pnpm/network.ca-file",
+  "version": "1.0.2",
+  "homepage": "https://bit.dev/pnpm/network/ca-file",
+  "main": "dist/index.js",
+  "componentId": {
+    "scope": "pnpm.network",
+    "name": "ca-file",
+    "version": "1.0.2"
+  },
+  "dependencies": {
+    "graceful-fs": "4.2.10"
+  },
+  "devDependencies": {
+    "@types/graceful-fs": "4.1.5",
+    "@babel/runtime": "7.20.0",
+    "@types/node": "12.20.4",
+    "@types/jest": "26.0.20"
+  },
+  "peerDependencies": {},
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=12.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnpm/components"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

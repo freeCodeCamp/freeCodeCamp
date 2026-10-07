@@ -1,0 +1,61 @@
+.TH MDB_COPY 1 "2017/07/31" "LMDB 0.9.70"
+.\" Copyright 2012-2020 Howard Chu, Symas Corp. All Rights Reserved.
+.\" Copying restrictions apply.  See COPYRIGHT/LICENSE.
+.SH NAME
+mdb_copy \- LMDB environment copy tool
+.SH SYNOPSIS
+.B mdb_copy
+[\c
+.BR \-V ]
+[\c
+.BR \-c ]
+[\c
+.BR \-n ]
+[\c
+.BR \-v ]
+.B srcpath
+[\c
+.BR dstpath ]
+.SH DESCRIPTION
+The
+.B mdb_copy
+utility copies an LMDB environment. The environment can
+be copied regardless of whether it is currently in use.
+No lockfile is created, since it gets recreated at need.
+
+If
+.I dstpath
+is specified it must be the path of an empty directory
+for storing the backup. Otherwise, the backup will be
+written to stdout.
+
+.SH OPTIONS
+.TP
+.BR \-V
+Write the library version number to the standard output, and exit.
+.TP
+.BR \-c
+Compact while copying. Only current data pages will be copied; freed
+or unused pages will be omitted from the copy. This option will
+slow down the backup process as it is more CPU-intensive.
+Currently it fails if the environment has suffered a page leak.
+.TP
+.BR \-n
+Open LDMB environment(s) which do not use subdirectories.
+.TP
+.BR \-v
+Use the previous environment state instead of the latest state.
+This may be useful if the latest state has been corrupted.
+
+.SH DIAGNOSTICS
+Exit status is zero if no errors occur.
+Errors result in a non-zero exit status and
+a diagnostic message being written to standard error.
+.SH CAVEATS
+This utility can trigger significant file size growth if run
+in parallel with write transactions, because pages which they
+free during copying cannot be reused until the copy is done.
+.SH "SEE ALSO"
+.BR mdb_stat (1)
+.SH AUTHOR
+Howard Chu of Symas Corporation <http://www.symas.com>

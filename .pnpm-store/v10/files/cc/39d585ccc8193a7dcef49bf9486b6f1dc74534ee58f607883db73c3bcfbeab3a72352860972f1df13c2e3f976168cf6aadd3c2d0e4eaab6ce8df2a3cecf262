@@ -1,0 +1,1 @@
+{"version":3,"file":"publishLast.js","sources":["../../src/internal/operators/publishLast.ts"],"names":[],"mappings":";;AACA,gDAA+C;AAC/C,yCAAwC;AA8DxC,SAAgB,WAAW;IACzB,OAAO,UAAC,MAAqB,IAAK,OAAA,qBAAS,CAAC,IAAI,2BAAY,EAAK,CAAC,CAAC,MAAM,CAAC,EAAxC,CAAwC,CAAC;AAC7E,CAAC;AAFD,kCAEC"}

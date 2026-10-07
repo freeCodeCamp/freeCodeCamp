@@ -1,0 +1,65 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .lightBulbWidget {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.monaco-editor .lightBulbWidget:hover{
+	cursor: pointer;
+}
+
+.monaco-editor .lightBulbWidget.codicon-light-bulb,
+.monaco-editor .lightBulbWidget.codicon-lightbulb-sparkle {
+	color: var(--vscode-editorLightBulb-foreground);
+}
+
+.monaco-editor .lightBulbWidget.codicon-lightbulb-autofix,
+.monaco-editor .lightBulbWidget.codicon-lightbulb-sparkle-autofix {
+	color: var(--vscode-editorLightBulbAutoFix-foreground, var(--vscode-editorLightBulb-foreground));
+}
+
+.monaco-editor .lightBulbWidget.codicon-sparkle-filled {
+	color: var(--vscode-editorLightBulbAi-foreground, var(--vscode-icon-foreground));
+}
+
+.monaco-editor .lightBulbWidget:before {
+	position: relative;
+	z-index: 2;
+}
+
+.monaco-editor .lightBulbWidget:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	z-index: 1;
+}
+
+/* gutter decoration */
+.monaco-editor .glyph-margin-widgets .cgmr[class*="codicon-gutter-lightbulb"] {
+	display: block;
+	cursor: pointer;
+}
+
+.monaco-editor .glyph-margin-widgets .cgmr.codicon-gutter-lightbulb,
+.monaco-editor .glyph-margin-widgets .cgmr.codicon-gutter-lightbulb-sparkle {
+	color: var(--vscode-editorLightBulb-foreground);
+}
+
+.monaco-editor .glyph-margin-widgets .cgmr.codicon-gutter-lightbulb-auto-fix,
+.monaco-editor .glyph-margin-widgets .cgmr.codicon-gutter-lightbulb-aifix-auto-fix {
+	color: var(--vscode-editorLightBulbAutoFix-foreground, var(--vscode-editorLightBulb-foreground));
+}
+
+.monaco-editor .glyph-margin-widgets .cgmr.codicon-gutter-lightbulb-sparkle-filled {
+	color: var(--vscode-editorLightBulbAi-foreground, var(--vscode-icon-foreground));
+}

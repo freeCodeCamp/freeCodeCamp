@@ -1,0 +1,25 @@
+{
+    "name": "@sideway/pinpoint",
+    "description": "Return the filename and line number of the calling function",
+    "version": "2.0.0",
+    "repository": "git://github.com/sideway/pinpoint",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib"
+    ],
+    "keywords": [
+        "utilities"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+        "typescript": "4.0.x",
+        "@hapi/code": "8.x.x",
+        "@hapi/lab": "24.x.x"
+    },
+    "scripts": {
+        "test": "lab -a @hapi/code -t 100 -L -Y",
+        "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html"
+    },
+    "license": "BSD-3-Clause"
+}

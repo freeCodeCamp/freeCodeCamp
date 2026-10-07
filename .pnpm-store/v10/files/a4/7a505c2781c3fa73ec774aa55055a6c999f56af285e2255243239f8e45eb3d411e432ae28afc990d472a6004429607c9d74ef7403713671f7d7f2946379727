@@ -1,0 +1,18 @@
+[
+  {
+    "name": "html",
+    "description": "Outputs results to HTML. The `html` formatter is useful for visual presentation in the browser."
+  },
+  {
+    "name": "json-with-metadata",
+    "description": "Outputs JSON-serialized results. The `json-with-metadata` provides the same linting results as the [`json`](#json) formatter with additional metadata about the rules applied. The linting results are included in the `results` property and the rules metadata is included in the `metadata` property.\n\nAlternatively, you can use the [ESLint Node.js API](../../integrate/nodejs-api) to programmatically use ESLint."
+  },
+  {
+    "name": "json",
+    "description": "Outputs JSON-serialized results. The `json` formatter is useful when you want to programmatically work with the CLI's linting results.\n\nAlternatively, you can use the [ESLint Node.js API](../../integrate/nodejs-api) to programmatically use ESLint."
+  },
+  {
+    "name": "stylish",
+    "description": "Human-readable output format. This is the default formatter."
+  }
+]

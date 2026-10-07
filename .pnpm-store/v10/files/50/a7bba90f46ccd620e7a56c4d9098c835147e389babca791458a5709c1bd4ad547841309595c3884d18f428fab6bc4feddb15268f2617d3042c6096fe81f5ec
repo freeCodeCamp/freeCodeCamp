@@ -1,0 +1,24 @@
+{
+  "name": "@webassemblyjs/floating-point-hex-parser",
+  "scripts": {
+    "build-fuzzer": "[ -f ./test/fuzzing/parse.out ] || gcc ./test/fuzzing/parse.c -o ./test/fuzzing/parse.out -lm -Wall"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xtuc/webassemblyjs.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.13.2",
+  "description": "A function to parse floating point hexadecimal strings as defined by the WebAssembly specification",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "keywords": [
+    "webassembly",
+    "floating-point"
+  ],
+  "author": "Mauro Bringolf",
+  "license": "MIT",
+  "gitHead": "897aeb784f042a46a00626f1d1cca96159aa5db3"
+}

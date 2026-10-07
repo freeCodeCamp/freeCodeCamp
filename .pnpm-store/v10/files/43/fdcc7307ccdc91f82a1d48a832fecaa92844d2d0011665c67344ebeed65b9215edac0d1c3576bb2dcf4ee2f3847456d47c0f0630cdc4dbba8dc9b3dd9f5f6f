@@ -1,0 +1,20 @@
+{
+  "name": "@esbuild/linux-x64",
+  "version": "0.27.7",
+  "description": "The Linux 64-bit binary for esbuild, a JavaScript bundler.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanw/esbuild.git"
+  },
+  "license": "MIT",
+  "preferUnplugged": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ]
+}

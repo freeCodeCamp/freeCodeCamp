@@ -1,0 +1,51 @@
+{
+  "name": "tree-kill",
+  "version": "1.2.2",
+  "description": "kill trees of processes",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "bin": {
+    "tree-kill": "cli.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pkrumins/node-tree-kill.git"
+  },
+  "homepage": "https://github.com/pkrumins/node-tree-kill",
+  "keywords": [
+    "tree",
+    "trees",
+    "process",
+    "processes",
+    "kill",
+    "signal"
+  ],
+  "author": {
+    "name": "Peteris Krumins",
+    "email": "peteris.krumins@gmail.com",
+    "url": "http://www.catonmat.net"
+  },
+  "contributors": [
+    {
+      "name": "Todd Wolfson",
+      "email": "todd@twolfson.com",
+      "url": "http://twolfson.com/"
+    },
+    {
+      "name": "William Hilton",
+      "email": "wmhilton@gmail.com",
+      "url": "http://wmhilton.com/"
+    },
+    {
+      "name": "Fabrício Matté",
+      "url": "http://ultcombo.js.org/"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}

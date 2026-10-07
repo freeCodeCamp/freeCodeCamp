@@ -1,0 +1,80 @@
+{
+  "name": "core-js-pure",
+  "version": "3.48.0",
+  "type": "commonjs",
+  "description": "Standard library",
+  "keywords": [
+    "ES3",
+    "ES5",
+    "ES6",
+    "ES7",
+    "ES2015",
+    "ES2016",
+    "ES2017",
+    "ES2018",
+    "ES2019",
+    "ES2020",
+    "ES2021",
+    "ES2022",
+    "ES2023",
+    "ES2024",
+    "ECMAScript 3",
+    "ECMAScript 5",
+    "ECMAScript 6",
+    "ECMAScript 7",
+    "ECMAScript 2015",
+    "ECMAScript 2016",
+    "ECMAScript 2017",
+    "ECMAScript 2018",
+    "ECMAScript 2019",
+    "ECMAScript 2020",
+    "ECMAScript 2021",
+    "ECMAScript 2022",
+    "ECMAScript 2023",
+    "ECMAScript 2024",
+    "Map",
+    "Set",
+    "WeakMap",
+    "WeakSet",
+    "TypedArray",
+    "Promise",
+    "Observable",
+    "Symbol",
+    "Iterator",
+    "AsyncIterator",
+    "URL",
+    "URLSearchParams",
+    "queueMicrotask",
+    "setImmediate",
+    "structuredClone",
+    "polyfill",
+    "ponyfill",
+    "shim"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zloirock/core-js.git",
+    "directory": "packages/core-js-pure"
+  },
+  "homepage": "https://core-js.io",
+  "bugs": {
+    "url": "https://github.com/zloirock/core-js/issues"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/core-js"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Denis Pushkarev",
+    "email": "zloirock@zloirock.ru",
+    "url": "http://zloirock.ru"
+  },
+  "sideEffects": [
+    "./modules/*.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+  }
+}

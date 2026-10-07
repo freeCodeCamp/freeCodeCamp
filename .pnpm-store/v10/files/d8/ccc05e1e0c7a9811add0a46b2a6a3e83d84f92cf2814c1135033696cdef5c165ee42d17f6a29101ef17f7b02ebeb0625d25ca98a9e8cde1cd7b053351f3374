@@ -1,0 +1,39 @@
+{
+  "name": "tapable",
+  "version": "1.1.3",
+  "author": "Tobias Koppers @sokra",
+  "description": "Just a little module for plugins.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/webpack/tapable.git"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.0.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "codecov": "^2.3.0",
+    "jest": "^21.0.4",
+    "prettier": "^1.13.2"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "lib",
+    "!lib/__tests__"
+  ],
+  "homepage": "https://github.com/webpack/tapable",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "travis": "jest --coverage && codecov",
+    "pretty": "prettier --write lib/*.js lib/__tests__/*.js"
+  },
+  "jest": {
+    "transform": {
+      "__tests__[\\\\/].+\\.js$": "babel-jest"
+    }
+  }
+}

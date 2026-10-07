@@ -1,0 +1,43 @@
+{
+  "name": "content-disposition",
+  "description": "Create and parse Content-Disposition header",
+  "version": "1.0.1",
+  "author": "Douglas Christopher Wilson <doug@somethingdoug.com>",
+  "license": "MIT",
+  "keywords": [
+    "content-disposition",
+    "http",
+    "rfc6266",
+    "res"
+  ],
+  "repository": "jshttp/content-disposition",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/express"
+  },
+  "devDependencies": {
+    "c8": "^10.1.2",
+    "eslint": "7.32.0",
+    "eslint-config-standard": "13.0.1",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-markdown": "2.2.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.2.0",
+    "eslint-plugin-standard": "4.1.0"
+  },
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "README.md",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "node --test --test-reporter spec",
+    "test-ci": "c8 --reporter=lcovonly --reporter=text npm test",
+    "test-cov": "c8 --reporter=html --reporter=text npm test"
+  }
+}

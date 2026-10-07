@@ -1,0 +1,47 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+.monaco-editor .inlineSuggestionsHints {
+	padding: 4px;
+
+	.warningMessage p {
+		margin: 0;
+	}
+}
+
+.monaco-editor .inlineSuggestionsHints.withBorder {
+	z-index: 39;
+	color: var(--vscode-editorHoverWidget-foreground);
+	background-color: var(--vscode-editorHoverWidget-background);
+	border: 1px solid var(--vscode-editorHoverWidget-border);
+}
+
+.monaco-editor .inlineSuggestionsHints a {
+	color: var(--vscode-foreground) !important;
+}
+
+.monaco-editor .inlineSuggestionsHints a:hover {
+	color: var(--vscode-foreground) !important;
+}
+
+.monaco-editor .inlineSuggestionsHints .keybinding {
+	display: flex;
+	margin-left: 4px;
+	opacity: 0.6;
+}
+
+.monaco-editor .inlineSuggestionsHints .keybinding .monaco-keybinding-key {
+	font-size: 8px;
+	padding: 2px 3px;
+}
+
+.monaco-editor .inlineSuggestionsHints .availableSuggestionCount a {
+	display: flex;
+	min-width: 19px;
+	justify-content: center;
+}
+
+.monaco-editor .inlineSuggestionStatusBarItemLabel {
+	margin-right: 2px;
+}

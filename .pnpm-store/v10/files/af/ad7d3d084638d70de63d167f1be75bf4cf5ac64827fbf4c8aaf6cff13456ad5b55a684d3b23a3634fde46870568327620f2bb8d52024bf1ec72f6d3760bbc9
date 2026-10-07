@@ -1,0 +1,46 @@
+{
+  "name": "svg-tags",
+  "version": "1.0.0",
+  "description": "List of standard SVG tags.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "kgryte@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "./node_modules/.bin/mocha",
+    "test-cov": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coveralls/coverage --report lcovonly -- -R spec && cat ./reports/coveralls/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./reports/coveralls"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/element-io/svg-tags.git"
+  },
+  "keywords": [
+    "svg",
+    "tags",
+    "w3c"
+  ],
+  "bugs": {
+    "url": "https://github.com/element-io/svg-tags/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "1.x.x",
+    "coveralls": "^2.11.1",
+    "istanbul": "^0.3.0",
+    "mocha": "1.x.x"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ]
+}

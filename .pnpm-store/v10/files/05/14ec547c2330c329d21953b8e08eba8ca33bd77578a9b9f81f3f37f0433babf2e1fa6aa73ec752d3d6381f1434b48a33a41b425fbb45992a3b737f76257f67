@@ -1,0 +1,2 @@
+export declare const assignNativeAudioNodeOption: <T extends keyof any, U extends unknown>(nativeAudioNode: Record<T, U>, options: Record<T, U>, option: T) => void;
+//# sourceMappingURL=assign-native-audio-node-option.d.ts.map

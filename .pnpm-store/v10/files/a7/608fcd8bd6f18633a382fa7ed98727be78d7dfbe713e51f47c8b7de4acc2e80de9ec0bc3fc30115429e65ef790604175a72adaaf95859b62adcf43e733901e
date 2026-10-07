@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/remove",
+  "private": true,
+  "main": "../cjs/remove.js",
+  "module": "../esm/remove.js",
+  "types": "../esm/remove.d.ts"
+}

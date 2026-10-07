@@ -1,0 +1,28 @@
+{
+  "name": "cssnano-utils",
+  "version": "3.1.0",
+  "repository": "cssnano/cssnano",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "description": "Utility methods and plugin for cssnano projects",
+  "homepage": "https://github.com/cssnano/cssnano",
+  "bugs": {
+    "url": "https://github.com/cssnano/cssnano/issues"
+  },
+  "engines": {
+    "node": "^10 || ^12 || >=14.0"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "types"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.15"
+  },
+  "readme": "# cssnano-utils\n\nUtility methods and plugin for cssnano projects\n\n## List of methods and plugin(s)\n\n| **utility methods** | **description**                                                           |\n| ------------------- | ------------------------------------------------------------------------- |\n| `rawCache`          | Postcss plugin to manage the raw value formatting for generated AST nodes |\n| `getArguments`      | Get a list of arguments, separated by a comma.                            |\n| `sameParent`        | Check that two PostCSS nodes share the same parent.                       |\n\n## Contributors\n\nSee [CONTRIBUTORS.md](https://github.com/cssnano/cssnano/blob/master/CONTRIBUTORS.md).\n"
+}

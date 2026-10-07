@@ -1,0 +1,9 @@
+{
+  "extends": "fastify-tsconfig",
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true
+  },
+  "exclude": ["./node_modules", "types/**/*.test-d.mts"]
+}

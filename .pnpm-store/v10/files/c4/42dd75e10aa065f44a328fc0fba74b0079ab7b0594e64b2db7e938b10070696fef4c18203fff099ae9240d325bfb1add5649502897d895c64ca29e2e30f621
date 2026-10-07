@@ -1,0 +1,790 @@
+import { _ as _$6 } from '@swc/helpers/esm/_define_property.js';
+import { _ } from '@swc/helpers/esm/_object_spread.js';
+import { _ as _$2 } from '@swc/helpers/esm/_object_spread_props.js';
+import { _ as _$3 } from '@swc/helpers/esm/_object_without_properties.js';
+import { _ as _$4 } from '@swc/helpers/esm/_sliced_to_array.js';
+import { _ as _$1 } from '@swc/helpers/esm/_to_consumable_array.js';
+import { _ as _$5 } from '@swc/helpers/esm/_type_of.js';
+import { createAutocompleteComponent, createAutocompletePanelComponent, createAutocompleteIndexComponent, createAutocompleteSuggestionComponent, createAutocompletePromptSuggestionComponent, createAutocompleteSearchComponent, createAutocompleteRecentSearchComponent, createAutocompleteDetachedContainerComponent, createAutocompleteDetachedOverlayComponent, createAutocompleteDetachedFormContainerComponent, createAutocompleteDetachedSearchButtonComponent, createAutocompletePropGetters, createAutocompleteStorage, cx, getPromptSuggestionHits, isPromptSuggestion } from 'instantsearch-ui-components';
+import { h, Fragment, render } from 'preact';
+import { useEffect, useId, useMemo, useRef, useState } from 'preact/hooks';
+import Template from '../../components/Template/Template.js';
+import { component } from '../../lib/suit.js';
+import configure from '../configure/configure.js';
+import index from '../index/index.js';
+import connectAutocomplete from '../../connectors/autocomplete/connectAutocomplete.js';
+import connectSearchBox from '../../connectors/search-box/connectSearchBox.js';
+import { createDocumentationMessageGenerator } from '../../lib/utils/documentation.js';
+import { getContainerNode } from '../../lib/utils/getContainerNode.js';
+import { ReverseHighlight } from '../../helpers/components/ReverseHighlight.js';
+import { Highlight } from '../../helpers/components/Highlight.js';
+import { walkIndex } from '../../lib/utils/walkIndex.js';
+import { prepareTemplateProps } from '../../lib/templating/prepareTemplateProps.js';
+import { find } from '../../lib/utils/find.js';
+
+var autocompleteInstanceId = 0;
+var withUsage = createDocumentationMessageGenerator({
+    name: 'autocomplete'
+});
+var suit = component('Autocomplete');
+var Autocomplete = createAutocompleteComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompletePanel = createAutocompletePanelComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompleteIndex = createAutocompleteIndexComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompleteSuggestion = createAutocompleteSuggestionComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompletePromptSuggestion = createAutocompletePromptSuggestionComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompleteSearchBox = createAutocompleteSearchComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompleteRecentSearch = createAutocompleteRecentSearchComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompleteDetachedContainer = createAutocompleteDetachedContainerComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompleteDetachedOverlay = createAutocompleteDetachedOverlayComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompleteDetachedFormContainer = createAutocompleteDetachedFormContainerComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var AutocompleteDetachedSearchButton = createAutocompleteDetachedSearchButtonComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+var usePropGetters = createAutocompletePropGetters({
+    useEffect: useEffect,
+    useId: useId,
+    useMemo: useMemo,
+    useRef: useRef,
+    useState: useState
+});
+var useStorage = createAutocompleteStorage({
+    useEffect: useEffect,
+    useState: useState,
+    useMemo: useMemo
+});
+var DEFAULT_DETACHED_MEDIA_QUERY = '(max-width: 680px)';
+var DEFAULT_DETACHED_MODAL_MEDIA_QUERY = '(min-width: 680px)';
+var DETACHED_MEDIA_QUERY_CSS_VAR = '--ais-autocomplete-detached-media-query';
+var DETACHED_MODAL_MEDIA_QUERY_CSS_VAR = '--ais-autocomplete-detached-modal-media-query';
+var DEFAULT_TRANSLATIONS = {
+    detachedCancelButtonText: 'Cancel',
+    detachedSearchButtonTitle: 'Search',
+    detachedClearButtonTitle: 'Clear'
+};
+function getCssMediaQueryValue(name) {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+        return '';
+    }
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+function resolveMediaQuery(value, cssVarName, fallback) {
+    if (value === '') {
+        return '';
+    }
+    if (value) {
+        return value;
+    }
+    return getCssMediaQueryValue(cssVarName) || fallback;
+}
+function getMediaQueryList(mediaQuery) {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+        return null;
+    }
+    return window.matchMedia(mediaQuery);
+}
+var createRenderer = function createRenderer(params) {
+    var instanceId = params.instanceId, containerNode = params.containerNode, rendererParams = _$3(params, [
+        "instanceId",
+        "containerNode"
+    ]);
+    return function(connectorParams, isFirstRendering) {
+        if (isFirstRendering) {
+            var _ref;
+            var _targetIndex_getHelper;
+            var showRecentObj = rendererParams.showRecent;
+            var isolatedIndex = connectorParams.instantSearchInstance.mainIndex;
+            var targetIndex = connectorParams.instantSearchInstance.mainIndex;
+            walkIndex(targetIndex, function(childIndex) {
+                if (childIndex.getIndexId() === "ais-autocomplete-".concat(instanceId)) {
+                    isolatedIndex = childIndex;
+                    targetIndex = childIndex.parent;
+                }
+            });
+            var RecentSearchComponent = function RecentSearchComponent(param) {
+                var item = param.item, onSelect = param.onSelect, onApply = param.onApply, onRemoveRecentSearch = param.onRemoveRecentSearch;
+                return /*#__PURE__*/ h(AutocompleteRecentSearch, {
+                    item: item,
+                    onSelect: onSelect,
+                    onApply: onApply,
+                    onRemoveRecentSearch: onRemoveRecentSearch
+                }, /*#__PURE__*/ h(ConditionalReverseHighlight, {
+                    item: item
+                }));
+            };
+            var recentSearchHeaderComponent = undefined;
+            if (showRecentObj && showRecentObj.templates) {
+                var recentTemplateProps = prepareTemplateProps({
+                    defaultTemplates: {},
+                    templatesConfig: connectorParams.instantSearchInstance.templatesConfig,
+                    templates: showRecentObj.templates
+                });
+                if (showRecentObj.templates.item) {
+                    RecentSearchComponent = function RecentSearchComponent(param) {
+                        var item = param.item, onSelect = param.onSelect, onRemoveRecentSearch = param.onRemoveRecentSearch;
+                        return /*#__PURE__*/ h(Template, _$2(_({}, recentTemplateProps), {
+                            templateKey: "item",
+                            rootTagName: "fragment",
+                            data: {
+                                item: item,
+                                onSelect: onSelect,
+                                onRemoveRecentSearch: onRemoveRecentSearch
+                            }
+                        }));
+                    };
+                }
+                if (showRecentObj.templates.header) {
+                    recentSearchHeaderComponent = function recentSearchHeaderComponent(param) {
+                        var items = param.items;
+                        return /*#__PURE__*/ h(Template, _$2(_({}, recentTemplateProps), {
+                            templateKey: "header",
+                            rootTagName: "fragment",
+                            data: {
+                                items: items
+                            }
+                        }));
+                    };
+                }
+            }
+            rendererParams.renderState = {
+                indexTemplateProps: [],
+                isolatedIndex: isolatedIndex,
+                targetIndex: targetIndex,
+                templateProps: prepareTemplateProps({
+                    defaultTemplates: {},
+                    templatesConfig: connectorParams.instantSearchInstance.templatesConfig,
+                    templates: rendererParams.templates
+                }),
+                RecentSearchComponent: RecentSearchComponent,
+                recentSearchHeaderComponent: recentSearchHeaderComponent,
+                hasWarnedMissingPromptSuggestionsChat: false
+            };
+            connectorParams.refine((_ref = (_targetIndex_getHelper = targetIndex.getHelper()) === null || _targetIndex_getHelper === void 0 ? void 0 : _targetIndex_getHelper.state.query) !== null && _ref !== void 0 ? _ref : '');
+            return;
+        }
+        render(/*#__PURE__*/ h(AutocompleteWrapper, _({}, rendererParams, connectorParams)), containerNode);
+    };
+};
+function AutocompleteWrapper(param) {
+    var indicesConfig = param.indicesConfig, indices = param.indices, getSearchPageURL = param.getSearchPageURL, userOnSelect = param.onSelect, refineAutocomplete = param.refine, cssClasses = param.cssClasses, renderState = param.renderState, instantSearchInstance = param.instantSearchInstance, showRecent = param.showRecent, showQuerySuggestions = param.showQuerySuggestions, showPromptSuggestions = param.showPromptSuggestions, templates = param.templates, placeholder = param.placeholder, autofocus = param.autofocus, detachedMediaQuery = param.detachedMediaQuery, translations = param.translations, aiMode = param.aiMode;
+    var _ref, _ref1;
+    var _isolatedIndex_getHelper, _targetIndex_getHelper, _getMediaQueryList, _showPromptSuggestions_searchParameters, _showRecentObj_cssClasses, _showRecentObj_cssClasses1, _showRecentObj_cssClasses2, _showRecentObj_cssClasses3;
+    var isolatedIndex = renderState.isolatedIndex, targetIndex = renderState.targetIndex;
+    var searchboxQuery = isolatedIndex === null || isolatedIndex === void 0 ? void 0 : (_isolatedIndex_getHelper = isolatedIndex.getHelper()) === null || _isolatedIndex_getHelper === void 0 ? void 0 : _isolatedIndex_getHelper.state.query;
+    var targetIndexQuery = targetIndex === null || targetIndex === void 0 ? void 0 : (_targetIndex_getHelper = targetIndex.getHelper()) === null || _targetIndex_getHelper === void 0 ? void 0 : _targetIndex_getHelper.state.query;
+    var _useState = _$4(useState(searchboxQuery !== undefined ? searchboxQuery : targetIndexQuery !== null && targetIndexQuery !== void 0 ? targetIndexQuery : ''), 2), localQuery = _useState[0], setLocalQuery = _useState[1];
+    useEffect(function() {
+        // When the isolated index has a defined query (including ''), use it.
+        // Only fall back to the target index query when not yet set (undefined).
+        var query = searchboxQuery !== undefined ? searchboxQuery : targetIndexQuery;
+        if (query !== undefined) {
+            setLocalQuery(query);
+        }
+    }, [
+        searchboxQuery,
+        targetIndexQuery
+    ]);
+    var resolvedDetachedMediaQuery = useMemo(function() {
+        return resolveMediaQuery(detachedMediaQuery, DETACHED_MEDIA_QUERY_CSS_VAR, DEFAULT_DETACHED_MEDIA_QUERY);
+    }, [
+        detachedMediaQuery
+    ]);
+    var _useState1 = _$4(useState(resolvedDetachedMediaQuery ? Boolean((_getMediaQueryList = getMediaQueryList(resolvedDetachedMediaQuery)) === null || _getMediaQueryList === void 0 ? void 0 : _getMediaQueryList.matches) : false), 2), isDetached = _useState1[0], setIsDetached = _useState1[1];
+    var _useState2 = _$4(useState(false), 2), isModalOpen = _useState2[0], setIsModalOpen = _useState2[1];
+    var _useState3 = _$4(useState(false), 2), isModalDetached = _useState3[0], setIsModalDetached = _useState3[1];
+    var previousIsDetachedRef = useRef(isDetached);
+    // Media query listener for detached mode
+    useEffect(function() {
+        if (!resolvedDetachedMediaQuery) {
+            setIsDetached(false);
+            return function() {};
+        }
+        var mql = getMediaQueryList(resolvedDetachedMediaQuery);
+        if (!mql) {
+            setIsDetached(false);
+            return function() {};
+        }
+        var handler = function handler(event) {
+            var wasDetached = isDetached;
+            setIsDetached(event.matches);
+            // Close modal if switching from detached to non-detached
+            if (wasDetached && !event.matches) {
+                setIsModalOpen(false);
+            }
+        };
+        mql.addEventListener('change', handler);
+        return function() {
+            return mql.removeEventListener('change', handler);
+        };
+    }, [
+        resolvedDetachedMediaQuery,
+        isDetached
+    ]);
+    useEffect(function() {
+        if (!isDetached) {
+            setIsModalDetached(false);
+            return function() {};
+        }
+        var modalMediaQuery = resolveMediaQuery(undefined, DETACHED_MODAL_MEDIA_QUERY_CSS_VAR, DEFAULT_DETACHED_MODAL_MEDIA_QUERY);
+        if (!modalMediaQuery) {
+            setIsModalDetached(false);
+            return function() {};
+        }
+        var mql = getMediaQueryList(modalMediaQuery);
+        if (!mql) {
+            setIsModalDetached(false);
+            return function() {};
+        }
+        var handler = function handler(event) {
+            setIsModalDetached(event.matches);
+        };
+        setIsModalDetached(mql.matches);
+        mql.addEventListener('change', handler);
+        return function() {
+            return mql.removeEventListener('change', handler);
+        };
+    }, [
+        isDetached
+    ]);
+    // Body class management for scroll prevention
+    useEffect(function() {
+        if (typeof document === 'undefined') return function() {};
+        if (isModalOpen) {
+            var scrollY = window.scrollY;
+            document.body.style.top = "-".concat(scrollY, "px");
+            document.body.classList.add('ais-Autocomplete--detached');
+            return function() {
+                document.body.classList.remove('ais-Autocomplete--detached');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollY);
+            };
+        }
+        return function() {};
+    }, [
+        isModalOpen
+    ]);
+    var _useStorage = useStorage({
+        query: searchboxQuery,
+        showRecent: showRecent,
+        indices: indices,
+        indicesConfig: indicesConfig,
+        suggestionsIndexName: showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName
+    }), storage = _useStorage.storage, storageHits = _useStorage.storageHits, indicesConfigForPropGetters = _useStorage.indicesConfigForPropGetters, indicesForPropGetters = _useStorage.indicesForPropGetters;
+    var promptSuggestionsIndexName = showPromptSuggestions === null || showPromptSuggestions === void 0 ? void 0 : showPromptSuggestions.indexName;
+    var promptSuggestionsLimit = (_ref = showPromptSuggestions === null || showPromptSuggestions === void 0 ? void 0 : (_showPromptSuggestions_searchParameters = showPromptSuggestions.searchParameters) === null || _showPromptSuggestions_searchParameters === void 0 ? void 0 : _showPromptSuggestions_searchParameters.hitsPerPage) !== null && _ref !== void 0 ? _ref : 3;
+    var indicesForPanel = indices.map(function(autocompleteIndex) {
+        var dedupedHits = autocompleteIndex.indexName === (showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName) && showRecent ? autocompleteIndex.hits.filter(function(suggestionHit) {
+            return !find(storageHits, function(storageHit) {
+                return storageHit.query === suggestionHit.query;
+            });
+        }) : autocompleteIndex.hits;
+        if (autocompleteIndex.indexName !== promptSuggestionsIndexName) {
+            return _$2(_({}, autocompleteIndex), {
+                hits: dedupedHits
+            });
+        }
+        return _$2(_({}, autocompleteIndex), {
+            hits: getPromptSuggestionHits({
+                hits: dedupedHits,
+                limit: promptSuggestionsLimit
+            })
+        });
+    });
+    var indicesForPropGettersWithPromptSuggestions = indicesForPropGetters.map(function(autocompleteIndex) {
+        if (autocompleteIndex.indexName !== promptSuggestionsIndexName) {
+            return autocompleteIndex;
+        }
+        return _$2(_({}, autocompleteIndex), {
+            hits: getPromptSuggestionHits({
+                hits: autocompleteIndex.hits,
+                limit: promptSuggestionsLimit
+            })
+        });
+    });
+    var showRecentObj = showRecent;
+    var recentSearchCssClasses = {
+        root: cx('ais-AutocompleteRecentSearches', showRecentObj === null || showRecentObj === void 0 ? void 0 : (_showRecentObj_cssClasses = showRecentObj.cssClasses) === null || _showRecentObj_cssClasses === void 0 ? void 0 : _showRecentObj_cssClasses.root),
+        list: cx('ais-AutocompleteRecentSearchesList', showRecentObj === null || showRecentObj === void 0 ? void 0 : (_showRecentObj_cssClasses1 = showRecentObj.cssClasses) === null || _showRecentObj_cssClasses1 === void 0 ? void 0 : _showRecentObj_cssClasses1.list),
+        header: cx('ais-AutocompleteRecentSearchesHeader', showRecentObj === null || showRecentObj === void 0 ? void 0 : (_showRecentObj_cssClasses2 = showRecentObj.cssClasses) === null || _showRecentObj_cssClasses2 === void 0 ? void 0 : _showRecentObj_cssClasses2.header),
+        item: cx('ais-AutocompleteRecentSearchesItem', showRecentObj === null || showRecentObj === void 0 ? void 0 : (_showRecentObj_cssClasses3 = showRecentObj.cssClasses) === null || _showRecentObj_cssClasses3 === void 0 ? void 0 : _showRecentObj_cssClasses3.item)
+    };
+    var isSearchPage = (_ref1 = targetIndex === null || targetIndex === void 0 ? void 0 : targetIndex.getWidgets().some(function(param) {
+        var $$type = param.$$type;
+        return [
+            'ais.hits',
+            'ais.infiniteHits'
+        ].includes($$type);
+    })) !== null && _ref1 !== void 0 ? _ref1 : false;
+    var onRefine = function onRefine(query) {
+        setLocalQuery(query);
+        refineAutocomplete(query);
+        instantSearchInstance.setUiState(function(uiState) {
+            var _obj;
+            return _$2(_({}, uiState), (_obj = {}, _$6(_obj, targetIndex.getIndexId(), _$2(_({}, uiState[targetIndex.getIndexId()]), {
+                query: query
+            })), _$6(_obj, isolatedIndex.getIndexId(), {
+                query: query
+            }), _obj));
+        });
+        query.length > 0 && storage.onAdd(query);
+    };
+    var allIndicesEmpty = indicesForPanel.every(function(param) {
+        var hits = param.hits;
+        return hits.length === 0;
+    });
+    var recentEmpty = !storageHits || storageHits.length === 0;
+    var hasNoResultsTemplate = indicesConfig.some(function(c) {
+        var _c_templates;
+        return ((_c_templates = c.templates) === null || _c_templates === void 0 ? void 0 : _c_templates.noResults) !== undefined;
+    });
+    var shouldHideEmptyPanel = allIndicesEmpty && recentEmpty && !hasNoResultsTemplate && !templates.panel;
+    var _usePropGetters = usePropGetters({
+        indices: indicesForPropGettersWithPromptSuggestions,
+        indicesConfig: indicesConfigForPropGetters,
+        onRefine: onRefine,
+        onSelect: userOnSelect !== null && userOnSelect !== void 0 ? userOnSelect : function(param) {
+            var query = param.query, item = param.item, setQuery = param.setQuery, url = param.url;
+            if (isPromptSuggestion(item)) {
+                var _instantSearchInstance_renderState_targetIndex_getIndexId;
+                var chatRenderState = (_instantSearchInstance_renderState_targetIndex_getIndexId = instantSearchInstance.renderState[targetIndex.getIndexId()]) === null || _instantSearchInstance_renderState_targetIndex_getIndexId === void 0 ? void 0 : _instantSearchInstance_renderState_targetIndex_getIndexId.chat;
+                if (chatRenderState) {
+                    var _chatRenderState_setOpen, _chatRenderState_focusInput, _chatRenderState_sendMessage;
+                    (_chatRenderState_setOpen = chatRenderState.setOpen) === null || _chatRenderState_setOpen === void 0 ? void 0 : _chatRenderState_setOpen.call(chatRenderState, true);
+                    (_chatRenderState_focusInput = chatRenderState.focusInput) === null || _chatRenderState_focusInput === void 0 ? void 0 : _chatRenderState_focusInput.call(chatRenderState);
+                    (_chatRenderState_sendMessage = chatRenderState.sendMessage) === null || _chatRenderState_sendMessage === void 0 ? void 0 : _chatRenderState_sendMessage.call(chatRenderState, {
+                        text: item.prompt
+                    });
+                    return;
+                }
+            }
+            if (url) {
+                window.location.href = url;
+                return;
+            }
+            if (!isSearchPage && typeof getSearchPageURL !== 'undefined') {
+                var indexUiState = instantSearchInstance.getUiState()[targetIndex.getIndexId()];
+                window.location.href = getSearchPageURL(_$2(_({}, indexUiState), {
+                    query: query
+                }));
+                return;
+            }
+            setQuery(query);
+        },
+        onApply: function onApply(query) {
+            refineAutocomplete(query);
+        },
+        onSubmit: function onSubmit() {
+            // Close the detached modal when form is submitted
+            if (isDetached) {
+                setIsModalOpen(false);
+            }
+        },
+        placeholder: placeholder,
+        isDetached: isDetached,
+        shouldHidePanel: shouldHideEmptyPanel,
+        autoFocus: autofocus
+    }), getInputProps = _usePropGetters.getInputProps, getItemProps = _usePropGetters.getItemProps, getPanelProps = _usePropGetters.getPanelProps, getRootProps = _usePropGetters.getRootProps, isOpen = _usePropGetters.isOpen, setIsOpen = _usePropGetters.setIsOpen, focusInput = _usePropGetters.focusInput;
+    // Open panel and focus input when modal opens
+    useEffect(function() {
+        if (isDetached && isModalOpen) {
+            setIsOpen(true);
+            // Focus input to show the keyboard on mobile
+            focusInput();
+        }
+    }, [
+        isDetached,
+        isModalOpen,
+        setIsOpen,
+        focusInput
+    ]);
+    // Keep the modal open if the panel was open before switching to detached
+    useEffect(function() {
+        var wasDetached = previousIsDetachedRef.current;
+        var switchedToDetached = !wasDetached && isDetached;
+        if (switchedToDetached && isOpen) {
+            setIsModalOpen(true);
+        }
+        previousIsDetachedRef.current = isDetached;
+    }, [
+        isDetached,
+        isOpen,
+        setIsModalOpen
+    ]);
+    var elements = {};
+    if (showRecent) {
+        elements.recent = /*#__PURE__*/ h(AutocompleteIndex, {
+            HeaderComponent: renderState.recentSearchHeaderComponent,
+            // @ts-ignore - there seems to be problems with React.ComponentType and this, but it's actually correct
+            ItemComponent: function ItemComponent(param) {
+                var item = param.item, onSelect = param.onSelect, onApply = param.onApply;
+                return /*#__PURE__*/ h(renderState.RecentSearchComponent, {
+                    item: item,
+                    onSelect: onSelect,
+                    onApply: onApply,
+                    onRemoveRecentSearch: function onRemoveRecentSearch() {
+                        return storage.onRemove(item.query);
+                    }
+                });
+            },
+            classNames: recentSearchCssClasses,
+            items: storageHits,
+            getItemProps: getItemProps
+        });
+    }
+    indicesForPanel.forEach(function(param, i) {
+        var indexId = param.indexId, indexName = param.indexName, hits = param.hits;
+        var _currentIndexConfig_templates, _currentIndexConfig_templates1, _find;
+        var currentIndexConfig = find(indicesConfig, function(config) {
+            return config.indexName === indexName;
+        });
+        if (!currentIndexConfig) {
+            return;
+        }
+        if (!renderState.indexTemplateProps[i]) {
+            renderState.indexTemplateProps[i] = prepareTemplateProps({
+                defaultTemplates: {},
+                templatesConfig: instantSearchInstance.templatesConfig,
+                templates: currentIndexConfig.templates
+            });
+        }
+        var headerComponent = ((_currentIndexConfig_templates = currentIndexConfig.templates) === null || _currentIndexConfig_templates === void 0 ? void 0 : _currentIndexConfig_templates.header) ? function(param) {
+            var items = param.items;
+            return /*#__PURE__*/ h(Template, _$2(_({}, renderState.indexTemplateProps[i]), {
+                templateKey: "header",
+                rootTagName: "fragment",
+                data: {
+                    items: items
+                }
+            }));
+        } : undefined;
+        var itemComponent = function itemComponent(param) {
+            var item = param.item, onSelect = param.onSelect, onApply = param.onApply;
+            return /*#__PURE__*/ h(Template, _$2(_({}, renderState.indexTemplateProps[i]), {
+                templateKey: "item",
+                rootTagName: "fragment",
+                data: {
+                    item: item,
+                    onSelect: onSelect,
+                    onApply: onApply
+                }
+            }));
+        };
+        var noResultsComponent = ((_currentIndexConfig_templates1 = currentIndexConfig.templates) === null || _currentIndexConfig_templates1 === void 0 ? void 0 : _currentIndexConfig_templates1.noResults) ? function() {
+            return /*#__PURE__*/ h(Template, _$2(_({}, renderState.indexTemplateProps[i]), {
+                templateKey: "noResults",
+                rootTagName: "fragment",
+                data: {}
+            }));
+        } : undefined;
+        var elementId = indexName;
+        if (indexName === (showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName)) {
+            elementId = 'suggestions';
+        } else if (indexName === (showPromptSuggestions === null || showPromptSuggestions === void 0 ? void 0 : showPromptSuggestions.indexName)) {
+            elementId = 'promptSuggestions';
+        }
+        elements[elementId] = /*#__PURE__*/ h(AutocompleteIndex, {
+            key: indexId,
+            HeaderComponent: headerComponent,
+            ItemComponent: itemComponent,
+            NoResultsComponent: noResultsComponent,
+            items: hits.map(function(item) {
+                return _$2(_({}, item), {
+                    __indexName: indexId
+                });
+            }),
+            getItemProps: getItemProps,
+            sendEvent: (_find = find(indices, function(idx) {
+                return idx.indexId === indexId;
+            })) === null || _find === void 0 ? void 0 : _find.sendEvent,
+            classNames: currentIndexConfig.cssClasses
+        });
+    });
+    var rawInputProps = getInputProps();
+    var inputProps = (typeof rawInputProps === "undefined" ? "undefined" : _$5(rawInputProps)) === 'object' && rawInputProps !== null ? rawInputProps : {};
+    var handleCancel = function handleCancel() {
+        setIsModalOpen(false);
+        setIsOpen(false);
+    };
+    var searchBoxContent = /*#__PURE__*/ h(AutocompleteSearchBox, {
+        query: localQuery,
+        inputProps: _$2(_({}, inputProps), {
+            onInput: function onInput(event) {
+                var query = event.currentTarget.value;
+                setLocalQuery(query);
+                refineAutocomplete(query);
+            }
+        }),
+        onClear: function onClear() {
+            onRefine('');
+        },
+        isSearchStalled: instantSearchInstance.status === 'stalled',
+        onCancel: function onCancel() {
+            if (isDetached) {
+                handleCancel();
+            }
+        },
+        isDetached: isDetached,
+        submitTitle: isDetached ? translations.detachedCancelButtonText : undefined,
+        onAiModeClick: aiMode ? function() {
+            var _instantSearchInstance_renderState_indexId;
+            setIsOpen(false);
+            if (isDetached) {
+                setIsModalOpen(false);
+            }
+            var indexId = targetIndex.getIndexId();
+            var chatState = (_instantSearchInstance_renderState_indexId = instantSearchInstance.renderState[indexId]) === null || _instantSearchInstance_renderState_indexId === void 0 ? void 0 : _instantSearchInstance_renderState_indexId.chat;
+            if (chatState) {
+                var _chatState_setOpen;
+                (_chatState_setOpen = chatState.setOpen) === null || _chatState_setOpen === void 0 ? void 0 : _chatState_setOpen.call(chatState, true);
+                if (localQuery.trim()) {
+                    var _chatState_sendMessage;
+                    (_chatState_sendMessage = chatState.sendMessage) === null || _chatState_sendMessage === void 0 ? void 0 : _chatState_sendMessage.call(chatState, {
+                        text: localQuery
+                    });
+                }
+            }
+        } : undefined
+    });
+    var panelContent = /*#__PURE__*/ h(AutocompletePanel, getPanelProps(), templates.panel ? /*#__PURE__*/ h(Template, _$2(_({}, renderState.templateProps), {
+        templateKey: "panel",
+        rootTagName: "fragment",
+        data: {
+            elements: elements,
+            indices: indicesForPanel
+        }
+    })) : Object.keys(elements).map(function(elementId) {
+        return elements[elementId];
+    }));
+    var detachedContainerCssClasses = isModalDetached ? _$2(_({}, cssClasses), {
+        detachedContainer: cx('ais-AutocompleteDetachedContainer--modal', cssClasses.detachedContainer)
+    }) : cssClasses;
+    var _getRootProps = getRootProps(), rootRef = _getRootProps.ref, rootProps = _$3(_getRootProps, [
+        "ref"
+    ]);
+    if (isDetached) {
+        return /*#__PURE__*/ h(Autocomplete, _$2(_({}, rootProps), {
+            rootRef: rootRef,
+            classNames: cssClasses
+        }), /*#__PURE__*/ h(AutocompleteDetachedSearchButton, {
+            query: localQuery,
+            placeholder: placeholder,
+            classNames: cssClasses,
+            onClick: function onClick() {
+                setIsModalOpen(true);
+                setIsOpen(true);
+            },
+            onClear: function onClear() {
+                onRefine('');
+            },
+            translations: translations
+        }), isModalOpen && /*#__PURE__*/ h(AutocompleteDetachedOverlay, {
+            classNames: cssClasses,
+            onClose: handleCancel
+        }, /*#__PURE__*/ h(AutocompleteDetachedContainer, {
+            classNames: detachedContainerCssClasses
+        }, /*#__PURE__*/ h(AutocompleteDetachedFormContainer, {
+            classNames: cssClasses
+        }, searchBoxContent), panelContent)));
+    }
+    // Normal (non-detached) rendering
+    return /*#__PURE__*/ h(Autocomplete, _$2(_({}, rootProps), {
+        rootRef: rootRef,
+        classNames: cssClasses
+    }), searchBoxContent, panelContent);
+}
+function EXPERIMENTAL_autocomplete(widgetParams) {
+    var _ref = widgetParams || {}, container = _ref.container, escapeHTML = _ref.escapeHTML, _ref_indices = _ref.indices, indices = _ref_indices === void 0 ? [] : _ref_indices, showQuerySuggestions = _ref.showQuerySuggestions, showPromptSuggestions = _ref.showPromptSuggestions, showRecent = _ref.showRecent, userSearchParameters = _ref.searchParameters, getSearchPageURL = _ref.getSearchPageURL, onSelect = _ref.onSelect, _ref_templates = _ref.templates, templates = _ref_templates === void 0 ? {} : _ref_templates, transformItems = _ref.transformItems, tmp = _ref.cssClasses, userCssClasses = tmp === void 0 ? {} : tmp, placeholder = _ref.placeholder, autofocus = _ref.autofocus, detachedMediaQuery = _ref.detachedMediaQuery, tmp1 = _ref.translations, userTranslations = tmp1 === void 0 ? {} : tmp1, aiMode = _ref.aiMode;
+    if (!container) {
+        throw new Error(withUsage('The `container` option is required.'));
+    }
+    var containerNode = getContainerNode(container);
+    var searchParameters = _({
+        hitsPerPage: 5
+    }, userSearchParameters);
+    var cssClasses = {
+        root: cx(suit(), userCssClasses.root)
+    };
+    var indicesConfig = _$1(indices);
+    if (showQuerySuggestions === null || showQuerySuggestions === void 0 ? void 0 : showQuerySuggestions.indexName) {
+        var _showQuerySuggestions_cssClasses, _showQuerySuggestions_cssClasses1, _showQuerySuggestions_cssClasses2, _showQuerySuggestions_cssClasses3;
+        indicesConfig.unshift({
+            indexName: showQuerySuggestions.indexName,
+            templates: _({
+                // @ts-expect-error
+                item: function item(param) {
+                    var item = param.item, onSelectItem = param.onSelect, onApply = param.onApply;
+                    return /*#__PURE__*/ h(AutocompleteSuggestion, {
+                        item: item,
+                        onSelect: onSelectItem,
+                        onApply: onApply
+                    }, /*#__PURE__*/ h(ConditionalReverseHighlight, {
+                        item: item
+                    }));
+                }
+            }, showQuerySuggestions.templates),
+            cssClasses: {
+                root: cx('ais-AutocompleteSuggestions', (_showQuerySuggestions_cssClasses = showQuerySuggestions.cssClasses) === null || _showQuerySuggestions_cssClasses === void 0 ? void 0 : _showQuerySuggestions_cssClasses.root),
+                list: cx('ais-AutocompleteSuggestionsList', (_showQuerySuggestions_cssClasses1 = showQuerySuggestions.cssClasses) === null || _showQuerySuggestions_cssClasses1 === void 0 ? void 0 : _showQuerySuggestions_cssClasses1.list),
+                header: cx('ais-AutocompleteSuggestionsHeader', (_showQuerySuggestions_cssClasses2 = showQuerySuggestions.cssClasses) === null || _showQuerySuggestions_cssClasses2 === void 0 ? void 0 : _showQuerySuggestions_cssClasses2.header),
+                item: cx('ais-AutocompleteSuggestionsItem', (_showQuerySuggestions_cssClasses3 = showQuerySuggestions.cssClasses) === null || _showQuerySuggestions_cssClasses3 === void 0 ? void 0 : _showQuerySuggestions_cssClasses3.item)
+            },
+            searchParameters: _({
+                hitsPerPage: 3
+            }, showQuerySuggestions.searchParameters),
+            getQuery: function getQuery(item) {
+                return item.query;
+            },
+            getURL: showQuerySuggestions.getURL
+        });
+    }
+    if (showPromptSuggestions === null || showPromptSuggestions === void 0 ? void 0 : showPromptSuggestions.indexName) {
+        var _showPromptSuggestions_cssClasses, _showPromptSuggestions_cssClasses1, _showPromptSuggestions_cssClasses2, _showPromptSuggestions_cssClasses3;
+        indicesConfig.push({
+            indexName: showPromptSuggestions.indexName,
+            templates: _({
+                // @ts-expect-error
+                item: function item(param) {
+                    var item = param.item, onSelectItem = param.onSelect;
+                    return /*#__PURE__*/ h(AutocompletePromptSuggestion, {
+                        item: item,
+                        onSelect: onSelectItem
+                    }, renderConditionalHighlight({
+                        item: item,
+                        attribute: 'prompt'
+                    }));
+                }
+            }, showPromptSuggestions.templates),
+            cssClasses: {
+                root: cx('ais-AutocompletePromptSuggestions', (_showPromptSuggestions_cssClasses = showPromptSuggestions.cssClasses) === null || _showPromptSuggestions_cssClasses === void 0 ? void 0 : _showPromptSuggestions_cssClasses.root),
+                list: cx('ais-AutocompletePromptSuggestionsList', (_showPromptSuggestions_cssClasses1 = showPromptSuggestions.cssClasses) === null || _showPromptSuggestions_cssClasses1 === void 0 ? void 0 : _showPromptSuggestions_cssClasses1.list),
+                header: cx('ais-AutocompletePromptSuggestionsHeader', (_showPromptSuggestions_cssClasses2 = showPromptSuggestions.cssClasses) === null || _showPromptSuggestions_cssClasses2 === void 0 ? void 0 : _showPromptSuggestions_cssClasses2.header),
+                item: cx('ais-AutocompletePromptSuggestionsItem', (_showPromptSuggestions_cssClasses3 = showPromptSuggestions.cssClasses) === null || _showPromptSuggestions_cssClasses3 === void 0 ? void 0 : _showPromptSuggestions_cssClasses3.item)
+            },
+            searchParameters: _({
+                hitsPerPage: 3
+            }, showPromptSuggestions.searchParameters),
+            getQuery: function getQuery(item) {
+                return item.prompt;
+            },
+            getURL: showPromptSuggestions.getURL
+        });
+    }
+    var instanceId = ++autocompleteInstanceId;
+    var shouldShowRecent = showRecent || undefined;
+    var showRecentOptions = typeof shouldShowRecent === 'boolean' ? {} : shouldShowRecent;
+    var translations = _({}, DEFAULT_TRANSLATIONS, userTranslations);
+    var specializedRenderer = createRenderer({
+        instanceId: instanceId,
+        containerNode: containerNode,
+        indicesConfig: indicesConfig,
+        getSearchPageURL: getSearchPageURL,
+        onSelect: onSelect,
+        cssClasses: cssClasses,
+        showRecent: showRecentOptions,
+        showQuerySuggestions: showQuerySuggestions,
+        showPromptSuggestions: showPromptSuggestions,
+        placeholder: placeholder,
+        autofocus: autofocus,
+        detachedMediaQuery: detachedMediaQuery,
+        translations: translations,
+        renderState: {
+            indexTemplateProps: [],
+            isolatedIndex: undefined,
+            targetIndex: undefined,
+            templateProps: undefined,
+            RecentSearchComponent: AutocompleteRecentSearch,
+            recentSearchHeaderComponent: undefined,
+            hasWarnedMissingPromptSuggestionsChat: false
+        },
+        templates: templates,
+        aiMode: aiMode
+    });
+    var makeWidget = connectAutocomplete(specializedRenderer, function() {
+        return render(null, containerNode);
+    });
+    return [
+        connectSearchBox(function() {
+            return null;
+        })({}),
+        index({
+            indexId: "ais-autocomplete-".concat(instanceId),
+            EXPERIMENTAL_isolated: true
+        }).addWidgets([
+            configure(searchParameters)
+        ].concat(_$1(indicesConfig.map(function(param) {
+            var indexName = param.indexName, indexSearchParameters = param.searchParameters;
+            return index({
+                indexName: indexName,
+                indexId: indexName
+            }).addWidgets([
+                configure(indexSearchParameters || {})
+            ]);
+        })), [
+            _$2(_({}, makeWidget({
+                escapeHTML: escapeHTML,
+                transformItems: transformItems,
+                future: {
+                    undefinedEmptyQuery: true
+                }
+            })), {
+                $$widgetType: 'ais.autocomplete'
+            })
+        ]))
+    ];
+}
+function ConditionalReverseHighlight(param) {
+    var item = param.item;
+    var _item__highlightResult;
+    if (!((_item__highlightResult = item._highlightResult) === null || _item__highlightResult === void 0 ? void 0 : _item__highlightResult.query) || // @ts-expect-error - we should not have matchLevel as arrays here
+    item._highlightResult.query.matchLevel === 'none') {
+        return item.query;
+    }
+    return /*#__PURE__*/ h(ReverseHighlight, {
+        attribute: "query",
+        hit: item
+    });
+}
+function renderConditionalHighlight(param) {
+    var item = param.item, attribute = param.attribute;
+    var _item__highlightResult;
+    if (!((_item__highlightResult = item._highlightResult) === null || _item__highlightResult === void 0 ? void 0 : _item__highlightResult[attribute]) || // @ts-expect-error - we should not have matchLevel as arrays here
+    item._highlightResult[attribute].matchLevel === 'none') {
+        return item[attribute];
+    }
+    return /*#__PURE__*/ h(Highlight, {
+        attribute: attribute,
+        hit: item
+    });
+}
+
+export { EXPERIMENTAL_autocomplete };

@@ -1,0 +1,110 @@
+{
+  "author": {
+    "name": "Jeremy Stashewsky",
+    "email": "jstash@gmail.com",
+    "website": "https://github.com/stash"
+  },
+  "contributors": [
+    {
+      "name": "Ivan Nikulin",
+      "website": "https://github.com/inikulin"
+    },
+    {
+      "name": "Shivan Kaul Sahib",
+      "website": "https://github.com/ShivanKaul"
+    },
+    {
+      "name": "Clint Ruoho",
+      "website": "https://github.com/ruoho"
+    },
+    {
+      "name": "Ian Livingstone",
+      "website": "https://github.com/ianlivingstone"
+    },
+    {
+      "name": "Andrew Waterman",
+      "website": "https://github.com/awaterma"
+    },
+    {
+      "name": "Michael de Libero ",
+      "website": "https://github.com/medelibero-sfdc"
+    },
+    {
+      "name": "Jonathan Stewmon",
+      "website": "https://github.com/jstewmon"
+    },
+    {
+      "name": "Miguel Roncancio",
+      "website": "https://github.com/miggs125"
+    },
+    {
+      "name": "Sebastian Mayr",
+      "website": "https://github.com/Sebmaster"
+    },
+    {
+      "name": "Alexander Savin",
+      "website": "https://github.com/apsavin"
+    },
+    {
+      "name": "Lalit Kapoor",
+      "website": "https://github.com/lalitkapoor"
+    },
+    {
+      "name": "Sam Thompson",
+      "website": "https://github.com/sambthompson"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "name": "tough-cookie",
+  "description": "RFC6265 Cookies and Cookie Jar for node.js",
+  "keywords": [
+    "HTTP",
+    "cookie",
+    "cookies",
+    "set-cookie",
+    "cookiejar",
+    "jar",
+    "RFC6265",
+    "RFC2965"
+  ],
+  "version": "4.1.4",
+  "homepage": "https://github.com/salesforce/tough-cookie",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/salesforce/tough-cookie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/salesforce/tough-cookie/issues"
+  },
+  "main": "./lib/cookie",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "version": "genversion lib/version.js && git add lib/version.js",
+    "test": "vows test/*_test.js && npm run eslint",
+    "cover": "nyc --reporter=lcov --reporter=html vows test/*_test.js",
+    "eslint": "eslint --env node --ext .js .",
+    "prettier": "prettier '**/*.{json,ts,yaml,md}'",
+    "format": "npm run eslint -- --fix"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "devDependencies": {
+    "async": "^2.6.2",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "genversion": "^2.1.0",
+    "nyc": "^14.0.0",
+    "prettier": "^1.17.0",
+    "vows": "^0.8.2"
+  },
+  "dependencies": {
+    "psl": "^1.1.33",
+    "punycode": "^2.1.1",
+    "universalify": "^0.2.0",
+    "url-parse": "^1.5.3"
+  }
+}

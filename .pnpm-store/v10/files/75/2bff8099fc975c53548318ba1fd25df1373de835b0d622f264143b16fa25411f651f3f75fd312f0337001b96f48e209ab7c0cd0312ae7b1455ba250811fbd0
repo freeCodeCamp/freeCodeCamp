@@ -1,0 +1,26 @@
+{
+  "name": "teex",
+  "version": "1.0.1",
+  "description": "Turn a readable stream into multiple readable streamx streams",
+  "main": "index.js",
+  "dependencies": {
+    "streamx": "^2.12.5"
+  },
+  "devDependencies": {
+    "standard": "^14.3.4",
+    "tape": "^5.0.1"
+  },
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/teex.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/teex/issues"
+  },
+  "homepage": "https://github.com/mafintosh/teex"
+}

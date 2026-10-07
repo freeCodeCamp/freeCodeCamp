@@ -1,0 +1,50 @@
+{
+  "name": "@babel/parser",
+  "version": "7.29.3",
+  "description": "A JavaScript parser",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-parser",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A+parser+%28babylon%29%22+is%3Aopen",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "babel",
+    "javascript",
+    "parser",
+    "tc39",
+    "ecmascript",
+    "@babel/parser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-parser"
+  },
+  "main": "./lib/index.js",
+  "types": "./typings/babel-parser.d.ts",
+  "files": [
+    "bin",
+    "lib",
+    "typings/babel-parser.d.ts",
+    "index.cjs"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "# dependencies": "This package doesn't actually have runtime dependencies. @babel/types is only needed for type definitions.",
+  "dependencies": {
+    "@babel/types": "^7.29.0"
+  },
+  "devDependencies": {
+    "@babel/code-frame": "^7.29.0",
+    "@babel/helper-check-duplicate-nodes": "^7.28.6",
+    "@babel/helper-fixtures": "^7.28.6",
+    "@babel/helper-string-parser": "^7.27.1",
+    "@babel/helper-validator-identifier": "^7.28.5",
+    "charcodes": "^0.2.0"
+  },
+  "bin": "./bin/babel-parser.js",
+  "type": "commonjs"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "react",
+  "description": "React is a JavaScript library for building user interfaces.",
+  "keywords": [
+    "react"
+  ],
+  "version": "18.3.1",
+  "homepage": "https://reactjs.org/",
+  "bugs": "https://github.com/facebook/react/issues",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "cjs/",
+    "umd/",
+    "jsx-runtime.js",
+    "jsx-dev-runtime.js",
+    "react.shared-subset.js"
+  ],
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "react-server": "./react.shared-subset.js",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json",
+    "./jsx-runtime": "./jsx-runtime.js",
+    "./jsx-dev-runtime": "./jsx-dev-runtime.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/react.git",
+    "directory": "packages/react"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "loose-envify": "^1.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
+  }
+}

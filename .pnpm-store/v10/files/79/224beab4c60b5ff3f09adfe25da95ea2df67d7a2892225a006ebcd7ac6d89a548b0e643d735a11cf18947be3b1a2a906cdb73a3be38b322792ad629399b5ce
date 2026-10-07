@@ -1,0 +1,1 @@
+{"version":3,"names":["Object","defineProperty","exports","get","require"],"sources":["../../src/babel-7/index.cjs"],"sourcesContent":["Object.defineProperty(exports, \"createPolyfillPlugins\", {\n  get: () => require(\"./polyfills.cjs\"),\n});\n"],"mappings":"AAAAA,MAAM,CAACC,cAAc,CAACC,OAAO,EAAE,uBAAuB,EAAE;EACtDC,GAAG,EAAEA,CAAA,KAAMC,OAAO,CAAC,iBAAiB;AACtC,CAAC,CAAC"}

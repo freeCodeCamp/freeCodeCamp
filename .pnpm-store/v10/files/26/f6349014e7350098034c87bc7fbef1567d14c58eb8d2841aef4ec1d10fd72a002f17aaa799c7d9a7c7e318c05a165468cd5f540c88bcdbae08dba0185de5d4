@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ES6",
+    "lib": ["es2017", "es7", "es6", "dom"],
+    "baseUrl": ".",
+    "strict": false,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "include": [
+    "lib",
+  ]
+}

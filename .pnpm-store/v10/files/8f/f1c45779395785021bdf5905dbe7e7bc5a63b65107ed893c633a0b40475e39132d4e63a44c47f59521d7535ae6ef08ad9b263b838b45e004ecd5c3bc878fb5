@@ -1,0 +1,64 @@
+{
+  "name": "shallow-clone",
+  "description": "Creates a shallow clone of any JavaScript value.",
+  "version": "3.0.1",
+  "homepage": "https://github.com/jonschlinkert/shallow-clone",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)"
+  ],
+  "repository": "jonschlinkert/shallow-clone",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/shallow-clone/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "kind-of": "^6.0.2"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^2.0.0",
+    "mocha": "^6.1.3"
+  },
+  "keywords": [
+    "array",
+    "clone",
+    "copy",
+    "extend",
+    "mixin",
+    "object",
+    "primitive",
+    "shallow"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": [
+        "assign-deep",
+        "clone-deep",
+        "is-plain-object",
+        "kind-of"
+      ]
+    }
+  }
+}

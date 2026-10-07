@@ -1,0 +1,28 @@
+{
+  "name": "@babel/helper-simple-access",
+  "version": "7.22.5",
+  "description": "Babel helper for ensuring that access to a given value is performed through simple accesses",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-helper-simple-access",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-simple-access"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/types": "^7.22.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/traverse": "^7.22.5"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

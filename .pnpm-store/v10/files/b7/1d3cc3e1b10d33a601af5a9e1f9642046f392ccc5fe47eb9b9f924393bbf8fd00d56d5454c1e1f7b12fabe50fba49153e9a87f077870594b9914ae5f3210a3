@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/direction.tsx"],
+  "sourcesContent": ["import * as React from 'react';\n\ntype Direction = 'ltr' | 'rtl';\nconst DirectionContext = React.createContext<Direction | undefined>(undefined);\n\n/* -------------------------------------------------------------------------------------------------\n * Direction\n * -----------------------------------------------------------------------------------------------*/\n\ninterface DirectionProviderProps {\n  children?: React.ReactNode;\n  dir: Direction;\n}\nconst DirectionProvider: React.FC<DirectionProviderProps> = (props) => {\n  const { dir, children } = props;\n  return <DirectionContext.Provider value={dir}>{children}</DirectionContext.Provider>;\n};\n\n/* -----------------------------------------------------------------------------------------------*/\n\nfunction useDirection(localDir?: Direction) {\n  const globalDir = React.useContext(DirectionContext);\n  return localDir || globalDir || 'ltr';\n}\n\nconst Provider = DirectionProvider;\n\nexport {\n  useDirection,\n  //\n  Provider,\n  //\n  DirectionProvider,\n};\n"],
+  "mappings": ";AAAA,YAAY,WAAW;AAed;AAZT,IAAM,mBAAyB,oBAAqC,MAAS;AAU7E,IAAM,oBAAsD,CAAC,UAAU;AACrE,QAAM,EAAE,KAAK,SAAS,IAAI;AAC1B,SAAO,oBAAC,iBAAiB,UAAjB,EAA0B,OAAO,KAAM,UAAS;AAC1D;AAIA,SAAS,aAAa,UAAsB;AAC1C,QAAM,YAAkB,iBAAW,gBAAgB;AACnD,SAAO,YAAY,aAAa;AAClC;AAEA,IAAM,WAAW;",
+  "names": []
+}

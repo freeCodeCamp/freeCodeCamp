@@ -1,0 +1,27 @@
+{
+  "name": "debounce",
+  "description": "Creates and returns a new debounced version of the passed function that will postpone its execution until after wait milliseconds have elapsed since the last time it was invoked",
+  "version": "1.2.1",
+  "repository": "git://github.com/component/debounce",
+  "main": "index.js",
+  "scripts": {
+    "test": "minijasminenode test.js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "function",
+    "throttle",
+    "invoke"
+  ],
+  "devDependencies": {
+    "minijasminenode": "^1.1.1",
+    "sinon": "^1.17.7",
+    "mocha": "*",
+    "should": "*"
+  },
+  "component": {
+    "scripts": {
+      "debounce/index.js": "index.js"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+import { type QuizProps } from "./types";
+export declare const Quiz: <AnswerT extends number | string>({ questions, disabled, required, }: QuizProps<AnswerT>) => JSX.Element;

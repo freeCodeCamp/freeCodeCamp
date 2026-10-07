@@ -1,0 +1,64 @@
+{
+    "name": "entities",
+    "version": "2.2.0",
+    "description": "Encode & decode XML and HTML entities with ease",
+    "author": "Felix Boehm <me@feedic.com>",
+    "funding": "https://github.com/fb55/entities?sponsor=1",
+    "sideEffects": false,
+    "keywords": [
+        "entity",
+        "decoding",
+        "encoding",
+        "html",
+        "xml",
+        "html entities"
+    ],
+    "directories": {
+        "lib": "lib/"
+    },
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
+    "devDependencies": {
+        "@types/jest": "^26.0.0",
+        "@types/node": "^14.11.8",
+        "@typescript-eslint/eslint-plugin": "^4.4.1",
+        "@typescript-eslint/parser": "^4.4.1",
+        "coveralls": "*",
+        "eslint": "^7.11.0",
+        "eslint-config-prettier": "^7.0.0",
+        "eslint-plugin-node": "^11.1.0",
+        "jest": "^26.5.3",
+        "prettier": "^2.0.5",
+        "ts-jest": "^26.1.0",
+        "typescript": "^4.0.2"
+    },
+    "scripts": {
+        "test": "jest --coverage && npm run lint",
+        "coverage": "cat coverage/lcov.info | coveralls",
+        "lint": "npm run lint:es && npm run lint:prettier",
+        "lint:es": "eslint .",
+        "lint:prettier": "npm run prettier -- --check",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run prettier -- --write",
+        "prettier": "prettier '**/*.{ts,md,json,yml}'",
+        "build": "tsc && cp -r src/maps lib",
+        "prepare": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/fb55/entities.git"
+    },
+    "license": "BSD-2-Clause",
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "proseWrap": "always"
+    }
+}

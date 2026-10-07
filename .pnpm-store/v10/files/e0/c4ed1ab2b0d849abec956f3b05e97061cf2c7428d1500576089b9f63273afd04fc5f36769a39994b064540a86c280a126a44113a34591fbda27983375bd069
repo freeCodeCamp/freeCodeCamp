@@ -1,0 +1,53 @@
+.TH MDB_DROP 1 "2017/11/19" "LMDB 0.9.90"
+.\" Copyright 2014-2021 Howard Chu, Symas Corp. All Rights Reserved.
+.\" Copying restrictions apply.  See COPYRIGHT/LICENSE.
+.SH NAME
+mdb_drop \- LMDB database delete tool
+.SH SYNOPSIS
+.B mdb_drop
+[\c
+.BR \-V ]
+[\c
+.BR \-n ]
+[\c
+.BR \-d ]
+[\c
+.BI \-m \ module
+[\c
+.BI \-w \ password\fR]]
+[\c
+.BI \-s \ subdb\fR]
+.BR \ envpath
+.SH DESCRIPTION
+The
+.B mdb_drop
+utility empties or deletes a database in the specified
+environment.
+.SH OPTIONS
+.TP
+.BR \-V
+Write the library version number to the standard output, and exit.
+.TP
+.BR \-n
+Operate on an LMDB database which does not use subdirectories.
+.TP
+.BR \-d
+Delete the specified database, don't just empty it.
+.TP
+.BI \-m \ module
+Load the specified dynamic module to utilize cryptographic functions.
+This is required to operate on environments that have been configured
+with page-level checksums or encryption.
+.TP
+.BI \-w \ password
+Specify the password for an encrypted environment. This is only
+used if a cryptography module has been loaded.
+.TP
+.BR \-s \ subdb
+Operate on a specific subdatabase. If no database is specified, only the main database is dropped.
+.SH DIAGNOSTICS
+Exit status is zero if no errors occur.
+Errors result in a non-zero exit status and
+a diagnostic message being written to standard error.
+.SH AUTHOR
+Howard Chu of Symas Corporation <http://www.symas.com>

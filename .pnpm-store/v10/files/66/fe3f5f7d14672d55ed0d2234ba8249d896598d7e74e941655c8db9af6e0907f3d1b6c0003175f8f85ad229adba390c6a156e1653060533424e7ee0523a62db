@@ -1,0 +1,74 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "impliedStrict": true,
+      "classes": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "reportUnusedDisableDirectives": true,
+  "rules": {
+    "no-debugger": 0,
+    "no-alert": 0,
+    "no-unused-vars": [1, { "argsIgnorePattern": "res|next|^err" }],
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    "prefer-const": ["error", { "destructuring": "all" }],
+    "arrow-body-style": [2, "as-needed"],
+    "no-unused-expressions": [2, { "allowTaggedTemplates": true }],
+    "no-param-reassign": [2, { "props": false }],
+    "no-console": 0,
+    "no-use-before-define": 0,
+    "no-nested-ternary": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 1,
+    "import/no-named-as-default-member": 1,
+    "import": 0,
+    "func-names": 0,
+    "space-before-function-paren": 0,
+    "comma-dangle": 0,
+    "max-len": 0,
+    "import/extensions": 0,
+    "no-underscore-dangle": 0,
+    "consistent-return": 0,
+    "react/display-name": 1,
+    "react/no-array-index-key": 0,
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "react/react-in-jsx-scope": 0,
+    "react/prefer-stateless-function": 0,
+    "react/forbid-prop-types": 0,
+    "react/no-unescaped-entities": 0,
+    "react/prop-types": 0,
+    "jsx-a11y/accessible-emoji": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/no-unknown-property": ["error", { "ignore": ["i18nIsDynamicList"] }],
+    "radix": 0,
+    "no-shadow": [
+      2,
+      { "hoist": "all", "allow": ["resolve", "reject", "done", "next", "err", "error"] }
+    ],
+    "quotes": [2, "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "react/jsx-props-no-spreading": 0
+  },
+  "overrides": [
+    {
+      "files": ["test/*"],
+      "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"],
+      "globals": {
+        "globalThis": false
+      },
+      "rules": {
+        "testing-library/no-node-access": ["error", { "allowContainerFirstChild": true }],
+        "testing-library/no-manual-cleanup": "off"
+      }
+    }
+  ]
+}

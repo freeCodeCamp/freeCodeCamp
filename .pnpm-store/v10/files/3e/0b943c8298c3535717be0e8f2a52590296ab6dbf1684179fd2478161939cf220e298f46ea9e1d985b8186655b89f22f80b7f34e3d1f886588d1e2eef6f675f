@@ -1,0 +1,48 @@
+{
+  "name": "@prisma/get-platform",
+  "version": "6.19.3",
+  "description": "This package is intended for Prisma's internal use",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "Apache-2.0",
+  "author": "Tim Suchanek <suchanek@prisma.io>",
+  "homepage": "https://www.prisma.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prisma/prisma.git",
+    "directory": "packages/get-platform"
+  },
+  "bugs": "https://github.com/prisma/prisma/issues",
+  "devDependencies": {
+    "@codspeed/benchmark.js-plugin": "4.0.0",
+    "@swc/core": "1.11.5",
+    "@swc/jest": "0.2.37",
+    "@types/jest": "29.5.14",
+    "@types/node": "18.19.76",
+    "benchmark": "2.1.4",
+    "escape-string-regexp": "5.0.0",
+    "execa": "8.0.1",
+    "fs-jetpack": "5.1.0",
+    "jest": "29.7.0",
+    "jest-junit": "16.0.0",
+    "kleur": "4.1.5",
+    "tempy": "1.0.1",
+    "terminal-link": "4.0.0",
+    "ts-pattern": "5.6.2",
+    "typescript": "5.4.5",
+    "vitest": "3.2.4"
+  },
+  "dependencies": {
+    "@prisma/debug": "6.19.3"
+  },
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "DEV=true tsx helpers/build.ts",
+    "build": "tsx helpers/build.ts",
+    "test": "jest"
+  }
+}

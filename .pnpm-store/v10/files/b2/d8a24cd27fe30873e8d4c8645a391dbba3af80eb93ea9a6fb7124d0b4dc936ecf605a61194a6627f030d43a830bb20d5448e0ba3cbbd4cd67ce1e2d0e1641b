@@ -1,0 +1,31 @@
+{
+  "name": "meant",
+  "version": "1.0.3",
+  "description": "Like the `Did you mean?` in git for npm",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "standard": "^11.0.1",
+    "standard-version": "^8.0.1",
+    "tap": "^12.7.0"
+  },
+  "scripts": {
+    "test": "standard && tap test.js",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watilde/meant.git"
+  },
+  "keywords": [
+    "meant"
+  ],
+  "author": "Daijiro Wachi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/watilde/meant/issues"
+  },
+  "homepage": "https://github.com/watilde/meant#readme"
+}

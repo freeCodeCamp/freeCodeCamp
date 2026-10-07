@@ -1,0 +1,51 @@
+{
+  "name": "preact-compat",
+  "amdName": "preactCompat",
+  "version": "4.0.0",
+  "private": true,
+  "description": "A React compatibility layer for Preact",
+  "main": "dist/compat.js",
+  "module": "dist/compat.module.js",
+  "umd:main": "dist/compat.umd.js",
+  "source": "src/index.js",
+  "types": "src/index.d.ts",
+  "license": "MIT",
+  "mangle": {
+    "regex": "^_"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "browser": "./dist/compat.module.js",
+      "umd": "./dist/compat.umd.js",
+      "import": "./dist/compat.mjs",
+      "require": "./dist/compat.js"
+    },
+    "./client": {
+      "types": "./client.d.ts",
+      "import": "./client.mjs",
+      "require": "./client.js"
+    },
+    "./server": {
+      "browser": "./server.browser.js",
+      "import": "./server.mjs",
+      "require": "./server.js"
+    },
+    "./jsx-runtime": {
+      "import": "./jsx-runtime.mjs",
+      "require": "./jsx-runtime.js"
+    },
+    "./jsx-dev-runtime": {
+      "import": "./jsx-dev-runtime.mjs",
+      "require": "./jsx-dev-runtime.js"
+    },
+    "./scheduler": {
+      "import": "./scheduler.mjs",
+      "require": "./scheduler.js"
+    },
+    "./package.json": "./package.json"
+  }
+}

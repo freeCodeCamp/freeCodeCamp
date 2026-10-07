@@ -1,0 +1,1 @@
+{"version":3,"file":"audio-buffer-source-node.d.ts","sourceRoot":"","sources":["../../../src/guards/audio-buffer-source-node.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,sBAAsB,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AACnE,OAAO,EAAE,QAAQ,EAAE,MAAM,UAAU,CAAC;AAEpC,eAAO,MAAM,uBAAuB,GAAI,CAAC,SAAS,QAAQ,aAAa,UAAU,CAAC,CAAC,CAAC,KAAG,SAAS,IAAI,sBAAsB,CAAC,CAAC,CAE3H,CAAC"}

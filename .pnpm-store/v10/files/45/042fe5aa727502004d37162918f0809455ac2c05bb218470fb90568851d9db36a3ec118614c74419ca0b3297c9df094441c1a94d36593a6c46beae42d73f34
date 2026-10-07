@@ -1,0 +1,19 @@
+import * as helpers from "../../helpers/lib";
+import FakeTimers from "@sinonjs/fake-timers";
+import { assert as chaiAssert } from "chai";
+import type { TestEvaluator, Fail, CodeEvent, TestEvent, InitEvent, Pass, InitTestFrameOptions } from "../../shared/src/interfaces/test-evaluator";
+import { ProxyConsole } from "../../shared/src/proxy-console";
+declare global {
+    var __FakeTimers: typeof FakeTimers;
+    var assert: typeof chaiAssert;
+    var __helpers: typeof helpers;
+}
+export declare class DOMTestEvaluator implements TestEvaluator {
+    #private;
+    constructor(proxyConsole?: ProxyConsole);
+    init(opts: InitTestFrameOptions): Promise<void>;
+    runTest(test: string): Promise<Pass | Fail>;
+    runCode(code: string): Promise<void>;
+    handleMessage(e: CodeEvent | TestEvent | InitEvent<InitTestFrameOptions>): Promise<void>;
+}
+//# sourceMappingURL=dom-test-evaluator.d.ts.map

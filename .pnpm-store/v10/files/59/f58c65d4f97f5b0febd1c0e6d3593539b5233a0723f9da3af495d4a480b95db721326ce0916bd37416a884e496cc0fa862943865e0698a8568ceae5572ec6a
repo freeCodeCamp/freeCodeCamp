@@ -1,0 +1,42 @@
+@import '../variables';
+@import '../mixins';
+
+@keyframes ball-grid-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@mixin ball-grid-pulse($n:9) {
+  @for $i from 1 through $n {
+    > div:nth-child(#{$i}) {
+      animation-delay: ((random(100) / 100) - 0.2) + s;
+      animation-duration: ((random(100) / 100) + 0.6) + s;
+    }
+  }
+
+}
+
+.ball-grid-pulse {
+  @include ball-grid-pulse();
+  width: ($ball-size * 3) + $margin * 6;
+
+  > div {
+    @include balls();
+    @include global-animation();
+
+    display: inline-block;
+    float: left;
+    animation-name: ball-grid-pulse;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+  }
+}

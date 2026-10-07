@@ -1,0 +1,45 @@
+{
+	"name": "is-wsl",
+	"version": "2.2.0",
+	"description": "Check if the process is running inside Windows Subsystem for Linux (Bash on Windows)",
+	"license": "MIT",
+	"repository": "sindresorhus/is-wsl",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"check",
+		"wsl",
+		"windows",
+		"subsystem",
+		"linux",
+		"detect",
+		"bash",
+		"process",
+		"console",
+		"terminal",
+		"is"
+	],
+	"dependencies": {
+		"is-docker": "^2.0.0"
+	},
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"clear-module": "^3.2.0",
+		"proxyquire": "^2.1.0",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

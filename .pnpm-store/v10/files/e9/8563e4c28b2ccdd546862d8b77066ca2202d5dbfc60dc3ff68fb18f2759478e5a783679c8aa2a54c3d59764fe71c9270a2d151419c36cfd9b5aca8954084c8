@@ -1,0 +1,52 @@
+# `MD022` - Headings should be surrounded by blank lines
+
+Tags: `blank_lines`, `headings`
+
+Aliases: `blanks-around-headings`
+
+Parameters:
+
+- `lines_above`: Blank lines above heading (`integer|integer[]`, default `1`)
+- `lines_below`: Blank lines below heading (`integer|integer[]`, default `1`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when headings (any style) are either not preceded or not
+followed by at least one blank line:
+
+```markdown
+# Heading 1
+Some text
+
+Some more text
+## Heading 2
+```
+
+To fix this, ensure that all headings have a blank line both before and after
+(except where the heading is at the beginning or end of the document):
+
+```markdown
+# Heading 1
+
+Some text
+
+Some more text
+
+## Heading 2
+```
+
+The `lines_above` and `lines_below` parameters can be used to specify a
+different number of blank lines (including `0`) above or below each heading.
+If the value `-1` is used for either parameter, any number of blank lines is
+allowed. To customize the number of lines above or below each heading level
+individually, specify a `number[]` where values correspond to heading levels
+1-6 (in order).
+
+Notes: If `lines_above` or `lines_below` are configured to require more than one
+blank line, [MD012/no-multiple-blanks](md012.md) should also be customized. This
+rule checks for *at least* as many blank lines as specified; any extra blank
+lines are ignored.
+
+Rationale: Aside from aesthetic reasons, some parsers, including `kramdown`,
+will not parse headings that don't have a blank line before, and will parse them
+as regular text.

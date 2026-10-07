@@ -1,0 +1,74 @@
+{
+  "name": "pirates",
+  "description": "Properly hijack require, i.e., properly define require hooks and customizations",
+  "main": "lib/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "babel src -d lib",
+    "test": "cross-env BABEL_ENV=test yarn run build && nyc ava",
+    "lint": "eslint --report-unused-disable-directives .",
+    "prepublishOnly": "yarn run build"
+  },
+  "files": [
+    "lib",
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danez/pirates.git"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "author": {
+    "name": "Ari Porad",
+    "email": "ari@ariporad.com",
+    "url": "http://ariporad.com"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.21.0",
+    "@babel/core": "7.21.4",
+    "@babel/preset-env": "7.21.4",
+    "ava": "1.4.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.1.0",
+    "babel-plugin-istanbul": "5.2.0",
+    "cross-env": "5.2.1",
+    "decache": "4.6.1",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "4.3.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-prettier": "3.4.1",
+    "mock-require": "3.0.3",
+    "nyc": "13.3.0",
+    "prettier": "1.19.1",
+    "rewire": "4.0.1",
+    "rimraf": "3.0.2"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danez/pirates/issues"
+  },
+  "homepage": "https://github.com/danez/pirates#readme",
+  "ava": {
+    "files": [
+      "test/*.js"
+    ],
+    "sources": [
+      "lib/**/*.js"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "src/*.js"
+    ],
+    "reporter": [
+      "json",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
+  "version": "4.0.6"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "@sideway/address",
+    "description": "Email address and domain validation",
+    "version": "4.1.5",
+    "repository": "git://github.com/sideway/address",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib"
+    ],
+    "keywords": [
+        "email",
+        "domain",
+        "address",
+        "validation"
+    ],
+    "dependencies": {
+        "@hapi/hoek": "^9.0.0"
+    },
+    "devDependencies": {
+        "typescript": "4.0.x",
+        "@hapi/code": "8.x.x",
+        "@hapi/lab": "24.x.x"
+    },
+    "scripts": {
+        "test": "lab -a @hapi/code -t 100 -L -Y",
+        "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html"
+    },
+    "license": "BSD-3-Clause"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "react-gtm-module",
+  "version": "2.0.11",
+  "description": "React Google Tag Manager Module",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "jest": "jest",
+    "test": "npm run lint && npm run jest",
+    "build": "babel src -d dist --ignore src/__tests__",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alinemorelli/react-gtm"
+  },
+  "author": {
+    "name": "Aline Morelli",
+    "email": "aline.morelliw@gmail.com",
+    "url": "https://github.com/alinemorelli"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alinemorelli/react-gtm/issues"
+  },
+  "homepage": "",
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-component",
+    "google tag manager",
+    "tag manager",
+    "gtm"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "6.18.0",
+    "enzyme": "^3.3.0",
+    "eslint": "^4.18.2",
+    "jest": "^19.0.2",
+    "jest-cli": "^21.2.1",
+    "sinon": "^1.14.1"
+  },
+  "jest": {
+    "testRegex": "__tests__.*\\.spec.js$",
+    "collectCoverage": true
+  }
+}

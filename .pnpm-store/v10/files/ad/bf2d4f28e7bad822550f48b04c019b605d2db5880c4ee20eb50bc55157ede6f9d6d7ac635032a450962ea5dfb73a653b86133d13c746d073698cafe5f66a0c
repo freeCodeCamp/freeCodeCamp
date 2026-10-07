@@ -1,0 +1,1 @@
+{"version":3,"file":"enhanceDscWithOpenTelemetryRootSpanName.d.ts","sourceRoot":"","sources":["../../../src/utils/enhanceDscWithOpenTelemetryRootSpanName.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,cAAc,CAAC;AAM3C;;;GAGG;AACH,wBAAgB,uCAAuC,CAAC,MAAM,EAAE,MAAM,GAAG,IAAI,CA6B5E"}

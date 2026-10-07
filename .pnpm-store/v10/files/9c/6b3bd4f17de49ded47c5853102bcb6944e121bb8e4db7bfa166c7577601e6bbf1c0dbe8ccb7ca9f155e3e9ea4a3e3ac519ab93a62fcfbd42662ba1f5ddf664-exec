@@ -1,0 +1,30 @@
+{
+  "name": "@hapi/topo",
+  "description": "Topological sorting with grouping support",
+  "version": "5.1.0",
+  "repository": "git://github.com/hapijs/topo",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "topological",
+    "sort",
+    "toposort",
+    "topsort"
+  ],
+  "dependencies": {
+    "@hapi/hoek": "^9.0.0"
+  },
+  "devDependencies": {
+    "@hapi/code": "8.x.x",
+    "@hapi/lab": "24.x.x",
+    "typescript": "~4.0.2"
+  },
+  "scripts": {
+    "test": "lab -a @hapi/code -t 100 -L -Y",
+    "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html"
+  },
+  "license": "BSD-3-Clause"
+}

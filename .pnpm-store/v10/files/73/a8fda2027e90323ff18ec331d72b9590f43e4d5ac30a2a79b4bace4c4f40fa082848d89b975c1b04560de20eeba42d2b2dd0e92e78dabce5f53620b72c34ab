@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Order.js",
+  "module": "../dist/esm/Order.js",
+  "types": "../dist/dts/Order.d.ts"
+}

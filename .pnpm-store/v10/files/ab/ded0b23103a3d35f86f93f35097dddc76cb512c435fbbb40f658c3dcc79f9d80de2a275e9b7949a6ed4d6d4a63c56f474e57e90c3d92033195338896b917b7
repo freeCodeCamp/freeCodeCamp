@@ -1,0 +1,130 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# The SystemInfo domain defines methods and events for querying low-level system information.
+experimental domain SystemInfo
+
+  # Describes a single graphics processor (GPU).
+  type GPUDevice extends object
+    properties
+      # PCI ID of the GPU vendor, if available; 0 otherwise.
+      number vendorId
+      # PCI ID of the GPU device, if available; 0 otherwise.
+      number deviceId
+      # Sub sys ID of the GPU, only available on Windows.
+      optional number subSysId
+      # Revision of the GPU, only available on Windows.
+      optional number revision
+      # String description of the GPU vendor, if the PCI ID is not available.
+      string vendorString
+      # String description of the GPU device, if the PCI ID is not available.
+      string deviceString
+      # String description of the GPU driver vendor.
+      string driverVendor
+      # String description of the GPU driver version.
+      string driverVersion
+
+  # Describes the width and height dimensions of an entity.
+  type Size extends object
+    properties
+      # Width in pixels.
+      integer width
+      # Height in pixels.
+      integer height
+
+  # Describes a supported video decoding profile with its associated minimum and
+  # maximum resolutions.
+  type VideoDecodeAcceleratorCapability extends object
+    properties
+      # Video codec profile that is supported, e.g. VP9 Profile 2.
+      string profile
+      # Maximum video dimensions in pixels supported for this |profile|.
+      Size maxResolution
+      # Minimum video dimensions in pixels supported for this |profile|.
+      Size minResolution
+
+  # Describes a supported video encoding profile with its associated maximum
+  # resolution and maximum framerate.
+  type VideoEncodeAcceleratorCapability extends object
+    properties
+      # Video codec profile that is supported, e.g H264 Main.
+      string profile
+      # Maximum video dimensions in pixels supported for this |profile|.
+      Size maxResolution
+      # Maximum encoding framerate in frames per second supported for this
+      # |profile|, as fraction's numerator and denominator, e.g. 24/1 fps,
+      # 24000/1001 fps, etc.
+      integer maxFramerateNumerator
+      integer maxFramerateDenominator
+
+  # YUV subsampling type of the pixels of a given image.
+  type SubsamplingFormat extends string
+    enum
+      yuv420
+      yuv422
+      yuv444
+
+  # Image format of a given image.
+  type ImageType extends string
+    enum
+      jpeg
+      webp
+      unknown
+
+  # Provides information about the GPU(s) on the system.
+  type GPUInfo extends object
+    properties
+      # The graphics devices on the system. Element 0 is the primary GPU.
+      array of GPUDevice devices
+      # An optional dictionary of additional GPU related attributes.
+      optional object auxAttributes
+      # An optional dictionary of graphics features and their status.
+      optional object featureStatus
+      # An optional array of GPU driver bug workarounds.
+      array of string driverBugWorkarounds
+      # Supported accelerated video decoding capabilities.
+      array of VideoDecodeAcceleratorCapability videoDecoding
+      # Supported accelerated video encoding capabilities.
+      array of VideoEncodeAcceleratorCapability videoEncoding
+
+  # Represents process info.
+  type ProcessInfo extends object
+    properties
+      # Specifies process type.
+      string type
+      # Specifies process id.
+      integer id
+      # Specifies cumulative CPU usage in seconds across all threads of the
+      # process since the process start.
+      number cpuTime
+
+  # Returns information about the system.
+  command getInfo
+    returns
+      # Information about the GPUs on the system.
+      GPUInfo gpu
+      # A platform-dependent description of the model of the machine. On Mac OS, this is, for
+      # example, 'MacBookPro'. Will be the empty string if not supported.
+      string modelName
+      # A platform-dependent description of the version of the machine. On Mac OS, this is, for
+      # example, '10.1'. Will be the empty string if not supported.
+      string modelVersion
+      # The command line string used to launch the browser. Will be the empty string if not
+      # supported.
+      string commandLine
+
+  # Returns information about the feature state.
+  command getFeatureState
+    parameters
+      string featureState
+    returns
+      boolean featureEnabled
+
+  # Returns information about all running processes.
+  command getProcessInfo
+    returns
+      # An array of process info blocks.
+      array of ProcessInfo processInfo

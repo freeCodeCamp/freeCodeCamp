@@ -1,0 +1,32 @@
+{
+  "name": "spdx-correct",
+  "description": "correct invalid SPDX expressions",
+  "version": "3.2.0",
+  "dependencies": {
+    "spdx-expression-parse": "^3.0.0",
+    "spdx-license-ids": "^3.0.0"
+  },
+  "devDependencies": {
+    "defence-cli": "^3.0.1",
+    "replace-require-self": "^1.0.0",
+    "standard": "^14.3.4",
+    "standard-markdown": "^6.0.0",
+    "tape": "^5.0.1"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "SPDX",
+    "law",
+    "legal",
+    "license",
+    "metadata"
+  ],
+  "license": "Apache-2.0",
+  "repository": "jslicense/spdx-correct.js",
+  "scripts": {
+    "lint": "standard && standard-markdown README.md",
+    "test": "defence README.md | replace-require-self | node && node test.js"
+  }
+}

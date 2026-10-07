@@ -1,0 +1,67 @@
+{
+  "name": "import-in-the-middle",
+  "version": "3.0.2",
+  "description": "Intercept imports in Node.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "c8 --reporter lcov --check-coverage --lines 45 imhotap --files test/{hook,low-level,other,get-esm-exports,register}/*",
+    "test:e2e": "node test/check-exports/test.mjs && node test/integration-tests/turbopack-dev.mjs && node test/integration-tests/turbopack-build-start.mjs",
+    "test:ts": "c8 --reporter lcov imhotap --files test/typescript/*.test.mts",
+    "coverage": "c8 --reporter html imhotap --files test/{hook,low-level,other,get-esm-exports,register}/* && echo \"\nNow open coverage/index.html\n\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nodejs/import-in-the-middle.git"
+  },
+  "keywords": [
+    "import",
+    "ritm",
+    "iitm",
+    "loader",
+    "hook",
+    "hooks"
+  ],
+  "author": "Bryan English <bryan.english@datadoghq.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nodejs/import-in-the-middle/issues"
+  },
+  "homepage": "https://github.com/nodejs/import-in-the-middle#readme",
+  "imhotap": {
+    "runner": "node",
+    "test-env": "NODE_OPTIONS=--no-warnings --require ./test/version-check.js --experimental-loader ./test/generic-loader.mjs"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/eslint-parser": "^7.28.5",
+    "@babel/plugin-syntax-import-assertions": "^7.27.1",
+    "@node-rs/crc32": "^1.10.6",
+    "@react-email/components": "^0.0.19",
+    "@types/node": "^18.0.6",
+    "c8": "^7.14.0",
+    "date-fns": "^3.6.0",
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.6.0",
+    "got": "^14.6.6",
+    "imhotap": "^2.2.0",
+    "openai": "4.47.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5",
+    "vue": "^3.5.26"
+  },
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "acorn-import-attributes": "^1.9.5",
+    "cjs-module-lexer": "^2.2.0",
+    "module-details-from-path": "^1.0.4"
+  }
+}

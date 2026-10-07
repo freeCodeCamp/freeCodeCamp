@@ -1,0 +1,30 @@
+export { W3CBaggagePropagator } from './baggage/propagation/W3CBaggagePropagator';
+export { AnchoredClock } from './common/anchored-clock';
+export type { Clock } from './common/anchored-clock';
+export { isAttributeValue, sanitizeAttributes } from './common/attributes';
+export { globalErrorHandler, setGlobalErrorHandler, } from './common/global-error-handler';
+export { loggingErrorHandler } from './common/logging-error-handler';
+export { addHrTimes, getTimeOrigin, hrTime, hrTimeDuration, hrTimeToMicroseconds, hrTimeToMilliseconds, hrTimeToNanoseconds, hrTimeToSeconds, hrTimeToTimeStamp, isTimeInput, isTimeInputHrTime, millisToHrTime, timeInputToHrTime, } from './common/time';
+export { unrefTimer } from './common/timer-util';
+export type { ErrorHandler, InstrumentationScope } from './common/types';
+export { ExportResultCode } from './ExportResult';
+export type { ExportResult } from './ExportResult';
+export { parseKeyPairsIntoRecord } from './baggage/utils';
+export { SDK_INFO, _globalThis, getStringFromEnv, getBooleanFromEnv, getNumberFromEnv, getStringListFromEnv, otperformance, } from './platform';
+export { CompositePropagator } from './propagation/composite';
+export type { CompositePropagatorConfig } from './propagation/composite';
+export { TRACE_PARENT_HEADER, TRACE_STATE_HEADER, W3CTraceContextPropagator, parseTraceParent, } from './trace/W3CTraceContextPropagator';
+export { RPCType, deleteRPCMetadata, getRPCMetadata, setRPCMetadata, } from './trace/rpc-metadata';
+export type { RPCMetadata } from './trace/rpc-metadata';
+export { isTracingSuppressed, suppressTracing, unsuppressTracing, } from './trace/suppress-tracing';
+export { TraceState } from './trace/TraceState';
+export { merge } from './utils/merge';
+export { TimeoutError, callWithTimeout } from './utils/timeout';
+export { isUrlIgnored, urlMatches } from './utils/url';
+export { BindOnceFuture } from './utils/callback';
+export { diagLogLevelFromString } from './utils/configuration';
+import { _export } from './internal/exporter';
+export declare const internal: {
+    _export: typeof _export;
+};
+//# sourceMappingURL=index.d.ts.map

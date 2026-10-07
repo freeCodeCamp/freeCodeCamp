@@ -1,0 +1,17 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": 0,
+		"max-statements": [2, 25],
+		"new-cap": [2, {
+			"capIsNewExceptions": [
+				"GetIntrinsic",
+				"IsCallable",
+				"Type",
+			],
+		}],
+	},
+}

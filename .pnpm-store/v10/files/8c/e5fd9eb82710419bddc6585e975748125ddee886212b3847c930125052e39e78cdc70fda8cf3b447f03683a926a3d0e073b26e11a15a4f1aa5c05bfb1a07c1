@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Inspectable.js",
+  "module": "../dist/esm/Inspectable.js",
+  "types": "../dist/dts/Inspectable.d.ts"
+}

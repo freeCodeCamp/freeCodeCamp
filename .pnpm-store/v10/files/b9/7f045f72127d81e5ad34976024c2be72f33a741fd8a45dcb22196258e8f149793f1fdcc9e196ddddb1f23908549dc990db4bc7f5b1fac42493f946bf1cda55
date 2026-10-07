@@ -1,0 +1,202 @@
+{
+  "name": "axe-core",
+  "description": "Accessibility engine for automated Web UI testing",
+  "version": "4.10.3",
+  "license": "MPL-2.0",
+  "engines": {
+    "node": ">=4"
+  },
+  "contributors": [
+    {
+      "name": "David Sturley",
+      "organization": "Deque Systems, Inc.",
+      "url": "http://deque.com/"
+    },
+    {
+      "name": "Dylan Barrell",
+      "email": "dylan@barrell.com",
+      "organization": "Deque Systems, Inc.",
+      "url": "http://deque.com/"
+    },
+    {
+      "name": "Wilco Fiers",
+      "organization": "Deque Systems, Inc.",
+      "url": "http://deque.com/"
+    },
+    {
+      "name": "Dian Fay",
+      "organization": "Deque Systems, Inc.",
+      "url": "http://deque.com/"
+    },
+    {
+      "name": "Marcy Sutton",
+      "organization": "Deque Systems, Inc.",
+      "url": "http://deque.com/"
+    },
+    {
+      "name": "Ava Gaiety Wroten",
+      "organization": "Deque Systems, Inc.",
+      "url": "http://deque.com/"
+    }
+  ],
+  "homepage": "https://www.deque.com/axe/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dequelabs/axe-core.git"
+  },
+  "keywords": [
+    "Accessibility",
+    "a11y",
+    "testing",
+    "unit",
+    "tdd",
+    "bdd",
+    "axe"
+  ],
+  "main": "axe.js",
+  "typings": "axe.d.ts",
+  "files": [
+    "axe.js",
+    "axe.min.js",
+    "axe.d.ts",
+    "sri-history.json",
+    "locales/",
+    "LICENSE-3RD-PARTY.txt"
+  ],
+  "standard-version": {
+    "scripts": {
+      "postbump": "npm ci && npm run sri-update && git add doc/rule-descriptions.md"
+    },
+    "skip": {
+      "tag": true
+    }
+  },
+  "scripts": {
+    "start": "http-server -a \"\" -p 9876 --silent",
+    "develop": "grunt dev --force",
+    "api-docs": "jsdoc --configure .jsdoc.json",
+    "build": "grunt",
+    "patch": "npx patch-package",
+    "unpatch": "npx patch-package --reverse",
+    "eslint": "eslint --color --format stylish '{lib,test,build,doc}/**/*.js' 'Gruntfile.js'",
+    "test": "npm run test:tsc && run-s \"test:unit:* -- {@}\" --",
+    "test:tsc": "tsc",
+    "test:unit": "karma start test/karma.conf.js",
+    "test:debug": "npm run test:unit -- --no-single-run --browsers=ChromeDebugging",
+    "test:unit:core": "npm run test:unit -- testDirs=core",
+    "test:unit:commons": "npm run test:unit -- testDirs=commons",
+    "test:unit:rule-matches": "npm run test:unit -- testDirs=rule-matches",
+    "test:unit:checks": "npm run test:unit -- testDirs=checks",
+    "test:unit:api": "npm run test:unit -- testDirs=api",
+    "test:unit:integration": "npm run test:unit -- testDirs=integration",
+    "test:unit:virtual-rules": "npm run test:unit -- testDirs=virtual-rules",
+    "integration": "node test/integration/full/test-webdriver.js",
+    "integration:apg": "mocha --fail-zero test/aria-practices/*.spec.js",
+    "integration:chrome": "npm run integration -- browser=Chrome",
+    "integration:firefox": "npm run integration -- browser=Firefox",
+    "test:integration": "npm run test:integration:chrome",
+    "test:integration:chrome": "start-server-and-test 9876 integration:chrome",
+    "test:integration:firefox": "start-server-and-test 9876 integration:firefox",
+    "test:examples": "node ./doc/examples/test-examples",
+    "test:act": "mocha --fail-zero test/act-rules/*.spec.js",
+    "test:apg": "start-server-and-test 9876 integration:apg",
+    "test:locales": "mocha test/test-locales.js",
+    "test:virtual-rules": "mocha test/test-virtual-rules.js",
+    "test:rule-help-version": "mocha test/test-rule-help-version.js",
+    "test:node": "node test/node/node.js",
+    "test:jsdom": "mocha test/node/jsdom.js",
+    "version": "echo \"use 'npm run release' to bump axe-core version\" && exit 1",
+    "release": "git fetch origin --tags --force && standard-version -a",
+    "rule-gen": "node build/rule-generator",
+    "next-release": "standard-version --scripts.prebump=./build/next-version.js --skip.commit=true --skip.tag=true",
+    "sri-update": "grunt build && node build/sri-update && git add sri-history.json",
+    "sri-validate": "node build/sri-update --validate",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check .",
+    "prepare": "husky && npm run patch",
+    "prebuild": "node ./build/check-node-version.js",
+    "pretest": "node ./build/check-node-version.js",
+    "postbuild": "prettier --write ./locales/_template.json ./doc/rule-descriptions.md"
+  },
+  "devDependencies": {
+    "@axe-core/webdriverjs": "^4.9.0",
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/runtime-corejs3": "^7.20.7",
+    "@deque/dot": "^1.1.5",
+    "@types/node": "^4.9.5",
+    "aria-practices": "github:w3c/aria-practices#ce0336bd82d7d3651abcbde86af644197ddbc629",
+    "aria-query": "^5.1.3",
+    "browser-driver-manager": "1.0.4",
+    "chai": "^4.3.7",
+    "chalk": "^4.x",
+    "chromedriver": "latest",
+    "clean-jsdoc-theme": "^4.2.17",
+    "clone": "^2.1.2",
+    "colorjs.io": "0.4.3",
+    "conventional-commits-parser": "^5.0.0",
+    "core-js": "^3.27.1",
+    "css-selector-parser": "^1.4.1",
+    "emoji-regex": "^10.2.1",
+    "es6-promise": "^4.2.8",
+    "esbuild": "^0.10.x",
+    "eslint": "^9.2.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-mocha-no-only": "^1.2.0",
+    "execa": "5.x",
+    "glob": "^10.3.10",
+    "globals": "^15.2.0",
+    "grunt": "^1.5.3",
+    "grunt-babel": "^8.0.0",
+    "grunt-bytesize": "^0.2.0",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "html-entities": "^2.4.0",
+    "http-server": "^14.1.1",
+    "husky": "^9.0.7",
+    "inquirer": "^8.2.5",
+    "jquery": "^3.6.3",
+    "jsdoc": "^4.0.2",
+    "jsdom": "^25.0.1",
+    "karma": "^6.4.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-mocha": "^2.0.1",
+    "karma-sinon": "^1.0.5",
+    "karma-spec-reporter": "^0.0.36",
+    "lint-staged": "^15.0.2",
+    "memoizee": "^0.4.15",
+    "mocha": "^10.2.0",
+    "node-notifier": "^10.0.1",
+    "npm-run-all": "^4.1.5",
+    "outdent": "^0.8.0",
+    "patch-package": "^8.0.0",
+    "prettier": "^3.0.3",
+    "revalidator": "^0.3.1",
+    "selenium-webdriver": "^4.7.1",
+    "serve-handler": "^6.1.5",
+    "sinon": "^19.0.2",
+    "sri-toolbox": "^0.2.0",
+    "standard-version": "^9.5.0",
+    "start-server-and-test": "^2.0.1",
+    "typedarray": "^0.0.7",
+    "typescript": "^5.2.2",
+    "uglify-js": "^3.17.4",
+    "wcag-act-rules": "github:w3c/wcag-act-rules#dc90495a5533d326b300ee5a9487afdfc6d493c0",
+    "weakmap-polyfill": "^2.0.4"
+  },
+  "lint-staged": {
+    "*.{md,json,ts,html}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}

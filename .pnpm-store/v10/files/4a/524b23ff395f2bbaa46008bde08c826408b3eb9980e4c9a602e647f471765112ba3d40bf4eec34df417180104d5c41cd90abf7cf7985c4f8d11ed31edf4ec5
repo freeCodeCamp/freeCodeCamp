@@ -1,0 +1,46 @@
+{
+	"name": "parent-module",
+	"version": "1.0.1",
+	"description": "Get the path of the parent module",
+	"license": "MIT",
+	"repository": "sindresorhus/parent-module",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"parent",
+		"module",
+		"package",
+		"pkg",
+		"caller",
+		"calling",
+		"module",
+		"path",
+		"callsites",
+		"callsite",
+		"stacktrace",
+		"stack",
+		"trace",
+		"function",
+		"file"
+	],
+	"dependencies": {
+		"callsites": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"execa": "^1.0.0",
+		"xo": "^0.24.0"
+	}
+}

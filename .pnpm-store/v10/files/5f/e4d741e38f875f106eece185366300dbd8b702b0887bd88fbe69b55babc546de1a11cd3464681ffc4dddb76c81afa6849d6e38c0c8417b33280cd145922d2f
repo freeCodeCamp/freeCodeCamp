@@ -1,0 +1,84 @@
+{
+  "name": "unist-util-stringify-position",
+  "version": "2.0.3",
+  "description": "unist utility to serialize a node, position, or point as a human readable location",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "position",
+    "location",
+    "point",
+    "node",
+    "stringify",
+    "tostring"
+  ],
+  "repository": "syntax-tree/unist-util-stringify-position",
+  "bugs": "https://github.com/syntax-tree/unist-util-stringify-position/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "types": "types/index.d.ts",
+  "files": [
+    "types/index.d.ts",
+    "index.js"
+  ],
+  "dependencies": {
+    "@types/unist": "^2.0.2"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "dtslint": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "typescript": "^3.0.0",
+    "xo": "^0.27.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.{js,ts}\" && xo --fix",
+    "build-bundle": "browserify . -s unistUtilStringifyPosition > unist-util-stringify-position.js",
+    "build-mangle": "browserify . -s unistUtilStringifyPosition -p tinyify > unist-util-stringify-position.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignores": [
+      "unist-util-stringify-position.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

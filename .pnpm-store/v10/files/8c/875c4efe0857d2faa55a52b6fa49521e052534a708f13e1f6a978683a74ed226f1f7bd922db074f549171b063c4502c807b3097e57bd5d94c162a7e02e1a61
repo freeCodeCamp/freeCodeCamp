@@ -1,0 +1,50 @@
+{
+  "name": "sonic-boom",
+  "version": "3.4.0",
+  "description": "Extremely fast utf8 only stream implementation",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "npm run test:types && standard && npm run test:unit",
+    "test:unit": "tap",
+    "test:types": "tsc && tsd && ts-node types/tests/test.ts",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinojs/sonic-boom.git"
+  },
+  "keywords": [
+    "stream",
+    "fs",
+    "net",
+    "fd",
+    "file",
+    "descriptor",
+    "fast"
+  ],
+  "author": "Matteo Collina <hello@matteocollina.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinojs/sonic-boom/issues"
+  },
+  "homepage": "https://github.com/pinojs/sonic-boom#readme",
+  "devDependencies": {
+    "@types/node": "^20.1.0",
+    "fastbench": "^1.0.1",
+    "husky": "^8.0.1",
+    "proxyquire": "^2.1.3",
+    "standard": "^17.0.0",
+    "tap": "^16.2.0",
+    "tsd": "^0.29.0",
+    "typescript": "^5.0.2",
+    "ts-node": "^10.8.0"
+  },
+  "dependencies": {
+    "atomic-sleep": "^1.0.0"
+  },
+  "tsd": {
+    "directory": "./types"
+  }
+}

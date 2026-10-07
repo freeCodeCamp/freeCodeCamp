@@ -1,0 +1,27 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.post-edit-widget {
+	box-shadow: 0 0 8px 2px var(--vscode-widget-shadow);
+	border: 1px solid var(--vscode-widget-border, transparent);
+	border-radius: 4px;
+	color: var(--vscode-button-foreground);
+	background-color: var(--vscode-button-background);
+	overflow: hidden;
+}
+
+.post-edit-widget .monaco-button {
+	padding: 2px;
+	border: none;
+	border-radius: 0;
+}
+
+.post-edit-widget .monaco-button:hover {
+	background-color: var(--vscode-button-hoverBackground) !important;
+}
+
+.post-edit-widget .monaco-button .codicon {
+	margin: 0;
+}

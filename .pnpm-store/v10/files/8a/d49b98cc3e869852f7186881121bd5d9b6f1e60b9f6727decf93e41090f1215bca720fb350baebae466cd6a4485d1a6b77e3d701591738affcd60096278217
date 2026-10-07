@@ -1,0 +1,61 @@
+{
+  "name": "github-slugger",
+  "description": "Generate a slug just like GitHub does for markdown headings.",
+  "version": "1.5.0",
+  "author": "Dan Flettre <flettre@gmail.com>",
+  "contributors": [
+    "Dan Flettre <flettre@gmail.com>",
+    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "bugs": {
+    "url": "https://github.com/Flet/github-slugger/issues"
+  },
+  "files": [
+    "index.js",
+    "regex.js"
+  ],
+  "devDependencies": {
+    "@octokit/rest": "^19.0.0",
+    "@unicode/unicode-13.0.0": "^1.0.0",
+    "hast-util-select": "^5.0.0",
+    "mdast-util-gfm": "^2.0.0",
+    "mdast-util-to-markdown": "^1.0.0",
+    "node-fetch": "^3.0.0",
+    "nyc": "^15.0.0",
+    "regenerate": "^1.0.0",
+    "rehype-parse": "^8.0.0",
+    "standard": "*",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.0",
+    "unified": "^10.0.0"
+  },
+  "homepage": "https://github.com/Flet/github-slugger",
+  "keywords": [
+    "anchor",
+    "github",
+    "hash",
+    "heading",
+    "markdown",
+    "slug",
+    "slugger",
+    "url"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Flet/github-slugger.git"
+  },
+  "scripts": {
+    "format": "standard --fix",
+    "test-api": "tape test | tap-spec",
+    "test-coverage": "nyc --reporter lcov tape test/index.js | tap-spec",
+    "test": "npm run format && npm run test-coverage"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  }
+}

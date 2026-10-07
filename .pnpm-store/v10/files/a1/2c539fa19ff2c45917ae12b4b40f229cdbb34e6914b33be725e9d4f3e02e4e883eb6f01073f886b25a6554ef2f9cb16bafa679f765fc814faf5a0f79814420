@@ -1,0 +1,42 @@
+{
+  "name": "ret",
+  "description": "Tokenizes a string that represents a regular expression.",
+  "keywords": [
+    "regex",
+    "regexp",
+    "regular expression",
+    "parser",
+    "tokenizer"
+  ],
+  "version": "0.5.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fent/ret.js.git"
+  },
+  "author": "fent <fentbox@gmail.com> (https://github.com/fent)",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "nyc --extension .ts --reporter=lcov --reporter=text-summary vows -- --spec test/*-test.js",
+    "build": "tsc",
+    "prepare": "tsc",
+    "lint": "eslint ./lib ./test",
+    "lint:fix": "eslint --fix ./lib ./test"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.8",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "eslint": "^7.16.0",
+    "nyc": "^14.1.1",
+    "typescript": "^4.0.3",
+    "vows": "^0.8.3"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

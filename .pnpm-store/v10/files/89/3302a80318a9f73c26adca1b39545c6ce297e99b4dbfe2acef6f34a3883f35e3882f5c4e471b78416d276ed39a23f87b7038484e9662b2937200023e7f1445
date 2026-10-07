@@ -1,0 +1,1 @@
+{"version":3,"file":"native-panner-node-factory.d.ts","sourceRoot":"","sources":["../../../src/types/native-panner-node-factory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,MAAM,eAAe,CAAC;AAC/C,OAAO,EAAE,cAAc,EAAE,MAAM,kBAAkB,CAAC;AAClD,OAAO,EAAE,iBAAiB,EAAE,MAAM,sBAAsB,CAAC;AAEzD,MAAM,MAAM,wBAAwB,GAAG,CAAC,aAAa,EAAE,cAAc,EAAE,OAAO,EAAE,cAAc,KAAK,iBAAiB,CAAC"}

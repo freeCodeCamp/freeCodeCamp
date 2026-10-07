@@ -1,0 +1,486 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.quick-input-widget {
+	position: absolute;
+	width: 600px;
+	z-index: 2550;
+	left: 50%;
+	-webkit-app-region: no-drag;
+	border-radius: 6px;
+}
+
+.quick-input-titlebar {
+	cursor: grab;
+	display: flex;
+	align-items: center;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.quick-input-left-action-bar {
+	display: flex;
+	margin-left: 4px;
+	flex: 1;
+}
+
+/* give some space between input and action bar */
+.quick-input-inline-action-bar > .actions-container > .action-item:first-child {
+	margin-left: 5px;
+}
+
+/* center horizontally */
+.quick-input-inline-action-bar > .actions-container > .action-item {
+	margin-top: 2px;
+}
+
+.quick-input-title {
+	cursor: grab;
+	padding: 3px 0px;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.quick-input-right-action-bar {
+	display: flex;
+	margin-right: 4px;
+	flex: 1;
+}
+
+.quick-input-right-action-bar > .actions-container {
+	justify-content: flex-end;
+}
+
+.quick-input-right-action-bar > .actions-container > .action-item {
+	margin-left: 4px;
+}
+
+.quick-input-titlebar .monaco-action-bar .action-label.codicon {
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 2px;
+}
+
+.quick-input-description {
+	margin: 6px 6px 6px 11px;
+}
+
+.quick-input-header .quick-input-description {
+	margin: 4px 2px;
+	flex: 1;
+}
+
+.quick-input-header {
+	cursor: grab;
+	display: flex;
+	padding: 6px 6px 2px 6px;
+}
+
+.quick-input-widget.hidden-input .quick-input-header {
+	/* reduce margins and paddings when input box hidden */
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.quick-input-and-message {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	min-width: 0;
+	position: relative;
+}
+
+.quick-input-check-all {
+	align-self: center;
+	margin: 0;
+}
+
+.quick-input-widget .quick-input-header .monaco-checkbox {
+	margin-top: 6px;
+}
+
+.quick-input-filter {
+	flex-grow: 1;
+	display: flex;
+	position: relative;
+}
+
+.quick-input-box {
+	flex-grow: 1;
+}
+
+.quick-input-widget.show-checkboxes .quick-input-box,
+.quick-input-widget.show-checkboxes .quick-input-message {
+	margin-left: 5px;
+}
+
+.quick-input-visible-count {
+	position: absolute;
+	left: -10000px;
+}
+
+.quick-input-count {
+	align-self: center;
+	position: absolute;
+	right: 4px;
+	display: flex;
+	align-items: center;
+}
+
+.quick-input-count .monaco-count-badge {
+	vertical-align: middle;
+	padding: 2px 4px;
+	border-radius: 2px;
+	min-height: auto;
+	line-height: normal;
+}
+
+.quick-input-action {
+	margin-left: 6px;
+}
+
+.quick-input-action .monaco-text-button {
+	font-size: 11px;
+	padding: 0 6px;
+	display: flex;
+	height: 25px;
+	align-items: center;
+}
+
+.quick-input-message {
+	margin-top: -1px;
+	padding: 5px;
+	overflow-wrap: break-word;
+}
+
+.quick-input-message > .codicon {
+	margin: 0 0.2em;
+	vertical-align: text-bottom;
+}
+
+/* Links in descriptions & validations */
+.quick-input-message a {
+	color: inherit;
+}
+
+.quick-input-progress.monaco-progress-container {
+	position: relative;
+}
+
+.quick-input-list {
+	line-height: 22px;
+}
+
+.quick-input-widget.hidden-input .quick-input-list {
+	margin-top: 4px;
+	/* reduce margins when input box hidden */
+	padding-bottom: 4px;
+}
+
+.quick-input-list .monaco-list {
+	overflow: hidden;
+	max-height: calc(20 * 22px);
+	padding-bottom: 5px;
+}
+
+.quick-input-list .monaco-scrollable-element {
+	padding: 0px 6px;
+}
+
+.quick-input-list .quick-input-list-entry {
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	padding: 0 6px;
+}
+
+.quick-input-list .quick-input-list-entry.quick-input-list-separator-border {
+	border-top-width: 1px;
+	border-top-style: solid;
+}
+
+.quick-input-list .monaco-list-row {
+	border-radius: 3px;
+}
+
+.quick-input-list .monaco-list-row[data-index="0"] .quick-input-list-entry.quick-input-list-separator-border {
+	border-top-style: none;
+}
+
+.quick-input-list .quick-input-list-label {
+	overflow: hidden;
+	display: flex;
+	height: 100%;
+	flex: 1;
+}
+
+.quick-input-widget .monaco-checkbox {
+	margin-right: 0;
+}
+
+.quick-input-widget .quick-input-list .monaco-checkbox,
+.quick-input-widget .quick-input-tree .monaco-checkbox {
+	margin-top: 4px;
+}
+
+.quick-input-list .quick-input-list-icon {
+	background-size: 16px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-right: 6px;
+	width: 16px;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.quick-input-list .quick-input-list-rows {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	flex: 1;
+	margin-left: 5px;
+}
+
+.quick-input-list .quick-input-list-rows > .quick-input-list-row {
+	display: flex;
+	align-items: center;
+}
+
+.quick-input-list .quick-input-list-rows > .quick-input-list-row .monaco-icon-label,
+.quick-input-list .quick-input-list-rows > .quick-input-list-row .monaco-icon-label .monaco-icon-label-container > .monaco-icon-name-container {
+	flex: 1;
+	/* make sure the icon label grows within the row */
+}
+
+.quick-input-list .quick-input-list-rows > .quick-input-list-row .codicon[class*='codicon-'] {
+	vertical-align: text-bottom;
+}
+
+.quick-input-list .quick-input-list-rows .monaco-highlighted-label > span {
+	opacity: 1;
+}
+
+.quick-input-list .quick-input-list-entry .quick-input-list-entry-keybinding {
+	margin-right: 8px;
+	/* separate from the separator label or scrollbar if any */
+}
+
+.quick-input-list .quick-input-list-label-meta {
+	opacity: 0.7;
+	line-height: normal;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+/* preserve list-like styling instead of tree-like styling */
+.quick-input-list .monaco-list .monaco-list-row .monaco-highlighted-label .highlight {
+	font-weight: bold;
+	background-color: unset;
+	color: var(--vscode-list-highlightForeground) !important;
+}
+
+/* preserve list-like styling instead of tree-like styling */
+.quick-input-list .monaco-list .monaco-list-row.focused .monaco-highlighted-label .highlight {
+	color: var(--vscode-list-focusHighlightForeground) !important;
+}
+
+.quick-input-list .quick-input-list-entry .quick-input-list-separator {
+	margin-right: 4px;
+	/* separate from keybindings or actions */
+}
+
+.quick-input-list .quick-input-list-entry-action-bar {
+	display: flex;
+	flex: 0;
+	overflow: visible;
+}
+
+.quick-input-list .quick-input-list-entry-action-bar .action-label {
+	/*
+	 * By default, actions in the quick input action bar are hidden
+	 * until hovered over them or selected.
+	 */
+	display: none;
+}
+
+.quick-input-list .quick-input-list-entry-action-bar .action-label.codicon {
+	margin-right: 4px;
+	padding: 2px;
+}
+
+.quick-input-list .quick-input-list-entry-action-bar {
+	margin-top: 1px;
+}
+
+.quick-input-list .quick-input-list-entry-action-bar {
+	margin-right: 4px;
+	/* separate from scrollbar */
+}
+
+.quick-input-list .quick-input-list-entry .quick-input-list-entry-action-bar .action-label.always-visible,
+.quick-input-list .quick-input-list-entry:hover .quick-input-list-entry-action-bar .action-label,
+.quick-input-list .quick-input-list-entry.focus-inside .quick-input-list-entry-action-bar .action-label,
+.quick-input-list .monaco-list-row.focused .quick-input-list-entry-action-bar .action-label,
+.quick-input-list .monaco-list-row.passive-focused .quick-input-list-entry-action-bar .action-label {
+	display: flex;
+}
+
+.quick-input-list > .monaco-list:focus .monaco-list-row.focused {
+	outline: 1px solid var(--vscode-list-focusOutline) !important;
+	outline-offset: -1px;
+}
+
+.quick-input-list > .monaco-list:focus .monaco-list-row.focused .quick-input-list-entry.quick-input-list-separator-border {
+	border-color: transparent;
+}
+
+/* focused items in quick pick */
+.quick-input-list .monaco-list-row.focused .monaco-keybinding-key,
+.quick-input-list .monaco-list-row.focused .quick-input-list-entry .quick-input-list-separator {
+	color: inherit
+}
+
+.quick-input-list .monaco-list-row.focused .monaco-keybinding-key {
+	background: none;
+}
+
+.quick-input-list .quick-input-list-separator-as-item {
+	padding: 4px 6px;
+	font-size: 12px;
+}
+
+/* Quick input separators as full-row item */
+.quick-input-list .quick-input-list-separator-as-item .label-name {
+	font-weight: 600;
+}
+
+.quick-input-list .quick-input-list-separator-as-item .label-description {
+	/* Override default description opacity so we don't have a contrast ratio issue. */
+	opacity: 1 !important;
+}
+
+/* Hide border when the item becomes the sticky one */
+.quick-input-list .monaco-tree-sticky-row .quick-input-list-entry.quick-input-list-separator-as-item.quick-input-list-separator-border {
+	border-top-style: none;
+}
+
+/* Give sticky row the same padding as the scrollable list */
+.quick-input-list .monaco-tree-sticky-row {
+	padding: 0 5px;
+}
+
+/* Hide the twistie containers so that there isn't blank indent */
+.quick-input-list .monaco-tl-twistie {
+	display: none !important;
+}
+
+/* Tree */
+
+.quick-input-tree .monaco-list {
+	overflow: hidden;
+	max-height: calc(20 * 22px);
+	padding-bottom: 5px;
+}
+
+.quick-input-tree .quick-input-tree-entry {
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	padding: 0 6px;
+}
+
+.quick-input-tree .quick-input-tree-label {
+	overflow: hidden;
+	display: flex;
+	height: 100%;
+	flex: 1;
+}
+
+.quick-input-tree .quick-input-tree-icon {
+	background-size: 16px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-right: 6px;
+	width: 16px;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.quick-input-tree .quick-input-tree-rows {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	flex: 1;
+	margin-left: 5px;
+}
+
+.quick-input-tree .quick-input-tree-rows > .quick-input-tree-row {
+	display: flex;
+	align-items: center;
+}
+
+.quick-input-tree .quick-input-tree-rows > .quick-input-tree-row .monaco-icon-label,
+.quick-input-tree .quick-input-tree-rows > .quick-input-tree-row .monaco-icon-label .monaco-icon-label-container > .monaco-icon-name-container {
+	flex: 1;
+	/* make sure the icon label grows within the row */
+}
+
+.quick-input-tree .quick-input-tree-rows > .quick-input-tree-row .codicon[class*='codicon-'] {
+	vertical-align: text-bottom;
+}
+
+.quick-input-tree .quick-input-tree-rows .monaco-highlighted-label > span {
+	opacity: 1;
+}
+
+.quick-input-tree .quick-input-tree-entry-action-bar {
+	display: flex;
+	flex: 0;
+	overflow: visible;
+}
+
+.quick-input-tree .quick-input-tree-entry-action-bar .action-label {
+	/*
+	 * By default, actions in the quick input action bar are hidden
+	 * until hovered over them or selected.
+	 */
+	display: none;
+}
+
+.quick-input-tree .quick-input-tree-entry-action-bar .action-label.codicon {
+	margin-right: 4px;
+	padding: 2px;
+}
+
+.quick-input-tree .quick-input-tree-entry-action-bar {
+	margin-top: 1px;
+}
+
+.quick-input-tree .quick-input-tree-entry-action-bar {
+	margin-right: 4px;
+	/* separate from scrollbar */
+}
+
+.quick-input-tree .quick-input-tree-entry .quick-input-tree-entry-action-bar .action-label.always-visible,
+.quick-input-tree .quick-input-tree-entry:hover .quick-input-tree-entry-action-bar .action-label,
+.quick-input-tree .quick-input-tree-entry.focus-inside .quick-input-tree-entry-action-bar .action-label,
+.quick-input-tree .monaco-list-row.focused .quick-input-tree-entry-action-bar .action-label,
+.quick-input-tree .monaco-list-row.passive-focused .quick-input-tree-entry-action-bar .action-label {
+	display: flex;
+}
+
+.quick-input-tree > .monaco-list:focus .monaco-list-row.focused {
+	outline: 1px solid var(--vscode-list-focusOutline) !important;
+	outline-offset: -1px;
+}

@@ -1,0 +1,68 @@
+{
+  "name": "@sentry-internal/node-cpu-profiler",
+  "version": "2.4.1",
+  "description": "Binaries for Sentry Node Profiling",
+  "repository": "git://github.com/getsentry/sentry-javascript-profiling-node-binaries.git",
+  "homepage": "https://github.com/getsentry/sentry-javascript/tree/master/packages/profiling-node",
+  "author": "Sentry",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/lib",
+    "/bindings",
+    "/binding.gyp",
+    "package.json",
+    "/scripts/binaries.js",
+    "/scripts/check-build.js",
+    "/scripts/copy-target.js"
+  ],
+  "scripts": {
+    "install": "node scripts/check-build.js",
+    "clean": "rm -rf build && rm -rf lib",
+    "lint": "yarn lint:eslint && yarn lint:clang",
+    "lint:eslint": "eslint . --format stylish",
+    "lint:clang": "node scripts/clang-format.js",
+    "fix": "yarn fix:eslint && yarn fix:clang",
+    "fix:eslint": "eslint . --format stylish --fix",
+    "fix:clang": "node scripts/clang-format.js --fix",
+    "build": "yarn build:lib && yarn build:bindings:configure && yarn build:bindings",
+    "build:lib": "tsc",
+    "build:bindings:configure": "node-gyp configure",
+    "build:bindings:configure:arm64": "node-gyp configure --arch=arm64 --target_arch=arm64",
+    "build:bindings": "node-gyp build && node scripts/copy-target.js",
+    "build:bindings:arm64": "node-gyp build --arch=arm64 && node scripts/copy-target.js",
+    "build:dev": "yarn clean && yarn build:bindings:configure && yarn build",
+    "build:tarball": "npm pack",
+    "test": "yarn test:bindings && yarn test:bundling && yarn test:electron",
+    "test:bundling": "node test/prepare.mjs bundler && vitest run --testTimeout 60000 ./test/bundler",
+    "test:electron": "node test/prepare.mjs electron && vitest run --testTimeout 120000 ./test/electron",
+    "test:bindings": "node test/prepare.mjs bindings && vitest run --testTimeout 60000 ./test/bindings"
+  },
+  "dependencies": {
+    "detect-libc": "^2.0.3",
+    "node-abi": "^3.73.0"
+  },
+  "devDependencies": {
+    "@sentry-internal/eslint-config-sdk": "^8.51.0",
+    "@types/node": "^18.19.1",
+    "@types/node-abi": "^3.0.3",
+    "clang-format": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.0.0",
+    "node-gyp": "^11.2.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "sideEffects": false,
+  "volta": {
+    "node": "24.0.0",
+    "yarn": "1.22.22"
+  }
+}

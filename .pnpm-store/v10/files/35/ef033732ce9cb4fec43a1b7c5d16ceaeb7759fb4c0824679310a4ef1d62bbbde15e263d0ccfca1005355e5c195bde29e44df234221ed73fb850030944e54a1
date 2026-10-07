@@ -1,0 +1,39 @@
+{
+	"name": "p-defer",
+	"version": "3.0.0",
+	"description": "Create a deferred promise",
+	"license": "MIT",
+	"repository": "sindresorhus/p-defer",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"promise",
+		"defer",
+		"deferred",
+		"resolve",
+		"reject",
+		"lazy",
+		"later",
+		"async",
+		"await",
+		"promises"
+	],
+	"devDependencies": {
+		"ava": "^2.0.0",
+		"tsd": "^0.7.3",
+		"xo": "^0.24.0"
+	}
+}

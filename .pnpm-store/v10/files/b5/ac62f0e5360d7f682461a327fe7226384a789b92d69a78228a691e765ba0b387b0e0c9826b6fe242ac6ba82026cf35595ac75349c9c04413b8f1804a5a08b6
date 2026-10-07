@@ -1,0 +1,93 @@
+{
+  "name": "anser",
+  "version": "2.1.1",
+  "description": "A low level parser for ANSI sequences.",
+  "keywords": [
+    "ansi",
+    "html"
+  ],
+  "author": "Ionică Bizău <bizauionica@gmail.com> (https://ionicabizau.net)",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/IonicaBizau/anser.git"
+  },
+  "bugs": {
+    "url": "http://github.com/IonicaBizau/anser/issues"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "jshint": "*",
+    "jslint": "*"
+  },
+  "homepage": "https://github.com/IonicaBizau/anser#readme",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "blah": {
+    "description": [
+      {
+        "h2": ":rocket: Features"
+      },
+      {
+        "ul": [
+          "Converts text containing [ANSI color escape codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) into equivalent HTML elements.",
+          "Allows converting the input into JSON output.",
+          "HTML escaping",
+          "Converts links into HTML elements",
+          "Friendly APIs to use with  virtual dom libraries"
+        ]
+      }
+    ],
+    "example": [
+      "When using **TypeScript** without --esModuleInterop enabled you can do the following:",
+      {
+        "code": {
+          "content": [
+            "import Anser = require('anser');",
+            "const txt = \"\\u001b[38;5;196mHello\\u001b[39m \\u001b[48;5;226mWorld\\u001b[49m\";",
+            "console.log(Anser.ansiToHtml(txt));",
+            "// <span style=\"color:rgb(255, 0, 0)\">Hello</span> <span style=\"background-color:rgb(255, 255, 0)\">World</span>"
+          ],
+          "language": "ts"
+        }
+      },
+      "Or with --esModuleInterop enabled you can do the following:",
+      {
+        "code": {
+          "content": [
+            "import Anser from 'anser';",
+            "const txt = \"\\u001b[38;5;196mHello\\u001b[39m \\u001b[48;5;226mWorld\\u001b[49m\";",
+            "console.log(Anser.ansiToHtml(txt));",
+            "// <span style=\"color:rgb(255, 0, 0)\">Hello</span> <span style=\"background-color:rgb(255, 255, 0)\">World</span>"
+          ],
+          "language": "ts"
+        }
+      }
+    ],
+    "thanks": "This project is highly based on [`ansi_up`](https://github.com/drudru/ansi_up), by [@drudru](https://github.com/drudru/). Thanks! :cake:"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "files": [
+    "bin/",
+    "app/",
+    "lib/",
+    "dist/",
+    "src/",
+    "scripts/",
+    "resources/",
+    "menu/",
+    "cli.js",
+    "index.js",
+    "bloggify.js",
+    "bloggify.json",
+    "bloggify/"
+  ]
+}

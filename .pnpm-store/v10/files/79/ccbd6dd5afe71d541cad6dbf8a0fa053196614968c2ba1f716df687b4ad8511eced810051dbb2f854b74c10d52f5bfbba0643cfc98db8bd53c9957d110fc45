@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Runtime.js",
+  "module": "../dist/esm/Runtime.js",
+  "types": "../dist/dts/Runtime.d.ts"
+}

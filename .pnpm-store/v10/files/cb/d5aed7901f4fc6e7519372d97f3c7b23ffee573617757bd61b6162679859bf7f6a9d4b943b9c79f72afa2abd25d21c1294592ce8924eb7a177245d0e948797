@@ -1,0 +1,57 @@
+{
+  "name": "eslint-visitor-keys",
+  "version": "5.0.1",
+  "description": "Constants and utilities about visitor keys to traverse AST.",
+  "type": "module",
+  "main": "dist/eslint-visitor-keys.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": [
+      {
+        "import": "./lib/index.js",
+        "require": "./dist/eslint-visitor-keys.cjs"
+      },
+      "./dist/eslint-visitor-keys.cjs"
+    ],
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/index.d.ts",
+    "dist/visitor-keys.d.ts",
+    "dist/eslint-visitor-keys.cjs",
+    "dist/eslint-visitor-keys.d.cts",
+    "lib"
+  ],
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "devDependencies": {
+    "rollup-plugin-dts": "^6.2.3",
+    "tsd": "^0.33.0"
+  },
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:types",
+    "build:cjs": "rollup -c",
+    "build:debug": "npm run build:cjs -- -m && npm run build:types",
+    "build:types": "tsc -v && tsc",
+    "test": "mocha \"tests/**/*.test.cjs\" && mocha \"tests/**/*.test.js\" && npm run test:types",
+    "test:coverage": "c8 npm test",
+    "test:types": "tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eslint/js.git",
+    "directory": "packages/eslint-visitor-keys"
+  },
+  "funding": "https://opencollective.com/eslint",
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Toru Nagashima (https://github.com/mysticatea)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eslint/js/issues"
+  },
+  "homepage": "https://github.com/eslint/js/blob/main/packages/eslint-visitor-keys/README.md",
+  "sideEffects": false
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@eslint/eslintrc",
+  "version": "0.4.3",
+  "description": "The legacy ESLintRC config file format for ESLint",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "conf",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint . --report-unused-disable-directives",
+    "fix": "npm run lint -- --fix",
+    "test": "mocha -R progress -c 'tests/lib/**/*.js'",
+    "generate-release": "eslint-generate-release",
+    "generate-alpharelease": "eslint-generate-prerelease alpha",
+    "generate-betarelease": "eslint-generate-prerelease beta",
+    "generate-rcrelease": "eslint-generate-prerelease rc",
+    "publish-release": "eslint-publish-release"
+  },
+  "repository": "eslint/eslintrc",
+  "keywords": [
+    "ESLint",
+    "ESLintRC",
+    "Configuration"
+  ],
+  "author": "Nicholas C. Zakas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eslint/eslintrc/issues"
+  },
+  "homepage": "https://github.com/eslint/eslintrc#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.21.0",
+    "eslint-config-eslint": "^7.0.0",
+    "eslint-plugin-jsdoc": "^32.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-release": "^3.1.2",
+    "fs-teardown": "0.1.1",
+    "mocha": "^8.1.1",
+    "shelljs": "^0.8.4",
+    "sinon": "^9.2.0",
+    "temp-dir": "^2.0.0"
+  },
+  "dependencies": {
+    "ajv": "^6.12.4",
+    "debug": "^4.1.1",
+    "espree": "^7.3.0",
+    "globals": "^13.9.0",
+    "ignore": "^4.0.6",
+    "import-fresh": "^3.2.1",
+    "js-yaml": "^3.13.1",
+    "minimatch": "^3.0.4",
+    "strip-json-comments": "^3.1.1"
+  },
+  "engines": {
+    "node": "^10.12.0 || >=12.0.0"
+  }
+}

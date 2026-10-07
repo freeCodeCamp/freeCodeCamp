@@ -1,0 +1,45 @@
+{
+	"name": "monaco-editor-webpack-plugin",
+	"version": "7.1.1",
+	"description": "A webpack plugin for the Monaco Editor",
+	"main": "out/index.js",
+	"typings": "./out/index.d.ts",
+	"scripts": {
+		"watch": "tsc -w -p tsconfig.json",
+		"compile": "tsc -p tsconfig.json",
+		"prepublishOnly": "npm run compile"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/microsoft/monaco-editor.git"
+	},
+	"keywords": [
+		"webpack",
+		"monaco",
+		"editor",
+		"loader"
+	],
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/microsoft/monaco-editor/issues"
+	},
+	"homepage": "https://github.com/microsoft/monaco-editor#readme",
+	"peerDependencies": {
+		"webpack": "^4.5.0 || 5.x",
+		"monaco-editor": ">= 0.31.0"
+	},
+	"devDependencies": {
+		"css-loader": "^6.6.0",
+		"file-loader": "^6.2.0",
+		"glob": "^7.2.0",
+		"monaco-editor": "^0.32.0",
+		"style-loader": "^3.3.1",
+		"typescript": "^5.4.5",
+		"webpack": "^5.68.0",
+		"webpack-cli": "^4.9.2"
+	},
+	"dependencies": {
+		"loader-utils": "^2.0.2"
+	}
+}

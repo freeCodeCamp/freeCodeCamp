@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Random.js",
+  "module": "../dist/esm/Random.js",
+  "types": "../dist/dts/Random.d.ts"
+}

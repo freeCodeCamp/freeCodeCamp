@@ -1,0 +1,1 @@
+{"version":3,"file":"analyser-options.d.ts","sourceRoot":"","sources":["../../../src/interfaces/analyser-options.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,sBAAsB,CAAC;AAEzD,MAAM,WAAW,gBAAiB,SAAQ,iBAAiB;IACvD,OAAO,EAAE,MAAM,CAAC;IAEhB,WAAW,EAAE,MAAM,CAAC;IAEpB,WAAW,EAAE,MAAM,CAAC;IAEpB,qBAAqB,EAAE,MAAM,CAAC;CACjC"}

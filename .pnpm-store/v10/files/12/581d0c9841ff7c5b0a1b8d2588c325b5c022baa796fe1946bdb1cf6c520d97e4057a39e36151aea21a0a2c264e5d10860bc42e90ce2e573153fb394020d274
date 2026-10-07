@@ -1,0 +1,25 @@
+{
+    "name": "@types/range-parser",
+    "version": "1.2.5",
+    "description": "TypeScript definitions for range-parser",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/range-parser",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Tomek Łaziuk",
+            "url": "https://github.com/tlaziuk",
+            "githubUsername": "tlaziuk"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/range-parser"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "8cae3d90a5b621ab27c73380a07b6fd2a6e37a7b5a67925e388e34a116580b9b",
+    "typeScriptVersion": "4.5"
+}

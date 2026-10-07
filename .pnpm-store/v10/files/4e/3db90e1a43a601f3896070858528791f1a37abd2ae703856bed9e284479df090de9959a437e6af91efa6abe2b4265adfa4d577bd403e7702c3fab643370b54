@@ -1,0 +1,3 @@
+{
+  "$ref": "../../WebpackOptions.json#/definitions/AssetGeneratorOptions"
+}

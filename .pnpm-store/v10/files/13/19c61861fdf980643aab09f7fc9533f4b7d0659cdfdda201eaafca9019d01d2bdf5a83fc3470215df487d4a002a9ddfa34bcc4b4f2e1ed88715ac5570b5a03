@@ -1,0 +1,42 @@
+# `MD048` - Code fence style
+
+Tags: `code`
+
+Aliases: `code-fence-style`
+
+Parameters:
+
+- `style`: Code fence style (`string`, default `consistent`, values `backtick`
+  / `consistent` / `tilde`)
+
+This rule is triggered when the symbols used in the document for fenced code
+blocks do not match the configured code fence style:
+
+````markdown
+```ruby
+# Fenced code
+```
+
+~~~ruby
+# Fenced code
+~~~
+````
+
+To fix this issue, use the configured code fence style throughout the
+document:
+
+````markdown
+```ruby
+# Fenced code
+```
+
+```ruby
+# Fenced code
+```
+````
+
+The configured code fence style can be a specific symbol to use (`backtick`,
+`tilde`) or it can require all code fences match the first code fence
+(`consistent`).
+
+Rationale: Consistent formatting makes it easier to understand a document.

@@ -1,0 +1,97 @@
+{
+  "name": "yaml",
+  "version": "2.8.3",
+  "license": "ISC",
+  "author": "Eemeli Aro <eemeli@gmail.com>",
+  "funding": "https://github.com/sponsors/eemeli",
+  "repository": "github:eemeli/yaml",
+  "description": "JavaScript parser and stringifier for YAML",
+  "keywords": [
+    "YAML",
+    "parser",
+    "stringifier"
+  ],
+  "homepage": "https://eemeli.org/yaml/",
+  "files": [
+    "browser/",
+    "dist/",
+    "util.js"
+  ],
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "bin": "./bin.mjs",
+  "browser": {
+    "./dist/index.js": "./browser/index.js",
+    "./dist/util.js": "./browser/dist/util.js",
+    "./util.js": "./browser/dist/util.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "node": "./dist/index.js",
+      "default": "./browser/index.js"
+    },
+    "./package.json": "./package.json",
+    "./util": {
+      "types": "./dist/util.d.ts",
+      "node": "./dist/util.js",
+      "default": "./browser/dist/util.js"
+    }
+  },
+  "scripts": {
+    "build": "npm run build:node && npm run build:browser",
+    "build:browser": "rollup -c config/rollup.browser-config.mjs",
+    "build:node": "rollup -c config/rollup.node-config.mjs",
+    "clean": "git clean -fdxe node_modules",
+    "lint": "eslint config/ src/",
+    "prettier": "prettier --write .",
+    "prestart": "rollup --sourcemap -c config/rollup.node-config.mjs",
+    "start": "node --enable-source-maps -i -e 'YAML=require(\"./dist/index.js\");const{parse,parseDocument,parseAllDocuments}=YAML'",
+    "test": "jest --config config/jest.config.js",
+    "test:all": "npm test && npm run test:types && npm run test:dist && npm run test:dist:types",
+    "test:browsers": "cd playground && npm test",
+    "test:dist": "npm run build:node && jest --config config/jest.config.js",
+    "test:dist:types": "tsc --allowJs --moduleResolution node --noEmit --target es5 dist/index.js",
+    "test:types": "tsc --noEmit && tsc --noEmit -p tests/tsconfig.json",
+    "docs:install": "cd docs-slate && bundle install",
+    "predocs:deploy": "node docs/prepare-docs.mjs",
+    "docs:deploy": "cd docs-slate && ./deploy.sh",
+    "predocs": "node docs/prepare-docs.mjs",
+    "docs": "cd docs-slate && bundle exec middleman server",
+    "preversion": "npm test && npm run build",
+    "prepublishOnly": "npm run clean && npm test && npm run build"
+  },
+  "browserslist": "defaults, not ie 11",
+  "prettier": {
+    "arrowParens": "avoid",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-typescript": "^7.12.17",
+    "@babel/preset-env": "^7.12.11",
+    "@eslint/js": "^9.9.1",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-replace": "^6.0.3",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/jest": "^29.2.4",
+    "@types/node": "^20.11.20",
+    "babel-jest": "^29.0.1",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^10.1.8",
+    "fast-check": "^2.12.0",
+    "jest": "^29.0.1",
+    "jest-resolve": "^29.7.0",
+    "jest-ts-webcompat-resolver": "^1.0.0",
+    "prettier": "^3.0.2",
+    "rollup": "^4.12.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.4.0"
+  },
+  "engines": {
+    "node": ">= 14.6"
+  }
+}

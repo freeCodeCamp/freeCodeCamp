@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "semi": [2, "always"],
+    "quotes": [2, "single"],
+    "strict": [2, "global"],
+    "no-undef": 0,
+    "no-use-before-define": 0
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

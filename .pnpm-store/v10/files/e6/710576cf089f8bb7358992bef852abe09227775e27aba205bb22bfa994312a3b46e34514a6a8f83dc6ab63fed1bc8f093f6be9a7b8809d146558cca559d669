@@ -1,0 +1,79 @@
+{
+    "name": "domutils",
+    "version": "3.2.2",
+    "description": "Utilities for working with htmlparser2's dom",
+    "author": "Felix Boehm <me@feedic.com>",
+    "funding": {
+        "url": "https://github.com/fb55/domutils?sponsor=1"
+    },
+    "license": "BSD-2-Clause",
+    "sideEffects": false,
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "module": "lib/esm/index.js",
+    "exports": {
+        "require": "./lib/index.js",
+        "import": "./lib/esm/index.js"
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "npm run test:jest && npm run lint",
+        "test:jest": "jest",
+        "lint": "npm run lint:es && npm run lint:prettier",
+        "lint:es": "eslint --ignore-path .gitignore .",
+        "lint:prettier": "npm run prettier -- --check",
+        "format": "npm run format:es && npm run format:prettier",
+        "format:es": "npm run lint:es -- --fix",
+        "format:prettier": "npm run prettier -- --write",
+        "prettier": "prettier \"**/*.{ts,md,json,yml}\" --ignore-path .gitignore",
+        "build": "npm run build:cjs && npm run build:esm",
+        "build:cjs": "tsc --sourceRoot https://raw.githubusercontent.com/fb55/domutils/$(git rev-parse HEAD)/src/",
+        "build:esm": "npm run build:cjs -- --module esnext --target es2019 --outDir lib/esm && echo '{\"type\":\"module\"}' > lib/esm/package.json",
+        "build:docs": "typedoc src",
+        "prepare": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/fb55/domutils.git"
+    },
+    "keywords": [
+        "dom",
+        "htmlparser2"
+    ],
+    "dependencies": {
+        "dom-serializer": "^2.0.0",
+        "domelementtype": "^2.3.0",
+        "domhandler": "^5.0.3"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.10.5",
+        "@typescript-eslint/eslint-plugin": "^8.19.0",
+        "@typescript-eslint/parser": "^8.19.0",
+        "eslint": "^8.57.1",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-jsdoc": "^50.6.1",
+        "htmlparser2": "~9.1.0",
+        "jest": "^29.7.0",
+        "prettier": "^3.4.2",
+        "ts-jest": "^29.2.5",
+        "typedoc": "^0.27.6",
+        "typescript": "^5.7.2"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "coverageProvider": "v8",
+        "moduleNameMapper": {
+            "^(.*)\\.js$": [
+                "$1.js",
+                "$1"
+            ]
+        }
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}

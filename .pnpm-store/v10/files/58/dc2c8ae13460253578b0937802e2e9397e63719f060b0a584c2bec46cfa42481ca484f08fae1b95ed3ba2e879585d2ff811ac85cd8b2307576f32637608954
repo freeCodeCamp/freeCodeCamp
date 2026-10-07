@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_instanceof.cjs",
+    "module": "../../esm/_instanceof.js"
+}

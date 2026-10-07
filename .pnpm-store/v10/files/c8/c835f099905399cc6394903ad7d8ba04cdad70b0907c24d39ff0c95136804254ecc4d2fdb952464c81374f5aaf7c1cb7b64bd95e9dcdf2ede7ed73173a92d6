@@ -1,0 +1,39 @@
+{
+  "name": "eslint-plugin-react-hooks",
+  "description": "ESLint rules for React Hooks",
+  "version": "4.6.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/react.git",
+    "directory": "packages/eslint-plugin-react-hooks"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "cjs"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "react"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/facebook/react/issues"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "https://reactjs.org/",
+  "peerDependencies": {
+    "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser-v2": "npm:@typescript-eslint/parser@^2.26.0",
+    "@typescript-eslint/parser-v3": "npm:@typescript-eslint/parser@^3.10.0",
+    "@typescript-eslint/parser-v4": "npm:@typescript-eslint/parser@^4.1.0",
+    "@typescript-eslint/parser-v5": "npm:@typescript-eslint/parser@^5.0.0-0"
+  }
+}

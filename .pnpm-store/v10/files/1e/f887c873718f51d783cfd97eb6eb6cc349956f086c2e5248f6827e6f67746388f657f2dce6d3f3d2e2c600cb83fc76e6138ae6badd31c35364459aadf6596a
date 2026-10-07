@@ -1,0 +1,39 @@
+{
+  "name": "eslint-visitor-keys",
+  "version": "2.1.0",
+  "description": "Constants and utilities about visitor keys to traverse AST.",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.7.2",
+    "eslint-config-eslint": "^4.0.0",
+    "eslint-release": "^1.0.0",
+    "mocha": "^3.5.3",
+    "nyc": "^11.2.1",
+    "opener": "^1.4.3"
+  },
+  "scripts": {
+    "lint": "eslint lib tests/lib",
+    "test": "nyc mocha tests/lib",
+    "coverage": "nyc report --reporter lcov && opener coverage/lcov-report/index.html",
+    "generate-release": "eslint-generate-release",
+    "generate-alpharelease": "eslint-generate-prerelease alpha",
+    "generate-betarelease": "eslint-generate-prerelease beta",
+    "generate-rcrelease": "eslint-generate-prerelease rc",
+    "publish-release": "eslint-publish-release"
+  },
+  "repository": "eslint/eslint-visitor-keys",
+  "keywords": [],
+  "author": "Toru Nagashima (https://github.com/mysticatea)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+  },
+  "homepage": "https://github.com/eslint/eslint-visitor-keys#readme"
+}

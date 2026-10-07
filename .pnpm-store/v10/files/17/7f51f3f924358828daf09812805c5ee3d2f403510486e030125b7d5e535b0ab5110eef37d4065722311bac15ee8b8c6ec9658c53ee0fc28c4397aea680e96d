@@ -1,0 +1,46 @@
+{
+  "name": "remark-stringify",
+  "version": "9.0.1",
+  "description": "remark plugin to compile Markdown",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "plugin",
+    "markdown",
+    "mdast",
+    "markdown",
+    "abstract",
+    "syntax",
+    "tree",
+    "ast",
+    "stringify",
+    "serialize",
+    "compile"
+  ],
+  "homepage": "https://remark.js.org",
+  "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark-stringify",
+  "bugs": "https://github.com/remarkjs/remark/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Eugene Sharygin <eush77@gmail.com>"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "mdast-util-to-markdown": "^0.6.0"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "xo": false
+}

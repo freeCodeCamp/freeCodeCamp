@@ -1,0 +1,71 @@
+{
+  "author": {
+    "email": "gajus@gajus.com",
+    "name": "Gajus Kuizinas",
+    "url": "http://gajus.com"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "string-natural-compare": "^3.0.1"
+  },
+  "description": "Flowtype linting rules for ESLint.",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/plugin-syntax-flow": "^7.14.5",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/register": "^7.15.3",
+    "ajv": "^8.6.3",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "eslint": "^8.1.0",
+    "eslint-config-canonical": "^32.15.0",
+    "eslint-plugin-eslint-plugin": "^4.0.2",
+    "gitdown": "^3.1.4",
+    "glob": "^7.2.0",
+    "husky": "^7.0.4",
+    "jsonlint": "^1.6.3",
+    "mocha": "^9.1.3",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^18.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run check-docs && npm run check-tests && npm run lint && npm run test && npm run build && npm run format-json"
+    }
+  },
+  "keywords": [
+    "eslint",
+    "plugin",
+    "flowtype"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "./dist/index.js",
+  "name": "eslint-plugin-flowtype",
+  "peerDependencies": {
+    "@babel/plugin-syntax-flow": "^7.14.5",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "eslint": "^8.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajus/eslint-plugin-flowtype"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && babel ./src --out-dir ./dist --copy-files",
+    "check-docs": "babel-node ./src/bin/checkDocs",
+    "check-tests": "babel-node ./src/bin/checkTests",
+    "create-readme": "gitdown ./.README/README.md --output-file ./README.md && npm run documentation-add-assertions",
+    "documentation-add-assertions": "babel-node ./src/bin/addAssertions",
+    "format-json": "jsonlint --sort-keys --in-place --indent \"  \" ./src/configs/recommended.json",
+    "lint": "eslint ./src ./tests",
+    "test": "mocha --require @babel/register ./tests/rules/index.js"
+  },
+  "version": "8.0.3"
+}

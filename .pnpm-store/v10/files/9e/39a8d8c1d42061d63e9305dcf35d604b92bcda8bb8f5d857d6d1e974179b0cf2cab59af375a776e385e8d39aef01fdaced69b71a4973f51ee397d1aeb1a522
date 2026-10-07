@@ -1,0 +1,7 @@
+import { type QuizQuestionAnswer } from "./types";
+interface AnswerProps<AnswerT extends number | string> extends QuizQuestionAnswer<AnswerT> {
+    checked?: boolean;
+    disabled?: boolean;
+}
+export declare const Answer: <AnswerT extends number | string>({ value, label, disabled, checked, validation, feedback, action, }: AnswerProps<AnswerT>) => JSX.Element;
+export {};

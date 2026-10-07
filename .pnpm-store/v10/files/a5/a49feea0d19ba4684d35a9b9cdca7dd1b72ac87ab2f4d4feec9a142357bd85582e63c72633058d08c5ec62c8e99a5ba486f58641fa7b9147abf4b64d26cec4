@@ -1,0 +1,16 @@
+{
+    "pkg": {
+        "assets": [
+            "../../lib/worker.js",
+            "../../lib/transport-stream.js",
+            "../../test/fixtures/ts/to-file-transport.es2017.cjs",
+            "../../node_modules/pino-abstract-transport/index.js"
+        ],
+        "targets": [
+            "node18",
+            "node20",
+            "node22"
+        ],
+        "outputPath": "test/pkg"
+    }
+}

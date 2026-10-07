@@ -1,0 +1,1 @@
+{"version":3,"file":"convolver-node.d.ts","sourceRoot":"","sources":["../../../src/interfaces/convolver-node.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,QAAQ,EAAE,MAAM,UAAU,CAAC;AACrD,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAE1C,MAAM,WAAW,cAAc,CAAC,CAAC,SAAS,QAAQ,CAAE,SAAQ,UAAU,CAAC,CAAC,CAAC;IACrE,MAAM,EAAE,IAAI,GAAG,eAAe,CAAC;IAE/B,SAAS,EAAE,OAAO,CAAC;CACtB"}

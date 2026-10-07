@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/setISODay/index.js",
+  "typings": "../typings.d.ts"
+}

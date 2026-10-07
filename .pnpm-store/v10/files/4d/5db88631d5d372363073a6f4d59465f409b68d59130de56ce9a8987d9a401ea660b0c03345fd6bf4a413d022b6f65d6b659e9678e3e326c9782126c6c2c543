@@ -1,0 +1,85 @@
+{
+  "name": "light-my-request",
+  "version": "6.6.0",
+  "description": "Fake HTTP injection library",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "cookie": "^1.0.1",
+    "process-warning": "^4.0.0",
+    "set-cookie-parser": "^2.6.0"
+  },
+  "devDependencies": {
+    "@fastify/ajv-compiler": "^4.0.0",
+    "@fastify/pre-commit": "^2.1.0",
+    "@types/node": "^22.7.7",
+    "c8": "^10.1.2",
+    "end-of-stream": "^1.4.4",
+    "eslint": "^9.17.0",
+    "express": "^4.19.2",
+    "form-auto-content": "^3.2.1",
+    "form-data": "^4.0.0",
+    "formdata-node": "^6.0.3",
+    "multer": "^1.4.5-lts.1",
+    "neostandard": "^0.12.0",
+    "tinybench": "^3.0.0",
+    "tsd": "^0.31.0",
+    "undici": "^7.0.0"
+  },
+  "scripts": {
+    "benchmark": "node benchmark/benchmark.js",
+    "coverage": "npm run unit -- --cov --coverage-report=html",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "npm run lint && npm run test:unit && npm run test:typescript",
+    "test:typescript": "tsd",
+    "test:unit": "c8 --100 node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/light-my-request.git"
+  },
+  "keywords": [
+    "http",
+    "inject",
+    "fake",
+    "request",
+    "server"
+  ],
+  "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Manuel Spigolon",
+      "email": "behemoth89@gmail.com"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/fastify/light-my-request/issues"
+  },
+  "homepage": "https://github.com/fastify/light-my-request#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ]
+}

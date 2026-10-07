@@ -1,0 +1,9 @@
+// add more variables as needed
+
+$defaultFontSize: 16px;
+$subTextFontSize: 14px;
+
+$smallScreenFontSize: 13px;
+$smallScreenSubFontSize: 12px;
+
+$preferredFontSize: 10px;

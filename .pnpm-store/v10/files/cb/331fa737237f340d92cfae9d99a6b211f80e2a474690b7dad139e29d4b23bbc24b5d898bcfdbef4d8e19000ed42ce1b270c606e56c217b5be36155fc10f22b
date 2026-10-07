@@ -1,0 +1,13 @@
+{
+  "name": "@reduxjs/toolkit-react",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "module": "../dist/react/redux-toolkit-react.legacy-esm.js",
+  "main": "./../dist/react/redux-toolkit-react.modern.mjs",
+  "types": "./../dist/react/index.d.ts",
+  "react-native": "./../dist/react/redux-toolkit-react.modern.mjs",
+  "author": "Mark Erikson <mark@isquaredsoftware.com>",
+  "license": "MIT",
+  "sideEffects": false
+}

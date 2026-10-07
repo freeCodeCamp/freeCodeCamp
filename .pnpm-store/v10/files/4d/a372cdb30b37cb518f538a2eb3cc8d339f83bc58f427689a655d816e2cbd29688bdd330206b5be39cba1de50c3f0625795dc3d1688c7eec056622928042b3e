@@ -1,0 +1,52 @@
+# `MD007` - Unordered list indentation
+
+Tags: `bullet`, `indentation`, `ul`
+
+Aliases: `ul-indent`
+
+Parameters:
+
+- `indent`: Spaces for indent (`integer`, default `2`)
+- `start_indent`: Spaces for first level indent (when start_indented is set)
+  (`integer`, default `2`)
+- `start_indented`: Whether to indent the first level of the list (`boolean`,
+  default `false`)
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when list items are not indented by the configured
+number of spaces (default: 2).
+
+Example:
+
+```markdown
+* List item
+   * Nested list item indented by 3 spaces
+```
+
+Corrected Example:
+
+```markdown
+* List item
+  * Nested list item indented by 2 spaces
+```
+
+Note: This rule applies to a sublist only if its parent lists are all also
+unordered (otherwise, extra indentation of ordered lists interferes with the
+rule).
+
+The `start_indented` parameter allows the first level of lists to be indented by
+the configured number of spaces rather than starting at zero. The `start_indent`
+parameter allows the first level of lists to be indented by a different number
+of spaces than the rest (ignored when `start_indented` is not set).
+
+Rationale: Indenting by 2 spaces allows the content of a nested list to be in
+line with the start of the content of the parent list when a single space is
+used after the list marker. Indenting by 4 spaces is consistent with code blocks
+and simpler for editors to implement. Additionally, this can be a compatibility
+issue for other Markdown parsers, which require 4-space indents. More
+information: [Markdown Style Guide][markdown-style-guide].
+
+Note: See [Prettier.md](Prettier.md) for compatibility information.
+
+[markdown-style-guide]: https://cirosantilli.com/markdown-style-guide#indentation-of-content-inside-lists

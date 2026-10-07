@@ -1,0 +1,1 @@
+{"version":3,"file":"ClassFieldInitializerScope.js","sourceRoot":"","sources":["../../src/scope/ClassFieldInitializerScope.ts"],"names":[],"mappings":";;;AAIA,2CAAwC;AACxC,2CAAwC;AAExC,MAAM,0BAA2B,SAAQ,qBAKxC;IACC,YACE,YAA0B,EAC1B,UAA+C,EAC/C,KAA0C;QAE1C,KAAK,CACH,YAAY,EACZ,qBAAS,CAAC,qBAAqB,EAC/B,UAAU,EACV,KAAK,EACL,KAAK,CACN,CAAC;IACJ,CAAC;CACF;AAEQ,gEAA0B"}

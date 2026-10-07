@@ -1,0 +1,43 @@
+{
+  "name": "regenerator-transform",
+  "author": "Ben Newman <bn@cs.stanford.edu>",
+  "description": "Explode async and generator functions into a state machine.",
+  "version": "0.15.2",
+  "main": "lib/index.js",
+  "keywords": [
+    "regenerator",
+    "runtime",
+    "generator",
+    "async"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/regenerator/tree/main/packages/transform"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "npx babel src/ --out-dir lib/"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ],
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "loose": true
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4"
+  }
+}

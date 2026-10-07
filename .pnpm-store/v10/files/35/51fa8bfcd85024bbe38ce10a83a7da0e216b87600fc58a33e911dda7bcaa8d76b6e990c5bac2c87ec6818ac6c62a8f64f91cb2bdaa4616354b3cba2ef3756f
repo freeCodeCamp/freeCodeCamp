@@ -1,0 +1,46 @@
+{
+  "name": "fast-url-parser",
+  "description": "Extremely fast implementation of node core url library",
+  "version": "1.1.3",
+  "keywords": [
+    "fast",
+    "parse",
+    "parser",
+    "url",
+    "uri",
+    "performance"
+  ],
+  "scripts": {
+    "test": "npm run jshint && node ./test/index.js | tap-spec",
+    "dot": "node ./test/index.js | tap-dot",
+    "bench": "node ./benchmark/urlparser.js",
+    "bench-node": "node ./benchmark/nodecore.js",
+    "jshint": "jshint --verbose ./src/*"
+  },
+  "homepage": "https://github.com/petkaantonov/urlparser",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/petkaantonov/urlparser.git"
+  },
+  "bugs": {
+    "url": "http://github.com/petkaantonov/urlparser/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Petka Antonov",
+    "email": "petka_antonov@hotmail.com",
+    "url": "http://github.com/petkaantonov/"
+  },
+  "dependencies": {
+    "punycode": "^1.3.2"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.10",
+    "querystringparser": "^0.1.1",
+    "tap-dot": "^0.2.3",
+    "tap-spec": "^2.1.1",
+    "tape": "^3.0.3"
+  },
+  "readmeFilename": "README.md",
+  "main": "./src/urlparser.js"
+}

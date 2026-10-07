@@ -1,0 +1,36 @@
+{
+  "name": "@lezer/css",
+  "version": "1.3.0",
+  "description": "lezer-based CSS grammar",
+  "main": "dist/index.cjs",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
+  "license": "MIT",
+  "devDependencies": {
+    "@lezer/generator": "^1.8.0",
+    "mocha": "^10.2.0",
+    "rollup": "^2.52.2",
+    "@rollup/plugin-node-resolve": "^9.0.0"
+  },
+  "dependencies": {
+    "@lezer/common": "^1.2.0",
+    "@lezer/lr": "^1.3.0",
+    "@lezer/highlight": "^1.0.0"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/lezer-parser/css.git"
+  },
+  "scripts": {
+    "build": "lezer-generator src/css.grammar -o src/parser && rollup -c",
+    "build-debug": "lezer-generator src/css.grammar --names -o src/parser && rollup -c",
+    "prepare": "npm run build",
+    "test": "mocha test/test-*.js"
+  }
+}

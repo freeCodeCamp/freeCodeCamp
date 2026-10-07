@@ -1,0 +1,34 @@
+{
+  "name": "proxy-from-env",
+  "version": "1.1.0",
+  "description": "Offers getProxyForUrl to get the proxy URL for a URL, respecting the *_PROXY (e.g. HTTP_PROXY) and NO_PROXY environment variables.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "mocha ./test.js --reporter spec",
+    "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rob--W/proxy-from-env.git"
+  },
+  "keywords": [
+    "proxy",
+    "http_proxy",
+    "https_proxy",
+    "no_proxy",
+    "environment"
+  ],
+  "author": "Rob Wu <rob@robwu.nl> (https://robwu.nl/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rob--W/proxy-from-env/issues"
+  },
+  "homepage": "https://github.com/Rob--W/proxy-from-env#readme",
+  "devDependencies": {
+    "coveralls": "^3.0.9",
+    "eslint": "^6.8.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^7.1.0"
+  }
+}

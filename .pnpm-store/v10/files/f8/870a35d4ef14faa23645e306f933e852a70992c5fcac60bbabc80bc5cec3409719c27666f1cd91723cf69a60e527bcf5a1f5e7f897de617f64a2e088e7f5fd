@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../lib/vocabularies/unevaluated/index.ts"],"names":[],"mappings":";;AACA,mEAA2D;AAC3D,yDAAiD;AAEjD,MAAM,WAAW,GAAe,CAAC,+BAAqB,EAAE,0BAAgB,CAAC,CAAA;AAEzE,kBAAe,WAAW,CAAA"}

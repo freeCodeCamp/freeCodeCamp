@@ -1,0 +1,64 @@
+{
+    "name": "resize-observer-polyfill",
+    "author": "Denis Rul <que.etc@gmail.com>",
+    "version": "1.5.1",
+    "description": "A polyfill for the Resize Observer API",
+    "main": "dist/ResizeObserver.js",
+    "module": "dist/ResizeObserver.es.js",
+    "scripts": {
+        "build": "rollup -c && cpy src/index.js.flow dist --rename=ResizeObserver.js.flow",
+        "test": "npm run test:lint && npm run test:spec",
+        "test:ci": "npm run test:lint && npm run test:spec:sauce && npm run test:spec:node",
+        "test:ci:pull": "npm run test:lint && karma start --browsers Firefox && npm run test:spec:node",
+        "test:lint": "node ./node_modules/eslint/bin/eslint.js \"**/*.js\" --ignore-pattern \"/dist/\"",
+        "test:spec": "karma start --browsers Chrome && npm run test:spec:node",
+        "test:spec:sauce": "karma start --sauce=windows && karma start --sauce=linux && karma start --sauce=osx",
+        "test:spec:node": "npm run build && node tests/node/index.js",
+        "test:spec:custom": "karma start --no-browsers",
+        "test:spec:native": "karma start --no-browsers --native"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/que-etc/resize-observer-polyfill.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/que-etc/resize-observer-polyfill/issues"
+    },
+    "types": "src/index.d.ts",
+    "files": [
+        "src/",
+        "dist/"
+    ],
+    "keywords": [
+        "ResizeObserver",
+        "resize",
+        "observer",
+        "util",
+        "client",
+        "browser",
+        "polyfill",
+        "ponyfill"
+    ],
+    "homepage": "https://github.com/que-etc/resize-observer-polyfill",
+    "devDependencies": {
+        "babel-eslint": "10.0.1",
+        "cpy-cli": "2.0.0",
+        "eslint": "5.10.0",
+        "jasmine": "2.8.0",
+        "jasmine-core": "2.8.0",
+        "karma": "3.1.3",
+        "karma-chrome-launcher": "2.2.0",
+        "karma-firefox-launcher": "1.1.0",
+        "karma-jasmine": "1.1.2",
+        "karma-jasmine-html-reporter": "0.2.2",
+        "karma-rollup-preprocessor": "6.1.1",
+        "karma-sauce-launcher": "1.2.0",
+        "karma-sourcemap-loader": "0.3.7",
+        "karma-spec-reporter": "0.0.32",
+        "promise-polyfill": "8.1.0",
+        "rollup": "0.67.4",
+        "rollup-plugin-typescript": "1.0.0",
+        "typescript": "3.2.2"
+    }
+}

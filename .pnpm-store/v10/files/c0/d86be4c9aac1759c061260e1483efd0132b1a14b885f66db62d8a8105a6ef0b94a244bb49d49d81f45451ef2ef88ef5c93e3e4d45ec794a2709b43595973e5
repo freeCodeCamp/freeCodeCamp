@@ -1,0 +1,51 @@
+{
+    "name": "@types/semver",
+    "version": "7.7.1",
+    "description": "TypeScript definitions for semver",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/semver",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Bart van der Schoor",
+            "githubUsername": "Bartvds",
+            "url": "https://github.com/Bartvds"
+        },
+        {
+            "name": "BendingBender",
+            "githubUsername": "BendingBender",
+            "url": "https://github.com/BendingBender"
+        },
+        {
+            "name": "Lucian Buzzo",
+            "githubUsername": "LucianBuzzo",
+            "url": "https://github.com/LucianBuzzo"
+        },
+        {
+            "name": "Klaus Meinhardt",
+            "githubUsername": "ajafff",
+            "url": "https://github.com/ajafff"
+        },
+        {
+            "name": "ExE Boss",
+            "githubUsername": "ExE-Boss",
+            "url": "https://github.com/ExE-Boss"
+        },
+        {
+            "name": "Piotr Błażejewicz",
+            "githubUsername": "peterblazejewicz",
+            "url": "https://github.com/peterblazejewicz"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/semver"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {},
+    "typesPublisherContentHash": "05c64b15fc87f8868c6987ed5adbd9c42e5be6045d53624b68f3046619c2e29e",
+    "typeScriptVersion": "5.2"
+}

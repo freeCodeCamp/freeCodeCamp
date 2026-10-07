@@ -1,0 +1,53 @@
+{
+  "name": "@babel/eslint-parser",
+  "version": "7.26.5",
+  "description": "ESLint parser that allows for linting of experimental syntax transformed by Babel",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "eslint/babel-eslint-parser"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/babel/babel/issues"
+  },
+  "homepage": "https://babel.dev/",
+  "engines": {
+    "node": "^10.13.0 || ^12.13.0 || >=14.0.0"
+  },
+  "main": "./lib/index.cjs",
+  "type": "module",
+  "types": "./types.d.cts",
+  "exports": {
+    ".": {
+      "default": "./lib/index.cjs",
+      "types": "./types.d.cts"
+    },
+    "./experimental-worker": {
+      "default": "./lib/experimental-worker.cjs",
+      "types": "./types.d.cts"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.11.0",
+    "eslint": "^7.5.0 || ^8.0.0 || ^9.0.0"
+  },
+  "dependencies": {
+    "@nicolo-ribaudo/eslint-scope-5-internals": "5.1.1-v1",
+    "eslint-visitor-keys": "^2.1.0",
+    "semver": "^6.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@types/eslint": "^8.56.2",
+    "@types/estree": "^1.0.5",
+    "@typescript-eslint/scope-manager": "^6.19.0",
+    "dedent": "^1.5.3",
+    "eslint": "^9.7.0"
+  }
+}

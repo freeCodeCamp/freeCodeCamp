@@ -1,0 +1,88 @@
+{
+  "name": "keyv",
+  "version": "5.6.0",
+  "description": "Simple key-value storage with support for multiple backends",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredwray/keyv.git"
+  },
+  "keywords": [
+    "key",
+    "value",
+    "store",
+    "cache",
+    "ttl",
+    "key-value",
+    "storage",
+    "backend",
+    "adapter",
+    "redis",
+    "mongodb",
+    "sqlite",
+    "mysql",
+    "postgresql",
+    "memory",
+    "node-cache",
+    "lru-cache",
+    "lru",
+    "cache-manager"
+  ],
+  "author": "Jared Wray <me@jaredwray.com> (http://jaredwray.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaredwray/keyv/issues"
+  },
+  "homepage": "https://github.com/jaredwray/keyv",
+  "dependencies": {
+    "@keyv/serialize": "^1.1.1"
+  },
+  "devDependencies": {
+    "lru.min": "^1.1.1",
+    "quick-lru": "^7.0.0",
+    "@biomejs/biome": "^2.3.8",
+    "@faker-js/faker": "^10.1.0",
+    "@vitest/coverage-v8": "^4.0.14",
+    "rimraf": "^6.1.2",
+    "timekeeper": "^2.3.1",
+    "tsd": "^0.33.0",
+    "vitest": "^4.0.14",
+    "@keyv/compress-gzip": "^2.0.3",
+    "@keyv/sqlite": "^4.0.6",
+    "@keyv/test-suite": "^2.1.2",
+    "@keyv/mongo": "^3.1.0",
+    "@keyv/compress-brotli": "^2.0.5",
+    "@keyv/compress-lz4": "^1.0.1",
+    "@keyv/memcache": "^2.0.2"
+  },
+  "tsd": {
+    "directory": "test"
+  },
+  "files": [
+    "dist",
+    "LISCENCE"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && tsup src/index.ts --format cjs,esm --dts --clean",
+    "lint": "biome check --write --error-on-warnings",
+    "lint:ci": "biome check --error-on-warnings",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:ci": "pnpm lint:ci && vitest --run --sequence.setupFiles=list --coverage",
+    "clean": "rimraf ./node_modules ./coverage ./test/testdb.sqlite ./dist"
+  }
+}

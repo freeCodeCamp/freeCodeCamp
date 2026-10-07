@@ -1,0 +1,45 @@
+{
+  "name": "is-arrayish",
+  "description": "Determines if an object can be used as an array",
+  "version": "0.3.4",
+  "author": "Qix (http://github.com/qix-)",
+  "keywords": [
+    "is",
+    "array",
+    "duck",
+    "type",
+    "arrayish",
+    "similar",
+    "proto",
+    "prototype",
+    "type"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha --require coffeescript/register ./test/**/*.coffee",
+    "lint": "zeit-eslint --ext .jsx,.js .",
+    "lint-staged": "git diff --diff-filter=ACMRT --cached --name-only '*.js' '*.jsx' | xargs zeit-eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qix-/node-is-arrayish.git"
+  },
+  "devDependencies": {
+    "@zeit/eslint-config-node": "^0.3.0",
+    "@zeit/git-hooks": "^0.1.4",
+    "coffeescript": "^2.3.1",
+    "coveralls": "^3.0.1",
+    "eslint": "^4.19.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "should": "^13.2.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@zeit/eslint-config-node"
+    ]
+  },
+  "git": {
+    "pre-commit": "lint-staged"
+  }
+}

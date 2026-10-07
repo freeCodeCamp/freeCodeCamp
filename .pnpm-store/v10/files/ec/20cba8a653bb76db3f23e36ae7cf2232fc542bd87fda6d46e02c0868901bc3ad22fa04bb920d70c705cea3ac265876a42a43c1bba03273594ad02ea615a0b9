@@ -1,0 +1,85 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+.monaco-editor .cursors-layer {
+	position: absolute;
+	top: 0;
+}
+
+.monaco-editor .cursors-layer > .cursor {
+	position: absolute;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+/* -- smooth-caret-animation -- */
+.monaco-editor .cursors-layer.cursor-smooth-caret-animation > .cursor {
+	transition: all 80ms;
+}
+
+/* -- block-outline-style -- */
+.monaco-editor .cursors-layer.cursor-block-outline-style > .cursor {
+	background: transparent !important;
+	border-style: solid;
+	border-width: 1px;
+}
+
+/* -- underline-style -- */
+.monaco-editor .cursors-layer.cursor-underline-style > .cursor {
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	background: transparent !important;
+}
+
+/* -- underline-thin-style -- */
+.monaco-editor .cursors-layer.cursor-underline-thin-style > .cursor {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	background: transparent !important;
+}
+
+@keyframes monaco-cursor-smooth {
+	0%,
+	20% {
+		opacity: 1;
+	}
+	60%,
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes monaco-cursor-phase {
+	0%,
+	20% {
+		opacity: 1;
+	}
+	90%,
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes monaco-cursor-expand {
+	0%,
+	20% {
+		transform: scaleY(1);
+	}
+	80%,
+	100% {
+		transform: scaleY(0);
+	}
+}
+
+.cursor-smooth {
+	animation: monaco-cursor-smooth 0.5s ease-in-out 0s 20 alternate;
+}
+
+.cursor-phase {
+	animation: monaco-cursor-phase 0.5s ease-in-out 0s 20 alternate;
+}
+
+.cursor-expand > .cursor {
+	animation: monaco-cursor-expand 0.5s ease-in-out 0s 20 alternate;
+}

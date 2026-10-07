@@ -1,0 +1,9 @@
+{
+  "schematics": {
+    "rxjs-migration-01": {
+      "description": "Adds rxjs-compat package to the project to ensure compatability with RxJS 5",
+      "version": "6.0.0-rc.0",
+      "factory": "./update-6_0_0/index#rxjsV6MigrationSchematic"
+    }
+  }
+}

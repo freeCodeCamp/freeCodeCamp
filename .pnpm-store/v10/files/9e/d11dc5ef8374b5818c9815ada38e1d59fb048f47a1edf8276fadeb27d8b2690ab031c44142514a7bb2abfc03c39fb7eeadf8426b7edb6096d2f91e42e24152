@@ -1,0 +1,20 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+      "declaration": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "target": "ES2018",
+      "noImplicitAny": true,
+      "sourceMap": false,
+      "importHelpers": false,
+      "inlineSourceMap": true,
+      "inlineSources": true,
+      "outDir": "dist",
+      "baseUrl": ".",
+      "skipLibCheck": true,
+      "sourceRoot": ".",
+      "noUnusedLocals": true,
+      "esModuleInterop": true
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "name": "@freecodecamp/curriculum-helpers",
+  "version": "9.0.1",
+  "description": "Helper functions to test challenges in freeCodecamp's curriculum",
+  "homepage": "https://freecodecamp.org",
+  "author": {
+    "name": "freeCodeCamp.org",
+    "email": "team@freecodecamp.org",
+    "url": "https://freecodecamp.org"
+  },
+  "files": [
+    "/dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/helpers/python/index.d.ts",
+      "require": "./dist/curriculum-helpers/format-exception.cjs",
+      "default": "./dist/curriculum-helpers/format-exception.mjs"
+    },
+    "./format-exception.js": {
+      "types": "./dist/types/helpers/python/index.d.ts",
+      "require": "./dist/curriculum-helpers/format-exception.cjs",
+      "default": "./dist/curriculum-helpers/format-exception.mjs"
+    },
+    "./test-runner.js": {
+      "types": "./dist/types/main/src/index.d.ts",
+      "default": "./dist/test-runner/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    ""
+  ],
+  "devDependencies": {
+    "@babel/core": "7.28.5",
+    "@babel/preset-env": "7.28.5",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "7.28.5",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.25.1",
+    "@sinonjs/fake-timers": "^14.0.0",
+    "@types/chai": "^4.3.20",
+    "@types/jquery": "^3.5.32",
+    "@types/react-dom": "^19.1.6",
+    "@types/react": "^19.1.8",
+    "@types/sinonjs__fake-timers": "^8.1.5",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
+    "browserify": "^17.0.0",
+    "chai": "4",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-config-xo": "0.46.0",
+    "eslint": "9.39.1",
+    "expect-puppeteer": "^11.0.0",
+    "globals": "^16.0.0",
+    "http-server": "^14.1.1",
+    "husky": "8.0.3",
+    "jquery": "^3.7.1",
+    "lint-staged": "16.2.7",
+    "prettier": "3.7.1",
+    "process": "^0.11.10",
+    "puppeteer": "^24.9.0",
+    "pyodide": "0.23.3",
+    "react-dom": "^18.3.1",
+    "react-test-renderer": "^18.3.1",
+    "react": "^18.3.1",
+    "ts-loader": "9.5.4",
+    "typescript-eslint": "^8.31.0",
+    "typescript": "^5.8.2",
+    "util": "^0.12.5",
+    "vitest-environment-puppeteer": "^11.0.3",
+    "vitest": "^3.2.4",
+    "webpack-cli": "5.1.4",
+    "webpack": "5.104.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "enzyme>cheerio": "1.0.0-rc.3"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "puppeteer"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "pnpm": ">= 10"
+  },
+  "lint-staged": {
+    "*.{ts,js,mjs,cjs,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "!(*.{ts,js,mjs,cjs,jsx,tsx})": [
+      "prettier --ignore-unknown --write"
+    ]
+  },
+  "scripts": {
+    "build": "tsc --build --clean && webpack && pnpm build:version",
+    "build:version": "node ./packages/shared/tooling/output-version.mjs",
+    "build-dev": "webpack --env development",
+    "clean": "pnpm clean:build && pnpm clean:packages",
+    "clean:build": "rm -rf dist && rm -rf __fixtures__/dist && tsc --build --clean",
+    "clean:packages": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "install-puppeteer-browser": "puppeteer browsers install chrome",
+    "lint": "eslint . --max-warnings 0 && prettier --check . && tsc --build",
+    "format": "prettier --write .",
+    "test": "vitest",
+    "test:unit": "vitest --config vitest.unit.config.mjs",
+    "test:integration": "vitest --config vitest.integration.config.mjs",
+    "test:python": "python ./packages/helpers/python/python.test.py",
+    "prepare": "husky install",
+    "prepublishOnly": "pnpm clean:build && pnpm build",
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/freeCodeCamp/curriculum-helpers.git"
+  },
+  "license": "BSD-3-Clause",
+  "dependencies": {}
+}

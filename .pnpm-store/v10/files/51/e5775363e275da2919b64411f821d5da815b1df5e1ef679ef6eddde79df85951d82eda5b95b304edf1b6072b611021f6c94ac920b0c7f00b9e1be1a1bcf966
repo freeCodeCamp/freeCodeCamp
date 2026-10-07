@@ -1,0 +1,18 @@
+import { type TUnreachable } from '../../system/unreachable/unreachable.mjs';
+import { type TSchema } from '../types/schema.mjs';
+import { type TProperties } from '../types/properties.mjs';
+import { type TLiteral, type TLiteralValue } from '../types/literal.mjs';
+import { type TBigInt } from '../types/bigint.mjs';
+import { type TBoolean } from '../types/boolean.mjs';
+import { type TNumber } from '../types/number.mjs';
+import { type TString } from '../types/string.mjs';
+import { type TExtendsRight } from './extends_right.mjs';
+import * as Result from './result.mjs';
+type TExtendsLiteralValue<Inferred extends TProperties, Left extends TLiteralValue, Right extends TLiteralValue> = (Left extends Right ? Result.TExtendsTrue<Inferred> : Result.TExtendsFalse);
+type TExtendsLiteralBigInt<Inferred extends TProperties, Left extends bigint, Right extends TSchema> = (Right extends TLiteral<infer Value extends bigint> ? TExtendsLiteralValue<Inferred, Left, Value> : Right extends TBigInt ? Result.TExtendsTrue<Inferred> : TExtendsRight<Inferred, TLiteral<Left>, Right>);
+type TExtendsLiteralBoolean<Inferred extends TProperties, Left extends boolean, Right extends TSchema> = (Right extends TLiteral<infer Value extends boolean> ? TExtendsLiteralValue<Inferred, Left, Value> : Right extends TBoolean ? Result.TExtendsTrue<Inferred> : TExtendsRight<Inferred, TLiteral<Left>, Right>);
+type TExtendsLiteralNumber<Inferred extends TProperties, Left extends number, Right extends TSchema> = (Right extends TLiteral<infer Value extends number> ? TExtendsLiteralValue<Inferred, Left, Value> : Right extends TNumber ? Result.TExtendsTrue<Inferred> : TExtendsRight<Inferred, TLiteral<Left>, Right>);
+type TExtendsLiteralString<Inferred extends TProperties, Left extends string, Right extends TSchema> = (Right extends TLiteral<infer Value extends string> ? TExtendsLiteralValue<Inferred, Left, Value> : Right extends TString ? Result.TExtendsTrue<Inferred> : TExtendsRight<Inferred, TLiteral<Left>, Right>);
+export type TExtendsLiteral<Inferred extends TProperties, Left extends TLiteral, Right extends TSchema> = (Left extends TLiteral<infer Value extends bigint> ? TExtendsLiteralBigInt<Inferred, Value, Right> : Left extends TLiteral<infer Value extends boolean> ? TExtendsLiteralBoolean<Inferred, Value, Right> : Left extends TLiteral<infer Value extends number> ? TExtendsLiteralNumber<Inferred, Value, Right> : Left extends TLiteral<infer Value extends string> ? TExtendsLiteralString<Inferred, Value, Right> : TUnreachable);
+export declare function ExtendsLiteral<Inferred extends TProperties, Left extends TLiteral, Right extends TSchema>(inferred: TProperties, left: Left, right: Right): TExtendsLiteral<Inferred, Left, Right>;
+export {};

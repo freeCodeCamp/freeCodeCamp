@@ -1,0 +1,55 @@
+{
+  "name": "gatsby-plugin-react-helmet",
+  "description": "Manage document head data with react-helmet. Provides drop-in server rendering support for Gatsby.",
+  "version": "6.16.0",
+  "author": "Kyle Mathews <matthews.kyle@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.20.13"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "babel-preset-gatsby-package": "^3.16.0",
+    "cross-env": "^7.0.3"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-react-helmet#readme",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "favicon",
+    "react-helmet",
+    "seo",
+    "document",
+    "head",
+    "title",
+    "meta",
+    "link",
+    "script",
+    "base",
+    "noscript",
+    "style"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "peerDependencies": {
+    "gatsby": "^5.0.0-next",
+    "react-helmet": "^5.1.3 || ^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby.git",
+    "directory": "packages/gatsby-plugin-react-helmet"
+  },
+  "scripts": {
+    "build": "babel src --out-dir . --ignore \"**/__tests__\",**/__mocks__",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir . --ignore \"**/__tests__\",**/__mocks__"
+  },
+  "engines": {
+    "node": ">=18.0.0 <26"
+  },
+  "gitHead": "92d6c67dcf10b641adf5fcc81ebeec5f50b75e40"
+}

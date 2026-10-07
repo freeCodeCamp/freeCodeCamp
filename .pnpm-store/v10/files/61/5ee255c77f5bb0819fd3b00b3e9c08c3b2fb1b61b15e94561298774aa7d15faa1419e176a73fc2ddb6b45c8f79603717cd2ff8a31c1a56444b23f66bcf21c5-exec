@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const colors = require('picocolors');
+const { program } = require('commander');
+const makeProgram = require('../lib/svgo/coa');
+makeProgram(program);
+program.parseAsync(process.argv).catch(error => {
+  console.error(colors.red(error.stack));
+  process.exit(1);
+});

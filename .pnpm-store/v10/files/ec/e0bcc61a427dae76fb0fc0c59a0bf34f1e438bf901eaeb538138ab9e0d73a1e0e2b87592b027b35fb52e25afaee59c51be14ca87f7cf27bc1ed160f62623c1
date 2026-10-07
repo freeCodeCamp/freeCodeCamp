@@ -1,0 +1,53 @@
+{
+  "name": "@prisma/fetch-engine",
+  "version": "6.19.3",
+  "description": "This package is intended for Prisma's internal use",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "Apache-2.0",
+  "author": "Tim Suchanek <suchanek@prisma.io>",
+  "homepage": "https://www.prisma.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prisma/prisma.git",
+    "directory": "packages/fetch-engine"
+  },
+  "bugs": "https://github.com/prisma/prisma/issues",
+  "enginesOverride": {},
+  "devDependencies": {
+    "@types/node": "18.19.76",
+    "@types/progress": "2.0.7",
+    "del": "6.1.1",
+    "execa": "8.0.1",
+    "find-cache-dir": "5.0.0",
+    "fs-extra": "11.3.0",
+    "hasha": "5.2.2",
+    "http-proxy-agent": "7.0.2",
+    "https-proxy-agent": "7.0.6",
+    "kleur": "4.1.5",
+    "node-fetch": "3.3.2",
+    "p-filter": "4.1.0",
+    "p-map": "4.0.0",
+    "p-retry": "4.6.2",
+    "progress": "2.0.3",
+    "temp-dir": "2.0.0",
+    "tempy": "1.0.1",
+    "timeout-signal": "2.0.0",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "@prisma/engines-version": "7.1.1-3.c2990dca591cba766e3b7ef5d9e8a84796e47ab7",
+    "@prisma/debug": "6.19.3",
+    "@prisma/get-platform": "6.19.3"
+  },
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "DEV=true tsx helpers/build.ts",
+    "build": "tsx helpers/build.ts",
+    "test": "vitest run"
+  }
+}

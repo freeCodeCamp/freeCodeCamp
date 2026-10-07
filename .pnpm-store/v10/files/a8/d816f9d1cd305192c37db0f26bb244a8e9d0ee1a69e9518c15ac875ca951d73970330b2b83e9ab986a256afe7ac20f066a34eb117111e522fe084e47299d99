@@ -1,0 +1,64 @@
+{
+  "name": "eslint-scope",
+  "description": "ECMAScript scope analyzer for ESLint",
+  "homepage": "https://github.com/eslint/js/blob/main/packages/eslint-scope/README.md",
+  "main": "./dist/eslint-scope.cjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./dist/eslint-scope.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "version": "8.4.0",
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eslint/js.git",
+    "directory": "packages/eslint-scope"
+  },
+  "funding": "https://opencollective.com/eslint",
+  "keywords": [
+    "eslint"
+  ],
+  "bugs": {
+    "url": "https://github.com/eslint/js/issues"
+  },
+  "license": "BSD-2-Clause",
+  "scripts": {
+    "build": "rollup -c",
+    "build:update-version": "node tools/update-version.js",
+    "prepublishOnly": "npm run build:update-version && npm run build",
+    "pretest": "npm run build",
+    "release:generate:latest": "eslint-generate-release",
+    "release:generate:alpha": "eslint-generate-prerelease alpha",
+    "release:generate:beta": "eslint-generate-prerelease beta",
+    "release:generate:rc": "eslint-generate-prerelease rc",
+    "release:publish": "eslint-publish-release",
+    "test": "node Makefile.js test"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib",
+    "dist/eslint-scope.cjs"
+  ],
+  "dependencies": {
+    "esrecurse": "^4.3.0",
+    "estraverse": "^5.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^8.7.0",
+    "chai": "^4.3.4",
+    "eslint-release": "^3.2.0",
+    "eslint-visitor-keys": "^4.2.1",
+    "espree": "^10.4.0",
+    "npm-license": "^0.3.3",
+    "rollup": "^2.52.7",
+    "shelljs": "^0.8.5",
+    "typescript": "^5.4.2"
+  }
+}

@@ -1,0 +1,2 @@
+!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e=e||self).cleanSet=n()}(this,function(){function e(e){var n=e&&e.pop?[]:{};for(var t in e)n[t]=e[t];return n}return function(n,t,o){t.split&&(t=t.split("."));for(var f=e(n),i=f,r=0,u=t.length;r<u;r++)i=i[t[r]]=r===u-1?o&&o.call?o(i[t[r]]):o:e(i[t[r]]);return f}});
+//# sourceMappingURL=clean-set.min.js.map

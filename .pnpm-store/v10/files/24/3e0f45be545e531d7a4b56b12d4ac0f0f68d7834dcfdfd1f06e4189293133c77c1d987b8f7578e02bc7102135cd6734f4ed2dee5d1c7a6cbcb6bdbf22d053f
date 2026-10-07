@@ -1,0 +1,1 @@
+{"version":3,"file":"code-points-data-browser.d.ts","sourceRoot":"","sources":["../src/code-points-data-browser.ts"],"names":[],"mappings":"AAAA,QAAA,MAAM,IAAI,qBAGT,CAAC;AACF,eAAe,IAAI,CAAC"}

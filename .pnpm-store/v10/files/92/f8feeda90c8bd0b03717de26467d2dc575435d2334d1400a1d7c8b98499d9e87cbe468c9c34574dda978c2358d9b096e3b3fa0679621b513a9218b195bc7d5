@@ -1,0 +1,8 @@
+{
+  "name": "rxjs/ajax",
+  "typings": "./index.d.ts",
+  "main": "./index.js",
+  "module": "../_esm5/ajax/index.js",
+  "es2015": "../_esm2015/ajax/index.js",
+  "sideEffects": false
+}

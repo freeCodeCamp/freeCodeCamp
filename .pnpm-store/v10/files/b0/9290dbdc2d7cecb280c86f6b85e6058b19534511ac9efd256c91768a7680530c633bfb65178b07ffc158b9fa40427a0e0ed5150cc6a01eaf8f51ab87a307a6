@@ -1,0 +1,9 @@
+import { createChatInlineLayoutComponent } from 'instantsearch-ui-components';
+import { createElement, Fragment } from 'react';
+
+var ChatInlineLayout = createChatInlineLayoutComponent({
+    createElement: createElement,
+    Fragment: Fragment
+});
+
+export { ChatInlineLayout };

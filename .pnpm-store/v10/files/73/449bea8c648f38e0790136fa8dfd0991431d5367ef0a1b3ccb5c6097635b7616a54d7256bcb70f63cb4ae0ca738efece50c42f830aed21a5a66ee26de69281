@@ -1,0 +1,43 @@
+{
+	"name": "base-64",
+	"version": "1.0.0",
+	"description": "A robust base64 encoder/decoder that is fully compatible with `atob()` and `btoa()`, written in JavaScript.",
+	"homepage": "https://mths.be/base64",
+	"main": "base64.js",
+	"keywords": [
+		"codec",
+		"decoder",
+		"encoder",
+		"base64",
+		"atob",
+		"btoa"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "https://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/base64.git"
+	},
+	"bugs": "https://github.com/mathiasbynens/base64/issues",
+	"files": [
+		"LICENSE-MIT.txt",
+		"base64.js"
+	],
+	"scripts": {
+		"test": "mocha tests/tests.js",
+		"build": "grunt build"
+	},
+	"devDependencies": {
+		"coveralls": "^2.11.4",
+		"grunt": "^0.4.5",
+		"grunt-cli": "^1.3.2",
+		"grunt-shell": "^1.1.2",
+		"grunt-template": "^0.2.3",
+		"istanbul": "^0.4.0",
+		"mocha": "^6.2.0",
+		"regenerate": "^1.2.1"
+	}
+}

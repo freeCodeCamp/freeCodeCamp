@@ -1,0 +1,90 @@
+{
+  "name": "diff",
+  "version": "5.2.2",
+  "description": "A JavaScript text diff implementation.",
+  "keywords": [
+    "diff",
+    "jsdiff",
+    "compare",
+    "patch",
+    "text",
+    "json",
+    "css",
+    "javascript"
+  ],
+  "maintainers": [
+    "Kevin Decker <kpdecker@gmail.com> (http://incaseofstairs.com)",
+    "Mark Amery <markrobertamery+jsdiff@gmail.com>"
+  ],
+  "bugs": {
+    "email": "kpdecker@gmail.com",
+    "url": "http://github.com/kpdecker/jsdiff/issues"
+  },
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kpdecker/jsdiff.git"
+  },
+  "engines": {
+    "node": ">=0.3.1"
+  },
+  "main": "./lib/index.js",
+  "module": "./lib/index.es6.js",
+  "browser": "./dist/diff.js",
+  "unpkg": "./dist/diff.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./package.json": "./package.json",
+    "./": "./",
+    "./*": "./*"
+  },
+  "scripts": {
+    "clean": "rm -rf lib/ dist/",
+    "build:node": "yarn babel --out-dir lib  --source-maps=inline src",
+    "test": "grunt"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "@colors/colors": "^1.3.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "chai": "^4.2.0",
+    "eslint": "^5.12.0",
+    "grunt": "^1.0.3",
+    "grunt-babel": "^8.0.0",
+    "grunt-cli": "^1.3.2",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^23.0.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-karma": "^4.0.0",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "grunt-mocha-test": "^0.13.3",
+    "grunt-webpack": "^3.1.3",
+    "istanbul": "github:kpdecker/istanbul",
+    "karma": "^6.3.16",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-mocha": "^2.0.1",
+    "karma-mocha-reporter": "^2.0.0",
+    "karma-sauce-launcher": "^4.1.5",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^4.0.2",
+    "mocha": "^6.0.0",
+    "rollup": "^1.0.2",
+    "rollup-plugin-babel": "^4.2.0",
+    "semver": "^7.3.2",
+    "webpack": "^4.28.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "optionalDependencies": {},
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}

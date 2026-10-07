@@ -1,0 +1,30 @@
+{
+  "name": "html-encoding-sniffer",
+  "description": "Sniff the encoding from a HTML byte stream",
+  "keywords": [
+    "encoding",
+    "html"
+  ],
+  "version": "2.0.1",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "MIT",
+  "repository": "jsdom/html-encoding-sniffer",
+  "main": "lib/html-encoding-sniffer.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "whatwg-encoding": "^1.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "mocha": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

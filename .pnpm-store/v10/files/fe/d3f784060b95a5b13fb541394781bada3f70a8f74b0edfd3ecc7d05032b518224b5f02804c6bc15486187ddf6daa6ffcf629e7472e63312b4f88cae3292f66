@@ -1,0 +1,38 @@
+{
+  "name": "is-stream",
+  "version": "1.1.0",
+  "description": "Check if something is a Node.js stream",
+  "license": "MIT",
+  "repository": "sindresorhus/is-stream",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "stream",
+    "type",
+    "streams",
+    "writable",
+    "readable",
+    "duplex",
+    "transform",
+    "check",
+    "detect",
+    "is"
+  ],
+  "devDependencies": {
+    "ava": "*",
+    "tempfile": "^1.1.0",
+    "xo": "*"
+  }
+}

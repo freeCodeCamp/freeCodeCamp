@@ -1,0 +1,80 @@
+{
+  "name": "npm-run-all2",
+  "version": "5.0.2",
+  "description": "A CLI tool to run multiple npm-scripts in parallel or sequential. (Maintainence fork)",
+  "bin": {
+    "run-p": "bin/run-p/index.js",
+    "run-s": "bin/run-s/index.js",
+    "npm-run-all": "bin/npm-run-all/index.js"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "bin",
+    "lib",
+    "docs"
+  ],
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "_mocha": "mocha \"test/*.js\" --timeout 120000",
+    "clean": "rimraf .nyc_output coverage jsdoc \"test-workspace/{build,test.txt}\"",
+    "docs": "jsdoc -c jsdoc.json",
+    "lint": "eslint bin lib scripts test \"test-workspace/tasks/*.js\"",
+    "pretest": "node scripts/make-slink.js && npm run lint",
+    "test": "nyc npm run _mocha",
+    "watch": "npm run _mocha -- --watch --growl",
+    "lcov": "nyc report -r lcovonly",
+    "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
+    "preversion": "npm test",
+    "postversion": "git push --follow-tags && gh-release -y"
+  },
+  "dependencies": {
+    "ansi-styles": "^5.0.0",
+    "cross-spawn": "^7.0.3",
+    "memorystream": "^0.3.1",
+    "minimatch": "^3.0.4",
+    "pidtree": "^0.5.0",
+    "read-pkg": "^5.2.0",
+    "shell-quote": "^1.6.1"
+  },
+  "devDependencies": {
+    "auto-changelog": "^2.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-mysticatea": "^13.0.2",
+    "fs-extra": "^9.0.1",
+    "gh-release": "^4.0.0",
+    "jsdoc": "^3.6.6",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "p-queue": "^6.6.1",
+    "rimraf": "^3.0.2",
+    "yarn": "^1.12.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcomnes/npm-run-all2.git"
+  },
+  "keywords": [
+    "cli",
+    "command",
+    "commandline",
+    "tool",
+    "npm",
+    "npm-scripts",
+    "run",
+    "sequential",
+    "serial",
+    "parallel",
+    "task"
+  ],
+  "author": "Toru Nagashima",
+  "contributors": [
+    "Bret Comnes <bcomnes@gmail.com> (https://bret.io)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bcomnes/npm-run-all2/issues"
+  },
+  "homepage": "https://github.com/bcomnes/npm-run-all2"
+}

@@ -1,0 +1,88 @@
+{
+  "name": "react-dev-utils",
+  "version": "12.0.1",
+  "description": "webpack utilities used by Create React App",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/create-react-app.git",
+    "directory": "packages/react-dev-utils"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/facebook/create-react-app/issues"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "browsersHelper.js",
+    "chalk.js",
+    "checkRequiredFiles.js",
+    "clearConsole.js",
+    "crossSpawn.js",
+    "errorOverlayMiddleware.js",
+    "eslintFormatter.js",
+    "evalSourceMapMiddleware.js",
+    "FileSizeReporter.js",
+    "ForkTsCheckerWebpackPlugin.js",
+    "ForkTsCheckerWarningWebpackPlugin.js",
+    "formatWebpackMessages.js",
+    "getCacheIdentifier.js",
+    "getCSSModuleLocalIdent.js",
+    "getProcessForPort.js",
+    "getPublicUrlOrPath.js",
+    "globby.js",
+    "ignoredFiles.js",
+    "immer.js",
+    "InlineChunkHtmlPlugin.js",
+    "InterpolateHtmlPlugin.js",
+    "launchEditor.js",
+    "launchEditorEndpoint.js",
+    "ModuleNotFoundPlugin.js",
+    "ModuleScopePlugin.js",
+    "noopServiceWorkerMiddleware.js",
+    "openBrowser.js",
+    "openChrome.applescript",
+    "printBuildError.js",
+    "printHostingInstructions.js",
+    "redirectServedPathMiddleware.js",
+    "refreshOverlayInterop.js",
+    "typescriptFormatter.js",
+    "WebpackDevServerUtils.js",
+    "webpackHotDevClient.js"
+  ],
+  "dependencies": {
+    "@babel/code-frame": "^7.16.0",
+    "address": "^1.1.2",
+    "browserslist": "^4.18.1",
+    "chalk": "^4.1.2",
+    "cross-spawn": "^7.0.3",
+    "detect-port-alt": "^1.1.6",
+    "escape-string-regexp": "^4.0.0",
+    "filesize": "^8.0.6",
+    "find-up": "^5.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.5.0",
+    "global-modules": "^2.0.0",
+    "globby": "^11.0.4",
+    "gzip-size": "^6.0.0",
+    "immer": "^9.0.7",
+    "is-root": "^2.1.0",
+    "loader-utils": "^3.2.0",
+    "open": "^8.4.0",
+    "pkg-up": "^3.1.0",
+    "prompts": "^2.4.2",
+    "react-error-overlay": "^6.0.11",
+    "recursive-readdir": "^2.2.2",
+    "shell-quote": "^1.7.3",
+    "strip-ansi": "^6.0.1",
+    "text-table": "^0.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^27.4.3"
+  },
+  "scripts": {
+    "test": "cross-env FORCE_COLOR=true jest"
+  },
+  "gitHead": "19fa58d527ae74f2b6baa0867463eea1d290f9a5"
+}

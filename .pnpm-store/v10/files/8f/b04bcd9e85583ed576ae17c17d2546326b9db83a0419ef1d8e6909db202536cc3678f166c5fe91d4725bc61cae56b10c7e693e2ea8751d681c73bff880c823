@@ -1,0 +1,2385 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Network domain allows tracking network activities of the page. It exposes information about http,
+# file, data and other requests and responses, their headers, bodies, timing, etc.
+domain Network
+  depends on Debugger
+  depends on Runtime
+  depends on Security
+
+  # Resource type as it was perceived by the rendering engine.
+  type ResourceType extends string
+    enum
+      Document
+      Stylesheet
+      Image
+      Media
+      Font
+      Script
+      TextTrack
+      XHR
+      Fetch
+      Prefetch
+      EventSource
+      WebSocket
+      Manifest
+      SignedExchange
+      Ping
+      CSPViolationReport
+      Preflight
+      FedCM
+      Other
+
+  # Unique loader identifier.
+  type LoaderId extends string
+
+  # Unique network request identifier.
+  # Note that this does not identify individual HTTP requests that are part of
+  # a network request.
+  type RequestId extends string
+
+  # Unique intercepted request identifier.
+  type InterceptionId extends string
+
+  # Network level fetch failure reason.
+  type ErrorReason extends string
+    enum
+      Failed
+      Aborted
+      TimedOut
+      AccessDenied
+      ConnectionClosed
+      ConnectionReset
+      ConnectionRefused
+      ConnectionAborted
+      ConnectionFailed
+      NameNotResolved
+      InternetDisconnected
+      AddressUnreachable
+      BlockedByClient
+      BlockedByResponse
+
+  # UTC time in seconds, counted from January 1, 1970.
+  type TimeSinceEpoch extends number
+
+  # Monotonically increasing time in seconds since an arbitrary point in the past.
+  type MonotonicTime extends number
+
+  # Request / response headers as keys / values of JSON object.
+  type Headers extends object
+
+  # The underlying connection technology that the browser is supposedly using.
+  type ConnectionType extends string
+    enum
+      none
+      cellular2g
+      cellular3g
+      cellular4g
+      bluetooth
+      ethernet
+      wifi
+      wimax
+      other
+
+  # Represents the cookie's 'SameSite' status:
+  # https://tools.ietf.org/html/draft-west-first-party-cookies
+  type CookieSameSite extends string
+    enum
+      Strict
+      Lax
+      None
+
+  # Represents the cookie's 'Priority' status:
+  # https://tools.ietf.org/html/draft-west-cookie-priority-00
+  experimental type CookiePriority extends string
+    enum
+      Low
+      Medium
+      High
+
+  # Represents the source scheme of the origin that originally set the cookie.
+  # A value of "Unset" allows protocol clients to emulate legacy cookie scope for the scheme.
+  # This is a temporary ability and it will be removed in the future.
+  experimental type CookieSourceScheme extends string
+    enum
+      Unset
+      NonSecure
+      Secure
+
+  # Timing information for the request.
+  type ResourceTiming extends object
+    properties
+      # Timing's requestTime is a baseline in seconds, while the other numbers are ticks in
+      # milliseconds relatively to this requestTime.
+      number requestTime
+      # Started resolving proxy.
+      number proxyStart
+      # Finished resolving proxy.
+      number proxyEnd
+      # Started DNS address resolve.
+      number dnsStart
+      # Finished DNS address resolve.
+      number dnsEnd
+      # Started connecting to the remote host.
+      number connectStart
+      # Connected to the remote host.
+      number connectEnd
+      # Started SSL handshake.
+      number sslStart
+      # Finished SSL handshake.
+      number sslEnd
+      # Started running ServiceWorker.
+      experimental number workerStart
+      # Finished Starting ServiceWorker.
+      experimental number workerReady
+      # Started fetch event.
+      experimental number workerFetchStart
+      # Settled fetch event respondWith promise.
+      experimental number workerRespondWithSettled
+      # Started ServiceWorker static routing source evaluation.
+      experimental optional number workerRouterEvaluationStart
+      # Started cache lookup when the source was evaluated to `cache`.
+      experimental optional number workerCacheLookupStart
+      # Started sending request.
+      number sendStart
+      # Finished sending request.
+      number sendEnd
+      # Time the server started pushing request.
+      experimental number pushStart
+      # Time the server finished pushing request.
+      experimental number pushEnd
+      # Started receiving response headers.
+      experimental number receiveHeadersStart
+      # Finished receiving response headers.
+      number receiveHeadersEnd
+
+  # Loading priority of a resource request.
+  type ResourcePriority extends string
+    enum
+      VeryLow
+      Low
+      Medium
+      High
+      VeryHigh
+
+  # The render-blocking behavior of a resource request.
+  experimental type RenderBlockingBehavior extends string
+    enum
+      Blocking
+      InBodyParserBlocking
+      NonBlocking
+      NonBlockingDynamic
+      PotentiallyBlocking
+
+  # Post data entry for HTTP request
+  type PostDataEntry extends object
+    properties
+      optional binary bytes
+
+  # HTTP request data.
+  type Request extends object
+    properties
+      # Request URL (without fragment).
+      string url
+      # Fragment of the requested URL starting with hash, if present.
+      optional string urlFragment
+      # HTTP request method.
+      string method
+      # HTTP request headers.
+      Headers headers
+      # HTTP POST request data.
+      # Use postDataEntries instead.
+      deprecated optional string postData
+      # True when the request has POST data. Note that postData might still be omitted when this flag is true when the data is too long.
+      optional boolean hasPostData
+      # Request body elements (post data broken into individual entries).
+      experimental optional array of PostDataEntry postDataEntries
+      # The mixed content type of the request.
+      optional Security.MixedContentType mixedContentType
+      # Priority of the resource request at the time request is sent.
+      ResourcePriority initialPriority
+      # The referrer policy of the request, as defined in https://www.w3.org/TR/referrer-policy/
+      enum referrerPolicy
+        unsafe-url
+        no-referrer-when-downgrade
+        no-referrer
+        origin
+        origin-when-cross-origin
+        same-origin
+        strict-origin
+        strict-origin-when-cross-origin
+      # Whether is loaded via link preload.
+      optional boolean isLinkPreload
+      # Set for requests when the TrustToken API is used. Contains the parameters
+      # passed by the developer (e.g. via "fetch") as understood by the backend.
+      experimental optional TrustTokenParams trustTokenParams
+      # True if this resource request is considered to be the 'same site' as the
+      # request corresponding to the main frame.
+      experimental optional boolean isSameSite
+      # True when the resource request is ad-related.
+      experimental optional boolean isAdRelated
+
+  # Details of a signed certificate timestamp (SCT).
+  type SignedCertificateTimestamp extends object
+    properties
+      # Validation status.
+      string status
+      # Origin.
+      string origin
+      # Log name / description.
+      string logDescription
+      # Log ID.
+      string logId
+      # Issuance date. Unlike TimeSinceEpoch, this contains the number of
+      # milliseconds since January 1, 1970, UTC, not the number of seconds.
+      number timestamp
+      # Hash algorithm.
+      string hashAlgorithm
+      # Signature algorithm.
+      string signatureAlgorithm
+      # Signature data.
+      string signatureData
+
+  # Security details about a request.
+  type SecurityDetails extends object
+    properties
+      # Protocol name (e.g. "TLS 1.2" or "QUIC").
+      string protocol
+      # Key Exchange used by the connection, or the empty string if not applicable.
+      string keyExchange
+      # (EC)DH group used by the connection, if applicable.
+      optional string keyExchangeGroup
+      # Cipher name.
+      string cipher
+      # TLS MAC. Note that AEAD ciphers do not have separate MACs.
+      optional string mac
+      # Certificate ID value.
+      Security.CertificateId certificateId
+      # Certificate subject name.
+      string subjectName
+      # Subject Alternative Name (SAN) DNS names and IP addresses.
+      array of string sanList
+      # Name of the issuing CA.
+      string issuer
+      # Certificate valid from date.
+      TimeSinceEpoch validFrom
+      # Certificate valid to (expiration) date
+      TimeSinceEpoch validTo
+      # List of signed certificate timestamps (SCTs).
+      array of SignedCertificateTimestamp signedCertificateTimestampList
+      # Whether the request complied with Certificate Transparency policy
+      CertificateTransparencyCompliance certificateTransparencyCompliance
+      # The signature algorithm used by the server in the TLS server signature,
+      # represented as a TLS SignatureScheme code point. Omitted if not
+      # applicable or not known.
+      optional integer serverSignatureAlgorithm
+      # Whether the connection used Encrypted ClientHello
+      boolean encryptedClientHello
+
+  # Whether the request complied with Certificate Transparency policy.
+  type CertificateTransparencyCompliance extends string
+    enum
+      unknown
+      not-compliant
+      compliant
+
+  # The reason why request was blocked.
+  type BlockedReason extends string
+    enum
+      other
+      csp
+      mixed-content
+      origin
+      inspector
+      integrity
+      subresource-filter
+      content-type
+      coep-frame-resource-needs-coep-header
+      coop-sandboxed-iframe-cannot-navigate-to-coop-page
+      corp-not-same-origin
+      corp-not-same-origin-after-defaulted-to-same-origin-by-coep
+      corp-not-same-origin-after-defaulted-to-same-origin-by-dip
+      corp-not-same-origin-after-defaulted-to-same-origin-by-coep-and-dip
+      corp-not-same-site
+      sri-message-signature-mismatch
+
+  # The reason why request was blocked.
+  type CorsError extends string
+    enum
+      DisallowedByMode
+      InvalidResponse
+      WildcardOriginNotAllowed
+      MissingAllowOriginHeader
+      MultipleAllowOriginValues
+      InvalidAllowOriginValue
+      AllowOriginMismatch
+      InvalidAllowCredentials
+      CorsDisabledScheme
+      PreflightInvalidStatus
+      PreflightDisallowedRedirect
+      PreflightWildcardOriginNotAllowed
+      PreflightMissingAllowOriginHeader
+      PreflightMultipleAllowOriginValues
+      PreflightInvalidAllowOriginValue
+      PreflightAllowOriginMismatch
+      PreflightInvalidAllowCredentials
+      # TODO(https://crbug.com/1263483): Remove this once frontend code does
+      # not reference it anymore.
+      PreflightMissingAllowExternal
+      # TODO(https://crbug.com/1263483): Remove this once frontend code does
+      # not reference it anymore.
+      PreflightInvalidAllowExternal
+      InvalidAllowMethodsPreflightResponse
+      InvalidAllowHeadersPreflightResponse
+      MethodDisallowedByPreflightResponse
+      HeaderDisallowedByPreflightResponse
+      RedirectContainsCredentials
+      # Request was a private network request initiated by a non-secure context.
+      InsecureLocalNetwork
+      # Request carried a target IP address space property that did not match
+      # the target resource's address space.
+      InvalidLocalNetworkAccess
+      NoCorsRedirectModeNotFollow
+      # Request was a local network request and is denied by user permission.
+      # https://wicg.github.io/local-network-access/
+      LocalNetworkAccessPermissionDenied
+
+  type CorsErrorStatus extends object
+    properties
+      CorsError corsError
+      string failedParameter
+
+  # Source of serviceworker response.
+  type ServiceWorkerResponseSource extends string
+    enum
+      cache-storage
+      http-cache
+      fallback-code
+      network
+
+  # Determines what type of Trust Token operation is executed and
+  # depending on the type, some additional parameters. The values
+  # are specified in third_party/blink/renderer/core/fetch/trust_token.idl.
+  experimental type TrustTokenParams extends object
+    properties
+      TrustTokenOperationType operation
+
+      # Only set for "token-redemption" operation and determine whether
+      # to request a fresh SRR or use a still valid cached SRR.
+      enum refreshPolicy
+        UseCached
+        Refresh
+
+      # Origins of issuers from whom to request tokens or redemption
+      # records.
+      optional array of string issuers
+
+  experimental type TrustTokenOperationType extends string
+    enum
+      # Type "token-request" in the Trust Token API.
+      Issuance
+      # Type "token-redemption" in the Trust Token API.
+      Redemption
+      # Type "send-redemption-record" in the Trust Token API.
+      Signing
+
+  # The reason why Chrome uses a specific transport protocol for HTTP semantics.
+  experimental type AlternateProtocolUsage extends string
+    enum
+      # Alternate Protocol was used without racing a normal connection.
+      alternativeJobWonWithoutRace
+      # Alternate Protocol was used by winning a race with a normal connection.
+      alternativeJobWonRace
+      # Alternate Protocol was not used by losing a race with a normal connection.
+      mainJobWonRace
+      # Alternate Protocol was not used because no Alternate-Protocol information
+      # was available when the request was issued, but an Alternate-Protocol header
+      # was present in the response.
+      mappingMissing
+      # Alternate Protocol was not used because it was marked broken.
+      broken
+      # HTTPS DNS protocol upgrade job was used without racing with a normal
+      # connection and an Alternate Protocol job.
+      dnsAlpnH3JobWonWithoutRace
+      # HTTPS DNS protocol upgrade job won a race with a normal connection and
+      # an Alternate Protocol job.
+      dnsAlpnH3JobWonRace
+      # This value is used when the reason is unknown.
+      unspecifiedReason
+
+  # Source of service worker router.
+  type ServiceWorkerRouterSource extends string
+    enum
+      network
+      cache
+      fetch-event
+      race-network-and-fetch-handler
+      race-network-and-cache
+
+  experimental type ServiceWorkerRouterInfo extends object
+    properties
+      # ID of the rule matched. If there is a matched rule, this field will
+      # be set, otherwiser no value will be set.
+      optional integer ruleIdMatched
+      # The router source of the matched rule. If there is a matched rule, this
+      # field will be set, otherwise no value will be set.
+      optional ServiceWorkerRouterSource matchedSourceType
+      # The actual router source used.
+      optional ServiceWorkerRouterSource actualSourceType
+
+  # HTTP response data.
+  type Response extends object
+    properties
+      # Response URL. This URL can be different from CachedResource.url in case of redirect.
+      string url
+      # HTTP response status code.
+      integer status
+      # HTTP response status text.
+      string statusText
+      # HTTP response headers.
+      Headers headers
+      # HTTP response headers text. This has been replaced by the headers in Network.responseReceivedExtraInfo.
+      deprecated optional string headersText
+      # Resource mimeType as determined by the browser.
+      string mimeType
+      # Resource charset as determined by the browser (if applicable).
+      string charset
+      # Refined HTTP request headers that were actually transmitted over the network.
+      optional Headers requestHeaders
+      # HTTP request headers text. This has been replaced by the headers in Network.requestWillBeSentExtraInfo.
+      deprecated optional string requestHeadersText
+      # Specifies whether physical connection was actually reused for this request.
+      boolean connectionReused
+      # Physical connection id that was actually used for this request.
+      number connectionId
+      # Remote IP address.
+      optional string remoteIPAddress
+      # Remote port.
+      optional integer remotePort
+      # Specifies that the request was served from the disk cache.
+      optional boolean fromDiskCache
+      # Specifies that the request was served from the ServiceWorker.
+      optional boolean fromServiceWorker
+      # Specifies that the request was served from the prefetch cache.
+      optional boolean fromPrefetchCache
+      # Specifies that the request was served from the prefetch cache.
+      optional boolean fromEarlyHints
+      # Information about how ServiceWorker Static Router API was used. If this
+      # field is set with `matchedSourceType` field, a matching rule is found.
+      # If this field is set without `matchedSource`, no matching rule is found.
+      # Otherwise, the API is not used.
+      experimental optional ServiceWorkerRouterInfo serviceWorkerRouterInfo
+      # Total number of bytes received for this request so far.
+      number encodedDataLength
+      # Timing information for the given request.
+      optional ResourceTiming timing
+      # Response source of response from ServiceWorker.
+      optional ServiceWorkerResponseSource serviceWorkerResponseSource
+      # The time at which the returned response was generated.
+      optional TimeSinceEpoch responseTime
+      # Cache Storage Cache Name.
+      optional string cacheStorageCacheName
+      # Protocol used to fetch this request.
+      optional string protocol
+      # The reason why Chrome uses a specific transport protocol for HTTP semantics.
+      experimental optional AlternateProtocolUsage alternateProtocolUsage
+      # Security state of the request resource.
+      Security.SecurityState securityState
+      # Security details for the request.
+      optional SecurityDetails securityDetails
+
+  # WebSocket request data.
+  type WebSocketRequest extends object
+    properties
+      # HTTP request headers.
+      Headers headers
+
+  # WebSocket response data.
+  type WebSocketResponse extends object
+    properties
+      # HTTP response status code.
+      integer status
+      # HTTP response status text.
+      string statusText
+      # HTTP response headers.
+      Headers headers
+      # HTTP response headers text.
+      optional string headersText
+      # HTTP request headers.
+      optional Headers requestHeaders
+      # HTTP request headers text.
+      optional string requestHeadersText
+
+  # WebSocket message data. This represents an entire WebSocket message, not just a fragmented frame as the name suggests.
+  type WebSocketFrame extends object
+    properties
+      # WebSocket message opcode.
+      number opcode
+      # WebSocket message mask.
+      boolean mask
+      # WebSocket message payload data.
+      # If the opcode is 1, this is a text message and payloadData is a UTF-8 string.
+      # If the opcode isn't 1, then payloadData is a base64 encoded string representing binary data.
+      string payloadData
+
+  # Information about the cached resource.
+  type CachedResource extends object
+    properties
+      # Resource URL. This is the url of the original network request.
+      string url
+      # Type of this resource.
+      ResourceType type
+      # Cached response data.
+      optional Response response
+      # Cached response body size.
+      number bodySize
+
+  # Information about the request initiator.
+  type Initiator extends object
+    properties
+      # Type of this initiator.
+      enum type
+        parser
+        script
+        preload
+        SignedExchange
+        preflight
+        FedCM
+        other
+      # Initiator JavaScript stack trace, set for Script only.
+      # Requires the Debugger domain to be enabled.
+      optional Runtime.StackTrace stack
+      # Initiator URL, set for Parser type or for Script type (when script is importing module) or for SignedExchange type.
+      optional string url
+      # Initiator line number, set for Parser type or for Script type (when script is importing
+      # module) (0-based).
+      optional number lineNumber
+      # Initiator column number, set for Parser type or for Script type (when script is importing
+      # module) (0-based).
+      optional number columnNumber
+      # Set if another request triggered this request (e.g. preflight).
+      optional RequestId requestId
+
+  # cookiePartitionKey object
+  # The representation of the components of the key that are created by the cookiePartitionKey class contained in net/cookies/cookie_partition_key.h.
+  experimental type CookiePartitionKey extends object
+    properties
+      # The site of the top-level URL the browser was visiting at the start
+      # of the request to the endpoint that set the cookie.
+      string topLevelSite
+      # Indicates if the cookie has any ancestors that are cross-site to the topLevelSite.
+      boolean hasCrossSiteAncestor
+
+  # Cookie object
+  type Cookie extends object
+    properties
+      # Cookie name.
+      string name
+      # Cookie value.
+      string value
+      # Cookie domain.
+      string domain
+      # Cookie path.
+      string path
+      # Cookie expiration date as the number of seconds since the UNIX epoch.
+      # The value is set to -1 if the expiry date is not set.
+      # The value can be null for values that cannot be represented in
+      # JSON (±Inf).
+      number expires
+      # Cookie size.
+      integer size
+      # True if cookie is http-only.
+      boolean httpOnly
+      # True if cookie is secure.
+      boolean secure
+      # True in case of session cookie.
+      boolean session
+      # Cookie SameSite type.
+      optional CookieSameSite sameSite
+      # Cookie Priority
+      experimental CookiePriority priority
+      # Cookie source scheme type.
+      experimental CookieSourceScheme sourceScheme
+      # Cookie source port. Valid values are {-1, [1, 65535]}, -1 indicates an unspecified port.
+      # An unspecified port value allows protocol clients to emulate legacy cookie scope for the port.
+      # This is a temporary ability and it will be removed in the future.
+      experimental integer sourcePort
+      # Cookie partition key.
+      experimental optional CookiePartitionKey partitionKey
+      # True if cookie partition key is opaque.
+      experimental optional boolean partitionKeyOpaque
+
+  # Types of reasons why a cookie may not be stored from a response.
+  experimental type SetCookieBlockedReason extends string
+    enum
+      # The cookie had the "Secure" attribute but was not received over a secure connection.
+      SecureOnly
+      # The cookie had the "SameSite=Strict" attribute but came from a cross-origin response.
+      # This includes navigation requests initiated by other origins.
+      SameSiteStrict
+      # The cookie had the "SameSite=Lax" attribute but came from a cross-origin response.
+      SameSiteLax
+      # The cookie didn't specify a "SameSite" attribute and was defaulted to "SameSite=Lax" and
+      # broke the same rules specified in the SameSiteLax value.
+      SameSiteUnspecifiedTreatedAsLax
+      # The cookie had the "SameSite=None" attribute but did not specify the "Secure" attribute,
+      # which is required in order to use "SameSite=None".
+      SameSiteNoneInsecure
+      # The cookie was not stored due to user preferences.
+      UserPreferences
+      # The cookie was blocked due to third-party cookie phaseout.
+      ThirdPartyPhaseout
+      # The cookie was blocked by third-party cookie blocking between sites in
+      # the same First-Party Set.
+      ThirdPartyBlockedInFirstPartySet
+      # The syntax of the Set-Cookie header of the response was invalid.
+      SyntaxError
+      # The scheme of the connection is not allowed to store cookies.
+      SchemeNotSupported
+      # The cookie was not sent over a secure connection and would have overwritten a cookie with
+      # the Secure attribute.
+      OverwriteSecure
+      # The cookie's domain attribute was invalid with regards to the current host url.
+      InvalidDomain
+      # The cookie used the "__Secure-" or "__Host-" prefix in its name and broke the additional
+      # rules applied to cookies with these prefixes as defined in
+      # https://tools.ietf.org/html/draft-west-cookie-prefixes-05
+      InvalidPrefix
+      # An unknown error was encountered when trying to store this cookie.
+      UnknownError
+      # The cookie had the "SameSite=Strict" attribute but came from a response
+      # with the same registrable domain but a different scheme.
+      # This includes navigation requests initiated by other origins.
+      # This is the "Schemeful Same-Site" version of the blocked reason.
+      SchemefulSameSiteStrict
+      # The cookie had the "SameSite=Lax" attribute but came from a response
+      # with the same registrable domain but a different scheme.
+      # This is the "Schemeful Same-Site" version of the blocked reason.
+      SchemefulSameSiteLax
+      # The cookie didn't specify a "SameSite" attribute and was defaulted to
+      # "SameSite=Lax" and broke the same rules specified in the SchemefulSameSiteLax
+      # value.
+      # This is the "Schemeful Same-Site" version of the blocked reason.
+      SchemefulSameSiteUnspecifiedTreatedAsLax
+      # The cookie's name/value pair size exceeded the size limit defined in
+      # RFC6265bis.
+      NameValuePairExceedsMaxSize
+      # The cookie contained a forbidden ASCII control character, or the tab
+      # character if it appears in the middle of the cookie name, value, an
+      # attribute name, or an attribute value.
+      DisallowedCharacter
+      # Cookie contains no content or only whitespace.
+      NoCookieContent
+
+  # Types of reasons why a cookie may not be sent with a request.
+  experimental type CookieBlockedReason extends string
+    enum
+      # The cookie had the "Secure" attribute and the connection was not secure.
+      SecureOnly
+      # The cookie's path was not within the request url's path.
+      NotOnPath
+      # The cookie's domain is not configured to match the request url's domain, even though they
+      # share a common TLD+1 (TLD+1 of foo.bar.example.com is example.com).
+      DomainMismatch
+      # The cookie had the "SameSite=Strict" attribute and the request was made on on a different
+      # site. This includes navigation requests initiated by other sites.
+      SameSiteStrict
+      # The cookie had the "SameSite=Lax" attribute and the request was made on a different site.
+      # This does not include navigation requests initiated by other sites.
+      SameSiteLax
+      # The cookie didn't specify a SameSite attribute when it was stored and was defaulted to
+      # "SameSite=Lax" and broke the same rules specified in the SameSiteLax value. The cookie had
+      # to have been set with "SameSite=None" to enable third-party usage.
+      SameSiteUnspecifiedTreatedAsLax
+      # The cookie had the "SameSite=None" attribute and the connection was not secure. Cookies
+      # without SameSite restrictions must be sent over a secure connection.
+      SameSiteNoneInsecure
+      # The cookie was not sent due to user preferences.
+      UserPreferences
+      # The cookie was blocked due to third-party cookie phaseout.
+      ThirdPartyPhaseout
+      # The cookie was blocked by third-party cookie blocking between sites in
+      # the same First-Party Set.
+      ThirdPartyBlockedInFirstPartySet
+      # An unknown error was encountered when trying to send this cookie.
+      UnknownError
+      # The cookie had the "SameSite=Strict" attribute but came from a response
+      # with the same registrable domain but a different scheme.
+      # This includes navigation requests initiated by other origins.
+      # This is the "Schemeful Same-Site" version of the blocked reason.
+      SchemefulSameSiteStrict
+      # The cookie had the "SameSite=Lax" attribute but came from a response
+      # with the same registrable domain but a different scheme.
+      # This is the "Schemeful Same-Site" version of the blocked reason.
+      SchemefulSameSiteLax
+      # The cookie didn't specify a "SameSite" attribute and was defaulted to
+      # "SameSite=Lax" and broke the same rules specified in the SchemefulSameSiteLax
+      # value.
+      # This is the "Schemeful Same-Site" version of the blocked reason.
+      SchemefulSameSiteUnspecifiedTreatedAsLax
+      # The cookie's name/value pair size exceeded the size limit defined in
+      # RFC6265bis.
+      NameValuePairExceedsMaxSize
+      # The cookie's source port value does not match the request origin's port.
+      PortMismatch
+      # The cookie's source scheme value does not match the request origin's scheme.
+      SchemeMismatch
+      # Unpartitioned cookie access from an anonymous context was blocked.
+      AnonymousContext
+
+  # Types of reasons why a cookie should have been blocked by 3PCD but is exempted for the request.
+  experimental type CookieExemptionReason extends string
+    enum
+      # The default value. Cookie with this reason could either be blocked or included.
+      None
+      # The cookie should have been blocked by 3PCD but is exempted by explicit user setting.
+      UserSetting
+      # The cookie should have been blocked by 3PCD but is exempted by metadata mitigation.
+      TPCDMetadata
+      # The cookie should have been blocked by 3PCD but is exempted by Deprecation Trial mitigation.
+      TPCDDeprecationTrial
+      # The cookie should have been blocked by 3PCD but is exempted by Top-level Deprecation Trial mitigation.
+      TopLevelTPCDDeprecationTrial
+      # The cookie should have been blocked by 3PCD but is exempted by heuristics mitigation.
+      TPCDHeuristics
+      # The cookie should have been blocked by 3PCD but is exempted by Enterprise Policy.
+      EnterprisePolicy
+      # The cookie should have been blocked by 3PCD but is exempted by Storage Access API.
+      StorageAccess
+      # The cookie should have been blocked by 3PCD but is exempted by Top-level Storage Access API.
+      TopLevelStorageAccess
+      # The cookie should have been blocked by 3PCD but is exempted by the first-party URL scheme.
+      Scheme
+      # The cookie was included due to the 'allow-same-site-none-cookies' value being set in the sandboxing policy.
+      SameSiteNoneCookiesInSandbox
+
+  # A cookie which was not stored from a response with the corresponding reason.
+  experimental type BlockedSetCookieWithReason extends object
+    properties
+      # The reason(s) this cookie was blocked.
+      array of SetCookieBlockedReason blockedReasons
+      # The string representing this individual cookie as it would appear in the header.
+      # This is not the entire "cookie" or "set-cookie" header which could have multiple cookies.
+      string cookieLine
+      # The cookie object which represents the cookie which was not stored. It is optional because
+      # sometimes complete cookie information is not available, such as in the case of parsing
+      # errors.
+      optional Cookie cookie
+
+  # A cookie should have been blocked by 3PCD but is exempted and stored from a response with the
+  # corresponding reason. A cookie could only have at most one exemption reason.
+  experimental type ExemptedSetCookieWithReason extends object
+    properties
+      # The reason the cookie was exempted.
+      CookieExemptionReason exemptionReason
+      # The string representing this individual cookie as it would appear in the header.
+      string cookieLine
+      # The cookie object representing the cookie.
+      Cookie cookie
+
+  # A cookie associated with the request which may or may not be sent with it.
+  # Includes the cookies itself and reasons for blocking or exemption.
+  experimental type AssociatedCookie extends object
+    properties
+      # The cookie object representing the cookie which was not sent.
+      Cookie cookie
+      # The reason(s) the cookie was blocked. If empty means the cookie is included.
+      array of CookieBlockedReason blockedReasons
+      # The reason the cookie should have been blocked by 3PCD but is exempted. A cookie could
+      # only have at most one exemption reason.
+      optional CookieExemptionReason exemptionReason
+
+  # Cookie parameter object
+  type CookieParam extends object
+    properties
+      # Cookie name.
+      string name
+      # Cookie value.
+      string value
+      # The request-URI to associate with the setting of the cookie. This value can affect the
+      # default domain, path, source port, and source scheme values of the created cookie.
+      optional string url
+      # Cookie domain.
+      optional string domain
+      # Cookie path.
+      optional string path
+      # True if cookie is secure.
+      optional boolean secure
+      # True if cookie is http-only.
+      optional boolean httpOnly
+      # Cookie SameSite type.
+      optional CookieSameSite sameSite
+      # Cookie expiration date, session cookie if not set
+      optional TimeSinceEpoch expires
+      # Cookie Priority.
+      experimental optional CookiePriority priority
+      # Cookie source scheme type.
+      experimental optional CookieSourceScheme sourceScheme
+      # Cookie source port. Valid values are {-1, [1, 65535]}, -1 indicates an unspecified port.
+      # An unspecified port value allows protocol clients to emulate legacy cookie scope for the port.
+      # This is a temporary ability and it will be removed in the future.
+      experimental optional integer sourcePort
+      # Cookie partition key. If not set, the cookie will be set as not partitioned.
+      experimental optional CookiePartitionKey partitionKey
+
+  # Authorization challenge for HTTP status code 401 or 407.
+  experimental type AuthChallenge extends object
+    properties
+      # Source of the authentication challenge.
+      optional enum source
+        Server
+        Proxy
+      # Origin of the challenger.
+      string origin
+      # The authentication scheme used, such as basic or digest
+      string scheme
+      # The realm of the challenge. May be empty.
+      string realm
+
+  # Response to an AuthChallenge.
+  experimental type AuthChallengeResponse extends object
+    properties
+      # The decision on what to do in response to the authorization challenge.  Default means
+      # deferring to the default behavior of the net stack, which will likely either the Cancel
+      # authentication or display a popup dialog box.
+      enum response
+        Default
+        CancelAuth
+        ProvideCredentials
+      # The username to provide, possibly empty. Should only be set if response is
+      # ProvideCredentials.
+      optional string username
+      # The password to provide, possibly empty. Should only be set if response is
+      # ProvideCredentials.
+      optional string password
+
+  # Stages of the interception to begin intercepting. Request will intercept before the request is
+  # sent. Response will intercept after the response is received.
+  experimental type InterceptionStage extends string
+    enum
+      Request
+      HeadersReceived
+
+  # Request pattern for interception.
+  experimental type RequestPattern extends object
+    properties
+      # Wildcards (`'*'` -> zero or more, `'?'` -> exactly one) are allowed. Escape character is
+      # backslash. Omitting is equivalent to `"*"`.
+      optional string urlPattern
+      # If set, only requests for matching resource types will be intercepted.
+      optional ResourceType resourceType
+      # Stage at which to begin intercepting requests. Default is Request.
+      optional InterceptionStage interceptionStage
+
+  # Information about a signed exchange signature.
+  # https://wicg.github.io/webpackage/draft-yasskin-httpbis-origin-signed-exchanges-impl.html#rfc.section.3.1
+  experimental type SignedExchangeSignature extends object
+    properties
+      # Signed exchange signature label.
+      string label
+      # The hex string of signed exchange signature.
+      string signature
+      # Signed exchange signature integrity.
+      string integrity
+      # Signed exchange signature cert Url.
+      optional string certUrl
+      # The hex string of signed exchange signature cert sha256.
+      optional string certSha256
+      # Signed exchange signature validity Url.
+      string validityUrl
+      # Signed exchange signature date.
+      integer date
+      # Signed exchange signature expires.
+      integer expires
+      # The encoded certificates.
+      optional array of string certificates
+
+  # Information about a signed exchange header.
+  # https://wicg.github.io/webpackage/draft-yasskin-httpbis-origin-signed-exchanges-impl.html#cbor-representation
+  experimental type SignedExchangeHeader extends object
+    properties
+      # Signed exchange request URL.
+      string requestUrl
+      # Signed exchange response code.
+      integer responseCode
+      # Signed exchange response headers.
+      Headers responseHeaders
+      # Signed exchange response signature.
+      array of SignedExchangeSignature signatures
+      # Signed exchange header integrity hash in the form of `sha256-<base64-hash-value>`.
+      string headerIntegrity
+
+  # Field type for a signed exchange related error.
+  experimental type SignedExchangeErrorField extends string
+    enum
+      signatureSig
+      signatureIntegrity
+      signatureCertUrl
+      signatureCertSha256
+      signatureValidityUrl
+      signatureTimestamps
+
+  # Information about a signed exchange response.
+  experimental type SignedExchangeError extends object
+    properties
+      # Error message.
+      string message
+      # The index of the signature which caused the error.
+      optional integer signatureIndex
+      # The field which caused the error.
+      optional SignedExchangeErrorField errorField
+
+  # Information about a signed exchange response.
+  experimental type SignedExchangeInfo extends object
+    properties
+      # The outer response of signed HTTP exchange which was received from network.
+      Response outerResponse
+      # Whether network response for the signed exchange was accompanied by
+      # extra headers.
+      boolean hasExtraInfo
+      # Information about the signed exchange header.
+      optional SignedExchangeHeader header
+      # Security details for the signed exchange header.
+      optional SecurityDetails securityDetails
+      # Errors occurred while handling the signed exchange.
+      optional array of SignedExchangeError errors
+
+  # List of content encodings supported by the backend.
+  experimental type ContentEncoding extends string
+    enum
+      deflate
+      gzip
+      br
+      zstd
+
+  # Sets a list of content encodings that will be accepted. Empty list means no encoding is accepted.
+  experimental command setAcceptedEncodings
+    parameters
+      # List of accepted content encodings.
+      array of ContentEncoding encodings
+
+  # Clears accepted encodings set by setAcceptedEncodings
+  experimental command clearAcceptedEncodingsOverride
+
+  # Tells whether clearing browser cache is supported.
+  deprecated command canClearBrowserCache
+    returns
+      # True if browser cache can be cleared.
+      boolean result
+
+  # Tells whether clearing browser cookies is supported.
+  deprecated command canClearBrowserCookies
+    returns
+      # True if browser cookies can be cleared.
+      boolean result
+
+  # Tells whether emulation of network conditions is supported.
+  deprecated command canEmulateNetworkConditions
+    returns
+      # True if emulation of network conditions is supported.
+      boolean result
+
+  # Clears browser cache.
+  command clearBrowserCache
+
+  # Clears browser cookies.
+  command clearBrowserCookies
+
+  # Response to Network.requestIntercepted which either modifies the request to continue with any
+  # modifications, or blocks it, or completes it with the provided response bytes. If a network
+  # fetch occurs as a result which encounters a redirect an additional Network.requestIntercepted
+  # event will be sent with the same InterceptionId.
+  # Deprecated, use Fetch.continueRequest, Fetch.fulfillRequest and Fetch.failRequest instead.
+  experimental deprecated command continueInterceptedRequest
+    parameters
+      InterceptionId interceptionId
+      # If set this causes the request to fail with the given reason. Passing `Aborted` for requests
+      # marked with `isNavigationRequest` also cancels the navigation. Must not be set in response
+      # to an authChallenge.
+      optional ErrorReason errorReason
+      # If set the requests completes using with the provided base64 encoded raw response, including
+      # HTTP status line and headers etc... Must not be set in response to an authChallenge.
+      optional binary rawResponse
+      # If set the request url will be modified in a way that's not observable by page. Must not be
+      # set in response to an authChallenge.
+      optional string url
+      # If set this allows the request method to be overridden. Must not be set in response to an
+      # authChallenge.
+      optional string method
+      # If set this allows postData to be set. Must not be set in response to an authChallenge.
+      optional string postData
+      # If set this allows the request headers to be changed. Must not be set in response to an
+      # authChallenge.
+      optional Headers headers
+      # Response to a requestIntercepted with an authChallenge. Must not be set otherwise.
+      optional AuthChallengeResponse authChallengeResponse
+
+  # Deletes browser cookies with matching name and url or domain/path/partitionKey pair.
+  command deleteCookies
+    parameters
+      # Name of the cookies to remove.
+      string name
+      # If specified, deletes all the cookies with the given name where domain and path match
+      # provided URL.
+      optional string url
+      # If specified, deletes only cookies with the exact domain.
+      optional string domain
+      # If specified, deletes only cookies with the exact path.
+      optional string path
+      # If specified, deletes only cookies with the the given name and partitionKey where
+      # all partition key attributes match the cookie partition key attribute.
+      experimental optional CookiePartitionKey partitionKey
+
+  # Disables network tracking, prevents network events from being sent to the client.
+  command disable
+
+  experimental type NetworkConditions extends object
+    properties
+      # Only matching requests will be affected by these conditions. Patterns use the URLPattern constructor string
+      # syntax (https://urlpattern.spec.whatwg.org/) and must be absolute. If the pattern is empty, all requests are
+      # matched (including p2p connections).
+      string urlPattern
+      # Minimum latency from request sent to response headers received (ms).
+      number latency
+      # Maximal aggregated download throughput (bytes/sec). -1 disables download throttling.
+      number downloadThroughput
+      # Maximal aggregated upload throughput (bytes/sec).  -1 disables upload throttling.
+      number uploadThroughput
+      # Connection type if known.
+      optional ConnectionType connectionType
+      # WebRTC packet loss (percent, 0-100). 0 disables packet loss emulation, 100 drops all the packets.
+      optional number packetLoss
+      # WebRTC packet queue length (packet). 0 removes any queue length limitations.
+      optional integer packetQueueLength
+      # WebRTC packetReordering feature.
+      optional boolean packetReordering
+
+  # Activates emulation of network conditions. This command is deprecated in favor of the emulateNetworkConditionsByRule
+  # and overrideNetworkState commands, which can be used together to the same effect.
+  deprecated command emulateNetworkConditions
+    parameters
+      # True to emulate internet disconnection.
+      boolean offline
+      # Minimum latency from request sent to response headers received (ms).
+      number latency
+      # Maximal aggregated download throughput (bytes/sec). -1 disables download throttling.
+      number downloadThroughput
+      # Maximal aggregated upload throughput (bytes/sec).  -1 disables upload throttling.
+      number uploadThroughput
+      # Connection type if known.
+      optional ConnectionType connectionType
+      # WebRTC packet loss (percent, 0-100). 0 disables packet loss emulation, 100 drops all the packets.
+      experimental optional number packetLoss
+      # WebRTC packet queue length (packet). 0 removes any queue length limitations.
+      experimental optional integer packetQueueLength
+      # WebRTC packetReordering feature.
+      experimental optional boolean packetReordering
+
+  # Activates emulation of network conditions for individual requests using URL match patterns. Unlike the deprecated
+  # Network.emulateNetworkConditions this method does not affect `navigator` state. Use Network.overrideNetworkState to
+  # explicitly modify `navigator` behavior.
+  experimental command emulateNetworkConditionsByRule
+    parameters
+      # True to emulate internet disconnection.
+      boolean offline
+      # Configure conditions for matching requests. If multiple entries match a request, the first entry wins.  Global
+      # conditions can be configured by leaving the urlPattern for the conditions empty. These global conditions are
+      # also applied for throttling of p2p connections.
+      array of NetworkConditions matchedNetworkConditions
+    returns
+      # An id for each entry in matchedNetworkConditions. The id will be included in the requestWillBeSentExtraInfo for
+      # requests affected by a rule.
+      array of string ruleIds
+
+  # Override the state of navigator.onLine and navigator.connection.
+  experimental command overrideNetworkState
+    parameters
+      # True to emulate internet disconnection.
+      boolean offline
+      # Minimum latency from request sent to response headers received (ms).
+      number latency
+      # Maximal aggregated download throughput (bytes/sec). -1 disables download throttling.
+      number downloadThroughput
+      # Maximal aggregated upload throughput (bytes/sec).  -1 disables upload throttling.
+      number uploadThroughput
+      # Connection type if known.
+      optional ConnectionType connectionType
+
+  # Enables network tracking, network events will now be delivered to the client.
+  command enable
+    parameters
+      # Buffer size in bytes to use when preserving network payloads (XHRs, etc).
+      # This is the maximum number of bytes that will be collected by this
+      # DevTools session.
+      experimental optional integer maxTotalBufferSize
+      # Per-resource buffer size in bytes to use when preserving network payloads (XHRs, etc).
+      experimental optional integer maxResourceBufferSize
+      # Longest post body size (in bytes) that would be included in requestWillBeSent notification
+      optional integer maxPostDataSize
+      # Whether DirectSocket chunk send/receive events should be reported.
+      experimental optional boolean reportDirectSocketTraffic
+      # Enable storing response bodies outside of renderer, so that these survive
+      # a cross-process navigation. Requires maxTotalBufferSize to be set.
+      # Currently defaults to false. This field is being deprecated in favor of the dedicated
+      # configureDurableMessages command, due to the possibility of deadlocks when awaiting
+      # Network.enable before issuing Runtime.runIfWaitingForDebugger.
+      experimental optional boolean enableDurableMessages
+
+  # Configures storing response bodies outside of renderer, so that these survive
+  # a cross-process navigation.
+  # If maxTotalBufferSize is not set, durable messages are disabled.
+  experimental command configureDurableMessages
+    parameters
+      # Buffer size in bytes to use when preserving network payloads (XHRs, etc).
+      optional integer maxTotalBufferSize
+      # Per-resource buffer size in bytes to use when preserving network payloads (XHRs, etc).
+      optional integer maxResourceBufferSize
+
+  # Returns all browser cookies. Depending on the backend support, will return detailed cookie
+  # information in the `cookies` field.
+  # Deprecated. Use Storage.getCookies instead.
+  deprecated command getAllCookies
+    returns
+      # Array of cookie objects.
+      array of Cookie cookies
+
+  # Returns the DER-encoded certificate.
+  experimental command getCertificate
+    parameters
+      # Origin to get certificate for.
+      string origin
+    returns
+      array of string tableNames
+
+  # Returns all browser cookies for the current URL. Depending on the backend support, will return
+  # detailed cookie information in the `cookies` field.
+  command getCookies
+    parameters
+      # The list of URLs for which applicable cookies will be fetched.
+      # If not specified, it's assumed to be set to the list containing
+      # the URLs of the page and all of its subframes.
+      optional array of string urls
+    returns
+      # Array of cookie objects.
+      array of Cookie cookies
+
+  # Returns content served for the given request.
+  command getResponseBody
+    parameters
+      # Identifier of the network request to get content for.
+      RequestId requestId
+    returns
+      # Response body.
+      string body
+      # True, if content was sent as base64.
+      boolean base64Encoded
+
+  # Returns post data sent with the request. Returns an error when no data was sent with the request.
+  command getRequestPostData
+    parameters
+      # Identifier of the network request to get content for.
+      RequestId requestId
+    returns
+      # Request body string, omitting files from multipart requests
+      string postData
+      # True, if content was sent as base64.
+      boolean base64Encoded
+
+  # Returns content served for the given currently intercepted request.
+  experimental command getResponseBodyForInterception
+    parameters
+      # Identifier for the intercepted request to get body for.
+      InterceptionId interceptionId
+    returns
+      # Response body.
+      string body
+      # True, if content was sent as base64.
+      boolean base64Encoded
+
+  # Returns a handle to the stream representing the response body. Note that after this command,
+  # the intercepted request can't be continued as is -- you either need to cancel it or to provide
+  # the response body. The stream only supports sequential read, IO.read will fail if the position
+  # is specified.
+  experimental command takeResponseBodyForInterceptionAsStream
+    parameters
+      InterceptionId interceptionId
+    returns
+      IO.StreamHandle stream
+
+  # This method sends a new XMLHttpRequest which is identical to the original one. The following
+  # parameters should be identical: method, url, async, request body, extra headers, withCredentials
+  # attribute, user, password.
+  experimental command replayXHR
+    parameters
+      # Identifier of XHR to replay.
+      RequestId requestId
+
+  # Searches for given string in response content.
+  experimental command searchInResponseBody
+    parameters
+      # Identifier of the network response to search.
+      RequestId requestId
+      # String to search for.
+      string query
+      # If true, search is case sensitive.
+      optional boolean caseSensitive
+      # If true, treats string parameter as regex.
+      optional boolean isRegex
+    returns
+      # List of search matches.
+      array of Debugger.SearchMatch result
+
+  experimental type BlockPattern extends object
+    properties
+      # URL pattern to match. Patterns use the URLPattern constructor string syntax
+      # (https://urlpattern.spec.whatwg.org/) and must be absolute. Example: `*://*:*/*.css`.
+      string urlPattern
+      # Whether or not to block the pattern. If false, a matching request will not be blocked even if it matches a later
+      # `BlockPattern`.
+      boolean block
+
+  # Blocks URLs from loading.
+  experimental command setBlockedURLs
+    parameters
+      # Patterns to match in the order in which they are given. These patterns
+      # also take precedence over any wildcard patterns defined in `urls`.
+      optional array of BlockPattern urlPatterns
+      # URL patterns to block. Wildcards ('*') are allowed.
+      deprecated optional array of string urls
+
+  # Toggles ignoring of service worker for each request.
+  command setBypassServiceWorker
+    parameters
+      # Bypass service worker and load from network.
+      boolean bypass
+
+  # Toggles ignoring cache for each request. If `true`, cache will not be used.
+  command setCacheDisabled
+    parameters
+      # Cache disabled state.
+      boolean cacheDisabled
+
+  # Sets a cookie with the given cookie data; may overwrite equivalent cookies if they exist.
+  command setCookie
+    parameters
+      # Cookie name.
+      string name
+      # Cookie value.
+      string value
+      # The request-URI to associate with the setting of the cookie. This value can affect the
+      # default domain, path, source port, and source scheme values of the created cookie.
+      optional string url
+      # Cookie domain.
+      optional string domain
+      # Cookie path.
+      optional string path
+      # True if cookie is secure.
+      optional boolean secure
+      # True if cookie is http-only.
+      optional boolean httpOnly
+      # Cookie SameSite type.
+      optional CookieSameSite sameSite
+      # Cookie expiration date, session cookie if not set
+      optional TimeSinceEpoch expires
+      # Cookie Priority type.
+      experimental optional CookiePriority priority
+      # Cookie source scheme type.
+      experimental optional CookieSourceScheme sourceScheme
+      # Cookie source port. Valid values are {-1, [1, 65535]}, -1 indicates an unspecified port.
+      # An unspecified port value allows protocol clients to emulate legacy cookie scope for the port.
+      # This is a temporary ability and it will be removed in the future.
+      experimental optional integer sourcePort
+      # Cookie partition key. If not set, the cookie will be set as not partitioned.
+      experimental optional CookiePartitionKey partitionKey
+    returns
+      # Always set to true. If an error occurs, the response indicates protocol error.
+      deprecated boolean success
+
+  # Sets given cookies.
+  command setCookies
+    parameters
+      # Cookies to be set.
+      array of CookieParam cookies
+
+  # Specifies whether to always send extra HTTP headers with the requests from this page.
+  command setExtraHTTPHeaders
+    parameters
+      # Map with extra HTTP headers.
+      Headers headers
+
+  # Specifies whether to attach a page script stack id in requests
+  experimental command setAttachDebugStack
+    parameters
+      # Whether to attach a page script stack for debugging purpose.
+      boolean enabled
+
+  # Sets the requests to intercept that match the provided patterns and optionally resource types.
+  # Deprecated, please use Fetch.enable instead.
+  experimental deprecated command setRequestInterception
+    parameters
+      # Requests matching any of these patterns will be forwarded and wait for the corresponding
+      # continueInterceptedRequest call.
+      array of RequestPattern patterns
+
+  # Allows overriding user agent with the given string.
+  command setUserAgentOverride
+    redirect Emulation
+    parameters
+      # User agent to use.
+      string userAgent
+      # Browser language to emulate.
+      optional string acceptLanguage
+      # The platform navigator.platform should return.
+      optional string platform
+      # To be sent in Sec-CH-UA-* headers and returned in navigator.userAgentData
+      experimental optional Emulation.UserAgentMetadata userAgentMetadata
+
+
+  # Fired when data chunk was received over the network.
+  event dataReceived
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # Data chunk length.
+      integer dataLength
+      # Actual bytes received (might be less than dataLength for compressed encodings).
+      integer encodedDataLength
+      # Data that was received.
+      experimental optional binary data
+
+  # Enables streaming of the response for the given requestId.
+  # If enabled, the dataReceived event contains the data that was received during streaming.
+  experimental command streamResourceContent
+    parameters
+      # Identifier of the request to stream.
+      RequestId requestId
+    returns
+      # Data that has been buffered until streaming is enabled.
+      binary bufferedData
+
+  # Fired when EventSource message is received.
+  event eventSourceMessageReceived
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # Message type.
+      string eventName
+      # Message identifier.
+      string eventId
+      # Message content.
+      string data
+
+  # Fired when HTTP request has failed to load.
+  event loadingFailed
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # Resource type.
+      ResourceType type
+      # Error message. List of network errors: https://cs.chromium.org/chromium/src/net/base/net_error_list.h
+      string errorText
+      # True if loading was canceled.
+      optional boolean canceled
+      # The reason why loading was blocked, if any.
+      optional BlockedReason blockedReason
+       # The reason why loading was blocked by CORS, if any.
+      optional CorsErrorStatus corsErrorStatus
+
+  # Fired when HTTP request has finished loading.
+  event loadingFinished
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # Total number of bytes received for this request.
+      number encodedDataLength
+
+  # Details of an intercepted HTTP request, which must be either allowed, blocked, modified or
+  # mocked.
+  # Deprecated, use Fetch.requestPaused instead.
+  experimental deprecated event requestIntercepted
+    parameters
+      # Each request the page makes will have a unique id, however if any redirects are encountered
+      # while processing that fetch, they will be reported with the same id as the original fetch.
+      # Likewise if HTTP authentication is needed then the same fetch id will be used.
+      InterceptionId interceptionId
+      Request request
+      # The id of the frame that initiated the request.
+      Page.FrameId frameId
+      # How the requested resource will be used.
+      ResourceType resourceType
+      # Whether this is a navigation request, which can abort the navigation completely.
+      boolean isNavigationRequest
+      # Set if the request is a navigation that will result in a download.
+      # Only present after response is received from the server (i.e. HeadersReceived stage).
+      optional boolean isDownload
+      # Redirect location, only sent if a redirect was intercepted.
+      optional string redirectUrl
+      # Details of the Authorization Challenge encountered. If this is set then
+      # continueInterceptedRequest must contain an authChallengeResponse.
+      optional AuthChallenge authChallenge
+      # Response error if intercepted at response stage or if redirect occurred while intercepting
+      # request.
+      optional ErrorReason responseErrorReason
+      # Response code if intercepted at response stage or if redirect occurred while intercepting
+      # request or auth retry occurred.
+      optional integer responseStatusCode
+      # Response headers if intercepted at the response stage or if redirect occurred while
+      # intercepting request or auth retry occurred.
+      optional Headers responseHeaders
+      # If the intercepted request had a corresponding requestWillBeSent event fired for it, then
+      # this requestId will be the same as the requestId present in the requestWillBeSent event.
+      optional RequestId requestId
+
+  # Fired if request ended up loading from cache.
+  event requestServedFromCache
+    parameters
+      # Request identifier.
+      RequestId requestId
+
+  # Fired when page is about to send HTTP request.
+  event requestWillBeSent
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Loader identifier. Empty string if the request is fetched from worker.
+      LoaderId loaderId
+      # URL of the document this request is loaded for.
+      string documentURL
+      # Request data.
+      Request request
+      # Timestamp.
+      MonotonicTime timestamp
+      # Timestamp.
+      TimeSinceEpoch wallTime
+      # Request initiator.
+      Initiator initiator
+      # In the case that redirectResponse is populated, this flag indicates whether
+      # requestWillBeSentExtraInfo and responseReceivedExtraInfo events will be or were emitted
+      # for the request which was just redirected.
+      experimental boolean redirectHasExtraInfo
+      # Redirect response data.
+      optional Response redirectResponse
+      # Type of this resource.
+      optional ResourceType type
+      # Frame identifier.
+      optional Page.FrameId frameId
+      # Whether the request is initiated by a user gesture. Defaults to false.
+      optional boolean hasUserGesture
+      # The render-blocking behavior of the request.
+      experimental optional RenderBlockingBehavior renderBlockingBehavior
+
+  # Fired when resource loading priority is changed
+  experimental event resourceChangedPriority
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # New priority
+      ResourcePriority newPriority
+      # Timestamp.
+      MonotonicTime timestamp
+
+  # Fired when a signed exchange was received over the network
+  experimental event signedExchangeReceived
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Information about the signed exchange response.
+      SignedExchangeInfo info
+
+  # Fired when HTTP response is available.
+  event responseReceived
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Loader identifier. Empty string if the request is fetched from worker.
+      LoaderId loaderId
+      # Timestamp.
+      MonotonicTime timestamp
+      # Resource type.
+      ResourceType type
+      # Response data.
+      Response response
+      # Indicates whether requestWillBeSentExtraInfo and responseReceivedExtraInfo events will be
+      # or were emitted for this request.
+      experimental boolean hasExtraInfo
+      # Frame identifier.
+      optional Page.FrameId frameId
+
+  # Fired when WebSocket is closed.
+  event webSocketClosed
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+
+  # Fired upon WebSocket creation.
+  event webSocketCreated
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # WebSocket request URL.
+      string url
+      # Request initiator.
+      optional Initiator initiator
+
+  # Fired when WebSocket message error occurs.
+  event webSocketFrameError
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # WebSocket error message.
+      string errorMessage
+
+  # Fired when WebSocket message is received.
+  event webSocketFrameReceived
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # WebSocket response data.
+      WebSocketFrame response
+
+  # Fired when WebSocket message is sent.
+  event webSocketFrameSent
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # WebSocket response data.
+      WebSocketFrame response
+
+  # Fired when WebSocket handshake response becomes available.
+  event webSocketHandshakeResponseReceived
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # WebSocket response data.
+      WebSocketResponse response
+
+  # Fired when WebSocket is about to initiate handshake.
+  event webSocketWillSendHandshakeRequest
+    parameters
+      # Request identifier.
+      RequestId requestId
+      # Timestamp.
+      MonotonicTime timestamp
+      # UTC Timestamp.
+      TimeSinceEpoch wallTime
+      # WebSocket request data.
+      WebSocketRequest request
+
+  # Fired upon WebTransport creation.
+  event webTransportCreated
+    parameters
+      # WebTransport identifier.
+      RequestId transportId
+      # WebTransport request URL.
+      string url
+      # Timestamp.
+      MonotonicTime timestamp
+      # Request initiator.
+      optional Initiator initiator
+
+  # Fired when WebTransport handshake is finished.
+  event webTransportConnectionEstablished
+    parameters
+      # WebTransport identifier.
+      RequestId transportId
+      # Timestamp.
+      MonotonicTime timestamp
+
+  # Fired when WebTransport is disposed.
+  event webTransportClosed
+    parameters
+      # WebTransport identifier.
+      RequestId transportId
+      # Timestamp.
+      MonotonicTime timestamp
+
+  experimental type DirectSocketDnsQueryType extends string
+    enum
+      ipv4
+      ipv6
+
+  experimental type DirectTCPSocketOptions extends object
+    properties
+      # TCP_NODELAY option
+      boolean noDelay
+      # Expected to be unsigned integer.
+      optional number keepAliveDelay
+      # Expected to be unsigned integer.
+      optional number sendBufferSize
+      # Expected to be unsigned integer.
+      optional number receiveBufferSize
+      optional DirectSocketDnsQueryType dnsQueryType
+
+
+  # Fired upon direct_socket.TCPSocket creation.
+  experimental event directTCPSocketCreated
+    parameters
+      RequestId identifier
+      string remoteAddr
+      # Unsigned int 16.
+      integer remotePort
+      DirectTCPSocketOptions options
+      MonotonicTime timestamp
+      optional Initiator initiator
+
+  # Fired when direct_socket.TCPSocket connection is opened.
+  experimental event directTCPSocketOpened
+    parameters
+      RequestId identifier
+      string remoteAddr
+      # Expected to be unsigned integer.
+      integer remotePort
+      MonotonicTime timestamp
+      optional string localAddr
+      # Expected to be unsigned integer.
+      optional integer localPort
+
+  # Fired when direct_socket.TCPSocket is aborted.
+  experimental event directTCPSocketAborted
+    parameters
+      RequestId identifier
+      string errorMessage
+      MonotonicTime timestamp
+
+  # Fired when direct_socket.TCPSocket is closed.
+  experimental event directTCPSocketClosed
+    parameters
+      RequestId identifier
+      MonotonicTime timestamp
+
+  # Fired when data is sent to tcp direct socket stream.
+  experimental event directTCPSocketChunkSent
+    parameters
+      RequestId identifier
+      binary data
+      MonotonicTime timestamp
+
+  # Fired when data is received from tcp direct socket stream.
+  experimental event directTCPSocketChunkReceived
+    parameters
+      RequestId identifier
+      binary data
+      MonotonicTime timestamp
+
+  experimental type DirectUDPSocketOptions extends object
+    properties
+      optional string remoteAddr
+      # Unsigned int 16.
+      optional integer remotePort
+
+      optional string localAddr
+      # Unsigned int 16.
+      optional integer localPort
+
+      optional DirectSocketDnsQueryType dnsQueryType
+
+      # Expected to be unsigned integer.
+      optional number sendBufferSize
+      # Expected to be unsigned integer.
+      optional number receiveBufferSize
+      optional boolean multicastLoopback
+      # Unsigned int 8.
+      optional integer multicastTimeToLive
+      optional boolean multicastAllowAddressSharing
+
+  experimental event directUDPSocketJoinedMulticastGroup
+    parameters
+      RequestId identifier
+      string IPAddress
+
+  experimental event directUDPSocketLeftMulticastGroup
+    parameters
+      RequestId identifier
+      string IPAddress
+
+
+  # Fired upon direct_socket.UDPSocket creation.
+  experimental event directUDPSocketCreated
+    parameters
+      RequestId identifier
+      DirectUDPSocketOptions options
+      MonotonicTime timestamp
+      optional Initiator initiator
+
+  # Fired when direct_socket.UDPSocket connection is opened.
+  experimental event directUDPSocketOpened
+    parameters
+      RequestId identifier
+      string localAddr
+      # Expected to be unsigned integer.
+      integer localPort
+      MonotonicTime timestamp
+      optional string remoteAddr
+      # Expected to be unsigned integer.
+      optional integer remotePort
+
+  # Fired when direct_socket.UDPSocket is aborted.
+  experimental event directUDPSocketAborted
+    parameters
+      RequestId identifier
+      string errorMessage
+      MonotonicTime timestamp
+
+  # Fired when direct_socket.UDPSocket is closed.
+  experimental event directUDPSocketClosed
+    parameters
+      RequestId identifier
+      MonotonicTime timestamp
+
+  experimental type DirectUDPMessage extends object
+    properties
+      binary data
+      # Null for connected mode.
+      optional string remoteAddr
+      # Null for connected mode.
+      # Expected to be unsigned integer.
+      optional integer remotePort
+
+  # Fired when message is sent to udp direct socket stream.
+  experimental event directUDPSocketChunkSent
+    parameters
+      RequestId identifier
+      DirectUDPMessage message
+      MonotonicTime timestamp
+
+  # Fired when message is received from udp direct socket stream.
+  experimental event directUDPSocketChunkReceived
+    parameters
+      RequestId identifier
+      DirectUDPMessage message
+      MonotonicTime timestamp
+
+  experimental type LocalNetworkAccessRequestPolicy extends string
+    enum
+      Allow
+      BlockFromInsecureToMorePrivate
+      WarnFromInsecureToMorePrivate
+      PermissionBlock
+      PermissionWarn
+
+  experimental type IPAddressSpace extends string
+    enum
+      Loopback
+      Local
+      Public
+      Unknown
+
+  experimental type ConnectTiming extends object
+    properties
+      # Timing's requestTime is a baseline in seconds, while the other numbers are ticks in
+      # milliseconds relatively to this requestTime. Matches ResourceTiming's requestTime for
+      # the same request (but not for redirected requests).
+      number requestTime
+
+  experimental type ClientSecurityState extends object
+    properties
+      boolean initiatorIsSecureContext
+      IPAddressSpace initiatorIPAddressSpace
+      LocalNetworkAccessRequestPolicy localNetworkAccessRequestPolicy
+
+  # Identifies the script on the stack that caused a resource or element to be
+  # labeled as an ad. For resources, this indicates the context that triggered
+  # the fetch. For elements, this indicates the context that caused the element
+  # to be appended to the DOM.
+  experimental type AdScriptIdentifier extends object
+    properties
+      # The script's V8 identifier.
+      Runtime.ScriptId scriptId
+      # V8's debugging ID for the v8::Context.
+      Runtime.UniqueDebuggerId debuggerId
+      # The script's url (or generated name based on id if inline script).
+      string name
+
+  # Encapsulates the script ancestry and the root script filter list rule that
+  # caused the resource or element to be labeled as an ad.
+  experimental type AdAncestry extends object
+    properties
+      # A chain of `AdScriptIdentifier`s representing the ancestry of an ad
+      # script that led to the creation of a resource or element. The chain is
+      # ordered from the script itself (lowest level) up to its root ancestor
+      # that was flagged by a filter list.
+      array of AdScriptIdentifier ancestryChain
+      # The filter list rule that caused the root (last) script in
+      # `ancestryChain` to be tagged as an ad.
+      optional string rootScriptFilterlistRule
+
+  # Represents the provenance of an ad resource or element. Only one of
+  # `filterlistRule` or `adScriptAncestry` can be set. If `filterlistRule`
+  # is provided, the resource URL directly matches a filter list rule. If
+  # `adScriptAncestry` is provided, an ad script initiated the resource fetch or
+  # appended the element to the DOM. If neither is provided, the entity is
+  # known to be an ad, but provenance tracking information is unavailable.
+  experimental type AdProvenance extends object
+    properties
+      # The filterlist rule that matched, if any.
+      optional string filterlistRule
+      # The script ancestry that created the ad, if any.
+      optional AdAncestry adScriptAncestry
+
+  # Fired when additional information about a requestWillBeSent event is available from the
+  # network stack. Not every requestWillBeSent event will have an additional
+  # requestWillBeSentExtraInfo fired for it, and there is no guarantee whether requestWillBeSent
+  # or requestWillBeSentExtraInfo will be fired first for the same request.
+  experimental event requestWillBeSentExtraInfo
+    parameters
+      # Request identifier. Used to match this information to an existing requestWillBeSent event.
+      RequestId requestId
+      # A list of cookies potentially associated to the requested URL. This includes both cookies sent with
+      # the request and the ones not sent; the latter are distinguished by having blockedReasons field set.
+      array of AssociatedCookie associatedCookies
+      # Raw request headers as they will be sent over the wire.
+      Headers headers
+      # Connection timing information for the request.
+      experimental ConnectTiming connectTiming
+      # How the request site's device bound sessions were used during this request.
+      optional array of DeviceBoundSessionWithUsage deviceBoundSessionUsages
+      # The client security state set for the request.
+      optional ClientSecurityState clientSecurityState
+      # Whether the site has partitioned cookies stored in a partition different than the current one.
+      optional boolean siteHasCookieInOtherPartition
+      # The network conditions id if this request was affected by network conditions configured via
+      # emulateNetworkConditionsByRule.
+      optional string appliedNetworkConditionsId
+
+  # Fired when additional information about a responseReceived event is available from the network
+  # stack. Not every responseReceived event will have an additional responseReceivedExtraInfo for
+  # it, and responseReceivedExtraInfo may be fired before or after responseReceived.
+  experimental event responseReceivedExtraInfo
+    parameters
+      # Request identifier. Used to match this information to another responseReceived event.
+      RequestId requestId
+      # A list of cookies which were not stored from the response along with the corresponding
+      # reasons for blocking. The cookies here may not be valid due to syntax errors, which
+      # are represented by the invalid cookie line string instead of a proper cookie.
+      array of BlockedSetCookieWithReason blockedCookies
+      # Raw response headers as they were received over the wire.
+      # Duplicate headers in the response are represented as a single key with their values
+      # concatentated using `\n` as the separator.
+      # See also `headersText` that contains verbatim text for HTTP/1.*.
+      Headers headers
+      # The IP address space of the resource. The address space can only be determined once the transport
+      # established the connection, so we can't send it in `requestWillBeSentExtraInfo`.
+      IPAddressSpace resourceIPAddressSpace
+      # The status code of the response. This is useful in cases the request failed and no responseReceived
+      # event is triggered, which is the case for, e.g., CORS errors. This is also the correct status code
+      # for cached requests, where the status in responseReceived is a 200 and this will be 304.
+      integer statusCode
+      # Raw response header text as it was received over the wire. The raw text may not always be
+      # available, such as in the case of HTTP/2 or QUIC.
+      optional string headersText
+      # The cookie partition key that will be used to store partitioned cookies set in this response.
+      # Only sent when partitioned cookies are enabled.
+      experimental optional CookiePartitionKey cookiePartitionKey
+      # True if partitioned cookies are enabled, but the partition key is not serializable to string.
+      optional boolean cookiePartitionKeyOpaque
+      # A list of cookies which should have been blocked by 3PCD but are exempted and stored from
+      # the response with the corresponding reason.
+      optional array of ExemptedSetCookieWithReason exemptedCookies
+
+  # Fired when 103 Early Hints headers is received in addition to the common response.
+  # Not every responseReceived event will have an responseReceivedEarlyHints fired.
+  # Only one responseReceivedEarlyHints may be fired for eached responseReceived event.
+  experimental event responseReceivedEarlyHints
+    parameters
+      # Request identifier. Used to match this information to another responseReceived event.
+      RequestId requestId
+      # Raw response headers as they were received over the wire.
+      # Duplicate headers in the response are represented as a single key with their values
+      # concatentated using `\n` as the separator.
+      # See also `headersText` that contains verbatim text for HTTP/1.*.
+      Headers headers
+
+  # Fired exactly once for each Trust Token operation. Depending on
+  # the type of the operation and whether the operation succeeded or
+  # failed, the event is fired before the corresponding request was sent
+  # or after the response was received.
+  experimental event trustTokenOperationDone
+    parameters
+      # Detailed success or error status of the operation.
+      # 'AlreadyExists' also signifies a successful operation, as the result
+      # of the operation already exists und thus, the operation was abort
+      # preemptively (e.g. a cache hit).
+      enum status
+        Ok
+        InvalidArgument
+        MissingIssuerKeys
+        FailedPrecondition
+        ResourceExhausted
+        AlreadyExists
+        ResourceLimited
+        Unauthorized
+        BadResponse
+        InternalError
+        UnknownError
+        FulfilledLocally
+        SiteIssuerLimit
+      TrustTokenOperationType type
+      RequestId requestId
+      # Top level origin. The context in which the operation was attempted.
+      optional string topLevelOrigin
+      # Origin of the issuer in case of a "Issuance" or "Redemption" operation.
+      optional string issuerOrigin
+      # The number of obtained Trust Tokens on a successful "Issuance" operation.
+      optional integer issuedTokenCount
+
+  # Fired once security policy has been updated.
+  experimental event policyUpdated
+
+  experimental type CrossOriginOpenerPolicyValue extends string
+    enum
+      SameOrigin
+      SameOriginAllowPopups
+      RestrictProperties
+      UnsafeNone
+      SameOriginPlusCoep
+      RestrictPropertiesPlusCoep
+      NoopenerAllowPopups
+
+  experimental type CrossOriginOpenerPolicyStatus extends object
+    properties
+      CrossOriginOpenerPolicyValue value
+      CrossOriginOpenerPolicyValue reportOnlyValue
+      optional string reportingEndpoint
+      optional string reportOnlyReportingEndpoint
+
+  experimental type CrossOriginEmbedderPolicyValue extends string
+    enum
+      None
+      Credentialless
+      RequireCorp
+
+  experimental type CrossOriginEmbedderPolicyStatus extends object
+    properties
+      CrossOriginEmbedderPolicyValue value
+      CrossOriginEmbedderPolicyValue reportOnlyValue
+      optional string reportingEndpoint
+      optional string reportOnlyReportingEndpoint
+
+  experimental type ContentSecurityPolicySource extends string
+    enum
+      HTTP
+      Meta
+
+  experimental type ContentSecurityPolicyStatus extends object
+    properties
+      string effectiveDirectives
+      boolean isEnforced
+      ContentSecurityPolicySource source
+
+  experimental type SecurityIsolationStatus extends object
+    properties
+      optional CrossOriginOpenerPolicyStatus coop
+      optional CrossOriginEmbedderPolicyStatus coep
+      optional array of ContentSecurityPolicyStatus csp
+
+  # Returns information about the COEP/COOP isolation status.
+  experimental command getSecurityIsolationStatus
+    parameters
+      # If no frameId is provided, the status of the target is provided.
+      optional Page.FrameId frameId
+    returns
+      SecurityIsolationStatus status
+
+  # Enables tracking for the Reporting API, events generated by the Reporting API will now be delivered to the client.
+  # Enabling triggers 'reportingApiReportAdded' for all existing reports.
+  experimental command enableReportingApi
+    parameters
+      # Whether to enable or disable events for the Reporting API
+      boolean enable
+
+  # The status of a Reporting API report.
+  experimental type ReportStatus extends string
+    enum
+      # Report has been queued and no attempt has been made to deliver it yet,
+      # or attempted previous upload failed (impermanently).
+      Queued
+      # There is an ongoing attempt to upload this report.
+      Pending
+      # Deletion of this report was requested while it was pending, so it will
+      # be removed after possibly outstanding upload attempts complete (successful
+      # or not).
+      MarkedForRemoval
+      # Successfully uploaded and MarkedForRemoval.
+      Success
+
+  experimental type ReportId extends string
+
+  # An object representing a report generated by the Reporting API.
+  experimental type ReportingApiReport extends object
+    properties
+      ReportId id
+      # The URL of the document that triggered the report.
+      string initiatorUrl
+      # The name of the endpoint group that should be used to deliver the report.
+      string destination
+      # The type of the report (specifies the set of data that is contained in the report body).
+      string type
+      # When the report was generated.
+      Network.TimeSinceEpoch timestamp
+      # How many uploads deep the related request was.
+      integer depth
+      # The number of delivery attempts made so far, not including an active attempt.
+      integer completedAttempts
+      object body
+      ReportStatus status
+
+  # Is sent whenever a new report is added.
+  # And after 'enableReportingApi' for all existing reports.
+  experimental event reportingApiReportAdded
+    parameters
+      ReportingApiReport report
+
+  experimental event reportingApiReportUpdated
+    parameters
+      ReportingApiReport report
+
+  experimental type ReportingApiEndpoint extends object
+    properties
+      # The URL of the endpoint to which reports may be delivered.
+      string url
+      # Name of the endpoint group.
+      string groupName
+
+  experimental event reportingApiEndpointsChangedForOrigin
+    parameters
+      # Origin of the document(s) which configured the endpoints.
+      string origin
+      array of ReportingApiEndpoint endpoints
+
+  # Unique identifier for a device bound session.
+  experimental type DeviceBoundSessionKey extends object
+    properties
+      # The site the session is set up for.
+      string site
+      # The id of the session.
+      string id
+
+  # How a device bound session was used during a request.
+  experimental type DeviceBoundSessionWithUsage extends object
+    properties
+      # The key for the session.
+      DeviceBoundSessionKey sessionKey
+      # How the session was used (or not used).
+      enum usage
+        NotInScope
+        InScopeRefreshNotYetNeeded
+        InScopeRefreshNotAllowed
+        ProactiveRefreshNotPossible
+        ProactiveRefreshAttempted
+        Deferred
+
+  # A device bound session's cookie craving.
+  experimental type DeviceBoundSessionCookieCraving extends object
+    properties
+      # The name of the craving.
+      string name
+      # The domain of the craving.
+      string domain
+      # The path of the craving.
+      string path
+      # The `Secure` attribute of the craving attributes.
+      boolean secure
+      # The `HttpOnly` attribute of the craving attributes.
+      boolean httpOnly
+      # The `SameSite` attribute of the craving attributes.
+      optional CookieSameSite sameSite
+
+  # A device bound session's inclusion URL rule.
+  experimental type DeviceBoundSessionUrlRule extends object
+    properties
+      # See comments on `net::device_bound_sessions::SessionInclusionRules::UrlRule::rule_type`.
+      enum ruleType
+        Exclude
+        Include
+      # See comments on `net::device_bound_sessions::SessionInclusionRules::UrlRule::host_pattern`.
+      string hostPattern
+      # See comments on `net::device_bound_sessions::SessionInclusionRules::UrlRule::path_prefix`.
+      string pathPrefix
+
+  # A device bound session's inclusion rules.
+  experimental type DeviceBoundSessionInclusionRules extends object
+    properties
+      # See comments on `net::device_bound_sessions::SessionInclusionRules::origin_`.
+      string origin
+      # Whether the whole site is included. See comments on
+      # `net::device_bound_sessions::SessionInclusionRules::include_site_` for more
+      # details; this boolean is true if that value is populated.
+      boolean includeSite
+      # See comments on `net::device_bound_sessions::SessionInclusionRules::url_rules_`.
+      array of DeviceBoundSessionUrlRule urlRules
+
+  # A device bound session.
+  experimental type DeviceBoundSession extends object
+    properties
+      # The site and session ID of the session.
+      DeviceBoundSessionKey key
+      # See comments on `net::device_bound_sessions::Session::refresh_url_`.
+      string refreshUrl
+      # See comments on `net::device_bound_sessions::Session::inclusion_rules_`.
+      DeviceBoundSessionInclusionRules inclusionRules
+      # See comments on `net::device_bound_sessions::Session::cookie_cravings_`.
+      array of DeviceBoundSessionCookieCraving cookieCravings
+      # See comments on `net::device_bound_sessions::Session::expiry_date_`.
+      Network.TimeSinceEpoch expiryDate
+      # See comments on `net::device_bound_sessions::Session::cached_challenge__`.
+      optional string cachedChallenge
+      # See comments on `net::device_bound_sessions::Session::allowed_refresh_initiators_`.
+      array of string allowedRefreshInitiators
+
+  # A unique identifier for a device bound session event.
+  experimental type DeviceBoundSessionEventId extends string
+
+  # A fetch result for a device bound session creation or refresh.
+  experimental type DeviceBoundSessionFetchResult extends string
+    enum
+      Success
+      KeyError
+      SigningError
+      ServerRequestedTermination
+      InvalidSessionId
+      InvalidChallenge
+      TooManyChallenges
+      InvalidFetcherUrl
+      InvalidRefreshUrl
+      TransientHttpError
+      ScopeOriginSameSiteMismatch
+      RefreshUrlSameSiteMismatch
+      MismatchedSessionId
+      MissingScope
+      NoCredentials
+      SubdomainRegistrationWellKnownUnavailable
+      SubdomainRegistrationUnauthorized
+      SubdomainRegistrationWellKnownMalformed
+      SessionProviderWellKnownUnavailable
+      RelyingPartyWellKnownUnavailable
+      FederatedKeyThumbprintMismatch
+      InvalidFederatedSessionUrl
+      InvalidFederatedKey
+      TooManyRelyingOriginLabels
+      BoundCookieSetForbidden
+      NetError
+      ProxyError
+      EmptySessionConfig
+      InvalidCredentialsConfig
+      InvalidCredentialsType
+      InvalidCredentialsEmptyName
+      InvalidCredentialsCookie
+      PersistentHttpError
+      RegistrationAttemptedChallenge
+      InvalidScopeOrigin
+      ScopeOriginContainsPath
+      RefreshInitiatorNotString
+      RefreshInitiatorInvalidHostPattern
+      InvalidScopeSpecification
+      MissingScopeSpecificationType
+      EmptyScopeSpecificationDomain
+      EmptyScopeSpecificationPath
+      InvalidScopeSpecificationType
+      InvalidScopeIncludeSite
+      MissingScopeIncludeSite
+      FederatedNotAuthorizedByProvider
+      FederatedNotAuthorizedByRelyingParty
+      SessionProviderWellKnownMalformed
+      SessionProviderWellKnownHasProviderOrigin
+      RelyingPartyWellKnownMalformed
+      RelyingPartyWellKnownHasRelyingOrigins
+      InvalidFederatedSessionProviderSessionMissing
+      InvalidFederatedSessionWrongProviderOrigin
+      InvalidCredentialsCookieCreationTime
+      InvalidCredentialsCookieName
+      InvalidCredentialsCookieParsing
+      InvalidCredentialsCookieUnpermittedAttribute
+      InvalidCredentialsCookieInvalidDomain
+      InvalidCredentialsCookiePrefix
+      InvalidScopeRulePath
+      InvalidScopeRuleHostPattern
+      ScopeRuleOriginScopedHostPatternMismatch
+      ScopeRuleSiteScopedHostPatternMismatch
+      SigningQuotaExceeded
+      InvalidConfigJson
+      InvalidFederatedSessionProviderFailedToRestoreKey
+      FailedToUnwrapKey
+      SessionDeletedDuringRefresh
+
+  # Details about a failed device bound session network request.
+  experimental type DeviceBoundSessionFailedRequest extends object
+    properties
+      # The failed request URL.
+      string requestUrl
+      # The net error of the response if it was not OK.
+      optional string netError
+      # The response code if the net error was OK and the response code was not
+      # 200.
+      optional integer responseError
+      # The body of the response if the net error was OK, the response code was
+      # not 200, and the response body was not empty.
+      optional string responseErrorBody
+
+  # Session event details specific to creation.
+  experimental type CreationEventDetails extends object
+    properties
+      # The result of the fetch attempt.
+      DeviceBoundSessionFetchResult fetchResult
+      # The session if there was a newly created session. This is populated for
+      # all successful creation events.
+      optional DeviceBoundSession newSession
+      # Details about a failed device bound session network request if there was
+      # one.
+      optional DeviceBoundSessionFailedRequest failedRequest
+
+  # Session event details specific to refresh.
+  experimental type RefreshEventDetails extends object
+    properties
+      # The result of a refresh.
+      enum refreshResult
+        Refreshed
+        InitializedService
+        Unreachable
+        ServerError
+        RefreshQuotaExceeded
+        FatalError
+        SigningQuotaExceeded
+      # If there was a fetch attempt, the result of that.
+      optional DeviceBoundSessionFetchResult fetchResult
+      # The session display if there was a newly created session. This is populated
+      # for any refresh event that modifies the session config.
+      optional DeviceBoundSession newSession
+      # See comments on `net::device_bound_sessions::RefreshEventResult::was_fully_proactive_refresh`.
+      boolean wasFullyProactiveRefresh
+      # Details about a failed device bound session network request if there was
+      # one.
+      optional DeviceBoundSessionFailedRequest failedRequest
+
+  # Session event details specific to termination.
+  experimental type TerminationEventDetails extends object
+    properties
+      # The reason for a session being deleted.
+      enum deletionReason
+        Expired
+        FailedToRestoreKey
+        FailedToUnwrapKey
+        StoragePartitionCleared
+        ClearBrowsingData
+        ServerRequested
+        InvalidSessionParams
+        RefreshFatalError
+
+  # Session event details specific to challenges.
+  experimental type ChallengeEventDetails extends object
+    properties
+      # The result of a challenge.
+      enum challengeResult
+        Success
+        NoSessionId
+        NoSessionMatch
+        CantSetBoundCookie
+      # The challenge set.
+      string challenge
+
+  # Triggered when the initial set of device bound sessions is added.
+  experimental event deviceBoundSessionsAdded
+    parameters
+      # The device bound sessions.
+      array of DeviceBoundSession sessions
+
+  # Triggered when a device bound session event occurs.
+  experimental event deviceBoundSessionEventOccurred
+    parameters
+      # A unique identifier for this session event.
+      DeviceBoundSessionEventId eventId
+      # The site this session event is associated with.
+      string site
+      # Whether this event was considered successful.
+      boolean succeeded
+      # The session ID this event is associated with. May not be populated for
+      # failed events.
+      optional string sessionId
+
+      # The below are the different session event type details. Exactly one is populated.
+      optional CreationEventDetails creationEventDetails
+      optional RefreshEventDetails refreshEventDetails
+      optional TerminationEventDetails terminationEventDetails
+      optional ChallengeEventDetails challengeEventDetails
+
+  # Sets up tracking device bound sessions and fetching of initial set of sessions.
+  experimental command enableDeviceBoundSessions
+    parameters
+      # Whether to enable or disable events.
+      boolean enable
+
+  # Fetches the schemeful site for a specific origin.
+  experimental command fetchSchemefulSite
+    parameters
+      # The URL origin.
+      string origin
+    returns
+      # The corresponding schemeful site.
+      string schemefulSite
+
+  # An object providing the result of a network resource load.
+  experimental type LoadNetworkResourcePageResult extends object
+    properties
+      boolean success
+      # Optional values used for error reporting.
+      optional number netError
+      optional string netErrorName
+      optional number httpStatusCode
+      # If successful, one of the following two fields holds the result.
+      optional IO.StreamHandle stream
+      # Response headers.
+      optional Network.Headers headers
+
+  # An options object that may be extended later to better support CORS,
+  # CORB and streaming.
+  experimental type LoadNetworkResourceOptions extends object
+    properties
+      boolean disableCache
+      boolean includeCredentials
+
+  # Fetches the resource and returns the content.
+  experimental command loadNetworkResource
+    parameters
+      # Frame id to get the resource for. Mandatory for frame targets, and
+      # should be omitted for worker targets.
+      optional Page.FrameId frameId
+      # URL of the resource to get content for.
+      string url
+      # Options for the request.
+      LoadNetworkResourceOptions options
+    returns
+      LoadNetworkResourcePageResult resource
+
+  # Sets Controls for third-party cookie access
+  # Page reload is required before the new cookie behavior will be observed
+  experimental command setCookieControls
+    parameters
+      # Whether 3pc restriction is enabled.
+      boolean enableThirdPartyCookieRestriction
+
+      # Whether 3pc grace period exception should be enabled; false by default.
+      boolean disableThirdPartyCookieMetadata
+
+      # Whether 3pc heuristics exceptions should be enabled; false by default.
+      boolean disableThirdPartyCookieHeuristics

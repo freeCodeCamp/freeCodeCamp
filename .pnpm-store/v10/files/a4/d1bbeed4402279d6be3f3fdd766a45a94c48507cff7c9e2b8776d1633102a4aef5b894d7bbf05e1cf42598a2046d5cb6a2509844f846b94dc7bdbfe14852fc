@@ -1,0 +1,37 @@
+{
+  "name": "@parcel/fs-search",
+  "version": "2.8.3",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "files": [
+    "index.js",
+    "*.node"
+  ],
+  "napi": {
+    "name": "fs-search"
+  },
+  "scripts": {
+    "build": "napi build --platform",
+    "build-release": "napi build --platform --release"
+  },
+  "dependencies": {
+    "detect-libc": "^1.0.3"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^2.6.2"
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

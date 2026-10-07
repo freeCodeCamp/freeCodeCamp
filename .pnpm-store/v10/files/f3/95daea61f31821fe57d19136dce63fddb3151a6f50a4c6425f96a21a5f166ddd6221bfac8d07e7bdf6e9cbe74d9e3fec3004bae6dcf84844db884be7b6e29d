@@ -1,0 +1,77 @@
+{
+  "name": "word-wrap",
+  "description": "Wrap words to a specified length.",
+  "version": "1.2.5",
+  "homepage": "https://github.com/jonschlinkert/word-wrap",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Danilo Sampaio <danilo.sampaio@gmail.com> (localhost:8080)",
+    "Fede Ramirez <i@2fd.me> (https://2fd.github.io)",
+    "Joe Hildebrand <joe-github@cursive.net> (https://twitter.com/hildjj)",
+    "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)",
+    "Todd Kennedy (https://tck.io)",
+    "Waldemar Reusch (https://github.com/lordvlad)",
+    "Wolfgang Faust (http://www.linestarve.com)",
+    "Zach Hale <zachhale@gmail.com> (http://zachhale.com)"
+  ],
+  "repository": "jonschlinkert/word-wrap",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/word-wrap/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^0.1.11",
+    "mocha": "^3.2.0"
+  },
+  "keywords": [
+    "break",
+    "carriage",
+    "line",
+    "new-line",
+    "newline",
+    "return",
+    "soft",
+    "text",
+    "word",
+    "word-wrap",
+    "words",
+    "wrap"
+  ],
+  "typings": "index.d.ts",
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": [
+        "common-words",
+        "shuffle-words",
+        "unique-words",
+        "wordcount"
+      ]
+    },
+    "reflinks": [
+      "verb",
+      "verb-generate-readme"
+    ]
+  }
+}

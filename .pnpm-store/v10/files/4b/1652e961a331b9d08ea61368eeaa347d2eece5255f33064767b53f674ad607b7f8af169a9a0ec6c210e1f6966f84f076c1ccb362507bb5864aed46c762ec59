@@ -1,0 +1,36 @@
+{
+  "name": "streamx",
+  "version": "2.25.0",
+  "description": "An iteration of the Node.js core streams with a series of improvements",
+  "main": "index.js",
+  "dependencies": {
+    "events-universal": "^1.0.0",
+    "fast-fifo": "^1.3.2",
+    "text-decoder": "^1.1.0"
+  },
+  "devDependencies": {
+    "b4a": "^1.6.6",
+    "brittle": "^3.1.1",
+    "end-of-stream": "^1.4.4",
+    "prettier": "^3.6.2",
+    "prettier-config-holepunch": "^2.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "test": "prettier --check . && node test/all.js",
+    "test:bare": "bare test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/streamx.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/streamx/issues"
+  },
+  "homepage": "https://github.com/mafintosh/streamx"
+}

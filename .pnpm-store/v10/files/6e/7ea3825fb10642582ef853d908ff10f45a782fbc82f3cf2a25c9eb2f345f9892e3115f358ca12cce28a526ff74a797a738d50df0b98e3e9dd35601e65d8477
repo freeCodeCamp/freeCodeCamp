@@ -1,0 +1,85 @@
+{
+  "definitions": {
+    "VirtualModule": {
+      "description": "A virtual module definition.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "context": {
+          "description": "The context for the virtual module. A string path. Defaults to 'auto', which will try to resolve the context from the module id.",
+          "type": "string"
+        },
+        "source": {
+          "description": "The source function that provides the virtual content.",
+          "instanceof": "Function",
+          "tsType": "import('../../../lib/schemes/VirtualUrlPlugin').SourceFn"
+        },
+        "type": {
+          "description": "The module type.",
+          "type": "string"
+        },
+        "version": {
+          "description": "Optional version function or value for cache invalidation.",
+          "anyOf": [
+            {
+              "type": "boolean",
+              "enum": [true]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "instanceof": "Function",
+              "tsType": "import('../../../lib/schemes/VirtualUrlPlugin').VersionFn"
+            }
+          ]
+        }
+      },
+      "required": ["source"]
+    },
+    "VirtualModuleContent": {
+      "description": "A virtual module can be a string, a function, or a VirtualModule object.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function",
+          "tsType": "import('../../../lib/schemes/VirtualUrlPlugin').SourceFn"
+        },
+        {
+          "$ref": "#/definitions/VirtualModule"
+        }
+      ]
+    },
+    "VirtualUrlOptions": {
+      "description": "Options for building virtual resources.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "context": {
+          "description": "The default context for virtual modules. A string path. Defaults to 'auto', which will try to resolve the context from the module id.",
+          "type": "string"
+        },
+        "modules": {
+          "description": "The virtual modules configuration.",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/VirtualModuleContent"
+          }
+        },
+        "scheme": {
+          "description": "The URL scheme to use for virtual resources.",
+          "type": "string"
+        }
+      },
+      "required": ["modules"]
+    }
+  },
+  "title": "VirtualUrlPluginOptions",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/VirtualUrlOptions"
+    }
+  ]
+}

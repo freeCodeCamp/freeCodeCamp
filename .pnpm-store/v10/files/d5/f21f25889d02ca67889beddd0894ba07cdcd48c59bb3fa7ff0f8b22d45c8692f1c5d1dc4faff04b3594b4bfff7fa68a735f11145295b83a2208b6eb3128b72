@@ -1,0 +1,46 @@
+{
+  "Commands:": "คอมมาน",
+  "Options:": "ออฟชั่น",
+  "Examples:": "ตัวอย่าง",
+  "boolean": "บูลีน",
+  "count": "นับ",
+  "string": "สตริง",
+  "number": "ตัวเลข",
+  "array": "อาเรย์",
+  "required": "จำเป็น",
+  "default": "ค่าเริ่มต้",
+  "default:": "ค่าเริ่มต้น",
+  "choices:": "ตัวเลือก",
+  "aliases:": "เอเลียส",
+  "generated-value": "ค่าที่ถูกสร้างขึ้น",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "ใส่อาร์กิวเมนต์ไม่ครบตามจำนวนที่กำหนด: ใส่ค่ามาจำนวน %s ค่า, แต่ต้องการอย่างน้อย %s ค่า",
+    "other": "ใส่อาร์กิวเมนต์ไม่ครบตามจำนวนที่กำหนด: ใส่ค่ามาจำนวน %s ค่า, แต่ต้องการอย่างน้อย %s ค่า"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "ใส่อาร์กิวเมนต์เกินจำนวนที่กำหนด: ใส่ค่ามาจำนวน %s ค่า, แต่ต้องการมากที่สุด %s ค่า",
+    "other": "ใส่อาร์กิวเมนต์เกินจำนวนที่กำหนด: ใส่ค่ามาจำนวน %s ค่า, แต่ต้องการมากที่สุด %s ค่า"
+  },
+  "Missing argument value: %s": {
+    "one": "ค่าอาร์กิวเมนต์ที่ขาดไป: %s",
+    "other": "ค่าอาร์กิวเมนต์ที่ขาดไป: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "อาร์กิวเมนต์จำเป็นที่ขาดไป: %s",
+    "other": "อาร์กิวเมนต์จำเป็นที่ขาดไป: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "อาร์กิวเมนต์ที่ไม่รู้จัก: %s",
+    "other": "อาร์กิวเมนต์ที่ไม่รู้จัก: %s"
+  },
+  "Invalid values:": "ค่าไม่ถูกต้อง:",
+  "Argument: %s, Given: %s, Choices: %s": "อาร์กิวเมนต์: %s, ได้รับ: %s, ตัวเลือก: %s",
+  "Argument check failed: %s": "ตรวจสอบพบอาร์กิวเมนต์ที่ไม่ถูกต้อง: %s",
+  "Implications failed:": "Implications ไม่สำเร็จ:",
+  "Not enough arguments following: %s": "ใส่อาร์กิวเมนต์ไม่ครบ: %s",
+  "Invalid JSON config file: %s": "ไฟล์คอนฟิค JSON ไม่ถูกต้อง: %s",
+  "Path to JSON config file": "พาทไฟล์คอนฟิค JSON",
+  "Show help": "ขอความช่วยเหลือ",
+  "Show version number": "แสดงตัวเลขเวอร์ชั่น",
+  "Did you mean %s?": "คุณหมายถึง %s?"
+}

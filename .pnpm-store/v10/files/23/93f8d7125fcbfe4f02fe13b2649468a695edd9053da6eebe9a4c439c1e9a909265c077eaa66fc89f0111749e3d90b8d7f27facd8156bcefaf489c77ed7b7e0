@@ -1,0 +1,74 @@
+{
+  "name": "micromark-core-commonmark",
+  "version": "2.0.3",
+  "description": "The CommonMark markdown constructs",
+  "license": "MIT",
+  "keywords": [
+    "micromark",
+    "core",
+    "commonmark"
+  ],
+  "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-core-commonmark",
+  "bugs": "https://github.com/micromark/micromark/issues",
+  "funding": [
+    {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/unifiedjs"
+    },
+    {
+      "type": "OpenCollective",
+      "url": "https://opencollective.com/unified"
+    }
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dev/",
+    "lib/",
+    "index.d.ts.map",
+    "index.d.ts",
+    "index.js"
+  ],
+  "exports": {
+    "development": "./dev/index.js",
+    "default": "./index.js"
+  },
+  "dependencies": {
+    "decode-named-character-reference": "^1.0.0",
+    "devlop": "^1.0.0",
+    "micromark-factory-destination": "^2.0.0",
+    "micromark-factory-label": "^2.0.0",
+    "micromark-factory-space": "^2.0.0",
+    "micromark-factory-title": "^2.0.0",
+    "micromark-factory-whitespace": "^2.0.0",
+    "micromark-util-character": "^2.0.0",
+    "micromark-util-chunked": "^2.0.0",
+    "micromark-util-classify-character": "^2.0.0",
+    "micromark-util-html-tag-name": "^2.0.0",
+    "micromark-util-normalize-identifier": "^2.0.0",
+    "micromark-util-resolve-all": "^2.0.0",
+    "micromark-util-subtokenize": "^2.0.0",
+    "micromark-util-symbol": "^2.0.0",
+    "micromark-util-types": "^2.0.0"
+  },
+  "scripts": {
+    "build": "micromark-build"
+  },
+  "xo": {
+    "envs": [
+      "shared-node-browser"
+    ],
+    "prettier": true,
+    "rules": {
+      "logical-assignment-operators": "off",
+      "max-depth": "off",
+      "unicorn/no-this-assignment": "off",
+      "unicorn/prefer-at": "off",
+      "unicorn/prefer-code-point": "off"
+    }
+  }
+}

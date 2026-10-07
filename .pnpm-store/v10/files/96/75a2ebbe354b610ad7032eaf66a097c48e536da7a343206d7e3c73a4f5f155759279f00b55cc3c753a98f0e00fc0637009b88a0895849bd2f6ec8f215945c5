@@ -1,0 +1,28 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# The Tethering domain defines methods and events for browser port binding.
+experimental domain Tethering
+
+  # Request browser port binding.
+  command bind
+    parameters
+      # Port number to bind.
+      integer port
+
+  # Request browser port unbinding.
+  command unbind
+    parameters
+      # Port number to unbind.
+      integer port
+
+  # Informs that port was successfully bound and got a specified connection id.
+  event accepted
+    parameters
+      # Port number that was successfully bound.
+      integer port
+      # Connection id to be used.
+      string connectionId

@@ -1,0 +1,32 @@
+'use strict';
+
+const tokenNames = [
+    'EOF-token',
+    'ident-token',
+    'function-token',
+    'at-keyword-token',
+    'hash-token',
+    'string-token',
+    'bad-string-token',
+    'url-token',
+    'bad-url-token',
+    'delim-token',
+    'number-token',
+    'percentage-token',
+    'dimension-token',
+    'whitespace-token',
+    'CDO-token',
+    'CDC-token',
+    'colon-token',
+    'semicolon-token',
+    'comma-token',
+    '[-token',
+    ']-token',
+    '(-token',
+    ')-token',
+    '{-token',
+    '}-token',
+    'comment-token'
+];
+
+module.exports = tokenNames;

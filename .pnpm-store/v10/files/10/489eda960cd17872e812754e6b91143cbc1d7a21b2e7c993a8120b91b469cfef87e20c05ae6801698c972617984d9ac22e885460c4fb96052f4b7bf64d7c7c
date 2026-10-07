@@ -1,0 +1,167 @@
+{
+  "name": "date-fns-tz",
+  "version": "3.2.0",
+  "sideEffects": false,
+  "description": "Time zone support for date-fns v3 with the Intl API",
+  "author": "Marnus Weststrate <marnusw@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "date-fns",
+    "timezone",
+    "time zone",
+    "date",
+    "time",
+    "parse",
+    "format",
+    "immutable"
+  ],
+  "repository": "https://github.com/marnusw/date-fns-tz",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "npm run build",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json && echo {\"type\":\"module\"} > dist/esm/package.json",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "clean": "rm -rf dist",
+    "test": "cross-env NODE_OPTIONS=\"--openssl-legacy-provider\" karma start config/karma.js",
+    "test:watch": "cross-env TEST_WATCH=true NODE_OPTIONS=\"--openssl-legacy-provider\" karma start config/karma.js",
+    "prettier": "prettier . --write",
+    "lint": "eslint ."
+  },
+  "engine": {
+    "node": ">= 0.11"
+  },
+  "type": "commonjs",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./format": {
+      "import": "./dist/esm/format/index.js",
+      "require": "./dist/cjs/format/index.js"
+    },
+    "./formatInTimeZone": {
+      "import": "./dist/esm/formatInTimeZone/index.js",
+      "require": "./dist/cjs/formatInTimeZone/index.js"
+    },
+    "./getTimezoneOffset": {
+      "import": "./dist/esm/getTimezoneOffset/index.js",
+      "require": "./dist/cjs/getTimezoneOffset/index.js"
+    },
+    "./toDate": {
+      "import": "./dist/esm/toDate/index.js",
+      "require": "./dist/cjs/toDate/index.js"
+    },
+    "./toZonedTime": {
+      "import": "./dist/esm/toZonedTime/index.js",
+      "require": "./dist/cjs/toZonedTime/index.js"
+    },
+    "./fromZonedTime": {
+      "import": "./dist/esm/fromZonedTime/index.js",
+      "require": "./dist/cjs/fromZonedTime/index.js"
+    },
+    "./fp": {
+      "import": "./dist/esm/fp/index.js",
+      "require": "./dist/cjs/fp/index.js"
+    },
+    "./fp/format": {
+      "import": "./dist/esm/fp/format/index.js",
+      "require": "./dist/cjs/fp/format/index.js"
+    },
+    "./fp/formatInTimeZone": {
+      "import": "./dist/esm/fp/formatInTimeZone/index.js",
+      "require": "./dist/cjs/fp/formatInTimeZone/index.js"
+    },
+    "./fp/formatInTimeZoneWithOptions": {
+      "import": "./dist/esm/fp/formatInTimeZoneWithOptions/index.js",
+      "require": "./dist/cjs/fp/formatInTimeZoneWithOptions/index.js"
+    },
+    "./fp/formatWithOptions": {
+      "import": "./dist/esm/fp/formatWithOptions/index.js",
+      "require": "./dist/cjs/fp/formatWithOptions/index.js"
+    },
+    "./fp/fromZonedTime": {
+      "import": "./dist/esm/fp/fromZonedTime/index.js",
+      "require": "./dist/cjs/fp/fromZonedTime/index.js"
+    },
+    "./fp/fromZonedTimeWithOptions": {
+      "import": "./dist/esm/fp/fromZonedTimeWithOptions/index.js",
+      "require": "./dist/cjs/fp/fromZonedTimeWithOptions/index.js"
+    },
+    "./fp/getTimezoneOffset": {
+      "import": "./dist/esm/fp/getTimezoneOffset/index.js",
+      "require": "./dist/cjs/fp/getTimezoneOffset/index.js"
+    },
+    "./fp/toDate": {
+      "import": "./dist/esm/fp/toDate/index.js",
+      "require": "./dist/cjs/fp/toDate/index.js"
+    },
+    "./fp/toDateWithOptions": {
+      "import": "./dist/esm/fp/toDateWithOptions/index.js",
+      "require": "./dist/cjs/fp/toDateWithOptions/index.js"
+    },
+    "./fp/toZonedTime": {
+      "import": "./dist/esm/fp/toZonedTime/index.js",
+      "require": "./dist/cjs/fp/toZonedTime/index.js"
+    },
+    "./fp/toZonedTimeWithOptions": {
+      "import": "./dist/esm/fp/toZonedTimeWithOptions/index.js",
+      "require": "./dist/cjs/fp/toZonedTimeWithOptions/index.js"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ],
+    "*.{js,json,md,ts}": [
+      "prettier --write"
+    ]
+  },
+  "peerDependencies": {
+    "date-fns": "^3.0.0 || ^4.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "assert": "^2.1.0",
+    "buffer": "^6.0.3",
+    "cross-env": "^7.0.3",
+    "date-fns": "^4.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "fs-extra": "^11.2.0",
+    "husky": "^4.3.8",
+    "karma": "^6.4.3",
+    "karma-benchmark": "^1.0.4",
+    "karma-benchmark-reporter": "^0.1.1",
+    "karma-chrome-launcher": "3.2.0",
+    "karma-cli": "^2.0.0",
+    "karma-mocha": "^2.0.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-sourcemap-loader": "^0.4.0",
+    "karma-webpack": "^5.0.1",
+    "lint-staged": "^15.2.2",
+    "mocha": "^10.4.0",
+    "power-assert": "^1.6.1",
+    "prettier": "^3.2.5",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.4",
+    "util": "^0.12.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "packageManager": "yarn@4.5.0"
+}

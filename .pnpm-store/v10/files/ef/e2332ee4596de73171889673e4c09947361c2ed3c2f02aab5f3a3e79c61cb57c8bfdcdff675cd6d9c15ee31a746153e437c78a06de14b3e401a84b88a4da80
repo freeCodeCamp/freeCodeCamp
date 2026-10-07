@@ -1,0 +1,207 @@
+{
+  "name": "vitest",
+  "type": "module",
+  "version": "3.2.4",
+  "description": "Next generation testing framework powered by Vite",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://github.com/vitest-dev/vitest#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/vitest"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "keywords": [
+    "vite",
+    "vitest",
+    "test",
+    "jest"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./index.cjs"
+      }
+    },
+    "./*": "./*",
+    "./globals": {
+      "types": "./globals.d.ts"
+    },
+    "./jsdom": {
+      "types": "./jsdom.d.ts"
+    },
+    "./importMeta": {
+      "types": "./importMeta.d.ts"
+    },
+    "./import-meta": {
+      "types": "./import-meta.d.ts"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    },
+    "./execute": {
+      "types": "./dist/execute.d.ts",
+      "default": "./dist/execute.js"
+    },
+    "./workers": {
+      "types": "./dist/workers.d.ts",
+      "import": "./dist/workers.js"
+    },
+    "./internal/browser": {
+      "types": "./dist/browser.d.ts",
+      "default": "./dist/browser.js"
+    },
+    "./runners": {
+      "types": "./dist/runners.d.ts",
+      "default": "./dist/runners.js"
+    },
+    "./suite": {
+      "types": "./dist/suite.d.ts",
+      "default": "./dist/suite.js"
+    },
+    "./environments": {
+      "types": "./dist/environments.d.ts",
+      "default": "./dist/environments.js"
+    },
+    "./config": {
+      "types": "./config.d.ts",
+      "require": "./dist/config.cjs",
+      "default": "./dist/config.js"
+    },
+    "./coverage": {
+      "types": "./coverage.d.ts",
+      "default": "./dist/coverage.js"
+    },
+    "./reporters": {
+      "types": "./dist/reporters.d.ts",
+      "default": "./dist/reporters.js"
+    },
+    "./snapshot": {
+      "types": "./dist/snapshot.d.ts",
+      "default": "./dist/snapshot.js"
+    },
+    "./mocker": {
+      "types": "./dist/mocker.d.ts",
+      "default": "./dist/mocker.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "vitest": "./vitest.mjs"
+  },
+  "files": [
+    "*.cjs",
+    "*.d.cts",
+    "*.d.ts",
+    "*.mjs",
+    "bin",
+    "dist"
+  ],
+  "engines": {
+    "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
+  },
+  "peerDependencies": {
+    "@edge-runtime/vm": "*",
+    "@types/debug": "^4.1.12",
+    "@types/node": "^18.0.0 || ^20.0.0 || >=22.0.0",
+    "happy-dom": "*",
+    "jsdom": "*",
+    "@vitest/browser": "3.2.4",
+    "@vitest/ui": "3.2.4"
+  },
+  "peerDependenciesMeta": {
+    "@edge-runtime/vm": {
+      "optional": true
+    },
+    "@types/debug": {
+      "optional": true
+    },
+    "@types/node": {
+      "optional": true
+    },
+    "@vitest/browser": {
+      "optional": true
+    },
+    "@vitest/ui": {
+      "optional": true
+    },
+    "happy-dom": {
+      "optional": true
+    },
+    "jsdom": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@types/chai": "^5.2.2",
+    "chai": "^5.2.0",
+    "debug": "^4.4.1",
+    "expect-type": "^1.2.1",
+    "magic-string": "^0.30.17",
+    "pathe": "^2.0.3",
+    "picomatch": "^4.0.2",
+    "std-env": "^3.9.0",
+    "tinybench": "^2.9.0",
+    "tinyexec": "^0.3.2",
+    "tinyglobby": "^0.2.14",
+    "tinypool": "^1.1.1",
+    "tinyrainbow": "^2.0.0",
+    "vite": "^5.0.0 || ^6.0.0 || ^7.0.0-0",
+    "why-is-node-running": "^2.3.0",
+    "@vitest/expect": "3.2.4",
+    "@vitest/mocker": "3.2.4",
+    "@vitest/snapshot": "3.2.4",
+    "@vitest/runner": "3.2.4",
+    "@vitest/pretty-format": "^3.2.4",
+    "@vitest/spy": "3.2.4",
+    "vite-node": "3.2.4",
+    "@vitest/utils": "3.2.4"
+  },
+  "devDependencies": {
+    "@ampproject/remapping": "^2.3.0",
+    "@antfu/install-pkg": "^1.1.0",
+    "@edge-runtime/vm": "^5.0.0",
+    "@sinonjs/fake-timers": "14.0.0",
+    "@types/debug": "^4.1.12",
+    "@types/estree": "^1.0.8",
+    "@types/istanbul-lib-coverage": "^2.0.6",
+    "@types/istanbul-reports": "^3.0.4",
+    "@types/jsdom": "^21.1.7",
+    "@types/mime": "^4.0.0",
+    "@types/node": "^22.15.32",
+    "@types/picomatch": "^4.0.0",
+    "@types/prompts": "^2.4.9",
+    "@types/sinonjs__fake-timers": "^8.1.5",
+    "acorn-walk": "^8.3.4",
+    "birpc": "2.4.0",
+    "cac": "^6.7.14",
+    "chai-subset": "^1.6.0",
+    "find-up": "^6.3.0",
+    "flatted": "^3.3.3",
+    "happy-dom": "^17.6.3",
+    "jsdom": "^26.1.0",
+    "local-pkg": "^1.1.1",
+    "mime": "^4.0.7",
+    "pretty-format": "^29.7.0",
+    "prompts": "^2.4.2",
+    "strip-literal": "^3.0.0",
+    "ws": "^8.18.2"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "dev": "NODE_OPTIONS=\"--max-old-space-size=8192\" rollup -c --watch -m inline"
+  }
+}

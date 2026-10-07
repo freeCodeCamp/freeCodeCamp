@@ -1,0 +1,22 @@
+{
+  "comment": "Rules for the style guide at https://www.cirosantilli.com/markdown-style-guide/",
+
+  "default": true,
+  "MD003": {
+    "style": "atx"
+  },
+  "MD004": {
+    "style": "dash"
+  },
+  "MD007": {
+    "indent": 4
+  },
+  "MD030": {
+    "ul_multi": 3,
+    "ol_multi": 2
+  },
+  "MD033": false,
+  "MD035": {
+    "style": "---"
+  }
+}

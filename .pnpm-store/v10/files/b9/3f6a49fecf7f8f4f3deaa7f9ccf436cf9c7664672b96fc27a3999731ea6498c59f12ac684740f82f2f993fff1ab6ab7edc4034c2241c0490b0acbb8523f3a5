@@ -1,0 +1,87 @@
+{
+  "name": "ignore",
+  "version": "7.0.5",
+  "description": "Ignore is a manager and filter for .gitignore rules, the one used by eslint, gitbook and many others.",
+  "types": "index.d.ts",
+  "files": [
+    "legacy.js",
+    "index.js",
+    "index.d.ts",
+    "LICENSE-MIT"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "babel -o legacy.js index.js",
+
+    "==================== linting ======================": "",
+    "lint": "eslint .",
+
+    "===================== import ======================": "",
+    "ts": "npm run test:ts && npm run test:16",
+    "test:ts": "ts-node ./test/import/simple.ts",
+    "test:16": "npm run test:ts:16 && npm run test:cjs:16 && npm run test:mjs:16",
+    "test:ts:16": "ts-node --compilerOptions '{\"moduleResolution\": \"Node16\", \"module\": \"Node16\"}' ./test/import/simple.ts && tsc ./test/import/simple.ts --lib ES6 --moduleResolution Node16 --module Node16 && node ./test/import/simple.js",
+    "test:cjs:16": "ts-node --compilerOptions '{\"moduleResolution\": \"Node16\", \"module\": \"Node16\"}' ./test/import/simple.cjs",
+    "test:mjs:16": "ts-node --compilerOptions '{\"moduleResolution\": \"Node16\", \"module\": \"Node16\"}' ./test/import/simple.mjs && babel -o ./test/import/simple-mjs.js ./test/import/simple.mjs && node ./test/import/simple-mjs.js",
+
+    "===================== cases =======================": "",
+    "test:cases": "npm run tap test/*.test.js -- --coverage",
+    "tap": "tap --reporter classic",
+
+    "===================== debug =======================": "",
+    "test:git": "npm run tap test/git-check-ignore.test.js",
+    "test:ignore": "npm run tap test/ignore.test.js",
+    "test:ignore:only": "IGNORE_ONLY_IGNORES=1 npm run tap test/ignore.test.js",
+    "test:others": "npm run tap test/others.test.js",
+    "test:no-coverage": "npm run tap test/*.test.js -- --no-check-coverage",
+
+    "test": "npm run lint && npm run ts && npm run build && npm run test:cases",
+    "test:win32": "IGNORE_TEST_WIN32=1 npm run test",
+    "report": "tap --coverage-report=html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kaelzhang/node-ignore.git"
+  },
+  "keywords": [
+    "ignore",
+    ".gitignore",
+    "gitignore",
+    "npmignore",
+    "rules",
+    "manager",
+    "filter",
+    "regexp",
+    "regex",
+    "fnmatch",
+    "glob",
+    "asterisks",
+    "regular-expression"
+  ],
+  "author": "kael",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/node-ignore/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "debug": "^4.3.4",
+    "eslint": "^8.46.0",
+    "eslint-config-ostai": "^3.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "mkdirp": "^3.0.1",
+    "pre-suf": "^1.1.1",
+    "rimraf": "^6.0.1",
+    "spawn-sync": "^2.0.0",
+    "tap": "^16.3.9",
+    "tmp": "0.2.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "engines": {
+    "node": ">= 4"
+  }
+}

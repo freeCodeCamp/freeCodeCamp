@@ -1,0 +1,4 @@
+import { Block } from "./class/node";
+import { options } from "./option-types";
+export declare const parse: (input: string, options?: Partial<options>) => Block;
+//# sourceMappingURL=parse.d.ts.map

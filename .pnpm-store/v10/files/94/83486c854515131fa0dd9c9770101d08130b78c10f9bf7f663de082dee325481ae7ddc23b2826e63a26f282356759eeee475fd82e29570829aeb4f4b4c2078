@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/eachWeekendOfInterval/index.js",
+  "typings": "../typings.d.ts"
+}

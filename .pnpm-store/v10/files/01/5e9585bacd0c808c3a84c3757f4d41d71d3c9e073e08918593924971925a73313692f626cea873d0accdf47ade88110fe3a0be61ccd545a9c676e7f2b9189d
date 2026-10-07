@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/TSet.js",
+  "module": "../dist/esm/TSet.js",
+  "types": "../dist/dts/TSet.d.ts"
+}

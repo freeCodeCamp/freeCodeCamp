@@ -1,0 +1,70 @@
+{
+  "name": "babel-plugin-preval",
+  "version": "5.1.0",
+  "description": "Pre-evaluate code at build-time",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "kcd-scripts build",
+    "lint": "kcd-scripts lint",
+    "test": "kcd-scripts test",
+    "test:update": "npm test -- --updateSnapshot --coverage",
+    "typecheck": "kcd-scripts typecheck",
+    "validate": "kcd-scripts validate"
+  },
+  "files": [
+    "dist",
+    "macro.js",
+    "macro.d.ts"
+  ],
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "eval",
+    "precompile",
+    "babel-plugin-macros"
+  ],
+  "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
+  "license": "MIT",
+  "dependencies": {
+    "@types/babel__core": "^7.1.12",
+    "@babel/runtime": "^7.12.5",
+    "babel-plugin-macros": "^3.0.1",
+    "require-from-string": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/babel-plugin-macros": "^2.8.4",
+    "@types/require-from-string": "^1.2.0",
+    "ast-pretty-print": "^2.0.1",
+    "babel-plugin-tester": "^10.0.0",
+    "kcd-scripts": "^7.2.0",
+    "type-fest": "^0.20.2",
+    "typescript": "^4.1.3"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/kcd-scripts/eslint.js"
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "/macro.d.ts",
+    "dist"
+  ],
+  "babel": {
+    "presets": [
+      "kcd-scripts/babel"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kentcdodds/babel-plugin-preval"
+  },
+  "bugs": {
+    "url": "https://github.com/kentcdodds/babel-plugin-preval/issues"
+  },
+  "homepage": "https://github.com/kentcdodds/babel-plugin-preval#readme"
+}

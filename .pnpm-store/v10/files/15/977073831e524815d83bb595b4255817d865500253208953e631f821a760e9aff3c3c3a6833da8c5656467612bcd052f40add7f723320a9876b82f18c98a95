@@ -1,0 +1,14 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"globals": {
+		"StopIteration": false,
+	},
+
+	"rules": {
+		"func-name-matching": [2, "always"],
+		"id-length": 0,
+	},
+}

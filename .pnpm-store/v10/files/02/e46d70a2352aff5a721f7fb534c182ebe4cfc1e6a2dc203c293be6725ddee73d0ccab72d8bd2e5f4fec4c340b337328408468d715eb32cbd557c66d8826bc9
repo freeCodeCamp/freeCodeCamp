@@ -1,0 +1,38 @@
+{
+	"name": "array-union",
+	"version": "2.1.0",
+	"description": "Create an array of unique values, in order, from the input arrays",
+	"license": "MIT",
+	"repository": "sindresorhus/array-union",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"array",
+		"set",
+		"uniq",
+		"unique",
+		"duplicate",
+		"remove",
+		"union",
+		"combine",
+		"merge"
+	],
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

@@ -1,0 +1,45 @@
+{
+  "name": "node-abi",
+  "version": "3.87.0",
+  "description": "Get the Node ABI for a given target and runtime, and vice versa.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/index.js",
+    "update-abi-registry": "node --unhandled-rejections=strict scripts/update-abi-registry.js"
+  },
+  "files": [
+    "abi_registry.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/node-abi.git"
+  },
+  "keywords": [
+    "node",
+    "electron",
+    "node_module_version",
+    "abi",
+    "v8"
+  ],
+  "author": "Lukas Geiger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/electron/node-abi/issues"
+  },
+  "homepage": "https://github.com/electron/node-abi#readme",
+  "devDependencies": {
+    "@semantic-release/npm": "13.0.0-alpha.15",
+    "semantic-release": "^24.2.7",
+    "tape": "^5.3.1"
+  },
+  "dependencies": {
+    "semver": "^7.3.5"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "provenance": true
+  },
+  "packageManager": "yarn@4.10.3+sha512.c38cafb5c7bb273f3926d04e55e1d8c9dfa7d9c3ea1f36a4868fa028b9e5f72298f0b7f401ad5eb921749eb012eb1c3bb74bf7503df3ee43fd600d14a018266f"
+}

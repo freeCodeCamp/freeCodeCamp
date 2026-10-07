@@ -1,0 +1,85 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.editor-banner {
+	box-sizing: border-box;
+	cursor: default;
+	width: 100%;
+	font-size: 12px;
+	display: flex;
+	overflow: visible;
+
+	height: 26px;
+
+	background: var(--vscode-banner-background);
+}
+
+
+.editor-banner .icon-container {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	padding: 0 6px 0 10px;
+}
+
+.editor-banner .icon-container.custom-icon {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 16px;
+	width: 16px;
+	padding: 0;
+	margin: 0 6px 0 10px;
+}
+
+.editor-banner .message-container {
+	display: flex;
+	align-items: center;
+	line-height: 26px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.editor-banner .message-container p {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+.editor-banner .message-actions-container {
+	flex-grow: 1;
+	flex-shrink: 0;
+	line-height: 26px;
+	margin: 0 4px;
+}
+
+.editor-banner .message-actions-container a.monaco-button {
+	width: inherit;
+	margin: 2px 8px;
+	padding: 0px 12px;
+}
+
+.editor-banner .message-actions-container a {
+	padding: 3px;
+	margin-left: 12px;
+	text-decoration: underline;
+}
+
+.editor-banner .action-container {
+	padding: 0 10px 0 6px;
+}
+
+.editor-banner {
+	background-color: var(--vscode-banner-background);
+}
+
+.editor-banner,
+.editor-banner .action-container .codicon,
+.editor-banner .message-actions-container .monaco-link {
+	color: var(--vscode-banner-foreground);
+}
+
+.editor-banner .icon-container .codicon {
+	color: var(--vscode-banner-iconForeground);
+}

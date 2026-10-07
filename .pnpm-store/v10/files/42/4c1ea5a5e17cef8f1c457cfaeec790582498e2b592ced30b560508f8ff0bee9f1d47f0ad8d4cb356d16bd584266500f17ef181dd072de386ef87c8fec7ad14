@@ -1,0 +1,10 @@
+import { type TSchema, type TSchemaOptions } from '../../types/schema.mjs';
+import { type TProperties } from '../../types/properties.mjs';
+import { type TIdentifier } from '../../types/identifier.mjs';
+import { type TMappedDeferred } from '../../action/mapped.mjs';
+import { type TState, type TInstantiateType, type TCanInstantiate } from '../instantiate.mjs';
+import { type TMappedOperation } from './mapped_operation.mjs';
+export type TMappedAction<Context extends TProperties, State extends TState, Identifier extends TIdentifier, Type extends TSchema, As extends TSchema, Property extends TSchema, Result extends TSchema = TCanInstantiate<[Type]> extends true ? TMappedOperation<Context, State, Identifier, Type, As, Property> : TMappedDeferred<Identifier, Type, As, Property>> = Result;
+export declare function MappedAction<Context extends TProperties, State extends TState, Identifier extends TIdentifier, Type extends TSchema, As extends TSchema, Property extends TSchema>(context: Context, state: State, identifier: Identifier, type: Type, as: As, property: Property, options: TSchemaOptions): TMappedAction<Context, State, Identifier, Type, As, Property>;
+export type TMappedInstantiate<Context extends TProperties, State extends TState, Identifier extends TIdentifier, Type extends TSchema, As extends TSchema, Property extends TSchema, InstaniatedType extends TSchema = TInstantiateType<Context, State, Type>> = TMappedAction<Context, State, Identifier, InstaniatedType, As, Property>;
+export declare function MappedInstantiate<Context extends TProperties, State extends TState, Identifier extends TIdentifier, Type extends TSchema, As extends TSchema, Property extends TSchema>(context: Context, state: State, identifier: Identifier, type: Type, as: As, property: Property, options: TSchemaOptions): TMappedInstantiate<Context, State, Identifier, Type, As, Property>;

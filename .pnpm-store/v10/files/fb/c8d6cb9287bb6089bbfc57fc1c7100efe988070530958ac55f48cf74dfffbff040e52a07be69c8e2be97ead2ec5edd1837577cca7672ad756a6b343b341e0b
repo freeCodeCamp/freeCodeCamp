@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_get_prototype_of.cjs",
+    "module": "../../esm/_get_prototype_of.js"
+}

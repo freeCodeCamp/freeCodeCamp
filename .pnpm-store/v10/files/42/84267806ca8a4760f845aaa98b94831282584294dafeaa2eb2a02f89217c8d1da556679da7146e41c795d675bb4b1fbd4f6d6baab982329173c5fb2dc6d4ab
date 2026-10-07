@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/contains",
+  "private": true,
+  "main": "../cjs/contains.js",
+  "module": "../esm/contains.js",
+  "types": "../esm/contains.d.ts"
+}

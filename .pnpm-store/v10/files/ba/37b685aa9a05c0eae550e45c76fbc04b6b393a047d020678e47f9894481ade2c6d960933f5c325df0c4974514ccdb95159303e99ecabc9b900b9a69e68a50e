@@ -1,0 +1,206 @@
+{
+    "name": "@types/react",
+    "version": "18.3.31",
+    "description": "TypeScript definitions for react",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Asana",
+            "url": "https://asana.com"
+        },
+        {
+            "name": "AssureSign",
+            "url": "http://www.assuresign.com"
+        },
+        {
+            "name": "Microsoft",
+            "url": "https://microsoft.com"
+        },
+        {
+            "name": "John Reilly",
+            "githubUsername": "johnnyreilly",
+            "url": "https://github.com/johnnyreilly"
+        },
+        {
+            "name": "Benoit Benezech",
+            "githubUsername": "bbenezech",
+            "url": "https://github.com/bbenezech"
+        },
+        {
+            "name": "Patricio Zavolinsky",
+            "githubUsername": "pzavolinsky",
+            "url": "https://github.com/pzavolinsky"
+        },
+        {
+            "name": "Eric Anderson",
+            "githubUsername": "ericanderson",
+            "url": "https://github.com/ericanderson"
+        },
+        {
+            "name": "Dovydas Navickas",
+            "githubUsername": "DovydasNavickas",
+            "url": "https://github.com/DovydasNavickas"
+        },
+        {
+            "name": "Josh Rutherford",
+            "githubUsername": "theruther4d",
+            "url": "https://github.com/theruther4d"
+        },
+        {
+            "name": "Guilherme Hübner",
+            "githubUsername": "guilhermehubner",
+            "url": "https://github.com/guilhermehubner"
+        },
+        {
+            "name": "Ferdy Budhidharma",
+            "githubUsername": "ferdaber",
+            "url": "https://github.com/ferdaber"
+        },
+        {
+            "name": "Johann Rakotoharisoa",
+            "githubUsername": "jrakotoharisoa",
+            "url": "https://github.com/jrakotoharisoa"
+        },
+        {
+            "name": "Olivier Pascal",
+            "githubUsername": "pascaloliv",
+            "url": "https://github.com/pascaloliv"
+        },
+        {
+            "name": "Martin Hochel",
+            "githubUsername": "hotell",
+            "url": "https://github.com/hotell"
+        },
+        {
+            "name": "Frank Li",
+            "githubUsername": "franklixuefei",
+            "url": "https://github.com/franklixuefei"
+        },
+        {
+            "name": "Jessica Franco",
+            "githubUsername": "Jessidhia",
+            "url": "https://github.com/Jessidhia"
+        },
+        {
+            "name": "Saransh Kataria",
+            "githubUsername": "saranshkataria",
+            "url": "https://github.com/saranshkataria"
+        },
+        {
+            "name": "Kanitkorn Sujautra",
+            "githubUsername": "lukyth",
+            "url": "https://github.com/lukyth"
+        },
+        {
+            "name": "Sebastian Silbermann",
+            "githubUsername": "eps1lon",
+            "url": "https://github.com/eps1lon"
+        },
+        {
+            "name": "Kyle Scully",
+            "githubUsername": "zieka",
+            "url": "https://github.com/zieka"
+        },
+        {
+            "name": "Cong Zhang",
+            "githubUsername": "dancerphil",
+            "url": "https://github.com/dancerphil"
+        },
+        {
+            "name": "Dimitri Mitropoulos",
+            "githubUsername": "dimitropoulos",
+            "url": "https://github.com/dimitropoulos"
+        },
+        {
+            "name": "JongChan Choi",
+            "githubUsername": "disjukr",
+            "url": "https://github.com/disjukr"
+        },
+        {
+            "name": "Victor Magalhães",
+            "githubUsername": "vhfmag",
+            "url": "https://github.com/vhfmag"
+        },
+        {
+            "name": "Priyanshu Rav",
+            "githubUsername": "priyanshurav",
+            "url": "https://github.com/priyanshurav"
+        },
+        {
+            "name": "Dmitry Semigradsky",
+            "githubUsername": "Semigradsky",
+            "url": "https://github.com/Semigradsky"
+        },
+        {
+            "name": "Matt Pocock",
+            "githubUsername": "mattpocock",
+            "url": "https://github.com/mattpocock"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "typesVersions": {
+        "<=5.0": {
+            "*": [
+                "ts5.0/*"
+            ]
+        }
+    },
+    "exports": {
+        ".": {
+            "types@<=5.0": {
+                "default": "./ts5.0/index.d.ts"
+            },
+            "types": {
+                "default": "./index.d.ts"
+            }
+        },
+        "./canary": {
+            "types@<=5.0": {
+                "default": "./ts5.0/canary.d.ts"
+            },
+            "types": {
+                "default": "./canary.d.ts"
+            }
+        },
+        "./experimental": {
+            "types@<=5.0": {
+                "default": "./ts5.0/experimental.d.ts"
+            },
+            "types": {
+                "default": "./experimental.d.ts"
+            }
+        },
+        "./jsx-runtime": {
+            "types@<=5.0": {
+                "default": "./ts5.0/jsx-runtime.d.ts"
+            },
+            "types": {
+                "default": "./jsx-runtime.d.ts"
+            }
+        },
+        "./jsx-dev-runtime": {
+            "types@<=5.0": {
+                "default": "./ts5.0/jsx-dev-runtime.d.ts"
+            },
+            "types": {
+                "default": "./jsx-dev-runtime.d.ts"
+            }
+        },
+        "./package.json": "./package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/prop-types": "*",
+        "csstype": "^3.2.2"
+    },
+    "peerDependencies": {},
+    "typesPublisherContentHash": "8ee185c606f82e91e22bd6c41a581f0b284f09472333a0d30863f96a4e72d74a",
+    "typeScriptVersion": "5.3"
+}

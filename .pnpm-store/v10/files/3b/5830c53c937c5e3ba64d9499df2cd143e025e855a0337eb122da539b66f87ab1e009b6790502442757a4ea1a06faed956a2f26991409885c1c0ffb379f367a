@@ -1,0 +1,1 @@
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("preact"),require("htm")):"function"==typeof define&&define.amd?define(["exports","preact","htm"],t):t(e.htmPreact={},e.preact,e.htm)}(this,function(e,t,n){var r=(n=n&&n.hasOwnProperty("default")?n.default:n).bind(t.h);e.h=t.h,e.render=t.render,e.Component=t.Component,e.html=r});

@@ -1,0 +1,69 @@
+{
+  "name": "chokidar",
+  "description": "Minimal and efficient cross-platform file watching library",
+  "version": "4.0.3",
+  "homepage": "https://github.com/paulmillr/chokidar",
+  "author": "Paul Miller (https://paulmillr.com)",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "handler.js",
+    "handler.d.ts",
+    "esm"
+  ],
+  "main": "./index.js",
+  "module": "./esm/index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./index.js"
+    },
+    "./handler.js": {
+      "import": "./esm/handler.js",
+      "require": "./handler.js"
+    }
+  },
+  "dependencies": {
+    "readdirp": "^4.0.1"
+  },
+  "devDependencies": {
+    "@paulmillr/jsbt": "0.2.1",
+    "@types/node": "20.14.8",
+    "chai": "4.3.4",
+    "prettier": "3.1.1",
+    "rimraf": "5.0.5",
+    "sinon": "12.0.1",
+    "sinon-chai": "3.7.0",
+    "typescript": "5.5.2",
+    "upath": "2.0.1"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">= 14.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulmillr/chokidar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulmillr/chokidar/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "lint": "prettier --check src",
+    "format": "prettier --write src",
+    "test": "node --test"
+  },
+  "keywords": [
+    "fs",
+    "watch",
+    "watchFile",
+    "watcher",
+    "watching",
+    "file",
+    "fsevents"
+  ],
+  "funding": "https://paulmillr.com/funding/"
+}

@@ -1,0 +1,132 @@
+{
+  "definitions": {
+    "stringOrPropertyList": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "property-reference": {
+              "comment": "property-reference is an extension to the JSON schema validator. Here it jumps 3 levels up in the hierarchy and tests if a value is an existing key in descriptors. See test/validate-schema.js for implementation details.",
+              "$data": "3"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "syntax": {
+        "type": "string"
+      },
+      "interfaces": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "groups": {
+        "type": "array",
+        "minitems": 1,
+        "uniqueItems": true,
+        "items": {
+          "$ref": "definitions.json#/groupList"
+        }
+      },
+      "descriptors": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "syntax": {
+              "type": "string"
+            },
+            "media": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "all",
+                    "continuous",
+                    "paged",
+                    "visual"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "minItems": 2,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "continuous",
+                      "paged",
+                      "visual"
+                    ]
+                  }
+                }
+              ]
+            },
+            "initial": {
+              "$ref": "#/definitions/stringOrPropertyList"
+            },
+            "percentages": {
+              "$ref": "#/definitions/stringOrPropertyList"
+            },
+            "computed": {
+              "$ref": "#/definitions/stringOrPropertyList"
+            },
+            "order": {
+              "enum": [
+                "orderOfAppearance",
+                "uniqueOrder"
+              ]
+            },
+            "status": {
+              "enum": [
+                "standard",
+                "nonstandard",
+                "experimental"
+              ]
+            }
+          },
+          "required": [
+            "syntax",
+            "media",
+            "initial",
+            "percentages",
+            "computed",
+            "order",
+            "status"
+          ]
+        }
+      },
+      "status": {
+        "enum": [
+          "standard",
+          "nonstandard",
+          "experimental"
+        ]
+      },
+      "mdn_url": {
+        "type": "string",
+        "pattern": "^https://developer.mozilla.org/docs/Web/CSS/"
+      }
+    },
+    "required": [
+      "syntax",
+      "groups",
+      "status"
+    ]
+  }
+}

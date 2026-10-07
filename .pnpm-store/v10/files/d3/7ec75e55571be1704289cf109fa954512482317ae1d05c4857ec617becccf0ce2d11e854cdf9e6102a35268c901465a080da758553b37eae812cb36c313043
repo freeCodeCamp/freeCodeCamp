@@ -1,0 +1,51 @@
+{
+  "name": "clone",
+  "description": "deep cloning of objects and arrays",
+  "tags": [
+    "clone",
+    "object",
+    "array",
+    "function",
+    "date"
+  ],
+  "version": "1.0.4",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pvorb/node-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pvorb/node-clone/issues"
+  },
+  "main": "clone.js",
+  "author": "Paul Vorbach <paul@vorba.ch> (http://paul.vorba.ch/)",
+  "contributors": [
+    "Blake Miner <miner.blake@gmail.com> (http://www.blakeminer.com/)",
+    "Tian You <axqd001@gmail.com> (http://blog.axqd.net/)",
+    "George Stagas <gstagas@gmail.com> (http://stagas.com/)",
+    "Tobiasz Cudnik <tobiasz.cudnik@gmail.com> (https://github.com/TobiaszCudnik)",
+    "Pavel Lang <langpavel@phpskelet.org> (https://github.com/langpavel)",
+    "Dan MacTough (http://yabfog.com/)",
+    "w1nk (https://github.com/w1nk)",
+    "Hugh Kennedy (http://twitter.com/hughskennedy)",
+    "Dustin Diaz (http://dustindiaz.com)",
+    "Ilya Shaisultanov (https://github.com/diversario)",
+    "Nathan MacInnes <nathan@macinn.es> (http://macinn.es/)",
+    "Benjamin E. Coe <ben@npmjs.com> (https://twitter.com/benjamincoe)",
+    "Nathan Zadoks (https://github.com/nathan7)",
+    "Róbert Oroszi <robert+gh@oroszi.net> (https://github.com/oroce)",
+    "Aurélio A. Heckert (http://softwarelivre.org/aurium)",
+    "Guy Ellis (http://www.guyellisrocks.com/)"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nodeunit": "~0.9.0"
+  },
+  "optionalDependencies": {},
+  "scripts": {
+    "test": "nodeunit test.js"
+  }
+}

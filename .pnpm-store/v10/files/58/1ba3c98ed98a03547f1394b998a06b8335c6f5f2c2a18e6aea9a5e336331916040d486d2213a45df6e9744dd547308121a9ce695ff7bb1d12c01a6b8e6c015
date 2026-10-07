@@ -1,0 +1,24 @@
+import React from "react";
+interface MenuItemsProps {
+    children: React.ReactNode;
+    className?: string;
+}
+export interface DropdownProps {
+    children: React.ReactNode;
+    dropup?: boolean;
+    id?: string;
+    block?: boolean;
+}
+interface DropDownButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children: React.ReactNode;
+    className?: string;
+    block?: boolean;
+}
+export declare const MenuItems: React.ForwardRefExoticComponent<MenuItemsProps & React.RefAttributes<HTMLDivElement>>;
+export declare const Dropdown: {
+    ({ children, id, dropup, block, }: DropdownProps): JSX.Element;
+    Menu: React.ForwardRefExoticComponent<MenuItemsProps & React.RefAttributes<HTMLDivElement>>;
+    Toggle: ({ children, className, ...rest }: DropDownButtonProps) => JSX.Element;
+    displayName: string;
+};
+export {};

@@ -1,0 +1,77 @@
+{
+	"name": "is-nan",
+	"version": "1.3.2",
+	"description": "ES2015-compliant shim for Number.isNaN - the global isNaN returns false positives.",
+	"author": "Jordan Harband",
+	"funding": {
+		"url": "https://github.com/sponsors/ljharb"
+	},
+	"license": "MIT",
+	"main": "index.js",
+	"scripts": {
+		"prepublish": "safe-publish-latest",
+		"pretest": "npm run lint",
+		"test": "npm run tests-only",
+		"tests-only": "nyc tape 'test/**/*.js'",
+		"posttest": "npx aud --production",
+		"lint": "eslint .",
+		"postlint": "es-shim-api --bound"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/es-shims/is-nan.git"
+	},
+	"bugs": {
+		"url": "https://github.com/es-shims/is-nan/issues"
+	},
+	"homepage": "https://github.com/es-shims/is-nan",
+	"keywords": [
+		"is",
+		"NaN",
+		"not a number",
+		"number",
+		"isNaN",
+		"ES6",
+		"ES2015",
+		"shim",
+		"polyfill",
+		"es-shim API"
+	],
+	"dependencies": {
+		"call-bind": "^1.0.0",
+		"define-properties": "^1.1.3"
+	},
+	"devDependencies": {
+		"@es-shims/api": "^2.1.2",
+		"@ljharb/eslint-config": "^17.3.0",
+		"aud": "^1.1.3",
+		"es5-shim": "^4.5.14",
+		"eslint": "^7.16.0",
+		"functions-have-names": "^1.2.2",
+		"nyc": "^10.3.2",
+		"safe-publish-latest": "^1.1.4",
+		"tape": "^5.0.1"
+	},
+	"testling": {
+		"files": "test.js",
+		"browsers": [
+			"iexplore/6.0..latest",
+			"firefox/3.0..6.0",
+			"firefox/15.0..latest",
+			"firefox/nightly",
+			"chrome/4.0..10.0",
+			"chrome/20.0..latest",
+			"chrome/canary",
+			"opera/10.0..12.0",
+			"opera/15.0..latest",
+			"opera/next",
+			"safari/4.0..latest",
+			"ipad/6.0..latest",
+			"iphone/6.0..latest",
+			"android-browser/4.2"
+		]
+	},
+	"engines": {
+		"node": ">= 0.4"
+	}
+}

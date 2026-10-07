@@ -1,0 +1,7 @@
+{
+  "name": "dom-helpers/isVisible",
+  "private": true,
+  "main": "../cjs/isVisible.js",
+  "module": "../esm/isVisible.js",
+  "types": "../esm/isVisible.d.ts"
+}

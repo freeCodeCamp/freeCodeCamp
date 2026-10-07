@@ -1,0 +1,92 @@
+{
+  "name": "hookified",
+  "version": "1.15.1",
+  "description": "Event Emitting and Middleware Hooks",
+  "type": "module",
+  "main": "./dist/node/index.js",
+  "module": "./dist/node/index.js",
+  "types": "./dist/node/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/node/index.d.ts",
+        "default": "./dist/node/index.js"
+      },
+      "require": {
+        "types": "./dist/node/index.d.cts",
+        "default": "./dist/node/index.cjs"
+      },
+      "default": "./dist/node/index.js"
+    },
+    "./browser": {
+      "import": "./dist/browser/index.js",
+      "default": "./dist/browser/index.global.js"
+    }
+  },
+  "scripts": {
+    "lint": "biome check --write --error-on-warnings",
+    "test": "pnpm lint && vitest run --coverage",
+    "test:ci": "biome check --error-on-warnings && vitest run --coverage",
+    "clean": "rimraf ./dist ./coverage ./site/dist",
+    "build": "rimraf ./dist && tsup",
+    "benchmark": "pnpm benchmark:hooks && pnpm benchmark:emit",
+    "benchmark:hooks": "pnpm tsx benchmark/hook.ts",
+    "benchmark:emit": "pnpm tsx benchmark/emit.ts",
+    "benchmark:readme": "pnpm tsx scripts/benchmark-readme.ts",
+    "website:build": "docula build",
+    "website:serve": "docula serve",
+    "prepare": "pnpm build"
+  },
+  "keywords": [
+    "hooks",
+    "eventemitter",
+    "eventemitter3",
+    "middleware",
+    "events",
+    "hooks",
+    "event-hooks",
+    "hook-system",
+    "event-driven",
+    "event-emitter",
+    "hook-handlers",
+    "middleware",
+    "emit",
+    "event-management",
+    "before-after-hooks",
+    "event-listeners",
+    "custom-hooks",
+    "hook-utilities",
+    "typescript-hooks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredwray/hookified.git"
+  },
+  "author": "Jared Wray <me@jaredwray.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaredwray/hookified/issues"
+  },
+  "homepage": "https://github.com/jaredwray/hookified#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.13",
+    "@monstermann/tinybench-pretty-printer": "^0.3.0",
+    "@types/node": "^25.0.3",
+    "@vitest/coverage-v8": "^4.0.18",
+    "docula": "^0.40.0",
+    "emittery": "^1.2.0",
+    "eventemitter3": "^5.0.4",
+    "hookable": "^6.0.1",
+    "pino": "^10.3.0",
+    "rimraf": "^6.1.2",
+    "tinybench": "^6.0.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ]
+}

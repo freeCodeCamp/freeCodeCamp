@@ -1,0 +1,824 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# Audits domain allows investigation of page violations and possible improvements.
+experimental domain Audits
+  depends on Network
+  depends on Runtime
+
+  # Information about a cookie that is affected by an inspector issue.
+  type AffectedCookie extends object
+    properties
+      # The following three properties uniquely identify a cookie
+      string name
+      string path
+      string domain
+
+  # Information about a request that is affected by an inspector issue.
+  type AffectedRequest extends object
+    properties
+      # The unique request id.
+      optional Network.RequestId requestId
+      string url
+
+  # Information about the frame affected by an inspector issue.
+  type AffectedFrame extends object
+    properties
+      Page.FrameId frameId
+
+  type CookieExclusionReason extends string
+    enum
+      ExcludeSameSiteUnspecifiedTreatedAsLax
+      ExcludeSameSiteNoneInsecure
+      ExcludeSameSiteLax
+      ExcludeSameSiteStrict
+      ExcludeDomainNonASCII
+      ExcludeThirdPartyCookieBlockedInFirstPartySet
+      ExcludeThirdPartyPhaseout
+      ExcludePortMismatch
+      ExcludeSchemeMismatch
+
+  type CookieWarningReason extends string
+    enum
+      WarnSameSiteUnspecifiedCrossSiteContext
+      WarnSameSiteNoneInsecure
+      WarnSameSiteUnspecifiedLaxAllowUnsafe
+      WarnSameSiteStrictLaxDowngradeStrict
+      WarnSameSiteStrictCrossDowngradeStrict
+      WarnSameSiteStrictCrossDowngradeLax
+      WarnSameSiteLaxCrossDowngradeStrict
+      WarnSameSiteLaxCrossDowngradeLax
+      WarnAttributeValueExceedsMaxSize
+      WarnDomainNonASCII
+      WarnThirdPartyPhaseout
+      WarnCrossSiteRedirectDowngradeChangesInclusion
+      WarnDeprecationTrialMetadata
+      WarnThirdPartyCookieHeuristic
+
+  type CookieOperation extends string
+    enum
+      SetCookie
+      ReadCookie
+
+  # Represents the category of insight that a cookie issue falls under.
+  type InsightType extends string
+    enum
+      # Cookie domain has an entry in third-party cookie migration readiness
+      # list:
+      # https://github.com/privacysandbox/privacy-sandbox-dev-support/blob/main/3pc-migration-readiness.md
+      GitHubResource
+      # Cookie is exempted due to a grace period:
+      # https://developers.google.com/privacy-sandbox/cookies/temporary-exceptions/grace-period
+      GracePeriod
+      # Cookie is exempted due a heuristics-based exemptiuon:
+      # https://developers.google.com/privacy-sandbox/cookies/temporary-exceptions/heuristics-based-exception
+      Heuristics
+
+  # Information about the suggested solution to a cookie issue.
+  type CookieIssueInsight extends object
+    properties
+      InsightType type
+      # Link to table entry in third-party cookie migration readiness list.
+      optional string tableEntryUrl
+
+  # This information is currently necessary, as the front-end has a difficult
+  # time finding a specific cookie. With this, we can convey specific error
+  # information without the cookie.
+  type CookieIssueDetails extends object
+    properties
+      # If AffectedCookie is not set then rawCookieLine contains the raw
+      # Set-Cookie header string. This hints at a problem where the
+      # cookie line is syntactically or semantically malformed in a way
+      # that no valid cookie could be created.
+      optional AffectedCookie cookie
+      optional string rawCookieLine
+      array of CookieWarningReason cookieWarningReasons
+      array of CookieExclusionReason cookieExclusionReasons
+      # Optionally identifies the site-for-cookies and the cookie url, which
+      # may be used by the front-end as additional context.
+      CookieOperation operation
+      optional string siteForCookies
+      optional string cookieUrl
+      optional AffectedRequest request
+      # The recommended solution to the issue.
+      optional CookieIssueInsight insight
+
+  type PerformanceIssueType extends string
+    enum
+      DocumentCookie
+
+  # Details for a performance issue.
+  type PerformanceIssueDetails extends object
+    properties
+      PerformanceIssueType performanceIssueType
+      optional SourceCodeLocation sourceCodeLocation
+
+  type MixedContentResolutionStatus extends string
+    enum
+      MixedContentBlocked
+      MixedContentAutomaticallyUpgraded
+      MixedContentWarning
+
+  type MixedContentResourceType extends string
+    enum
+      AttributionSrc
+      Audio
+      Beacon
+      CSPReport
+      Download
+      EventSource
+      Favicon
+      Font
+      Form
+      Frame
+      Image
+      Import
+      JSON
+      Manifest
+      Ping
+      PluginData
+      PluginResource
+      Prefetch
+      Resource
+      Script
+      ServiceWorker
+      SharedWorker
+      SpeculationRules
+      Stylesheet
+      Track
+      Video
+      Worker
+      XMLHttpRequest
+      XSLT
+
+  type MixedContentIssueDetails extends object
+    properties
+      # The type of resource causing the mixed content issue (css, js, iframe,
+      # form,...). Marked as optional because it is mapped to from
+      # blink::mojom::RequestContextType, which will be replaced
+      # by network::mojom::RequestDestination
+      optional MixedContentResourceType resourceType
+      # The way the mixed content issue is being resolved.
+      MixedContentResolutionStatus resolutionStatus
+      # The unsafe http url causing the mixed content issue.
+      string insecureURL
+      # The url responsible for the call to an unsafe url.
+      string mainResourceURL
+      # The mixed content request.
+      # Does not always exist (e.g. for unsafe form submission urls).
+      optional AffectedRequest request
+      # Optional because not every mixed content issue is necessarily linked to a frame.
+      optional AffectedFrame frame
+
+  # Enum indicating the reason a response has been blocked. These reasons are
+  # refinements of the net error BLOCKED_BY_RESPONSE.
+  type BlockedByResponseReason extends string
+    enum
+      CoepFrameResourceNeedsCoepHeader
+      CoopSandboxedIFrameCannotNavigateToCoopPage
+      CorpNotSameOrigin
+      CorpNotSameOriginAfterDefaultedToSameOriginByCoep
+      CorpNotSameOriginAfterDefaultedToSameOriginByDip
+      CorpNotSameOriginAfterDefaultedToSameOriginByCoepAndDip
+      CorpNotSameSite
+      SRIMessageSignatureMismatch
+
+  # Details for a request that has been blocked with the BLOCKED_BY_RESPONSE
+  # code. Currently only used for COEP/COOP, but may be extended to include
+  # some CSP errors in the future.
+  type BlockedByResponseIssueDetails extends object
+    properties
+      AffectedRequest request
+      optional AffectedFrame parentFrame
+      optional AffectedFrame blockedFrame
+      BlockedByResponseReason reason
+
+  type HeavyAdResolutionStatus extends string
+    enum
+      HeavyAdBlocked
+      HeavyAdWarning
+
+  type HeavyAdReason extends string
+    enum
+      NetworkTotalLimit
+      CpuTotalLimit
+      CpuPeakLimit
+
+  type HeavyAdIssueDetails extends object
+    properties
+      # The resolution status, either blocking the content or warning.
+      HeavyAdResolutionStatus resolution
+      # The reason the ad was blocked, total network or cpu or peak cpu.
+      HeavyAdReason reason
+      # The frame that was blocked.
+      AffectedFrame frame
+
+  type ContentSecurityPolicyViolationType extends string
+    enum
+      kInlineViolation
+      kEvalViolation
+      kURLViolation
+      kSRIViolation
+      kTrustedTypesSinkViolation
+      kTrustedTypesPolicyViolation
+      kWasmEvalViolation
+
+  type SourceCodeLocation extends object
+    properties
+      optional Runtime.ScriptId scriptId
+      string url
+      integer lineNumber
+      integer columnNumber
+
+  type ContentSecurityPolicyIssueDetails extends object
+    properties
+      # The url not included in allowed sources.
+      optional string blockedURL
+      # Specific directive that is violated, causing the CSP issue.
+      string violatedDirective
+      boolean isReportOnly
+      ContentSecurityPolicyViolationType contentSecurityPolicyViolationType
+      optional AffectedFrame frameAncestor
+      optional SourceCodeLocation sourceCodeLocation
+      optional DOM.BackendNodeId violatingNodeId
+
+  type SharedArrayBufferIssueType extends string
+    enum
+      TransferIssue
+      CreationIssue
+
+  # Details for a issue arising from an SAB being instantiated in, or
+  # transferred to a context that is not cross-origin isolated.
+  type SharedArrayBufferIssueDetails extends object
+    properties
+      SourceCodeLocation sourceCodeLocation
+      boolean isWarning
+      SharedArrayBufferIssueType type
+
+  # Details for a CORS related issue, e.g. a warning or error related to
+  # CORS RFC1918 enforcement.
+  type CorsIssueDetails extends object
+    properties
+      Network.CorsErrorStatus corsErrorStatus
+      boolean isWarning
+      AffectedRequest request
+      optional SourceCodeLocation location
+      optional string initiatorOrigin
+      optional Network.IPAddressSpace resourceIPAddressSpace
+      optional Network.ClientSecurityState clientSecurityState
+
+  type AttributionReportingIssueType extends string
+    enum
+      PermissionPolicyDisabled
+      UntrustworthyReportingOrigin
+      InsecureContext
+      # TODO(apaseltiner): Rename this to InvalidRegisterSourceHeader
+      InvalidHeader
+      InvalidRegisterTriggerHeader
+      SourceAndTriggerHeaders
+      SourceIgnored
+      TriggerIgnored
+      OsSourceIgnored
+      OsTriggerIgnored
+      InvalidRegisterOsSourceHeader
+      InvalidRegisterOsTriggerHeader
+      WebAndOsHeaders
+      NoWebOrOsSupport
+      NavigationRegistrationWithoutTransientUserActivation
+      InvalidInfoHeader
+      NoRegisterSourceHeader
+      NoRegisterTriggerHeader
+      NoRegisterOsSourceHeader
+      NoRegisterOsTriggerHeader
+      NavigationRegistrationUniqueScopeAlreadySet
+
+  type SharedDictionaryError extends string
+    enum
+      UseErrorCrossOriginNoCorsRequest
+      UseErrorDictionaryLoadFailure
+      UseErrorMatchingDictionaryNotUsed
+      UseErrorUnexpectedContentDictionaryHeader
+      WriteErrorCossOriginNoCorsRequest
+      WriteErrorDisallowedBySettings
+      WriteErrorExpiredResponse
+      WriteErrorFeatureDisabled
+      WriteErrorInsufficientResources
+      WriteErrorInvalidMatchField
+      WriteErrorInvalidStructuredHeader
+      WriteErrorInvalidTTLField
+      WriteErrorNavigationRequest
+      WriteErrorNoMatchField
+      WriteErrorNonIntegerTTLField
+      WriteErrorNonListMatchDestField
+      WriteErrorNonSecureContext
+      WriteErrorNonStringIdField
+      WriteErrorNonStringInMatchDestList
+      WriteErrorNonStringMatchField
+      WriteErrorNonTokenTypeField
+      WriteErrorRequestAborted
+      WriteErrorShuttingDown
+      WriteErrorTooLongIdField
+      WriteErrorUnsupportedType
+
+  type SRIMessageSignatureError extends string
+    enum
+      MissingSignatureHeader
+      MissingSignatureInputHeader
+      InvalidSignatureHeader
+      InvalidSignatureInputHeader
+      SignatureHeaderValueIsNotByteSequence
+      SignatureHeaderValueIsParameterized
+      SignatureHeaderValueIsIncorrectLength
+      SignatureInputHeaderMissingLabel
+      SignatureInputHeaderValueNotInnerList
+      SignatureInputHeaderValueMissingComponents
+      SignatureInputHeaderInvalidComponentType
+      SignatureInputHeaderInvalidComponentName
+      SignatureInputHeaderInvalidHeaderComponentParameter
+      SignatureInputHeaderInvalidDerivedComponentParameter
+      SignatureInputHeaderKeyIdLength
+      SignatureInputHeaderInvalidParameter
+      SignatureInputHeaderMissingRequiredParameters
+      ValidationFailedSignatureExpired
+      ValidationFailedInvalidLength
+      ValidationFailedSignatureMismatch
+      ValidationFailedIntegrityMismatch
+
+  type UnencodedDigestError extends string
+    enum
+      MalformedDictionary
+      UnknownAlgorithm
+      IncorrectDigestType
+      IncorrectDigestLength
+
+  type ConnectionAllowlistError extends string
+    enum
+      InvalidHeader
+      MoreThanOneList
+      ItemNotInnerList
+      InvalidAllowlistItemType
+      ReportingEndpointNotToken
+      InvalidUrlPattern
+
+  # Details for issues around "Attribution Reporting API" usage.
+  # Explainer: https://github.com/WICG/attribution-reporting-api
+  type AttributionReportingIssueDetails extends object
+    properties
+      AttributionReportingIssueType violationType
+      optional AffectedRequest request
+      optional DOM.BackendNodeId violatingNodeId
+      optional string invalidParameter
+
+# Details for issues about documents in Quirks Mode
+# or Limited Quirks Mode that affects page layouting.
+  type QuirksModeIssueDetails extends object
+    properties
+      # If false, it means the document's mode is "quirks"
+      # instead of "limited-quirks".
+      boolean isLimitedQuirksMode
+      DOM.BackendNodeId documentNodeId
+      string url
+      Page.FrameId frameId
+      Network.LoaderId loaderId
+
+  deprecated type NavigatorUserAgentIssueDetails extends object
+    properties
+      string url
+      optional SourceCodeLocation location
+
+  type SharedDictionaryIssueDetails extends object
+    properties
+      SharedDictionaryError sharedDictionaryError
+      AffectedRequest request
+
+  type SRIMessageSignatureIssueDetails extends object
+    properties
+      SRIMessageSignatureError error
+      string signatureBase
+      array of string integrityAssertions
+      AffectedRequest request
+
+  type UnencodedDigestIssueDetails extends object
+    properties
+      UnencodedDigestError error
+      AffectedRequest request
+
+  type ConnectionAllowlistIssueDetails extends object
+    properties
+      ConnectionAllowlistError error
+      AffectedRequest request
+
+  type GenericIssueErrorType extends string
+    enum
+      FormLabelForNameError
+      FormDuplicateIdForInputError
+      FormInputWithNoLabelError
+      FormAutocompleteAttributeEmptyError
+      FormEmptyIdAndNameAttributesForInputError
+      FormAriaLabelledByToNonExistingIdError
+      FormInputAssignedAutocompleteValueToIdOrNameAttributeError
+      FormLabelHasNeitherForNorNestedInputError
+      FormLabelForMatchesNonExistingIdError
+      FormInputHasWrongButWellIntendedAutocompleteValueError
+      ResponseWasBlockedByORB
+      NavigationEntryMarkedSkippable
+      AutofillAndManualTextPolicyControlledFeaturesInfo
+      AutofillPolicyControlledFeatureInfo
+      ManualTextPolicyControlledFeatureInfo
+      FormModelContextParameterMissingTitleAndDescription
+
+  # Depending on the concrete errorType, different properties are set.
+  type GenericIssueDetails extends object
+    properties
+      # Issues with the same errorType are aggregated in the frontend.
+      GenericIssueErrorType errorType
+      optional Page.FrameId frameId
+      optional DOM.BackendNodeId violatingNodeId
+      optional string violatingNodeAttribute
+      optional AffectedRequest request
+
+  # This issue tracks information needed to print a deprecation message.
+  # https://source.chromium.org/chromium/chromium/src/+/main:third_party/blink/renderer/core/frame/third_party/blink/renderer/core/frame/deprecation/README.md
+  type DeprecationIssueDetails extends object
+    properties
+      optional AffectedFrame affectedFrame
+      SourceCodeLocation sourceCodeLocation
+      # One of the deprecation names from third_party/blink/renderer/core/frame/deprecation/deprecation.json5
+      string type
+
+  # This issue warns about sites in the redirect chain of a finished navigation
+  # that may be flagged as trackers and have their state cleared if they don't
+  # receive a user interaction. Note that in this context 'site' means eTLD+1.
+  # For example, if the URL `https://example.test:80/bounce` was in the
+  # redirect chain, the site reported would be `example.test`.
+  type BounceTrackingIssueDetails extends object
+    properties
+      array of string trackingSites
+
+  # This issue warns about third-party sites that are accessing cookies on the
+  # current page, and have been permitted due to having a global metadata grant.
+  # Note that in this context 'site' means eTLD+1. For example, if the URL
+  # `https://example.test:80/web_page` was accessing cookies, the site reported
+  # would be `example.test`.
+  type CookieDeprecationMetadataIssueDetails extends object
+    properties
+      array of string allowedSites
+      number optOutPercentage
+      boolean isOptOutTopLevel
+      CookieOperation operation
+
+  type ClientHintIssueReason extends string
+    enum
+      # Items in the accept-ch meta tag allow list must be valid origins.
+      # No special values (e.g. self, none, and *) are permitted.
+      MetaTagAllowListInvalidOrigin
+      # Only accept-ch meta tags in the original HTML sent from the server
+      # are respected. Any injected via javascript (or other means) are ignored.
+      MetaTagModifiedHTML
+
+  type FederatedAuthRequestIssueDetails extends object
+    properties
+      FederatedAuthRequestIssueReason federatedAuthRequestIssueReason
+
+  # Represents the failure reason when a federated authentication reason fails.
+  # Should be updated alongside RequestIdTokenStatus in
+  # third_party/blink/public/mojom/devtools/inspector_issue.mojom to include
+  # all cases except for success.
+  type FederatedAuthRequestIssueReason extends string
+    enum
+      ShouldEmbargo
+      TooManyRequests
+      WellKnownHttpNotFound
+      WellKnownNoResponse
+      WellKnownInvalidResponse
+      WellKnownListEmpty
+      WellKnownInvalidContentType
+      ConfigNotInWellKnown
+      WellKnownTooBig
+      ConfigHttpNotFound
+      ConfigNoResponse
+      ConfigInvalidResponse
+      ConfigInvalidContentType
+      IdpNotPotentiallyTrustworthy
+      DisabledInSettings
+      DisabledInFlags
+      ErrorFetchingSignin
+      InvalidSigninResponse
+      AccountsHttpNotFound
+      AccountsNoResponse
+      AccountsInvalidResponse
+      AccountsListEmpty
+      AccountsInvalidContentType
+      IdTokenHttpNotFound
+      IdTokenNoResponse
+      IdTokenInvalidResponse
+      IdTokenIdpErrorResponse
+      IdTokenCrossSiteIdpErrorResponse
+      IdTokenInvalidRequest
+      IdTokenInvalidContentType
+      ErrorIdToken
+      Canceled
+      RpPageNotVisible
+      SilentMediationFailure
+      NotSignedInWithIdp
+      MissingTransientUserActivation
+      ReplacedByActiveMode
+      RelyingPartyOriginIsOpaque
+      TypeNotMatching
+      UiDismissedNoEmbargo
+      CorsError
+      SuppressedBySegmentationPlatform
+
+  type FederatedAuthUserInfoRequestIssueDetails extends object
+    properties
+      FederatedAuthUserInfoRequestIssueReason federatedAuthUserInfoRequestIssueReason
+
+  # Represents the failure reason when a getUserInfo() call fails.
+  # Should be updated alongside FederatedAuthUserInfoRequestResult in
+  # third_party/blink/public/mojom/devtools/inspector_issue.mojom.
+  type FederatedAuthUserInfoRequestIssueReason extends string
+    enum
+      NotSameOrigin
+      NotIframe
+      NotPotentiallyTrustworthy
+      NoApiPermission
+      NotSignedInWithIdp
+      NoAccountSharingPermission
+      InvalidConfigOrWellKnown
+      InvalidAccountsResponse
+      NoReturningUserFromFetchedAccounts
+
+  # This issue tracks client hints related issues. It's used to deprecate old
+  # features, encourage the use of new ones, and provide general guidance.
+  type ClientHintIssueDetails extends object
+    properties
+      SourceCodeLocation sourceCodeLocation
+      ClientHintIssueReason clientHintIssueReason
+
+  type FailedRequestInfo extends object
+    properties
+      # The URL that failed to load.
+      string url
+      # The failure message for the failed request.
+      string failureMessage
+      optional Network.RequestId requestId
+
+  type PartitioningBlobURLInfo extends string
+    enum
+      BlockedCrossPartitionFetching
+      EnforceNoopenerForNavigation
+
+  type PartitioningBlobURLIssueDetails extends object
+    properties
+      # The BlobURL that failed to load.
+      string url
+      # Additional information about the Partitioning Blob URL issue.
+      PartitioningBlobURLInfo partitioningBlobURLInfo
+
+  type ElementAccessibilityIssueReason extends string
+    enum
+      DisallowedSelectChild
+      DisallowedOptGroupChild
+      NonPhrasingContentOptionChild
+      InteractiveContentOptionChild
+      InteractiveContentLegendChild
+      InteractiveContentSummaryDescendant
+
+  # This issue warns about errors in the select or summary element content model.
+  type ElementAccessibilityIssueDetails extends object
+    properties
+      DOM.BackendNodeId nodeId
+      ElementAccessibilityIssueReason elementAccessibilityIssueReason
+      boolean hasDisallowedAttributes
+
+  type StyleSheetLoadingIssueReason extends string
+    enum
+      LateImportRule
+      RequestFailed
+
+  # This issue warns when a referenced stylesheet couldn't be loaded.
+  type StylesheetLoadingIssueDetails extends object
+    properties
+      # Source code position that referenced the failing stylesheet.
+      SourceCodeLocation sourceCodeLocation
+      # Reason why the stylesheet couldn't be loaded.
+      StyleSheetLoadingIssueReason styleSheetLoadingIssueReason
+      # Contains additional info when the failure was due to a request.
+      optional FailedRequestInfo failedRequestInfo
+
+  type PropertyRuleIssueReason extends string
+    enum
+      InvalidSyntax
+      InvalidInitialValue
+      InvalidInherits
+      InvalidName
+
+  # This issue warns about errors in property rules that lead to property
+  # registrations being ignored.
+  type PropertyRuleIssueDetails extends object
+    properties
+      # Source code position of the property rule.
+      SourceCodeLocation sourceCodeLocation
+      # Reason why the property rule was discarded.
+      PropertyRuleIssueReason propertyRuleIssueReason
+      # The value of the property rule property that failed to parse
+      optional string propertyValue
+
+  type UserReidentificationIssueType extends string
+    enum
+      BlockedFrameNavigation
+      BlockedSubresource
+      NoisedCanvasReadback
+
+  # This issue warns about uses of APIs that may be considered misuse to
+  # re-identify users.
+  type UserReidentificationIssueDetails extends object
+    properties
+      UserReidentificationIssueType type
+      # Applies to BlockedFrameNavigation and BlockedSubresource issue types.
+      optional AffectedRequest request
+      # Applies to NoisedCanvasReadback issue type.
+      optional SourceCodeLocation sourceCodeLocation
+
+  type PermissionElementIssueType extends string
+    enum
+      InvalidType
+      FencedFrameDisallowed
+      CspFrameAncestorsMissing
+      PermissionsPolicyBlocked
+      PaddingRightUnsupported
+      PaddingBottomUnsupported
+      InsetBoxShadowUnsupported
+      RequestInProgress
+      UntrustedEvent
+      RegistrationFailed
+      TypeNotSupported
+      InvalidTypeActivation
+      SecurityChecksFailed
+      ActivationDisabled
+      GeolocationDeprecated
+      InvalidDisplayStyle
+      NonOpaqueColor
+      LowContrast
+      FontSizeTooSmall
+      FontSizeTooLarge
+      InvalidSizeValue
+
+  # This issue warns about improper usage of the <permission> element.
+  type PermissionElementIssueDetails extends object
+    properties
+      PermissionElementIssueType issueType
+      # The value of the type attribute.
+      optional string type
+      # The node ID of the <permission> element.
+      optional DOM.BackendNodeId nodeId
+      # True if the issue is a warning, false if it is an error.
+      optional boolean isWarning
+
+      # Fields for message construction:
+      # Used for messages that reference a specific permission name
+      optional string permissionName
+      # Used for messages about occlusion
+      optional string occluderNodeInfo
+      # Used for messages about occluder's parent
+      optional string occluderParentNodeInfo
+      # Used for messages about activation disabled reason
+      optional string disableReason
+
+  # The issue warns about blocked calls to privacy sensitive APIs via the
+  # Selective Permissions Intervention.
+  type SelectivePermissionsInterventionIssueDetails extends object
+    properties
+      # Which API was intervened on.
+      string apiName
+      # Why the ad script using the API is considered an ad.
+      Network.AdAncestry adAncestry
+      # The stack trace at the time of the intervention.
+      optional Runtime.StackTrace stackTrace
+
+  # A unique identifier for the type of issue. Each type may use one of the
+  # optional fields in InspectorIssueDetails to convey more specific
+  # information about the kind of issue.
+  type InspectorIssueCode extends string
+    enum
+      CookieIssue
+      MixedContentIssue
+      BlockedByResponseIssue
+      HeavyAdIssue
+      ContentSecurityPolicyIssue
+      SharedArrayBufferIssue
+      CorsIssue
+      AttributionReportingIssue
+      QuirksModeIssue
+      PartitioningBlobURLIssue
+      # Deprecated
+      NavigatorUserAgentIssue
+      GenericIssue
+      DeprecationIssue
+      ClientHintIssue
+      FederatedAuthRequestIssue
+      BounceTrackingIssue
+      CookieDeprecationMetadataIssue
+      StylesheetLoadingIssue
+      FederatedAuthUserInfoRequestIssue
+      PropertyRuleIssue
+      SharedDictionaryIssue
+      ElementAccessibilityIssue
+      SRIMessageSignatureIssue
+      UnencodedDigestIssue
+      ConnectionAllowlistIssue
+      UserReidentificationIssue
+      PermissionElementIssue
+      PerformanceIssue
+      SelectivePermissionsInterventionIssue
+
+  # This struct holds a list of optional fields with additional information
+  # specific to the kind of issue. When adding a new issue code, please also
+  # add a new optional field to this type.
+  type InspectorIssueDetails extends object
+    properties
+      optional CookieIssueDetails cookieIssueDetails
+      optional MixedContentIssueDetails mixedContentIssueDetails
+      optional BlockedByResponseIssueDetails blockedByResponseIssueDetails
+      optional HeavyAdIssueDetails heavyAdIssueDetails
+      optional ContentSecurityPolicyIssueDetails contentSecurityPolicyIssueDetails
+      optional SharedArrayBufferIssueDetails sharedArrayBufferIssueDetails
+      optional CorsIssueDetails corsIssueDetails
+      optional AttributionReportingIssueDetails attributionReportingIssueDetails
+      optional QuirksModeIssueDetails quirksModeIssueDetails
+      optional PartitioningBlobURLIssueDetails partitioningBlobURLIssueDetails
+      deprecated optional NavigatorUserAgentIssueDetails navigatorUserAgentIssueDetails
+      optional GenericIssueDetails genericIssueDetails
+      optional DeprecationIssueDetails deprecationIssueDetails
+      optional ClientHintIssueDetails clientHintIssueDetails
+      optional FederatedAuthRequestIssueDetails federatedAuthRequestIssueDetails
+      optional BounceTrackingIssueDetails bounceTrackingIssueDetails
+      optional CookieDeprecationMetadataIssueDetails cookieDeprecationMetadataIssueDetails
+      optional StylesheetLoadingIssueDetails stylesheetLoadingIssueDetails
+      optional PropertyRuleIssueDetails propertyRuleIssueDetails
+      optional FederatedAuthUserInfoRequestIssueDetails federatedAuthUserInfoRequestIssueDetails
+      optional SharedDictionaryIssueDetails sharedDictionaryIssueDetails
+      optional ElementAccessibilityIssueDetails elementAccessibilityIssueDetails
+      optional SRIMessageSignatureIssueDetails sriMessageSignatureIssueDetails
+      optional UnencodedDigestIssueDetails unencodedDigestIssueDetails
+      optional ConnectionAllowlistIssueDetails connectionAllowlistIssueDetails
+      optional UserReidentificationIssueDetails userReidentificationIssueDetails
+      optional PermissionElementIssueDetails permissionElementIssueDetails
+      optional PerformanceIssueDetails performanceIssueDetails
+      optional SelectivePermissionsInterventionIssueDetails selectivePermissionsInterventionIssueDetails
+
+  # A unique id for a DevTools inspector issue. Allows other entities (e.g.
+  # exceptions, CDP message, console messages, etc.) to reference an issue.
+  type IssueId extends string
+
+  # An inspector issue reported from the back-end.
+  type InspectorIssue extends object
+    properties
+      InspectorIssueCode code
+      InspectorIssueDetails details
+      # A unique id for this issue. May be omitted if no other entity (e.g.
+      # exception, CDP message, etc.) is referencing this issue.
+      optional IssueId issueId
+
+  # Returns the response body and size if it were re-encoded with the specified settings. Only
+  # applies to images.
+  command getEncodedResponse
+    parameters
+      # Identifier of the network request to get content for.
+      Network.RequestId requestId
+      # The encoding to use.
+      enum encoding
+        webp
+        jpeg
+        png
+      # The quality of the encoding (0-1). (defaults to 1)
+      optional number quality
+      # Whether to only return the size information (defaults to false).
+      optional boolean sizeOnly
+    returns
+      # The encoded body as a base64 string. Omitted if sizeOnly is true.
+      optional binary body
+      # Size before re-encoding.
+      integer originalSize
+      # Size after re-encoding.
+      integer encodedSize
+
+  # Disables issues domain, prevents further issues from being reported to the client.
+  command disable
+
+  # Enables issues domain, sends the issues collected so far to the client by means of the
+  # `issueAdded` event.
+  command enable
+
+  # Runs the form issues check for the target page. Found issues are reported
+  # using Audits.issueAdded event.
+  command checkFormsIssues
+    returns
+      array of GenericIssueDetails formIssues
+
+  event issueAdded
+    parameters
+      InspectorIssue issue

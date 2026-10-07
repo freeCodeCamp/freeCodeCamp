@@ -1,0 +1,46 @@
+{
+  "name": "engine.io-parser",
+  "description": "Parser for the client for the realtime Engine",
+  "license": "MIT",
+  "version": "5.2.3",
+  "main": "./build/cjs/index.js",
+  "module": "./build/esm/index.js",
+  "exports": {
+    "import": "./build/esm/index.js",
+    "require": "./build/cjs/index.js"
+  },
+  "types": "build/esm/index.d.ts",
+  "devDependencies": {
+    "prettier": "^3.3.2"
+  },
+  "scripts": {
+    "compile": "rimraf ./build && tsc && tsc -p tsconfig.esm.json && ./postcompile.sh",
+    "test": "npm run format:check && npm run compile && if test \"$BROWSERS\" = \"1\" ; then npm run test:browser; else npm run test:node; fi",
+    "test:node": "nyc mocha -r ts-node/register test/index.ts",
+    "test:browser": "zuul test/index.ts --no-coverage",
+    "format:check": "prettier --check 'lib/**/*.ts' 'test/**/*.ts'",
+    "format:fix": "prettier --write 'lib/**/*.ts' 'test/**/*.ts'",
+    "prepack": "npm run compile"
+  },
+  "homepage": "https://github.com/socketio/socket.io/tree/main/packages/engine.io-parser#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/socketio/socket.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/socketio/socket.io/issues"
+  },
+  "files": [
+    "build/"
+  ],
+  "browser": {
+    "./test/node": "./test/browser",
+    "./build/esm/encodePacket.js": "./build/esm/encodePacket.browser.js",
+    "./build/esm/decodePacket.js": "./build/esm/decodePacket.browser.js",
+    "./build/cjs/encodePacket.js": "./build/cjs/encodePacket.browser.js",
+    "./build/cjs/decodePacket.js": "./build/cjs/decodePacket.browser.js"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

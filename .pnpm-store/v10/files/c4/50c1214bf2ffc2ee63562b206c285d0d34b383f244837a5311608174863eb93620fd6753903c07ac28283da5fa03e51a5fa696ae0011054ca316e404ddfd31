@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/UpstreamPullRequest.js",
+  "module": "../dist/esm/UpstreamPullRequest.js",
+  "types": "../dist/dts/UpstreamPullRequest.d.ts"
+}

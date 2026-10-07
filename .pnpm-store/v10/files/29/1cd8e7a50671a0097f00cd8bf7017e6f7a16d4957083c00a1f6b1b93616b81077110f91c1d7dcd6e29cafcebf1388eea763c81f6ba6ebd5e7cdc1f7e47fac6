@@ -1,0 +1,98 @@
+import { TypeStorage } from './TypeStorage';
+import { TypeMapper } from './TypeMapper';
+import { ObjectTypeComposer, ObjectTypeComposerDefinition } from './ObjectTypeComposer';
+import { InputTypeComposer, InputTypeComposerDefinition } from './InputTypeComposer';
+import { ScalarTypeComposer, ScalarTypeComposerDefinition } from './ScalarTypeComposer';
+import { EnumTypeComposer, EnumTypeComposerDefinition } from './EnumTypeComposer';
+import { InterfaceTypeComposer, InterfaceTypeComposerDefinition } from './InterfaceTypeComposer';
+import { UnionTypeComposer, UnionTypeComposerDefinition } from './UnionTypeComposer';
+import { Resolver, ResolverDefinition } from './Resolver';
+import { AnyType, NamedTypeComposer, ComposeInputTypeDefinition, ComposeOutputTypeDefinition } from './utils/typeHelpers';
+import { GraphQLSchema, GraphQLDirective, GraphQLType, GraphQLNamedType, SchemaDefinitionNode, GraphQLResolveInfo, SchemaExtensionNode, GraphQLScalarTypeConfig } from './graphql';
+import { SchemaPrinterOptions, SchemaComposerPrinterOptions } from './utils/schemaPrinter';
+declare type ExtraSchemaConfig = {
+    description?: string | null;
+    types?: GraphQLNamedType[] | null;
+    directives?: GraphQLDirective[] | null;
+    extensions?: any | null;
+    astNode?: SchemaDefinitionNode | null;
+    extensionASTNodes?: ReadonlyArray<SchemaExtensionNode> | null;
+    keepUnusedTypes?: boolean | null;
+};
+export declare type GraphQLToolsResolveMethods<TContext> = {
+    [typeName: string]: {
+        [fieldName: string]: ((source: any, args: Record<string, any>, context: TContext, info: GraphQLResolveInfo) => any) | string | number | Record<string, any>;
+    } | GraphQLNamedType | GraphQLScalarTypeConfig<any, any>;
+};
+export declare const BUILT_IN_DIRECTIVES: GraphQLDirective[];
+export declare class SchemaComposer<TContext = any> extends TypeStorage<any, NamedTypeComposer<TContext>> {
+    typeMapper: TypeMapper<TContext>;
+    _schemaMustHaveTypes: Array<AnyType<TContext>>;
+    _directives: Array<GraphQLDirective>;
+    _description: string | undefined;
+    constructor(schemaOrSDL?: GraphQLSchema | string);
+    get Query(): ObjectTypeComposer<any, TContext>;
+    get Mutation(): ObjectTypeComposer<any, TContext>;
+    get Subscription(): ObjectTypeComposer<any, TContext>;
+    buildSchema(extraConfig?: ExtraSchemaConfig): GraphQLSchema;
+    addSchemaMustHaveType(type: AnyType<TContext>): this;
+    removeEmptyTypes(tc: ObjectTypeComposer<any, TContext>, passedTypes?: Set<string>): void;
+    clone(): SchemaComposer<any>;
+    merge(schema: GraphQLSchema | SchemaComposer<any>): this;
+    getDescription(): string | undefined;
+    setDescription(description: string | undefined): this;
+    addTypeDefs(typeDefs: string): TypeStorage<string, NamedTypeComposer<any>>;
+    addResolveMethods(typesFieldsResolve: GraphQLToolsResolveMethods<TContext>): void;
+    createObjectTC<TSource = any>(typeDef: ObjectTypeComposerDefinition<TSource, TContext>): ObjectTypeComposer<TSource, TContext>;
+    createInputTC(typeDef: InputTypeComposerDefinition): InputTypeComposer<TContext>;
+    createEnumTC(typeDef: EnumTypeComposerDefinition): EnumTypeComposer<TContext>;
+    createInterfaceTC<TSource = any>(typeDef: InterfaceTypeComposerDefinition<TSource, TContext>): InterfaceTypeComposer<TSource, TContext>;
+    createUnionTC<TSource = any>(typeDef: UnionTypeComposerDefinition<TSource, TContext>): UnionTypeComposer<TSource, TContext>;
+    createScalarTC<TInternal = any, TExternal = any>(typeDef: ScalarTypeComposerDefinition<TInternal, TExternal>): ScalarTypeComposer<TContext>;
+    createResolver<TSource = any, TArgs = any>(opts: ResolverDefinition<TSource, TContext, TArgs>): Resolver<any, TContext>;
+    createTC(typeOrSDL: ComposeOutputTypeDefinition<any> | ComposeInputTypeDefinition): NamedTypeComposer<TContext>;
+    createTempTC(typeOrSDL: ComposeOutputTypeDefinition<any> | ComposeInputTypeDefinition): NamedTypeComposer<TContext>;
+    getOrCreateTC(typeName: string, onCreate?: (tc: ObjectTypeComposer<any, TContext>) => any): ObjectTypeComposer<any, TContext>;
+    getOrCreateOTC(typeName: string, onCreate?: (tc: ObjectTypeComposer<any, TContext>) => any): ObjectTypeComposer<any, TContext>;
+    getOrCreateITC(typeName: string, onCreate?: (tc: InputTypeComposer<TContext>) => any): InputTypeComposer<TContext>;
+    getOrCreateETC(typeName: string, onCreate?: (tc: EnumTypeComposer<TContext>) => any): EnumTypeComposer<TContext>;
+    getOrCreateIFTC(typeName: string, onCreate?: (tc: InterfaceTypeComposer<any, TContext>) => any): InterfaceTypeComposer<any, TContext>;
+    getOrCreateUTC(typeName: string, onCreate?: (tc: UnionTypeComposer<any, TContext>) => any): UnionTypeComposer<any, TContext>;
+    getOrCreateSTC(typeName: string, onCreate?: (tc: ScalarTypeComposer<TContext>) => any): ScalarTypeComposer<TContext>;
+    getOTC(typeName: unknown): ObjectTypeComposer<any, TContext>;
+    getITC(typeName: unknown): InputTypeComposer<TContext>;
+    getETC(typeName: unknown): EnumTypeComposer<TContext>;
+    getIFTC(typeName: unknown): InterfaceTypeComposer<any, TContext>;
+    getUTC(typeName: unknown): UnionTypeComposer<any, TContext>;
+    getSTC(typeName: unknown): ScalarTypeComposer<TContext>;
+    getAnyTC(typeOrName: string | AnyType<any> | GraphQLType): NamedTypeComposer<TContext>;
+    addAsComposer(typeOrSDL: ComposeOutputTypeDefinition<any> | ComposeInputTypeDefinition): string;
+    isObjectType(type: string | AnyType<any> | GraphQLType): boolean;
+    isInputObjectType(type: string | AnyType<any> | GraphQLType): boolean;
+    isScalarType(type: string | AnyType<any> | GraphQLType): boolean;
+    isEnumType(type: string | AnyType<any> | GraphQLType): boolean;
+    isInterfaceType(type: string | AnyType<any> | GraphQLType): boolean;
+    isUnionType(type: string | AnyType<any> | GraphQLType): boolean;
+    clear(): void;
+    add(typeOrSDL: ComposeOutputTypeDefinition<any> | ComposeInputTypeDefinition): string;
+    set(key: unknown, value: NamedTypeComposer<TContext>): this;
+    addDirective(directive: GraphQLDirective): this;
+    removeDirective(directive: GraphQLDirective): this;
+    getDirectives(): Array<GraphQLDirective>;
+    _getDirective(name: string): GraphQLDirective | undefined;
+    getDirective(name: string): GraphQLDirective;
+    hasDirective(directive: string | GraphQLDirective): boolean;
+    toString(): string;
+    toJSON(): string;
+    inspect(): string;
+    getTypeSDL(typeName: string, opts?: SchemaPrinterOptions & {
+        deep?: boolean;
+        exclude?: string[];
+    }): string;
+    toSDL(options?: SchemaComposerPrinterOptions): string;
+    getResolveMethods(opts?: {
+        exclude?: string[] | null;
+    }): GraphQLToolsResolveMethods<TContext>;
+}
+export {};
+//# sourceMappingURL=SchemaComposer.d.ts.map

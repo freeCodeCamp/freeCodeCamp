@@ -1,0 +1,34 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    commit-message:
+      # Prefix all commit messages with "chore: "
+      prefix: "chore"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    commit-message:
+      # Prefix all commit messages with "chore: "
+      prefix: "chore"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 10
+    groups:
+      # Production dependencies without breaking changes
+      dependencies:
+        dependency-type: "production"
+        update-types:
+        - "minor"
+        - "patch"
+      # Production dependencies with breaking changes
+      dependencies-major:
+        dependency-type: "production"
+        update-types:
+        - "major"
+      # Development dependencies
+      dev-dependencies:
+        dependency-type: "development"

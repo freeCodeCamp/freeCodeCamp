@@ -1,0 +1,8 @@
+{
+  "name": "package-alias",
+  "main": "main.js",
+  "alias": {
+    "./main.js": "./browser.js",
+    "./foo": "./bar"
+  }
+}

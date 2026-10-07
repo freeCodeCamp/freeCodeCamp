@@ -1,0 +1,310 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+experimental domain Accessibility
+  depends on DOM
+
+  # Unique accessibility node identifier.
+  type AXNodeId extends string
+
+  # Enum of possible property types.
+  type AXValueType extends string
+    enum
+      boolean
+      tristate
+      booleanOrUndefined
+      idref
+      idrefList
+      integer
+      node
+      nodeList
+      number
+      string
+      computedString
+      token
+      tokenList
+      domRelation
+      role
+      internalRole
+      valueUndefined
+
+  # Enum of possible property sources.
+  type AXValueSourceType extends string
+    enum
+      attribute
+      implicit
+      style
+      contents
+      placeholder
+      relatedElement
+
+  # Enum of possible native property sources (as a subtype of a particular AXValueSourceType).
+  type AXValueNativeSourceType extends string
+    enum
+      description
+      figcaption
+      label
+      labelfor
+      labelwrapped
+      legend
+      rubyannotation
+      tablecaption
+      title
+      other
+
+  # A single source for a computed AX property.
+  type AXValueSource extends object
+    properties
+      # What type of source this is.
+      AXValueSourceType type
+      # The value of this property source.
+      optional AXValue value
+      # The name of the relevant attribute, if any.
+      optional string attribute
+      # The value of the relevant attribute, if any.
+      optional AXValue attributeValue
+      # Whether this source is superseded by a higher priority source.
+      optional boolean superseded
+      # The native markup source for this value, e.g. a `<label>` element.
+      optional AXValueNativeSourceType nativeSource
+      # The value, such as a node or node list, of the native source.
+      optional AXValue nativeSourceValue
+      # Whether the value for this property is invalid.
+      optional boolean invalid
+      # Reason for the value being invalid, if it is.
+      optional string invalidReason
+
+  type AXRelatedNode extends object
+    properties
+      # The BackendNodeId of the related DOM node.
+      DOM.BackendNodeId backendDOMNodeId
+      # The IDRef value provided, if any.
+      optional string idref
+      # The text alternative of this node in the current context.
+      optional string text
+
+  type AXProperty extends object
+    properties
+      # The name of this property.
+      AXPropertyName name
+      # The value of this property.
+      AXValue value
+
+  # A single computed AX property.
+  type AXValue extends object
+    properties
+      # The type of this value.
+      AXValueType type
+      # The computed value of this property.
+      optional any value
+      # One or more related nodes, if applicable.
+      optional array of AXRelatedNode relatedNodes
+      # The sources which contributed to the computation of this property.
+      optional array of AXValueSource sources
+
+  # Values of AXProperty name:
+  # - from 'busy' to 'roledescription': states which apply to every AX node
+  # - from 'live' to 'root': attributes which apply to nodes in live regions
+  # - from 'autocomplete' to 'valuetext': attributes which apply to widgets
+  # - from 'checked' to 'selected': states which apply to widgets
+  # - from 'activedescendant' to 'owns': relationships between elements other than parent/child/sibling
+  # - from 'activeFullscreenElement' to 'uninteresting': reasons why this noode is hidden
+  type AXPropertyName extends string
+    enum
+      actions
+      busy
+      disabled
+      editable
+      focusable
+      focused
+      hidden
+      hiddenRoot
+      invalid
+      keyshortcuts
+      settable
+      roledescription
+      live
+      atomic
+      relevant
+      root
+      autocomplete
+      hasPopup
+      level
+      multiselectable
+      orientation
+      multiline
+      readonly
+      required
+      valuemin
+      valuemax
+      valuetext
+      checked
+      expanded
+      modal
+      pressed
+      selected
+      activedescendant
+      controls
+      describedby
+      details
+      errormessage
+      flowto
+      labelledby
+      owns
+      url
+      # LINT.IfChange(AXIgnoredReason)
+      activeFullscreenElement
+      activeModalDialog
+      activeAriaModalDialog
+      ariaHiddenElement
+      ariaHiddenSubtree
+      emptyAlt
+      emptyText
+      inertElement
+      inertSubtree
+      labelContainer
+      labelFor
+      notRendered
+      notVisible
+      presentationalRole
+      probablyPresentational
+      inactiveCarouselTabContent
+      uninteresting
+      # LINT.ThenChange(//third_party/blink/renderer/modules/accessibility/ax_enums.cc:AXIgnoredReason)
+
+  # A node in the accessibility tree.
+  type AXNode extends object
+    properties
+      # Unique identifier for this node.
+      AXNodeId nodeId
+      # Whether this node is ignored for accessibility
+      boolean ignored
+      # Collection of reasons why this node is hidden.
+      optional array of AXProperty ignoredReasons
+      # This `Node`'s role, whether explicit or implicit.
+      optional AXValue role
+      # This `Node`'s Chrome raw role.
+      optional AXValue chromeRole
+      # The accessible name for this `Node`.
+      optional AXValue name
+      # The accessible description for this `Node`.
+      optional AXValue description
+      # The value for this `Node`.
+      optional AXValue value
+      # All other properties
+      optional array of AXProperty properties
+      # ID for this node's parent.
+      optional AXNodeId parentId
+      # IDs for each of this node's child nodes.
+      optional array of AXNodeId childIds
+      # The backend ID for the associated DOM node, if any.
+      optional DOM.BackendNodeId backendDOMNodeId
+      # The frame ID for the frame associated with this nodes document.
+      optional Page.FrameId frameId
+
+  # Disables the accessibility domain.
+  command disable
+
+  # Enables the accessibility domain which causes `AXNodeId`s to remain consistent between method calls.
+  # This turns on accessibility for the page, which can impact performance until accessibility is disabled.
+  command enable
+
+  # Fetches the accessibility node and partial accessibility tree for this DOM node, if it exists.
+  experimental command getPartialAXTree
+    parameters
+      # Identifier of the node to get the partial accessibility tree for.
+      optional DOM.NodeId nodeId
+      # Identifier of the backend node to get the partial accessibility tree for.
+      optional DOM.BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper to get the partial accessibility tree for.
+      optional Runtime.RemoteObjectId objectId
+      # Whether to fetch this node's ancestors, siblings and children. Defaults to true.
+      optional boolean fetchRelatives
+    returns
+      # The `Accessibility.AXNode` for this DOM node, if it exists, plus its ancestors, siblings and
+      # children, if requested.
+      array of AXNode nodes
+
+  # Fetches the entire accessibility tree for the root Document
+  experimental command getFullAXTree
+    parameters
+      # The maximum depth at which descendants of the root node should be retrieved.
+      # If omitted, the full tree is returned.
+      optional integer depth
+      # The frame for whose document the AX tree should be retrieved.
+      # If omitted, the root frame is used.
+      optional Page.FrameId frameId
+    returns
+      array of AXNode nodes
+
+  # Fetches the root node.
+  # Requires `enable()` to have been called previously.
+  experimental command getRootAXNode
+    parameters
+      # The frame in whose document the node resides.
+      # If omitted, the root frame is used.
+      optional Page.FrameId frameId
+    returns
+      AXNode node
+
+  # Fetches a node and all ancestors up to and including the root.
+  # Requires `enable()` to have been called previously.
+  experimental command getAXNodeAndAncestors
+    parameters
+      # Identifier of the node to get.
+      optional DOM.NodeId nodeId
+      # Identifier of the backend node to get.
+      optional DOM.BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper to get.
+      optional Runtime.RemoteObjectId objectId
+    returns
+      array of AXNode nodes
+
+  # Fetches a particular accessibility node by AXNodeId.
+  # Requires `enable()` to have been called previously.
+  experimental command getChildAXNodes
+    parameters
+      AXNodeId id
+      # The frame in whose document the node resides.
+      # If omitted, the root frame is used.
+      optional Page.FrameId frameId
+    returns
+      array of AXNode nodes
+
+  # Query a DOM node's accessibility subtree for accessible name and role.
+  # This command computes the name and role for all nodes in the subtree, including those that are
+  # ignored for accessibility, and returns those that match the specified name and role. If no DOM
+  # node is specified, or the DOM node does not exist, the command returns an error. If neither
+  # `accessibleName` or `role` is specified, it returns all the accessibility nodes in the subtree.
+  experimental command queryAXTree
+    parameters
+      # Identifier of the node for the root to query.
+      optional DOM.NodeId nodeId
+      # Identifier of the backend node for the root to query.
+      optional DOM.BackendNodeId backendNodeId
+      # JavaScript object id of the node wrapper for the root to query.
+      optional Runtime.RemoteObjectId objectId
+      # Find nodes with this computed name.
+      optional string accessibleName
+      # Find nodes with this computed role.
+      optional string role
+    returns
+      # A list of `Accessibility.AXNode` matching the specified attributes,
+      # including nodes that are ignored for accessibility.
+      array of AXNode nodes
+
+  # The loadComplete event mirrors the load complete event sent by the browser to assistive
+  # technology when the web page has finished loading.
+  experimental event loadComplete
+    parameters
+      # New document root node.
+      AXNode root
+
+  # The nodesUpdated event is sent every time a previously requested node has changed the in tree.
+  experimental event nodesUpdated
+    parameters
+      # Updated node data.
+      array of AXNode nodes

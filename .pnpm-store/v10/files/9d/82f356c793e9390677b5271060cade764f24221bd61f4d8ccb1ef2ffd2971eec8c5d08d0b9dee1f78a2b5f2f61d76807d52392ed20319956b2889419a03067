@@ -1,0 +1,30 @@
+{
+  "name": "@babel/highlight",
+  "version": "7.24.7",
+  "description": "Syntax highlight JavaScript strings for output in terminals.",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-highlight",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-highlight"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/helper-validator-identifier": "^7.24.7",
+    "chalk": "^2.4.2",
+    "js-tokens": "^4.0.0",
+    "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "strip-ansi": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

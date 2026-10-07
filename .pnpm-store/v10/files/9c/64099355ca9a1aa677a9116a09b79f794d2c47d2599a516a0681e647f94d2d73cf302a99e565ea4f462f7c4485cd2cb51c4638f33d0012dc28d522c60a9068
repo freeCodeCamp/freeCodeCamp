@@ -1,0 +1,1 @@
+{"version":3,"file":"getPropertyByPath.d.ts","sourceRoot":"","sources":["../src/getPropertyByPath.ts"],"names":[],"mappings":"AAKA,iBAAS,iBAAiB,CACxB,MAAM,EAAE;IAAE,CAAC,GAAG,EAAE,MAAM,GAAG,OAAO,CAAA;CAAE,EAClC,IAAI,EAAE,MAAM,GAAG,KAAK,CAAC,MAAM,CAAC,GAC3B,OAAO,CAgBT;AAED,OAAO,EAAE,iBAAiB,EAAE,CAAC"}

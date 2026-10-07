@@ -1,0 +1,48 @@
+{
+    "name": "lilconfig",
+    "version": "2.1.0",
+    "description": "A zero-dependency alternative to cosmiconfig",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "prebuild": "npm run clean",
+        "build": "tsc --declaration",
+        "postbuild": "du -h ./dist/*",
+        "clean": "rm -rf ./dist",
+        "test": "jest --coverage",
+        "lint": "eslint ./src/*.ts"
+    },
+    "keywords": [
+        "cosmiconfig",
+        "config",
+        "configuration",
+        "search"
+    ],
+    "files": [
+        "dist/*"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/antonk52/lilconfig"
+    },
+    "bugs": "https://github.com/antonk52/lilconfig/issues",
+    "author": "antonk52",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^27.0.2",
+        "@types/node": "^14.18.36",
+        "@typescript-eslint/eslint-plugin": "^5.54.0",
+        "@typescript-eslint/parser": "^5.54.0",
+        "cosmiconfig": "^7.1.0",
+        "eslint": "^8.35.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "jest": "^27.3.1",
+        "prettier": "^2.8.4",
+        "ts-jest": "27.0.7",
+        "typescript": "4.4.4"
+    },
+    "engines": {
+        "node": ">=10"
+    }
+}

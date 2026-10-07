@@ -1,0 +1,64 @@
+{
+  "name": "ignore",
+  "version": "4.0.6",
+  "description": "Ignore is a manager and filter for .gitignore rules.",
+  "files": [
+    "legacy.js",
+    "index.js",
+    "index.d.ts",
+    "LICENSE-MIT"
+  ],
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "babel -o legacy.js index.js",
+    "test:lint": "eslint .",
+    "test:tsc": "tsc ./test/ts/simple.ts",
+    "test:git": "tap test/git-check-ignore.js",
+    "test:ignore": "tap test/ignore.js --coverage",
+    "test-no-cov": "npm run test:lint && npm run test:tsc && tap test/*.js --coverage",
+    "test": "npm run test-no-cov",
+    "posttest": "tap --coverage-report=html && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kaelzhang/node-ignore.git"
+  },
+  "keywords": [
+    "ignore",
+    ".gitignore",
+    "gitignore",
+    "npmignore",
+    "rules",
+    "manager",
+    "filter",
+    "regexp",
+    "regex",
+    "fnmatch",
+    "glob",
+    "asterisks",
+    "regular-expression"
+  ],
+  "author": "kael",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/node-ignore/issues"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "codecov": "^3.0.4",
+    "eslint": "^5.3.0",
+    "eslint-config-ostai": "^1.3.2",
+    "eslint-plugin-import": "^2.13.0",
+    "mkdirp": "^0.5.1",
+    "pre-suf": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "spawn-sync": "^2.0.0",
+    "tap": "^12.0.1",
+    "tmp": "0.0.33",
+    "typescript": "^3.0.1"
+  },
+  "engines": {
+    "node": ">= 4"
+  }
+}

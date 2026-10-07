@@ -1,0 +1,38 @@
+{
+  "name": "md5.js",
+  "version": "1.3.5",
+  "description": "node style md5 on pure JavaScript",
+  "keywords": [
+    "crypto",
+    "md5"
+  ],
+  "homepage": "https://github.com/crypto-browserify/md5.js",
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/md5.js/issues"
+  },
+  "license": "MIT",
+  "author": "Kirill Fomichev <fanatid@ya.ru> (https://github.com/fanatid)",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto-browserify/md5.js.git"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint && npm run unit",
+    "unit": "node test/*.js"
+  },
+  "dependencies": {
+    "hash-base": "^3.0.0",
+    "inherits": "^2.0.1",
+    "safe-buffer": "^5.1.2"
+  },
+  "devDependencies": {
+    "hash-test-vectors": "^1.3.2",
+    "standard": "^7.0.0",
+    "tape": "^4.2.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "devtools-protocol",
+  "version": "0.0.1608973",
+  "description": "The Chrome DevTools Protocol JSON",
+  "repository": "https://github.com/ChromeDevTools/devtools-protocol",
+  "author": "The Chromium Authors",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ChromeDevTools/devtools-protocol/issues"
+  },
+  "files": [
+    "json",
+    "pdl",
+    "types"
+  ],
+  "types": "types/protocol.d.ts"
+}

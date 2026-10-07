@@ -1,0 +1,61 @@
+{
+  "name": "playwright",
+  "version": "1.60.0",
+  "description": "A high-level API to automate web browsers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microsoft/playwright.git"
+  },
+  "homepage": "https://playwright.dev",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json",
+    "./lib/common": "./lib/common/index.js",
+    "./lib/fsWatcher": "./lib/fsWatcher.js",
+    "./lib/mcp/index": "./lib/mcp/index.js",
+    "./lib/program": "./lib/program.js",
+    "./lib/runner": "./lib/runner/index.js",
+    "./lib/isomorphic": "./lib/isomorphic/index.js",
+    "./lib/transform/babelBundle": "./lib/transform/babelBundle.js",
+    "./jsx-runtime": {
+      "import": "./jsx-runtime.mjs",
+      "require": "./jsx-runtime.js",
+      "default": "./jsx-runtime.js"
+    },
+    "./lib/util": "./lib/util.js",
+    "./types/test": {
+      "types": "./types/test.d.ts"
+    },
+    "./types/testReporter": {
+      "types": "./types/testReporter.d.ts"
+    },
+    "./test": {
+      "types": "./test.d.ts",
+      "import": "./test.mjs",
+      "require": "./test.js",
+      "default": "./test.js"
+    }
+  },
+  "bin": {
+    "playwright": "cli.js"
+  },
+  "author": {
+    "name": "Microsoft Corporation"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "playwright-core": "1.60.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "2.3.2"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "rxjs/fetch",
+  "typings": "./index.d.ts",
+  "main": "./index.js",
+  "module": "../_esm5/fetch/index.js",
+  "es2015": "../_esm2015/fetch/index.js",
+  "sideEffects": false
+}

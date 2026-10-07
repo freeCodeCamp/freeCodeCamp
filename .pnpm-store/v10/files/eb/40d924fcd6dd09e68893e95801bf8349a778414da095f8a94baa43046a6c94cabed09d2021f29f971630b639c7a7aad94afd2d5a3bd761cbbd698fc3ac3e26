@@ -1,0 +1,53 @@
+{
+  "name": "eslint-plugin-turbo",
+  "version": "2.11.5",
+  "description": "ESLint plugin for Turborepo",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "turbo",
+    "turborepo"
+  ],
+  "bugs": {
+    "url": "https://github.com/vercel/turborepo/issues"
+  },
+  "license": "MIT",
+  "author": "Vercel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vercel/turborepo",
+    "directory": "packages/eslint-plugin-turbo"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "dotenv": "16.0.3"
+  },
+  "devDependencies": {
+    "@eslint/core": "^1.1.0",
+    "@jest/globals": "30.3.0",
+    "@turbo/test-utils": "0.0.0",
+    "@turbo/tsconfig": "0.0.0",
+    "@turbo/types": "2.11.5",
+    "@turbo/utils": "0.0.0",
+    "@types/estree": "1.0.8",
+    "@types/node": "18.17.4",
+    "eslint": "10.2.0",
+    "jest": "30.3.0",
+    "json5": "2.2.3",
+    "tsdown": "0.12.0",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-7": "npm:typescript@7.0.2"
+  },
+  "peerDependencies": {
+    "eslint": ">6.6.0",
+    "turbo": ">2.0.0"
+  },
+  "scripts": {
+    "build": "tsdown && tsc -p tsconfig.build.json"
+  }
+}

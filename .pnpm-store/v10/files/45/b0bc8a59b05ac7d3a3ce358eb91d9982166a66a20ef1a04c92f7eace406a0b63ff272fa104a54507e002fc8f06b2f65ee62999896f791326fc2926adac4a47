@@ -1,0 +1,69 @@
+{
+  "name": "@typescript-eslint/tsconfig-utils",
+  "version": "8.59.1",
+  "description": "Utilities for collecting TSConfigs for linting scenarios.",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/tsconfig-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "homepage": "https://typescript-eslint.io",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "typescript",
+    "estree"
+  ],
+  "peerDependencies": {
+    "typescript": ">=4.8.4 <6.1.0"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
+    "rimraf": "^5.0.10",
+    "typescript": ">=4.8.4 <6.1.0",
+    "vitest": "^4.0.18"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/typescript-eslint"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "nx": {
+    "name": "tsconfig-utils",
+    "includedScripts": [
+      "clean"
+    ]
+  },
+  "scripts": {
+    "//": "These package scripts are mostly here for convenience. Task running is handled by Nx at the root level.",
+    "build": "pnpm exec nx build",
+    "clean": "rimraf dist/ coverage/",
+    "format": "pnpm -w exec format",
+    "lint": "pnpm -w exec nx lint",
+    "test": "pnpm -w exec nx test",
+    "typecheck": "pnpm -w exec nx typecheck"
+  }
+}

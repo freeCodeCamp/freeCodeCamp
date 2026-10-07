@@ -1,0 +1,65 @@
+{
+    "root": true,
+
+    "extends": "@ljharb",
+
+    "rules": {
+        "indent": [2, 4],
+        "strict": 0,
+        "complexity": 0,
+        "consistent-return": 0,
+        "curly": 0,
+        "dot-notation": [2, { "allowKeywords": true }],
+        "func-name-matching": 0,
+        "func-style": 0,
+        "global-require": 1,
+        "id-length": [2, { "min": 1, "max": 40 }],
+        "max-lines": [2, 360],
+        "max-lines-per-function": 0,
+        "max-nested-callbacks": 0,
+        "max-params": 0,
+        "max-statements-per-line": [2, { "max": 2 }],
+        "max-statements": 0,
+        "no-magic-numbers": 0,
+        "no-shadow": 0,
+        "no-use-before-define": 0,
+        "sort-keys": 0,
+    },
+    "overrides": [
+        {
+            "files": "bin/**",
+            "rules": {
+                "no-process-exit": "off",
+            },
+        },
+        {
+            "files": "example/**",
+            "rules": {
+                "no-console": 0,
+            },
+        },
+        {
+            "files": "test/resolver/nested_symlinks/mylib/*.js",
+            "rules": {
+                "no-throw-literal": 0,
+            },
+        },
+        {
+            "files": "test/**",
+            "parserOptions": {
+                "ecmaVersion": 5,
+                "allowReserved": false,
+            },
+            "rules": {
+                "dot-notation": [2, { "allowPattern": "throws" }],
+                "max-lines": 0,
+                "max-lines-per-function": 0,
+                "no-unused-vars": [2, { "vars": "all", "args": "none" }],
+            },
+        },
+    ],
+
+    "ignorePatterns": [
+        "./test/resolver/malformed_package_json/package.json",
+    ],
+}

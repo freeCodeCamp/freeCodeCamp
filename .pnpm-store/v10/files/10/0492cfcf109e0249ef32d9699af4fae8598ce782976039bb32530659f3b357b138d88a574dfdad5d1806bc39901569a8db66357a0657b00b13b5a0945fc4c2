@@ -1,0 +1,61 @@
+{
+  "name": "@humanwhocodes/config-array",
+  "version": "0.5.0",
+  "description": "Glob-based configuration matching.",
+  "author": "Nicholas C. Zakas",
+  "main": "api.js",
+  "files": [
+    "api.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humanwhocodes/config-array.git"
+  },
+  "bugs": {
+    "url": "https://github.com/humanwhocodes/config-array/issues"
+  },
+  "homepage": "https://github.com/humanwhocodes/config-array#readme",
+  "scripts": {
+    "build": "rollup -c",
+    "format": "nitpik",
+    "lint": "eslint *.config.js src/*.js tests/*.js",
+    "prepublish": "npm run build",
+    "test:coverage": "nyc --include src/*.js npm run test",
+    "test": "mocha -r esm tests/ --recursive"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "nitpik",
+      "eslint --fix --ignore-pattern '!.eslintrc.js'"
+    ]
+  },
+  "keywords": [
+    "configuration",
+    "configarray",
+    "config file"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=10.10.0"
+  },
+  "dependencies": {
+    "@humanwhocodes/object-schema": "^1.2.0",
+    "debug": "^4.1.1",
+    "minimatch": "^3.0.4"
+  },
+  "devDependencies": {
+    "@nitpik/javascript": "^0.3.3",
+    "@nitpik/node": "0.0.5",
+    "chai": "^4.2.0",
+    "eslint": "^6.7.1",
+    "esm": "^3.2.25",
+    "lint-staged": "^10.2.8",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "rollup": "^1.12.3",
+    "yorkie": "^2.0.0"
+  }
+}

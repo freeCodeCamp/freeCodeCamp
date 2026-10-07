@@ -1,0 +1,44 @@
+{
+  "Commands:": "Kommandoar:",
+  "Options:": "Alternativ:",
+  "Examples:": "Døme:",
+  "boolean": "boolsk",
+  "count": "mengd",
+  "string": "streng",
+  "number": "nummer",
+  "array": "matrise",
+  "required": "obligatorisk",
+  "default": "standard",
+  "default:": "standard:",
+  "choices:": "val:",
+  "generated-value": "generert-verdi",
+  "Not enough non-option arguments: got %s, need at least %s": {
+    "one": "Ikkje nok ikkje-alternativ argument: fekk %s, treng minst %s",
+    "other": "Ikkje nok ikkje-alternativ argument: fekk %s, treng minst %s"
+  },
+  "Too many non-option arguments: got %s, maximum of %s": {
+    "one": "For mange ikkje-alternativ argument: fekk %s, maksimum %s",
+    "other": "For mange ikkje-alternativ argument: fekk %s, maksimum %s"
+  },
+  "Missing argument value: %s": {
+    "one": "Manglar argumentverdi: %s",
+    "other": "Manglar argumentverdiar: %s"
+  },
+  "Missing required argument: %s": {
+    "one": "Manglar obligatorisk argument: %s",
+    "other": "Manglar obligatoriske argument: %s"
+  },
+  "Unknown argument: %s": {
+    "one": "Ukjent argument: %s",
+    "other": "Ukjende argument: %s"
+  },
+  "Invalid values:": "Ugyldige verdiar:",
+  "Argument: %s, Given: %s, Choices: %s": "Argument: %s, Gjeve: %s, Val: %s",
+  "Argument check failed: %s": "Argumentsjekk mislukkast: %s",
+  "Implications failed:": "Konsekvensane mislukkast:",
+  "Not enough arguments following: %s": "Ikkje nok fylgjande argument: %s",
+  "Invalid JSON config file: %s": "Ugyldig JSON konfigurasjonsfil: %s",
+  "Path to JSON config file": "Bane til JSON konfigurasjonsfil",
+  "Show help": "Vis hjelp",
+  "Show version number": "Vis versjonsnummer"
+}

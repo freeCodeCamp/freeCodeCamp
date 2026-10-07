@@ -1,0 +1,44 @@
+{
+  "name": "es6-object-assign",
+  "version": "1.1.0",
+  "description": "ECMAScript 2015 (ES6) Object.assign polyfill and ponyfill",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npm run compile:manual && npm run compile:auto",
+    "compile:manual": "browserify index.js -o dist/object-assign.js --standalone ObjectAssign",
+    "compile:auto": "browserify auto.js -o dist/object-assign-auto.js",
+    "compress": "npm run compress:manual && npm run compress:auto",
+    "compress:manual": "uglifyjs dist/object-assign.js --compress --mangle > dist/object-assign.min.js",
+    "compress:auto": "uglifyjs dist/object-assign-auto.js --compress --mangle > dist/object-assign-auto.min.js",
+    "build": "npm run compile && npm run compress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rubennorte/es6-object-assign.git"
+  },
+  "keywords": [
+    "Object",
+    "assign",
+    "ES6",
+    "ECMAScript 6",
+    "ES2015",
+    "ECMAScript 2015",
+    "polyfill",
+    "ponyfill"
+  ],
+  "author": "Rubén Norte <rubennorte@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rubennorte/es6-object-assign/issues"
+  },
+  "homepage": "https://github.com/rubennorte/es6-object-assign",
+  "devDependencies": {
+    "browserify": "^10.1.3",
+    "uglify-js": "^2.4.21"
+  },
+  "files": [
+    "index.js",
+    "auto.js",
+    "dist"
+  ]
+}

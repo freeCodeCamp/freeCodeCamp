@@ -1,0 +1,93 @@
+{
+  "name": "mitt",
+  "version": "1.2.0",
+  "description": "Tiny 200b functional Event Emitter / pubsub.",
+  "jsnext:main": "dist/mitt.es.js",
+  "module": "dist/mitt.es.js",
+  "main": "dist/mitt.js",
+  "umd:main": "dist/mitt.umd.js",
+  "scripts": {
+    "bump": "standard-version",
+    "testonly": "mocha --require esm --require flow-remove-types/register test/**/*.js",
+    "lint": "eslint src test",
+    "test": "flow && npm run lint && npm run testonly",
+    "build": "npm-run-all --silent clean -p rollup -p minify:* -s docs size",
+    "clean": "rimraf dist",
+    "rollup": "rollup -c",
+    "minify:cjs": "uglifyjs $npm_package_main -cm toplevel -o $npm_package_main -p relative --in-source-map ${npm_package_main}.map --source-map ${npm_package_main}.map",
+    "minify:umd": "uglifyjs $npm_package_umd_main -cm -o $npm_package_umd_main -p relative --in-source-map ${npm_package_umd_main}.map --source-map ${npm_package_umd_main}.map",
+    "docs": "documentation readme src/index.js --section API -q",
+    "size": "echo \"Gzipped Size: $(strip-json-comments --no-whitespace $npm_package_main | gzip-size | pretty-bytes)\"",
+    "release": "npm run build -s && npm run bump && git push --follow-tags origin master && npm publish"
+  },
+  "repository": "developit/mitt",
+  "keywords": [
+    "events",
+    "eventemitter",
+    "pubsub"
+  ],
+  "homepage": "https://github.com/developit/mitt",
+  "authors": [
+    "Jason Miller <jason@developit.ca>"
+  ],
+  "license": "MIT",
+  "files": [
+    "src",
+    "dist",
+    "mitt.d.ts"
+  ],
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-flow-strip-types"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "mocha": true,
+      "es6": true
+    },
+    "globals": {
+      "expect": true
+    },
+    "rules": {
+      "semi": [
+        2,
+        "always"
+      ]
+    }
+  },
+  "typings": "./mitt.d.ts",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-flow-strip-types": "^6.21.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "documentation": "^4.0.0-beta4",
+    "eslint": "^3.13.1",
+    "esm": "^3.2.25",
+    "flow-bin": "^0.38.0",
+    "flow-remove-types": "^1.2.0",
+    "gzip-size-cli": "^1.0.0",
+    "mocha": "^3.2.0",
+    "npm-run-all": "^2.1.1",
+    "pretty-bytes-cli": "^2.0.0",
+    "rimraf": "^2.5.2",
+    "rollup": "^0.41.4",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-flow": "^1.1.1",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0",
+    "standard-version": "^4.0.0",
+    "strip-json-comments-cli": "^1.0.1",
+    "uglify-js": "^2.6.2"
+  }
+}

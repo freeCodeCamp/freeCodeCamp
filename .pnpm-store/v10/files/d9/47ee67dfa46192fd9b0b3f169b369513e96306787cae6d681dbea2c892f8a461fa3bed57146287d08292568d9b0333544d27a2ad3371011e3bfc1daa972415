@@ -1,0 +1,122 @@
+{
+  "name": "hast-to-hyperscript",
+  "version": "9.0.1",
+  "description": "hast utility to transform to something else (react, vue, etc) through a hyperscript DSL",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "hast",
+    "hast-util",
+    "util",
+    "utility",
+    "html",
+    "change",
+    "transform",
+    "rehype",
+    "vdom",
+    "virtual",
+    "dom",
+    "hyperscript",
+    "dsl"
+  ],
+  "repository": "syntax-tree/hast-to-hyperscript",
+  "bugs": "https://github.com/syntax-tree/hast-to-hyperscript/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Jannis Redmann <mail@jannisr.de>",
+    "Koto Hajime <toxictoxer@gmail.com>",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "@types/unist": "^2.0.3",
+    "comma-separated-tokens": "^1.0.0",
+    "property-information": "^5.3.0",
+    "space-separated-tokens": "^1.0.0",
+    "style-to-object": "^0.3.0",
+    "unist-util-is": "^4.0.0",
+    "web-namespaces": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/hyperscript": "0.0.4",
+    "@types/react": "^16.0.0",
+    "@types/virtual-dom": "^2.0.0",
+    "browserify": "^17.0.0",
+    "dtslint": "^4.0.0",
+    "hyperscript": "^2.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "rehype": "^11.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "unist-builder": "^2.0.0",
+    "vdom-to-html": "^2.0.0",
+    "virtual-dom": "^2.0.0",
+    "vue": "^2.0.0",
+    "vue-server-renderer": "^2.0.0",
+    "xo": "^0.34.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify index.js -s hastToHyperscript > hast-to-hyperscript.js",
+    "build-mangle": "browserify index.js -s hastToHyperscript -p tinyify > hast-to-hyperscript.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "complexity": "off",
+      "eqeqeq": [
+        "error",
+        "always",
+        {
+          "null": "ignore"
+        }
+      ],
+      "guard-for-in": "off",
+      "max-params": "off",
+      "no-eq-null": "off",
+      "no-self-compare": "off",
+      "unicorn/explicit-length-check": "off",
+      "unicorn/no-fn-reference-in-iterator": "off",
+      "unicorn/prefer-type-error": "off"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/isAfter/index.js",
+  "typings": "../typings.d.ts"
+}

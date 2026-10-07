@@ -1,0 +1,30 @@
+{
+  "name": "xml-name-validator",
+  "description": "Validates whether a string matches the production for an XML name or qualified name",
+  "keywords": [
+    "xml",
+    "name",
+    "qname"
+  ],
+  "version": "5.0.0",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "Apache-2.0",
+  "repository": "jsdom/xml-name-validator",
+  "main": "lib/xml-name-validator.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "benchmark": "node scripts/benchmark.js",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@domenic/eslint-config": "^3.0.0",
+    "benchmark": "^2.1.4",
+    "eslint": "^8.53.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

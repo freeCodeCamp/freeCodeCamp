@@ -1,0 +1,88 @@
+{
+  "name": "hast-util-to-parse5",
+  "version": "6.0.0",
+  "description": "hast utility to transform hast to Parse5’s AST",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "hast",
+    "hast-util",
+    "util",
+    "utility",
+    "html",
+    "parse5",
+    "ast",
+    "tree"
+  ],
+  "repository": "syntax-tree/hast-util-to-parse5",
+  "bugs": "https://github.com/syntax-tree/hast-util-to-parse5/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "hast-to-hyperscript": "^9.0.0",
+    "property-information": "^5.0.0",
+    "web-namespaces": "^1.0.0",
+    "xtend": "^4.0.0",
+    "zwitch": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "json-stringify-safe": "^5.0.0",
+    "nyc": "^15.0.0",
+    "parse5": "^6.0.0",
+    "prettier": "^2.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.32.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . --write && xo --fix",
+    "build-bundle": "browserify . -s hastUtilToParse5 > hast-util-to-parse5.js",
+    "build-mangle": "browserify . -s hastUtilToParse5 -p tinyify > hast-util-to-parse5.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test",
+    "test": "npm run format && npm run build && npm run test-coverage"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-includes": "off",
+      "guard-for-in": "off"
+    },
+    "ignores": [
+      "hast-util-to-parse5.js"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

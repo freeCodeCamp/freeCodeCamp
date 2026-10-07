@@ -1,0 +1,13 @@
+export { V as VitestExecutor } from './chunks/execute.B7h3T_Hc.js';
+import 'node:fs';
+import 'node:url';
+import 'node:vm';
+import '@vitest/utils/error';
+import 'pathe';
+import 'vite-node/client';
+import 'vite-node/utils';
+import './path.js';
+import 'node:path';
+import '@vitest/mocker';
+import 'node:module';
+import '@vitest/utils';

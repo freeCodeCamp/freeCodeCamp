@@ -1,0 +1,1 @@
+import{useRef as o}from"react";function t(e){return[e.screenX,e.screenY]}function u(){let e=o([-1,-1]);return{wasMoved(r){let n=t(r);return e.current[0]===n[0]&&e.current[1]===n[1]?!1:(e.current=n,!0)},update(r){e.current=t(r)}}}export{u as useTrackedPointer};

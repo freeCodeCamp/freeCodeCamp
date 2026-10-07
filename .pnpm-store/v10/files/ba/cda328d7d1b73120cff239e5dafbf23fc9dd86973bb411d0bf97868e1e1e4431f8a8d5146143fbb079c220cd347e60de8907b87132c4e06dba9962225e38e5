@@ -1,0 +1,7 @@
+import { CalloutProps } from "./types";
+/**
+ * A `Callout` is used to emphasize an important snippet of information within the flow of a page.
+ * Content in a callout should be something on the page that you want to highlight, but that is not critical information.
+ * Use `Alert` instead of `Callout` if you want to communicate system-level information.
+ */
+export declare const Callout: ({ children, className, variant, label, ...others }: CalloutProps) => JSX.Element;

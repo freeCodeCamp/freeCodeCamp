@@ -1,0 +1,88 @@
+{
+  "name": "kind-of",
+  "description": "Get the native type of a value.",
+  "version": "6.0.3",
+  "homepage": "https://github.com/jonschlinkert/kind-of",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "David Fox-Powell (https://dtothefp.github.io/me)",
+    "James (https://twitter.com/aretecode)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Ken Sheedlo (kensheedlo.com)",
+    "laggingreflex (https://github.com/laggingreflex)",
+    "Miguel Mota (https://miguelmota.com)",
+    "Peter deHaan (http://about.me/peterdehaan)",
+    "tunnckoCore (https://i.am.charlike.online)"
+  ],
+  "repository": "jonschlinkert/kind-of",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/kind-of/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "prepublish": "browserify -o browser.js -e index.js -s index --bare"
+  },
+  "devDependencies": {
+    "benchmarked": "^2.0.0",
+    "browserify": "^14.4.0",
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^4.0.1",
+    "write": "^1.0.3"
+  },
+  "keywords": [
+    "arguments",
+    "array",
+    "boolean",
+    "check",
+    "date",
+    "function",
+    "is",
+    "is-type",
+    "is-type-of",
+    "kind",
+    "kind-of",
+    "number",
+    "object",
+    "of",
+    "regexp",
+    "string",
+    "test",
+    "type",
+    "type-of",
+    "typeof",
+    "types"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": [
+        "is-glob",
+        "is-number",
+        "is-primitive"
+      ]
+    },
+    "reflinks": [
+      "type-of",
+      "typeof",
+      "verb"
+    ]
+  }
+}

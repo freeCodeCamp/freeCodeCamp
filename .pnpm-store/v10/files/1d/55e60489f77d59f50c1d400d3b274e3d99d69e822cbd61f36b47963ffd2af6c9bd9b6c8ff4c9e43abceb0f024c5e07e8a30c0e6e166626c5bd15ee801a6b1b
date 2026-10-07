@@ -1,0 +1,60 @@
+{
+  "name": "strip-literal",
+  "type": "module",
+  "version": "3.1.0",
+  "description": "Strip comments and string literals from JavaScript code",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/antfu",
+  "homepage": "https://github.com/antfu/strip-literal#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antfu/strip-literal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antfu/strip-literal/issues"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "js-tokens": "^9.0.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.4.1",
+    "@antfu/ni": "^26.0.1",
+    "@types/node": "^24.5.2",
+    "bumpp": "^10.2.3",
+    "eslint": "^9.36.0",
+    "pnpm": "^10.17.1",
+    "rimraf": "^6.0.1",
+    "three": "^0.180.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2",
+    "unbuild": "^3.6.1",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4",
+    "vue": "^3.5.22"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "release": "bumpp",
+    "start": "tsx src/index.ts",
+    "test": "vitest",
+    "bench": "vitest bench",
+    "typecheck": "tsc --noEmit"
+  }
+}

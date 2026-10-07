@@ -1,0 +1,284 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/* Find widget */
+.monaco-editor .find-widget {
+	position: absolute;
+	z-index: 35;
+	height: 33px;
+	overflow: hidden;
+	line-height: 19px;
+	transition: transform 200ms linear;
+	padding: 0 4px;
+	box-sizing: border-box;
+	transform: translateY(calc(-100% - 10px)); /* shadow (10px) */
+	box-shadow: 0 0 8px 2px var(--vscode-widget-shadow);
+	color: var(--vscode-editorWidget-foreground);
+	border-left: 1px solid var(--vscode-widget-border);
+	border-right: 1px solid var(--vscode-widget-border);
+	border-bottom: 1px solid var(--vscode-widget-border);
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background-color: var(--vscode-editorWidget-background);
+}
+
+.monaco-reduce-motion .monaco-editor .find-widget {
+	transition: transform 0ms linear;
+}
+
+.monaco-editor .find-widget textarea {
+	margin: 0px;
+}
+
+.monaco-editor .find-widget.hiddenEditor {
+	display: none;
+}
+
+/* Find widget when replace is toggled on */
+.monaco-editor .find-widget.replaceToggled > .replace-part {
+	display: flex;
+}
+
+.monaco-editor .find-widget.visible {
+	transform: translateY(0);
+}
+
+/* This outline-color rule is used to override the outline color for synthetic-focus find input. */
+.monaco-editor .find-widget .monaco-inputbox.synthetic-focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+	outline-color: var(--vscode-focusBorder);
+}
+
+.monaco-editor .find-widget .monaco-inputbox .input {
+	background-color: transparent;
+	min-height: 0;
+}
+
+.monaco-editor .find-widget .monaco-findInput .input {
+	font-size: 13px;
+}
+
+.monaco-editor .find-widget > .find-part,
+.monaco-editor .find-widget > .replace-part {
+	margin: 3px 25px 0 17px;
+	font-size: 12px;
+	display: flex;
+}
+
+.monaco-editor .find-widget > .find-part .monaco-inputbox,
+.monaco-editor .find-widget > .replace-part .monaco-inputbox {
+	min-height: 25px;
+}
+
+
+.monaco-editor .find-widget > .replace-part .monaco-inputbox > .ibwrapper > .mirror {
+	padding-right: 22px;
+}
+
+.monaco-editor .find-widget > .find-part .monaco-inputbox > .ibwrapper > .input,
+.monaco-editor .find-widget > .find-part .monaco-inputbox > .ibwrapper > .mirror,
+.monaco-editor .find-widget > .replace-part .monaco-inputbox > .ibwrapper > .input,
+.monaco-editor .find-widget > .replace-part .monaco-inputbox > .ibwrapper > .mirror {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.monaco-editor .find-widget > .find-part .find-actions {
+	height: 25px;
+	display: flex;
+	align-items: center;
+}
+
+.monaco-editor .find-widget > .replace-part .replace-actions {
+	height: 25px;
+	display: flex;
+	align-items: center;
+}
+
+.monaco-editor .find-widget .monaco-findInput {
+	vertical-align: middle;
+	display: flex;
+	flex: 1;
+}
+
+.monaco-editor .find-widget .monaco-findInput .monaco-scrollable-element {
+	/* Make sure textarea inherits the width correctly */
+	width: 100%;
+}
+
+.monaco-editor .find-widget .monaco-findInput .monaco-scrollable-element .scrollbar.vertical {
+	/* Hide vertical scrollbar */
+	opacity: 0;
+}
+
+.monaco-editor .find-widget .matchesCount {
+	display: flex;
+	flex: initial;
+	margin: 0 0 0 3px;
+	padding: 2px 0 0 2px;
+	height: 25px;
+	vertical-align: middle;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 23px;
+}
+
+.monaco-editor .find-widget .button {
+	width: 16px;
+	height: 16px;
+	padding: 3px;
+	border-radius: 5px;
+	display: flex;
+	flex: initial;
+	margin-left: 3px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* find in selection button */
+.monaco-editor .find-widget .codicon-find-selection {
+	width: 22px;
+	height: 22px;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+.monaco-editor .find-widget .button.left {
+	margin-left: 0;
+	margin-right: 3px;
+}
+
+.monaco-editor .find-widget .button.wide {
+	width: auto;
+	padding: 1px 6px;
+	top: -1px;
+}
+
+.monaco-editor .find-widget .button.toggle {
+	position: absolute;
+	top: 0;
+	left: 3px;
+	width: 18px;
+	height: 100%;
+	border-radius: 0;
+	box-sizing: border-box;
+}
+
+.monaco-editor .find-widget .button.toggle.disabled {
+	display: none;
+}
+
+.monaco-editor .find-widget .disabled {
+	color: var(--vscode-disabledForeground);
+	cursor: default;
+}
+
+.monaco-editor .find-widget > .replace-part {
+	display: none;
+}
+
+.monaco-editor .find-widget > .replace-part > .monaco-findInput {
+	position: relative;
+	display: flex;
+	vertical-align: middle;
+	flex: auto;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.monaco-editor .find-widget > .replace-part > .monaco-findInput > .controls {
+	position: absolute;
+	top: 3px;
+	right: 2px;
+}
+
+/* REDUCED */
+.monaco-editor .find-widget.reduced-find-widget .matchesCount {
+	display: none;
+}
+
+/* NARROW (SMALLER THAN REDUCED) */
+.monaco-editor .find-widget.narrow-find-widget {
+	max-width: 257px !important;
+}
+
+/* COLLAPSED (SMALLER THAN NARROW) */
+.monaco-editor .find-widget.collapsed-find-widget {
+	max-width: 170px !important;
+}
+
+.monaco-editor .find-widget.collapsed-find-widget .button.previous,
+.monaco-editor .find-widget.collapsed-find-widget .button.next,
+.monaco-editor .find-widget.collapsed-find-widget .button.replace,
+.monaco-editor .find-widget.collapsed-find-widget .button.replace-all,
+.monaco-editor .find-widget.collapsed-find-widget > .find-part .monaco-findInput .controls {
+	display: none;
+}
+
+.monaco-editor .find-widget.no-results .matchesCount {
+	color: var(--vscode-errorForeground);
+}
+
+.monaco-editor .findMatch {
+	animation-duration: 0;
+	animation-name: inherit !important;
+	background-color: var(--vscode-editor-findMatchHighlightBackground);
+}
+
+.monaco-editor .currentFindMatch {
+	background-color: var(--vscode-editor-findMatchBackground);
+	border: 2px solid var(--vscode-editor-findMatchBorder);
+	padding: 1px;
+	box-sizing: border-box;
+}
+
+.monaco-editor .findScope {
+	background-color: var(--vscode-editor-findRangeHighlightBackground);
+}
+
+.monaco-editor .find-widget .monaco-sash {
+	left: 0 !important;
+	background-color: var(--vscode-editorWidget-resizeBorder, var(--vscode-editorWidget-border));
+}
+
+.monaco-editor.hc-black .find-widget .button:before {
+	position: relative;
+	top: 1px;
+	left: 2px;
+}
+
+/* Action bars */
+.monaco-editor .find-widget .button:not(.disabled):hover,
+.monaco-editor .find-widget .codicon-find-selection:hover {
+	background-color: var(--vscode-toolbar-hoverBackground) !important;
+}
+
+.monaco-editor.findMatch {
+	background-color: var(--vscode-editor-findMatchHighlightBackground);
+}
+
+.monaco-editor.currentFindMatch {
+	background-color: var(--vscode-editor-findMatchBackground);
+}
+
+.monaco-editor.findScope {
+	background-color: var(--vscode-editor-findRangeHighlightBackground);
+}
+
+.monaco-editor.findMatch {
+	background-color: var(--vscode-editorWidget-background);
+}
+
+/* Close button position. */
+.monaco-editor .find-widget > .button.codicon-widget-close {
+	position: absolute;
+	top: 5px;
+	right: 4px;
+}

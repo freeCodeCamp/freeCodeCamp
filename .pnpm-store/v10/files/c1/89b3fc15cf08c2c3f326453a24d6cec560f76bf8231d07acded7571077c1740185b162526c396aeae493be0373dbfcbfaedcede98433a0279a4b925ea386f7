@@ -1,0 +1,42 @@
+{
+  "name": "slugify",
+  "version": "1.6.6",
+  "description": "Slugifies a String",
+  "keywords": [
+    "slugify",
+    "slug",
+    "url",
+    "urlify"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/simov/slugify",
+  "author": "Simeon Velichkov <simeonvelichkov@gmail.com> (https://simov.github.io)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simov/slugify.git"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "github-changes": "^2.0.3",
+    "mocha": "^7.2.0",
+    "nyc": "^15.1.0"
+  },
+  "main": "./slugify.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "slugify.d.ts",
+    "slugify.js"
+  ],
+  "types": "slugify.d.ts",
+  "scripts": {
+    "build": "node bin/build",
+    "build:changelog": "github-changes --owner simov --repository slugify --only-pulls --use-commit-body --date-format '(YYYY-MM-DD)' --file CHANGELOG.md --verbose",
+    "test:ci": "npx mocha --recursive",
+    "test:cov": "npx nyc --reporter=lcov --reporter=text-summary mocha -- --recursive",
+    "test": "npm run build && npm run test:ci"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

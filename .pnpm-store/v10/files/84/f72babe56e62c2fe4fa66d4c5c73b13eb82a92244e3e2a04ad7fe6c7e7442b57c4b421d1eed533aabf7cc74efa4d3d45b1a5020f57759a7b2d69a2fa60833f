@@ -1,0 +1,41 @@
+{
+  "name": "@babel/register",
+  "version": "7.23.7",
+  "description": "babel require hook",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-register"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs",
+  "main": "./lib/index.js",
+  "dependencies": {
+    "clone-deep": "^4.0.1",
+    "find-cache-dir": "^2.0.0",
+    "make-dir": "^2.1.0",
+    "pirates": "^4.0.6",
+    "source-map-support": "^0.5.16"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/plugin-transform-arrow-functions": "^7.23.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.23.3",
+    "browserify": "^16.5.2"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-register",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20register%22+is%3Aopen",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "browser": {
+    "./lib/index.js": "./lib/browser.js"
+  }
+}

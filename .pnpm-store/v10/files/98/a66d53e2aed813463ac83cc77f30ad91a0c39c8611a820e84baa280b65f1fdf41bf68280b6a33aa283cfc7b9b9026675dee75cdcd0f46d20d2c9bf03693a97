@@ -1,0 +1,70 @@
+{
+  "name": "jsonwebtoken",
+  "version": "9.0.3",
+  "description": "JSON Web Token implementation (symmetric and asymmetric)",
+  "main": "index.js",
+  "nyc": {
+    "check-coverage": true,
+    "lines": 95,
+    "statements": 95,
+    "functions": 100,
+    "branches": 95,
+    "exclude": [
+      "./test/**"
+    ],
+    "reporter": [
+      "json",
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "coverage": "nyc mocha --use_strict",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/auth0/node-jsonwebtoken"
+  },
+  "keywords": [
+    "jwt"
+  ],
+  "author": "auth0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/auth0/node-jsonwebtoken/issues"
+  },
+  "dependencies": {
+    "jws": "^4.0.1",
+    "lodash.includes": "^4.3.0",
+    "lodash.isboolean": "^3.0.3",
+    "lodash.isinteger": "^4.0.4",
+    "lodash.isnumber": "^3.0.3",
+    "lodash.isplainobject": "^4.0.6",
+    "lodash.isstring": "^4.0.1",
+    "lodash.once": "^4.0.0",
+    "ms": "^2.1.1",
+    "semver": "^7.5.4"
+  },
+  "devDependencies": {
+    "atob": "^2.1.2",
+    "chai": "^4.1.2",
+    "conventional-changelog": "~1.1.0",
+    "eslint": "^4.19.1",
+    "mocha": "^5.2.0",
+    "nsp": "^2.6.2",
+    "nyc": "^11.9.0",
+    "sinon": "^6.0.0"
+  },
+  "engines": {
+    "npm": ">=6",
+    "node": ">=12"
+  },
+  "files": [
+    "lib",
+    "decode.js",
+    "sign.js",
+    "verify.js"
+  ]
+}

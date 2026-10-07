@@ -1,0 +1,5 @@
+# These are supported funding model platforms
+
+github: [jsx-eslint, ljharb]
+open_collective: eslint-plugin-jsx-a11y
+tidelift: "npm/jsx-ast-utils"

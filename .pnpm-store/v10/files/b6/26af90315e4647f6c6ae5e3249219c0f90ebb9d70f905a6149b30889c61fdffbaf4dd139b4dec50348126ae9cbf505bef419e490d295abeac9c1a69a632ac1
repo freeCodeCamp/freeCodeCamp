@@ -1,0 +1,42 @@
+{
+  "name": "@ardatan/relay-compiler",
+  "description": "A compiler tool for building GraphQL-driven applications.",
+  "version": "12.0.0",
+  "keywords": [
+    "graphql",
+    "relay"
+  ],
+  "license": "MIT",
+  "homepage": "https://relay.dev",
+  "bugs": "https://github.com/facebook/relay/issues",
+  "repository": "facebook/relay",
+  "main": "index.js",
+  "bin": {
+    "relay-compiler": "bin/relay-compiler"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/generator": "^7.14.0",
+    "@babel/parser": "^7.14.0",
+    "@babel/runtime": "^7.0.0",
+    "@babel/traverse": "^7.14.0",
+    "@babel/types": "^7.0.0",
+    "babel-preset-fbjs": "^3.4.0",
+    "chalk": "^4.0.0",
+    "fb-watchman": "^2.0.0",
+    "fbjs": "^3.0.0",
+    "glob": "^7.1.1",
+    "immutable": "~3.7.6",
+    "invariant": "^2.2.4",
+    "nullthrows": "^1.1.1",
+    "relay-runtime": "12.0.0",
+    "signedsource": "^1.0.0",
+    "yargs": "^15.3.1"
+  },
+  "peerDependencies": {
+    "graphql": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

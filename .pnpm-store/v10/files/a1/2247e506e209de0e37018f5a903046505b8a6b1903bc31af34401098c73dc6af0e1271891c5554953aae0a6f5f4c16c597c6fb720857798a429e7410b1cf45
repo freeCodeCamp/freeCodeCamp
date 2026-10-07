@@ -1,0 +1,50 @@
+{
+  "name": "global-prefix",
+  "description": "Get the npm global path prefix.",
+  "version": "3.0.0",
+  "homepage": "https://github.com/jonschlinkert/global-prefix",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Alexandr Bogachev (https://github.com/rmbaad)",
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Charlike Mike Reagent (https://i.am.charlike.online)",
+    "JasonChang (https://packagist.org/packages/jason-chang)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Jorrit Schippers (https://www.ncode.nl)",
+    "Mathias Rasmussen (chrome://dino)",
+    "Ross Fenning (http://rossfenning.co.uk)"
+  ],
+  "repository": "jonschlinkert/global-prefix",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/global-prefix/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "ini": "^1.3.5",
+    "kind-of": "^6.0.2",
+    "which": "^1.3.1"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^2.0.0",
+    "mocha": "^5.2.0"
+  },
+  "keywords": [
+    "global",
+    "module",
+    "modules",
+    "npm",
+    "path",
+    "prefix",
+    "resolve"
+  ]
+}

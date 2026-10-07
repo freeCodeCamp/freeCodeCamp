@@ -1,0 +1,72 @@
+define("vs/javascript-BgQ1b_eP", ["exports", "./typescript-0SV7N1Xc"], (function(exports, typescript) {
+  "use strict";
+  const conf = typescript.conf;
+  const language = {
+    // Set defaultToken to invalid to see what you do not tokenize yet
+    defaultToken: "invalid",
+    tokenPostfix: ".js",
+    keywords: [
+      "break",
+      "case",
+      "catch",
+      "class",
+      "continue",
+      "const",
+      "constructor",
+      "debugger",
+      "default",
+      "delete",
+      "do",
+      "else",
+      "export",
+      "extends",
+      "false",
+      "finally",
+      "for",
+      "from",
+      "function",
+      "get",
+      "if",
+      "import",
+      "in",
+      "instanceof",
+      "let",
+      "new",
+      "null",
+      "return",
+      "set",
+      "static",
+      "super",
+      "switch",
+      "symbol",
+      "this",
+      "throw",
+      "true",
+      "try",
+      "typeof",
+      "undefined",
+      "var",
+      "void",
+      "while",
+      "with",
+      "yield",
+      "async",
+      "await",
+      "of"
+    ],
+    typeKeywords: [],
+    operators: typescript.language.operators,
+    symbols: typescript.language.symbols,
+    escapes: typescript.language.escapes,
+    digits: typescript.language.digits,
+    octaldigits: typescript.language.octaldigits,
+    binarydigits: typescript.language.binarydigits,
+    hexdigits: typescript.language.hexdigits,
+    regexpctl: typescript.language.regexpctl,
+    regexpesc: typescript.language.regexpesc,
+    tokenizer: typescript.language.tokenizer
+  };
+  exports.conf = conf;
+  exports.language = language;
+  Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+}));

@@ -1,0 +1,1 @@
+npm exec lint-staged

@@ -1,0 +1,33 @@
+{
+  "name": "@webassemblyjs/wasm-edit",
+  "version": "1.14.1",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xtuc/webassemblyjs.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Sven Sauleau",
+  "license": "MIT",
+  "dependencies": {
+    "@webassemblyjs/ast": "1.14.1",
+    "@webassemblyjs/helper-buffer": "1.14.1",
+    "@webassemblyjs/helper-wasm-bytecode": "1.13.2",
+    "@webassemblyjs/helper-wasm-section": "1.14.1",
+    "@webassemblyjs/wasm-gen": "1.14.1",
+    "@webassemblyjs/wasm-opt": "1.14.1",
+    "@webassemblyjs/wasm-parser": "1.14.1",
+    "@webassemblyjs/wast-printer": "1.14.1"
+  },
+  "devDependencies": {
+    "@webassemblyjs/helper-test-framework": "1.14.1"
+  },
+  "gitHead": "25d52b1296e151ac56244a7c3886661e6b4a69ea"
+}

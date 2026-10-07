@@ -1,0 +1,102 @@
+{
+  "name": "search-insights",
+  "description": "Library for reporting click, conversion and view metrics using the Algolia Insights API",
+  "version": "2.17.2",
+  "jsdelivr": "dist/search-insights.min.js",
+  "main": "index-node.cjs",
+  "types": "index-node.d.ts",
+  "browser": "index-browser.mjs",
+  "module": "index-node.mjs",
+  "exports": {
+    "types": "./index-browser.d.ts",
+    "node": {
+      "types": "./index-node.d.ts",
+      "import": "./index-node.mjs",
+      "require": "./index-node.cjs"
+    },
+    "browser": {
+      "import": "./index-browser.mjs",
+      "require": "./index-browser.cjs"
+    },
+    "default": "./index-browser.mjs"
+  },
+  "react-native": {
+    "http": "./empty-module.cjs",
+    "https": "./empty-module.cjs"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "!**/__tests__/**",
+    "empty-module.*",
+    "index-browser.*",
+    "index-node.*"
+  ],
+  "scripts": {
+    "build": "rollup --environment NODE_ENV:'production' -c rollup.config.mjs && tsc --build tsconfig.declaration.json",
+    "build:dev": "rollup --watch --environment NODE_ENV:'development' -c rollup.config.mjs",
+    "lint": "eslint --ext .js,.ts,.tsx lib",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier 'lib/**/*.ts' 'docs/**/*.md' --write",
+    "test": "jest --runInBand",
+    "test:watch": "yarn test --watch",
+    "test:size": "bundlesize",
+    "toc": "markdown-toc -i --maxdepth=3 --bullets=\"-\" README.md",
+    "type-check": "tsc",
+    "type-check:watch": "yarn type-check --watch",
+    "release": "shipjs prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algolia/search-insights.js.git"
+  },
+  "author": {
+    "name": "Algolia",
+    "url": "https://www.algolia.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/eslint-parser": "^7.22.11",
+    "@rollup/plugin-buble": "^1.0.2",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-typescript": "^11.1.3",
+    "@types/istanbul-reports": "^1.1.1",
+    "@types/jest": "^29.5.4",
+    "@types/jsdom": "^21.1.2",
+    "@types/node": "^20.5.7",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "bundlesize2": "^0.0.31",
+    "eslint": "^8.48.0",
+    "eslint-config-algolia": "^22.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsdoc": "^46.5.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.6.4",
+    "jest-environment-jsdom": "^29.6.4",
+    "jest-fetch-mock": "^3.0.3",
+    "jest-localstorage-mock": "^2.4.26",
+    "jest-watch-typeahead": "^2.2.2",
+    "markdown-toc": "^1.2.0",
+    "prettier": "^3.0.3",
+    "rollup": "^3.28.1",
+    "rollup-plugin-filesize": "^10.0.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "shipjs": "^0.26.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/search-insights.min.js",
+      "maxSize": "3.70 kB"
+    }
+  ],
+  "packageManager": "yarn@1.22.19"
+}

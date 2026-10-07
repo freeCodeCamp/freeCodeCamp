@@ -1,0 +1,33 @@
+.sk-wordpress > div {
+  width: 27px;
+  height: 27px;
+  background-color: currentColor;
+  display: inline-block;
+  border-radius: 27px;
+  position: relative;
+
+  -webkit-animation: sk-inner-circle 1s linear infinite;
+  animation: sk-inner-circle 1s linear infinite;
+}
+
+.sk-wordpress > div::after {
+  content: '';
+  display: block;
+  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border-radius: 8px;
+  top: 5px;
+  left: 5px;
+}
+
+@-webkit-keyframes sk-inner-circle {
+  0% { -webkit-transform: rotate(0); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes sk-inner-circle {
+  0% { transform: rotate(0); -webkit-transform:rotate(0); }
+  100% { transform: rotate(360deg); -webkit-transform:rotate(360deg); }
+}

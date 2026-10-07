@@ -1,0 +1,80 @@
+{
+  "name": "redux-saga",
+  "version": "1.4.2",
+  "description": "Saga middleware for Redux to handle Side Effects",
+  "main": "dist/redux-saga.cjs.js",
+  "module": "dist/redux-saga.esm.js",
+  "unpkg": "./dist/redux-saga.umd.min.js",
+  "files": [
+    "dist",
+    "effects"
+  ],
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/redux-saga.cjs.mjs",
+        "default": "./dist/redux-saga.cjs.js"
+      },
+      "module": "./dist/redux-saga.esm.js",
+      "import": "./dist/redux-saga.cjs.mjs",
+      "default": "./dist/redux-saga.cjs.js"
+    },
+    "./effects": {
+      "types": {
+        "import": "./effects/dist/redux-saga-effects.cjs.mjs",
+        "default": "./effects/dist/redux-saga-effects.cjs.js"
+      },
+      "module": "./effects/dist/redux-saga-effects.esm.js",
+      "import": "./effects/dist/redux-saga-effects.cjs.mjs",
+      "default": "./effects/dist/redux-saga-effects.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {},
+  "repository": "https://github.com/redux-saga/redux-saga/tree/main/packages/core",
+  "keywords": [
+    "javascript",
+    "redux",
+    "middleware",
+    "saga",
+    "effects",
+    "side effects"
+  ],
+  "author": "Yassine ELOUAFI <yelouafi@gmail.com>",
+  "contributors": [
+    "Mateusz Burzyński <mateuszburzynski@gmail.com> (https://github.com/Andarist)",
+    "Mikhail Shustov <restrry@gmail.com> (https://github.com/restrry)",
+    "Shi Feichao <842351815@qq.com> (https://github.com/shinima)",
+    "Daniel Lytkin <dan.lytkin@gmail.com (https://github.com/aikoven)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redux-saga/redux-saga/issues"
+  },
+  "homepage": "https://redux-saga.js.org/",
+  "dependencies": {
+    "@redux-saga/core": "^1.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.24.7"
+  },
+  "types": "./dist/redux-saga.cjs.d.ts",
+  "npmName": "redux-saga",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ],
+  "preconstruct": {
+    "entrypoints": [
+      "./index.js",
+      "./effects.js"
+    ]
+  }
+}

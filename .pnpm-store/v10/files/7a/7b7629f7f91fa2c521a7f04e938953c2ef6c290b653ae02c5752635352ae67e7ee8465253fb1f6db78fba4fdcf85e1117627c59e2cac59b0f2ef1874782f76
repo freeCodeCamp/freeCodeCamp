@@ -1,0 +1,16 @@
+{
+    "name": "@types/json5",
+    "version": "0.0.29",
+    "description": "TypeScript definitions for JSON5",
+    "license": "MIT",
+    "author": "Jason Swearingen <https://jasonswearingen.github.io>",
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typings": "index.d.ts",
+    "typesPublisherContentHash": "1ed77f2bfd59d290798abf89db281c36565f4a78d97d4e9caab25319d54c6331"
+}

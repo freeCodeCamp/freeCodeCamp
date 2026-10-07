@@ -1,0 +1,48 @@
+{
+  "umd:name": "ms",
+  "version": "2.0.2",
+  "name": "@lukeed/ms",
+  "repository": "lukeed/ms",
+  "description": "A tiny (414B) and fast utility to convert milliseconds to and from strings.",
+  "unpkg": "dist/index.min.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "build": "bundt",
+    "test": "uvu -r esm test"
+  },
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "keywords": [
+    "ms",
+    "time",
+    "format",
+    "milliseconds",
+    "convert"
+  ],
+  "devDependencies": {
+    "bundt": "1.1.2",
+    "esm": "3.2.25",
+    "uvu": "0.5.1"
+  }
+}

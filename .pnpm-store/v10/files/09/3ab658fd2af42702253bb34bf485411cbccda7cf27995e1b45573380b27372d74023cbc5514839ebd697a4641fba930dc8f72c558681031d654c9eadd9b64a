@@ -1,0 +1,52 @@
+{
+    "name": "@types/react-helmet",
+    "version": "6.1.11",
+    "description": "TypeScript definitions for react-helmet",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-helmet",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Evan Bremer",
+            "githubUsername": "evanbb",
+            "url": "https://github.com/evanbb"
+        },
+        {
+            "name": "Isman Usoh",
+            "githubUsername": "isman-usoh",
+            "url": "https://github.com/isman-usoh"
+        },
+        {
+            "name": "Yui T.",
+            "githubUsername": "yuit",
+            "url": "https://github.com/yuit"
+        },
+        {
+            "name": "Yamagishi Kazutoshi",
+            "githubUsername": "ykzts",
+            "url": "https://github.com/ykzts"
+        },
+        {
+            "name": "Andriy2",
+            "githubUsername": "Andriy2",
+            "url": "https://github.com/Andriy2"
+        },
+        {
+            "name": "Piotr Błażejewicz",
+            "githubUsername": "peterblazejewicz",
+            "url": "https://github.com/peterblazejewicz"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-helmet"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/react": "*"
+    },
+    "typesPublisherContentHash": "36642c9720eded9a7e2eed6b4e95920e8f41ca20fc772cf0d61b686ef8791e4f",
+    "typeScriptVersion": "4.6"
+}

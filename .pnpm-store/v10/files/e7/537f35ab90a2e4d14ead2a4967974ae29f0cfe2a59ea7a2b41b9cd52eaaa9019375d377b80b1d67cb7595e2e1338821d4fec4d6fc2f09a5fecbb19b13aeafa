@@ -1,0 +1,15 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .blockDecorations-container {
+	position: absolute;
+	top: 0;
+	pointer-events: none;
+}
+
+.monaco-editor .blockDecorations-block {
+	position: absolute;
+	box-sizing: border-box;
+}

@@ -1,0 +1,46 @@
+{
+  "name": "remark-parse",
+  "version": "9.0.0",
+  "description": "remark plugin to parse Markdown",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "plugin",
+    "markdown",
+    "mdast",
+    "abstract",
+    "syntax",
+    "tree",
+    "ast",
+    "parse"
+  ],
+  "types": "types/index.d.ts",
+  "homepage": "https://remark.js.org",
+  "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark-parse",
+  "bugs": "https://github.com/remarkjs/remark/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Eugene Sharygin <eush77@gmail.com>",
+    "Junyoung Choi <fluke8259@gmail.com>",
+    "Elijah Hamovitz <elijahhamovitz@gmail.com>",
+    "Ika <ikatyang@gmail.com>"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "dependencies": {
+    "mdast-util-from-markdown": "^0.8.0"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "xo": false
+}

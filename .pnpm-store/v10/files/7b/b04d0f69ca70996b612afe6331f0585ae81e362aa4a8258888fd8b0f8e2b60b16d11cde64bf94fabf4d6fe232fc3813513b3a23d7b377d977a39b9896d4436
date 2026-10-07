@@ -1,0 +1,47 @@
+{
+  "name": "outvariant",
+  "version": "1.4.3",
+  "description": "Type-safe implementation of invariant with positionals.",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "typings": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "default": "./lib/index.mjs"
+    }
+  },
+  "author": "Artem Zakharchenko",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "clean": "rimraf ./lib",
+    "build": "yarn clean && tsup",
+    "prepublishOnly": "yarn test && yarn build",
+    "release": "release publish"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "invariant",
+    "outvariant",
+    "exception",
+    "positional"
+  ],
+  "devDependencies": {
+    "@ossjs/release": "^0.8.0",
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.6",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.0.0",
+    "tsup": "^6.2.3",
+    "typescript": "^4.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-draft/outvariant"
+  }
+}

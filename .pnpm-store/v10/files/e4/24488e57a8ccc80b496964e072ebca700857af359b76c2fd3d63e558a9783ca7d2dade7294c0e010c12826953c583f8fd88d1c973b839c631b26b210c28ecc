@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_throw.cjs",
+    "module": "../../esm/_throw.js"
+}

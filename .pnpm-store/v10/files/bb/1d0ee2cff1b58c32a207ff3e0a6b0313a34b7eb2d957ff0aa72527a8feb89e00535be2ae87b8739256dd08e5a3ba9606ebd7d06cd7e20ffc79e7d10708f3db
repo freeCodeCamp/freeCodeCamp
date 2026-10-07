@@ -1,0 +1,4 @@
+export type ReadyEvent = MessageEvent<{
+    type: "ready";
+}>;
+//# sourceMappingURL=test-runner.d.ts.map

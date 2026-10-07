@@ -1,0 +1,116 @@
+{
+  "name": "jsdom",
+  "version": "16.7.0",
+  "description": "A JavaScript implementation of many web standards",
+  "keywords": [
+    "dom",
+    "html",
+    "whatwg",
+    "w3c"
+  ],
+  "maintainers": [
+    "Elijah Insua <tmpvar@gmail.com> (http://tmpvar.com)",
+    "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+    "Sebastian Mayr <sebmaster16@gmail.com> (https://blog.smayr.name/)",
+    "Joris van der Wel <joris@jorisvanderwel.com>",
+    "Timothy Gu <timothygu99@gmail.com> (https://timothygu.me/)",
+    "Magne Andersson <code@zirro.se> (https://zirro.se/)",
+    "Pierre-Marie Dartus <dartus.pierremarie@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": "jsdom/jsdom",
+  "dependencies": {
+    "abab": "^2.0.5",
+    "acorn": "^8.2.4",
+    "acorn-globals": "^6.0.0",
+    "cssom": "^0.4.4",
+    "cssstyle": "^2.3.0",
+    "data-urls": "^2.0.0",
+    "decimal.js": "^10.2.1",
+    "domexception": "^2.0.1",
+    "escodegen": "^2.0.0",
+    "form-data": "^3.0.0",
+    "html-encoding-sniffer": "^2.0.1",
+    "http-proxy-agent": "^4.0.1",
+    "https-proxy-agent": "^5.0.0",
+    "is-potential-custom-element-name": "^1.0.1",
+    "nwsapi": "^2.2.0",
+    "parse5": "6.0.1",
+    "saxes": "^5.0.1",
+    "symbol-tree": "^3.2.4",
+    "tough-cookie": "^4.0.0",
+    "w3c-hr-time": "^1.0.2",
+    "w3c-xmlserializer": "^2.0.0",
+    "webidl-conversions": "^6.1.0",
+    "whatwg-encoding": "^1.0.5",
+    "whatwg-mimetype": "^2.3.0",
+    "whatwg-url": "^8.5.0",
+    "ws": "^7.4.6",
+    "xml-name-validator": "^3.0.0"
+  },
+  "_dependenciesComments": {
+    "parse5": "Pinned to exact version number because we monkeypatch its internals (see htmltodom.js)"
+  },
+  "peerDependencies": {
+    "canvas": "^2.5.0"
+  },
+  "peerDependenciesMeta": {
+    "canvas": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@domenic/eslint-config": "^1.2.0",
+    "benchmark": "^2.1.4",
+    "browserify": "^17.0.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.27.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-jsdom-internal": "link:./scripts/eslint-plugin",
+    "js-yaml": "^4.1.0",
+    "karma": "^6.3.2",
+    "karma-browserify": "^8.0.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-mocha": "^2.0.1",
+    "karma-mocha-webworker": "^1.3.0",
+    "minimatch": "^3.0.4",
+    "mocha": "^8.4.0",
+    "mocha-sugar-free": "^1.4.0",
+    "optimist": "0.6.1",
+    "rimraf": "^3.0.2",
+    "server-destroy": "^1.0.1",
+    "watchify": "^4.0.0",
+    "wd": "^1.14.0",
+    "webidl2js": "^16.2.0"
+  },
+  "browser": {
+    "canvas": false,
+    "vm": "./lib/jsdom/vm-shim.js",
+    "./lib/jsdom/living/websockets/WebSocket-impl.js": "./lib/jsdom/living/websockets/WebSocket-impl-browser.js"
+  },
+  "scripts": {
+    "prepare": "yarn convert-idl && yarn generate-js-globals",
+    "pretest": "yarn prepare && yarn init-wpt",
+    "test-wpt": "mocha test/web-platform-tests/run-wpts.js",
+    "test-tuwpt": "mocha test/web-platform-tests/run-tuwpts.js",
+    "test-mocha": "mocha",
+    "test-api": "mocha test/api",
+    "test": "mocha test/index.js",
+    "test-browser-iframe": "karma start test/karma.conf.js",
+    "test-browser-worker": "karma start test/karma-webworker.conf.js",
+    "test-browser": "yarn test-browser-iframe && yarn test-browser-worker",
+    "lint": "eslint . --cache --ext .js,.html",
+    "init-wpt": "git submodule update --init --recursive",
+    "reset-wpt": "rimraf ./test/web-platform-tests/tests && yarn init-wpt",
+    "update-wpt": "git submodule update --recursive --remote && cd test/web-platform-tests/tests && python3 wpt.py manifest --path ../wpt-manifest.json",
+    "update-authors": "git log --format=\"%aN <%aE>\" | sort -f | uniq > AUTHORS.txt",
+    "benchmark": "node ./benchmark/runner",
+    "benchmark-browser": "node ./benchmark/runner --bundle",
+    "convert-idl": "node ./scripts/webidl/convert.js",
+    "generate-js-globals": "node ./scripts/generate-js-globals.js"
+  },
+  "main": "./lib/api.js",
+  "engines": {
+    "node": ">=10"
+  }
+}

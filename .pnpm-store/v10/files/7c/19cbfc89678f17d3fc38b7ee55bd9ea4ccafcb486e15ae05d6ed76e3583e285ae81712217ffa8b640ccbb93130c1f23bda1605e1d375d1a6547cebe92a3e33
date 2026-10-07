@@ -1,0 +1,11 @@
+{
+  "main": "../lib/node/RemoteHttpInterceptor.cjs",
+  "module": "../lib/node/RemoteHttpInterceptor.mjs",
+  "browser": null,
+  "exports": {
+    ".": {
+      "import": "./../lib/node/RemoteHttpInterceptor.mjs",
+      "default": "./../lib/node/RemoteHttpInterceptor.cjs"
+    }
+  }
+}

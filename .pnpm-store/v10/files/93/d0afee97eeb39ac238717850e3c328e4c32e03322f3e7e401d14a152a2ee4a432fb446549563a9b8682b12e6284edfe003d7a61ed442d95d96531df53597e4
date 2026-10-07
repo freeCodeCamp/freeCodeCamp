@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/SortedMap.js",
+  "module": "../dist/esm/SortedMap.js",
+  "types": "../dist/dts/SortedMap.d.ts"
+}

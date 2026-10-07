@@ -1,0 +1,38 @@
+{
+  "name": "nullthrows",
+  "version": "1.1.1",
+  "description": "flow typed nullthrows",
+  "keywords": [
+    "assert",
+    "flow",
+    "invariant",
+    "nullthrows"
+  ],
+  "license": "MIT",
+  "author": "Andres Suarez <zertosh@gmail.com>",
+  "files": [
+    "nullthrows.d.ts",
+    "nullthrows.js",
+    "nullthrows.js.flow"
+  ],
+  "main": "nullthrows.js",
+  "types": "nullthrows.d.ts",
+  "repository": "https://github.com/zertosh/nullthrows",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/runtime-corejs2": "^7.0.0",
+    "flow-bin": "0.87.0",
+    "jest": "^23.5.0",
+    "typescript": "3.0.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/__fixtures__/"
+    ],
+    "watchman": false
+  }
+}

@@ -1,0 +1,146 @@
+import { _ as _$1 } from '@swc/helpers/esm/_object_spread.js';
+import { _ as _$2 } from '@swc/helpers/esm/_object_spread_props.js';
+import { _ } from '@swc/helpers/esm/_object_without_properties.js';
+import { compiler } from 'markdown-to-jsx';
+import { createButtonComponent } from '../Button.js';
+import { MenuIcon } from './icons.js';
+import { startsWith } from '../../lib/utils/startsWith.js';
+import { cx } from '../../lib/cx.js';
+
+// Keep in sync with packages/instantsearch.js/src/lib/chat/index.ts
+var SearchIndexToolType = 'algolia_search_index';
+function createChatMessageComponent(param) {
+    var createElement = param.createElement;
+    var Button = createButtonComponent({
+        createElement: createElement
+    });
+    return function ChatMessage(userProps) {
+        var _userProps_classNames = userProps.classNames, classNames = _userProps_classNames === void 0 ? {} : _userProps_classNames, message = userProps.message, status = userProps.status, _userProps_side = userProps.side, side = _userProps_side === void 0 ? 'left' : _userProps_side, _userProps_variant = userProps.variant, variant = _userProps_variant === void 0 ? 'subtle' : _userProps_variant, _userProps_actions = userProps.actions, actions = _userProps_actions === void 0 ? [] : _userProps_actions, _userProps_autoHideActions = userProps.autoHideActions, autoHideActions = _userProps_autoHideActions === void 0 ? false : _userProps_autoHideActions, LeadingComponent = userProps.leadingComponent, ActionsComponent = userProps.actionsComponent, FooterComponent = userProps.footerComponent, _userProps_tools = userProps.tools, tools = _userProps_tools === void 0 ? {} : _userProps_tools, indexUiState = userProps.indexUiState, setIndexUiState = userProps.setIndexUiState, onClose = userProps.onClose, userTranslations = userProps.translations, suggestionsElement = userProps.suggestionsElement, props = _(userProps, [
+            "classNames",
+            "message",
+            "status",
+            "side",
+            "variant",
+            "actions",
+            "autoHideActions",
+            "leadingComponent",
+            "actionsComponent",
+            "footerComponent",
+            "tools",
+            "indexUiState",
+            "setIndexUiState",
+            "onClose",
+            "translations",
+            "suggestionsElement"
+        ]);
+        var translations = _$1({
+            messageLabel: 'Message',
+            actionsLabel: 'Message actions'
+        }, userTranslations);
+        var hasLeading = Boolean(LeadingComponent);
+        var showActions = Boolean(actions.length > 0 || ActionsComponent) && status === 'ready';
+        var cssClasses = {
+            root: cx('ais-ChatMessage', "ais-ChatMessage--".concat(side), "ais-ChatMessage--".concat(variant), autoHideActions && 'ais-ChatMessage--auto-hide-actions', classNames.root),
+            container: cx('ais-ChatMessage-container', classNames.container),
+            leading: cx('ais-ChatMessage-leading', classNames.leading),
+            content: cx('ais-ChatMessage-content', classNames.content),
+            message: cx('ais-ChatMessage-message', classNames.message),
+            actions: cx('ais-ChatMessage-actions', classNames.actions),
+            footer: cx('ais-ChatMessage-footer', classNames.footer)
+        };
+        function renderMessagePart(part, index) {
+            if (part.type === 'step-start') {
+                return null;
+            }
+            if (part.type === 'text') {
+                if (part.text.startsWith('<context>') && part.text.endsWith('</context>')) {
+                    return null;
+                }
+                var markdown = compiler(part.text, {
+                    createElement: createElement,
+                    disableParsingRawHTML: true
+                });
+                return /*#__PURE__*/ createElement("span", {
+                    key: "".concat(message.id, "-").concat(index)
+                }, markdown);
+            }
+            if (startsWith(part.type, 'tool-')) {
+                var toolName = part.type.replace('tool-', '');
+                var tool = tools[toolName];
+                // Compatibility shim with Algolia MCP Server search tool
+                if (!tool && startsWith(toolName, "".concat(SearchIndexToolType, "_"))) {
+                    tool = tools[SearchIndexToolType];
+                }
+                if (tool) {
+                    var ToolLayoutComponent = tool.layoutComponent;
+                    var toolMessage = part;
+                    var boundAddToolResult = function boundAddToolResult(params) {
+                        var _tool_addToolResult;
+                        return (_tool_addToolResult = tool.addToolResult) === null || _tool_addToolResult === void 0 ? void 0 : _tool_addToolResult.call(tool, {
+                            output: params.output,
+                            tool: part.type,
+                            toolCallId: toolMessage.toolCallId
+                        });
+                    };
+                    if (toolMessage.state === 'input-streaming' && !tool.streamInput) {
+                        return null;
+                    }
+                    if (!ToolLayoutComponent) {
+                        return null;
+                    }
+                    return /*#__PURE__*/ createElement("div", {
+                        key: "".concat(message.id, "-").concat(index),
+                        className: "ais-ChatMessage-tool"
+                    }, /*#__PURE__*/ createElement(ToolLayoutComponent, {
+                        message: toolMessage,
+                        indexUiState: indexUiState,
+                        setIndexUiState: setIndexUiState,
+                        addToolResult: boundAddToolResult,
+                        applyFilters: tool.applyFilters,
+                        sendEvent: tool.sendEvent || function() {},
+                        onClose: onClose
+                    }));
+                }
+            }
+            return null;
+        }
+        return /*#__PURE__*/ createElement("article", _$2(_$1({}, props), {
+            className: cx(cssClasses.root, props.className),
+            "aria-label": translations.messageLabel
+        }), /*#__PURE__*/ createElement("div", {
+            className: cx(cssClasses.container)
+        }, hasLeading && /*#__PURE__*/ createElement("div", {
+            className: cx(cssClasses.leading)
+        }, LeadingComponent && /*#__PURE__*/ createElement(LeadingComponent, null)), /*#__PURE__*/ createElement("div", {
+            className: cx(cssClasses.content)
+        }, /*#__PURE__*/ createElement("div", {
+            className: cx(cssClasses.message)
+        }, message.parts.map(renderMessagePart)), suggestionsElement, showActions && /*#__PURE__*/ createElement("div", {
+            className: cx(cssClasses.actions),
+            "aria-label": translations.actionsLabel
+        }, ActionsComponent ? /*#__PURE__*/ createElement(ActionsComponent, {
+            actions: actions,
+            message: message
+        }) : actions.map(function(action, index) {
+            return /*#__PURE__*/ createElement(Button, {
+                key: index,
+                variant: "ghost",
+                size: "sm",
+                iconOnly: true,
+                className: "ais-ChatMessage-action",
+                disabled: action.disabled,
+                "aria-label": action.title,
+                onClick: function onClick() {
+                    var _action_onClick;
+                    return (_action_onClick = action.onClick) === null || _action_onClick === void 0 ? void 0 : _action_onClick.call(action, message);
+                }
+            }, action.icon ? /*#__PURE__*/ createElement(action.icon, null) : /*#__PURE__*/ createElement(MenuIcon, {
+                createElement: createElement
+            }));
+        })), FooterComponent && /*#__PURE__*/ createElement("div", {
+            className: cx(cssClasses.footer)
+        }, /*#__PURE__*/ createElement(FooterComponent, null)))));
+    };
+}
+
+export { createChatMessageComponent };

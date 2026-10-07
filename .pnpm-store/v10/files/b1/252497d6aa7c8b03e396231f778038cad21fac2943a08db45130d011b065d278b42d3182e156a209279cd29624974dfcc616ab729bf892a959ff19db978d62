@@ -1,0 +1,1 @@
+import{useRef as t}from"react";import{useWindowEvent as a}from'./use-window-event.js';var s=(r=>(r[r.Forwards=0]="Forwards",r[r.Backwards=1]="Backwards",r))(s||{});function n(){let e=t(0);return a("keydown",o=>{o.key==="Tab"&&(e.current=o.shiftKey?1:0)},!0),e}export{s as Direction,n as useTabDirection};

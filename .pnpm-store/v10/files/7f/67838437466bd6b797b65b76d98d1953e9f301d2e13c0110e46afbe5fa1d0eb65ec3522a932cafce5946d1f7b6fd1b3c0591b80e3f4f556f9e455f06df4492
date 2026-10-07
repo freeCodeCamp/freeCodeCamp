@@ -1,0 +1,70 @@
+{
+  "name": "@graphql-tools/relay-operation-optimizer",
+  "version": "6.5.18",
+  "description": "Package for optimizing your GraphQL operations relay style.",
+  "sideEffects": false,
+  "peerDependencies": {
+    "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+  },
+  "dependencies": {
+    "@graphql-tools/utils": "^9.2.1",
+    "@ardatan/relay-compiler": "12.0.0",
+    "tslib": "^2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ardatan/graphql-tools",
+    "directory": "packages/relay-operation-optimizer"
+  },
+  "keywords": [
+    "graphql",
+    "codegen",
+    "graphql-codegen",
+    "plugin",
+    "relay"
+  ],
+  "author": {
+    "name": "Laurin Quast",
+    "email": "laurinquast@googlemail.com",
+    "url": "https://github.com/n1ru4l"
+  },
+  "license": "MIT",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "typings": "typings/index.d.ts",
+  "typescript": {
+    "definition": "typings/index.d.ts"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./typings/index.d.cts",
+        "default": "./cjs/index.js"
+      },
+      "import": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "default": {
+        "types": "./typings/index.d.ts",
+        "default": "./esm/index.js"
+      }
+    },
+    "./*": {
+      "require": {
+        "types": "./typings/*.d.cts",
+        "default": "./cjs/*.js"
+      },
+      "import": {
+        "types": "./typings/*.d.ts",
+        "default": "./esm/*.js"
+      },
+      "default": {
+        "types": "./typings/*.d.ts",
+        "default": "./esm/*.js"
+      }
+    },
+    "./package.json": "./package.json"
+  }
+}

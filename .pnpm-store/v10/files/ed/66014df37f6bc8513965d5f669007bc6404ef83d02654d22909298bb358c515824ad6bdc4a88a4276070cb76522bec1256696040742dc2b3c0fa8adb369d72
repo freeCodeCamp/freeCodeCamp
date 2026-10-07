@@ -1,0 +1,19 @@
+{
+  "versions": [
+    {
+      "version": "*",
+      "target": {
+        "node": "supported"
+      },
+      "response": {
+        "type": "time-permitting"
+      },
+      "backing": {
+        "donations": [
+          "https://github.com/sponsors/abetomo",
+          "https://github.com/sponsors/shadowspawn"
+        ]
+      }
+    }
+  ]
+}

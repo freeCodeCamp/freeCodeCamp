@@ -1,0 +1,76 @@
+{
+  "name": "json5",
+  "version": "1.0.2",
+  "description": "JSON for humans.",
+  "main": "lib/index.js",
+  "bin": "lib/cli.js",
+  "browser": "dist/index.js",
+  "files": [
+    "lib/",
+    "dist/"
+  ],
+  "scripts": {
+    "build": "babel-node build/build.js && babel src -d lib && rollup -c",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint --fix build src",
+    "prepublishOnly": "npm run lint && npm test && npm run production",
+    "pretest": "cross-env NODE_ENV=test npm run build",
+    "preversion": "npm run lint && npm test && npm run production",
+    "production": "cross-env NODE_ENV=production npm run build",
+    "test": "nyc --reporter=html --reporter=text mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/json5/json5.git"
+  },
+  "keywords": [
+    "json",
+    "json5",
+    "es5",
+    "es2015",
+    "ecmascript"
+  ],
+  "author": "Aseem Kishore <aseem.kishore@gmail.com>",
+  "contributors": [
+    "Max Nanasy <max.nanasy@gmail.com>",
+    "Andrew Eisenberg <andrew@eisenberg.as>",
+    "Jordan Tucker <jordanbtucker@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/json5/json5/issues"
+  },
+  "homepage": "http://json5.org/",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "babelrc-rollup": "^3.0.0",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.1.4",
+    "del": "^3.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^5.0.4",
+    "nyc": "^11.4.1",
+    "regenerate": "^1.3.3",
+    "rollup": "^0.56.5",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.0.0",
+    "rollup-plugin-node-resolve": "^3.2.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "sinon": "^4.4.2",
+    "unicode-9.0.0": "^0.7.5"
+  }
+}

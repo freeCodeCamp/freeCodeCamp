@@ -1,0 +1,54 @@
+{
+  "name": "string-natural-compare",
+  "version": "3.0.1",
+  "description": "Compare alphanumeric strings the same way a human would, using a natural order algorithm",
+  "author": "Nathan Woltman <nwoltman@outlook.com>",
+  "license": "MIT",
+  "main": "natural-compare.js",
+  "files": [
+    "natural-compare.js"
+  ],
+  "repository": "github:nwoltman/string-natural-compare",
+  "homepage": "https://github.com/nwoltman/string-natural-compare",
+  "bugs": "https://github.com/nwoltman/string-natural-compare/issues",
+  "keywords": [
+    "string",
+    "natural",
+    "compare",
+    "comparison",
+    "order",
+    "natcmp",
+    "strnatcmp",
+    "sort",
+    "natsort",
+    "alphanum",
+    "alphanumeric"
+  ],
+  "eslintIgnore": [
+    "benchmark/node_modules/",
+    "coverage/"
+  ],
+  "nyc": {
+    "reporter": [
+      "html",
+      "text-summary"
+    ],
+    "check-coverage": true,
+    "branches": 100,
+    "lines": 100,
+    "statements": 100
+  },
+  "devDependencies": {
+    "@nwoltman/eslint-config": "^0.6.0",
+    "coveralls": "^3.0.9",
+    "eslint": "^6.8.0",
+    "mocha": "^7.0.0",
+    "nyc": "^15.0.0",
+    "should": "^13.2.3"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "eslint . && nyc mocha",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  }
+}

@@ -1,0 +1,4 @@
+{
+    "main": "../../cjs/_object_spread.cjs",
+    "module": "../../esm/_object_spread.js"
+}

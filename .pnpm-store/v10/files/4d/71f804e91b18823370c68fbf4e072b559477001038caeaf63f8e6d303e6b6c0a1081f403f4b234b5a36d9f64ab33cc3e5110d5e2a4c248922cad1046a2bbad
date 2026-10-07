@@ -1,0 +1,5 @@
+# Set the default behavior, in case people don't have core.autocrlf set
+* text=auto
+
+# Require Unix line endings
+* text eol=lf

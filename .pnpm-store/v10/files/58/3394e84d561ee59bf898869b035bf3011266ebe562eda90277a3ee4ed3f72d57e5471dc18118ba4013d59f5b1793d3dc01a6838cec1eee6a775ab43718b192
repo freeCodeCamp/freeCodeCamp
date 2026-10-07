@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/use-callback-ref.tsx"],
+  "sourcesContent": ["import * as React from 'react';\n\n/**\n * A custom hook that converts a callback to a ref to avoid triggering re-renders when passed as a\n * prop or avoid re-executing effects when passed as a dependency\n */\nfunction useCallbackRef<T extends (...args: any[]) => any>(callback: T | undefined): T {\n  const callbackRef = React.useRef(callback);\n\n  React.useEffect(() => {\n    callbackRef.current = callback;\n  });\n\n  // https://github.com/facebook/react/issues/19240\n  return React.useMemo(() => ((...args) => callbackRef.current?.(...args)) as T, []);\n}\n\nexport { useCallbackRef };\n"],
+  "mappings": ";AAAA,YAAY,WAAW;AAMvB,SAAS,eAAkD,UAA4B;AACrF,QAAM,cAAoB,aAAO,QAAQ;AAEzC,EAAM,gBAAU,MAAM;AACpB,gBAAY,UAAU;AAAA,EACxB,CAAC;AAGD,SAAa,cAAQ,MAAO,IAAI,SAAS,YAAY,UAAU,GAAG,IAAI,GAAS,CAAC,CAAC;AACnF;",
+  "names": []
+}

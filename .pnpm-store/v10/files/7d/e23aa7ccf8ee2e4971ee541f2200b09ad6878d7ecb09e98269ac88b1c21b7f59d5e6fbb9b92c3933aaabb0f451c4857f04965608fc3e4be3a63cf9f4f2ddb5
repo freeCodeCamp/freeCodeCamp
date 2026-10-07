@@ -1,0 +1,25 @@
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @providesModule ErrorUtils
+ */
+
+/* jslint unused:false */
+if (global.ErrorUtils) {
+  module.exports = global.ErrorUtils;
+} else {
+  var ErrorUtils = {
+    applyWithGuard(callback, context, args, onError, name) {
+      return callback.apply(context, args);
+    },
+
+    guard(callback, name) {
+      return callback;
+    }
+
+  };
+  module.exports = ErrorUtils;
+}

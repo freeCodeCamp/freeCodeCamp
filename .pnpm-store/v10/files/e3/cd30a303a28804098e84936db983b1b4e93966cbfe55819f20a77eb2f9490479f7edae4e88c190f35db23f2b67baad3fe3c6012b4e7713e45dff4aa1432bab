@@ -1,0 +1,610 @@
+import { _ as _$3 } from '@swc/helpers/esm/_define_property.js';
+import { _ as _$1 } from '@swc/helpers/esm/_object_spread.js';
+import { _ as _$2 } from '@swc/helpers/esm/_object_spread_props.js';
+import { _ } from '@swc/helpers/esm/_object_without_properties.js';
+import { _ as _$4 } from '@swc/helpers/esm/_sliced_to_array.js';
+import { createChatComponent, createButtonComponent, ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon } from 'instantsearch-ui-components';
+import { h, Fragment, render } from 'preact';
+import { useMemo } from 'preact/hooks';
+import Template from '../../components/Template/Template.js';
+import connectChat from '../../connectors/chat/connectChat.js';
+import { SearchIndexToolType, RecommendToolType, MemorizeToolType, MemorySearchToolType, PonderToolType } from '../../lib/chat/index.js';
+import { useStickToBottom } from '../../lib/useStickToBottom.js';
+import { carousel } from '../../templates/carousel/carousel.js';
+import { createDocumentationMessageGenerator } from '../../lib/utils/documentation.js';
+import { getContainerNode } from '../../lib/utils/getContainerNode.js';
+import { prepareTemplateProps } from '../../lib/templating/prepareTemplateProps.js';
+import { addAbsolutePosition } from '../../lib/utils/hits-absolute-position.js';
+import { addQueryID } from '../../lib/utils/hits-query-id.js';
+
+var withUsage = createDocumentationMessageGenerator({
+    name: 'chat'
+});
+var Chat = createChatComponent({
+    createElement: h,
+    Fragment: Fragment
+});
+function getDefinedProperties(obj) {
+    return Object.fromEntries(Object.entries(obj).filter(function(param) {
+        var _param = _$4(param, 2), value = _param[1];
+        return value !== undefined;
+    }));
+}
+function createCarouselTool(showViewAll, templates, getSearchPageURL) {
+    var Button = createButtonComponent({
+        createElement: h
+    });
+    function SearchLayoutComponent(param) {
+        var message = param.message, applyFilters = param.applyFilters, onClose = param.onClose, sendEvent = param.sendEvent;
+        var _ref;
+        var _output_hits;
+        var input = message === null || message === void 0 ? void 0 : message.input;
+        var output = message === null || message === void 0 ? void 0 : message.output;
+        var hitsWithAbsolutePosition = addAbsolutePosition((output === null || output === void 0 ? void 0 : output.hits) || [], 0, ((_ref = input === null || input === void 0 ? void 0 : input.number_of_results) !== null && _ref !== void 0 ? _ref : output === null || output === void 0 ? void 0 : (_output_hits = output.hits) === null || _output_hits === void 0 ? void 0 : _output_hits.length) || 5 // defaulting to 5 if number_of_results is not provided
+        );
+        var items = addQueryID(hitsWithAbsolutePosition, output === null || output === void 0 ? void 0 : output.queryID);
+        var MemoedHeaderComponent = useMemo(function() {
+            return function(props) {
+                return /*#__PURE__*/ h(HeaderComponent, _$1({
+                    nbHits: output === null || output === void 0 ? void 0 : output.nbHits,
+                    input: input,
+                    hitsPerPage: items.length,
+                    applyFilters: applyFilters,
+                    onClose: onClose
+                }, props));
+            };
+        }, [
+            items.length,
+            input,
+            output === null || output === void 0 ? void 0 : output.nbHits,
+            applyFilters,
+            onClose
+        ]);
+        return carousel({
+            showNavigation: false,
+            templates: {
+                header: MemoedHeaderComponent
+            }
+        })({
+            items: items,
+            templates: {
+                item: function item(param) {
+                    var item = param.item;
+                    return /*#__PURE__*/ h(Template, {
+                        templates: templates,
+                        templateKey: "item",
+                        data: item,
+                        rootTagName: "fragment"
+                    });
+                }
+            },
+            sendEvent: sendEvent
+        });
+    }
+    function HeaderComponent(param) {
+        var canScrollLeft = param.canScrollLeft, canScrollRight = param.canScrollRight, scrollLeft = param.scrollLeft, scrollRight = param.scrollRight, nbHits = param.nbHits, input = param.input, hitsPerPage = param.hitsPerPage, applyFilters = param.applyFilters, onClose = param.onClose;
+        if ((hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0) < 1) {
+            return null;
+        }
+        return /*#__PURE__*/ h("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeader"
+        }, /*#__PURE__*/ h("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderResults"
+        }, nbHits && /*#__PURE__*/ h("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderCount"
+        }, hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0, " of ", nbHits.toLocaleString(), " result", nbHits > 1 ? 's' : ''), showViewAll && /*#__PURE__*/ h(Button, {
+            variant: "ghost",
+            size: "sm",
+            onClick: function onClick() {
+                if (!input || !applyFilters) return;
+                var params = applyFilters({
+                    query: input.query,
+                    facetFilters: input.facet_filters
+                });
+                if (getSearchPageURL && new URL(getSearchPageURL(params)).pathname !== window.location.pathname) {
+                    window.location.href = getSearchPageURL(params);
+                }
+                onClose();
+            },
+            className: "ais-ChatToolSearchIndexCarouselHeaderViewAll"
+        }, "View all", /*#__PURE__*/ h(ArrowRightIcon, {
+            createElement: h
+        }))), (hitsPerPage !== null && hitsPerPage !== void 0 ? hitsPerPage : 0) > 2 && /*#__PURE__*/ h("div", {
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButtons"
+        }, /*#__PURE__*/ h(Button, {
+            variant: "outline",
+            size: "sm",
+            iconOnly: true,
+            onClick: scrollLeft,
+            disabled: !canScrollLeft,
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButton"
+        }, /*#__PURE__*/ h(ChevronLeftIcon, {
+            createElement: h
+        })), /*#__PURE__*/ h(Button, {
+            variant: "outline",
+            size: "sm",
+            iconOnly: true,
+            onClick: scrollRight,
+            disabled: !canScrollRight,
+            className: "ais-ChatToolSearchIndexCarouselHeaderScrollButton"
+        }, /*#__PURE__*/ h(ChevronRightIcon, {
+            createElement: h
+        }))));
+    }
+    return {
+        templates: {
+            layout: SearchLayoutComponent
+        }
+    };
+}
+function createDefaultTools(templates, getSearchPageURL) {
+    var _obj;
+    return _obj = {}, _$3(_obj, SearchIndexToolType, createCarouselTool(true, templates, getSearchPageURL)), _$3(_obj, RecommendToolType, createCarouselTool(false, templates, getSearchPageURL)), _$3(_obj, MemorizeToolType, {
+        templates: {}
+    }), _$3(_obj, MemorySearchToolType, {
+        templates: {}
+    }), _$3(_obj, PonderToolType, {
+        templates: {}
+    }), _obj;
+}
+function ChatWrapper(param) {
+    var layoutComponent = param.layoutComponent, cssClasses = param.cssClasses, chatOpen = param.chatOpen, setChatOpen = param.setChatOpen, chatMessages = param.chatMessages, indexUiState = param.indexUiState, setIndexUiState = param.setIndexUiState, chatStatus = param.chatStatus, chatInput = param.chatInput, setChatInput = param.setChatInput, sendMessage = param.sendMessage, regenerate = param.regenerate, stop = param.stop, error = param.error, isClearing = param.isClearing, clearMessages = param.clearMessages, onClearTransitionEnd = param.onClearTransitionEnd, onFeedback = param.onFeedback, feedbackState = param.feedbackState, toolsForUi = param.toolsForUi, toggleButtonProps = param.toggleButtonProps, headerProps = param.headerProps, messagesProps = param.messagesProps, promptProps = param.promptProps, suggestionsProps = param.suggestionsProps, state = param.state;
+    var _useStickToBottom = useStickToBottom({
+        initial: 'smooth',
+        resize: 'smooth'
+    }), scrollRef = _useStickToBottom.scrollRef, contentRef = _useStickToBottom.contentRef, scrollToBottom = _useStickToBottom.scrollToBottom, isAtBottom = _useStickToBottom.isAtBottom;
+    state.init();
+    var _state_use = _$4(state.use(false), 2), maximized = _state_use[0], setMaximized = _state_use[1];
+    return /*#__PURE__*/ h(Chat, {
+        layoutComponent: layoutComponent,
+        classNames: cssClasses,
+        open: chatOpen,
+        maximized: maximized,
+        sendMessage: sendMessage,
+        regenerate: regenerate,
+        stop: stop,
+        error: error,
+        toggleButtonComponent: toggleButtonProps.layoutComponent,
+        toggleButtonProps: {
+            open: chatOpen,
+            onClick: function onClick() {
+                return setChatOpen(!chatOpen);
+            },
+            toggleIconComponent: toggleButtonProps.iconComponent
+        },
+        headerComponent: headerProps.layoutComponent,
+        promptComponent: promptProps.layoutComponent,
+        suggestionsComponent: suggestionsProps.suggestionsComponent,
+        headerProps: {
+            onClose: function onClose() {
+                return setChatOpen(false);
+            },
+            maximized: maximized,
+            onToggleMaximize: function onToggleMaximize() {
+                return setMaximized(!maximized);
+            },
+            onClear: clearMessages,
+            canClear: Boolean(chatMessages === null || chatMessages === void 0 ? void 0 : chatMessages.length) && !isClearing,
+            closeIconComponent: headerProps.closeIconComponent,
+            minimizeIconComponent: headerProps.minimizeIconComponent,
+            maximizeIconComponent: headerProps.maximizeIconComponent,
+            titleIconComponent: headerProps.titleIconComponent,
+            translations: headerProps.translations
+        },
+        messagesProps: {
+            status: chatStatus,
+            onReload: function onReload(messageId) {
+                return regenerate({
+                    messageId: messageId
+                });
+            },
+            onClose: function onClose() {
+                return setChatOpen(false);
+            },
+            onFeedback: onFeedback,
+            feedbackState: feedbackState,
+            messages: chatMessages,
+            indexUiState: indexUiState,
+            isClearing: isClearing,
+            onClearTransitionEnd: onClearTransitionEnd,
+            isScrollAtBottom: isAtBottom,
+            scrollRef: scrollRef,
+            contentRef: contentRef,
+            onScrollToBottom: scrollToBottom,
+            setIndexUiState: setIndexUiState,
+            tools: toolsForUi,
+            loaderComponent: messagesProps.loaderComponent,
+            errorComponent: messagesProps.errorComponent,
+            emptyComponent: messagesProps.emptyComponent,
+            actionsComponent: messagesProps.actionsComponent,
+            assistantMessageProps: messagesProps.assistantMessageProps,
+            userMessageProps: messagesProps.userMessageProps,
+            translations: messagesProps.translations,
+            messageTranslations: messagesProps.messageTranslations,
+            sendMessage: messagesProps.sendMessage,
+            setInput: messagesProps.setInput
+        },
+        promptProps: {
+            promptRef: promptProps.promptRef,
+            status: chatStatus,
+            value: chatInput,
+            onInput: function onInput(event) {
+                setChatInput(event.currentTarget.value);
+            },
+            onSubmit: function onSubmit() {
+                sendMessage({
+                    text: chatInput
+                });
+                setChatInput('');
+            },
+            onStop: function onStop() {
+                stop();
+            },
+            headerComponent: promptProps.headerComponent,
+            footerComponent: promptProps.footerComponent,
+            translations: promptProps.translations
+        },
+        suggestionsProps: {
+            onSuggestionClick: suggestionsProps.onSuggestionClick,
+            suggestions: suggestionsProps.suggestions
+        }
+    });
+}
+var createRenderer = function createRenderer(param) {
+    var renderState = param.renderState, cssClasses = param.cssClasses, containerNode = param.containerNode, templates = param.templates, tools = param.tools;
+    var _templates_header, _templates_header1, _templates_header2, _templates_header3, _templates_header4, _templates_messages, _templates_assistantMessage, _templates_assistantMessage1, _templates_userMessage, _templates_userMessage1, _templates_prompt, _templates_prompt1, _templates_prompt2, _templates_toggleButton, _templates_toggleButton1;
+    var state = createLocalState();
+    var promptRef = {
+        current: null
+    };
+    var wasOpen = false;
+    var makeTemplateRef = function makeTemplateRef() {
+        return {
+            current: undefined
+        };
+    };
+    var headerTemplateRef = makeTemplateRef();
+    var messagesTemplateRef = makeTemplateRef();
+    var loaderTemplateRef = makeTemplateRef();
+    var emptyTemplateRef = makeTemplateRef();
+    var assistantMessageTemplateRef = makeTemplateRef();
+    var userMessageTemplateRef = makeTemplateRef();
+    var promptTemplateRef = makeTemplateRef();
+    var toggleButtonTemplateRef = makeTemplateRef();
+    var layoutTemplateRef = makeTemplateRef();
+    function createStableTemplateComponent(templateRef, templateKey, rootTagName) {
+        return function(props) {
+            return /*#__PURE__*/ h(Template, _$2(_$1({}, templateRef.current), {
+                templateKey: templateKey,
+                rootTagName: rootTagName,
+                data: props
+            }));
+        };
+    }
+    var stableHeaderLayoutComponent = ((_templates_header = templates.header) === null || _templates_header === void 0 ? void 0 : _templates_header.layout) ? createStableTemplateComponent(headerTemplateRef, 'layout', 'div') : undefined;
+    var stableHeaderCloseIconComponent = ((_templates_header1 = templates.header) === null || _templates_header1 === void 0 ? void 0 : _templates_header1.closeIcon) ? createStableTemplateComponent(headerTemplateRef, 'closeIcon', 'span') : undefined;
+    var stableHeaderMinimizeIconComponent = ((_templates_header2 = templates.header) === null || _templates_header2 === void 0 ? void 0 : _templates_header2.minimizeIcon) ? createStableTemplateComponent(headerTemplateRef, 'minimizeIcon', 'span') : undefined;
+    var stableHeaderMaximizeIconComponent = ((_templates_header3 = templates.header) === null || _templates_header3 === void 0 ? void 0 : _templates_header3.maximizeIcon) ? createStableTemplateComponent(headerTemplateRef, 'maximizeIcon', 'span') : undefined;
+    var stableHeaderTitleIconComponent = ((_templates_header4 = templates.header) === null || _templates_header4 === void 0 ? void 0 : _templates_header4.titleIcon) ? createStableTemplateComponent(headerTemplateRef, 'titleIcon', 'span') : undefined;
+    var stableMessagesErrorComponent = ((_templates_messages = templates.messages) === null || _templates_messages === void 0 ? void 0 : _templates_messages.error) ? createStableTemplateComponent(messagesTemplateRef, 'error', 'div') : undefined;
+    var stableMessagesEmptyComponent = templates.empty ? createStableTemplateComponent(emptyTemplateRef, 'empty', 'div') : undefined;
+    var stableAssistantMessageLeadingComponent = ((_templates_assistantMessage = templates.assistantMessage) === null || _templates_assistantMessage === void 0 ? void 0 : _templates_assistantMessage.leading) ? createStableTemplateComponent(assistantMessageTemplateRef, 'leading', 'fragment') : undefined;
+    var stableAssistantMessageFooterComponent = ((_templates_assistantMessage1 = templates.assistantMessage) === null || _templates_assistantMessage1 === void 0 ? void 0 : _templates_assistantMessage1.footer) ? createStableTemplateComponent(assistantMessageTemplateRef, 'footer', 'fragment') : undefined;
+    var stableUserMessageLeadingComponent = ((_templates_userMessage = templates.userMessage) === null || _templates_userMessage === void 0 ? void 0 : _templates_userMessage.leading) ? createStableTemplateComponent(userMessageTemplateRef, 'leading', 'fragment') : undefined;
+    var stableUserMessageFooterComponent = ((_templates_userMessage1 = templates.userMessage) === null || _templates_userMessage1 === void 0 ? void 0 : _templates_userMessage1.footer) ? createStableTemplateComponent(userMessageTemplateRef, 'footer', 'fragment') : undefined;
+    var stablePromptLayoutComponent = ((_templates_prompt = templates.prompt) === null || _templates_prompt === void 0 ? void 0 : _templates_prompt.layout) ? createStableTemplateComponent(promptTemplateRef, 'layout', 'div') : undefined;
+    var stablePromptHeaderComponent = ((_templates_prompt1 = templates.prompt) === null || _templates_prompt1 === void 0 ? void 0 : _templates_prompt1.header) ? createStableTemplateComponent(promptTemplateRef, 'header', 'fragment') : undefined;
+    var stablePromptFooterComponent = ((_templates_prompt2 = templates.prompt) === null || _templates_prompt2 === void 0 ? void 0 : _templates_prompt2.footer) ? createStableTemplateComponent(promptTemplateRef, 'footer', 'fragment') : undefined;
+    var stableToggleButtonLayoutComponent = ((_templates_toggleButton = templates.toggleButton) === null || _templates_toggleButton === void 0 ? void 0 : _templates_toggleButton.layout) ? createStableTemplateComponent(toggleButtonTemplateRef, 'layout', 'button') : undefined;
+    var stableToggleButtonIconComponent = ((_templates_toggleButton1 = templates.toggleButton) === null || _templates_toggleButton1 === void 0 ? void 0 : _templates_toggleButton1.icon) ? createStableTemplateComponent(toggleButtonTemplateRef, 'icon', 'span') : undefined;
+    var stableActionsComponent = templates.actions ? function(actionsProps) {
+        return /*#__PURE__*/ h(Template, _$2(_$1({}, renderState.templateProps), {
+            templateKey: "actions",
+            rootTagName: "div",
+            data: actionsProps
+        }));
+    } : undefined;
+    var stableLoaderComponent = templates.loader ? createStableTemplateComponent(loaderTemplateRef, 'loader', 'div') : undefined;
+    var stableSuggestionsComponent = templates.suggestions ? function(suggestionsProps) {
+        return /*#__PURE__*/ h(Template, _$2(_$1({}, renderState.templateProps), {
+            templateKey: "suggestions",
+            rootTagName: "fragment",
+            data: suggestionsProps
+        }));
+    } : undefined;
+    var stableLayoutComponent = templates.layout ? function(layoutProps) {
+        var headerComponent = layoutProps.headerComponent, messagesComponent = layoutProps.messagesComponent, promptComponent = layoutProps.promptComponent, toggleButtonComponent = layoutProps.toggleButtonComponent, restLayoutProps = _(layoutProps, [
+            "headerComponent",
+            "messagesComponent",
+            "promptComponent",
+            "toggleButtonComponent"
+        ]);
+        return /*#__PURE__*/ h(Template, _$2(_$1({}, layoutTemplateRef.current), {
+            templateKey: "layout",
+            rootTagName: "fragment",
+            data: _$2(_$1({}, restLayoutProps), {
+                templates: {
+                    header: function header() {
+                        return headerComponent;
+                    },
+                    messages: function messages() {
+                        return messagesComponent;
+                    },
+                    prompt: function prompt() {
+                        return promptComponent;
+                    },
+                    toggleButton: function toggleButton() {
+                        return toggleButtonComponent;
+                    }
+                }
+            })
+        }));
+    } : undefined;
+    // eslint-disable-next-line complexity
+    return function(props, isFirstRendering) {
+        var _templates_header, _templates_header1, _templates_header2, _templates_header3, _templates_header4, _templates_messages, _templates_messages1, _templates_messages2, _templates_messages3, _templates_message, _templates_message1, _templates_prompt, _templates_prompt1, _templates_prompt2, _templates_prompt3, _templates_prompt4, _templates_prompt5;
+        var indexUiState = props.indexUiState, input = props.input, instantSearchInstance = props.instantSearchInstance, messages = props.messages, open = props.open, sendMessage = props.sendMessage, setIndexUiState = props.setIndexUiState, setInput = props.setInput, setOpen = props.setOpen, status = props.status, error = props.error, regenerate = props.regenerate, stop = props.stop, isClearing = props.isClearing, clearMessages = props.clearMessages, onClearTransitionEnd = props.onClearTransitionEnd, toolsFromConnector = props.tools, suggestions = props.suggestions, onFeedback = props.sendChatMessageFeedback, feedbackState = props.feedbackState;
+        if (isFirstRendering) {
+            renderState.templateProps = prepareTemplateProps({
+                defaultTemplates: {},
+                templatesConfig: instantSearchInstance.templatesConfig,
+                templates: templates
+            });
+            return;
+        }
+        var toolsForUi = {};
+        Object.entries(toolsFromConnector).forEach(function(param) {
+            var _param = _$4(param, 2), key = _param[0], connectorTool = _param[1];
+            var _widgetTool_templates;
+            var widgetTool = tools[key];
+            // Compatibility shim with Algolia MCP Server search tool
+            if (!widgetTool && key.startsWith("".concat(SearchIndexToolType, "_"))) {
+                widgetTool = tools[SearchIndexToolType];
+            }
+            toolsForUi[key] = _$1({}, connectorTool, (widgetTool === null || widgetTool === void 0 ? void 0 : (_widgetTool_templates = widgetTool.templates) === null || _widgetTool_templates === void 0 ? void 0 : _widgetTool_templates.layout) && {
+                layoutComponent: function layoutComponent(layoutComponentProps) {
+                    return /*#__PURE__*/ h(Template, {
+                        templates: widgetTool.templates,
+                        rootTagName: "fragment",
+                        templateKey: "layout",
+                        data: layoutComponentProps
+                    });
+                }
+            });
+        });
+        headerTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: templates.header
+        });
+        var headerTranslations = getDefinedProperties({
+            title: (_templates_header = templates.header) === null || _templates_header === void 0 ? void 0 : _templates_header.titleText,
+            minimizeLabel: (_templates_header1 = templates.header) === null || _templates_header1 === void 0 ? void 0 : _templates_header1.minimizeLabelText,
+            maximizeLabel: (_templates_header2 = templates.header) === null || _templates_header2 === void 0 ? void 0 : _templates_header2.maximizeLabelText,
+            closeLabel: (_templates_header3 = templates.header) === null || _templates_header3 === void 0 ? void 0 : _templates_header3.closeLabelText,
+            clearLabel: (_templates_header4 = templates.header) === null || _templates_header4 === void 0 ? void 0 : _templates_header4.clearLabelText
+        });
+        messagesTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: templates.messages
+        });
+        loaderTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: {
+                loader: templates.loader
+            }
+        });
+        emptyTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: {
+                empty: templates.empty
+            }
+        });
+        var messagesTranslations = getDefinedProperties({
+            scrollToBottomLabel: (_templates_messages = templates.messages) === null || _templates_messages === void 0 ? void 0 : _templates_messages.scrollToBottomLabelText,
+            loaderText: (_templates_messages1 = templates.messages) === null || _templates_messages1 === void 0 ? void 0 : _templates_messages1.loaderText,
+            copyToClipboardLabel: (_templates_messages2 = templates.messages) === null || _templates_messages2 === void 0 ? void 0 : _templates_messages2.copyToClipboardLabelText,
+            regenerateLabel: (_templates_messages3 = templates.messages) === null || _templates_messages3 === void 0 ? void 0 : _templates_messages3.regenerateLabelText
+        });
+        assistantMessageTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: templates.assistantMessage
+        });
+        var messageTranslations = getDefinedProperties({
+            actionsLabel: (_templates_message = templates.message) === null || _templates_message === void 0 ? void 0 : _templates_message.actionsLabelText,
+            messageLabel: (_templates_message1 = templates.message) === null || _templates_message1 === void 0 ? void 0 : _templates_message1.messageLabelText
+        });
+        userMessageTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: templates.userMessage
+        });
+        promptTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: templates.prompt
+        });
+        var promptTranslations = getDefinedProperties({
+            textareaLabel: (_templates_prompt = templates.prompt) === null || _templates_prompt === void 0 ? void 0 : _templates_prompt.textareaLabelText,
+            textareaPlaceholder: (_templates_prompt1 = templates.prompt) === null || _templates_prompt1 === void 0 ? void 0 : _templates_prompt1.textareaPlaceholderText,
+            emptyMessageTooltip: (_templates_prompt2 = templates.prompt) === null || _templates_prompt2 === void 0 ? void 0 : _templates_prompt2.emptyMessageTooltipText,
+            stopResponseTooltip: (_templates_prompt3 = templates.prompt) === null || _templates_prompt3 === void 0 ? void 0 : _templates_prompt3.stopResponseTooltipText,
+            sendMessageTooltip: (_templates_prompt4 = templates.prompt) === null || _templates_prompt4 === void 0 ? void 0 : _templates_prompt4.sendMessageTooltipText,
+            disclaimer: (_templates_prompt5 = templates.prompt) === null || _templates_prompt5 === void 0 ? void 0 : _templates_prompt5.disclaimerText
+        });
+        toggleButtonTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: templates.toggleButton
+        });
+        layoutTemplateRef.current = prepareTemplateProps({
+            defaultTemplates: {},
+            templatesConfig: instantSearchInstance.templatesConfig,
+            templates: {
+                layout: templates.layout
+            }
+        });
+        state.subscribe(rerender);
+        function rerender() {
+            render(/*#__PURE__*/ h(ChatWrapper, {
+                layoutComponent: stableLayoutComponent,
+                cssClasses: cssClasses,
+                chatOpen: open,
+                setChatOpen: setOpen,
+                chatMessages: messages,
+                indexUiState: indexUiState,
+                setIndexUiState: setIndexUiState,
+                chatStatus: status,
+                chatInput: input,
+                setChatInput: setInput,
+                sendMessage: sendMessage,
+                regenerate: regenerate,
+                stop: stop,
+                error: error,
+                isClearing: isClearing,
+                clearMessages: clearMessages,
+                onClearTransitionEnd: onClearTransitionEnd,
+                onFeedback: onFeedback,
+                feedbackState: feedbackState,
+                toolsForUi: toolsForUi,
+                toggleButtonProps: {
+                    layoutComponent: stableToggleButtonLayoutComponent,
+                    iconComponent: stableToggleButtonIconComponent
+                },
+                headerProps: {
+                    layoutComponent: stableHeaderLayoutComponent,
+                    closeIconComponent: stableHeaderCloseIconComponent,
+                    minimizeIconComponent: stableHeaderMinimizeIconComponent,
+                    maximizeIconComponent: stableHeaderMaximizeIconComponent,
+                    titleIconComponent: stableHeaderTitleIconComponent,
+                    translations: headerTranslations
+                },
+                messagesProps: {
+                    loaderComponent: stableLoaderComponent,
+                    errorComponent: stableMessagesErrorComponent,
+                    emptyComponent: stableMessagesEmptyComponent,
+                    actionsComponent: stableActionsComponent,
+                    assistantMessageProps: {
+                        leadingComponent: stableAssistantMessageLeadingComponent,
+                        footerComponent: stableAssistantMessageFooterComponent
+                    },
+                    userMessageProps: {
+                        leadingComponent: stableUserMessageLeadingComponent,
+                        footerComponent: stableUserMessageFooterComponent
+                    },
+                    translations: messagesTranslations,
+                    messageTranslations: messageTranslations,
+                    sendMessage: sendMessage,
+                    setInput: setInput
+                },
+                promptProps: {
+                    layoutComponent: stablePromptLayoutComponent,
+                    headerComponent: stablePromptHeaderComponent,
+                    footerComponent: stablePromptFooterComponent,
+                    translations: promptTranslations,
+                    promptRef: promptRef
+                },
+                state: state,
+                suggestionsProps: {
+                    suggestions: suggestions,
+                    onSuggestionClick: function onSuggestionClick(message) {
+                        sendMessage({
+                            text: message
+                        });
+                    },
+                    suggestionsComponent: stableSuggestionsComponent
+                }
+            }), containerNode);
+        }
+        var shouldFocusPrompt = !wasOpen && open;
+        rerender();
+        if (shouldFocusPrompt) {
+            window.requestAnimationFrame(function() {
+                var _promptRef_current;
+                (_promptRef_current = promptRef.current) === null || _promptRef_current === void 0 ? void 0 : _promptRef_current.focus();
+            });
+        }
+        wasOpen = open;
+    };
+};
+var defaultTemplates = {
+    item: function item(item) {
+        return /*#__PURE__*/ h(Fragment, null, JSON.stringify(item, null, 2));
+    }
+};
+var chat = (function chat(widgetParams) {
+    var _ref = widgetParams || {}, container = _ref.container, tmp = _ref.templates, userTemplates = tmp === void 0 ? {} : tmp, _ref_cssClasses = _ref.cssClasses, cssClasses = _ref_cssClasses === void 0 ? {} : _ref_cssClasses, _ref_resume = _ref.resume, resume = _ref_resume === void 0 ? false : _ref_resume, userTools = _ref.tools, getSearchPageURL = _ref.getSearchPageURL, options = _(_ref, [
+        "container",
+        "templates",
+        "cssClasses",
+        "resume",
+        "tools",
+        "getSearchPageURL"
+    ]);
+    if (!container) {
+        throw new Error(withUsage('The `container` option is required.'));
+    }
+    var containerNode = getContainerNode(container);
+    var templates = _$1({}, defaultTemplates, userTemplates);
+    var defaultTools = createDefaultTools(templates, getSearchPageURL);
+    var tools = _$1({}, defaultTools, userTools);
+    var specializedRenderer = createRenderer({
+        containerNode: containerNode,
+        cssClasses: cssClasses,
+        renderState: {},
+        templates: templates,
+        tools: tools
+    });
+    var makeWidget = connectChat(specializedRenderer, function() {
+        return render(null, containerNode);
+    });
+    return _$2(_$1({}, makeWidget(_$1({
+        resume: resume,
+        tools: tools
+    }, options))), {
+        $$widgetType: 'ais.chat'
+    });
+});
+function createLocalState() {
+    var state = [];
+    var subscriptions = new Set();
+    var cursor = 0;
+    function use(initialValue) {
+        var index = cursor++;
+        if (state[index] === undefined) {
+            state[index] = initialValue;
+        }
+        return [
+            state[index],
+            function(value) {
+                var prev = state[index];
+                if (prev === value) {
+                    return prev;
+                }
+                state[index] = value;
+                subscriptions.forEach(function(fn) {
+                    return fn();
+                });
+                return value;
+            }
+        ];
+    }
+    return {
+        init: function init() {
+            cursor = 0;
+        },
+        subscribe: function subscribe(fn) {
+            subscriptions.add(fn);
+            return function() {
+                return subscriptions.delete(fn);
+            };
+        },
+        use: use
+    };
+}
+
+export { RecommendToolType, SearchIndexToolType, chat as default };

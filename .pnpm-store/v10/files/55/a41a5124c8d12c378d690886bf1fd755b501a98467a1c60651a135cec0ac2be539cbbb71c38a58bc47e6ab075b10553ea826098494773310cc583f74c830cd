@@ -1,0 +1,1 @@
+{"version":3,"file":"native-convolver-node-factory.d.ts","sourceRoot":"","sources":["../../../src/types/native-convolver-node-factory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,eAAe,CAAC;AAClD,OAAO,EAAE,cAAc,EAAE,MAAM,kBAAkB,CAAC;AAClD,OAAO,EAAE,oBAAoB,EAAE,MAAM,yBAAyB,CAAC;AAE/D,MAAM,MAAM,2BAA2B,GAAG,CAAC,aAAa,EAAE,cAAc,EAAE,OAAO,EAAE,iBAAiB,KAAK,oBAAoB,CAAC"}

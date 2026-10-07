@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../esm/clamp/index.js",
+  "typings": "../typings.d.ts"
+}

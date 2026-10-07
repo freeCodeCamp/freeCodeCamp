@@ -1,0 +1,77 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-diff-editor .diff-review {
+	position: absolute;
+
+}
+
+.monaco-component.diff-review {
+	user-select: none;
+	-webkit-user-select: none;
+	z-index: 99;
+
+
+	.diff-review-line-number {
+		text-align: right;
+		display: inline-block;
+		color: var(--vscode-editorLineNumber-foreground);
+	}
+
+	.diff-review-summary {
+		padding-left: 10px;
+	}
+
+	.diff-review-shadow {
+		position: absolute;
+		box-shadow: var(--vscode-scrollbar-shadow) 0 -6px 6px -6px inset;
+	}
+
+	.diff-review-row {
+		white-space: pre;
+	}
+
+	.diff-review-table {
+		display: table;
+		min-width: 100%;
+	}
+
+	.diff-review-row {
+		display: table-row;
+		width: 100%;
+	}
+
+	.diff-review-spacer {
+		display: inline-block;
+		width: 10px;
+		vertical-align: middle;
+	}
+
+	.diff-review-spacer > .codicon {
+		font-size: 9px !important;
+	}
+
+	.diff-review-actions {
+		display: inline-block;
+		position: absolute;
+		right: 10px;
+		top: 2px;
+		z-index: 100;
+	}
+
+	.diff-review-actions .action-label {
+		width: 16px;
+		height: 16px;
+		margin: 2px 0;
+	}
+
+	.revertButton {
+		cursor: pointer;
+	}
+
+	.action-label {
+		background: var(--vscode-editorActionList-background);
+	}
+}

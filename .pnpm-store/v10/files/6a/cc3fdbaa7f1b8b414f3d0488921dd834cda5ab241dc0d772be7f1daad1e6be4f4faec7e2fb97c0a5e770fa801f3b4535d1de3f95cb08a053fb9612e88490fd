@@ -1,0 +1,45 @@
+{
+  "name": "acorn-walk",
+  "description": "ECMAScript (ESTree) AST walker",
+  "homepage": "https://github.com/acornjs/acorn",
+  "main": "dist/walk.js",
+  "types": "dist/walk.d.ts",
+  "module": "dist/walk.mjs",
+  "exports": {
+    ".": [
+      {
+        "import": "./dist/walk.mjs",
+        "require": "./dist/walk.js",
+        "default": "./dist/walk.js"
+      },
+      "./dist/walk.js"
+    ],
+    "./package.json": "./package.json"
+  },
+  "version": "8.2.0",
+  "engines": {"node": ">=0.4.0"},
+  "maintainers": [
+    {
+      "name": "Marijn Haverbeke",
+      "email": "marijnh@gmail.com",
+      "web": "https://marijnhaverbeke.nl"
+    },
+    {
+      "name": "Ingvar Stepanyan",
+      "email": "me@rreverser.com",
+      "web": "https://rreverser.com/"
+    },
+    {
+      "name": "Adrian Heine",
+      "web": "http://adrianheine.de"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acornjs/acorn.git"
+  },
+  "scripts": {
+    "prepare": "cd ..; npm run build:walk"
+  },
+  "license": "MIT"
+}

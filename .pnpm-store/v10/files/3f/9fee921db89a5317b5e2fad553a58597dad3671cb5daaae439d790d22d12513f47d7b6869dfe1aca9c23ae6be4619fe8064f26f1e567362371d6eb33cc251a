@@ -1,0 +1,48 @@
+# `MD045` - Images should have alternate text (alt text)
+
+Tags: `accessibility`, `images`
+
+Aliases: `no-alt-text`
+
+This rule reports a violation when an image is missing alternate text (alt text)
+information.
+
+Alternate text is commonly specified inline as:
+
+```markdown
+![Alternate text](image.jpg)
+```
+
+Or with reference syntax as:
+
+```markdown
+![Alternate text][ref]
+
+...
+
+[ref]: image.jpg "Optional title"
+```
+
+Or with HTML as:
+
+```html
+<img src="image.jpg" alt="Alternate text" />
+```
+
+Note: If the [HTML `aria-hidden` attribute][aria-hidden] is used to hide the
+image from assistive technology, this rule does not report a violation:
+
+```html
+<img src="image.jpg" aria-hidden="true" />
+```
+
+Guidance for writing alternate text is available from the [W3C][w3c],
+[Wikipedia][wikipedia], and [other locations][phase2technology].
+
+Rationale: Alternate text is important for accessibility and describes the
+content of an image for people who may not be able to see it.
+
+[aria-hidden]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden
+[phase2technology]: https://www.phase2technology.com/blog/no-more-excuses
+[w3c]: https://www.w3.org/WAI/alt/
+[wikipedia]: https://en.wikipedia.org/wiki/Alt_attribute

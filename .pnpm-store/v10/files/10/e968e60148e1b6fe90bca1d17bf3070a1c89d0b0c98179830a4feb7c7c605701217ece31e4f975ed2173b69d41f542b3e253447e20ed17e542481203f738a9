@@ -1,0 +1,43 @@
+{
+    "name": "nodemailer",
+    "version": "6.10.1",
+    "description": "Easy as cake e-mail sending from your Node.js applications",
+    "main": "lib/nodemailer.js",
+    "scripts": {
+        "test": "node --test --test-concurrency=1 test/**/*.test.js test/**/*-test.js",
+        "test:coverage": "c8 node --test --test-concurrency=1 test/**/*.test.js test/**/*-test.js",
+        "lint": "eslint .",
+        "update": "rm -rf node_modules/ package-lock.json && ncu -u && npm install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodemailer/nodemailer.git"
+    },
+    "keywords": [
+        "Nodemailer"
+    ],
+    "author": "Andris Reinman",
+    "license": "MIT-0",
+    "bugs": {
+        "url": "https://github.com/nodemailer/nodemailer/issues"
+    },
+    "homepage": "https://nodemailer.com/",
+    "devDependencies": {
+        "@aws-sdk/client-ses": "3.731.1",
+        "bunyan": "1.8.15",
+        "c8": "10.1.3",
+        "eslint": "8.57.0",
+        "eslint-config-nodemailer": "1.2.0",
+        "eslint-config-prettier": "9.1.0",
+        "libbase64": "1.3.0",
+        "libmime": "5.3.6",
+        "libqp": "2.1.1",
+        "nodemailer-ntlm-auth": "1.0.4",
+        "proxy": "1.0.2",
+        "proxy-test-server": "1.0.0",
+        "smtp-server": "3.13.6"
+    },
+    "engines": {
+        "node": ">=6.0.0"
+    }
+}

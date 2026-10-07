@@ -1,0 +1,47 @@
+{
+	"name": "system-architecture",
+	"version": "0.1.0",
+	"description": "Get the operating system CPU architecture",
+	"license": "MIT",
+	"repository": "sindresorhus/system-architecture",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"sideEffects": false,
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"arch",
+		"architecture",
+		"cpu",
+		"arm64",
+		"arm",
+		"x64",
+		"x86",
+		"64-bit",
+		"32-bit",
+		"bitness",
+		"detect",
+		"check"
+	],
+	"devDependencies": {
+		"ava": "^5.3.1",
+		"xo": "^0.56.0"
+	}
+}

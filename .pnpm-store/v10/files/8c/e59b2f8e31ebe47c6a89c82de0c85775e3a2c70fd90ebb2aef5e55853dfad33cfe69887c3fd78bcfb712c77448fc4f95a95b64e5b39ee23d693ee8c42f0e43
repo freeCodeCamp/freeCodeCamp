@@ -1,0 +1,40 @@
+{
+  "name": "@babel/preset-typescript",
+  "version": "7.23.3",
+  "description": "Babel preset for TypeScript.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-preset-typescript"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "keywords": [
+    "babel-preset",
+    "typescript"
+  ],
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.22.5",
+    "@babel/helper-validator-option": "^7.22.15",
+    "@babel/plugin-syntax-jsx": "^7.23.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.23.3",
+    "@babel/plugin-transform-typescript": "^7.23.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/helper-plugin-test-runner": "^7.22.5"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-preset-typescript",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22area%3A%20typescript%22+is%3Aopen",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "author": "The Babel Team (https://babel.dev/team)",
+  "type": "commonjs"
+}

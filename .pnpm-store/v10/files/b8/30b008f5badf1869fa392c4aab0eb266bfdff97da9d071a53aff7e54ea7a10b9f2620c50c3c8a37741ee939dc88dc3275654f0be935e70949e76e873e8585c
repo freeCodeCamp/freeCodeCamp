@@ -1,0 +1,71 @@
+{
+  "name": "defer-to-connect",
+  "version": "2.0.1",
+  "description": "The safe way to handle the `connect` socket event",
+  "main": "dist/source",
+  "files": [
+    "dist/source"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "del-cli dist && tsc",
+    "prepare": "npm run build",
+    "test": "xo && tsc --noEmit && nyc ava",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "keywords": [
+    "socket",
+    "connect",
+    "event"
+  ],
+  "author": "Szymon Marczak",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szmarczak/defer-to-connect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/szmarczak/defer-to-connect/issues"
+  },
+  "homepage": "https://github.com/szmarczak/defer-to-connect#readme",
+  "xo": {
+    "extends": "xo-typescript",
+    "extensions": [
+      "ts"
+    ]
+  },
+  "devDependencies": {
+    "@ava/typescript": "^1.1.0",
+    "@sindresorhus/tsconfig": "^0.7.0",
+    "@types/node": "^13.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "ava": "^3.2.0",
+    "coveralls": "^3.0.9",
+    "create-cert": "^1.0.6",
+    "del-cli": "^3.0.0",
+    "eslint-config-xo-typescript": "^0.24.1",
+    "nyc": "^15.0.0",
+    "p-event": "^4.1.0",
+    "typescript": "^3.7.5",
+    "xo": "^0.25.3"
+  },
+  "nyc": {
+    "include": [
+      "dist/source"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "ava": {
+    "typescript": {
+      "rewritePaths": {
+        "tests/": "dist/tests/"
+      }
+    }
+  },
+  "types": "dist/source/index.d.ts"
+}

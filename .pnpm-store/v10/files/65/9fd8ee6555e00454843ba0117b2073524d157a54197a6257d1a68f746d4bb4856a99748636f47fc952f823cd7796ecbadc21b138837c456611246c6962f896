@@ -1,0 +1,10 @@
+export declare class MockLocalStorage implements Storage {
+    #private;
+    get length(): number;
+    setItem(key: string, value: unknown): void;
+    key(index: number): string | null;
+    getItem(key: string): string | null;
+    removeItem(key: string): void;
+    clear(): void;
+}
+//# sourceMappingURL=mock-local-storage.d.ts.map

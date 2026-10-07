@@ -1,0 +1,42 @@
+{
+  "name": "resolve-pkg-maps",
+  "version": "1.0.0",
+  "description": "Resolve package.json exports & imports maps",
+  "keywords": [
+    "node.js",
+    "package.json",
+    "exports",
+    "imports"
+  ],
+  "license": "MIT",
+  "repository": "privatenumber/resolve-pkg-maps",
+  "funding": "https://github.com/privatenumber/resolve-pkg-maps?sponsor=1",
+  "author": {
+    "name": "Hiroki Osame",
+    "email": "hiroki.osame@gmail.com"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    "require": {
+      "types": "./dist/index.d.cts",
+      "default": "./dist/index.cjs"
+    },
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "imports": {
+    "#resolve-pkg-maps": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    }
+  }
+}

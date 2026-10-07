@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/KeyedPool.js",
+  "module": "../dist/esm/KeyedPool.js",
+  "types": "../dist/dts/KeyedPool.d.ts"
+}

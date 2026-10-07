@@ -1,0 +1,77 @@
+{
+  "name": "immutable",
+  "version": "3.7.6",
+  "description": "Immutable Data Collections",
+  "homepage": "https://github.com/facebook/immutable-js",
+  "author": {
+    "name": "Lee Byron",
+    "url": "https://github.com/leebyron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/facebook/immutable-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/facebook/immutable-js/issues"
+  },
+  "main": "dist/immutable.js",
+  "typescript": {
+    "definition": "dist/immutable.d.ts"
+  },
+  "scripts": {
+    "test": "./resources/node_test.sh",
+    "perf": "node ./resources/bench.js"
+  },
+  "jest": {
+    "scriptPreprocessor": "resources/jestPreprocessor.js",
+    "testFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "persistModuleRegistryBetweenSpecs": true
+  },
+  "devDependencies": {
+    "acorn": "^0.11.0",
+    "benchmark": "^1.0.0",
+    "bluebird": "^2.7.1",
+    "colors": "^1.0.3",
+    "es6-transpiler": "^0.7.18",
+    "estraverse": "^1.9.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jest": "^0.1.0",
+    "grunt-release": "^0.7.0",
+    "jasmine-check": "^0.1.2",
+    "magic-string": "^0.2.6",
+    "microtime": "^1.2.0",
+    "react-tools": "^0.11.1",
+    "rollup": "^0.19.2",
+    "typescript": "~1.4.1",
+    "uglify-js": "^2.4.15"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "files": [
+    "dist",
+    "contrib",
+    "README.md",
+    "LICENSE",
+    "PATENTS"
+  ],
+  "keywords": [
+    "immutable",
+    "persistent",
+    "lazy",
+    "data",
+    "datastructure",
+    "functional",
+    "collection",
+    "stateless",
+    "sequence",
+    "iteration"
+  ],
+  "license": "BSD-3-Clause"
+}

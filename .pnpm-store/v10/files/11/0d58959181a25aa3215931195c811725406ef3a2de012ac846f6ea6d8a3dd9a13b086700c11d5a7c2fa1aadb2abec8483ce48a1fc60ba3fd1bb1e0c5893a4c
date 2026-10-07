@@ -1,0 +1,7 @@
+{
+  "name": "@rtsao/scc",
+  "version": "1.1.0",
+  "repository": "rtsao/scc",
+  "main": "index.js",
+  "license": "MIT"
+}

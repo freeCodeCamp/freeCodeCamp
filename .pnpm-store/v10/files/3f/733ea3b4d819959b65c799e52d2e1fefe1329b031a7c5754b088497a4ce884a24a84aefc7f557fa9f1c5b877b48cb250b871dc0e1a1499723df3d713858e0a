@@ -1,0 +1,1 @@
+{"version":3,"file":"emitter.js","names":["emitter","mitt"],"sources":["../emitter.js"],"sourcesContent":["import mitt from \"mitt\"\n\nconst emitter = mitt()\nexport default emitter\n"],"mappings":";;;;;AAAA;AAEA,MAAMA,OAAO,GAAG,IAAAC,aAAI,GAAE;AAAA,eACPD,OAAO;AAAA"}

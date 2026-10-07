@@ -1,0 +1,58 @@
+{
+  "name": "asap",
+  "version": "2.0.6",
+  "description": "High-priority task queue for Node.js and browsers",
+  "keywords": [
+    "event",
+    "task",
+    "queue"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kriskowal/asap.git"
+  },
+  "main": "./asap.js",
+  "browser": {
+    "./asap": "./browser-asap.js",
+    "./asap.js": "./browser-asap.js",
+    "./raw": "./browser-raw.js",
+    "./raw.js": "./browser-raw.js",
+    "./test/domain.js": "./test/browser-domain.js"
+  },
+  "react-native": {
+    "domain": false
+  },
+  "files": [
+    "raw.js",
+    "asap.js",
+    "browser-raw.js",
+    "browser-asap.js"
+  ],
+  "scripts": {
+    "test": "npm run lint && npm run test-node",
+    "test-travis": "npm run lint && npm run test-node && npm run test-saucelabs && npm run test-saucelabs-worker",
+    "test-node": "node test/asap-test.js",
+    "test-publish": "node scripts/publish-bundle.js test/asap-test.js | pbcopy",
+    "test-browser": "node scripts/publish-bundle.js test/asap-test.js | xargs opener",
+    "test-saucelabs": "node scripts/saucelabs.js test/asap-test.js scripts/saucelabs-spot-configurations.json",
+    "test-saucelabs-all": "node scripts/saucelabs.js test/asap-test.js scripts/saucelabs-all-configurations.json",
+    "test-saucelabs-worker": "node scripts/saucelabs-worker-test.js scripts/saucelabs-spot-configurations.json",
+    "test-saucelabs-worker-all": "node scripts/saucelabs-worker-test.js scripts/saucelabs-all-configurations.json",
+    "lint": "jshint raw.js asap.js browser-raw.js browser-asap.js $(find scripts -name '*.js' | grep -v gauntlet)",
+    "benchmarks": "node benchmarks"
+  },
+  "devDependencies": {
+    "events": "^1.0.1",
+    "jshint": "^2.5.1",
+    "knox": "^0.8.10",
+    "mr": "^2.0.5",
+    "opener": "^1.3.0",
+    "q": "^2.0.3",
+    "q-io": "^2.0.3",
+    "saucelabs": "^0.1.1",
+    "wd": "^0.2.21",
+    "weak-map": "^1.0.5",
+    "benchmark": "^1.0.0"
+  }
+}

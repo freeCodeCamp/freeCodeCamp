@@ -1,0 +1,67 @@
+{
+  "name": "simple-get",
+  "description": "Simplest way to make http get requests. Supports HTTPS, redirects, gzip/deflate, streams in < 100 lines.",
+  "version": "4.0.1",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
+  "browser": {
+    "decompress-response": false
+  },
+  "bugs": {
+    "url": "https://github.com/feross/simple-get/issues"
+  },
+  "dependencies": {
+    "decompress-response": "^6.0.0",
+    "once": "^1.3.1",
+    "simple-concat": "^1.0.0"
+  },
+  "devDependencies": {
+    "self-signed-https": "^1.0.5",
+    "standard": "*",
+    "string-to-stream": "^3.0.0",
+    "tape": "^5.0.0"
+  },
+  "homepage": "https://github.com/feross/simple-get",
+  "keywords": [
+    "request",
+    "http",
+    "GET",
+    "get request",
+    "http.get",
+    "redirects",
+    "follow redirects",
+    "gzip",
+    "deflate",
+    "https",
+    "http-https",
+    "stream",
+    "simple request",
+    "simple get"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/simple-get.git"
+  },
+  "scripts": {
+    "test": "standard && tape test/*.js"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/feross"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/feross"
+    },
+    {
+      "type": "consulting",
+      "url": "https://feross.org/support"
+    }
+  ]
+}

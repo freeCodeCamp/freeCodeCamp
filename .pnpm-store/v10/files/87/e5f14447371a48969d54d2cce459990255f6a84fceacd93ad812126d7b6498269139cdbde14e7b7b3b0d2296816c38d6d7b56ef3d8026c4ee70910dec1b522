@@ -1,0 +1,82 @@
+{
+  "name": "@vitest/mocker",
+  "type": "module",
+  "version": "3.2.4",
+  "description": "Vitest module mocker implementation",
+  "license": "MIT",
+  "funding": "https://opencollective.com/vitest",
+  "homepage": "https://github.com/vitest-dev/vitest/tree/main/packages/mocker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitest-dev/vitest.git",
+    "directory": "packages/mocker"
+  },
+  "bugs": {
+    "url": "https://github.com/vitest-dev/vitest/issues"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "default": "./dist/browser.js"
+    },
+    "./redirect": {
+      "types": "./dist/redirect.d.ts",
+      "default": "./dist/redirect.js"
+    },
+    "./register": {
+      "types": "./dist/register.d.ts",
+      "default": "./dist/register.js"
+    },
+    "./auto-register": {
+      "types": "./dist/register.d.ts",
+      "default": "./dist/register.js"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "peerDependencies": {
+    "msw": "^2.4.9",
+    "vite": "^5.0.0 || ^6.0.0 || ^7.0.0-0"
+  },
+  "peerDependenciesMeta": {
+    "msw": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "estree-walker": "^3.0.3",
+    "magic-string": "^0.30.17",
+    "@vitest/spy": "3.2.4"
+  },
+  "devDependencies": {
+    "@types/estree": "^1.0.8",
+    "acorn-walk": "^8.3.4",
+    "msw": "^2.10.2",
+    "pathe": "^2.0.3",
+    "vite": "^5.4.0",
+    "@vitest/spy": "3.2.4",
+    "@vitest/utils": "3.2.4"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "dev": "rollup -c --watch"
+  }
+}

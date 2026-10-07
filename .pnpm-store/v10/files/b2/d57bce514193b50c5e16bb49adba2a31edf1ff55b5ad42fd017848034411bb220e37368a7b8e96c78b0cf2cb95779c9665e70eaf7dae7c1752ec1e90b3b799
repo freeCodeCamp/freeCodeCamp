@@ -1,0 +1,20 @@
+{
+    "check-coverage": true,
+    "lines": 95,
+    "statements": 95,
+    "functions": 95,
+    "branches": 75,
+    "include": [
+        "lib/**/*.js"
+    ],
+    "exclude": [
+        "**/datamigration/**",
+        "**/new-schema-migration/**"
+    ],
+    "reporter": [
+        "lcov",
+        "text"
+    ],
+    "cache": true,
+    "all": true
+}

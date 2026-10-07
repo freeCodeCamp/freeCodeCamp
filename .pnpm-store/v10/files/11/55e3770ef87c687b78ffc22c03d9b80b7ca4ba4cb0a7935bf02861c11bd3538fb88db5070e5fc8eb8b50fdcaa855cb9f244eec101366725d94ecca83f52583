@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/integrations/node-fetch/index.ts"],"names":[],"mappings":"AAOA,UAAU,gBAAgB;IACxB;;;OAGG;IACH,WAAW,CAAC,EAAE,OAAO,CAAC;IAEtB;;;;OAIG;IACH,gBAAgB,CAAC,EAAE,OAAO,CAAC;IAE3B;;;OAGG;IACH,sBAAsB,CAAC,EAAE,CAAC,GAAG,EAAE,MAAM,KAAK,OAAO,CAAC;CACnD;AAmBD,eAAO,MAAM,0BAA0B,gFAAiD,CAAC"}

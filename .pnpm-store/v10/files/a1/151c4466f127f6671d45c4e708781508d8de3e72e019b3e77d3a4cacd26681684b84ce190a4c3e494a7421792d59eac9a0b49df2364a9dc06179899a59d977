@@ -1,0 +1,67 @@
+{
+  "name": "prebuild-install",
+  "version": "7.1.3",
+  "description": "A command line tool to easily install prebuilt binaries for multiple version of node/iojs on a specific platform",
+  "scripts": {
+    "test": "standard && hallmark && tape test/*-test.js",
+    "hallmark": "hallmark --fix"
+  },
+  "keywords": [
+    "prebuilt",
+    "binaries",
+    "native",
+    "addon",
+    "module",
+    "c",
+    "c++",
+    "bindings",
+    "devops",
+    "napi"
+  ],
+  "dependencies": {
+    "detect-libc": "^2.0.0",
+    "expand-template": "^2.0.3",
+    "github-from-package": "0.0.0",
+    "minimist": "^1.2.3",
+    "mkdirp-classic": "^0.5.3",
+    "napi-build-utils": "^2.0.0",
+    "node-abi": "^3.3.0",
+    "pump": "^3.0.0",
+    "rc": "^1.2.7",
+    "simple-get": "^4.0.0",
+    "tar-fs": "^2.0.0",
+    "tunnel-agent": "^0.6.0"
+  },
+  "devDependencies": {
+    "a-native-module": "^1.0.0",
+    "hallmark": "^4.0.0",
+    "nock": "^10.0.6",
+    "rimraf": "^2.5.2",
+    "standard": "^16.0.4",
+    "tape": "^5.3.1",
+    "tempy": "0.2.1"
+  },
+  "bin": "./bin.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prebuild/prebuild-install.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "contributors": [
+    "Julian Gruber <julian@juliangruber.com> (https://github.com/juliangruber)",
+    "Brett Lawson <brett19@gmail.com> (https://github.com/brett19)",
+    "Pieter Hintjens <ph@imatix.com> (https://github.com/hintjens)",
+    "Lars-Magnus Skog <ralphtheninja@riseup.net> (https://github.com/ralphtheninja)",
+    "Jesús Leganés Combarro <piranna@gmail.com> (https://github.com/piranna)",
+    "Mathias Küsel <mathiask@hotmail.de> (https://github.com/mathiask88)",
+    "Lukas Geiger <lukas.geiger94@gmail.com> (https://github.com/lgeiger)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prebuild/prebuild-install/issues"
+  },
+  "homepage": "https://github.com/prebuild/prebuild-install",
+  "engines": {
+    "node": ">=10"
+  }
+}

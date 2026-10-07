@@ -1,0 +1,33 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.monaco-editor .margin-view-overlays .line-numbers {
+	bottom: 0;
+	font-variant-numeric: tabular-nums;
+	position: absolute;
+	text-align: right;
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	cursor: default;
+}
+
+.monaco-editor .relative-current-line-number {
+	text-align: left;
+	display: inline-block;
+	width: 100%;
+}
+
+.monaco-editor .margin-view-overlays .line-numbers.lh-odd {
+	margin-top: 1px;
+}
+
+.monaco-editor .line-numbers {
+	color: var(--vscode-editorLineNumber-foreground);
+}
+
+.monaco-editor .line-numbers.active-line-number {
+	color: var(--vscode-editorLineNumber-activeForeground);
+}

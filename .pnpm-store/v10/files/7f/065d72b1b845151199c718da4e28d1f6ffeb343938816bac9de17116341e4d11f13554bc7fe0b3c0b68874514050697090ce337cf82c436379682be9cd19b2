@@ -1,0 +1,57 @@
+{
+	"name": "keyv",
+	"version": "4.5.4",
+	"description": "Simple key-value storage with support for multiple backends",
+	"main": "src/index.js",
+	"scripts": {
+		"build": "echo 'No build step required.'",
+		"prepare": "yarn build",
+		"test": "xo && c8 ava --serial",
+		"test:ci": "xo && ava --serial",
+		"clean": "rm -rf node_modules && rm -rf ./coverage && rm -rf ./test/testdb.sqlite"
+	},
+	"xo": {
+		"rules": {
+			"unicorn/prefer-module": 0,
+			"unicorn/prefer-node-protocol": 0,
+			"@typescript-eslint/consistent-type-definitions": 0,
+			"unicorn/no-typeof-undefined": 0,
+			"unicorn/prefer-event-target": 0
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jaredwray/keyv.git"
+	},
+	"keywords": [
+		"key",
+		"value",
+		"store",
+		"cache",
+		"ttl"
+	],
+	"author": "Jared Wray <me@jaredwray.com> (http://jaredwray.com)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/jaredwray/keyv/issues"
+	},
+	"homepage": "https://github.com/jaredwray/keyv",
+	"dependencies": {
+		"json-buffer": "3.0.1"
+	},
+	"devDependencies": {
+		"@keyv/test-suite": "*",
+		"eslint": "^8.51.0",
+		"eslint-plugin-promise": "^6.1.1",
+		"pify": "^5.0.0",
+		"timekeeper": "^2.3.1",
+		"tsd": "^0.29.0"
+	},
+	"tsd": {
+		"directory": "test"
+	},
+	"types": "./src/index.d.ts",
+	"files": [
+		"src"
+	]
+}

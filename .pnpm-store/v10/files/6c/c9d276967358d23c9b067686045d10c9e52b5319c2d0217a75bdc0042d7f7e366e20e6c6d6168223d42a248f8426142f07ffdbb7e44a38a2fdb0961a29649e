@@ -1,0 +1,73 @@
+import type { ApiHost, Attributes, ClientKey, ClientOptions, DestroyOptions, EventLogger, EventProperties, Experiment, FeatureApiResponse, FeatureDefinitions, FeatureResult, FeatureUsageCallback, InitOptions, InitResponse, InitSyncOptions, LogUnion, Plugin, RefreshFeaturesOptions, Result, TrackingCallback, TrackingCallbackWithUser, UserContext, WidenPrimitives } from "./types/growthbook";
+import { StickyBucketService } from "./sticky-bucket-service";
+export declare class GrowthBookClient<AppFeatures extends Record<string, any> = Record<string, any>> {
+    debug: boolean;
+    ready: boolean;
+    version: string;
+    private _options;
+    private _features;
+    private _experiments;
+    private _payload;
+    private _decryptedPayload;
+    private _destroyed?;
+    constructor(options?: ClientOptions);
+    setPayload(payload: FeatureApiResponse): Promise<void>;
+    initSync(options: InitSyncOptions): GrowthBookClient<AppFeatures>;
+    init(options?: InitOptions): Promise<InitResponse>;
+    refreshFeatures(options?: RefreshFeaturesOptions): Promise<void>;
+    getApiInfo(): [ApiHost, ClientKey];
+    getApiHosts(): {
+        apiHost: string;
+        streamingHost: string;
+        apiRequestHeaders?: Record<string, string>;
+        streamingHostRequestHeaders?: Record<string, string>;
+    };
+    getClientKey(): string;
+    getPayload(): FeatureApiResponse;
+    getDecryptedPayload(): FeatureApiResponse;
+    private _refresh;
+    getFeatures(): FeatureDefinitions;
+    getGlobalAttributes(): Attributes;
+    setGlobalAttributes(attributes: Attributes): void;
+    destroy(options?: DestroyOptions): void;
+    isDestroyed(): boolean;
+    setEventLogger(logger: EventLogger): void;
+    logEvent(eventName: string, properties: EventProperties, userContext: UserContext): void;
+    runInlineExperiment<T>(experiment: Experiment<T>, userContext: UserContext): Result<T>;
+    private _getEvalContext;
+    private _getGlobalContext;
+    isOn<K extends string & keyof AppFeatures = string>(key: K, userContext: UserContext): boolean;
+    isOff<K extends string & keyof AppFeatures = string>(key: K, userContext: UserContext): boolean;
+    getFeatureValue<V extends AppFeatures[K], K extends string & keyof AppFeatures = string>(key: K, defaultValue: V, userContext: UserContext): WidenPrimitives<V>;
+    evalFeature<V extends AppFeatures[K], K extends string & keyof AppFeatures = string>(id: K, userContext: UserContext): FeatureResult<V | null>;
+    log(msg: string, ctx: Record<string, unknown>): void;
+    setTrackingCallback(callback: TrackingCallbackWithUser): void;
+    setFeatureUsageCallback(callback: FeatureUsageCallback): void;
+    applyStickyBuckets(partialContext: Omit<UserContext, "stickyBucketService" | "stickyBucketAssignmentDocs">, stickyBucketService: StickyBucketService): Promise<UserContext>;
+    createScopedInstance(userContext: UserContext, userPlugins?: Plugin[]): UserScopedGrowthBook<AppFeatures>;
+}
+export declare class UserScopedGrowthBook<AppFeatures extends Record<string, any> = Record<string, any>> {
+    private _gb;
+    private _userContext;
+    logs: Array<LogUnion>;
+    constructor(gb: GrowthBookClient<AppFeatures>, userContext: UserContext, plugins?: Plugin[]);
+    runInlineExperiment<T>(experiment: Experiment<T>): Result<T>;
+    isOn<K extends string & keyof AppFeatures = string>(key: K): boolean;
+    isOff<K extends string & keyof AppFeatures = string>(key: K): boolean;
+    getFeatureValue<V extends AppFeatures[K], K extends string & keyof AppFeatures = string>(key: K, defaultValue: V): WidenPrimitives<V>;
+    evalFeature<V extends AppFeatures[K], K extends string & keyof AppFeatures = string>(id: K): FeatureResult<V | null>;
+    logEvent(eventName: string, properties?: EventProperties): void;
+    setTrackingCallback(cb: TrackingCallback): void;
+    getApiInfo(): [ApiHost, ClientKey];
+    getClientKey(): string;
+    setURL(url: string): void;
+    updateAttributes(attributes: Attributes): void;
+    setAttributeOverrides(overrides: Attributes): void;
+    setForcedVariations(vars: Record<string, number>): Promise<void>;
+    setForcedFeatures(map: Map<string, any>): void;
+    getUserContext(): UserContext;
+    getVersion(): string;
+    getDecryptedPayload(): FeatureApiResponse;
+    inDevMode(): boolean;
+}
+//# sourceMappingURL=GrowthBookClient.d.ts.map

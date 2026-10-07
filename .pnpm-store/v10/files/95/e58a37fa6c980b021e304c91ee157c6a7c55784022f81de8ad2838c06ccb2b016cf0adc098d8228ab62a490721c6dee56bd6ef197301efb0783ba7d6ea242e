@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css"></link>
+  </head>
+  <body>
+    <button id="my-button">
+      The button
+    </button>
+  </body>
+</html>

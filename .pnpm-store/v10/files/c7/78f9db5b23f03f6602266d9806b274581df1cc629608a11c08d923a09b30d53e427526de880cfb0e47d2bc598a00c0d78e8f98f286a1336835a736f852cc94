@@ -1,0 +1,83 @@
+{
+  "name": "react-scroll",
+  "version": "1.9.3",
+  "description": "A scroll component for React.js",
+  "main": "modules",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fisshy/react-scroll.git"
+  },
+  "scripts": {
+    "examples": "webpack-dev-server --config examples/webpack.config.js --no-info --content-base examples",
+    "build": "babel modules -d build/npm/modules --ignore '**/__tests__/**' --plugins transform-class-properties && gulp",
+    "clean": "rm -rf build/npm/modules",
+    "test": "karma start",
+    "start": "npm run examples"
+  },
+  "homepage": "https://github.com/fisshy/react-scroll",
+  "bugs": {
+    "url": "https://github.com/fisshy/react-scroll/issues"
+  },
+  "authors": [
+    "Joachim Karlsson"
+  ],
+  "license": "MIT",
+  "tags": [
+    "react",
+    "scroll"
+  ],
+  "keywords": [
+    "react",
+    "react-component",
+    "scroll",
+    "scroller",
+    "scrolls"
+  ],
+  "dependencies": {
+    "lodash.throttle": "^4.1.1",
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "expect": "^1.20.2",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-edge-launcher": "^0.4.2",
+    "karma-firefox-launcher": "^1.3.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.13",
+    "mocha": "^3.5.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sinon": "^4.5.0",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.11.5"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-assign"
+    ]
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "author": ""
+}

@@ -1,0 +1,43 @@
+name: CI
+on:
+  push:
+    paths-ignore:
+        - 'docs/**'
+        - '*.md'
+  pull_request:
+    paths-ignore:
+        - 'docs/**'
+        - '*.md'
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [14, 16, 18]
+        os: [macos-latest, ubuntu-latest, windows-latest]
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: |
+          npm install --ignore-scripts
+
+      - name: Run tests
+        run: |
+          npm run test
+
+  automerge:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

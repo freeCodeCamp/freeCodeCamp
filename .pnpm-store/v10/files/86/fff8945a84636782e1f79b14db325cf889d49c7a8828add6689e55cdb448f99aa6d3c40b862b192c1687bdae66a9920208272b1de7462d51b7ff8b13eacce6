@@ -1,0 +1,110 @@
+{
+    "name": "@types/react-redux",
+    "version": "7.1.34",
+    "description": "TypeScript definitions for react-redux",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-redux",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Qubo",
+            "githubUsername": "tkqubo",
+            "url": "https://github.com/tkqubo"
+        },
+        {
+            "name": "Curits Layne",
+            "githubUsername": "clayne11",
+            "url": "https://github.com/clayne11"
+        },
+        {
+            "name": "Frank Tan",
+            "githubUsername": "tansongyang",
+            "url": "https://github.com/tansongyang"
+        },
+        {
+            "name": "Nicholas Boll",
+            "githubUsername": "nicholasboll",
+            "url": "https://github.com/nicholasboll"
+        },
+        {
+            "name": "Dibyo Majumdar",
+            "githubUsername": "mdibyo",
+            "url": "https://github.com/mdibyo"
+        },
+        {
+            "name": "Valentin Descamps",
+            "githubUsername": "val1984",
+            "url": "https://github.com/val1984"
+        },
+        {
+            "name": "Johann Rakotoharisoa",
+            "githubUsername": "jrakotoharisoa",
+            "url": "https://github.com/jrakotoharisoa"
+        },
+        {
+            "name": "Anatoli Papirovski",
+            "githubUsername": "apapirovski",
+            "url": "https://github.com/apapirovski"
+        },
+        {
+            "name": "Boris Sergeyev",
+            "githubUsername": "surgeboris",
+            "url": "https://github.com/surgeboris"
+        },
+        {
+            "name": "Søren Bruus Frank",
+            "githubUsername": "soerenbf",
+            "url": "https://github.com/soerenbf"
+        },
+        {
+            "name": "Jonathan Ziller",
+            "githubUsername": "mrwolfz",
+            "url": "https://github.com/mrwolfz"
+        },
+        {
+            "name": "Dylan Vann",
+            "githubUsername": "dylanvann",
+            "url": "https://github.com/dylanvann"
+        },
+        {
+            "name": "Yuki Ito",
+            "githubUsername": "Lazyuki",
+            "url": "https://github.com/Lazyuki"
+        },
+        {
+            "name": "Kazuma Ebina",
+            "githubUsername": "kazuma1989",
+            "url": "https://github.com/kazuma1989"
+        },
+        {
+            "name": "Michael Lebedev",
+            "githubUsername": "megazazik",
+            "url": "https://github.com/megazazik"
+        },
+        {
+            "name": "Lenz Weber",
+            "githubUsername": "phryneas",
+            "url": "https://github.com/phryneas"
+        },
+        {
+            "name": "Mark Erikson",
+            "githubUsername": "markerikson",
+            "url": "https://github.com/markerikson"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-redux"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/hoist-non-react-statics": "^3.3.0",
+        "@types/react": "*",
+        "hoist-non-react-statics": "^3.3.0",
+        "redux": "^4.0.0"
+    },
+    "typesPublisherContentHash": "0bca859870c928967a511a0732c00eb6423bfdfae1fad656ebe55b93d83599ce",
+    "typeScriptVersion": "4.8"
+}

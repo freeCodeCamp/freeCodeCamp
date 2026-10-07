@@ -1,0 +1,581 @@
+
+import { SearchIndexToolType, RecommendToolType } from '../../lib/chat';
+import type { ChatRenderState, ChatConnectorParams, ChatWidgetDescription } from '../../connectors/chat/connectChat';
+import type { WidgetFactory, Hit, TemplateWithBindEvent, BaseHit, Template, IndexUiState } from '../../types';
+import type { ChatClassNames, ChatHeaderProps, ChatLayoutOwnProps, ChatMessageActionProps, ChatMessageBase, ChatMessageErrorProps, ChatEmptyProps, ChatMessageLoaderProps, ChatPromptProps, ChatToggleButtonProps, ClientSideToolComponentProps, ClientSideTools, RecordWithObjectID, UserClientSideTool } from 'instantsearch-ui-components';
+export { SearchIndexToolType, RecommendToolType };
+export type ClientSideToolTemplateData = ClientSideToolComponentProps;
+export type UserClientSideToolTemplates = Partial<{
+    layout: TemplateWithBindEvent<ClientSideToolTemplateData>;
+}>;
+type UserClientSideToolWithTemplate = Omit<UserClientSideTool, 'layoutComponent'> & {
+    templates: UserClientSideToolTemplates;
+};
+type UserClientSideToolsWithTemplate = Record<string, UserClientSideToolWithTemplate>;
+export type Tool = UserClientSideToolWithTemplate;
+export type Tools = UserClientSideToolsWithTemplate;
+export type ChatCSSClasses = Partial<ChatClassNames>;
+export type ChatLayoutTemplateData = Omit<ChatLayoutOwnProps, 'headerComponent' | 'messagesComponent' | 'promptComponent' | 'toggleButtonComponent'> & {
+    templates: {
+        header: () => JSX.Element;
+        messages: () => JSX.Element;
+        prompt: () => JSX.Element;
+        toggleButton: () => JSX.Element;
+    };
+};
+export type ChatTemplates<THit extends NonNullable<object> = BaseHit> = Partial<{
+    /**
+     * Custom layout template for the chat widget.
+     */
+    layout: Template<ChatLayoutTemplateData>;
+    /**
+     * Template to use for each result. This template will receive an object containing a single record.
+     */
+    item: TemplateWithBindEvent<Hit<THit>>;
+    /**
+     * Custom loader template for the chat widget.
+     */
+    loader: Template<ChatMessageLoaderProps>;
+    /**
+     * Templates to use for the header.
+     */
+    header: Partial<{
+        /**
+         * Template to use for the chat header.
+         */
+        layout: Template<ChatHeaderProps>;
+        /**
+         * Optional close icon
+         */
+        closeIcon: Template;
+        /**
+         * Optional minimize icon
+         */
+        minimizeIcon?: Template;
+        /**
+         * Optional maximize icon
+         */
+        maximizeIcon?: Template<{
+            maximized: boolean;
+        }>;
+        /**
+         * Optional title icon (defaults to sparkles)
+         */
+        titleIcon?: Template;
+        /**
+         * The title to display in the header
+         */
+        titleText: string;
+        /**
+         * Accessible label for the minimize button
+         */
+        minimizeLabelText: string;
+        /**
+         * Accessible label for the maximize button
+         */
+        maximizeLabelText: string;
+        /**
+         * Accessible label for the close button
+         */
+        closeLabelText: string;
+        /**
+         * Text for the clear button
+         */
+        clearLabelText: string;
+    }>;
+    /**
+     * Templates to use for the messages.
+     */
+    messages: Partial<{
+        /**
+         * Template to use when there is an error loading messages
+         */
+        error: Template<ChatMessageErrorProps>;
+        /**
+         * Label for the scroll to bottom button
+         */
+        scrollToBottomLabelText?: string;
+        /**
+         * Text to display in the loader
+         */
+        loaderText?: string;
+        /**
+         * Label for the copy to clipboard action
+         */
+        copyToClipboardLabelText?: string;
+        /**
+         * Label for the regenerate action
+         */
+        regenerateLabelText?: string;
+    }>;
+    /**
+     * Templates to use for each message.
+     */
+    message: Partial<{
+        /**
+         * Label for the message actions
+         */
+        actionsLabelText?: string;
+        /**
+         * Label for the message container
+         */
+        messageLabelText?: string;
+    }>;
+    /**
+     * Templates to use for the assistant message.
+     */
+    assistantMessage: Partial<{
+        /**
+         * Template to use for the assistant message leading content.
+         */
+        leading: Template;
+        /**
+         * Template to use for the assistant message footer content.
+         */
+        footer: Template;
+    }>;
+    /**
+     * Templates to use for the user message.
+     */
+    userMessage: Partial<{
+        /**
+         * Template to use for the user message leading content.
+         */
+        leading: Template;
+        /**
+         * Template to use for the user message footer content.
+         */
+        footer: Template;
+    }>;
+    /**
+     * Templates to use for the prompt.
+     */
+    prompt: Partial<{
+        /**
+         * Template to use for the chat prompt.
+         */
+        layout: Template<ChatPromptProps>;
+        /**
+         * Template to use for the prompt header.
+         */
+        header: Template;
+        /**
+         * Template to use for the prompt footer.
+         */
+        footer: Template;
+        /**
+         * The label for the textarea
+         */
+        textareaLabelText: string;
+        /**
+         * The placeholder text for the textarea
+         */
+        textareaPlaceholderText: string;
+        /**
+         * The tooltip for the submit button when message is empty
+         */
+        emptyMessageTooltipText: string;
+        /**
+         * The tooltip for the stop button
+         */
+        stopResponseTooltipText: string;
+        /**
+         * The tooltip for the send button
+         */
+        sendMessageTooltipText: string;
+        /**
+         * The disclaimer text shown in the footer
+         */
+        disclaimerText: string;
+    }>;
+    /**
+     * Templates to use for the toggle button.
+     */
+    toggleButton: Partial<{
+        /**
+         * Template to use for the toggle button layout.
+         */
+        layout: Template<ChatToggleButtonProps>;
+        /**
+         * Template to use for the toggle button icon.
+         */
+        icon: Template<{
+            isOpen: boolean;
+        }>;
+    }>;
+    /**
+     * Template to use for the message actions.
+     */
+    actions: Template<{
+        actions: ChatMessageActionProps[];
+        message: ChatMessageBase;
+    }>;
+    /**
+     * Template to use for the empty screen shown when there are no messages
+     */
+    empty?: Template<ChatEmptyProps>;
+    /**
+     * Template to use for prompt suggestions.
+     */
+    suggestions: Template<{
+        suggestions: string[];
+        onSuggestionClick: (suggestion: string) => void;
+    }>;
+}>;
+type ChatWidgetParams<THit extends RecordWithObjectID = RecordWithObjectID> = {
+    /**
+     * CSS Selector or HTMLElement to insert the widget.
+     */
+    container: string | HTMLElement;
+    /**
+     * Return the URL of the main search page with the `nextUiState`.
+     * This is used to navigate to the main search page when the user clicks on "View all" in the search tool.
+     *
+     * @example (nextUiState) => `/search?${qs.stringify(nextUiState)}`
+     */
+    getSearchPageURL?: (nextUiState: IndexUiState) => string;
+    /**
+     * Client-side tools to add to the chat
+     */
+    tools?: UserClientSideToolsWithTemplate;
+    /**
+     * Templates to use for the widget.
+     */
+    templates?: ChatTemplates<THit>;
+    /**
+     * CSS classes to add.
+     */
+    cssClasses?: ChatCSSClasses;
+};
+export type ChatWidget = WidgetFactory<ChatWidgetDescription & {
+    $$widgetType: 'ais.chat';
+}, ChatConnectorParams, ChatWidgetParams>;
+declare const _default: <THit extends RecordWithObjectID = RecordWithObjectID>(widgetParams: ChatWidgetParams<THit> & ChatConnectorParams) => {
+    $$widgetType: "ais.chat";
+    $$type: "ais.chat";
+    init(initOptions: import("../../types").InitOptions): void;
+    render(renderOptions: import("../../types").RenderOptions): void;
+    getRenderState(renderState: {
+        answers?: import("../../types").WidgetRenderState<import("../../connectors/answers/connectAnswers").AnswersRenderState, import("../../connectors/answers/connectAnswers").AnswersConnectorParams> | undefined;
+        autocomplete?: import("../../types").WidgetRenderState<import("../../connectors/autocomplete/connectAutocomplete").AutocompleteRenderState, import("../../connectors/autocomplete/connectAutocomplete").AutocompleteConnectorParams> | undefined;
+        breadcrumb?: {
+            [rootAttribute: string]: import("../../types").WidgetRenderState<import("../../connectors/breadcrumb/connectBreadcrumb").BreadcrumbRenderState, import("../../connectors/breadcrumb/connectBreadcrumb").BreadcrumbConnectorParams>;
+        } | undefined;
+        chat?: import("../../types").WidgetRenderState<ChatRenderState<import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>>, ChatConnectorParams<import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>>> | undefined;
+        clearRefinements?: import("../../types").WidgetRenderState<import("../../connectors/clear-refinements/connectClearRefinements").ClearRefinementsRenderState, import("../../connectors/clear-refinements/connectClearRefinements").ClearRefinementsConnectorParams> | undefined;
+        configure?: import("../../types").WidgetRenderState<import("../../connectors/configure/connectConfigure").ConfigureRenderState, import("../../connectors/configure/connectConfigure").ConfigureConnectorParams> | undefined;
+        currentRefinements?: import("../../types").WidgetRenderState<import("../../connectors/current-refinements/connectCurrentRefinements").CurrentRefinementsRenderState, import("../../connectors/current-refinements/connectCurrentRefinements").CurrentRefinementsConnectorParams> | undefined;
+        geoSearch?: import("../../types").WidgetRenderState<import("../../connectors/geo-search/connectGeoSearch").GeoSearchRenderState<import("../../types").GeoHit>, import("../../connectors/geo-search/connectGeoSearch").GeoSearchConnectorParams<import("../../types").GeoHit>> | undefined;
+        hierarchicalMenu?: {
+            [rootAttribute: string]: import("../../types").WidgetRenderState<import("../../connectors/hierarchical-menu/connectHierarchicalMenu").HierarchicalMenuRenderState, import("../../connectors/hierarchical-menu/connectHierarchicalMenu").HierarchicalMenuConnectorParams>;
+        } | undefined;
+        hits?: import("../../types").WidgetRenderState<import("../../connectors/hits/connectHits").HitsRenderState<BaseHit>, import("../../connectors/hits/connectHits").HitsConnectorParams<BaseHit>> | undefined;
+        hitsPerPage?: import("../../types").WidgetRenderState<import("../../connectors/hits-per-page/connectHitsPerPage").HitsPerPageRenderState, import("../../connectors/hits-per-page/connectHitsPerPage").HitsPerPageConnectorParams> | undefined;
+        infiniteHits?: import("../../types").WidgetRenderState<import("../../connectors/infinite-hits/connectInfiniteHits").InfiniteHitsRenderState<BaseHit>, import("../../connectors/infinite-hits/connectInfiniteHits").InfiniteHitsConnectorParams<BaseHit>> | undefined;
+        menu?: {
+            [attribute: string]: import("../../types").WidgetRenderState<import("../../connectors/menu/connectMenu").MenuRenderState, import("../../connectors/menu/connectMenu").MenuConnectorParams>;
+        } | undefined;
+        numericMenu?: {
+            [attribute: string]: import("../../types").WidgetRenderState<import("../../connectors/numeric-menu/connectNumericMenu").NumericMenuRenderState, import("../../connectors/numeric-menu/connectNumericMenu").NumericMenuConnectorParams>;
+        } | undefined;
+        pagination?: import("../../types").WidgetRenderState<import("../../connectors/pagination/connectPagination").PaginationRenderState, import("../../connectors/pagination/connectPagination").PaginationConnectorParams> | undefined;
+        poweredBy?: import("../../types").WidgetRenderState<import("../../connectors/powered-by/connectPoweredBy").PoweredByRenderState, import("../../connectors/powered-by/connectPoweredBy").PoweredByConnectorParams> | undefined;
+        queryRules?: import("../../types").WidgetRenderState<import("../../connectors/query-rules/connectQueryRules").QueryRulesRenderState, import("../../connectors/query-rules/connectQueryRules").QueryRulesConnectorParams> | undefined;
+        range?: {
+            [attribute: string]: import("../../types").WidgetRenderState<import("../../connectors/range/connectRange").RangeRenderState, import("../../connectors/range/connectRange").RangeConnectorParams>;
+        } | undefined;
+        ratingMenu?: {
+            [attribute: string]: import("../../types").WidgetRenderState<import("../../connectors/rating-menu/connectRatingMenu").RatingMenuRenderState, import("../../connectors/rating-menu/connectRatingMenu").RatingMenuConnectorParams>;
+        } | undefined;
+        refinementList?: {
+            [attribute: string]: import("../../types").WidgetRenderState<import("../../connectors/refinement-list/connectRefinementList").RefinementListRenderState, import("../../connectors/refinement-list/connectRefinementList").RefinementListConnectorParams>;
+        } | undefined;
+        relevantSort?: import("../../types").WidgetRenderState<import("../../connectors/relevant-sort/connectRelevantSort").RelevantSortRenderState, import("../../connectors/relevant-sort/connectRelevantSort").RelevantSortConnectorParams> | undefined;
+        searchBox?: import("../../types").WidgetRenderState<import("../../connectors/search-box/connectSearchBox").SearchBoxRenderState, import("../../connectors/search-box/connectSearchBox").SearchBoxConnectorParams> | undefined;
+        sortBy?: import("../../types").WidgetRenderState<import("../../connectors/sort-by/connectSortBy").SortByRenderState, import("../../connectors/sort-by/connectSortBy").SortByConnectorParams> | undefined;
+        stats?: import("../../types").WidgetRenderState<import("../../connectors/stats/connectStats").StatsRenderState, import("../../connectors/stats/connectStats").StatsConnectorParams> | undefined;
+        toggleRefinement?: {
+            [attribute: string]: import("../../types").WidgetRenderState<import("../../connectors/toggle-refinement/connectToggleRefinement").ToggleRefinementRenderState, import("../../connectors/toggle-refinement/connectToggleRefinement").ToggleRefinementConnectorParams>;
+        } | undefined;
+        voiceSearch?: import("../../types").WidgetRenderState<import("../../connectors/voice-search/connectVoiceSearch").VoiceSearchRenderState, import("../../connectors/voice-search/connectVoiceSearch").VoiceSearchConnectorParams> | undefined;
+        analytics?: import("../../types").WidgetRenderState<Record<string, unknown>, import("../analytics/analytics").AnalyticsWidgetParams> | undefined;
+        places?: import("../../types").WidgetRenderState<Record<string, unknown>, import("../places/places").PlacesWidgetParams> | undefined;
+    }, renderOptions: import("../../types").InitOptions | import("../../types").RenderOptions): import("../../types").IndexRenderState & ChatWidgetDescription["indexRenderState"];
+    getWidgetRenderState(renderOptions: import("../../types").InitOptions | import("../../types").RenderOptions): {
+        indexUiState: Partial<{
+            query: string;
+        } & {
+            configure: import("algoliasearch-helper").PlainSearchParameters;
+        } & {
+            geoSearch: {
+                boundingBox: string;
+            };
+        } & {
+            hierarchicalMenu: {
+                [rootAttribute: string]: string[];
+            };
+        } & {
+            hitsPerPage: number;
+        } & {
+            page: number;
+        } & {
+            menu: {
+                [attribute: string]: string;
+            };
+        } & {
+            numericMenu: {
+                [attribute: string]: string;
+            };
+        } & {
+            page: number;
+        } & {
+            range: {
+                [attribute: string]: string;
+            };
+        } & {
+            ratingMenu: {
+                [attribute: string]: number | undefined;
+            };
+        } & {
+            refinementList: {
+                [attribute: string]: string[];
+            };
+        } & {
+            relevantSort: number;
+        } & {
+            query: string;
+        } & {
+            sortBy: string;
+        } & {
+            toggle: {
+                [attribute: string]: boolean;
+            };
+        } & {
+            query: string;
+        } & {
+            places: {
+                query: string;
+                position: string;
+            };
+        }>;
+        input: string;
+        open: boolean;
+        sendEvent: import("../../lib/utils").SendEventForHits;
+        setIndexUiState: (indexUiState: Partial<{
+            query: string;
+        } & {
+            configure: import("algoliasearch-helper").PlainSearchParameters;
+        } & {
+            geoSearch: {
+                boundingBox: string;
+            };
+        } & {
+            hierarchicalMenu: {
+                [rootAttribute: string]: string[];
+            };
+        } & {
+            hitsPerPage: number;
+        } & {
+            page: number;
+        } & {
+            menu: {
+                [attribute: string]: string;
+            };
+        } & {
+            numericMenu: {
+                [attribute: string]: string;
+            };
+        } & {
+            page: number;
+        } & {
+            range: {
+                [attribute: string]: string;
+            };
+        } & {
+            ratingMenu: {
+                [attribute: string]: number | undefined;
+            };
+        } & {
+            refinementList: {
+                [attribute: string]: string[];
+            };
+        } & {
+            relevantSort: number;
+        } & {
+            query: string;
+        } & {
+            sortBy: string;
+        } & {
+            toggle: {
+                [attribute: string]: boolean;
+            };
+        } & {
+            query: string;
+        } & {
+            places: {
+                query: string;
+                position: string;
+            };
+        }> | ((previousIndexUiState: Partial<{
+            query: string;
+        } & {
+            configure: import("algoliasearch-helper").PlainSearchParameters;
+        } & {
+            geoSearch: {
+                boundingBox: string;
+            };
+        } & {
+            hierarchicalMenu: {
+                [rootAttribute: string]: string[];
+            };
+        } & {
+            hitsPerPage: number;
+        } & {
+            page: number;
+        } & {
+            menu: {
+                [attribute: string]: string;
+            };
+        } & {
+            numericMenu: {
+                [attribute: string]: string;
+            };
+        } & {
+            page: number;
+        } & {
+            range: {
+                [attribute: string]: string;
+            };
+        } & {
+            ratingMenu: {
+                [attribute: string]: number | undefined;
+            };
+        } & {
+            refinementList: {
+                [attribute: string]: string[];
+            };
+        } & {
+            relevantSort: number;
+        } & {
+            query: string;
+        } & {
+            sortBy: string;
+        } & {
+            toggle: {
+                [attribute: string]: boolean;
+            };
+        } & {
+            query: string;
+        } & {
+            places: {
+                query: string;
+                position: string;
+            };
+        }>) => Partial<{
+            query: string;
+        } & {
+            configure: import("algoliasearch-helper").PlainSearchParameters;
+        } & {
+            geoSearch: {
+                boundingBox: string;
+            };
+        } & {
+            hierarchicalMenu: {
+                [rootAttribute: string]: string[];
+            };
+        } & {
+            hitsPerPage: number;
+        } & {
+            page: number;
+        } & {
+            menu: {
+                [attribute: string]: string;
+            };
+        } & {
+            numericMenu: {
+                [attribute: string]: string;
+            };
+        } & {
+            page: number;
+        } & {
+            range: {
+                [attribute: string]: string;
+            };
+        } & {
+            ratingMenu: {
+                [attribute: string]: number | undefined;
+            };
+        } & {
+            refinementList: {
+                [attribute: string]: string[];
+            };
+        } & {
+            relevantSort: number;
+        } & {
+            query: string;
+        } & {
+            sortBy: string;
+        } & {
+            toggle: {
+                [attribute: string]: boolean;
+            };
+        } & {
+            query: string;
+        } & {
+            places: {
+                query: string;
+                position: string;
+            };
+        }>)) => void;
+        setInput: (input: string) => void;
+        setOpen: (open: boolean) => void;
+        focusInput: () => void;
+        setMessages: (messagesParam: import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>[] | ((m: import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>[]) => import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>[])) => void;
+        suggestions: string[] | undefined;
+        isClearing: boolean;
+        clearMessages: () => void;
+        onClearTransitionEnd: () => void;
+        tools: ClientSideTools;
+        sendChatMessageFeedback: ((messageId: string, vote: 0 | 1) => void) | undefined;
+        feedbackState: Record<string, 0 | 1 | "sending">;
+        widgetParams: Partial<ChatWidgetParams<RecordWithObjectID>> & ChatConnectorParams<import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>>;
+        addToolResult: <TTool extends string>({ tool, toolCallId, output, }: {
+            tool: TTool;
+            toolCallId: string;
+            output: unknown;
+        }) => Promise<void>;
+        clearError: () => void;
+        error: Error | undefined;
+        id: string;
+        messages: import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>[];
+        regenerate: ({ messageId, ...options }?: {
+            messageId?: string;
+        } & import("../../lib/ai-lite").ChatRequestOptions) => Promise<void>;
+        resumeStream: (options?: import("../../lib/ai-lite").ChatRequestOptions) => Promise<void>;
+        sendMessage: (message?: (Omit<import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>, "id" | "role"> & {
+            id?: string | undefined;
+            role?: "system" | "user" | "assistant" | undefined;
+        } & {
+            text?: never;
+            files?: never;
+            messageId?: string;
+        }) | {
+            text: string;
+            files?: FileList | import("../../lib/ai-lite").FileUIPart[];
+            metadata?: unknown;
+            parts?: never;
+            messageId?: string;
+        } | {
+            files: FileList | import("../../lib/ai-lite").FileUIPart[];
+            metadata?: unknown;
+            parts?: never;
+            messageId?: string;
+        } | undefined, options?: import("../../lib/ai-lite").ChatRequestOptions) => Promise<void>;
+        status: import("../../lib/ai-lite").ChatStatus;
+        stop: () => Promise<void>;
+    };
+    dispose(): void;
+    shouldRender(): true;
+    chatInstance: import("../../lib/chat").Chat<import("../../lib/chat").UIMessage<unknown, import("../../lib/ai-lite").UIDataTypes, import("../../lib/ai-lite").UITools>>;
+};
+export default _default;

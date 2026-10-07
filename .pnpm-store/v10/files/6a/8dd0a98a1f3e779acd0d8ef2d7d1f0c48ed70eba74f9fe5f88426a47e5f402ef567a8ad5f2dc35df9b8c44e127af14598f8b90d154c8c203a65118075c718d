@@ -1,0 +1,3 @@
+var version = '7.31.0';
+
+export { version as default };

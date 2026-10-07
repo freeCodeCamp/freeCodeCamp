@@ -1,0 +1,11 @@
+coverage: true
+flow: false
+ts: false
+jsx: false
+timeout: 240
+check-coverage: false
+
+reporter: terse
+
+files:
+  - 'test/**/*.test.js'

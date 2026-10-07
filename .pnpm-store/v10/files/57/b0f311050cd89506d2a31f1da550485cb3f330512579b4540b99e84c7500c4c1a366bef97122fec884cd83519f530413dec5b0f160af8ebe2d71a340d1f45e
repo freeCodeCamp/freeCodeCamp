@@ -1,0 +1,21 @@
+{
+  "name": "to-space-case",
+  "version": "1.0.0",
+  "description": "Convert a string to space case.",
+  "repository": "git://github.com/ianstormtaylor/to-space-case.git",
+  "license": "MIT",
+  "dependencies": {
+    "to-no-case": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  },
+  "keywords": [
+    "camel",
+    "case",
+    "slug",
+    "space",
+    "spacecase",
+    "string"
+  ]
+}

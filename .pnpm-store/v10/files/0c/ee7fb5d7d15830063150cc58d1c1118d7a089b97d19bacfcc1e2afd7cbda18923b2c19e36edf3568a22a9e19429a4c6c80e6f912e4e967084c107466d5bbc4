@@ -1,0 +1,96 @@
+{
+	"name": "type",
+	"version": "1.2.0",
+	"description": "Runtime validation and processing of JavaScript types",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (https://www.medikoo.com/)",
+	"keywords": [
+		"type",
+		"coercion"
+	],
+	"repository": "medikoo/type",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"eslint": "^6.4.0",
+		"eslint-config-medikoo": "^2.5.1",
+		"git-list-updated": "^1.2.1",
+		"husky": "^3.0.5",
+		"lint-staged": "^9.2.5",
+		"mocha": "^6.2.0",
+		"nyc": "^14.1.1",
+		"prettier-elastic": "^1.18.2"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint"
+		],
+		"*.{css,html,js,json,md,yaml,yml}": [
+			"prettier -c"
+		]
+	},
+	"eslintConfig": {
+		"extends": "medikoo/es3",
+		"root": true,
+		"globals": {
+			"Map": true,
+			"Promise": true,
+			"Set": true,
+			"Symbol": true
+		},
+		"overrides": [
+			{
+				"files": "test/**/*.js",
+				"env": {
+					"mocha": true
+				},
+				"rules": {
+					"no-eval": "off",
+					"no-new-wrappers": "off"
+				}
+			},
+			{
+				"files": [
+					"string/coerce.js",
+					"number/coerce.js"
+				],
+				"rules": {
+					"no-implicit-coercion": "off"
+				}
+			},
+			{
+				"files": "plain-object/is.js",
+				"rules": {
+					"no-proto": "off"
+				}
+			}
+		]
+	},
+	"prettier": {
+		"printWidth": 100,
+		"tabWidth": 4,
+		"overrides": [
+			{
+				"files": [
+					"*.md"
+				],
+				"options": {
+					"tabWidth": 2
+				}
+			}
+		]
+	},
+	"scripts": {
+		"coverage": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm test",
+		"check-coverage": "npm run coverage && nyc check-coverage --statements 80 --function 80 --branches 80 --lines 80",
+		"lint": "eslint --ignore-path=.gitignore .",
+		"lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+		"prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
+		"prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
+		"test": "mocha --recursive"
+	},
+	"license": "ISC"
+}

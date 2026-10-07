@@ -1,0 +1,37 @@
+{
+  "name": "w3c-keyname",
+  "version": "2.2.8",
+  "description": "Get a KeyboardEvent.key-style string from an event",
+  "main": "index.cjs",
+  "type": "module",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
+  "module": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marijnh/w3c-keyname.git"
+  },
+  "keywords": [
+    "browser",
+    "key",
+    "event",
+    "key code"
+  ],
+  "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marijnh/w3c-keyname/issues"
+  },
+  "homepage": "https://github.com/marijnh/w3c-keyname#readme",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "rollup": "^1.26.3"
+  }
+}

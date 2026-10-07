@@ -1,0 +1,80 @@
+{
+  "name": "flatted",
+  "version": "3.4.2",
+  "description": "A super light and fast circular JSON parser.",
+  "unpkg": "min.js",
+  "main": "./cjs/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run rollup:esm && npm run rollup:es && npm run rollup:babel && npm run min && npm run test && npm run size",
+    "cjs": "ascjs esm cjs",
+    "rollup:es": "rollup --config rollup/es.config.js && sed -i.bck 's/^var /self./' es.js && rm -rf es.js.bck",
+    "rollup:esm": "rollup --config rollup/esm.config.js",
+    "rollup:babel": "rollup --config rollup/babel.config.js && sed -i.bck 's/^var /self./' index.js && rm -rf index.js.bck",
+    "min": "terser index.js -c -m -o min.js",
+    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c;cat min.js | brotli | wc -c; cat es.js | brotli | wc -c; cat esm.js | brotli | wc -c",
+    "test": "c8 node test/index.js",
+    "test:php": "php php/test.php",
+    "test:py": "python python/test.py",
+    "ts": "tsc -p .",
+    "coverage": "mkdir -p ./coverage; c8 report --reporter=text-lcov > ./coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/flatted.git"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "cjs/",
+    "es.js",
+    "esm.js",
+    "esm/",
+    "index.js",
+    "min.js",
+    "php/flatted.php",
+    "python/flatted.py",
+    "golang/pkg/flatted/flatted.go",
+    "types/"
+  ],
+  "keywords": [
+    "circular",
+    "JSON",
+    "fast",
+    "parser",
+    "minimal"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebReflection/flatted/issues"
+  },
+  "homepage": "https://github.com/WebReflection/flatted#readme",
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "@rollup/plugin-babel": "^7.0.0",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@ungap/structured-clone": "^1.3.0",
+    "ascjs": "^6.0.3",
+    "c8": "^11.0.0",
+    "circular-json": "^0.5.9",
+    "circular-json-es6": "^2.0.2",
+    "flatted-view": "^0.1.1",
+    "jsan": "^3.1.14",
+    "rollup": "^4.59.0",
+    "terser": "^5.46.0",
+    "typescript": "^5.9.3"
+  },
+  "module": "./esm/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./esm/index.js",
+      "default": "./cjs/index.js"
+    },
+    "./esm": "./esm.js",
+    "./package.json": "./package.json"
+  },
+  "types": "./types/index.d.ts"
+}

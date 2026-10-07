@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/FiberSet.js",
+  "module": "../dist/esm/FiberSet.js",
+  "types": "../dist/dts/FiberSet.d.ts"
+}

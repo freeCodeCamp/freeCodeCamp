@@ -1,0 +1,1 @@
+{"version":3,"file":"types.js","names":[],"sources":["../../../src/utils/worker/types.ts"],"sourcesContent":["import type { WorkerPool } from \"gatsby-worker\"\n\nimport type { MessagesFromChild, MessagesFromParent } from \"./messaging\"\n\nexport type GatsbyWorkerPool = WorkerPool<\n  typeof import(\"./child\"),\n  MessagesFromParent,\n  MessagesFromChild\n>\n"],"mappings":""}

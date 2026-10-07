@@ -1,0 +1,31 @@
+# `MD021` - Multiple spaces inside hashes on closed atx style heading
+
+Tags: `atx_closed`, `headings`, `spaces`
+
+Aliases: `no-multiple-space-closed-atx`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when more than one space is used to separate the
+heading text from the hash characters in a closed atx style heading:
+
+```markdown
+#  Heading 1  #
+
+##  Heading 2  ##
+```
+
+To fix this, separate the heading text from the hash character by a single
+space:
+
+```markdown
+# Heading 1 #
+
+## Heading 2 ##
+```
+
+Note: this rule will fire if either side of the heading contains multiple
+spaces.
+
+Rationale: Extra space has no purpose and does not affect the rendering of
+content.

@@ -1,0 +1,24 @@
+{
+  "name": "@babel/helper-plugin-utils",
+  "version": "7.28.6",
+  "description": "General utilities for plugins to use",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-helper-plugin-utils",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-plugin-utils"
+  },
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.6"
+  },
+  "type": "commonjs"
+}

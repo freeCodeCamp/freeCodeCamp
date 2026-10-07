@@ -1,0 +1,34 @@
+{
+  "name": "jws",
+  "version": "4.0.1",
+  "description": "Implementation of JSON Web Signatures",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brianloveswords/node-jws.git"
+  },
+  "keywords": [
+    "jws",
+    "json",
+    "web",
+    "signatures"
+  ],
+  "author": "Brian J Brennan",
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "gitHead": "c0f6b27bcea5a2ad2e304d91c2e842e4076a6b03",
+  "dependencies": {
+    "jwa": "^2.0.1",
+    "safe-buffer": "^5.0.1"
+  },
+  "devDependencies": {
+    "semver": "^5.1.0",
+    "tape": "~2.14.0"
+  }
+}

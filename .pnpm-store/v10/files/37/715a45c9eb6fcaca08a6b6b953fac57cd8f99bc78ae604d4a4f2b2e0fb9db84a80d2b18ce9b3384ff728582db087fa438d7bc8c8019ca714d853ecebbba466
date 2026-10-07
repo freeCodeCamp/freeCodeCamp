@@ -1,0 +1,6 @@
+import React from "react";
+import { type TabsTriggerProps, type TabsListProps } from "@radix-ui/react-tabs";
+export declare const TabsTrigger: React.ForwardRefExoticComponent<TabsTriggerProps & React.RefAttributes<HTMLButtonElement>>;
+export declare const TabsList: React.ForwardRefExoticComponent<TabsListProps & React.RefAttributes<HTMLDivElement>>;
+export declare const Tabs: React.ForwardRefExoticComponent<import("@radix-ui/react-tabs").TabsProps & React.RefAttributes<HTMLDivElement>>;
+export declare const TabsContent: React.ForwardRefExoticComponent<import("@radix-ui/react-tabs").TabsContentProps & React.RefAttributes<HTMLDivElement>>;

@@ -1,0 +1,1 @@
+{"version":3,"file":"brace-expressions.d.ts","sourceRoot":"","sources":["../../src/brace-expressions.ts"],"names":[],"mappings":"AAgCA,MAAM,MAAM,gBAAgB,GAAG;IAC7B,GAAG,EAAE,MAAM;IACX,KAAK,EAAE,OAAO;IACd,QAAQ,EAAE,MAAM;IAChB,QAAQ,EAAE,OAAO;CAClB,CAAA;AAQD,eAAO,MAAM,UAAU,GACrB,MAAM,MAAM,EACZ,UAAU,MAAM,KACf,gBA2HF,CAAA"}

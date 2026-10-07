@@ -1,0 +1,13 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"new-cap": [2, {
+			"capIsNewExceptions": [
+				"GetIntrinsic",
+			],
+		}],
+	},
+}

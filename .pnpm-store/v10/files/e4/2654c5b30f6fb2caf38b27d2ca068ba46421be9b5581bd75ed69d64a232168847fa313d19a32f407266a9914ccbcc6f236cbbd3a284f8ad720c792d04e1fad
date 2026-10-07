@@ -1,0 +1,33 @@
+{
+  "name": "@tokenizer/token",
+  "version": "0.3.0",
+  "description": "TypeScript definition for strtok3 token",
+  "main": "",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts"
+  ],
+  "keywords": [
+    "token",
+    "interface",
+    "tokenizer",
+    "TypeScript"
+  ],
+  "author": {
+    "name": "Borewit",
+    "url": "https://github.com/Borewit"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Borewit/tokenizer-token.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Borewit/tokenizer-token/issues"
+  },
+  "typeScriptVersion": "3.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^13.1.0"
+  }
+}

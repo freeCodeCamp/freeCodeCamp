@@ -1,0 +1,12 @@
+{
+	"name": "htm_react",
+	"module": "index.module.js",
+	"main": "index.js",
+	"umd:main": "index.umd.js",
+	"unpkg": "index.js",
+	"scripts": {
+		"build": "npm run -s build:main && npm run -s build:static",
+		"build:main": "microbundle index.mjs -o ../../../react/index.js --external react,htm --no-sourcemap --target web",
+		"build:static": "cp index.d.ts package.json ../../../react/"
+	}
+}

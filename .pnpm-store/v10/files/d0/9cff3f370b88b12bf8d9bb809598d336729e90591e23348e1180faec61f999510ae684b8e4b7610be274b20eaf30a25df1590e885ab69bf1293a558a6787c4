@@ -1,0 +1,91 @@
+{
+  "name": "parse-entities",
+  "version": "4.0.2",
+  "description": "Parse HTML character references",
+  "license": "MIT",
+  "keywords": [
+    "parse",
+    "html",
+    "character",
+    "reference",
+    "entity",
+    "entities"
+  ],
+  "repository": "wooorm/parse-entities",
+  "bugs": "https://github.com/wooorm/parse-entities/issues",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "lib/",
+    "index.d.ts",
+    "index.js"
+  ],
+  "dependencies": {
+    "@types/unist": "^2.0.0",
+    "character-entities-legacy": "^3.0.0",
+    "character-reference-invalid": "^2.0.0",
+    "decode-named-character-reference": "^1.0.0",
+    "is-alphanumerical": "^2.0.0",
+    "is-decimal": "^2.0.0",
+    "is-hexadecimal": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "c8": "^10.0.0",
+    "prettier": "^3.0.0",
+    "remark-cli": "^12.0.0",
+    "remark-preset-wooorm": "^10.0.0",
+    "type-coverage": "^2.0.0",
+    "typescript": "^5.0.0",
+    "xo": "^0.60.0"
+  },
+  "scripts": {
+    "prepack": "npm run build && npm run format",
+    "build": "tsc --build --clean && tsc --build && type-coverage",
+    "format": "remark . -qfo && prettier . -w --log-level warn && xo --fix",
+    "test-api": "node --conditions development test.js",
+    "test-coverage": "c8 --check-coverage --100 --reporter lcov npm run test-api",
+    "test": "npm run build && npm run format && npm run test-coverage"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "@typescript-eslint/consistent-type-definitions": "off",
+      "@typescript-eslint/ban-types": "off",
+      "complexity": "off",
+      "max-depth": "off",
+      "no-bitwise": "off",
+      "unicorn/numeric-separators-style": "off",
+      "unicorn/prefer-code-point": "off"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-wooorm"
+    ]
+  },
+  "typeCoverage": {
+    "atLeast": 100,
+    "detail": true,
+    "strict": true,
+    "ignoreCatch": true
+  }
+}

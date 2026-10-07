@@ -1,0 +1,34 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": 0,
+		"max-params": 0,
+		"max-statements": 0,
+		"multiline-comment-style": 0,
+		"new-cap": [2, {
+			"capIsNewExceptions": [
+				"IsSharedArrayBuffer",
+				"ToIntegerOrInfinity",
+				"GetIntrinsic",
+				"IsDetachedBuffer",
+				"SpeciesConstructor",
+			],
+		}],
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"globals": {
+				"ArrayBuffer": false,
+				"Uint8Array": false,
+			},
+			"rules": {
+				"max-lines-per-function": 0,
+			},
+		},
+	],
+}

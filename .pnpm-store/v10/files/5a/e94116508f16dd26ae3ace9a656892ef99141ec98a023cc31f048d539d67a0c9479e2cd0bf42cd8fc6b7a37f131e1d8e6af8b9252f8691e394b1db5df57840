@@ -1,0 +1,1 @@
+define("vs/language/css/monaco.contribution",["exports","../../editor.api-CalNCsUg","../../monaco.contribution-DO3azKX8"],(function(s,t,e){"use strict";s.cssDefaults=e.cssDefaults,s.lessDefaults=e.lessDefaults,s.scssDefaults=e.scssDefaults,Object.defineProperty(s,Symbol.toStringTag,{value:"Module"})}));

@@ -1,0 +1,31 @@
+{
+  "name": "string_decoder",
+  "version": "1.1.1",
+  "description": "The string_decoder module from Node core",
+  "main": "lib/string_decoder.js",
+  "dependencies": {
+    "safe-buffer": "~5.1.0"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.23.0",
+    "core-util-is": "^1.0.2",
+    "inherits": "^2.0.3",
+    "tap": "~0.4.8"
+  },
+  "scripts": {
+    "test": "tap test/parallel/*.js && node test/verify-dependencies",
+    "ci": "tap test/parallel/*.js test/ours/*.js --tap | tee test.tap && node test/verify-dependencies.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nodejs/string_decoder.git"
+  },
+  "homepage": "https://github.com/nodejs/string_decoder",
+  "keywords": [
+    "string",
+    "decoder",
+    "browser",
+    "browserify"
+  ],
+  "license": "MIT"
+}

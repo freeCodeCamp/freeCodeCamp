@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/GlobalValue.js",
+  "module": "../dist/esm/GlobalValue.js",
+  "types": "../dist/dts/GlobalValue.d.ts"
+}

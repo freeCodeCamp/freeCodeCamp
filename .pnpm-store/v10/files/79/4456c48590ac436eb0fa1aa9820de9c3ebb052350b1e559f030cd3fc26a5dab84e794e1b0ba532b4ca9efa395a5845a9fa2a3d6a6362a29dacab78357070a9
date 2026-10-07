@@ -1,0 +1,61 @@
+{
+  "name": "cacheable-lookup",
+  "version": "7.0.0",
+  "description": "A cacheable dns.lookup(…) that respects TTL",
+  "engines": {
+    "node": ">=14.16"
+  },
+  "files": [
+    "source",
+    "index.d.ts"
+  ],
+  "type": "module",
+  "exports": {
+    "types": "./index.d.ts",
+    "default": "./source/index.js"
+  },
+  "scripts": {
+    "//test": "xo && nyc --reporter=lcovonly --reporter=text ava && tsd",
+    "test": "tsd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szmarczak/cacheable-lookup.git"
+  },
+  "keywords": [
+    "dns",
+    "lookup",
+    "cacheable",
+    "ttl"
+  ],
+  "author": "Szymon Marczak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/szmarczak/cacheable-lookup/issues"
+  },
+  "homepage": "https://github.com/szmarczak/cacheable-lookup#readme",
+  "devDependencies": {
+    "@types/keyv": "^3.1.1",
+    "ava": "^4.3.3",
+    "benchmark": "^2.1.4",
+    "coveralls": "^3.0.9",
+    "keyv": "^4.0.0",
+    "nyc": "^15.0.0",
+    "quibble": "^0.6.14",
+    "quick-lru": "^5.1.0",
+    "tsd": "^0.11.0",
+    "xo": "^0.25.3"
+  },
+  "ava": {
+    "nodeArguments": [
+      "--loader=quibble"
+    ]
+  },
+  "xo": {
+    "rules": {
+      "unicorn/import-index": "off",
+      "import/extensions": "off",
+      "import/no-useless-path-segments": "off"
+    }
+  }
+}

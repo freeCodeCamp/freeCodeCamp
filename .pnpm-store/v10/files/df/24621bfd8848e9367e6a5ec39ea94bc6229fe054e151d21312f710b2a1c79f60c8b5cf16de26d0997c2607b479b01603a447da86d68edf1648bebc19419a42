@@ -1,0 +1,29 @@
+{
+  "name": "rc",
+  "version": "1.2.8",
+  "description": "hardwired configuration loader",
+  "main": "index.js",
+  "browser": "browser.js",
+  "scripts": {
+    "test": "set -e; node test/test.js; node test/ini.js; node test/nested-env-vars.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dominictarr/rc.git"
+  },
+  "license": "(BSD-2-Clause OR MIT OR Apache-2.0)",
+  "keywords": [
+    "config",
+    "rc",
+    "unix",
+    "defaults"
+  ],
+  "bin": "./cli.js",
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (dominictarr.com)",
+  "dependencies": {
+    "deep-extend": "^0.6.0",
+    "ini": "~1.3.0",
+    "minimist": "^1.2.0",
+    "strip-json-comments": "~2.0.1"
+  }
+}

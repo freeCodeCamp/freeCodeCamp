@@ -1,0 +1,26 @@
+{
+  "name": "markdownlint-rule-helpers",
+  "version": "0.30.0",
+  "description": "A collection of markdownlint helper functions for custom rules",
+  "main": "./helpers.cjs",
+  "exports": {
+    ".": "./helpers.cjs",
+    "./micromark": "./micromark-helpers.cjs"
+  },
+  "author": "David Anson (https://dlaa.me/)",
+  "license": "MIT",
+  "homepage": "https://github.com/DavidAnson/markdownlint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidAnson/markdownlint.git"
+  },
+  "bugs": "https://github.com/DavidAnson/markdownlint/issues",
+  "funding": "https://github.com/sponsors/DavidAnson",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "markdownlint",
+    "markdownlint-rule"
+  ]
+}

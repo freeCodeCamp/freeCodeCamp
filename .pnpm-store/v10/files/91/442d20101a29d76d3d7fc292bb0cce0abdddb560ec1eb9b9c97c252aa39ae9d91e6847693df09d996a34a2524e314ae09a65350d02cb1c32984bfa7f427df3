@@ -1,0 +1,104 @@
+{
+  "name": "stripe",
+  "version": "16.12.0",
+  "description": "Stripe API wrapper",
+  "keywords": [
+    "stripe",
+    "payment processing",
+    "credit cards",
+    "api"
+  ],
+  "homepage": "https://github.com/stripe/stripe-node",
+  "author": "Stripe <support@stripe.com> (https://stripe.com/)",
+  "contributors": [
+    "Ask Bjørn Hansen <ask@develooper.com> (http://www.askask.com/)",
+    "Michelle Bu <michelle@stripe.com>",
+    "Alex Sexton <alex@stripe.com>",
+    "James Padolsey"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stripe/stripe-node.git"
+  },
+  "bugs": "https://github.com/stripe/stripe-node/issues",
+  "engines": {
+    "node": ">=12.*"
+  },
+  "main": "cjs/stripe.cjs.node.js",
+  "types": "types/index.d.ts",
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/chai-as-promised": "^7.1.5",
+    "@types/mocha": "^10.0.1",
+    "@types/qs": "^6.9.7",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "chai": "^4.3.6",
+    "chai-as-promised": "~7.1.1",
+    "coveralls": "^3.1.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^3.4.1",
+    "mocha": "^8.4.0",
+    "mocha-junit-reporter": "^2.1.0",
+    "nock": "^13.2.9",
+    "node-fetch": "^2.6.7",
+    "nyc": "^15.1.0",
+    "prettier": "^1.16.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  },
+  "resolutions": {
+    "minimist": "1.2.6",
+    "nanoid": "^3.2.0"
+  },
+  "dependencies": {
+    "@types/node": ">=8.1.0",
+    "qs": "^6.11.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build-esm && yarn build-cjs",
+    "build-esm": "mkdir -p esm && tsc -p tsconfig.esm.json && echo '{\"type\":\"module\"}' > esm/package.json",
+    "build-cjs": "mkdir -p cjs && tsc -p tsconfig.cjs.json && echo '{\"type\":\"commonjs\"}' > cjs/package.json",
+    "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage ./esm ./cjs",
+    "prepack": "yarn install && yarn build",
+    "mocha": "nyc mocha",
+    "mocha-only": "mocha",
+    "test": "yarn build && yarn test-typescript && yarn mocha",
+    "test-typescript": "tsc --build types/test",
+    "lint": "eslint --ext .js,.jsx,.ts .",
+    "fix": "yarn lint --fix && ./scripts/updateAPIVersion.js",
+    "report": "nyc -r text -r lcov report",
+    "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "exports": {
+    "types": "./types/index.d.ts",
+    "browser": {
+      "import": "./esm/stripe.esm.worker.js",
+      "require": "./cjs/stripe.cjs.worker.js"
+    },
+    "bun": {
+      "import": "./esm/stripe.esm.worker.js",
+      "require": "./cjs/stripe.cjs.worker.js"
+    },
+    "deno": {
+      "import": "./esm/stripe.esm.worker.js",
+      "require": "./cjs/stripe.cjs.worker.js"
+    },
+    "worker": {
+      "import": "./esm/stripe.esm.worker.js",
+      "require": "./cjs/stripe.cjs.worker.js"
+    },
+    "workerd": {
+      "import": "./esm/stripe.esm.worker.js",
+      "require": "./cjs/stripe.cjs.worker.js"
+    },
+    "default": {
+      "import": "./esm/stripe.esm.node.js",
+      "require": "./cjs/stripe.cjs.node.js"
+    }
+  }
+}

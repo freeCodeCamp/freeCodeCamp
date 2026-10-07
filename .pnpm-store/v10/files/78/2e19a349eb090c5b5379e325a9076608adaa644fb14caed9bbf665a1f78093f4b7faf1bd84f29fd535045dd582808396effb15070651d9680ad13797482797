@@ -1,0 +1,52 @@
+{
+	"name": "pkg-up",
+	"version": "3.1.0",
+	"description": "Find the closest package.json file",
+	"license": "MIT",
+	"repository": "sindresorhus/pkg-up",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"pkg",
+		"package",
+		"file",
+		"find",
+		"up",
+		"find-up",
+		"findup",
+		"look-up",
+		"look",
+		"search",
+		"match",
+		"resolve",
+		"parent",
+		"parents",
+		"folder",
+		"directory",
+		"dir",
+		"walk",
+		"walking",
+		"path"
+	],
+	"dependencies": {
+		"find-up": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
+	}
+}

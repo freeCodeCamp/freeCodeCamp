@@ -1,0 +1,28 @@
+{
+    "name": "@sideway/formula",
+    "description": "Math and string formula parser.",
+    "version": "3.0.1",
+    "repository": "git://github.com/sideway/formula",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "keywords": [
+        "formula",
+        "parser",
+        "math",
+        "string"
+    ],
+    "files": [
+        "lib"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+        "typescript": "4.0.x",
+        "@hapi/code": "8.x.x",
+        "@hapi/lab": "24.x.x"
+    },
+    "scripts": {
+        "test": "lab -a @hapi/code -t 100 -L -Y",
+        "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html"
+    },
+    "license": "BSD-3-Clause"
+}

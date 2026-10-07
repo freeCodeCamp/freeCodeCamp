@@ -1,0 +1,104 @@
+{
+  "name": "date-fns",
+  "version": "2.30.0",
+  "sideEffects": false,
+  "contributors": ["Sasha Koss <koss@nocorp.me>", "Lesha Koss <regiusprod@gmail.com>"],
+  "license": "MIT",
+  "description": "Modern JavaScript date utility library",
+  "repository": "https://github.com/date-fns/date-fns",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/date-fns"
+  },
+  "engines": {
+    "node": ">=0.11"
+  },
+  "typings": "./typings.d.ts",
+  "main": "index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "test": "karma start config/karma.js",
+    "lint": "eslint .",
+    "lint-types": "eslint --config=.ts-eslintrc.js typings.d.ts",
+    "locale-snapshots": "env TZ=utc babel-node --extensions .ts,.js ./scripts/build/localeSnapshots/index.js",
+    "stats": "cloc . --exclude-dir=node_modules,tmp,.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": ["prettier --write", "git add"]
+  },
+  "browserslist": ["last 1 version", "> 1%", "IE 11"],
+  "dependencies": {
+    "@babel/runtime": "^7.21.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.5",
+    "@babel/node": "^7.20.7",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.21.4",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-typescript": "^7.21.5",
+    "@date-fns/date-fns-scripts": "0.0.6",
+    "@octokit/core": "^3.2.5",
+    "@size-limit/preset-big-lib": "^8.2.4",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^14.6.3",
+    "@types/sinon": "^9.0.6",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "8.0.6",
+    "babel-plugin-add-import-extension": "^1.4.3",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "cloc": "^2.2.0",
+    "coveralls": "^3.0.6",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^4.3.0",
+    "firebase": "^3.7.1",
+    "glob-promise": "^2.0.0",
+    "globby": "^11.0.3",
+    "husky": "^1.0.1",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "jest": "^27.0.4",
+    "js-beautify": "^1.5.10",
+    "js-fns": "^2.5.1",
+    "jsdoc-babel": "^0.5.0",
+    "jsdoc-to-markdown": "7",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "2.2",
+    "karma-cli": "^1.0.1",
+    "karma-coverage": "^1.1.2",
+    "karma-coverage-istanbul-reporter": "^2.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-sauce-launcher": "^1.2.0",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^4.0.2",
+    "lint-staged": "^7.3.0",
+    "lodash": "^4.17.15",
+    "lodash.clonedeep": "^4.5.0",
+    "mocha": "^3.5.3",
+    "moment": "^2.24.0",
+    "mz": "^2.7.0",
+    "node-fetch": "^1.7.3",
+    "p-limit": "^3.1.0",
+    "prettier": "2",
+    "simple-git": "^2.35.2",
+    "sinon": "^7.4.1",
+    "size-limit": "^8.2.4",
+    "snazzy": "^7.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.2.4",
+    "webpack": "4",
+    "webpack-cli": "^3.1.2",
+    "world-countries": "^1.8.1"
+  },
+  "resolutions": {
+    "ajv": "6.8.1"
+  }
+}

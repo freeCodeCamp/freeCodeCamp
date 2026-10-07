@@ -1,0 +1,352 @@
+# Copyright 2017 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+#
+# Contributing to Chrome DevTools Protocol: https://goo.gle/devtools-contribution-guide-cdp
+
+# The Browser domain defines methods and events for browser managing.
+domain Browser
+  experimental type BrowserContextID extends string
+  experimental type WindowID extends integer
+
+  # The state of the browser window.
+  experimental type WindowState extends string
+    enum
+      normal
+      minimized
+      maximized
+      fullscreen
+
+  # Browser window bounds information
+  experimental type Bounds extends object
+    properties
+      # The offset from the left edge of the screen to the window in pixels.
+      optional integer left
+      # The offset from the top edge of the screen to the window in pixels.
+      optional integer top
+      # The window width in pixels.
+      optional integer width
+      # The window height in pixels.
+      optional integer height
+      # The window state. Default to normal.
+      optional WindowState windowState
+
+  experimental type PermissionType extends string
+    enum
+      ar
+      audioCapture
+      automaticFullscreen
+      backgroundFetch
+      backgroundSync
+      cameraPanTiltZoom
+      capturedSurfaceControl
+      clipboardReadWrite
+      clipboardSanitizedWrite
+      displayCapture
+      durableStorage
+      geolocation
+      handTracking
+      idleDetection
+      keyboardLock
+      localFonts
+      localNetwork
+      localNetworkAccess
+      loopbackNetwork
+      midi
+      midiSysex
+      nfc
+      notifications
+      paymentHandler
+      periodicBackgroundSync
+      pointerLock
+      protectedMediaIdentifier
+      sensors
+      smartCard
+      speakerSelection
+      storageAccess
+      topLevelStorageAccess
+      videoCapture
+      vr
+      wakeLockScreen
+      wakeLockSystem
+      webAppInstallation
+      webPrinting
+      windowManagement
+
+  experimental type PermissionSetting extends string
+    enum
+      granted
+      denied
+      prompt
+
+  # Definition of PermissionDescriptor defined in the Permissions API:
+  # https://w3c.github.io/permissions/#dom-permissiondescriptor.
+  experimental type PermissionDescriptor extends object
+    properties
+      # Name of permission.
+      # See https://cs.chromium.org/chromium/src/third_party/blink/renderer/modules/permissions/permission_descriptor.idl for valid permission names.
+      string name
+      # For "midi" permission, may also specify sysex control.
+      optional boolean sysex
+      # For "push" permission, may specify userVisibleOnly.
+      # Note that userVisibleOnly = true is the only currently supported type.
+      optional boolean userVisibleOnly
+      # For "clipboard" permission, may specify allowWithoutSanitization.
+      optional boolean allowWithoutSanitization
+      # For "fullscreen" permission, must specify allowWithoutGesture:true.
+      optional boolean allowWithoutGesture
+      # For "camera" permission, may specify panTiltZoom.
+      optional boolean panTiltZoom
+
+  # Browser command ids used by executeBrowserCommand.
+  experimental type BrowserCommandId extends string
+    enum
+      openTabSearch
+      closeTabSearch
+      openGlic
+
+  # Set permission settings for given embedding and embedded origins.
+  experimental command setPermission
+    parameters
+      # Descriptor of permission to override.
+      PermissionDescriptor permission
+      # Setting of the permission.
+      PermissionSetting setting
+      # Embedding origin the permission applies to, all origins if not specified.
+      optional string origin
+      # Embedded origin the permission applies to. It is ignored unless the embedding origin is
+      # present and valid. If the embedding origin is provided but the embedded origin isn't, the
+      # embedding origin is used as the embedded origin.
+      optional string embeddedOrigin
+      # Context to override. When omitted, default browser context is used.
+      optional BrowserContextID browserContextId
+
+  # Grant specific permissions to the given origin and reject all others. Deprecated. Use
+  # setPermission instead.
+  experimental deprecated command grantPermissions
+    parameters
+      array of PermissionType permissions
+      # Origin the permission applies to, all origins if not specified.
+      optional string origin
+      # BrowserContext to override permissions. When omitted, default browser context is used.
+      optional BrowserContextID browserContextId
+
+  # Reset all permission management for all origins.
+  command resetPermissions
+    parameters
+      # BrowserContext to reset permissions. When omitted, default browser context is used.
+      optional BrowserContextID browserContextId
+
+  # Set the behavior when downloading a file.
+  experimental command setDownloadBehavior
+    parameters
+      # Whether to allow all or deny all download requests, or use default Chrome behavior if
+      # available (otherwise deny). |allowAndName| allows download and names files according to
+      # their download guids.
+      enum behavior
+        deny
+        allow
+        allowAndName
+        default
+      # BrowserContext to set download behavior. When omitted, default browser context is used.
+      optional BrowserContextID browserContextId
+      # The default path to save downloaded files to. This is required if behavior is set to 'allow'
+      # or 'allowAndName'.
+      optional string downloadPath
+      # Whether to emit download events (defaults to false).
+      optional boolean eventsEnabled
+
+  # Cancel a download if in progress
+  experimental command cancelDownload
+    parameters
+      # Global unique identifier of the download.
+      string guid
+      # BrowserContext to perform the action in. When omitted, default browser context is used.
+      optional BrowserContextID browserContextId
+
+  # Fired when page is about to start a download.
+  experimental event downloadWillBegin
+    parameters
+      # Id of the frame that caused the download to begin.
+      Page.FrameId frameId
+      # Global unique identifier of the download.
+      string guid
+      # URL of the resource being downloaded.
+      string url
+      # Suggested file name of the resource (the actual name of the file saved on disk may differ).
+      string suggestedFilename
+
+  # Fired when download makes progress. Last call has |done| == true.
+  experimental event downloadProgress
+    parameters
+      # Global unique identifier of the download.
+      string guid
+      # Total expected bytes to download.
+      number totalBytes
+      # Total bytes received.
+      number receivedBytes
+      # Download status.
+      enum state
+        inProgress
+        completed
+        canceled
+      # If download is "completed", provides the path of the downloaded file.
+      # Depending on the platform, it is not guaranteed to be set, nor the file
+      # is guaranteed to exist.
+      experimental optional string filePath
+
+  # Close browser gracefully.
+  command close
+
+  # Crashes browser on the main thread.
+  experimental command crash
+
+  # Crashes GPU process.
+  experimental command crashGpuProcess
+
+  # Returns version information.
+  command getVersion
+    returns
+      # Protocol version.
+      string protocolVersion
+      # Product name.
+      string product
+      # Product revision.
+      string revision
+      # User-Agent.
+      string userAgent
+      # V8 version.
+      string jsVersion
+
+  # Returns the command line switches for the browser process if, and only if
+  # --enable-automation is on the commandline.
+  experimental command getBrowserCommandLine
+    returns
+      # Commandline parameters
+      array of string arguments
+
+  # Chrome histogram bucket.
+  experimental type Bucket extends object
+    properties
+      # Minimum value (inclusive).
+      integer low
+      # Maximum value (exclusive).
+      integer high
+      # Number of samples.
+      integer count
+
+  # Chrome histogram.
+  experimental type Histogram extends object
+    properties
+      # Name.
+      string name
+      # Sum of sample values.
+      integer sum
+      # Total number of samples.
+      integer count
+      # Buckets.
+      array of Bucket buckets
+
+  # Get Chrome histograms.
+  experimental command getHistograms
+    parameters
+      # Requested substring in name. Only histograms which have query as a
+      # substring in their name are extracted. An empty or absent query returns
+      # all histograms.
+      optional string query
+      # If true, retrieve delta since last delta call.
+      optional boolean delta
+
+    returns
+      # Histograms.
+      array of Histogram histograms
+
+  # Get a Chrome histogram by name.
+  experimental command getHistogram
+    parameters
+      # Requested histogram name.
+      string name
+      # If true, retrieve delta since last delta call.
+      optional boolean delta
+    returns
+      # Histogram.
+      Histogram histogram
+
+  # Get position and size of the browser window.
+  experimental command getWindowBounds
+    parameters
+      # Browser window id.
+      WindowID windowId
+    returns
+      # Bounds information of the window. When window state is 'minimized', the restored window
+      # position and size are returned.
+      Bounds bounds
+
+  # Get the browser window that contains the devtools target.
+  experimental command getWindowForTarget
+    parameters
+      # Devtools agent host id. If called as a part of the session, associated targetId is used.
+      optional Target.TargetID targetId
+    returns
+      # Browser window id.
+      WindowID windowId
+      # Bounds information of the window. When window state is 'minimized', the restored window
+      # position and size are returned.
+      Bounds bounds
+
+  # Set position and/or size of the browser window.
+  experimental command setWindowBounds
+    parameters
+      # Browser window id.
+      WindowID windowId
+      # New window bounds. The 'minimized', 'maximized' and 'fullscreen' states cannot be combined
+      # with 'left', 'top', 'width' or 'height'. Leaves unspecified fields unchanged.
+      Bounds bounds
+
+  # Set size of the browser contents resizing browser window as necessary.
+  experimental command setContentsSize
+    parameters
+      # Browser window id.
+      WindowID windowId
+      # The window contents width in DIP. Assumes current width if omitted.
+      # Must be specified if 'height' is omitted.
+      optional integer width
+      # The window contents height in DIP. Assumes current height if omitted.
+      # Must be specified if 'width' is omitted.
+      optional integer height
+
+  # Set dock tile details, platform-specific.
+  experimental command setDockTile
+    parameters
+      optional string badgeLabel
+      # Png encoded image.
+      optional binary image
+
+  # Invoke custom browser commands used by telemetry.
+  experimental command executeBrowserCommand
+    parameters
+      BrowserCommandId commandId
+
+  # Allows a site to use privacy sandbox features that require enrollment
+  # without the site actually being enrolled. Only supported on page targets.
+  command addPrivacySandboxEnrollmentOverride
+    parameters
+      string url
+
+  experimental type PrivacySandboxAPI extends string
+    enum
+      BiddingAndAuctionServices
+      TrustedKeyValue
+
+  # Configures encryption keys used with a given privacy sandbox API to talk
+  # to a trusted coordinator.  Since this is intended for test automation only,
+  # coordinatorOrigin must be a .test domain. No existing coordinator
+  # configuration for the origin may exist.
+  command addPrivacySandboxCoordinatorKeyConfig
+    parameters
+      PrivacySandboxAPI api
+      string coordinatorOrigin
+      string keyConfig
+      # BrowserContext to perform the action in. When omitted, default browser
+      # context is used.
+      optional BrowserContextID browserContextId

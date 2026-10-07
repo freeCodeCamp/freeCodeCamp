@@ -1,0 +1,13 @@
+import { type Messenger } from "./awaitable-post";
+export declare const createFetchProxy: (messenger: Messenger<unknown>) => (url: string, options?: RequestInit) => Promise<CustomResponse>;
+type CustomResponse = {
+    status: number;
+    statusText: string;
+    url: string;
+    ok: boolean;
+    text: () => Promise<string>;
+    json: () => Promise<unknown>;
+};
+export declare const responseParser: (obj: unknown) => CustomResponse;
+export {};
+//# sourceMappingURL=proxy-fetch.d.ts.map

@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/previousDay/index.js",
+  "typings": "../../typings.d.ts"
+}

@@ -1,0 +1,52 @@
+{
+	"name": "import-local",
+	"version": "3.1.0",
+	"description": "Let a globally installed package use a locally installed version of itself if available",
+	"license": "MIT",
+	"repository": "sindresorhus/import-local",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"bin": {
+		"import-local-fixture": "fixtures/cli.js"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"fixtures/cli.js"
+	],
+	"keywords": [
+		"import",
+		"local",
+		"require",
+		"resolve",
+		"global",
+		"version",
+		"prefer",
+		"cli"
+	],
+	"dependencies": {
+		"pkg-dir": "^4.2.0",
+		"resolve-cwd": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "2.1.0",
+		"cpy": "^7.0.1",
+		"del": "^4.1.1",
+		"execa": "^2.0.1",
+		"xo": "^0.24.0"
+	},
+	"xo": {
+		"ignores": [
+			"fixtures"
+		]
+	}
+}

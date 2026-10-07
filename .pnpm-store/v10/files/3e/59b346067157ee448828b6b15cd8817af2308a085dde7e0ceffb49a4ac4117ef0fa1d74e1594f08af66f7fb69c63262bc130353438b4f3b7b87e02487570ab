@@ -1,0 +1,44 @@
+{
+	"name": "mimic-response",
+	"version": "4.0.0",
+	"description": "Mimic a Node.js HTTP response stream",
+	"license": "MIT",
+	"repository": "sindresorhus/mimic-response",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.d.ts",
+		"index.js"
+	],
+	"keywords": [
+		"mimic",
+		"response",
+		"stream",
+		"http",
+		"https",
+		"request",
+		"get",
+		"core"
+	],
+	"devDependencies": {
+		"@types/node": "^16.4.13",
+		"ava": "^3.15.0",
+		"create-test-server": "^3.0.1",
+		"p-event": "^4.2.0",
+		"pify": "^5.0.0",
+		"tsd": "^0.17.0",
+		"xo": "^0.44.0"
+	}
+}

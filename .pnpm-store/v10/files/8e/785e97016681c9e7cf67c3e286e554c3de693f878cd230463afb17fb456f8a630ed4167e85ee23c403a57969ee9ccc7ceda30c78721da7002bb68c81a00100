@@ -1,0 +1,41 @@
+'use strict';
+
+var shimIterator = require('./Iterator/shim');
+var shimIteratorFrom = require('./Iterator.from/shim');
+var shimIteratorConcat = require('./Iterator.concat/shim');
+var shimZip = require('./Iterator.zip/shim');
+var shimZipKeyed = require('./Iterator.zipKeyed/shim');
+var shimIteratorProto = require('./Iterator.prototype/shim');
+var shimIteratorCtor = require('./Iterator.prototype.constructor/shim');
+var shimIteratorDrop = require('./Iterator.prototype.drop/shim');
+var shimIteratorEvery = require('./Iterator.prototype.every/shim');
+var shimIteratorFilter = require('./Iterator.prototype.filter/shim');
+var shimIteratorFind = require('./Iterator.prototype.find/shim');
+var shimIteratorFlatMap = require('./Iterator.prototype.flatMap/shim');
+var shimIteratorForEach = require('./Iterator.prototype.forEach/shim');
+var shimIteratorMap = require('./Iterator.prototype.map/shim');
+var shimIteratorReduce = require('./Iterator.prototype.reduce/shim');
+var shimIteratorSome = require('./Iterator.prototype.some/shim');
+var shimIteratorTake = require('./Iterator.prototype.take/shim');
+var shimIteratorToArray = require('./Iterator.prototype.toArray/shim');
+
+module.exports = function shimIteratorHelpers() {
+	shimIterator();
+	shimIteratorProto();
+	shimIteratorFrom();
+	shimIteratorConcat();
+	shimZip();
+	shimZipKeyed();
+	shimIteratorCtor();
+	shimIteratorDrop();
+	shimIteratorEvery();
+	shimIteratorFilter();
+	shimIteratorFind();
+	shimIteratorFlatMap();
+	shimIteratorForEach();
+	shimIteratorMap();
+	shimIteratorReduce();
+	shimIteratorSome();
+	shimIteratorTake();
+	shimIteratorToArray();
+};

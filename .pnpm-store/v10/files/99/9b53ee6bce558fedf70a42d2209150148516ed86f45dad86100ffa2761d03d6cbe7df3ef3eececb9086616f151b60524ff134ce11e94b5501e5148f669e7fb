@@ -1,0 +1,297 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "async": {
+            "type": "boolean",
+            "description": "When true, plugin will not block compilation to finish issues checking"
+        },
+        "typescript": {
+            "$ref": "#/definitions/TypeScriptReporterOptions"
+        },
+        "eslint": {
+            "$ref": "#/definitions/EsLintReporterOptions"
+        },
+        "formatter": {
+            "$ref": "#/definitions/FormatterOptions"
+        },
+        "issue": {
+            "$ref": "#/definitions/IssueOptions"
+        },
+        "logger": {
+            "$ref": "#/definitions/LoggerOptions"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "Formatter": {
+            "instanceof": "Function"
+        },
+        "ComplexFormatterPreferences": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/FormatterType"
+                },
+                "options": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            },
+            "required": ["type"]
+        },
+        "FormatterType": {
+            "type": "string",
+            "enum": ["basic", "codeframe"]
+        },
+        "IssueMatch": {
+            "type": "object",
+            "properties": {
+                "origin": {
+                    "type": "string",
+                    "enum": ["typescript", "eslint"]
+                },
+                "severity": {
+                    "type": "string",
+                    "enum": ["error", "warning"]
+                },
+                "code": {
+                    "type": "string"
+                },
+                "file": {
+                    "type": "string"
+                }
+            }
+        },
+        "IssuePredicate": {
+            "instanceof": "Function"
+        },
+        "IssuePredicateOption": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/IssuePredicate"
+                },
+                {
+                    "$ref": "#/definitions/IssueMatch"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/IssuePredicate"
+                            },
+                            {
+                                "$ref": "#/definitions/IssueMatch"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "LoggerType": {
+            "type": "string",
+            "enum": ["console", "webpack-infrastructure", "silent"]
+        },
+        "Logger": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "instanceof": "Function"
+                },
+                "info": {
+                    "instanceof": "Function"
+                },
+                "log": {
+                    "instanceof": "Function"
+                }
+            }
+        },
+        "TypeScriptReporterOptions": {
+            "oneOf": [
+                {
+                    "type": "boolean",
+                    "description": "Enable TypeScript reporter."
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "description": "Enable TypeScript reporter."
+                        },
+                        "memoryLimit": {
+                            "type": "number",
+                            "description": "Memory limit for TypeScript reporter process."
+                        },
+                        "configFile": {
+                            "type": "string",
+                            "description": "Path to tsconfig.json. By default plugin uses context or process.cwd() to localize tsconfig.json file."
+                        },
+                        "context": {
+                            "type": "string",
+                            "description": "The base path for finding files specified in the tsconfig.json. Same as context option from the ts-loader."
+                        },
+                        "build": {
+                            "type": "boolean",
+                            "description": "The equivalent of the `--build` flag from the `tsc`."
+                        },
+                        "mode": {
+                            "type": "string",
+                            "enum": ["readonly", "write-tsbuildinfo", "write-dts", "write-references"],
+                            "description": "`readonly` keeps all emitted files in memory, `write-tsbuildinfo` which writes only .tsbuildinfo files, `write-dts` writes .tsbuildinfo and type definition files, and `write-references` which writes both .tsbuildinfo and referenced projects output"
+                        },
+                        "compilerOptions": {
+                            "type": "object",
+                            "description": "Custom compilerOptions to be passed to the TypeScript compiler.",
+                            "additionalProperties": true
+                        },
+                        "diagnosticOptions": {
+                            "type": "object",
+                            "description": "Types of diagnostics to be reported.",
+                            "properties": {
+                                "syntactic": {
+                                    "type": "boolean"
+                                },
+                                "semantic": {
+                                    "type": "boolean"
+                                },
+                                "declaration": {
+                                    "type": "boolean"
+                                },
+                                "global": {
+                                    "type": "boolean"
+                                }
+                            }
+                        },
+                        "extensions": {
+                            "type": "object",
+                            "properties": {
+                                "vue": {
+                                    "$ref": "#/definitions/TypeScriptVueExtensionOptions"
+                                }
+                            }
+                        },
+                        "profile": {
+                            "type": "boolean",
+                            "description": "Measures and prints timings related to the TypeScript performance."
+                        },
+                        "typescriptPath": {
+                            "type": "string",
+                            "description": "If supplied this is a custom path where TypeScript can be found."
+                        }
+                    }
+                }
+            ]
+        },
+        "TypeScriptVueExtensionOptions": {
+            "oneOf": [
+                {
+                    "type": "boolean",
+                    "description": "Enable TypeScript Vue extension."
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "description": "Enable TypeScript Vue extension."
+                        },
+                        "compiler": {
+                            "type": "string",
+                            "description": "Custom vue-template-compiler package"
+                        }
+                    }
+                }
+            ]
+        },
+        "EsLintReporterOptions": {
+            "type": "object",
+            "properties": {
+                "files": {
+                    "oneOf": [
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "List of glob patterns or files to be linted."
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Enable EsLint reporter."
+                },
+                "memoryLimit": {
+                    "type": "number",
+                    "description": "Memory limit for EsLint reporter process."
+                },
+                "options": {
+                    "type": "object",
+                    "description": "Custom options to be passed to the EsLint engine.",
+                    "additionalProperties": true
+                }
+            },
+            "required": ["files"]
+        },
+        "FormatterOptions": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/FormatterType"
+                },
+                {
+                    "$ref": "#/definitions/ComplexFormatterPreferences"
+                },
+                {
+                    "$ref": "#/definitions/Formatter"
+                }
+            ]
+        },
+        "IssueOptions": {
+            "type": "object",
+            "properties": {
+                "include": {
+                    "$ref": "#/definitions/IssuePredicateOption"
+                },
+                "exclude": {
+                    "$ref": "#/definitions/IssuePredicateOption"
+                }
+            }
+        },
+        "LoggerOptions": {
+            "type": "object",
+            "properties": {
+                "infrastructure": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/LoggerType"
+                        },
+                        {
+                            "$ref": "#/definitions/Logger"
+                        }
+                    ]
+                },
+                "issues": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/LoggerType"
+                        },
+                        {
+                            "$ref": "#/definitions/Logger"
+                        }
+                    ]
+                },
+                "devServer": {
+                    "type": "boolean",
+                    "description": "Enable reporting to Webpack Dev Server."
+                }
+            }
+        }
+    }
+}

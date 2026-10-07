@@ -1,0 +1,136 @@
+{
+  "name": "consola",
+  "version": "3.4.2",
+  "description": "Elegant Console Wrapper",
+  "keywords": [
+    "console",
+    "logger",
+    "reporter",
+    "elegant",
+    "cli",
+    "universal",
+    "unified",
+    "prompt",
+    "clack",
+    "format",
+    "error",
+    "stacktrace"
+  ],
+  "repository": "unjs/consola",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "node": {
+        "import": {
+          "types": "./dist/index.d.mts",
+          "default": "./dist/index.mjs"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./lib/index.cjs"
+        }
+      },
+      "default": {
+        "import": {
+          "types": "./dist/browser.d.mts",
+          "default": "./dist/browser.mjs"
+        },
+        "require": {
+          "types": "./dist/browser.d.cts",
+          "default": "./dist/browser.cjs"
+        }
+      }
+    },
+    "./browser": {
+      "import": {
+        "types": "./dist/browser.d.mts",
+        "default": "./dist/browser.mjs"
+      },
+      "require": {
+        "types": "./dist/browser.d.cts",
+        "default": "./dist/browser.cjs"
+      }
+    },
+    "./basic": {
+      "node": {
+        "import": {
+          "types": "./dist/basic.d.mts",
+          "default": "./dist/basic.mjs"
+        },
+        "require": {
+          "types": "./dist/basic.d.cts",
+          "default": "./dist/basic.cjs"
+        }
+      },
+      "default": {
+        "import": {
+          "types": "./dist/browser.d.mts",
+          "default": "./dist/browser.mjs"
+        },
+        "require": {
+          "types": "./dist/browser.d.cts",
+          "default": "./dist/browser.cjs"
+        }
+      }
+    },
+    "./core": {
+      "import": {
+        "types": "./dist/core.d.mts",
+        "default": "./dist/core.mjs"
+      },
+      "require": {
+        "types": "./dist/core.d.cts",
+        "default": "./dist/core.cjs"
+      }
+    },
+    "./utils": {
+      "import": {
+        "types": "./dist/utils.d.mts",
+        "default": "./dist/utils.mjs"
+      },
+      "require": {
+        "types": "./dist/utils.d.cts",
+        "default": "./dist/utils.cjs"
+      }
+    }
+  },
+  "main": "./lib/index.cjs",
+  "module": "./dist/index.mjs",
+  "browser": "./dist/browser.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "lib",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest",
+    "lint": "eslint . && prettier -c src examples test",
+    "lint:fix": "eslint . --fix && prettier -w src examples test",
+    "release": "pnpm test && pnpm build && changelogen --release --push && npm publish",
+    "test": "pnpm lint && pnpm vitest run --coverage"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^0.10.0",
+    "@types/node": "^22.13.10",
+    "@vitest/coverage-v8": "^3.0.9",
+    "changelogen": "^0.6.1",
+    "defu": "^6.1.4",
+    "eslint": "^9.22.0",
+    "eslint-config-unjs": "^0.4.2",
+    "is-unicode-supported": "^2.1.0",
+    "prettier": "^3.5.3",
+    "sentencer": "^0.2.1",
+    "std-env": "^3.8.1",
+    "string-width": "^7.2.0",
+    "typescript": "^5.8.2",
+    "unbuild": "^3.5.0",
+    "vitest": "^3.0.9"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.10.0"
+  },
+  "packageManager": "pnpm@10.6.3"
+}

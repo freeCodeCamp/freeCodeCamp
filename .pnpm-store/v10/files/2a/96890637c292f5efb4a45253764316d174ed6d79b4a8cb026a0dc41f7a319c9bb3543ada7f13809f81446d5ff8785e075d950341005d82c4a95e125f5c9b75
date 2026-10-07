@@ -1,0 +1,28 @@
+{
+  "name": "@babel/helper-module-imports",
+  "version": "7.28.6",
+  "description": "Babel helper functions for inserting module loads",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-helper-module-imports",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-module-imports"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/traverse": "^7.28.6",
+    "@babel/types": "^7.28.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.6"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}

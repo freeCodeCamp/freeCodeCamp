@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Number.js",
+  "module": "../dist/esm/Number.js",
+  "types": "../dist/dts/Number.d.ts"
+}

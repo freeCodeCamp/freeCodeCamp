@@ -1,0 +1,33 @@
+{
+  "name": "@codesandbox/sandpack-themes",
+  "version": "2.0.21",
+  "description": "",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codesandbox/sandpack"
+  },
+  "license": "Apache-2.0",
+  "author": "CodeSandbox",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "prebuild": "yarn run clean",
+    "build": "rollup -c && yarn build:types",
+    "build:types": "tsc -p tsconfig.json",
+    "build:publish": "yarn build",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "4.0.3"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "gitHead": "93a5b2d450b868738e74520b37d50c83ceb9396b"
+}

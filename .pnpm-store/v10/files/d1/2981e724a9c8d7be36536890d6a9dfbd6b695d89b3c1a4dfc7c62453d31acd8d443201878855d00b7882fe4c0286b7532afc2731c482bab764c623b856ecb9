@@ -1,0 +1,50 @@
+{
+  "name": "html-parse-stringify",
+  "description": "Parses well-formed HTML (meaning all tags closed) into an AST and back. quickly.",
+  "version": "3.0.1",
+  "author": "Henrik Joreteg <henrik@joreteg.com>",
+  "bugs": {
+    "url": "https://github.com/henrikjoreteg/html-parse-stringify/issues"
+  },
+  "dependencies": {
+    "void-elements": "3.1.0"
+  },
+  "devDependencies": {
+    "esm": "3.2.25",
+    "microbundle": "0.12.2",
+    "prettier": "2.0.5",
+    "tap-spec": "2.1.2",
+    "tape": "5.0.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/henrikjoreteg/html-parse-stringify",
+  "keywords": [
+    "ast",
+    "html",
+    "parse",
+    "stringify"
+  ],
+  "license": "MIT",
+  "main": "dist/html-parse-stringify.js",
+  "module": "dist/html-parse-stringify.module.js",
+  "source": "src/index.js",
+  "unpkg": "dist/html-parse-stringify.umd.js",
+  "prettier": {
+    "arrowParens": "avoid",
+    "singleQuote": true,
+    "semi": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henrikjoreteg/html-parse-stringify"
+  },
+  "scripts": {
+    "build": "microbundle",
+    "format": "prettier --write .",
+    "prebuild": "rm -rf dist",
+    "prepublish": "npm run build",
+    "test": "tape -r esm test/* | tap-spec"
+  }
+}

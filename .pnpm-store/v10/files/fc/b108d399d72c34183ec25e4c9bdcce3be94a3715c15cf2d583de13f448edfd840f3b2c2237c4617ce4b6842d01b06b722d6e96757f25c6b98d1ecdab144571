@@ -1,0 +1,40 @@
+# `MD028` - Blank line inside blockquote
+
+Tags: `blockquote`, `whitespace`
+
+Aliases: `no-blanks-blockquote`
+
+This rule is triggered when two blockquote blocks are separated by nothing
+except for a blank line:
+
+```markdown
+> This is a blockquote
+> which is immediately followed by
+
+> this blockquote. Unfortunately
+> In some parsers, these are treated as the same blockquote.
+```
+
+To fix this, ensure that any blockquotes that are right next to each other
+have some text in between:
+
+```markdown
+> This is a blockquote.
+
+And Jimmy also said:
+
+> This too is a blockquote.
+```
+
+Alternatively, if they are supposed to be the same quote, then add the
+blockquote symbol at the beginning of the blank line:
+
+```markdown
+> This is a blockquote.
+>
+> This is the same blockquote.
+```
+
+Rationale: Some Markdown parsers will treat two blockquotes separated by one
+or more blank lines as the same blockquote, while others will treat them as
+separate blockquotes.

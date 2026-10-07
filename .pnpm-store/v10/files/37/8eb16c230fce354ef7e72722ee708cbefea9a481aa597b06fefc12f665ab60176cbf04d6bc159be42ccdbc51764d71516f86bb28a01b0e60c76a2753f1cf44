@@ -1,0 +1,12 @@
+language: node_js
+
+node_js:
+  - "11"
+  - "10"
+  - "8"
+  - "6"
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always

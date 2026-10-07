@@ -1,0 +1,38 @@
+@import '../variables';
+@import '../mixins';
+@import '../functions';
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(0.1);
+    opacity: 0.7;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// mixins should be separated out
+@mixin ball-pulse($n:3, $start:0) {
+  @for $i from $start through $n {
+    > div:nth-child(#{$i}) {
+      animation: scale 0.75s delay(0.12s, $n, $i) infinite cubic-bezier(.2,.68,.18,1.08);
+    }
+  }
+}
+
+.ball-pulse {
+  @include ball-pulse();
+
+  > div {
+    @include balls();
+    @include global-animation();
+
+    display: inline-block;
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "public-encrypt",
+  "version": "4.0.3",
+  "description": "browserify version of publicEncrypt & privateDecrypt",
+  "main": "index.js",
+  "browser": "browser.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/index.js | tspec",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto-browserify/publicEncrypt.git"
+  },
+  "author": "Calvin Metcalf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/publicEncrypt/issues"
+  },
+  "homepage": "https://github.com/crypto-browserify/publicEncrypt",
+  "dependencies": {
+    "bn.js": "^4.1.0",
+    "browserify-rsa": "^4.0.0",
+    "create-hash": "^1.1.0",
+    "parse-asn1": "^5.0.0",
+    "randombytes": "^2.0.1",
+    "safe-buffer": "^5.1.2"
+  },
+  "devDependencies": {
+    "standard": "^12.0.0",
+    "tap-spec": "^2.1.2",
+    "tape": "^3.0.3"
+  }
+}

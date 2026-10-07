@@ -1,0 +1,116 @@
+{
+  "name": "lru-cache",
+  "publishConfig": {
+    "tag": "legacy-v10"
+  },
+  "description": "A cache object that deletes the least-recently-used items.",
+  "version": "10.4.3",
+  "author": "Isaac Z. Schlueter <i@izs.me>",
+  "keywords": [
+    "mru",
+    "lru",
+    "cache"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run prepare",
+    "prepare": "tshy && bash fixup.sh",
+    "pretest": "npm run prepare",
+    "presnap": "npm run prepare",
+    "test": "tap",
+    "snap": "tap",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "format": "prettier --write .",
+    "typedoc": "typedoc --tsconfig ./.tshy/esm.json ./src/*.ts",
+    "benchmark-results-typedoc": "bash scripts/benchmark-results-typedoc.sh",
+    "prebenchmark": "npm run prepare",
+    "benchmark": "make -C benchmark",
+    "preprofile": "npm run prepare",
+    "profile": "make -C benchmark profile"
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "tshy": {
+    "exports": {
+      ".": "./src/index.ts",
+      "./min": {
+        "import": {
+          "types": "./dist/esm/index.d.ts",
+          "default": "./dist/esm/index.min.js"
+        },
+        "require": {
+          "types": "./dist/commonjs/index.d.ts",
+          "default": "./dist/commonjs/index.min.js"
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/node-lru-cache.git"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@types/tap": "^15.0.6",
+    "benchmark": "^2.1.4",
+    "esbuild": "^0.17.11",
+    "eslint-config-prettier": "^8.5.0",
+    "marked": "^4.2.12",
+    "mkdirp": "^2.1.5",
+    "prettier": "^2.6.2",
+    "tap": "^20.0.3",
+    "tshy": "^2.0.0",
+    "tslib": "^2.4.0",
+    "typedoc": "^0.25.3",
+    "typescript": "^5.2.2"
+  },
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "prettier": {
+    "semi": false,
+    "printWidth": 70,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "tap": {
+    "node-arg": [
+      "--expose-gc"
+    ],
+    "plugin": [
+      "@tapjs/clock"
+    ]
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./min": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.min.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.min.js"
+      }
+    }
+  },
+  "type": "module",
+  "module": "./dist/esm/index.js"
+}

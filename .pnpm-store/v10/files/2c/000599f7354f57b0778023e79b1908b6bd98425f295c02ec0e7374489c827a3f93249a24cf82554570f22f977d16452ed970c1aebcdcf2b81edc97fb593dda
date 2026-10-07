@@ -1,0 +1,25 @@
+{
+    "authors": "Jason Swearingen <https://jasonswearingen.github.io>",
+    "definitionFilename": "index.d.ts",
+    "libraryDependencies": [],
+    "moduleDependencies": [],
+    "libraryMajorVersion": "0",
+    "libraryMinorVersion": "0",
+    "libraryName": "JSON5",
+    "typingsPackageName": "json5",
+    "projectName": "http://json5.org/",
+    "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+    "sourceBranch": "types-2.0",
+    "kind": "ProperModule",
+    "globals": [
+        "json5"
+    ],
+    "declaredModules": [
+        "json5"
+    ],
+    "files": [
+        "index.d.ts"
+    ],
+    "hasPackageJson": false,
+    "contentHash": "1ed77f2bfd59d290798abf89db281c36565f4a78d97d4e9caab25319d54c6331"
+}

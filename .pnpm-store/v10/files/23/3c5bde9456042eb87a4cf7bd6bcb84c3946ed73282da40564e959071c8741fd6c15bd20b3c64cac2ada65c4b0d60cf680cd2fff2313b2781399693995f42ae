@@ -1,0 +1,1 @@
+{"version":3,"file":"polyfill-entry.js","names":["process","env","NODE_ENV","require"],"sources":["../polyfill-entry.js"],"sourcesContent":["import \"gatsby-legacy-polyfills\"\n\nif (process.env.NODE_ENV === `development`) {\n  require(`event-source-polyfill`)\n}\n"],"mappings":";;AAAA;AAEA,IAAIA,OAAO,CAACC,GAAG,CAACC,QAAQ,KAAM,aAAY,EAAE;EAC1CC,OAAO,CAAE,uBAAsB,CAAC;AAClC"}

@@ -1,0 +1,17 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "ChatInlineLayout", {
+    enumerable: true,
+    get: function() {
+        return ChatInlineLayout;
+    }
+});
+var _instantsearchuicomponents = require("instantsearch-ui-components");
+var _react = require("react");
+var ChatInlineLayout = (0, _instantsearchuicomponents.createChatInlineLayoutComponent)({
+    createElement: _react.createElement,
+    Fragment: _react.Fragment
+});

@@ -1,0 +1,48 @@
+# `MD058` - Tables should be surrounded by blank lines
+
+Tags: `table`
+
+Aliases: `blanks-around-tables`
+
+Fixable: Some violations can be fixed by tooling
+
+This rule is triggered when tables are either not preceded or not followed by a
+blank line:
+
+```markdown
+Some text
+| Header | Header |
+| ------ | ------ |
+| Cell   | Cell   |
+> Blockquote
+```
+
+To fix violations of this rule, ensure that all tables have a blank line both
+before and after (except when the table is at the very beginning or end of the
+document):
+
+```markdown
+Some text
+
+| Header | Header |
+| ------ | ------ |
+| Cell   | Cell   |
+
+> Blockquote
+```
+
+Note that text immediately following a table (i.e., not separated by an empty
+line) is treated as part of the table (per the specification) and will not
+trigger this rule:
+
+```markdown
+| Header | Header |
+| ------ | ------ |
+| Cell   | Cell   |
+This text is part of the table and the next line is blank
+
+Some text
+```
+
+Rationale: In addition to aesthetic reasons, some parsers will incorrectly parse
+tables that don't have blank lines before and after them.

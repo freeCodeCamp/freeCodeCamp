@@ -1,0 +1,69 @@
+{
+  "name": "graphql-compose",
+  "version": "9.1.0",
+  "description": "GraphQL schema builder from different data sources with middleware extensions.",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphql-compose/graphql-compose.git"
+  },
+  "keywords": [
+    "graphql",
+    "compose"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphql-compose/graphql-compose/issues"
+  },
+  "homepage": "https://github.com/graphql-compose/graphql-compose",
+  "peerDependencies": {
+    "graphql": "^14.2.0 || ^15.0.0 || ^16.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "29.2.0",
+    "@types/lodash": "4.14.186",
+    "@typescript-eslint/eslint-plugin": "5.41.0",
+    "@typescript-eslint/parser": "5.41.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "8.26.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "graphql": "16.6.0",
+    "jest": "29.2.2",
+    "jest-junit": "14.0.1",
+    "prettier": "2.7.1",
+    "rimraf": "3.0.2",
+    "semantic-release": "18.0.1",
+    "ts-jest": "29.0.3",
+    "typescript": "4.8.4"
+  },
+  "dependencies": {
+    "graphql-type-json": "0.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc -p ./tsconfig.build.json",
+    "watch": "jest --watch",
+    "coverage": "jest --coverage --maxWorkers 4",
+    "lint": "npm run eslint",
+    "tscheck": "tsc --noEmit",
+    "eslint": "eslint --ext .ts ./src",
+    "test": "npm run coverage && npm run eslint && npm run tscheck",
+    "semantic-release": "semantic-release"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/graphql-compose",
+    "logo": "https://opencollective.com/graphql-compose/logo.txt"
+  }
+}

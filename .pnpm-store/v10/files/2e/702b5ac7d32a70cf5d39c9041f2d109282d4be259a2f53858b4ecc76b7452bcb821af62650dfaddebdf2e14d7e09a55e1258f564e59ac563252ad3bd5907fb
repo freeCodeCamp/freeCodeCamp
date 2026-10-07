@@ -1,0 +1,20 @@
+# Copyright 2026 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# This domain exposes the current state of the CrashReportContext API.
+experimental domain CrashReportContext
+  depends on Page
+
+  # Key-value pair in CrashReportContext.
+  type CrashReportContextEntry extends object
+    properties
+      string key
+      string value
+      # The ID of the frame where the key-value pair was set.
+      Page.FrameId frameId
+
+  # Returns all entries in the CrashReportContext across all frames in the page.
+  command getEntries
+    returns
+      array of CrashReportContextEntry entries

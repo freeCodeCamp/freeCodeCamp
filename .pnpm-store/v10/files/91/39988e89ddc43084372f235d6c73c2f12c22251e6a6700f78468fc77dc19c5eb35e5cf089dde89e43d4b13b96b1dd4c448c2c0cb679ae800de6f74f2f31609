@@ -1,0 +1,106 @@
+{
+  "name": "@es-joy/jsdoccomment",
+  "version": "0.46.0",
+  "author": "Brett Zamir <brettz9@yahoo.com>",
+  "contributors": [],
+  "description": "Maintained replacement for ESLint's deprecated SourceCode#getJSDocComment along with other jsdoc utilities",
+  "license": "MIT",
+  "keywords": [
+    "ast",
+    "comment",
+    "estree",
+    "jsdoc",
+    "parser",
+    "eslint",
+    "sourcecode"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./src/index.js",
+    "require": "./dist/index.cjs.cjs"
+  },
+  "browserslist": [
+    "cover 100%"
+  ],
+  "typedocOptions": {
+    "dmtLinksService": {
+      "GitHub": "https://github.com/es-joy/jsdoccomment",
+      "NPM": "https://www.npmjs.com/package/@es-joy/jsdoccomment"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/es-joy/jsdoccomment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/es-joy/jsdoccomment/issues"
+  },
+  "homepage": "https://github.com/es-joy/jsdoccomment",
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "comment-parser": "1.4.1",
+    "esquery": "^1.6.0",
+    "jsdoc-type-pratt-parser": "~4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.24.7",
+    "@brettz9/eslint-plugin": "^1.0.4",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@types/eslint": "^8.56.10",
+    "@types/esquery": "^1.5.4",
+    "@types/estraverse": "^5.1.7",
+    "@types/estree": "^1.0.5",
+    "@typescript-eslint/types": "^7.16.0",
+    "@typescript-eslint/visitor-keys": "^7.16.0",
+    "@typhonjs-build-test/esm-d-ts": "0.3.0-next.1",
+    "@typhonjs-typedoc/typedoc-pkg": "^0.0.5",
+    "@vitest/coverage-v8": "^2.0.1",
+    "@vitest/ui": "^2.0.1",
+    "eslint": "^8.56.0",
+    "eslint-config-ash-nazg": "35.3.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-array-func": "^4.0.0",
+    "eslint-plugin-compat": "^4.2.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.0.4",
+    "eslint-plugin-markdown": "^3.0.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-no-unsanitized": "^4.0.2",
+    "eslint-plugin-no-use-extend-native": "^0.5.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-sonarjs": "^0.23.0",
+    "eslint-plugin-unicorn": "^50.0.1",
+    "espree": "^10.1.0",
+    "estraverse": "^5.3.0",
+    "rollup": "^4.18.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.0",
+    "vitest": "^2.0.1"
+  },
+  "files": [
+    "/dist",
+    "/src",
+    "CHANGES.md",
+    "LICENSE-MIT.txt"
+  ],
+  "scripts": {
+    "build": "rollup -c && npm run types",
+    "docs": "typedoc-pkg --api-link es",
+    "eslint": "eslint --ext=js,cjs,md,html .",
+    "lint": "npm run eslint --",
+    "open": "open ./coverage/index.html",
+    "test": "npm run lint && npm run build && npm run test-ui",
+    "test-ui": "vitest --ui --coverage",
+    "test-cov": "vitest --coverage",
+    "tsc": "tsc",
+    "types": "esm-d-ts gen ./src/index.js --output ./dist/index.d.ts"
+  }
+}

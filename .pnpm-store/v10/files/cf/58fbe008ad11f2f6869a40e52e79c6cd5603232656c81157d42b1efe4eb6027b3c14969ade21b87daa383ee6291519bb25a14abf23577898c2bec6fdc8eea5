@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/PrimaryKey.js",
+  "module": "../dist/esm/PrimaryKey.js",
+  "types": "../dist/dts/PrimaryKey.d.ts"
+}

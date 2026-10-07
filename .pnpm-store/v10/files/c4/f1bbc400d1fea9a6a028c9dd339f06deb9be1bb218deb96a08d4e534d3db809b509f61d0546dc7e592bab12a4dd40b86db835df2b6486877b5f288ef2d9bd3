@@ -1,0 +1,70 @@
+{
+  "name": "aria-query",
+  "version": "5.3.2",
+  "description": "Programmatic access to the ARIA specification",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prepack": "npm run build",
+    "prebuild": "rimraf lib",
+    "build": "babel src --out-dir lib",
+    "lint": "eslint --ext=js,mjs .",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run lint && flow",
+    "build:tests": "npm run build && rimraf __tests-built__ && BABEL_ENV=test babel __tests__ --out-dir __tests-built__",
+    "tests-built": "nyc tape --strict -r array.from/auto '__tests-built__/**/*.js'",
+    "tests-only": "nyc tape --strict -r @babel/register '__tests__/**/*.js'",
+    "test": "npm run tests-only",
+    "posttest": "npm audit --production",
+    "output_as_hack": "babel-node ./scripts/output_as_hack.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A11yance/aria-query.git"
+  },
+  "keywords": [
+    "accessibility",
+    "ARIA"
+  ],
+  "author": "Jesse Beach <splendidnoise@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/A11yance/aria-query/issues"
+  },
+  "homepage": "https://github.com/A11yance/aria-query#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/eslint-parser": "^7.25.1",
+    "@babel/node": "^7.25.0",
+    "@babel/plugin-transform-react-jsx": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-flow": "^7.24.7",
+    "@babel/register": "^7.24.6",
+    "array.from": "^1.1.6",
+    "array.prototype.some": "^1.1.6",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "commander": "^9.4.1",
+    "deep-equal-json": "^1.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "flow-bin": "^0.191.0",
+    "mock-property": "^1.1.0",
+    "nyc": "^10.3.2",
+    "object-inspect": "^1.13.2",
+    "object.values": "^1.2.0",
+    "rimraf": "^2.7.1",
+    "tape": "^5.9.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all",
+    "ie 11"
+  ],
+  "engines": {
+    "node": ">= 0.4"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/BigInt.js",
+  "module": "../dist/esm/BigInt.js",
+  "types": "../dist/dts/BigInt.d.ts"
+}

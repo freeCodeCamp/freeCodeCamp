@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/StreamHaltStrategy.js",
+  "module": "../dist/esm/StreamHaltStrategy.js",
+  "types": "../dist/dts/StreamHaltStrategy.d.ts"
+}

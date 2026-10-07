@@ -1,0 +1,104 @@
+{
+  "name": "remark-html",
+  "version": "13.0.2",
+  "description": "remark plugin to compile Markdown to HTML",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "remark-plugin",
+    "plugin",
+    "mdast",
+    "markdown",
+    "html",
+    "stringify",
+    "compile"
+  ],
+  "repository": "remarkjs/remark-html",
+  "bugs": "https://github.com/remarkjs/remark-html/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Ben Briggs <beneb.info@gmail.com>",
+    "Seth Vincent <sethvincent@gmail.com>",
+    "Junyoung Choi <fluke8259@gmail.com>",
+    "Jonathan Soeder <jonathan.soeder@gmail.com>"
+  ],
+  "types": "types/index.d.ts",
+  "files": [
+    "types/index.d.ts",
+    "index.js"
+  ],
+  "dependencies": {
+    "hast-util-sanitize": "^3.0.0",
+    "hast-util-to-html": "^7.0.0",
+    "mdast-util-to-hast": "^10.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "commonmark.json": "^0.29.0",
+    "dtslint": "^4.0.0",
+    "is-hidden": "^1.0.0",
+    "not": "^0.1.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "rehype-parse": "^7.0.0",
+    "rehype-stringify": "^8.0.0",
+    "remark": "^13.0.0-alpha.0",
+    "remark-cli": "^8.0.0",
+    "remark-github": "^9.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "remark-slug": "^6.0.0",
+    "remark-toc": "^7.0.0",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "to-vfile": "^6.0.0",
+    "unified": "^9.0.0",
+    "xo": "^0.33.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo --ignore-pattern test/ && prettier . --write && xo --fix",
+    "build-bundle": "browserify . -s remarkHtml > remark-html.js",
+    "build-mangle": "browserify . -s remarkHtml -p tinyify > remark-html.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run build && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/no-fn-reference-in-iterator": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-optional-catch-binding": "off"
+    },
+    "ignores": [
+      "remark-html.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "sideEffects": false,
+  "module": "../../esm/fp/eachHourOfInterval/index.js",
+  "typings": "../../typings.d.ts"
+}

@@ -1,0 +1,67 @@
+{
+  "name": "@parcel/utils",
+  "version": "2.8.3",
+  "description": "Blazing fast, zero configuration web application bundler",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/parcel.git"
+  },
+  "main": "lib/index.js",
+  "source": "src/index.js",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "targets": {
+    "main": {
+      "includeNodeModules": {
+        "@parcel/codeframe": false,
+        "@parcel/diagnostic": false,
+        "@parcel/hash": false,
+        "@parcel/logger": false,
+        "@parcel/markdown-ansi": false,
+        "@parcel/source-map": false,
+        "chalk": false
+      }
+    }
+  },
+  "dependencies": {
+    "@parcel/codeframe": "2.8.3",
+    "@parcel/diagnostic": "2.8.3",
+    "@parcel/hash": "2.8.3",
+    "@parcel/logger": "2.8.3",
+    "@parcel/markdown-ansi": "2.8.3",
+    "@parcel/source-map": "^2.1.1",
+    "chalk": "^4.1.0"
+  },
+  "devDependencies": {
+    "@iarna/toml": "^2.2.0",
+    "ansi-html-community": "0.0.8",
+    "clone": "^2.1.1",
+    "fast-glob": "3.1.1",
+    "fastest-levenshtein": "^1.0.8",
+    "is-glob": "^4.0.0",
+    "is-url": "^1.2.2",
+    "json5": "^2.2.0",
+    "lru-cache": "^6.0.0",
+    "micromatch": "^4.0.4",
+    "node-forge": "^1.2.1",
+    "nullthrows": "^1.1.1",
+    "open": "^7.0.3",
+    "random-int": "^1.0.0",
+    "terminal-link": "^2.1.1"
+  },
+  "browser": {
+    "./src/generateCertificate.js": false,
+    "./src/http-server.js": false,
+    "./src/openInBrowser.js": false
+  },
+  "gitHead": "349a6caf40ec8abb6a49fcae0765f8f8deb2073d"
+}

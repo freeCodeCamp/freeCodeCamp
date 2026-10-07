@@ -1,0 +1,6 @@
+{
+  "sideEffects": [],
+  "main": "../dist/cjs/Data.js",
+  "module": "../dist/esm/Data.js",
+  "types": "../dist/dts/Data.d.ts"
+}

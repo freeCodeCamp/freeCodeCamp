@@ -1,0 +1,32 @@
+{
+  "name": "@babel/code-frame",
+  "version": "7.29.0",
+  "description": "Generate errors that contain a code frame that point to source locations.",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "homepage": "https://babel.dev/docs/en/next/babel-code-frame",
+  "bugs": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-code-frame"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "@babel/helper-validator-identifier": "^7.28.5",
+    "js-tokens": "^4.0.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "charcodes": "^0.2.0",
+    "import-meta-resolve": "^4.1.0",
+    "strip-ansi": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "type": "commonjs"
+}
