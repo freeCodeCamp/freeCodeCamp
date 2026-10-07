@@ -1,0 +1,74 @@
+{
+  "chapters": [
+    {
+      "dashedName": "html",
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "blocks": [
+            "workshop-curriculum-outline",
+            "lecture-understanding-html-attributes",
+            "workshop-cat-photo-app",
+            "lab-recipe-page"
+          ]
+        },
+        {
+          "dashedName": "html-fundamentals",
+          "blocks": [
+            "lecture-html-fundamentals",
+            "lecture-importance-of-semantic-html",
+            "workshop-blog-page",
+            "lab-event-hub"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-survey-form",
+          "blocks": ["lab-survey-form"]
+        },
+        {
+          "dashedName": "html-tables-and-more",
+          "blocks": ["workshop-final-exams-table", "workshop-quincys-job-tips"]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-html",
+          "blocks": ["review-html"]
+        },
+        {
+          "moduleType": "quiz",
+          "dashedName": "review-css",
+          "blocks": ["review-css"]
+        }
+      ]
+    },
+    {
+      "dashedName": "css",
+      "modules": [
+        {
+          "dashedName": "basic-css",
+          "blocks": ["lecture-what-is-css"]
+        }
+      ]
+    },
+    {
+      "dashedName": "javascript",
+      "modules": [
+        {
+          "dashedName": "javascript-variables-and-strings",
+          "blocks": ["lecture-introduction-to-javascript"]
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "responsive-web-design-certification-exam",
+      "modules": [
+        {
+          "dashedName": "responsive-web-design-certification-exam",
+          "blocks": ["exam-responsive-web-design-certification"]
+        }
+      ]
+    }
+  ]
+}

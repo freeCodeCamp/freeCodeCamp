@@ -11001,5 +11001,134 @@
         "intro": ["Review Python concepts to prepare for the upcoming exam."]
       }
     }
+  },
+
+  "front-end-development": {
+    "title": "Front-End Web Development with HTML, CSS, and Javascript Certification",
+    "intro": [
+      "Complete the required projects and pass the exam to earn the Front-End Web Development with HTML, CSS, and JavaScript Certification."
+    ],
+    "chapters": {
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "responsive-web-design-certification-exam": "Front-End Web Development with HTML, CSS, and Javascript Certification Exam"
+    },
+    "modules": {
+      "basic-html": "Basic HTML",
+      "html-fundamentals": "HTML Fundamentals",
+      "lab-survey-form": "Build a Survey Form",
+      "html-tables-and-more": "HTML Tables and More",
+      "review-html": "HTML Review",
+      "review-css": "HTML Quiz",
+      "basic-css": "Basic CSS",
+      "javascript-variables-and-strings": "JavaScript Variables and Strings",
+      "responsive-web-design-certification-exam": "Front-End Web Development with HTML, CSS, and Javascript Certification Exam"
+    },
+    "blocks": {
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
+        "intro": [
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-understanding-html-attributes": {
+        "title": "Understanding HTML Attributes",
+        "intro": [
+          "In these lectures, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, and what HTML attributes are."
+        ]
+      },
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
+      },
+      "lab-recipe-page": {
+        "title": "Build a Recipe Page",
+        "intro": [
+          "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
+        ]
+      },
+      "lecture-html-fundamentals": {
+        "title": "HTML Fundamentals",
+        "intro": [
+          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+        ]
+      },
+      "lecture-importance-of-semantic-html": {
+        "title": "Importance of Semantic HTML",
+        "intro": [
+          "In these lectures, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
+        ]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
+        ]
+      },
+      "lab-event-hub": {
+        "title": "Build an Event Hub",
+        "intro": [
+          "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
+        ]
+      },
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
+      },
+      "workshop-final-exams-table": {
+        "title": "Build a Final Exams Table",
+        "intro": [
+          "In this workshop, you will practice working with HTML tables by building a table of final exams."
+        ]
+      },
+      "workshop-quincys-job-tips": {
+        "title": "Build a Page of Other HTML Elements?",
+        "intro": [
+          "In this lab, you'll review HTML tables by building a book information table.",
+          "You'll practice the different table components like the <code>thead</code>, <code>tbody</code>, <code>th</code>, <code>tr</code>, and <code>td</code> elements."
+        ]
+      },
+      "review-html": {
+        "title": "HTML Review",
+        "intro": [
+          "Before you take the HTML prep exam, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
+        ]
+      },
+      "review-css": {
+        "title": "HTML Quiz",
+        "intro": [
+          "Before you take the CSS prep exam, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
+        ]
+      },
+      "lecture-what-is-css": {
+        "title": "What Is CSS?",
+        "intro": [
+          "The following lectures are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and much more."
+        ]
+      },
+      "lecture-introduction-to-javascript": {
+        "title": "Introduction to JavaScript",
+        "intro": [
+          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+        ]
+      },
+      "exam-responsive-web-design-certification": {
+        "title": "Front-End Web Development with HTML, CSS, and JavaScript Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Front-End Web Development with HTML, CSS, and JavaScript Certification."
+        ]
+      }
+    }
   }
 }
