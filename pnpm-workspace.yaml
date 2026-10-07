@@ -23,20 +23,27 @@ minimumReleaseAgeExclude:
 
 # Dependencies allowed to run their build scripts.
 allowBuilds:
+  '@parcel/watcher': false
   '@prisma/client': true
   '@prisma/engines': true
+  '@sentry-internal/node-cpu-profiler': false
+  core-js: false
+  core-js-pure: false
+  es5-ext: false
   esbuild: true
   gatsby: true
+  gatsby-cli: false
   lmdb: true
   msgpackr-extract: true
   msw: true
   prisma: true
   puppeteer: true
+  sharp: false
   unrs-resolver: true
 
 overrides:
   # Pin transitive deps to mature releases so Renovate can refresh lockfiles.
-  caniuse-lite: 1.0.30001791
+  caniuse-lite: 1.0.30001813
 
 packageExtensions:
   '@testing-library/jest-dom':

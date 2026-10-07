@@ -6547,7 +6547,7 @@
       "lab-rpg-character": {
         "title": "Build an RPG Character",
         "intro": [
-          "In this lab you will practice basic python by building an RPG character."
+          "In this lab you will practice basic Python by building an RPG character."
         ]
       },
       "review-python-basics": {
@@ -10442,6 +10442,12 @@
       "review-python-programming-fundamentals": "Python Review"
     },
     "blocks": {
+      "workshop-first-python-program": {
+        "title": "Build Your First Python Program",
+        "intro": [
+          "For this workshop, you'll build your first program in Python."
+        ]
+      },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
@@ -10468,6 +10474,12 @@
         "title": "Build an Employee Profile Generator",
         "intro": [
           "In this workshop, you will practice the fundamentals of string manipulation in Python by building a tool that generates formatted employee badges and analyzes employee codes."
+        ]
+      },
+      "workshop-employee-profile-validator": {
+        "title": "Build an Employee Profile Validator",
+        "intro": [
+          "In this workshop, you will use Python string methods to validate and format data from an employee profile."
         ]
       },
       "lecture-numbers-and-mathematical-operations": {
@@ -10527,7 +10539,7 @@
       "lab-rpg-character": {
         "title": "Build an RPG Character",
         "intro": [
-          "In this lab you will practice basic python by building an RPG character."
+          "In this lab you will practice basic Python by building an RPG character."
         ]
       },
       "review-python-basics": {
