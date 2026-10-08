@@ -564,8 +564,8 @@ importers:
         specifier: 0.55.1
         version: 0.55.1
       nanoid:
-        specifier: 3.3.12
-        version: 3.3.12
+        specifier: 3.3.19
+        version: 3.3.19
       normalize-url:
         specifier: 6.1.0
         version: 6.1.0
