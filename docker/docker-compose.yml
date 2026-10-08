@@ -43,7 +43,6 @@ services:
       CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
     volumes:
       - clickhouse-data:/var/lib/clickhouse
-      - ../api/clickhouse/migrations:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test:
         [

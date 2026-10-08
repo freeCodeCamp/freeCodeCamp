@@ -2,6 +2,10 @@ import { execSync } from 'child_process';
 
 import { test as setup } from '@playwright/test';
 
+setup.beforeAll(() => {
+  execSync('pnpm --dir .. migrate', { stdio: 'inherit' });
+});
+
 setup.describe('certifieduser', () => {
   setup.use({ storageState: { cookies: [], origins: [] } });
 
