@@ -68,7 +68,7 @@
     "@types/js-yaml": "4.0.9",
     "@types/polka": "0.5.8",
     "@typescript/vfs-1.6.1": "npm:@typescript/vfs@1.6.5",
-    "@vitest/ui": "4.1.5",
+    "@vitest/ui": "4.1.11",
     "eslint": "9.39.5",
     "glob": "13.0.6",
     "joi": "17.13.3",
@@ -83,7 +83,7 @@
     "puppeteer": "25.0.4",
     "sirv": "3.0.2",
     "typescript-5.9.2": "npm:typescript@5.9.2",
-    "vitest": "4.1.5"
+    "vitest": "4.1.11"
   },
   "dependencies": {
     "@types/node": "24.12.2"

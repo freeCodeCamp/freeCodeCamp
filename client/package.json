@@ -165,7 +165,7 @@
     "@types/sanitize-html": "^2.8.0",
     "@types/store": "^2.0.2",
     "@types/validator": "^13.7.12",
-    "@vitest/ui": "^4.0.15",
+    "@vitest/ui": "4.1.5",
     "autoprefixer": "10.4.27",
     "babel-plugin-macros": "3.1.0",
     "core-js": "3.49.0",
@@ -185,6 +185,6 @@
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
     "url": "0.11.4",
-    "vitest": "^4.0.15"
+    "vitest": "4.1.5"
   }
 }

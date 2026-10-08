@@ -93,9 +93,9 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
-    "@vitest/ui": "^4.0.15",
+    "@vitest/ui": "4.1.5",
     "eslint": "^9.39.1",
     "tsdown": "^0.21.0",
-    "vitest": "^4.0.15"
+    "vitest": "4.1.5"
   }
 }
