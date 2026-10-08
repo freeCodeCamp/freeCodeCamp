@@ -67,7 +67,7 @@ You can also specify a different file to return the extension of:
 console.log(path.extname('text-files/text1.txt')); // .txt
 ```
 
-## The join() Method
+## The `join()` Method
 
 The `join()` method takes all the path segments you pass in and joins them into one clean, normalized path. 
 
@@ -87,7 +87,7 @@ const wrongPath = path.join("/src//", "assets", "text-files");
 console.log(wrongPath); // /src/assets/text-files
 ```
 
-## The resolve() Method
+## The `resolve()` Method
 
 The `resolve()` method turns a sequence of path segments into an absolute path. It processes the segments from right to left until it constructs an absolute path. If it reaches the beginning without constructing an absolute path, it uses the current working directory:
 
@@ -99,7 +99,7 @@ console.log(absolutePath);
 
 Unlike `join()`, which joins and normalizes path segments and can return either a relative or an absolute path, `resolve()` always returns an absolute path.
 
-## The parse() and format() Methods
+## The `parse()` and `format()` Methods
 
 Lastly, there are the `parse()` and `format()` methods.
 
