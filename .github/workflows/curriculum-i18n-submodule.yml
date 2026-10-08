@@ -17,7 +17,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [26]
         # Exclude the languages that we currently run in the full CI suite.
         locale:
           - 'chinese'
@@ -35,10 +34,10 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: .nvmrc
 
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
