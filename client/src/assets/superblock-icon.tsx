@@ -126,7 +126,8 @@ const iconMap = {
   [SuperBlocks.IntroductionToLinearDataStructuresInPython]: PythonIcon,
   [SuperBlocks.LearnAlgorithmsInPython]: PythonIcon,
   [SuperBlocks.LearnGraphsAndTreesInPython]: PythonIcon,
-  [SuperBlocks.LearnDynamicProgrammingInPython]: PythonIcon
+  [SuperBlocks.LearnDynamicProgrammingInPython]: PythonIcon,
+  [SuperBlocks.FrontEndDevelopment]: ResponsiveDesign
 };
 
 type SuperBlockIconProps = {
