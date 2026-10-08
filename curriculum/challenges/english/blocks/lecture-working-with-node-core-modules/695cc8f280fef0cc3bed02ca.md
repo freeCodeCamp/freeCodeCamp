@@ -7,6 +7,8 @@ dashedName: what-is-the-path-module-and-how-does-it-work
 
 # --description--
 
+## What Is the `path` Module?
+
 The Node.js `path` module lets you work with files and directory paths. It provides several useful methods for handling and transforming directories, including joining, normalizing, and resolving the directories across different platforms and operating systems.
 
 To use the `path` module, you can import it like this:
@@ -16,6 +18,8 @@ const path = require("path");
 ```
 
 Let's look at some of the methods the `path` module provides and how they work.
+
+## Global Variables in Node.js
 
 First, you should be aware of the Node.js global variables `__filename` and `__dirname`, AKA "common JS" variables. You don't need the `path` module to access them, which is why they are called global variables.
 
@@ -30,6 +34,8 @@ console.log(__filename);
 console.log(__dirname);
 // /Users/user/Desktop/fCC/script-code/node/node-path
 ```
+
+## Relative and Absolute `paths`
 
 You should also be aware of relative and absolute paths.
 
@@ -61,6 +67,8 @@ You can also specify a different file to return the extension of:
 console.log(path.extname('text-files/text1.txt')); // .txt
 ```
 
+## The join() Method
+
 The `join()` method takes all the path segments you pass in and joins them into one clean, normalized path. 
 
 This could be useful if you want to merge related files in different folders so you can work with them together:
@@ -79,6 +87,8 @@ const wrongPath = path.join("/src//", "assets", "text-files");
 console.log(wrongPath); // /src/assets/text-files
 ```
 
+## The resolve() Method
+
 The `resolve()` method turns a sequence of path segments into an absolute path. It processes the segments from right to left until it constructs an absolute path. If it reaches the beginning without constructing an absolute path, it uses the current working directory:
 
 ```js
@@ -88,6 +98,8 @@ console.log(absolutePath);
 ```
 
 Unlike `join()`, which joins and normalizes path segments and can return either a relative or an absolute path, `resolve()` always returns an absolute path.
+
+## The parse() and format() Methods
 
 Lastly, there are the `parse()` and `format()` methods.
 
