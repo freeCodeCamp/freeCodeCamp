@@ -11009,20 +11009,13 @@
       "Complete the required projects and pass the exam to earn the Front-End Web Development with HTML, CSS, and JavaScript Certification."
     ],
     "chapters": {
-      "html": "HTML",
-      "css": "CSS",
-      "javascript": "JavaScript",
+      "front-end-web-development": "Front-End Web Development with HTML, CSS, and JavaScript",
       "responsive-web-design-certification-exam": "Front-End Web Development with HTML, CSS, and Javascript Certification Exam"
     },
     "modules": {
-      "basic-html": "Basic HTML",
-      "html-fundamentals": "HTML Fundamentals",
-      "lab-survey-form": "Build a Survey Form",
-      "html-tables-and-more": "HTML Tables and More",
-      "review-html": "HTML Review",
-      "review-css": "HTML Quiz",
-      "basic-css": "Basic CSS",
-      "javascript-variables-and-strings": "JavaScript Variables and Strings",
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
       "responsive-web-design-certification-exam": "Front-End Web Development with HTML, CSS, and Javascript Certification Exam"
     },
     "blocks": {
@@ -11033,8 +11026,8 @@
           "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
         ]
       },
-      "lecture-understanding-html-attributes": {
-        "title": "Understanding HTML Attributes",
+      "lecture-html-introduction": {
+        "title": "Introduction to HTML",
         "intro": [
           "In these lectures, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
           "You will learn about HTML's role on the web, and what HTML attributes are."
@@ -11053,13 +11046,13 @@
           "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
         ]
       },
-      "lecture-html-fundamentals": {
+      "lecture-fundamental-html": {
         "title": "HTML Fundamentals",
         "intro": [
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
-      "lecture-importance-of-semantic-html": {
+      "lecture-semantic-html": {
         "title": "Importance of Semantic HTML",
         "intro": [
           "In these lectures, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
@@ -11077,6 +11070,19 @@
           "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
         ]
       },
+      "lecture-importance-of-accessibility": {
+        "title": "Importance of Accessibility",
+        "intro": [
+          "In these lectures, you will learn about accessibility and its importance, and how to make your HTML code more accessible."
+        ]
+      },
+      "workshop-hotel-feedback-form": {
+        "title": "Build a Hotel Feedback Form",
+        "intro": [
+          "In this workshop, you will build a Hotel Feedback Form.",
+          "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
+        ]
+      },
       "lab-survey-form": {
         "title": "Build a Survey Form",
         "intro": [
@@ -11088,13 +11094,6 @@
         "title": "Build a Final Exams Table",
         "intro": [
           "In this workshop, you will practice working with HTML tables by building a table of final exams."
-        ]
-      },
-      "workshop-quincys-job-tips": {
-        "title": "Build a Page of Other HTML Elements?",
-        "intro": [
-          "In this lab, you'll review HTML tables by building a book information table.",
-          "You'll practice the different table components like the <code>thead</code>, <code>tbody</code>, <code>th</code>, <code>tr</code>, and <code>td</code> elements."
         ]
       },
       "review-html": {

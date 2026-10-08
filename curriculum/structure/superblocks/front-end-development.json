@@ -1,62 +1,34 @@
 {
   "chapters": [
     {
-      "dashedName": "html",
+      "dashedName": "front-end-web-development",
       "modules": [
         {
-          "dashedName": "basic-html",
+          "dashedName": "html",
           "blocks": [
             "workshop-curriculum-outline",
-            "lecture-understanding-html-attributes",
+            "lecture-html-introduction",
             "workshop-cat-photo-app",
-            "lab-recipe-page"
-          ]
-        },
-        {
-          "dashedName": "html-fundamentals",
-          "blocks": [
-            "lecture-html-fundamentals",
-            "lecture-importance-of-semantic-html",
+            "lab-recipe-page",
+            "lecture-fundamental-html",
+            "lecture-semantic-html",
             "workshop-blog-page",
-            "lab-event-hub"
+            "lab-event-hub",
+            "lecture-importance-of-accessibility",
+            "workshop-hotel-feedback-form",
+            "lab-survey-form",
+            "workshop-final-exams-table",
+            "review-html",
+            "review-css"
           ]
         },
         {
-          "moduleType": "cert-project",
-          "dashedName": "lab-survey-form",
-          "blocks": ["lab-survey-form"]
-        },
-        {
-          "dashedName": "html-tables-and-more",
-          "blocks": ["workshop-final-exams-table", "workshop-quincys-job-tips"]
-        },
-        {
-          "moduleType": "review",
-          "dashedName": "review-html",
-          "blocks": ["review-html"]
-        },
-        {
-          "moduleType": "quiz",
-          "dashedName": "review-css",
-          "blocks": ["review-css"]
-        }
-      ]
-    },
-    {
-      "dashedName": "css",
-      "modules": [
-        {
-          "dashedName": "basic-css",
+          "dashedName": "css",
           "blocks": ["lecture-what-is-css"]
-        }
-      ]
-    },
-    {
-      "dashedName": "javascript",
-      "modules": [
+        },
         {
-          "dashedName": "javascript-variables-and-strings",
-          "blocks": ["lecture-introduction-to-javascript"]
+          "dashedName": "javascript",
+          "blocks": ["lecture-what-is-css"]
         }
       ]
     },
