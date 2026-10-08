@@ -26,10 +26,6 @@ jobs:
     # Skip PR runs for Renovate since push already triggered CI
     if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'renovate[bot]'
     runs-on: ubuntu-24.04
-    strategy:
-      matrix:
-        node-version: [24]
-      fail-fast: false
 
     steps:
       - name: Checkout
@@ -49,10 +45,10 @@ jobs:
       - name: Check format of sample.env
         run: docker run --rm -v `pwd`:/app -w /app dotenvlinter/dotenv-linter check --ignore-checks UnorderedKey sample.env
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: .nvmrc
 
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
@@ -96,9 +92,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-24.04
-    strategy:
-      matrix:
-        node-version: [24]
 
     steps:
       - name: Checkout
@@ -119,10 +112,10 @@ jobs:
           restore-keys: |
             turbo-${{ github.ref_name }}-
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: .nvmrc
 
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
@@ -193,11 +186,6 @@ jobs:
     needs: build
     runs-on: ubuntu-24.04
 
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [24]
-
     steps:
       - name: Checkout
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -217,10 +205,10 @@ jobs:
           restore-keys: |
             turbo-${{ github.ref_name }}-
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: .nvmrc
 
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
@@ -258,11 +246,6 @@ jobs:
     needs: build
     runs-on: ubuntu-24.04
 
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [24]
-
     steps:
       - name: Checkout
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -282,10 +265,10 @@ jobs:
           restore-keys: |
             turbo-${{ github.ref_name }}-
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: .nvmrc
 
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
@@ -327,7 +310,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [24]
         locale: [portuguese, italian]
 
     steps:
@@ -349,10 +331,10 @@ jobs:
           restore-keys: |
             turbo-${{ github.ref_name }}-
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: .nvmrc
 
       - name: Install pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6

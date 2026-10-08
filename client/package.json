@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=24",
+    "node": ">=26",
     "pnpm": ">=12"
   },
   "repository": {
@@ -19,7 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation\" gatsby build --prefix-paths",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation --no-experimental-webstorage\" gatsby build --prefix-paths",
     "clean": "gatsby clean",
     "copy:scripts": "tsx ./tools/copy-browser-scripts.ts",
     "create:i18n": "tsx ./tools/create-i18n.ts",
@@ -27,7 +27,7 @@
     "create:external-curriculum": "tsx ./tools/external-curriculum/build",
     "create:trending": "tsx ./tools/download-trending.ts",
     "create:search-placeholder": "tsx ./tools/generate-search-placeholder",
-    "develop": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation\" gatsby develop --inspect=9230",
+    "develop": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation --no-experimental-webstorage\" gatsby develop --inspect=9230",
     "lint": "eslint --max-warnings 0",
     "setup": "pnpm clean && pnpm create:env && pnpm create:i18n && pnpm create:trending && pnpm create:search-placeholder && pnpm create:external-curriculum && pnpm copy:scripts",
     "serve": "gatsby serve -p 8000",
