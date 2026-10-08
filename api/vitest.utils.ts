@@ -6,6 +6,10 @@ import { build, buildOptions } from './src/app.js';
 import { createUserInput } from './src/utils/create-user.js';
 import { examJson } from './__fixtures__/exam.js';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
+import {
+  createClickHouseTestDatabase,
+  dropClickHouseTestDatabase
+} from './clickhouse.test-utils.js';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -182,10 +186,13 @@ export async function checkCanConnectToDb(
 
 export function setupServer(): void {
   let fastify: FastifyTestInstance;
+  let clickhouseDatabaseCreated = false;
   beforeAll(async () => {
     if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
       delete buildOptions.loggerInstance;
     }
+    await createClickHouseTestDatabase();
+    clickhouseDatabaseCreated = true;
     fastify = await build(buildOptions);
     await fastify.ready();
     // Supertest does not handle multiple concurrent requests gracefully
@@ -217,12 +224,17 @@ export function setupServer(): void {
   }, 10000);
 
   afterAll(async () => {
-    if (!global.fastifyTestInstance)
-      throw Error(`fastifyTestInstance was not created. Typically this means that something went wrong when building the fastify instance.
-If you are seeing this error, the root cause is likely an error thrown in the beforeAll hook.`);
-    await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
-
-    await fastifyTestInstance.close();
+    try {
+      if (fastify?.prisma) {
+        await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
+      }
+    } finally {
+      try {
+        if (fastify) await fastify.close();
+      } finally {
+        if (clickhouseDatabaseCreated) await dropClickHouseTestDatabase();
+      }
+    }
   });
 }
 

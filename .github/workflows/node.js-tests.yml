@@ -223,9 +223,6 @@ jobs:
           echo pnpm version $(pnpm -v)
           pnpm install
 
-      - name: Migrate ClickHouse
-        run: pnpm migrate
-
       - name: Install Chrome for Puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
@@ -278,9 +275,6 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-
-      - name: Migrate ClickHouse
-        run: pnpm migrate
 
       - name: Install Chrome for Puppeteer
         run: pnpm -F=curriculum install-puppeteer
