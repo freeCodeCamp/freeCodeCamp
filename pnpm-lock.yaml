@@ -1191,6 +1191,9 @@ importers:
       micromark-extension-gfm-table:
         specifier: 0.4.3
         version: 0.4.3(supports-color@8.1.1)
+      rehype-parse:
+        specifier: 7.0.1
+        version: 7.0.1
       remark:
         specifier: 13.0.0
         version: 13.0.0(supports-color@8.1.1)
@@ -10944,6 +10947,9 @@ packages:
   regjsparser@0.9.1:
     resolution: {integrity: sha512-dQUtn90WanSNl+7mQKcXAgZxvUe7Z0SqXlgzv0za4LwiUhyzBC58yQO3liFoUgu8GiJVInAhJjkj1N0EtQ5nkQ==}
     hasBin: true
+
+  rehype-parse@7.0.1:
+    resolution: {integrity: sha512-fOiR9a9xH+Le19i4fGzIEowAbwG7idy2Jzs4mOrFWBSJ0sNUgy0ev871dwWnbOo371SjgjG4pwzrbgSVrKxecw==}
 
   relay-runtime@12.0.0:
     resolution: {integrity: sha512-QU6JKr1tMsry22DXNy9Whsq5rmvwr3LSZiiWV/9+DFpuTWvp+WFhobWMc8TC4OjKFfNhEZy7mOiqUAn5atQtug==}
@@ -25696,6 +25702,11 @@ snapshots:
   regjsparser@0.9.1:
     dependencies:
       jsesc: 0.5.0
+
+  rehype-parse@7.0.1:
+    dependencies:
+      hast-util-from-parse5: 6.0.1
+      parse5: 6.0.1
 
   relay-runtime@12.0.0:
     dependencies:
