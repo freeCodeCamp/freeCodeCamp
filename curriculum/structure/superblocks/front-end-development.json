@@ -17,28 +17,8 @@
             "lecture-importance-of-accessibility",
             "workshop-hotel-feedback-form",
             "lab-survey-form",
-            "workshop-final-exams-table",
-            "review-html",
-            "review-css"
+            "workshop-final-exams-table"
           ]
-        },
-        {
-          "dashedName": "css",
-          "blocks": ["lecture-what-is-css"]
-        },
-        {
-          "dashedName": "javascript",
-          "blocks": ["lecture-what-is-css"]
-        }
-      ]
-    },
-    {
-      "chapterType": "exam",
-      "dashedName": "responsive-web-design-certification-exam",
-      "modules": [
-        {
-          "dashedName": "responsive-web-design-certification-exam",
-          "blocks": ["exam-responsive-web-design-certification"]
         }
       ]
     }

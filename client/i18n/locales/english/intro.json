@@ -11009,14 +11009,10 @@
       "Complete the required projects and pass the exam to earn the Front-End Web Development with HTML, CSS, and JavaScript Certification."
     ],
     "chapters": {
-      "front-end-web-development": "Front-End Web Development with HTML, CSS, and JavaScript",
-      "responsive-web-design-certification-exam": "Front-End Web Development with HTML, CSS, and Javascript Certification Exam"
+      "front-end-web-development": "Front-End Web Development with HTML, CSS, and JavaScript"
     },
     "modules": {
-      "html": "HTML",
-      "css": "CSS",
-      "javascript": "JavaScript",
-      "responsive-web-design-certification-exam": "Front-End Web Development with HTML, CSS, and Javascript Certification Exam"
+      "html": "HTML"
     },
     "blocks": {
       "workshop-curriculum-outline": {
@@ -11094,38 +11090,6 @@
         "title": "Build a Final Exams Table",
         "intro": [
           "In this workshop, you will practice working with HTML tables by building a table of final exams."
-        ]
-      },
-      "review-html": {
-        "title": "HTML Review",
-        "intro": [
-          "Before you take the HTML prep exam, you first need to review the concepts taught in the previous modules.",
-          "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
-        ]
-      },
-      "review-css": {
-        "title": "HTML Quiz",
-        "intro": [
-          "Before you take the CSS prep exam, you first need to review the concepts taught in the previous modules.",
-          "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
-        ]
-      },
-      "lecture-what-is-css": {
-        "title": "What Is CSS?",
-        "intro": [
-          "The following lectures are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and much more."
-        ]
-      },
-      "lecture-introduction-to-javascript": {
-        "title": "Introduction to JavaScript",
-        "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
-        ]
-      },
-      "exam-responsive-web-design-certification": {
-        "title": "Front-End Web Development with HTML, CSS, and JavaScript Certification Exam",
-        "intro": [
-          "Pass this exam to earn your Front-End Web Development with HTML, CSS, and JavaScript Certification."
         ]
       }
     }

@@ -1,7 +1,7 @@
 {
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": false,
+  "isUpcomingChange": true,
   "dashedName": "lecture-fundamental-html",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [
