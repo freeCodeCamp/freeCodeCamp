@@ -6,7 +6,8 @@
   "description": "Config and utils used in multiple workspaces",
   "private": false,
   "engines": {
-    "node": ">=24"
+    "node": ">=24",
+    "pnpm": ">=12"
   },
   "scripts": {
     "build": "tsdown --log-level warn --no-clean --format cjs --format esm",
