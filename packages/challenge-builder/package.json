@@ -37,6 +37,7 @@
     "@types/lodash-es": "4.17.12",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.39.1",
+    "jsdom": "26.1.0",
     "vitest": "^3.2.4"
   },
   "dependencies": {
