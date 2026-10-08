@@ -311,8 +311,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       joi:
-        specifier: 17.13.3
-        version: 17.13.3
+        specifier: 17.13.8
+        version: 17.13.8
       jsonwebtoken:
         specifier: 9.0.3
         version: 9.0.3
@@ -814,8 +814,8 @@ importers:
         specifier: 2.6.8
         version: 2.6.8
       joi:
-        specifier: 18.1.2
-        version: 18.1.2
+        specifier: 18.2.9
+        version: 18.2.9
       js-yaml:
         specifier: 4.1.0
         version: 4.1.0
@@ -896,8 +896,8 @@ importers:
         specifier: 13.0.6
         version: 13.0.6
       joi:
-        specifier: 17.13.3
-        version: 17.13.3
+        specifier: 17.13.8
+        version: 17.13.8
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -1396,8 +1396,8 @@ importers:
         specifier: ^9.39.1
         version: 9.39.5(jiti@2.6.1)(supports-color@8.1.1)
       joi:
-        specifier: 17.13.3
-        version: 17.13.3
+        specifier: 17.13.8
+        version: 17.13.8
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -8749,8 +8749,11 @@ packages:
   joi@17.13.3:
     resolution: {integrity: sha512-otDA4ldcIx+ZXsKHWmp0YizCweVRZG96J10b0FevjfuncLO1oX59THoAmHkNubYJ+9gWsYsp5k8v4ib6oDv1fA==}
 
-  joi@18.1.2:
-    resolution: {integrity: sha512-rF5MAmps5esSlhCA+N1b6IYHDw9j/btzGaqfgie522jS02Ju/HXBxamlXVlKEHAxoMKQL77HWI8jlqWsFuekZA==}
+  joi@17.13.8:
+    resolution: {integrity: sha512-iPKOGmiRw1jxf/JOPwxmCcUQAOdF359mdzYiP2DJ+TMX0YK2zjK3D+zYOaGjpumWxOFF/l2xVWjRVK5bGSLdEw==}
+
+  joi@18.2.9:
+    resolution: {integrity: sha512-2mD929bUVKUhOLQQEVhlf6EZ0Mlo0DeRb5MO7cViR9AXLtBauuccEtB1py9Ocxpo/P7ucnh442iY/iOwrh3IQw==}
     engines: {node: '>= 20'}
 
   joycon@3.1.1:
@@ -23120,7 +23123,15 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  joi@18.1.2:
+  joi@17.13.8:
+    dependencies:
+      '@hapi/hoek': 9.3.0
+      '@hapi/topo': 5.1.0
+      '@sideway/address': 4.1.5
+      '@sideway/formula': 3.0.1
+      '@sideway/pinpoint': 2.0.0
+
+  joi@18.2.9:
     dependencies:
       '@hapi/address': 5.1.1
       '@hapi/formula': 3.0.2
