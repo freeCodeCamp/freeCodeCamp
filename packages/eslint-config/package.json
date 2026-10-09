@@ -11,14 +11,14 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.26.5",
     "@babel/preset-react": "7.26.3",
-    "@eslint/compat": "^1.2.6",
-    "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.19.0",
+    "@eslint/compat": "1.4.1",
+    "@eslint/eslintrc": "3.3.7",
+    "@eslint/js": "9.39.5",
     "@html-eslint/eslint-plugin-react": "^0.60.0",
     "@vitest/eslint-plugin": "1.6.27",
-    "eslint": "^9.39.1",
+    "eslint": "9.39.5",
     "eslint-config-prettier": "10.1.8",
-    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-import-resolver-typescript": "3.10.1",
     "eslint-plugin-filenames-simple": "0.9.0",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jsdoc": "48.11.0",
@@ -27,8 +27,8 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-testing-library": "7.16.2",
-    "eslint-plugin-turbo": "^2.8.3",
+    "eslint-plugin-turbo": "2.11.5",
     "typescript": "5.9.3",
-    "typescript-eslint": "^8.47.0"
+    "typescript-eslint": "8.70.1"
   }
 }
