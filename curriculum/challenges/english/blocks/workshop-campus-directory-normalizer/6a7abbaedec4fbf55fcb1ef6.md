@@ -154,7 +154,6 @@ function normalizeDirectory(rawData) {
   };
 }
 
-
 const normalizedData = normalizeDirectory(rawData);
 
 

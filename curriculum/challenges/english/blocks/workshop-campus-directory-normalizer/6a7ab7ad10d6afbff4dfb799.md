@@ -183,7 +183,6 @@ function normalizeDirectory(rawData) {
   };
 }
 
-
 const normalizedData = normalizeDirectory(rawData);
 
 
@@ -204,7 +203,7 @@ function getInstructorByEmail(email, normalizedData) {
   };
 }
 
-console.log( getInstructorByEmail("fatima@example.com", normalizedData));
+console.log(getInstructorByEmail("fatima@example.com", normalizedData));
 --fcc-editable-region--
 
 --fcc-editable-region--
