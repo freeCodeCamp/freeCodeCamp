@@ -103,7 +103,8 @@ export enum SuperBlocks {
   IntroductionToLinearDataStructuresInPython = 'introduction-to-linear-data-structures-in-python',
   LearnAlgorithmsInPython = 'learn-algorithms-in-python',
   LearnGraphsAndTreesInPython = 'learn-graphs-and-trees-in-python',
-  LearnDynamicProgrammingInPython = 'learn-dynamic-programming-in-python'
+  LearnDynamicProgrammingInPython = 'learn-dynamic-programming-in-python',
+  FrontEndDevelopment = 'front-end-development'
 }
 
 export const languageSuperBlocks = [
@@ -226,7 +227,8 @@ export const superBlockStages: StageMap = {
     SuperBlocks.A2Chinese,
     SuperBlocks.DevPlayground,
     SuperBlocks.PythonProgrammingFundamentals,
-    SuperBlocks.AlgorithmsAndDataStructure
+    SuperBlocks.AlgorithmsAndDataStructure,
+    SuperBlocks.FrontEndDevelopment
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
@@ -333,6 +335,7 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.PythonV9,
   SuperBlocks.PythonProgrammingFundamentals,
   SuperBlocks.AlgorithmsAndDataStructure,
+  SuperBlocks.FrontEndDevelopment,
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
   SuperBlocks.FullStackDeveloperV9,
