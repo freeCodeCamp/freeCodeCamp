@@ -7,8 +7,6 @@ dashedName: what-is-the-path-module-and-how-does-it-work
 
 # --description--
 
-## What Is the `path` Module?
-
 The Node.js `path` module lets you work with files and directory paths. It provides several useful methods for handling and transforming directories, including joining, normalizing, and resolving the directories across different platforms and operating systems.
 
 To use the `path` module, you can import it like this:
