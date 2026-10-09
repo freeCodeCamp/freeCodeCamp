@@ -41,6 +41,8 @@ A relative path points to a file or folder based on your current working directo
 
 An absolute path, on the other hand, gives the complete address of a file or folder from the root of your system, such as `/Users/johndoe/projects/app/assets/src/text-files.`
 
+## The `basename()`, `dirname()`, and `extname()` Methods
+
 The `basename()` method shows the last part of the file, that is, the filename:
 
 ```js
