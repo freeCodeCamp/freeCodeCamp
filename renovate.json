@@ -38,11 +38,6 @@
       "matchPackageNames": ["vitest", "@vitest/**"]
     },
     {
-      "groupName": "transitive-pins",
-      "matchFileNames": ["pnpm-workspace.yaml"],
-      "matchDepTypes": ["pnpm-workspace.overrides"]
-    },
-    {
       "description": "Fastify core + official plugins.",
       "groupName": "fastify",
       "matchPackageNames": ["fastify", "@fastify/**"]
