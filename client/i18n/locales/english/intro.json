@@ -11001,5 +11001,97 @@
         "intro": ["Review Python concepts to prepare for the upcoming exam."]
       }
     }
+  },
+
+  "front-end-development": {
+    "title": "Front-End Web Development with HTML, CSS, and Javascript Certification",
+    "intro": [
+      "Complete the required projects and pass the exam to earn the Front-End Web Development with HTML, CSS, and JavaScript Certification."
+    ],
+    "chapters": {
+      "front-end-web-development": "Front-End Web Development with HTML, CSS, and JavaScript"
+    },
+    "modules": {
+      "html": "HTML"
+    },
+    "blocks": {
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
+        "intro": [
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-html-introduction": {
+        "title": "Introduction to HTML",
+        "intro": [
+          "In these lectures, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, and what HTML attributes are."
+        ]
+      },
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
+      },
+      "lab-recipe-page": {
+        "title": "Build a Recipe Page",
+        "intro": [
+          "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
+        ]
+      },
+      "lecture-fundamental-html": {
+        "title": "HTML Fundamentals",
+        "intro": [
+          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+        ]
+      },
+      "lecture-semantic-html": {
+        "title": "Importance of Semantic HTML",
+        "intro": [
+          "In these lectures, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
+        ]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
+        ]
+      },
+      "lab-event-hub": {
+        "title": "Build an Event Hub",
+        "intro": [
+          "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
+        ]
+      },
+      "lecture-importance-of-accessibility": {
+        "title": "Importance of Accessibility",
+        "intro": [
+          "In these lectures, you will learn about accessibility and its importance, and how to make your HTML code more accessible."
+        ]
+      },
+      "workshop-hotel-feedback-form": {
+        "title": "Build a Hotel Feedback Form",
+        "intro": [
+          "In this workshop, you will build a Hotel Feedback Form.",
+          "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
+        ]
+      },
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
+      },
+      "workshop-final-exams-table": {
+        "title": "Build a Final Exams Table",
+        "intro": [
+          "In this workshop, you will practice working with HTML tables by building a table of final exams."
+        ]
+      }
+    }
   }
 }
