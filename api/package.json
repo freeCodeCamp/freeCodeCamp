@@ -25,7 +25,7 @@
     "fast-uri": "2.4.0",
     "fastify": "5.8.5",
     "fastify-plugin": "5.1.0",
-    "joi": "17.13.3",
+    "joi": "17.13.8",
     "jsonwebtoken": "9.0.3",
     "lodash": "4.18.1",
     "lodash-es": "4.18.1",
@@ -51,7 +51,7 @@
     "@types/nodemailer": "6.4.23",
     "@types/supertest": "2.0.16",
     "@types/validator": "13.15.10",
-    "@vitest/ui": "^4.0.15",
+    "@vitest/ui": "4.1.11",
     "dotenv-cli": "7.4.4",
     "eslint": "^9.39.1",
     "eslint-plugin-jsdoc": "48.11.0",
@@ -60,7 +60,7 @@
     "supertest": "6.3.4",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "^4.0.15"
+    "vitest": "4.1.11"
   },
   "engines": {
     "node": ">=24",
