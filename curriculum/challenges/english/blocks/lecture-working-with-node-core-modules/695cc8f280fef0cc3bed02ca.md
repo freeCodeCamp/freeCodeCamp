@@ -33,7 +33,7 @@ console.log(__dirname);
 // /Users/user/Desktop/fCC/script-code/node/node-path
 ```
 
-## Relative and Absolute `paths`
+## Relative and Absolute Path
 
 You should also be aware of relative and absolute paths.
 
