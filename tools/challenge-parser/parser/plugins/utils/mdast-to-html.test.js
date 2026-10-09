@@ -39,4 +39,22 @@ describe('mdast-to-html', () => {
         ' by <div><span>some nested html </span></div></p>'
     );
   });
+
+  it('should validate the HTML', () => {
+    const nodesWithDisallowedTag = [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'html',
+            value: '<script>alert("test")</script>'
+          }
+        ]
+      }
+    ];
+
+    expect(() => mdastToHTML(nodesWithDisallowedTag)).toThrow(
+      'HTML validation failed'
+    );
+  });
 });
