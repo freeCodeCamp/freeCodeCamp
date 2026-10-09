@@ -817,8 +817,8 @@ importers:
         specifier: 18.2.9
         version: 18.2.9
       js-yaml:
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.3.2
+        version: 4.3.2
       jsdom:
         specifier: 26.1.0
         version: 26.1.0(supports-color@8.1.1)
@@ -902,8 +902,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       js-yaml:
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.3.2
+        version: 4.3.2
       jsdom:
         specifier: 16.7.0
         version: 16.7.0(supports-color@8.1.1)
@@ -1405,8 +1405,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       js-yaml:
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.3.2
+        version: 4.3.2
       mongodb:
         specifier: 6.21.0
         version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
@@ -8715,14 +8715,6 @@ packages:
 
   js-yaml@3.15.2:
     resolution: {integrity: sha512-6EuL879VkRA+1Cz578mKMiKvjPNEuk6+r1JaFzoSWejZmtf7xWbIyw1e3KkxlkzTIt9Taw6JBhEppG7utc1P+w==}
-    hasBin: true
-
-  js-yaml@4.0.0:
-    resolution: {integrity: sha512-pqon0s+4ScYUvX30wxQi3PogGFAlUyH0awepWvwkj4jD4v+ova3RiYw8bmA6x2rDrEaj8i/oWKoRxpVNW+Re8Q==}
-    hasBin: true
-
-  js-yaml@4.1.0:
-    resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
   js-yaml@4.3.2:
@@ -19716,7 +19708,7 @@ snapshots:
   cosmiconfig@8.3.6(typescript@5.9.3):
     dependencies:
       import-fresh: 3.3.1
-      js-yaml: 4.1.0
+      js-yaml: 4.3.2
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
@@ -22945,14 +22937,6 @@ snapshots:
       argparse: 1.0.10
       esprima: 4.0.1
 
-  js-yaml@4.0.0:
-    dependencies:
-      argparse: 2.0.1
-
-  js-yaml@4.1.0:
-    dependencies:
-      argparse: 2.0.1
-
   js-yaml@4.3.2:
     dependencies:
       argparse: 2.0.1
@@ -23940,7 +23924,7 @@ snapshots:
       find-up: 5.0.0
       glob: 8.1.0
       he: 1.2.0
-      js-yaml: 4.1.0
+      js-yaml: 4.3.2
       log-symbols: 4.1.0
       minimatch: 5.1.9
       ms: 2.1.3

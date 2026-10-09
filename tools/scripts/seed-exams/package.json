@@ -28,7 +28,7 @@
     "eslint": "^9.39.1",
     "joi": "17.13.8",
     "joi-objectid": "3.0.1",
-    "js-yaml": "4.1.0",
+    "js-yaml": "4.3.2",
     "mongodb": "6.21.0",
     "nanoid": "4.0.2"
   },
