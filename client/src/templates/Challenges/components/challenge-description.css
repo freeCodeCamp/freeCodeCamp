@@ -15,3 +15,42 @@
 #description ol li {
   line-height: 1.5;
 }
+
+.challenge-instructions kbd {
+  display: inline-block;
+  padding: 0.15em 0.4em;
+  color: var(--secondary-color);
+  font-family: var(--font-family-monospace);
+  font-size: 0.85em;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: var(--tertiary-background);
+  border: 1px solid var(--quaternary-background);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 var(--quaternary-background);
+}
+
+.challenge-instructions kbd kbd,
+.challenge-instructions code kbd,
+.challenge-instructions pre kbd {
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: inherit;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+@media (forced-colors: active) {
+  .challenge-instructions kbd {
+    color: CanvasText;
+    background-color: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+}
