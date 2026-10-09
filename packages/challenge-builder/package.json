@@ -7,7 +7,7 @@
   "private": false,
   "engines": {
     "node": ">=24",
-    "pnpm": ">=10"
+    "pnpm": ">=12"
   },
   "exports": {
     "./build": "./dist/build.js",
@@ -35,9 +35,10 @@
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "@types/lodash-es": "4.17.12",
-    "@vitest/ui": "^3.2.4",
+    "@vitest/ui": "3.2.7",
     "eslint": "^9.39.1",
-    "vitest": "^3.2.4"
+    "jsdom": "26.1.0",
+    "vitest": "3.2.7"
   },
   "dependencies": {
     "@babel/preset-env": "7.23.7",
