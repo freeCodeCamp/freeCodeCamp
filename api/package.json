@@ -55,7 +55,7 @@
     "dotenv-cli": "7.4.4",
     "eslint": "^9.39.1",
     "eslint-plugin-jsdoc": "48.11.0",
-    "msw": "^2.12.10",
+    "msw": "^2.15.0",
     "prisma": "6.19.3",
     "supertest": "6.3.4",
     "tsx": "4.21.0",
