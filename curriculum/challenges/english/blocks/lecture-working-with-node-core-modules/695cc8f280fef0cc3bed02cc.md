@@ -7,9 +7,13 @@ dashedName: what-is-the-stream-module-and-how-does-it-work
 
 # --description--
 
+## What Is the Stream Module?
+
 The last core Node.js module we'll look at is `stream`. This module helps you handle data efficiently, especially when the data is too large to load all at once, like reading a big text file or downloading a large video.
 
 Instead of waiting to read or write all the data before doing anything, streams process chunks of data as they arrive, similar to how you can start watching a YouTube video before the whole video finishes loading.
+
+## Types of Streams
 
 There are four main types of streams in Node.js: readable, writable, duplex, and transform:
 
@@ -24,9 +28,13 @@ You can import the stream classes you need by destructuring them from the stream
 const { Readable, Writable, Transform } = require("stream");
 ```
 
+## Using Built-In File Streams
+
 Most of the time, you don't need to create custom stream classes yourself. For everyday file operations, built-in methods like `fs.createReadStream()` and `fs.createWriteStream()` are usually all you need.
 
 These two methods take the path of the file to read or write. This means you also need the `fs` and `path` modules to implement streaming on many occasions.
+
+## Reading Data with a Readable Stream
 
 Here's how you can read data from a file, say an `input.txt` file:
 
@@ -65,6 +73,8 @@ Received data: <Buffer 4c 6f 72 65 6d 20 69 70 73 75 6d
 */
 ```
 
+## Converting Buffers to Text
+
 Since it returns a buffer, you can call the `toString()` method to convert it into readable text:
 
 ```js
@@ -93,6 +103,8 @@ eaque doloribus assumenda, minima fuga tempore, porro, debitis rem harum in
 */
 ```
 
+## Writing Data with a Writable Stream
+
 To implement a writable stream, particularly when you're reading from one file and writing to another, you need to create the read stream first, followed by the write stream:
 
 ```js
@@ -108,6 +120,8 @@ const readInputFileStream = fs.createReadStream(inputFilePath);
 // Create the write stream
 const writeOutputFileStream = fs.createWriteStream(outputFilePath);
 ```
+
+## Connecting Streams with pipe()
 
 Next, use the `.pipe()` method to connect the readable stream to the writable stream. This lets Node.js automatically read data from the source and write it to the destination, chunk by chunk:
 
@@ -127,6 +141,8 @@ const writeOutputFileStream = fs.createWriteStream(outputFilePath);
 // Pipe the read stream to the write stream
 readInputFileStream.pipe(writeOutputFileStream);
 ```
+
+## Handling the finish and error Events
 
 Then you can listen for the `finish` and `error` events on the writable stream to know when the streaming is complete or if something goes wrong:
 
