@@ -19,7 +19,7 @@ You should declare `user` as a `const` set to an object, inside the `try` block.
 
 ```js
 assert.match(
-  code,
+  __helpers.removeJSComments(code),
   /try\s*\{(?:(?!catch)[\s\S])*?const\s+user\s*=\s*\{[\s\S]*?\}/
 );
 ```
@@ -27,7 +27,8 @@ assert.match(
 Your `user` object should include a `"name"` property with the value of the `name` variable.
 
 ```js
-const objectMatch = code.match(
+const noCommentsCode = __helpers.removeJSComments(code)
+const objectMatch = noCommentsCode.match(
   /const\s+user\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\})/
 );
 assert.exists(objectMatch);
@@ -39,7 +40,8 @@ assert.isTrue(name?.value.matches("name"));
 Your `user` object should include an `"age"` property with the value of the `age` variable.
 
 ```js
-const objectMatch = code.match(
+const noCommentsCode = __helpers.removeJSComments(code)
+const objectMatch = noCommentsCode.match(
   /const\s+user\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\})/
 );
 assert.exists(objectMatch);
