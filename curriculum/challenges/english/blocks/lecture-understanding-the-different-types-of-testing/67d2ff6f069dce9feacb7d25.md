@@ -7,9 +7,13 @@ dashedName: what-is-compatibility-testing
 
 # --description--
 
+## The Goal of Compatibility Testing
+
 When you build out web applications at scale, you will need to think beyond your personal computing environment. How will these applications work on a variety of devices, operating systems, and browsers? Well, this is where compatibility testing comes in.
 
 The goal of compatibility testing is to see how well your software works in a variety of different computing environments. This provides the team with the ability to catch bugs before they reach production and will help contribute to a smoother product launch.
+
+## Different Types of Compatibility Testing
 
 Different types of compatibility testing include backwards and forwards compatibility, hardware testing, operating systems, networks, browsers, and mobile devices.
 
@@ -24,6 +28,8 @@ The next type of testing is network compatibility testing. You will have users w
 Then, there's browser compatibility testing. There are a few popular browsers in the market like Google Chrome, Safari, Firefox, and more. Since all browsers work slightly differently, it's important to test your web application thoroughly and make sure your web applications work consistently across many browsers.
 
 The last type of testing is mobile testing. There was a time in web development when most developers didn't think about testing for mobile devices. This was because, in the early 2000s, mobile devices weren't nearly as powerful or widely used as they are today. But now, tens of millions of people visit websites on phones and tablets. So, it is important to ensure that your software applications work on a variety of Android and iOS devices.
+
+## Why Compatibility Tests Matter
 
 Those are just a few types of testing that you will need to consider when building out your applications. While this might seem like a lot of extra work, it is important to perform compatibility tests because you do want to ensure that your applications work in a variety of computing environments.
 
