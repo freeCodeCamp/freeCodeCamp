@@ -10,6 +10,8 @@ dashedName: building-an-mcp-server
 
 In this video, you will learn how to build an MCP server.
 
+Want to build one yourself? The <a href="https://modelcontextprotocol.io/quickstart/server" target="_blank" rel="noopener noreferrer nofollow">official MCP server quickstart</a> walks through a working server and links to complete code examples.
+
 # --questions--
 
 ## --text--

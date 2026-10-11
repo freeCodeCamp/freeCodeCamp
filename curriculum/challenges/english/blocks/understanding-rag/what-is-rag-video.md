@@ -10,6 +10,8 @@ dashedName: what-is-rag
 
 In this video, you will learn more about RAG.
 
+Want to see RAG in action? Follow the <a href="https://developers.llamaindex.ai/python/framework/getting_started/starter_example/" target="_blank" rel="noopener noreferrer nofollow">LlamaIndex starter tutorial</a> to build an app that answers questions about your documents.
+
 # --questions--
 
 ## --text--

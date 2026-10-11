@@ -10,6 +10,8 @@ dashedName: mcp-inspector
 
 In this video, you will learn about the MCP Inspector.
 
+To test a server yourself, follow the <a href="https://modelcontextprotocol.io/docs/tools/inspector" target="_blank" rel="noopener noreferrer nofollow">MCP Inspector quickstart</a> to connect and try its tools.
+
 # --questions--
 
 ## --text--

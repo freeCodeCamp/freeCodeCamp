@@ -10,6 +10,8 @@ dashedName: using-mcp-servers
 
 In this video, you will learn how to use MCP servers.
 
+Ready to try one? Explore the <a href="https://modelcontextprotocol.io/examples" target="_blank" rel="noopener noreferrer nofollow">official MCP server examples</a> and connect a server to an MCP client.
+
 # --questions--
 
 ## --text--

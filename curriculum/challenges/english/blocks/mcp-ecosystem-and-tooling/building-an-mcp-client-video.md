@@ -10,6 +10,8 @@ dashedName: building-an-mcp-client
 
 In this video, you will learn how to build an MCP client.
 
+Ready to build a client? The <a href="https://modelcontextprotocol.io/quickstart/client" target="_blank" rel="noopener noreferrer nofollow">official MCP client quickstart</a> walks through connecting to a server and links to complete code examples.
+
 # --questions--
 
 ## --text--
