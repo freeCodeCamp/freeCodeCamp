@@ -141,6 +141,76 @@ const createHeader = (id = mainPreviewId) =>
       console.log(msg);
       return true;
     };
+    try {
+      window.localStorage;
+    } catch (err) {
+      function createMockStorage() {
+        var store = new Map();
+        var storage = {
+          getItem: function(key) {
+            var k = String(key);
+            return store.has(k) ? store.get(k) : null;
+          },
+          setItem: function(key, value) {
+            store.set(String(key), String(value));
+          },
+          removeItem: function(key) {
+            store.delete(String(key));
+          },
+          clear: function() {
+            store.clear();
+          },
+          key: function(index) {
+            var keys = Array.from(store.keys());
+            return keys[index] !== undefined ? keys[index] : null;
+          },
+          get length() {
+            return store.size;
+          }
+        };
+        return new Proxy(storage, {
+          get: function(target, prop) {
+            if (prop in target || typeof prop === 'symbol') {
+              var val = target[prop];
+              return typeof val === 'function' ? val.bind(target) : val;
+            }
+            return target.getItem(prop);
+          },
+          set: function(target, prop, value) {
+            if (prop in target) {
+              target[prop] = value;
+              return true;
+            }
+            target.setItem(prop, value);
+            return true;
+          },
+          deleteProperty: function(target, prop) {
+            if (prop in target) {
+              delete target[prop];
+              return true;
+            }
+            target.removeItem(prop);
+            return true;
+          }
+        });
+      }
+
+      try {
+        Object.defineProperty(window, 'localStorage', {
+          value: createMockStorage(),
+          configurable: true,
+          writable: true
+        });
+      } catch (e) {}
+
+      try {
+        Object.defineProperty(window, 'sessionStorage', {
+          value: createMockStorage(),
+          configurable: true,
+          writable: true
+        });
+      } catch (e) {}
+    }
     document.addEventListener('click', function(e) {
       let element = e.target;
       while(element && element.nodeName !== 'A') {
