@@ -198,8 +198,7 @@ describe('<Block />', () => {
           {
             ...defaultProps.challenges[0],
             blockLayout: BlockLayouts.ChallengeGrid,
-            id: 'rwd-cat-photo-app-step-1',
-            superBlock: SuperBlocks.RespWebDesignNew
+            id: 'rwd-cat-photo-app-step-1'
           }
         ]}
         completedChallengeIds={[]}
