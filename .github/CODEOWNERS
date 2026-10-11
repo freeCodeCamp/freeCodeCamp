@@ -19,9 +19,9 @@
 
 # --- Package files for negation ---
 
-**/package.json @freecodecamp/none
-**/pnpm-lock.yaml @freecodecamp/none
-/pnpm-workspace.yaml @freecodecamp/none
+**/package.json @freecodecamp/package-approvers
+**/pnpm-lock.yaml @freecodecamp/package-approvers
+/pnpm-workspace.yaml @freecodecamp/package-approvers
 
 # -------------------------------------------------
 # Files that need attention from i18n & dev team
