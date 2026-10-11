@@ -9,6 +9,11 @@ on:
 permissions:
   issues: write
   pull-requests: write
+
+concurrency:
+  group: pr-label-writes-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
 jobs:
   autoclose:
     runs-on: ubuntu-24.04
