@@ -50,6 +50,8 @@ export const isExamResultsModalOpenSelector = state =>
 export const isExitQuizModalOpenSelector = state => state[ns].modal.exitQuiz;
 export const isFinishQuizModalOpenSelector = state =>
   state[ns].modal.finishQuiz;
+export const isExitProjectModalOpenSelector = state =>
+  state[ns].modal.exitProject;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
 export const isProjectPreviewLoadingSelector = state =>
