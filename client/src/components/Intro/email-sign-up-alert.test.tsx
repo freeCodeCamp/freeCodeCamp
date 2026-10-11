@@ -5,7 +5,12 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
+import callGA from '../../analytics/call-ga';
 import EmailSignUpAlert from './email-sign-up-alert';
+
+vi.mock('../../analytics/call-ga', () => ({
+  default: vi.fn()
+}));
 
 interface TestUser {
   completedChallenges: unknown[];
@@ -90,6 +95,21 @@ describe('<EmailSignUpAlert />', () => {
     expect(dispatch).toHaveBeenCalledWith({
       type: 'settings.updateMyQuincyEmail',
       payload: { sendQuincyEmail: false }
+    });
+  });
+
+  it('tracks the choice as coming from the alert', async () => {
+    const user = userEvent.setup();
+    renderWithUser(baseUser);
+
+    await user.click(
+      screen.getByRole('button', { name: 'buttons.yes-please' })
+    );
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'email_sign_up_choice',
+      choice: 'yes',
+      source: 'alert'
     });
   });
 });
