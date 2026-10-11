@@ -114,10 +114,11 @@ export const isProcessingSelector = state => {
 };
 
 export const createUserByNameSelector = username => state => {
+  const lowerUsername = username.toLowerCase();
   const sessionUser = userSelector(state);
   const otherUser = otherUserSelector(state);
-  const isSessionUser = sessionUser?.username === username;
-  const isOtherUser = otherUser?.username === username;
+  const isSessionUser = sessionUser?.username === lowerUsername;
+  const isOtherUser = otherUser?.username === lowerUsername;
   const user = isSessionUser ? sessionUser : isOtherUser ? otherUser : null;
   return user;
 };
