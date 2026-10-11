@@ -6,7 +6,15 @@
   "challengeOrder": [
     {
       "id": "683ec7b778993c6971b56c83",
-      "title": "What Is the Python Standard Library, and How Do You Import a Module?"
+      "title": "How Do You Import Python Modules?"
+    },
+    {
+      "id": "56b190c7be1f4738b7cfb5f8",
+      "title": "How Do You Create and Use Local Modules?"
+    },
+    {
+      "id": "a8a2a460fbdae082887a2eeb",
+      "title": "How Do You Find and Use Standard-Library Modules?"
     }
   ],
   "helpCategory": "Python"
