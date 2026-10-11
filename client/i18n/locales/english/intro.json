@@ -10999,6 +10999,10 @@
       "review-python": {
         "title": "Python Review",
         "intro": ["Review Python concepts to prepare for the upcoming exam."]
+      },
+      "lab-implement-a-stack-python": {
+        "title": "Implement a Stack",
+        "intro": ["Implement a Stack", ""]
       }
     }
   },
