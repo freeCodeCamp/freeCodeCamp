@@ -36,7 +36,7 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "@types/lodash-es": "4.17.12",
     "@vitest/ui": "3.2.7",
-    "eslint": "^9.39.1",
+    "eslint": "9.39.5",
     "jsdom": "26.1.0",
     "vitest": "3.2.7"
   },

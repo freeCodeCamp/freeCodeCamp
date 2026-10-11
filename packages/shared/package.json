@@ -94,7 +94,7 @@
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "@vitest/ui": "4.1.11",
-    "eslint": "^9.39.1",
+    "eslint": "9.39.5",
     "tsdown": "^0.21.0",
     "vitest": "4.1.11"
   }

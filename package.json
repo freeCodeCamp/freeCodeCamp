@@ -74,7 +74,7 @@
   },
   "dependencies": {
     "dotenv": "16.6.1",
-    "eslint": "^9.39.1"
+    "eslint": "9.39.5"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
