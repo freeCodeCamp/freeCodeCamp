@@ -20,6 +20,7 @@ import Privacy from '../components/settings/privacy';
 import UserToken from '../components/settings/user-token';
 import ExamToken from '../components/settings/exam-token';
 import SettingsSidebarNav from '../components/settings/settings-sidebar-nav';
+import { getStickyScrollOffset } from '../components/sidebar-panel';
 import About from '../components/profile/components/about';
 import ClassroomMode from '../components/settings/classroom-mode';
 import { hardGoTo as navigate } from '../redux/actions';
@@ -109,10 +110,16 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     const hash = event ? new URL(event.newURL).hash : window.location.hash;
     const id = hash.replace('#', '');
     if (id) {
-      scroller.scrollTo(id, {
-        smooth: true,
-        duration: 500,
-        offset: -100
+      // Wait for web fonts, as text reflowing once they load shifts the target.
+      void document.fonts.ready.then(() => {
+        // Use the same offset as the sidebar's scroll spy and the root
+        // scroll-padding-top, otherwise the spy treats the previous section
+        // as active and rewrites the hash to it.
+        scroller.scrollTo(id, {
+          smooth: true,
+          duration: 500,
+          offset: getStickyScrollOffset(['--header-height'], 10)
+        });
       });
     }
   };

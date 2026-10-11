@@ -1,6 +1,23 @@
 import { useEffect, useState } from 'react';
 
 /**
+ * Reads the current pixel value of each supplied CSS custom property from
+ * `:root` and returns the negated sum plus any additional fixed offset.
+ */
+export function getStickyScrollOffset(
+  cssVarNames: string[],
+  additionalOffset = 0
+): number {
+  const rootStyle = window.getComputedStyle(document.documentElement);
+  const total = cssVarNames.reduce(
+    (sum, name) =>
+      sum + (Number.parseFloat(rootStyle.getPropertyValue(name)) || 0),
+    0
+  );
+  return -(total + additionalOffset);
+}
+
+/**
  * Computes a negative scroll offset suitable for `react-scroll`'s `offset`
  * prop so that scrolled-to elements are not hidden behind a sticky header.
  *
@@ -20,13 +37,7 @@ function useStickyScrollOffset(
 
   useEffect(() => {
     const compute = () => {
-      const rootStyle = window.getComputedStyle(document.documentElement);
-      const total = cssVarNames.reduce(
-        (sum, name) =>
-          sum + (Number.parseFloat(rootStyle.getPropertyValue(name)) || 0),
-        0
-      );
-      setOffset(-(total + additionalOffset));
+      setOffset(getStickyScrollOffset(cssVarNames, additionalOffset));
     };
 
     compute();
