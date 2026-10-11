@@ -1,10 +1,6 @@
 import crypto from 'node:crypto';
 
-import { customAlphabet } from 'nanoid';
-
-export const nanoidCharSet =
-  '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const nanoid = customAlphabet(nanoidCharSet, 21);
+import { generateNanoId } from './ids.js';
 
 /**
  * Creates the necessary data to reset a user's properties.
@@ -80,7 +76,7 @@ export function createUserInput(email: string) {
     keyboardShortcuts: false,
     location: '',
     name: '',
-    unsubscribeId: nanoid(),
+    unsubscribeId: generateNanoId(),
     picture: '',
     portfolio: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     profileUI: {
@@ -101,6 +97,7 @@ export function createUserInput(email: string) {
     username,
     usernameDisplay: username,
     yearsTopContributor: [], // TODO: Omit this from the document? (prisma will always return []),
-    ...createResetProperties()
+    ...createResetProperties(),
+    activityTrackingId: generateNanoId()
   };
 }

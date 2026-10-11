@@ -59,3 +59,66 @@
   text-align: center;
   font-style: italic;
 }
+
+.resume-card {
+  padding: 20px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--quaternary-color);
+}
+
+.resume-card h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.resume-progress-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.resume-progress-header span:last-child {
+  white-space: nowrap;
+}
+
+.resume-progress {
+  position: relative;
+  width: 100%;
+  height: 14px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--quaternary-color);
+  background-color: var(--quaternary-background);
+}
+
+.resume-progress .progress-bar-background,
+.resume-progress .progress-bar-percent {
+  height: 12px;
+}
+
+.resume-progress .progress-bar-background {
+  position: absolute;
+  width: 100%;
+  background-color: var(--quaternary-background);
+}
+
+.resume-progress .progress-bar-percent {
+  position: relative;
+  background-color: var(--primary-color);
+}
+
+.resume-card-action-container {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  .resume-progress-header {
+    display: block;
+  }
+
+  .resume-progress-header span {
+    display: block;
+  }
+}
