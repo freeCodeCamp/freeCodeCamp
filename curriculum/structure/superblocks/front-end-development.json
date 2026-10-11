@@ -1,0 +1,26 @@
+{
+  "chapters": [
+    {
+      "dashedName": "front-end-development",
+      "modules": [
+        {
+          "dashedName": "html",
+          "blocks": [
+            "workshop-curriculum-outline",
+            "lecture-html-introduction",
+            "workshop-cat-photo-app",
+            "lab-recipe-page",
+            "lecture-fundamental-html",
+            "lecture-semantic-html",
+            "workshop-blog-page",
+            "lab-event-hub",
+            "lecture-importance-of-accessibility",
+            "workshop-hotel-feedback-form",
+            "lab-survey-form",
+            "workshop-final-exams-table"
+          ]
+        }
+      ]
+    }
+  ]
+}
