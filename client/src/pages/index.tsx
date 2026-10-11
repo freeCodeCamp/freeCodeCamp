@@ -1,8 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGrowthBook } from '@growthbook/growthbook-react';
+import { useSelector } from 'react-redux';
 import SEO from '../components/seo';
-import { Loader } from '../components/helpers';
+import { userFetchStateSelector } from '../redux/selectors';
+import type { UserFetchState } from '../redux/prop-types';
 import LandingTop from '../components/landing/components/landing-top';
 import Testimonials from '../components/landing/components/testimonials';
 import Certifications from '../components/landing/components/certifications';
@@ -13,13 +15,13 @@ import { useClaimableCertsNotification } from '../components/helpers/use-claimab
 
 import '../components/landing/landing.css';
 
-const Landing = () => (
+const Landing = ({ isReady }: { isReady: boolean }) => (
   <main
     id='landing-content'
     data-testid='landing-content'
     className={`landing-page`}
   >
-    <LandingTop />
+    <LandingTop isReady={isReady} />
     <Benefits />
     <Testimonials />
     <Certifications />
@@ -31,24 +33,22 @@ const Landing = () => (
 function IndexPage(): JSX.Element {
   const { t } = useTranslation();
   const growthbook = useGrowthBook();
+  const { complete } = useSelector<unknown, UserFetchState>(
+    userFetchStateSelector
+  );
+  const isReady = complete && !!growthbook?.ready;
   useClaimableCertsNotification();
 
-  if (growthbook && growthbook.ready) {
-    growthbook.getFeatureValue('landing-aa-test', false);
-    return (
-      <>
-        <SEO title={t('metaTags:title')} />
-        <Landing />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <SEO title={t('metaTags:title')} />
-        <Loader fullScreen={true} />
-      </>
-    );
+  if (isReady) {
+    growthbook?.getFeatureValue('landing-aa-test', false);
   }
+
+  return (
+    <>
+      <SEO title={t('metaTags:title')} />
+      <Landing isReady={isReady} />
+    </>
+  );
 }
 
 IndexPage.displayName = 'IndexPage';
