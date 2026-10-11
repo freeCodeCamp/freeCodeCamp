@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+import { getUnsubscribeId } from '@freecodecamp/scripts-seed/seed-isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import metaTags from '../client/i18n/locales/english/meta-tags.json';
 
@@ -41,11 +42,11 @@ test.describe('The unsubscribed page without unsubscribeId', () => {
 test.describe('The unsubscribed page with unsubscribeId', () => {
   const encoded_url_text =
     '?messages=success%5B0%5D%3DWe%2527ve%2520successfully%2520updated%2520your%2520email%2520preferences.%2520Thank%2520you%2520for%2520resubscribing.';
-  // This value is sourced from self/freeCodeCamp/tools/scripts/seed/certified-user-data.js
-  // The file certified-user-data.js is used to seed the database before running the tests.
-  const unsubscribeId = 'tBX8stC5jiustPBteF2mV';
+  test.use({ userPreset: 'certified' });
+  let unsubscribeId: string;
 
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, isolatedUser }) => {
+    unsubscribeId = await getUnsubscribeId(isolatedUser.email);
     await page.goto(`/unsubscribed/${unsubscribeId}`);
   });
 
