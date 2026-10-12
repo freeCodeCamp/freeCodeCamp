@@ -321,5 +321,103 @@ describe('translation parser', () => {
         translateComments(seedScript, 'chinese', SIMPLE_TRANSLATION, 'html')
       ).toThrow();
     });
+
+    it('replaces English TypeScript comments with their translations', () => {
+      const seed = `//  Add your code below this line
+         Add your code above this line `;
+      const transSeed = `//  (Chinese) Add your code below this line (Chinese)
+         Add your code above this line `;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'ts').text
+      ).toBe(transSeed);
+    });
+
+    it('replaces English TSX comments with their translations', () => {
+      const seed = `{ /*  Add your code below this line */ }`;
+      const transSeed = `{ /*  (Chinese) Add your code below this line (Chinese) */ }`;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'tsx').text
+      ).toBe(transSeed);
+    });
+
+    it('replaces English CSS comments with their translations', () => {
+      const seed = `/*  Add your code below this line */
+         Add your code above this line `;
+      const transSeed = `/*  (Chinese) Add your code below this line (Chinese) */
+         Add your code above this line `;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'css').text
+      ).toBe(transSeed);
+    });
+
+    it('replaces English Python comments with their translations', () => {
+      const seed = `# Add your code below this line
+# Add your code above this line`;
+      const transSeed = `# (Chinese) Add your code below this line (Chinese)
+# (Chinese) Add your code above this line (Chinese)`;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'py').text
+      ).toBe(transSeed);
+    });
+
+    it('replaces indented Python comments with their translations', () => {
+      const seed = `    # Add your code below this line
+    pass`;
+      const transSeed = `    # (Chinese) Add your code below this line (Chinese)
+    pass`;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'py').text
+      ).toBe(transSeed);
+    });
+
+    it('ignores empty Python comments', () => {
+      expect(
+        translateComments('#', 'chinese', SIMPLE_TRANSLATION, 'py').text
+      ).toBe('#');
+    });
+
+    it('does not let a Python comment run into the next line', () => {
+      const seed = `# Add your code below this line
+#
+Add your code above this line`;
+      const transSeed = `# (Chinese) Add your code below this line (Chinese)
+#
+Add your code above this line`;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'py').text
+      ).toBe(transSeed);
+    });
+
+    it('throws if the comment is not in the dictionary (ts, tsx, css, py)', () => {
+      expect.assertions(5);
+      const seedTS = `// this is not a comment`;
+      const seedTSX = `{ /* this is not a comment */ }`;
+      const seedCSS = `/* this is not a comment */`;
+      const seedPy = `# this is not a comment`;
+      const seedPyIndented = `    # this is not a comment`;
+
+      expect(() =>
+        translateComments(seedTS, 'chinese', SIMPLE_TRANSLATION, 'ts')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedTSX, 'chinese', SIMPLE_TRANSLATION, 'tsx')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedCSS, 'chinese', SIMPLE_TRANSLATION, 'css')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedPy, 'chinese', SIMPLE_TRANSLATION, 'py')
+      ).toThrow();
+      expect(() =>
+        translateComments(seedPyIndented, 'chinese', SIMPLE_TRANSLATION, 'py')
+      ).toThrow();
+    });
+
+    it('leaves languages without comment support untouched', () => {
+      const seed = `# Add your code below this line`;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'json').text
+      ).toBe(seed);
+    });
   });
 });

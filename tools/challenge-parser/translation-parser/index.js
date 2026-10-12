@@ -7,9 +7,15 @@ exports.translateComments = (text, lang, dict, codeLang) => {
   switch (codeLang) {
     case 'js':
     case 'jsx':
+    case 'ts':
+    case 'tsx':
       return transMultiline(transInline(input, config), config);
     case 'html':
       return transScript(transHTML(transCSS(input, config), config), config);
+    case 'css':
+      return transMultiline(input, config);
+    case 'py':
+      return transHash(input, config);
     default:
       return input;
   }
@@ -43,6 +49,13 @@ function transInline(input, config) {
 
 function transMultiline(input, config) {
   return translateGeneric(input, config, '(/\\*\\s*)', '(\\s*\\*/)');
+}
+
+// Python comments run from a '#' to the end of the line. The whitespace
+// classes deliberately exclude newlines so that a comment cannot swallow the
+// line that follows it.
+function transHash(input, config) {
+  return translateGeneric(input, config, '(#[^\\S\\n]*)', '([^\\S\\n]*$)');
 }
 
 // CSS has to be handled separately since it is looking for comments inside tags
