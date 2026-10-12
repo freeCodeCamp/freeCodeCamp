@@ -112,7 +112,7 @@ const replaceNBSP = cond([
   [stubTrue, identity]
 ]);
 
-const getJSTranspiler = loopProtectOptions => async challengeFile => {
+export const getJSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetEnv();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
