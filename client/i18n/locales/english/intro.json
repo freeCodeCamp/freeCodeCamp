@@ -5062,7 +5062,6 @@
       "workshop-campus-directory-normalizer": {
         "title": "Build a Campus Directory Normalizer",
         "intro": [
-          "Build a Campus Directory Normalizer",
           "In this workshop, you will normalize nested data into independent, easy-to-use lookup tables."
         ]
       },
