@@ -25,7 +25,7 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "debug": "4.4.3",
     "dotenv": "16.6.1",
-    "eslint": "^9.39.1",
+    "eslint": "9.39.5",
     "joi": "17.13.8",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.3.2",
