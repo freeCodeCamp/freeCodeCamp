@@ -25,7 +25,7 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "debug": "4.4.3",
     "dotenv": "16.6.1",
-    "eslint": "^9.39.1",
+    "eslint": "9.39.5",
     "lodash": "4.18.1",
     "mongodb": "6.21.0"
   }
