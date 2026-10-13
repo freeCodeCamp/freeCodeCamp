@@ -72,11 +72,9 @@ export default Grandchild;
 
 In the browser, you'll see a page with a single `h1` element that has the text `Hello, Prop Drilling!`.
 
-## Why Prop Drilling Is a Problem
-
 At first, prop drilling might not seem like such a big deal. But as your app grows, it gets harder to understand, debug, and maintain.
 
-## Keeping Props in a Single Parent
+## Keeping Props in a Single Parent Component
 
 If you need to pass props around, try to keep them all in a single parent component. This approach of centralizing all necessary data is called the "single source of truth".
 
