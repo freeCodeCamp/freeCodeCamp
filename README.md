@@ -82,7 +82,7 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 Recent Contributions:
 
-![Recent contributions analytics](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
+![Live summary of recent repository activity: contributions in the last 30 days, issue open/close ratio, pull requests opened, and pushes, each compared to the previous month. Below are bar charts of issues, pull requests, and pushes over time, and a list of top contributors.](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
 
 ### License
 
