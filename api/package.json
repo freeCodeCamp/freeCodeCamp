@@ -53,7 +53,7 @@
     "@types/validator": "13.15.10",
     "@vitest/ui": "4.1.11",
     "dotenv-cli": "7.4.4",
-    "eslint": "^9.39.1",
+    "eslint": "9.39.5",
     "eslint-plugin-jsdoc": "48.11.0",
     "msw": "^2.12.10",
     "prisma": "6.19.3",
