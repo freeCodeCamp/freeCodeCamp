@@ -11078,7 +11078,7 @@
           "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
         ]
       },
-      "lab-survey-form": {
+      "lab-survey-form-v2": {
         "title": "Build a Survey Form",
         "intro": [
           "In this lab, you'll review HTML forms by creating a survey form.",
