@@ -33,9 +33,6 @@ services:
     image: clickhouse/clickhouse-server:25.8-alpine
     container_name: clickhouse
     restart: unless-stopped
-    ports:
-      - 8123:8123
-      - 9000:9000
     environment:
       CLICKHOUSE_DB: freecodecamp
       CLICKHOUSE_USER: default

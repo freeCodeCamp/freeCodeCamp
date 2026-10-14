@@ -3,7 +3,9 @@ import { execSync } from 'child_process';
 import { test as setup } from '@playwright/test';
 
 setup.beforeAll(() => {
-  execSync('pnpm --dir .. migrate', { stdio: 'inherit' });
+  if (process.env.CLICKHOUSE_URL) {
+    execSync('pnpm --dir .. clickhouse:migrate', { stdio: 'inherit' });
+  }
 });
 
 setup.describe('certifieduser', () => {

@@ -24,6 +24,15 @@ services:
         condition: service_completed_successfully
       mailpit:
         condition: service_started
+      clickhouse:
+        condition: service_healthy
+
+  clickhouse:
+    # Same namespace, for CLICKHOUSE_URL=http://127.0.0.1:8123.
+    network_mode: service:db
+    depends_on:
+      db:
+        condition: service_healthy
 
   mailpit:
     # Same namespace, for MAILPIT_HOST=localhost.
