@@ -85,6 +85,7 @@
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
     "lint": "eslint --max-warnings 0",
     "test": "vitest run",
+    "test:clickhouse": "FCC_ENABLE_CLICKHOUSE_TESTS=true vitest run clickhouse.test-utils.test.ts",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "type-check": "tsc --noEmit",

@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 
-import { createClient } from '@clickhouse/client';
+import { createClient, type ClickHouseClient } from '@clickhouse/client';
 import {
   afterAll,
   afterEach,
@@ -15,32 +15,51 @@ import {
 } from 'vitest';
 
 import {
-  CLICKHOUSE_DATABASE,
-  CLICKHOUSE_PASSWORD,
-  CLICKHOUSE_URL,
-  CLICKHOUSE_USERNAME
-} from './src/utils/env.js';
-import {
   createClickHouseTestDatabase,
-  dropClickHouseTestDatabase
+  dropClickHouseTestDatabase,
+  getClickHouseTestConfiguration
 } from './clickhouse.test-utils.js';
 import { applyMigrations } from './tools/clickhouse/migrations.js';
+import { setupServer } from './vitest.utils.js';
 
-const configuration = {
-  url: CLICKHOUSE_URL,
-  username: CLICKHOUSE_USERNAME,
-  password: CLICKHOUSE_PASSWORD
-};
+const integrationTestsEnabled =
+  process.env.CI === 'true' ||
+  process.env.FCC_ENABLE_CLICKHOUSE_TESTS === 'true';
 
-describe('ClickHouse test databases', () => {
-  const firstDatabase = `${CLICKHOUSE_DATABASE}_first`;
-  const secondDatabase = `${CLICKHOUSE_DATABASE}_second`;
-  const first = createClient({ ...configuration, database: firstDatabase });
-  const second = createClient({ ...configuration, database: secondDatabase });
-  const admin = createClient({ ...configuration, database: 'system' });
+describe.skipIf(!integrationTestsEnabled)(
+  'API with explicit ClickHouse enablement',
+  () => {
+    setupServer({ clickhouse: true });
+
+    test('connects the application client to its migrated worker database', async () => {
+      assert.ok(fastifyTestInstance.clickhouse);
+      const result = await fastifyTestInstance.clickhouse.query({
+        query:
+          'SELECT currentDatabase() AS database, count() AS migrations FROM schema_migrations',
+        format: 'JSONEachRow'
+      });
+      expect(await result.json()).toEqual([
+        { database: getClickHouseTestConfiguration().database, migrations: 1 }
+      ]);
+    });
+  }
+);
+
+describe.skipIf(!integrationTestsEnabled)('ClickHouse test databases', () => {
+  let firstDatabase: string;
+  let secondDatabase: string;
+  let first: ClickHouseClient;
+  let second: ClickHouseClient;
+  let admin: ClickHouseClient;
   let databasesBefore: string[];
 
   beforeAll(async () => {
+    const configuration = getClickHouseTestConfiguration();
+    firstDatabase = `${configuration.database}_first`;
+    secondDatabase = `${configuration.database}_second`;
+    first = createClient({ ...configuration, database: firstDatabase });
+    second = createClient({ ...configuration, database: secondDatabase });
+    admin = createClient({ ...configuration, database: 'system' });
     const result = await admin.query({
       query: 'SHOW DATABASES',
       format: 'JSONEachRow'
@@ -53,6 +72,7 @@ describe('ClickHouse test databases', () => {
   });
 
   afterAll(async () => {
+    if (!admin) return;
     try {
       await Promise.all([
         dropClickHouseTestDatabase(firstDatabase),
@@ -117,59 +137,68 @@ describe('ClickHouse test databases', () => {
   });
 });
 
-describe('ClickHouse migration integration', () => {
-  const database = `${CLICKHOUSE_DATABASE}_migrations`;
-  const client = createClient({ ...configuration, database });
-  let directory: string;
+describe.skipIf(!integrationTestsEnabled)(
+  'ClickHouse migration integration',
+  () => {
+    let database: string;
+    let client: ClickHouseClient;
+    let directory: string;
 
-  beforeEach(async () => {
-    directory = await fs.mkdtemp(
-      path.join(os.tmpdir(), 'fcc-clickhouse-integration-')
-    );
-    await createClickHouseTestDatabase(database);
-  });
-
-  afterEach(async () => {
-    try {
-      await dropClickHouseTestDatabase(database);
-    } finally {
-      await fs.rm(directory, { recursive: true, force: true });
-    }
-  });
-
-  afterAll(async () => {
-    await client.close();
-  });
-
-  test('adopts an existing activity table and records the initial migration once', async () => {
-    await client.command({ query: 'DROP TABLE schema_migrations SYNC' });
-    expect(await applyMigrations(client)).toEqual([
-      '001_create_activity_events.sql'
-    ]);
-    expect(await applyMigrations(client)).toEqual([]);
-    const result = await client.query({
-      query: 'SELECT migration_id, filename FROM schema_migrations',
-      format: 'JSONEachRow'
+    beforeAll(() => {
+      const configuration = getClickHouseTestConfiguration();
+      database = `${configuration.database}_migrations`;
+      client = createClient({ ...configuration, database });
     });
-    expect(await result.json()).toEqual([
-      { migration_id: '1', filename: '001_create_activity_events.sql' }
-    ]);
-  });
 
-  test('does not replay a non-idempotent migration on its second run', async () => {
-    await client.command({ query: 'DROP TABLE schema_migrations SYNC' });
-    await fs.writeFile(
-      path.join(directory, '1000-create-probe.sql'),
-      'CREATE TABLE migration_probe (n UInt8) ENGINE = Memory'
-    );
-    expect(await applyMigrations(client, directory)).toEqual([
-      '1000-create-probe.sql'
-    ]);
-    expect(await applyMigrations(client, directory)).toEqual([]);
-    const result = await client.query({
-      query: 'SELECT count() AS count FROM schema_migrations',
-      format: 'JSONEachRow'
+    beforeEach(async () => {
+      directory = await fs.mkdtemp(
+        path.join(os.tmpdir(), 'fcc-clickhouse-integration-')
+      );
+      await createClickHouseTestDatabase(database);
     });
-    expect(await result.json()).toEqual([{ count: 1 }]);
-  });
-});
+
+    afterEach(async () => {
+      try {
+        await dropClickHouseTestDatabase(database);
+      } finally {
+        await fs.rm(directory, { recursive: true, force: true });
+      }
+    });
+
+    afterAll(async () => {
+      if (client) await client.close();
+    });
+
+    test('adopts an existing activity table and records the initial migration once', async () => {
+      await client.command({ query: 'DROP TABLE schema_migrations SYNC' });
+      expect(await applyMigrations(client)).toEqual([
+        '001_create_activity_events.sql'
+      ]);
+      expect(await applyMigrations(client)).toEqual([]);
+      const result = await client.query({
+        query: 'SELECT migration_id, filename FROM schema_migrations',
+        format: 'JSONEachRow'
+      });
+      expect(await result.json()).toEqual([
+        { migration_id: '1', filename: '001_create_activity_events.sql' }
+      ]);
+    });
+
+    test('does not replay a non-idempotent migration on its second run', async () => {
+      await client.command({ query: 'DROP TABLE schema_migrations SYNC' });
+      await fs.writeFile(
+        path.join(directory, '1000-create-probe.sql'),
+        'CREATE TABLE migration_probe (n UInt8) ENGINE = Memory'
+      );
+      expect(await applyMigrations(client, directory)).toEqual([
+        '1000-create-probe.sql'
+      ]);
+      expect(await applyMigrations(client, directory)).toEqual([]);
+      const result = await client.query({
+        query: 'SELECT count() AS count FROM schema_migrations',
+        format: 'JSONEachRow'
+      });
+      expect(await result.json()).toEqual([{ count: 1 }]);
+    });
+  }
+);

@@ -2,19 +2,34 @@ import assert from 'node:assert';
 
 import { createClient } from '@clickhouse/client';
 
-import {
-  CLICKHOUSE_DATABASE,
-  CLICKHOUSE_PASSWORD,
-  CLICKHOUSE_URL,
-  CLICKHOUSE_USERNAME,
-  FREECODECAMP_NODE_ENV
-} from './src/utils/env.js';
+import { CLICKHOUSE_CONFIG, FREECODECAMP_NODE_ENV } from './src/utils/env.js';
+import type { ClickHouseConfiguration } from './src/utils/clickhouse-config.js';
 import { applyMigrations } from './tools/clickhouse/migrations.js';
 
-function assertTestDatabase(database: string): void {
+/**
+ * Gets ClickHouse configuration scoped to this test worker and process.
+ * @returns Configuration for an isolated test database.
+ */
+export function getClickHouseTestConfiguration(): ClickHouseConfiguration {
   assert.equal(process.env.NODE_ENV, 'test');
   assert.notEqual(FREECODECAMP_NODE_ENV, 'production');
-  const workerDatabase = `${process.env.CLICKHOUSE_DATABASE}_test_${process.env.VITEST_WORKER_ID}_${process.pid}`;
+  assert.ok(
+    CLICKHOUSE_CONFIG,
+    'CLICKHOUSE_URL is required for ClickHouse integration tests.'
+  );
+  const workerId = process.env.VITEST_WORKER_ID;
+  assert.ok(
+    workerId && /^\d+$/.test(workerId),
+    'VITEST_WORKER_ID is required.'
+  );
+  return {
+    ...CLICKHOUSE_CONFIG,
+    database: `${CLICKHOUSE_CONFIG.database}_test_${workerId}_${process.pid}`
+  };
+}
+
+function assertTestDatabase(database: string): void {
+  const workerDatabase = getClickHouseTestConfiguration().database;
   assert.ok(
     database === workerDatabase || database.startsWith(`${workerDatabase}_`)
   );
@@ -25,19 +40,16 @@ function assertTestDatabase(database: string): void {
  * @param database The generated test database name.
  */
 export async function createClickHouseTestDatabase(
-  database: string = CLICKHOUSE_DATABASE
+  database: string = getClickHouseTestConfiguration().database
 ): Promise<void> {
   assertTestDatabase(database);
+  const configuration = getClickHouseTestConfiguration();
   const admin = createClient({
-    url: CLICKHOUSE_URL,
-    username: CLICKHOUSE_USERNAME,
-    password: CLICKHOUSE_PASSWORD,
+    ...configuration,
     database: 'system'
   });
   const client = createClient({
-    url: CLICKHOUSE_URL,
-    username: CLICKHOUSE_USERNAME,
-    password: CLICKHOUSE_PASSWORD,
+    ...configuration,
     database
   });
   let created = false;
@@ -61,13 +73,11 @@ export async function createClickHouseTestDatabase(
  * @param database The generated test database name.
  */
 export async function dropClickHouseTestDatabase(
-  database: string = CLICKHOUSE_DATABASE
+  database: string = getClickHouseTestConfiguration().database
 ): Promise<void> {
   assertTestDatabase(database);
   const admin = createClient({
-    url: CLICKHOUSE_URL,
-    username: CLICKHOUSE_USERNAME,
-    password: CLICKHOUSE_PASSWORD,
+    ...getClickHouseTestConfiguration(),
     database: 'system'
   });
   try {

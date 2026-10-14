@@ -8,7 +8,8 @@ import { examJson } from './__fixtures__/exam.js';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
 import {
   createClickHouseTestDatabase,
-  dropClickHouseTestDatabase
+  dropClickHouseTestDatabase,
+  getClickHouseTestConfiguration
 } from './clickhouse.test-utils.js';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
@@ -184,43 +185,56 @@ export async function checkCanConnectToDb(
   await Promise.race([countP, delayedRejection]);
 }
 
-export function setupServer(): void {
+export function setupServer({
+  clickhouse = false
+}: { clickhouse?: boolean } = {}): void {
   let fastify: FastifyTestInstance;
   let clickhouseDatabaseCreated = false;
   beforeAll(async () => {
-    if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
-      delete buildOptions.loggerInstance;
+    try {
+      if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
+        delete buildOptions.loggerInstance;
+      }
+      if (clickhouse) {
+        await createClickHouseTestDatabase();
+        clickhouseDatabaseCreated = true;
+      }
+      fastify = await build(buildOptions, {
+        clickhouse: clickhouse ? getClickHouseTestConfiguration() : false
+      });
+      await fastify.ready();
+      // Supertest does not handle multiple concurrent requests gracefully
+      // https://github.com/forwardemail/supertest/issues/709
+      // it calls `server.close` and can end up killing live connections.
+      // By listening to 0, we keep the ephemeral port generation, but the fact
+      // it is listening means supertest will not attempt to close it.
+      fastify.server.listen(0);
+
+      await checkCanConnectToDb(fastify.prisma);
+
+      // Prisma does not support TTL indexes in the schema yet, so, to avoid
+      // conflicts with the TTL index in the sessions collection, we need to
+      // create it manually (before interacting with the db in any way). Also,
+      // to save time, we create all other indexes so we don't need to invoke
+      // `prisma db push` (which is relatively slow).
+
+      await Promise.all(
+        indexData.map(async ({ collection, indexes }) => {
+          await fastify.prisma.$runCommandRaw({
+            createIndexes: collection,
+            indexes
+          });
+        })
+      );
+
+      global.fastifyTestInstance = fastify;
+      // allow a little time to setup the db
+    } catch (error) {
+      throw new Error(
+        'fastifyTestInstance was not created. Check the beforeAll setup failure and database connectivity.',
+        { cause: error }
+      );
     }
-    await createClickHouseTestDatabase();
-    clickhouseDatabaseCreated = true;
-    fastify = await build(buildOptions);
-    await fastify.ready();
-    // Supertest does not handle multiple concurrent requests gracefully
-    // https://github.com/forwardemail/supertest/issues/709
-    // it calls `server.close` and can end up killing live connections.
-    // By listening to 0, we keep the ephemeral port generation, but the fact
-    // it is listening means supertest will not attempt to close it.
-    fastify.server.listen(0);
-
-    await checkCanConnectToDb(fastify.prisma);
-
-    // Prisma does not support TTL indexes in the schema yet, so, to avoid
-    // conflicts with the TTL index in the sessions collection, we need to
-    // create it manually (before interacting with the db in any way). Also,
-    // to save time, we create all other indexes so we don't need to invoke
-    // `prisma db push` (which is relatively slow).
-
-    await Promise.all(
-      indexData.map(async ({ collection, indexes }) => {
-        await fastify.prisma.$runCommandRaw({
-          createIndexes: collection,
-          indexes
-        });
-      })
-    );
-
-    global.fastifyTestInstance = fastify;
-    // allow a little time to setup the db
   }, 10000);
 
   afterAll(async () => {
