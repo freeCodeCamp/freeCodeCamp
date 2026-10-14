@@ -36,7 +36,6 @@ print(4 == 4) # True
 print(3 != 4) # True
 print(3 >= 4) # False
 print(3 <= 4) # True
-```
 
 ## Using `if` Statements
 
@@ -60,6 +59,7 @@ In the example above, the body of the `if` statement contains a `pass` statement
 The code within the body of the `if` statement runs only when the condition evaluates to `True`. For example:
 
 ```python
+
 age = 18
 
 if age >= 18:
@@ -96,9 +96,9 @@ But what if you also want to print something if `age` is less than `18`? That's 
 
 ```python
 if condition:
-   pass # Code to execute if condition is True
+    pass # Code to execute if condition is True
 else:
-   pass # Code to execute if condition is False
+    pass # Code to execute if condition is False
 ```
 
 For example:
@@ -132,11 +132,11 @@ Here's the syntax:
 
 ```python
 if condition1:
-   pass # Code to execute if condition1 is True
+    pass # Code to execute if condition1 is True
 elif condition2:
-   pass # Code to execute if condition1 is False and condition2 is True
+    pass # Code to execute if condition1 is False and condition2 is True
 else:
-   pass # Code to execute if all conditions are False
+    pass # Code to execute if all conditions are False
 ```
 
 For example:
