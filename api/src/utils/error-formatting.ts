@@ -9,6 +9,8 @@ type FormattedError = {
 type CodeRoadError = {
   type: 'error';
   msg: string;
+  // Backwards-compatible alias for message text. Prefer `message` in newer callers.
+  message?: string;
 };
 
 const getError = (errors: ErrorObject[]): ErrorObject => {
@@ -62,7 +64,7 @@ export const formatCoderoadChallengeCompletedValidation = (
 
   // TODO(Post-MVP): Return error saying that the body is not an object.
   if (error.instancePath === '' && error.message === 'must be object')
-    return { type: 'error', msg: `'tutorialId' not found in request body` };
+    return { type: 'error', msg: `'tutorialId' not found in request body`, message: `'tutorialId' not found in request body` };
 
   if (
     error.instancePath === '' &&
@@ -70,10 +72,11 @@ export const formatCoderoadChallengeCompletedValidation = (
   ) {
     return {
       type: 'error',
-      msg: `'Coderoad-User-Token' not found in request headers`
+      msg: `'Coderoad-User-Token' not found in request headers`,
+      message: `'Coderoad-User-Token' not found in request headers`
     };
   } else {
     // by process of elimination:
-    return { type: 'error', msg: `'tutorialId' not found in request body` };
+    return { type: 'error', msg: `'tutorialId' not found in request body`, message: `'tutorialId' not found in request body` };
   }
 };
