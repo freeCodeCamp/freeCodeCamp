@@ -1699,7 +1699,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
@@ -6661,7 +6661,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
@@ -10653,7 +10653,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
