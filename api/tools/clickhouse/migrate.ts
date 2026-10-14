@@ -1,20 +1,25 @@
 import { createClient } from '@clickhouse/client';
+import assert from 'node:assert';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { config } from 'dotenv';
 
 import { applyMigrations } from './migrations.js';
 
-import {
-  CLICKHOUSE_DATABASE,
-  CLICKHOUSE_PASSWORD,
-  CLICKHOUSE_URL,
-  CLICKHOUSE_USERNAME
-} from '../../src/utils/env.js';
+import { readClickHouseConfiguration } from '../../src/utils/clickhouse-config.js';
 
-const client = createClient({
-  url: CLICKHOUSE_URL,
-  username: CLICKHOUSE_USERNAME,
-  password: CLICKHOUSE_PASSWORD,
-  database: CLICKHOUSE_DATABASE
+config({
+  path: path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    '../../../.env'
+  )
 });
+const configuration = readClickHouseConfiguration(process.env);
+assert.ok(
+  configuration,
+  'CLICKHOUSE_URL is required to run ClickHouse migrations.'
+);
+const client = createClient(configuration);
 
 try {
   const migrations = await applyMigrations(client);

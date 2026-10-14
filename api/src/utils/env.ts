@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
 import { parseBool, parseInt } from './validation.js';
+import { readClickHouseConfiguration } from './clickhouse-config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
@@ -52,19 +53,6 @@ If so, ensure that the environment variable VITEST_WORKER_ID is set.`
   return url.replace(/(.*)(\?.*)/, `$1${dbId}$2`);
 }
 
-function createTestClickHouseDatabase(database: string, workerId?: string) {
-  assert.notEqual(
-    _FREECODECAMP_NODE_ENV,
-    'production',
-    "The ClickHouse database can't be modified in production."
-  );
-  assert.ok(
-    workerId && /^\d+$/.test(workerId),
-    'VITEST_WORKER_ID is required.'
-  );
-  return `${database}_test_${workerId}_${process.pid}`;
-}
-
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(isAllowedEnv(_FREECODECAMP_NODE_ENV));
 assert.ok(process.env.DEPLOYMENT_ENV);
@@ -79,9 +67,6 @@ assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
 assert.ok(process.env.SOCRATES_API_KEY);
 assert.ok(process.env.SOCRATES_ENDPOINT);
-assert.ok(process.env.CLICKHOUSE_URL);
-assert.ok(process.env.CLICKHOUSE_USERNAME);
-assert.ok(process.env.CLICKHOUSE_DATABASE);
 
 const LOG_LEVELS: LogLevel[] = [
   'fatal',
@@ -207,16 +192,7 @@ export const MONGOHQ_URL =
         process.env.VITEST_WORKER_ID
       )
     : process.env.MONGOHQ_URL;
-export const CLICKHOUSE_URL = process.env.CLICKHOUSE_URL;
-export const CLICKHOUSE_USERNAME = process.env.CLICKHOUSE_USERNAME;
-export const CLICKHOUSE_PASSWORD = process.env.CLICKHOUSE_PASSWORD ?? '';
-export const CLICKHOUSE_DATABASE =
-  process.env.NODE_ENV === 'test'
-    ? createTestClickHouseDatabase(
-        process.env.CLICKHOUSE_DATABASE,
-        process.env.VITEST_WORKER_ID
-      )
-    : process.env.CLICKHOUSE_DATABASE;
+export const CLICKHOUSE_CONFIG = readClickHouseConfiguration(process.env);
 
 export const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
