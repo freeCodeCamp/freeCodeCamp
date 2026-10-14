@@ -7,7 +7,7 @@ dashedName: what-is-the-stream-module-and-how-does-it-work
 
 # --description--
 
-## What Is the Stream Module?
+## What is the Stream Module?
 
 The last core Node.js module we'll look at is `stream`. This module helps you handle data efficiently, especially when the data is too large to load all at once, like reading a big text file or downloading a large video.
 
@@ -34,7 +34,7 @@ Most of the time, you don't need to create custom stream classes yourself. For e
 
 These two methods take the path of the file to read or write. This means you also need the `fs` and `path` modules to implement streaming on many occasions.
 
-## Reading Data with a Readable Stream
+## Reading Data With a Readable Stream
 
 Here's how you can read data from a file, say an `input.txt` file:
 
@@ -103,7 +103,7 @@ eaque doloribus assumenda, minima fuga tempore, porro, debitis rem harum in
 */
 ```
 
-## Writing Data with a Writable Stream
+## Writing Data With a Writable Stream
 
 To implement a writable stream, particularly when you're reading from one file and writing to another, you need to create the read stream first, followed by the write stream:
 
@@ -121,7 +121,7 @@ const readInputFileStream = fs.createReadStream(inputFilePath);
 const writeOutputFileStream = fs.createWriteStream(outputFilePath);
 ```
 
-## Connecting Streams with pipe()
+## Connecting Streams With `pipe()`
 
 Next, use the `.pipe()` method to connect the readable stream to the writable stream. This lets Node.js automatically read data from the source and write it to the destination, chunk by chunk:
 
@@ -142,7 +142,7 @@ const writeOutputFileStream = fs.createWriteStream(outputFilePath);
 readInputFileStream.pipe(writeOutputFileStream);
 ```
 
-## Handling the finish and error Events
+## Handling the `finish` and `error` Events
 
 Then you can listen for the `finish` and `error` events on the writable stream to know when the streaming is complete or if something goes wrong:
 
