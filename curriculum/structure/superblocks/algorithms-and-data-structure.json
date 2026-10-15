@@ -36,6 +36,7 @@
             "workshop-merge-sort",
             "lab-quicksort",
             "lab-selection-sort",
+            "workshop-luhn-algorithm",
             "lab-luhn-algorithm",
             "review-searching-and-sorting-algorithms",
             "quiz-searching-and-sorting-algorithms"
