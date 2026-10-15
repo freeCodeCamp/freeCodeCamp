@@ -209,8 +209,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       js-yaml:
-        specifier: 3.14.2
-        version: 3.14.2
+        specifier: 3.15.2
+        version: 3.15.2
       lint-staged:
         specifier: ^16.4.0
         version: 16.4.0
@@ -1159,8 +1159,8 @@ importers:
         specifier: 7.1.3
         version: 7.1.3
       js-yaml:
-        specifier: 3.14.2
-        version: 3.14.2
+        specifier: 3.15.2
+        version: 3.15.2
       lodash:
         specifier: 4.18.1
         version: 4.18.1
