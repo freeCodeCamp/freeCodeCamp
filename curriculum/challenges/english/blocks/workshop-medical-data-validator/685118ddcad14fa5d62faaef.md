@@ -31,7 +31,9 @@ _target = _Node(_code).find_function("find_invalid_records").find_variable("cons
 _keys = [k.value for k in _target.keys]
 _index = _keys.index('diagnosis')
 _val = _target.values[_index]
-_Node(_val).is_equivalent("isinstance(diagnosis, str) or diagnosis is None")
+_first = "isinstance(diagnosis, str) or diagnosis is None"
+_second = "diagnosis is None or isinstance(diagnosis, str)"
+_Node(_val).is_equivalent(_first) or _Node(_val).is_equivalent(_second)
 `)) })
 ```
 
