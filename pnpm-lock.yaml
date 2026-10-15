@@ -447,8 +447,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/challenge-builder
       '@freecodecamp/ui':
-        specifier: 6.0.1
-        version: 6.0.1(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.1.0
+        version: 6.1.0(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@gatsbyjs/reach-router':
         specifier: 1.3.9
         version: 1.3.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3187,8 +3187,8 @@ packages:
   '@freecodecamp/loop-protect@3.0.0':
     resolution: {integrity: sha512-5zIULL5pm7Ylkk2dPq1f/4KJTAV5KQZEAFQg/qFj0t18EBSNO3fjn3HdfE1sPocXhXom3DVvZO3Rl2sqifMFYQ==}
 
-  '@freecodecamp/ui@6.0.1':
-    resolution: {integrity: sha512-BzW4knDV7zzfRJbO7k0Pen9tOV+Npl9b07XjlH+CXOgH+Dapj745E8OBoZ1DiQvVMSdbewexDLfWQzb2AsHQaw==}
+  '@freecodecamp/ui@6.1.0':
+    resolution: {integrity: sha512-EXIOk762EP18onNOtLxujfmZbpUN1vuSzEQp5Tq4jciNp2a+kRUDdxQxK5YidsqGKW/ELjbQxAXtXVV5IORIdQ==}
     engines: {node: '>=24', pnpm: '>=10'}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
@@ -7165,6 +7165,9 @@ packages:
   dompurify@3.2.7:
     resolution: {integrity: sha512-WhL/YuveyGXJaerVlMYGWhvQswa7myDG17P7Vu65EWC05o8vfeNbvNf4d/BOvH99+ZW+LlQsc1GDKMa1vNK6dw==}
 
+  dompurify@3.4.7:
+    resolution: {integrity: sha512-2jBxDJY4RR06tQNy4w5FlFH7kfxsQZlufd0sbv+chfHCxeJwrFw2baUDsSwvBISD4K4RDbd0PTfy3uNXsR6siA==}
+
   domutils@2.8.0:
     resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==}
 
@@ -8516,9 +8519,6 @@ packages:
 
   htmlparser2@6.1.0:
     resolution: {integrity: sha512-gyyPk6rgonLFEDGoeRgQNaEUvdJ4ktTmmUh/h2t7s+M8oPpIPxgNACWa+6ESR57kXstwqPiCut0V8NRpcwgU7A==}
-
-  htmlparser2@8.0.2:
-    resolution: {integrity: sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==}
 
   http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
@@ -11554,9 +11554,6 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
-
-  sanitize-html@2.17.0:
-    resolution: {integrity: sha512-dLAADUSS8rBwhaevT12yCezvioCA+bmUTPH/u57xKPT8d++voeYE6HeluA/bPbQ15TwDBG2ii+QZIEmYx8VdxA==}
 
   sanitize-html@2.18.0:
     resolution: {integrity: sha512-CvY+PV+NBhxe3BnjFI5f//vEDKLULm9OlZArso7gdgVsWvanBuq9PNDx+/2llfL+8XFYa/UNBxvqRBg3TWU2Ug==}
@@ -16362,7 +16359,7 @@ snapshots:
 
   '@freecodecamp/loop-protect@3.0.0': {}
 
-  '@freecodecamp/ui@6.0.1(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@freecodecamp/ui@6.1.0(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 7.2.0
       '@fortawesome/free-solid-svg-icons': 7.2.0
@@ -16370,10 +16367,10 @@ snapshots:
       '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-tabs': 1.1.13(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       babel-plugin-prismjs: 2.1.0(prismjs@1.30.0)
+      dompurify: 3.4.7
       prismjs: 1.30.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      sanitize-html: 2.17.0
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -20993,6 +20990,10 @@ snapshots:
     optionalDependencies:
       '@types/trusted-types': 2.0.7
 
+  dompurify@3.4.7:
+    optionalDependencies:
+      '@types/trusted-types': 2.0.7
+
   domutils@2.8.0:
     dependencies:
       dom-serializer: 1.4.1
@@ -23228,13 +23229,6 @@ snapshots:
       domhandler: 4.3.1
       domutils: 2.8.0
       entities: 2.2.0
-
-  htmlparser2@8.0.2:
-    dependencies:
-      domelementtype: 2.3.0
-      domhandler: 5.0.3
-      domutils: 3.2.2
-      entities: 4.5.0
 
   http-cache-semantics@4.1.1: {}
 
@@ -26633,15 +26627,6 @@ snapshots:
   safe-stable-stringify@2.4.3: {}
 
   safer-buffer@2.1.2: {}
-
-  sanitize-html@2.17.0:
-    dependencies:
-      deepmerge: 4.3.1
-      escape-string-regexp: 4.0.0
-      htmlparser2: 8.0.2
-      is-plain-object: 5.0.0
-      parse-srcset: 1.0.2
-      postcss: 8.5.13
 
   sanitize-html@2.18.0:
     dependencies:
