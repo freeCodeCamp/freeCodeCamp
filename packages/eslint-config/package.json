@@ -9,8 +9,8 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "@babel/eslint-parser": "7.26.5",
-    "@babel/preset-react": "7.26.3",
+    "@babel/eslint-parser": "7.29.9",
+    "@babel/preset-react": "7.29.7",
     "@eslint/compat": "1.4.1",
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "9.39.5",
@@ -29,6 +29,6 @@
     "eslint-plugin-testing-library": "7.16.2",
     "eslint-plugin-turbo": "2.11.7",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.71.0"
+    "typescript-eslint": "8.71.1"
   }
 }

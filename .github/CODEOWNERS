@@ -38,3 +38,5 @@
 /client/src/redux/prop-types.ts @freeCodeCamp/dev-team @freeCodeCamp/mobile
 /client/tools/external-curriculum/* @freeCodeCamp/dev-team @freeCodeCamp/mobile
 /curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/renovate.json @freecodecamp/package-approvers
+/.github/CODEOWNERS @freecodecamp/package-approvers

@@ -1699,7 +1699,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
@@ -3034,6 +3034,13 @@
         "title": "Debugging Techniques",
         "intro": [
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
+        ]
+      },
+      "workshop-library-search": {
+        "title": "Build a Library Book Search",
+        "intro": [
+          "In this workshop, you will practice handling errors gracefully in JavaScript.",
+          "You will build a Library Book Search application and use <code>try...catch...finally</code> blocks, along with the <code>throw</code> statement, to catch and manage custom errors."
         ]
       },
       "lab-random-background-color-changer": {
@@ -6661,7 +6668,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
@@ -10653,7 +10660,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
@@ -11009,14 +11016,13 @@
       }
     }
   },
-
   "front-end-development": {
     "title": "Front-End Web Development with HTML, CSS, and Javascript Certification",
     "intro": [
       "Complete the required projects and pass the exam to earn the Front-End Web Development with HTML, CSS, and JavaScript Certification."
     ],
     "chapters": {
-      "front-end-web-development": "Front-End Web Development with HTML, CSS, and JavaScript"
+      "front-end-development": "Front-End Web Development with HTML, CSS, and JavaScript"
     },
     "modules": {
       "html": "HTML"
@@ -11086,7 +11092,7 @@
           "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
         ]
       },
-      "lab-survey-form": {
+      "lab-survey-form-v2": {
         "title": "Build a Survey Form",
         "intro": [
           "In this lab, you'll review HTML forms by creating a survey form.",
@@ -11097,6 +11103,19 @@
         "title": "Build a Final Exams Table",
         "intro": [
           "In this workshop, you will practice working with HTML tables by building a table of final exams."
+        ]
+      },
+      "review-html-v2": {
+        "title": "HTML Review",
+        "intro": [
+          "Before you take the HTML quiz, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
+        ]
+      },
+      "quiz-html": {
+        "title": "HTML Quiz",
+        "intro": [
+          "The following quiz will test your knowledge of the HTML concepts you have learned so far."
         ]
       }
     }
