@@ -88,7 +88,7 @@
     "globals": "^15.14.0",
     "husky": "9.1.7",
     "identity-obj-proxy": "^3.0.0",
-    "js-yaml": "3.14.2",
+    "js-yaml": "3.15.2",
     "lint-staged": "^16.4.0",
     "lodash": "4.18.1",
     "npm-run-all2": "5.0.2",
