@@ -10,8 +10,8 @@
             "lecture-searching-and-sorting-algorithms-v2",
             "workshop-binary-search",
             "lab-selection-sort",
-            "review-searching-and-sorting-algorithms",
-            "quiz-searching-and-sorting-algorithms"
+            "review-python-algorithms",
+            "quiz-python-algorithms"
           ]
         },
         {
@@ -24,8 +24,8 @@
           "blocks": [
             "lecture-working-with-common-data-structures-v2",
             "workshop-linked-list-class",
-            "review-data-structures",
-            "quiz-data-structures"
+            "review-linear-data-structures",
+            "quiz-linear-data-structures"
           ]
         },
         {
