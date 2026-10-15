@@ -94,7 +94,7 @@
     "npm-run-all2": "5.0.2",
     "prettier": "3.8.2",
     "stylelint": "16.26.1",
-    "tsx": "4.21.0",
+    "tsx": "4.23.15",
     "turbo": "2.10.0",
     "typescript": "5.9.3",
     "webpack-bundle-analyzer": "4.10.2",
