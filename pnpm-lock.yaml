@@ -459,8 +459,8 @@ importers:
         specifier: 5.16.7
         version: 5.16.7(react@18.3.1)
       '@paypal/react-paypal-js':
-        specifier: 10.3.0
-        version: 10.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 10.6.0
+        version: 10.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@redux-devtools/extension':
         specifier: 3.3.0
         version: 3.3.0(redux@4.2.1)
@@ -4022,11 +4022,11 @@ packages:
     peerDependencies:
       '@parcel/core': ^2.8.3
 
-  '@paypal/paypal-js@10.1.0':
-    resolution: {integrity: sha512-OolzHD7lu2K03HApg+YyMtBsPnrVc+ASj1MzuH/mz7feHj5OnxYyLWQiCcCm4douJFJ6P19JW8+LzsAN4x3jHw==}
+  '@paypal/paypal-js@11.2.1':
+    resolution: {integrity: sha512-Oi9JAxXOZrTpPWvJtlf98r76AvjIsn5kud7ZgqaqCL0JUOS3rqNzCbPmmWt9eg9Gw0qMf3KpVX+sEusQGe09pw==}
 
-  '@paypal/react-paypal-js@10.3.0':
-    resolution: {integrity: sha512-7hSrJU0TRmyEuilrsDxGTjT9SaY5ll1CZv4cnCHFwIZ8pC5U0fPHeq1iuGERCg1XBFvOWtg7FcH1DIkHXZ6W5g==}
+  '@paypal/react-paypal-js@10.6.0':
+    resolution: {integrity: sha512-oBf/5EsmHTvNho8U25z/SJkU82eGoWEfogVHBd7K0Bf91hOPuM9brx3bwbP87j+45/M/S91SyVTavEKpBKxWVA==}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
       react-dom: ^16.8.0 || ^17 || ^18 || ^19
@@ -17327,13 +17327,13 @@ snapshots:
       chrome-trace-event: 1.0.4
       nullthrows: 1.1.1
 
-  '@paypal/paypal-js@10.1.0':
+  '@paypal/paypal-js@11.2.1':
     dependencies:
       promise-polyfill: 8.3.0
 
-  '@paypal/react-paypal-js@10.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@paypal/react-paypal-js@10.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@paypal/paypal-js': 10.1.0
+      '@paypal/paypal-js': 11.2.1
       '@paypal/sdk-constants': 1.0.158
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
