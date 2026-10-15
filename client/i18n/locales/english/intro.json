@@ -10915,7 +10915,7 @@
         ]
       },
       "workshop-luhn-algorithm": {
-        "title": "Build a Luhn Algorithm Validator",
+        "title": "Implement the Luhn Algorithm",
         "intro": [
           "The Luhn algorithm is used to check identification numbers, such as credit card numbers.",
           "In this workshop, you will build a validator using numerical computations and string manipulation."
