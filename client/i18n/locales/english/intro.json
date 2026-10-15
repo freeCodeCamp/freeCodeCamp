@@ -1699,7 +1699,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
@@ -3034,6 +3034,13 @@
         "title": "Debugging Techniques",
         "intro": [
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
+        ]
+      },
+      "workshop-library-search": {
+        "title": "Build a Library Book Search",
+        "intro": [
+          "In this workshop, you will practice handling errors gracefully in JavaScript.",
+          "You will build a Library Book Search application and use <code>try...catch...finally</code> blocks, along with the <code>throw</code> statement, to catch and manage custom errors."
         ]
       },
       "lab-random-background-color-changer": {
@@ -6661,7 +6668,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
@@ -10653,7 +10660,7 @@
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
         "intro": [
-          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+          "In this lab, you will debug an ISBN validator by fixing errors in the provided Python code."
         ]
       },
       "review-error-handling": {
