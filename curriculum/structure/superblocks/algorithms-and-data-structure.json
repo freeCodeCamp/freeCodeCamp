@@ -4,9 +4,25 @@
       "dashedName": "algorithms-and-data-structure",
       "modules": [
         {
+          "dashedName": "python-algorithms",
+          "blocks": [
+            "lecture-understanding-algorithms-and-big-o",
+            "lecture-searching-and-sorting-algorithms-v2",
+            "workshop-binary-search",
+            "lab-selection-sort",
+            "review-searching-and-sorting-algorithms",
+            "quiz-searching-and-sorting-algorithms"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-bisection-method",
+          "blocks": ["lab-bisection-method"]
+        },
+        {
           "dashedName": "python-linear-data-structures",
           "blocks": [
-            "lecture-working-with-common-data-structures",
+            "lecture-working-with-common-data-structures-v2",
             "workshop-linked-list-class",
             "review-data-structures",
             "quiz-data-structures"
@@ -14,8 +30,9 @@
         },
         {
           "moduleType": "cert-project",
-          "dashedName": "lab-hash-table",
-          "blocks": ["lab-hash-table"]
+          "dashedName": "lab-circular-queue",
+          "comingSoon": true,
+          "blocks": ["lab-circular-queue"]
         },
         {
           "dashedName": "python-recursion",
@@ -23,22 +40,11 @@
             "lecture-understanding-recursion-and-the-call-stack-python",
             "workshop-countup-python",
             "lab-range-of-numbers-python",
-            "review-recursion-python",
-            "quiz-recursion-python"
-          ]
-        },
-        {
-          "dashedName": "python-algorithms",
-          "blocks": [
-            "lecture-searching-and-sorting-algorithms",
-            "workshop-binary-search",
-            "lab-bisection-method",
+            "lecture-understanding-divide-and-conquer",
             "workshop-merge-sort",
             "lab-quicksort",
-            "lab-selection-sort",
-            "lab-luhn-algorithm",
-            "review-searching-and-sorting-algorithms",
-            "quiz-searching-and-sorting-algorithms"
+            "review-recursion-python",
+            "quiz-recursion-python"
           ]
         },
         {
@@ -47,17 +53,26 @@
           "blocks": ["lab-tower-of-hanoi"]
         },
         {
-          "dashedName": "python-graphs-and-trees",
+          "dashedName": "non-linear-data-structures",
           "blocks": [
-            "lecture-understanding-graphs-and-trees",
-            "workshop-shortest-path-algorithm",
+            "lecture-working-with-hash-maps-and-sets",
+            "lab-hash-table",
+            "lecture-understanding-graphs",
             "lab-adjacency-list-to-matrix-converter",
-            "workshop-breadth-first-search",
             "lab-depth-first-search",
+            "workshop-shortest-path-algorithm",
             "lab-n-queens-problem",
-            "review-graphs-and-trees",
-            "quiz-graphs-and-trees"
+            "lecture-understanding-trees-and-tries",
+            "lecture-understanding-priority-queues-and-heaps",
+            "review-non-linear-data-structures",
+            "quiz-non-linear-data-structures"
           ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-paint-bucket-tool",
+          "comingSoon": true,
+          "blocks": ["lab-paint-bucket-tool"]
         },
         {
           "dashedName": "python-dynamic-programming",
@@ -67,6 +82,12 @@
             "review-dynamic-programming",
             "quiz-dynamic-programming"
           ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-knapsack-algorithm",
+          "comingSoon": true,
+          "blocks": ["lab-knapsack-algorithm"]
         },
         {
           "moduleType": "review",
