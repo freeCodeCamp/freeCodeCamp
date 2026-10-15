@@ -79,7 +79,7 @@
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
-    "@playwright/test": "1.63.0",
+    "@playwright/test": "1.64.0",
     "@testing-library/dom": "10.4.2",
     "@testing-library/jest-dom": "6.9.1",
     "@types/lodash": "4.17.24",
@@ -94,11 +94,11 @@
     "npm-run-all2": "5.0.2",
     "prettier": "3.8.2",
     "stylelint": "16.26.1",
-    "tsx": "4.21.0",
-    "turbo": "2.10.0",
+    "tsx": "4.23.15",
+    "turbo": "2.11.7",
     "typescript": "5.9.3",
     "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@12.9.1"
+  "packageManager": "pnpm@12.10.1"
 }
