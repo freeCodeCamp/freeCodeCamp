@@ -1,0 +1,14 @@
+{
+  "blockLabel": "cert-project",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-page-of-playing-cards",
+  "challengeOrder": [
+    {
+      "id": "66be24cb4144f955b6bcc550",
+      "title": "Build a Page of Playing Cards"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
