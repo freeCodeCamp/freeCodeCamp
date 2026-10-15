@@ -10806,7 +10806,7 @@
       "lab-paint-bucket-tool": "Build a Paint Bucket Tool",
       "python-dynamic-programming": "Dynamic Programming",
       "lab-knapsack-algorithm": "Implement the Knapsack Algorithm",
-      "review-python": "Python Review"
+      "review-python-algorithms-and-data-structures": "Algorithms and Data Structures Review"
     },
     "module-intros": {
       "lab-circular-queue": {
@@ -11065,9 +11065,11 @@
           "In this lab, you will use dynamic programming to solve the knapsack problem."
         ]
       },
-      "review-python": {
-        "title": "Python Review",
-        "intro": ["Review Python concepts to prepare for the upcoming exam."]
+      "review-python-algorithms-and-data-structures": {
+        "title": "Algorithms and Data Structures Review",
+        "intro": [
+          "Review algorithms and data structures concepts to prepare for the upcoming exam."
+        ]
       }
     }
   },
