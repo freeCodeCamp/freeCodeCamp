@@ -110,6 +110,13 @@ export function CompletionModal({
     };
   }, [close]);
 
+  // Release the download URL when it is replaced or when the modal unmounts.
+  useEffect(() => {
+    return () => {
+      if (downloadURL) URL.revokeObjectURL(downloadURL);
+    };
+  }, [downloadURL]);
+
   useEffect(() => {
     if (isOpen) {
       callGA({ event: 'pageview', pagePath: '/completion-modal' });
