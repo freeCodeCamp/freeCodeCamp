@@ -55,7 +55,7 @@
     "@freecodecamp/challenge-builder": "workspace:*",
     "@freecodecamp/ui": "6.1.0",
     "@gatsbyjs/reach-router": "1.3.9",
-    "@growthbook/growthbook-react": "1.6.5",
+    "@growthbook/growthbook-react": "1.8.0",
     "@loadable/component": "5.16.7",
     "@paypal/react-paypal-js": "10.6.0",
     "@redux-devtools/extension": "3.3.0",
