@@ -10786,14 +10786,14 @@
       }
     }
   },
-  "algorithms-and-data-structure": {
-    "title": "Algorithms and Data Structure Certification",
+  "algorithms-and-data-structures": {
+    "title": "Algorithms and Data Structures Certification",
     "intro": [
       "This course covers data structures and algorithms in Python.",
-      "Complete the required projects and pass the exam to earn the Algorithms and Data Structure Certification."
+      "Complete the required projects and pass the exam to earn the Algorithms and Data Structures Certification."
     ],
     "chapters": {
-      "algorithms-and-data-structure": "Algorithms and Data Structure"
+      "algorithms-and-data-structures": "Algorithms and Data Structures"
     },
     "modules": {
       "python-algorithms": "Algorithms",
