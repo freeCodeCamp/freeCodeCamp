@@ -11267,7 +11267,7 @@
         ]
       },
       "lecture-understanding-positioning-in-css": {
-        "title": "Understanding How to Work with Floats and Positioning in CSS",
+        "title": "Understanding Positioning in CSS",
         "intro": [
           "In these lectures, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
         ]
