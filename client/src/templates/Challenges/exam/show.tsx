@@ -374,7 +374,12 @@ function ShowExam(props: ShowExamProps) {
     t
   } = props;
 
-  let timerInterval: NodeJS.Timeout;
+  const timerIntervalRef = useRef<ReturnType<typeof setInterval>>();
+
+  // Stop the timer if the exam view unmounts while it is still running.
+  useEffect(() => {
+    return () => clearInterval(timerIntervalRef.current);
+  }, []);
 
   const container = useRef<HTMLElement>(null);
 
@@ -469,7 +474,7 @@ function ShowExam(props: ShowExamProps) {
       setGeneratedExamQuestions(generatedExam);
       setUserExamQuestions(emptyUserExamQuestions);
 
-      timerInterval = setInterval(() => {
+      timerIntervalRef.current = setInterval(() => {
         setExamTimeInSeconds(t => t + 1);
       }, 1000);
 
@@ -493,7 +498,7 @@ function ShowExam(props: ShowExamProps) {
   };
 
   const cleanUp = () => {
-    clearInterval(timerInterval);
+    clearInterval(timerIntervalRef.current);
 
     setExamTimeInSeconds(0);
 
