@@ -54,7 +54,9 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
 
         const userUpdatePromises = unsubUsers.map(user =>
           fastify.prisma.user.updateMany({
-            where: { email: user.email },
+            // A null email matches every other null-email user, so target the
+            // account itself in that case.
+            where: user.email ? { email: user.email } : { id: user.id },
             data: {
               sendQuincyEmail: false
             }

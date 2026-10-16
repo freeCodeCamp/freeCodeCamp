@@ -216,6 +216,45 @@ describe('Email Subscription endpoints', () => {
         }
       });
     });
+
+    test('only unsubscribes the matched account when it has no email', async () => {
+      // Prisma matches `email: null` against every null-email row, so the
+      // unsubscribe must target this account alone.
+      await fastifyTestInstance.prisma.user.createMany({
+        data: [
+          {
+            ...createUserInput('null-email-a@freecodecamp.org'),
+            email: null,
+            unsubscribeId: 'nullemaila',
+            sendQuincyEmail: true
+          },
+          {
+            ...createUserInput('null-email-b@freecodecamp.org'),
+            email: null,
+            unsubscribeId: 'nullemailb',
+            sendQuincyEmail: true
+          }
+        ]
+      });
+
+      const response = await superRequest('/ue/nullemaila', {
+        method: 'GET'
+      });
+      const users = await fastifyTestInstance.prisma.user.findMany({
+        where: { unsubscribeId: { in: ['nullemaila', 'nullemailb'] } },
+        orderBy: { unsubscribeId: 'asc' }
+      });
+
+      expect(response.statusCode).toBe(302);
+      expect(users.map(user => user.sendQuincyEmail)).toStrictEqual([
+        false,
+        true
+      ]);
+
+      await fastifyTestInstance.prisma.user.deleteMany({
+        where: { unsubscribeId: { in: ['nullemaila', 'nullemailb'] } }
+      });
+    });
   });
 
   describe('GET /resubscribe/:unsubscribeId', () => {
