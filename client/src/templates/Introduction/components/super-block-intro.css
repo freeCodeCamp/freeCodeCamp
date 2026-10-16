@@ -1,0 +1,13 @@
+.super-block-intro-callout hr {
+  border-top-color: var(--blue10);
+}
+
+.super-block-intro-callout .donate-button {
+  background-color: transparent;
+  color: #31708f;
+  border-color: #31708f;
+}
+
+.super-block-intro-callout .btn-container {
+  text-align: center;
+}

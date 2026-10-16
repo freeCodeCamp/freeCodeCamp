@@ -22,8 +22,6 @@ export const cookieUpdate: FastifyPluginCallback<Options> = (
   done
 ) => {
   fastify.addHook('onSend', (request, reply, _payload, next) => {
-    const logger = fastify.log.child({ request });
-
     for (const cookie of options.cookies) {
       const oldCookie = request.cookies[cookie];
       if (!oldCookie) continue;
@@ -33,7 +31,7 @@ export const cookieUpdate: FastifyPluginCallback<Options> = (
       void reply.setCookie(cookie, raw, options.attributes);
     }
 
-    logger.trace(`Updated cookies for user ${request.user?.id}.`);
+    request.log.trace('Updated cookies');
 
     next();
   });

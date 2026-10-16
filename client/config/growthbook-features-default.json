@@ -11,9 +11,6 @@
   "rdb-local-instructions": {
     "defaultValue": true
   },
-  "rdb-ona-instructions": {
-    "defaultValue": true
-  },
   "landing-top-skill-focused": {
     "defaultValue": false,
     "rules": [
@@ -142,7 +139,13 @@
       }
     ]
   },
+  "classroom-mode": {
+    "defaultValue": false
+  },
   "disabled_blocks": {
     "defaultValue": []
+  },
+  "show-socrates": {
+    "defaultValue": false
   }
 }

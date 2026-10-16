@@ -4,25 +4,28 @@ import { Spacer } from '@freecodecamp/ui';
 import store from 'store';
 
 import PrismFormatted from './prism-formatted';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
 import './challenge-transcript.css';
 
 interface ChallengeTranscriptProps {
   transcript: string;
   shouldPersistExpanded?: boolean;
   isDialogue?: boolean;
+  superBlock?: string;
 }
 
 function ChallengeTranscript({
   transcript,
   shouldPersistExpanded,
-  isDialogue
+  isDialogue,
+  superBlock
 }: ChallengeTranscriptProps): JSX.Element {
   const { t } = useTranslation();
 
   // default to collapsed
   const [isOpen, setIsOpen] = useState(() =>
     shouldPersistExpanded
-      ? (store.get('fcc-transcript-expanded') as boolean | null) ?? false
+      ? ((store.get('fcc-transcript-expanded') as boolean | null) ?? false)
       : false
   );
 
@@ -53,9 +56,14 @@ function ChallengeTranscript({
           <div
             className='transcript-dialogue'
             dangerouslySetInnerHTML={{ __html: transcript }}
+            {...getChallengeContentLangProps(superBlock)}
           />
         ) : (
-          <PrismFormatted className='line-numbers' text={transcript} />
+          <PrismFormatted
+            className='line-numbers'
+            text={transcript}
+            {...getChallengeContentLangProps(superBlock)}
+          />
         )}
       </details>
       <Spacer size='m' />

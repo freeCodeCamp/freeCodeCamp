@@ -45,7 +45,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
   render(): JSX.Element {
     const { challengeType, description, t } = this.props;
 
-    // back end challenges and front end projects use a single form field
+    // back end challenges and frontend projects use a single form field
     const solutionField = [
       { name: 'solution', label: t('learn.solution-link') }
     ];
@@ -105,6 +105,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
         break;
 
       case challengeTypes.codeAllyCert:
+      case challengeTypes.freeCodeCampOsCert:
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink = solutionLink + 'https://your-git-repo.url/files';

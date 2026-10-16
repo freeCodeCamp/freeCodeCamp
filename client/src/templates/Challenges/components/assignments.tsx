@@ -4,6 +4,7 @@ import { Spacer } from '@freecodecamp/ui';
 
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
 
 import './assignments.css';
 
@@ -14,14 +15,17 @@ type AssignmentsProps = {
     event: React.ChangeEvent<HTMLInputElement>,
     totalAssignments: number
   ) => void;
+  superBlock?: string;
 };
 
 function Assignments({
   assignments,
   allAssignmentsCompleted,
-  handleAssignmentChange
+  handleAssignmentChange,
+  superBlock
 }: AssignmentsProps): JSX.Element {
   const { t } = useTranslation();
+  const contentLangProps = getChallengeContentLangProps(superBlock);
   return (
     <>
       <ChallengeHeading
@@ -37,7 +41,11 @@ function Assignments({
                 handleAssignmentChange(event, assignments.length)
               }
             />
-            <PrismFormatted className={'video-quiz-option'} text={assignment} />
+            <PrismFormatted
+              className={'video-quiz-option'}
+              text={assignment}
+              {...contentLangProps}
+            />
             <Spacer size='m' />
           </label>
         ))}

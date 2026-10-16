@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "en-a2-quiz-discussing-new-ideas",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69603327a10266c239ab29b3",
+      "title": "Tech Updates and Trends Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

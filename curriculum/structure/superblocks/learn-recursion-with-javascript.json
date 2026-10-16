@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    "lecture-understanding-recursion-and-the-call-stack",
+    "workshop-countup",
+    "lab-countdown",
+    "lab-range-of-numbers",
+    "workshop-decimal-to-binary-converter",
+    "lab-permutation-generator",
+    "review-recursion",
+    "quiz-recursion"
+  ]
+}

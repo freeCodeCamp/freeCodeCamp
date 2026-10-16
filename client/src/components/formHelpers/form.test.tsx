@@ -21,6 +21,16 @@ const defaultTestProps: StrictSolutionFormProps = {
   submit: () => undefined
 };
 
+const solutionLinkField = {
+  name: 'solution',
+  label: 'learn.solution-link'
+};
+
+const githubLinkField = {
+  name: 'githubLink',
+  label: 'learn.source-code-link'
+};
+
 describe('<StrictSolutionForm />', () => {
   test('should render', () => {
     render(<StrictSolutionForm {...defaultTestProps} />);
@@ -87,5 +97,79 @@ describe('<StrictSolutionForm />', () => {
     expect((submit.mock.calls[1] as unknown[])[0]).toEqual(
       expect.objectContaining({ values: { website: websiteValue } })
     );
+  });
+
+  test('renders only the solution link when the source code link is ignored', () => {
+    render(
+      <StrictSolutionForm
+        buttonText='learn.i-completed'
+        formFields={[solutionLinkField, githubLinkField]}
+        id='solution-link-only'
+        options={{
+          ignored: ['githubLink'],
+          types: {
+            solution: 'url',
+            githubLink: 'url'
+          }
+        }}
+        submit={() => undefined}
+      />
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'learn.i-completed' })
+    ).toHaveAttribute('aria-disabled', 'true');
+    expect(screen.getByLabelText('learn.solution-link')).toBeInTheDocument();
+    expect(
+      screen.queryByLabelText('learn.source-code-link')
+    ).not.toBeInTheDocument();
+
+    fireEvent.change(screen.getByLabelText('learn.solution-link'), {
+      target: { value: 'https://example.com/solution' }
+    });
+
+    expect(
+      screen.getByRole('button', { name: 'learn.i-completed' })
+    ).toBeEnabled();
+  });
+
+  test('renders solution and source code link fields', () => {
+    render(
+      <StrictSolutionForm
+        buttonText='learn.i-completed'
+        formFields={[solutionLinkField, githubLinkField]}
+        id='solution-and-source-code-links'
+        options={{
+          types: {
+            solution: 'url',
+            githubLink: 'url'
+          }
+        }}
+        submit={() => undefined}
+      />
+    );
+
+    const submitButton = screen.getByRole('button', {
+      name: 'learn.i-completed'
+    });
+    const solutionLink = screen.getByLabelText('learn.solution-link');
+    const githubLink = screen.getByLabelText('learn.source-code-link');
+
+    expect(submitButton).toHaveAttribute('aria-disabled', 'true');
+    expect(solutionLink).toBeInTheDocument();
+    expect(githubLink).toBeInTheDocument();
+
+    fireEvent.change(solutionLink, {
+      target: { value: 'https://example.com/solution' }
+    });
+    expect(submitButton).toBeEnabled();
+
+    fireEvent.change(solutionLink, { target: { value: '' } });
+    expect(submitButton).toHaveAttribute('aria-disabled', 'true');
+
+    fireEvent.change(githubLink, {
+      target: { value: 'https://github.com/freeCodeCamp/freeCodeCamp' }
+    });
+    expect(submitButton).toBeEnabled();
   });
 });

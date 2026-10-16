@@ -107,7 +107,7 @@ function plugin() {
           }
         }
 
-        return { sentence, blanks, ...(inputType && { inputType }) };
+        return { sentence, blanks };
       }
 
       function getBlanks(blanksNodes) {

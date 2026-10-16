@@ -2,21 +2,22 @@ import { createSelector } from 'reselect';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   completedChallengesSelector,
-  allChallengesInfoSelector,
   isSignedInSelector,
   completionStateSelector,
   completedChallengesIdsSelector,
   completedDailyCodingChallengesIdsSelector
 } from '../../../redux/selectors';
+import { curriculumData } from '../../../services/curriculum-data';
 import {
-  getCurrentBlockIds,
   getCompletedChallengesInBlock,
-  getCompletedPercentage
+  getCompletedPercentage,
+  getCurrentBlockIds
 } from '../../../utils/get-completion-percentage';
 import { ns } from './action-types';
 
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
+export const socratesHintStateSelector = state => state[ns].socratesHintState;
 export const challengeHooksSelector = state => state[ns].challengeHooks;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => {
@@ -51,6 +52,8 @@ export const isFinishQuizModalOpenSelector = state =>
   state[ns].modal.finishQuiz;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
+export const isProjectPreviewLoadingSelector = state =>
+  state[ns].isProjectPreviewLoading;
 export const isShortcutsModalOpenSelector = state => state[ns].modal.shortcuts;
 export const isSpeakingModalOpenSelector = state => state[ns].modal.speaking;
 export const isSubmittingSelector = state => state[ns].isSubmitting;
@@ -120,9 +123,12 @@ export const challengeDataSelector = state => {
 
 export const currentBlockIdsSelector = createSelector(
   challengeMetaSelector,
-  allChallengesInfoSelector,
-  (challengeMeta, allChallengesInfo) => {
+  challengeMeta => {
     const { block, certification, challengeType } = challengeMeta;
+    const allChallengesInfo = {
+      challengeNodes: curriculumData.challengeNodes,
+      certificateNodes: curriculumData.certificateNodes
+    };
 
     return getCurrentBlockIds(
       allChallengesInfo,

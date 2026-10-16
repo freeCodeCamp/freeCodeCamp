@@ -1,0 +1,54 @@
+---
+id: 6999faf886634b72be7a819b
+title: Step 2
+challengeType: 1
+dashedName: step-2
+---
+
+# --description--
+
+For this wildlife tracker, you will update an object with new properties.
+
+Here is an example of creating an object with a property:
+
+```js
+const animal = {
+  name: "Lion" // property: value
+};
+```
+
+Now update the `tiger` object so it includes a property called `species`.
+
+Set its value to `"Tiger"`.
+
+# --hints--
+
+`tiger` should be an object.
+
+```js
+assert.isObject(tiger);
+```
+
+`tiger` should have a `species` property.
+
+```js
+assert.property(tiger, "species");
+```
+
+`tiger.species` should be equal to `"Tiger"`.
+
+```js
+assert.propertyVal(tiger, "species", "Tiger");
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+const tiger = {
+--fcc-editable-region--
+  
+--fcc-editable-region--
+};
+```

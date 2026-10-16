@@ -27,6 +27,17 @@ describe('<Intro />', () => {
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 
+  it('does not mount the email sign-up alert when logged out', () => {
+    renderWithRedux(<Intro {...loggedOutProps} />);
+    expect(screen.queryByText('misc.email-blast')).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'buttons.yes-please' })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'buttons.no-thanks' })
+    ).not.toBeInTheDocument();
+  });
+
   it('has a blockquote when loggedIn', () => {
     // Provide a minimal preloaded state so connected components expecting a
     // sessionUser (e.g. EmailSignUpAlert) do not receive null.

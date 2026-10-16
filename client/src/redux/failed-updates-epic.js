@@ -53,7 +53,7 @@ function failedUpdateEpic(action$, state$) {
 
       let submitableFailures = failures.filter(isSubmitable);
 
-      // delete unsubmitable failed challenges
+      // delete unsubmittable failed challenges
       store.set(key, submitableFailures);
       failures = submitableFailures;
 

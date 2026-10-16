@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Spacer } from '@freecodecamp/ui';
+import { IfFeatureEnabled } from '@growthbook/growthbook-react';
 import store from 'store';
 import { scroller, Element as ScrollElement } from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader } from '../components/helpers';
+import { FullWidthRow, Loader } from '../components/helpers';
 import Certification from '../components/settings/certification';
 import Account from '../components/settings/account';
 import DangerZone from '../components/settings/danger-zone';
@@ -19,6 +20,8 @@ import Privacy from '../components/settings/privacy';
 import UserToken from '../components/settings/user-token';
 import ExamToken from '../components/settings/exam-token';
 import SettingsSidebarNav from '../components/settings/settings-sidebar-nav';
+import About from '../components/profile/components/about';
+import ClassroomMode from '../components/settings/classroom-mode';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
@@ -28,6 +31,7 @@ import {
 import type { User } from '../redux/prop-types';
 import {
   submitNewAbout,
+  updateMyClassroomMode,
   updateMyHonesty,
   updateMyQuincyEmail,
   updateMySound,
@@ -48,6 +52,7 @@ type ShowSettingsProps = {
   toggleSoundMode: (sound: boolean) => void;
   resetEditorLayout: () => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
+  updateIsClassroomAccount: () => void;
   updateIsHonest: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User | null;
@@ -74,6 +79,8 @@ const mapDispatchToProps = {
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
+  updateIsClassroomAccount: () =>
+    updateMyClassroomMode({ isClassroomAccount: true }),
   updateIsHonest: updateMyHonesty,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
@@ -92,13 +99,15 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate,
     showLoading,
     updateQuincyEmail,
+    updateIsClassroomAccount,
     updateIsHonest,
     verifyCert,
     userToken
   } = props;
 
-  const handleHashChange = () => {
-    const id = window.location.hash.replace('#', '');
+  const handleHashChange = (event?: HashChangeEvent) => {
+    const hash = event ? new URL(event.newURL).hash : window.location.hash;
+    const id = hash.replace('#', '');
     if (id) {
       scroller.scrollTo(id, {
         smooth: true,
@@ -158,10 +167,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isA2ChineseCert,
     isA1ChineseCert,
     isEmailVerified,
+    isClassroomAccount,
     isHonest,
     sendQuincyEmail,
     username,
-    keyboardShortcuts
+    keyboardShortcuts,
+    socrates
   } = user;
 
   const sound = (store.get('fcc-sound') as boolean) ?? false;
@@ -173,17 +184,34 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
         <SettingsSidebarNav userToken={userToken} />
         <main className='settings-main'>
           <Spacer size='l' />
-          <ScrollElement name='username'>
-            <h1
-              id='content-start'
-              className='text-center'
-              style={{ overflowWrap: 'break-word' }}
-              data-playwright-test-label='settings-heading'
-            >
-              {t('settings.for', { username: username })}
-            </h1>
+          <FullWidthRow>
+            <ScrollElement name='username'>
+              <h1
+                id='content-start'
+                className='text-center'
+                style={{ overflowWrap: 'break-word' }}
+                data-playwright-test-label='settings-heading'
+              >
+                {t('settings.for', { username: username })}
+              </h1>
+              <Trans
+                i18nKey='settings.profile-note'
+                parent='p'
+                className='text-center'
+              >
+                <a href={`/${username}`}>your profile</a>
+              </Trans>
+            </ScrollElement>
+          </FullWidthRow>
+          <Spacer size='l' />
+          <ScrollElement name='personal'>
+            <About
+              user={user}
+              setIsEditing={() => {}}
+              sectionTitle={t('settings.headings.personal')}
+            />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='account'>
             <Account
               keyboardShortcuts={keyboardShortcuts}
@@ -192,13 +220,14 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               resetEditorLayout={resetEditorLayout}
               toggleKeyboardShortcuts={toggleKeyboardShortcuts}
               toggleSoundMode={toggleSoundMode}
+              socrates={socrates}
             />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='privacy'>
             <Privacy />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='email'>
             <Email
               email={email}
@@ -207,15 +236,24 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               updateQuincyEmail={updateQuincyEmail}
             />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='honesty'>
             <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           </ScrollElement>
-          <Spacer size='m' />
+          <ScrollElement name='classroom-mode'>
+            <IfFeatureEnabled feature='classroom-mode'>
+              <Spacer size='m' />
+              <ClassroomMode
+                isClassroomAccount={isClassroomAccount}
+                updateIsClassroomAccount={updateIsClassroomAccount}
+              />
+            </IfFeatureEnabled>
+          </ScrollElement>
+          <Spacer size='l' />
           <ScrollElement name='exam-token'>
             <ExamToken email={email} />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='certifications'>
             <Certification
               completedChallenges={completedChallenges}
@@ -255,14 +293,14 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               username={username}
               verifyCert={verifyCert}
             />
-            <Spacer size='m' />
+            <Spacer size='l' />
           </ScrollElement>
           {userToken && (
             <>
               <ScrollElement name='user-token'>
                 <UserToken />
               </ScrollElement>
-              <Spacer size='m' />
+              <Spacer size='l' />
             </>
           )}
           <ScrollElement name='danger-zone'>

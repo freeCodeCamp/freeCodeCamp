@@ -198,6 +198,19 @@ export function SolutionDisplayWidget({
     <> {t('certification.project.no-solution-to-display')} </>
   );
 
+  // This is to hide the "view" button on the timeline for the ms trophy challenges,
+  // the solutions for those are a link to a JSON file, which isn't useful
+  const msTrophyIds = [
+    '647f85d407d29547b3bee1bb',
+    '647f87dc07d29547b3bee1bf',
+    '647f882207d29547b3bee1c0',
+    '647f867a07d29547b3bee1bc',
+    '647f877f07d29547b3bee1be',
+    '647f86ff07d29547b3bee1bd'
+  ];
+
+  if (msTrophyIds.includes(id)) return MissingSolutionComponent;
+
   const displayComponents =
     displayContext === 'certification'
       ? {

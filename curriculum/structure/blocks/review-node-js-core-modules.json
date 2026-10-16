@@ -1,6 +1,5 @@
 {
-  "name": "Node.js Core Modules Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-node-js-core-modules",
   "helpCategory": "Backend Development",
   "blockLayout": "link",

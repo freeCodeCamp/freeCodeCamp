@@ -57,6 +57,7 @@ assert.isTrue(listenerPlanInnerDiv.classList.contains("gap-y-2"))
         <div class="bg-gray-100 ring-1 ring-gray-300 grid grid-rows-[1fr_auto] rounded-xl p-8 gap-6">
 --fcc-editable-region--
           <div>
+--fcc-editable-region--
             <h2>Listener</h2>
             <p>$0<span>/month</span></p>
             <p>
@@ -67,7 +68,6 @@ assert.isTrue(listenerPlanInnerDiv.classList.contains("gap-y-2"))
               <li><span>&#10003;</span>Curated playlists</li>
             </ul>
           </div>
---fcc-editable-region--
           <a href="#">Start listening</a>
         </div>
         <div>

@@ -23,6 +23,7 @@ const localeCode = getLangCode(clientLocale);
 
 interface HeatMapProps {
   calendar: User['calendar'];
+  isPrivate?: boolean;
 }
 
 interface PageData {
@@ -37,6 +38,7 @@ interface CalendarData {
 
 interface HeatMapInnerProps {
   calendarData: CalendarData[];
+  isPrivate?: boolean;
   pages: PageData[];
   points?: number;
   t: TFunction;
@@ -93,7 +95,14 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
     return (
       <FullWidthRow>
         <section className='card'>
-          <h2>{t('profile.activity')}</h2>
+          <div className='profile-section-heading'>
+            <h2>{t('profile.activity')}</h2>
+            {this.props.isPrivate && (
+              <span className='profile-private-badge'>
+                {t('buttons.private')}
+              </span>
+            )}
+          </div>
           <Spacer size='m' />
 
           <CalendarHeatMap
@@ -170,7 +179,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
 
 const HeatMap = (props: HeatMapProps): JSX.Element => {
   const { t } = useTranslation();
-  const { calendar } = props;
+  const { calendar, isPrivate } = props;
 
   /**
    *  the following logic creates the data for the heatmap
@@ -230,7 +239,14 @@ const HeatMap = (props: HeatMapProps): JSX.Element => {
     }
   });
 
-  return <HeatMapInner calendarData={calendarData} pages={pages} t={t} />;
+  return (
+    <HeatMapInner
+      calendarData={calendarData}
+      isPrivate={isPrivate}
+      pages={pages}
+      t={t}
+    />
+  );
 };
 
 HeatMap.displayName = 'HeatMap';

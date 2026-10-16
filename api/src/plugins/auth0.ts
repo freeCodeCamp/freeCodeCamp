@@ -1,3 +1,4 @@
+import { performance } from 'node:perf_hooks';
 import fastifyOauth2, { type OAuth2Namespace } from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { Type } from 'typebox';
@@ -16,6 +17,7 @@ import {
 import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
 import { createAccessToken } from '../utils/tokens.js';
 import { getLoginRedirectParams } from '../utils/redirection.js';
+import { clientNetInfo } from '../utils/logger.js';
 
 declare module 'fastify' {
   interface FastifyInstance {
@@ -106,17 +108,18 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
 
     // TODO: use a schema to validate the query params.
     fastify.get('/auth/auth0/callback', async function (req, reply) {
-      const logger = fastify.log.child({ req, res: reply });
-
       const { error, error_description } = req.query as Record<string, string>;
       if (error === 'access_denied') {
         const blockedByLaw =
           error_description === 'Access denied from your location';
         if (blockedByLaw) {
-          logger.info('Access denied due to user location');
+          req.log.info('Access denied due to user location');
           return reply.redirect(`${HOME_LOCATION}/blocked`);
         } else {
-          logger.info('Authentication failed for user:' + error_description);
+          req.log.info(
+            { errorDescription: error_description, ...clientNetInfo(req) },
+            'Authentication failed for user'
+          );
           return reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
             type: 'info',
             content: error_description ?? 'Authentication failed'
@@ -132,17 +135,24 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           await this.auth0OAuth.getAccessTokenFromAuthorizationCodeFlow(req)
         ).token;
       } catch (error) {
+        fastify.Sentry?.metrics?.count('auth.failed', 1, {
+          attributes: { stage: 'token' }
+        });
         // This is the plugin's error message. If it changes, we will either
         // have to update the test or write custom state create/verify
         // functions.
         if (error instanceof Error && error.message === 'Invalid state') {
-          logger.error('Auth failed: invalid state');
+          req.log.warn(error, 'Auth failed: invalid state');
         } else if (Value.Check(Auth0ErrorSchema, error)) {
           const errorType = error.data.payload.error;
-          logger.error(error, 'Auth failed: ' + errorType);
+          const expectedErrorTypes = ['invalid_grant', 'access_denied'];
+          if (!expectedErrorTypes.includes(errorType)) {
+            fastify.Sentry?.captureException(error);
+          }
+          req.log.error(error, 'Auth failed: ' + errorType);
         } else {
-          logger.error(error, 'Failed to get access token from Auth0');
-          fastify.Sentry.captureException(error);
+          fastify.Sentry?.captureException(error);
+          req.log.error(error, 'Failed to get access token from Auth0');
         }
         // It's important _not_ to redirect to /signin here, as that could
         // create an infinite loop.
@@ -153,27 +163,52 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       }
 
       let email;
+      const __userinfoStart = performance.now();
       try {
         const userinfo = (await fastify.auth0OAuth.userinfo(token)) as {
           email: string;
         };
-        logger.info(`Auth0 userinfo: ${JSON.stringify(userinfo)}`);
+        fastify.Sentry?.metrics?.distribution(
+          'auth.login_latency_ms',
+          performance.now() - __userinfoStart,
+          {
+            unit: 'millisecond',
+            attributes: { provider: 'auth0', result: 'success' }
+          }
+        );
+        req.log.debug(
+          { hasEmail: !!userinfo.email },
+          'Received Auth0 userinfo'
+        );
         email = userinfo.email;
         if (typeof email !== 'string') {
+          req.log.warn('Auth0 userinfo missing email');
           return reply.redirectWithMessage(returnTo, {
             type: 'danger',
             content: 'flash.no-email-in-userinfo'
           });
         }
       } catch (error) {
-        logger.error(error, 'Failed to get userinfo from Auth0');
+        fastify.Sentry?.metrics?.distribution(
+          'auth.login_latency_ms',
+          performance.now() - __userinfoStart,
+          {
+            unit: 'millisecond',
+            attributes: { provider: 'auth0', result: 'failure' }
+          }
+        );
+        fastify.Sentry?.metrics?.count('auth.failed', 1, {
+          attributes: { stage: 'userinfo' }
+        });
         if (isError(error) && 'innerError' in error) {
           // This is a specific error from the @fastify/oauth2 plugin.
           const innerError = error.innerError as Error;
           innerError.message = `Auth0 userinfo error: ${innerError.message}`;
-          fastify.Sentry.captureException(error.innerError);
+          fastify.Sentry?.captureException(innerError);
+          req.log.error(innerError, 'Failed to get userinfo from Auth0');
         } else {
-          fastify.Sentry.captureException(error);
+          fastify.Sentry?.captureException(error);
+          req.log.error(error, 'Failed to get userinfo from Auth0');
         }
         return reply.redirectWithMessage(returnTo, {
           type: 'danger',
@@ -184,6 +219,10 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       const { id } = await findOrCreateUser(fastify, email);
 
       reply.setAccessTokenCookie(createAccessToken(id));
+
+      fastify.Sentry?.metrics?.count('auth.login_succeeded', 1, {
+        attributes: { provider: 'auth0' }
+      });
 
       const returnPath = new URL(returnTo).pathname;
       const returnURL = returnPath === '/' ? `${origin}/learn` : returnTo;

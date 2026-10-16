@@ -11,6 +11,7 @@ import {
 import callGA from '../analytics/call-ga';
 import {
   addDonation,
+  getSessionUser,
   postChargeStripe,
   postChargeStripeCard,
   updateStripeCard
@@ -25,8 +26,10 @@ import {
 
 import { actionTypes as appTypes } from './action-types';
 import {
+  fetchUserComplete,
   openDonationModal,
   postChargeComplete,
+  postChargePending,
   postChargeProcessing,
   postChargeError,
   preventSectionDonationRequests,
@@ -75,6 +78,30 @@ function* showDonateModalSaga() {
   }
 }
 
+// PayPal usually activates a subscription within seconds of approval, but it
+// is not immediate. Polling covers the common case; donors whose activation
+// takes longer are still granted donor status by the webhook, they just see it
+// confirmed on their next visit rather than here.
+const ACTIVATION_POLL_ATTEMPTS = 10;
+const ACTIVATION_POLL_INTERVAL = 1000;
+
+function* waitForDonationToActivate() {
+  for (let attempt = 0; attempt < ACTIVATION_POLL_ATTEMPTS; attempt++) {
+    yield delay(ACTIVATION_POLL_INTERVAL);
+
+    const { data } = yield call(getSessionUser);
+
+    if (data?.isDonating) {
+      // Put the refreshed user into the store, otherwise donor status only
+      // shows up after a reload.
+      yield put(fetchUserComplete({ user: data }));
+      return true;
+    }
+  }
+
+  return false;
+}
+
 export function* postChargeSaga({
   payload,
   payload: {
@@ -103,7 +130,7 @@ export function* postChargeSaga({
       const response = yield call(postChargeStripeCard, optimizedPayload);
       const error = response?.data?.error;
       if (error) {
-        yield stripeCardErrorHandler(
+        const paymentIntentId = yield stripeCardErrorHandler(
           error,
           handleAuthentication,
           error.client_secret,
@@ -111,17 +138,31 @@ export function* postChargeSaga({
           optimizedPayload
         );
 
-        //if the authentication does not throw an error, add a donation
-        yield call(addDonation, { amount, duration });
-      }
-    } else if (paymentProvider === PaymentProvider.Paypal) {
-      // If the user is signed in and the payment goes through call api
-      // look into skip add donation
-      // what to do with "data" that comes through
+        // if the authentication does not throw an error, verify and add a donation
+        const result = yield call(addDonation, {
+          amount,
+          duration,
+          stripePaymentIntentId: paymentIntentId
+        });
 
-      if (isSignedIn) yield call(addDonation, { amount, duration });
+        // post() resolves for 4xx too, so an unverified donation would
+        // otherwise be reported to the donor as a success.
+        if (!result?.response?.ok) {
+          throw new Error('Donation could not be verified');
+        }
+      }
     }
-    if (
+    // A PayPal approval only means the donor authorised the subscription.
+    // Until the activation webhook says it was charged we have not confirmed
+    // anything, so wait rather than claiming the donation succeeded.
+    const isUnconfirmedPaypal =
+      paymentProvider === PaymentProvider.Paypal &&
+      isSignedIn &&
+      !(yield call(waitForDonationToActivate));
+
+    if (isUnconfirmedPaypal) {
+      yield put(postChargePending());
+    } else if (
       [
         PaymentProvider.Paypal,
         PaymentProvider.Stripe,
@@ -166,10 +207,11 @@ function* stripeCardErrorHandler(
   paymentMethodId
 ) {
   if (error.type === 'UserActionRequired' && clientSecret) {
-    yield handleAuthentication(clientSecret, paymentMethodId)
+    return yield handleAuthentication(clientSecret, paymentMethodId)
       .then(result => {
         if (result?.paymentIntent?.status !== 'succeeded')
           throw result.error || { type: 'StripeAuthorizationFailed' };
+        return result.paymentIntent.id;
       })
       .catch(error => {
         throw error;

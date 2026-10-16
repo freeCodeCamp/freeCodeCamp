@@ -50,10 +50,12 @@ import {
   initLogs,
   logsToConsole,
   openModal,
+  setProjectPreviewLoading,
   updateConsole,
   updateLogs,
   updateTests
 } from './actions';
+import { curriculumData } from '../../../services/curriculum-data';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -133,6 +135,7 @@ export function* executeChallengeSaga({ payload }) {
       disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
+    yield* outputBuildWarnings(buildData?.warnings);
     const testRunner = yield call(getTestRunner, { ...buildData, hooks });
     const testResults = yield executeTests(testRunner, tests);
     yield put(updateTests(testResults));
@@ -141,7 +144,7 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      if (isBlockCompleted) {
+      if (isBlockCompleted && curriculumData.hasData) {
         fireConfetti();
       }
     } else {
@@ -184,6 +187,51 @@ function* buildChallengeData(challengeData, options) {
     yield put(disableBuildOnError());
     throw e;
   }
+}
+
+function formatAllowedSources(allowedSources) {
+  return allowedSources.map(source => `"${source}"`).join(', ');
+}
+
+function getBuildWarningMessage(warning) {
+  if (typeof warning === 'string') {
+    return warning;
+  }
+
+  if (warning?.type === 'unavailable-local-resource') {
+    const resourceType = i18next.t(
+      `learn.local-resource-type.${warning.resourceType}`
+    );
+    if (
+      !Array.isArray(warning.allowedSources) ||
+      warning.allowedSources.length === 0
+    ) {
+      return i18next.t('learn.unavailable-local-resource-no-allowed', {
+        source: warning.source,
+        resourceType
+      });
+    }
+    return i18next.t('learn.unavailable-local-resource', {
+      source: warning.source,
+      resourceType,
+      allowedSources: formatAllowedSources(warning.allowedSources)
+    });
+  }
+
+  return '';
+}
+
+function* outputBuildWarnings(warnings) {
+  for (const warningMessage of getBuildWarningMessages(warnings)) {
+    yield put(updateConsole(escape(warningMessage)));
+  }
+}
+
+function getBuildWarningMessages(warnings) {
+  if (!Array.isArray(warnings) || warnings.length === 0) {
+    return [];
+  }
+  return warnings.map(getBuildWarningMessage).filter(Boolean);
 }
 
 export function* executeTests(testRunner, tests, testTimeout = 5000) {
@@ -245,22 +293,22 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
   return testResults;
 }
 
-// updates preview frame and the fcc console.
-export function* previewChallengeSaga(action) {
-  const flushLogs = action?.type !== actionTypes.previewMounted;
+function* flush() {
+  yield put(initLogs());
+  yield put(initConsole(''));
+}
+
+function* previewChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
   }
 
-  const isExecuting = yield select(isExecutingSelector);
-  // executeChallengeSaga flushes the logs, so there's no need to if that's
-  // just happened.
-  if (flushLogs && !isExecuting) {
-    yield put(initLogs());
-    yield put(initConsole(''));
+  // the challenge execution will update the preview, so this saga doesn't
+  // need to do anything.
+  if (yield select(isExecutingSelector)) {
+    return;
   }
-  yield delay(700);
 
   const logProxy = yield channel();
   const proxyLogger = args => {
@@ -284,6 +332,11 @@ export function* previewChallengeSaga(action) {
       // If there's an error building the challenge then throwing it here will
       // let the user know there's a problem.
       if (buildData.error) throw buildData.error;
+      for (const warningMessage of getBuildWarningMessages(
+        buildData?.warnings
+      )) {
+        logProxy.put(warningMessage);
+      }
 
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
@@ -316,7 +369,9 @@ export function* previewChallengeSaga(action) {
           const logs = results[0].logs?.filter(
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
-          yield put(updateConsole(logs?.map(log => log.msg).join('\n')));
+          const output = logs?.map(log => log.msg).join('\n');
+
+          yield put(updateConsole(output));
         }
       }
     }
@@ -332,10 +387,11 @@ export function* previewChallengeSaga(action) {
   }
 }
 
-// TODO: refactor this so that we can use a single saga for all challenge
-// updates (then they can all go in the same `takeLatest` call and be cancelled
-// appropriately)
-function* updatePreviewSaga(action) {
+export function* updatePreviewSaga(action) {
+  yield flush();
+  if (action.type === actionTypes.updateFile) {
+    yield delay(700);
+  }
   const challengeData = yield select(challengeDataSelector);
   if (
     challengeData.challengeType === challengeTypes.python ||
@@ -362,14 +418,14 @@ function* updatePython(challengeData) {
   };
 
   runPythonCode(code);
-  // TODO: proxy errors to the console
 }
 
 function* previewProjectSolutionSaga({ payload }) {
-  if (!payload?.challengeData) return;
-  const { challengeData } = payload;
-
+  yield put(setProjectPreviewLoading(true));
   try {
+    if (!payload?.challengeData) return;
+    const { challengeData } = payload;
+
     if (canBuildChallenge(challengeData)) {
       const buildData = yield buildChallengeData(challengeData);
       if (buildData.error) throw Error(buildData.error);
@@ -384,16 +440,22 @@ function* previewProjectSolutionSaga({ payload }) {
   } catch (err) {
     console.error('Unable to show project preview');
     console.error(err);
+  } finally {
+    yield put(setProjectPreviewLoading(false));
   }
 }
 
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
-    takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.challengeMounted, types.resetChallenge, types.previewMounted],
-      previewChallengeSaga
+      [
+        types.updateFile,
+        types.challengeMounted,
+        types.resetChallenge,
+        types.previewMounted
+      ],
+      updatePreviewSaga
     ),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];

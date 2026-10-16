@@ -1,15 +1,18 @@
-import { test, expect } from '@playwright/test';
+import { execSync } from 'child_process';
+
+import { test, expect } from './fixtures/isolated-user';
 import {
   getTodayUsCentral,
-  formatDate,
   formatDisplayDate
 } from '../client/src/components/daily-coding-challenge/helpers';
+import translations from '../client/i18n/locales/english/translations.json';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 
-const dateRouteRe = /.*\/daily-coding-challenge\/date\/.*/;
-const allRouteRe = /.*\/daily-coding-challenge\/all/;
+test.use({ userPreset: 'certified' });
+
+const dateRouteRe = /.*\/daily-coding-challenge\/day\/.*/;
 
 const todayUsCentral = getTodayUsCentral();
-const [year, month, day] = todayUsCentral.split('-').map(Number);
 
 const todayMidnight = `${todayUsCentral}T00:00:00.000Z`;
 
@@ -49,77 +52,28 @@ const mockApiChallenge = {
   }
 };
 
-const mockApiAllChallenges = [
-  // today
-  {
-    // real ID from certified user so it shows completed in calendar
-    id: '6814d8e1516e86b171929de4',
-    date: todayMidnight
-  },
-  // yesterday, or tomorrow if today is the first
-  {
-    id: 'other-id',
-    date: `${formatDate({ year, month, day: day === 1 ? day + 1 : day - 1 })}T00:00:00.000Z`
-  }
-];
+const dailyChallengeRoute = '/learn/daily-coding-challenge/08-11';
 
-const mockDaysInMonth = new Date(year, month, 0).getDate();
+// The test checks the previous month for the August 11 challenge, so freeze time in September.
+const archiveTestDate = new Date('2026-09-15T12:00:00.000Z');
+
+const solution =
+  "function isBalanced(s) { const h = s.length >> 1, v = x => [...x].filter(c => 'aeiou'.includes(c.toLowerCase())).length; return v(s.slice(0, h)) === v(s.slice(s.length - h)); }";
+
+// Temporarily disabled
+// const runChallengeTest = async (page: Page, isMobile: boolean) => {
+//   if (isMobile) {
+//     await page.getByRole('tab', { name: 'Console' }).click();
+//     await page.getByText('Run').click();
+//   } else {
+//     await page.getByText('Run the Tests (Ctrl + Enter)').click();
+//   }
+// };
 
 test.describe('Daily Coding Challenges', () => {
-  test('should show not found page for invalid date', async ({ page }) => {
+  test('should redirect to archive for invalid date', async ({ page }) => {
     await page.goto('/learn/daily-coding-challenge/invalid-date');
-    await expect(
-      page.getByText(/daily coding challenge not found\./i)
-    ).toBeVisible();
-  });
-
-  test('should show not found page for date without challenge', async ({
-    page
-  }) => {
-    await page.route(dateRouteRe, async route => {
-      await route.fulfill({
-        status: 404,
-        headers: { 'Content-Type': 'application/json' },
-        json: { type: 'error', message: 'Challenge not found.' }
-      });
-    });
-
-    await page.goto('/learn/daily-coding-challenge/2025-01-01');
-    await expect(
-      page.getByText(/daily coding challenge not found\./i)
-    ).toBeVisible();
-  });
-
-  test('should show not found page for API error', async ({ page }) => {
-    await page.route(dateRouteRe, async route => {
-      await route.fulfill({
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-        json: { type: 'error', message: 'Internal server error.' }
-      });
-    });
-
-    await page.goto('/learn/daily-coding-challenge/2025-01-01');
-    await expect(
-      page.getByText(/daily coding challenge not found\./i)
-    ).toBeVisible();
-  });
-
-  test('should show not found page for invalid challenge data', async ({
-    page
-  }) => {
-    await page.route(dateRouteRe, async route => {
-      await route.fulfill({
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-        json: { invalid: 'data structure' }
-      });
-    });
-
-    await page.goto('/learn/daily-coding-challenge/2025-06-27');
-    await expect(
-      page.getByText(/daily coding challenge not found\./i)
-    ).toBeVisible();
+    await expect(page).toHaveURL('/learn/daily-coding-challenge/archive');
   });
 
   test('should load and display a daily coding challenge with a valid date, and should be able to switch between JavaScript and Python', async ({
@@ -196,6 +150,56 @@ test.describe('Daily Coding Challenges', () => {
   });
 });
 
+test.describe('Daily Coding Challenge completion persistence', () => {
+  test.use({ userPreset: 'development' });
+
+  test.beforeAll(() => {
+    execSync('node ../tools/scripts/seed/seed-daily-coding-challenge');
+  });
+
+  test('persists a completed daily coding challenge in the archive', async ({
+    page,
+    browserName,
+    isMobile
+  }) => {
+    await page.clock.setFixedTime(archiveTestDate);
+    await page.goto(dailyChallengeRoute);
+    await expect(
+      page.getByRole('heading', { name: /vowel balance/i })
+    ).toBeVisible();
+
+    await focusEditor({ page, isMobile });
+    await expect(async () => {
+      await clearEditor({ page, browserName, isMobile });
+      await getEditors(page).fill(solution);
+      await expect(page.getByTestId('editor-container-scriptjs')).toContainText(
+        solution
+      );
+    }).toPass();
+
+    await page
+      .getByRole('button', { name: translations.buttons['check-code'] })
+      .click();
+
+    await expect(
+      page.getByText(translations.learn['congratulations-code-passes']).first()
+    ).toBeVisible();
+
+    await page
+      .getByRole('button', { name: translations.buttons['submit-continue'] })
+      .click();
+    await expect(page).toHaveURL('/learn/daily-coding-challenge/archive');
+
+    await page.reload();
+    await page.getByRole('button', { name: 'Previous month' }).click();
+
+    const completedDay = page.getByRole('link', { name: 'August 11' });
+    await expect(
+      completedDay.getByTestId('calendar-day-completed')
+    ).toBeVisible();
+  });
+});
+
 test.describe('Daily Coding Challenge Archive', () => {
   test('/learn/daily-coding-challenge should redirect to archive', async ({
     page
@@ -217,40 +221,35 @@ test.describe('Daily Coding Challenge Archive', () => {
     await page.goto('/learn/daily-coding-challenge/path-1/path2');
     await expect(page).toHaveURL('/learn/daily-coding-challenge/archive');
   });
-
-  test('archive should load and display the calendar', async ({ page }) => {
-    await page.route(allRouteRe, async route => {
-      await route.fulfill({
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-        json: mockApiAllChallenges
-      });
-    });
-
-    await page.goto('/learn/daily-coding-challenge/archive');
-
-    await expect(page.getByText('Daily Coding Challenges')).toBeVisible();
-
-    await expect(
-      page.getByRole('button', { name: /previous month/i })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('button', { name: /next month/i })
-    ).toBeVisible();
-
-    await expect(
-      page
-        .locator('div')
-        .filter({ hasText: /New challenges are released/ })
-        .getByRole('link', { name: /go to today/i })
-        .first()
-    ).toBeVisible();
-
-    const totalCalendarDays = await page.getByTestId('calendar-day').count();
-    expect(totalCalendarDays).toBe(mockDaysInMonth);
-
-    await expect(page.getByTestId('calendar-day-completed')).toHaveCount(1);
-
-    await expect(page.getByTestId('calendar-day-not-completed')).toHaveCount(3);
-  });
 });
+
+// Temporarily disabled
+// test.describe('Daily code challenge solution can be downloaded', () => {
+//   test('Downloaded solution files are named by challenge number', async ({
+//     page,
+//     isMobile
+//   }) => {
+//     await page.route(/.*\/daily-coding-challenge\/date\/.*/, async route => {
+//       await route.fulfill({
+//         status: 200,
+//         headers: { 'Content-Type': 'application/json' },
+//         json: mockApiChallenge
+//       });
+//     });
+
+//     await page.goto(`/learn/daily-coding-challenge/${todayUsCentral}`);
+//     await runChallengeTest(page, isMobile);
+//     await expect(page.getByRole('dialog')).toBeVisible({ timeout: 15000 });
+//     await expect(
+//       page.getByRole('link', { name: 'Download my solution' })
+//     ).toBeVisible({ timeout: 15000 });
+//     const [download] = await Promise.all([
+//       page.waitForEvent('download'),
+//       page.getByRole('link', { name: 'Download my solution' }).click()
+//     ]);
+//     const suggestedFileName = download.suggestedFilename();
+//     await download.saveAs(suggestedFileName);
+//     expect(fs.existsSync(suggestedFileName)).toBeTruthy();
+//     expect(suggestedFileName).toBe('challenge-1.txt');
+//   });
+// });

@@ -1,0 +1,108 @@
+---
+id: 6929d11427af84246eddc423
+title: Task 4
+challengeType: 19
+dashedName: task-4
+lang: es
+---
+
+<!-- (Audio) Luna: Primer apellido -->
+
+# --description--
+
+In this task, you will hear Luna say the Spanish phrase for "first last name". This is commonly used in Spanish-speaking countries where people often have two last names.
+
+# --instructions--
+
+Listen to the audio and answer the question below. 
+
+# --questions--
+
+## --text--
+
+What word does Luna use to say "first last name"?
+
+## --answers--
+
+`Primer nombre`
+
+### --feedback--
+
+This means "first name", but Luna is referring to a last name.
+
+---
+
+`Apellido materno`
+
+### --feedback--
+
+This is the mother's last name, but the phrase refers to the first one.
+
+---
+
+`Nombre completo`
+
+### --feedback--
+
+This means "full name", not just the first last name.
+
+---
+
+`Primer apellido`
+
+
+## --video-solution--
+
+4
+
+# --explanation--
+
+`Primer apellido` means "first last name".
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-roof.png",
+    "characters": [
+      {
+        "character": "Luna",
+        "position": {
+          "x": 50,
+          "y": 25,
+          "z": 1.5
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "ES_A1_luna_personal_data_form.mp3",
+      "startTime": 1,
+      "startTimestamp": 3.25,
+      "finishTimestamp": 4.57
+    }
+  },
+  "commands": [
+    {
+      "character": "Luna",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Luna",
+      "startTime": 1,
+      "finishTime": 2.32,
+      "dialogue": {
+        "text": "Primer apellido.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Luna",
+      "opacity": 0,
+      "startTime": 2.82
+    }
+  ]
+}
+```

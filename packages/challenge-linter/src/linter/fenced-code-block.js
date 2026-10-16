@@ -1,6 +1,7 @@
 export const names = ['closed-code-blocks'];
 export const description = 'Code blocks must have closing triple backticks';
 export const tags = ['code'];
+export const parser = 'micromark';
 function rule(params, onError) {
   params.parsers.micromark.tokens
     .filter(token => token.type === 'codeFenced')

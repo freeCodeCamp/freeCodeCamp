@@ -4,6 +4,7 @@ import path, { join } from 'path';
 import matter from 'gray-matter';
 import { ObjectId } from 'bson';
 import { vi, describe, it, expect, afterEach } from 'vitest';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 vi.mock('fs', () => {
   return {
@@ -20,12 +21,6 @@ vi.mock('gray-matter', () => {
       read: vi.fn(),
       stringify: vi.fn()
     }
-  };
-});
-
-vi.mock('bson', () => {
-  return {
-    ObjectId: vi.fn(() => ({ toString: () => mockChallengeId }))
   };
 });
 
@@ -46,10 +41,11 @@ vi.mock('./helpers/project-metadata', () => {
   };
 });
 
-const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template.js';
 import {
   createChallengeFile,
+  createLabFile,
+  createReviewFile,
   createStepFile,
   insertStepIntoMeta,
   updateStepTitles,
@@ -71,25 +67,26 @@ describe('Challenge utils helper scripts', () => {
     vi.clearAllMocks();
   });
   describe('createStepFile util', () => {
-    it('should create next step and return its identifier', () => {
+    it('should create next step', () => {
       process.env.INIT_CWD = projectPath;
       const mockTemplate = 'Mock template...';
       (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
         mockTemplate
       );
-      const step = createStepFile({
+
+      const challengeId = new ObjectId();
+
+      createStepFile({
+        challengeId,
         stepNum: 3,
         challengeType: 0
       });
-
-      expect(step.toString()).toEqual(mockChallengeId);
-      expect(ObjectId).toHaveBeenCalledTimes(1);
 
       // Internal tasks
       // - Should generate a template for the step that is being created
       expect(getStepTemplate).toHaveBeenCalledTimes(1);
       expect(fs.writeFileSync).toHaveBeenCalledWith(
-        `${projectPath}/${mockChallengeId}.md`,
+        `${projectPath}/${challengeId.toString()}.md`,
         mockTemplate
       );
     });
@@ -124,15 +121,52 @@ describe('Challenge utils helper scripts', () => {
     });
   });
 
+  describe('single-challenge project files', () => {
+    it('creates a lab file with the selected lab challenge type', () => {
+      const challengeId = new ObjectId();
+
+      createLabFile({
+        challengeId,
+        projectPath: `${projectPath}/`,
+        title: 'JavaScript Lab',
+        dashedName: 'javascript-lab',
+        challengeType: challengeTypes.jsLab,
+        contentType: 'javascript'
+      });
+
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        expect.stringContaining(`challengeType: ${challengeTypes.jsLab}`)
+      );
+    });
+
+    it('creates a review file with the review challenge type', () => {
+      const challengeId = new ObjectId();
+
+      createReviewFile({
+        challengeId,
+        projectPath: `${projectPath}/`,
+        title: 'JavaScript Review',
+        dashedName: 'javascript-review'
+      });
+
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        expect.stringContaining(`challengeType: ${challengeTypes.review}`)
+      );
+    });
+  });
+
   describe('createChallengeFile util', () => {
-    it('should create the challenge', () => {
+    it('should create the challenge using an ObjectId string as the filename', () => {
       process.env.INIT_CWD = projectPath;
       const template = 'pretend this is a template';
+      const challengeId = new ObjectId();
 
-      createChallengeFile('hi', template);
-      // - Should write a file with a given name and template
+      createChallengeFile(challengeId.toString(), template);
+      // - Should write a file named after the ObjectId with the given template
       expect(fs.writeFileSync).toHaveBeenCalledWith(
-        `${projectPath}/hi.md`,
+        `${projectPath}/${challengeId.toString()}.md`,
         template
       );
     });
@@ -142,15 +176,17 @@ describe('Challenge utils helper scripts', () => {
     it('should call updateMetaData with a new file id and name', async () => {
       process.env.INIT_CWD = projectPath;
 
+      const stepId = new ObjectId();
+
       await insertStepIntoMeta({
         stepNum: 3,
-        stepId: new ObjectId(mockChallengeId)
+        stepId
       });
 
       expect(updateMetaData).toHaveBeenCalledWith({
         challengeOrder: [
           { id: 'abc', title: 'Step 1' }, // title gets overwritten
-          { id: mockChallengeId, title: 'Step 2' }
+          { id: stepId.toString(), title: 'Step 2' }
         ]
       });
     });

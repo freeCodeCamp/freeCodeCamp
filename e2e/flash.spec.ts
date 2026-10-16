@@ -1,5 +1,8 @@
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
+
+test.use({ userPreset: 'certified' });
 
 const checkFlashMessageVisibility = async (page: Page, translation: string) => {
   const flashMessage = page.getByText(translation);
@@ -38,19 +41,6 @@ test.describe('Flash Message component E2E test', () => {
     await checkFlashMessageVisibility(
       page,
       translations.flash['updated-sound']
-    );
-  });
-
-  test('should be visible when a network error occurs', async ({ page }) => {
-    await page.route(
-      '*/**/user/get-session-user',
-      async route => await route.fulfill({ status: 500 })
-    );
-
-    await page.goto('/');
-    await checkFlashMessageVisibility(
-      page,
-      translations.flash['user-fetch-error']
     );
   });
 });

@@ -1,0 +1,200 @@
+---
+id: 698f5a372871b5dfb9e01698
+title: What are Union Types and How Do They Work?
+challengeType: 19
+dashedName: what-are-union-types-and-how-do-they-work
+---
+
+# --description--
+
+In the prior lessons, you learned how to work with primitive types like `string`, and `boolean`. But TypeScript allows you to build new types from existing ones. One example of this would be the union type.
+
+A union type is a type that combines two or more other types.
+
+Here is the basic syntax:
+
+```ts
+type1 | type2 | type3
+```
+
+Let's take a look at some examples to better understand the concept. 
+
+Here is a variable called `id` with a union type for `string` or `number`:
+
+```ts
+let id: string | number = "user_783";
+```
+
+The value can be updated to a number which is still valid for the union type:
+
+```ts
+let id: string | number = 1024;
+```
+
+If you tried to assign another value that isn't a `string` or `number`, then TypeScript will display an error message:
+
+```ts
+// Type 'string[]' is not assignable to type 'string | number'.
+let id: string | number = ["Java", "Python"];
+```
+
+When working with union types, it is important to use methods that work for all of the types, otherwise TypeScript will throw an error like this:
+
+```ts
+function getId(id: string | number) {
+  // Property 'toUpperCase' does not exist on type 'string | number'.
+  return id.toUpperCase();
+}
+```
+
+There is a solution for this which involves narrowing the union. But you will learn more about that as well as how union types work with type aliases in future lessons.
+
+Union types are also helpful when working with `null` and `undefined` values. 
+
+Here is an example where a variable might contain a `string` value, or it might be `null` if no value has been set yet:
+
+```ts
+let username: string | null;
+
+// Type 'number' is not assignable to type 'string | null'.
+username = 42;
+```
+
+In this case, `username` can either be a `string` or `null`, but nothing else. You might use `null` when you want to intentionally represent the absence of a value.
+
+Here is another example using `undefined`:
+
+```ts
+let score: number | undefined;
+
+score = undefined; 
+
+// Type 'string' is not assignable to type 'number | undefined'.
+score = "high";
+```
+
+In this example, `score` can either be a `number` or `undefined`. You might use `undefined` when a value has not been assigned yet.
+
+Using union types with `null` and `undefined` makes it clear when a value might be missing, while still allowing TypeScript to catch invalid assignments.
+
+# --questions--
+
+## --text--
+
+Which of the following is the correct way to create a union type?
+
+## --answers--
+
+```ts
+let id: string >> number;
+```
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+```ts
+let id: string | number;
+```
+
+---
+
+```ts
+let id: string ? number;
+```
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+```ts
+let id: string << number;
+```
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+## --video-solution--
+
+2
+
+## --text--
+
+Which assignment would be considered valid for the following?
+
+```ts
+let id: string | number
+```
+
+## --answers--
+
+`false`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+`"28djj38372"`
+
+---
+
+`["a", "b"]`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+`null`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+## --video-solution--
+
+2
+
+## --text--
+
+What will happen if you call a method that only exists on a string for a union `type string | number` without using type narrowing?
+
+## --answers--
+
+Nothing will happen.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+---
+
+It will convert the number to a string.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+---
+
+The method will be ignored at runtime.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+---
+
+TypeScript will throw an error.
+
+## --video-solution--
+
+4

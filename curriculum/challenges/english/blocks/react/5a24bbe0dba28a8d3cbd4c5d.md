@@ -82,12 +82,6 @@ assert(
 
 # --seed--
 
-## --after-user-code--
-
-```jsx
-ReactDOM.render(JSX, document.getElementById('root'))
-```
-
 ## --seed-contents--
 
 ```jsx

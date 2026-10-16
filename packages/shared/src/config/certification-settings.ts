@@ -57,10 +57,12 @@ export const currentCertifications = [
   Certification.A2English,
   Certification.B1English,
   Certification.FoundationalCSharp,
+  Certification.RespWebDesignV9,
   Certification.JsV9,
+  Certification.FrontEndDevLibsV9,
   Certification.PythonV9,
   Certification.RelationalDbV9,
-  Certification.RespWebDesignV9
+  Certification.BackEndDevApisV9
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -94,8 +96,6 @@ export const legacyFullStackCertification = [
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
-  Certification.FrontEndDevLibsV9,
-  Certification.BackEndDevApisV9,
   Certification.FullStackDeveloperV9,
   Certification.A2Spanish,
   Certification.A2Chinese,
@@ -236,10 +236,10 @@ export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   [Certification.RelationalDbV9]: 'isRelationalDatabaseCertV9',
   [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
   [Certification.JsV9]: 'isJavascriptCertV9',
-
-  // upcoming
   [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
   [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
+
+  // upcoming
   [Certification.FullStackDeveloperV9]: 'isFullStackDeveloperCertV9',
   [Certification.B1English]: 'isB1EnglishCert',
   [Certification.A2Spanish]: 'isA2SpanishCert',
@@ -262,22 +262,22 @@ export function isCertified(
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {
   // Legacy certifications
-  [Certification.LegacyFrontEnd]: 'Legacy Front End',
+  [Certification.LegacyFrontEnd]: 'Legacy Frontend',
   [Certification.JsAlgoDataStruct]:
     'Legacy JavaScript Algorithms and Data Structures V7',
-  [Certification.LegacyBackEnd]: 'Legacy Back End',
+  [Certification.LegacyBackEnd]: 'Legacy Backend',
   [Certification.LegacyDataVis]: 'Legacy Data Visualization',
   [Certification.LegacyInfoSecQa]:
     'Legacy Information Security and Quality Assurance',
-  [Certification.LegacyFullStack]: 'Legacy Full Stack',
+  [Certification.LegacyFullStack]: 'Legacy Full-Stack',
 
   // Current certifications
   [Certification.RespWebDesign]: 'Legacy Responsive Web Design V8',
   [Certification.JsAlgoDataStructNew]:
     'Legacy JavaScript Algorithms and Data Structures V8',
-  [Certification.FrontEndDevLibs]: 'Front End Development Libraries V8',
+  [Certification.FrontEndDevLibs]: 'Frontend Development Libraries V8',
   [Certification.DataVis]: 'Data Visualization V8',
-  [Certification.BackEndDevApis]: 'Back End Development and APIs V8',
+  [Certification.BackEndDevApis]: 'Backend Development and APIs V8',
   [Certification.QualityAssurance]: 'Quality Assurance',
   [Certification.InfoSec]: 'Information Security',
   [Certification.SciCompPy]: 'Scientific Computing with Python',
@@ -291,11 +291,11 @@ export const certToTitleMap: Record<Certification, string> = {
   // Upcoming certifications
   [Certification.RespWebDesignV9]: 'Responsive Web Design',
   [Certification.JsV9]: 'JavaScript',
-  [Certification.FrontEndDevLibsV9]: 'Front End Development Libraries',
+  [Certification.FrontEndDevLibsV9]: 'Frontend Development Libraries',
   [Certification.PythonV9]: 'Python',
   [Certification.RelationalDbV9]: 'Relational Database',
-  [Certification.BackEndDevApisV9]: 'Back End Development and APIs',
-  [Certification.FullStackDeveloperV9]: 'Full Stack Developer',
+  [Certification.BackEndDevApisV9]: 'Backend Development and APIs',
+  [Certification.FullStackDeveloperV9]: 'Full-Stack Developer',
   [Certification.B1English]: 'B1 English for Developers',
   [Certification.A2Spanish]: 'A2 Professional Spanish',
   [Certification.A2Chinese]: 'A2 Professional Chinese',
@@ -324,6 +324,9 @@ export const superBlockToCertMap: {
   [SuperBlocks.JsV9]: Certification.JsV9,
   [SuperBlocks.FrontEndDevLibsV9]: Certification.FrontEndDevLibsV9,
   [SuperBlocks.PythonV9]: Certification.PythonV9,
+  [SuperBlocks.PythonProgrammingFundamentals]: null,
+  [SuperBlocks.FrontEndDevelopment]: null,
+  [SuperBlocks.AlgorithmsAndDataStructure]: null,
   [SuperBlocks.RelationalDbV9]: Certification.RelationalDbV9,
   [SuperBlocks.BackEndDevApisV9]: Certification.BackEndDevApisV9,
   [SuperBlocks.FullStackDeveloperV9]: Certification.FullStackDeveloperV9,
@@ -341,7 +344,68 @@ export const superBlockToCertMap: {
   [SuperBlocks.BasicHtml]: null,
   [SuperBlocks.SemanticHtml]: null,
   [SuperBlocks.DevPlayground]: null,
-  [SuperBlocks.FullStackOpen]: null
+  [SuperBlocks.FullStackOpen]: null,
+  [SuperBlocks.HtmlFormsAndTables]: null,
+  [SuperBlocks.HtmlAndAccessibility]: null,
+  [SuperBlocks.ComputerBasics]: null,
+  [SuperBlocks.BasicCss]: null,
+  [SuperBlocks.DesignForDevelopers]: null,
+  [SuperBlocks.AbsoluteAndRelativeUnits]: null,
+  [SuperBlocks.PseudoClassesAndElements]: null,
+  [SuperBlocks.CssColors]: null,
+  [SuperBlocks.StylingForms]: null,
+  [SuperBlocks.CssBoxModel]: null,
+  [SuperBlocks.CssFlexbox]: null,
+  [SuperBlocks.CssTypography]: null,
+  [SuperBlocks.CssAndAccessibility]: null,
+  [SuperBlocks.CssPositioning]: null,
+  [SuperBlocks.AttributeSelectors]: null,
+  [SuperBlocks.ResponsiveDesign]: null,
+  [SuperBlocks.CssVariables]: null,
+  [SuperBlocks.CssGrid]: null,
+  [SuperBlocks.CssAnimations]: null,
+  [SuperBlocks.LearnPythonForBeginners]: null,
+  [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: null,
+  [SuperBlocks.LearnOOPWithPython]: null,
+  [SuperBlocks.LearnRAGAndMCPFundamentals]: null,
+  [SuperBlocks.IntroductionToPrecalculus]: null,
+  [SuperBlocks.IntroductionToBash]: null,
+  [SuperBlocks.IntroductionToSQLAndPostgreSQL]: null,
+  [SuperBlocks.LearnBashScripting]: null,
+  [SuperBlocks.LearnSQLAndBash]: null,
+  [SuperBlocks.IntroductionToNano]: null,
+  [SuperBlocks.IntroductionToGitAndGithub]: null,
+  [SuperBlocks.IntroductionToVariablesAndStringsInJS]: null,
+  [SuperBlocks.IntroductionToBooleansAndNumbersInJS]: null,
+  [SuperBlocks.IntroductionToFunctionsInJS]: null,
+  [SuperBlocks.IntroductionToArraysInJS]: null,
+  [SuperBlocks.IntroductionToObjectsInJS]: null,
+  [SuperBlocks.IntroductionToLoopsInJS]: null,
+  [SuperBlocks.JavascriptFundamentalsReview]: null,
+  [SuperBlocks.IntroductionToHigherOrderFunctionsAndCallbacksInJS]: null,
+  [SuperBlocks.LearnDomManipulationAndEventsWithJS]: null,
+  [SuperBlocks.IntroductionToJavascriptAndAccessibility]: null,
+  [SuperBlocks.LearnJavascriptDebugging]: null,
+  [SuperBlocks.LearnBasicRegexWithJS]: null,
+  [SuperBlocks.IntroductionToDatesInJS]: null,
+  [SuperBlocks.LearnAudioAndVideoEventsWithJS]: null,
+  [SuperBlocks.IntroductionToMapsAndSetsInJS]: null,
+  [SuperBlocks.LearnLocalstorageAndCrudOperationsWithJS]: null,
+  [SuperBlocks.IntroductionToJavascriptClasses]: null,
+  [SuperBlocks.LearnRecursionWithJS]: null,
+  [SuperBlocks.IntroductionToFunctionalProgrammingWithJS]: null,
+  [SuperBlocks.IntroductionToAsynchronousJS]: null,
+  [SuperBlocks.LearnDataVisualizationWithD3]: null,
+  [SuperBlocks.IntroductionToPythonBasics]: null,
+  [SuperBlocks.LearnPythonLoopsAndSequences]: null,
+  [SuperBlocks.LearnPythonDictionariesAndSets]: null,
+  [SuperBlocks.LearnErrorHandlingInPython]: null,
+  [SuperBlocks.LearnPythonClassesAndObjects]: null,
+  [SuperBlocks.IntroductionToOOPInPython]: null,
+  [SuperBlocks.IntroductionToLinearDataStructuresInPython]: null,
+  [SuperBlocks.LearnAlgorithmsInPython]: null,
+  [SuperBlocks.LearnGraphsAndTreesInPython]: null,
+  [SuperBlocks.LearnDynamicProgrammingInPython]: null
 };
 
 export const certificationRequirements: Partial<

@@ -1,3 +1,4 @@
+import { parseArgs } from 'node:util';
 import { flatten } from 'lodash/fp';
 
 import { availableLangs } from '@freecodecamp/shared/config/i18n';
@@ -7,6 +8,11 @@ import {
 } from '@freecodecamp/shared/config/curriculum';
 
 import { getChallengesForLang } from '../get-challenges.js';
+import { isEmpty } from 'lodash';
+
+const {
+  values: { language: languages }
+} = parseArgs({ options: { language: { type: 'string', multiple: true } } });
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in
@@ -43,9 +49,9 @@ const getChallenges = async (lang: string) => {
 void (async () => {
   let actionShouldFail = false;
 
-  const langsToCheck = availableLangs.curriculum.filter(
-    lang => String(lang) !== 'english'
-  );
+  const langsToCheck = isEmpty(languages)
+    ? availableLangs.curriculum.filter(lang => String(lang) !== 'english')
+    : languages!;
   for (const language of langsToCheck) {
     console.log(`\n=== ${language} ===`);
     const certs = getAuditedSuperBlocks({ language });

@@ -98,7 +98,7 @@ test.describe('Search bar optimized', () => {
     isMobile
   }) => {
     // This means that the default search bar should be rendered ^.
-    await page.getByTestId('curriculum-map-button').nth(0).click();
+    await page.locator('[data-testid="curriculum-map-button"]').nth(0).click();
 
     if (isMobile) {
       const menuButton = page.getByTestId('header-menu-button');

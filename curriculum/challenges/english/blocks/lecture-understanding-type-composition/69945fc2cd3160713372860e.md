@@ -1,0 +1,187 @@
+---
+id: 69945fc2cd3160713372860e
+title: What are Type Aliases and How Do They Work?
+challengeType: 19
+dashedName: what-are-type-aliases-and-how-do-they-work
+---
+
+# --description--
+
+In the prior lesson, you learned how to work with union types. One common way to work with union types is to use a type alias. 
+
+A type alias is a name for a type. Here is an example of providing a name for a union type:
+
+```ts
+type ID = number | string;
+```
+
+Often times in your projects, you will create type aliases and use them throughout your program like this:
+
+```ts
+type ID = number | string;
+
+type User = {
+  id: ID;
+  name: string;
+};
+
+function getUserId(user: User): ID {
+  return user.id;
+}
+```
+
+This example uses two types named `ID` and `User`. `ID` would be a union type for `number` or `string` while `User` is an object type with `id` and `name` properties. The `id` is specified with the `ID` type while the `name` has the `string` type. 
+
+The `getUserId` function has one parameter called `user` and its type is `User`. The return type for the `getUserId` function would be `ID`. 
+
+Type aliases are a great way to describe the shape of an object. It is common to create object types and use them in arrays like this:
+
+```ts
+type User = {
+  id: number | string;
+  name: string;
+};
+
+const users: User[] = [
+  { id: 101, name: "Alice" },
+  { id: "A102", name: "Bob" },
+  { id: 103, name: "Charlie" }
+];
+```
+
+In this example, the `users` array must be filled with only `User` objects. If you forget a property in one of the objects, then TypeScript will throw an error like this:
+
+```ts
+type User = {
+  id: number | string;
+  name: string;
+};
+
+const users: User[] = [
+  // Property 'name' is missing in type '{ id: number; }' but required in type 'User'.
+  { id: 101 },
+  { id: "A102", name: "Bob" },
+  { id: 103, name: "Charlie" }
+];
+```
+
+You might have noticed the use of PascalCase when it came to naming the type aliases. This is because by convention using PascalCase helps distinguish types from variables. It also helps with readability. When you see `User[]`, you will know it's an array of objects of type `User`.
+
+# --questions--
+
+## --text--
+
+What is a type alias in TypeScript?
+
+## --answers--
+
+A built-in TypeScript keyword used only for arrays.
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+A special class that stores multiple values.
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+A name given to a type, such as a union or object type.
+
+---
+
+A function that automatically converts one type to another.
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+## --video-solution--
+
+3
+
+## --text--
+
+What is the type of `id` inside of the `User` type here?
+
+```ts
+type ID = number | string;
+
+type User = {
+  id: ID;
+  name: string;
+};
+```
+
+## --answers--
+
+`number`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+`string`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+`number | string`
+
+---
+
+`null`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+## --video-solution--
+
+3
+
+## --text--
+
+Why is PascalCase commonly used when naming type aliases in TypeScript?
+
+## --answers--
+
+Because it is required by TypeScript.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+---
+
+To help distinguish types from variables and improve readability.
+
+---
+
+To make the code run faster.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+---
+
+To allow the type to be used in arrays.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+## --video-solution--
+
+2

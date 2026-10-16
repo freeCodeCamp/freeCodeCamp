@@ -4,8 +4,9 @@ export const names = ['prism-langs'];
 export const description =
   'Code block languages should be supported by PrismJS';
 export const tags = ['prism'];
+export const parser = 'markdownit';
 function rule(params, onError) {
-  params.tokens
+  params.parsers.markdownit.tokens
     .filter(param => param.type === 'fence')
     .forEach(codeBlock => {
       // whitespace around the language is ignored by the parser, as is case:

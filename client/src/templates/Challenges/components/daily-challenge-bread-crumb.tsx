@@ -5,7 +5,7 @@ import { Link } from '../../../components/helpers/index';
 
 import './challenge-title.css';
 import {
-  isValidDateString,
+  isValidDateOrMonthDayString,
   formatDisplayDate
 } from '../../../components/daily-coding-challenge/helpers';
 
@@ -16,7 +16,8 @@ function DailyChallengeBreadCrumb({
 }): JSX.Element | null {
   const { t } = useTranslation();
 
-  return dailyChallengeParam && isValidDateString(dailyChallengeParam) ? (
+  return dailyChallengeParam &&
+    isValidDateOrMonthDayString(dailyChallengeParam) ? (
     <nav
       className='challenge-title-breadcrumbs'
       aria-label={t('aria.breadcrumb-nav')}

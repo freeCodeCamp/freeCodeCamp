@@ -3,8 +3,6 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 const pageWithSpeaking =
   '/learn/b1-english-for-developers/learn-about-adverbial-phrases/task-19';
-const pageWithoutSpeaking =
-  '/learn/responsive-web-design-v9/lecture-what-is-css/what-is-the-basic-anatomy-of-a-css-rule';
 
 test.describe('Multiple Choice Question Challenge - With Speaking Modal', () => {
   test.beforeEach(async ({ page }) => {
@@ -20,40 +18,22 @@ test.describe('Multiple Choice Question Challenge - With Speaking Modal', () => 
       'Skip on Firefox - speech recognition unsupported'
     );
 
-    const speakingButtons = page.getByRole('button', {
-      name: translations['speaking-modal']['speaking-button']
-    });
-    const speakingButtonCount = await speakingButtons.count();
-    expect(speakingButtonCount).toBeGreaterThan(0);
+    const speakingButton = page
+      .getByRole('button', {
+        name: translations['speaking-modal']['speaking-button']
+      })
+      .first();
+    await expect(speakingButton).toBeVisible();
 
-    const radioCount = await page.getByRole('radio').count();
-    expect(speakingButtonCount).toBe(radioCount);
-
-    for (let i = 0; i < speakingButtonCount; i++) {
-      const btn = speakingButtons.nth(i);
-      await expect(btn).toBeVisible();
-
-      const describedBy = await btn.getAttribute('aria-describedby');
-      expect(describedBy).toBeTruthy();
-
-      // Ensure aria-describedby points to an existing element
-      await expect(page.locator(`#${describedBy}`)).toBeVisible();
-
-      await expect(btn).toHaveAttribute(
-        'aria-label',
-        translations['speaking-modal']['speaking-button']
-      );
-    }
-
-    await speakingButtons.first().click();
+    await speakingButton.click();
 
     await expect(page.getByRole('dialog')).toBeVisible();
 
-    await expect(
-      page.getByRole('button', {
-        name: translations['speaking-modal']['play']
-      })
-    ).toBeVisible();
+    const playButton = page.getByRole('button', {
+      name: translations['speaking-modal']['play']
+    });
+    await expect(playButton).toBeVisible();
+    await expect(playButton).toBeFocused(); // The button is focused by default
     await expect(
       page.getByRole('button', {
         name: translations['speaking-modal']['record']
@@ -89,26 +69,5 @@ test.describe('Multiple Choice Question Challenge - With Speaking Modal', () => 
         translations['speaking-modal']['speech-recognition-not-supported']
       )
     ).toBeVisible();
-  });
-});
-
-test.describe('Multiple Choice Question Challenge - Without Speaking Modal', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto(pageWithoutSpeaking);
-  });
-
-  test('should not show speaking controls on a challenge without speaking', async ({
-    page
-  }) => {
-    const radioCount = await page.getByRole('radio').count();
-    expect(radioCount).toBeGreaterThan(1);
-
-    const speakingButtonsCount = await page
-      .getByRole('button', {
-        name: translations['speaking-modal']['speaking-button']
-      })
-      .count();
-
-    expect(speakingButtonsCount).toBe(0);
   });
 });

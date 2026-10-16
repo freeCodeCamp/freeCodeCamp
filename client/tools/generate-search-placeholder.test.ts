@@ -1,11 +1,13 @@
 import { describe, test, expect } from 'vitest';
 
-import { clientLocale } from '../config/env.json';
+import envData from '../config/env.json';
 import {
   convertToLocalizedString,
   generateSearchPlaceholder,
   roundDownToNearestHundred
 } from './generate-search-placeholder';
+
+const { clientLocale } = envData;
 
 describe('Search bar placeholder tests:', () => {
   describe('Number rounding', () => {
@@ -144,7 +146,7 @@ describe('Search bar placeholder tests:', () => {
   if (clientLocale === 'english') {
     describe('Placeholder strings', () => {
       test('When the total number of hits is less than 100 the expected placeholder is generated', async () => {
-        const expected = 'Search our news articles, tutorials, and books';
+        const expected = 'Search our books and courses';
         const placeholderText = await generateSearchPlaceholder({
           mockRecordsNum: 99,
           locale: 'english'
@@ -158,7 +160,7 @@ describe('Search bar placeholder tests:', () => {
           mockRecordsNum: 100,
           locale: 'english'
         });
-        const expected = 'Search 100+ news articles, tutorials, and books';
+        const expected = 'Search 100+ of our books and courses';
 
         expect(placeholderText).toEqual(expected);
       });
@@ -168,7 +170,7 @@ describe('Search bar placeholder tests:', () => {
           mockRecordsNum: 11000,
           locale: 'english'
         });
-        const expected = 'Search 11,000+ news articles, tutorials, and books';
+        const expected = 'Search 11,000+ of our books and courses';
 
         expect(placeholderText).toEqual(expected);
       });

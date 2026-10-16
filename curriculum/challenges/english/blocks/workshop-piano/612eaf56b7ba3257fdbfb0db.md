@@ -67,10 +67,11 @@ assert.equal(document.querySelector('img')?.getAttribute('alt'), 'freeCodeCamp L
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    --fcc-editable-region--
     <div id="piano">
+--fcc-editable-region--
+      
+--fcc-editable-region--
       <div class="keys">
-    --fcc-editable-region--
         <div class="key"></div>
         <div class="key black--key"></div>
         <div class="key black--key"></div>

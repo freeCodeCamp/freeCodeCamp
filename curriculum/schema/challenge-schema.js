@@ -1,21 +1,20 @@
-const Joi = require('joi');
-Joi.objectId = require('joi-objectid')(Joi);
+import Joi from 'joi';
+import joiObjectId from 'joi-objectid';
 
-const {
-  challengeTypes
-} = require('@freecodecamp/shared/config/challenge-types');
-const {
+Joi.objectId = joiObjectId(Joi);
+
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
   chapterBasedSuperBlocks,
-  catalogSuperBlocks,
   languageSuperBlocks,
   SuperBlocks
-} = require('@freecodecamp/shared/config/curriculum');
-const {
+} from '@freecodecamp/shared/config/curriculum';
+import {
   availableCharacters,
   availableBackgrounds,
   availableAudios,
   availableAlignments
-} = require('./scene-assets');
+} from './scene-assets.js';
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -27,8 +26,6 @@ const fileJoi = Joi.object().keys({
   editableRegionBoundaries: [Joi.array().items(Joi.number())],
   path: Joi.string(),
   error: Joi.valid(null),
-  head: Joi.string().allow(''),
-  tail: Joi.string().allow(''),
   seed: Joi.string().allow(''),
   contents: Joi.string().allow(''),
   id: Joi.string().allow(''),
@@ -117,7 +114,20 @@ const quizJoi = Joi.object().keys({
           .length(3)
           .required()
           .unique(),
-        answer: Joi.string().required()
+        answer: Joi.string().required(),
+        audioData: Joi.object().keys({
+          audio: Joi.object({
+            filename: Joi.string().required(),
+            startTimestamp: Joi.number(),
+            finishTimestamp: Joi.number()
+          }),
+          transcript: Joi.array().items(
+            Joi.object({
+              character: Joi.string().required(),
+              text: Joi.string().required()
+            })
+          )
+        })
       })
     )
     .custom((value, helpers) => {
@@ -131,12 +141,13 @@ const quizJoi = Joi.object().keys({
     .required()
 });
 
-const schema = Joi.object().keys({
+export const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockLabel: Joi.when('superBlock', {
-    is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
+    is: [...chapterBasedSuperBlocks],
     then: Joi.valid(
+      'cert-project',
       'workshop',
       'lab',
       'lecture',
@@ -167,7 +178,7 @@ const schema = Joi.object().keys({
   }),
   certification: Joi.string().regex(slugWithSlashRE),
   isExam: Joi.boolean(),
-  challengeType: Joi.number().min(0).max(31).required(),
+  challengeType: Joi.number().min(0).max(33).required(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
   demoType: Joi.string().valid('onClick', 'onLoad'),
@@ -193,7 +204,7 @@ const schema = Joi.object().keys({
   nodules: Joi.array().items(
     Joi.object().keys({
       type: Joi.valid('paragraph', 'interactiveEditor').required(),
-      data: Joi.when('type', {
+      files: Joi.when('type', {
         is: ['interactiveEditor'],
         then: Joi.array().items(
           Joi.object().keys({
@@ -203,7 +214,12 @@ const schema = Joi.object().keys({
             contentsHtml: Joi.string().required()
           })
         ),
-        otherwise: Joi.string().required()
+        otherwise: Joi.forbidden()
+      }),
+      contents: Joi.when('type', {
+        is: ['paragraph'],
+        then: Joi.string().required(),
+        otherwise: Joi.forbidden()
       })
     })
   ),
@@ -219,7 +235,8 @@ const schema = Joi.object().keys({
     'Euler',
     'Rosetta',
     'Chinese Curriculum',
-    'Spanish Curriculum'
+    'Spanish Curriculum',
+    'General'
   ).required(),
   isLastChallengeInBlock: Joi.boolean().required(),
   videoUrl: Joi.string().allow(''),
@@ -232,8 +249,7 @@ const schema = Joi.object().keys({
           feedback: Joi.string().allow(null)
         })
       )
-      .required(),
-    inputType: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional()
+      .required()
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
@@ -246,13 +262,17 @@ const schema = Joi.object().keys({
     is: challengeTypes.fillInTheBlank,
     then: Joi.when('superBlock', {
       is: Joi.valid(SuperBlocks.A1Chinese, SuperBlocks.A2Chinese),
-      then: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional(),
+      then: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').required(),
       otherwise: Joi.forbidden()
     }),
     otherwise: Joi.forbidden()
   }),
   instructions: Joi.string().when('challengeType', {
-    is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
+    is: [
+      challengeTypes.pythonProject,
+      challengeTypes.codeAllyCert,
+      challengeTypes.freeCodeCampOsCert
+    ],
     then: Joi.string().min(1).required(),
     otherwise: Joi.string().allow('')
   }),
@@ -341,7 +361,8 @@ const schema = Joi.object().keys({
         'array.unique': 'Dialogues must not have overlapping times.'
       })
   }),
-  showSpeakingButton: Joi.bool(),
+  // This is only to be used for dynamic client updates.
+  sourceLocation: Joi.string(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
   superBlock: Joi.string().regex(slugWithSlashRE),
   superOrder: Joi.number(),
@@ -375,12 +396,17 @@ const schema = Joi.object().keys({
   }),
   translationPending: Joi.bool().required(),
   url: Joi.when('challengeType', {
-    is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
+    is: [
+      challengeTypes.codeAllyPractice,
+      challengeTypes.codeAllyCert,
+      challengeTypes.freeCodeCampOsPractice,
+      challengeTypes.freeCodeCampOsCert
+    ],
     then: Joi.string().required()
   }),
   usesMultifileEditor: Joi.boolean()
 });
 
-exports.challengeSchemaValidator = () => {
+export const challengeSchemaValidator = () => {
   return challenge => schema.validate(challenge);
 };

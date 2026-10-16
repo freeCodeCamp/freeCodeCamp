@@ -325,7 +325,7 @@ class ShoppingCart {
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
       
-    })
+    });
   }
 --fcc-editable-region--
 };

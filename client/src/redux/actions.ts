@@ -51,14 +51,11 @@ export const toggleTheme = createAction(actionTypes.toggleTheme);
 export const setTheme = createAction(actionTypes.setTheme);
 export const initializeTheme = createAction(actionTypes.initializeTheme);
 
-export const updateAllChallengesInfo = createAction(
-  actionTypes.updateAllChallengesInfo
-);
-
 export const postCharge = createAction(actionTypes.postCharge);
 export const postChargeProcessing = createAction(
   actionTypes.postChargeProcessing
 );
+export const postChargePending = createAction(actionTypes.postChargePending);
 export const postChargeComplete = createAction(actionTypes.postChargeComplete);
 export const postChargeError = createAction(actionTypes.postChargeError);
 
@@ -83,6 +80,9 @@ export const reportUser = createAction(actionTypes.reportUser);
 export const reportUserComplete = createAction(actionTypes.reportUserComplete);
 export const reportUserError = createAction(actionTypes.reportUserError);
 
+export const removeModuleChallenges = createAction(
+  actionTypes.removeModuleChallenges
+);
 export const resetUserData = createAction(actionTypes.resetUserData);
 
 export const showCert = createAction(actionTypes.showCert);

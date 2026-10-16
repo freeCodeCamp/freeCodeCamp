@@ -39,12 +39,6 @@ assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(__helpers.removeJSCo
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(z){return 'difference = '+z;})(difference);
-```
-
 ## --seed-contents--
 
 ```js

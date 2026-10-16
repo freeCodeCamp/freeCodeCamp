@@ -5,7 +5,7 @@ import { Button, Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { randomQuote } from '../../utils/get-words';
 import { Link } from '../helpers';
 import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
-import { getTodayUsCentral } from './helpers';
+import { getMonthDayUsCentral } from './helpers';
 
 import './not-found.css';
 
@@ -41,7 +41,7 @@ function DailyCodingChallengeNotFound(): JSX.Element {
           <div className='button-wrapper'>
             <Button
               block={true}
-              href={`/learn/daily-coding-challenge/${getTodayUsCentral()}`}
+              href={`/learn/daily-coding-challenge/${getMonthDayUsCentral()}`}
             >
               {t(`buttons.go-to-dcc-today`)}
             </Button>

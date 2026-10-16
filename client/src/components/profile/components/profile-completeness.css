@@ -1,0 +1,120 @@
+.profile-completeness {
+  padding: 1em;
+  background: var(--primary-background);
+  border: 1px solid var(--quaternary-background);
+  margin-bottom: 1em;
+}
+
+.profile-completeness-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.profile-completeness-header:hover {
+  background: none;
+  color: var(--primary-color);
+}
+
+.profile-completeness-title {
+  flex: 1;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.profile-completeness-percentage {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.profile-completeness-chevron {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+  transform: rotate(180deg);
+  flex-shrink: 0;
+}
+
+.profile-completeness-chevron svg {
+  width: 15px;
+  height: 15px;
+}
+
+.profile-completeness-chevron.expanded {
+  transform: rotate(0deg);
+}
+
+.profile-completeness-expanded {
+  margin-top: 1rem;
+}
+
+.profile-completeness-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.profile-completeness-bar-container {
+  flex: 1;
+  height: 8px;
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--quaternary-background);
+}
+
+.profile-completeness-bar-fill {
+  height: 100%;
+  background-color: var(--blue-mid);
+  border-radius: 0;
+  transition: width 0.3s ease;
+}
+
+.profile-completeness-progress-text {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.profile-completeness-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-completeness-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.completeness-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.completeness-item-complete {
+  color: var(--primary-color);
+  opacity: 0.7;
+}
+
+.completeness-item-incomplete {
+  color: var(--primary-color);
+}

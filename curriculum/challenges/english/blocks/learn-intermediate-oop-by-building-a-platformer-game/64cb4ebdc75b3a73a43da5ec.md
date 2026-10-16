@@ -196,7 +196,7 @@ let isCheckpointCollisionDetectionActive = true;
 
 const proportionalSize = (size) => {
   return innerHeight < 500 ? Math.ceil((size / 500) * innerHeight) : size;
-}
+};
 
 class Player {
   constructor() {
@@ -378,7 +378,7 @@ const animate = () => {
       player.velocity.y = gravity;
     };
   });
-}
+};
 
 
 const keys = {
@@ -417,13 +417,13 @@ const movePlayer = (key, xVelocity, isPressed) => {
       }
       player.velocity.x += xVelocity;
   }
-}
+};
 
 const startGame = () => {
   canvas.style.display = "block";
   startScreen.style.display = "none";
   animate();
-}
+};
 
 --fcc-editable-region--
 

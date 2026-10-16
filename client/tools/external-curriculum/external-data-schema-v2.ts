@@ -1,5 +1,6 @@
 import Joi from 'joi';
 import { chapterBasedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import { Levels, Topic } from '@freecodecamp/shared/config/catalog';
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 
@@ -23,7 +24,8 @@ const blockSchema = Joi.object().keys({
         'Spanish Curriculum',
         'Odin',
         'Euler',
-        'Rosetta'
+        'Rosetta',
+        'General'
       ).required(),
       order: Joi.number().required(),
       template: Joi.string().allow(''),
@@ -40,6 +42,7 @@ const blockSchema = Joi.object().keys({
         'legacy-challenge-grid'
       ).required(),
       blockLabel: Joi.valid(
+        'cert-project',
         'lecture',
         'workshop',
         'lab',
@@ -121,6 +124,23 @@ const availableSuperBlocksSchema = Joi.object({
   )
 });
 
+const catalogSchema = Joi.object({
+  catalog: Joi.array().items(
+    Joi.object({
+      dashedName: Joi.string().regex(slugRE).required(),
+      title: Joi.string().required(),
+      summary: Joi.array().items(Joi.string()).required(),
+      level: Joi.valid(
+        ...Object.values(Levels as Record<string, string>)
+      ).required(),
+      hours: Joi.number().required(),
+      topic: Joi.valid(
+        ...Object.values(Topic as Record<string, string>)
+      ).required()
+    })
+  )
+});
+
 export const superblockSchemaValidator =
   () => (superBlock: Record<string, unknown>) => {
     const superBlockName = Object.keys(superBlock)[0];
@@ -134,3 +154,6 @@ export const superblockSchemaValidator =
 
 export const availableSuperBlocksValidator = () => (data: unknown) =>
   availableSuperBlocksSchema.validate(data);
+
+export const catalogValidator = () => (data: unknown) =>
+  catalogSchema.validate(data);

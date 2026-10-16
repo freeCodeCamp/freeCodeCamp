@@ -9,6 +9,7 @@ export const getCertifications = (user: User) => {
     isRespWebDesignCertV9,
     is2018DataVisCert,
     isFrontEndLibsCert,
+    isFrontEndLibsCertV9,
     isJavascriptCertV9,
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
@@ -36,6 +37,7 @@ export const getCertifications = (user: User) => {
       isB1EnglishCert ||
       isRespWebDesignCertV9 ||
       isJavascriptCertV9 ||
+      isFrontEndLibsCertV9 ||
       isFoundationalCSharpCertV8 ||
       isPythonCertV9 ||
       isRelationalDatabaseCertV9,
@@ -81,6 +83,11 @@ export const getCertifications = (user: User) => {
         certSlug: Certification.JsV9
       },
       {
+        show: isFrontEndLibsCertV9,
+        title: 'Front End Developer Libraries Certification',
+        certSlug: Certification.FrontEndDevLibsV9
+      },
+      {
         show: isFoundationalCSharpCertV8,
         title: 'Foundational C# with Microsoft Certification',
         certSlug: Certification.FoundationalCSharp
@@ -110,7 +117,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Front End Development Libraries V8 Certification',
+        title: 'Front-End Development Libraries V8 Certification',
         certSlug: Certification.FrontEndDevLibs
       },
       {
@@ -125,7 +132,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isApisMicroservicesCert,
-        title: 'Back End Development and APIs V8 Certification',
+        title: 'Back-End Development and APIs V8 Certification',
         certSlug: Certification.BackEndDevApis
       },
       {
@@ -160,7 +167,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isFrontEndCert,
-        title: 'Front End Certification',
+        title: 'Front-End Certification',
         certSlug: Certification.LegacyFrontEnd
       },
       {
@@ -171,7 +178,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isBackEndCert,
-        title: 'Back End Certification',
+        title: 'Back-End Certification',
         certSlug: Certification.LegacyBackEnd
       },
       {
@@ -187,7 +194,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isFullStackCert,
-        title: 'Full Stack Certification',
+        title: 'Full-Stack Certification',
         // Keep the current public profile cert slug
         certSlug: Certification.LegacyFullStack
       }

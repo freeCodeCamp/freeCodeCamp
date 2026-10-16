@@ -77,7 +77,7 @@ function ConditionalContent({
           <div className='supporter-badge-container'>
             <SupporterBadge />
           </div>
-          <ThankYouMessage askForDonation={false} thankContributon={true} />
+          <ThankYouMessage askForDonation={false} thankContribution={true} />
         </Col>
         <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
           <CurrentInitiativesText isSupportersPage={true} />

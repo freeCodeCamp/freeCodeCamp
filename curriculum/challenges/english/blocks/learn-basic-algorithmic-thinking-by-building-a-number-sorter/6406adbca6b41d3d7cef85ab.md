@@ -331,7 +331,7 @@ const sortInputArray = (event) => {
   event.preventDefault();
 
 
-}
+};
 --fcc-editable-region--
 
 sortButton.addEventListener("click", sortInputArray);

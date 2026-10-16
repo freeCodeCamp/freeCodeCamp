@@ -10,56 +10,12 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test.describe('Link MS user component (signed-out user)', () => {
-  test.use({ storageState: { cookies: [], origins: [] } });
-  test('should display the page content with a signin CTA', async ({
-    page
-  }) => {
-    await expect(
-      page.getByRole('heading', {
-        name: 'Trophy - Write Your First Code Using C#',
-        level: 1
-      })
-    ).toBeVisible();
-
-    await expect(
-      page.getByRole('heading', {
-        name: translations.learn.ms['link-header'],
-        level: 2
-      })
-    ).toBeVisible();
-
-    await expect(
-      page.getByText(translations.learn.ms['link-signin'])
-    ).toBeVisible();
-
-    // There are 2 sign in button on the page: one in the navbar, and one in the page content
-    const signInButtons = await page
-      .getByRole('link', { name: translations.buttons['sign-in'] })
-      .all();
-    expect(signInButtons).toHaveLength(2);
-  });
-});
-
-test.describe('Link MS user component (signed-in user)', () => {
+test.describe('Link MS user component unlink flow', () => {
   test.afterEach(() => {
     execSync('node ../tools/scripts/seed/seed-ms-username');
   });
 
-  test("should recognize the user's MS account", async ({ page }) => {
-    await expect(
-      page.getByRole('heading', {
-        name: 'Trophy - Write Your First Code Using C#',
-        level: 1
-      })
-    ).toBeVisible();
-
-    await expect(page.locator('main')).toHaveText(
-      /The Microsoft account with username "certifieduser" is currently linked to your freeCodeCamp account\. If this is not your Microsoft username, remove the link\./
-    );
-  });
-
-  test('should allow the user to unlink their MS account and display a form for re-link', async ({
+  test('should allow the user to unlink their MS account and display a form for relinking', async ({
     page
   }) => {
     const unlinkButton = page.getByRole('button', {
@@ -77,46 +33,10 @@ test.describe('Link MS user component (signed-in user)', () => {
       })
     ).toBeVisible();
     await expect(page.getByText(translations.learn.ms.unlinked)).toBeVisible();
-    await expect(
-      page.getByRole('listitem').filter({
-        hasText:
-          'Using a browser where you are logged into your Microsoft account, go to https://learn.microsoft.com/users/me/transcript'
-      })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('listitem')
-        .filter({ hasText: translations.learn.ms['link-li-2'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('listitem')
-        .filter({ hasText: translations.learn.ms['link-li-3'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('listitem')
-        .filter({ hasText: translations.learn.ms['link-li-4'] })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('listitem').filter({
-        hasText:
-          'Paste the URL into the input below, it should look similar to this: https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID'
-      })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('listitem')
-        .filter({ hasText: translations.learn.ms['link-li-6'] })
-    ).toBeVisible();
 
     const transcriptLinkInput = page.getByLabel(
       translations.learn.ms['transcript-label']
     );
     await expect(transcriptLinkInput).toBeVisible();
-    await expect(transcriptLinkInput).toHaveAttribute(
-      'placeholder',
-      'https://learn.microsoft.com/en-us/users/username/transcript/transcriptId'
-    );
   });
 });

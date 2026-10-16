@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { select, input, number } from '@inquirer/prompts';
 import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
@@ -9,6 +9,7 @@ import {
   chapterBasedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   createBlockFolder,
   writeBlockStructure
@@ -16,18 +17,30 @@ import {
 import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import {
   createQuizFile,
+  createLabFile,
+  createReviewFile,
   createStepFile,
   validateBlockName,
   getAllBlocks
 } from './utils.js';
-import { getBaseMeta } from './helpers/get-base-meta.js';
-import { IntroJson, parseJson } from './helpers/parse-json.js';
+import { parseIntroJson } from './helpers/parse-json.js';
 import {
   ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
 } from './helpers/create-project.js';
 import { withTrace } from './helpers/utils.js';
+import {
+  buildProjectMeta,
+  getDefaultBlockLayout
+} from './helpers/project-type.js';
+import {
+  getProjectChallengeType,
+  getProjectSeedFiles,
+  isProjectContentType,
+  projectContentTypeChoices,
+  type ProjectContentType
+} from './helpers/project-content-type.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -37,15 +50,17 @@ const helpCategories = [
   'English',
   'Odin',
   'Euler',
-  'Rosetta'
+  'Rosetta',
+  'General'
 ] as const;
 
 interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  blockLabel?: string;
-  blockLayout?: string;
+  blockLabel?: BlockLabel;
+  blockLayout?: BlockLayouts;
+  projectContentType?: ProjectContentType;
   questionCount?: number;
   order?: number;
   chapter?: string;
@@ -55,26 +70,105 @@ interface CreateProjectArgs {
 }
 
 async function createProject(projectArgs: CreateProjectArgs) {
-  if (!projectArgs.title) {
-    projectArgs.title = projectArgs.block;
-  }
-
+  const title = projectArgs.title ?? projectArgs.block;
   const order = projectArgs.order;
   const chapter = projectArgs.chapter;
   const module = projectArgs.module;
   const position = projectArgs.position;
+  const questionCount = projectArgs.questionCount;
+  const projectContentType = projectArgs.projectContentType;
+  const isChapterBased = chapterBasedSuperBlocks.includes(
+    projectArgs.superBlock
+  );
+
+  if (isChapterBased && (!projectArgs.blockLabel || !projectArgs.blockLayout)) {
+    throw new Error(
+      'Missing one of the following arguments: blockLabel, blockLayout'
+    );
+  }
+
+  const createChallenge = (() => {
+    switch (projectArgs.blockLabel) {
+      case BlockLabel.quiz: {
+        if (questionCount == null) {
+          throw new Error(
+            'Property `questionCount` is null when creating new Quiz Challenge'
+          );
+        }
+        return (challengeId: ObjectId) =>
+          createQuizChallenge({
+            challengeId,
+            block: projectArgs.block,
+            title,
+            questionCount
+          });
+      }
+      case BlockLabel.lab: {
+        if (!isProjectContentType(projectContentType)) {
+          throw new Error(
+            'Property `projectContentType` is invalid when creating new Lab Challenge'
+          );
+        }
+        return (challengeId: ObjectId) =>
+          createLabChallenge({
+            challengeId,
+            block: projectArgs.block,
+            title,
+            challengeType: getProjectChallengeType(
+              BlockLabel.lab,
+              projectContentType
+            ),
+            contentType: projectContentType
+          });
+      }
+      case BlockLabel.workshop: {
+        if (!isProjectContentType(projectContentType)) {
+          throw new Error(
+            'Property `projectContentType` is invalid when creating new Workshop Challenge'
+          );
+        }
+        return (challengeId: ObjectId) =>
+          createFirstChallenge({
+            block: projectArgs.block,
+            challengeId,
+            title,
+            challengeType: getProjectChallengeType(
+              BlockLabel.workshop,
+              projectContentType
+            ),
+            contentType: projectContentType
+          });
+      }
+      case BlockLabel.review:
+        return (challengeId: ObjectId) =>
+          createReviewChallenge({
+            challengeId,
+            block: projectArgs.block,
+            title
+          });
+      default:
+        return (challengeId: ObjectId) =>
+          createFirstChallenge({
+            block: projectArgs.block,
+            challengeId,
+            title,
+            challengeType: challengeTypes.html,
+            contentType: 'html'
+          });
+    }
+  })();
 
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[projectArgs.superBlock];
 
-  if (chapterBasedSuperBlocks.includes(projectArgs.superBlock)) {
+  if (isChapterBased) {
     if (!chapter || !module || typeof position == 'undefined') {
       throw Error(
         'Missing one of the following arguments: chapter, module, position'
       );
     }
-    void updateChapterModuleSuperblockStructure(
+    await updateChapterModuleSuperblockStructure(
       projectArgs.block,
       // Convert human-friendly (1-based) position to 0-based index for insertion.
       { order: position - 1, chapter, module },
@@ -84,60 +178,24 @@ async function createProject(projectArgs: CreateProjectArgs) {
     if (typeof order == 'undefined') {
       throw Error('Missing argument: order');
     }
-    void updateSimpleSuperblockStructure(
+    await updateSimpleSuperblockStructure(
       projectArgs.block,
       { order },
       superblockFilename
     );
   }
 
-  void updateIntroJson(
-    projectArgs.superBlock,
-    projectArgs.block,
-    projectArgs.title
-  );
+  await updateIntroJson(projectArgs.superBlock, projectArgs.block, title);
 
-  if (projectArgs.blockLabel === BlockLabel.quiz) {
-    if (projectArgs.questionCount == null) {
-      throw new Error(
-        'Property `questionCount` is null when creating new Quiz Challenge'
-      );
-    }
-    const challengeId = await createQuizChallenge(
-      projectArgs.block,
-      projectArgs.title,
-      projectArgs.questionCount
-    );
-    void createMetaJson(
-      projectArgs.superBlock,
-      projectArgs.block,
-      projectArgs.title,
-      projectArgs.helpCategory,
-      challengeId
-    );
-  } else {
-    const challengeId = await createFirstChallenge(projectArgs.block);
-    void createMetaJson(
-      projectArgs.superBlock,
-      projectArgs.block,
-      projectArgs.title,
-      projectArgs.helpCategory,
-      challengeId,
-      projectArgs.order,
-      projectArgs.blockLabel,
-      projectArgs.blockLayout
-    );
-    // TODO: remove once we stop relying on markdown in the client.
-  }
+  const challengeId = new ObjectId();
+  const createMetaJsonArgs = {
+    ...projectArgs,
+    title,
+    challengeId
+  };
 
-  if (
-    (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
-      projectArgs.blockLabel) == null
-  ) {
-    throw new Error(
-      'Missing argument: blockLabel when updating intro markdown'
-    );
-  }
+  await createMetaJson(createMetaJsonArgs);
+  await createChallenge(challengeId);
 }
 
 async function updateIntroJson(
@@ -149,79 +207,135 @@ async function updateIntroJson(
     __dirname,
     '../../client/i18n/locales/english/intro.json'
   );
-  const newIntro = await parseJson<IntroJson>(introJsonPath);
+  const newIntro = await parseIntroJson(introJsonPath);
   newIntro[superBlock].blocks[block] = {
     title,
     intro: [title, '']
   };
-  void withTrace(
+  await withTrace(
     fs.writeFile,
     introJsonPath,
     await format(JSON.stringify(newIntro), { parser: 'json' })
   );
 }
 
-async function createMetaJson(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string,
-  helpCategory: string,
-  challengeId: ObjectId,
-  order?: number,
-  blockLabel?: string,
-  blockLayout?: string
-) {
-  let newMeta;
-  if (chapterBasedSuperBlocks.includes(superBlock)) {
-    newMeta = getBaseMeta('FullStack');
-    newMeta.blockLabel = blockLabel;
-    newMeta.blockLayout = blockLayout;
-    if (blockLabel === BlockLabel.workshop) {
-      newMeta.hasEditableBoundaries = true;
-    }
-  } else {
-    newMeta = getBaseMeta('Step');
-    newMeta.order = order;
-  }
-  newMeta.name = title;
-  newMeta.dashedName = block;
-  newMeta.helpCategory = helpCategory;
+type CreateMetaJsonArgs = CreateProjectArgs & {
+  title: string;
+  challengeId: ObjectId;
+};
 
-  newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
+async function createMetaJson({
+  superBlock,
+  block,
+  title,
+  helpCategory,
+  challengeId,
+  order,
+  blockLabel,
+  blockLayout
+}: CreateMetaJsonArgs) {
+  const newMeta = buildProjectMeta({
+    isChapterBased: chapterBasedSuperBlocks.includes(superBlock),
+    block,
+    title,
+    helpCategory,
+    challengeId: challengeId.toString(),
+    order,
+    blockLabel,
+    blockLayout
+  });
 
   await writeBlockStructure(block, newMeta);
 }
 
-async function createFirstChallenge(block: string): Promise<ObjectId> {
-  // TODO: would be nice if the extension made sense for the challenge, but, at
-  // least until react I think they're all going to be html anyway.
-  const challengeSeeds = [
-    {
-      contents: '',
-      ext: 'html',
-      editableRegionBoundaries: [0, 2]
-    }
-  ];
+async function createFirstChallenge({
+  block,
+  challengeId,
+  title,
+  challengeType,
+  contentType
+}: {
+  block: string;
+  challengeId: ObjectId;
+  title: string;
+  challengeType: number;
+  contentType: ProjectContentType;
+}) {
+  const challengeSeeds = getProjectSeedFiles(contentType, title).map(
+    ({ contents, ext, editableRegionBoundaries }) => ({
+      contents,
+      ext,
+      editableRegionBoundaries: editableRegionBoundaries ?? []
+    })
+  );
   // including trailing slash for compatibility with createStepFile
-  return createStepFile({
+  createStepFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     stepNum: 1,
-    challengeType: 0,
+    challengeType,
     challengeSeeds,
-    isFirstChallenge: true
+    isFirstChallenge: challengeType === challengeTypes.html
   });
 }
 
-async function createQuizChallenge(
-  block: string,
-  title: string,
-  questionCount: number
-): Promise<ObjectId> {
+async function createQuizChallenge({
+  challengeId,
+  block,
+  title,
+  questionCount
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+  questionCount: number;
+}): Promise<ObjectId> {
   return createQuizFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount
+  });
+}
+
+async function createLabChallenge({
+  challengeId,
+  block,
+  title,
+  challengeType,
+  contentType
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+  challengeType: number;
+  contentType: ProjectContentType;
+}): Promise<ObjectId> {
+  return createLabFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
+    title,
+    dashedName: block,
+    challengeType,
+    contentType
+  });
+}
+
+async function createReviewChallenge({
+  challengeId,
+  block,
+  title
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+}): Promise<ObjectId> {
+  return createReviewFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
+    title,
+    dashedName: block
   });
 }
 
@@ -251,153 +365,143 @@ async function getModules(superBlock: string, chapterName: string) {
 }
 
 void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'superBlock',
-        message: 'Which certification does this belong to?',
-        default: SuperBlocks.RespWebDesignV9,
-        type: 'list',
-        choices: Object.values(SuperBlocks)
-      },
-      {
-        name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this project?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
-        }
-      },
-      {
-        name: 'title',
-        default: ({ block }: { block: string }) => block
-      },
-      {
-        name: 'helpCategory',
-        message: 'Choose a help category',
-        default: 'HTML-CSS',
-        type: 'list',
-        choices: helpCategories
-      },
-      {
-        name: 'blockLabel',
+  .then(async existingBlocks => {
+    const superBlock = await select<SuperBlocks>({
+      message: 'Which certification does this belong to?',
+      default: SuperBlocks.RespWebDesignV9,
+      choices: Object.values(SuperBlocks).map(value => ({
+        name: value,
+        value
+      }))
+    });
+
+    const rawBlock = await input({
+      message: 'What is the dashed name (in kebab-case) for this project?',
+      validate: (value: string) => validateBlockName(value, existingBlocks)
+    });
+
+    const block = rawBlock.toLowerCase().trim();
+
+    const title = await input({
+      message: 'Enter a title for this project:',
+      default: block
+    });
+
+    const helpCategory = await select<string>({
+      message: 'Choose a help category',
+      default: 'HTML-CSS',
+      choices: helpCategories.map(value => ({
+        name: value,
+        value
+      }))
+    });
+
+    let blockLabel: BlockLabel | undefined;
+    let blockLayout: BlockLayouts | undefined;
+    let questionCount: number | undefined;
+    let projectContentType: ProjectContentType | undefined;
+    let chapter: string | undefined;
+    let module: string | undefined;
+    let position: number | undefined;
+    let order: number | undefined;
+
+    if (chapterBasedSuperBlocks.includes(superBlock)) {
+      blockLabel = await select<BlockLabel>({
         message: 'Choose a block label',
         default: BlockLabel.lab,
-        type: 'list',
-        choices: Object.values(BlockLabel),
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'blockLayout',
-        message: 'Choose a block layout',
+        choices: Object.values(BlockLabel).map(value => ({
+          name: value,
+          value
+        }))
+      });
 
-        default: (answers: { blockLabel: BlockLabel }) =>
-          answers.blockLabel == BlockLabel.quiz
-            ? BlockLayouts.Link
-            : BlockLayouts.ChallengeList,
-        type: 'list',
-        choices: Object.values(BlockLayouts),
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'questionCount',
-        message: 'Choose a question count',
-        default: 20,
-        type: 'list',
-        choices: [10, 20],
-        when: (answers: CreateProjectArgs) =>
-          answers.blockLabel === BlockLabel.quiz
-      },
-      {
-        name: 'chapter',
+      blockLayout = await select<BlockLayouts>({
+        message: 'Choose a block layout',
+        default: getDefaultBlockLayout(blockLabel),
+        choices: Object.values(BlockLayouts).map(value => ({
+          name: value,
+          value
+        }))
+      });
+
+      if (blockLabel === BlockLabel.quiz) {
+        questionCount = await select<number>({
+          message: 'Choose a question count',
+          default: 20,
+          choices: [
+            { name: '10', value: 10 },
+            { name: '20', value: 20 }
+          ]
+        });
+      }
+
+      if (blockLabel === BlockLabel.lab || blockLabel === BlockLabel.workshop) {
+        projectContentType = await select<ProjectContentType>({
+          message: 'Choose a project content type',
+          default: 'html',
+          choices: projectContentTypeChoices
+        });
+      }
+
+      const chapters = await getChapters(superBlock);
+      chapter = await select({
         message: 'What chapter should this project go in?',
-        default: 'html',
-        type: 'list',
-        choices: async (answers: CreateProjectArgs) => {
-          const chapters = await getChapters(answers.superBlock);
-          return chapters.map(x => x.dashedName);
-        },
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'module',
+        choices: chapters.map(x => ({
+          name: x.dashedName,
+          value: x.dashedName
+        }))
+      });
+
+      const modules = await getModules(superBlock, chapter);
+      module = await select({
         message: 'What module should this project go in?',
-        default: 'html',
-        type: 'list',
-        choices: async (answers: CreateProjectArgs) => {
-          const modules = await getModules(
-            answers.superBlock,
-            answers.chapter!
-          );
-          return modules!.map(x => x.dashedName);
-        },
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'position',
+        choices: modules!.map(x => ({
+          name: x.dashedName,
+          value: x.dashedName
+        }))
+      });
+
+      position = await number({
         message: 'At which position does this appear in the module?',
         default: 1,
-        validate: (position: string) => {
-          return parseInt(position, 10) > 0
+        validate: (value: number | undefined) =>
+          value && value > 0
             ? true
-            : 'Position must be an number greater than zero.';
-        },
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock),
-        filter: (position: string) => {
-          return parseInt(position, 10);
-        }
-      },
-      {
-        name: 'order',
+            : 'Position must be a number greater than zero.'
+      });
+    } else {
+      order = await number({
         message: 'Which position does this appear in the certificate?',
         default: 42,
-        validate: (order: string) => {
-          return parseInt(order, 10) > 0
+        validate: (value: number | undefined) =>
+          value && value > 0
             ? true
-            : 'Order must be an number greater than zero.';
-        },
-        when: (answers: CreateProjectArgs) =>
-          !chapterBasedSuperBlocks.includes(answers.superBlock),
-        filter: (order: string) => {
-          return parseInt(order, 10);
-        }
-      }
-    ]).then(
-      async ({
-        superBlock,
-        block,
-        title,
-        helpCategory,
-        blockLabel,
-        blockLayout,
-        questionCount,
-        chapter,
-        module,
-        position,
-        order
-      }: CreateProjectArgs) =>
-        await createProject({
-          superBlock,
-          block,
-          helpCategory,
-          blockLabel,
-          blockLayout,
-          questionCount,
-          title,
-          chapter,
-          module,
-          position,
-          order
-        })
-    )
-  )
-  .then(() =>
-    console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
+            : 'Order must be a number greater than zero.'
+      });
+    }
+
+    return {
+      superBlock,
+      block,
+      title,
+      helpCategory,
+      blockLabel,
+      blockLayout,
+      questionCount,
+      projectContentType,
+      chapter,
+      module,
+      position,
+      order
+    };
+  })
+  .then(async (answers: CreateProjectArgs) => {
+    await createProject(answers);
+  })
+  .then(() => console.log('All set.  Refresh the page to see the changes.'))
+  .catch((err: unknown) =>
+    console.error(
+      'Error creating project:',
+      err instanceof Error ? err.message : String(err)
     )
   );

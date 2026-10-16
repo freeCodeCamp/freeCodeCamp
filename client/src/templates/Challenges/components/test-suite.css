@@ -7,8 +7,7 @@
 }
 
 .challenge-test-suite-heading {
-  font-size: 0.9em;
-  text-align: center;
+  font-size: 1em;
 }
 
 .sk-spinner {
@@ -25,6 +24,7 @@
   width: 100%;
   align-items: center;
   line-height: 1.5;
+  padding: 6px;
 }
 
 .test-result:nth-child(odd) {
@@ -47,11 +47,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 60px;
-  min-height: 60px;
 }
 
 .test-status-icon > svg {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }

@@ -57,6 +57,15 @@ export const updateMyKeyboardShortcutsError = createAction(
   types.updateMyKeyboardShortcutsError
 );
 
+export const updateMyClassroomMode = createAction(types.updateMyClassroomMode);
+export const updateMyClassroomModeComplete = createAction(
+  types.updateMyClassroomModeComplete,
+  checkForSuccessPayload
+);
+export const updateMyClassroomModeError = createAction(
+  types.updateMyClassroomModeError
+);
+
 export const updateMyHonesty = createAction(types.updateMyHonesty);
 export const updateMyHonestyComplete = createAction(
   types.updateMyHonestyComplete,
@@ -72,6 +81,13 @@ export const updateMyQuincyEmailComplete = createAction(
 export const updateMyQuincyEmailError = createAction(
   types.updateMyQuincyEmailError
 );
+
+export const updateMySocrates = createAction(types.updateMySocrates);
+export const updateMySocratesComplete = createAction(
+  types.updateMySocratesComplete,
+  checkForSuccessPayload
+);
+export const updateMySocratesError = createAction(types.updateMySocratesError);
 
 export const updateMyPortfolio = createAction(types.updateMyPortfolio);
 export const updateMyPortfolioComplete = createAction(

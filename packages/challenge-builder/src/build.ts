@@ -5,9 +5,11 @@ import { concatHtml } from './builders.js';
 import {
   getTransformers,
   embedFilesInHtml,
+  getLocalSourceWarnings,
   getPythonTransformers,
   getMultifileJSXTransformers
 } from './transformers.js';
+import { setupTSCompiler } from './typescript-worker-handler.js';
 
 interface Source {
   index: string;
@@ -53,20 +55,31 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
+// Test helpers parse sources.contents across all files. Without this boundary,
+// an index.ts first-line declaration can be concatenated onto empty/no-newline
+// HTML or CSS, so AST checks fail.
+const joinWithFileBoundaries = (contents: string[]) => contents.join('\n');
+
+export function buildSourceMap(
+  challengeFiles: { source?: string; editableContents?: string }[]
+): Source | undefined {
   // TODO: rename sources.index to sources.contents.
-  const source: Source | undefined = challengeFiles?.reduce(
-    (sources, challengeFile) => {
-      sources.index += challengeFile.source || '';
-      sources.contents = sources.index;
-      sources.editableContents += challengeFile.editableContents || '';
-      return sources;
-    },
-    {
-      index: '',
-      editableContents: ''
-    } as Source
+  const index = joinWithFileBoundaries(
+    challengeFiles.map(challengeFile => challengeFile.source ?? '')
   );
+  const editableContents = joinWithFileBoundaries(
+    challengeFiles.map(challengeFile => challengeFile.editableContents ?? '')
+  );
+  const source: Source | undefined = challengeFiles.length
+    ? {
+        index,
+        contents: index,
+        editableContents
+      }
+    : {
+        index,
+        editableContents
+      };
   return source;
 }
 
@@ -154,7 +167,9 @@ export const runnerTypes: Record<
   [challengeTypes.pyLab]: 'python',
   [challengeTypes.dailyChallengeJs]: 'javascript',
   [challengeTypes.dailyChallengePy]: 'python',
-  [challengeTypes.review]: 'dom'
+  [challengeTypes.review]: 'dom',
+  [challengeTypes.freeCodeCampOsPractice]: 'dom',
+  [challengeTypes.freeCodeCampOsCert]: 'dom'
 };
 
 type BuildResult = {
@@ -163,7 +178,46 @@ type BuildResult = {
   sources: Source | undefined;
   loadEnzyme?: boolean;
   error?: unknown;
+  warnings?: {
+    type: 'unavailable-local-resource';
+    source: string;
+    resourceType: 'stylesheet' | 'script';
+    allowedSources: string[];
+  }[];
 };
+
+function hasTS(challengeFiles: ChallengeFile[]) {
+  return challengeFiles.some(
+    challengeFile => challengeFile.ext === 'ts' || challengeFile.ext === 'tsx'
+  );
+}
+
+const isTSConfig = (f: { name: string; ext: string }) =>
+  f.name === 'tsconfig' && f.ext === 'json';
+
+export function getTSConfig(challengeFiles: ChallengeFile[]) {
+  const tsConfigFiles = challengeFiles.filter(isTSConfig);
+
+  if (tsConfigFiles.length > 1) {
+    throw new Error(
+      'TypeScript challenge must include only one tsconfig.json file'
+    );
+  }
+
+  return tsConfigFiles.length === 1 ? tsConfigFiles[0].contents : null;
+}
+
+async function configureTSCompiler(challengeFiles: ChallengeFile[]) {
+  if (hasTS(challengeFiles)) {
+    const tsConfig = getTSConfig(challengeFiles);
+
+    if (tsConfig) {
+      await setupTSCompiler(tsConfig);
+    } else {
+      await setupTSCompiler();
+    }
+  }
+}
 
 // TODO: All the buildXChallenge files have a similar structure, so make that
 // abstraction (function, class, whatever) and then create the various functions
@@ -182,12 +236,10 @@ async function buildDOMChallenge(
   const hasJsx = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx' || challengeFile.ext === 'tsx'
   );
-  const isMultifile = challengeFiles.length > 1;
 
-  const requiresReact16 = required.some(({ src }) =>
-    src?.includes('https://cdnjs.cloudflare.com/ajax/libs/react/16.')
-  );
-
+  await configureTSCompiler(challengeFiles);
+  const sourceFiles = challengeFiles.filter(file => !isTSConfig(file));
+  const isMultifile = sourceFiles.length > 1;
   // I'm reasonably sure this is fine, but we need to migrate transformers to
   // TypeScript to be sure.
   const transformers: ApplyFunctionProps[] = (isMultifile && hasJsx
@@ -195,8 +247,9 @@ async function buildDOMChallenge(
     : getTransformers(options)) as unknown as ApplyFunctionProps[];
 
   const pipeLine = composeFunctions(...transformers);
-  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
+  const finalFiles = await Promise.all(sourceFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
+  const warnings = getLocalSourceWarnings(finalFiles);
   const contents = (await embedFilesInHtml(finalFiles)) as string;
 
   // if there is an error, we just build the test runner so that it can be
@@ -209,12 +262,17 @@ async function buildDOMChallenge(
         contents
       };
 
+  const requiresReact16 = required.some(({ src }) =>
+    src?.includes('https://cdnjs.cloudflare.com/ajax/libs/react/16.')
+  );
+
   return {
     challengeType,
     build: concatHtml(toBuild),
     sources: buildSourceMap(finalFiles),
     loadEnzyme: requiresReact16,
-    error
+    error,
+    warnings
   };
 }
 
@@ -230,7 +288,9 @@ async function buildJSChallenge(
     ...(getTransformers(options) as unknown as ApplyFunctionProps[])
   );
 
-  const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
+  await configureTSCompiler(challengeFiles);
+  const sourceFiles = challengeFiles.filter(file => !isTSConfig(file));
+  const finalFiles = await Promise.all(sourceFiles?.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
 
   const toBuild = error ? [] : finalFiles;
@@ -239,12 +299,7 @@ async function buildJSChallenge(
     challengeType,
     build: toBuild
       .reduce(
-        (body, challengeFile) => [
-          ...body,
-          challengeFile.head,
-          challengeFile.contents,
-          challengeFile.tail
-        ],
+        (body, challengeFile) => [...body, challengeFile.contents],
         [] as string[]
       )
       .join('\n'),

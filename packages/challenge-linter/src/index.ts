@@ -1,18 +1,25 @@
 import { readFileSync } from 'node:fs';
 import YAML from 'js-yaml';
-import glob from 'glob';
 
 import { linter } from './linter/index.js';
 
-export const configure = (configPath: string) => {
+interface LintResults {
+  [key: string]: unknown[];
+}
+
+const configure = (
+  configPath: string
+): { lint: (files: string[]) => Promise<LintResults> } => {
   const lintRules = readFileSync(configPath, 'utf8');
   const lint = linter(YAML.load(lintRules));
-  const lintAll = (pattern: string) => {
-    glob(pattern, (err, files) => {
-      if (!files.length) throw Error('No files found');
-      files.forEach(file => lint({ path: file }));
-    });
-  };
 
-  return { lint, lintAll };
+  return { lint };
 };
+
+const processLintErrors = (results: LintResults) => {
+  return Object.entries(results)
+    .map(([file, errors]) => ({ file, errors }))
+    .filter(({ errors }) => errors.length > 0);
+};
+
+export { configure, processLintErrors };

@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { ObjectId } from 'bson';
 import { getStepTemplate } from './get-step-template.js';
+import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 const props = {
   challengeId: new ObjectId('60d4ebe4801158d1abe1b18f'),
@@ -9,11 +11,9 @@ const props = {
       contents: '',
       editableRegionBoundaries: [0, 2],
       ext: 'html',
-      head: '',
       id: '',
       key: 'indexhtml',
-      name: 'index',
-      tail: ''
+      name: 'index'
     }
   ],
   stepNum: 5,
@@ -65,8 +65,27 @@ dashedName: step-5
 lang: es
 ---`;
 
-    expect(getStepTemplate({ ...props, challengeLang: 'es' })).match(
-      new RegExp(`^${frontMatter}`)
-    );
+    expect(
+      getStepTemplate({
+        ...props,
+        challengeLang: ChallengeLang.Spanish
+      })
+    ).match(new RegExp(`^${frontMatter}`));
+  });
+
+  it('includes the Python test scaffold for Python workshops', () => {
+    const template = getStepTemplate({
+      ...props,
+      challengeType: challengeTypes.python,
+      challengeSeeds: [
+        {
+          contents: '',
+          editableRegionBoundaries: [0, 2],
+          ext: 'py'
+        }
+      ]
+    });
+
+    expect(template).toContain('assert(runPython(');
   });
 });

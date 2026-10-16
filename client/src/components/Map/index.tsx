@@ -13,10 +13,13 @@ import {
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink, Link } from '../helpers';
-import { showUpcomingChanges } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
+
+const { showUpcomingChanges } = envData;
+
 interface MapProps {
   forLanding?: boolean;
 }
@@ -53,7 +56,7 @@ function MapLi({
   return (
     <li
       data-test-label='curriculum-map-button'
-      data-playwright-test-label='curriculum-map-button'
+      data-testid='curriculum-map-button'
     >
       <ButtonLink
         block
@@ -94,7 +97,11 @@ function Map({ forLanding = false }: MapProps) {
         showUpcomingChanges
       })
         // remove legacy superblocks from main maps - shown in archive map only
-        .filter(stage => stage !== SuperBlockStage.Legacy)
+        .filter(
+          stage =>
+            stage !== SuperBlockStage.Legacy &&
+            stage !== SuperBlockStage.Catalog
+        )
         .map(stage => {
           const superblocks = superBlockStages[stage];
           if (superblocks.length === 0) {

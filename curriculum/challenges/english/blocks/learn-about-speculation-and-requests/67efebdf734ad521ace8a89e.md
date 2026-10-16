@@ -34,7 +34,7 @@ This two-word phrase refers to a security flaw in a system that lacks a fix or u
 
 Together, an `unpatched vulnerability` is a security weakness that has not been fixed or updated. Hackers can exploit these weaknesses to attack a system. For example:
 
-`We need to fix the unpatched vulnerability now.` - The team knows about security problem but it hasn't been repaired yet.
+`We need to fix the unpatched vulnerability now.` - The team knows about a security problem but it hasn't been repaired yet.
 
 # --scene--
 

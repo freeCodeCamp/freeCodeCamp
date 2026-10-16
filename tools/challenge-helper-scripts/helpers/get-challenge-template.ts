@@ -1,4 +1,9 @@
 import { ObjectId } from 'bson';
+import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
+import {
+  getProjectSeedFiles,
+  type ProjectContentType
+} from './project-content-type.js';
 
 const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
@@ -10,8 +15,10 @@ interface ChallengeOptions {
   dashedName: string;
   challengeType: string;
   questionCount?: number;
-  challengeLang?: string;
+  challengeLang?: ChallengeLang;
   inputType?: string;
+  demoType?: 'onClick' | 'onLoad';
+  contentType?: ProjectContentType;
 }
 
 const buildFrontMatter = ({
@@ -20,7 +27,8 @@ const buildFrontMatter = ({
   dashedName,
   challengeType,
   challengeLang,
-  inputType
+  inputType,
+  demoType
 }: ChallengeOptions) => {
   const langString = challengeLang
     ? `
@@ -30,12 +38,16 @@ lang: ${challengeLang}`
     ? `
 inputType: ${inputType}`
     : '';
+  const demoTypeString = demoType
+    ? `
+demoType: ${demoType}`
+    : '';
 
   return `---
 id: ${challengeId.toString()}
 title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
-dashedName: ${dashedName}${langString}${inputTypeString}
+dashedName: ${dashedName}${langString}${inputTypeString}${demoTypeString}
 ---`;
 };
 
@@ -85,19 +97,10 @@ Test 1
 \`\`\`
 `;
 
-const getQuizChallengeTemplate = (
-  options: ChallengeOptions
-): string => `${buildFrontMatter(options)}
+const getQuizChallengeTemplate = (options: ChallengeOptions): string => {
+  const count = options.questionCount!;
 
-# --description--
-
-To pass the quiz, you must correctly answer at least ${options.questionCount! == 20 ? '18' : '9'} of the ${options.questionCount!.toString()} questions below.
-
-# --quizzes--
-
-## --quiz--
-
-${`### --question--
+  const regularQuestion = `### --question--
 
 #### --text--
 
@@ -119,7 +122,65 @@ Placeholder distractor 3
 
 Placeholder answer
 
-`.repeat(options.questionCount! - 1)}
+`;
+
+  const questionWithAudio = `### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --audio--
+
+\`\`\`json
+{
+  "audio": {
+    "filename": "1.1-1.mp3",
+    "startTimestamp": 5.7,
+    "finishTimestamp": 6.48
+  },
+  "transcript": [
+    {
+      "character": "Tom",
+      "text": "Hi, I'm Tom."
+    }
+  ]
+}
+\`\`\`
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+`;
+
+  const firstQuestion = options.challengeLang
+    ? questionWithAudio
+    : regularQuestion;
+
+  return `${buildFrontMatter(options)}
+
+# --description--
+
+To pass the quiz, you must correctly answer at least ${count == 20 ? '18' : '9'} of the ${count.toString()} questions below.
+
+# --quizzes--
+
+## --quiz--
+
+${firstQuestion}${regularQuestion.repeat(Math.max(0, count - 2))}
 ### --question--
 
 #### --text--
@@ -141,6 +202,80 @@ Placeholder distractor 3
 #### --answer--
 
 Placeholder answer
+`;
+};
+
+const getLabChallengeTemplate = (options: ChallengeOptions): string => {
+  const challengeTypeToContentType: Record<string, ProjectContentType> = {
+    '25': 'html',
+    '26': 'javascript',
+    '27': 'python'
+  };
+  const contentType =
+    options.contentType ??
+    challengeTypeToContentType[options.challengeType] ??
+    'html';
+  const seedFiles = getProjectSeedFiles(contentType, options.title);
+  const seedContents = seedFiles
+    .map(({ ext, contents }) => `\`\`\`${ext}\n${contents}\n\`\`\``)
+    .join('\n\n');
+  const frontMatterOptions =
+    options.challengeType === '25'
+      ? { ...options, demoType: 'onClick' as const }
+      : options;
+  const hintCode =
+    contentType === 'python'
+      ? '({ test: () => assert(runPython(`<python expression that returns truthy>`)) });'
+      : '';
+
+  return `${buildFrontMatter(frontMatterOptions)}
+
+# --description--
+
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+**User Stories:**
+
+1.
+
+# --hints--
+
+Hint text
+
+\`\`\`js
+
+${hintCode}
+\`\`\`
+
+# --seed--
+
+## --seed-contents--
+
+${seedContents}
+
+# --solutions--
+
+${seedContents}
+`;
+};
+
+const getReviewChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatter(options)}
+
+# --description--
+
+## Some topic
+
+- **Some topic**: Description
+
+\`\`\`md
+Some code example
+\`\`\`
+
+# --assignment--
+
+Review the ${options.title} topics and concepts.
 `;
 
 const getVideoChallengeTemplate = (
@@ -486,5 +621,12 @@ const challengeTypeToTemplate: {
   21: getDialogueChallengeTemplate,
   22: getFillInTheBlankChallengeTemplate,
   23: null,
-  24: getGenericChallengeTemplate
+  24: getGenericChallengeTemplate,
+  25: getLabChallengeTemplate,
+  26: getLabChallengeTemplate,
+  27: getLabChallengeTemplate,
+  28: null,
+  29: null,
+  30: null,
+  31: getReviewChallengeTemplate
 };

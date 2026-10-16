@@ -4,7 +4,13 @@ const visitChildren = require('unist-util-visit-children');
 const { getSection } = require('./utils/get-section');
 const { getFileVisitor } = require('./utils/get-file-visitor');
 
+const path = require('path');
+
 const editableRegionMarker = '--fcc-editable-region--';
+
+function isWorkshop(file) {
+  return file.path && file.path.includes(path.sep + 'workshop-');
+}
 
 function findRegionMarkers(challengeFile) {
   const lines = challengeFile.contents.split('\n');
@@ -38,22 +44,17 @@ function addSeeds() {
     // processing in these cases.
     if (isEmpty(seedTree.children)) return;
     const contentsTree = root(getSection(seedTree, `--seed-contents--`));
-    const headTree = root(getSection(seedTree, `--before-user-code--`));
-    const tailTree = root(getSection(seedTree, `--after-user-code--`));
     const seeds = {};
 
-    // While before and after code are optional, the contents are not
+    // Seed contents are required.
     if (isEmpty(contentsTree.children))
       throw Error('## --seed-contents-- must appear in # --seed-- sections');
 
     const visitForContents = visitChildren(
       getFileVisitor(seeds, 'contents', validateEditableMarkers)
     );
-    const visitForHead = visitChildren(getFileVisitor(seeds, 'head'));
-    const visitForTail = visitChildren(getFileVisitor(seeds, 'tail'));
     visitForContents(contentsTree);
-    visitForHead(headTree);
-    visitForTail(tailTree);
+
     const seedVals = Object.values(seeds);
     file.data = {
       ...file.data,
@@ -61,8 +62,13 @@ function addSeeds() {
     };
 
     // process region markers - remove them from content and add them to data
+    let totalEditableRegionMarkers = 0;
+
     const challengeFiles = Object.values(seeds).map(data => {
       const seed = { ...data };
+      // Per-file check: ensures no single seed file has more than 2 markers.
+      // This is distinct from the workshop-level check below, which enforces
+      // exactly 2 total markers across all seed files combined.
       const editRegionMarkers = findRegionMarkers(seed);
       if (editRegionMarkers) {
         seed.contents = removeLines(seed.contents, editRegionMarkers);
@@ -71,11 +77,18 @@ function addSeeds() {
           throw Error('Editable region must be non zero');
         }
         seed.editableRegionBoundaries = editRegionMarkers;
+        totalEditableRegionMarkers += editRegionMarkers.length;
       } else {
         seed.editableRegionBoundaries = [];
       }
       return seed;
     });
+
+    if (isWorkshop(file) && totalEditableRegionMarkers !== 2) {
+      throw Error(
+        `Workshop challenge ${file.path} must have exactly 2 editable region markers`
+      );
+    }
 
     file.data = {
       ...file.data,
@@ -113,3 +126,4 @@ function validateEditableMarkers({ value, position }) {
 
 module.exports = addSeeds;
 module.exports.editableRegionMarker = editableRegionMarker;
+module.exports.isWorkshop = isWorkshop;

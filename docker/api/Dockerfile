@@ -2,7 +2,11 @@ FROM node:24-bookworm AS builder
 RUN apt-get update && apt-get install -y jq
 # global installs need root permissions, so have to happen before we switch to
 # the node user
-RUN npm i -g pnpm@10
+RUN --mount=type=bind,source=package.json,target=/tmp/package.json \
+    npm i -g "pnpm@$(node -p 'require("/tmp/package.json").packageManager.split("@")[1]')"
+# TODO(o11y): re-enable Sentry source maps + release marking in a follow-up PR
+# (needs a stable release-id scheme). See .scratchpad/o11y-cutover-review-2026-07-10.md
+# RUN npm i -g @sentry/cli@3.6.0
 # node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
@@ -16,7 +20,7 @@ COPY --chown=node:node curriculum/ curriculum/
 # curriculum and then we can remove this.
 COPY --chown=node:node client/ client/
 
-RUN pnpm config set dedupe-peer-dependents false
+RUN pnpm config set --location=project dedupe-peer-dependents false
 # While we want to ignore scripts generally, we do need to generate the prisma
 # client.
 RUN pnpm install --frozen-lockfile --ignore-scripts
@@ -26,8 +30,13 @@ RUN cd api && pnpm prisma generate
 # following env vars.
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
+ARG CURRICULUM_LOCALE=english
+ENV CURRICULUM_LOCALE=$CURRICULUM_LOCALE
 
 RUN pnpm turbo -F=@freecodecamp/api build
+
+# TODO(o11y): re-enable in the source-maps follow-up PR
+# RUN sentry-cli sourcemaps inject api/dist
 
 FROM node:24-bookworm AS deps
 RUN apt-get update && apt-get install -y jq
@@ -37,14 +46,14 @@ COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node package.json .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node packages/ packages/
-RUN npm i -g pnpm@10
+RUN npm i -g "pnpm@$(node -p 'require("./package.json").packageManager.split("@")[1]')"
 
 # Weirdly this config does not seem necessary for the new api (the same number
 # of deps are installed in both cases), but I'm including it just for
 # consistency.
-RUN pnpm config set dedupe-peer-dependents false
+RUN pnpm config set --location=project dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=api -F=packages/shared --frozen-lockfile
-RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
+RUN cd api && pnpm dlx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 FROM node:24-bookworm
 USER node

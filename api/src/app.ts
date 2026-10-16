@@ -1,4 +1,3 @@
-import { randomBytes } from 'crypto';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -18,34 +17,36 @@ import addFormats from 'ajv-formats';
 import prismaPlugin from './db/prisma.js';
 import cookies from './plugins/cookies.js';
 import cors from './plugins/cors.js';
-import { NodemailerProvider } from './plugins/mail-providers/nodemailer.js';
-import { SESProvider } from './plugins/mail-providers/ses.js';
+import { createMailProvider } from './plugins/mail-providers/nodemailer.js';
 import mailer from './plugins/mailer.js';
 import redirectWithMessage from './plugins/redirect-with-message.js';
 import security from './plugins/security.js';
 import auth from './plugins/auth.js';
 import bouncer from './plugins/bouncer.js';
 import errorHandling from './plugins/error-handling.js';
+import runtimeMetrics from './plugins/runtime-metrics.js';
 import csrf from './plugins/csrf.js';
 import notFound from './plugins/not-found.js';
-import shadowCapture from './plugins/shadow-capture.js';
 import growthBook from './plugins/growth-book.js';
+import serviceBearerAuth from './plugins/service-bearer-auth.js';
 
 import * as publicRoutes from './routes/public/index.js';
 import * as protectedRoutes from './routes/protected/index.js';
+import { classroomRoutes } from './routes/apps/classroom.js';
 
 import {
   API_LOCATION,
-  EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
+  FCC_ENABLE_CLASSROOM,
+  FREECODECAMP_NODE_ENV,
   GROWTHBOOK_FASTIFY_API_HOST,
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env.js';
 import { isObjectID } from './utils/validation.js';
-import { getLogger } from './utils/logger.js';
+import { bindRouteToLogger, genReqId, getLogger } from './utils/logger.js';
+import { recordHttpMetrics } from './utils/http-metrics.js';
 import {
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
@@ -84,9 +85,11 @@ export const buildOptions: FastifyHttpOptions<
   FastifyBaseLogger
 > = {
   loggerInstance: getLogger(),
-  genReqId: () => randomBytes(8).toString('hex'),
-  // disabled so we can customise the request/response logging
-  disableRequestLogging: true
+  genReqId,
+  // destroy all connections on close to avoid EADDRINUSE
+  // on restart, in development. Leave default in production.
+  forceCloseConnections:
+    FREECODECAMP_NODE_ENV === 'production' ? ('idle' as const) : true
 };
 
 /**
@@ -104,22 +107,15 @@ export const build = async (
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
-  fastify.addHook('onRequest', (req, _reply, done) => {
-    const logger = fastify.log.child({ req });
-    logger.debug({ req }, 'received request');
-    done();
-  });
 
-  fastify.addHook('onResponse', (req, reply, done) => {
-    const logger = fastify.log.child({ res: reply });
-    logger.debug({ req, res: reply }, 'responding to request');
-    done();
-  });
+  fastify.addHook('onRequest', bindRouteToLogger);
+  fastify.addHook('onResponse', recordHttpMetrics);
 
   void fastify.register(redirectWithMessage);
   void fastify.register(security);
   void fastify.register(fastifyAccepts);
   void fastify.register(errorHandling);
+  void fastify.register(runtimeMetrics);
 
   await fastify.register(cors);
   await fastify.register(cookies);
@@ -130,9 +126,7 @@ export const build = async (
     clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
   });
 
-  const provider =
-    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
-  void fastify.register(mailer, { provider });
+  void fastify.register(mailer, { provider: createMailProvider() });
 
   // Swagger plugin
   if (FCC_ENABLE_SWAGGER_UI ?? fastify.gb.isOn('swagger-ui')) {
@@ -163,14 +157,11 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  if (FCC_ENABLE_SHADOW_CAPTURE ?? fastify.gb.isOn('shadow-capture')) {
-    void fastify.register(shadowCapture);
-  }
-
   void fastify.register(auth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(bouncer);
+  await fastify.register(serviceBearerAuth);
 
   // Routes requiring authentication:
   void fastify.register(async function (fastify, _opts) {
@@ -186,16 +177,10 @@ export const build = async (
 
       await fastify.register(protectedRoutes.challengeRoutes);
       await fastify.register(protectedRoutes.donateRoutes);
+      await fastify.register(protectedRoutes.socratesRoutes);
       await fastify.register(protectedRoutes.protectedCertificateRoutes);
       await fastify.register(protectedRoutes.settingRoutes);
       await fastify.register(protectedRoutes.userRoutes);
-    });
-
-    // CSRF protection disabled:
-    await fastify.register(async function (fastify, _opts) {
-      fastify.addHook('onRequest', fastify.send401IfNoUser);
-
-      await fastify.register(protectedRoutes.userGetRoutes);
     });
 
     // Routes that redirect if access is denied:
@@ -208,6 +193,26 @@ export const build = async (
 
   // TODO: The route should not handle its own AuthZ
   await fastify.register(protectedRoutes.challengeTokenRoutes);
+
+  // CSRF protection disabled:
+  // Routes that work for both authenticated and unauthenticated users:
+  void fastify.register(async function (fastify) {
+    fastify.addHook('onRequest', fastify.authorize);
+
+    await fastify.register(protectedRoutes.userGetRoutes);
+  });
+
+  // CSRF protection enabled:
+  // Routes that work for unauthenticated users, but make use of .user if present
+  void fastify.register(async function (fastify) {
+    // authorize adds .user if the request is authenticated, but does not block
+    // the request
+    fastify.addHook('onRequest', fastify.authorize);
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    fastify.addHook('onRequest', fastify.csrfProtection);
+
+    await fastify.register(publicRoutes.paypalSubscriptionRoute);
+  });
 
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
@@ -230,6 +235,14 @@ export const build = async (
     done();
   });
   void fastify.register(examEnvironmentOpenRoutes);
+
+  // Service-to-service app routes (API key auth), gated by the classroom flag:
+  if (FCC_ENABLE_CLASSROOM ?? fastify.gb.isOn('classroom-mode')) {
+    void fastify.register(async function (fastify) {
+      fastify.addHook('onRequest', fastify.validateBearerToken);
+      await fastify.register(classroomRoutes, { prefix: '/apps/classroom' });
+    });
+  }
 
   if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
     void fastify.register(publicRoutes.sentryRoutes);

@@ -184,7 +184,6 @@ assert.isTrue(
               </tr>
             </thead>
             <tbody>
---fcc-editable-region--
               <tr class="data">
                 <th>Loans <span class="description">The outstanding balance on our startup loan.</span></th>
                 <td>$500</td>
@@ -198,10 +197,12 @@ assert.isTrue(
                 <td class="current">$400</td>
               </tr>
               <tr class="data">
+--fcc-editable-region--
+                
+--fcc-editable-region--
               </tr>
               <tr class="total">
               </tr>
---fcc-editable-region--
             </tbody>
           </table>
           <table></table>

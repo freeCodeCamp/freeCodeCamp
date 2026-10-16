@@ -51,10 +51,10 @@ import { postUserToken } from '../../../utils/ajax';
 import RdbStep1Instructions from './rdb-step-1-instructions';
 import RdbStep2Instructions from './rdb-step-2-instructions';
 import { LocalInstructions } from './local-instructions';
-import { OnaInstructions } from './ona-instructions';
 
 import './codeally.css';
 import { CodespacesInstructions } from './codespaces-instructions';
+import { isCodeAllyProjectCompleted } from './project-submit';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -150,7 +150,6 @@ function ShowCodeAlly({
       }
     }
   } = data;
-
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
@@ -174,10 +173,13 @@ function ShowCodeAlly({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -187,15 +189,13 @@ function ShowCodeAlly({
   }: {
     showCompletionModal: boolean;
   }) => {
-    const isPartiallyCompleted = partiallyCompletedChallenges.some(
-      challenge => challenge.id === challengeId
-    );
-
-    const isCompleted = completedChallenges.some(
-      challenge => challenge.id === challengeId
-    );
-
-    if (!isPartiallyCompleted && !isCompleted) {
+    if (
+      !isCodeAllyProjectCompleted({
+        challengeId,
+        completedChallenges,
+        partiallyCompletedChallenges
+      })
+    ) {
       createFlashMessage({
         type: 'danger',
         message: FlashMessages.CompleteProjectFirst
@@ -207,7 +207,6 @@ function ShowCodeAlly({
 
   const rdbLocalInstructions = useFeature('rdb-local-instructions');
   const rdbCodespacesInstructions = useFeature('rdb-codespaces-instructions');
-  const rdbOnaInstructions = useFeature('rdb-ona-instructions');
 
   const coderoadTutorial = `https://raw.githubusercontent.com/${url}/main/tutorial.json`;
 
@@ -273,11 +272,6 @@ function ShowCodeAlly({
       name: t('learn.local.summary'),
       component: LocalInstructions,
       on: rdbLocalInstructions.on
-    },
-    {
-      name: t('learn.ona.summary'),
-      component: OnaInstructions,
-      on: rdbOnaInstructions.on
     }
   ];
 

@@ -1,6 +1,6 @@
 ---
 id: 67fe85a3db9bad35f2b6a2bd
-title: How Do Conditional Statements and Logical Operators Work?
+title: How Do Conditional Statements and Comparison Operators Work?
 challengeType: 19
 dashedName: how-do-conditional-statements-and-logical-operators-work
 ---
@@ -11,7 +11,9 @@ Conditional statements, or conditionals, let you control the flow of your progra
 
 But before we get into all that, let's go over the basic building blocks of conditional statements, starting with comparison operators. Comparison operators are operators that let you compare two or more values, and return a boolean value.
 
-In a previous lesson, you learned that booleans are one of the data types in Python, and can only be `True` or `False`.
+In a previous lesson, you learned that booleans are one of the data types in Python and can only be `True` or `False`.
+
+## Using Comparison Operators
 
 Here's a table with the comparison operators in Python:
 
@@ -36,6 +38,8 @@ print(3 >= 4) # False
 print(3 <= 4) # True
 ```
 
+## Using `if` Statements
+
 These operators can be used in conditionals to compare values and run certain code based on whether the conditional evaluates to `True` or `False`.
 
 In Python, the most basic conditional is the `if` statement. Here's the basic syntax:
@@ -47,13 +51,13 @@ if condition:
 
 * `if` statements start with the `if` keyword.
     
-* `condition` is an expression that evaluates to `True` or `False`, followed by a colon (`:`).
+* `condition` is an expression followed by a colon (`:`).
 
-* The body of the `if` statement constitutes a <dfn>code block</dfn>, which is a group of statements that belong together. In Python, the level of indentation is what defines a code block.
+* The body of the `if` statement constitutes a <dfn>code block</dfn>, which is a group of statements that belong together. Spaces at the beginning of a line are called indentation. In Python, indentation determines which statements belong to a code block.
     
 In the example above, the body of the `if` statement contains a `pass` statement. When a `pass` statement is executed, nothing happens. This is a special keyword that can be used as a placeholder for future code and it is useful when empty code blocks are not allowed.
 
-The code within the body of the `if` statement runs only when the condition evaluates to `True`. For example:
+The code within the body of the `if` statement runs only when Python treats the condition as true. The comparisons shown here return `True` or `False`. In the next lesson, you will learn how Python treats other values in conditions. For example:
 
 ```python
 age = 18
@@ -62,7 +66,7 @@ if age >= 18:
     print('You are an adult') # You are an adult
 ```
 
-Notice the indentation before `print('You are an adult')`. While other programming languages use characters like curly braces to define code blocks, and just use indentation for readability, in Python, code blocks are determined by indentation.
+The four spaces before `print('You are an adult')` indent that line and place it inside the `if` block.
 
 The following code would raise an `IndentationError`, which is Python's way to signal that indentation is required at a certain point of the code:
 
@@ -73,7 +77,7 @@ if age >= 18:
 print('You are an adult') # IndentationError: expected an indented block after 'if' statement on line 3
 ```
 
-Though you can use any number spaces (as long as you are consistent) to determine each level of indentation, the Python style guide recommends using four spaces.
+Though you can use any number of spaces (as long as you are consistent) to determine each level of indentation, the Python style guide recommends using four spaces.
 
 Blocks are also found in loops and functions, which you'll learn about in future lessons.
 
@@ -86,13 +90,15 @@ if age >= 18:
     print('You are an adult') # Nothing shows up in the terminal
 ```
 
-But what if you also want to print something if `age` is less than `18`? That's where the `else` clause comes in. The `else` clause runs when the `if` condition is false. Here's the syntax for an `if…else` statement:
+## Adding an `else` Clause
+
+But what if you also want to print something if `age` is less than `18`? That's where the `else` clause comes in. The `else` clause runs when the `if` condition is false. Here's the syntax for an `if...else` statement:
 
 ```python
 if condition:
-   pass # Code to execute if condition is True
+    pass # Code to execute if condition is True
 else:
-   pass # Code to execute if condition is False
+    pass # Code to execute if condition is False
 ```
 
 For example:
@@ -106,17 +112,31 @@ else:
     print('You are not an adult yet') # You are not an adult yet
 ```
 
-There might be situations in which you want to account for multiple conditions. To do that, Python lets you extend your if statement with the `elif` (else if) keyword.
+Note that you cannot place any statements between the `if` block and the `else` clause. The following code would raise a `SyntaxError`:
+
+```python
+age = 12
+
+if age >= 18:
+    print('You are an adult')
+print('Almost there!')
+else: # SyntaxError: invalid syntax
+    print('You are not an adult yet')
+```
+
+## Adding `elif` Clauses
+
+There might be situations in which you want to account for multiple conditions. To do that, Python lets you extend your `if` statement with the `elif` (else if) keyword.
 
 Here's the syntax:
 
 ```python
 if condition1:
-   pass # Code to execute if condition1 is True
+    pass # Code to execute if condition1 is True
 elif condition2:
-   pass # Code to execute if condition1 is False and condition2 is True
+    pass # Code to execute if condition1 is False and condition2 is True
 else:
-   pass # Code to execute if all conditions are False
+    pass # Code to execute if all conditions are False
 ```
 
 For example:
@@ -132,7 +152,7 @@ else:
     print('You are a child') # You are a child
 ```
 
-Note that you can use as many `elif` statements as you want:
+Note that you can use as many `elif` clauses as you want:
 
 ```python
 age = 2
@@ -151,7 +171,7 @@ else:
     print('You are a toddler or an infant') # You are a toddler or an infant
 ```
 
-Now that you understand how comparison operators and conditional statements work in Python, you can start writing programs that make decisions based on logic and input. Whether you’re comparing values or branching through multiple conditions, these tools are the foundation to writing flexible, responsive code.
+Now that you understand how comparison operators and conditional statements work in Python, you can start writing programs that make decisions based on logic and input. Whether you're comparing values or branching through multiple conditions, these tools are the foundation for writing flexible, responsive code.
 
 # --questions--
 
@@ -161,7 +181,7 @@ What do comparison operators do?
 
 ## --answers--
 
-Perform mathematical calculations with boolean values
+Perform mathematical calculations with boolean values.
 
 ### --feedback--
 
@@ -208,7 +228,7 @@ else:
 
 ## --answers--
 
-`You are an adult` will be printed to the console.
+`You are an adult` will be printed to the terminal.
 
 ### --feedback--
 
@@ -216,7 +236,7 @@ Review the last part of the lesson for the correct answer.
 
 ---
 
-`You are a teenager` will be printed to the console.
+`You are a teenager` will be printed to the terminal.
 
 ### --feedback--
 
@@ -224,11 +244,11 @@ Review the last part of the lesson for the correct answer.
 
 ---
 
-`You are a child` will be printed to the console.
+`You are a child` will be printed to the terminal.
 
 ---
 
-An error will be printed to the console.
+An error will be printed to the terminal.
 
 ### --feedback--
 

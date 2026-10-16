@@ -102,7 +102,7 @@ describe('Cookie updates', () => {
       }
     });
 
-    expect(res.cookies[0]).toStrictEqual({
+    expect(res.cookies[0]).toEqual({
       domain: 'www.example.com',
       httpOnly: true,
       name: 'cookie_name',

@@ -1,6 +1,5 @@
 {
-  "name": "NodeJS Core Modules Quiz",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-node-js-core-modules",
   "helpCategory": "Backend Development",
   "challengeOrder": [

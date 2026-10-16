@@ -1,0 +1,13 @@
+{
+  "blocks": [
+    "lecture-working-with-sql",
+    "workshop-sql-student-database-part-1",
+    "workshop-sql-student-database-part-2",
+    "workshop-kitty-ipsum-translator",
+    "workshop-bike-rental-shop",
+    "lab-world-cup-database",
+    "lab-salon-appointment-scheduler",
+    "review-bash-and-sql",
+    "quiz-bash-and-sql"
+  ]
+}

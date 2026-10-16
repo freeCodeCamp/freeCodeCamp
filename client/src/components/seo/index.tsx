@@ -6,6 +6,7 @@ import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 interface SEOProps {
   title?: string;
+  children?: React.ReactNode;
 }
 
 interface SiteData {
@@ -42,7 +43,7 @@ interface StructuredData {
   itemListElement: ListItem[];
 }
 
-const SEO: React.FC<SEOProps> = ({ title, children }) => {
+const SEO = ({ title, children }: SEOProps) => {
   const { t } = useTranslation();
   const {
     site: {

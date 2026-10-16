@@ -275,7 +275,7 @@ your_set = {2, 3, 4, 6}
 my_set & your_set # {2, 3, 4}
 ```
 
-- **Difference Operator (`-`)**: The difference operator `-` returns a new set with the elements of the first set that are not in the other sets.
+- **Difference Operator (`-`)**: The difference operator `-` returns a new set with the elements of the first set that are not in the other set.
 
 ```python
 my_set = {1, 2, 3, 4, 5}
@@ -313,10 +313,10 @@ print(5 in my_set) # True
 import module_name
 ```
 
-Then, if you need to call a method from that module, you would use dot notation, with the name of the module followed by the name of the method.
+Then, if you need to call a function from that module, you would use dot notation, with the name of the module followed by the name of the function.
 
 ```python
-module_name.method_name()
+module_name.function_name()
 ```
 
 For example, you would write the following in your code to import the `math` module and get the square root of 36:

@@ -24,9 +24,17 @@ Jake hasn't checked that yet and says the team should focus on something else. W
 
 `Not yet, but we should focus on the critical systems first.`
 
+### --audio-id--
+
+ENcd1493b2
+
 ---
 
 `I already checked, and everything looks fine.`
+
+### --audio-id--
+
+EN4ec0b91b
 
 ### --feedback--
 

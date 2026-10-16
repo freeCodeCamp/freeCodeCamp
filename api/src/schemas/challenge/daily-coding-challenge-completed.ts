@@ -1,4 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { genericError } from '../types.js';
 
 // This has to be declared as a tuple, because Type.Union expects a
 // tuple of types, not an array of unions of said types.
@@ -31,11 +32,14 @@ export const dailyCodingChallengeCompleted = {
         'That does not appear to be a valid challenge submission.'
       )
     }),
-    403: Type.Object({
-      type: Type.Literal('error'),
-      message: Type.Literal(
-        'Exam submissions are not allowed on this endpoint.'
-      )
-    })
+    403: Type.Union([
+      Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Literal(
+          'Exam submissions are not allowed on this endpoint.'
+        )
+      }),
+      genericError
+    ])
   }
 };

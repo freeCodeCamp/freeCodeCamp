@@ -1,0 +1,9 @@
+{
+  "$schema": "https://v2-10-0.turborepo.dev/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "test": {
+      "env": ["CURRICULUM_LOCALE", "SHOW_UPCOMING_CHANGES"]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "dashedName": "workshop-test-steps",
+  "blockLabel": "workshop",
+  "challengeOrder": [
+    { "id": "step-1", "title": "Step 1" },
+    { "id": "step-with-four-erms", "title": "Step with four erms" },
+    { "id": "step-2", "title": "Step 2" }
+  ]
+}

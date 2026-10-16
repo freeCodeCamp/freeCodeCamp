@@ -113,6 +113,7 @@ function SelectionTabs({
                 value={value.toString()}
               >
                 <p>{donationDescription}</p>
+                <p>{t('donate.repeats-monthly')}</p>
               </TabsContent>
             );
           })}
@@ -168,13 +169,13 @@ function DonationFormRow({
   );
 }
 
-const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
+const MultiTierDonationForm = ({
   handleProcessing,
   setShowHeaderAndFooter,
   isMinimalForm,
   paymentContext,
   isAnimationEnabled
-}) => {
+}: MultiTierDonationFormProps) => {
   const replace20With25 = useFeature('replace-20-with-25').on;
   const [donationAmount, setDonationAmount] = useState(
     replace20With25 ? defaultTierAmountB : defaultTierAmount

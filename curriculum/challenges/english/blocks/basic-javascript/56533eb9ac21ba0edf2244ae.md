@@ -55,14 +55,6 @@ assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function (y) {
-  return 'remainder = ' + y;
-})(remainder);
-```
-
 ## --seed-contents--
 
 ```js

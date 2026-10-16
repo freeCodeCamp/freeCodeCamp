@@ -43,12 +43,6 @@ assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(v){return v;})(lastLetterOfLastName);
-```
-
 ## --seed-contents--
 
 ```js

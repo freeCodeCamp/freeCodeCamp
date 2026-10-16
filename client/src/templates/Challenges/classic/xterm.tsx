@@ -1,10 +1,11 @@
 import React, { MutableRefObject, useEffect, useRef } from 'react';
-import type { IDisposable, Terminal } from 'xterm';
-import type { FitAddon } from 'xterm-addon-fit';
+import type { FitAddon } from '@xterm/addon-fit';
+import type { IDisposable, Terminal } from '@xterm/xterm';
 import { useTranslation } from 'react-i18next';
 
 import { registerTerminal } from '../utils/python-worker-handler';
 import './xterm.css';
+import './xterm-original.css';
 
 const registerServiceWorker = async () => {
   if ('serviceWorker' in navigator) {
@@ -34,8 +35,8 @@ export const XtermTerminal = ({
 
     async function createTerminal() {
       const disposables: IDisposable[] = [];
-      const { Terminal } = await import('xterm');
-      const { FitAddon } = await import('xterm-addon-fit');
+      const { Terminal } = await import('@xterm/xterm');
+      const { FitAddon } = await import('@xterm/addon-fit');
 
       // Setting convertEol so that \n is converted to \r\n. Otherwise the terminal
       // will interpret \n as line feed and just move the cursor to the next line.
@@ -64,7 +65,14 @@ export const XtermTerminal = ({
 
       const print = (text?: string) => {
         term?.writeln(`${text ?? ''}`);
-        outputForScreenReader.textContent = text ?? '';
+
+        // Append each line so screen readers get the full output, not just the last line
+        const lines = (text ?? '').split('\n');
+        for (const line of lines) {
+          const lineElement = document.createElement('p');
+          lineElement.textContent = line;
+          outputForScreenReader.appendChild(lineElement);
+        }
       };
 
       // TODO: prevent user from moving cursor outside the current input line and
@@ -142,8 +150,6 @@ export const XtermTerminal = ({
       data-playwright-test-label='xterm-terminal'
       style={{ height: dimensions?.height }}
       ref={termContainerRef}
-    >
-      <link rel='stylesheet' href='/css/xterm.css' />
-    </div>
+    ></div>
   );
 };

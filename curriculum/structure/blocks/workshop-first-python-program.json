@@ -1,0 +1,16 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "workshop-first-python-program",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6ac09f8420b4b67e075d2cd2", "title": "Step 1" },
+    { "id": "6ac0a4463662d9738c393e21", "title": "Step 2" },
+    { "id": "6ac0aaba914d81b32567c076", "title": "Step 3" },
+    { "id": "6ac0ae563f6de70930f47ef7", "title": "Step 4" },
+    { "id": "6ac0b35f3b29a27f7e207295", "title": "Step 5" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

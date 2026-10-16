@@ -1,0 +1,25 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "trig-graphs-inverses",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "699e69db8f18cf77dfce5c12",
+      "title": "Graphs of Sinusoidal Functions"
+    },
+    {
+      "id": "699e69e18f18cf77dfce5c13",
+      "title": "Graphs of Tan, Sec, Cot, Csc"
+    },
+    {
+      "id": "699e69e58f18cf77dfce5c14",
+      "title": "Graphs of Transformations of Tan, Sec, Cot, Csc"
+    },
+    {
+      "id": "699e69ea8f18cf77dfce5c15",
+      "title": "Inverse Trig Functions"
+    }
+  ]
+}

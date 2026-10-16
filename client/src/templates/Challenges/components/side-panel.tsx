@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Trans } from 'react-i18next';
@@ -32,9 +32,8 @@ interface SidePanelProps extends DispatchProps, StateProps {
   challengeTitle: ReactElement;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   hasDemo: boolean;
-  toolPanel: ReactNode;
   tests: Test[];
-  showIndependentLowerJaw: boolean;
+  showSidePanelTests?: boolean;
 }
 
 export function SidePanel({
@@ -42,10 +41,9 @@ export function SidePanel({
   challengeTitle,
   instructionsPanelRef,
   hasDemo,
-  toolPanel,
   tests,
   openModal,
-  showIndependentLowerJaw
+  showSidePanelTests
 }: SidePanelProps): JSX.Element {
   return (
     <div
@@ -72,10 +70,9 @@ export function SidePanel({
         </p>
       )}{' '}
       {challengeDescription}
-      {!showIndependentLowerJaw && (
+      {showSidePanelTests && (
         <>
           <Spacer size='m' />
-          {toolPanel}
           <TestSuite tests={tests} />
         </>
       )}

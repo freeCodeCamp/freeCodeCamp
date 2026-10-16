@@ -32,12 +32,6 @@ assert(/\*/.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(y){return 'product = '+y;})(product);
-```
-
 ## --seed-contents--
 
 ```js

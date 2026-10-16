@@ -18,7 +18,7 @@ const cards = document.querySelectorAll('.card');
 assert.isTrue(cards[1]?.hasAttribute('id'));
 ```
 
-Your second element having a class of`card` should have an `id` with value of `dave-cooking-book`.
+Your second element having a class of `card` should have an `id` with value of `dave-cooking-book`.
 
 ```js
 const cards = document.querySelectorAll('.card');
@@ -30,6 +30,7 @@ assert.equal(cards[1]?.id, 'dave-cooking-book');
 ## --seed-contents--
 
 ```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -39,17 +40,19 @@ assert.equal(cards[1]?.id, 'dave-cooking-book');
 <body>
   <h1>XYZ Bookstore</h1>
   <p>Browse our collection of amazing books!</p>
+  
   <div class="card-container">
     <div class="card" id="sally-adventure-book">
       <h2>Sally's SciFi Adventure</h2>
       <p>This is an epic story of Sally and her dog Rex as they navigate through other worlds.</p>
       <button class="btn">Buy Now</button>
     </div>
+    
   --fcc-editable-region--
     <div class="card">
-
-    </div>
   --fcc-editable-region--
+      
+    </div>
   </div>
 </body>
 

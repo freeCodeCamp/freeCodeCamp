@@ -7,11 +7,11 @@ dashedName: step-11
 
 # --description--
 
-After the form, add a `div` element with an `id` of `results` that will display the search results.
+After the `form` element, add a `div` element with an `id` of `results` that will display the search results.
 
 # --hints--
 
-You should have a `div` element with the `id` of `results` after the form.
+You should have a `div` element with the `id` of `results` after the `form` element.
 
 ```js
 const searchContainer = document.getElementById("search-container");
@@ -112,7 +112,6 @@ export function FruitsSearch() {
 
   return (
     <div id="search-container">
-    --fcc-editable-region--
       <form onSubmit={handleSubmit}>
         <label htmlFor="search-input">Search for fruits:</label>
         <input
@@ -122,6 +121,7 @@ export function FruitsSearch() {
           onChange={(e) => setQuery(e.target.value)}
         />
       </form>
+    --fcc-editable-region--
       
     --fcc-editable-region--
     </div>

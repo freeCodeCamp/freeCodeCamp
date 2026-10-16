@@ -39,31 +39,7 @@ if(let x of xs) {
 
 # --seed--
 
-## --before-user-code--
-
-```css
-body {
-  etc: ''
-}
-```
-
-```html
-<!-- comment -->
-```
-
-## --after-user-code--
-
-```css
-body {
-  background: blue;
-}
-```
-
-```js
-function teardown(params) {
-  // after
-}
-```
+This section intentionally has no `## --seed-contents--`.
 
 
 # --solutions--

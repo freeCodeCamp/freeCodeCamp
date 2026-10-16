@@ -1,0 +1,23 @@
+{
+  "blocks": [
+    "lecture-working-with-loops",
+    "workshop-word-counter",
+    "lab-factorial-calculator",
+    "lab-repeat-a-string",
+    "workshop-sentence-analyzer",
+    "lab-longest-word-in-a-string",
+    "lab-mutations",
+    "lab-missing-letter-detector",
+    "lab-profile-lookup",
+    "workshop-space-mission-roster",
+    "lab-chunky-monkey",
+    "lab-device-loan-ledger",
+    "workshop-heritage-library-catalog",
+    "lab-smart-pantry-restocker",
+    "workshop-festival-crowd-flow-simulator",
+    "lab-traffic-light-sequencer",
+    "lab-proofreading-tool",
+    "review-javascript-loops",
+    "quiz-javascript-loops"
+  ]
+}

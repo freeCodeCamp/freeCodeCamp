@@ -1,0 +1,25 @@
+{
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "retrieval-engine-internals",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "69ae69fbb4a814be6a4f2bdc",
+      "title": "What is Semantic Search?"
+    },
+    {
+      "id": "69ae6a04b4a814be6a4f2bdd",
+      "title": "What are Embedding Models?"
+    },
+    {
+      "id": "69ae6a09b4a814be6a4f2bde",
+      "title": "What are Vector Databases?"
+    },
+    {
+      "id": "69ae6a0eb4a814be6a4f2bdf",
+      "title": "Chunking"
+    }
+  ]
+}

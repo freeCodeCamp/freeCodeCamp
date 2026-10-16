@@ -18,16 +18,22 @@ on:
           - japanese
           - german
           - swahili
+          - korean
+          - arabic
         default: all
       show_upcoming_changes:
         description: 'Show upcoming changes (enables upcoming certifications and challenges)'
         type: boolean
         default: false
 
+concurrency:
+  group: deploy-client-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }} # org, dev
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
@@ -37,12 +43,14 @@ jobs:
     steps:
       - name: Setup
         id: setup
+        env:
+          BRANCH: ${{ github.ref_name }}
+          SHOW_UPCOMING_CHANGES: ${{ inputs.show_upcoming_changes }}
         run: |
-          BRANCH="${{ github.ref_name }}"
           echo "Current branch: $BRANCH"
 
           # Convert boolean input to string 'true' or 'false'
-          if [[ "${{ inputs.show_upcoming_changes }}" == "true" ]]; then
+          if [[ "$SHOW_UPCOMING_CHANGES" == "true" ]]; then
             echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
           else
             echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
@@ -65,13 +73,13 @@ jobs:
 
   setup-matrix:
     name: Setup Matrix
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: setup-jobs
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - name: Setup Matrix
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         id: matrix
         env:
           TARGET_LANG: ${{ inputs.target_language }}
@@ -96,7 +104,9 @@ jobs:
               'ukrainian': 'ukr',
               'japanese': 'jpn',
               'german': 'ger',
-              'swahili': 'swa'
+              'swahili': 'swa',
+              'korean': 'kor',
+              'arabic': 'ara'
             };
 
             const allLanguages = Object.keys(languageMap);
@@ -156,7 +166,7 @@ jobs:
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
     needs: [setup-jobs, setup-matrix]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
@@ -171,17 +181,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         id: pnpm-install
         with:
           run_install: false
@@ -224,11 +234,14 @@ jobs:
           pnpm install
           pnpm run build
 
+      - name: Free up space
+        run: pnpm run clean:packages
+
       - name: Tar Files
         run: tar -czf client-${{ matrix.lang-name-short }}.tar client/public
 
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@53acf823325fe9ca47f4cdaa951f90b4b0de5bb9 # v4
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
@@ -264,16 +277,22 @@ jobs:
             StrictHostKeyChecking no" > ~/.ssh/config
           chmod 644 ~/.ssh/config
 
+          scrub_ips() {
+            sed -E 's/100(\.[0-9]{1,3}){3}/100.x.x.x/g'
+          }
+
           validate_connection() {
             local machine_name=$1
             local max_retries=3
             local retry_delay=5
+            local ping_output ssh_output
             
             for attempt in $(seq 1 $max_retries); do
               echo "Connection attempt $attempt/$max_retries to $machine_name"
               
-              if ! tailscale status | grep -q "$machine_name"; then
-                echo "Machine $machine_name not found in Tailscale network"
+              if ! ping_output=$(tailscale ping -c 1 --until-direct=false --timeout=5s "$machine_name" 2>&1); then
+                ping_output=$(printf '%s' "$ping_output" | scrub_ips)
+                echo "No Tailscale data path to $machine_name: $ping_output"
                 if [ $attempt -eq $max_retries ]; then
                   return 1
                 fi
@@ -282,12 +301,13 @@ jobs:
               fi
               
               MACHINE_IP=$(tailscale ip -4 $machine_name)
-              if ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; uptime" > /dev/null 2>&1; then
+              if ssh_output=$(ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; uptime" 2>&1); then
                 echo "Successfully validated connection to $machine_name"
                 return 0
               fi
               
-              echo "SSH validation failed for $machine_name"
+              ssh_output=$(printf '%s' "$ssh_output" | scrub_ips)
+              echo "SSH validation failed for $machine_name: $ssh_output"
               if [ $attempt -lt $max_retries ]; then
                 sleep $retry_delay
               fi
