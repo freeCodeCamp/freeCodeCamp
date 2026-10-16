@@ -11122,7 +11122,7 @@
       "lecture-introduction-to-css": {
         "title": "Introduction to CSS",
         "intro": [
-          "The following lectures are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and much more."
+          "In these lectures, you will learn what CSS is and its role on the web, how inline and block-level elements differ, and how inline-block works."
         ]
       },
       "workshop-cafe-menu": {
@@ -11142,13 +11142,13 @@
       "lecture-understanding-css-specificity": {
         "title": "Understanding CSS Specificity",
         "intro": [
-          "In these lectures, you will learn about CSS specificity, the common selectors and their specificities, the cascade algorithm, inheritance, and more."
+          "In these lectures, you will learn about CSS specificity, the specificity of different selectors, and best practices for using the <code>!important</code> keyword."
         ]
       },
       "lecture-working-with-backgrounds-and-borders-v2": {
         "title": "Working with Backgrounds and Borders",
         "intro": [
-          "In these lessons, you will learn about the properties and values you need to know to style backgrounds and borders of elements, alongside the accessibility considerations for backgrounds."
+          "In these lectures, you will learn how to control background image size, repeat, position, and attachment, and how to add borders around images."
         ]
       },
       "lab-blog-post-card": {
@@ -11269,7 +11269,7 @@
       "lecture-understanding-positioning-in-css": {
         "title": "Understanding Positioning in CSS",
         "intro": [
-          "In these lectures, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
+          "In these lectures, you will learn how to use CSS positioning. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
         ]
       },
       "workshop-cat-painting": {
@@ -11289,7 +11289,7 @@
       "lecture-working-with-attribute-selectors-and-combinators": {
         "title": "Working with Attribute Selectors and Combinators",
         "intro": [
-          "In these lectures, you will how to use attribute selectors to target elements, and how to target elements based on their relationship to other elements using combinators."
+          "In these lectures, you will learn how to use attribute selectors to target elements, and how to target elements based on their relationship to other elements using combinators."
         ]
       },
       "workshop-balance-sheet": {
@@ -11315,7 +11315,7 @@
       "lecture-introduction-to-css-variables": {
         "title": "Introduction to CSS Variables",
         "intro": [
-          "In these lectures, you will learn how to define and use custom properties (also known as CSS variables). You will also learn about the <code>@property</code> rule and how it works."
+          "In this lecture, you will learn how to define and use custom properties (also known as CSS variables)."
         ]
       },
       "workshop-magazine": {
