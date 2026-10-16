@@ -11,6 +11,10 @@ interface PrismFormattedProps {
   lang?: string;
 }
 
+// Register once per module load. Adding the hook on every mount stacks
+// duplicate global hooks that never get removed.
+Prism.hooks.add('complete', enhancePrismAccessibility);
+
 function PrismFormatted({
   className,
   text,
@@ -29,7 +33,6 @@ function PrismFormatted({
   useEffect(() => {
     // Just in case 'current' has not been created, though it should have been.
     if (instructionsRef.current) {
-      Prism.hooks.add('complete', enhancePrismAccessibility);
       Prism.highlightAllUnder(instructionsRef.current);
 
       const preElements = instructionsRef.current.querySelectorAll('pre');
