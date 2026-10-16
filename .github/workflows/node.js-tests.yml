@@ -25,7 +25,7 @@ jobs:
     name: Lint
     # Skip PR runs for Renovate since push already triggered CI
     if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'renovate[bot]'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         node-version: [24]
@@ -95,7 +95,7 @@ jobs:
   # DONT REMOVE THIS JOB.
   build:
     name: Build
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         node-version: [24]
@@ -156,7 +156,7 @@ jobs:
   build-e2e-api:
     name: Build E2E API (Container)
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout Source Files
@@ -191,7 +191,7 @@ jobs:
   test:
     name: Test
     needs: build
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     strategy:
       fail-fast: false
@@ -256,7 +256,7 @@ jobs:
   test-upcoming:
     name: Test - Upcoming Changes
     needs: build
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     strategy:
       fail-fast: false
@@ -321,7 +321,7 @@ jobs:
   test-localization:
     name: Test - i18n
     needs: build
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     if: github.event.pull_request.user.login == 'camperbot' && github.head_ref == 'chore/update-i18n-curriculum-submodule'
 
     strategy:
