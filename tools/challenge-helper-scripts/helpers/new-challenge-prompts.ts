@@ -6,6 +6,7 @@ export const newChallengePrompts = async (): Promise<{
   title: string;
   dashedName: string;
   challengeType: string;
+  questionCount?: number;
 }> => {
   const challengeType = await select<string>({
     message: 'What type of challenge is this?',
@@ -14,6 +15,19 @@ export const newChallengePrompts = async (): Promise<{
       value: value.toString()
     }))
   });
+
+  // The quiz template needs to know how many questions to scaffold
+  const questionCount =
+    challengeType === challengeTypes.quiz.toString()
+      ? await select<number>({
+          message: 'Should this quiz have either ten or twenty questions?',
+          default: 20,
+          choices: [
+            { name: '20 questions', value: 20 },
+            { name: '10 questions', value: 10 }
+          ]
+        })
+      : undefined;
 
   const lastStep = getLastStep().stepNum;
   const defaultTitle = `Step ${lastStep + 1}`;
@@ -41,6 +55,7 @@ export const newChallengePrompts = async (): Promise<{
   return {
     title,
     dashedName,
-    challengeType
+    challengeType,
+    ...(questionCount !== undefined && { questionCount })
   };
 };
