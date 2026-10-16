@@ -11,7 +11,7 @@ test.describe('Public profile certifications', () => {
 
     await expect(
       page.getByRole('link', { name: /View.+Certification/ })
-    ).toHaveCount(26);
+    ).toHaveCount(27);
   });
 
   test('Should show claimed certifications if the username includes uppercase characters', async ({
@@ -33,6 +33,6 @@ test.describe('Public profile certifications', () => {
     await page.waitForURL(`/${newUsername.toLowerCase()}`);
     await expect(
       page.getByRole('link', { name: /View.+Certification/ })
-    ).toHaveCount(26);
+    ).toHaveCount(27);
   });
 });
