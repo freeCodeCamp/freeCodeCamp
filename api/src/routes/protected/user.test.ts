@@ -202,6 +202,11 @@ const computedProperties = {
 // The following appears in session-user responses, but not
 // get-public-profile
 const sessionOnlyData = {
+  activityStreak: {
+    current: 0,
+    longest: 0,
+    activeSession: false
+  },
   currentChallengeId: testUserData.currentChallengeId,
   email: testUserData.email,
   emailVerified: testUserData.emailVerified,
