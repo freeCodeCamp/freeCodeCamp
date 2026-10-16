@@ -33,7 +33,7 @@ concurrency:
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }} # org, dev
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
@@ -73,7 +73,7 @@ jobs:
 
   setup-matrix:
     name: Setup Matrix
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: setup-jobs
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
@@ -166,7 +166,7 @@ jobs:
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
     needs: [setup-jobs, setup-matrix]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}

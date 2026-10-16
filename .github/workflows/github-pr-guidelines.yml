@@ -9,7 +9,7 @@ jobs:
   # the contributor hasn't tested their changes in a local development environment.
   no-web-commits:
     name: No Commits on GitHub Web
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       is_allow_listed: ${{ steps.pr_author.outputs.is_allow_listed }}
     steps:
@@ -80,7 +80,7 @@ jobs:
   # Kept as a standalone job so it does not depend on the web-commit checks.
   no-main-branch:
     name: No PRs from Main Branch
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -142,7 +142,7 @@ jobs:
   # for common mistakes like typos, missing colons, or incorrect spacing.
   fix-pr-title:
     name: Fix PR Title
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: [no-web-commits, no-main-branch]
     if: needs.no-web-commits.result == 'success' && needs.no-main-branch.result == 'success' && github.event.action != 'edited'
     steps:
@@ -164,7 +164,7 @@ jobs:
   # but removing the entire template is not.
   check-pr-template:
     name: Check PR Template
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: [no-web-commits, no-main-branch]
     if: needs.no-web-commits.result == 'success' && needs.no-main-branch.result == 'success'
     outputs:
@@ -187,7 +187,7 @@ jobs:
   # or removes the deprioritized label when all checks pass.
   report:
     name: Report
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: [no-web-commits, no-main-branch, check-pr-template]
     if: always() && needs.no-web-commits.result == 'success' && needs.no-main-branch.result == 'success'
     steps:

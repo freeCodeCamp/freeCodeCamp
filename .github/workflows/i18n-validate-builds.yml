@@ -11,7 +11,7 @@ concurrency:
 jobs:
   ci:
     name: Validate i18n Builds
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         node-version: [24]

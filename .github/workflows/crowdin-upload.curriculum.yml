@@ -17,7 +17,7 @@ permissions:
 jobs:
   i18n-upload-curriculum-files:
     name: Learn
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout Source Files
