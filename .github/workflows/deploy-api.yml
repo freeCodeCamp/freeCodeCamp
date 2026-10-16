@@ -27,7 +27,7 @@ concurrency:
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }}
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }}
@@ -90,7 +90,7 @@ jobs:
 
   deploy:
     name: Deploy to Docker Swarm -- ${{ needs.setup-jobs.outputs.tgt_env_short }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: [setup-jobs, build]
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}

@@ -16,7 +16,7 @@ jobs:
       contents: read
       # for actions/labeler to add labels to PRs
       pull-requests: write
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/labeler@bf12e9b00b37c5c0ca2b87b79b2daf7891dbda13 # v7
         with:
