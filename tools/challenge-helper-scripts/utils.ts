@@ -269,8 +269,15 @@ const updateStepTitles = (): void => {
   fileNames.forEach(fileName => {
     const filePath = `${getProjectPath()}${fileName}`;
     const frontMatter = matter.read(filePath);
-    const newStepNum =
-      meta.challengeOrder.findIndex(({ id }) => id === frontMatter.data.id) + 1;
+    const stepIndex = meta.challengeOrder.findIndex(
+      ({ id }) => id === frontMatter.data.id
+    );
+    if (stepIndex === -1) {
+      throw new Error(
+        `Step id "${frontMatter.data.id}" in ${filePath} is missing from meta.json challengeOrder`
+      );
+    }
+    const newStepNum = stepIndex + 1;
     const title = `Step ${newStepNum}`;
     const dashedName = `step-${newStepNum}`;
     const newData = {
