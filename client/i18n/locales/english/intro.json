@@ -10944,13 +10944,13 @@
           "In this lab you will implement the quicksort algorithm to sort a list of integers."
         ]
       },
-      "review-recursion-python": {
+      "review-recursion-python-v2": {
         "title": "Review Recursion",
         "intro": [
           "Review the concepts of recursion, base cases, and the call stack."
         ]
       },
-      "quiz-recursion-python": {
+      "quiz-recursion-python-v2": {
         "title": "Recursion Quiz",
         "intro": [
           "Test your understanding of recursion, base cases, and the call stack."
