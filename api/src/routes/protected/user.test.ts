@@ -2389,6 +2389,59 @@ Thanks and regards,
 
         expect(response.status).toBe(201);
       });
+
+      test('GET returns the valid, unexpired token for the user', async () => {
+        const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;
+        const token =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create(
+            {
+              data: {
+                userId: defaultUserId,
+                expireAt: new Date(Date.now() + ONE_DAY_IN_MS)
+              }
+            }
+          );
+
+        const response = await superGet('/user/exam-environment/token');
+
+        expect(response.status).toBe(200);
+        const { examEnvironmentAuthorizationToken } = response.body;
+        const decodedToken = jwt.verify(
+          examEnvironmentAuthorizationToken,
+          JWT_SECRET
+        ) as JwtPayload;
+        expect(decodedToken.examEnvironmentAuthorizationToken).toBe(token.id);
+      });
+
+      test('GET does not return an expired token', async () => {
+        const TWO_DAYS_IN_MS = 2 * 24 * 60 * 60 * 1000;
+        await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create(
+          {
+            data: {
+              userId: defaultUserId,
+              expireAt: new Date(Date.now() - TWO_DAYS_IN_MS)
+            }
+          }
+        );
+
+        const response = await superGet('/user/exam-environment/token');
+
+        expect(response.status).toBe(404);
+        expect(response.body).toStrictEqual({
+          code: 'FCC_ERR_EXAM_ENVIRONMENT',
+          message: 'No valid token found for user.'
+        });
+      });
+
+      test('GET returns 404 when the user has no token', async () => {
+        const response = await superGet('/user/exam-environment/token');
+
+        expect(response.status).toBe(404);
+        expect(response.body).toStrictEqual({
+          code: 'FCC_ERR_EXAM_ENVIRONMENT',
+          message: 'No valid token found for user.'
+        });
+      });
     });
   });
 
@@ -2410,7 +2463,8 @@ Thanks and regards,
       { path: '/user/ms-username', method: 'DELETE' },
       { path: '/user/report-user', method: 'POST' },
       { path: '/user/ms-username', method: 'POST' },
-      { path: '/user/submit-survey', method: 'POST' }
+      { path: '/user/submit-survey', method: 'POST' },
+      { path: '/user/exam-environment/token', method: 'GET' }
     ];
 
     endpoints.forEach(({ path, method }) => {
