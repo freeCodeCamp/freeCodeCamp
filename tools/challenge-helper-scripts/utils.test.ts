@@ -45,6 +45,7 @@ import { getStepTemplate } from './helpers/get-step-template.js';
 import {
   createChallengeFile,
   createLabFile,
+  createLectureFile,
   createReviewFile,
   createStepFile,
   insertStepIntoMeta,
@@ -153,6 +154,34 @@ describe('Challenge utils helper scripts', () => {
       expect(fs.writeFileSync).toHaveBeenCalledWith(
         `${projectPath}/${challengeId.toString()}.md`,
         expect.stringContaining(`challengeType: ${challengeTypes.review}`)
+      );
+    });
+
+    it('creates a lecture file with the multiple-choice template', () => {
+      const challengeId = new ObjectId();
+
+      createLectureFile({
+        challengeId,
+        projectPath: `${projectPath}/`,
+        title: 'HTML Fundamentals',
+        dashedName: 'html-fundamentals'
+      });
+
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        expect.any(String)
+      );
+      const lectureText = (fs.writeFileSync as ReturnType<typeof vi.fn>).mock
+        .calls[0]?.[1] as string;
+      expect(lectureText).toContain('title: HTML Fundamentals');
+      expect(lectureText).toContain(
+        `challengeType: ${challengeTypes.multipleChoice}`
+      );
+      expect(lectureText).toContain('dashedName: html-fundamentals');
+      expect(lectureText).toContain('# --description--');
+      expect(lectureText).toContain('# --questions--');
+      expect(lectureText).not.toMatch(
+        /# --(?:instructions|hints|seed|solutions)--/
       );
     });
   });
