@@ -166,6 +166,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
           },
           "then": {
             "allow": [
+              "cert-project",
               "workshop",
               "lab",
               "lecture",
