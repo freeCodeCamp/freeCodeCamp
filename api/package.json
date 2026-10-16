@@ -19,7 +19,7 @@
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "bson": "7.3.3",
-    "date-fns": "4.1.0",
+    "date-fns": "4.4.0",
     "date-fns-tz": "3.2.0",
     "dotenv": "16.6.1",
     "fast-uri": "2.4.0",
