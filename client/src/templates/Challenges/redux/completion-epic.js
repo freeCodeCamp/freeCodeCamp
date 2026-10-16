@@ -312,13 +312,16 @@ export default function completionEpic(action$, state$) {
           return donationAction ? of(x, donationAction) : of(x);
         }),
         mergeMap(x => of(x, setRenderStartTime(Date.now()))),
+        mergeMap(x =>
+          x.type === submitActionTypes.updateFailed
+            ? of(x, createFlashMessage(standardErrorMessage))
+            : of(x)
+        ),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {
             if (challengeType !== challengeTypes.exam) {
               navigate(pathToNavigateTo);
             }
-          } else {
-            createFlashMessage(standardErrorMessage);
           }
         }),
         concat(of(closeModal('completion')))
