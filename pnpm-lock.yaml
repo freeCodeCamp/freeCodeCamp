@@ -209,8 +209,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       js-yaml:
-        specifier: 3.14.2
-        version: 3.14.2
+        specifier: 3.15.2
+        version: 3.15.2
       lint-staged:
         specifier: ^16.4.0
         version: 16.4.0
@@ -269,8 +269,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/shared
       '@growthbook/growthbook':
-        specifier: 1.6.5
-        version: 1.6.5
+        specifier: 1.8.0
+        version: 1.8.0
       '@prisma/client':
         specifier: 6.19.3
         version: 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
@@ -287,14 +287,14 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(ajv@8.20.0)
       bson:
-        specifier: 7.2.0
-        version: 7.2.0
+        specifier: 7.3.3
+        version: 7.3.3
       date-fns:
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.4.0
+        version: 4.4.0
       date-fns-tz:
         specifier: 3.2.0
-        version: 3.2.0(date-fns@4.1.0)
+        version: 3.2.0(date-fns@4.4.0)
       dotenv:
         specifier: 16.6.1
         version: 16.6.1
@@ -432,17 +432,17 @@ importers:
         specifier: 2.0.21
         version: 2.0.21
       '@fortawesome/fontawesome-svg-core':
-        specifier: 7.2.0
-        version: 7.2.0
+        specifier: 7.3.1
+        version: 7.3.1
       '@fortawesome/free-brands-svg-icons':
-        specifier: 7.2.0
-        version: 7.2.0
+        specifier: 7.3.1
+        version: 7.3.1
       '@fortawesome/free-solid-svg-icons':
-        specifier: 7.2.0
-        version: 7.2.0
+        specifier: 7.3.1
+        version: 7.3.1
       '@fortawesome/react-fontawesome':
-        specifier: 3.3.1
-        version: 3.3.1(@fortawesome/fontawesome-svg-core@7.2.0)(react@18.3.1)
+        specifier: 3.5.0
+        version: 3.5.0(@fortawesome/fontawesome-svg-core@7.3.1)(react@18.3.1)
       '@freecodecamp/challenge-builder':
         specifier: workspace:*
         version: link:../packages/challenge-builder
@@ -453,14 +453,14 @@ importers:
         specifier: 1.3.9
         version: 1.3.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@growthbook/growthbook-react':
-        specifier: 1.6.5
-        version: 1.6.5(react@18.3.1)
+        specifier: 1.8.0
+        version: 1.8.0(react@18.3.1)
       '@loadable/component':
         specifier: 5.16.7
         version: 5.16.7(react@18.3.1)
       '@paypal/react-paypal-js':
-        specifier: 10.3.0
-        version: 10.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 10.6.0
+        version: 10.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@redux-devtools/extension':
         specifier: 3.3.0
         version: 3.3.0(redux@4.2.1)
@@ -510,11 +510,11 @@ importers:
         specifier: 3.12.1
         version: 3.12.1
       date-fns:
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.4.0
+        version: 4.4.0
       date-fns-tz:
         specifier: 3.2.0
-        version: 3.2.0(date-fns@4.1.0)
+        version: 3.2.0(date-fns@4.4.0)
       eslint-config-react-app:
         specifier: 7.0.1
         version: 7.0.1(@babel/plugin-syntax-flow@7.27.1(@babel/core@7.29.7(supports-color@8.1.1)))(@babel/plugin-transform-react-jsx@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(eslint@9.39.5(jiti@2.6.1)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
@@ -1135,7 +1135,7 @@ importers:
         specifier: 4.1.11
         version: 4.1.11(vitest@4.1.11)
       bson:
-        specifier: ^7.0.0
+        specifier: ^7.2.0
         version: 7.2.0
       eslint:
         specifier: 9.39.5
@@ -1159,8 +1159,8 @@ importers:
         specifier: 7.1.3
         version: 7.1.3
       js-yaml:
-        specifier: 3.14.2
-        version: 3.14.2
+        specifier: 3.15.2
+        version: 3.15.2
       lodash:
         specifier: 4.18.1
         version: 4.18.1
@@ -3154,16 +3154,28 @@ packages:
     resolution: {integrity: sha512-IpR0bER9FY25p+e7BmFH25MZKEwFHTfRAfhOyJubgiDnoJNsSvJ7nigLraHtp4VOG/cy8D7uiV0dLkHOne5Fhw==}
     engines: {node: '>=6'}
 
+  '@fortawesome/fontawesome-common-types@7.3.1':
+    resolution: {integrity: sha512-k0C0sdHmZtAo6dRDtd1Z/qcpyHbL0CKsjV8seMY/21xGhY5Wsv0XRmiI/xEEH4y2c9b1+jvgNs/3EqhV27yUEA==}
+    engines: {node: '>=6'}
+
   '@fortawesome/fontawesome-svg-core@7.2.0':
     resolution: {integrity: sha512-6639htZMjEkwskf3J+e6/iar+4cTNM9qhoWuRfj9F3eJD6r7iCzV1SWnQr2Mdv0QT0suuqU8BoJCZUyCtP9R4Q==}
     engines: {node: '>=6'}
 
-  '@fortawesome/free-brands-svg-icons@7.2.0':
-    resolution: {integrity: sha512-VNG8xqOip1JuJcC3zsVsKRQ60oXG9+oYNDCosjoU/H9pgYmLTEwWw8pE0jhPz/JWdHeUuK6+NQ3qsM4gIbdbYQ==}
+  '@fortawesome/fontawesome-svg-core@7.3.1':
+    resolution: {integrity: sha512-BoxVN3PKnMbgStHhjoaky/oWdxHomDqmBVA24IA3KEmssFGeI7u9YT/BJceOjIum/t6TpPa/vcMKaVYQeIQ/3Q==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/free-brands-svg-icons@7.3.1':
+    resolution: {integrity: sha512-8eiNzycuFhy3mZsi5EVO8JpO3H8l7/kSCl4Gk4iUew9hJuzYFqAAD6kqgeEup3+YZ9hL+5cjjorGzrRLkYuURg==}
     engines: {node: '>=6'}
 
   '@fortawesome/free-solid-svg-icons@7.2.0':
     resolution: {integrity: sha512-YTVITFGN0/24PxzXrwqCgnyd7njDuzp5ZvaCx5nq/jg55kUYd94Nj8UTchBdBofi/L0nwRfjGOg0E41d2u9T1w==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/free-solid-svg-icons@7.3.1':
+    resolution: {integrity: sha512-v0BLa0eqg7ubvVWeNSHVBs8fWH/GJicERZoJaxJ3FE/lj67VSqzoMg9pzfZVOfLMX10y0pGwQAuxoRVVH2patg==}
     engines: {node: '>=6'}
 
   '@fortawesome/react-fontawesome@3.3.0':
@@ -3173,8 +3185,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~6 || ~7
       react: ^18.0.0 || ^19.0.0
 
-  '@fortawesome/react-fontawesome@3.3.1':
-    resolution: {integrity: sha512-wGnAPhfzivDwBWYmEG8MSrEXPruoiMMo48NnsRkj1NZkoaawgOijPNAiSHKMYEoCsqTBSgLTzL6EqTTWGaUR4w==}
+  '@fortawesome/react-fontawesome@3.5.0':
+    resolution: {integrity: sha512-63mlRr6fiBbJ0wjr1Cf6dsDGtP2lNvk9lnatKgxs/fIkhslsZT291hIUzJkuUkI9yr69ZvWnWfgb2qXm4QyVaA==}
     engines: {node: '>=20'}
     peerDependencies:
       '@fortawesome/fontawesome-svg-core': ~6 || ~7
@@ -3303,14 +3315,14 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@growthbook/growthbook-react@1.6.5':
-    resolution: {integrity: sha512-afi/RUbwazVNKv2acn6wDQz4BJNRAEpwIuHfggQup2/aE5PLAxy3+95gjjRMgCcPR0Pf3sFmhYGvOmxLD0ZRbQ==}
+  '@growthbook/growthbook-react@1.8.0':
+    resolution: {integrity: sha512-mJo31XBfZlsuLV6ud/YdhFtJsJd2SEvn2/M96mP1ZqCn8PRRsOSkdBnO/kFILneoJWtV9IxbMZWCsJCenW3Huw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0
 
-  '@growthbook/growthbook@1.6.5':
-    resolution: {integrity: sha512-mUaMsgeUTpRIUOTn33EUXHRK6j7pxBjwqH4WpQyq+pukjd1AIzWlEa6w7i6bInJUcweGgP2beXZmaP6b6UPn7A==}
+  '@growthbook/growthbook@1.8.0':
+    resolution: {integrity: sha512-WlS5bCwm0EJQDdTNkiPGE1X9EdvU7BIaAbHP8pg/5xP1stRyUI7sPQMpC21p6B2c/VvgxatGn/tM+r0SYnhfQw==}
     engines: {node: '>=10'}
 
   '@hapi/address@5.1.1':
@@ -4022,11 +4034,11 @@ packages:
     peerDependencies:
       '@parcel/core': ^2.8.3
 
-  '@paypal/paypal-js@10.1.0':
-    resolution: {integrity: sha512-OolzHD7lu2K03HApg+YyMtBsPnrVc+ASj1MzuH/mz7feHj5OnxYyLWQiCcCm4douJFJ6P19JW8+LzsAN4x3jHw==}
+  '@paypal/paypal-js@11.2.1':
+    resolution: {integrity: sha512-Oi9JAxXOZrTpPWvJtlf98r76AvjIsn5kud7ZgqaqCL0JUOS3rqNzCbPmmWt9eg9Gw0qMf3KpVX+sEusQGe09pw==}
 
-  '@paypal/react-paypal-js@10.3.0':
-    resolution: {integrity: sha512-7hSrJU0TRmyEuilrsDxGTjT9SaY5ll1CZv4cnCHFwIZ8pC5U0fPHeq1iuGERCg1XBFvOWtg7FcH1DIkHXZ6W5g==}
+  '@paypal/react-paypal-js@10.6.0':
+    resolution: {integrity: sha512-oBf/5EsmHTvNho8U25z/SJkU82eGoWEfogVHBd7K0Bf91hOPuM9brx3bwbP87j+45/M/S91SyVTavEKpBKxWVA==}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
       react-dom: ^16.8.0 || ^17 || ^18 || ^19
@@ -6306,6 +6318,10 @@ packages:
     resolution: {integrity: sha512-YCEo7KjMlbNlyHhz7zAZNDpIpQbd+wOEHJYezv0nMYTn4x31eIUM2yomNNubclAt63dObUzKHWsBLJ9QcZNSnQ==}
     engines: {node: '>=20.19.0'}
 
+  bson@7.3.3:
+    resolution: {integrity: sha512-oz3LwE3qGEhTCSyhzQRLY3Bj1NLOsjFMf6tcmY5J8M+3R7EVcmoBfSHWvjUK3yXCLDUsGpIuB3aQL4nDZ1EV/g==}
+    engines: {node: '>=20.19.0'}
+
   buffer-equal-constant-time@1.0.1:
     resolution: {integrity: sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==}
 
@@ -6937,8 +6953,8 @@ packages:
     resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
 
-  date-fns@4.1.0:
-    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+  date-fns@4.4.0:
+    resolution: {integrity: sha512-+1UMbeh68lH1SegH83CGWwpb6OHHbpSgr3+s5Eww5M4CAgswBpoWS0AjTOfEJ33HiYKz1hdj/KTFprzXHmq/6w==}
 
   dateformat@4.6.3:
     resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}
@@ -16333,26 +16349,36 @@ snapshots:
 
   '@fortawesome/fontawesome-common-types@7.2.0': {}
 
+  '@fortawesome/fontawesome-common-types@7.3.1': {}
+
   '@fortawesome/fontawesome-svg-core@7.2.0':
     dependencies:
       '@fortawesome/fontawesome-common-types': 7.2.0
 
-  '@fortawesome/free-brands-svg-icons@7.2.0':
+  '@fortawesome/fontawesome-svg-core@7.3.1':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 7.2.0
+      '@fortawesome/fontawesome-common-types': 7.3.1
+
+  '@fortawesome/free-brands-svg-icons@7.3.1':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 7.3.1
 
   '@fortawesome/free-solid-svg-icons@7.2.0':
     dependencies:
       '@fortawesome/fontawesome-common-types': 7.2.0
+
+  '@fortawesome/free-solid-svg-icons@7.3.1':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 7.3.1
 
   '@fortawesome/react-fontawesome@3.3.0(@fortawesome/fontawesome-svg-core@7.2.0)(react@18.3.1)':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 7.2.0
       react: 18.3.1
 
-  '@fortawesome/react-fontawesome@3.3.1(@fortawesome/fontawesome-svg-core@7.2.0)(react@18.3.1)':
+  '@fortawesome/react-fontawesome@3.5.0(@fortawesome/fontawesome-svg-core@7.3.1)(react@18.3.1)':
     dependencies:
-      '@fortawesome/fontawesome-svg-core': 7.2.0
+      '@fortawesome/fontawesome-svg-core': 7.3.1
       react: 18.3.1
 
   '@freecodecamp/curriculum-helpers@9.0.1': {}
@@ -16564,12 +16590,12 @@ snapshots:
     dependencies:
       graphql: 16.13.2
 
-  '@growthbook/growthbook-react@1.6.5(react@18.3.1)':
+  '@growthbook/growthbook-react@1.8.0(react@18.3.1)':
     dependencies:
-      '@growthbook/growthbook': 1.6.5
+      '@growthbook/growthbook': 1.8.0
       react: 18.3.1
 
-  '@growthbook/growthbook@1.6.5':
+  '@growthbook/growthbook@1.8.0':
     dependencies:
       dom-mutator: 0.6.0
 
@@ -17327,13 +17353,13 @@ snapshots:
       chrome-trace-event: 1.0.4
       nullthrows: 1.1.1
 
-  '@paypal/paypal-js@10.1.0':
+  '@paypal/paypal-js@11.2.1':
     dependencies:
       promise-polyfill: 8.3.0
 
-  '@paypal/react-paypal-js@10.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@paypal/react-paypal-js@10.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@paypal/paypal-js': 10.1.0
+      '@paypal/paypal-js': 11.2.1
       '@paypal/sdk-constants': 1.0.158
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -20015,6 +20041,8 @@ snapshots:
 
   bson@7.2.0: {}
 
+  bson@7.3.3: {}
+
   buffer-equal-constant-time@1.0.1: {}
 
   buffer-from@1.1.2: {}
@@ -20764,15 +20792,15 @@ snapshots:
       es-errors: 1.3.0
       is-data-view: 1.0.2
 
-  date-fns-tz@3.2.0(date-fns@4.1.0):
+  date-fns-tz@3.2.0(date-fns@4.4.0):
     dependencies:
-      date-fns: 4.1.0
+      date-fns: 4.4.0
 
   date-fns@2.30.0:
     dependencies:
       '@babel/runtime': 7.29.2
 
-  date-fns@4.1.0: {}
+  date-fns@4.4.0: {}
 
   dateformat@4.6.3: {}
 
