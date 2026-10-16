@@ -269,8 +269,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/shared
       '@growthbook/growthbook':
-        specifier: 1.6.5
-        version: 1.6.5
+        specifier: 1.8.0
+        version: 1.8.0
       '@prisma/client':
         specifier: 6.19.3
         version: 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
@@ -453,8 +453,8 @@ importers:
         specifier: 1.3.9
         version: 1.3.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@growthbook/growthbook-react':
-        specifier: 1.6.5
-        version: 1.6.5(react@18.3.1)
+        specifier: 1.8.0
+        version: 1.8.0(react@18.3.1)
       '@loadable/component':
         specifier: 5.16.7
         version: 5.16.7(react@18.3.1)
@@ -3315,14 +3315,14 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@growthbook/growthbook-react@1.6.5':
-    resolution: {integrity: sha512-afi/RUbwazVNKv2acn6wDQz4BJNRAEpwIuHfggQup2/aE5PLAxy3+95gjjRMgCcPR0Pf3sFmhYGvOmxLD0ZRbQ==}
+  '@growthbook/growthbook-react@1.8.0':
+    resolution: {integrity: sha512-mJo31XBfZlsuLV6ud/YdhFtJsJd2SEvn2/M96mP1ZqCn8PRRsOSkdBnO/kFILneoJWtV9IxbMZWCsJCenW3Huw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0
 
-  '@growthbook/growthbook@1.6.5':
-    resolution: {integrity: sha512-mUaMsgeUTpRIUOTn33EUXHRK6j7pxBjwqH4WpQyq+pukjd1AIzWlEa6w7i6bInJUcweGgP2beXZmaP6b6UPn7A==}
+  '@growthbook/growthbook@1.8.0':
+    resolution: {integrity: sha512-WlS5bCwm0EJQDdTNkiPGE1X9EdvU7BIaAbHP8pg/5xP1stRyUI7sPQMpC21p6B2c/VvgxatGn/tM+r0SYnhfQw==}
     engines: {node: '>=10'}
 
   '@hapi/address@5.1.1':
@@ -16590,12 +16590,12 @@ snapshots:
     dependencies:
       graphql: 16.13.2
 
-  '@growthbook/growthbook-react@1.6.5(react@18.3.1)':
+  '@growthbook/growthbook-react@1.8.0(react@18.3.1)':
     dependencies:
-      '@growthbook/growthbook': 1.6.5
+      '@growthbook/growthbook': 1.8.0
       react: 18.3.1
 
-  '@growthbook/growthbook@1.6.5':
+  '@growthbook/growthbook@1.8.0':
     dependencies:
       dom-mutator: 0.6.0
 
