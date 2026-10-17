@@ -47,6 +47,7 @@ const initialState = {
     finishExam: false,
     exitQuiz: false,
     finishQuiz: false,
+    exitProject: false,
     examResults: false,
     survey: false,
     projectPreview: false,
