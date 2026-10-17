@@ -97,8 +97,15 @@ Test 1
 \`\`\`
 `;
 
+const quizQuestionCounts = [10, 20];
+
 const getQuizChallengeTemplate = (options: ChallengeOptions): string => {
-  const count = options.questionCount!;
+  const count = options.questionCount;
+  if (count === undefined || !quizQuestionCounts.includes(count)) {
+    throw Error(
+      `A quiz needs a questionCount of ${quizQuestionCounts.join(' or ')}, but received ${String(count)}.`
+    );
+  }
 
   const regularQuestion = `### --question--
 
