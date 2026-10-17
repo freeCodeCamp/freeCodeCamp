@@ -352,6 +352,52 @@ describe('settingRoutes', () => {
         );
       });
 
+      test('should reject confirmation if another account claimed the email after the change was requested', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { newEmail }
+        });
+        // Another account takes the address after the change was requested.
+        // email is not unique, so update by email must go through updateMany.
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: otherUserEmail },
+          data: { email: newEmail }
+        });
+
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
+
+        const user = await fastifyTestInstance.prisma.user.findUnique({
+          where: { id: defaultUserId }
+        });
+        // Put the other account back so later tests find it unchanged.
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: newEmail },
+          data: { email: otherUserEmail }
+        });
+
+        expect(res.headers.location).toBe(
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
+        );
+        expect(res.status).toBe(302);
+        expect(user?.email).not.toBe(newEmail);
+        expect(count).toHaveBeenCalledWith(
+          'settings.email_confirm_rejected',
+          1,
+          { attributes: { reason: 'email_taken' } }
+        );
+      });
+
       test('should reject requests if the auth token has expired', async () => {
         const count = vi.fn();
         const originalSentry = fastifyTestInstance.Sentry;
@@ -1317,6 +1363,21 @@ Happy coding!
           hasPicture: true,
           pictureLength: leakyUrl.length
         });
+      });
+
+      test('PUT rejects a non-image URL that only mentions an image extension in its query string', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/tracker?format=.png'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT accepts an image URL with query string', async () => {
