@@ -43,6 +43,18 @@ describe('clickhousePlugin', () => {
     await fastify.register(clickhousePlugin);
 
     expect(fastify.clickhouse).toBe(clickhouse);
+    expect(createClient).toHaveBeenCalledWith({
+      ...configuration.current,
+      request_timeout: 5000,
+      clickhouse_settings: {
+        final: 1,
+        async_insert: 1,
+        wait_for_async_insert: 1,
+        async_insert_use_adaptive_busy_timeout: 0,
+        async_insert_busy_timeout_ms: 100,
+        date_time_input_format: 'best_effort'
+      }
+    });
     expect(clickhouse.ping).toHaveBeenCalledWith({
       select: true,
       abort_signal: expect.any(AbortSignal) as unknown

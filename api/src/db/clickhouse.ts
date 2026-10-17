@@ -20,10 +20,13 @@ const clickhousePlugin: FastifyPluginAsync<Options> = fp(
     if (!configuration) return;
     const clickhouse = createClient({
       ...configuration,
+      request_timeout: 5000,
       clickhouse_settings: {
+        final: 1,
         async_insert: 1,
         wait_for_async_insert: 1,
-        async_insert_busy_timeout_ms: 1000,
+        async_insert_use_adaptive_busy_timeout: 0,
+        async_insert_busy_timeout_ms: 100,
         date_time_input_format: 'best_effort'
       }
     });

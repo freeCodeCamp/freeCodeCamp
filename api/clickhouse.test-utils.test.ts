@@ -26,6 +26,13 @@ const integrationTestsEnabled =
   process.env.CI === 'true' ||
   process.env.FCC_ENABLE_CLICKHOUSE_TESTS === 'true';
 
+const migrationFilenames = [
+  '001_create_activity_events.sql',
+  '002_create_activity_events_by_identity.sql',
+  '003_copy_activity_events.sql',
+  '004_exchange_activity_events.sql'
+];
+
 describe.skipIf(!integrationTestsEnabled)(
   'API with explicit ClickHouse enablement',
   () => {
@@ -39,8 +46,66 @@ describe.skipIf(!integrationTestsEnabled)(
         format: 'JSONEachRow'
       });
       expect(await result.json()).toEqual([
-        { database: getClickHouseTestConfiguration().database, migrations: 1 }
+        {
+          database: getClickHouseTestConfiguration().database,
+          migrations: migrationFilenames.length
+        }
       ]);
+    });
+
+    test('reads acknowledged retries once across dates, months and timezones before merges', async () => {
+      const client = fastifyTestInstance.clickhouse;
+      assert.ok(client);
+      const eventId = crypto.randomUUID();
+      const first = {
+        event_id: eventId,
+        tracking_id: 'retry-test',
+        event_type: 'test',
+        url: '/old',
+        occurred_at: '2026-01-31 23:59:59.000',
+        activity_date: '2026-01-31',
+        timezone: 'UTC',
+        ingested_at: '2026-02-01 00:00:00.000'
+      };
+      await client.command({ query: 'SYSTEM STOP MERGES activity_events' });
+      try {
+        for (const value of [
+          first,
+          {
+            ...first,
+            url: '/latest',
+            occurred_at: '2026-02-01 00:00:01.000',
+            activity_date: '2026-02-01',
+            timezone: 'Asia/Dhaka',
+            ingested_at: '2026-02-01 00:00:02.000'
+          },
+          { ...first, tracking_id: 'another-camper' }
+        ]) {
+          await client.insert({
+            table: 'activity_events',
+            format: 'JSONEachRow',
+            values: [value]
+          });
+        }
+        const result = await client.query({
+          query: `SELECT tracking_id, url FROM activity_events
+            WHERE event_id = {eventId:UUID} ORDER BY tracking_id`,
+          query_params: { eventId },
+          format: 'JSONEachRow'
+        });
+        expect(await result.json()).toEqual([
+          { tracking_id: 'another-camper', url: '/old' },
+          { tracking_id: 'retry-test', url: '/latest' }
+        ]);
+        const filtered = await client.query({
+          query: `SELECT count() AS count FROM activity_events
+            WHERE tracking_id = 'retry-test' AND url = '/old'`,
+          format: 'JSONEachRow'
+        });
+        expect(await filtered.json()).toEqual([{ count: 0 }]);
+      } finally {
+        await client.command({ query: 'SYSTEM START MERGES activity_events' });
+      }
     });
   }
 );
@@ -169,19 +234,66 @@ describe.skipIf(!integrationTestsEnabled)(
       if (client) await client.close();
     });
 
-    test('adopts an existing activity table and records the initial migration once', async () => {
+    test('migrates legacy data without changing applied files or deleting the original table', async () => {
+      await client.command({ query: 'DROP TABLE activity_events SYNC' });
+      await client.command({
+        query: 'DROP TABLE activity_events_before_event_id_migration SYNC'
+      });
+      await client.command({
+        query: await fs.readFile(
+          new URL(
+            './clickhouse/migrations/001_create_activity_events.sql',
+            import.meta.url
+          ),
+          'utf8'
+        )
+      });
+      const eventId = crypto.randomUUID();
+      const first = {
+        event_id: eventId,
+        tracking_id: 'legacy-camper',
+        event_type: 'test',
+        occurred_at: '2026-01-31 23:59:59.000',
+        activity_date: '2026-01-31',
+        timezone: 'UTC',
+        ingested_at: '2026-02-01 00:00:00.000'
+      };
+      await client.insert({
+        table: 'activity_events',
+        format: 'JSONEachRow',
+        values: [
+          first,
+          {
+            ...first,
+            activity_date: '2026-02-01',
+            timezone: 'Asia/Dhaka',
+            ingested_at: '2026-02-01 00:00:02.000'
+          }
+        ]
+      });
       await client.command({ query: 'DROP TABLE schema_migrations SYNC' });
-      expect(await applyMigrations(client)).toEqual([
-        '001_create_activity_events.sql'
-      ]);
+      expect(await applyMigrations(client)).toEqual(migrationFilenames);
       expect(await applyMigrations(client)).toEqual([]);
       const result = await client.query({
-        query: 'SELECT migration_id, filename FROM schema_migrations',
+        query: 'SELECT filename FROM schema_migrations ORDER BY migration_id',
         format: 'JSONEachRow'
       });
-      expect(await result.json()).toEqual([
-        { migration_id: '1', filename: '001_create_activity_events.sql' }
+      expect(await result.json()).toEqual(
+        migrationFilenames.map(filename => ({ filename }))
+      );
+      const events = await client.query({
+        query: 'SELECT activity_date, timezone FROM activity_events FINAL',
+        format: 'JSONEachRow'
+      });
+      expect(await events.json()).toEqual([
+        { activity_date: '2026-02-01', timezone: 'Asia/Dhaka' }
       ]);
+      const original = await client.query({
+        query:
+          'SELECT count() AS count FROM activity_events_before_event_id_migration',
+        format: 'JSONEachRow'
+      });
+      expect(await original.json()).toEqual([{ count: 2 }]);
     });
 
     test('does not replay a non-idempotent migration on its second run', async () => {
