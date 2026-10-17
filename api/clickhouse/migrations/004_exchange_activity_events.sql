@@ -1,0 +1,1 @@
+EXCHANGE TABLES activity_events AND activity_events_before_event_id_migration;
