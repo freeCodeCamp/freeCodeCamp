@@ -106,6 +106,7 @@
             "lab-mutations",
             "lab-missing-letter-detector",
             "lab-profile-lookup",
+            "lab-data-sanitizer-sweep",
             "workshop-space-mission-roster",
             "lab-chunky-monkey",
             "lab-device-loan-ledger",
