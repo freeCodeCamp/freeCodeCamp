@@ -51,6 +51,7 @@
     "lint:prettier": "prettier --list-different .",
     "lint:css": "stylelint '**/*.css'",
     "clickhouse:migrate": "pnpm --filter=@freecodecamp/api clickhouse:migrate",
+    "clickhouse:test-db:cleanup": "pnpm --filter=@freecodecamp/api clickhouse:test-db:cleanup",
     "preseed": "turbo setup",
     "playwright:install-build-tools": "npx playwright install --with-deps",
     "rename-challenges": "tsx tools/challenge-helper-scripts/rename-challenge-files.ts",

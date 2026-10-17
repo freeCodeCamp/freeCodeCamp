@@ -80,6 +80,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clickhouse:migrate": "tsx tools/clickhouse/migrate.ts",
+    "clickhouse:test-db:cleanup": "tsx tools/clickhouse/cleanup-test-databases.ts",
     "clean": "rm -rf dist",
     "develop": "tsx watch --clear-screen=false src/server.ts",
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
