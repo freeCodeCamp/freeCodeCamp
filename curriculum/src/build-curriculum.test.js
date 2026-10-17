@@ -6,11 +6,79 @@ import {
   createCommentMap,
   addBlockStructure,
   getSuperblocks,
+  parseCurriculumStructure,
   superBlockNames
 } from './build-curriculum.js';
 import { getCurriculumStructure } from './file-handler.js';
 
 vi.mock('./file-handler');
+
+describe('parseCurriculumStructure', () => {
+  it('filters a reused structure without changing later block or challenge selections', async () => {
+    const structure = {
+      fullSuperblockList: [
+        {
+          name: SuperBlocks.RespWebDesign,
+          blocks: [
+            {
+              dashedName: 'first-block',
+              order: 0,
+              challengeOrder: [{ id: 'first' }, { id: 'second' }]
+            },
+            {
+              dashedName: 'second-block',
+              order: 1,
+              challengeOrder: [{ id: 'third' }, { id: 'fourth' }]
+            }
+          ]
+        }
+      ],
+      certifications: ['responsive-web-design']
+    };
+    const original = structuredClone(structure);
+
+    const first = await parseCurriculumStructure(
+      { block: 'first-block', challengeId: 'second' },
+      structure
+    );
+    expect(first.fullSuperblockList[0].blocks).toEqual([
+      {
+        ...original.fullSuperblockList[0].blocks[0],
+        challengeOrder: [{ id: 'second' }]
+      }
+    ]);
+
+    const second = await parseCurriculumStructure(
+      { block: 'second-block' },
+      structure
+    );
+    expect(second.fullSuperblockList[0].blocks).toEqual([
+      original.fullSuperblockList[0].blocks[1]
+    ]);
+    expect(await parseCurriculumStructure(undefined, structure)).toEqual(
+      original
+    );
+    expect(structure).toEqual(original);
+  });
+
+  it('reads and validates fresh metadata when no structure is supplied', async () => {
+    getCurriculumStructure.mockReturnValue({
+      superblocks: [],
+      certifications: ['responsive-web-design']
+    });
+    await expect(parseCurriculumStructure()).rejects.toThrow(
+      'No superblocks found in curriculum.json'
+    );
+
+    getCurriculumStructure.mockReturnValue({
+      superblocks: ['responsive-web-design'],
+      certifications: []
+    });
+    await expect(parseCurriculumStructure()).rejects.toThrow(
+      'No certifications found in curriculum.json'
+    );
+  });
+});
 
 describe('createCommentMap', () => {
   const dictionaryDir = path.resolve(
