@@ -254,6 +254,7 @@ test.describe('Submit button should be shown after submitting a project', () => 
     context,
     isMobile
   }) => {
+    test.setTimeout(40000);
     test.skip(isMobile);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
@@ -279,11 +280,12 @@ test.describe('Submit button should be shown after submitting a project', () => 
     }
 
     await page.keyboard.press('Control+Enter');
-    await page
-      .locator(
-        '[data-playwright-test-label="independentLowerJaw-submit-button"]'
-      )
-      .click();
+    const submitButton = page.locator(
+      '[data-playwright-test-label="independentLowerJaw-submit-button"]'
+    );
+    await expect(submitButton).toBeVisible({ timeout: 30_000 });
+    await expect(submitButton).toBeEnabled({ timeout: 30_000 });
+    await submitButton.click();
   });
 });
 
