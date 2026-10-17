@@ -21,6 +21,43 @@
             "review-html-v2",
             "quiz-html"
           ]
+        },
+        {
+          "dashedName": "css",
+          "blocks": [
+            "lecture-introduction-to-css",
+            "workshop-cafe-menu",
+            "lab-business-card",
+            "lecture-understanding-css-specificity",
+            "lecture-working-with-backgrounds-and-borders-v2",
+            "lab-blog-post-card",
+            "lecture-working-with-relative-and-absolute-units-v2",
+            "lab-event-flyer-page",
+            "lecture-working-with-pseudo-classes-and-pseudo-elements",
+            "workshop-greeting-card",
+            "lab-tribute-page",
+            "workshop-colored-markers",
+            "lab-colored-boxes",
+            "workshop-registration-form",
+            "lab-contact-form",
+            "lecture-introduction-to-the-box-model",
+            "workshop-rothko-painting",
+            "lab-confidential-email-page",
+            "lecture-working-with-css-flexbox-v2",
+            "workshop-flexbox-photo-gallery",
+            "lab-page-of-playing-cards-v2",
+            "workshop-nutritional-label",
+            "lab-newspaper-article",
+            "lecture-understanding-positioning-in-css",
+            "workshop-cat-painting",
+            "lab-house-painting",
+            "lecture-working-with-attribute-selectors-and-combinators",
+            "workshop-balance-sheet",
+            "workshop-piano",
+            "lab-technical-documentation-page-v2",
+            "lecture-introduction-to-css-variables",
+            "workshop-magazine"
+          ]
         }
       ]
     }
