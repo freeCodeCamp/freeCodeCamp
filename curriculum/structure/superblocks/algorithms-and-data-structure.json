@@ -14,6 +14,11 @@
         },
         {
           "moduleType": "cert-project",
+          "dashedName": "lab-implement-a-stack-python",
+          "blocks": ["lab-implement-a-stack-python"]
+        },
+        {
+          "moduleType": "cert-project",
           "dashedName": "lab-hash-table",
           "blocks": ["lab-hash-table"]
         },
