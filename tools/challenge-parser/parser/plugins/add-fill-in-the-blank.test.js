@@ -14,7 +14,8 @@ describe('fill-in-the-blanks plugin', () => {
     mockChineseFillInTheBlankNoHanziAST,
     mockChineseFillInTheBlankWrongAnswerFormatAST,
     mockChineseFillInTheBlankBlankAnswerMismatchAST,
-    mockChineseFillInTheBlankLatinAST;
+    mockChineseFillInTheBlankLatinAST,
+    mockChineseFillInTheBlankNoBlanksAST;
   const plugin = addFillInTheBlankQuestion();
   let file = { data: {} };
 
@@ -52,6 +53,9 @@ describe('fill-in-the-blanks plugin', () => {
     );
     mockChineseFillInTheBlankLatinAST = await parseFixture(
       'with-chinese-fill-in-the-blank-latin.md'
+    );
+    mockChineseFillInTheBlankNoBlanksAST = await parseFixture(
+      'with-chinese-fill-in-the-blank-no-blanks.md'
     );
   });
 
@@ -246,6 +250,13 @@ Example of good formatting:
     file.data.lang = 'zh-CN';
     expect(() => {
       plugin(mockChineseFillInTheBlankBlankAnswerMismatchAST, file);
+    }).toThrow(`Number of BLANKs doesn't match the number of answers.`);
+  });
+
+  it('should throw the designed validation error when the sentence has no BLANK token', () => {
+    file.data.lang = 'zh-CN';
+    expect(() => {
+      plugin(mockChineseFillInTheBlankNoBlanksAST, file);
     }).toThrow(`Number of BLANKs doesn't match the number of answers.`);
   });
 
