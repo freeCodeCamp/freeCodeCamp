@@ -142,7 +142,6 @@ export function SearchBar({
 
       setIndex(hoveredIndex);
     }
-    setIndex(-1);
   };
 
   const handleMouseLeave = () => {

@@ -17,7 +17,7 @@ const TimelinePagination = (props: TimelinePaginationProps): JSX.Element => {
 
   return (
     <nav aria-label={t('aria.timeline-pagination-nav')}>
-      <ul aria-hidden='true' className='timeline-pagination_list'>
+      <ul className='timeline-pagination_list'>
         {totalPages > 10 && (
           <li
             className='timeline-pagination_list_item'
