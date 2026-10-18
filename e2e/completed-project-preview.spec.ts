@@ -63,6 +63,10 @@ test.describe('Completed project preview', () => {
     });
   });
 
+  test.afterAll(() => {
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
+  });
+
   test('it should be viewable on the timeline', async ({ page }) => {
     await page.goto('/developmentuser');
 

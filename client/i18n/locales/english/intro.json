@@ -1711,7 +1711,7 @@
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
         "intro": [
-          "Test what you've learned about Error Handling in Python with this quiz."
+          "Test what you've learned about error handling in Python with this quiz."
         ]
       }
     }
@@ -5072,6 +5072,12 @@
           "In this lab, you will use JavaScript loops to build a traffic light sequencer."
         ]
       },
+      "workshop-campus-directory-normalizer": {
+        "title": "Build a Campus Directory Normalizer",
+        "intro": [
+          "In this workshop, you will normalize nested data into independent, easy-to-use lookup tables."
+        ]
+      },
       "lab-proofreading-tool": {
         "title": "Build a Proofreading Tool",
         "intro": [
@@ -6680,7 +6686,7 @@
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
         "intro": [
-          "Test what you've learned about Error Handling in Python with this quiz."
+          "Test what you've learned about error handling in Python with this quiz."
         ]
       },
       "lecture-classes-and-objects": {
@@ -10672,7 +10678,7 @@
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
         "intro": [
-          "Test what you've learned about Error Handling in Python with this quiz."
+          "Test what you've learned about error handling in Python with this quiz."
         ]
       },
       "lecture-classes-and-objects": {
