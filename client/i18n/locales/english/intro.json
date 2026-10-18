@@ -11158,7 +11158,7 @@
           "You'll practice concepts like <code>background-color</code>, <code>border-radius</code>, margins, paddings, and more."
         ]
       },
-      "lecture-working-with-relative-and-absolute-units-v2": {
+      "lecture-working-with-relative-and-absolute-units": {
         "title": "Working with Relative and Absolute Units",
         "intro": [
           "In these lectures, you will learn about relative and absolute units, and how they both impact what you see in the browser."
@@ -11233,7 +11233,7 @@
           "In this lab, you'll create a web page using HTML and mask the content using CSS properties."
         ]
       },
-      "lecture-working-with-css-flexbox-v2": {
+      "lecture-working-with-css-flexbox": {
         "title": "Working with CSS Flexbox",
         "intro": [
           "In these lectures, you will learn how CSS flexbox works, its properties, and when you should use it."
