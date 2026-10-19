@@ -14,6 +14,8 @@ import Fastify, {
 import { Ajv } from 'ajv';
 import addFormats from 'ajv-formats';
 
+import clickhousePlugin from './db/clickhouse.js';
+import type { ClickHouseConfiguration } from './utils/clickhouse-config.js';
 import prismaPlugin from './db/prisma.js';
 import cookies from './plugins/cookies.js';
 import cors from './plugins/cors.js';
@@ -97,10 +99,12 @@ export const buildOptions: FastifyHttpOptions<
  * routes should be mounted.
  *
  * @param options The options to pass to the Fastify constructor.
+ * @param integrations Optional integration configuration, disabled by default in tests.
  * @returns The instantiated Fastify server, with TypeBox.
  */
 export const build = async (
-  options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
+  options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {},
+  integrations: { clickhouse?: ClickHouseConfiguration | false } = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
   // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
   // Watch when implementing in client
@@ -159,6 +163,11 @@ export const build = async (
 
   void fastify.register(auth);
   void fastify.register(notFound);
+  void fastify.register(clickhousePlugin, {
+    configuration:
+      integrations.clickhouse ??
+      (process.env.NODE_ENV === 'test' ? false : undefined)
+  });
   void fastify.register(prismaPlugin);
   void fastify.register(bouncer);
   await fastify.register(serviceBearerAuth);
