@@ -14,6 +14,7 @@ const superBlocksWithMathJax = [
   SuperBlocks.RosettaCode,
   SuperBlocks.SciCompPy,
   SuperBlocks.PythonV9,
+  SuperBlocks.PythonProgrammingFundamentals,
   SuperBlocks.AlgorithmsAndDataStructure,
   SuperBlocks.IntroductionToPrecalculus
 ];

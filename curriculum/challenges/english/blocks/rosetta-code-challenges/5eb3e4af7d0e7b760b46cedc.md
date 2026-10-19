@@ -53,7 +53,7 @@ Write a function that takes an array of strings as a parameter. Each string is r
 assert(typeof setConsolidation === 'function');
 ```
 
-`setConsolidation(["AB", "CD"])` should return a array.
+`setConsolidation(["AB", "CD"])` should return an array.
 
 ```js
 assert(Array.isArray(setConsolidation(['AB', 'CD'])));
