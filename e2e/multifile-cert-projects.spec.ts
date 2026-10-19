@@ -1,11 +1,11 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor } from './utils/editor';
 
+test.use({ userPreset: 'certified' });
+
 test.describe('multifileCertProjects', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto(
       'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
