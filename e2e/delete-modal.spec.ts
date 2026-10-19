@@ -28,25 +28,28 @@ test.describe('Delete Modal component', () => {
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
-    const dialog = page.getByRole('dialog', {
-      name: translations.settings.danger['delete-title']
-    });
-
-    await expect(dialog).toBeVisible();
+    await expect(
+      page.getByRole('dialog', {
+        name: translations.settings.danger['delete-title']
+      })
+    ).toBeVisible();
 
     const verifyDeleteText = translations.settings.danger['verify-delete-text'];
 
     const verifyDeleteInput = page.getByRole('textbox', {
       exact: true
     });
-    const deleteButton = dialog.getByRole('button', {
-      name: translations.settings.danger.certain
-    });
     await verifyDeleteInput.fill(verifyDeleteText);
-    await expect(deleteButton).toBeEnabled();
-    await deleteButton.click();
 
-    await expect(dialog).not.toBeVisible();
+    await page
+      .getByRole('button', { name: translations.settings.danger.certain })
+      .click();
+
+    await expect(
+      page.getByRole('dialog', {
+        name: translations.settings.danger['delete-title']
+      })
+    ).not.toBeVisible();
 
     // TODO: Reinstate these checks when flakiness is resolved:
     // await expect(page).toHaveURL(allowTrailingSlash('/learn'));
