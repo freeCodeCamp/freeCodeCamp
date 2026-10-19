@@ -1836,9 +1836,9 @@
         ]
       },
       "quiz-object-oriented-programming": {
-        "title": "Object Oriented Programming Quiz",
+        "title": "Object-Oriented Programming Quiz",
         "intro": [
-          "Test what you've learned about object oriented programming in Python with this quiz."
+          "Test what you've learned about object-oriented programming in Python with this quiz."
         ]
       }
     }
@@ -6783,9 +6783,9 @@
         ]
       },
       "quiz-object-oriented-programming": {
-        "title": "Object Oriented Programming Quiz",
+        "title": "Object-Oriented Programming Quiz",
         "intro": [
-          "Test what you've learned about object oriented programming in python with this quiz."
+          "Test what you've learned about object-oriented programming in Python with this quiz."
         ]
       },
       "lab-polygon-area-calculator": {
@@ -10775,9 +10775,9 @@
         ]
       },
       "quiz-object-oriented-programming": {
-        "title": "Object Oriented Programming Quiz",
+        "title": "Object-Oriented Programming Quiz",
         "intro": [
-          "Test what you've learned about object oriented programming in python with this quiz."
+          "Test what you've learned about object-oriented programming in Python with this quiz."
         ]
       },
       "lab-polygon-area-calculator": {
@@ -10792,37 +10792,101 @@
       }
     }
   },
-  "algorithms-and-data-structure": {
-    "title": "Algorithms and Data Structure Certification",
+  "algorithms-and-data-structures": {
+    "title": "Algorithms and Data Structures Certification",
     "intro": [
       "This course covers data structures and algorithms in Python.",
-      "Complete the required projects and pass the exam to earn the Algorithms and Data Structure Certification."
+      "Complete the required projects and pass the exam to earn the Algorithms and Data Structures Certification."
     ],
     "chapters": {
-      "algorithms-and-data-structure": "Algorithms and Data Structure"
+      "algorithms-and-data-structures": "Algorithms and Data Structures"
     },
     "modules": {
-      "python-linear-data-structures": "Linear Data Structures",
-      "lab-hash-table": "Build a Hash Table",
-      "python-recursion": "Recursion",
       "python-algorithms": "Algorithms",
+      "lab-bisection-method": "Implement the Bisection Method",
+      "python-linear-data-structures": "Linear Data Structures",
+      "lab-circular-queue": "Build a Circular Queue",
+      "python-recursion": "Recursion",
       "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
-      "python-graphs-and-trees": "Graphs and Trees",
+      "non-linear-data-structures": "Non-Linear Data Structures",
+      "lab-paint-bucket-tool": "Build a Paint Bucket Tool",
       "python-dynamic-programming": "Dynamic Programming",
-      "review-python": "Python Review"
+      "lab-knapsack-algorithm": "Implement the Knapsack Algorithm",
+      "review-python-algorithms-and-data-structures": "Algorithms and Data Structures Review"
     },
     "module-intros": {
+      "lab-circular-queue": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this lab, you will build a circular queue, a fixed-size queue that wraps around to reuse empty slots."
+        ]
+      },
       "python-recursion": {
         "intro": [
           "In this module, you will learn how recursion and the call stack work in Python."
         ]
+      },
+      "lab-paint-bucket-tool": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this lab, you will build a paint bucket tool that uses graph traversal to fill connected regions of a grid."
+        ]
+      },
+      "lab-knapsack-algorithm": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this lab, you will use dynamic programming to solve the knapsack problem."
+        ]
       }
     },
     "blocks": {
-      "lecture-working-with-common-data-structures": {
+      "lecture-understanding-algorithms-and-big-o": {
+        "title": "Understanding Algorithms and Big O Notation",
+        "intro": [
+          "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
+        ]
+      },
+      "lecture-searching-and-sorting-algorithms-v2": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [
+          "In this lesson, you will learn how binary search works and how it differs from linear search."
+        ]
+      },
+      "workshop-binary-search": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "lab-selection-sort": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
+      },
+      "review-python-algorithms": {
+        "title": "Algorithms Review",
+        "intro": [
+          "Before you're quizzed on algorithms, you should review what you've learned about Big O notation, problem-solving techniques, and searching and sorting algorithms."
+        ]
+      },
+      "quiz-python-algorithms": {
+        "title": "Algorithms Quiz",
+        "intro": [
+          "Test what you've learned about algorithms in Python with this quiz."
+        ]
+      },
+      "lab-bisection-method": {
+        "title": "Implement the Bisection Method",
+        "intro": [
+          "In this lab, you will implement the bisection method to find the square root of a number."
+        ]
+      },
+      "lecture-working-with-common-data-structures-v2": {
         "title": "Working with Common Data Structures",
         "intro": [
-          "Learn about working with common data structures in these lessons."
+          "In these lessons, you will learn about dynamic and static arrays, singly and doubly linked lists, stacks, and queues."
         ]
       },
       "workshop-linked-list-class": {
@@ -10831,24 +10895,22 @@
           "In this workshop, you'll practice working with data structures by building a linked list."
         ]
       },
-      "review-data-structures": {
-        "title": "Data Structures Review",
+      "review-linear-data-structures": {
+        "title": "Linear Data Structures Review",
         "intro": [
-          "Before you're quizzed on data structures, you should review what you've learned about them.",
-          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
+          "Before you're quizzed on linear data structures, you should review what you've learned about arrays, linked lists, stacks, and queues."
         ]
       },
-      "quiz-data-structures": {
-        "title": "Data Structures Quiz",
+      "quiz-linear-data-structures": {
+        "title": "Linear Data Structures Quiz",
         "intro": [
-          "Test what you've learned about data structures in Python with this quiz."
+          "Test what you've learned about linear data structures in Python with this quiz."
         ]
       },
-      "lab-hash-table": {
-        "title": "Build a Hash Table",
+      "lab-circular-queue": {
+        "title": "Build a Circular Queue",
         "intro": [
-          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
-          "In this lab, you will use your knowledge about data structures to build a hash table."
+          "In this lab, you will build a circular queue, a fixed-size queue that wraps around to reuse empty slots."
         ]
       },
       "lecture-understanding-recursion-and-the-call-stack-python": {
@@ -10869,36 +10931,10 @@
           "In this lab, you will use recursion to generate a list of numbers within a specified range."
         ]
       },
-      "review-recursion-python": {
-        "title": "Review Recursion",
+      "lecture-understanding-divide-and-conquer": {
+        "title": "Understanding Divide and Conquer",
         "intro": [
-          "Review the concepts of recursion, base cases, and the call stack."
-        ]
-      },
-      "quiz-recursion-python": {
-        "title": "Recursion Quiz",
-        "intro": [
-          "Test your understanding of recursion, base cases, and the call stack."
-        ]
-      },
-      "lecture-searching-and-sorting-algorithms": {
-        "title": "Searching and Sorting Algorithms",
-        "intro": [
-          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
-          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
-        ]
-      },
-      "workshop-binary-search": {
-        "title": "Implement the Binary Search Algorithm",
-        "intro": [
-          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
-          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
-        ]
-      },
-      "lab-bisection-method": {
-        "title": "Implement the Bisection Method",
-        "intro": [
-          "In this lab, you will implement the bisection method to find the square root of a number."
+          "In this lesson, you will learn about the divide and conquer paradigm and how the merge sort algorithm works."
         ]
       },
       "workshop-merge-sort": {
@@ -10914,28 +10950,16 @@
           "In this lab you will implement the quicksort algorithm to sort a list of integers."
         ]
       },
-      "lab-selection-sort": {
-        "title": "Implement the Selection Sort Algorithm",
+      "review-recursion-python-v2": {
+        "title": "Review Recursion",
         "intro": [
-          "In this lab you will implement the selection sort algorithm."
+          "Review the concepts of recursion, base cases, and the call stack."
         ]
       },
-      "lab-luhn-algorithm": {
-        "title": "Implement the Luhn Algorithm",
+      "quiz-recursion-python-v2": {
+        "title": "Recursion Quiz",
         "intro": [
-          "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
-        ]
-      },
-      "review-searching-and-sorting-algorithms": {
-        "title": "Searching and Sorting Algorithms Review",
-        "intro": [
-          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them."
-        ]
-      },
-      "quiz-searching-and-sorting-algorithms": {
-        "title": "Searching and Sorting Algorithms Quiz",
-        "intro": [
-          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+          "Test your understanding of recursion, base cases, and the call stack."
         ]
       },
       "lab-tower-of-hanoi": {
@@ -10944,16 +10968,23 @@
           "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
         ]
       },
-      "lecture-understanding-graphs-and-trees": {
-        "title": "Understanding Graphs and Trees",
+      "lecture-working-with-hash-maps-and-sets": {
+        "title": "Working with Hash Maps and Sets",
         "intro": [
-          "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
+          "In this lesson, you will learn how maps, hash maps, and sets work."
         ]
       },
-      "workshop-shortest-path-algorithm": {
-        "title": "Implement the Shortest Path Algorithm",
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
         "intro": [
-          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
+      },
+      "lecture-understanding-graphs": {
+        "title": "Understanding Graphs",
+        "intro": [
+          "In these lessons, you will learn about graphs, depth-first and breadth-first search, and how to represent graphs with adjacency matrices and adjacency lists."
         ]
       },
       "lab-adjacency-list-to-matrix-converter": {
@@ -10962,16 +10993,16 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
-      "workshop-breadth-first-search": {
-        "title": "Implement the Breadth-First Search Algorithm",
-        "intro": [
-          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
-        ]
-      },
       "lab-depth-first-search": {
         "title": "Implement the Depth-First Search Algorithm",
         "intro": [
           "In this lab, you will implement the Depth-First Search Algorithm."
+        ]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
         ]
       },
       "lab-n-queens-problem": {
@@ -10980,16 +11011,34 @@
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
       },
-      "review-graphs-and-trees": {
-        "title": "Graphs and Trees Review",
+      "lecture-understanding-trees-and-tries": {
+        "title": "Understanding Trees and Tries",
         "intro": [
-          "Before you're quizzed on graphs and trees, you should review what you've learned about them."
+          "In this lesson, you will learn what trees and tries are and how they work."
         ]
       },
-      "quiz-graphs-and-trees": {
-        "title": "Graphs and Trees Quiz",
+      "lecture-understanding-priority-queues-and-heaps": {
+        "title": "Understanding Priority Queues and Heaps",
         "intro": [
-          "Test what you've learned about graphs and trees in Python with this quiz."
+          "In this lesson, you will learn how priority queues and heaps work."
+        ]
+      },
+      "review-non-linear-data-structures": {
+        "title": "Non-Linear Data Structures Review",
+        "intro": [
+          "Before you're quizzed on non-linear data structures, you should review what you've learned about hash maps, sets, graphs, trees, tries, and heaps."
+        ]
+      },
+      "quiz-non-linear-data-structures": {
+        "title": "Non-Linear Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about non-linear data structures in Python with this quiz."
+        ]
+      },
+      "lab-paint-bucket-tool": {
+        "title": "Build a Paint Bucket Tool",
+        "intro": [
+          "In this lab, you will build a paint bucket tool that uses graph traversal to fill connected regions of a grid."
         ]
       },
       "lecture-understanding-dynamic-programming": {
@@ -11016,9 +11065,17 @@
           "Test what you've learned about dynamic programming in python with this quiz."
         ]
       },
-      "review-python": {
-        "title": "Python Review",
-        "intro": ["Review Python concepts to prepare for the upcoming exam."]
+      "lab-knapsack-algorithm": {
+        "title": "Implement the Knapsack Algorithm",
+        "intro": [
+          "In this lab, you will use dynamic programming to solve the knapsack problem."
+        ]
+      },
+      "review-python-algorithms-and-data-structures": {
+        "title": "Algorithms and Data Structures Review",
+        "intro": [
+          "Review algorithms and data structures concepts to prepare for the upcoming exam."
+        ]
       }
     }
   },

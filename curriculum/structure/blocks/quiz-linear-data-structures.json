@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-linear-data-structures",
+  "challengeOrder": [
+    {
+      "id": "67f41341453c2247fb2828f7",
+      "title": "Linear Data Structures Quiz"
+    }
+  ],
+  "helpCategory": "Python"
+}
