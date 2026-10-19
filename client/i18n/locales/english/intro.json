@@ -1836,9 +1836,9 @@
         ]
       },
       "quiz-object-oriented-programming": {
-        "title": "Object Oriented Programming Quiz",
+        "title": "Object-Oriented Programming Quiz",
         "intro": [
-          "Test what you've learned about object oriented programming in Python with this quiz."
+          "Test what you've learned about object-oriented programming in Python with this quiz."
         ]
       }
     }
@@ -6783,9 +6783,9 @@
         ]
       },
       "quiz-object-oriented-programming": {
-        "title": "Object Oriented Programming Quiz",
+        "title": "Object-Oriented Programming Quiz",
         "intro": [
-          "Test what you've learned about object oriented programming in python with this quiz."
+          "Test what you've learned about object-oriented programming in Python with this quiz."
         ]
       },
       "lab-polygon-area-calculator": {
@@ -10775,9 +10775,9 @@
         ]
       },
       "quiz-object-oriented-programming": {
-        "title": "Object Oriented Programming Quiz",
+        "title": "Object-Oriented Programming Quiz",
         "intro": [
-          "Test what you've learned about object oriented programming in python with this quiz."
+          "Test what you've learned about object-oriented programming in Python with this quiz."
         ]
       },
       "lab-polygon-area-calculator": {
