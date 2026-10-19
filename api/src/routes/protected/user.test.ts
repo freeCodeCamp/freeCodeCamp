@@ -26,7 +26,8 @@ import {
   superRequest,
   createSuperRequest,
   defaultUsername,
-  resetDefaultUser
+  resetDefaultUser,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import { JWT_SECRET } from '../../utils/env.js';
 import {
@@ -516,7 +517,7 @@ describe('userRoutes', () => {
       test("POST deletes all the user's cookies", async () => {
         const res = await superPost('/account/delete');
 
-        const setCookie = res.headers['set-cookie'] as string[];
+        const setCookie = getSetCookies(res);
         expect(setCookie).toEqual(
           expect.arrayContaining([
             expect.stringMatching(
@@ -706,7 +707,7 @@ describe('userRoutes', () => {
       test("DELETE deletes all the user's cookies", async () => {
         const res = await superDelete(`/users/${defaultUserId}`);
 
-        const setCookie = res.headers['set-cookie'] as string[];
+        const setCookie = getSetCookies(res);
         expect(setCookie).toEqual(
           expect.arrayContaining([
             expect.stringMatching(
@@ -1518,7 +1519,7 @@ describe('userRoutes', () => {
 
         // devLogin must not be used here since it overrides the user
         const res = await superRequest('/signin', { method: 'GET' });
-        const setCookies = res.get('Set-Cookie');
+        const setCookies = getSetCookies(res);
 
         const publicUser = {
           ...omit(minimalUserData, ['externalId', 'unsubscribeId']),
@@ -2397,7 +2398,7 @@ Thanks and regards,
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     const endpoints: { path: string; method: 'GET' | 'POST' | 'DELETE' }[] = [
