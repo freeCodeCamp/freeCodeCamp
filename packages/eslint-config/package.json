@@ -29,6 +29,6 @@
     "eslint-plugin-testing-library": "7.16.2",
     "eslint-plugin-turbo": "2.11.7",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.71.1"
+    "typescript-eslint": "8.71.2"
   }
 }
