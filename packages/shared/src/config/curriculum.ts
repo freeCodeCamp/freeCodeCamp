@@ -39,7 +39,7 @@ export enum SuperBlocks {
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
   PythonV9 = 'python-v9',
   PythonProgrammingFundamentals = 'python-programming-fundamentals',
-  AlgorithmsAndDataStructure = 'algorithms-and-data-structure',
+  AlgorithmsAndDataStructures = 'algorithms-and-data-structures',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
@@ -227,7 +227,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.A2Chinese,
     SuperBlocks.DevPlayground,
     SuperBlocks.PythonProgrammingFundamentals,
-    SuperBlocks.AlgorithmsAndDataStructure,
+    SuperBlocks.AlgorithmsAndDataStructures,
     SuperBlocks.FrontEndDevelopment
   ],
   // Catalog is treated like upcoming for now
@@ -334,7 +334,7 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.FrontEndDevLibsV9,
   SuperBlocks.PythonV9,
   SuperBlocks.PythonProgrammingFundamentals,
-  SuperBlocks.AlgorithmsAndDataStructure,
+  SuperBlocks.AlgorithmsAndDataStructures,
   SuperBlocks.FrontEndDevelopment,
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,

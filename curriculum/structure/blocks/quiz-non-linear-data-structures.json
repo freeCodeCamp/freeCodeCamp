@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-non-linear-data-structures",
+  "challengeOrder": [
+    {
+      "id": "67f4138c34cd9c4ac783ceef",
+      "title": "Non-Linear Data Structures Quiz"
+    }
+  ],
+  "helpCategory": "Python"
+}

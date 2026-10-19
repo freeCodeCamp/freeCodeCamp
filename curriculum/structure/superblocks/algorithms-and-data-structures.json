@@ -1,0 +1,101 @@
+{
+  "chapters": [
+    {
+      "dashedName": "algorithms-and-data-structures",
+      "modules": [
+        {
+          "dashedName": "python-algorithms",
+          "blocks": [
+            "lecture-understanding-algorithms-and-big-o",
+            "workshop-luhn-algorithm",
+            "lecture-searching-and-sorting-algorithms-v2",
+            "workshop-binary-search",
+            "lab-selection-sort",
+            "review-python-algorithms",
+            "quiz-python-algorithms"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-bisection-method",
+          "blocks": ["lab-bisection-method"]
+        },
+        {
+          "dashedName": "python-linear-data-structures",
+          "blocks": [
+            "lecture-working-with-common-data-structures-v2",
+            "workshop-linked-list-class",
+            "review-linear-data-structures",
+            "quiz-linear-data-structures"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-circular-queue",
+          "comingSoon": true,
+          "blocks": ["lab-circular-queue"]
+        },
+        {
+          "dashedName": "python-recursion",
+          "blocks": [
+            "lecture-understanding-recursion-and-the-call-stack-python",
+            "workshop-countup-python",
+            "lab-range-of-numbers-python",
+            "lecture-understanding-divide-and-conquer",
+            "workshop-merge-sort",
+            "lab-quicksort",
+            "review-recursion-python-v2",
+            "quiz-recursion-python-v2"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-tower-of-hanoi",
+          "blocks": ["lab-tower-of-hanoi"]
+        },
+        {
+          "dashedName": "non-linear-data-structures",
+          "blocks": [
+            "lecture-working-with-hash-maps-and-sets",
+            "lab-hash-table",
+            "lecture-understanding-graphs",
+            "lab-adjacency-list-to-matrix-converter",
+            "lab-depth-first-search",
+            "workshop-shortest-path-algorithm",
+            "lab-n-queens-problem",
+            "lecture-understanding-trees-and-tries",
+            "lecture-understanding-priority-queues-and-heaps",
+            "review-non-linear-data-structures",
+            "quiz-non-linear-data-structures"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-paint-bucket-tool",
+          "comingSoon": true,
+          "blocks": ["lab-paint-bucket-tool"]
+        },
+        {
+          "dashedName": "python-dynamic-programming",
+          "blocks": [
+            "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
+            "review-dynamic-programming",
+            "quiz-dynamic-programming"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-knapsack-algorithm",
+          "comingSoon": true,
+          "blocks": ["lab-knapsack-algorithm"]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-python-algorithms-and-data-structures",
+          "blocks": ["review-python-algorithms-and-data-structures"]
+        }
+      ]
+    }
+  ]
+}
