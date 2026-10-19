@@ -15,6 +15,12 @@ dashedName: implement-the-quicksort-algorithm
 
 1. The `quick_sort` function should take a list of integers as input and return a new list of these integers in sorted order from least to greatest.
 
+1. The `quick_sort` function should not modify the input list.
+
+1. You should not import any modules in your code.
+
+1. You should not use the built-in `sorted()` function or the `sort()` method in your code.
+
 1. To implement the algorithm, you should:
    - Choose a pivot value from the elements of the input list (use the first or the last element of the list).
    - Partition the input list into three sublists: one with elements less than the pivot, one with elements equal to the pivot, and one with elements greater than the pivot.
