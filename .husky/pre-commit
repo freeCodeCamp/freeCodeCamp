@@ -1,1 +1,2 @@
+node tools/scripts/check-node-version.js || exit 1
 NODE_OPTIONS=\"--max-old-space-size=7168\" pnpm lint-staged
