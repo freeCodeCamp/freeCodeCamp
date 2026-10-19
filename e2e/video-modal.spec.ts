@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 const currentUrlPath =
-  '/learn/responsive-web-design/responsive-web-design-principles/create-a-media-query';
+  '/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion';
 
 test.describe('Exit Video Modal E2E Test Suite - Mobile', () => {
   test.use({

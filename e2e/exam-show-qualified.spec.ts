@@ -1,6 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
+
+test.use({ userPreset: 'certified-with-survey' });
 
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';

@@ -1,4 +1,5 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { Prisma } from '@prisma/client';
 import Stripe from 'stripe';
 
 import { STRIPE_SECRET_KEY } from '../../utils/env.js';
@@ -7,9 +8,89 @@ import {
   allStripeProductIdsArray
 } from '@freecodecamp/shared/config/donation-settings';
 import * as schemas from '../../schemas.js';
-import { inLastFiveMinutes } from '../../utils/validate-donation.js';
+import { isWithinMinutes } from '../../utils/validate-donation.js';
 import { findOrCreateUser } from '../helpers/auth-helpers.js';
 import { clientNetInfo } from '../../utils/logger.js';
+import {
+  createPayPalSubscription,
+  paypalPlanIdForAmount
+} from '../../utils/donation-verification.js';
+
+/**
+ * Plugin for creating PayPal subscriptions.
+ *
+ * Works signed in or signed out. The plan is chosen here rather than sent by
+ * the client, and a signed in donor's id is recorded on the subscription so
+ * that the activation webhook can attribute the payment to them.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done The callback to signal that the plugin is ready.
+ */
+export const paypalSubscriptionRoute: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.post(
+    '/donate/create-paypal-subscription',
+    {
+      schema: schemas.createPaypalSubscription
+    },
+    async (req, reply) => {
+      const { amount, duration } = req.body;
+
+      if (
+        duration !== 'month' ||
+        !donationSubscriptionConfig.plans.month.includes(
+          amount as (typeof donationSubscriptionConfig.plans.month)[number]
+        )
+      ) {
+        req.log.warn({ amount, duration }, 'Invalid donation plan requested');
+        void reply.code(400);
+        return {
+          error: 'The donation form had invalid values for this submission.'
+        } as const;
+      }
+
+      const planId = paypalPlanIdForAmount(amount);
+
+      if (!planId) {
+        req.log.warn({ amount }, 'No PayPal plan for donation amount');
+        void reply.code(400);
+        return {
+          error: 'The donation form had invalid values for this submission.'
+        } as const;
+      }
+
+      const subscriptionId = await createPayPalSubscription(
+        planId,
+        req.user?.id
+      );
+
+      if (!subscriptionId) {
+        fastify.Sentry?.captureException(
+          new Error('PayPal subscription creation failed')
+        );
+        req.log.error(
+          { amount, userId: req.user?.id, ...clientNetInfo(req) },
+          'Could not create PayPal subscription'
+        );
+        void reply.code(500);
+        return { error: 'Donation failed due to a server error.' } as const;
+      }
+
+      req.log.info(
+        { audit: true, subscriptionId, userId: req.user?.id },
+        'PayPal subscription created'
+      );
+
+      return { id: subscriptionId } as const;
+    }
+  );
+
+  done();
+};
 
 /**
  * Plugin for public donation endpoints.
@@ -131,8 +212,11 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         const isSubscriptionActive = subscription.status === 'active';
         // eslint-disable-next-line @typescript-eslint/no-base-to-string
         const productId = subscription.items.data[0]?.plan.product?.toString();
-        const isStartedRecently = inLastFiveMinutes(
-          subscription.current_period_start
+        // Tighter than the authenticated routes: this one takes no session, so
+        // the window is also how long a subscription id is worth stealing.
+        const isStartedRecently = isWithinMinutes(
+          subscription.current_period_start,
+          5
         );
         const isProductIdValid =
           productId && allStripeProductIdsArray.includes(productId);
@@ -209,16 +293,24 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           }
         };
 
-        await fastify.prisma.donation.create({
-          data: donation
-        });
-
-        await fastify.prisma.user.update({
-          where: { id: user.id },
-          data: {
-            isDonating: true
-          }
-        });
+        await fastify.prisma.$transaction([
+          fastify.prisma.donationClaim.create({
+            data: {
+              provider: 'stripe',
+              reference: subscriptionId,
+              userId: user.id
+            }
+          }),
+          fastify.prisma.donation.create({
+            data: donation
+          }),
+          fastify.prisma.user.update({
+            where: { id: user.id },
+            data: {
+              isDonating: true
+            }
+          })
+        ]);
         req.log.info(
           {
             audit: true,
@@ -246,6 +338,16 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           subscriptionId: req.body.subscriptionId,
           ...clientNetInfo(req)
         };
+        if (
+          err instanceof Prisma.PrismaClientKnownRequestError &&
+          err.code === 'P2002'
+        ) {
+          req.log.warn(ctx, 'Stripe subscription has already been claimed');
+          void reply.code(409);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
+        }
         if (
           err instanceof Stripe.errors.StripeCardError ||
           err instanceof Stripe.errors.StripeInvalidRequestError
