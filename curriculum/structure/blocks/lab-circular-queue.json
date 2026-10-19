@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-circular-queue",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6ad13662f3f425d0a47765f4",
+      "title": "Build a Circular Queue"
+    }
+  ],
+  "usesMultifileEditor": true
+}

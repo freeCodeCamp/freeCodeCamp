@@ -49,7 +49,8 @@ import {
   seedExam,
   defaultUserEmail,
   createSuperRequest,
-  defaultUsername
+  defaultUsername,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import {
   completedExamChallengeOneCorrect,
@@ -3024,7 +3025,7 @@ describe('challengeRoutes', () => {
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     const endpoints: { path: string; method: 'POST' | 'GET' }[] = [

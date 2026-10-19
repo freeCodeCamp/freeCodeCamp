@@ -100,5 +100,5 @@
     "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@12.11.1"
+  "packageManager": "pnpm@12.12.1"
 }
