@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { Link } from '../../../components/helpers';
 import { ButtonLink } from '../../../components/helpers/button-link';
@@ -14,7 +13,6 @@ interface ChallengeInfo {
   dashedName: string;
   title: string;
   stepNumber: number;
-  superBlock: SuperBlocks;
   challengeType: number;
 }
 

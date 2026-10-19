@@ -491,6 +491,15 @@ input:focus {
   font-size: 90%;
 }
 
+kbd {
+  background-color: var(--background-tertiary);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 2px;
+  margin: 2px 0;
+  display: inline-block;
+}
+
 code {
   padding: 1px 4px;
   background-color: var(--tertiary-background);

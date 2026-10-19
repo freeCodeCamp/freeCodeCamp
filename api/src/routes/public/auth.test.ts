@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { describe, it, expect, vi, beforeAll, beforeEach } from 'vitest';
 import {
   setupServer,
   superRequest,
-  createSuperRequest
+  createSuperRequest,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import { AUTH0_DOMAIN } from '../../utils/env.js';
 
@@ -50,8 +50,7 @@ describe('auth0 routes', () => {
       const res = await superRequest('/signin', { method: 'GET' });
 
       expect(res.status).toBe(302);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      const redirectUrl = new URL(res.headers.location);
+      const redirectUrl = new URL(res.headers.location!);
       expect(redirectUrl.host).toMatch(AUTH0_DOMAIN);
       expect(redirectUrl.pathname).toBe('/authorize');
     });
@@ -201,7 +200,7 @@ describe('auth0 routes', () => {
 
       const res = await superRequest('/mobile-login', {
         method: 'GET',
-        setCookies: firstRes.get('Set-Cookie')
+        setCookies: getSetCookies(firstRes)
       })
         .set('Authorization', 'Bearer does-not-matter')
         .set('Referer', 'https://www.freecodecamp.org/back-home');

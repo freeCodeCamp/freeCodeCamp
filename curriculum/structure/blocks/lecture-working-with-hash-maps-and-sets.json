@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-hash-maps-and-sets",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6895d06b5968736797c408e7",
+      "title": "How Do Maps, Hash Maps and Sets Work?"
+    }
+  ],
+  "helpCategory": "Python"
+}
