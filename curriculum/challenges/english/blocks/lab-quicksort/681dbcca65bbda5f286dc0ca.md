@@ -20,6 +20,12 @@ dashedName: implement-the-quicksort-algorithm
    - Partition the input list into three sublists: one with elements less than the pivot, one with elements equal to the pivot, and one with elements greater than the pivot.
    - Recursively call `quick_sort` to sort the sublists and concatenate the sorted sublists to produce the final sorted list.
 
+1. Your `quick_sort` function should not modify the list passed to it as the argument.
+
+1. You should not import any modules in your code.
+
+1. You should not use the built-in `sorted()` function or the `.sort()` method.
+
 # --hints--
 
 You should have a function named `quick_sort`.
