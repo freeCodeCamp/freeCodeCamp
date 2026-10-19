@@ -17,6 +17,7 @@ import {
   type DonationAmount
 } from '@freecodecamp/shared/config/donation-settings';
 import envData from '../../../config/env.json';
+import { createPaypalSubscription } from '../../utils/ajax';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { LocalStorageThemes } from '../../redux/types';
 import type { User } from '../../redux/prop-types';
@@ -97,6 +98,7 @@ function getScriptOptions({
 
 type ButtonsProps = {
   amount: DonationAmount;
+  duration: DonationDuration;
   planId: string | null;
   isSubscription: boolean;
   scriptOptions: ReactPayPalScriptOptions;
@@ -109,6 +111,7 @@ type ButtonsProps = {
 
 function Buttons({
   amount,
+  duration,
   planId,
   isSubscription,
   scriptOptions,
@@ -161,8 +164,18 @@ function Buttons({
       }
       createSubscription={
         isSubscription
-          ? (_data, actions) =>
-              actions.subscription.create({ plan_id: planId as string })
+          ? async () => {
+              // Created by our api so that the plan, and the donor it belongs
+              // to, are decided server side rather than sent by the browser.
+              const { data } = await createPaypalSubscription({
+                amount,
+                duration
+              });
+
+              if (!data?.id) throw new Error('Could not start the donation');
+
+              return data.id;
+            }
           : undefined
       }
       onApprove={async (data, actions) => {
@@ -212,6 +225,7 @@ function PaypalButton({
       <PayPalScriptProvider options={scriptOptions}>
         <Buttons
           amount={amount}
+          duration={duration}
           planId={planId}
           isSubscription={isSubscription}
           scriptOptions={scriptOptions}

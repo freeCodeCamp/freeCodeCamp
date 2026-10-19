@@ -27,7 +27,7 @@ concurrency:
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }}
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }}
@@ -90,7 +90,7 @@ jobs:
 
   deploy:
     name: Deploy to Docker Swarm -- ${{ needs.setup-jobs.outputs.tgt_env_short }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: [setup-jobs, build]
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
@@ -102,7 +102,7 @@ jobs:
 
     steps:
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
@@ -281,6 +281,9 @@ jobs:
               \"SOCRATES_API_KEY\"
               \"SOCRATES_ENDPOINT\"
               \"STRIPE_SECRET_KEY\"
+              \"PAYPAL_API_URL\"
+              \"PAYPAL_CLIENT_ID\"
+              \"PAYPAL_CLIENT_SECRET\"
               \"DEPLOYMENT_VERSION\"
               \"DEPLOYMENT_TLD\"
               \"DEPLOYMENT_ENV\"

@@ -229,6 +229,17 @@ model Donation {
   @@index([userId], map: "userId_1")
 }
 
+model DonationClaim {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  provider  String
+  reference String
+  userId    String   @db.ObjectId
+  createdAt DateTime @default(now()) @db.Date
+
+  @@unique([provider, reference], map: "provider_1_reference_1")
+  @@index([userId], map: "userId_1")
+}
+
 model SocratesUsage {
   id     String   @id @default(auto()) @map("_id") @db.ObjectId
   userId String   @db.ObjectId

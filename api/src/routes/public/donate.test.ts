@@ -1,6 +1,24 @@
-import { describe, test, expect, beforeAll, vi } from 'vitest';
+import { describe, test, expect, beforeAll, beforeEach, vi } from 'vitest';
 import Stripe from 'stripe';
-import { setupServer, superRequest } from '../../../vitest.utils.js';
+import { paypalConfigTypes } from '@freecodecamp/shared/config/donation-settings';
+import {
+  createSuperRequest,
+  defaultUserId,
+  devLogin,
+  setupServer,
+  superRequest
+} from '../../../vitest.utils.js';
+
+const { mockCreatePayPalSubscription } = vi.hoisted(() => ({
+  mockCreatePayPalSubscription: vi.fn()
+}));
+
+vi.mock('../../utils/donation-verification.js', async importActual => ({
+  ...(await importActual<
+    typeof import('../../utils/donation-verification.js')
+  >()),
+  createPayPalSubscription: mockCreatePayPalSubscription
+}));
 
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';
@@ -116,11 +134,99 @@ describe('Donate', () => {
   let setCookies: string[];
   setupServer();
 
+  describe('POST /donate/create-paypal-subscription', () => {
+    beforeEach(async () => {
+      mockCreatePayPalSubscription.mockReset();
+      const res = await superRequest('/status/ping', { method: 'GET' });
+      setCookies = res.get('Set-Cookie');
+    });
+
+    // Anonymous donors get no custom_id, so the activation webhook has nobody
+    // to grant donor status to.
+    test('should create a subscription without a custom id when signed out', async () => {
+      mockCreatePayPalSubscription.mockResolvedValueOnce('I-TESTSUBSCRIPTION');
+
+      const response = await superRequest(
+        '/donate/create-paypal-subscription',
+        { method: 'POST', setCookies }
+      ).send(sharedDonationReqBody);
+
+      expect(mockCreatePayPalSubscription).toHaveBeenCalledWith(
+        paypalConfigTypes.staging.month[500].planId,
+        undefined
+      );
+      expect(response.body).toEqual({ id: 'I-TESTSUBSCRIPTION' });
+      expect(response.status).toBe(200);
+    });
+
+    // The donor id comes from the session, never from the request, so a client
+    // cannot point a subscription at somebody else's account.
+    test('should put the signed in donor id on the subscription', async () => {
+      mockCreatePayPalSubscription.mockResolvedValueOnce('I-TESTSUBSCRIPTION');
+      const authedCookies = await devLogin();
+      const superPost = createSuperRequest({
+        method: 'POST',
+        setCookies: authedCookies
+      });
+
+      const response = await superPost(
+        '/donate/create-paypal-subscription'
+      ).send(sharedDonationReqBody);
+
+      expect(mockCreatePayPalSubscription).toHaveBeenCalledWith(
+        paypalConfigTypes.staging.month[500].planId,
+        defaultUserId
+      );
+      expect(response.status).toBe(200);
+    });
+
+    test('should reject an amount we have no plan for', async () => {
+      const response = await superRequest(
+        '/donate/create-paypal-subscription',
+        { method: 'POST', setCookies }
+      ).send({ amount: 1, duration: 'month' });
+
+      expect(mockCreatePayPalSubscription).not.toHaveBeenCalled();
+      expect(response.status).toBe(400);
+    });
+
+    test('should reject a duration we do not have plans for', async () => {
+      const response = await superRequest(
+        '/donate/create-paypal-subscription',
+        { method: 'POST', setCookies }
+      ).send({ amount: 500, duration: 'one-time' });
+
+      expect(mockCreatePayPalSubscription).not.toHaveBeenCalled();
+      expect(response.status).toBe(400);
+    });
+
+    test('should return 500 when PayPal will not create the subscription', async () => {
+      mockCreatePayPalSubscription.mockResolvedValueOnce(null);
+
+      const response = await superRequest(
+        '/donate/create-paypal-subscription',
+        { method: 'POST', setCookies }
+      ).send(sharedDonationReqBody);
+
+      expect(response.status).toBe(500);
+    });
+  });
+
   describe('Unauthenticated User', () => {
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
+    });
+
+    beforeEach(async () => {
+      await fastifyTestInstance.prisma.donation.deleteMany({});
+      await fastifyTestInstance.prisma.donationClaim.deleteMany({});
+      await fastifyTestInstance.prisma.user.deleteMany({
+        where: { email: testEWalletEmail }
+      });
+      mockSubRetrieve.mockReset();
+      mockSubRetrieve.mockResolvedValue(mockSubRetrieveObj);
     });
 
     const endpoints: { path: string; method: 'POST' | 'PUT' }[] = [
@@ -157,7 +263,43 @@ describe('Donate', () => {
         method: 'POST',
         setCookies
       }).send(chargeStripeReqBody);
+      const user = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email: testEWalletEmail }
+      });
+      const claim = await fastifyTestInstance.prisma.donationClaim.findFirst({
+        where: { reference: testSubscriptionId }
+      });
+
+      expect(user?.isDonating).toBe(true);
+      expect(claim).toMatchObject({
+        provider: 'stripe',
+        reference: testSubscriptionId,
+        userId: user?.id
+      });
       expect(response.status).toBe(200);
+    });
+
+    test('POST /donate/charge-stripe rejects duplicate subscription claims', async () => {
+      const firstResponse = await superRequest('/donate/charge-stripe', {
+        method: 'POST',
+        setCookies
+      }).send(chargeStripeReqBody);
+      const secondResponse = await superRequest('/donate/charge-stripe', {
+        method: 'POST',
+        setCookies
+      }).send({
+        ...chargeStripeReqBody,
+        email: 'another-user@example.com'
+      });
+      const donations = await fastifyTestInstance.prisma.donation.findMany({});
+      const anotherUser = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email: 'another-user@example.com' }
+      });
+
+      expect(firstResponse.status).toBe(200);
+      expect(secondResponse.status).toBe(409);
+      expect(donations).toHaveLength(1);
+      expect(anotherUser?.isDonating).not.toBe(true);
     });
 
     describe('Sentry Issue reporting', () => {

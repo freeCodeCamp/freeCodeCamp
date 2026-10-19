@@ -200,6 +200,7 @@ export const superBlockNames = {
   'responsive-web-design-v9': SuperBlocks.RespWebDesignV9,
   'front-end-development-libraries-v9': SuperBlocks.FrontEndDevLibsV9,
   'python-v9': SuperBlocks.PythonV9,
+  'python-programming-fundamentals': SuperBlocks.PythonProgrammingFundamentals,
   'algorithms-and-data-structure': SuperBlocks.AlgorithmsAndDataStructure,
   'relational-databases-v9': SuperBlocks.RelationalDbV9,
   'back-end-development-and-apis-v9': SuperBlocks.BackEndDevApisV9,
@@ -282,7 +283,8 @@ export const superBlockNames = {
   'learn-algorithms-in-python': SuperBlocks.LearnAlgorithmsInPython,
   'learn-graphs-and-trees-in-python': SuperBlocks.LearnGraphsAndTreesInPython,
   'learn-dynamic-programming-in-python':
-    SuperBlocks.LearnDynamicProgrammingInPython
+    SuperBlocks.LearnDynamicProgrammingInPython,
+  'front-end-development': SuperBlocks.FrontEndDevelopment
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

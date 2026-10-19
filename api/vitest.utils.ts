@@ -122,6 +122,17 @@ const indexData: IndexData[] = [
     ]
   },
   {
+    collection: 'DonationClaim',
+    indexes: [
+      {
+        key: { provider: 1, reference: 1 },
+        name: 'provider_1_reference_1',
+        unique: true
+      },
+      { key: { userId: 1 }, name: 'userId_1' }
+    ]
+  },
+  {
     collection: 'MsUsername',
     indexes: [{ key: { userId: 1, id: 1 }, name: 'userId_1__id_1' }]
   },
