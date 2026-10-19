@@ -1,5 +1,7 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures/isolated-user';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Archive Page', () => {
   test.beforeEach(async ({ page }) => {
