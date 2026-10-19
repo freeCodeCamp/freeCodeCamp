@@ -11387,6 +11387,19 @@
           "CSS Grid gives you control over the rows and columns of your webpage design.",
           "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
         ]
+      },
+      "review-css-v2": {
+        "title": "CSS Review",
+        "intro": [
+          "Before you take the CSS quiz, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
+        ]
+      },
+      "quiz-css": {
+        "title": "CSS Quiz",
+        "intro": [
+          "The following quiz will test your knowledge of the CSS concepts you have learned so far."
+        ]
       }
     }
   }
