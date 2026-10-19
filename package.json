@@ -50,6 +50,7 @@
     "lint": "turbo type-check && turbo lint && turbo lint-root",
     "lint:prettier": "prettier --list-different .",
     "lint:css": "stylelint '**/*.css'",
+    "migrate": "pnpm --filter=@freecodecamp/api clickhouse:migrate",
     "preseed": "turbo setup",
     "playwright:install-build-tools": "npx playwright install --with-deps",
     "rename-challenges": "tsx tools/challenge-helper-scripts/rename-challenge-files.ts",
