@@ -5,18 +5,20 @@ const _ = require('lodash');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const {
   demoUser,
+  publicUser,
   fullyCertifiedUser,
   almostFullyCertifiedUser,
   unclaimedUser
 } = require('./user-data');
 
 /**
- * @typedef {'new' | 'development' | 'certified' | 'certified-with-survey' | 'almost-certified' | 'unclaimed'} UserPreset
+ * @typedef {'new' | 'development' | 'public' | 'certified' | 'certified-with-survey' | 'almost-certified' | 'unclaimed'} UserPreset
  */
 
 const testUserData = {
   new: {},
   development: demoUser,
+  public: publicUser,
   certified: fullyCertifiedUser,
   'certified-with-survey': fullyCertifiedUser,
   'almost-certified': almostFullyCertifiedUser,

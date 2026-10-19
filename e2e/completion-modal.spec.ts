@@ -1,6 +1,7 @@
 import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
+import { useIsolatedSignIn } from './utils/signin';
 import { allowTrailingSlash } from './utils/url';
 
 const nextChallengeURL =
@@ -20,7 +21,11 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
-  test('should redirect to /learn after sign in', async ({ page }) => {
+  test('should redirect to /learn after sign in', async ({
+    page,
+    isolatedUser
+  }) => {
+    await useIsolatedSignIn(page, isolatedUser.email);
     await page
       .getByRole('link', { name: translations.learn['sign-in-save'] })
       .click();

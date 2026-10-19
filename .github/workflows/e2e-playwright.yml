@@ -84,8 +84,8 @@ jobs:
           pnpm run serve:client-ci &
           sleep 10
 
-      - name: Seed Database with Certified User
-        run: pnpm run seed:certified-user
+      - name: Seed Exam Data
+        run: pnpm run seed:exams
 
       - name: Run playwright tests
         run: pnpm run playwright:run --project=${{ matrix.browsers }}
