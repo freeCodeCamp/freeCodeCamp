@@ -61,6 +61,52 @@
             "review-css-v2",
             "quiz-css"
           ]
+        },
+        {
+          "dashedName": "javascript",
+          "blocks": [
+            "lecture-introduction-to-javascript-v2",
+            "workshop-greeting-bot",
+            "lecture-working-with-strings",
+            "workshop-teacher-chatbot",
+            "lecture-working-with-data-types-v2",
+            "workshop-string-inspector",
+            "workshop-string-formatter",
+            "workshop-string-transformer",
+            "lecture-working-with-conditional-logic",
+            "workshop-logic-checker-app",
+            "lecture-working-with-the-math-object",
+            "workshop-mathbot",
+            "lab-fortune-teller",
+            "lecture-working-with-numbers-and-common-number-methods",
+            "lecture-working-with-functions",
+            "workshop-calculator",
+            "lab-email-masker",
+            "lecture-working-with-arrays-and-common-array-methods",
+            "workshop-shopping-list",
+            "lab-lunch-picker-program",
+            "lecture-working-with-objects",
+            "workshop-wildlife-tracker",
+            "lecture-working-with-optional-chaining-and-object-destructuring",
+            "workshop-recipe-tracker",
+            "lab-quiz-game",
+            "workshop-word-counter",
+            "lab-profile-lookup",
+            "workshop-campus-directory-normalizer",
+            "lab-proofreading-tool-v2",
+            "lecture-working-with-higher-order-functions-and-callbacks",
+            "workshop-library-manager",
+            "lab-book-organizer",
+            "lecture-introduction-to-the-dom",
+            "workshop-storytelling-app",
+            "lab-favorite-icon-toggler",
+            "lecture-working-with-client-side-storage-and-crud-operations-v2",
+            "workshop-todo-app",
+            "lab-bookmark-manager-app",
+            "lecture-understanding-asynchronous-programming",
+            "workshop-fcc-authors-page",
+            "lab-weather-app-v2"
+          ]
         }
       ]
     }

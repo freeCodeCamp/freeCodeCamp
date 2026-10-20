@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-objects",
+  "challengeOrder": [
+    {
+      "id": "67329f737126b75bcb949e13",
+      "title": "What Is an Object in JavaScript, and How Can You Access Properties from an Object?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
