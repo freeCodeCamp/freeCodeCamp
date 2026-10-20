@@ -8,6 +8,7 @@ permissions:
 concurrency:
   group: pr-label-writes-${{ github.event.pull_request.number }}
   cancel-in-progress: false
+  queue: max
 
 jobs:
   triage:
