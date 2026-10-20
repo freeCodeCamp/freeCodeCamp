@@ -1,4 +1,6 @@
-import type { ExamResults, user, Prisma } from '@prisma/client';
+import { setTimeout } from 'node:timers/promises';
+
+import { Prisma, type ExamResults, type user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash-es';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
@@ -103,6 +105,29 @@ export function saveUserChallengeData(
   }
 
   return savedChallenges;
+}
+
+/**
+ * Retries function iff it fails due to a deadlock or write conflict.
+ * @param fn The function that could fail.
+ * @param timeout Delay before retrying (optional defaulting to 1000).
+ * @returns Promise returned by fn().
+ */
+export async function retryIfWriteConflict<T>(
+  fn: () => Promise<T>,
+  timeout = 1000
+): Promise<T> {
+  return await fn().catch(async (error: unknown) => {
+    if (
+      !(error instanceof Prisma.PrismaClientKnownRequestError) ||
+      error.code !== 'P2034'
+    ) {
+      throw error;
+    }
+
+    await setTimeout(timeout);
+    return fn();
+  });
 }
 
 /**
@@ -215,8 +240,8 @@ export async function updateUserChallengeData(
     challenge => challenge.id !== challengeId
   );
 
-  const { savedChallenges: userSavedChallenges } =
-    await fastify.prisma.user.update({
+  const updateUser = () =>
+    fastify.prisma.user.update({
       where: { id: user.id },
       data: {
         completedChallenges: userCompletedChallenges,
@@ -231,6 +256,9 @@ export async function updateUserChallengeData(
         savedChallenges: true
       }
     });
+
+  const { savedChallenges: userSavedChallenges } =
+    await retryIfWriteConflict(updateUser);
 
   return {
     alreadyCompleted,

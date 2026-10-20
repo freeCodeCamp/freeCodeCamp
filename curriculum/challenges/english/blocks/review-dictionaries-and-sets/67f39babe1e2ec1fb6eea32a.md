@@ -275,7 +275,7 @@ your_set = {2, 3, 4, 6}
 my_set & your_set # {2, 3, 4}
 ```
 
-- **Difference Operator (`-`)**: The difference operator `-` returns a new set with the elements of the first set that are not in the other sets.
+- **Difference Operator (`-`)**: The difference operator `-` returns a new set with the elements of the first set that are not in the other set.
 
 ```python
 my_set = {1, 2, 3, 4, 5}
