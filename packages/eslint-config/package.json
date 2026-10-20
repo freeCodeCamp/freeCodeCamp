@@ -27,7 +27,7 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-testing-library": "7.16.2",
-    "eslint-plugin-turbo": "2.11.7",
+    "eslint-plugin-turbo": "2.11.8",
     "typescript": "5.9.3",
     "typescript-eslint": "8.71.2"
   }
