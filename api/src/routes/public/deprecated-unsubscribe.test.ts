@@ -16,7 +16,6 @@ describe('Deprecated unsubscribeEndpoints', () => {
         'https://www.freecodecamp.org/settings'
       );
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       expect(response.headers.location).toStrictEqual(
         'https://www.freecodecamp.org' + urlEncodedMessage
       );

@@ -326,7 +326,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.PythonV9]: Certification.PythonV9,
   [SuperBlocks.PythonProgrammingFundamentals]: null,
   [SuperBlocks.FrontEndDevelopment]: null,
-  [SuperBlocks.AlgorithmsAndDataStructure]: null,
+  [SuperBlocks.AlgorithmsAndDataStructures]: null,
   [SuperBlocks.RelationalDbV9]: Certification.RelationalDbV9,
   [SuperBlocks.BackEndDevApisV9]: Certification.BackEndDevApisV9,
   [SuperBlocks.FullStackDeveloperV9]: Certification.FullStackDeveloperV9,
