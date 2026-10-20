@@ -24,7 +24,7 @@
           "blocks": [
             "lecture-working-with-common-data-structures-v2",
             "workshop-linked-list-class",
-            "lab-implement-a-stack-python",
+            "lab-build-a-stack",
             "review-linear-data-structures",
             "quiz-linear-data-structures"
           ]

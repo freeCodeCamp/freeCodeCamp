@@ -10895,10 +10895,10 @@
           "In this workshop, you'll practice working with data structures by building a linked list."
         ]
       },
-      "lab-implement-a-stack-python": {
-        "title": "Implement a Stack",
+      "lab-build-a-stack": {
+        "title": "Build a Stack",
         "intro": [
-          "In this lab, you will implement a stack data structure using functions."
+          "In this lab, you will build a stack using functions to push, pop, and peek at elements."
         ]
       },
       "review-linear-data-structures": {

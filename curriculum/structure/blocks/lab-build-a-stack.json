@@ -1,12 +1,12 @@
 {
   "isUpcomingChange": true,
-  "dashedName": "lab-implement-a-stack-python",
+  "dashedName": "lab-build-a-stack",
   "helpCategory": "Python",
   "blockLayout": "link",
   "challengeOrder": [
     {
       "id": "6ac200f06b568b700b78fb5d",
-      "title": "Implement a Stack"
+      "title": "Build a Stack"
     }
   ],
   "blockLabel": "lab"
