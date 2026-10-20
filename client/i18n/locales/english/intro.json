@@ -1809,7 +1809,9 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about understanding abstraction in these lessons."]
+        "intro": [
+          "Learn about abstraction and how to work with abstract classes in Python in these lessons."
+        ]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
@@ -6762,7 +6764,9 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about understanding abstraction in these lessons."]
+        "intro": [
+          "Learn about abstraction and how to work with abstract classes in Python in these lessons."
+        ]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
@@ -10754,7 +10758,9 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about understanding abstraction in these lessons."]
+        "intro": [
+          "Learn about abstraction and how to work with abstract classes in Python in these lessons."
+        ]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
