@@ -10871,6 +10871,12 @@
           "In this lab you will implement the selection sort algorithm."
         ]
       },
+      "lab-insertion-sort-py": {
+        "title": "Implement the Insertion Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the insertion sort algorithm in Python."
+        ]
+      },
       "review-python-algorithms": {
         "title": "Algorithms Review",
         "intro": [
