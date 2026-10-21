@@ -122,8 +122,7 @@ The function should print each row of the matrix.
         sys.stdout = sys.__stdout__
         output = captured_output.getvalue()
         
-        assert "[0, 1]" in output
-        assert "[0, 0]" in output
+        assert output.splitlines() == ["[0, 1]", "[0, 0]"]
     `) 
 })
 ```
