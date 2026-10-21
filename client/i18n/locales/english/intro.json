@@ -10859,7 +10859,7 @@
           "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
         ]
       },
-      "lab-implement-the-bubble-sort-algorithm": {
+      "lab-bubble-sort": {
         "title": "Implement the Bubble Sort Algorithm",
         "intro": [
           "In this lab, you will implement the bubble sort algorithm in Python."
