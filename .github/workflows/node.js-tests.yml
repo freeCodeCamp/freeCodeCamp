@@ -158,6 +158,9 @@ jobs:
 
       - name: Build
         id: build
+        # Temporary PoC measurement: run Gatsby with the restored compiler cache.
+        env:
+          TURBO_FORCE: 'true'
         run: |
           webpack_cache_marker="$RUNNER_TEMP/webpack-cache-build-start"
           touch "$webpack_cache_marker"
