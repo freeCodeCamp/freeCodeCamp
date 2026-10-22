@@ -1778,9 +1778,9 @@
     "note": "",
     "blocks": {
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
-        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "title": "Understanding Object-Oriented Programming and Encapsulation",
         "intro": [
-          "Learn about understanding object oriented programming and encapsulation in these lessons."
+          "Learn about classes and objects, how encapsulation works, and how to use getters and setters to access and validate attributes in these lessons."
         ]
       },
       "workshop-salary-tracker": {
@@ -1798,7 +1798,7 @@
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about understanding inheritance and polymorphism in these lessons."
+          "Learn how inheritance and polymorphism promote code reuse, and how name mangling works in Python in these lessons."
         ]
       },
       "workshop-media-catalogue": {
@@ -6733,9 +6733,9 @@
         ]
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
-        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "title": "Understanding Object-Oriented Programming and Encapsulation",
         "intro": [
-          "Learn about understanding object oriented programming and encapsulation in these lessons."
+          "Learn about classes and objects, how encapsulation works, and how to use getters and setters to access and validate attributes in these lessons."
         ]
       },
       "workshop-salary-tracker": {
@@ -6753,7 +6753,7 @@
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about understanding inheritance and polymorphism in these lessons."
+          "Learn how inheritance and polymorphism promote code reuse, and how name mangling works in Python in these lessons."
         ]
       },
       "workshop-media-catalogue": {
@@ -10727,9 +10727,9 @@
         ]
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
-        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "title": "Understanding Object-Oriented Programming and Encapsulation",
         "intro": [
-          "Learn about understanding object oriented programming and encapsulation in these lessons."
+          "Learn about classes and objects, how encapsulation works, and how to use getters and setters to access and validate attributes in these lessons."
         ]
       },
       "workshop-salary-tracker": {
@@ -10747,7 +10747,7 @@
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about understanding inheritance and polymorphism in these lessons."
+          "Learn how inheritance and polymorphism promote code reuse, and how name mangling works in Python in these lessons."
         ]
       },
       "workshop-media-catalogue": {
