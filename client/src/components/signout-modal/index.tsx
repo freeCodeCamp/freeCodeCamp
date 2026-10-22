@@ -7,9 +7,11 @@ import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import { closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
-import { apiLocation } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import callGA from '../../analytics/call-ga';
 import { pathAfterSignout } from './path-after-signout';
+
+const { apiLocation } = envData;
 
 const mapStateToProps = createSelector(
   isSignoutModalOpenSelector,
@@ -43,7 +45,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
     closeSignoutModal();
     callGA({ event: 'sign_out', user_id: undefined });
     const redirect = () => {
-      window.location.pathname = pathAfterSignout(window.location.pathname);
+      window.location.href = pathAfterSignout(window.location.pathname);
     };
     void fetch(`${apiLocation}/signout`, {
       method: 'GET',

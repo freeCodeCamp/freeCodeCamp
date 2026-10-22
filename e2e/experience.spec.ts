@@ -1,21 +1,12 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
-test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-test.beforeAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user');
-});
-
-test.afterAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-});
+test.use({ userPreset: 'development' });
 
 test.describe('Add Experience Item', () => {
   test.skip(({ browserName }) => browserName === 'webkit', 'flaky on Safari');
 
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/developmentuser');
+  test.beforeEach(async ({ isolatedUser, page }) => {
+    await page.goto(`/${isolatedUser.username}`);
 
     // The 'Add experience' icon button is on the profile page directly.
     // Click it to open the experience modal.

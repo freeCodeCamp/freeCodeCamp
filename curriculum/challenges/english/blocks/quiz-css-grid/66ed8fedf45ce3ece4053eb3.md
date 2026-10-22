@@ -773,11 +773,11 @@ How would you create a grid with 3 equal columns and a `20px` gap between them?
 
 #### --text--
 
-What does `repeat(3, minmax(100px, 1fr))` create?
+What does `repeat(3, minmax(100px, 1fr))` create when used with `grid-template-columns`?
 
 #### --distractors--
 
-Three columns that can't shrink below `100px`.
+Three columns that can't grow larger than `100px`.
 
 ---
 
@@ -901,7 +901,7 @@ Offsets it by 2 pixels.
 
 ---
 
-Positions it starting at the second vertical grid line.
+Makes it start at the second row line.
 
 #### --answer--
 

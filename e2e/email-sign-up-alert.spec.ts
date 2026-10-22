@@ -1,15 +1,14 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
 
+// The certified preset leaves the newsletter preference unset, so the sign-up
+// alert is shown.
+test.use({ userPreset: 'certified' });
+
 test.describe("Email sign-up alert when user has not selected Quincy's newsletter preference", () => {
   test.beforeEach(async ({ page }) => {
-    // It's necessary to seed with a user that has not accepted the privacy
-    // terms, otherwise the user will be redirected away from the email sign-up
-    // page.
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/learn');
   });
 

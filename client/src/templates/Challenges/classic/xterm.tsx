@@ -65,7 +65,14 @@ export const XtermTerminal = ({
 
       const print = (text?: string) => {
         term?.writeln(`${text ?? ''}`);
-        outputForScreenReader.textContent = text ?? '';
+
+        // Append each line so screen readers get the full output, not just the last line
+        const lines = (text ?? '').split('\n');
+        for (const line of lines) {
+          const lineElement = document.createElement('p');
+          lineElement.textContent = line;
+          outputForScreenReader.appendChild(lineElement);
+        }
       };
 
       // TODO: prevent user from moving cursor outside the current input line and

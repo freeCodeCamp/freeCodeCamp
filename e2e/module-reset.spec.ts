@@ -1,21 +1,7 @@
-import { exec } from 'child_process';
-import { promisify } from 'util';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 
-const execP = promisify(exec);
-
-test.beforeAll(async () => {
-  await execP('node ./tools/scripts/seed/seed-demo-user --certified-user', {
-    cwd: process.cwd().replace('/e2e', '')
-  });
-});
-
-test.afterEach(async () => {
-  await execP('node ./tools/scripts/seed/seed-demo-user --certified-user', {
-    cwd: process.cwd().replace('/e2e', '')
-  });
-});
+test.use({ userPreset: 'certified' });
 
 test.describe('Module reset', () => {
   test.beforeEach(async ({ page }) => {

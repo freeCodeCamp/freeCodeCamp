@@ -58,9 +58,30 @@ async function mockPaypalSdk(page: Page) {
   );
 }
 
-async function expectDonationToComplete(page: Page) {
+async function expectDonationToComplete(
+  page: Page,
+  { withActivation = false } = {}
+) {
   await clickDonate(page);
   await page.getByTestId('fake-paypal-approve').click();
+
+  if (withActivation) {
+    await page.route('**/user/session-user', async route => {
+      const response = await route.fetch();
+      const body = await response.json();
+      const username = body.result;
+      await route.fulfill({
+        response,
+        json: {
+          ...body,
+          user: {
+            ...body.user,
+            [username]: { ...body.user[username], isDonating: true }
+          }
+        }
+      });
+    });
+  }
 
   await expect(page.getByText(translations.donate['thank-you'])).toBeVisible();
   await expect(page.getByText(translations.donate['free-tech'])).toBeVisible();
@@ -78,17 +99,10 @@ test.describe('PayPal donation button', () => {
     }) => {
       // Register the mock before navigating, so PayPal's real script is
       // never requested at all.
-      let addDonationCalled = false;
-      await page.route('**/donate/add-donation', route => {
-        addDonationCalled = true;
-        return route.fulfill({ json: {} });
-      });
       await mockPaypalSdk(page);
 
       await page.goto('/donate');
-      await expectDonationToComplete(page);
-
-      expect(addDonationCalled).toBe(true);
+      await expectDonationToComplete(page, { withActivation: true });
     });
   });
 
@@ -103,20 +117,12 @@ test.describe('PayPal donation button', () => {
     test('completes the donation flow once PayPal approves the payment', async ({
       page
     }) => {
-      // Unauthenticated donors are never recorded via /donate/add-donation
-      // (see donation-saga.js), so completion here should not call our API
-      // at all - it should go straight to the success screen.
-      let addDonationCalled = false;
-      await page.route('**/donate/add-donation', route => {
-        addDonationCalled = true;
-        return route.fulfill({ json: {} });
-      });
+      // Unauthenticated donors do not need activation polling, so approval
+      // goes straight to the success screen.
       await mockPaypalSdk(page);
 
       await page.goto('/donate');
       await expectDonationToComplete(page);
-
-      expect(addDonationCalled).toBe(false);
     });
   });
 });

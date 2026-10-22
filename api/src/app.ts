@@ -202,6 +202,18 @@ export const build = async (
     await fastify.register(protectedRoutes.userGetRoutes);
   });
 
+  // CSRF protection enabled:
+  // Routes that work for unauthenticated users, but make use of .user if present
+  void fastify.register(async function (fastify) {
+    // authorize adds .user if the request is authenticated, but does not block
+    // the request
+    fastify.addHook('onRequest', fastify.authorize);
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    fastify.addHook('onRequest', fastify.csrfProtection);
+
+    await fastify.register(publicRoutes.paypalSubscriptionRoute);
+  });
+
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
     fastify.addHook('onRequest', fastify.authorize);
