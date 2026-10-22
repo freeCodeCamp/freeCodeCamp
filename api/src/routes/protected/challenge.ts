@@ -738,7 +738,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
         }
 
-        const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
+        const { prerequisites, numberOfQuestionsInExam, questions, title } =
+          examFromDb;
 
         const prerequisiteIds = prerequisites.map(p => p.id);
         const completedPrerequisites = completedChallenges.filter(c =>
@@ -758,7 +759,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const validUserCompletedExam = validateUserCompletedExamSchema(
           userCompletedExam,
-          numberOfQuestionsInExam
+          numberOfQuestionsInExam,
+          questions
         );
         if ('error' in validUserCompletedExam) {
           req.log.warn(
