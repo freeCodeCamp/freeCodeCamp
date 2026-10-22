@@ -10901,6 +10901,12 @@
           "In this workshop, you'll practice working with data structures by building a linked list."
         ]
       },
+      "lab-doubly-linked-list": {
+        "title": "Build a Doubly Linked List",
+        "intro": [
+          "In this lab, you will build a doubly linked list, where each node keeps a reference to both the next and the previous node in the list."
+        ]
+      },
       "review-linear-data-structures": {
         "title": "Linear Data Structures Review",
         "intro": [

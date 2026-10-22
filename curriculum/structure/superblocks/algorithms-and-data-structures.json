@@ -24,6 +24,7 @@
           "blocks": [
             "lecture-working-with-common-data-structures-v2",
             "workshop-linked-list-class",
+            "lab-doubly-linked-list",
             "review-linear-data-structures",
             "quiz-linear-data-structures"
           ]
