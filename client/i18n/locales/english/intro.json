@@ -10901,6 +10901,12 @@
           "In this workshop, you'll practice working with data structures by building a linked list."
         ]
       },
+      "lab-linked-list-operations-python": {
+        "title": "Implement Linked List Operations",
+        "intro": [
+          "In this lab, you will extend a linked list class with methods to search, access, insert, and remove elements by index."
+        ]
+      },
       "review-linear-data-structures": {
         "title": "Linear Data Structures Review",
         "intro": [
