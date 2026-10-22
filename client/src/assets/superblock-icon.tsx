@@ -83,7 +83,7 @@ const iconMap = {
   [SuperBlocks.FrontEndDevLibsV9]: ReactIcon,
   [SuperBlocks.PythonV9]: PythonIcon,
   [SuperBlocks.PythonProgrammingFundamentals]: PythonIcon,
-  [SuperBlocks.AlgorithmsAndDataStructure]: Algorithm,
+  [SuperBlocks.AlgorithmsAndDataStructures]: Algorithm,
   [SuperBlocks.RelationalDbV9]: DatabaseIcon,
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
   [SuperBlocks.FullStackDeveloperV9]: Code,

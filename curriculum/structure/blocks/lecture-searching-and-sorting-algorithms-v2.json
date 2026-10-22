@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-searching-and-sorting-algorithms-v2",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68420c70e4bfe26d52b780dc",
+      "title": "What Is Binary Search and How Does It Differ from Linear Search?"
+    }
+  ],
+  "helpCategory": "Python"
+}

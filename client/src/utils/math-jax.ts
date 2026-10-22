@@ -15,7 +15,7 @@ const superBlocksWithMathJax = [
   SuperBlocks.SciCompPy,
   SuperBlocks.PythonV9,
   SuperBlocks.PythonProgrammingFundamentals,
-  SuperBlocks.AlgorithmsAndDataStructure,
+  SuperBlocks.AlgorithmsAndDataStructures,
   SuperBlocks.IntroductionToPrecalculus
 ];
 
