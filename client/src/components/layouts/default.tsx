@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
@@ -62,6 +62,9 @@ import { LocalStorageThemes } from '../../redux/types';
 import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
 
 const { clientLocale } = envData;
+
+const AMBIENT_VOLUME = 0.1;
+const AMBIENT_STORAGE_KEY = 'fcc-ambient-enabled';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -183,6 +186,44 @@ function DefaultLayout({
     return typeof isOnline === 'boolean' ? onlineStatusChange(isOnline) : null;
   };
 
+  const [isAmbientPlaying, setIsAmbientPlaying] = useState(false);
+  const ambientAudioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = ambientAudioRef.current;
+    if (audio) audio.volume = AMBIENT_VOLUME;
+  }, []);
+
+  useEffect(() => {
+    if (!isBrowser()) return;
+    try {
+      window.localStorage.setItem(
+        AMBIENT_STORAGE_KEY,
+        String(isAmbientPlaying)
+      );
+    } catch {
+      // Private browsing / storage disabled. Non-fatal.
+    }
+  }, [isAmbientPlaying]);
+
+  const toggleAmbientMusic = async () => {
+    const audio = ambientAudioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      audio.volume = AMBIENT_VOLUME;
+      try {
+        await audio.play();
+        setIsAmbientPlaying(true);
+      } catch {
+        setIsAmbientPlaying(false);
+      }
+    } else {
+      audio.pause();
+      setIsAmbientPlaying(false);
+    }
+  };
+
   const isJapanese = clientLocale === 'japanese';
 
   if (!fetchState.complete) {
@@ -282,6 +323,27 @@ function DefaultLayout({
             pathname={pathname}
             skipButtonText={t('learn.skip-to-content')}
           />
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption --
+              Ambient background audio contains no speech, so a captions
+              track would convey no information. The control below is
+              keyboard accessible and exposes state via aria-pressed. */}
+          <audio
+            ref={ambientAudioRef}
+            src='/audio/ambient.wav'
+            loop
+            preload='metadata'
+            onPlay={() => setIsAmbientPlaying(true)}
+            onPause={() => setIsAmbientPlaying(false)}
+            onError={() => setIsAmbientPlaying(false)}
+          />
+          <button
+            type='button'
+            className='ambient-toggle'
+            aria-pressed={isAmbientPlaying}
+            onClick={() => void toggleAmbientMusic()}
+          >
+            {isAmbientPlaying ? t('Ambience Off') : t('Ambience On')}
+          </button>
           <OfflineWarning
             isOnline={isOnline}
             isServerOnline={isServerOnline}
