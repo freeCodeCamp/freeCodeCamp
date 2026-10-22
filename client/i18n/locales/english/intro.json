@@ -10901,6 +10901,12 @@
           "In this workshop, you'll practice working with data structures by building a linked list."
         ]
       },
+      "lab-queue-python": {
+        "title": "Build a Queue",
+        "intro": [
+          "In this lab, you will build a queue class that follows the first-in, first-out principle."
+        ]
+      },
       "review-linear-data-structures": {
         "title": "Linear Data Structures Review",
         "intro": [
