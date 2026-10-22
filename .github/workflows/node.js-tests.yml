@@ -120,6 +120,7 @@ jobs:
             turbo-${{ github.ref_name }}-
 
       - name: Use Node.js ${{ matrix.node-version }}
+        id: node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: ${{ matrix.node-version }}
@@ -140,10 +141,41 @@ jobs:
         run: |
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
-      - name: Install and Build
+      - name: Install dependencies
+        run: pnpm install
+
+      # Seed Webpack even when the client task is a Turbo cache miss. GitHub
+      # scopes PR caches to the PR; production branch builds remain uncached.
+      - name: Restore Webpack compiler cache
+        id: webpack-cache
+        if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: client/.webpack-cache
+          key: webpack-ci-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('pnpm-lock.yaml', 'pnpm-workspace.yaml', 'package.json', 'client/package.json', 'client/gatsby-config.ts', 'client/gatsby-node.ts', 'client/.babelrc.js', 'client/postcss.config.js', 'client/tsconfig.json', 'client/utils/gatsby/webpack-cache.ts', 'sample.env') }}-${{ env.CLIENT_LOCALE }}-${{ env.CURRICULUM_LOCALE }}-${{ env.DEPLOYMENT_ENV }}-${{ env.FREECODECAMP_NODE_ENV }}-${{ env.SHOW_UPCOMING_CHANGES }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            webpack-ci-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('pnpm-lock.yaml', 'pnpm-workspace.yaml', 'package.json', 'client/package.json', 'client/gatsby-config.ts', 'client/gatsby-node.ts', 'client/.babelrc.js', 'client/postcss.config.js', 'client/tsconfig.json', 'client/utils/gatsby/webpack-cache.ts', 'sample.env') }}-${{ env.CLIENT_LOCALE }}-${{ env.CURRICULUM_LOCALE }}-${{ env.DEPLOYMENT_ENV }}-${{ env.FREECODECAMP_NODE_ENV }}-${{ env.SHOW_UPCOMING_CHANGES }}-
+
+      - name: Build
+        id: build
         run: |
-          pnpm install
+          webpack_cache_marker="$RUNNER_TEMP/webpack-cache-build-start"
+          touch "$webpack_cache_marker"
           pnpm run build
+          # A Turbo hit leaves the restored compiler cache unchanged. Avoid
+          # uploading another large copy unless Gatsby wrote compiler packs.
+          if [ -d client/.webpack-cache ] && [ -n "$(find client/.webpack-cache -type f -name '*.pack*' -newer "$webpack_cache_marker" -print -quit)" ]; then
+            echo "webpack-cache-updated=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Save Webpack compiler cache
+        if: >-
+          success() && steps.build.outputs.webpack-cache-updated == 'true' &&
+          (github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/main'))
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: client/.webpack-cache
+          key: ${{ steps.webpack-cache.outputs.cache-primary-key }}
 
       - name: Upload Client Artifact
         if: github.event_name == 'pull_request'

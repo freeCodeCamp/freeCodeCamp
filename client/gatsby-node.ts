@@ -4,6 +4,7 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const env = require('./config/env.json');
 const { createSuperBlockIntroPages } = require('./utils/gatsby');
+const { getWebpackCacheOptions } = require('./utils/gatsby/webpack-cache');
 
 exports.createPages = async function createPages({
   actions,
@@ -61,7 +62,27 @@ exports.createPages = async function createPages({
   });
 };
 
-exports.onCreateWebpackConfig = ({ stage, actions, plugins }: any) => {
+exports.onCreateWebpackConfig = ({
+  stage,
+  actions,
+  plugins,
+  getConfig
+}: any) => {
+  const { cache, context } = getConfig();
+  // Keep compiler results across setup's Gatsby clean. Gatsby's page and query
+  // caches still start fresh, and `pnpm run clean` removes both caches.
+  if (
+    (stage === 'build-javascript' || stage === 'build-html') &&
+    cache?.type === 'filesystem'
+  ) {
+    actions.setWebpackConfig({
+      cache: {
+        ...cache,
+        ...getWebpackCacheOptions(context, stage, cache.version)
+      }
+    });
+  }
+
   const newPlugins = [
     // We add the shims of the node globals to the global scope
     plugins.provide({
