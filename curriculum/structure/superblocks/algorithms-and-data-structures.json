@@ -7,8 +7,10 @@
           "dashedName": "python-algorithms",
           "blocks": [
             "lecture-understanding-algorithms-and-big-o",
+            "lab-stock-profit-calculator",
             "lecture-searching-and-sorting-algorithms-v2",
             "workshop-binary-search",
+            "lab-bubble-sort",
             "lab-selection-sort",
             "review-python-algorithms",
             "quiz-python-algorithms"
@@ -24,6 +26,8 @@
           "blocks": [
             "lecture-working-with-common-data-structures-v2",
             "workshop-linked-list-class",
+            "lab-build-a-stack",
+            "lab-queue-python",
             "review-linear-data-structures",
             "quiz-linear-data-structures"
           ]
