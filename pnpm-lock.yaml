@@ -996,7 +996,7 @@ importers:
   packages/challenge-linter:
     dependencies:
       markdown-it:
-        specifier: ^14.1.1
+        specifier: ^14.3.2
         version: 14.3.2
     devDependencies:
       '@freecodecamp/eslint-config':
