@@ -26,6 +26,7 @@
           "blocks": [
             "lecture-working-with-common-data-structures-v2",
             "workshop-linked-list-class",
+            "lab-linked-list-operations-python",
             "lab-queue-python",
             "review-linear-data-structures",
             "quiz-linear-data-structures"
