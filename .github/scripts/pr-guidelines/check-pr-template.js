@@ -9,18 +9,23 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
   // ticked. The last checkbox (tested locally) is acceptable to leave
   // unticked.
   const templatePresent = body.includes('checklist:');
-  const requiredTicked = [
-    'i have read and followed the contribution guidelines',
-    'i have read and followed the how to open a pull request guide',
-    'my pull request targets the'
-  ];
-  // Strip markdown links ([text](url) → text) before matching so contributors
-  // who omit the link syntax (e.g. type plain text) still pass the check.
+
+  // Contributors may format checklist items with quotation marks or markdown
+  // links. Normalize those variants before checking whether the required boxes
+  // were marked complete.
   const normalizedBody = body
     .replace(/\[\s*x\s*\]/g, '[x]')
+    .replace(/["'`]/g, '')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+
+  const requiredTicked = [
+    '[x] i have read and followed the contribution guidelines',
+    '[x] i have read and followed the how to open a pull request guide',
+    '[x] my pull request targets the main branch of freecodecamp'
+  ];
+
   const allRequiredTicked = requiredTicked.every(item =>
-    normalizedBody.includes(`[x] ${item}`)
+    normalizedBody.includes(item)
   );
 
   if (templatePresent && allRequiredTicked) return;
