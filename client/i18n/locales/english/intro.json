@@ -11026,7 +11026,7 @@
       "lab-incidence-matrix": {
         "title": "Build an Incidence Matrix",
         "intro": [
-          "In this lab, you will build a function that converts an undirected graph's edge list into an incidence matrix."
+          "In this lab, you will build a function that converts a directed graph's edge list into an incidence matrix."
         ]
       },
       "lab-depth-first-search": {
