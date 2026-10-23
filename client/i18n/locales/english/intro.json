@@ -11243,8 +11243,7 @@
       "workshop-greeting-card": {
         "title": "Design a Greeting Card",
         "intro": [
-          "In the previous lectures, you learned how to work with the different types of pseudo-classes.",
-          "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
+          "In this workshop, you will have a chance to practice working with pseudo-classes by designing a greeting card."
         ]
       },
       "lab-tribute-page": {
@@ -11286,7 +11285,7 @@
       "workshop-rothko-painting": {
         "title": "Design a Rothko Painting",
         "intro": [
-          "Every HTML element is its own box - with its own spacing and a border. This is called the Box Model.",
+          "Every HTML element is its own box, with its own spacing and a border. This is called the Box Model.",
           "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
         ]
       },
@@ -11358,14 +11357,14 @@
       "workshop-balance-sheet": {
         "title": "Build a Balance Sheet",
         "intro": [
-          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "In this workshop, you'll build a balance sheet using pseudo-selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
       "workshop-piano": {
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo-selectors."
         ]
       },
       "lab-technical-documentation-page-v2": {
@@ -11392,7 +11391,7 @@
         "title": "CSS Review",
         "intro": [
           "Before you take the CSS quiz, you first need to review the concepts taught in the previous modules.",
-          "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
+          "Open up this page to review concepts around the CSS you have learned."
         ]
       },
       "quiz-css": {
