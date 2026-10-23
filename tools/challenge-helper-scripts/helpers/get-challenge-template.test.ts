@@ -65,3 +65,35 @@ describe('project challenge templates', () => {
     expect(template).not.toContain('# --seed--');
   });
 });
+
+describe('quiz challenge templates', () => {
+  const createQuizTemplate = (questionCount?: number) =>
+    getTemplate(challengeTypes.quiz.toString())({
+      challengeId,
+      title: 'History Quiz',
+      dashedName: 'history-quiz',
+      challengeType: challengeTypes.quiz.toString(),
+      ...(questionCount === undefined ? {} : { questionCount })
+    });
+
+  it.each([10, 20])(
+    'creates a quiz template with %i questions',
+    questionCount => {
+      const template = createQuizTemplate(questionCount);
+      const passingCount = questionCount === 10 ? 9 : 18;
+
+      expect(template).toContain(
+        `at least ${passingCount} of the ${questionCount} questions below`
+      );
+    }
+  );
+
+  it.each([undefined, 0, 15, 30])(
+    'rejects invalid quiz question count: %s',
+    questionCount => {
+      expect(() => createQuizTemplate(questionCount)).toThrow(
+        'Quiz question count must be either 10 or 20.'
+      );
+    }
+  );
+});
