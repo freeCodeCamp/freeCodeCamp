@@ -10913,6 +10913,12 @@
           "In this workshop, you'll practice working with data structures by building a linked list."
         ]
       },
+      "lab-build-a-stack": {
+        "title": "Build a Stack",
+        "intro": [
+          "In this lab, you will build a stack using functions to push, pop, and peek at elements."
+        ]
+      },
       "lab-queue-python": {
         "title": "Build a Queue",
         "intro": [
