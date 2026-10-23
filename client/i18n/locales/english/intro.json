@@ -10852,6 +10852,12 @@
           "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
         ]
       },
+      "lab-stock-profit-calculator": {
+        "title": "Build a Stock Profit Calculator",
+        "intro": [
+          "In this lab, you will find the best profit from a single stock trade using a linear time algorithm."
+        ]
+      },
       "lecture-searching-and-sorting-algorithms-v2": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
