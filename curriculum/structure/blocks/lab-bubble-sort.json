@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-bubble-sort",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6ad71087abea005c4179b14f",
+      "title": "Implement the Bubble Sort Algorithm"
+    }
+  ],
+  "blockLabel": "lab"
+}
