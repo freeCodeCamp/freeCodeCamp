@@ -13,7 +13,7 @@ Here is an example of a method with both parameter and return type hints whose r
 
 ```py
 def example_method(self, value: int) -> bool:
-  pass
+    pass
 ```
 
 Other return type hints you might use include `str`, `None`, `float` and more.

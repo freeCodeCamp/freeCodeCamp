@@ -1613,9 +1613,9 @@
         ]
       },
       "workshop-pin-extractor": {
-        "title": "Build a Pin Extractor",
+        "title": "Build a PIN Extractor",
         "intro": [
-          "In this workshop you will build a function to extract secret pins hidden in poems."
+          "In this workshop you will build a function to extract secret PINs hidden in poems."
         ]
       },
       "lab-number-pattern-generator": {
@@ -1756,7 +1756,7 @@
         "title": "Classes and Objects Review",
         "intro": [
           "Before you're quizzed on classes and objects, you should review what you've learned about them.",
-          "Open up this page to review concepts like how classes work, what are objects, methods, attributes, special methods and more."
+          "Open up this page to review concepts like how classes work, what objects are, methods, attributes, special methods, and more."
         ]
       },
       "quiz-classes-and-objects": {
@@ -1809,7 +1809,9 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about understanding abstraction in these lessons."]
+        "intro": [
+          "Learn about abstraction and how to work with abstract classes in Python in these lessons."
+        ]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
@@ -6608,9 +6610,9 @@
         ]
       },
       "workshop-pin-extractor": {
-        "title": "Build a Pin Extractor",
+        "title": "Build a PIN Extractor",
         "intro": [
-          "In this workshop you will build a function to extract secret pins hidden in poems."
+          "In this workshop you will build a function to extract secret PINs hidden in poems."
         ]
       },
       "lab-number-pattern-generator": {
@@ -6715,7 +6717,7 @@
         "title": "Classes and Objects Review",
         "intro": [
           "Before you're quizzed on classes and objects, you should review what you've learned about them.",
-          "Open up this page to review concepts like how classes work, what are objects, methods, attributes, special methods and more."
+          "Open up this page to review concepts like how classes work, what objects are, methods, attributes, special methods, and more."
         ]
       },
       "quiz-classes-and-objects": {
@@ -6762,7 +6764,9 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about understanding abstraction in these lessons."]
+        "intro": [
+          "Learn about abstraction and how to work with abstract classes in Python in these lessons."
+        ]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
@@ -6940,7 +6944,7 @@
       "workshop-breadth-first-search": {
         "title": "Implement the Breadth-First Search Algorithm",
         "intro": [
-          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
         ]
       },
       "lab-depth-first-search": {
@@ -10600,9 +10604,9 @@
         ]
       },
       "workshop-pin-extractor": {
-        "title": "Build a Pin Extractor",
+        "title": "Build a PIN Extractor",
         "intro": [
-          "In this workshop you will build a function to extract secret pins hidden in poems."
+          "In this workshop you will build a function to extract secret PINs hidden in poems."
         ]
       },
       "lab-number-pattern-generator": {
@@ -10707,7 +10711,7 @@
         "title": "Classes and Objects Review",
         "intro": [
           "Before you're quizzed on classes and objects, you should review what you've learned about them.",
-          "Open up this page to review concepts like how classes work, what are objects, methods, attributes, special methods and more."
+          "Open up this page to review concepts like how classes work, what objects are, methods, attributes, special methods, and more."
         ]
       },
       "quiz-classes-and-objects": {
@@ -10754,7 +10758,9 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about understanding abstraction in these lessons."]
+        "intro": [
+          "Learn about abstraction and how to work with abstract classes in Python in these lessons."
+        ]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
@@ -10852,6 +10858,12 @@
           "In this workshop, you will build a validator using numerical computations and string manipulation."
         ]
       },
+      "lab-stock-profit-calculator": {
+        "title": "Build a Stock Profit Calculator",
+        "intro": [
+          "In this lab, you will find the best profit from a single stock trade using a linear time algorithm."
+        ]
+      },
       "lecture-searching-and-sorting-algorithms-v2": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
@@ -10863,6 +10875,12 @@
         "intro": [
           "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
           "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "lab-bubble-sort": {
+        "title": "Implement the Bubble Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the bubble sort algorithm in Python."
         ]
       },
       "lab-selection-sort": {
@@ -10899,6 +10917,18 @@
         "title": "Build a Linked List",
         "intro": [
           "In this workshop, you'll practice working with data structures by building a linked list."
+        ]
+      },
+      "lab-build-a-stack": {
+        "title": "Build a Stack",
+        "intro": [
+          "In this lab, you will build a stack using functions to push, pop, and peek at elements."
+        ]
+      },
+      "lab-queue-python": {
+        "title": "Build a Queue",
+        "intro": [
+          "In this lab, you will build a queue class that follows the first-in, first-out principle."
         ]
       },
       "review-linear-data-structures": {
@@ -11105,7 +11135,7 @@
           "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
         ]
       },
-      "lecture-html-introduction": {
+      "lecture-understanding-html-attributes": {
         "title": "Introduction to HTML",
         "intro": [
           "In these lectures, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
