@@ -2656,6 +2656,35 @@ describe('challengeRoutes', () => {
           });
         };
 
+        test('POST rejects exams with duplicate question ids', async () => {
+          const [firstQuestion] = examWithAllCorrect.userExamQuestions;
+          const response = await submitExam({
+            ...examWithAllCorrect,
+            userExamQuestions: [firstQuestion!, firstQuestion!, firstQuestion!]
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred validating the submitted exam.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects exams with question ids not in the exam', async () => {
+          const [, ...otherQuestions] = examWithAllCorrect.userExamQuestions;
+          const response = await submitExam({
+            ...examWithAllCorrect,
+            userExamQuestions: [
+              { ...otherQuestions[0]!, id: 'zzzzzzzzzz' },
+              ...otherQuestions
+            ]
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred validating the submitted exam.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
         test('POST handles submitting a failing exam', async () => {
           const now = Date.now();
           const count = vi.fn();

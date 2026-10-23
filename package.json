@@ -79,7 +79,7 @@
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
-    "@playwright/test": "1.64.0",
+    "@playwright/test": "1.64.1",
     "@testing-library/dom": "10.4.2",
     "@testing-library/jest-dom": "6.9.1",
     "@types/lodash": "4.17.24",
@@ -100,5 +100,5 @@
     "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@12.12.1"
+  "packageManager": "pnpm@12.14.0"
 }
