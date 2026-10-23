@@ -1756,7 +1756,7 @@
         "title": "Classes and Objects Review",
         "intro": [
           "Before you're quizzed on classes and objects, you should review what you've learned about them.",
-          "Open up this page to review concepts like how classes work, what are objects, methods, attributes, special methods and more."
+          "Open up this page to review concepts like how classes work, what objects are, methods, attributes, special methods, and more."
         ]
       },
       "quiz-classes-and-objects": {
@@ -6717,7 +6717,7 @@
         "title": "Classes and Objects Review",
         "intro": [
           "Before you're quizzed on classes and objects, you should review what you've learned about them.",
-          "Open up this page to review concepts like how classes work, what are objects, methods, attributes, special methods and more."
+          "Open up this page to review concepts like how classes work, what objects are, methods, attributes, special methods, and more."
         ]
       },
       "quiz-classes-and-objects": {
@@ -10711,7 +10711,7 @@
         "title": "Classes and Objects Review",
         "intro": [
           "Before you're quizzed on classes and objects, you should review what you've learned about them.",
-          "Open up this page to review concepts like how classes work, what are objects, methods, attributes, special methods and more."
+          "Open up this page to review concepts like how classes work, what objects are, methods, attributes, special methods, and more."
         ]
       },
       "quiz-classes-and-objects": {
@@ -10852,6 +10852,12 @@
           "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
         ]
       },
+      "lab-stock-profit-calculator": {
+        "title": "Build a Stock Profit Calculator",
+        "intro": [
+          "In this lab, you will find the best profit from a single stock trade using a linear time algorithm."
+        ]
+      },
       "lecture-searching-and-sorting-algorithms-v2": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
@@ -10863,6 +10869,12 @@
         "intro": [
           "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
           "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "lab-bubble-sort": {
+        "title": "Implement the Bubble Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the bubble sort algorithm in Python."
         ]
       },
       "lab-selection-sort": {
@@ -10905,6 +10917,12 @@
         "title": "Implement Linked List Operations",
         "intro": [
           "In this lab, you will extend a linked list class with methods to search, access, insert, and remove elements by index."
+        ]
+      },
+      "lab-queue-python": {
+        "title": "Build a Queue",
+        "intro": [
+          "In this lab, you will build a queue class that follows the first-in, first-out principle."
         ]
       },
       "review-linear-data-structures": {
