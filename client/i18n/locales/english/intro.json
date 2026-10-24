@@ -11047,6 +11047,12 @@
           "In this lesson, you will learn what trees and tries are and how they work."
         ]
       },
+      "workshop-binary-search-tree": {
+        "title": "Build a Binary Search Tree",
+        "intro": [
+          "In this workshop, you'll build a binary search tree, learn how to insert, search for, and delete values, and traverse it with inorder traversal."
+        ]
+      },
       "lecture-understanding-priority-queues-and-heaps": {
         "title": "Understanding Priority Queues and Heaps",
         "intro": [
