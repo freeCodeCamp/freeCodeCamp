@@ -22,7 +22,9 @@ function SettingsSidebarNav({
   userToken
 }: SettingsSidebarNavProps): JSX.Element {
   const { t } = useTranslation();
-  const scrollOffset = useStickyScrollOffset(['--header-height']);
+  // Matches the root scroll-padding-top, so native hash scrolls land on the
+  // section the spy considers active.
+  const scrollOffset = useStickyScrollOffset(['--header-height'], 10);
   const allLegacyCertifications = [
     ...legacyFullStackCertification,
     ...legacyCertifications
