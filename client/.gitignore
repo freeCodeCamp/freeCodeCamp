@@ -1,5 +1,6 @@
 # Project dependencies
 .cache
+/.webpack-cache/
 node_modules
 yarn-error.log
 
