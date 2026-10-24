@@ -11023,6 +11023,12 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "lab-incidence-matrix": {
+        "title": "Build an Incidence Matrix",
+        "intro": [
+          "In this lab, you will build a function that converts a directed graph's edge list into an incidence matrix."
+        ]
+      },
       "lab-depth-first-search": {
         "title": "Implement the Depth-First Search Algorithm",
         "intro": [
