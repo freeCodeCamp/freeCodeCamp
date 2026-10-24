@@ -61,7 +61,9 @@ const mockSubRetrieveObj = {
     data: [
       {
         plan: {
-          product: 'prod_GD1GGbJsqQaupl'
+          product: 'prod_GD1GGbJsqQaupl',
+          // Matches the amount used in the charge-stripe requests (in cents).
+          amount: 500
         }
       }
     ]
@@ -301,6 +303,24 @@ describe('Donate', () => {
       expect(secondResponse.status).toBe(409);
       expect(donations).toHaveLength(1);
       expect(anotherUser?.isDonating).not.toBe(true);
+    });
+
+    test('POST /donate/charge-stripe rejects an amount that does not match the subscription plan', async () => {
+      const response = await superRequest('/donate/charge-stripe', {
+        method: 'POST',
+        setCookies
+      }).send({ ...chargeStripeReqBody, amount: 1000 });
+      const donations = await fastifyTestInstance.prisma.donation.findMany({});
+      const user = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email: testEWalletEmail }
+      });
+
+      expect(response.status).toBe(500);
+      expect(response.body).toStrictEqual({
+        error: 'Donation failed due to a server error.'
+      });
+      expect(donations).toHaveLength(0);
+      expect(user?.isDonating).not.toBe(true);
     });
 
     describe('Sentry Issue reporting', () => {
