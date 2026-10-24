@@ -14,6 +14,10 @@ type IsolatedUser = {
 };
 
 type IsolatedUserFixtures = {
+  createUser: (
+    preset?: UserPreset,
+    overrides?: Record<string, boolean>
+  ) => Promise<IsolatedUser>;
   isolatedUser: IsolatedUser;
   userOverrides: Record<string, boolean>;
   userPreset: UserPreset;
@@ -70,23 +74,41 @@ async function deleteAccount(request: APIRequestContext) {
   }
 }
 
+async function cleanupUsers(cleanups: (() => Promise<void>)[]) {
+  // Attempt every cleanup even if another account could not be deleted.
+  const results = await Promise.allSettled(cleanups.map(cleanup => cleanup()));
+  for (const result of results) {
+    if (result.status === 'rejected') throw result.reason;
+  }
+}
+
 export const test = base.extend<IsolatedUserFixtures>({
   userPreset: ['new', { option: true }],
   userOverrides: [{}, { option: true }],
 
-  isolatedUser: async (
-    { playwright, userOverrides, userPreset },
-    use,
-    testInfo
-  ) => {
-    // Tests in a worker run sequentially and delete the account after each test.
-    const email = `test-user-${testInfo.workerIndex}@example.com`;
-    const request = await playwright.request.newContext({
-      storageState: { cookies: [], origins: [] }
-    });
-    let signedIn = false;
+  createUser: async ({ playwright }, use, testInfo) => {
+    const cleanups: (() => Promise<void>)[] = [];
+    let userIndex = 0;
 
-    try {
+    // Tests in a worker run sequentially and delete the account after each test.
+    const createUser: IsolatedUserFixtures['createUser'] = async (
+      preset = 'new',
+      overrides = {}
+    ) => {
+      const email = `test-user-${testInfo.workerIndex}-${userIndex++}@example.com`;
+      const request = await playwright.request.newContext({
+        storageState: { cookies: [], origins: [] }
+      });
+      let signedIn = false;
+
+      cleanups.push(async () => {
+        try {
+          if (signedIn) await deleteAccount(request);
+        } finally {
+          await request.dispose();
+        }
+      });
+
       const signInUrl = new URL('/signin', apiLocation);
       signInUrl.searchParams.set('email', email);
 
@@ -110,17 +132,21 @@ export const test = base.extend<IsolatedUserFixtures>({
         );
       }
 
-      await seedIsolatedUser(email, userPreset, userOverrides);
+      await seedIsolatedUser(email, preset, overrides);
       const username = await getUsername(request);
 
-      await use({ email, storageState, username });
+      return { email, storageState, username };
+    };
+
+    try {
+      await use(createUser);
     } finally {
-      try {
-        if (signedIn) await deleteAccount(request);
-      } finally {
-        await request.dispose();
-      }
+      await cleanupUsers(cleanups);
     }
+  },
+
+  isolatedUser: async ({ createUser, userOverrides, userPreset }, use) => {
+    await use(await createUser(userPreset, userOverrides));
   },
 
   storageState: async ({ isolatedUser }, use) => {
