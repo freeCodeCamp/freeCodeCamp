@@ -47,6 +47,44 @@ describe('project challenge templates', () => {
     expect(template).toContain('assert(runPython(');
   });
 
+  it.each([
+    [20, 18],
+    [10, 9]
+  ])(
+    'creates a quiz template with %i questions',
+    (questionCount, passingScore) => {
+      const template = getTemplate(challengeTypes.quiz.toString())({
+        challengeId,
+        title: 'HTML Quiz',
+        dashedName: 'quiz-html',
+        challengeType: challengeTypes.quiz.toString(),
+        questionCount
+      });
+
+      expect(template).toContain(
+        `you must correctly answer at least ${passingScore} of the ${questionCount} questions below.`
+      );
+      expect(template.match(/### --question--/g)).toHaveLength(questionCount);
+    }
+  );
+
+  it.each([undefined, 15])(
+    'rejects a quiz template with a question count of %s',
+    questionCount => {
+      expect(() =>
+        getTemplate(challengeTypes.quiz.toString())({
+          challengeId,
+          title: 'HTML Quiz',
+          dashedName: 'quiz-html',
+          challengeType: challengeTypes.quiz.toString(),
+          questionCount
+        })
+      ).toThrow(
+        `A quiz needs a questionCount of 10 or 20, but received ${String(questionCount)}.`
+      );
+    }
+  );
+
   it('creates a review template with the project title', () => {
     const template = getTemplate(challengeTypes.review.toString())({
       challengeId,
