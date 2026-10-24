@@ -10852,6 +10852,12 @@
           "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
         ]
       },
+      "workshop-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this workshop, you will build a validator using numerical computations and string manipulation."
+        ]
+      },
       "lab-stock-profit-calculator": {
         "title": "Build a Stock Profit Calculator",
         "intro": [
