@@ -13,7 +13,7 @@ dotenvConfig({ path: envPath });
  */
 export default defineConfig({
   testDir: '.',
-  /* Run tests in files in parallel */
+  /* Run files in parallel; keep tests within each file sequential. */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -21,8 +21,8 @@ export default defineConfig({
   maxFailures: process.env.CI ? 6 : undefined,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: 1,
+  /* Use three workers locally and in CI. */
+  workers: 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', { outputFolder: 'playwright/reporter' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
