@@ -952,12 +952,6 @@ importers:
 
   packages/challenge-builder:
     dependencies:
-      '@babel/preset-env':
-        specifier: 7.29.7
-        version: 7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
-      '@babel/preset-react':
-        specifier: 7.29.7
-        version: 7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/standalone':
         specifier: 7.29.10
         version: 7.29.10

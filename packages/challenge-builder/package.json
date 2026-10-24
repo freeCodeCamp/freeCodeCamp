@@ -41,8 +41,6 @@
     "vitest": "3.2.7"
   },
   "dependencies": {
-    "@babel/preset-env": "7.29.7",
-    "@babel/preset-react": "7.29.7",
     "@babel/standalone": "7.29.10",
     "@freecodecamp/browser-scripts": "workspace:*",
     "@freecodecamp/loop-protect": "3.0.0",

@@ -39,10 +39,9 @@ function testLoopProtectCB(line) {
   );
 }
 
-// hold Babel and presets so we don't try to import them multiple times
+// Hold Babel and its preset options between transformations.
 
 let Babel;
-let presetEnv, presetReact;
 let presetsJS, presetsJSX;
 
 async function loadBabel() {
@@ -61,28 +60,15 @@ async function loadBabel() {
 }
 
 async function loadPresetEnv() {
-  if (!presetEnv)
-    presetEnv = await import(
-      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-    );
-
+  // These presets are already included in @babel/standalone.
   presetsJS = {
-    presets: [[presetEnv, BABEL_ENV_OPTIONS]]
+    presets: [['env', BABEL_ENV_OPTIONS]]
   };
 }
 
 async function loadPresetReact() {
-  if (!presetReact)
-    presetReact = await import(
-      /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
-    );
-  if (!presetEnv)
-    presetEnv = await import(
-      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-    );
-
   presetsJSX = {
-    presets: [[presetEnv, BABEL_ENV_OPTIONS], presetReact]
+    presets: [['env', BABEL_ENV_OPTIONS], 'react']
   };
 }
 
