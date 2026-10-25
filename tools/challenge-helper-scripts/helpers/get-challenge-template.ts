@@ -6,7 +6,9 @@ import {
 } from './project-content-type.js';
 
 const sanitizeTitle = (title: string) => {
-  return title.includes(':') || title.includes("'") ? `"${title}"` : title;
+  return title.includes(':') || title.includes("'")
+    ? JSON.stringify(title)
+    : title;
 };
 
 interface ChallengeOptions {

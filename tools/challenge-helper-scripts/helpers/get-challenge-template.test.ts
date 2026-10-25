@@ -1,4 +1,5 @@
 import { ObjectId } from 'bson';
+import matter from 'gray-matter';
 import { describe, expect, it } from 'vitest';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { getTemplate } from './get-challenge-template.js';
@@ -6,6 +7,26 @@ import { getTemplate } from './get-challenge-template.js';
 const challengeId = new ObjectId('507f1f77bcf86cd799439011');
 
 describe('project challenge templates', () => {
+  describe.each([challengeTypes.review, challengeTypes.video])(
+    'quoted titles in challenge type %i',
+    challengeType => {
+      it.each([
+        'Build a "Hello: World" App',
+        String.raw`Build a C:\temp: App`,
+        'Build "Ada\'s" App'
+      ])('preserves quoted title %s in YAML front matter', title => {
+        const template = getTemplate(challengeType.toString())({
+          challengeId,
+          title,
+          dashedName: 'quoted-title',
+          challengeType: challengeType.toString()
+        });
+
+        expect(matter(template).data.title).toBe(title);
+      });
+    }
+  );
+
   it.each([
     [challengeTypes.lab, 'html-css-jsx', ['html', 'css', 'jsx'], true],
     [challengeTypes.jsLab, 'typescript', ['ts'], false],
