@@ -4,6 +4,7 @@ import { Spacer } from '@freecodecamp/ui';
 
 import { parseBlanks, parseAnswer } from '../fill-in-the-blank/parse-blanks';
 import PrismFormatted from '../components/prism-formatted';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
 import {
   FillInTheBlankInputType,
   FillInTheBlank
@@ -20,6 +21,7 @@ type FillInTheBlankProps = {
   feedback: string | null;
   showWrong: boolean;
   handleInputChange: (inputIndex: number, value: string) => void;
+  superBlock?: string;
 };
 
 const AnswerText = ({ answer }: { answer: string }) => {
@@ -113,7 +115,8 @@ function FillInTheBlanks({
   showFeedback,
   feedback,
   showWrong,
-  handleInputChange
+  handleInputChange,
+  superBlock
 }: FillInTheBlankProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -142,7 +145,10 @@ function FillInTheBlanks({
       <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
       <Spacer size='xs' />
       <p className='sr-only'>{ariaInputDescription}</p>
-      <div className='fill-in-the-blank-wrap'>
+      <div
+        className='fill-in-the-blank-wrap'
+        {...getChallengeContentLangProps(superBlock)}
+      >
         {paragraphs.map((p, i) => (
           // both keys, i and j, are stable between renders, since
           // the paragraphs are static.
@@ -195,7 +201,12 @@ function FillInTheBlanks({
             <Spacer size='m' />
           </div>
         )}
-        {showFeedback && feedback && <PrismFormatted text={feedback} />}
+        {showFeedback && feedback && (
+          <PrismFormatted
+            text={feedback}
+            {...getChallengeContentLangProps(superBlock)}
+          />
+        )}
       </div>
     </>
   );

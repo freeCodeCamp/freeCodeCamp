@@ -135,6 +135,7 @@ export function* executeChallengeSaga({ payload }) {
       disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
+    yield* outputBuildWarnings(buildData?.warnings);
     const testRunner = yield call(getTestRunner, { ...buildData, hooks });
     const testResults = yield executeTests(testRunner, tests);
     yield put(updateTests(testResults));
@@ -186,6 +187,51 @@ function* buildChallengeData(challengeData, options) {
     yield put(disableBuildOnError());
     throw e;
   }
+}
+
+function formatAllowedSources(allowedSources) {
+  return allowedSources.map(source => `"${source}"`).join(', ');
+}
+
+function getBuildWarningMessage(warning) {
+  if (typeof warning === 'string') {
+    return warning;
+  }
+
+  if (warning?.type === 'unavailable-local-resource') {
+    const resourceType = i18next.t(
+      `learn.local-resource-type.${warning.resourceType}`
+    );
+    if (
+      !Array.isArray(warning.allowedSources) ||
+      warning.allowedSources.length === 0
+    ) {
+      return i18next.t('learn.unavailable-local-resource-no-allowed', {
+        source: warning.source,
+        resourceType
+      });
+    }
+    return i18next.t('learn.unavailable-local-resource', {
+      source: warning.source,
+      resourceType,
+      allowedSources: formatAllowedSources(warning.allowedSources)
+    });
+  }
+
+  return '';
+}
+
+function* outputBuildWarnings(warnings) {
+  for (const warningMessage of getBuildWarningMessages(warnings)) {
+    yield put(updateConsole(escape(warningMessage)));
+  }
+}
+
+function getBuildWarningMessages(warnings) {
+  if (!Array.isArray(warnings) || warnings.length === 0) {
+    return [];
+  }
+  return warnings.map(getBuildWarningMessage).filter(Boolean);
 }
 
 export function* executeTests(testRunner, tests, testTimeout = 5000) {
@@ -286,6 +332,11 @@ function* previewChallengeSaga() {
       // If there's an error building the challenge then throwing it here will
       // let the user know there's a problem.
       if (buildData.error) throw buildData.error;
+      for (const warningMessage of getBuildWarningMessages(
+        buildData?.warnings
+      )) {
+        logProxy.put(warningMessage);
+      }
 
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {

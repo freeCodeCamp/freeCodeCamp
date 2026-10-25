@@ -147,6 +147,7 @@ export const schema = Joi.object().keys({
   blockLabel: Joi.when('superBlock', {
     is: [...chapterBasedSuperBlocks],
     then: Joi.valid(
+      'cert-project',
       'workshop',
       'lab',
       'lecture',

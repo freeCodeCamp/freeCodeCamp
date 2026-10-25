@@ -55,6 +55,7 @@ export const postCharge = createAction(actionTypes.postCharge);
 export const postChargeProcessing = createAction(
   actionTypes.postChargeProcessing
 );
+export const postChargePending = createAction(actionTypes.postChargePending);
 export const postChargeComplete = createAction(actionTypes.postChargeComplete);
 export const postChargeError = createAction(actionTypes.postChargeError);
 
@@ -83,7 +84,6 @@ export const removeModuleChallenges = createAction(
   actionTypes.removeModuleChallenges
 );
 export const resetUserData = createAction(actionTypes.resetUserData);
-export const routeUpdated = createAction(actionTypes.routeUpdated);
 
 export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);

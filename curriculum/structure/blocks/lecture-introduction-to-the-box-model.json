@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-the-box-model",
+  "challengeOrder": [
+    {
+      "id": "672bcc9c4a6dd6d7dd3e6357",
+      "title": "What Is the CSS Box Model, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

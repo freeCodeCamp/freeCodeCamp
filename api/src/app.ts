@@ -27,7 +27,6 @@ import errorHandling from './plugins/error-handling.js';
 import runtimeMetrics from './plugins/runtime-metrics.js';
 import csrf from './plugins/csrf.js';
 import notFound from './plugins/not-found.js';
-import shadowCapture from './plugins/shadow-capture.js';
 import growthBook from './plugins/growth-book.js';
 import serviceBearerAuth from './plugins/service-bearer-auth.js';
 
@@ -39,7 +38,6 @@ import {
   API_LOCATION,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
   FCC_ENABLE_CLASSROOM,
   FREECODECAMP_NODE_ENV,
@@ -159,10 +157,6 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  if (FCC_ENABLE_SHADOW_CAPTURE ?? fastify.gb.isOn('shadow-capture')) {
-    void fastify.register(shadowCapture);
-  }
-
   void fastify.register(auth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
@@ -206,6 +200,18 @@ export const build = async (
     fastify.addHook('onRequest', fastify.authorize);
 
     await fastify.register(protectedRoutes.userGetRoutes);
+  });
+
+  // CSRF protection enabled:
+  // Routes that work for unauthenticated users, but make use of .user if present
+  void fastify.register(async function (fastify) {
+    // authorize adds .user if the request is authenticated, but does not block
+    // the request
+    fastify.addHook('onRequest', fastify.authorize);
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    fastify.addHook('onRequest', fastify.csrfProtection);
+
+    await fastify.register(publicRoutes.paypalSubscriptionRoute);
   });
 
   // Routes for signed out users:

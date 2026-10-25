@@ -9,7 +9,7 @@ export function format(x) {
     return `Map(${x.size}) {${Array.from(
       x.entries(),
       ([k, v]) => `${k} => ${v}`
-    ).join(', ')}})`;
+    ).join(', ')}}`;
   } else if (typeof x === 'bigint') {
     return x.toString() + 'n';
   } else if (typeof x === 'symbol') {

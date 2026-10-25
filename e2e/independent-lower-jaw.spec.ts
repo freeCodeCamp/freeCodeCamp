@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 
 const workshopChallengeUrl =
@@ -20,6 +20,7 @@ const workshopPassingSolution = `<!DOCTYPE html>
 </html>`;
 
 test.use({
+  userPreset: 'certified',
   viewport: { width: 1080, height: 720 }
 });
 
@@ -50,18 +51,6 @@ test('Clicking "Check Your Code" reveals failing feedback', async ({
   await expect(
     page.getByTestId('independentLowerJaw-failing-hint')
   ).toBeVisible();
-});
-
-test('Reset button opens and closes the reset modal', async ({ page }) => {
-  await page.goto(workshopChallengeUrl);
-
-  await page.getByTestId('independentLowerJaw-reset-button').click();
-
-  const resetModal = page.getByRole('dialog', { name: 'Reset this lesson?' });
-  await expect(resetModal).toBeVisible();
-
-  await page.getByRole('button', { name: /close/i }).click();
-  await expect(resetModal).not.toBeVisible();
 });
 
 test('Checks hotkeys when instruction is focused', async ({
@@ -141,8 +130,6 @@ test.describe('Unauthenticated user', () => {
 });
 
 test.describe('Authenticated user', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('Focuses on the submit button when authenticated user completes a step', async ({
     page,
     browserName

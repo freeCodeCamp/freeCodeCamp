@@ -181,16 +181,17 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           result: user.username
         });
       } else {
+        const progressTimestamps = user.progressTimestamps as
+          | ProgressTimestamp[]
+          | null;
         const sharedUser = replacePrivateData({
           ...user,
-          calendar: getCalendar(
-            user.progressTimestamps as (ProgressTimestamp | null)[]
-          ),
+          calendar: getCalendar(progressTimestamps),
           completedChallenges: normalizeChallenges(user.completedChallenges),
           location: user.location ?? '',
           joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
           name: user.name ?? '',
-          points: getPoints(user.progressTimestamps),
+          points: getPoints(progressTimestamps),
           profileUI: normalizedProfileUI,
           experience: user.experience.map(removeNulls) ?? []
         });

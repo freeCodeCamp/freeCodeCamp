@@ -7,6 +7,8 @@ dashedName: step-33
 
 # --description--
 
+The `is` and `is not` operators check whether two values refer to the same object. This is called an identity comparison. You can use `is None` to check whether a value is the `None` object, and `is not None` to check whether it is not the `None` object.
+
 Now add a key `diagnosis` to the `constraints` dictionary. For its value, write an expression that checks that `diagnosis` is either an instance of `str` or is `None`.
 
 # --hints--
@@ -29,7 +31,9 @@ _target = _Node(_code).find_function("find_invalid_records").find_variable("cons
 _keys = [k.value for k in _target.keys]
 _index = _keys.index('diagnosis')
 _val = _target.values[_index]
-_Node(_val).is_equivalent("isinstance(diagnosis, str) or diagnosis is None")
+_first = "isinstance(diagnosis, str) or diagnosis is None"
+_second = "diagnosis is None or isinstance(diagnosis, str)"
+_Node(_val).is_equivalent(_first) or _Node(_val).is_equivalent(_second)
 `)) })
 ```
 
@@ -79,7 +83,7 @@ def find_invalid_records(
     patient_id, age, gender, diagnosis, medications, last_visit_id
 ):
     constraints = {
-        'patient_id': isinstance(patient_id, str) and re.fullmatch('p\d+', patient_id, re.IGNORECASE),
+        'patient_id': isinstance(patient_id, str) and re.fullmatch(r'p\d+', patient_id, re.IGNORECASE),
         'age': isinstance(age, int) and age >= 18,
 --fcc-editable-region--
         'gender': isinstance(gender, str) and gender.lower() in ('male', 'female')

@@ -36,6 +36,7 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import PrismFormatted from '../components/prism-formatted';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
 import { usePageLeave } from '../hooks';
 import { sounds } from '../components/scene/scene-assets';
 import ExitQuizModal from './exit-quiz-modal';
@@ -140,6 +141,8 @@ const ShowQuiz = ({
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
   const quiz = quizzes[quizId].questions;
 
+  const contentLangProps = getChallengeContentLangProps(superBlock);
+
   // Initialize the data passed to `useQuiz`
   const [initialQuizData] = useState(
     quiz.map(question => {
@@ -151,6 +154,7 @@ const ShowQuiz = ({
               text={removeParagraphTags(distractor)}
               useSpan
               noAria
+              {...contentLangProps}
             />
           ),
           value: index + 1
@@ -164,6 +168,7 @@ const ShowQuiz = ({
             text={removeParagraphTags(question.answer)}
             useSpan
             noAria
+            {...contentLangProps}
           />
         ),
         value: 4
@@ -191,6 +196,7 @@ const ShowQuiz = ({
           <PrismFormatted
             className='quiz-question-label'
             text={question.text}
+            {...contentLangProps}
           />
         ),
         answers: allAnswers,

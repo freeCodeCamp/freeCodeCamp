@@ -52,7 +52,16 @@ async function get<T>(
 }
 
 async function combineDataWithResponse<T>(response: Response) {
-  const data = (await response.json()) as T;
+  if (!response.body) {
+    return { response, data: undefined as T };
+  }
+
+  const responseText = await response.text();
+  if (!responseText) {
+    return { response, data: undefined as T };
+  }
+
+  const data = JSON.parse(responseText) as T;
   return { response, data };
 }
 
@@ -256,13 +265,14 @@ export function getExamAttempts(): Promise<ResponseWithData<Attempt[]>> {
 /** POST **/
 
 interface Donation {
-  email: string;
   amount: number;
+  customerId?: string;
   duration: string;
-  provider: string;
-  subscriptionId: string;
-  customerId: string;
-  startDate: Date;
+  email?: string;
+  provider?: string;
+  startDate?: Date;
+  stripePaymentIntentId?: string;
+  subscriptionId?: string;
 }
 
 interface SocratesHintPayload {
@@ -279,10 +289,15 @@ interface SocratesHintResponse {
   attempts?: number;
   limit?: number;
 }
-// TODO: Verify if the body has and needs this Donation type. The api seems to
-// just need the body to exist, but doesn't seem to use the properties.
 export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
   return post('/donate/add-donation', body);
+}
+
+export function createPaypalSubscription(body: {
+  amount: number;
+  duration: string;
+}): Promise<ResponseWithData<{ id?: string }>> {
+  return post('/donate/create-paypal-subscription', body);
 }
 
 export function updateStripeCard() {
@@ -345,10 +360,11 @@ export function postReportUser(body: Report): Promise<ResponseWithData<void>> {
 }
 
 // Both are called without a payload in danger-zone-saga,
-// which suggests both are sent without any body
-// TODO: Convert to DELETE
-export function postDeleteAccount(): Promise<ResponseWithData<void>> {
-  return post('/account/delete', {});
+// which suggests both are sent without any body.
+export function postDeleteAccount(
+  userId: string
+): Promise<ResponseWithData<void>> {
+  return deleteRequest(`/users/${userId}`, {});
 }
 
 export function postResetProgress(): Promise<ResponseWithData<void>> {

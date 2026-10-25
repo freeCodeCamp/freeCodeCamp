@@ -5,6 +5,7 @@ import { concatHtml } from './builders.js';
 import {
   getTransformers,
   embedFilesInHtml,
+  getLocalSourceWarnings,
   getPythonTransformers,
   getMultifileJSXTransformers
 } from './transformers.js';
@@ -59,7 +60,9 @@ const composeFunctions = (...fns: ApplyFunctionProps[]) =>
 // HTML or CSS, so AST checks fail.
 const joinWithFileBoundaries = (contents: string[]) => contents.join('\n');
 
-function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
+export function buildSourceMap(
+  challengeFiles: { source?: string; editableContents?: string }[]
+): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const index = joinWithFileBoundaries(
     challengeFiles.map(challengeFile => challengeFile.source ?? '')
@@ -175,6 +178,12 @@ type BuildResult = {
   sources: Source | undefined;
   loadEnzyme?: boolean;
   error?: unknown;
+  warnings?: {
+    type: 'unavailable-local-resource';
+    source: string;
+    resourceType: 'stylesheet' | 'script';
+    allowedSources: string[];
+  }[];
 };
 
 function hasTS(challengeFiles: ChallengeFile[]) {
@@ -240,6 +249,7 @@ async function buildDOMChallenge(
   const pipeLine = composeFunctions(...transformers);
   const finalFiles = await Promise.all(sourceFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
+  const warnings = getLocalSourceWarnings(finalFiles);
   const contents = (await embedFilesInHtml(finalFiles)) as string;
 
   // if there is an error, we just build the test runner so that it can be
@@ -261,7 +271,8 @@ async function buildDOMChallenge(
     build: concatHtml(toBuild),
     sources: buildSourceMap(finalFiles),
     loadEnzyme: requiresReact16,
-    error
+    error,
+    warnings
   };
 }
 

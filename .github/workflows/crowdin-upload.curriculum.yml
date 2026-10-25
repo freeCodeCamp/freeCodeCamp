@@ -17,11 +17,11 @@ permissions:
 jobs:
   i18n-upload-curriculum-files:
     name: Learn
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -32,7 +32,7 @@ jobs:
           PROJECT_NAME: 'curriculum'
 
       - name: Crowdin Upload
-        uses: crowdin/github-action@52aa776766211d83d975df51f3b9c53c2f8ba35f # v2.16.3
+        uses: crowdin/github-action@8f01d54f70f1713ee3f09d82c2bbb2daeac28689 # v2.17.1
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads

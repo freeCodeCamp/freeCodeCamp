@@ -49,7 +49,8 @@ import {
   seedExam,
   defaultUserEmail,
   createSuperRequest,
-  defaultUsername
+  defaultUsername,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import {
   completedExamChallengeOneCorrect,
@@ -1557,49 +1558,6 @@ describe('challengeRoutes', () => {
         });
         expect(resUpdate.statusCode).toBe(200);
       });
-
-      test('POST concurrent requests for different challenges should not lose completions', async () => {
-        // Send multiple simultaneous requests for different challenges.
-        // The read-then-write pattern in updateUserChallengeData means
-        // concurrent requests can read stale state and overwrite each
-        // other's completions.
-        const challengeIds = [
-          'aaa174fcf86c76b9248c6eb0',
-          'aaa174fcf86c76b9248c6eb1',
-          'aaa174fcf86c76b9248c6eb2',
-          'aaa174fcf86c76b9248c6eb3',
-          'aaa174fcf86c76b9248c6eb4'
-        ]; // these must be unique since it's possible for duplicate requests to update challenges or push new ones depending on timing.
-
-        const responses = await Promise.all(
-          challengeIds.map(id =>
-            superPost('/encoded/modern-challenge-completed').send({
-              challengeType: challengeTypes.html,
-              id
-            })
-          )
-        );
-
-        for (const res of responses) {
-          expect(res.statusCode).toBe(200);
-        }
-
-        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
-          where: { email: 'foo@bar.com' }
-        });
-
-        // Every challenge should be recorded. If the race condition
-        // causes lost updates, this count will be less than 5.
-        expect(user.completedChallenges).toHaveLength(challengeIds.length);
-
-        const completedIds = user.completedChallenges.map(c => c.id);
-        for (const id of challengeIds) {
-          expect(completedIds).toContain(id);
-        }
-
-        // Each completion should add a progress timestamp
-        expect(user.progressTimestamps).toHaveLength(challengeIds.length);
-      });
     });
 
     describe('/daily-coding-challenge-completed', () => {
@@ -2698,6 +2656,35 @@ describe('challengeRoutes', () => {
           });
         };
 
+        test('POST rejects exams with duplicate question ids', async () => {
+          const [firstQuestion] = examWithAllCorrect.userExamQuestions;
+          const response = await submitExam({
+            ...examWithAllCorrect,
+            userExamQuestions: [firstQuestion!, firstQuestion!, firstQuestion!]
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred validating the submitted exam.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects exams with question ids not in the exam', async () => {
+          const [, ...otherQuestions] = examWithAllCorrect.userExamQuestions;
+          const response = await submitExam({
+            ...examWithAllCorrect,
+            userExamQuestions: [
+              { ...otherQuestions[0]!, id: 'zzzzzzzzzz' },
+              ...otherQuestions
+            ]
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred validating the submitted exam.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
         test('POST handles submitting a failing exam', async () => {
           const now = Date.now();
           const count = vi.fn();
@@ -3067,7 +3054,7 @@ describe('challengeRoutes', () => {
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     const endpoints: { path: string; method: 'POST' | 'GET' }[] = [

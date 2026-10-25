@@ -2,7 +2,7 @@ import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
-import { clientLocale } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import {
   AmazonLogo,
   AppleLogo,
@@ -15,6 +15,8 @@ import {
 import BigCallToAction from './big-call-to-action';
 import TwoButtonCTA from './two-button-cta';
 import CampersImage from './campers-image';
+
+const { clientLocale } = envData;
 
 function LandingTop(): JSX.Element {
   const { t } = useTranslation();
@@ -36,13 +38,11 @@ function LandingTop(): JSX.Element {
               id='content-start'
               className='ultra-heading'
               data-test-label='landing-header'
-              data-playwright-test-label='big-heading-1-b'
+              data-testid='big-heading-1-b'
             >
               {t('landing.big-heading-1-b')}
             </h1>
-            <p data-playwright-test-label='advance-career'>
-              {t('landing.advance-career')}
-            </p>
+            <p data-testid='advance-career'>{t('landing.advance-career')}</p>
             <Spacer size='m' />
 
             {showTwoButtonCTA ? (
@@ -62,14 +62,11 @@ function LandingTop(): JSX.Element {
         <Row>
           <Col sm={10} smOffset={1} xs={12} className='brands-container'>
             <Spacer size='l' />
-            <p data-playwright-test-label='graduates-work'>
+            <p data-testid='graduates-work'>
               <Trans>landing.graduates-work</Trans>
             </p>
             <Spacer size='s' />
-            <div
-              className='logo-row'
-              data-playwright-test-label='brand-logo-container'
-            >
+            <div className='logo-row' data-testid='brand-logo-container'>
               <AppleLogo />
               <GoogleLogo />
               <MicrosoftLogo />

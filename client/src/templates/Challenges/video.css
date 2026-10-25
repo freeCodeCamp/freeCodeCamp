@@ -118,6 +118,11 @@ input:focus-visible + .video-quiz-input-visible {
   border-bottom: 2px solid var(--tertiary-background);
 }
 
+/* Without a speaking button the second column collapses, but its gap survives. */
+.mcq-option-row:not(:has(.mcq-speaking-button-wrapper)) {
+  column-gap: 0;
+}
+
 .mcq-option-row:first-child {
   border-top: 4px solid var(--tertiary-background);
 }
@@ -150,6 +155,12 @@ input:focus-visible + .video-quiz-input-visible {
   align-items: center;
   margin: 0;
   flex: 1;
+}
+
+/* LTR answers sit at the far edge; the radio stays at the inline-start. Must be
+   physical: dir='auto' resolves these to LTR, so a logical margin would flip. */
+[dir='rtl'] .mcq-option-label .video-quiz-option[dir='auto'] {
+  margin-right: auto;
 }
 
 .mcq-correct {

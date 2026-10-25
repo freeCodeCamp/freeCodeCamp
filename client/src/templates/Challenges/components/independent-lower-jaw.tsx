@@ -29,7 +29,7 @@ import {
   currentBlockIdsSelector,
   socratesHintStateSelector
 } from '../redux/selectors';
-import { apiLocation, clientLocale } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { openModal, executeChallenge, askSocrates } from '../redux/actions';
 import { saveChallenge } from '../../../redux/actions';
 import Help from '../../../assets/icons/help';
@@ -165,6 +165,7 @@ export function IndependentLowerJaw({
   hasSocratesAccess
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+  const { apiLocation, clientLocale } = envData;
   const showSocratesFlag =
     useFeature('show-socrates').on && clientLocale === 'english';
   const submitChallenge = useSubmit();

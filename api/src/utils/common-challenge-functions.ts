@@ -1,4 +1,6 @@
-import type { ExamResults, user, Prisma } from '@prisma/client';
+import { setTimeout } from 'node:timers/promises';
+
+import { Prisma, type ExamResults, type user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash-es';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
@@ -106,6 +108,29 @@ export function saveUserChallengeData(
 }
 
 /**
+ * Retries function iff it fails due to a deadlock or write conflict.
+ * @param fn The function that could fail.
+ * @param timeout Delay before retrying (optional defaulting to 1000).
+ * @returns Promise returned by fn().
+ */
+export async function retryIfWriteConflict<T>(
+  fn: () => Promise<T>,
+  timeout = 1000
+): Promise<T> {
+  return await fn().catch(async (error: unknown) => {
+    if (
+      !(error instanceof Prisma.PrismaClientKnownRequestError) ||
+      error.code !== 'P2034'
+    ) {
+      throw error;
+    }
+
+    await setTimeout(timeout);
+    return fn();
+  });
+}
+
+/**
  * Helper function to update a user's challenge data. Used in challenge
  * submission endpoints.
  * TODO: Keep refactoring. This function does too much.
@@ -119,7 +144,12 @@ export async function updateUserChallengeData(
   fastify: FastifyInstance,
   user: Pick<
     user,
-    'id' | 'completedChallenges' | 'needsModeration' | 'savedChallenges'
+    | 'id'
+    | 'completedChallenges'
+    | 'needsModeration'
+    | 'savedChallenges'
+    | 'progressTimestamps'
+    | 'partiallyCompletedChallenges'
   >,
   challengeId: string,
   _completedChallenge: CompletedChallenge
@@ -151,7 +181,9 @@ export async function updateUserChallengeData(
   const {
     completedChallenges = [],
     needsModeration = false,
-    savedChallenges = []
+    savedChallenges = [],
+    progressTimestamps = [],
+    partiallyCompletedChallenges = []
   } = user;
 
   let savedChallengesUpdate: Prisma.userUpdateInput['savedChallenges'];
@@ -171,8 +203,21 @@ export async function updateUserChallengeData(
   // check and update some property of the user record such that the same update
   // can't be applied twice.
   const userCompletedChallenges = alreadyCompleted
-    ? { updateMany: { where: { id: challengeId }, data: finalChallenge } }
+    ? completedChallenges.map(x =>
+        x.id === challengeId
+          ? finalChallenge
+          : { ...x, completedDate: normalizeDate(x.completedDate) }
+      )
     : { push: finalChallenge };
+
+  // We can't use push, because progressTimestamps is a JSON blob and, until
+  // we convert it to an array, push is not available. Since this could result
+  // in the completedChallenges and progressTimestamps arrays being out of sync,
+  // we should prioritize normalizing the data structure.
+  const userProgressTimestamps =
+    !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
+      ? [...progressTimestamps, newProgressTimeStamp]
+      : progressTimestamps;
 
   if (savableChallenges.has(challengeId)) {
     const challengeToSave: SavedChallenge = {
@@ -186,12 +231,17 @@ export async function updateUserChallengeData(
     const isSaved = savedChallenges.some(({ id }) => challengeId === id);
 
     savedChallengesUpdate = isSaved
-      ? { updateMany: { where: { id: challengeId }, data: challengeToSave } }
+      ? savedChallenges.map(x => (x.id === challengeId ? challengeToSave : x))
       : { push: challengeToSave };
   }
 
-  const { savedChallenges: userSavedChallenges } =
-    await fastify.prisma.user.update({
+  // remove from partiallyCompleted on submit
+  const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
+    challenge => challenge.id !== challengeId
+  );
+
+  const updateUser = () =>
+    fastify.prisma.user.update({
       where: { id: user.id },
       data: {
         completedChallenges: userCompletedChallenges,
@@ -199,19 +249,16 @@ export async function updateUserChallengeData(
         //       `undefined` in Prisma is a no-op
         needsModeration: needsModeration || undefined,
         savedChallenges: savedChallengesUpdate,
-        // Use atomic deleteMany instead of read-filter-write to avoid
-        // concurrent requests overwriting each other's removals.
-        partiallyCompletedChallenges: {
-          deleteMany: { where: { id: challengeId } }
-        },
-        progressTimestamps: alreadyCompleted
-          ? undefined
-          : { push: newProgressTimeStamp }
+        progressTimestamps: userProgressTimestamps,
+        partiallyCompletedChallenges: userPartiallyCompletedChallenges
       },
       select: {
         savedChallenges: true
       }
     });
+
+  const { savedChallenges: userSavedChallenges } =
+    await retryIfWriteConflict(updateUser);
 
   return {
     alreadyCompleted,

@@ -49,7 +49,6 @@ import RdbStep1Instructions from '../codeally/rdb-step-1-instructions';
 import RdbStep2Instructions from '../codeally/rdb-step-2-instructions';
 import { isCodeAllyProjectCompleted } from '../codeally/project-submit';
 import { LocalInstructions } from './local-instructions';
-import { OnaInstructions } from './ona-instructions';
 import { CodespacesInstructions } from './codespaces-instructions';
 
 import '../codeally/codeally.css';
@@ -245,10 +244,6 @@ function ShowFreeCodeCampOs({
     {
       name: t('learn.local.summary'),
       component: LocalInstructions
-    },
-    {
-      name: t('learn.ona.summary'),
-      component: OnaInstructions
     }
   ];
 

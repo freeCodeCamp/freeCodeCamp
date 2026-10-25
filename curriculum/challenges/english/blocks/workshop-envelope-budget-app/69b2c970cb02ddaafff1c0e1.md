@@ -140,8 +140,9 @@ assert.equal(document.querySelector('form fieldset input')?.getAttribute('placeh
             placeholder="e.g. 2000" 
             required 
           />
---fcc-editable-region--
 
+--fcc-editable-region--
+          
 --fcc-editable-region--
         </form>
       </div>

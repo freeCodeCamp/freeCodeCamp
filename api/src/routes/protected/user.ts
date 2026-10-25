@@ -935,11 +935,13 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             completedChallenges: normalizeChallenges(completedChallenges),
             completedChallengeCount: completedChallenges.length,
             completedDailyCodingChallenges,
+            // This assertion is necessary until the database is normalized.
             calendar: getCalendar(
-              progressTimestamps as (ProgressTimestamp | null)[]
+              progressTimestamps as ProgressTimestamp[] | null
             ),
             emailVerified: !!emailVerified,
-            points: getPoints(progressTimestamps),
+            // This assertion is necessary until the database is normalized.
+            points: getPoints(progressTimestamps as ProgressTimestamp[] | null),
             profileUI: normalizeProfileUI(profileUI),
             // TODO(Post-MVP) remove this and just use emailVerified
             isEmailVerified: !!emailVerified,

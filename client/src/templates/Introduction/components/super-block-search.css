@@ -16,7 +16,7 @@
 
 .super-block-search-magnifier {
   position: absolute;
-  left: 10px;
+  inset-inline-start: 10px;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
 
 .super-block-search-reset-btn {
   position: absolute;
-  right: 6px;
+  inset-inline-end: 6px;
   background: none;
   border: none;
   cursor: pointer;

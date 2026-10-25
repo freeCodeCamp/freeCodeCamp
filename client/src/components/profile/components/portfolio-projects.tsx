@@ -78,7 +78,7 @@ export const PortfolioProjects = ({
               onClick={openAddModal}
               aria-label={t('aria.add-portfolio')}
               type='button'
-              style={{ marginLeft: 'auto' }}
+              style={{ marginInlineStart: 'auto' }}
             >
               <FontAwesomeIcon icon={faPlus} />
             </Button>

@@ -586,6 +586,10 @@ a.patreon-button:hover {
   margin-inline-start: 0.25em;
 }
 
+.faq-question-heading {
+  margin: 0;
+}
+
 .faq-item .faq-question-title {
   color: var(--secondary-color);
   font-size: 1rem;
@@ -992,12 +996,6 @@ p.donation-animation-bullet-1-b {
 
 .tester-text {
   margin-top: 80px;
-}
-
-.donation-policy-disclaimer {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  text-align: center;
 }
 
 @media (max-width: 768px) {

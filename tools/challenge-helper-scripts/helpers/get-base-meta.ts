@@ -1,6 +1,6 @@
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
 
-interface Meta {
+export interface Meta {
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;
@@ -46,6 +46,12 @@ const quizMeta = {
   blockLayout: BlockLayouts.Link
 };
 
+const reviewMeta = {
+  ...baseMeta,
+  blockLabel: BlockLabel.review,
+  blockLayout: BlockLayouts.Link
+};
+
 const languageMeta = {
   ...baseMeta,
   blockLayout: 'dialogue-grid'
@@ -81,6 +87,7 @@ export const getBaseMeta = (
     | 'Lab'
     | 'Workshop'
     | 'Lecture'
+    | 'Review'
 ): Meta => {
   switch (projectType) {
     case 'Step':
@@ -97,6 +104,8 @@ export const getBaseMeta = (
       return workshopMeta;
     case 'Lecture':
       return lectureMeta;
+    case 'Review':
+      return reviewMeta;
     default:
       return stepMeta;
   }
