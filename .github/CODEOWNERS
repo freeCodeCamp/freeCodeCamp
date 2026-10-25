@@ -16,6 +16,7 @@
 
 /curriculum/challenges/ @freecodecamp/curriculum
 /curriculum/structure/ @freecodecamp/curriculum
+/client/i18n/locales/english/intro.json @freecodecamp/curriculum
 
 # --- Package files for negation ---
 

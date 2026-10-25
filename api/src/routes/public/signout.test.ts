@@ -1,5 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { devLogin, setupServer, superRequest } from '../../../vitest.utils.js';
+import {
+  devLogin,
+  getSetCookies,
+  setupServer,
+  superRequest
+} from '../../../vitest.utils.js';
 
 describe('GET /signout', () => {
   setupServer();
@@ -10,8 +15,7 @@ describe('GET /signout', () => {
   it('should clear all the cookies', async () => {
     const res = await superRequest('/signout', { method: 'GET' });
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-    const setCookie = res.headers['set-cookie'];
+    const setCookie = getSetCookies(res);
     expect(setCookie).toEqual(
       expect.arrayContaining([
         expect.stringMatching(
