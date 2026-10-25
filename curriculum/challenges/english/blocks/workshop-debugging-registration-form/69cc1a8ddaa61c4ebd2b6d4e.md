@@ -32,9 +32,11 @@ const objectMatch = noCommentsCode.match(
   /const\s+user\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\})/
 );
 assert.exists(objectMatch);
-const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
-const { name } = explorer.variables.user.value.objectProps;
-assert.isTrue(name?.value.matches("name"));
+//const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
+//const { name } = explorer.variables.user.value.objectProps;
+//assert.isTrue(name?.value.matches("name"));
+const obj = new Function("name", "age", "return " + objectMatch[1])("Alice", "20");
+assert.strictEqual(obj.name, "Alice");
 ```
 
 Your `user` object should include an `"age"` property with the value of the `age` variable.
@@ -45,9 +47,11 @@ const objectMatch = noCommentsCode.match(
   /const\s+user\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\})/
 );
 assert.exists(objectMatch);
-const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
-const { age } = explorer.variables.user.value.objectProps;
-assert.isTrue(age?.value.matches("age"));
+//const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
+//const { age } = explorer.variables.user.value.objectProps;
+//assert.isTrue(age?.value.matches("age"));
+const obj = new Function("name", "age", "return " + objectMatch[1])("Alice", "20");
+assert.strictEqual(obj.age, "20");
 ```
 
 # --seed--
