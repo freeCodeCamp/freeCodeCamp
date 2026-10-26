@@ -11380,6 +11380,12 @@
           "In this lecture, you will learn how to define and use custom properties (also known as CSS variables)."
         ]
       },
+      "lecture-working-with-css-grid": {
+        "title": "Working with CSS Grid",
+        "intro": [
+          "In these lectures, you will learn about CSS grid, its several properties and how to use them, and how CSS grid differs from flexbox."
+        ]
+      },
       "workshop-magazine": {
         "title": "Build a Magazine",
         "intro": [
