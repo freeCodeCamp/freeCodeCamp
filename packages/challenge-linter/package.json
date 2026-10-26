@@ -42,6 +42,6 @@
     "yargs": "17.7.2"
   },
   "dependencies": {
-    "markdown-it": "^14.1.1"
+    "markdown-it": "^14.3.2"
   }
 }
