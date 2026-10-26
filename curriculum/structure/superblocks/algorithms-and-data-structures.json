@@ -12,6 +12,7 @@
             "workshop-binary-search",
             "lab-bubble-sort",
             "lab-selection-sort",
+            "lab-insertion-sort-py",
             "review-python-algorithms",
             "quiz-python-algorithms"
           ]
