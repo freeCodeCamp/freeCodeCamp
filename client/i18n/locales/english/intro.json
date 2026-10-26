@@ -8445,7 +8445,7 @@
         ]
       },
       "review-css-backgrounds-and-borders": {
-        "title": "Lists, Links, CSS Background and Borders Review",
+        "title": "Lists, Links, Backgrounds and Borders Review",
         "intro": [
           "Before you are quizzed on CSS backgrounds and borders, you first need to review.",
           "Open up this page to review concepts including the <code>background-image</code> property, <code>border</code> property and more."
@@ -9701,7 +9701,7 @@
         ]
       },
       "review-css-backgrounds-and-borders": {
-        "title": "Lists, Links, CSS Background and Borders Review",
+        "title": "Lists, Links, Backgrounds and Borders Review",
         "intro": [
           "Before you are quizzed on CSS backgrounds and borders, you first need to review.",
           "Open up this page to review concepts including the <code>background-image</code> property, <code>border</code> property and more."
@@ -10883,6 +10883,12 @@
           "In this lab you will implement the selection sort algorithm."
         ]
       },
+      "lab-insertion-sort-py": {
+        "title": "Implement the Insertion Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the insertion sort algorithm in Python."
+        ]
+      },
       "review-python-algorithms": {
         "title": "Algorithms Review",
         "intro": [
@@ -10917,6 +10923,18 @@
         "title": "Implement Linked List Operations",
         "intro": [
           "In this lab, you will extend a linked list class with methods to search, access, insert, and remove elements by index."
+        ]
+      },
+      "lab-doubly-linked-list": {
+        "title": "Build a Doubly Linked List",
+        "intro": [
+          "In this lab, you will build a doubly linked list, where each node keeps a reference to both the next and the previous node in the list."
+        ]
+      },
+      "lab-build-a-stack": {
+        "title": "Build a Stack",
+        "intro": [
+          "In this lab, you will build a stack using functions to push, pop, and peek at elements."
         ]
       },
       "lab-queue-python": {

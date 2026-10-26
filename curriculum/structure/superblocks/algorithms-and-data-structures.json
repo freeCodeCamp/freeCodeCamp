@@ -12,6 +12,7 @@
             "workshop-binary-search",
             "lab-bubble-sort",
             "lab-selection-sort",
+            "lab-insertion-sort-py",
             "review-python-algorithms",
             "quiz-python-algorithms"
           ]
@@ -27,6 +28,8 @@
             "lecture-working-with-common-data-structures-v2",
             "workshop-linked-list-class",
             "lab-linked-list-operations-python",
+            "lab-doubly-linked-list",
+            "lab-build-a-stack",
             "lab-queue-python",
             "review-linear-data-structures",
             "quiz-linear-data-structures"
