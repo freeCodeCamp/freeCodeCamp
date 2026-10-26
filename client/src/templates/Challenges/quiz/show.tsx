@@ -120,6 +120,7 @@ const ShowQuiz = ({
 }: ShowQuizProps) => {
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
+  const scoreMessageRef = useRef<HTMLDivElement | null>(null);
 
   // Campers are not allowed to change their answers once the quiz is submitted.
   // `hasSubmitted` is used as a flag to disable the quiz.
@@ -339,6 +340,12 @@ const ShowQuiz = ({
 
   const errorMessage = getErrorMessage();
 
+  useEffect(() => {
+    if (validated && !isPassed) {
+      scoreMessageRef.current?.focus();
+    }
+  }, [validated, isPassed]);
+
   return (
     <Hotkeys
       executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
@@ -372,9 +379,11 @@ const ShowQuiz = ({
               </ObserveKeys>
               <Spacer size='m' />
               <div
+                ref={scoreMessageRef}
                 role={isPassed ? undefined : 'status'}
-                aria-live={isPassed ? 'off' : 'assertive'}
+                aria-live={validated || isPassed ? 'off' : 'assertive'}
                 aria-atomic='true'
+                tabIndex={validated && !isPassed ? -1 : undefined}
               >
                 {errorMessage}
               </div>
