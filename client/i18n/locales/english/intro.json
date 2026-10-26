@@ -8445,7 +8445,7 @@
         ]
       },
       "review-css-backgrounds-and-borders": {
-        "title": "Lists, Links, CSS Background and Borders Review",
+        "title": "Lists, Links, Backgrounds and Borders Review",
         "intro": [
           "Before you are quizzed on CSS backgrounds and borders, you first need to review.",
           "Open up this page to review concepts including the <code>background-image</code> property, <code>border</code> property and more."
@@ -9701,7 +9701,7 @@
         ]
       },
       "review-css-backgrounds-and-borders": {
-        "title": "Lists, Links, CSS Background and Borders Review",
+        "title": "Lists, Links, Backgrounds and Borders Review",
         "intro": [
           "Before you are quizzed on CSS backgrounds and borders, you first need to review.",
           "Open up this page to review concepts including the <code>background-image</code> property, <code>border</code> property and more."
@@ -10852,6 +10852,12 @@
           "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
         ]
       },
+      "lab-stock-profit-calculator": {
+        "title": "Build a Stock Profit Calculator",
+        "intro": [
+          "In this lab, you will find the best profit from a single stock trade using a linear time algorithm."
+        ]
+      },
       "lecture-searching-and-sorting-algorithms-v2": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
@@ -10863,6 +10869,12 @@
         "intro": [
           "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
           "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "lab-bubble-sort": {
+        "title": "Implement the Bubble Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the bubble sort algorithm in Python."
         ]
       },
       "lab-selection-sort": {
@@ -10905,6 +10917,18 @@
         "title": "Build a Doubly Linked List",
         "intro": [
           "In this lab, you will build a doubly linked list, where each node keeps a reference to both the next and the previous node in the list."
+        ]
+      },
+      "lab-build-a-stack": {
+        "title": "Build a Stack",
+        "intro": [
+          "In this lab, you will build a stack using functions to push, pop, and peek at elements."
+        ]
+      },
+      "lab-queue-python": {
+        "title": "Build a Queue",
+        "intro": [
+          "In this lab, you will build a queue class that follows the first-in, first-out principle."
         ]
       },
       "review-linear-data-structures": {
