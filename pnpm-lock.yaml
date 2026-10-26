@@ -570,8 +570,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       pinyin-tone:
-        specifier: 2.4.0
-        version: 2.4.0
+        specifier: 2.4.1
+        version: 2.4.1
       postcss:
         specifier: 8.5.30
         version: 8.5.30
@@ -9718,9 +9718,8 @@ packages:
     resolution: {integrity: sha512-8OEwKp5juEvb/MjpIc4hjqfgCNysrS94RIOMXYvpYCdm/jglrKEiAYmiumbmGhCvs+IcInsphYDFwqrjr7398w==}
     hasBin: true
 
-  pinyin-tone@2.4.0:
-    resolution: {integrity: sha512-ATSA0WW81iOxTTePpY3FN2hXwh8OcDuO/xP5YwdkZLBGvZnkvhF1Nhbl03fS8CRtyvwvt1cBmzRnmHRR3p/7aw==}
-    deprecated: '76% of this package is a generated CONTRIBUTORS.svg (two base64 avatars rendered at 64x64). Runtime is identical to 2.4.1: same code, 141 kB unpacked instead of 596 kB. Install 2.4.1.'
+  pinyin-tone@2.4.1:
+    resolution: {integrity: sha512-vC1grZuLy//cUEh4S1VOkJXF+RRjPqo50SW3H4C6qW7zidEMaPGTrci1YJQVSxCA5wh8mOJzUYYxXZF+4+MldQ==}
 
   pirates@4.0.7:
     resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
@@ -22583,7 +22582,7 @@ snapshots:
       sonic-boom: 4.2.1
       thread-stream: 3.2.0
 
-  pinyin-tone@2.4.0: {}
+  pinyin-tone@2.4.1: {}
 
   pirates@4.0.7: {}
 
