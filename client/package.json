@@ -94,7 +94,7 @@
     "nanoid": "3.3.20",
     "normalize-url": "6.1.0",
     "path-browserify": "1.0.1",
-    "pinyin-tone": "2.4.0",
+    "pinyin-tone": "2.4.1",
     "postcss": "8.5.30",
     "prismjs": "1.30.0",
     "process": "0.11.10",
