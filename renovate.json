@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>freecodecamp/renovate-config",
+    "github>freecodecamp/renovate-config:automerge",
     ":pinAllExceptPeerDependencies"
   ],
   "packageRules": [
