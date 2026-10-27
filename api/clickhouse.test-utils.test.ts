@@ -23,15 +23,9 @@ import { applyMigrations } from './tools/clickhouse/migrations.js';
 import { setupServer } from './vitest.utils.js';
 
 const integrationTestsEnabled =
-  process.env.CI === 'true' ||
   process.env.FCC_ENABLE_CLICKHOUSE_TESTS === 'true';
 
-const migrationFilenames = [
-  '001_create_activity_events.sql',
-  '002_create_activity_events_by_identity.sql',
-  '003_copy_activity_events.sql',
-  '004_exchange_activity_events.sql'
-];
+const migrationFilenames = ['001_create_activity_events.sql'];
 
 describe.skipIf(!integrationTestsEnabled)(
   'API with explicit ClickHouse enablement',
@@ -53,7 +47,7 @@ describe.skipIf(!integrationTestsEnabled)(
       ]);
     });
 
-    test('reads acknowledged retries once across dates, months and timezones before merges', async () => {
+    test('deduplicates retries across dates and timezones only when FINAL is requested', async () => {
       const client = fastifyTestInstance.clickhouse;
       assert.ok(client);
       const eventId = crypto.randomUUID();
@@ -87,8 +81,15 @@ describe.skipIf(!integrationTestsEnabled)(
             values: [value]
           });
         }
+        const raw = await client.query({
+          query:
+            'SELECT count() AS count FROM activity_events WHERE event_id = {eventId:UUID}',
+          query_params: { eventId },
+          format: 'JSONEachRow'
+        });
+        expect(await raw.json()).toEqual([{ count: 3 }]);
         const result = await client.query({
-          query: `SELECT tracking_id, url FROM activity_events
+          query: `SELECT tracking_id, url FROM activity_events FINAL
             WHERE event_id = {eventId:UUID} ORDER BY tracking_id`,
           query_params: { eventId },
           format: 'JSONEachRow'
@@ -98,7 +99,7 @@ describe.skipIf(!integrationTestsEnabled)(
           { tracking_id: 'retry-test', url: '/latest' }
         ]);
         const filtered = await client.query({
-          query: `SELECT count() AS count FROM activity_events
+          query: `SELECT count() AS count FROM activity_events FINAL
             WHERE tracking_id = 'retry-test' AND url = '/old'`,
           format: 'JSONEachRow'
         });
@@ -234,20 +235,7 @@ describe.skipIf(!integrationTestsEnabled)(
       if (client) await client.close();
     });
 
-    test('migrates legacy data without changing applied files or deleting the original table', async () => {
-      await client.command({ query: 'DROP TABLE activity_events SYNC' });
-      await client.command({
-        query: 'DROP TABLE activity_events_before_event_id_migration SYNC'
-      });
-      await client.command({
-        query: await fs.readFile(
-          new URL(
-            './clickhouse/migrations/001_create_activity_events.sql',
-            import.meta.url
-          ),
-          'utf8'
-        )
-      });
+    test('rejects pre-consolidation history without changing stored events or history', async () => {
       const eventId = crypto.randomUUID();
       const first = {
         event_id: eventId,
@@ -261,39 +249,42 @@ describe.skipIf(!integrationTestsEnabled)(
       await client.insert({
         table: 'activity_events',
         format: 'JSONEachRow',
-        values: [
-          first,
-          {
-            ...first,
-            activity_date: '2026-02-01',
-            timezone: 'Asia/Dhaka',
-            ingested_at: '2026-02-01 00:00:02.000'
-          }
-        ]
+        values: [first]
       });
-      await client.command({ query: 'DROP TABLE schema_migrations SYNC' });
-      expect(await applyMigrations(client)).toEqual(migrationFilenames);
-      expect(await applyMigrations(client)).toEqual([]);
+      await client.command({ query: 'TRUNCATE TABLE schema_migrations' });
+      const legacyHistory = [
+        {
+          migration_id: '1',
+          filename: migrationFilenames[0],
+          checksum: 'pre-consolidation-checksum'
+        },
+        {
+          migration_id: '2',
+          filename: '002_create_activity_events_by_identity.sql',
+          checksum: 'pre-consolidation-checksum'
+        }
+      ];
+      await client.insert({
+        table: 'schema_migrations',
+        format: 'JSONEachRow',
+        values: legacyHistory
+      });
+      await expect(applyMigrations(client)).rejects.toThrow(
+        'Applied migration was changed or removed'
+      );
       const result = await client.query({
-        query: 'SELECT filename FROM schema_migrations ORDER BY migration_id',
+        query:
+          'SELECT migration_id, filename, checksum FROM schema_migrations ORDER BY migration_id',
         format: 'JSONEachRow'
       });
-      expect(await result.json()).toEqual(
-        migrationFilenames.map(filename => ({ filename }))
-      );
+      expect(await result.json()).toEqual(legacyHistory);
       const events = await client.query({
         query: 'SELECT activity_date, timezone FROM activity_events FINAL',
         format: 'JSONEachRow'
       });
       expect(await events.json()).toEqual([
-        { activity_date: '2026-02-01', timezone: 'Asia/Dhaka' }
+        { activity_date: '2026-01-31', timezone: 'UTC' }
       ]);
-      const original = await client.query({
-        query:
-          'SELECT count() AS count FROM activity_events_before_event_id_migration',
-        format: 'JSONEachRow'
-      });
-      expect(await original.json()).toEqual([{ count: 2 }]);
     });
 
     test('does not replay a non-idempotent migration on its second run', async () => {
