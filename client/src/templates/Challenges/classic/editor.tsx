@@ -64,6 +64,7 @@ import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import { attachContentWidgetEvents } from './content-widget-events';
+import { copyEditorSelection, cutEditorSelection } from './editor-clipboard';
 // Direct from npm, license in react-types-licence
 import reactTypes from './react-types.json';
 
@@ -692,6 +693,38 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyR
       ],
       run: toggleAriaRoledescription
+    });
+    editor.addAction({
+      id: 'copy-selection',
+      label: 'Copy Selection',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyC,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyC
+      ],
+      precondition: 'editorHasSelection',
+      contextMenuGroupId: '9_cutcopypaste',
+      contextMenuOrder: 1,
+      run: () => {
+        void copyEditorSelection(editor, navigator.clipboard).catch(
+          () => undefined
+        );
+      }
+    });
+    editor.addAction({
+      id: 'cut-selection',
+      label: 'Cut Selection',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyX,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyX
+      ],
+      precondition: 'editorHasSelection',
+      contextMenuGroupId: '9_cutcopypaste',
+      contextMenuOrder: 2,
+      run: () => {
+        void cutEditorSelection(editor, navigator.clipboard).catch(
+          () => undefined
+        );
+      }
     });
     editor.addAction({
       id: 'select-all-and-copy',
