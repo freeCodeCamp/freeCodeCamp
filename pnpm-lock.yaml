@@ -245,26 +245,26 @@ importers:
   api:
     dependencies:
       '@fastify/accepts':
-        specifier: 5.0.4
-        version: 5.0.4
+        specifier: 5.0.7
+        version: 5.0.7
       '@fastify/cookie':
-        specifier: 11.0.2
-        version: 11.0.2
+        specifier: 11.1.3
+        version: 11.1.3
       '@fastify/csrf-protection':
         specifier: 7.1.0
         version: 7.1.0
       '@fastify/oauth2':
-        specifier: 8.2.0
-        version: 8.2.0(supports-color@8.1.1)
+        specifier: 8.3.2
+        version: 8.3.2(supports-color@8.1.1)
       '@fastify/swagger':
-        specifier: 9.7.0
-        version: 9.7.0(supports-color@8.1.1)
+        specifier: 9.9.2
+        version: 9.9.2(supports-color@8.1.1)
       '@fastify/swagger-ui':
         specifier: 5.2.6
         version: 5.2.6
       '@fastify/type-provider-typebox':
-        specifier: 6.1.0
-        version: 6.1.0(typebox@1.3.36)
+        specifier: 6.3.0
+        version: 6.3.0(ajv-formats@3.0.1(ajv@8.20.0))(typebox@1.3.36)
       '@freecodecamp/shared':
         specifier: workspace:*
         version: link:../packages/shared
@@ -302,8 +302,8 @@ importers:
         specifier: 2.4.8
         version: 2.4.8
       fastify:
-        specifier: 5.8.5
-        version: 5.8.5
+        specifier: 5.12.7
+        version: 5.12.7
       fastify-plugin:
         specifier: 5.1.0
         version: 5.1.0
@@ -2558,14 +2558,17 @@ packages:
   '@fastify/accept-negotiator@2.1.1':
     resolution: {integrity: sha512-gO48sJ/4+P9hYE24tEoWQF4fZvCfRmStf6NFhuT5hwXkH+3JXGdemoE/7ympeQZglieeLJx256rbg8e58IrCyA==}
 
-  '@fastify/accepts@5.0.4':
-    resolution: {integrity: sha512-XKtvD77ZLQ/4G5r1WhPua5+rTctt16DF4XUMBQuP8KM/Ic431GhfqjJoYvwS4aDaUhoRTiU9DGFaMZ3TRM6ctg==}
+  '@fastify/accepts@5.0.7':
+    resolution: {integrity: sha512-9ATtr8GWqIXcNxHKx/AuNyrfi0jqc6kYVcCYaIoDdKve6mWYcmKdy1J5H6zukbM4Qmumz54rlt/OHP7T1WT/Ig==}
 
   '@fastify/ajv-compiler@4.0.7':
     resolution: {integrity: sha512-VP0yIfwlc1ohj733keYDqyHm1VWeP9VQxYomunhr90jkC4aNNibbkrRiaNgPgqj1ORxUenILR4qzA/ppYBNAtQ==}
 
   '@fastify/cookie@11.0.2':
     resolution: {integrity: sha512-GWdwdGlgJxyvNv+QcKiGNevSspMQXncjMZ1J8IvuDQk0jvkzgWWZFNC2En3s+nHndZBGV8IbLwOI/sxCZw/mzA==}
+
+  '@fastify/cookie@11.1.3':
+    resolution: {integrity: sha512-RBhlMNsmSG6C5KGiTkhSXBF75xIrUMSytDDBcpnVewhJ8XVYnJTu+SV6FYKXClIRsBuRjOfKbBSULvnPD3X/mg==}
 
   '@fastify/csrf-protection@7.1.0':
     resolution: {integrity: sha512-I2TDd4SRRYQivKCMHdB/8py+CPO9DT0e63lh4DO8MDCJh8NROq8HD/iO0IjYtwhsD3bZhr0cBXsFdfPvyTmzNw==}
@@ -2588,8 +2591,8 @@ packages:
   '@fastify/merge-json-schemas@0.2.2':
     resolution: {integrity: sha512-d/gx9sRbUCVgGRGzma46wLcwiY8noTqO2Nmjg/vbTARxHRE5bdh5PIL8s97Lt1X7ScRWRW52eVYxwIoPwIdVUA==}
 
-  '@fastify/oauth2@8.2.0':
-    resolution: {integrity: sha512-JQls0pZVt7k9j+qLrSf5OGflpHvylgEfSCVSA2oDaILCX3dwC/Z0UeI1J9M3luik7dtEbEFfpq0v9hF1v/46pQ==}
+  '@fastify/oauth2@8.3.2':
+    resolution: {integrity: sha512-GJOd8HMJJ6/aa78PL+7MdRMIU6cAzQC0W97/lM9qDaYRXtt7xwNGgYbDV1SS4j7lLv6Gx/q09t24dp+RV9KO9w==}
 
   '@fastify/proxy-addr@5.1.2':
     resolution: {integrity: sha512-uqB4QsgVoro0XDC+DIftIMGXHdBPn+lK6Ek3xXAIxPMCJfqxnbtyEoMCm2KPUVOuIosd7Cyw9HawEqMFM/UA+g==}
@@ -2603,13 +2606,14 @@ packages:
   '@fastify/swagger-ui@5.2.6':
     resolution: {integrity: sha512-OMnms0O5s9wb6wis/K5nlrAMLsgUbr1GA8uphM41IasWe3AFdgxz6r/3bA9HTxlDNUYc2FGGKeqMp3ntxmSiNA==}
 
-  '@fastify/swagger@9.7.0':
-    resolution: {integrity: sha512-Vp1SC1GC2Hrkd3faFILv86BzUNyFz5N4/xdExqtCgkGASOzn/x+eMe4qXIGq7cdT6wif/P/oa6r1Ruqx19paZA==}
+  '@fastify/swagger@9.9.2':
+    resolution: {integrity: sha512-ayxItVgf/1axBvw33lqsA5ns02YMpT1r59G/HCJraRNWWBzvLgN+oiCBPhuzTiN67TvctlCYkG0+40WLKYuusQ==}
 
-  '@fastify/type-provider-typebox@6.1.0':
-    resolution: {integrity: sha512-k29cOitDRcZhMXVjtRq0+caKxdWoArz7su+dQWGzGWnFG+fSKhevgiZ7nexHWuXOEEQzgJlh6cptIMu69beaTA==}
+  '@fastify/type-provider-typebox@6.3.0':
+    resolution: {integrity: sha512-zsaoyyAdNvkuf2HOMJvf7vykRTFA/1M9J3HC0vHNtFhxNhwL36iDJl/2Tpl0XzMR0f0aATSeDV20ChH720wXYQ==}
     peerDependencies:
-      typebox: ^1.0.13
+      ajv-formats: ^3.0.1
+      typebox: ^1.1.14
 
   '@fortawesome/fontawesome-common-types@7.2.0':
     resolution: {integrity: sha512-IpR0bER9FY25p+e7BmFH25MZKEwFHTfRAfhOyJubgiDnoJNsSvJ7nigLraHtp4VOG/cy8D7uiV0dLkHOne5Fhw==}
@@ -7051,9 +7055,6 @@ packages:
   fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
 
-  fast-json-stringify@6.4.0:
-    resolution: {integrity: sha512-ibRCQ0GZKJIQ+P3Et1h0LhPgp3PMTYk0MH8O+kW3lNYsvmaQww5Nn3f1jf73Q0jR1Yz3a1CDP4/NZD3vOajWJQ==}
-
   fast-json-stringify@7.1.0:
     resolution: {integrity: sha512-wAhAQ+es0aH+x5OofdCHlZZFdqwtiM6lpEosaRIwfg271WYeEQ/tPcXdu5vpzlqZpbJ4WNqaW4QR5UjfG4Dc2w==}
 
@@ -7097,8 +7098,8 @@ packages:
   fastify-plugin@6.0.1:
     resolution: {integrity: sha512-4wW4RxSmvPXLrh5mgQEiu43qU3bw44N2ss4FTkTkQIbprUhE+/s43QX0j/ttcztdWK7PEkHqVthdc5GdEGDvjA==}
 
-  fastify@5.8.5:
-    resolution: {integrity: sha512-Yqptv59pQzPgQUSIm87hMqHJmdkb1+GPxdE6vW6FRyVE9G86mt7rOghitiU4JHRaTyDUk9pfeKmDeu70lAwM4Q==}
+  fastify@5.12.7:
+    resolution: {integrity: sha512-v4pEPsTRPuqlDIYiQFB+BHjVN4SdHX9u0ABk0ZDUKbbdY1vsNryUd1j4Z+jQEZajvYIVk047Kimva9/AJ79GYw==}
 
   fastq@1.20.3:
     resolution: {integrity: sha512-XKv5nnLs6nLF71NgiKJLIZFLkPyIEuOselLG7ujZnGrRfQK8HpvY+WqKhAJUAdLomwVHErVS4LfxFlPq0/FTAw==}
@@ -13844,10 +13845,10 @@ snapshots:
 
   '@fastify/accept-negotiator@2.1.1': {}
 
-  '@fastify/accepts@5.0.4':
+  '@fastify/accepts@5.0.7':
     dependencies:
       accepts: 1.3.8
-      fastify-plugin: 5.1.0
+      fastify-plugin: 6.0.1
 
   '@fastify/ajv-compiler@4.0.7':
     dependencies:
@@ -13859,6 +13860,11 @@ snapshots:
     dependencies:
       cookie: 1.1.1
       fastify-plugin: 5.1.0
+
+  '@fastify/cookie@11.1.3':
+    dependencies:
+      cookie: 2.0.1
+      fastify-plugin: 6.0.1
 
   '@fastify/csrf-protection@7.1.0':
     dependencies:
@@ -13882,10 +13888,10 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  '@fastify/oauth2@8.2.0(supports-color@8.1.1)':
+  '@fastify/oauth2@8.3.2(supports-color@8.1.1)':
     dependencies:
       '@fastify/cookie': 11.0.2
-      fastify-plugin: 5.1.0
+      fastify-plugin: 6.0.1
       simple-oauth2: 5.1.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
@@ -13920,9 +13926,9 @@ snapshots:
       rfdc: 1.4.1
       yaml: 2.9.1
 
-  '@fastify/swagger@9.7.0(supports-color@8.1.1)':
+  '@fastify/swagger@9.9.2(supports-color@8.1.1)':
     dependencies:
-      fastify-plugin: 5.1.0
+      fastify-plugin: 6.0.1
       json-schema-resolver: 3.0.0(supports-color@8.1.1)
       openapi-types: 12.1.3
       rfdc: 1.4.1
@@ -13930,8 +13936,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fastify/type-provider-typebox@6.1.0(typebox@1.3.36)':
+  '@fastify/type-provider-typebox@6.3.0(ajv-formats@3.0.1(ajv@8.20.0))(typebox@1.3.36)':
     dependencies:
+      ajv-formats: 3.0.1(ajv@8.20.0)
       typebox: 1.3.36
 
   '@fortawesome/fontawesome-common-types@7.2.0': {}
@@ -19225,15 +19232,6 @@ snapshots:
 
   fast-json-stable-stringify@2.1.0: {}
 
-  fast-json-stringify@6.4.0:
-    dependencies:
-      '@fastify/merge-json-schemas': 0.2.2
-      ajv: 8.20.0
-      ajv-formats: 3.0.1(ajv@8.20.0)
-      fast-uri: 3.1.8
-      json-schema-ref-resolver: 3.0.1
-      rfdc: 1.4.1
-
   fast-json-stringify@7.1.0:
     dependencies:
       '@fastify/merge-json-schemas': 0.2.2
@@ -19277,7 +19275,7 @@ snapshots:
 
   fastify-plugin@6.0.1: {}
 
-  fastify@5.8.5:
+  fastify@5.12.7:
     dependencies:
       '@fastify/ajv-compiler': 4.0.7
       '@fastify/error': 4.2.1
@@ -19285,7 +19283,7 @@ snapshots:
       '@fastify/proxy-addr': 5.1.2
       abstract-logging: 2.0.1
       avvio: 9.3.1
-      fast-json-stringify: 6.4.0
+      fast-json-stringify: 7.1.0
       find-my-way: 9.10.0
       light-my-request: 6.8.0
       pino: 9.14.0
