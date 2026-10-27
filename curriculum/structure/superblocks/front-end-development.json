@@ -56,7 +56,10 @@
             "workshop-piano",
             "lab-technical-documentation-page-v2",
             "lecture-introduction-to-css-variables",
-            "workshop-magazine"
+            "lecture-working-with-css-grid",
+            "workshop-magazine",
+            "review-css-v2",
+            "quiz-css"
           ]
         }
       ]
