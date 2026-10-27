@@ -11706,7 +11706,7 @@
           "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
         ]
       },
-      "lab-weather-app": {
+      "lab-weather-app-v2": {
         "title": "Build a Weather App",
         "intro": [
           "In this cetification project, you'll build a Weather App using an API",
