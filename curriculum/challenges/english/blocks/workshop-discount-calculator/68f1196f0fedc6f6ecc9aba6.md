@@ -18,7 +18,7 @@ def example_method(self, value: int) -> bool:
 
 Other return type hints you might use include `str`, `None`, `float` and more.
 
-In the existing `__init__` method, add a return type hint of `None` since constructors do not return a value.
+Add a `-> None` return type hint to the existing `__init__` method. This method initializes an instance that has already been created, so it must return `None`. Calling `Product(...)` creates and returns a `Product` instance; it does not return the value from `__init__`.
 
 # --hints--
 
