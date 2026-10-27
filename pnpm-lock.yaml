@@ -787,8 +787,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       core-js:
-        specifier: 3.50.0
-        version: 3.50.0
+        specifier: 3.51.0
+        version: 3.51.0
       dotenv:
         specifier: 16.6.1
         version: 16.6.1
@@ -6008,8 +6008,8 @@ packages:
   core-js-pure@3.50.0:
     resolution: {integrity: sha512-6GP3Pxz4IKyWjAfa747vIu/jilB5z29JWROLqH/b+pXVcpgh6tM06ZIBwSuglgVqzDYURhOK6oEzTrG0bCHitA==}
 
-  core-js@3.50.0:
-    resolution: {integrity: sha512-BRWgOLKkFeCgRudR6zrs8p9XJZcE14grzKMMssoYrk6krtuEZ7MTKPIY5RzOnqsEKIR9kst7wNzphttraT+Yqw==}
+  core-js@3.51.0:
+    resolution: {integrity: sha512-7bDKx/5jm5MxzsXxc93g6Z2+4ZsuT/MddrfRmTDJNAkWsYWHU8EVNEsBiIEWnMAMCHMmRfUEjkuo3jeNBOIHRw==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -16947,7 +16947,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-preset-gatsby@3.16.0(@babel/core@7.29.7(supports-color@8.1.1))(core-js@3.50.0)(supports-color@8.1.1):
+  babel-preset-gatsby@3.16.0(@babel/core@7.29.7(supports-color@8.1.1))(core-js@3.51.0)(supports-color@8.1.1):
     dependencies:
       '@babel/core': 7.29.7(supports-color@8.1.1)
       '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
@@ -16963,7 +16963,7 @@ snapshots:
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-macros: 3.1.0
       babel-plugin-transform-react-remove-prop-types: 0.4.24
-      core-js: 3.50.0
+      core-js: 3.51.0
       gatsby-core-utils: 4.16.0
       gatsby-legacy-polyfills: 3.16.0
     transitivePeerDependencies:
@@ -17667,7 +17667,7 @@ snapshots:
 
   core-js-pure@3.50.0: {}
 
-  core-js@3.50.0: {}
+  core-js@3.51.0: {}
 
   core-util-is@1.0.3: {}
 
@@ -19849,7 +19849,7 @@ snapshots:
       babel-plugin-add-module-exports: 1.0.4
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-remove-graphql-queries: 5.16.0(@babel/core@7.29.7(supports-color@8.1.1))(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.5(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@5.9.3)(webpack-cli@4.10.0))
-      babel-preset-gatsby: 3.16.0(@babel/core@7.29.7(supports-color@8.1.1))(core-js@3.50.0)(supports-color@8.1.1)
+      babel-preset-gatsby: 3.16.0(@babel/core@7.29.7(supports-color@8.1.1))(core-js@3.51.0)(supports-color@8.1.1)
       better-opn: 2.1.1
       bluebird: 3.7.2
       body-parser: 2.3.0(supports-color@8.1.1)
@@ -19860,7 +19860,7 @@ snapshots:
       common-tags: 1.8.2
       compression: 1.8.2(supports-color@8.1.1)
       cookie: 0.5.0
-      core-js: 3.50.0
+      core-js: 3.51.0
       cors: 2.8.6
       css-loader: 5.2.7(webpack@5.98.0)
       css-minimizer-webpack-plugin: 2.0.0(csso@4.2.0)(webpack@5.98.0)
