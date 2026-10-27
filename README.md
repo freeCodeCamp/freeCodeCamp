@@ -92,3 +92,18 @@ The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
+
+----
+
+### Sponsors
+
+These organizations have supported our non-profit through grants:
+
+<div align="center">
+  <a href="https://www.vultr.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset=".github/assets/vultr_logo__on-dark.png">
+      <img alt="Vultr" src=".github/assets/vultr_logo__on-white.png" width="480">
+    </picture>
+  </a>
+</div>
