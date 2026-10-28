@@ -11,6 +11,38 @@
     {
       "id": "67336894ae148431a870694d",
       "title": "What Is the DOM, and How Do You Access Elements?"
+    },
+    {
+      "id": "673368b1cf26253212a3cfb2",
+      "title": "What Is the querySelectorAll() Method, and When Should You Use It?"
+    },
+    {
+      "id": "673368c0161e6b326a7e03f0",
+      "title": "How Do You Create New Nodes Using innerHTML and createElement()?"
+    },
+    {
+      "id": "673368d97e8ce232cdcd6b68",
+      "title": "How Do You Add and Remove Nodes from the DOM with appendChild() and removeChild()?"
+    },
+    {
+      "id": "673369067f824d33a90a0534",
+      "title": "How Does the addEventListener Method Work?"
+    },
+    {
+      "id": "673369101e5c4a33db0e8a02",
+      "title": "How Does the removeEventListener Method Work?"
+    },
+    {
+      "id": "673368f272706633516e4873",
+      "title": "How Do You Add Attributes with setAttribute()?"
+    },
+    {
+      "id": "6733692ffe1da034469f7917",
+      "title": "How Do You Manipulate Styles Using Element.style and Element.classList?"
+    },
+    {
+      "id": "6733694805a85d34ced08a9b",
+      "title": "How Do the setTimeout and setInterval Methods Work?"
     }
   ],
   "helpCategory": "JavaScript"
