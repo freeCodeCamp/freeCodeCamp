@@ -1,5 +1,8 @@
-const parseCount = (rawCount: string | null) =>
-  rawCount == null ? 0 : parseInt(rawCount, 10);
+const parseCount = (rawCount: string | null) => {
+  if (rawCount == null || rawCount === '') return 0;
+  const value = Number(rawCount);
+  return Number.isFinite(value) ? Math.trunc(value) : 0;
+};
 
 export const CURRENT_COUNT_KEY = 'session-completed-challenges';
 export const SAVED_COUNT_KEY = 'saved-session-completed-challenges';
