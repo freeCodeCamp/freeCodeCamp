@@ -11471,7 +11471,7 @@
       "lecture-working-with-strings": {
         "title": "Working with Strings",
         "intro": [
-          "In these lectures, you will learn how to work with strings in JavaScript. You will learn how to access characters from a string, how to use template literals and interpolation, how to create a new line in strings, and much more."
+          "In this lecture, you will learn how to use template literals, interpolate variables and expressions, and create multiline strings in JavaScript."
         ]
       },
       "workshop-teacher-chatbot": {
@@ -11734,7 +11734,7 @@
       "lecture-working-with-client-side-storage-and-crud-operations-v2": {
         "title": "Working with Client-Side Storage and CRUD Operations",
         "intro": [
-          "In these lectures, you will learn about client-side storage and CRUD operations in JavaScript. You will learn about <code>localStorage</code> and <code>sessionStorage</code> alongside their methods and properties, cookies, the Cache API, IndexedDB, and much more."
+          "In these lectures, you will learn about CRUD operations and how to store, retrieve, and remove data using <code>localStorage</code> and <code>sessionStorage</code>."
         ]
       },
       "workshop-todo-app": {
@@ -11767,7 +11767,7 @@
       "lab-weather-app-v2": {
         "title": "Build a Weather App",
         "intro": [
-          "In this cetification project, you'll build a Weather App using an API",
+          "In this certification project, you'll build a Weather App using an API.",
           "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       }
