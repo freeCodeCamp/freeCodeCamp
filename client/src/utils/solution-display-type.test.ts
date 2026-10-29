@@ -34,4 +34,20 @@ describe('getSolutionDisplayType', () => {
   it('should handle solutions with both links', () => {
     expect(getSolutionDisplayType(bothLinks)).toBe('showProjectAndGithubLinks');
   });
+  it('should handle exam challenges', () => {
+    expect(
+      getSolutionDisplayType({
+        id: 'exam-download',
+        completedDate: 123456789,
+        challengeType: 30
+      })
+    ).toBe('noSolutionToDisplay');
+    expect(
+      getSolutionDisplayType({
+        id: 'exam-csharp',
+        completedDate: 123456789,
+        challengeType: 17
+      })
+    ).toBe('noSolutionToDisplay');
+  });
 });

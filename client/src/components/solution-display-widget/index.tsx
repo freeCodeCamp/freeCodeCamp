@@ -198,6 +198,8 @@ export function SolutionDisplayWidget({
     <> {t('certification.project.no-solution-to-display')} </>
   );
 
+  const ExamPassed = <>{t('exam.passed')}</>;
+
   // This is to hide the "view" button on the timeline for the ms trophy challenges,
   // the solutions for those are a link to a JSON file, which isn't useful
   const msTrophyIds = [
@@ -220,7 +222,7 @@ export function SolutionDisplayWidget({
           showProjectLink: ShowProjectLinkForCertification,
           showExamResults: ShowExamResults,
           none: MissingSolutionComponentForCertification,
-          noSolutionToDisplay: NoSolutionToDisplay
+          noSolutionToDisplay: ExamPassed
         }
       : {
           showUserCode: ShowUserCode,

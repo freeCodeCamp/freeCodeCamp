@@ -66,6 +66,9 @@ export const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     );
 
     if (!completedProject) {
+      if (currentCertifications.includes(certSlug)) {
+        return <>{t('exam.passed')}</>;
+      }
       return null;
     }
 

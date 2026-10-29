@@ -114,8 +114,32 @@ describe('<ShowProjectLinks />', () => {
       'href',
       '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam'
     );
+    expect(screen.getByText('Passed')).toBeInTheDocument();
     expect(
       screen.queryByRole('link', { name: 'academic honesty policy' })
     ).not.toBeInTheDocument();
+  });
+
+  test('renders v9 certification exam with Passed status', () => {
+    renderWithI18n(
+      <ShowProjectLinks
+        certSlug={Certification.RespWebDesignV9}
+        name='Full Stack User'
+        openModal={vi.fn()}
+        user={user}
+      />
+    );
+
+    expect(
+      screen.getByText(
+        'As part of this certification, Full Stack User passed the following exam:'
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', {
+        name: 'Responsive Web Design Certification Exam'
+      })
+    ).toBeInTheDocument();
+    expect(screen.getByText('Passed')).toBeInTheDocument();
   });
 });

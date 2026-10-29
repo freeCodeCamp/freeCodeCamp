@@ -18,7 +18,10 @@ export const getSolutionDisplayType = ({
   challengeType,
   examResults
 }: CompletedChallenge): DisplayType => {
-  if (challengeType === challengeTypes.examDownload)
+  if (
+    challengeType === challengeTypes.examDownload ||
+    challengeType === challengeTypes.exam
+  )
     return 'noSolutionToDisplay';
   if (examResults) return 'showExamResults';
   if (challengeFiles?.length)

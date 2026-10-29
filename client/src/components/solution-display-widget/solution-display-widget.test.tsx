@@ -104,4 +104,16 @@ describe('<SolutionDisplayWidget />', () => {
     );
     expect(sourceLink).toHaveAttribute('target', '_blank');
   });
+
+  it('renders "Passed" when the challenge is an exam on the certification page', () => {
+    renderWidget({
+      completedChallenge: {
+        id: 'exam-challenge',
+        completedDate: 1655158158000,
+        challengeType: 30
+      }
+    });
+
+    expect(screen.getByText('exam.passed')).toBeInTheDocument();
+  });
 });
