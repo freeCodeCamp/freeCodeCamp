@@ -189,9 +189,14 @@ export const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       <Table striped>
         <thead>
           <tr>
-            <th>
-              <span className='sr-only'>{t('settings.headings.certs')}</span>
-            </th>
+            {certSlug === Certification.LegacyFullStack ? (
+              <th>{t('settings.headings.certs')}</th>
+            ) : (
+              <>
+                <th>{t('settings.labels.project-name')}</th>
+                <th>{t('settings.labels.solution')}</th>
+              </>
+            )}
           </tr>
         </thead>
         <tbody>

@@ -47,6 +47,13 @@ describe('<ShowProjectLinks />', () => {
     );
 
     expect(
+      screen.getByRole('columnheader', { name: 'Project Name' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('columnheader', { name: 'Solution' })
+    ).toBeInTheDocument();
+
+    expect(
       screen.getByRole('link', { name: 'Build a Survey Form' })
     ).toHaveAttribute(
       'href',
@@ -117,5 +124,28 @@ describe('<ShowProjectLinks />', () => {
     expect(
       screen.queryByRole('link', { name: 'academic honesty policy' })
     ).not.toBeInTheDocument();
+  });
+
+  test('renders legacy full stack certification headers and links', () => {
+    renderWithI18n(
+      <ShowProjectLinks
+        certSlug={Certification.LegacyFullStack}
+        name='Full Stack User'
+        openModal={vi.fn()}
+        user={user}
+      />
+    );
+
+    expect(
+      screen.getByRole('columnheader', { name: 'Certifications' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', {
+        name: 'Responsive Web Design'
+      })
+    ).toHaveAttribute(
+      'href',
+      '/certification/certifieduser/responsive-web-design'
+    );
   });
 });
