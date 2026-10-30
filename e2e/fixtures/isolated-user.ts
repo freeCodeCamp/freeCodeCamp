@@ -18,13 +18,21 @@ type IsolatedUser = {
 };
 
 type IsolatedUserFixtures = {
+  /**
+   * Creates an additional account, cleaned up after the test, without switching
+   * the page's session. Uses its own arguments, independently of test.use().
+   */
   createUser: (
     preset?: UserPreset,
     overrides?: Record<string, boolean>
   ) => Promise<IsolatedUser>;
+  /** Routes sign-in to isolatedUser; preserves the page's initial signed-in or guest state. */
   isolatedPage: Page;
+  /** The account used to authenticate the built-in page, context and request by default. */
   isolatedUser: IsolatedUser;
+  /** Fields applied to isolatedUser after its preset. */
   userOverrides: Record<string, boolean>;
+  /** Data applied to isolatedUser, such as completed challenges and certifications. */
   userPreset: UserPreset;
 };
 
@@ -67,7 +75,20 @@ async function cleanupUsers(cleanups: (() => Promise<void>)[]) {
   }
 }
 
+/**
+ * Tests start signed in as their own account, which is deleted after each test.
+ * The built-in page, context and request receive its cookies through storageState.
+ *
+ * Choose account data with test.use({ userPreset: 'certified' }). The default
+ * 'new' preset leaves the freshly created account's data unchanged; it still
+ * provides a signed-in session.
+ *
+ * For guest tests, use test.use({ storageState: { cookies: [], origins: [] } }).
+ * If a guest test needs to sign in through the UI, request isolatedPage so the
+ * sign-in flow selects isolatedUser instead of the shared development account.
+ */
 export const test = base.extend<IsolatedUserFixtures>({
+  // Default account data; configurable per file or describe block with test.use().
   userPreset: ['new', { option: true }],
   userOverrides: [{}, { option: true }],
 
