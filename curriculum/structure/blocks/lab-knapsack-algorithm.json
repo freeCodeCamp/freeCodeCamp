@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-knapsack-algorithm",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6ad13662ca6bd3622e959533",
+      "title": "Implement the Knapsack Algorithm"
+    }
+  ],
+  "usesMultifileEditor": true
+}

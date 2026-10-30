@@ -119,7 +119,7 @@ describe('socratesRoutes', () => {
           expect(response.body).toStrictEqual({
             hint: 'Try adding a closing tag.',
             attempts: 1,
-            limit: 3
+            limit: 10
           });
           expect(count).toHaveBeenCalledWith('socrates.hint_granted', 1, {
             attributes: { donorStatus: 'non-donor' }
@@ -128,6 +128,100 @@ describe('socratesRoutes', () => {
             'socrates.upstream_latency_ms',
             expect.any(Number),
             { unit: 'millisecond', attributes: { result: 'success' } }
+          );
+        });
+
+        test('should not consume an attempt when Socrates serves a fallback hint', async () => {
+          const { Sentry } = fastifyTestInstance;
+          const count = vi.fn();
+          const distribution = vi.fn();
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            metrics: { ...Sentry.metrics, count, distribution }
+          });
+
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () =>
+              Promise.resolve(
+                JSON.stringify({
+                  hint: 'The hint service is temporarily unavailable.',
+                  model_used: 'fallback'
+                })
+              )
+          });
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(500);
+          expect(response.body).toStrictEqual({
+            error: 'socrates-unavailable',
+            type: 'danger',
+            attempts: 0,
+            limit: 10
+          });
+          expect(count).toHaveBeenCalledWith(
+            'socrates.upstream_call_failed',
+            1,
+            {
+              attributes: { reason: 'fallback' }
+            }
+          );
+          expect(count).not.toHaveBeenCalledWith(
+            'socrates.hint_granted',
+            1,
+            expect.anything()
+          );
+          expect(distribution).toHaveBeenCalledWith(
+            'socrates.upstream_latency_ms',
+            expect.any(Number),
+            { unit: 'millisecond', attributes: { result: 'failure' } }
+          );
+          expect(distribution).not.toHaveBeenCalledWith(
+            'socrates.upstream_latency_ms',
+            expect.any(Number),
+            { unit: 'millisecond', attributes: { result: 'success' } }
+          );
+        });
+
+        test('should give the upstream call a 90 second deadline', async () => {
+          const timeout = vi.spyOn(AbortSignal, 'timeout');
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(timeout).toHaveBeenCalledWith(90_000);
+          const fetchCall = mockedFetch.mock.calls[0]!;
+          expect(fetchCall[1].signal).toBe(timeout.mock.results[0]!.value);
+        });
+
+        test('should label upstream latency as a failure on a bad status', async () => {
+          const { Sentry } = fastifyTestInstance;
+          const distribution = vi.fn();
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            captureException: vi.fn(),
+            metrics: { ...Sentry.metrics, count: vi.fn(), distribution }
+          });
+
+          mockedFetch.mockResolvedValueOnce({
+            ok: false,
+            status: 503,
+            text: () => Promise.resolve('Service Unavailable')
+          });
+
+          await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(distribution).toHaveBeenCalledWith(
+            'socrates.upstream_latency_ms',
+            expect.any(Number),
+            { unit: 'millisecond', attributes: { result: 'failure' } }
           );
         });
 
@@ -221,7 +315,7 @@ describe('socratesRoutes', () => {
             error: 'socrates-rate-limit',
             type: 'info',
             attempts: 0,
-            limit: 3
+            limit: 10
           });
           expect(count).toHaveBeenCalledWith('socrates.rate_limit_hit', 1, {
             attributes: { source: 'upstream', donorStatus: 'non-donor' }
@@ -262,7 +356,7 @@ describe('socratesRoutes', () => {
               error: 'socrates-unable-to-generate',
               type: 'info',
               attempts: 0,
-              limit: 3
+              limit: 10
             });
             expect(count).toHaveBeenCalledWith(
               'socrates.upstream_call_failed',
@@ -296,12 +390,13 @@ describe('socratesRoutes', () => {
             error: 'socrates-unavailable',
             type: 'danger',
             attempts: 0,
-            limit: 3
+            limit: 10
           });
           expect(captureException).toHaveBeenCalledExactlyOnceWith(
             expect.objectContaining({
-              message: 'Socrates API returned status 503'
-            })
+              message: 'Socrates API returned an error status'
+            }),
+            { tags: { socrates_upstream_status: '503' } }
           );
           expect(count).toHaveBeenCalledWith(
             'socrates.upstream_call_failed',
@@ -332,7 +427,7 @@ describe('socratesRoutes', () => {
           expect(response.status).toBe(500);
           expect(response.body.type).toBe('danger');
           expect(response.body.attempts).toBe(0);
-          expect(response.body.limit).toBe(3);
+          expect(response.body.limit).toBe(10);
           expect(captureException).toHaveBeenCalledExactlyOnceWith(
             expect.any(Error)
           );
@@ -365,7 +460,7 @@ describe('socratesRoutes', () => {
           expect(response.status).toBe(500);
           expect(response.body.type).toBe('danger');
           expect(response.body.attempts).toBe(0);
-          expect(response.body.limit).toBe(3);
+          expect(response.body.limit).toBe(10);
           expect(captureException).toHaveBeenCalledExactlyOnceWith(
             expect.objectContaining({
               message: 'Socrates API did not return a hint'
@@ -389,7 +484,7 @@ describe('socratesRoutes', () => {
             error: 'socrates-unavailable',
             type: 'danger',
             attempts: 0,
-            limit: 3
+            limit: 10
           });
         });
 
@@ -454,6 +549,40 @@ describe('socratesRoutes', () => {
             { attributes: { reason: 'exception' } }
           );
         });
+
+        test('should not capture an upstream timeout', async () => {
+          const { Sentry } = fastifyTestInstance;
+          const captureException = vi.fn();
+          const count = vi.fn();
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            captureException,
+            metrics: { ...Sentry.metrics, count }
+          });
+
+          const timeoutError = new DOMException(
+            'The operation was aborted due to timeout',
+            'TimeoutError'
+          );
+          mockedFetch.mockRejectedValueOnce(timeoutError);
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(500);
+          expect(response.body).toStrictEqual({
+            error: 'socrates-unavailable',
+            type: 'danger',
+            attempts: 0,
+            limit: 10
+          });
+          expect(captureException).not.toHaveBeenCalled();
+          expect(count).toHaveBeenCalledWith(
+            'socrates.upstream_call_failed',
+            1,
+            { attributes: { reason: 'timeout' } }
+          );
+        });
       });
 
       describe('daily usage entitlements', () => {
@@ -471,7 +600,7 @@ describe('socratesRoutes', () => {
           vi.clearAllMocks();
         });
 
-        test('should return attempts=1 and limit=3 on first hint for non-donor', async () => {
+        test('should return attempts=1 and limit=10 on first hint for non-donor', async () => {
           mockedFetch.mockResolvedValueOnce({
             ok: true,
             status: 200,
@@ -483,7 +612,7 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(200);
           expect(response.body.attempts).toBe(1);
-          expect(response.body.limit).toBe(3);
+          expect(response.body.limit).toBe(10);
         });
 
         test('should increment attempts on each request', async () => {
@@ -501,7 +630,7 @@ describe('socratesRoutes', () => {
           expect(response.body.attempts).toBe(2);
         });
 
-        test('should return 429 when non-donor exceeds 3 hints/day', async () => {
+        test('should return 429 when non-donor exceeds 10 hints/day', async () => {
           const { Sentry } = fastifyTestInstance;
           const count = vi.fn();
           vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
@@ -515,7 +644,7 @@ describe('socratesRoutes', () => {
             text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
           });
 
-          for (let i = 0; i < 3; i++) {
+          for (let i = 0; i < 10; i++) {
             await superPut('/socrates/get-hint').send(validPayload);
           }
 
@@ -523,10 +652,10 @@ describe('socratesRoutes', () => {
             await superPut('/socrates/get-hint').send(validPayload);
 
           expect(response.status).toBe(429);
-          expect(response.body.attempts).toBe(3);
-          expect(response.body.limit).toBe(3);
+          expect(response.body.attempts).toBe(10);
+          expect(response.body.limit).toBe(10);
           expect(response.body.error).toBe('socrates-daily-limit');
-          expect(mockedFetch).toHaveBeenCalledTimes(3);
+          expect(mockedFetch).toHaveBeenCalledTimes(10);
           expect(count).toHaveBeenCalledWith('socrates.rate_limit_hit', 1, {
             attributes: { source: 'local', donorStatus: 'non-donor' }
           });
@@ -540,7 +669,7 @@ describe('socratesRoutes', () => {
           });
 
           // Exhaust the non-donor limit
-          for (let i = 0; i < 3; i++) {
+          for (let i = 0; i < 10; i++) {
             await superPut('/socrates/get-hint').send(validPayload);
           }
 
@@ -550,7 +679,7 @@ describe('socratesRoutes', () => {
             expect(res.status).toBe(429);
           }
 
-          // Upgrade to donor (limit: 10) and verify access is restored
+          // Upgrade to donor (limit: 20) and verify access is restored
           await fastifyTestInstance.prisma.user.update({
             where: { id: defaultUserId },
             data: { isDonating: true }
@@ -560,8 +689,8 @@ describe('socratesRoutes', () => {
             await superPut('/socrates/get-hint').send(validPayload);
 
           expect(response.status).toBe(200);
-          expect(response.body.attempts).toBe(4);
-          expect(response.body.limit).toBe(10);
+          expect(response.body.attempts).toBe(11);
+          expect(response.body.limit).toBe(20);
         });
 
         test('should enforce the non-donor limit for concurrent requests', async () => {
@@ -585,12 +714,12 @@ describe('socratesRoutes', () => {
             .map(result => result.value);
 
           expect(responses.filter(({ status }) => status === 200)).toHaveLength(
-            3
+            10
           );
           expect(responses.filter(({ status }) => status === 429)).toHaveLength(
-            17
+            10
           );
-          expect(mockedFetch).toHaveBeenCalledTimes(3);
+          expect(mockedFetch).toHaveBeenCalledTimes(10);
 
           const now = new Date();
           const usage =
@@ -608,10 +737,10 @@ describe('socratesRoutes', () => {
                 }
               }
             });
-          expect(usage.count).toBe(3);
+          expect(usage.count).toBe(10);
         });
 
-        test('should allow 10 hints/day for donors', async () => {
+        test('should allow 20 hints/day for donors', async () => {
           await fastifyTestInstance.prisma.user.update({
             where: { id: defaultUserId },
             data: { isDonating: true }
@@ -627,13 +756,13 @@ describe('socratesRoutes', () => {
             await superPut('/socrates/get-hint').send(validPayload);
           expect(response.status).toBe(200);
 
-          for (let i = 1; i < 10; i++) {
+          for (let i = 1; i < 20; i++) {
             response = await superPut('/socrates/get-hint').send(validPayload);
             expect(response.status).toBe(200);
           }
 
-          expect(response.body.attempts).toBe(10);
-          expect(response.body.limit).toBe(10);
+          expect(response.body.attempts).toBe(20);
+          expect(response.body.limit).toBe(20);
 
           response = await superPut('/socrates/get-hint').send(validPayload);
           expect(response.status).toBe(429);
@@ -651,7 +780,7 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(500);
           expect(response.body.attempts).toBe(0);
-          expect(response.body.limit).toBe(3);
+          expect(response.body.limit).toBe(10);
         });
 
         test('should not count yesterday usage against today limit', async () => {
@@ -687,7 +816,10 @@ describe('socratesRoutes', () => {
         beforeEach(async () => {
           await fastifyTestInstance.prisma.user.update({
             where: { id: defaultUserId },
-            data: { socrates: true }
+            data: { socrates: true, isDonating: false }
+          });
+          await fastifyTestInstance.prisma.socratesUsage.deleteMany({
+            where: { userId: defaultUserId }
           });
         });
 
@@ -736,6 +868,76 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(400);
           expect(mockedFetch).not.toHaveBeenCalled();
+        });
+
+        test('should return 400 when userInput and seed are both blank', async () => {
+          const response = await superPut('/socrates/get-hint').send({
+            ...validPayload,
+            userInput: ' ',
+            seed: '\n'
+          });
+
+          expect(response.status).toBe(400);
+          expect(response.body).toStrictEqual({
+            error: 'socrates-invalid-request',
+            type: 'info',
+            attempts: 0,
+            limit: 10
+          });
+          expect(mockedFetch).not.toHaveBeenCalled();
+        });
+
+        test('should report real usage counters when input is blank', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+          await superPut('/socrates/get-hint').send(validPayload);
+
+          const response = await superPut('/socrates/get-hint').send({
+            ...validPayload,
+            userInput: ' ',
+            seed: ' '
+          });
+
+          expect(response.status).toBe(400);
+          expect(response.body).toStrictEqual({
+            error: 'socrates-invalid-request',
+            type: 'info',
+            attempts: 1,
+            limit: 10
+          });
+        });
+
+        test('should return 400 when seed is blank and userInput is absent', async () => {
+          const { userInput: _unused, ...rest } = validPayload;
+          const response = await superPut('/socrates/get-hint').send({
+            ...rest,
+            seed: ' '
+          });
+
+          expect(response.status).toBe(400);
+          expect(mockedFetch).not.toHaveBeenCalled();
+        });
+
+        test('should accept a blank seed when userInput has content', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () =>
+              Promise.resolve(
+                JSON.stringify({ hint: 'Try adding a closing tag.' })
+              )
+          });
+
+          const response = await superPut('/socrates/get-hint').send({
+            ...validPayload,
+            seed: ' '
+          });
+
+          expect(response.status).toBe(200);
+          expect(mockedFetch).toHaveBeenCalledTimes(1);
         });
 
         test('should return 400 when description is empty', async () => {

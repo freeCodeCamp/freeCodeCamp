@@ -1,16 +1,7 @@
-import { execSync } from 'child_process';
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures/isolated-user';
 
 test.describe('Super Block Page - Authenticated User', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-  test.beforeEach(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-  });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-  });
+  test.use({ userPreset: 'development' });
 
   test.describe('Super Block in List View', () => {
     test('should expand the correct block when user goes to the page from breadcrumb click', async ({

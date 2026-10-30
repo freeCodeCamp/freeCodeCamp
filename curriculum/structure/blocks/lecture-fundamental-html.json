@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-fundamental-html",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "670803abcb3e980233da4768",
+      "title": "What Are Div Elements and When Should You Use Them?"
+    },
+    {
+      "id": "6708382cf088b216580a9ff1",
+      "title": "What Are IDs and Classes, and When Should You Use Them?"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import { Link } from '../helpers';
 
 type DonateCompletionProps = {
   error: string | null;
+  pending?: boolean;
   processing: boolean;
   redirecting: boolean;
   reset: () => unknown;
@@ -20,19 +21,26 @@ function DonateCompletion({
   success,
   redirecting,
   isSignedIn,
+  pending = false,
   error = null
 }: DonateCompletionProps): JSX.Element {
   const { t } = useTranslation();
   const style =
-    processing || redirecting ? 'info' : success ? 'success' : 'danger';
+    processing || redirecting || pending
+      ? 'info'
+      : success
+        ? 'success'
+        : 'danger';
 
   const heading = redirecting
     ? `${t('donate.redirecting')}`
     : processing
       ? `${t('donate.processing')}`
-      : success
-        ? `${t('donate.thank-you')}`
-        : `${t('donate.error')}`;
+      : pending
+        ? `${t('donate.confirming')}`
+        : success
+          ? `${t('donate.thank-you')}`
+          : `${t('donate.error')}`;
 
   return (
     <Alert variant={style} className='donation-completion'>
@@ -47,6 +55,7 @@ function DonateCompletion({
             name='line-scale'
           />
         )}
+        {pending && <p>{t('donate.confirming-body')}</p>}
         {success && (
           <>
             <p>{t('donate.free-tech')}</p>

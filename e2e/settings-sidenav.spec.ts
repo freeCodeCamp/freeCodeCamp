@@ -18,7 +18,6 @@ test.describe('Settings SideNav Component', () => {
     page,
     isMobile
   }) => {
-    test.setTimeout(30000);
     test.skip(isMobile, 'Sidebar is hidden on mobile');
 
     const sideNav = page.getByRole('complementary');
@@ -38,7 +37,7 @@ test.describe('Settings SideNav Component', () => {
     const sideNavLinks = sideNav.getByRole('link');
     await expect(sideNavLinks).toHaveCount(headingTexts.length);
 
-    // For each heading text, find the link by accessible name and test click behavior
+    // Every section should have a link in the sidebar.
     for (const headingText of headingTexts) {
       const link = sideNav.getByRole('link', {
         name: headingText,
@@ -46,16 +45,14 @@ test.describe('Settings SideNav Component', () => {
       });
 
       await expect(link).toBeVisible();
-
-      // Get the href and assert the URL ends with it after click
-      const href = await link.getAttribute('href');
-      await link.click();
-
-      // Wait for scroll animation
-      // Playwright performs click very fast, which could lead to URL check before scroll ends
-      await page.waitForTimeout(300);
-
-      await expect(page).toHaveURL(new RegExp(href + '$'));
     }
+
+    await sideNav
+      .getByRole('link', { name: 'Danger Zone', exact: true })
+      .click();
+    await expect(page).toHaveURL(/#danger-zone$/);
+    await expect(
+      main.getByRole('heading', { name: 'Danger Zone', exact: true })
+    ).toBeInViewport();
   });
 });

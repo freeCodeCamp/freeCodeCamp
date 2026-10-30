@@ -1,7 +1,9 @@
 import * as fs from 'fs';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import intro from '../client/i18n/locales/english/intro.json';
+
+test.use({ userPreset: 'certified-with-survey' });
 
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
@@ -105,10 +107,10 @@ test.describe('Exam Results E2E Test Suite', () => {
           .getByTestId('download-exam-results')
           .click()
       ]);
-      const suggestedFileName = download.suggestedFilename();
-      await download.saveAs(suggestedFileName);
-      expect(fs.existsSync(suggestedFileName)).toBeTruthy();
-      await download.delete();
+      const file = fs.readFileSync(await download.path(), { encoding: 'utf8' });
+      expect(file).toContain(
+        'Foundational C# with Microsoft Certification Exam'
+      );
     });
   });
 });
