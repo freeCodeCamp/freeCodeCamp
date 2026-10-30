@@ -15,7 +15,7 @@
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "9.39.5",
     "@html-eslint/eslint-plugin-react": "^0.60.0",
-    "@vitest/eslint-plugin": "1.6.27",
+    "@vitest/eslint-plugin": "1.6.28",
     "eslint": "9.39.5",
     "eslint-config-prettier": "10.1.8",
     "eslint-import-resolver-typescript": "3.10.1",
