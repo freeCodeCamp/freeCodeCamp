@@ -32,9 +32,9 @@ const testUserData = {
  * @param {string} email
  * @param {UserPreset} preset
  * @param {Record<string, boolean>} overrides
- * @returns {Promise<void>}
+ * @returns {Promise<string>} The existing account's username.
  */
-async function seedIsolatedUser(email, preset, overrides) {
+async function updateIsolatedUser(email, preset, overrides) {
   const client = new MongoClient(process.env.MONGOHQ_URL);
 
   try {
@@ -45,7 +45,11 @@ async function seedIsolatedUser(email, preset, overrides) {
       throw new Error(`Could not find isolated user with email ${email}.`);
     }
 
-    const seed = {
+    if (typeof existingUser.username !== 'string') {
+      throw new Error(`Could not find a username for isolated user ${email}.`);
+    }
+
+    const updates = {
       ..._.omit(testUserData[preset], [
         '_id',
         'id',
@@ -57,7 +61,7 @@ async function seedIsolatedUser(email, preset, overrides) {
       ...overrides
     };
 
-    await user.updateOne({ _id: existingUser._id }, { $set: seed });
+    await user.updateOne({ _id: existingUser._id }, { $set: updates });
 
     if (preset === 'certified-with-survey') {
       await client.db('freecodecamp').collection('Survey').insertOne({
@@ -66,6 +70,8 @@ async function seedIsolatedUser(email, preset, overrides) {
         responses: []
       });
     }
+
+    return existingUser.username;
   } finally {
     await client.close();
   }
@@ -113,7 +119,7 @@ async function seedMsUsername(email) {
 }
 
 module.exports = {
-  seedIsolatedUser,
+  updateIsolatedUser,
   getUnsubscribeId,
   seedMsUsername
 };

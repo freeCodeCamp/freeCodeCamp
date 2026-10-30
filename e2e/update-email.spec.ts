@@ -1,6 +1,5 @@
 import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
-import { useIsolatedSignIn } from './utils/signin';
 import { allowTrailingSlash } from './utils/url';
 import {
   deleteEmailsForAddress,
@@ -77,8 +76,7 @@ test.describe('The update-email page when the user is signed in', () => {
 test.describe('The update-email page when the user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
-  test.beforeEach(async ({ page, isolatedUser }) => {
-    await useIsolatedSignIn(page, isolatedUser.email);
+  test.beforeEach(async ({ isolatedPage: page }) => {
     await page.goto('/update-email');
   });
 

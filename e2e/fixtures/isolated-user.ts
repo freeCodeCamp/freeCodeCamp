@@ -1,7 +1,11 @@
-import { test as base, type APIRequestContext } from '@playwright/test';
+import {
+  test as base,
+  type APIRequestContext,
+  type Page
+} from '@playwright/test';
 
 import {
-  seedIsolatedUser,
+  updateIsolatedUser,
   type UserPreset
 } from '@freecodecamp/scripts-seed/seed-isolated-user';
 
@@ -18,6 +22,7 @@ type IsolatedUserFixtures = {
     preset?: UserPreset,
     overrides?: Record<string, boolean>
   ) => Promise<IsolatedUser>;
+  isolatedPage: Page;
   isolatedUser: IsolatedUser;
   userOverrides: Record<string, boolean>;
   userPreset: UserPreset;
@@ -26,26 +31,6 @@ type IsolatedUserFixtures = {
 const apiLocation = process.env.API_LOCATION ?? 'http://localhost:3000';
 
 const getApiUrl = (path: string) => new URL(path, apiLocation).toString();
-
-async function getUsername(request: APIRequestContext) {
-  const response = await request.get(getApiUrl('/user/session-user'));
-
-  if (response.status() !== 200) {
-    throw new Error(
-      `Could not get the isolated user: /user/session-user returned ${response.status()}.`
-    );
-  }
-
-  const body = (await response.json()) as { result?: unknown };
-
-  if (typeof body.result !== 'string') {
-    throw new Error(
-      'Could not get the isolated user: /user/session-user did not return a username.'
-    );
-  }
-
-  return body.result;
-}
 
 const getCsrfToken = async (request: APIRequestContext) =>
   (await request.storageState()).cookies.find(
@@ -132,8 +117,7 @@ export const test = base.extend<IsolatedUserFixtures>({
         );
       }
 
-      await seedIsolatedUser(email, preset, overrides);
-      const username = await getUsername(request);
+      const username = await updateIsolatedUser(email, preset, overrides);
 
       return { email, storageState, username };
     };
@@ -149,6 +133,24 @@ export const test = base.extend<IsolatedUserFixtures>({
     await use(await createUser(userPreset, userOverrides));
   },
 
+  isolatedPage: async ({ page, isolatedUser }, use) => {
+    const signInUrl = new URL('/signin', apiLocation);
+
+    // Keep the real sign-in flow while selecting this test's account in dev auth.
+    await page.route(
+      url =>
+        url.origin === signInUrl.origin && url.pathname === signInUrl.pathname,
+      async route => {
+        const url = new URL(route.request().url());
+        url.searchParams.set('email', isolatedUser.email);
+        await route.continue({ url: url.toString() });
+      }
+    );
+
+    await use(page);
+  },
+
+  // Playwright uses this implicitly for the built-in page, context and request fixtures.
   storageState: async ({ isolatedUser }, use) => {
     await use(isolatedUser.storageState);
   }

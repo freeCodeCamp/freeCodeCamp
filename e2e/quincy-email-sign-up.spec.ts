@@ -1,7 +1,6 @@
 import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { useIsolatedSignIn } from './utils/signin';
 import { allowTrailingSlash } from './utils/url';
 
 test.use({ userPreset: 'certified' });
@@ -11,8 +10,7 @@ const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
 test.describe('Email sign-up page when user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
-  test.beforeEach(async ({ page, isolatedUser }) => {
-    await useIsolatedSignIn(page, isolatedUser.email);
+  test.beforeEach(async ({ isolatedPage: page }) => {
     await page.goto('/email-sign-up');
   });
 
