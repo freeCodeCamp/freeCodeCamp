@@ -239,7 +239,7 @@ jobs:
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
           cat sample.env
 
-      - name: Start MongoDB
+      - name: Start test services
         run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
 
       - name: Install Dependencies
@@ -251,6 +251,8 @@ jobs:
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
+        env:
+          FCC_ENABLE_CLICKHOUSE_TESTS: 'true'
         run: pnpm test
 
   test-upcoming:
@@ -304,7 +306,7 @@ jobs:
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
           echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
 
-      - name: Start MongoDB
+      - name: Start test services
         run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
 
       - name: Install Dependencies
@@ -316,6 +318,8 @@ jobs:
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
+        env:
+          FCC_ENABLE_CLICKHOUSE_TESTS: 'true'
         run: pnpm test
 
   test-localization:
@@ -400,6 +404,7 @@ jobs:
 
       - name: Run Tests
         env:
+          FCC_ENABLE_CLICKHOUSE_TESTS: 'false'
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: pnpm test

@@ -5,6 +5,10 @@ import { DEPLOYMENT_VERSION } from '../../utils/env.js';
 describe('/status', () => {
   setupServer();
 
+  test('ordinary API tests do not initialize ClickHouse', () => {
+    expect(fastifyTestInstance.hasDecorator('clickhouse')).toBe(false);
+  });
+
   test('GET returns 200 status code with pong', async () => {
     const response = await superRequest('/status/ping', {
       method: 'GET'
