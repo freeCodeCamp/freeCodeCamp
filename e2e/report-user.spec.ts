@@ -14,14 +14,18 @@ test.beforeEach(async ({ isolatedUser }) => {
 
 test('should be possible to report a user from their profile page', async ({
   page,
-  isolatedUser
+  isolatedUser,
+  createUser
 }) => {
-  await page.goto('/twaha');
+  const reportedUser = await createUser('public');
+  await page.goto(`/${reportedUser.username}`);
 
   await page.getByText("Flag This User's Account for Abuse").click();
 
   await expect(
-    page.getByText("Do you want to report twaha's portfolio for abuse?")
+    page.getByText(
+      `Do you want to report ${reportedUser.username}'s portfolio for abuse?`
+    )
   ).toBeVisible();
 
   await page
@@ -39,7 +43,7 @@ test('should be possible to report a user from their profile page', async ({
     const emails = await getEmailsForAddress(isolatedUser.email);
     expect(emails.messages).toHaveLength(1);
     expect(getSubject(getFirstEmail(emails))).toBe(
-      "Abuse Report : Reporting twaha's profile."
+      `Abuse Report : Reporting ${reportedUser.username}'s profile.`
     );
   }).toPass();
 });
