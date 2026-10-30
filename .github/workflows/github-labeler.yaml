@@ -6,8 +6,14 @@ permissions:
   contents: read
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
-  cancel-in-progress: true
+  # Shared with the "GitHub - PR Contribution Guidelines" workflow so both
+  # label-updating workflows run one at a time per PR. Running concurrently,
+  # this workflow could compute its label set before the guidelines workflow
+  # adds a label (e.g. "deprioritized") and drop it when writing, since
+  # sync-labels replaces the label set it manages.
+  # See https://github.com/freeCodeCamp/freeCodeCamp/issues/70526
+  group: 'pr-labels-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}'
+  cancel-in-progress: false
 
 jobs:
   triage:
