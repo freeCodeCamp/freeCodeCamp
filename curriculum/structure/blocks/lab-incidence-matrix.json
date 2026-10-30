@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lab-incidence-matrix",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6adba4e8c74be28d0009c1da",
+      "title": "Build an Incidence Matrix"
+    }
+  ],
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}

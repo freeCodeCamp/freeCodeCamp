@@ -1587,7 +1587,7 @@
         "title": "Python Basics Review",
         "intro": [
           "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          "In this review page, you will review working with strings, functions, comparison operators and more."
+          "In this review page, you will review working with strings, functions, comparison operators, and more."
         ]
       },
       "quiz-python-basics": {
@@ -6576,7 +6576,7 @@
         "title": "Python Basics Review",
         "intro": [
           "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          "In this review page, you will review working with strings, functions, comparison operators and more."
+          "In this review page, you will review working with strings, functions, comparison operators, and more."
         ]
       },
       "quiz-python-basics": {
@@ -10454,7 +10454,6 @@
     },
     "modules": {
       "python-basics": "Python Basics",
-      "python-installation": "Install Python",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
@@ -10570,31 +10569,13 @@
         "title": "Python Basics Review",
         "intro": [
           "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          "In this review page, you will review working with strings, functions, comparison operators and more."
+          "In this review page, you will review working with strings, functions, comparison operators, and more."
         ]
       },
       "quiz-python-basics": {
         "title": "Python Basics Quiz",
         "intro": [
           "Test what you've learned about Python basics with this quiz."
-        ]
-      },
-      "lecture-python-installation": {
-        "title": "Installing Python and Running Code Locally",
-        "intro": [
-          "In these lessons, you will learn how to install Python on your local device and run code locally."
-        ]
-      },
-      "review-python-installation": {
-        "title": "Python Installation Review",
-        "intro": [
-          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
-        ]
-      },
-      "quiz-python-installation": {
-        "title": "Python Installation Quiz",
-        "intro": [
-          "Test what you've learned about installing Python locally with this quiz."
         ]
       },
       "lecture-working-with-loops-and-sequences": {
@@ -11041,6 +11022,12 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "lab-incidence-matrix": {
+        "title": "Build an Incidence Matrix",
+        "intro": [
+          "In this lab, you will build a function that converts a directed graph's edge list into an incidence matrix."
+        ]
+      },
       "lab-depth-first-search": {
         "title": "Implement the Depth-First Search Algorithm",
         "intro": [
@@ -11063,6 +11050,12 @@
         "title": "Understanding Trees and Tries",
         "intro": [
           "In this lesson, you will learn what trees and tries are and how they work."
+        ]
+      },
+      "workshop-binary-search-tree": {
+        "title": "Build a Binary Search Tree",
+        "intro": [
+          "In this workshop, you'll build a binary search tree, learn how to insert, search for, and delete values, and traverse it with inorder traversal."
         ]
       },
       "lecture-understanding-priority-queues-and-heaps": {
