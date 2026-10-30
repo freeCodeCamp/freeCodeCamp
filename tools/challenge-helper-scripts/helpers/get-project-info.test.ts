@@ -36,4 +36,17 @@ describe('getProjectName helper', () => {
     // Remove mock to not affect other tests
     delete process.env.INIT_CWD;
   });
+
+  it('should return the last path segment of the calling dir with Windows separators', () => {
+    const mockCallingDir = 'calling\\dir';
+    const expected = 'dir';
+
+    // Add mock to test condition
+    process.env.INIT_CWD = mockCallingDir;
+
+    expect(getProjectName()).toEqual(expected);
+
+    // Remove mock to not affect other tests
+    delete process.env.INIT_CWD;
+  });
 });

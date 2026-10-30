@@ -286,7 +286,7 @@ const updateStepTitles = (): void => {
   });
 
   fileNames.forEach(fileName => {
-    const filePath = `${getProjectPath()}${fileName}`;
+    const filePath = path.join(getProjectPath(), fileName);
     const frontMatter = matter.read(filePath);
     const newStepNum =
       meta.challengeOrder.findIndex(({ id }) => id === frontMatter.data.id) + 1;
@@ -312,7 +312,7 @@ const updateTaskMarkdownFiles = (): void => {
   });
 
   fileNames.forEach(fileName => {
-    const filePath = `${getProjectPath()}${fileName}`;
+    const filePath = path.join(getProjectPath(), fileName);
     const frontMatter = matter.read(filePath);
 
     const challenge = meta.challengeOrder.find(

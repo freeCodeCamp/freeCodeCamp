@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import { getProjectPath } from './helpers/get-project-info.js';
 import { getMetaData } from './helpers/project-metadata.js';
 import {
@@ -24,7 +25,7 @@ async function deleteStep(stepNum: number): Promise<void> {
 
   const stepId = challengeOrder[stepNum - 1].id;
 
-  fs.unlinkSync(`${getProjectPath()}${stepId}.md`);
+  fs.unlinkSync(path.join(getProjectPath(), `${stepId}.md`));
   await deleteStepFromMeta({ stepNum });
   updateStepTitles();
 
