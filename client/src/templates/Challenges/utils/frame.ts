@@ -141,6 +141,43 @@ const createHeader = (id = mainPreviewId) =>
       console.log(msg);
       return true;
     };
+    // The preview frame is sandboxed without allow-same-origin, so touching
+    // localStorage throws. Swap in a simple in-memory version so projects
+    // that rely on it still work in the preview.
+    (function() {
+      try {
+        window.localStorage;
+        return;
+      } catch (err) {}
+
+      var store = {};
+      var mockStorage = {
+        getItem: function(key) {
+          key = String(key);
+          return Object.prototype.hasOwnProperty.call(store, key) ? store[key] : null;
+        },
+        setItem: function(key, value) {
+          store[String(key)] = String(value);
+        },
+        removeItem: function(key) {
+          delete store[String(key)];
+        },
+        clear: function() {
+          store = {};
+        },
+        key: function(index) {
+          var keys = Object.keys(store);
+          return index in keys ? keys[index] : null;
+        },
+        get length() {
+          return Object.keys(store).length;
+        }
+      };
+      Object.defineProperty(window, 'localStorage', {
+        value: mockStorage,
+        configurable: true
+      });
+    })();
     document.addEventListener('click', function(e) {
       let element = e.target;
       while(element && element.nodeName !== 'A') {
