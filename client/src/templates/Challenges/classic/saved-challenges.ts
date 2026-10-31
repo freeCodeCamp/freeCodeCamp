@@ -28,3 +28,24 @@ export function mergeChallengeFiles(
       sortedSavedChallengeFiles[index].editableRegionBoundaries
   }));
 }
+
+type FileContents = Pick<ChallengeFile, 'fileKey' | 'contents'>;
+
+// A camper's work is only at risk if it differs from every copy it could be
+// restored from, so the caller passes one baseline per recoverable copy (the
+// challenge saved to the account, and the localStorage copy written by the
+// code-storage epic).
+export function hasUnsavedChanges(
+  challengeFiles: ChallengeFile[] | null | undefined,
+  baselines: FileContents[][]
+): boolean {
+  if (!challengeFiles) return false;
+  return baselines.every(baseline =>
+    challengeFiles.some(file => {
+      const baselineFile = baseline.find(
+        saved => saved.fileKey === file.fileKey
+      );
+      return baselineFile?.contents !== file.contents;
+    })
+  );
+}
