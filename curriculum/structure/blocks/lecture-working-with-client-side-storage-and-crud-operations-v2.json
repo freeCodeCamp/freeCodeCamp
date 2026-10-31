@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-client-side-storage-and-crud-operations-v2",
+  "challengeOrder": [
+    {
+      "id": "6733ab64775d35f78f5238fe",
+      "title": "What Does CRUD Stand For, and How Do the Basic Operations Work?"
+    },
+    {
+      "id": "6733ff4a9319c8486750886c",
+      "title": "What Is localStorage, and What Are Some Common Methods?"
+    },
+    {
+      "id": "6733ff5814129c48b4fca88e",
+      "title": "What Is sessionStorage, and What Are Some Common Methods?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

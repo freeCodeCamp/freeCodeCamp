@@ -1,6 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Template Challenges Show', () => {
   test.beforeEach(async ({ page }) => {
