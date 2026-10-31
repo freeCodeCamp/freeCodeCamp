@@ -15,12 +15,22 @@ import {
 import BigCallToAction from './big-call-to-action';
 import TwoButtonCTA from './two-button-cta';
 import CampersImage from './campers-image';
+import { SkeletonSprite } from '../../helpers';
 
 const { clientLocale } = envData;
 
-function LandingTop(): JSX.Element {
-  const { t } = useTranslation();
+function LandingCallToAction(): JSX.Element {
   const showTwoButtonCTA = useFeature('landing-two-button-cta').on;
+
+  return showTwoButtonCTA ? (
+    <TwoButtonCTA />
+  ) : (
+    <BigCallToAction testLabel='landing-top-big-cta' />
+  );
+}
+
+function LandingTop({ isReady }: { isReady: boolean }): JSX.Element {
+  const { t } = useTranslation();
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
   );
@@ -45,10 +55,12 @@ function LandingTop(): JSX.Element {
             <p data-testid='advance-career'>{t('landing.advance-career')}</p>
             <Spacer size='m' />
 
-            {showTwoButtonCTA ? (
-              <TwoButtonCTA />
+            {isReady ? (
+              <LandingCallToAction />
             ) : (
-              <BigCallToAction testLabel='landing-top-big-cta' />
+              <div className='landing-cta-placeholder' aria-hidden='true'>
+                <SkeletonSprite />
+              </div>
             )}
             <Spacer size='m' />
           </Col>
