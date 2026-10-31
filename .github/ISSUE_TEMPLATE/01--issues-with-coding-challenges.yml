@@ -47,10 +47,10 @@ body:
       label: System
       description: Please complete the following information.
       value: |
-        - Device: [e.g. iPhone 6, Laptop]
-        - OS: [e.g. iOS 14, Windows 10, Ubuntu 20.04]
+        - Device: [e.g. iPhone 12, Laptop]
+        - OS: [e.g. iOS 16, Windows 11, Ubuntu 22.04]
         - Browser: [e.g. Chrome, Safari]
-        - Version: [e.g. 22]
+        - Version: [e.g. 115]
     validations:
       required: true
   - type: textarea
