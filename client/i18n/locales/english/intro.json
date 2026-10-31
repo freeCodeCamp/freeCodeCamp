@@ -10802,12 +10802,6 @@
       "review-python-algorithms-and-data-structures": "Algorithms and Data Structures Review"
     },
     "module-intros": {
-      "lab-circular-queue": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this lab, you will build a circular queue, a fixed-size queue that wraps around to reuse empty slots."
-        ]
-      },
       "python-recursion": {
         "intro": [
           "In this module, you will learn how recursion and the call stack work in Python."
