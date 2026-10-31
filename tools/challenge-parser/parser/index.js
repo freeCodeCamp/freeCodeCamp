@@ -84,9 +84,19 @@ exports.parseMD = function parseMD(filename) {
   });
 };
 
+// The import plugin is async, so it cannot run under runSync.
+const containsImport = node =>
+  (node.type === 'leafDirective' && node.name === 'import') ||
+  (node.children ?? []).some(containsImport);
+
 exports.parseMDSync = function parseMDSync(filename) {
   const file = readSync(filename);
   const tree = processor.parse(file);
+  if (containsImport(tree)) {
+    throw new Error(
+      `::import is not supported by parseMDSync, use parseMD instead in file ${filename}`
+    );
+  }
   try {
     processor.runSync(tree, file);
   } catch (err) {
