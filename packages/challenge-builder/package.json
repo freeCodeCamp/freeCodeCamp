@@ -43,7 +43,7 @@
   "dependencies": {
     "@babel/preset-env": "7.29.7",
     "@babel/preset-react": "7.29.7",
-    "@babel/standalone": "7.29.10",
+    "@babel/standalone": "7.29.11",
     "@freecodecamp/browser-scripts": "workspace:*",
     "@freecodecamp/loop-protect": "3.0.0",
     "@freecodecamp/shared": "workspace:*",
