@@ -3,7 +3,10 @@ import { resolve, join } from 'path';
 import { promisify } from 'util';
 
 import { availableLangs } from '@freecodecamp/shared/config/i18n';
-import { buildCurriculum } from './build-curriculum.js';
+import {
+  buildCurriculum,
+  type CurriculumStructure
+} from './build-curriculum.js';
 import { curriculumFilter } from './config.js';
 import type { Filter } from './filter.js';
 
@@ -13,14 +16,15 @@ const access = promisify(_access);
 
 export async function getChallengesForLang(
   lang: string,
-  filters: Filter = curriculumFilter // default to global curriculum filter, but allow override (e.g. when testing specific blocks)
+  filters: Filter = curriculumFilter, // default to global curriculum filter, but allow override (e.g. when testing specific blocks)
+  structure?: CurriculumStructure
 ) {
   const invalidLang = !curriculumLangs.includes(lang);
   if (invalidLang)
     throw Error(`${lang} is not an accepted language.
 Accepted languages are ${curriculumLangs.join(', ')}`);
 
-  return buildCurriculum(lang, filters);
+  return buildCurriculum(lang, filters, structure);
 }
 
 export async function hasEnglishSource(
