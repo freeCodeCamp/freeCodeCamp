@@ -29,6 +29,7 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
+  closeModal,
   updateSolutionFormValues,
   initTests
 } from '../redux/actions';
@@ -43,6 +44,8 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import SolutionForm from '../projects/solution-form';
+import ExitProjectModal from '../projects/exit-project-modal';
+import { useUnsavedSolutionWarning } from '../projects/use-unsaved-solution-warning';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { postUserToken } from '../../../utils/ajax';
 import RdbStep1Instructions from '../codeally/rdb-step-1-instructions';
@@ -81,6 +84,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       challengeMounted,
       createFlashMessage,
       openCompletionModal: () => openModal('completion'),
+      openExitProjectModal: () => openModal('exitProject'),
+      closeExitProjectModal: () => closeModal('exitProject'),
       initTests,
       updateUserToken,
       updateChallengeMeta,
@@ -99,6 +104,8 @@ interface ShowFreeCodeCampOsProps {
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openCompletionModal: () => void;
+  openExitProjectModal: () => void;
+  closeExitProjectModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -125,9 +132,16 @@ function ShowFreeCodeCampOs({
   initTests,
   pageContext: { challengeMeta },
   updateChallengeMeta,
-  openCompletionModal
+  openCompletionModal,
+  openExitProjectModal,
+  closeExitProjectModal
 }: ShowFreeCodeCampOsProps) {
   const container = useRef<HTMLElement>(null);
+
+  const { onUnsavedChanges, confirmExit } = useUnsavedSolutionWarning({
+    openExitProjectModal,
+    closeExitProjectModal
+  });
 
   const {
     challengeNode: {
@@ -312,6 +326,7 @@ function ShowFreeCodeCampOs({
                       challengeType={challengeType}
                       description={description}
                       onSubmit={handleSubmit}
+                      onUnsavedChanges={onUnsavedChanges}
                       updateSolutionForm={updateSolutionFormValues}
                     />
                   </>
@@ -322,6 +337,7 @@ function ShowFreeCodeCampOs({
               <Spacer size='m' />
             </Col>
             <CompletionModal />
+            <ExitProjectModal onExit={confirmExit} />
             <HelpModal
               challengeTitle={title}
               challengeBlock={block}
