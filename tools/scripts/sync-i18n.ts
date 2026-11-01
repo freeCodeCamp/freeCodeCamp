@@ -1,9 +1,13 @@
-import { exec } from 'child_process';
-import { readFile, readdir, stat, writeFile } from 'fs/promises';
-import { join, sep } from 'path';
-import { promisify } from 'util';
-
-const asyncExec = promisify(exec);
+import {
+  copyFile,
+  mkdir,
+  readFile,
+  readdir,
+  rm,
+  stat,
+  writeFile
+} from 'fs/promises';
+import { dirname, join } from 'path';
 
 const loadDirectory = async (path: string): Promise<string[]> => {
   const files: string[] = [];
@@ -26,23 +30,23 @@ const syncChallenges = async () => {
   const allLangs = await readdir(basePath);
   const filtered = allLangs.filter(lang => !ignore.includes(lang));
   // these will be paths
-  const english = await loadDirectory(join(basePath, 'english'));
+  const englishDir = join(basePath, 'english');
+  const english = await loadDirectory(englishDir);
   for (const path of english) {
     await Promise.all(
       filtered.map(async lang => {
         if (block && !path.includes(block)) {
           return;
         }
-        const targetPath = path.replace('english', lang);
+        // Swap the language directory by path segment, not by substring, so a
+        // matching string elsewhere in the checkout path is never touched.
+        const targetPath = join(basePath, lang, path.slice(englishDir.length));
         // we swallow the error here to detect if the file doesn't exist
         const status = await stat(targetPath).catch(() => null);
         if (!status) {
-          const targetDir = targetPath.split(sep);
-          targetDir.pop();
           console.log(`Syncing ${path.split('/english/')[1]}`);
-          await asyncExec(
-            `mkdir -p ${targetDir.join(sep)} && cp ${path} ${targetPath}`
-          );
+          await mkdir(dirname(targetPath), { recursive: true });
+          await copyFile(path, targetPath);
         }
         const englishContent = await readFile(path, 'utf-8');
         if (path.endsWith('LICENSE.txt')) {
@@ -88,12 +92,12 @@ const syncChallenges = async () => {
       if (block && !path.includes(block)) {
         continue;
       }
-      const engPath = path.replace(lang, 'english');
+      const engPath = join(basePath, 'english', path.slice(langPath.length));
       // we don't want an error, only need to know that the file exists
       const existsEnglish = await stat(engPath).catch(() => null);
       if (!existsEnglish) {
         console.log(`Unlinking ${path.split(`/${lang}/`)[1]}`);
-        await asyncExec(`rm ${path}`);
+        await rm(path);
       }
     }
   }
