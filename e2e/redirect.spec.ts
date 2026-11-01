@@ -1,5 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import { allowTrailingSlash } from './utils/url';
+
+test.use({ userPreset: 'certified' });
 
 // To run this test locally you will need to run: pnpm run start-ci;
 // Also, make sure that you have pm2 installed globally via: pnpm install -g pm2
@@ -20,8 +22,8 @@ const pathsToTest = [
     '/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine'
   ],
   [
-    '/certification/certifieduser/front-end-libraries',
-    '/certification/certifieduser/front-end-development-libraries'
+    '/certification/:username/front-end-libraries',
+    '/certification/:username/front-end-development-libraries'
   ],
   [
     '/learn/front-end-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers',
@@ -45,8 +47,8 @@ const pathsToTest = [
     '/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice'
   ],
   [
-    '/certification/certifieduser/apis-and-microservices',
-    '/certification/certifieduser/back-end-development-and-apis'
+    '/certification/:username/apis-and-microservices',
+    '/certification/:username/back-end-development-and-apis'
   ],
   [
     '/learn/responsive-web-design/applied-visual-design/adjust-the-size-of-a-header-versus-a-paragraph-tag',
@@ -73,9 +75,14 @@ const pathsToTest = [
 
 test.describe('Legacy Challenge Path Redirection Tests', () => {
   for (const [input, expected] of pathsToTest) {
-    test(`should redirect from ${input} to ${expected}`, async ({ page }) => {
-      await page.goto(input);
-      await expect(page).toHaveURL(allowTrailingSlash(expected));
+    test(`should redirect from ${input} to ${expected}`, async ({
+      page,
+      isolatedUser
+    }) => {
+      await page.goto(input.replace(':username', isolatedUser.username));
+      await expect(page).toHaveURL(
+        allowTrailingSlash(expected.replace(':username', isolatedUser.username))
+      );
     });
   }
 });
