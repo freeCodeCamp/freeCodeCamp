@@ -187,9 +187,9 @@ export const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       {t(getCertHeading(certSlug), { user: name })}
       <Spacer size='m' />
       <Table striped>
-        <thead>
+        <thead className='sr-only'>
           <tr>
-            <th>
+            <th colSpan={2}>
               <span className='sr-only'>{t('settings.headings.certs')}</span>
             </th>
           </tr>

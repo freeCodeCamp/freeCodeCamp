@@ -211,7 +211,8 @@
   padding: 30px 0 4px;
   font-size: 15px;
   text-align: center;
-  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .qr-wrap,
@@ -251,13 +252,14 @@
   }
 
   .certification-namespace .information {
-    height: 300px;
+    height: auto;
+    min-height: 250px;
   }
 
   .certification-namespace .information-container {
     margin: 0px 15px;
     text-align: center;
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   .certification-namespace h3,
@@ -269,27 +271,57 @@
     font-size: 30px;
   }
 
-  .qr-code,
+  .qr-code {
+    width: 90px;
+    height: 90px;
+    top: -95px;
+    left: 15px;
+  }
+
   .ribbon {
-    display: none;
+    width: 100px;
+    height: 100px;
+    top: -100px;
+    right: 5px;
   }
 }
 
 @media (max-width: 830px) {
-  .certificate-wrapper::after {
-    display: none;
-  }
-  .certificate-wrapper::before {
-    display: none;
-  }
-  .certification-namespace {
-    outline-offset: unset;
+  .certificate-wrapper {
+    --outline-width: 4px;
+    --namespace-offset: 4px;
+    margin-inline: 0.5em;
   }
 }
 
 @media screen and (max-width: 675px) {
   .certification-namespace h1 {
-    font-size: 25px;
+    font-size: 24px;
+  }
+
+  .certification-namespace .verify {
+    font-size: 12px;
+    padding-inline: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .qr-code {
+    width: 60px;
+    height: 60px;
+    top: -70px;
+    left: 10px;
+  }
+
+  .ribbon {
+    width: 70px;
+    height: 70px;
+    top: -75px;
+    right: 0;
+  }
+
+  .certification-namespace .signatures img {
+    max-width: 160px !important;
   }
 }
 
