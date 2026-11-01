@@ -76,7 +76,12 @@ const commonImageExtensions = [
 
 const validateImageExtension = (picture?: string): boolean => {
   if (!picture) return true;
-  return commonImageExtensions.some(ext => picture.includes(`.${ext}`));
+  // Check the path, not the whole string, so ".png" in a query string does not
+  // count as an image extension.
+  const { pathname } = new URL(picture);
+  return commonImageExtensions.some(ext =>
+    pathname.toLowerCase().endsWith(`.${ext}`)
+  );
 };
 
 /**
@@ -1017,6 +1022,20 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       if (targetUser?.newEmail !== email) {
         fastify.Sentry?.metrics?.count('settings.email_confirm_rejected', 1, {
           attributes: { reason: 'email_mismatch' }
+        });
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
+
+      // Another account may have claimed this address since the change was
+      // requested, so check again before writing it.
+      const isEmailTaken =
+        (await fastify.prisma.user.count({
+          where: { email, NOT: { id: targetUser.id } }
+        })) > 0;
+
+      if (isEmailTaken) {
+        fastify.Sentry?.metrics?.count('settings.email_confirm_rejected', 1, {
+          attributes: { reason: 'email_taken' }
         });
         return reply.redirectWithMessage(origin, redirectMessage);
       }
