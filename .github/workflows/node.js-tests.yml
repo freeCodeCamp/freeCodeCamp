@@ -26,6 +26,8 @@ jobs:
     # Skip PR runs for Renovate since push already triggered CI
     if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'renovate[bot]'
     runs-on: ubuntu-26.04
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
     strategy:
       matrix:
         node-version: [24]
@@ -96,6 +98,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-26.04
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
     strategy:
       matrix:
         node-version: [24]

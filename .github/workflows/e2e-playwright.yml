@@ -9,6 +9,9 @@ jobs:
   playwright-run:
     name: Run Playwright Tests
     runs-on: ubuntu-26.04
+    env:
+      # These tests use Playwright's browser, not Puppeteer's.
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
     strategy:
       fail-fast: false
       matrix:
@@ -73,7 +76,7 @@ jobs:
           cp sample.env .env # for docker compose
 
       - name: Install playwright dependencies
-        run: npx playwright install --with-deps
+        run: pnpm exec playwright install --with-deps --only-shell ${{ matrix.browsers }}
 
       - name: Install
         run: pnpm install
