@@ -21,7 +21,7 @@
     "test:ui": "vitest --ui",
     "type-check": "tsc --noEmit",
     "build": "tsc",
-    "lint": "eslint --max-warnings 0"
+    "lint": "oxlint --deny-warnings"
   },
   "type": "module",
   "repository": {
@@ -33,10 +33,9 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/oxlint-config": "workspace:*",
     "@types/lodash-es": "4.17.12",
     "@vitest/ui": "3.2.7",
-    "eslint": "9.39.5",
     "jsdom": "26.1.0",
     "vitest": "3.2.7"
   },

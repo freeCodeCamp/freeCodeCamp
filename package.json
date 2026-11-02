@@ -40,8 +40,8 @@
     "develop": "turbo develop",
     "develop:client": "cd ./client && turbo develop",
     "develop:api": "cd ./api && turbo develop",
-    "format": "run-s format:eslint format:prettier",
-    "format:eslint": "turbo lint -- --fix",
+    "format": "run-s format:oxlint format:prettier",
+    "format:oxlint": "turbo lint -- --fix",
     "format:prettier": "prettier --write .",
     "i18n-sync": "tsx ./tools/scripts/sync-i18n.ts",
     "knip": "npx -y knip@5 --include files",
@@ -73,11 +73,10 @@
     "playwright:watch": "pnpm -F e2e run playwright:watch"
   },
   "dependencies": {
-    "dotenv": "16.6.1",
-    "eslint": "9.39.5"
+    "dotenv": "16.6.1"
   },
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/oxlint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
     "@playwright/test": "1.64.1",
     "@testing-library/dom": "10.4.2",
@@ -85,18 +84,19 @@
     "@types/lodash": "4.17.24",
     "@types/node": "^24.10.8",
     "debug": "4.4.3",
-    "globals": "^15.14.0",
     "husky": "9.1.7",
     "identity-obj-proxy": "^3.0.0",
     "js-yaml": "3.15.2",
     "lint-staged": "^16.4.0",
     "lodash": "4.18.1",
     "npm-run-all2": "5.0.2",
+    "oxlint": "1.89.0",
+    "oxlint-tsgolint": "7.0.2005",
     "prettier": "3.8.2",
     "stylelint": "16.26.1",
     "tsx": "4.23.15",
     "turbo": "2.11.7",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
