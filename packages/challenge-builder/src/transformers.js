@@ -27,6 +27,14 @@ const BABEL_ENV_OPTIONS = {
   targets: '> 0.4%, not dead'
 };
 
+// These presets are already included in @babel/standalone.
+const presetsJS = {
+  presets: [['env', BABEL_ENV_OPTIONS]]
+};
+const presetsJSX = {
+  presets: [['env', BABEL_ENV_OPTIONS], 'react']
+};
+
 function loopProtectCB(line) {
   console.log(
     `Potential infinite loop detected on line ${line}. Tests may fail if this is not changed.`
@@ -39,10 +47,9 @@ function testLoopProtectCB(line) {
   );
 }
 
-// Hold Babel and its preset options between transformations.
+// Hold Babel between transformations.
 
 let Babel;
-let presetsJS, presetsJSX;
 
 async function loadBabel() {
   if (Babel) return;
@@ -57,19 +64,6 @@ async function loadBabel() {
     'testLoopProtection',
     protect(testProtectTimeout, testLoopProtectCB, testLoopsPerTimeoutCheck)
   );
-}
-
-async function loadPresetEnv() {
-  // These presets are already included in @babel/standalone.
-  presetsJS = {
-    presets: [['env', BABEL_ENV_OPTIONS]]
-  };
-}
-
-async function loadPresetReact() {
-  presetsJSX = {
-    presets: [['env', BABEL_ENV_OPTIONS], 'react']
-  };
 }
 
 const babelTransformCode = options => code =>
@@ -100,21 +94,18 @@ const replaceNBSP = cond([
 
 export const getJSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
-  await loadPresetEnv();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
   return transformContents(babelTransformCode(babelOptions), challengeFile);
 };
 
 const getJSXTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
-  await loadPresetReact();
   const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   return transformContents(babelTransformCode(babelOptions), challengeFile);
 };
 
 const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
-  await loadPresetReact();
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
@@ -135,7 +126,6 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
 
 const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
-  await loadPresetReact();
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
@@ -205,8 +195,6 @@ async function transformSASS(documentElement) {
 
 async function transformScript(documentElement, { useModules }) {
   await loadBabel();
-  await loadPresetEnv();
-  await loadPresetReact();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
     const isBabel = script.type === 'text/babel';
