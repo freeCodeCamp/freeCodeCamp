@@ -41,7 +41,7 @@
     "vitest": "3.2.7"
   },
   "dependencies": {
-    "@babel/standalone": "7.29.10",
+    "@babel/standalone": "7.29.11",
     "@freecodecamp/browser-scripts": "workspace:*",
     "@freecodecamp/loop-protect": "3.0.0",
     "@freecodecamp/shared": "workspace:*",

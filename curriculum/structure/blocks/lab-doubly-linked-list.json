@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-doubly-linked-list",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6ad9bf8b0e22012560084c80",
+      "title": "Build a Doubly Linked List"
+    }
+  ],
+  "blockLabel": "lab"
+}
