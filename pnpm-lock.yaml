@@ -264,7 +264,7 @@ importers:
         version: 5.2.6
       '@fastify/type-provider-typebox':
         specifier: 6.1.0
-        version: 6.1.0(typebox@1.3.36)
+        version: 6.1.0(typebox@1.4.3)
       '@freecodecamp/shared':
         specifier: workspace:*
         version: link:../packages/shared
@@ -341,8 +341,8 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       typebox:
-        specifier: 1.3.36
-        version: 1.3.36
+        specifier: 1.4.3
+        version: 1.4.3
       validator:
         specifier: 13.15.35
         version: 13.15.35
@@ -11660,8 +11660,8 @@ packages:
   type@2.7.3:
     resolution: {integrity: sha512-8j+1QmAbPvLZow5Qpi6NCaN8FB60p/6x8/vfNqOk/hC+HuvFZhL4+WfekuhQLiqFZXOgQdrs3B+XxEmCc6b3FQ==}
 
-  typebox@1.3.36:
-    resolution: {integrity: sha512-bu2Ec2Ti9B4IFSFj1FcZbtLNB/W7igQwxocMGJLAG2NTv1nI+ImtIA34YgHW4CVyGVlJqNXR1GJyLmdWgV3DuA==}
+  typebox@1.4.3:
+    resolution: {integrity: sha512-u3nyf7ZciAv1GOijVpI0TDt9At5wmEi7lSHSlRrnjuThv1DcB7fgGBqqrz+fGZ54jAfTpOOX0JXwxSIg3pnxQA==}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -13940,9 +13940,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fastify/type-provider-typebox@6.1.0(typebox@1.3.36)':
+  '@fastify/type-provider-typebox@6.1.0(typebox@1.4.3)':
     dependencies:
-      typebox: 1.3.36
+      typebox: 1.4.3
 
   '@fortawesome/fontawesome-common-types@7.2.0': {}
 
@@ -24817,7 +24817,7 @@ snapshots:
 
   type@2.7.3: {}
 
-  typebox@1.3.36: {}
+  typebox@1.4.3: {}
 
   typed-array-buffer@1.0.3:
     dependencies:
