@@ -46,7 +46,7 @@ def bfs(graph, root):
             if is_connected:
                 print('Neighbor:', neighbor)
 --fcc-editable-region--
-
+                
 --fcc-editable-region--
 
     return distances

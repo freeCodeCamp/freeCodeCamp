@@ -56,7 +56,7 @@ def bfs(graph, root):
                 print('Neighbor:', neighbor)
                 distances[neighbor] = distances[current] + 1
 --fcc-editable-region--
-
+                
 --fcc-editable-region--
 
     return distances

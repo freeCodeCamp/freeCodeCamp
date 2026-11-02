@@ -9,7 +9,7 @@ dashedName: step-9
 
 The console shows every node of the graph, but only those with a value of `1` are neighbors of `current`.
 
-Replace the `print` call inside your `for` loop with an `if` statement that checks if `is_connected` is truthy. Inside it, print the string `'Neighbor:'` and `neighbor`.
+Replace the `print` call inside your `for` loop with an `if` statement that checks if `is_connected` is truthy. Inside it, print the string `Neighbor:` followed by a space and the value of `neighbor`.
 
 # --hints--
 
@@ -36,13 +36,14 @@ You should have an `if` statement inside your `for` loop that checks if `is_conn
 })
 ```
 
-Inside your `if` statement, you should call `print('Neighbor:', neighbor)`.
+Inside your `if` statement, you should print the string `Neighbor:` followed by a space and the value of `neighbor`.
 
 ```js
 ({
   test: () =>
     runPython(`
-    assert _Node(_code).find_function("bfs").find_whiles()[0].find_for_loops()[0].find_ifs()[0].find_bodies()[0].is_equivalent("print('Neighbor:', neighbor)")
+    _print = _Node(_code).find_function("bfs").find_whiles()[0].find_for_loops()[0].find_ifs()[0].find_bodies()[0]
+    assert _print.is_equivalent("print('Neighbor:', neighbor)") or _print.is_equivalent("print(f'Neighbor: {neighbor}')")
   `)
 })
 ```
