@@ -9,7 +9,7 @@ dashedName: review-dictionaries-and-sets
 
 ## Dictionaries
 
-- **Dictionaries**: Dictionaries are built-in data structures that store collections of key-value pairs. Keys need to be immutable data types. This is the general syntax of a Python dictionary:
+- **Dictionaries**: Dictionaries are built-in data structures that store collections of key-value pairs. Each key must be unique, while values can be repeated and of any data type. In modern Python, dictionaries maintain insertion order. Keys must be of immutable types, such as numbers, strings, or tuples containing only immutable objects (a tuple containing a list cannot be used as a key). This is the general syntax of a Python dictionary:
 
 ```python
 dictionary = {
@@ -18,16 +18,41 @@ dictionary = {
 }
 ```
 
-- **`dict()` Constructor**: The `dict()` constructor is an alternative way to build the dictionary. You pass a list of tuples as an argument to the `dict()` constructor. These tuples contain the key as the first element and the value as the second element.
+- **`dict()` Constructor**: The `dict()` constructor is an alternative way to build the dictionary. You pass a list of tuples as an argument to the `dict()` constructor. These tuples contain the key as the first element and the value as the second element.
 
 ```python
 pizza = dict([('name', 'Margherita Pizza'), ('price', 8.9), ('calories_per_slice', 250), ('toppings', ['mozzarella', 'basil'])])
 ```
 
-- **Bracket Notation**: To access the value of a key-value pair, you can use the syntax known as bracket notation.
+- **Bracket Notation**: To access the value of a key-value pair, you can use bracket notation with the key inside square brackets.
 
 ```python
 dictionary[key]
+```
+
+- **Adding and Updating Entries**: You can add a new key-value pair or update an existing one using bracket assignment. If the key already exists, its value is replaced; otherwise, the new key-value pair is added:
+
+```python
+pizza = {
+    'name': 'Margherita Pizza',
+    'price': 8.9
+}
+
+# Update an existing key
+pizza['name'] = 'Margherita'
+
+# Add a new key
+pizza['calories_per_slice'] = 250
+```
+
+- **Unpacking Operator (`**`)**: The `**` operator can unpack dictionary elements into keyword arguments in a function call:
+
+```python
+def make_pizza(name, price):
+    return f'{name} costs ${price}'
+
+info = {'name': 'Margherita', 'price': 8.9}
+print(make_pizza(**info)) # Margherita costs $8.9
 ```
 
 ## Common Dictionary Methods
@@ -164,6 +189,16 @@ Tablet 250
 Headphones 70
 ```
 
+You can also update values in place while iterating over items:
+
+```python
+for product, price in products.items():
+    products[product] = round(price * 0.8)
+
+print(products)
+# {'Laptop': 792, 'Smartphone': 480, 'Tablet': 200, 'Headphones': 56}
+```
+
 - **`enumerate()` Function**: If you need to iterate over a dictionary while keeping track of a counter, you can call the `enumerate()` function. The function returns an `enumerate` object, which assigns an integer to each item, like a counter. You can start the counter from any number, but by default, it starts from 0.
 
 Assigning the index and item to separate loop variables is the common way to use `enumerate()`. For example, with `products.items()`, you can get the entire key-value pair in addition to the index:
@@ -200,7 +235,7 @@ Output:
 
 ## Sets
 
-- **Sets**: Sets are built-in data structures in Python that do not allow duplicate values. Sets are mutable and unordered, which means that their elements are not stored in any specific order, so you cannot use indices or keys to access them. Also, sets can only contain values of immutable data types, like numbers, strings, and tuples.
+- **Sets**: Sets are built-in data structures in Python that do not allow duplicate values. Sets are mutable and unordered, which means that their elements are not stored in any specific order, so you cannot use indices or keys to access them. Sets can contain values of immutable data types, such as numbers, strings, and tuples containing only immutable objects (a tuple containing a list cannot be a set element).
 
 - **Defining a Set**: To define a set, you need to write its elements within curly brackets and separate them with commas.
 
@@ -208,11 +243,28 @@ Output:
 my_set = {1, 2, 3, 4, 5}
 ```
 
-- **Defining an Empty Set**: If you need to define an empty set, you must use the `set()` function. Only writing empty curly braces will automatically create a dictionary.
+- **Defining an Empty Set**: If you need to define an empty set, you must use the `set()` function. Only writing empty curly braces will automatically create a dictionary.
 
 ```python
 set() # Set
 {}    # Dictionary
+```
+
+- **Constructing a Set from an Iterable**: You can create a set from an iterable, such as a list or a dictionary's keys, using the `set()` function. Any duplicates in the iterable are automatically discarded:
+
+```python
+numbers = set([1, 2, 2, 3, 4, 4])
+print(numbers) # {1, 2, 3, 4}
+```
+
+This is useful for comparing the keys in a dictionary against an expected set of keys:
+
+```python
+user = {'name': 'Alice', 'age': 30}
+expected_keys = {'name', 'age'}
+
+if set(user.keys()) == expected_keys:
+    print('All expected keys are present.')
 ```
 
 ## Common Set Methods
@@ -291,6 +343,16 @@ my_set = {1, 2, 3, 4, 5}
 your_set = {2, 3, 4, 6}
 
 my_set ^ your_set # {1, 5, 6}
+```
+
+- **Compound Set Assignment Operators**: Each set operator has a corresponding compound assignment operator (`|=`, `&=`, `-=`, `^=`) that performs the operation and updates the original set in place:
+
+```python
+my_set = {1, 2, 3, 4, 5}
+your_set = {2, 3, 4, 6}
+
+my_set -= your_set
+print(my_set) # {1, 5}
 ```
 
 - **`in` Operator**: You can check if an element is in a set or not with the `in` operator.
@@ -374,30 +436,90 @@ If you need to assign aliases to these names, you can do so as well, using the 
 from module_name import name1 as alias1, name2 as alias2
 ```
 
-- **Import Statement with Asterisk (`*`)**: The asterisk tells Python that you want to import everything in that module, but you want to import it so that you don't need to use the name of the module as a prefix.
+- **Import Statement with Asterisk (`*`)**: The asterisk (`*`) imports all public names from a module into the current namespace without requiring the module prefix:
 
 ```python
 from module_name import *
 ```
 
-For example, if you use this to import the `math` module, you'll be able to call any function defined in that module without specifying the name of the module as a prefix.
+When `__all__` is defined in the module, it controls which names are imported. If `__all__` is not defined, all names that do not begin with an underscore (`_`) are imported. For example, a module defining `visible = 1` and `_hidden = 2` without `__all__` exposes `visible` through a wildcard import, but not `_hidden`.
 
-```python
-from math import *
-print(sqrt(36))  # 6.0
-```
-
-However, this is generally discouraged because it can lead to namespace collisions and make it harder to know where names come from.
+Wildcard imports are generally discouraged because they can lead to namespace collisions and make it harder to know where names come from.
 
 ## `if __name__ == '__main__'`
 
-- **`__name__` Variable**: `__name__` is a special built-in variable in Python. When a Python file is executed directly, Python sets the value of this variable to the string `"__main__"`. But if the Python file is imported as a module into another Python script, the value of the `__name__` variable is set to the name of that module.
+- **`__name__` Variable**: `__name__` is a special built-in variable in Python. When a Python file is executed directly, Python sets the value of this variable to the string `"__main__"`. But if the Python file is imported as a module into another Python script, the value of the `__name__` variable is set to the name of that module.
 
-This is why you'll often find this conditional in Python scripts. It contains the code that you only want to run **only** if the Python script is running as the main program.
+This is why you'll often find this conditional in Python scripts. It contains the code that you want to run only if the Python script is running as the main program.
 
 ```python
 if __name__ == '__main__': 
     # Code
+```
+
+## Regular Expressions
+
+- **Regular Expressions**: A regular expression (regex) is a pattern used to match a sequence of characters in text. The `re` module provides functions for working with regular expressions.
+
+- **`re.search()`**: The `search()` function searches a string for a match to a pattern. It returns a match object if the pattern is found, or `None` if it is not:
+
+```python
+import re
+
+text = 'Patient ID: P1001'
+match = re.search(r'P1001', text)
+print(match) # <re.Match object; span=(12, 17), match='P1001'>
+```
+
+- **`re.fullmatch()`**: The `fullmatch()` function returns a match object only when the pattern matches the entire string from start to finish. If extra characters are found, it returns `None`:
+
+```python
+import re
+
+print(re.fullmatch(r'P\d+', 'P1001'))  # <re.Match object ...>
+print(re.fullmatch(r'P\d+', 'P1001!')) # None
+```
+
+- **Case-Insensitive Matching**: Pass `re.IGNORECASE` as an optional flag argument to match characters without regard to case:
+
+```python
+import re
+
+print(re.search(r'p\d+', 'P1001', re.IGNORECASE)) # <re.Match object ...>
+```
+
+- **Raw Strings and `\d`**: Prefixing a string literal with `r` creates a raw string, which treats backslashes literally instead of as escape characters. The `\d` sequence matches any decimal digit (`0` through `9`):
+
+```python
+pattern = r'\d'
+```
+
+- **The `+` Quantifier**: Quantifiers specify how many times a character or group can repeat. The `+` quantifier matches the preceding pattern one or more times:
+
+```python
+import re
+
+print(re.search(r'\d+', 'Patient 1001')) # <re.Match object; span=(8, 12), match='1001'>
+```
+
+## Object Identity and Built-in Functions
+
+- **`is` and `is not` Operators**: The `is` and `is not` operators check whether two values refer to the same object in memory (identity comparison). They are commonly used to check if a value is the `None` object:
+
+```python
+value = None
+
+print(value is None)     # True
+print(value is not None) # False
+```
+
+- **`all()` Function**: The `all()` function returns `True` if every element in the given iterable is truthy, and `False` otherwise:
+
+```python
+print(all([True, True, True]))  # True
+print(all([True, False, True])) # False
+print(all([1, 2, 3]))           # True
+print(all([0, 1, 2]))           # False
 ```
 
 # --assignment--
