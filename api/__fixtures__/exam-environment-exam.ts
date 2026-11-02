@@ -1,4 +1,4 @@
-/* eslint-disable jsdoc/require-jsdoc */
+/* oxlint-disable jsdoc-extra/require-jsdoc */
 import { Static } from '@fastify/type-provider-typebox';
 import {
   ExamEnvironmentConfig,

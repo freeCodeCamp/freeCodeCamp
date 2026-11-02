@@ -85,7 +85,7 @@ export const XtermTerminal = ({
         // Eslint is correct that this only gets assigned once, but we can't use
         // const because the declaration (before keyListener is defined) and
         // assignment (after keyListener is defined) must be separate.
-        // eslint-disable-next-line prefer-const
+        // oxlint-disable-next-line prefer-const
         let disposable: IDisposable | undefined;
 
         const done = () => {

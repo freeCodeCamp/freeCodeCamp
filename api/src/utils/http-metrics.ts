@@ -4,7 +4,7 @@ import type {
   HookHandlerDoneFunction
 } from 'fastify';
 
-// eslint-disable-next-line jsdoc/require-jsdoc
+// oxlint-disable-next-line jsdoc-extra/require-jsdoc
 export const recordHttpMetrics = (
   req: FastifyRequest,
   reply: FastifyReply,

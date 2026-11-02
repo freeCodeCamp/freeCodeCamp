@@ -172,7 +172,7 @@ const ShowGeneric = ({
     // and Gatsby doesn't interfere with the focus.
     requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   // video
@@ -180,9 +180,9 @@ const ShowGeneric = ({
 
   const handleVideoIsLoaded = (e: YouTubeEvent) => {
     const playbackRate = Number(store.get('fcc-yt-playback-rate')) || 1;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // oxlint-disable-next-line typescript/no-unsafe-assignment
     const player = e.target;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    // oxlint-disable-next-line typescript/no-unsafe-call, typescript/no-unsafe-member-access
     player.setPlaybackRate(playbackRate);
 
     setVideoIsLoaded(true);

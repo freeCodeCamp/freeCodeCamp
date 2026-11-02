@@ -1,4 +1,4 @@
-/* eslint-disable jsdoc/require-jsdoc */
+/* oxlint-disable jsdoc-extra/require-jsdoc */
 import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 

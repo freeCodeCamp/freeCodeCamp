@@ -1,4 +1,4 @@
-/* eslint-disable filenames-simple/naming-convention */
+/* oxlint-disable filenames-simple/naming-convention */
 import React from 'react';
 import ShowSettings from '../../client-only-routes/show-settings';
 
