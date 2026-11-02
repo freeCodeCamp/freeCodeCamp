@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-linked-list-operations-python",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6ad8c35668b6668b784a203c",
+      "title": "Implement Linked List Operations"
+    }
+  ],
+  "blockLabel": "lab"
+}

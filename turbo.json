@@ -1,5 +1,6 @@
 {
   "$schema": "https://v2-10-0.turborepo.dev/schema.json",
+  "agentGuidance": false,
   "globalPassThroughEnv": ["MONGOHQ_URL"],
   "tasks": {
     "build": { "dependsOn": ["setup"], "outputs": ["dist/**"] },

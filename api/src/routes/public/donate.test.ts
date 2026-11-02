@@ -6,7 +6,8 @@ import {
   defaultUserId,
   devLogin,
   setupServer,
-  superRequest
+  superRequest,
+  getSetCookies
 } from '../../../vitest.utils.js';
 
 const { mockCreatePayPalSubscription } = vi.hoisted(() => ({
@@ -138,7 +139,7 @@ describe('Donate', () => {
     beforeEach(async () => {
       mockCreatePayPalSubscription.mockReset();
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     // Anonymous donors get no custom_id, so the activation webhook has nobody
@@ -216,7 +217,7 @@ describe('Donate', () => {
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     beforeEach(async () => {

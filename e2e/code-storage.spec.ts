@@ -1,6 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import { getEditors } from './utils/editor';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Challenge with editor', function () {
   test.skip(({ isMobile }) => isMobile);

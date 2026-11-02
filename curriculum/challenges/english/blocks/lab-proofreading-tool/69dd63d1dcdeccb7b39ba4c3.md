@@ -3,6 +3,7 @@ id: 69dd63d1dcdeccb7b39ba4c3
 title: Build a Proofreading Tool
 challengeType: 26
 dashedName: build-a-proofreading-tool
+saveSubmissionToDB: true
 ---
 
 # --description--

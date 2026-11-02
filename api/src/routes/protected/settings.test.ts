@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import {
   describe,
   test,
@@ -15,7 +14,8 @@ import {
   superRequest,
   createSuperRequest,
   defaultUserId,
-  defaultUserEmail
+  defaultUserEmail,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import { formatMessage } from '../../plugins/redirect-with-message.js';
 import { createUserInput } from '../../utils/create-user.js';
@@ -1894,7 +1894,7 @@ Happy coding!
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     describe('/confirm-email', () => {

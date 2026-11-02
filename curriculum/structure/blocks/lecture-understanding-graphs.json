@@ -1,0 +1,21 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-graphs",
+  "challengeOrder": [
+    {
+      "id": "68420c5ac17cf26ab2a4ca3c",
+      "title": "What Are Graphs in Computer Science?"
+    },
+    {
+      "id": "68baa5e4f0e07f079245ca08",
+      "title": "How Do Depth First and Breadth First Search Work?"
+    },
+    {
+      "id": "68baa5e4f0e07f079245ca09",
+      "title": "How Do Matrices and Adjacency Lists Work?"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list"
+}

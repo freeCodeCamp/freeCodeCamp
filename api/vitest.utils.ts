@@ -260,7 +260,13 @@ export async function devLogin(): Promise<string[]> {
   await resetDefaultUser();
   const res = await superRequest('/signin', { method: 'GET' });
   expect(res.status).toBe(302);
-  return res.get('Set-Cookie');
+  return getSetCookies(res);
+}
+
+export function getSetCookies(res: request.Response): string[] {
+  const setCookies = res.get('Set-Cookie');
+  if (!setCookies) throw new Error('The response has no Set-Cookie header');
+  return setCookies;
 }
 
 export async function seedExam(): Promise<void> {

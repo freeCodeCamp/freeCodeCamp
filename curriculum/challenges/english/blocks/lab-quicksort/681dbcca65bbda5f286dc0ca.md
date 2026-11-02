@@ -13,12 +13,14 @@ dashedName: implement-the-quicksort-algorithm
 
 1. You should define a function named `quick_sort` to implement the quicksort algorithm.
 
-1. The `quick_sort` function should take a list of integers as input and return a new list of these integers in sorted order from least to greatest.
+1. The `quick_sort` function should take a list of integers as input and return a new list of these integers in sorted order from least to greatest, without modifying the input list.
 
 1. To implement the algorithm, you should:
    - Choose a pivot value from the elements of the input list (use the first or the last element of the list).
    - Partition the input list into three sublists: one with elements less than the pivot, one with elements equal to the pivot, and one with elements greater than the pivot.
    - Recursively call `quick_sort` to sort the sublists and concatenate the sorted sublists to produce the final sorted list.
+
+**Note:** You should not import any modules or use the built-in `sorted()` function or the `sort()` method in your code.
 
 # --hints--
 
@@ -82,7 +84,9 @@ You should not import any module or use built-in sorting methods in your code.
 
 ```js
 ({ test: () => runPython(`
-    assert len(_Node(_code).find_imports()) == 0
+    import ast
+    _nodes = list(ast.walk(ast.parse(_code)))
+    assert not any(isinstance(n, (ast.Import, ast.ImportFrom)) for n in _nodes)
     assert not _Node(_code).block_has_call("sort")
     assert not _Node(_code).block_has_call("sorted")
 `)})
