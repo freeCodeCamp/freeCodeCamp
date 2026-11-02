@@ -33,7 +33,7 @@ export const deprecatedEndpoints: FastifyPluginCallbackTypebox = (
       method,
       url: endpoint,
       schema: schemas.deprecatedEndpoints,
-      handler: async (_req, reply) => {
+      handler: (_req, reply) => {
         void reply.status(410);
         return {
           message: {
