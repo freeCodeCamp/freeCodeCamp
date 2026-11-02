@@ -97,17 +97,24 @@ const completeChallenges = async ({
   for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(allowTrailingSlash(challenge.url));
     await focusEditor({ page, isMobile });
+    const currentEditor = await getEditors(page).elementHandle();
+    if (!currentEditor) throw new Error('The challenge editor was not found');
     await clearEditor({ page, browserName });
-    await getEditors(page).fill(challenge.solution);
-    await expect(getEditors(page)).toHaveValue(challenge.solution);
+    await page.evaluate(
+      async contents => await navigator.clipboard.writeText(contents),
+      challenge.solution
+    );
+    await page.keyboard.press('ControlOrMeta+V');
     await page.getByRole('button', { name: 'Check Your Code' }).click();
     await page.getByRole('button', { name: 'Submit and continue' }).click();
+    // The URL changes before the old editor is replaced during navigation.
+    await currentEditor.waitForElementState('hidden');
   }
 };
 
 test.skip(
   ({ browserName }) => browserName !== 'chromium',
-  'Only chromium supports the clipboard permissions used in these tests.'
+  'Only chromium allows us to use the clipboard API.'
 );
 
 test.describe('Donation modal display', () => {
