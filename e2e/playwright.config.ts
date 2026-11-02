@@ -21,6 +21,8 @@ export default defineConfig({
   maxFailures: process.env.CI ? 6 : undefined,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
+  /* Try four workers */
+  workers: 4,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', { outputFolder: 'playwright/reporter' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
