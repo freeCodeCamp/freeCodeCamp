@@ -30,8 +30,7 @@ You should have an `if` statement inside your `for` loop that checks if `is_conn
 ({
   test: () =>
     runPython(`
-    _cond = _Node(_code).find_function("bfs").find_whiles()[0].find_for_loops()[0].find_ifs()[0].find_conditions()[0]
-    assert _cond.is_equivalent("is_connected") or _cond.is_equivalent("is_connected == 1")
+    assert _Node(_code).find_function("bfs").find_whiles()[0].find_for_loops()[0].find_ifs()[0].find_conditions()[0].is_equivalent("is_connected")
   `)
 })
 ```
