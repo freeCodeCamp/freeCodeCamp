@@ -11016,6 +11016,12 @@
           "In these lessons, you will learn about graphs, depth-first and breadth-first search, and how to represent graphs with adjacency matrices and adjacency lists."
         ]
       },
+      "workshop-breadth-first-search-py": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you'll implement the breadth-first search algorithm on an adjacency matrix and use it to find the distance of every node from a starting node."
+        ]
+      },
       "lab-adjacency-list-to-matrix-converter": {
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
