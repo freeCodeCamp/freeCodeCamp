@@ -2,7 +2,7 @@ import { type Page } from '@playwright/test';
 import { test, expect } from './fixtures/isolated-user';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
-import { clearEditor, focusEditor } from './utils/editor';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { allowTrailingSlash } from './utils/url';
 
 test.use({ userPreset: 'certified' });
@@ -98,11 +98,8 @@ const completeChallenges = async ({
     await page.waitForURL(allowTrailingSlash(challenge.url));
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
-    await page.evaluate(
-      async contents => await navigator.clipboard.writeText(contents),
-      challenge.solution
-    );
-    await page.keyboard.press('ControlOrMeta+V');
+    await getEditors(page).fill(challenge.solution);
+    await expect(getEditors(page)).toHaveValue(challenge.solution);
     await page.getByRole('button', { name: 'Check Your Code' }).click();
     await page.getByRole('button', { name: 'Submit and continue' }).click();
   }
@@ -110,7 +107,7 @@ const completeChallenges = async ({
 
 test.skip(
   ({ browserName }) => browserName !== 'chromium',
-  'Only chromium allows us to use the clipboard API.'
+  'Only chromium supports the clipboard permissions used in these tests.'
 );
 
 test.describe('Donation modal display', () => {
