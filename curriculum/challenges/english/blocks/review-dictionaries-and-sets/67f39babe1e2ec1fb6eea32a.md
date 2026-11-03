@@ -9,7 +9,7 @@ dashedName: review-dictionaries-and-sets
 
 ## Dictionaries
 
-- **Dictionaries**: Dictionaries are built-in data structures that store collections of key-value pairs. Keys must be unique and immutable, such as numbers, strings, and tuples of numbers and strings. A tuple that contains a list can't be used as a key. Values can be repeated and can be any data type. Dictionaries also keep the order in which items were added. This is the general syntax of a Python dictionary:
+- **Dictionaries**: Dictionaries are built-in data structures that store collections of key-value pairs. Keys must be unique. Numbers, strings, and tuples of numbers and strings can be used as keys, but a tuple that contains a list can't. Values can be repeated and can be any data type. Dictionaries also keep the order in which items were added. This is the general syntax of a Python dictionary:
 
 ```python
 dictionary = {
@@ -217,7 +217,7 @@ Output:
 
 ## Sets
 
-- **Sets**: Sets are built-in data structures in Python that do not allow duplicate values. Sets are mutable and unordered, which means that their elements are not stored in any specific order, so you cannot use indices or keys to access them. Also, set elements must be immutable, such as numbers, strings, and tuples of numbers and strings. A tuple that contains a list can't be a set element.
+- **Sets**: Sets are built-in data structures in Python that do not allow duplicate values. Sets are mutable and unordered, which means that their elements are not stored in any specific order, so you cannot use indices or keys to access them. Numbers, strings, and tuples of numbers and strings can be set elements, but a tuple that contains a list can't.
 
 - **Defining a Set**: To define a set, you need to write its elements within curly brackets and separate them with commas.
 
@@ -430,7 +430,7 @@ if __name__ == '__main__':
 
 ## Validating Data
 
-- **Creating a Set from an Iterable**: The `set()` constructor accepts any iterable, such as a list, a string, or a dictionary (which gives its keys). This is useful for comparing the keys you expect with the keys you actually have.
+- **Creating a Set from an Iterable**: The `set()` constructor accepts an iterable, such as a list, a string, or a dictionary (which gives its keys), provided its elements can be stored in a set. For example, a list of numbers is valid, but a list containing other lists is not. This is useful for comparing the keys you expect with the keys you actually have.
 
 ```python
 expected_keys = {'name', 'age'}
