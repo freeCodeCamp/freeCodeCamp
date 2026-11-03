@@ -37,7 +37,9 @@ vi.mock(
     const tsvfs = await import('@typescript/vfs-1.6.1');
     const ts = await import('typescript-5.9.2');
     // Load libraries from the same pinned version as the compiler.
-    const tsLibDirectory = dirname(fileURLToPath(import.meta.resolve('typescript-5.9.2')));
+    const tsLibDirectory = dirname(
+      fileURLToPath(import.meta.resolve('typescript-5.9.2'))
+    );
     const tsCompiler =
       await import('@freecodecamp/browser-scripts/ts-compiler');
     const compiler = new tsCompiler.Compiler(ts, tsvfs);
