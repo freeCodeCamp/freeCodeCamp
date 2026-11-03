@@ -24,6 +24,19 @@ import {
 } from '../../utils/progress.js';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
+type ExamResults = {
+  numberOfCorrectAnswers: number;
+  numberOfQuestionsInExam: number;
+  percentCorrect: number;
+  passingPercent: number;
+  passed: boolean;
+  examTimeInSeconds: number;
+};
+
+type PublicExamResults = {
+  passed: boolean;
+};
+
 type ProfileUI = Partial<{
   isLocked: boolean;
   showAbout: boolean;
@@ -54,11 +67,81 @@ type RawUser = {
 };
 
 /**
+ * Filters exam results to show only pass/fail status for public viewers.
+ * This ensures detailed exam statistics (scores, time, correct answers) remain private.
+ * @param examResults The full exam results object.
+ * @returns A filtered object containing only the 'passed' field.
+ */
+const filterExamResultsForPublic = (
+  examResults: ExamResults
+): PublicExamResults => {
+  return {
+    passed: examResults.passed
+  };
+};
+
+/**
+ * Filters exam results in completed challenges for public viewers.
+ * Preserves the challenge structure but removes detailed exam statistics.
+ * @param challenges Array of completed challenges.
+ * @param isSessionUser Whether the viewer is the owner of the profile.
+ * @returns Challenges with filtered exam results for public viewers.
+ */
+const filterChallengesExamResults = (
+  challenges: NormalizedChallenge[],
+  isSessionUser: boolean
+): NormalizedChallenge[] => {
+  if (isSessionUser) {
+    // Session user can see all their own exam results
+    return challenges;
+  }
+
+  // Public viewers only see pass/fail status
+  return challenges.map(challenge => {
+    if (challenge.examResults) {
+      return {
+        ...challenge,
+        examResults: filterExamResultsForPublic(challenge.examResults)
+      };
+    }
+    return challenge;
+  });
+};
+
+/**
+ * Filters exam results in the completedExams array for public viewers.
+ * @param completedExams Array of completed exams.
+ * @param isSessionUser Whether the viewer is the owner of the profile.
+ * @returns Exams with filtered results for public viewers.
+ */
+const filterCompletedExamsResults = (
+  completedExams: Array<{
+    id: string;
+    completedDate: number;
+    challengeType?: number;
+    examResults: ExamResults;
+  }>,
+  isSessionUser: boolean
+) => {
+  if (isSessionUser) {
+    // Session user can see all their own exam results
+    return completedExams;
+  }
+
+  // Public viewers only see pass/fail status
+  return completedExams.map(exam => ({
+    ...exam,
+    examResults: filterExamResultsForPublic(exam.examResults)
+  }));
+};
+
+/**
  * Creates an object with the properties that are shared with the public.
  * @param user The raw user object.
+ * @param isSessionUser Whether the viewer is the owner of the profile.
  * @returns The shared user object.
  */
-export const replacePrivateData = (user: RawUser) => {
+export const replacePrivateData = (user: RawUser, isSessionUser = false) => {
   const {
     showAbout,
     showHeatMap,
@@ -72,16 +155,21 @@ export const replacePrivateData = (user: RawUser) => {
     showTimeLine
   } = user.profileUI;
 
+  const completedChallenges = showTimeLine
+    ? showCerts
+      ? user.completedChallenges
+      : user.completedChallenges.filter(
+          c => c.challengeType !== challengeTypes.step
+        )
+    : [];
+
   return {
     about: showAbout ? user.about : '',
     calendar: showHeatMap ? user.calendar : {},
-    completedChallenges: showTimeLine
-      ? showCerts
-        ? user.completedChallenges
-        : user.completedChallenges.filter(
-            c => c.challengeType !== challengeTypes.step
-          )
-      : [],
+    completedChallenges: filterChallengesExamResults(
+      completedChallenges,
+      isSessionUser
+    ),
     isDonating: showDonation ? user.isDonating : null,
     joinDate: showAbout ? user.joinDate : '',
     location: showLocation ? user.location : '',
@@ -163,6 +251,9 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
 
       const normalizedProfileUI = normalizeProfileUI(user.profileUI);
 
+      // Determine if the viewer is the profile owner (used for filtering exam results)
+      const isSessionUser = req.user?.id === user.id;
+
       void reply.code(200);
       if (normalizedProfileUI.isLocked) {
         // TODO(Post-MVP): just return isLocked: true and either a null user
@@ -184,20 +275,33 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         const progressTimestamps = user.progressTimestamps as
           | ProgressTimestamp[]
           | null;
-        const sharedUser = replacePrivateData({
-          ...user,
-          calendar: getCalendar(progressTimestamps),
-          completedChallenges: normalizeChallenges(user.completedChallenges),
-          location: user.location ?? '',
-          joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
-          name: user.name ?? '',
-          points: getPoints(progressTimestamps),
-          profileUI: normalizedProfileUI,
-          experience: user.experience.map(removeNulls) ?? []
-        });
+
+        const sharedUser = replacePrivateData(
+          {
+            ...user,
+            calendar: getCalendar(progressTimestamps),
+            completedChallenges: normalizeChallenges(user.completedChallenges),
+            location: user.location ?? '',
+            joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
+            name: user.name ?? '',
+            points: getPoints(progressTimestamps),
+            profileUI: normalizedProfileUI,
+            experience: user.experience.map(removeNulls) ?? []
+          },
+          isSessionUser
+        );
+
+        // Filter completedExams to hide detailed exam results from public viewers
+        const filteredPublicUser = {
+          ...publicUser,
+          completedExams: filterCompletedExamsResults(
+            publicUser.completedExams,
+            isSessionUser
+          )
+        };
 
         const returnedUser = {
-          ...removeNulls(publicUser),
+          ...removeNulls(filteredPublicUser),
           ...normalizeFlags(flags),
           ...sharedUser,
           picture: user.picture ?? '',

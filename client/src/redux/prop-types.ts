@@ -612,12 +612,12 @@ export interface UserExam {
 
 // Exam Results (from API)
 export interface GeneratedExamResults {
-  numberOfCorrectAnswers: number;
-  numberOfQuestionsInExam: number;
-  percentCorrect: number;
-  passingPercent: number;
+  numberOfCorrectAnswers?: number;
+  numberOfQuestionsInExam?: number;
+  percentCorrect?: number;
+  passingPercent?: number;
   passed: boolean;
-  examTimeInSeconds: number;
+  examTimeInSeconds?: number;
 }
 
 // Survey related types

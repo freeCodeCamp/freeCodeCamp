@@ -1,0 +1,266 @@
+{
+  "info": {
+    "name": "freeCodeCamp - Exam Privacy Fix Tests",
+    "description": "Test collection for GitHub issue #71470 - C# Exam Results Privacy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Sign In (Get Auth Cookie)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 302 (redirect)', function () {",
+              "    pm.response.to.have.status(302);",
+              "});",
+              "",
+              "pm.test('access_token cookie is set', function () {",
+              "    pm.expect(pm.cookies.has('access_token')).to.be.true;",
+              "});",
+              "",
+              "console.log('✓ Authentication cookie received');"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/signin",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["signin"]
+        },
+        "description": "Sign in to get the access_token cookie. This cookie will be used for authenticated requests."
+      },
+      "response": []
+    },
+    {
+      "name": "2A. Get Profile - Authenticated (Full Details)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Response has exam results', function () {",
+              "    const jsonData = pm.response.json();",
+              "    const user = jsonData.entities.user.certifieduser;",
+              "    pm.expect(user).to.have.property('completedExams');",
+              "});",
+              "",
+              "pm.test('Exam results contain FULL details (authenticated)', function () {",
+              "    const jsonData = pm.response.json();",
+              "    const user = jsonData.entities.user.certifieduser;",
+              "    ",
+              "    if (user.completedExams && user.completedExams.length > 0) {",
+              "        const examResult = user.completedExams[0].examResults;",
+              "        ",
+              "        // Should have all detailed fields",
+              "        pm.expect(examResult).to.have.property('numberOfCorrectAnswers');",
+              "        pm.expect(examResult).to.have.property('numberOfQuestionsInExam');",
+              "        pm.expect(examResult).to.have.property('percentCorrect');",
+              "        pm.expect(examResult).to.have.property('examTimeInSeconds');",
+              "        pm.expect(examResult).to.have.property('passed');",
+              "        ",
+              "        console.log('✓ Full exam details visible (as owner):', examResult);",
+              "    }",
+              "});",
+              "",
+              "pm.test('Completed challenges contain FULL details', function () {",
+              "    const jsonData = pm.response.json();",
+              "    const user = jsonData.entities.user.certifieduser;",
+              "    ",
+              "    if (user.completedChallenges && user.completedChallenges.length > 0) {",
+              "        const challengeWithExam = user.completedChallenges.find(c => c.examResults);",
+              "        ",
+              "        if (challengeWithExam) {",
+              "            const examResult = challengeWithExam.examResults;",
+              "            pm.expect(examResult).to.have.property('numberOfCorrectAnswers');",
+              "            pm.expect(examResult).to.have.property('examTimeInSeconds');",
+              "            console.log('✓ Challenge exam details visible:', examResult);",
+              "        }",
+              "    }",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users/get-public-profile?username=certifieduser",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "get-public-profile"],
+          "query": [
+            {
+              "key": "username",
+              "value": "certifieduser",
+              "description": "The certified user with C# exam results"
+            }
+          ]
+        },
+        "description": "Get profile WITH authentication cookie. Should return FULL exam details including scores, time, and correct answers."
+      },
+      "response": []
+    },
+    {
+      "name": "2B. Get Profile - Public (Only Pass/Fail)",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// Clear the access_token cookie to simulate public access",
+              "pm.cookies.clear('access_token');",
+              "console.log('✓ Cleared authentication cookie (simulating public viewer)');"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Response has exam results', function () {",
+              "    const jsonData = pm.response.json();",
+              "    const user = jsonData.entities.user.certifieduser;",
+              "    pm.expect(user).to.have.property('completedExams');",
+              "});",
+              "",
+              "pm.test('Exam results contain ONLY pass/fail (public view)', function () {",
+              "    const jsonData = pm.response.json();",
+              "    const user = jsonData.entities.user.certifieduser;",
+              "    ",
+              "    if (user.completedExams && user.completedExams.length > 0) {",
+              "        const examResult = user.completedExams[0].examResults;",
+              "        ",
+              "        // Should ONLY have 'passed' field",
+              "        pm.expect(examResult).to.have.property('passed');",
+              "        ",
+              "        // Should NOT have detailed fields",
+              "        pm.expect(examResult).to.not.have.property('numberOfCorrectAnswers');",
+              "        pm.expect(examResult).to.not.have.property('numberOfQuestionsInExam');",
+              "        pm.expect(examResult).to.not.have.property('percentCorrect');",
+              "        pm.expect(examResult).to.not.have.property('examTimeInSeconds');",
+              "        ",
+              "        console.log('✓ Only pass/fail visible (as public):', examResult);",
+              "    }",
+              "});",
+              "",
+              "pm.test('Completed challenges contain ONLY pass/fail', function () {",
+              "    const jsonData = pm.response.json();",
+              "    const user = jsonData.entities.user.certifieduser;",
+              "    ",
+              "    if (user.completedChallenges && user.completedChallenges.length > 0) {",
+              "        const challengeWithExam = user.completedChallenges.find(c => c.examResults);",
+              "        ",
+              "        if (challengeWithExam) {",
+              "            const examResult = challengeWithExam.examResults;",
+              "            pm.expect(examResult).to.have.property('passed');",
+              "            pm.expect(examResult).to.not.have.property('numberOfCorrectAnswers');",
+              "            pm.expect(examResult).to.not.have.property('examTimeInSeconds');",
+              "            console.log('✓ Challenge shows only pass/fail:', examResult);",
+              "        }",
+              "    }",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users/get-public-profile?username=certifieduser",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "get-public-profile"],
+          "query": [
+            {
+              "key": "username",
+              "value": "certifieduser",
+              "description": "The certified user with C# exam results"
+            }
+          ]
+        },
+        "description": "Get profile WITHOUT authentication cookie (simulates public viewer). Should return ONLY pass/fail status, no detailed stats."
+      },
+      "response": []
+    },
+    {
+      "name": "3. Verify Other User Profile (Public View)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Can view different user profile while signed in', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.entities.user).to.have.property('developmentuser');",
+              "});",
+              "",
+              "pm.test('Different user exam results are filtered (even when signed in)', function () {",
+              "    const jsonData = pm.response.json();",
+              "    const user = jsonData.entities.user.developmentuser;",
+              "    ",
+              "    if (user.completedExams && user.completedExams.length > 0) {",
+              "        const examResult = user.completedExams[0].examResults;",
+              "        ",
+              "        // Should ONLY have 'passed' field (viewing someone else's profile)",
+              "        pm.expect(examResult).to.have.property('passed');",
+              "        pm.expect(examResult).to.not.have.property('numberOfCorrectAnswers');",
+              "        ",
+              "        console.log('✓ Other user\\'s exam details are private:', examResult);",
+              "    }",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users/get-public-profile?username=developmentuser",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "get-public-profile"],
+          "query": [
+            {
+              "key": "username",
+              "value": "developmentuser",
+              "description": "A different user (not the signed-in user)"
+            }
+          ]
+        },
+        "description": "Get DIFFERENT user's profile while signed in. Should still filter exam details because you're not viewing your own profile."
+      },
+      "response": []
+    }
+  ]
+}
