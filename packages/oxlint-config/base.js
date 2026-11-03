@@ -66,6 +66,9 @@ const config = defineConfig({
 });
 
 const configTypeChecked = defineConfig({
+  options: {
+    typeAware: true
+  },
   extends: [config],
   overrides: [typescriptOverride(typescriptTypeChecked)]
 });
