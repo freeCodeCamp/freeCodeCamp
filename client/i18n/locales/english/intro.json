@@ -599,7 +599,9 @@
     "chapters": {
       "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
     },
-    "modules": { "introduction-to-d3": "Introduction to D3" },
+    "modules": {
+      "introduction-to-d3": "Introduction to D3"
+    },
     "module-intros": {
       "introduction-to-d3": {
         "note": "Coming Late 2026",
@@ -7738,7 +7740,10 @@
         "title": "Certification Introduction",
         "intro": ["", ""]
       },
-      "es-a1-learn-vowels": { "title": "Vowels", "intro": ["", ""] },
+      "es-a1-learn-vowels": {
+        "title": "Vowels",
+        "intro": ["", ""]
+      },
       "es-a1-learn-consonants-and-special-characters": {
         "title": "Consonants and Special Characters",
         "intro": ["", ""]
@@ -7759,7 +7764,10 @@
         "title": "Alphabet and Accents",
         "intro": ["", ""]
       },
-      "es-a1-learn-punctuation": { "title": "Punctuation", "intro": ["", ""] },
+      "es-a1-learn-punctuation": {
+        "title": "Punctuation",
+        "intro": ["", ""]
+      },
       "es-a1-review-spanish-fundamentals": {
         "title": "Spanish Fundamentals Review",
         "intro": ["", ""]
@@ -7792,8 +7800,14 @@
         "title": "Introducing Yourself Basics",
         "intro": ["", ""]
       },
-      "es-a1-learn-meet-luna": { "title": "Meet Luna", "intro": ["", ""] },
-      "es-a1-learn-meet-mateo": { "title": "Meet Mateo", "intro": ["", ""] },
+      "es-a1-learn-meet-luna": {
+        "title": "Meet Luna",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-meet-mateo": {
+        "title": "Meet Mateo",
+        "intro": ["", ""]
+      },
       "es-a1-learn-meet-julieta": {
         "title": "Meet Julieta",
         "intro": ["", ""]
@@ -9095,7 +9109,10 @@
         "title": "Simple Finals",
         "intro": ["", ""]
       },
-      "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
+      "zh-a1-learn-initials": {
+        "title": "Initials",
+        "intro": ["", ""]
+      },
       "zh-a1-learn-compound-finals": {
         "title": "Compound Finals",
         "intro": ["", ""]
@@ -9152,7 +9169,10 @@
         "title": "A New Colleague",
         "intro": ["", ""]
       },
-      "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
+      "zh-a1-learn-my-family": {
+        "title": "My Family",
+        "intro": ["", ""]
+      },
       "zh-a1-practice-introducing-others": {
         "title": "Introducing Others Practice",
         "intro": ["", ""]
@@ -10418,7 +10438,9 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": { "basic-html": "Basic HTML" },
+    "modules": {
+      "basic-html": "Basic HTML"
+    },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
@@ -10431,7 +10453,9 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
+      "daily-coding-challenge": {
+        "title": "Daily Coding Challenge"
+      }
     }
   },
   "misc-text": {
@@ -11098,6 +11122,12 @@
         "title": "Understanding Dynamic Programming",
         "intro": [
           "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "workshop-grid-path-counter": {
+        "title": "Build a Grid Path Counter",
+        "intro": [
+          "In this workshop, you'll build a grid path counter using both top-down memoization and bottom-up tabulation."
         ]
       },
       "lab-nth-fibonacci-number": {
