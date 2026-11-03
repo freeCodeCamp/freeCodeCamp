@@ -116,9 +116,6 @@ const Chapter = ({
   const panelId = `chapter-panel-${dashedName}`;
   const isComplete = completedSteps === totalSteps && totalSteps > 0;
   const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
-  const toggleLabel = open
-    ? t('intro:misc-text.collapse')
-    : t('intro:misc-text.expand');
   const showResetButton = !comingSoon && !isLinkChapter;
   const isResetDisabled = completedSteps === 0;
 
@@ -201,19 +198,9 @@ const Chapter = ({
           type='button'
         >
           {chapterButtonLeftContent}
-        </button>
-        {resetButton}
-        <button
-          aria-controls={panelId}
-          aria-expanded={open}
-          aria-label={`${toggleLabel} ${chapterLabel}`}
-          className='chapter-button chapter-button-toggle'
-          data-playwright-test-label='chapter-button-toggle'
-          onClick={toggleOpen}
-          type='button'
-        >
           {chapterButtonRightContent}
         </button>
+        {resetButton}
       </div>
       {open && (
         <ul className='chapter-panel' id={panelId}>

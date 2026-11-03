@@ -26,6 +26,7 @@
 .super-block-accordion .module-header-wrapper {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .super-block-accordion .chapter-header-wrapper .chapter-button-main,
@@ -35,9 +36,25 @@
   justify-content: space-between;
 }
 
-.super-block-accordion .chapter-header-wrapper .chapter-button-toggle,
-.super-block-accordion .module-header-wrapper .module-button-toggle {
-  flex-shrink: 0;
+/*
+ * By default the reset button follows the accordion button in the flow. With
+ * anchor positioning it moves next to the progress text instead.
+ */
+@supports (anchor-name: --steps) {
+  .super-block-accordion .chapter-steps,
+  .super-block-accordion .module-steps {
+    anchor-name: --steps;
+  }
+
+  .super-block-accordion .chapter-header-wrapper .block-reset-button,
+  .super-block-accordion .module-header-wrapper .block-reset-button {
+    position: absolute;
+    position-anchor: --steps;
+    inset-block: 0;
+    inset-inline-end: anchor(start);
+    height: fit-content;
+    margin-block: auto;
+  }
 }
 
 .super-block-accordion .chapter-header-wrapper {
@@ -50,10 +67,6 @@
   padding: 16px;
   display: flex;
   align-items: center;
-}
-
-.super-block-accordion .chapter-button-toggle {
-  padding-inline-start: 0;
 }
 
 .super-block-accordion .chapter-link {
@@ -134,28 +147,16 @@ button .block-header-button-text {
   color: var(--primary-color);
 }
 
-.super-block-accordion .module-button-toggle {
-  padding-inline-start: 0;
-}
-
 .super-block-accordion .block-header {
   width: 100%;
   justify-content: space-between;
 }
 
-.super-block-accordion .module-button-left,
-.super-block-accordion .module-button-right {
+.super-block-accordion .module-button-left {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.super-block-accordion .module-button-left {
   text-align: start;
-}
-
-.super-block-accordion .module-button-right {
-  text-align: end;
 }
 
 .super-block-accordion .module-steps {

@@ -156,6 +156,25 @@ const fullStackExamStructure = {
 };
 
 describe('SuperBlockAccordion', () => {
+  it('should include the progress steps in the accessible name of the chapter button', () => {
+    renderWithProvider(
+      <SuperBlockAccordion
+        challenges={[mockChallenge]}
+        superBlock={SuperBlocks.RespWebDesign}
+        structure={mockStructure}
+        chosenBlock={''}
+        completedChallengeIds={[]}
+      />
+    );
+
+    const chapterButtons = screen.getAllByRole('button', {
+      name: /^test-chapter/i
+    });
+
+    expect(chapterButtons).toHaveLength(1);
+    expect(chapterButtons[0]).toHaveAccessibleName(/learn\.steps-completed/);
+  });
+
   it('does not show completed checkmark when there are zero challenges in a chapter', () => {
     renderWithProvider(
       <SuperBlockAccordion
@@ -679,14 +698,12 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    expect(screen.getByRole('button', { name: 'chapter-one' })).toHaveAttribute(
-      'aria-expanded',
-      'false'
-    );
-    expect(screen.getByRole('button', { name: 'chapter-two' })).toHaveAttribute(
-      'aria-expanded',
-      'true'
-    );
+    expect(
+      screen.getByRole('button', { name: /^chapter-one/i })
+    ).toHaveAttribute('aria-expanded', 'false');
+    expect(
+      screen.getByRole('button', { name: /^chapter-two/i })
+    ).toHaveAttribute('aria-expanded', 'true');
 
     // The collapsed chapter's module is not rendered; the expanded chapter
     // reveals its module, which is expanded as well
