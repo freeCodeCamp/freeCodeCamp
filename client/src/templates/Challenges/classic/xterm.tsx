@@ -82,7 +82,7 @@ export const XtermTerminal = ({
       const input = (text?: string) => {
         print(text);
         let userinput = '';
-        // Eslint is correct that this only gets assigned once, but we can't use
+        // The linter is correct that this only gets assigned once, but we can't use
         // const because the declaration (before keyListener is defined) and
         // assignment (after keyListener is defined) must be separate.
         // oxlint-disable-next-line prefer-const

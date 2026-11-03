@@ -30,7 +30,7 @@
   "postAttachCommand": ".devcontainer/welcome.sh",
   "customizations": {
     "vscode": {
-      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+      "extensions": ["oxc.oxc-vscode", "esbenp.prettier-vscode"],
       "settings": {
         "tasks": {
           "version": "2.0.0",
