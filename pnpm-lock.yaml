@@ -459,8 +459,8 @@ importers:
         specifier: 5.16.7
         version: 5.16.7(react@18.3.1)
       '@paypal/react-paypal-js':
-        specifier: 10.6.0
-        version: 10.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 10.6.1
+        version: 10.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@redux-devtools/extension':
         specifier: 3.3.0
         version: 3.3.0(redux@4.2.1)
@@ -529,7 +529,7 @@ importers:
         version: 5.16.0(supports-color@8.1.1)
       gatsby-plugin-postcss:
         specifier: 6.16.0
-        version: 6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.5(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@5.9.3)(webpack-cli@4.10.0))(postcss@8.5.31)(typescript@5.9.3)(webpack@5.112.1)
+        version: 6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.5(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@5.9.3)(webpack-cli@4.10.0))(postcss@8.5.31)(typescript@5.9.3)(webpack@5.112.2)
       gatsby-plugin-react-helmet:
         specifier: 6.16.0
         version: 6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.5(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@5.9.3)(webpack-cli@4.10.0))(react-helmet@6.1.0(react@18.3.1))
@@ -821,7 +821,7 @@ importers:
         version: 26.1.0(supports-color@8.1.1)
       monaco-editor-webpack-plugin:
         specifier: 7.1.1
-        version: 7.1.1(monaco-editor@0.55.1)(webpack@5.112.1)
+        version: 7.1.1(monaco-editor@0.55.1)(webpack@5.112.2)
       react-test-renderer:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
@@ -959,8 +959,8 @@ importers:
         specifier: 7.29.7
         version: 7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/standalone':
-        specifier: 7.29.10
-        version: 7.29.10
+        specifier: 7.29.11
+        version: 7.29.11
       '@freecodecamp/browser-scripts':
         specifier: workspace:*
         version: link:../../tools/client-plugins/browser-scripts
@@ -1297,7 +1297,7 @@ importers:
         version: 1.6.5(supports-color@8.1.1)(typescript@5.9.3)
       babel-loader:
         specifier: 8.4.1
-        version: 8.4.1(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.112.1)
+        version: 8.4.1(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.112.2)
       eslint:
         specifier: 9.39.5
         version: 9.39.5(jiti@2.7.0)(supports-color@8.1.1)
@@ -1314,11 +1314,11 @@ importers:
         specifier: 0.12.5
         version: 0.12.5
       webpack:
-        specifier: 5.112.1
-        version: 5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
+        specifier: 5.112.2
+        version: 5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
       webpack-cli:
         specifier: 4.10.0
-        version: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.1)
+        version: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.2)
 
   tools/client-plugins/gatsby-source-challenges:
     dependencies:
@@ -2193,8 +2193,8 @@ packages:
     resolution: {integrity: sha512-NpugTzbKgGrNe45Ui32cN8vCFFMxVtP/9rtfwv0nP5FRDAjvYBxJcLVpYA9mr1jxP6cnIT7x9LUzuDTbWYYNRA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/standalone@7.29.10':
-    resolution: {integrity: sha512-Hw4VoSA8lWuYPfYlzfKP3W44F166NEQJbgJRkzZSn1lAqNPq0nVlOEfBKTLckQDs6X3cUcAq2Nh6vopUMvkk3g==}
+  '@babel/standalone@7.29.11':
+    resolution: {integrity: sha512-vluAHMxSAtHdRbVgGSHSrzxltmQ4H4FOPiUAOxYxmHA5OY1Cx8MJoy/aXUUGVYP+Iso+QziffGe1RBzcpgyHGg==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.29.7':
@@ -3507,11 +3507,11 @@ packages:
     peerDependencies:
       '@parcel/core': ^2.8.3
 
-  '@paypal/paypal-js@11.2.2':
-    resolution: {integrity: sha512-RVGfgu9lmcEtsi0LbMGwPL4ksmzQ6ws9nyOJyEmBVWtkMnf+WfA6JLPmi2aHvlwKbT+K6Sw153VbE5rUjYxE8g==}
+  '@paypal/paypal-js@11.3.0':
+    resolution: {integrity: sha512-Sn0M20QICbV8AeVcMvwQ1QWDX/JaxPgLsxrUFUshYC/W3gMVUZXlpmO/6z3JOhrhk9PU4HZLTYb/F0A/xMwHVw==}
 
-  '@paypal/react-paypal-js@10.6.0':
-    resolution: {integrity: sha512-oBf/5EsmHTvNho8U25z/SJkU82eGoWEfogVHBd7K0Bf91hOPuM9brx3bwbP87j+45/M/S91SyVTavEKpBKxWVA==}
+  '@paypal/react-paypal-js@10.6.1':
+    resolution: {integrity: sha512-0SuNOf6Qo9F4qx4CpPPcV4UMBcyesjt3qgl+RAQU+MKm7fWW682NSvCK6B64Far40Hc+DcvZ7V3dDpKEhg9iLg==}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
       react-dom: ^16.8.0 || ^17 || ^18 || ^19
@@ -12173,8 +12173,8 @@ packages:
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
-  webpack@5.112.1:
-    resolution: {integrity: sha512-DsEgOfaY5XrvTTEU7QvktlOpYEipgNUyXQY4rQO4KtFmr71IwjMoRWyv9rJNo6qwqctRzh9sO9VIwMgnWmiBVg==}
+  webpack@5.112.2:
+    resolution: {integrity: sha512-B2tp1LI9D8GVpPDqprdt12ukTkXXahj9MzqSWJq4faSPgOUM7CdZaGAB6HrL/8E6UwbBpdj4vzWDbKoFnVoU6g==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -13473,7 +13473,7 @@ snapshots:
 
   '@babel/runtime@7.29.10': {}
 
-  '@babel/standalone@7.29.10': {}
+  '@babel/standalone@7.29.11': {}
 
   '@babel/template@7.29.7':
     dependencies:
@@ -14956,13 +14956,13 @@ snapshots:
       chrome-trace-event: 1.0.4
       nullthrows: 1.1.1
 
-  '@paypal/paypal-js@11.2.2':
+  '@paypal/paypal-js@11.3.0':
     dependencies:
       promise-polyfill: 8.3.0
 
-  '@paypal/react-paypal-js@10.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@paypal/react-paypal-js@10.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@paypal/paypal-js': 11.2.2
+      '@paypal/paypal-js': 11.3.0
       '@paypal/sdk-constants': 1.0.158
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -16473,19 +16473,19 @@ snapshots:
       '@webassemblyjs/ast': 1.14.1
       '@xtuc/long': 4.2.2
 
-  '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0)(webpack@5.112.1)':
+  '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0)(webpack@5.112.2)':
     dependencies:
-      webpack: 5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.1)
+      webpack: 5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.2)
 
   '@webpack-cli/info@1.5.0(webpack-cli@4.10.0)':
     dependencies:
       envinfo: 7.21.0
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.1)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.2)
 
   '@webpack-cli/serve@1.7.0(webpack-cli@4.10.0)':
     dependencies:
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.1)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.2)
 
   '@xterm/addon-fit@0.11.0': {}
 
@@ -16848,14 +16848,14 @@ snapshots:
 
   babel-jsx-utils@1.1.0: {}
 
-  babel-loader@8.4.1(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.112.1):
+  babel-loader@8.4.1(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.112.2):
     dependencies:
       '@babel/core': 7.29.7(supports-color@8.1.1)
       find-cache-dir: 3.3.2
       loader-utils: 2.0.4
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
+      webpack: 5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
 
   babel-loader@8.4.1(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.98.0):
     dependencies:
@@ -19639,12 +19639,12 @@ snapshots:
       lodash.get: 4.4.2
       lodash.uniq: 4.5.0
 
-  gatsby-plugin-postcss@6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.5(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@5.9.3)(webpack-cli@4.10.0))(postcss@8.5.31)(typescript@5.9.3)(webpack@5.112.1):
+  gatsby-plugin-postcss@6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.5(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@5.9.3)(webpack-cli@4.10.0))(postcss@8.5.31)(typescript@5.9.3)(webpack@5.112.2):
     dependencies:
       '@babel/runtime': 7.29.10
       gatsby: 5.16.1(babel-eslint@10.1.0(eslint@9.39.5(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@5.9.3)(webpack-cli@4.10.0)
       postcss: 8.5.31
-      postcss-loader: 7.3.4(postcss@8.5.31)(typescript@5.9.3)(webpack@5.112.1)
+      postcss-loader: 7.3.4(postcss@8.5.31)(typescript@5.9.3)(webpack@5.112.2)
     transitivePeerDependencies:
       - typescript
       - webpack
@@ -21891,13 +21891,13 @@ snapshots:
 
   minimist@1.2.8: {}
 
-  minimizer-webpack-plugin@5.13.0(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack@5.112.1):
+  minimizer-webpack-plugin@5.13.0(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack@5.112.2):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
-      schema-utils: 4.8.1(webpack@5.112.1)
+      schema-utils: 4.8.1(webpack@5.112.2)
       terser: 5.51.2
-      webpack: 5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
+      webpack: 5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
     optionalDependencies:
       cssnano: 5.1.15(postcss@8.5.31)
       csso: 4.2.0
@@ -21950,11 +21950,11 @@ snapshots:
 
   moment@2.31.0: {}
 
-  monaco-editor-webpack-plugin@7.1.1(monaco-editor@0.55.1)(webpack@5.112.1):
+  monaco-editor-webpack-plugin@7.1.1(monaco-editor@0.55.1)(webpack@5.112.2):
     dependencies:
       loader-utils: 2.0.4
       monaco-editor: 0.55.1
-      webpack: 5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
+      webpack: 5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
 
   monaco-editor@0.55.1:
     dependencies:
@@ -22647,13 +22647,13 @@ snapshots:
       semver: 7.8.5
       webpack: 5.98.0(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(webpack-cli@4.10.0)
 
-  postcss-loader@7.3.4(postcss@8.5.31)(typescript@5.9.3)(webpack@5.112.1):
+  postcss-loader@7.3.4(postcss@8.5.31)(typescript@5.9.3)(webpack@5.112.2):
     dependencies:
       cosmiconfig: 8.3.6(typescript@5.9.3)
       jiti: 1.21.7
       postcss: 8.5.31
       semver: 7.8.5
-      webpack: 5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
+      webpack: 5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
     transitivePeerDependencies:
       - typescript
 
@@ -23800,14 +23800,14 @@ snapshots:
       ajv-formats: 3.0.1(ajv@8.20.0)
       ajv-keywords: 5.1.0(ajv@8.20.0)
 
-  schema-utils@4.8.1(webpack@5.112.1):
+  schema-utils@4.8.1(webpack@5.112.2):
     dependencies:
       '@types/json-schema': 7.0.15
       ajv: 8.20.0
       ajv-formats: 3.0.1(ajv@8.20.0)
       ajv-keywords: 5.1.0(ajv@8.20.0)
     optionalDependencies:
-      webpack: 5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
+      webpack: 5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
 
   search-insights@2.17.3: {}
 
@@ -25370,10 +25370,10 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.1):
+  webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.2):
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
-      '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0)(webpack@5.112.1)
+      '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0)(webpack@5.112.2)
       '@webpack-cli/info': 1.5.0(webpack-cli@4.10.0)
       '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0)
       colorette: 2.0.20
@@ -25383,7 +25383,7 @@ snapshots:
       import-local: 3.2.0
       interpret: 2.2.0
       rechoir: 0.7.1
-      webpack: 5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
+      webpack: 5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0)
       webpack-merge: 5.10.0
     optionalDependencies:
       webpack-bundle-analyzer: 4.10.2
@@ -25414,7 +25414,7 @@ snapshots:
 
   webpack-virtual-modules@0.6.2: {}
 
-  webpack@5.112.1(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0):
+  webpack@5.112.2(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack-cli@4.10.0):
     dependencies:
       '@types/estree': 1.0.9
       '@types/json-schema': 7.0.15
@@ -25428,13 +25428,13 @@ snapshots:
       events: 3.3.0
       graceful-fs: 4.2.11
       mime-db: 1.54.0
-      minimizer-webpack-plugin: 5.13.0(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack@5.112.1)
-      schema-utils: 4.8.1(webpack@5.112.1)
+      minimizer-webpack-plugin: 5.13.0(cssnano@5.1.15(postcss@8.5.31))(csso@4.2.0)(esbuild@0.28.2)(postcss@8.5.31)(sharp@0.32.6)(svgo@2.8.4)(webpack@5.112.2)
+      schema-utils: 4.8.1(webpack@5.112.2)
       tapable: 2.3.3
       watchpack: 2.6.3
       webpack-sources: 3.6.0
     optionalDependencies:
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.1)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.2)
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@napi-rs/image'
@@ -25479,7 +25479,7 @@ snapshots:
       watchpack: 2.5.2
       webpack-sources: 3.6.0
     optionalDependencies:
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.1)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.112.2)
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@swc/core'

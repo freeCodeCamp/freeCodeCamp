@@ -1626,7 +1626,7 @@
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+          "Open up this page to review concepts around loops, lists, tuples, and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
@@ -2610,6 +2610,12 @@
         "title": "Build a Traffic Light Sequencer",
         "intro": [
           "In this lab, you will use JavaScript loops to build a traffic light sequencer."
+        ]
+      },
+      "workshop-campus-directory-normalizer": {
+        "title": "Build a Campus Directory Normalizer",
+        "intro": [
+          "In this workshop, you will normalize nested data into independent, easy-to-use lookup tables."
         ]
       },
       "lab-proofreading-tool": {
@@ -5030,6 +5036,12 @@
           "In this lab, you'll create a function that looks up profile information."
         ]
       },
+      "lab-data-sanitizer-sweep": {
+        "title": "Implement the Data Sanitizer Sweep Process",
+        "intro": [
+          "In this lab, you will practice using string manipulation and loops to replace characters in log strings and entire log files."
+        ]
+      },
       "workshop-space-mission-roster": {
         "title": "Build a Space Mission Roster",
         "intro": [
@@ -6623,7 +6635,7 @@
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+          "Open up this page to review concepts around loops, lists, tuples, and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
@@ -10598,7 +10610,7 @@
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+          "Open up this page to review concepts around loops, lists, tuples, and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
