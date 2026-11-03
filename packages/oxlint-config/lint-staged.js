@@ -1,10 +1,8 @@
-import path from 'node:path';
-
 const quote = value => `'${value.replaceAll("'", "'\\''")}'`;
 
-export const createLintStagedConfig = cwd => ({
+export const createLintStagedConfig = () => ({
   '*.{mjs,cjs,js,jsx,ts,tsx}': files => [
-    `oxlint --deny-warnings --fix --no-error-on-unmatched-pattern --config ${quote(path.join(cwd, 'oxlint.config.ts'))} ${files.map(quote).join(' ')}`,
+    `oxlint --deny-warnings --fix --no-error-on-unmatched-pattern ${files.map(quote).join(' ')}`,
     ...files.map(filename => `prettier --write ${quote(filename)}`)
   ],
   '*.!(mjs|cjs|js|jsx|ts|tsx|css|md)': files =>
