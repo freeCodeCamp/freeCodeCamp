@@ -756,6 +756,8 @@
       "questions": "Question {{ n }} of {{ t }}",
       "passed": "Passed",
       "not-passed": "Not Passed",
+      "passed-exam": "Exam Passed",
+      "failed-exam": "Exam Not Passed",
       "number-of-questions": "Number of questions: {{ n }}",
       "correct-answers": "Correct answers: {{ n }}",
       "percent-correct": "Percent correct: {{ n }}%",

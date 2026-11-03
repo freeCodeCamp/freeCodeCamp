@@ -44,8 +44,16 @@ const ExamResultsModal = ({
     numberOfCorrectAnswers,
     examTimeInSeconds,
     numberOfQuestionsInExam,
-    percentCorrect
+    percentCorrect,
+    passed
   } = examResults;
+
+  // Check if detailed statistics are available (not filtered for privacy)
+  const hasDetailedStats =
+    numberOfCorrectAnswers !== undefined &&
+    examTimeInSeconds !== undefined &&
+    numberOfQuestionsInExam !== undefined &&
+    percentCorrect !== undefined;
 
   return (
     <Modal
@@ -61,23 +69,35 @@ const ExamResultsModal = ({
       <Modal.Body alignment='start'>
         <Spacer size='m' />
         <div style={{ paddingLeft: '30px' }}>
-          <Row>
-            {t('learn.exam.number-of-questions', {
-              n: numberOfQuestionsInExam
-            })}
-          </Row>{' '}
-          <Spacer size='m' />
-          <Row>
-            {t('learn.exam.correct-answers', { n: numberOfCorrectAnswers })}
-          </Row>{' '}
-          <Spacer size='m' />
-          <Row>{t('learn.exam.percent-correct', { n: percentCorrect })}</Row>
-          <Spacer size='m' />{' '}
-          <Row>
-            {t('learn.exam.time', {
-              t: formatSecondsToTime(examTimeInSeconds)
-            })}
-          </Row>
+          {hasDetailedStats ? (
+            <>
+              <Row>
+                {t('learn.exam.number-of-questions', {
+                  n: numberOfQuestionsInExam
+                })}
+              </Row>{' '}
+              <Spacer size='m' />
+              <Row>
+                {t('learn.exam.correct-answers', { n: numberOfCorrectAnswers })}
+              </Row>{' '}
+              <Spacer size='m' />
+              <Row>
+                {t('learn.exam.percent-correct', { n: percentCorrect })}
+              </Row>
+              <Spacer size='m' />{' '}
+              <Row>
+                {t('learn.exam.time', {
+                  t: formatSecondsToTime(examTimeInSeconds)
+                })}
+              </Row>
+            </>
+          ) : (
+            <Row>
+              {passed
+                ? t('learn.exam.passed-exam')
+                : t('learn.exam.failed-exam')}
+            </Row>
+          )}
         </div>
         <Spacer size='m' />
       </Modal.Body>

@@ -65,6 +65,12 @@ export const examResults = Type.Object({
   examTimeInSeconds: Type.Number()
 });
 
+// Public exam results schema - only contains pass/fail status
+// Used for filtering exam results shown to public viewers
+export const publicExamResults = Type.Object({
+  passed: Type.Boolean()
+});
+
 export const surveyTitles = Type.Union([
   Type.Literal('Foundational C# with Microsoft Survey')
 ]);

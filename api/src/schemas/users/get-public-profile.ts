@@ -1,5 +1,10 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { profileUI, examResults, experience } from '../types.js';
+import {
+  profileUI,
+  examResults,
+  publicExamResults,
+  experience
+} from '../types.js';
 
 export const getPublicProfile = {
   querystring: Type.Object({
@@ -36,7 +41,9 @@ export const getPublicProfile = {
                     })
                   ),
                   isManuallyApproved: Type.Optional(Type.Boolean()),
-                  examResults: Type.Optional(examResults)
+                  examResults: Type.Optional(
+                    Type.Union([examResults, publicExamResults])
+                  )
                 })
               ),
               completedExams: Type.Array(
@@ -44,7 +51,7 @@ export const getPublicProfile = {
                   id: Type.String(),
                   completedDate: Type.Number(),
                   challengeType: Type.Optional(Type.Number()),
-                  examResults
+                  examResults: Type.Union([examResults, publicExamResults])
                 })
               ),
               experience: Type.Array(experience),
