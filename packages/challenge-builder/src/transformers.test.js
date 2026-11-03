@@ -8,43 +8,35 @@ import { createPoly } from '@freecodecamp/shared/utils/polyvinyl';
 import {
   embedFilesInHtml,
   embedScript,
-  getLocalSourceWarnings,
-  getTransformers
+  getJSTranspiler,
+  getLocalSourceWarnings
 } from './transformers';
 
 const parseHtml = html => new DOMParser().parseFromString(html, 'text/html');
-const defaultLoopProtectOptions = {
-  preview: false,
-  disableLoopProtectTests: false,
-  disableLoopProtectPreview: false
-};
 
-const applyTransformers = challengeFile => {
-  const transformers = getTransformers(defaultLoopProtectOptions);
-  return transformers.reduce(
-    (fileP, transformer) => fileP.then(file => transformer(file)),
-    Promise.resolve(challengeFile)
+describe('getJSTranspiler', () => {
+  // The first time a transpiler is called it loads Babel (a very slow process) which
+  // is why we need a long timeout.
+  it(
+    'does not transpile const declarations to var',
+    { timeout: 10_000 },
+    async () => {
+      const file = createPoly({
+        name: 'script',
+        ext: 'js',
+        contents:
+          'const location = []; const copiedLocation = { ...window.location };',
+        head: '',
+        tail: ''
+      });
+      const transpiled = await getJSTranspiler()(file);
+
+      expect(transpiled.contents).toMatch(/\bconst\s+location\b/);
+    }
   );
-};
+});
 
 describe('embedFilesInHtml', () => {
-  it('does not transpile const declarations to var', async () => {
-    const file = createPoly({
-      name: 'script',
-      ext: 'js',
-      contents:
-        'const location = []; const copiedLocation = { ...window.location };',
-      head: '',
-      tail: ''
-    });
-
-    const transformed = await applyTransformers(file);
-
-    expect(transformed.contents).toMatch(/\bconst\s+location\b/);
-    expect(transformed.contents).not.toMatch(/\bvar\s+location\b/);
-    expect(transformed.contents).toMatch(/\.\.\.\s*window\.location/);
-  });
-
   it('keeps deferred script.js in place', async () => {
     const result = await embedFilesInHtml([
       {

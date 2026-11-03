@@ -14,20 +14,10 @@ Next, you need a way to track how many attendees are processed by the gate durin
 You should create a variable named `processed` and assign it a value of `0`.
 
 ```js
-const rawFuncStr = __helpers.removeJSComments(processGateFlow.toString());
-assert.match(
-  rawFuncStr,
-  /(var|const|let)\s+processed/,
-  "You must have at least one space between the declaration keyword (let/const) and 'processed'."
-);
-
-const cleaned = __helpers.removeWhiteSpace(__helpers.removeJSComments(processGateFlow.toString()));
-const solution = /(var|const|let)processed=0;?}$/;
-
-assert(
-  solution.test(cleaned),
-  "Inside your `processGateFlow` function, create a variable named `processed` and initialize it to 0."
-);
+const explorer = await __helpers.Explorer(code);
+const { processGateFlow } = explorer.allFunctions;
+const { processed } = processGateFlow?.variables ?? {};
+assert.isTrue(processed?.value.matches("0"));
 ```
 
 # --seed--

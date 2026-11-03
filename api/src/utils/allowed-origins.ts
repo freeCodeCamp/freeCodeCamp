@@ -4,6 +4,7 @@ const ALLOWED_ORIGINS = [
   'https://www.freecodecamp.dev',
   'https://www.freecodecamp.org',
   'https://exam.freecodecamp.org',
+  'https://auth.freecodecamp.org',
   // pretty sure the rest of these can go?
   'https://beta.freecodecamp.dev',
   'https://beta.freecodecamp.org',

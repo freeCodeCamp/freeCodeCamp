@@ -69,7 +69,7 @@ assert.equal(document.querySelector('form input')?.id, "income");
       <div class="container">
         <form id="budget-form">
 --fcc-editable-region--
-
+          
 --fcc-editable-region--
         </form>
       </div>

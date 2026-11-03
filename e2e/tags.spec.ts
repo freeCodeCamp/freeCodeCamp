@@ -1,4 +1,6 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+
+test.use({ userPreset: 'certified' });
 
 const challenges = {
   responsiveWebDesign:
@@ -9,7 +11,7 @@ const challenges = {
 };
 
 const social = {
-  description: 'Learn to Code — For Free'
+  description: 'Learn to Code for Free'
 };
 
 const scripts = {
@@ -25,7 +27,7 @@ test.describe('The Document Metadata', () => {
       await page.goto('/');
       await expect(
         page.locator('head meta[name="description"]')
-      ).toHaveAttribute('content', 'Learn to Code — For Free');
+      ).toHaveAttribute('content', 'Learn to Code for Free');
       await expect(page.locator('head meta[name="og:title"]')).toHaveAttribute(
         'content',
         'freeCodeCamp.org'

@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-conditional-logic",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "673271fd11d063daf0cf8d20",
+      "title": "What Are Conditional Statements, and How Do If/Else If/Else Statements Work?"
+    },
+    {
+      "id": "6732720e95f6a0db526a2e4d",
+      "title": "What Are Binary Logical Operators, and How Do They Work?"
+    },
+    {
+      "id": "673282bea35dbf129efb63d6",
+      "title": "What Are Switch Statements and How Do They Differ from If/Else Chains?"
+    }
+  ]
+}

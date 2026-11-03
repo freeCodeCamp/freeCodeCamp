@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import {
   describe,
   test,
@@ -15,7 +14,8 @@ import {
   superRequest,
   createSuperRequest,
   defaultUserId,
-  defaultUserEmail
+  defaultUserEmail,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import { formatMessage } from '../../plugins/redirect-with-message.js';
 import { createUserInput } from '../../utils/create-user.js';
@@ -1894,7 +1894,7 @@ Happy coding!
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     describe('/confirm-email', () => {
@@ -1913,6 +1913,7 @@ Happy coding!
     const endpoints: { path: string; method: 'PUT' }[] = [
       { path: '/update-my-profileui', method: 'PUT' },
       { path: '/update-my-theme', method: 'PUT' },
+      { path: '/update-my-email', method: 'PUT' },
       { path: '/update-my-username', method: 'PUT' },
       { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
       { path: '/update-my-socials', method: 'PUT' },
@@ -1921,7 +1922,9 @@ Happy coding!
       { path: '/update-my-honesty', method: 'PUT' },
       { path: '/update-privacy-terms', method: 'PUT' },
       { path: '/update-my-portfolio', method: 'PUT' },
-      { path: '/update-my-experience', method: 'PUT' }
+      { path: '/update-my-experience', method: 'PUT' },
+      { path: '/update-socrates', method: 'PUT' },
+      { path: '/update-my-classroom-mode', method: 'PUT' }
     ];
 
     endpoints.forEach(({ path, method }) => {

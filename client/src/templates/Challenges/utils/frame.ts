@@ -15,6 +15,11 @@ import type {
 } from '../../../../../tools/client-plugins/browser-scripts';
 import { Hooks } from '../../../redux/prop-types';
 import { pathPrefix } from '../../../../utils/gatsby/path-prefix';
+import {
+  alertKeyByVariant,
+  createPreviewAlertListener,
+  previewAlertMessageType
+} from './preview-messages';
 
 export const helperVersion = _helperVersion;
 
@@ -88,6 +93,9 @@ export const scrollManager = new ScrollManager();
 export const mainPreviewId = 'fcc-main-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
+const previewSandboxTokens = ['allow-scripts', 'allow-forms'] as const;
+export const previewSandbox = previewSandboxTokens.join(' ');
+
 const ASSET_PATH = `${pathPrefix}/js/test-runner/${helperVersion}/`;
 
 const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
@@ -105,6 +113,9 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // The "fcc-hide-header" class on line 95 is added to ensure that the CSSHelper class ignores this style element
 // during tests, preventing CSS-related test failures.
 
+const parentOrigin = () =>
+  typeof window === 'undefined' ? '*' : window.location.origin;
+
 const createHeader = (id = mainPreviewId) =>
   `
   <base href='' />
@@ -115,6 +126,13 @@ const createHeader = (id = mainPreviewId) =>
   </style>
   <script>
     window.__frameId = '${id}';
+    function __fccAlertParent(variant, externalLink) {
+      window.parent.postMessage({
+        type: '${previewAlertMessageType}',
+        variant: variant,
+        externalLink: externalLink
+      }, '${parentOrigin()}');
+    }
     window.onerror = function(msg) {
       const string = msg.toLowerCase();
       if (string.includes('script error')) {
@@ -130,10 +148,7 @@ const createHeader = (id = mainPreviewId) =>
       }
       if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
         e.preventDefault();
-        window.parent.window.alert(
-          i18nContent.t('misc.iframe-alert', { externalLink: element.href })
-        )
-      }
+        __fccAlertParent('external-link', element.href);      }
       if (element) {
         const href = element.getAttribute('href');
         if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {
@@ -150,9 +165,7 @@ const createHeader = (id = mainPreviewId) =>
       const action = e.target.getAttribute('action');
       e.preventDefault();
       if (action && action.match(/https?:\\/\\//)) {
-        window.parent.window.alert(
-          i18nContent.t('misc.iframe-form-submit-alert', { externalLink: action  })
-        )
+        __fccAlertParent('external-form', action);
       }
     }, false);
   </script>
@@ -257,10 +270,15 @@ const loadTestRunner = async (document: Document) => {
   return done;
 };
 
+const withSandbox = (frame: HTMLIFrameElement, sandbox: boolean) => {
+  if (sandbox) frame.sandbox.add(...previewSandboxTokens);
+  return frame;
+};
+
 const createFrame =
-  (document: Document, id: string, title?: string) =>
+  (document: Document, id: string, title?: string, sandbox = true) =>
   (frameContext: Context) => {
-    const frame = document.createElement('iframe');
+    const frame = withSandbox(document.createElement('iframe'), sandbox);
 
     frame.srcdoc = createContent(id, frameContext);
     frame.id = id;
@@ -346,7 +364,16 @@ const updateProxyConsole =
 const updateWindowI18next = (frameContext: Context) => {
   // window does not exist if the preview is hidden, so we have to check.
   if (frameContext?.window) {
-    frameContext.window.i18nContent = i18next;
+    try {
+      frameContext.window.i18nContent = i18next;
+    } catch (err) {
+      if (err instanceof DOMException && err.name === 'SecurityError') {
+        // do nothing because this is due to sandboxing
+      } else {
+        // if it's NOT due to sandboxing, we need the diagnostics
+        throw err;
+      }
+    }
   }
   return frameContext;
 };
@@ -449,7 +476,8 @@ export const createMainPreviewFramer = (
     init: initMainFrame,
     proxyLogger,
     frameReady,
-    frameTitle
+    frameTitle,
+    sandbox: false
   });
 
 export const createProjectPreviewFramer = (
@@ -462,8 +490,30 @@ export const createProjectPreviewFramer = (
     id: projectPreviewId,
     init: initProjectPreviewFrame,
     frameReady,
-    frameTitle
+    frameTitle,
+    sandbox: true
   });
+
+const alertListeners = new Map<string, (event: MessageEvent) => void>();
+
+const listenForPreviewAlerts = (frameContext: Context) => {
+  if (typeof window === 'undefined') return frameContext;
+
+  const { element } = frameContext;
+  const previous = alertListeners.get(element.id);
+  if (previous) window.removeEventListener('message', previous);
+
+  const listener: (event: MessageEvent) => void = createPreviewAlertListener({
+    frame: element,
+    showAlert: ({ variant, externalLink }) =>
+      window.alert(i18next.t(alertKeyByVariant[variant], { externalLink }))
+  });
+
+  alertListeners.set(element.id, listener);
+  window.addEventListener('message', listener);
+
+  return frameContext;
+};
 
 const createFramer = ({
   document,
@@ -472,7 +522,8 @@ const createFramer = ({
   proxyLogger,
   frameReady,
   frameTitle,
-  updateWindowFunctions
+  updateWindowFunctions,
+  sandbox
 }: {
   document: Document;
   id: string;
@@ -481,13 +532,15 @@ const createFramer = ({
   frameReady?: () => void;
   frameTitle?: string;
   updateWindowFunctions?: (frameContext: Context) => Context;
+  sandbox: boolean;
 }) =>
   flow(
-    createFrame(document, id, frameTitle),
+    createFrame(document, id, frameTitle, sandbox),
     mountFrame(document),
+    listenForPreviewAlerts,
     updateWindowFunctions ?? noop,
-    updateProxyConsole(proxyLogger),
-    updateWindowI18next,
-    restoreScrollPosition,
+    sandbox ? noop : updateProxyConsole(proxyLogger),
+    sandbox ? noop : updateWindowI18next,
+    sandbox ? noop : restoreScrollPosition,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;

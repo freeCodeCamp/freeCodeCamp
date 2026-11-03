@@ -143,7 +143,8 @@ exports.createChallengePages = function (
           node.challenge,
           lastChallengeByBlock
         ),
-        id: node.id
+        id: node.id,
+        superBlock
       }
     });
   };

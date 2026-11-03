@@ -105,8 +105,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     userToken
   } = props;
 
-  const handleHashChange = () => {
-    const id = window.location.hash.replace('#', '');
+  const handleHashChange = (event?: HashChangeEvent) => {
+    const hash = event ? new URL(event.newURL).hash : window.location.hash;
+    const id = hash.replace('#', '');
     if (id) {
       scroller.scrollTo(id, {
         smooth: true,

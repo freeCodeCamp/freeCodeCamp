@@ -1,0 +1,11 @@
+{
+  "blockLabel": "cert-project",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-survey-form-v2",
+  "challengeOrder": [
+    { "id": "587d78af367417b2b2512b03", "title": "Build a Survey Form" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

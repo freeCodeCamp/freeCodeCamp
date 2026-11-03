@@ -27,7 +27,7 @@ concurrency:
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }}
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }}
@@ -90,7 +90,7 @@ jobs:
 
   deploy:
     name: Deploy to Docker Swarm -- ${{ needs.setup-jobs.outputs.tgt_env_short }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: [setup-jobs, build]
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
@@ -102,7 +102,7 @@ jobs:
 
     steps:
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
@@ -138,16 +138,22 @@ jobs:
             StrictHostKeyChecking no" > ~/.ssh/config
           chmod 644 ~/.ssh/config
 
+          scrub_ips() {
+            sed -E 's/100(\.[0-9]{1,3}){3}/100.x.x.x/g'
+          }
+
           validate_connection() {
             local machine_name=$1
             local max_retries=3
             local retry_delay=5
+            local ping_output ssh_output
 
             for attempt in $(seq 1 $max_retries); do
               echo "Connection attempt $attempt/$max_retries to $machine_name"
 
-              if ! tailscale status | grep -q "$machine_name"; then
-                echo "Machine $machine_name not found in Tailscale network"
+              if ! ping_output=$(tailscale ping -c 1 --until-direct=false --timeout=5s "$machine_name" 2>&1); then
+                ping_output=$(printf '%s' "$ping_output" | scrub_ips)
+                echo "No Tailscale data path to $machine_name: $ping_output"
                 if [ "$attempt" -eq "$max_retries" ]; then
                   return 1
                 fi
@@ -156,12 +162,13 @@ jobs:
               fi
 
               MACHINE_IP=$(tailscale ip -4 "$machine_name")
-              if ssh -o ConnectTimeout=10 -o BatchMode=yes "$TS_USERNAME@$MACHINE_IP" "echo 'Connection test'; docker --version" > /dev/null 2>&1; then
+              if ssh_output=$(ssh -o ConnectTimeout=10 -o BatchMode=yes "$TS_USERNAME@$MACHINE_IP" "echo 'Connection test'; docker --version" 2>&1); then
                 echo "Successfully validated connection to $machine_name"
                 return 0
               fi
 
-              echo "SSH validation failed for $machine_name"
+              ssh_output=$(printf '%s' "$ssh_output" | scrub_ips)
+              echo "SSH validation failed for $machine_name: $ssh_output"
               if [ "$attempt" -lt "$max_retries" ]; then
                 sleep "$retry_delay"
               fi
@@ -274,6 +281,9 @@ jobs:
               \"SOCRATES_API_KEY\"
               \"SOCRATES_ENDPOINT\"
               \"STRIPE_SECRET_KEY\"
+              \"PAYPAL_API_URL\"
+              \"PAYPAL_CLIENT_ID\"
+              \"PAYPAL_CLIENT_SECRET\"
               \"DEPLOYMENT_VERSION\"
               \"DEPLOYMENT_TLD\"
               \"DEPLOYMENT_ENV\"

@@ -1,0 +1,16 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-countup-python",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6a89c69c8dbfda74151fa0b6", "title": "Step 1" },
+    { "id": "6a89c69c91bc7365fbd4b733", "title": "Step 2" },
+    { "id": "6a89c69c99298438d6fbe60b", "title": "Step 3" },
+    { "id": "6a89c69c6af682856558d78b", "title": "Step 4" },
+    { "id": "6a89c69c111694edc6d1c628", "title": "Step 5" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

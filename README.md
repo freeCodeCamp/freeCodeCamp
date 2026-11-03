@@ -82,7 +82,7 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 Recent Contributions:
 
-![Alt](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
+![Live summary of recent repository activity: contributions in the last 30 days, issue open/close ratio, pull requests opened, and pushes, each compared to the previous month. Below are bar charts of issues, pull requests, and pushes over time, and a list of top contributors.](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
 
 ### License
 
@@ -92,3 +92,18 @@ The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
+
+---
+
+### Sponsors
+
+These organizations have supported our non-profit through grants:
+
+<div align="center">
+  <a href="https://www.vultr.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset=".github/assets/vultr_logo__on-dark.png">
+      <img alt="Vultr" src=".github/assets/vultr_logo__on-white.png" width="480">
+    </picture>
+  </a>
+</div>
