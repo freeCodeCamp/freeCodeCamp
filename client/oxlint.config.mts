@@ -7,7 +7,6 @@ import {
 
 export default defineConfig({
   extends: [configTypeChecked, configReact, configTestingLibrary],
-  options: { typeAware: true },
   ignorePatterns: ['static', '.cache', 'public'],
   env: { browser: true, mocha: true, node: true },
   globals: {

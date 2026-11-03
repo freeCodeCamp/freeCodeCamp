@@ -3,7 +3,6 @@ import { config } from '@freecodecamp/oxlint-config/base';
 
 export default defineConfig({
   extends: [config],
-  options: { typeAware: true },
   env: { node: true, browser: true, mocha: true },
   ignorePatterns: [
     'src/test/stubs/js',

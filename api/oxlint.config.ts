@@ -3,7 +3,6 @@ import { configTypeChecked, tsFiles } from '@freecodecamp/oxlint-config/base';
 
 export default defineConfig({
   extends: [configTypeChecked],
-  options: { typeAware: true },
   overrides: [
     {
       files: tsFiles,
