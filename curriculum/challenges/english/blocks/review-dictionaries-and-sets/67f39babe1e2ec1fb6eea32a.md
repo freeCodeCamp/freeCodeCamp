@@ -449,40 +449,6 @@ data = {'name': 'Jessica', 'age': 30}
 greet(**data)  # Jessica is 30
 ```
 
-- **Regular Expressions and `re.search()`**: A regular expression describes a text pattern. The `re.search()` function looks for the pattern anywhere in a string. It returns a match object if it finds one, or `None` if it doesn't.
-
-```python
-import re
-
-print(re.search('cat', 'concatenate'))  # <re.Match object; span=(3, 6), match='cat'>
-print(re.search('dog', 'concatenate'))  # None
-```
-
-- **Case-Insensitive Matching with `re.IGNORECASE`**: Pass `re.IGNORECASE` as the third argument to ignore the difference between uppercase and lowercase letters.
-
-```python
-print(re.search('cat', 'CAT', re.IGNORECASE))  # <re.Match object; span=(0, 3), match='CAT'>
-```
-
-- **Raw Strings and `\d`**: A raw string starts with `r` and treats backslashes as literal characters, which keeps regular expressions readable. In a pattern, `\d` matches any single digit.
-
-```python
-print(re.search(r'\d', 'room 5'))  # <re.Match object; span=(5, 6), match='5'>
-```
-
-- **The `+` Quantifier**: The `+` quantifier matches one or more repetitions of the pattern before it.
-
-```python
-print(re.search(r'\d+', 'room 305'))  # <re.Match object; span=(5, 8), match='305'>
-```
-
-- **`re.fullmatch()` Function**: The `re.fullmatch()` function only returns a match object if the entire string matches the pattern. Otherwise, it returns `None`.
-
-```python
-print(re.fullmatch(r'\d+', '305'))      # <re.Match object; span=(0, 3), match='305'>
-print(re.fullmatch(r'\d+', 'room 305')) # None
-```
-
 - **Object Identity with `is` and `is not`**: The `is` operator checks if two names refer to the same object, while `is not` checks that they don't. These operators are the standard way to check whether a value is `None`.
 
 ```python
@@ -497,6 +463,56 @@ print(result is not None)  # False
 ```python
 print(all([1, 'a', True]))  # True
 print(all([1, 0, True]))    # False
+```
+
+## Regular Expressions
+
+- **Regular Expressions**: A regular expression, or regex, is a pattern used to match a sequence of characters in text. To use them in Python, you need to import the `re` module.
+
+- **`re.search()` Function**: The `search()` function looks for a pattern anywhere in a string. It returns a match object if it finds it, and `None` otherwise. The `group()` and `span()` methods of a match object return the matched text and its start and end indices.
+
+```python
+import re
+
+result = re.search('cat', 'The cat sat on the mat.')
+print(result)         # <re.Match object; span=(4, 7), match='cat'>
+print(result.group()) # cat
+print(result.span())  # (4, 7)
+```
+
+- **Flags**: Regex matching is case sensitive by default. The `re.IGNORECASE` flag makes it case insensitive, as in `re.search('Cat', 'The cat sat', re.IGNORECASE)`.
+
+- **Raw Strings**: A raw string, created by adding `r` before the opening quote, treats backslashes as literal characters instead of escape sequences. It's good practice to always write regex patterns as raw strings, like `r'\d'`.
+
+- **Special Sequences**: `\d` matches any digit, `\w` matches any word character (letters, digits, and the underscore), and `\s` matches any whitespace character. `\D`, `\W`, and `\S` match the opposite.
+
+- **Quantifiers**: Quantifiers specify how many times the preceding character can be repeated: `+` one or more times, `*` zero or more times, `?` zero or one time, `{n}` exactly `n` times, and `{n,m}` from `n` to `m` times.
+
+```python
+import re
+
+print(re.search(r'\d+', 'Room 42B'))    # <re.Match object; span=(5, 7), match='42'>
+print(re.search(r'colou?r', 'color'))   # <re.Match object; span=(0, 5), match='color'>
+print(re.search(r'\d{4}', 'Room 1987')) # <re.Match object; span=(5, 9), match='1987'>
+```
+
+## Useful Functions in the `re` Module
+
+- **`re.match()` Function**: Like `search()`, but it only looks for the pattern at the beginning of the string.
+
+- **`re.fullmatch()` Function**: Returns a match object only when the pattern matches the entire string. This makes it useful for validating data.
+
+- **`re.findall()` Function**: Returns a list of strings with all the matches, or an empty list if there are none.
+
+- **`re.sub()` Function**: Replaces every match of a pattern with another string and returns the new string. Its optional `count` and `flags` parameters should always be passed as keyword arguments.
+
+```python
+import re
+
+print(re.match(r'\d+', 'apples: 42'))             # None
+print(re.fullmatch(r'\d+:\d+', '10:30pm'))        # None
+print(re.findall(r'\d+', 'Rooms 12, 7, and 105')) # ['12', '7', '105']
+print(re.sub(r'\d', '*', '555 0123', count=3))    # *** 0123
 ```
 
 # --assignment--
