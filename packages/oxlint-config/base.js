@@ -39,6 +39,7 @@ const typescriptOverride = preset => ({
 
 const config = defineConfig({
   extends: [eslintRecommended, importRecommended, prettier],
+  // disabling categories since we only want the recommended rules
   categories: { correctness: 'off' },
   plugins: ['typescript', 'import', 'unicorn', 'vitest'],
   jsPlugins: [
@@ -52,7 +53,6 @@ const config = defineConfig({
     fileURLToPath(import.meta.resolve('eslint-plugin-no-only-tests'))
   ],
   ignorePatterns: ['**/dist/**', '**/.turbo/**'],
-  env: { builtin: true, es2020: true },
   rules: {
     'turbo/no-undeclared-env-vars': 'error',
     'filenames-simple/naming-convention': 'error',
