@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "workshop-ascii-art-printer",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "6aeb6bd1a78f0795188596df", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
