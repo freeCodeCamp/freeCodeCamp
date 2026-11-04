@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-order-processor",
+  "challengeOrder": [
+    {
+      "id": "6aea45eab8e7391a3000ba0b",
+      "title": "Build an Order Processor"
+    }
+  ],
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "helpCategory": "Python"
+}
