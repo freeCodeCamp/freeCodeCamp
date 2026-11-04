@@ -18,8 +18,10 @@ const jsFiles = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
 const tsFiles = ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'];
 const testFiles = ['**/*.test.{js,jsx,mjs,cjs,ts,tsx}'];
 
-// Scope the TypeScript presets to TypeScript files, including their overrides
-// that turn off core rules already checked by the compiler.
+// When configuring oxlint, you cannot 'extend' when defining overrides.  You also cannot use overrides to
+// remove plugins which have been added by 'extend', so you need to be careful.  typescriptOverride lets
+// us work around these limitations by ensuring that TS specific rules only apply to TS files, so there is no need to
+// try to override those rules when linting JavaScript.
 const typescriptOverride = preset => ({
   files: tsFiles,
   rules: {
@@ -38,9 +40,13 @@ const typescriptOverride = preset => ({
 });
 
 const config = defineConfig({
+  // since this config applies to both JS and TS files, we cannot extend any TS specific configurations
+  // or we'd have to override each rule (defeating the purpose of using recommended sets).
   extends: [eslintRecommended, importRecommended, prettier],
   // disabling categories since we only want the recommended rules
   categories: { correctness: 'off' },
+  // while the typescript plugin is enabled, the rules are not (except in overrides)
+  // so js files are not impacted.
   plugins: ['typescript', 'import', 'unicorn', 'vitest'],
   jsPlugins: [
     fileURLToPath(import.meta.resolve('eslint-plugin-turbo')),
