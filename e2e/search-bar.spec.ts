@@ -1,8 +1,11 @@
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import algoliaEightHits from './fixtures/algolia-eight-hits.json';
 import algoliaFiveHits from './fixtures/algolia-five-hits.json';
 import algoliaNoHits from './fixtures/algolia-no-hits.json';
+
+test.use({ userPreset: 'certified' });
 
 const haveApiKeys =
   process.env.ALGOLIA_APP_ID !== 'app_id_from_algolia_dashboard' &&

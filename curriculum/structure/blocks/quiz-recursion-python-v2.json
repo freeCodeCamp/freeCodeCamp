@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-recursion-python-v2",
+  "challengeOrder": [
+    {
+      "id": "f0b22197f53b2e630a538090",
+      "title": "Recursion Quiz"
+    }
+  ],
+  "helpCategory": "Python"
+}

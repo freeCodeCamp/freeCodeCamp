@@ -5,7 +5,7 @@ import { SOCRATES_API_KEY, SOCRATES_ENDPOINT } from '../../utils/env.js';
 import { mapErr } from '../../utils/index.js';
 import { Prisma } from '@prisma/client';
 
-const DAILY_LIMITS = { donor: 10, nonDonor: 3 } as const;
+const DAILY_LIMITS = { donor: 20, nonDonor: 10 } as const;
 
 const SOCRATES_TIMEOUT_MS = 90_000;
 

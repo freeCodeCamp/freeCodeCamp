@@ -9,7 +9,7 @@ dashedName: step-35
 
 It's time to test your new setter. Try to assign invalid values such as a random string or the current level (`trainee`) to `charlie_brown.level` and see the error messages in the console.
 
-Once you've done, remove the lines raising errors and set `charlie_brown.level` to the string `junior`.
+Once you've done that, remove the lines raising errors and set `charlie_brown.level` to the string `junior`.
 
 # --hints--
 
@@ -41,7 +41,7 @@ class Employee:
         return f'{self.name}: {self.level}'
 
     def __repr__(self):
-        return f"Employee('{self.name}', '{self.level}')"
+        return f'Employee({self.name!r}, {self.level!r})'
 
     @property
     def name(self):

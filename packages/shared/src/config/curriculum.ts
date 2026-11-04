@@ -38,7 +38,8 @@ export enum SuperBlocks {
   JsV9 = 'javascript-v9',
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
   PythonV9 = 'python-v9',
-  AlgorithmsAndDataStructure = 'algorithms-and-data-structure',
+  PythonProgrammingFundamentals = 'python-programming-fundamentals',
+  AlgorithmsAndDataStructures = 'algorithms-and-data-structures',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
@@ -102,7 +103,8 @@ export enum SuperBlocks {
   IntroductionToLinearDataStructuresInPython = 'introduction-to-linear-data-structures-in-python',
   LearnAlgorithmsInPython = 'learn-algorithms-in-python',
   LearnGraphsAndTreesInPython = 'learn-graphs-and-trees-in-python',
-  LearnDynamicProgrammingInPython = 'learn-dynamic-programming-in-python'
+  LearnDynamicProgrammingInPython = 'learn-dynamic-programming-in-python',
+  FrontEndDevelopment = 'front-end-development'
 }
 
 export const languageSuperBlocks = [
@@ -224,7 +226,9 @@ export const superBlockStages: StageMap = {
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.DevPlayground,
-    SuperBlocks.AlgorithmsAndDataStructure
+    SuperBlocks.PythonProgrammingFundamentals,
+    SuperBlocks.AlgorithmsAndDataStructures,
+    SuperBlocks.FrontEndDevelopment
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
@@ -329,7 +333,9 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.JsV9,
   SuperBlocks.FrontEndDevLibsV9,
   SuperBlocks.PythonV9,
-  SuperBlocks.AlgorithmsAndDataStructure,
+  SuperBlocks.PythonProgrammingFundamentals,
+  SuperBlocks.AlgorithmsAndDataStructures,
+  SuperBlocks.FrontEndDevelopment,
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
   SuperBlocks.FullStackDeveloperV9,

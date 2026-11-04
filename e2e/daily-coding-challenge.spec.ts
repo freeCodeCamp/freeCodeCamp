@@ -54,6 +54,9 @@ const mockApiChallenge = {
 
 const dailyChallengeRoute = '/learn/daily-coding-challenge/08-11';
 
+// The test checks the previous month for the August 11 challenge, so freeze time in September.
+const archiveTestDate = new Date('2026-09-15T12:00:00.000Z');
+
 const solution =
   "function isBalanced(s) { const h = s.length >> 1, v = x => [...x].filter(c => 'aeiou'.includes(c.toLowerCase())).length; return v(s.slice(0, h)) === v(s.slice(s.length - h)); }";
 
@@ -159,6 +162,7 @@ test.describe('Daily Coding Challenge completion persistence', () => {
     browserName,
     isMobile
   }) => {
+    await page.clock.setFixedTime(archiveTestDate);
     await page.goto(dailyChallengeRoute);
     await expect(
       page.getByRole('heading', { name: /vowel balance/i })

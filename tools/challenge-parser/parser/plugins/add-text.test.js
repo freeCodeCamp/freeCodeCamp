@@ -136,7 +136,7 @@ describe('add-text', () => {
   it('should not add paragraphs when html elements are separated by whitespace', () => {
     const plugin = addText([instructionsId]);
     plugin(realisticAST, file);
-    const expectedText1 = `<code>code</code> <tag>with more after a space</tag>`;
+    const expectedText1 = `<code>code</code> <span>with more after a space</span>`;
     const expectedText2 = `another pair of <strong>elements</strong> <em>with a space</em>`;
     expect(file.data[instructionsId]).toEqual(
       expect.stringContaining(expectedText1)
