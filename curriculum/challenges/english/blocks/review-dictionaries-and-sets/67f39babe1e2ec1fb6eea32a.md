@@ -47,6 +47,23 @@ for product, price in products.items():
 print(products)  # {'apple': 8, 'pear': 16}
 ```
 
+- **Dictionary Unpacking with `**`**: The `**` operator unpacks a dictionary into keyword arguments, where each key is used as a parameter name.
+
+```python
+def greet(name, age):
+    print(f'{name} is {age}')
+
+data = {'name': 'Jessica', 'age': 30}
+greet(**data)  # Jessica is 30
+```
+
+- **The `all()` Function**: The `all()` function returns `True` if every element in an iterable is truthy. It also returns `True` for an empty iterable.
+
+```python
+print(all([1, 'a', True]))  # True
+print(all([1, 0, True]))    # False
+```
+
 ## Common Dictionary Methods
 
 - **`get()` Method**: The `get()` method retrieves the value associated with a key. It's similar to the bracket notation, but it lets you set a default value, preventing errors if the key doesn't exist.
@@ -485,38 +502,6 @@ print(re.match(r'\d+', 'apples: 42'))             # None
 print(re.fullmatch(r'\d+:\d+', '10:30pm'))        # None
 print(re.findall(r'\d+', 'Rooms 12, 7, and 105')) # ['12', '7', '105']
 print(re.sub(r'\d', '*', '555 0123', count=3))    # *** 0123
-```
-
-## Dictionary Unpacking
-
-- **Dictionary Unpacking with `**`**: The `**` operator unpacks a dictionary into keyword arguments, where each key is used as a parameter name.
-
-```python
-def greet(name, age):
-    print(f'{name} is {age}')
-
-data = {'name': 'Jessica', 'age': 30}
-greet(**data)  # Jessica is 30
-```
-
-## Identity Operators
-
-- **Object Identity with `is` and `is not`**: The `is` operator checks if two names refer to the same object, while `is not` checks that they don't. These operators are the standard way to check whether a value is `None`.
-
-```python
-result = None
-
-print(result is None)      # True
-print(result is not None)  # False
-```
-
-## `all()` Function
-
-- **The `all()` Function**: The `all()` function returns `True` if every element in an iterable is truthy. It also returns `True` for an empty iterable.
-
-```python
-print(all([1, 'a', True]))  # True
-print(all([1, 0, True]))    # False
 ```
 
 # --assignment--
