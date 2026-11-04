@@ -116,6 +116,53 @@ print(alias) # ['milk', 'eggs']
 
 In the first function, only the local name refers to the new list. In the second, the shared list is mutated, and the local name still refers to it. This is why list `+=` is not interchangeable with addition followed by assignment when other references to the list exist.
 
+## Using a List as a Default Argument
+
+A default argument supplies a value when the caller omits that argument. If you use an empty list as a default, Python creates that list once, when the function is defined. Calls that omit the argument reuse the same list:
+
+```py
+def add_item(item, items=[]):
+    items.append(item)
+    return items
+
+print(add_item('milk')) # ['milk']
+print(add_item('eggs')) # ['milk', 'eggs']
+```
+
+The second call receives the list changed by the first call. Although each call has its own local parameter name, that name refers to the same default object. The list does not become empty again between calls.
+
+If each call should start with a fresh list when no list is supplied, use `None` as the default and create the list inside the function:
+
+```py
+def add_item(item, items=None):
+    if items is None:
+        items = []
+    items.append(item)
+    return items
+
+print(add_item('milk')) # ['milk']
+print(add_item('eggs')) # ['eggs']
+```
+
+Here, `items = []` runs each time the argument is omitted or explicitly passed as `None`, creating a new list for that call.
+
+You can still pass an existing list to be mutated:
+
+```py
+def add_item(item, items=None):
+    if items is None:
+        items = []
+    items.append(item)
+    return items
+
+groceries = []
+add_item('milk', groceries)
+add_item('eggs', groceries)
+print(groceries) # ['milk', 'eggs']
+```
+
+The check `items is None` distinguishes a missing list from an empty list supplied by the caller. Using `if not items` would also match an empty list and replace it with a new one, so the caller's empty list would not receive the added item.
+
 ## Repeating References to Nested Lists
 
 You have seen how list repetition can create a list such as `[0] * 3`. Repetition creates a new outer list, but repeats references to its elements rather than copying those elements.
