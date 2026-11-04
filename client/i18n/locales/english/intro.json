@@ -10802,7 +10802,7 @@
     },
     "modules": {
       "python-algorithms": "Algorithms",
-      "lab-bisection-method": "Implement the Bisection Method",
+      "lab-bisection-method-v2": "Implement the Bisection Method",
       "python-linear-data-structures": "Linear Data Structures",
       "lab-circular-queue": "Build a Circular Queue",
       "python-recursion": "Recursion",
@@ -10894,7 +10894,7 @@
           "Test what you've learned about algorithms in Python with this quiz."
         ]
       },
-      "lab-bisection-method": {
+      "lab-bisection-method-v2": {
         "title": "Implement the Bisection Method",
         "intro": [
           "In this lab, you will implement the bisection method to find the square root of a number."
