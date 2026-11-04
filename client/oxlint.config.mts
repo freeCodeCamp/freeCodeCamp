@@ -10,7 +10,7 @@ export default defineConfig({
   ignorePatterns: ['static', '.cache', 'public'],
   env: { browser: true, node: true },
   overrides: [{ files: ['i18n/config.js'], globals: { preval: 'readonly' } }],
-  settings: { react: { version: '16.4.2' } },
+  settings: { react: { version: '18.3.1' } },
   rules: {
     'import/no-cycle': ['error', { maxDepth: 2 }],
     'react/jsx-no-useless-fragment': 'error'
