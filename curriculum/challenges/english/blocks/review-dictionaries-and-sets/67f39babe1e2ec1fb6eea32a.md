@@ -327,13 +327,11 @@ my_set ^= {3, 5}          # {2, 5}
 print(5 in my_set) # True
 ```
 
-## Python Standard Library
-
-- **Python Standard Library**: A library gives you pre-written and reusable code, like functions, classes, and data structures, that you can reuse in your projects. Python has an extensive standard library with built-in modules that implement standardized solutions for many problems and tasks. Some examples of popular built-in modules are `math`, `random`, `re` (short for "regular expressions"), and `datetime`.
-
 ## Import Statement
 
-- **Import Statement**: To access the elements defined in built-in modules, you use an import statement. Import statements are generally written at the top of the file. Import statements work the same for functions, classes, constants, variables, and any other elements defined in the module.
+- **Modules**: A module groups related code, such as functions, classes, and constants, so you can reuse it in other Python files.
+
+- **Import Statement**: To access the elements defined in modules, you use an import statement. Import statements are generally written at the top of the file. Import statements work the same for functions, classes, constants, variables, and any other elements defined in the module.
 
 - **Basic Import Statement**: You can use the `import` keyword followed by the name of the module:
 
@@ -417,15 +415,62 @@ print(sqrt(36))  # 6.0
 
 However, this is generally discouraged because it can lead to namespace collisions and make it harder to know where names come from.
 
-## `if __name__ == '__main__'`
+## Local Modules
+
+- **Creating a Local Module**: Save related functions or constants in a `.py` file. Import it from another file in the same folder using the filename without the `.py` extension.
+
+```python
+# temperature.py
+def celsius_to_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+if __name__ == '__main__':
+    print(celsius_to_fahrenheit(100))
+```
+
+```python
+# main.py
+import temperature
+
+print(temperature.celsius_to_fahrenheit(0))  # 32.0
+```
 
 - **`__name__` Variable**: `__name__` is a special built-in variable in Python. When a Python file is executed directly, Python sets the value of this variable to the string `"__main__"`. But if the Python file is imported as a module into another Python script, the value of the `__name__` variable is set to the name of that module.
 
-This is why you'll often find this conditional in Python scripts. It contains the code that you want to run **only** if the Python script is running as the main program.
+- **Main Guard**: Code inside `if __name__ == '__main__':` runs only when the file is executed directly. In the example above, running `temperature.py` directly prints `212.0`. Importing it from `main.py` skips that guarded call. Top-level code outside the guard still runs when the module is first imported in a Python session.
+
+## Python Standard Library
+
+- **Standard Library and Third-Party Packages**: The Python standard library is a collection of modules and packages included with Python. Third-party packages are developed separately and usually need to be installed before you can use them.
+- **Common Modules**: `math` provides mathematical operations, `random` generates random numbers, `re` works with regular expressions, and `datetime` works with dates and times.
+- **Using Module Classes**: Modules can provide classes as well as functions and constants. For example, `datetime.date` creates a date object whose `day`, `month`, and `year` attributes can be accessed with dot notation.
 
 ```python
-if __name__ == '__main__': 
-    # Code
+import datetime
+
+birthday = datetime.date(1959, 7, 15)
+print(birthday.day)    # 15
+print(birthday.month)  # 7
+print(birthday.year)   # 1959
+```
+
+- **Finding Modules**: Browse the [Python Standard Library reference](https://docs.python.org/3/library/index.html), which groups modules by topic. Each module's documentation explains what it provides and how to use it.
+- **`help()` Function**: Displays documentation for a module or a specific function. It is not currently available in the freeCodeCamp environment.
+
+```python
+import math
+
+help(math)
+help(math.comb)
+```
+
+- **`dir()` Function**: Returns a list of names available on an object, such as a module's functions and constants.
+
+```python
+import math
+
+print('sqrt' in dir(math))  # True
+print('pi' in dir(math))    # True
 ```
 
 ## Validating Data
