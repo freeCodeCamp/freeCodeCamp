@@ -232,6 +232,15 @@ set() # Set
 {}    # Dictionary
 ```
 
+- **Creating a Set from an Iterable**: The `set()` constructor accepts an iterable, such as a list, a string, or a dictionary (which gives its keys), provided its elements can be stored in a set. For example, a list of numbers is valid, but a list containing other lists is not. This is useful for comparing the keys you expect with the keys you actually have.
+
+```python
+expected_keys = {'name', 'age'}
+data = {'name': 'Jessica', 'age': 30}
+
+print(set(data) == expected_keys)  # True
+```
+
 ## Common Set Methods
 
 - **`add()` Method**: You can add an element to a set with the `add()` method, passing the new element as an argument.
@@ -428,43 +437,6 @@ if __name__ == '__main__':
     # Code
 ```
 
-## Validating Data
-
-- **Creating a Set from an Iterable**: The `set()` constructor accepts an iterable, such as a list, a string, or a dictionary (which gives its keys), provided its elements can be stored in a set. For example, a list of numbers is valid, but a list containing other lists is not. This is useful for comparing the keys you expect with the keys you actually have.
-
-```python
-expected_keys = {'name', 'age'}
-data = {'name': 'Jessica', 'age': 30}
-
-print(set(data) == expected_keys)  # True
-```
-
-- **Dictionary Unpacking with `**`**: The `**` operator unpacks a dictionary into keyword arguments, where each key is used as a parameter name.
-
-```python
-def greet(name, age):
-    print(f'{name} is {age}')
-
-data = {'name': 'Jessica', 'age': 30}
-greet(**data)  # Jessica is 30
-```
-
-- **Object Identity with `is` and `is not`**: The `is` operator checks if two names refer to the same object, while `is not` checks that they don't. These operators are the standard way to check whether a value is `None`.
-
-```python
-result = None
-
-print(result is None)      # True
-print(result is not None)  # False
-```
-
-- **The `all()` Function**: The `all()` function returns `True` if every element in an iterable is truthy. It also returns `True` for an empty iterable.
-
-```python
-print(all([1, 'a', True]))  # True
-print(all([1, 0, True]))    # False
-```
-
 ## Regular Expressions
 
 - **Regular Expressions**: A regular expression, or regex, is a pattern used to match a sequence of characters in text. To use them in Python, you need to import the `re` module.
@@ -513,6 +485,38 @@ print(re.match(r'\d+', 'apples: 42'))             # None
 print(re.fullmatch(r'\d+:\d+', '10:30pm'))        # None
 print(re.findall(r'\d+', 'Rooms 12, 7, and 105')) # ['12', '7', '105']
 print(re.sub(r'\d', '*', '555 0123', count=3))    # *** 0123
+```
+
+## Dictionary Unpacking
+
+- **Dictionary Unpacking with `**`**: The `**` operator unpacks a dictionary into keyword arguments, where each key is used as a parameter name.
+
+```python
+def greet(name, age):
+    print(f'{name} is {age}')
+
+data = {'name': 'Jessica', 'age': 30}
+greet(**data)  # Jessica is 30
+```
+
+## Identity Operators
+
+- **Object Identity with `is` and `is not`**: The `is` operator checks if two names refer to the same object, while `is not` checks that they don't. These operators are the standard way to check whether a value is `None`.
+
+```python
+result = None
+
+print(result is None)      # True
+print(result is not None)  # False
+```
+
+## `all()` Function
+
+- **The `all()` Function**: The `all()` function returns `True` if every element in an iterable is truthy. It also returns `True` for an empty iterable.
+
+```python
+print(all([1, 'a', True]))  # True
+print(all([1, 0, True]))    # False
 ```
 
 # --assignment--
