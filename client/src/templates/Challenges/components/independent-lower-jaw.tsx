@@ -311,7 +311,7 @@ export function IndependentLowerJaw({
     });
     setWasCheckButtonClicked(true);
     setShowSocratesResults(false);
-    executeChallenge();
+    executeChallenge({ showCompletionModal: true });
   };
 
   const handleSubmitButtonClick = () => {
