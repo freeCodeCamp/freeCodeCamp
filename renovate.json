@@ -18,17 +18,6 @@
       "extends": ["schedule:weekly"]
     },
     {
-      "description": "ESLint core, plugins, and TS-ESLint move together because plugin/parser versions are tightly bound to the ESLint major.",
-      "groupName": "eslint",
-      "matchPackageNames": [
-        "eslint",
-        "eslint-**",
-        "@eslint/**",
-        "@typescript-eslint/**",
-        "typescript-eslint"
-      ]
-    },
-    {
       "description": "Gatsby core + plugins + scoped @gatsbyjs/* packages are version-coupled.",
       "groupName": "gatsby",
       "matchPackageNames": ["gatsby", "gatsby-**", "@gatsbyjs/**"]
