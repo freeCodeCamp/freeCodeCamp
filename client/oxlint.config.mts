@@ -8,16 +8,7 @@ import {
 export default defineConfig({
   extends: [configTypeChecked, configReact, configTestingLibrary],
   ignorePatterns: ['static', '.cache', 'public'],
-  env: { browser: true, mocha: true, node: true },
-  globals: {
-    Promise: true,
-    window: true,
-    $: true,
-    ga: true,
-    jQuery: true,
-    router: true,
-    globalThis: true
-  },
+  env: { browser: true, node: true },
   overrides: [{ files: ['i18n/config.js'], globals: { preval: 'readonly' } }],
   settings: { react: { version: '16.4.2' } },
   rules: {
