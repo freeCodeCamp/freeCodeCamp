@@ -1,7 +1,4 @@
-import { defineConfig } from 'oxlint';
 import { config } from './base.js';
 
-export default defineConfig({
-  extends: [config],
-  env: { node: true }
-});
+// The base config is enough because no node globals are used
+export default config;
