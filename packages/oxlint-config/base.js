@@ -12,6 +12,8 @@ import hooksRecommended from 'oxlint-config-presets/react-hooks/recommended.json
 import accessibilityRecommended from 'oxlint-config-presets/jsx-a11y/recommended.json' with { type: 'json' };
 import testingLibrary from 'eslint-plugin-testing-library';
 
+export { default as jsdocRecommended } from 'oxlint-config-presets/jsdoc/recommended-typescript-error.json' with { type: 'json' };
+
 const jsFiles = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
 const tsFiles = ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'];
 const testFiles = ['**/*.test.{js,jsx,mjs,cjs,ts,tsx}'];

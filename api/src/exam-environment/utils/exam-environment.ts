@@ -1,4 +1,3 @@
-/* oxlint-disable jsdoc-extra/require-description-complete-sentence */
 // TODO: enable this, since strings don't make good errors.
 import {
   ExamEnvironmentAnswer,
@@ -397,7 +396,6 @@ export function compareAnswers(
   return isQuestionCorrect;
 }
 
-/* oxlint-disable jsdoc-extra/require-description-complete-sentence */
 /**
  * Shuffles an array using the Fisher-Yates algorithm.
  *
@@ -422,7 +420,6 @@ export function shuffleArray<T>(array: Array<T>) {
 
   return arr;
 }
-/* oxlint-enable jsdoc-extra/require-description-complete-sentence */
 
 /**
  * From an exam attempt, construct the attempt with result (if ready).

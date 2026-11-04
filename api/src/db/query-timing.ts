@@ -1,6 +1,5 @@
 import { performance } from 'node:perf_hooks';
 
-// oxlint-disable-next-line jsdoc-extra/require-jsdoc
 export const timeOperation = async <T>(
   op: () => Promise<T>,
   emit: (result: 'success' | 'failure', durationMs: number) => void
