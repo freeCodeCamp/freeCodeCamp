@@ -22,10 +22,14 @@
             "workshop-kitchen-inventory-tracker",
             "lab-discount-calculator",
             "workshop-caesar-cipher",
-            "lab-rpg-character",
             "review-python-basics",
             "quiz-python-basics"
           ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-rpg-character-v2",
+          "blocks": ["lab-rpg-character-v2"]
         },
         {
           "dashedName": "python-loops-and-sequences",
