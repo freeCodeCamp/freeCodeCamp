@@ -28,8 +28,8 @@
         },
         {
           "moduleType": "cert-project",
-          "dashedName": "lab-rpg-character-v2",
-          "blocks": ["lab-rpg-character-v2"]
+          "dashedName": "lab-rpg-character",
+          "blocks": ["lab-rpg-character"]
         },
         {
           "dashedName": "python-loops-and-sequences",
