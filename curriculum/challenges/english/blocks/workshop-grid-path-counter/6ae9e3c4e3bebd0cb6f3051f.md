@@ -9,7 +9,7 @@ dashedName: step-24
 
 Now you should fill `table`.
 
-Between `table` and the return, add a `for` loop that uses `r` to loop over `range(row + 1)`. Add `pass` to its body for now.
+Between the `table` assignment and the `return` statement, add a `for` loop that uses `r` to loop over `range(row + 1)`. Add `pass` to its body for now.
 
 # --hints--
 

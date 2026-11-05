@@ -13,7 +13,7 @@ To see that in action, add `print(row, col)` as the first line of the function b
 
 # --hints--
 
-The first line of count_paths_top_down should be `print(row, col)`.
+The first line of `count_paths_top_down` should be `print(row, col)`.
 
 ```js
 

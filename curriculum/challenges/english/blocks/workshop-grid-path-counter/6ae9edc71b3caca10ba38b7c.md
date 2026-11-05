@@ -7,7 +7,7 @@ dashedName: step-31
 
 # --description--
 
-Print the result of `count_paths_bottom_up(warehouse, 3, 3)`. It should match the top-down answer.
+Print the result of `count_paths_bottom_up(warehouse, 3, 3)`. It should match the top-down answer of `3`.
 
 # --hints--
 
@@ -17,7 +17,7 @@ You should print `count_paths_bottom_up(warehouse, 3, 3)`.
 
 ```
 
-The print of `count_paths_bottom_up(warehouse, 3, 3)` should show `3` in the terminal.
+Your terminal should show `3` for `count_paths_bottom_up(warehouse, 3, 3)`.
 
 ```js
 

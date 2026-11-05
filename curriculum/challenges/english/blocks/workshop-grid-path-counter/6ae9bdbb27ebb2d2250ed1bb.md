@@ -19,13 +19,13 @@ You should have a variable named `open_floor`.
 
 ```
 
-`open_floor` should have four rows.
+`open_floor` should have four rows of four `0` values each.
 
 ```js
 
 ```
 
-Every value in open_floor should be `0`.
+Every value in `open_floor` should be `0`.
 
 ```js
 

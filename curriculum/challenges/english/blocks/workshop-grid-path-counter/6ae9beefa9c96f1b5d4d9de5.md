@@ -5,9 +5,9 @@ challengeType: 20
 dashedName: step-5
 ---
 
-# --description--
+# --description--s
 
-Next, you'll create a function that counts the paths to any square. A path can only enter a square from above or from the left, so the count is the sum of the paths to those two squares.
+Next, you'll create a function that counts the paths to any square. A path can only move right or down, so it can only enter a square from above or from the left. That means the number of paths to a square is the sum of the paths to those two squares.
 
 To do this, create a function named `count_paths_top_down` with `grid`, `row` and `col` as the parameters. Add `pass` to its body for now.
 

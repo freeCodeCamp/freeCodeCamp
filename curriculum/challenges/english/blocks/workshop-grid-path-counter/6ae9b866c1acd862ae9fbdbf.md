@@ -9,11 +9,11 @@ dashedName: step-1
 
 In this workshop, you'll build a grid path counter.
 
-Begin by creating a variable named `warehouse` and assign it an empty list.
+Begin by creating a variable named `warehouse` and assigning it an empty list.
 
-This represents the warehouse grid, which will contain lists.
+This list represents the warehouse floor as a grid. Each item in it will be a list that represents a row.
 
-Each row of the floor will be a list of numbers. `0`, and `1` means a square blocked by a box that no path can go through.
+Each row will contain numbers, where `0` means an open square and `1` means a square blocked by a box that no path can go through.
 
 # --hints--
 
