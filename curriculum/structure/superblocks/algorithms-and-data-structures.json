@@ -19,8 +19,8 @@
         },
         {
           "moduleType": "cert-project",
-          "dashedName": "lab-bisection-method-v2",
-          "blocks": ["lab-bisection-method-v2"]
+          "dashedName": "lab-bisection-method",
+          "blocks": ["lab-bisection-method"]
         },
         {
           "dashedName": "python-linear-data-structures",
