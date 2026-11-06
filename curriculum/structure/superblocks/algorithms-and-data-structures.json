@@ -38,7 +38,6 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-circular-queue",
-          "comingSoon": true,
           "blocks": ["lab-circular-queue"]
         },
         {
