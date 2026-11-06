@@ -46,6 +46,7 @@ import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
+import CampfireAmbience from '../CampfireAmbience';
 import { Loader } from '../helpers';
 import {
   MAX_MOBILE_WIDTH,
@@ -275,6 +276,7 @@ function DefaultLayout({
             type='font/woff'
           />
         </Helmet>
+        <CampfireAmbience />
         <div className={`default-layout`}>
           <Header
             fetchState={fetchState}
