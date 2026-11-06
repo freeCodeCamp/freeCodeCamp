@@ -16,13 +16,48 @@ Between the `table` assignment and the `return` statement, add a `for` loop that
 You should have a `for` loop with `r` as the loop variable.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert any(loop.find_for_vars().is_equivalent("r") for loop in _Node(_code).find_function("count_paths_bottom_up").find_for_loops())
+  `)
+})
 ```
 
 Your `for` loop should iterate through `range(row + 1)`.
 
 ```js
+({
+  test: () =>
+    runPython(`
+    assert not _Node(_code).find_function("count_paths_bottom_up").find_for("r", "range(row + 1)").is_empty()
+  `)
+})
+```
 
+Your `for` loop should come after the `table` assignment and before the `return` statement.
+
+```js
+({
+  test: () =>
+    runPython(`
+    body = _Node(_code).find_function("count_paths_bottom_up").find_body()
+    assert body[0].is_equivalent("table = [[0] * (col + 1) for _ in range(row + 1)]")
+    assert body[-1].is_equivalent("return table[row][col]")
+    assert not body.find_for("r", "range(row + 1)").is_empty()
+  `)
+})
+```
+
+You should add `pass` to the body of your `for` loop.
+
+```js
+({
+  test: () =>
+    runPython(`
+    assert _Node(_code).find_function("count_paths_bottom_up").find_for("r", "range(row + 1)").find_bodies()[0].has_pass()
+  `)
+})
 ```
 
 # --seed--
@@ -65,11 +100,11 @@ def count_paths_top_down(grid, row, col, memo=None):
 
 def count_paths_bottom_up(grid, row, col):
     table = [[0] * (col + 1) for _ in range(row + 1)]
-    return table[row][col]
-
 --fcc-editable-region--
     
 --fcc-editable-region--
+
+    return table[row][col]
 
 print(count_paths_top_down(warehouse, 3, 3))
 print(count_paths_top_down(open_floor, 3, 3))

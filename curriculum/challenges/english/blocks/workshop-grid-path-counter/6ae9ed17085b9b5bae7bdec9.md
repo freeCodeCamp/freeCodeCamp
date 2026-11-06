@@ -14,7 +14,12 @@ Now, store the total for the current square by assigning `from_above + from_left
 You should assign `from_above + from_left` to `table[r][c]`.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert _Node(_code).find_function("count_paths_bottom_up").find_for("r", "range(row + 1)").find_bodies()[0].find_for("c", "range(col + 1)").find_bodies()[0].find_if("grid[r][c] == 1").find_bodies()[2].has_stmt("table[r][c] = from_above + from_left")
+  `)
+})
 ```
 
 # --seed--
@@ -57,7 +62,6 @@ def count_paths_top_down(grid, row, col, memo=None):
 
 def count_paths_bottom_up(grid, row, col):
     table = [[0] * (col + 1) for _ in range(row + 1)]
-    return table[row][col]
 
     for r in range(row + 1):
         for c in range(col + 1):
@@ -71,6 +75,8 @@ def count_paths_bottom_up(grid, row, col):
                 --fcc-editable-region--
 
                 --fcc-editable-region--
+
+    return table[row][col]
 
 print(count_paths_top_down(warehouse, 3, 3))
 print(count_paths_top_down(open_floor, 3, 3))

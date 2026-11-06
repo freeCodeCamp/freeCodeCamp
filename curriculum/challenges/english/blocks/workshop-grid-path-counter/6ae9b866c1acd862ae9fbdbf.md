@@ -20,13 +20,23 @@ Each row will contain numbers, where `0` means an open square and `1` means a sq
 You should have a variable named `warehouse`.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert _Node(_code).has_variable("warehouse")
+  `)
+})
 ```
 
 `warehouse` should be an empty list.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert warehouse == []
+  `)
+})
 ```
 
 # --seed--

@@ -16,19 +16,36 @@ Below `warehouse`, create a variable named `open_floor` that holds four rows of 
 You should have a variable named `open_floor`.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert _Node(_code).has_variable("open_floor")
+  `)
+})
 ```
 
 `open_floor` should have four rows of four `0` values each.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert len(open_floor) == 4
+    assert all(len(row) == 4 for row in open_floor)
+  `)
+})
 ```
 
 Every value in `open_floor` should be `0`.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert len(open_floor) > 0
+    assert all(value == 0 for row in open_floor for value in row)
+  `)
+})
 ```
 
 # --seed--

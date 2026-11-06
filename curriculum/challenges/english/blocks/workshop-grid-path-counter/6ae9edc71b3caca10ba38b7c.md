@@ -14,13 +14,35 @@ Print the result of `count_paths_bottom_up(warehouse, 3, 3)`. It should match th
 You should print `count_paths_bottom_up(warehouse, 3, 3)`.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert _Node(_code).has_call("print(count_paths_bottom_up(warehouse, 3, 3))")
+  `)
+})
 ```
 
 Your terminal should show `3` for `count_paths_bottom_up(warehouse, 3, 3)`.
 
 ```js
+({
+  test: () =>
+    runPython(`
+    assert count_paths_bottom_up(warehouse, 3, 3) == 3
+    import io
+    import sys
+    old_stdout = sys.stdout
+    sys.stdout = buffer = io.StringIO()
+    try:
+        exec(_code)
+    finally:
+        sys.stdout = old_stdout
 
+    output = buffer.getvalue().split()
+
+    assert output.count("3") >= 2
+  `)
+})
 ```
 
 # --seed--
@@ -63,7 +85,6 @@ def count_paths_top_down(grid, row, col, memo=None):
 
 def count_paths_bottom_up(grid, row, col):
     table = [[0] * (col + 1) for _ in range(row + 1)]
-    return table[row][col]
 
     for r in range(row + 1):
         for c in range(col + 1):
@@ -75,6 +96,8 @@ def count_paths_bottom_up(grid, row, col):
                 from_above = table[r - 1][c] if r > 0 else 0
                 from_left = table[r][c - 1] if c > 0 else 0
                 table[r][c] = from_above + from_left
+
+    return table[row][col]
 
 print(count_paths_top_down(warehouse, 3, 3))
 print(count_paths_top_down(open_floor, 3, 3))

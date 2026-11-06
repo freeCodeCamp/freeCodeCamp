@@ -16,7 +16,12 @@ To see that in action, add `print(row, col)` as the first line of the function b
 The first line of `count_paths_top_down` should be `print(row, col)`.
 
 ```js
-
+({
+  test: () =>
+    runPython(`
+    assert _Node(_code).find_function("count_paths_top_down").find_body()[0].is_equivalent("print(row, col)")
+  `)
+})
 ```
 
 # --seed--
