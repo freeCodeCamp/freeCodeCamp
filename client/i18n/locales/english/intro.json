@@ -10471,6 +10471,7 @@
       "python-dictionaries-and-sets": "Dictionaries and Sets",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Error Handling",
+      "lab-order-processor": "Build an Order Processor",
       "python-classes-and-objects": "Classes and Objects",
       "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
@@ -10677,6 +10678,12 @@
         "title": "Error Handling Quiz",
         "intro": [
           "Test what you've learned about error handling in Python with this quiz."
+        ]
+      },
+      "lab-order-processor": {
+        "title": "Build an Order Processor",
+        "intro": [
+          "In this lab, you will practice handling errors in Python by processing e-commerce orders."
         ]
       },
       "lecture-classes-and-objects": {

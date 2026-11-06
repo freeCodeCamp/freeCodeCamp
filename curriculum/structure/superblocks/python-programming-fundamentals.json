@@ -66,6 +66,11 @@
           ]
         },
         {
+          "moduleType": "cert-project",
+          "dashedName": "lab-order-processor",
+          "blocks": ["lab-order-processor"]
+        },
+        {
           "dashedName": "python-classes-and-objects",
           "blocks": [
             "lecture-classes-and-objects",
