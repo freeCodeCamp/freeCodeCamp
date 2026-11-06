@@ -6,6 +6,7 @@ export const newChallengePrompts = async (): Promise<{
   title: string;
   dashedName: string;
   challengeType: string;
+  questionCount?: number;
 }> => {
   const challengeType = await select<string>({
     message: 'What type of challenge is this?',
@@ -14,6 +15,17 @@ export const newChallengePrompts = async (): Promise<{
       value: value.toString()
     }))
   });
+
+  const questionCount =
+    challengeType === challengeTypes.quiz.toString()
+      ? await select<number>({
+          message: 'How many questions should this quiz have?',
+          choices: [
+            { name: '10 questions', value: 10 },
+            { name: '20 questions', value: 20 }
+          ]
+        })
+      : undefined;
 
   const lastStep = getLastStep().stepNum;
   const defaultTitle = `Step ${lastStep + 1}`;
@@ -41,6 +53,7 @@ export const newChallengePrompts = async (): Promise<{
   return {
     title,
     dashedName,
-    challengeType
+    challengeType,
+    ...(questionCount !== undefined && { questionCount })
   };
 };
