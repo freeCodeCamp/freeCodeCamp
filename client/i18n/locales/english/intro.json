@@ -11107,6 +11107,12 @@
           "In this lab you will implement a Fibonacci sequence calculator using a dynamic programming approach."
         ]
       },
+      "lab-shift-scheduler": {
+        "title": "Build a Shift Scheduler",
+        "intro": [
+          "In this lab, you will plan which shifts to work to earn the most pay, using dynamic programming."
+        ]
+      },
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
         "intro": [
