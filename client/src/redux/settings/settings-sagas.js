@@ -62,7 +62,7 @@ import {
   verifyCertError
 } from './actions';
 
-function* submitNewAboutSaga({ payload }) {
+export function* submitNewAboutSaga({ payload }) {
   try {
     const { data } = yield call(putUpdateMyAbout, payload);
     yield put(submitNewAboutComplete({ ...data, payload }));
@@ -72,7 +72,7 @@ function* submitNewAboutSaga({ payload }) {
   }
 }
 
-function* submitNewUsernameSaga({ payload: username }) {
+export function* submitNewUsernameSaga({ payload: username }) {
   try {
     const { data } = yield call(putUpdateMyUsername, username);
     yield put(submitNewUsernameComplete({ ...data, username }));
@@ -84,27 +84,27 @@ function* submitNewUsernameSaga({ payload: username }) {
   }
 }
 
-function* submitProfileUISaga({ payload }) {
+export function* submitProfileUISaga({ payload }) {
   try {
     const { data } = yield call(putUpdateMyProfileUI, payload);
     yield put(submitProfileUIComplete({ ...data, payload }));
     yield put(createFlashMessage(data));
-  } catch {
-    yield put(submitProfileUIError);
+  } catch (e) {
+    yield put(submitProfileUIError(e));
   }
 }
 
-function* updateMySocialsSaga({ payload: update }) {
+export function* updateMySocialsSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMySocials, update);
     yield put(updateMySocialsComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMySocialsError);
+  } catch (e) {
+    yield put(updateMySocialsError(e));
   }
 }
 
-function* updateMySoundSaga({ payload: update }) {
+export function* updateMySoundSaga({ payload: update }) {
   try {
     store.set('fcc-sound', !!update.sound);
     const data = {
@@ -113,12 +113,12 @@ function* updateMySoundSaga({ payload: update }) {
     };
     yield put(updateMySoundComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMySoundError);
+  } catch (e) {
+    yield put(updateMySoundError(e));
   }
 }
 
-function* resetMyEditorLayoutSaga() {
+export function* resetMyEditorLayoutSaga() {
   const layout = store.get('challenge-layout');
 
   if (layout) {
@@ -132,83 +132,83 @@ function* resetMyEditorLayoutSaga() {
 
       yield put(createFlashMessage({ ...data }));
       yield put(resetMyEditorLayoutComplete({ ...data }));
-    } catch {
-      yield put(resetMyEditorLayoutError);
+    } catch (e) {
+      yield put(resetMyEditorLayoutError(e));
     }
   }
 }
 
-function* updateMyKeyboardShortcutsSaga({ payload: update }) {
+export function* updateMyKeyboardShortcutsSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyKeyboardShortcuts, update);
     yield put(updateMyKeyboardShortcutsComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMyKeyboardShortcutsError);
+  } catch (e) {
+    yield put(updateMyKeyboardShortcutsError(e));
   }
 }
 
-function* updateMyClassroomModeSaga({ payload: update }) {
+export function* updateMyClassroomModeSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyClassroomMode, update);
     yield put(updateMyClassroomModeComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMyClassroomModeError);
+  } catch (e) {
+    yield put(updateMyClassroomModeError(e));
   }
 }
 
-function* updateMyHonestySaga({ payload: update }) {
+export function* updateMyHonestySaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyHonesty, update);
     yield put(updateMyHonestyComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMyHonestyError);
+  } catch (e) {
+    yield put(updateMyHonestyError(e));
   }
 }
 
-function* updateMyQuincyEmailSaga({ payload: update }) {
+export function* updateMyQuincyEmailSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyQuincyEmail, update);
     yield put(updateMyQuincyEmailComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMyQuincyEmailError);
+  } catch (e) {
+    yield put(updateMyQuincyEmailError(e));
   }
 }
 
-function* updateMySocratesSaga({ payload: update }) {
+export function* updateMySocratesSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMySocrates, update);
     yield put(updateMySocratesComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMySocratesError);
+  } catch (e) {
+    yield put(updateMySocratesError(e));
   }
 }
 
-function* updateMyPortfolioSaga({ payload: update }) {
+export function* updateMyPortfolioSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyPortfolio, update);
     yield put(updateMyPortfolioComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMyPortfolioError);
+  } catch (e) {
+    yield put(updateMyPortfolioError(e));
   }
 }
 
-function* updateMyExperienceSaga({ payload: update }) {
+export function* updateMyExperienceSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyExperience, update);
     yield put(updateMyExperienceComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch {
-    yield put(updateMyExperienceError);
+  } catch (e) {
+    yield put(updateMyExperienceError(e));
   }
 }
 
-function* validateUsernameSaga({ payload }) {
+export function* validateUsernameSaga({ payload }) {
   try {
     const {
       data: { exists }
@@ -219,7 +219,7 @@ function* validateUsernameSaga({ payload }) {
   }
 }
 
-function* verifyCertificationSaga({ payload }) {
+export function* verifyCertificationSaga({ payload }) {
   // check redux if can claim cert before calling backend
   const currentCert = liveCerts.find(cert => cert.certSlug === payload);
   const completedChallenges = yield select(completedChallengesSelector);
