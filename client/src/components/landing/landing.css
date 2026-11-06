@@ -401,7 +401,19 @@ figcaption.caption {
   line-height: 1.5;
 }
 
+.landing-cta-placeholder {
+  height: 50px;
+}
+
+.landing-page-figure {
+  display: none;
+}
+
 @media (min-width: 1200px) {
+  .landing-page-figure {
+    display: block;
+  }
+
   .landing-top-two-column {
     flex-direction: row;
     align-items: center;
