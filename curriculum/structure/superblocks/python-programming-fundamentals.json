@@ -34,7 +34,10 @@
         {
           "dashedName": "python-loops-and-sequences",
           "blocks": [
-            "lecture-working-with-loops-and-sequences",
+            "lecture-working-with-lists",
+            "lecture-working-with-tuples",
+            "lecture-working-with-loops-python",
+            "lecture-understanding-list-comprehensions-and-lambda-functions",
             "workshop-pin-extractor",
             "lab-number-pattern-generator",
             "review-loops-and-sequences",
