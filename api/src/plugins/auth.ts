@@ -180,7 +180,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       );
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // oxlint-disable-next-line typescript/no-unsafe-assignment
     const examEnvironmentAuthorizationToken =
       payload['examEnvironmentAuthorizationToken'];
 

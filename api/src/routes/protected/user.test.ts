@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* oxlint-disable typescript/no-unsafe-member-access */
+/* oxlint-disable typescript/no-unsafe-argument */
+/* oxlint-disable typescript/no-unsafe-assignment */
 import {
   describe,
   test,
@@ -1065,9 +1065,7 @@ describe('userRoutes', () => {
         });
 
         expect(user?.completedChallenges).toHaveLength(2);
-        const challengeIds = (
-          user?.completedChallenges as { id: string }[]
-        ).map(c => c.id);
+        const challengeIds = user?.completedChallenges.map(c => c.id);
         expect(challengeIds).toContain('block-two-challenge-1');
         expect(challengeIds).toContain('block-two-challenge-2');
         expect(challengeIds).not.toContain('block-one-challenge-1');

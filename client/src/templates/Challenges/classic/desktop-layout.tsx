@@ -134,7 +134,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     initialShowState('showInstructions', true)
   );
 
-  /* eslint-disable react-hooks/exhaustive-deps */
+  /* oxlint-disable react/exhaustive-deps */
   useEffect(() => {
     setShowPreviewPane(initialShowState('showPreviewPane', false));
     setShowPreviewPortal(initialShowState('showPreviewPortal', false));

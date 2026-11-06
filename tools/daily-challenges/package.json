@@ -4,19 +4,18 @@
   "main": "seed-daily-challenges.js",
   "scripts": {
     "seed-daily-challenges": "tsx seed-daily-challenges.ts",
-    "lint": "eslint --max-warnings 0",
+    "lint": "oxlint --deny-warnings",
     "type-check": "tsc --noEmit"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/oxlint-config": "workspace:*",
     "dotenv": "16.6.1",
-    "eslint": "9.39.5",
     "mongodb": "6.21.0",
     "tsx": "4.23.15",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   },
   "type": "module"
 }

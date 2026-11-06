@@ -1,4 +1,4 @@
-/* eslint-disable filenames-simple/naming-convention */
+/* oxlint-disable filenames-simple/naming-convention */
 import React from 'react';
 import ShowCertification from '../../../client-only-routes/show-certification';
 import '../certification.css';
@@ -16,7 +16,7 @@ interface CertificationPageProps {
 const CertificationPage = ({ params, location }: CertificationPageProps) => {
   const { username, certSlug } = params;
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // oxlint-disable-next-line typescript/ban-ts-comment
     // @ts-ignore - Redux connect() provides remaining props
     <ShowCertification
       username={username}

@@ -434,7 +434,7 @@ const initProjectPreviewFrame =
 const waitForFrame = (frameContext: Context) => {
   return new Promise<void>((resolve, reject) => {
     const rejectId = setTimeout(() => {
-      // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
+      // oxlint-disable-next-line typescript/prefer-promise-reject-errors
       reject(DOCUMENT_NOT_FOUND_ERROR);
     }, 10000);
 
