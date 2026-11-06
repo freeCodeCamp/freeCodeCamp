@@ -551,6 +551,39 @@ describe('buildSuperblock pure functions', () => {
 
 describe('SuperblockCreator class', () => {
   describe('processSuperblock', () => {
+    test('should preserve block order when blocks finish out of order', async () => {
+      let resolveFirstBlock;
+      const firstBlock = new Promise(resolve => {
+        resolveFirstBlock = resolve;
+      });
+      const processBlock = vi
+        .fn()
+        .mockReturnValueOnce(firstBlock)
+        .mockResolvedValueOnce('Block 2')
+        .mockResolvedValueOnce(null);
+      const parser = new SuperblockCreator({ processBlock });
+
+      const resultPromise = parser.processSuperblock({
+        blocks: [
+          { dashedName: 'block-1' },
+          { dashedName: 'block-2' },
+          { dashedName: 'block-3' }
+        ],
+        name: 'test-superblock'
+      });
+
+      expect(processBlock).toHaveBeenCalledTimes(3);
+      await Promise.resolve();
+      resolveFirstBlock('Block 1');
+
+      const result = await resultPromise;
+      expect(Object.keys(result.blocks)).toEqual(['block-1', 'block-2']);
+      expect(result.blocks).toEqual({
+        'block-1': 'Block 1',
+        'block-2': 'Block 2'
+      });
+    });
+
     test('should process blocks using the provided processing function', async () => {
       const mockProcessBlockFn = vi
         .fn()
