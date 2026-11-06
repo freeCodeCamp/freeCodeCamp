@@ -253,6 +253,20 @@ describe('Challenge utils helper scripts', () => {
         title: 'Step 1'
       });
     });
+
+    it('should throw instead of writing "Step 0" when a step id is missing from meta.json', () => {
+      process.env.INIT_CWD = projectPath;
+      (fs.readdirSync as ReturnType<typeof vi.fn>).mockReturnValue(['name.md']);
+      (matter.read as ReturnType<typeof vi.fn>).mockReturnValue({
+        data: { id: 'not-in-meta' },
+        content: 'goes here'
+      });
+
+      expect(() => updateStepTitles()).toThrow(
+        'is missing from meta.json challengeOrder'
+      );
+      expect(fs.writeFileSync).not.toHaveBeenCalled();
+    });
   });
   afterEach(() => {
     delete process.env.INIT_CWD;

@@ -88,7 +88,7 @@ function plugin() {
         if (!sentence)
           throw Error('sentence is missing from fill in the blank');
         if (!blanks) throw Error('blanks are missing from fill in the blank');
-        if (sentence.match(/BLANK/g).length !== blanks.length)
+        if ((sentence.match(/BLANK/g) ?? []).length !== blanks.length)
           throw Error(`Number of BLANKs doesn't match the number of answers.`);
 
         // For 'pinyin-to-hanzi' inputType, all answers must be of type 'hanzi-pinyin'.

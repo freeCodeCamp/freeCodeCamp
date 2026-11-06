@@ -18,7 +18,7 @@ const EXPECTED_CHALLENGE_COUNT = 365;
 // Date to set for the first challenge, second challenge will be one day later, etc...
 // **DO NOT CHANGE THIS AFTER RELEASE (if seeding production - okay for local dev)**
 const year = 2025;
-const monthIndex = 7; // 0-indexed -> 5 = June
+const monthIndex = 7; // 0-indexed -> 7 = August
 const day = 11;
 const START_DATE = new Date(Date.UTC(year, monthIndex, day));
 const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;
