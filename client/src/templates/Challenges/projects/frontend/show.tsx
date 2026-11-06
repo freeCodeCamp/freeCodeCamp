@@ -24,6 +24,7 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
+  closeModal,
   updateSolutionFormValues,
   initTests
 } from '../../redux/actions';
@@ -31,6 +32,8 @@ import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
+import ExitProjectModal from '../exit-project-modal';
+import { useUnsavedSolutionWarning } from '../use-unsaved-solution-warning';
 import { getChallengePaths } from '../../utils/challenge-paths';
 
 // Redux Setup
@@ -48,7 +51,9 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
+      openCompletionModal: () => openModal('completion'),
+      openExitProjectModal: () => openModal('exitProject'),
+      closeExitProjectModal: () => closeModal('exitProject')
     },
     dispatch
   );
@@ -60,6 +65,8 @@ interface ProjectProps {
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
+  openExitProjectModal: () => void;
+  closeExitProjectModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -78,6 +85,11 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       props.openCompletionModal();
     }
   };
+
+  const { onUnsavedChanges, confirmExit } = useUnsavedSolutionWarning({
+    openExitProjectModal: props.openExitProjectModal,
+    closeExitProjectModal: props.closeExitProjectModal
+  });
 
   const container = useRef<HTMLElement>(null);
 
@@ -166,6 +178,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
                 challengeType={challengeType}
                 description={description}
                 onSubmit={handleSubmit}
+                onUnsavedChanges={onUnsavedChanges}
                 updateSolutionForm={updateSolutionFormValues}
               />
               <ProjectToolPanel
@@ -180,6 +193,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
               <Spacer size='m' />
             </Col>
             <CompletionModal />
+            <ExitProjectModal onExit={confirmExit} />
             <HelpModal
               challengeTitle={title}
               challengeBlock={block}
