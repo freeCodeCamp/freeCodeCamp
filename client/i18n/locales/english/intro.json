@@ -10490,7 +10490,13 @@
           "In these lessons, you will learn what Python is and common uses in the industry."
         ]
       },
-      "lecture-understanding-variables-and-data-types": {
+      "workshop-ascii-art-printer": {
+        "title": "Build an ASCII Art Printer",
+        "intro": [
+          "In this workshop, you will practice working with variables and the print function while building ASCII art."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types-v2": {
         "title": "Understanding Variables and Data Types",
         "intro": [
           "In these lessons, you will learn about variables and data types in Python."
