@@ -445,20 +445,21 @@ export class SuperblockCreator {
     blocks: BlockStructure[];
     name: SuperBlocks;
   }) {
-    const superBlock: { blocks: Record<string, unknown> } = { blocks: {} };
-
-    const blockResults = await Promise.all(
-      blocks.map((block, i) =>
-        this.blockCreator.processBlock(block, { superBlock: name, order: i })
-      )
+    const blockEntries = await Promise.all(
+      blocks.map(async (block, i) => [
+        block.dashedName,
+        await this.blockCreator.processBlock(block, {
+          superBlock: name,
+          order: i
+        })
+      ])
     );
 
-    blocks.forEach((block, i) => {
-      const blockResult = blockResults[i];
-      if (blockResult) {
-        superBlock.blocks[block.dashedName] = blockResult;
-      }
-    });
+    const superBlock: { blocks: Record<string, unknown> } = {
+      blocks: Object.fromEntries(
+        blockEntries.filter(([, blockResult]) => blockResult)
+      )
+    };
 
     log(
       `Completed parsing superblock. Total blocks: ${Object.keys(superBlock.blocks).length}`

@@ -34,16 +34,12 @@ const log = debug('fcc:build-curriculum');
  * Creates a BlockCreator instance for a specific language with appropriate configuration
  * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
  * @param {boolean} [skipValidation=false] - Whether to skip validation of challenges
- * @param {Object} [opts] - Optional configuration object
- * @param {string} [opts.baseDir] - Base directory for curriculum content
- * @param {string} [opts.i18nBaseDir] - Base directory for i18n curriculum content
- * @param {string} [opts.structureDir] - Directory containing curriculum structure
+ * @param {Function} [parser] - Optional parser for challenge markdown
  * @returns {BlockCreator} A configured BlockCreator instance
  */
 export const getBlockCreator = (
   lang: string,
   skipValidation?: boolean,
-  opts?: { baseDir: string; i18nBaseDir: string; structureDir: string },
   parser?: Parser
 ) => {
   const {
@@ -51,7 +47,7 @@ export const getBlockCreator = (
     i18nBlockContentDir,
     dictionariesDir,
     i18nDictionariesDir
-  } = getLanguageConfig(lang, opts);
+  } = getLanguageConfig(lang);
 
   const targetDictionariesDir =
     lang === 'english' ? dictionariesDir : i18nDictionariesDir;
@@ -431,7 +427,7 @@ export async function buildCurriculum(
   const contentDir = getContentDir(lang);
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, skipBlockValidation, undefined, parser)
+    getBlockCreator(lang, skipBlockValidation, parser)
   );
 
   const { fullSuperblockList, certifications } =
