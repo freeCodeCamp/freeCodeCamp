@@ -10992,6 +10992,12 @@
           "In this lab you will implement the quicksort algorithm to sort a list of integers."
         ]
       },
+      "workshop-sudoku-solver": {
+        "title": "Build a Sudoku Solver",
+        "intro": [
+          "In this workshop, you'll use recursion and backtracking to build a program that solves Sudoku puzzles."
+        ]
+      },
       "review-recursion-python-v2": {
         "title": "Review Recursion",
         "intro": [
