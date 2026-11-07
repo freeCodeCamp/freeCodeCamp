@@ -14,7 +14,7 @@ interface LearnAlertProps {
 
 const NonDonorLearnAlert = ({
   onLearnDonationAlertClick
-}: LearnAlertProps): JSX.Element | null => {
+}: Pick<LearnAlertProps, 'onLearnDonationAlertClick'>): JSX.Element | null => {
   const { t } = useTranslation();
   const seasonalAlertFlag = useFeature('seasonal-alert');
   const progressAlertFlag2024 = useFeature('progress-alert-2024');
@@ -109,10 +109,7 @@ const LearnAlert = ({
   isDonating
 }: LearnAlertProps): JSX.Element | null =>
   isDonating ? null : (
-    <NonDonorLearnAlert
-      onLearnDonationAlertClick={onLearnDonationAlertClick}
-      isDonating={isDonating}
-    />
+    <NonDonorLearnAlert onLearnDonationAlertClick={onLearnDonationAlertClick} />
   );
 
 LearnAlert.displayName = 'LearnAlert';
