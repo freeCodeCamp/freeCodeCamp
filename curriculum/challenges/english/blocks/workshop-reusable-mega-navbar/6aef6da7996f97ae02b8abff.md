@@ -7,14 +7,50 @@ dashedName: step-13
 
 # --description--
 
-step 13 instructions
+Now you can use the `isOpen` state in your JSX. Start with the `button` element.
+
+The `aria-expanded` attribute tells assistive technologies, such as screen readers, whether the content controlled by a button is shown (`"true"`) or hidden (`"false"`). Right now, its value is always `"false"`.
+
+Remember that curly braces let you embed JavaScript expressions in JSX. This works for attribute values too, so you can use the ternary operator to pick a value based on a condition:
+
+```jsx
+<p title={isDarkMode ? "Dark theme" : "Light theme"}>Theme</p>
+```
+
+Update the `aria-expanded` attribute of the `button` so its value is `"true"` when `isOpen` is `true`, and `"false"` when `isOpen` is `false`.
 
 # --hints--
 
-Test 1
+The `aria-expanded` attribute of the `button` element should be `"false"` when `isOpen` is `false`.
 
 ```js
+const originalUseState = React.useState;
+try {
+  React.useState = () => [false, () => {}];
+  const script = [...document.querySelectorAll("script")].find((s) => s.dataset.src === "index.jsx").innerText;
+  const exports = {};
+  const _a = eval(script);
+  const div = await __helpers.prepTestComponent(exports.Navbar);
+  assert.equal(div.querySelector("button")?.getAttribute("aria-expanded"), "false");
+} finally {
+  React.useState = originalUseState;
+}
+```
 
+The `aria-expanded` attribute of the `button` element should be `"true"` when `isOpen` is `true`.
+
+```js
+const originalUseState = React.useState;
+try {
+  React.useState = () => [true, () => {}];
+  const script = [...document.querySelectorAll("script")].find((s) => s.dataset.src === "index.jsx").innerText;
+  const exports = {};
+  const _a = eval(script);
+  const div = await __helpers.prepTestComponent(exports.Navbar);
+  assert.equal(div.querySelector("button")?.getAttribute("aria-expanded"), "true");
+} finally {
+  React.useState = originalUseState;
+}
 ```
 
 # --seed--
@@ -144,8 +180,9 @@ button:hover {
 ```
 
 ```jsx
---fcc-editable-region--
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <nav className="navbar">
       <ul>
@@ -156,16 +193,17 @@ export const Navbar = () => {
           <a href="#">Widgets</a>
         </li>
         <li className="nav-item">
+          --fcc-editable-region--
           <button aria-expanded="false">Apps</button>
+          --fcc-editable-region--
           <ul className="sub-menu" aria-label="Apps">
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Chat</a></li>
+            <li><a href="#">Email</a></li>
           </ul>
         </li>
       </ul>
     </nav>
   );
 };
---fcc-editable-region--
 ```
