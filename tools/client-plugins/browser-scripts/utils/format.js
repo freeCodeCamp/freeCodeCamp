@@ -5,7 +5,14 @@ import { inspect } from 'util/util.js';
 
 export function format(x) {
   // we're trying to mimic console.log, so we avoid wrapping strings in quotes:
-  if (typeof x === 'string') return x;
+  if (typeof x === 'string') {
+    return x
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
+  }
   else if (x instanceof Set) {
     return `Set(${x.size}) {${Array.from(x).join(', ')}}`;
   } else if (x instanceof Map) {
