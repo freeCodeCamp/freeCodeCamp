@@ -34,7 +34,6 @@ function parseGrowthBookUrl(
   }
 }
 
-// Parsed once so the GrowthBook instance below is not recreated on re-render.
 const parsedUrl = parseGrowthBookUrl(growthbookUri);
 
 declare global {

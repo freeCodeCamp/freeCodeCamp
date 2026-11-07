@@ -12,8 +12,6 @@ interface LearnAlertProps {
   isDonating: boolean;
 }
 
-// Flags are only evaluated here so that donors, who never see an alert, are
-// not counted as exposed to any experiment.
 const NonDonorLearnAlert = ({
   onLearnDonationAlertClick
 }: Pick<LearnAlertProps, 'onLearnDonationAlertClick'>): JSX.Element | null => {
