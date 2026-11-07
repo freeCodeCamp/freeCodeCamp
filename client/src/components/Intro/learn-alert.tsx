@@ -12,10 +12,11 @@ interface LearnAlertProps {
   isDonating: boolean;
 }
 
-const LearnAlert = ({
-  onLearnDonationAlertClick,
-  isDonating
-}: LearnAlertProps): JSX.Element | null => {
+// Flags are only evaluated here so that donors, who never see an alert, are
+// not counted as exposed to any experiment.
+const NonDonorLearnAlert = ({
+  onLearnDonationAlertClick
+}: Pick<LearnAlertProps, 'onLearnDonationAlertClick'>): JSX.Element | null => {
   const { t } = useTranslation();
   const seasonalAlertFlag = useFeature('seasonal-alert');
   const progressAlertFlag2024 = useFeature('progress-alert-2024');
@@ -99,13 +100,19 @@ const LearnAlert = ({
     </div>
   );
 
-  if (!isDonating) {
-    if (newCurriculumAB.on) return newCurriculumAlert;
-    if (progressAlertFlag2024.on) return progressAlert2024;
-    if (seasonalAlertFlag.on) return seasonalAlertFlagAlert;
-  }
+  if (newCurriculumAB.on) return newCurriculumAlert;
+  if (progressAlertFlag2024.on) return progressAlert2024;
+  if (seasonalAlertFlag.on) return seasonalAlertFlagAlert;
   return null;
 };
+
+const LearnAlert = ({
+  onLearnDonationAlertClick,
+  isDonating
+}: LearnAlertProps): JSX.Element | null =>
+  isDonating ? null : (
+    <NonDonorLearnAlert onLearnDonationAlertClick={onLearnDonationAlertClick} />
+  );
 
 LearnAlert.displayName = 'LearnAlert';
 

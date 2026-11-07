@@ -34,6 +34,9 @@ function parseGrowthBookUrl(
   }
 }
 
+// Parsed once so the GrowthBook instance below is not recreated on re-render.
+const parsedUrl = parseGrowthBookUrl(growthbookUri);
+
 declare global {
   interface Window {
     dataLayer: [Record<string, number | string>];
@@ -68,7 +71,6 @@ const GrowthBookWrapper = ({
   user,
   userFetchState
 }: GrowthBookWrapper) => {
-  const parsedUrl = parseGrowthBookUrl(growthbookUri);
   const growthbook = useMemo(
     () =>
       new GrowthBook({
@@ -85,8 +87,7 @@ const GrowthBookWrapper = ({
           });
         }
       }),
-
-    [parsedUrl]
+    []
   );
 
   useEffect(() => {
