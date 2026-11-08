@@ -65,3 +65,40 @@ describe('project challenge templates', () => {
     expect(template).not.toContain('# --seed--');
   });
 });
+
+describe('quiz challenge templates', () => {
+  const quizOptions = {
+    challengeId,
+    title: 'Test Quiz',
+    dashedName: 'test-quiz',
+    challengeType: challengeTypes.quiz.toString()
+  };
+
+  it.each([10, 20] as const)(
+    'creates a quiz template with %i questions',
+    (questionCount: number) => {
+      const template = getTemplate(challengeTypes.quiz.toString())({
+        ...quizOptions,
+        questionCount
+      });
+
+      expect(template).toContain(`challengeType: ${challengeTypes.quiz}`);
+      expect(template).toContain(
+        `of the ${questionCount} questions below`
+      );
+      expect(template).toContain(questionCount === 20 ? '18' : '9');
+    }
+  );
+
+  it.each([undefined, 5, 15] as const)(
+    'throws a clear error for invalid questionCount %s',
+    (questionCount?: number) => {
+      expect(() =>
+        getTemplate(challengeTypes.quiz.toString())({
+          ...quizOptions,
+          questionCount
+        })
+      ).toThrow(/questionCount/);
+    }
+  );
+});
