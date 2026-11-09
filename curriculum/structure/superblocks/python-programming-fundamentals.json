@@ -41,9 +41,9 @@
           "dashedName": "python-dictionaries-and-sets",
           "blocks": [
             "lecture-working-with-dictionaries-and-sets",
-            "lecture-working-with-modules",
+            "lecture-working-with-modules-v2",
             "workshop-medical-data-validator",
-            "review-dictionaries-and-sets",
+            "review-dictionaries-and-sets-v2",
             "quiz-dictionaries-and-sets"
           ]
         },

@@ -10625,7 +10625,7 @@
           "Learn about working with dictionaries and sets in these lessons."
         ]
       },
-      "lecture-working-with-modules": {
+      "lecture-working-with-modules-v2": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
       },
@@ -10635,7 +10635,7 @@
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
         ]
       },
-      "review-dictionaries-and-sets": {
+      "review-dictionaries-and-sets-v2": {
         "title": "Dictionaries and Sets Review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
