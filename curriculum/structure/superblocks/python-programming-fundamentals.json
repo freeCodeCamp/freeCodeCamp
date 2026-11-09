@@ -22,15 +22,22 @@
             "workshop-kitchen-inventory-tracker",
             "lab-discount-calculator",
             "workshop-caesar-cipher",
-            "lab-rpg-character",
             "review-python-basics",
             "quiz-python-basics"
           ]
         },
         {
+          "moduleType": "cert-project",
+          "dashedName": "lab-rpg-character",
+          "blocks": ["lab-rpg-character"]
+        },
+        {
           "dashedName": "python-loops-and-sequences",
           "blocks": [
-            "lecture-working-with-loops-and-sequences",
+            "lecture-working-with-lists",
+            "lecture-working-with-tuples",
+            "lecture-working-with-loops-python",
+            "lecture-understanding-list-comprehensions-and-lambda-functions",
             "workshop-pin-extractor",
             "lab-number-pattern-generator",
             "review-loops-and-sequences",

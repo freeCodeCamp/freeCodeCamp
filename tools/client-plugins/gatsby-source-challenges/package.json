@@ -9,7 +9,7 @@
     "pnpm": ">=12"
   },
   "scripts": {
-    "lint": "eslint --max-warnings 0"
+    "lint": "oxlint --deny-warnings"
   },
   "repository": {
     "type": "git",
@@ -25,9 +25,8 @@
     "gatsby": "^5.0.0"
   },
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
     "@freecodecamp/curriculum": "workspace:*",
-    "chokidar": "3.6.0",
-    "eslint": "9.39.5"
+    "@freecodecamp/oxlint-config": "workspace:*",
+    "chokidar": "3.6.0"
   }
 }

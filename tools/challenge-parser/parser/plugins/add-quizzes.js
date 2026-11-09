@@ -89,7 +89,9 @@ function plugin() {
           questionData.audioData = audioData;
         } catch (error) {
           if (error instanceof SyntaxError) {
-            throw Error('--audio-- section must contain valid JSON');
+            throw Error('--audio-- section must contain valid JSON', {
+              cause: error
+            });
           }
           throw error;
         }

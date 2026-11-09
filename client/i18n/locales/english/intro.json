@@ -1832,9 +1832,9 @@
         ]
       },
       "review-object-oriented-programming": {
-        "title": "Object Oriented Programming Review",
+        "title": "Object-Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
+          "Before you're quizzed on object-oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -5036,6 +5036,12 @@
           "In this lab, you'll create a function that looks up profile information."
         ]
       },
+      "lab-data-sanitizer-sweep": {
+        "title": "Implement the Data Sanitizer Sweep Process",
+        "intro": [
+          "In this lab, you will practice using string manipulation and loops to replace characters in log strings and entire log files."
+        ]
+      },
       "workshop-space-mission-roster": {
         "title": "Build a Space Mission Roster",
         "intro": [
@@ -6655,7 +6661,7 @@
         ]
       },
       "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets review",
+        "title": "Dictionaries and Sets Review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
           "Open up this page to review concepts around dictionaries, sets, and how to import modules."
@@ -6787,9 +6793,9 @@
         ]
       },
       "review-object-oriented-programming": {
-        "title": "Object Oriented Programming Review",
+        "title": "Object-Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
+          "Before you're quizzed on object-oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -10460,6 +10466,7 @@
     },
     "modules": {
       "python-basics": "Python Basics",
+      "lab-rpg-character": "Build an RPG Character",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
@@ -10565,12 +10572,6 @@
           "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
         ]
       },
-      "lab-rpg-character": {
-        "title": "Build an RPG Character",
-        "intro": [
-          "In this lab you will practice basic Python by building an RPG character."
-        ]
-      },
       "review-python-basics": {
         "title": "Python Basics Review",
         "intro": [
@@ -10584,10 +10585,28 @@
           "Test what you've learned about Python basics with this quiz."
         ]
       },
-      "lecture-working-with-loops-and-sequences": {
-        "title": "Working with Loops and Sequences",
+      "lab-rpg-character": {
+        "title": "Build an RPG Character",
         "intro": [
-          "Learn about working with loops and sequences in these lessons."
+          "In this lab you will practice basic Python by building an RPG character."
+        ]
+      },
+      "lecture-working-with-lists": {
+        "title": "Working with Lists",
+        "intro": ["Learn about working with lists in these lessons."]
+      },
+      "lecture-working-with-tuples": {
+        "title": "Working with Tuples",
+        "intro": ["Learn about working with tuples in these lessons."]
+      },
+      "lecture-working-with-loops-python": {
+        "title": "Working with Loops",
+        "intro": ["Learn about working with loops in these lessons."]
+      },
+      "lecture-understanding-list-comprehensions-and-lambda-functions": {
+        "title": "Understanding List Comprehensions and Lambda Functions",
+        "intro": [
+          "Learn about list comprehensions and lambda functions in these lessons."
         ]
       },
       "workshop-pin-extractor": {
@@ -10630,7 +10649,7 @@
         ]
       },
       "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets review",
+        "title": "Dictionaries and Sets Review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
           "Open up this page to review concepts around dictionaries, sets, and how to import modules."
@@ -10762,9 +10781,9 @@
         ]
       },
       "review-object-oriented-programming": {
-        "title": "Object Oriented Programming Review",
+        "title": "Object-Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
+          "Before you're quizzed on object-oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {

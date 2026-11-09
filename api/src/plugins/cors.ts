@@ -9,7 +9,7 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
     void reply.send();
   });
 
-  fastify.addHook('onRequest', async (req, reply) => {
+  fastify.addHook('onRequest', (req, reply, next) => {
     // `origin` is an undocumented reserved keyword in Sentry
     // if used as attribute name in logs, it is overwritten in queries
     // https://github.com/getsentry/sentry/issues/120640
@@ -42,6 +42,7 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
       // Vary: Origin to prevent cache poisoning
       // TODO: do we need Vary: Accept-Encoding?
       .header('Vary', 'Origin, Accept-Encoding');
+    next();
   });
 
   done();

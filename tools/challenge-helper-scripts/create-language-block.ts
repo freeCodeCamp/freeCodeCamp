@@ -104,7 +104,6 @@ async function createLanguageBlock(
       questionCount!,
       challengeLang
     );
-    blockLayout = BlockLayouts.Link;
   } else {
     await createDialogueChallenge(challengeId, block, challengeLang);
   }

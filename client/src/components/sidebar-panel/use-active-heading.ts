@@ -53,7 +53,7 @@ function useActiveHeading(ids: string[], topOffset: number): string | null {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [idsKey, topOffset]);
 
   return activeId;

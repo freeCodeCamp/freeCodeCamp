@@ -73,13 +73,11 @@ export class SolutionForm extends Component<SolutionFormProps> {
 
     switch (challengeType) {
       case challengeTypes.frontEndProject:
-        formFields = solutionField;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
         break;
 
       case challengeTypes.backend:
-        formFields = solutionField;
         options.isLocalLinkAllowed = true;
         solutionLink = solutionLink + 'http://localhost:3000/';
         break;
@@ -95,7 +93,6 @@ export class SolutionForm extends Component<SolutionFormProps> {
 
       case challengeTypes.pythonProject:
       case challengeTypes.colab:
-        formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink =
           solutionLink +
@@ -106,13 +103,11 @@ export class SolutionForm extends Component<SolutionFormProps> {
 
       case challengeTypes.codeAllyCert:
       case challengeTypes.freeCodeCampOsCert:
-        formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink = solutionLink + 'https://your-git-repo.url/files';
         break;
 
       default:
-        formFields = solutionField;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
     }
