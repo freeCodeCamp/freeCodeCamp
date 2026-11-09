@@ -442,7 +442,9 @@ print(temperature.celsius_to_fahrenheit(0))  # 32.0
 ## Python Standard Library
 
 - **Standard Library and Third-Party Packages**: The Python standard library is a collection of modules and packages included with Python. Third-party packages are developed separately and usually need to be installed before you can use them.
+
 - **Common Modules**: `math` provides mathematical operations, `random` generates random numbers, `re` works with regular expressions, and `datetime` works with dates and times.
+
 - **Using Module Classes**: Modules can provide classes as well as functions and constants. For example, `datetime.date` creates a date object whose `day`, `month`, and `year` attributes can be accessed with dot notation.
 
 ```python
@@ -455,6 +457,7 @@ print(birthday.year)   # 1959
 ```
 
 - **Finding Modules**: Browse the [Python Standard Library reference](https://docs.python.org/3/library/index.html), which groups modules by topic. Each module's documentation explains what it provides and how to use it.
+
 - **`help()` Function**: Displays documentation for a module or a specific function. It is not currently available in the freeCodeCamp environment.
 
 ```python
