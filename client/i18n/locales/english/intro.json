@@ -10466,6 +10466,7 @@
     },
     "modules": {
       "python-basics": "Python Basics",
+      "lab-rpg-character": "Build an RPG Character",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
@@ -10571,12 +10572,6 @@
           "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
         ]
       },
-      "lab-rpg-character": {
-        "title": "Build an RPG Character",
-        "intro": [
-          "In this lab you will practice basic Python by building an RPG character."
-        ]
-      },
       "review-python-basics": {
         "title": "Python Basics Review",
         "intro": [
@@ -10590,10 +10585,28 @@
           "Test what you've learned about Python basics with this quiz."
         ]
       },
-      "lecture-working-with-loops-and-sequences": {
-        "title": "Working with Loops and Sequences",
+      "lab-rpg-character": {
+        "title": "Build an RPG Character",
         "intro": [
-          "Learn about working with loops and sequences in these lessons."
+          "In this lab you will practice basic Python by building an RPG character."
+        ]
+      },
+      "lecture-working-with-lists": {
+        "title": "Working with Lists",
+        "intro": ["Learn about working with lists in these lessons."]
+      },
+      "lecture-working-with-tuples": {
+        "title": "Working with Tuples",
+        "intro": ["Learn about working with tuples in these lessons."]
+      },
+      "lecture-working-with-loops-python": {
+        "title": "Working with Loops",
+        "intro": ["Learn about working with loops in these lessons."]
+      },
+      "lecture-understanding-list-comprehensions-and-lambda-functions": {
+        "title": "Understanding List Comprehensions and Lambda Functions",
+        "intro": [
+          "Learn about list comprehensions and lambda functions in these lessons."
         ]
       },
       "workshop-pin-extractor": {

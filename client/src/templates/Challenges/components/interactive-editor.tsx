@@ -33,7 +33,7 @@ const InteractiveEditor = ({ files }: Props) => {
     >;
     files.forEach(file => {
       const ext = file.ext;
-      let path = '';
+      let path: string;
       if (ext === 'html') path = '/index.html';
       else if (ext === 'css') path = '/styles.css';
       else if (ext === 'js' || ext === 'ts') path = `/index.${ext}`;

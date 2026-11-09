@@ -5,7 +5,7 @@ import { FREECODECAMP_NODE_ENV } from '../utils/env.js';
 
 const securityHeaders: FastifyPluginCallback = (fastify, _options, done) => {
   // OWASP recommended headers
-  fastify.addHook('onRequest', async (req, reply) => {
+  fastify.addHook('onRequest', (req, reply, next) => {
     void reply
       .header('Cache-Control', 'no-store')
       .header('Content-Security-Policy', "frame-ancestors 'none'")
@@ -19,6 +19,7 @@ const securityHeaders: FastifyPluginCallback = (fastify, _options, done) => {
         'max-age=300; includeSubDomains'
       );
     }
+    next();
   });
 
   done();

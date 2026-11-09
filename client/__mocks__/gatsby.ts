@@ -1,7 +1,7 @@
 import React from 'react';
 import type { GatsbyLinkProps } from 'gatsby';
 import { vi } from 'vitest';
-import gatsby from 'gatsby';
+import * as gatsby from 'gatsby';
 
 import envData from '../config/env.json';
 const { clientLocale } = envData;

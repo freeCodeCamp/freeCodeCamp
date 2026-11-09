@@ -291,7 +291,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           id: subscriptionId,
           latest_invoice: {
             // For older api versions, @ts-ignore is recommended by Stripe. More info: https://github.com/stripe/stripe-node/blob/fe81d1f28064c9b468c7b380ab09f7a93054ba63/README.md?plain=1#L91
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // oxlint-disable-next-line typescript/ban-ts-comment
             // @ts-ignore stripe-version-2019-10-17
             payment_intent: { client_secret, status }
           }
@@ -309,7 +309,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
             error: {
               type: 'UserActionRequired',
               message: 'Payment requires user action',
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              // oxlint-disable-next-line typescript/no-unsafe-assignment
               client_secret
             }
           });

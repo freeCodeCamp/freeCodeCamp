@@ -158,7 +158,7 @@ function DefaultLayout({
 
   useEffect(() => {
     initializeTheme();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -174,7 +174,7 @@ function DefaultLayout({
       window.removeEventListener('online', updateOnlineStatus);
       window.removeEventListener('offline', updateOnlineStatus);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const updateOnlineStatus = () => {

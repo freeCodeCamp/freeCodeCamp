@@ -15,7 +15,7 @@ import SectionHeader from './section-header';
 import ToggleRadioSetting from './toggle-radio-setting';
 
 const mapStateToProps = createSelector(userSelector, user => ({
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   user
 }));
 

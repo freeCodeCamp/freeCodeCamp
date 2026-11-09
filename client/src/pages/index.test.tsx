@@ -142,11 +142,11 @@ describe('IndexPage', () => {
     ).toBeInTheDocument();
     expect(screen.getAllByTestId('landing-page-description')).toHaveLength(4);
 
-    /* eslint-disable testing-library/no-node-access */
+    /* oxlint-disable testing-library/no-node-access */
     expect(
       screen.getByTestId('brand-logo-container').querySelectorAll('svg')
     ).toHaveLength(5);
-    /* eslint-enable testing-library/no-node-access */
+    /* oxlint-enable testing-library/no-node-access */
 
     expect(screen.getByTestId('testimonials-section-header')).toHaveTextContent(
       translations.landing.testimonials.heading

@@ -19,7 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --max-warnings 0",
+    "lint": "oxlint --deny-warnings",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
@@ -59,9 +59,8 @@
     "unist-util-visit-children": "1.1.4"
   },
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
-    "eslint": "9.39.5",
-    "typescript": "5.9.3",
+    "@freecodecamp/oxlint-config": "workspace:*",
+    "typescript": "7.0.2",
     "unist-util-select": "3.0.4",
     "vitest": "4.1.12"
   }

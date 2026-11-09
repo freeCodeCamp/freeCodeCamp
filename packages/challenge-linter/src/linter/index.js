@@ -7,6 +7,9 @@ import * as fencedCodeBlock from './fenced-code-block.js';
 const markdownItFactory = () =>
   import('markdown-it').then(module => module.default({ html: true }));
 
+/**
+ * @returns {(files: import('markdownlint').Options['files']) => Promise<import('markdownlint').LintResults>}
+ */
 export function linter(rules) {
   const lint = async files => {
     const options = {
