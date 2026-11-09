@@ -10591,10 +10591,22 @@
           "In this lab you will practice basic Python by building an RPG character."
         ]
       },
-      "lecture-working-with-loops-and-sequences": {
-        "title": "Working with Loops and Sequences",
+      "lecture-working-with-lists": {
+        "title": "Working with Lists",
+        "intro": ["Learn about working with lists in these lessons."]
+      },
+      "lecture-working-with-tuples": {
+        "title": "Working with Tuples",
+        "intro": ["Learn about working with tuples in these lessons."]
+      },
+      "lecture-working-with-loops-python": {
+        "title": "Working with Loops",
+        "intro": ["Learn about working with loops in these lessons."]
+      },
+      "lecture-understanding-list-comprehensions-and-lambda-functions": {
+        "title": "Understanding List Comprehensions and Lambda Functions",
         "intro": [
-          "Learn about working with loops and sequences in these lessons."
+          "Learn about list comprehensions and lambda functions in these lessons."
         ]
       },
       "workshop-pin-extractor": {
