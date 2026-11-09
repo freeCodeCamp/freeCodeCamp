@@ -8,7 +8,8 @@
           "blocks": [
             "workshop-first-python-program",
             "lecture-introduction-to-python",
-            "lecture-understanding-variables-and-data-types",
+            "workshop-ascii-art-printer",
+            "lecture-understanding-variables-and-data-types-v2",
             "workshop-report-card-printer",
             "lecture-introduction-to-python-strings",
             "workshop-employee-profile-generator",
