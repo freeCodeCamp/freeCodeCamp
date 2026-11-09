@@ -944,8 +944,8 @@ importers:
         specifier: 7.29.7
         version: 7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
       '@babel/standalone':
-        specifier: 7.29.11
-        version: 7.29.11
+        specifier: 7.29.12
+        version: 7.29.12
       '@freecodecamp/browser-scripts':
         specifier: workspace:*
         version: link:../../tools/client-plugins/browser-scripts
@@ -2077,8 +2077,8 @@ packages:
     resolution: {integrity: sha512-NpugTzbKgGrNe45Ui32cN8vCFFMxVtP/9rtfwv0nP5FRDAjvYBxJcLVpYA9mr1jxP6cnIT7x9LUzuDTbWYYNRA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/standalone@7.29.11':
-    resolution: {integrity: sha512-vluAHMxSAtHdRbVgGSHSrzxltmQ4H4FOPiUAOxYxmHA5OY1Cx8MJoy/aXUUGVYP+Iso+QziffGe1RBzcpgyHGg==}
+  '@babel/standalone@7.29.12':
+    resolution: {integrity: sha512-+ZbUA81jL9HXWVdysgup3TAgnE8dayhAlzRTOlb2GCMB2+4ohLVHAtvG7nVbLwqBlgM2hXesYlB34RvVMk3jBA==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.29.7':
@@ -13471,7 +13471,7 @@ snapshots:
 
   '@babel/runtime@7.29.10': {}
 
-  '@babel/standalone@7.29.11': {}
+  '@babel/standalone@7.29.12': {}
 
   '@babel/template@7.29.7':
     dependencies:
