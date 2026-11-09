@@ -192,7 +192,7 @@ rows[0].append('hello')
 print(rows) # [['hello'], [], []]
 ```
 
-Later in this block, you will learn how list comprehensions can create a chosen number of separate inner lists.
+Later in this module, you will learn how list comprehensions can create a chosen number of separate inner lists.
 
 # --questions--
 
