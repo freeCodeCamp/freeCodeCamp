@@ -1,9 +1,8 @@
 // Package Utilities
-import { graphql, navigate } from 'gatsby';
+import { graphql, navigate, type HeadFC } from 'gatsby';
 
 import React, { useEffect, useRef, useState } from 'react';
 import type { RefObject } from 'react';
-import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -14,6 +13,9 @@ import { Container, Col, Callout, Row, Button, Spacer } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
+import ChallengeHead, {
+  type ChallengeHeadData
+} from '../components/challenge-head';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
@@ -275,7 +277,6 @@ interface ExamIntroductionProps {
   t: TFunction;
   title: string;
   translationPending: boolean;
-  windowTitle: string;
 }
 
 function ExamIntroduction({
@@ -291,13 +292,11 @@ function ExamIntroduction({
   superBlock,
   t,
   title,
-  translationPending,
-  windowTitle
+  translationPending
 }: ExamIntroductionProps) {
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
-        <Helmet title={windowTitle} />
         <Container>
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -546,11 +545,6 @@ function ShowExam(props: ShowExamProps) {
   const prerequisitesComplete = missingPrerequisites.length === 0;
   const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
-  const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-
   // TODO: If already taken exam, show different messages
 
   return examInProgress && generatedExamQuestions.length ? (
@@ -597,12 +591,15 @@ function ShowExam(props: ShowExamProps) {
       t={t}
       title={title}
       translationPending={translationPending}
-      windowTitle={windowTitle}
     />
   );
 }
 
 ShowExam.displayName = 'ShowExam';
+
+export const Head: HeadFC<ChallengeHeadData> = ({ data }) => (
+  <ChallengeHead challenge={data.challengeNode.challenge} />
+);
 
 export default connect(
   mapStateToProps,

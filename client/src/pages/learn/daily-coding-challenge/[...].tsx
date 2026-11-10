@@ -1,6 +1,7 @@
 /* oxlint-disable filenames-simple/naming-convention */
 import React, { useEffect } from 'react';
 import { withPrefix } from 'gatsby';
+import PageHead from '../../../components/page-head';
 
 import ShowDailyCodingChallenge from '../../../client-only-routes/show-daily-coding-challenge';
 import RedirectToArchive from '../../../components/redirect-daily-challenge-archive';
@@ -40,3 +41,7 @@ function DailyCodingChallengeAll(props: Props): JSX.Element | null {
 
 DailyCodingChallengeAll.displayName = 'DailyCodingChallengeAll';
 export default DailyCodingChallengeAll;
+
+export function Head() {
+  return <PageHead noindex={true} />;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
-import { render, screen, waitFor, within } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { I18nextProvider } from 'react-i18next';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
@@ -12,7 +13,16 @@ import translations from '../../../../i18n/locales/english/translations.json';
 import { initialState as appInitialState } from '../../../redux';
 import { createStore } from '../../../redux/create-store';
 import type { ChallengeMeta, ChallengeNode } from '../../../redux/prop-types';
-import MsTrophy from './show';
+import MsTrophy, { Head } from './show';
+
+vi.mock('../../../components/page-head', () => ({
+  default: ({ title, noindex }: { title: string; noindex?: boolean }) => (
+    <>
+      <title>{title}</title>
+      {noindex && <meta name='robots' content='noindex' />}
+    </>
+  )
+}));
 
 vi.unmock('react-i18next');
 
@@ -112,6 +122,16 @@ const pageContext: { challengeMeta: ChallengeMeta } = {
   }
 };
 
+function expectPageHead() {
+  const view = renderToStaticMarkup(
+    <I18nextProvider i18n={i18nTestConfig}>
+      <Head {...({ data } as Parameters<typeof Head>[0])} />
+    </I18nextProvider>
+  );
+  expect(view).toContain(`<title>${windowTitle}</title>`);
+  expect(view).toContain('name="robots" content="noindex"');
+}
+
 function renderMsTrophy() {
   const store = createStore({
     app: {
@@ -137,10 +157,10 @@ function renderMsTrophy() {
 }
 
 describe('MsTrophy', () => {
-  it('renders the trophy page title, description, and disabled verify button', async () => {
+  it('renders the trophy page title, description, and disabled verify button', () => {
     renderMsTrophy();
 
-    await waitFor(() => expect(document.title).toBe(windowTitle));
+    expectPageHead();
     expect(
       screen.getByRole('heading', { level: 1, name: title })
     ).toBeInTheDocument();

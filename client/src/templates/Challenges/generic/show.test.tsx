@@ -1,7 +1,8 @@
 import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 import { I18nextProvider } from 'react-i18next';
 import { describe, expect, it, vi } from 'vitest';
@@ -12,7 +13,16 @@ import translations from '../../../../i18n/locales/english/translations.json';
 import { initialState as appInitialState } from '../../../redux';
 import { createStore } from '../../../redux/create-store';
 import type { ChallengeMeta, ChallengeNode } from '../../../redux/prop-types';
-import ShowGeneric from './show';
+import ShowGeneric, { Head } from './show';
+
+vi.mock('../../../components/page-head', () => ({
+  default: ({ title, noindex }: { title: string; noindex?: boolean }) => (
+    <>
+      <title>{title}</title>
+      {noindex && <meta name='robots' content='noindex' />}
+    </>
+  )
+}));
 
 vi.unmock('react-i18next');
 
@@ -114,6 +124,16 @@ const pageContext: { challengeMeta: ChallengeMeta } = {
   }
 };
 
+function expectPageHead() {
+  const view = renderToStaticMarkup(
+    <I18nextProvider i18n={i18nTestConfig}>
+      <Head {...({ data } as Parameters<typeof Head>[0])} />
+    </I18nextProvider>
+  );
+  expect(view).toContain(`<title>${windowTitle}</title>`);
+  expect(view).toContain('name="robots" content="noindex"');
+}
+
 function renderShowGeneric({
   completedChallenges = []
 }: {
@@ -162,8 +182,8 @@ function renderShowGeneric({
   );
 }
 
-async function expectChallengePageContent() {
-  await waitFor(() => expect(document.title).toBe(windowTitle));
+function expectChallengePageContent() {
+  expectPageHead();
 
   expect(
     screen.getByRole('heading', { level: 1, name: challengeTitle })
@@ -178,20 +198,20 @@ async function expectChallengePageContent() {
 }
 
 describe('<ShowGeneric />', () => {
-  it('renders the challenge without the completed icon when the challenge is not completed', async () => {
+  it('renders the challenge without the completed icon when the challenge is not completed', () => {
     expect.hasAssertions();
     renderShowGeneric();
 
-    await expectChallengePageContent();
+    expectChallengePageContent();
 
     expect(screen.queryByTestId('green-pass')).not.toBeInTheDocument();
   });
 
-  it('renders the challenge with the completed icon when the challenge is completed', async () => {
+  it('renders the challenge with the completed icon when the challenge is completed', () => {
     expect.hasAssertions();
     renderShowGeneric({ completedChallenges: [{ id: challengeId }] });
 
-    await expectChallengePageContent();
+    expectChallengePageContent();
 
     expect(screen.getByTestId('green-pass')).toHaveAccessibleName(
       t('icons.passed')

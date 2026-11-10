@@ -1,10 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Helmet from 'react-helmet';
 import { describe, expect, it, vi } from 'vitest';
 
 import translations from '../../../i18n/locales/english/translations.json';
 import FourOhFour from '.';
+import { Head } from '../../pages/404';
+
+vi.mock('../page-head', () => ({
+  default: ({ title }: { title: string }) => <title>{title}</title>
+}));
 import { randomQuote } from '../../utils/get-words';
 
 vi.mock('../../utils/get-words');
@@ -25,12 +29,18 @@ vi.mock('react-i18next', () => ({
 }));
 
 describe('<FourOhFour />', () => {
+  it('exports the not found page title', () => {
+    render(<Head />);
+    expect(
+      screen.getByText(
+        `${translations['404']['page-not-found']} | freeCodeCamp.org`
+      )
+    ).toBeInTheDocument();
+  });
+
   it('renders the not found page content', () => {
     render(<FourOhFour />);
 
-    expect(Helmet.peek().title).toBe(
-      `${translations['404']['page-not-found']} | freeCodeCamp.org`
-    );
     expect(randomQuote).toHaveBeenCalledOnce();
     expect(
       screen.getByRole('img', { name: translations['404']['not-found'] })

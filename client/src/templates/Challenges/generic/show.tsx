@@ -1,6 +1,5 @@
-import { graphql } from 'gatsby';
+import { graphql, type HeadFC } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
@@ -13,6 +12,9 @@ import { YouTubeEvent } from 'react-youtube';
 
 // Local Utilities
 import PrismFormatted from '../components/prism-formatted';
+import ChallengeHead, {
+  type ChallengeHeadData
+} from '../components/challenge-head';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -149,10 +151,6 @@ const ShowGeneric = ({
 }: ShowQuizProps) => {
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
-
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
 
   useEffect(() => {
     initTests(tests);
@@ -422,9 +420,6 @@ const ShowGeneric = ({
       playScene={scene ? () => sceneSubject.notify('play') : undefined}
     >
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
         <Container
           className={isReviewChallenge ? 'content-layout-fluid' : undefined}
           fluid
@@ -455,6 +450,10 @@ const ShowGeneric = ({
 };
 
 ShowGeneric.displayName = 'ShowGeneric';
+
+export const Head: HeadFC<ChallengeHeadData> = ({ data }) => (
+  <ChallengeHead challenge={data.challengeNode.challenge} includeLearn />
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowGeneric);
 

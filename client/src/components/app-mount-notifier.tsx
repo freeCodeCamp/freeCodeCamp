@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -17,7 +16,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 const AppMountNotifier = ({
   children,
   appMount
-}: AppMountNotifierProps): JSX.Element => {
+}: AppMountNotifierProps): React.ReactNode => {
   useEffect(() => {
     appMount();
     // oxlint-disable-next-line react/exhaustive-deps
@@ -25,12 +24,11 @@ const AppMountNotifier = ({
 
   const { i18n } = useTranslation();
 
-  return (
-    <>
-      <Helmet htmlAttributes={{ lang: i18n.language }} />
-      {children}
-    </>
-  );
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
+  return children;
 };
 
 AppMountNotifier.displayName = 'AppMountNotifier';

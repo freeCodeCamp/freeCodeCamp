@@ -1,12 +1,14 @@
-import { graphql } from 'gatsby';
+import { graphql, type HeadFC } from 'gatsby';
 import React, { useEffect, useRef } from 'react';
-import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
+import ChallengeHead, {
+  type ChallengeHeadData
+} from '../../components/challenge-head';
 import LearnLayout from '../../../../components/layouts/learn';
 import { isSignedInSelector } from '../../../../redux/selectors';
 import {
@@ -160,16 +162,9 @@ const ShowBackEnd = (props: BackEndProps) => {
     updateSolutionFormValues
   } = props;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
-
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
         <Container>
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -226,6 +221,10 @@ const ShowBackEnd = (props: BackEndProps) => {
     </Hotkeys>
   );
 };
+
+export const Head: HeadFC<ChallengeHeadData> = ({ data }) => (
+  <ChallengeHead challenge={data.challengeNode.challenge} includeLearn />
+);
 
 export default connect(
   mapStateToProps,

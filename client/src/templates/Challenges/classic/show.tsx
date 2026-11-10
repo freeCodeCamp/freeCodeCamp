@@ -1,6 +1,5 @@
-import { graphql } from 'gatsby';
+import { graphql, type HeadFC } from 'gatsby';
 import React, { useState, useEffect, useRef } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
@@ -12,6 +11,9 @@ import type { FitAddon } from '@xterm/addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import ChallengeHead, {
+  type ChallengeHeadData
+} from '../components/challenge-head';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
@@ -438,7 +440,6 @@ function ShowClassic({
       editorRef={editorRef}
     >
       <LearnLayout>
-        <Helmet title={windowTitle} />
         {isMobile ? (
           <MobileLayout
             editor={renderEditor({
@@ -537,6 +538,10 @@ function ShowClassic({
 }
 
 ShowClassic.displayName = 'ShowClassic';
+
+export const Head: HeadFC<ChallengeHeadData> = ({ data }) => (
+  <ChallengeHead challenge={data.challengeNode.challenge} />
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowClassic);
 

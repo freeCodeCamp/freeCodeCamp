@@ -21,19 +21,21 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   return (
     <LocationProvider>
       <Provider store={store}>
-        <I18nextProvider i18n={i18n}>
-          <GrowthBookProvider>
-            <AppMountNotifier>
-              <Elements stripe={stripe}>{element}</Elements>
-            </AppMountNotifier>
-          </GrowthBookProvider>
-        </I18nextProvider>
+        <I18nextProvider i18n={i18n}>{element}</I18nextProvider>
       </Provider>
     </LocationProvider>
   );
 };
 
-export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = layoutSelector;
+// Head also uses wrapRootElement. Keep app startup and service effects in the
+// page tree so rendering metadata cannot run them a second time.
+export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = args => (
+  <GrowthBookProvider>
+    <AppMountNotifier>
+      <Elements stripe={stripe}>{layoutSelector(args)}</Elements>
+    </AppMountNotifier>
+  </GrowthBookProvider>
+);
 
 export const disableCorePrefetching: GatsbyBrowser['disableCorePrefetching'] =
   () => true;
