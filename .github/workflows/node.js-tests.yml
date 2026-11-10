@@ -372,11 +372,7 @@ jobs:
           cat sample.env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
-        with:
-          mongodb-version: 8.0
-          mongodb-replica-set: test-rs
-          mongodb-port: 27017
+        run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
 
       - name: Install Dependencies
         env:
