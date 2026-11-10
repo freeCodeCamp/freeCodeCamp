@@ -58,7 +58,6 @@
     "@growthbook/growthbook-react": "1.8.0",
     "@loadable/component": "5.16.7",
     "@paypal/react-paypal-js": "10.6.1",
-    "@redux-devtools/extension": "3.3.0",
     "@redux-saga/core": "^1.4.2",
     "@reduxjs/toolkit": "2.11.2",
     "@stripe/react-stripe-js": "1.16.5",
