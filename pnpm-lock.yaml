@@ -308,8 +308,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       joi:
-        specifier: 17.13.8
-        version: 17.13.8
+        specifier: 17.13.9
+        version: 17.13.9
       jsonwebtoken:
         specifier: 9.0.3
         version: 9.0.3
@@ -796,8 +796,8 @@ importers:
         specifier: 2.6.10
         version: 2.6.10
       joi:
-        specifier: 18.3.0
-        version: 18.3.0
+        specifier: 18.3.1
+        version: 18.3.1
       js-yaml:
         specifier: 4.3.2
         version: 4.3.2
@@ -878,8 +878,8 @@ importers:
         specifier: 13.0.6
         version: 13.0.6
       joi:
-        specifier: 17.13.8
-        version: 17.13.8
+        specifier: 17.13.9
+        version: 17.13.9
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -1312,8 +1312,8 @@ importers:
         specifier: 16.6.1
         version: 16.6.1
       joi:
-        specifier: 17.13.8
-        version: 17.13.8
+        specifier: 17.13.9
+        version: 17.13.9
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -8342,8 +8342,11 @@ packages:
   joi@17.13.8:
     resolution: {integrity: sha512-iPKOGmiRw1jxf/JOPwxmCcUQAOdF359mdzYiP2DJ+TMX0YK2zjK3D+zYOaGjpumWxOFF/l2xVWjRVK5bGSLdEw==}
 
-  joi@18.3.0:
-    resolution: {integrity: sha512-/RwAK4BAfzcdbdFg073tzq4/xhY6Q7lMd5AmjqTL6pu0QFJdEmtswgm8BvgwXvOKuPNYQ8XrdQrrW/gF65LiNw==}
+  joi@17.13.9:
+    resolution: {integrity: sha512-llFCT2rVtfwgBCaIqxtjim+iHqrgss4ONiGSYiiGH9jnjWq90ppSRffqmqKvwpa8W+YfILyQV6XyGcegXX2T4g==}
+
+  joi@18.3.1:
+    resolution: {integrity: sha512-mV9M4Llh4va3NT90p7KBtQhoZqjs8xLX7EWYE4y/GG3yLF6REbIBEHSUb0UX1JXRht2w5tiLSsvmpYc5akiqIw==}
     engines: {node: '>= 20'}
 
   joycon@3.1.1:
@@ -21055,7 +21058,15 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  joi@18.3.0:
+  joi@17.13.9:
+    dependencies:
+      '@hapi/hoek': 9.3.0
+      '@hapi/topo': 5.1.0
+      '@sideway/address': 4.1.5
+      '@sideway/formula': 3.0.1
+      '@sideway/pinpoint': 2.0.0
+
+  joi@18.3.1:
     dependencies:
       '@hapi/address': 5.1.1
       '@hapi/formula': 3.0.2
@@ -24202,7 +24213,7 @@ snapshots:
       '@hapi/hoek': 11.0.7
       '@hapi/wreck': 18.1.2
       debug: 4.4.3(supports-color@8.1.1)
-      joi: 17.13.8
+      joi: 17.13.9
     transitivePeerDependencies:
       - supports-color
 
