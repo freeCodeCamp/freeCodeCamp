@@ -25,7 +25,7 @@
     "@freecodecamp/oxlint-config": "workspace:*",
     "debug": "4.4.3",
     "dotenv": "16.6.1",
-    "joi": "17.13.8",
+    "joi": "17.13.9",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.3.2",
     "mongodb": "6.21.0",
