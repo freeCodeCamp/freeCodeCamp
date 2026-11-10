@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-backtracking",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6af2c214f97368d5000359e5",
+      "title": "What Is Backtracking and How Does It Work?"
+    }
+  ],
+  "blockLabel": "lecture"
+}
