@@ -1655,6 +1655,12 @@
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
       },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
+      },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
         "intro": [
@@ -6654,6 +6660,12 @@
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
       },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
+      },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
         "intro": [
@@ -10641,6 +10653,12 @@
       "lecture-working-with-modules": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
+      },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
       },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
