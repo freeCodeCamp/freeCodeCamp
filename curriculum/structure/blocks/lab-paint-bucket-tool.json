@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-paint-bucket-tool",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6ad1366263d207115800f897",
+      "title": "Build a Paint Bucket Tool"
+    }
+  ],
+  "usesMultifileEditor": true
+}

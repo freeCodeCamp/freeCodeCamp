@@ -1,0 +1,25 @@
+{
+  "name": "@freecodecamp/oxlint-config",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./base": "./base.js",
+    "./lintstaged": "./lint-staged.js",
+    "./filenames": "./filenames.js"
+  },
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@eslint/compat": "1.4.1",
+    "@html-eslint/eslint-plugin-react": "^0.60.0",
+    "eslint-plugin-filenames-simple": "0.9.0",
+    "eslint-plugin-no-only-tests": "3.4.0",
+    "eslint-plugin-testing-library": "7.16.2",
+    "eslint-plugin-turbo": "2.11.10",
+    "oxlint": "1.89.0",
+    "oxlint-config-presets": "0.1.21"
+  },
+  "scripts": {
+    "lint": "oxlint --deny-warnings"
+  }
+}

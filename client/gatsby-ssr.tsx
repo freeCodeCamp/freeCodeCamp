@@ -15,6 +15,7 @@ import {
   getPreBodyThemeScript
 } from './utils/tags';
 import GrowthBookProvider from './src/components/growth-book/growth-book-wrapper';
+import { externalizeGlobalCss } from './utils/gatsby/externalize-global-css';
 
 const store = createStore();
 
@@ -50,7 +51,7 @@ export const onPreRenderHTML: GatsbySSR['onPreRenderHTML'] = ({
   const isBootstrapScript = (key: React.Key | null) =>
     key === 'bootstrap-min-preload' || key === 'bootstrap-min';
 
-  const headComponents = getHeadComponents();
+  const headComponents = externalizeGlobalCss(getHeadComponents());
   headComponents.sort((x, y) => {
     const xKey = React.isValidElement(x) ? x.key : null;
     const yKey = React.isValidElement(y) ? y.key : null;

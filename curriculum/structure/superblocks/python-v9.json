@@ -11,12 +11,14 @@
             "workshop-report-card-printer",
             "lecture-introduction-to-python-strings",
             "workshop-employee-profile-generator",
+            "workshop-employee-profile-validator",
             "lecture-numbers-and-mathematical-operations",
             "workshop-bill-splitter",
             "lecture-booleans-and-conditionals",
             "workshop-movie-ticket-booking-calculator",
             "lab-travel-weather-planner",
             "lecture-understanding-functions-and-scope",
+            "workshop-kitchen-inventory-tracker",
             "lab-discount-calculator",
             "workshop-caesar-cipher",
             "lab-rpg-character",
@@ -47,6 +49,7 @@
           "blocks": [
             "lecture-working-with-dictionaries-and-sets",
             "lecture-working-with-modules",
+            "lecture-working-with-regular-expressions-python",
             "workshop-medical-data-validator",
             "review-dictionaries-and-sets",
             "quiz-dictionaries-and-sets"

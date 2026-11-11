@@ -19,7 +19,7 @@ describe('Cookie updates', () => {
     // Since register creates a new scope, we need to create a route inside the
     // scope for the plugin to be applied.
     await fastify.register(cookieUpdate, fastify => {
-      // eslint-disable-next-line @typescript-eslint/require-await
+      // oxlint-disable-next-line typescript/require-await
       fastify.get('/', async () => {
         return { hello: 'world' };
       });
@@ -108,7 +108,7 @@ describe('Cookie updates', () => {
       name: 'cookie_name',
       path: '/',
       sameSite: 'Lax',
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      // oxlint-disable-next-line typescript/no-unsafe-assignment
       value: expect.any(String),
       secure: true
     });

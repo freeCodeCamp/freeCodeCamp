@@ -1,8 +1,10 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import solution from './fixtures/learn-basic-css-by-building-a-cafe-menu-15.json';
 import { isMacOS } from './utils/user-agent';
+
+test.use({ userPreset: 'certified' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto(

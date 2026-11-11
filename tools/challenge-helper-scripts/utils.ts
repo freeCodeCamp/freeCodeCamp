@@ -136,6 +136,25 @@ const createLabFile = ({
   return challengeId;
 };
 
+const createLectureFile = ({
+  challengeId,
+  projectPath = getProjectPath(),
+  title,
+  dashedName
+}: SingleChallengeOptions): ObjectId => {
+  const challengeType = challengeTypes.multipleChoice.toString();
+  const template = getTemplate(challengeType);
+  const lectureText = template({
+    challengeId,
+    challengeType,
+    title,
+    dashedName
+  });
+
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, lectureText);
+  return challengeId;
+};
+
 const createReviewFile = ({
   challengeId,
   projectPath = getProjectPath(),
@@ -368,5 +387,6 @@ export {
   validateBlockName,
   createQuizFile,
   createLabFile,
+  createLectureFile,
   createReviewFile
 };

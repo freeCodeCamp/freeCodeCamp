@@ -18,6 +18,7 @@ import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum'
 import {
   createQuizFile,
   createLabFile,
+  createLectureFile,
   createReviewFile,
   createStepFile,
   validateBlockName,
@@ -32,7 +33,8 @@ import {
 import { withTrace } from './helpers/utils.js';
 import {
   buildProjectMeta,
-  getDefaultBlockLayout
+  getDefaultBlockLayout,
+  titleToDashedName
 } from './helpers/project-type.js';
 import {
   getProjectChallengeType,
@@ -67,6 +69,7 @@ interface CreateProjectArgs {
   position?: number;
   module?: string;
   title?: string;
+  lectureTitle?: string;
 }
 
 async function createProject(projectArgs: CreateProjectArgs) {
@@ -76,6 +79,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
   const module = projectArgs.module;
   const position = projectArgs.position;
   const questionCount = projectArgs.questionCount;
+  const lectureTitle = projectArgs.lectureTitle;
   const projectContentType = projectArgs.projectContentType;
   const isChapterBased = chapterBasedSuperBlocks.includes(
     projectArgs.superBlock
@@ -137,6 +141,19 @@ async function createProject(projectArgs: CreateProjectArgs) {
               projectContentType
             ),
             contentType: projectContentType
+          });
+      }
+      case BlockLabel.lecture: {
+        if (!lectureTitle) {
+          throw new Error(
+            'Property `lectureTitle` is missing when creating a new Lecture Challenge'
+          );
+        }
+        return (challengeId: ObjectId) =>
+          createLectureChallenge({
+            challengeId,
+            block: projectArgs.block,
+            title: lectureTitle
           });
       }
       case BlockLabel.review:
@@ -232,7 +249,8 @@ async function createMetaJson({
   challengeId,
   order,
   blockLabel,
-  blockLayout
+  blockLayout,
+  lectureTitle
 }: CreateMetaJsonArgs) {
   const newMeta = buildProjectMeta({
     isChapterBased: chapterBasedSuperBlocks.includes(superBlock),
@@ -242,7 +260,8 @@ async function createMetaJson({
     challengeId: challengeId.toString(),
     order,
     blockLabel,
-    blockLayout
+    blockLayout,
+    challengeTitle: lectureTitle
   });
 
   await writeBlockStructure(block, newMeta);
@@ -339,6 +358,23 @@ async function createReviewChallenge({
   });
 }
 
+async function createLectureChallenge({
+  challengeId,
+  block,
+  title
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+}): Promise<ObjectId> {
+  return createLectureFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
+    title,
+    dashedName: titleToDashedName(title)
+  });
+}
+
 async function getChapters(superBlock: string) {
   const blockMetaFile = await fs.readFile(
     '../../curriculum/structure/superblocks/' + superBlock + '.json',
@@ -383,7 +419,7 @@ void getAllBlocks()
     const block = rawBlock.toLowerCase().trim();
 
     const title = await input({
-      message: 'Enter a title for this project:',
+      message: 'Enter a title for this block:',
       default: block
     });
 
@@ -400,6 +436,7 @@ void getAllBlocks()
     let blockLayout: BlockLayouts | undefined;
     let questionCount: number | undefined;
     let projectContentType: ProjectContentType | undefined;
+    let lectureTitle: string | undefined;
     let chapter: string | undefined;
     let module: string | undefined;
     let position: number | undefined;
@@ -423,6 +460,18 @@ void getAllBlocks()
           value
         }))
       });
+
+      if (blockLabel === BlockLabel.lecture) {
+        lectureTitle = (
+          await input({
+            message: 'Enter a title for the first lecture:',
+            validate: (value: string) =>
+              titleToDashedName(value)
+                ? true
+                : 'please enter a title containing letters or numbers'
+          })
+        ).trim();
+      }
 
       if (blockLabel === BlockLabel.quiz) {
         questionCount = await select<number>({
@@ -489,6 +538,7 @@ void getAllBlocks()
       blockLayout,
       questionCount,
       projectContentType,
+      lectureTitle,
       chapter,
       module,
       position,

@@ -15,6 +15,8 @@ This gives rise to the need to optimize your React app for better performance by
 
 React solves this problem with a process called memoization, a technique which caches values and functions to prevent unnecessary recalculations, so your app can be faster and more responsive.
 
+## What Is Memoization?
+
 By definition, memoization is an optimization technique in which the result of expensive function calls are cached (remembered) based on specific arguments. When the same arguments are provided again, the cached result is returned instead of re-computing the function.
 
 The memoization process happens this way:
@@ -27,6 +29,8 @@ The memoization process happens this way:
 
 - If it doesn't exist, compute the result, store it in the cache, and then return it.
 
+## Memoization Tools in React
+
 To improve developer experience with memoization, React provides three tools – `React.memo` (or `memo`), `useMemo` and `useCallback`. 
 
 As you might guess, both `useMemo` and `useCallback` are hooks, but `React.memo` is a component wrapper, a higher-order component (HOC).
@@ -36,6 +40,8 @@ In the next lesson, we will take a look at how the `useCallback` hook and `React
 `useMemo` lets you memoize computed values while `useCallback` does the same for function references.
 
 If you're wondering what computed values and function references are, computed values refer to the result of executing a function, while function references are the pointers to functions – the function object in memory.
+
+## The `useMemo` Hook Syntax
 
 Let's see how to use the `useMemo` hook first. Here's the basic syntax of the `useMemo` hook:
 
@@ -49,6 +55,8 @@ const memoizedValue = useMemo(
 ```
 
 You can see all that's needed is to wrap the `useMemo` hook around the function.
+
+## Example: The `ExpensiveSquare` Component
 
 This `ExpensiveSquare` component will receive a `num` prop which it will use to calculate the square:
 
@@ -97,6 +105,8 @@ export default App;
 ```
 
 The `timer` in the `useEffect`, running every second, will make the `calculateSquare` function run any time it runs, even when you don't increase the `num` state variable.
+
+## Using `useMemo` to Avoid Recalculations
 
 To solve this problem, we can use the `useMemo` hook by wrapping the function call in it and specifying the `num` variable as the dependency:
 

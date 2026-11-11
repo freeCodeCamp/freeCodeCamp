@@ -1,28 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>freecodecamp/renovate-config"],
+  "extends": [
+    "github>freecodecamp/renovate-config",
+    "github>freecodecamp/renovate-config:automerge",
+    ":pinAllExceptPeerDependencies"
+  ],
   "packageRules": [
+    {
+      "description": "Keep .nvmrc on a major-only Node version instead of an exact pin.",
+      "matchManagers": ["nvm"],
+      "rangeStrategy": "auto"
+    },
     {
       "description": "Keep typebox on a weekly cadence to avoid noisy daily PRs.",
       "groupName": "weekly-cadence",
       "matchPackageNames": ["typebox"],
       "extends": ["schedule:weekly"]
-    },
-    {
-      "description": "ESLint core, plugins, and TS-ESLint move together because plugin/parser versions are tightly bound to the ESLint major.",
-      "groupName": "eslint",
-      "matchPackageNames": [
-        "eslint",
-        "eslint-**",
-        "@eslint/**",
-        "@typescript-eslint/**",
-        "typescript-eslint"
-      ]
-    },
-    {
-      "description": "Playwright runner + browsers must move in lockstep.",
-      "groupName": "playwright",
-      "matchPackageNames": ["@playwright/**", "playwright", "playwright-**"]
     },
     {
       "description": "Gatsby core + plugins + scoped @gatsbyjs/* packages are version-coupled.",
@@ -33,16 +26,6 @@
       "description": "Vitest core + UI must match.",
       "groupName": "vitest",
       "matchPackageNames": ["vitest", "@vitest/**"]
-    },
-    {
-      "groupName": "transitive-pins",
-      "matchFileNames": ["pnpm-workspace.yaml"],
-      "matchDepTypes": ["pnpm-workspace.overrides"]
-    },
-    {
-      "description": "Testing Library packages share peer-dep ranges and break together.",
-      "groupName": "testing-library",
-      "matchPackageNames": ["@testing-library/**"]
     },
     {
       "description": "Fastify core + official plugins.",
@@ -139,16 +122,6 @@
       "description": "nodemailer runtime + its types (overrides the generic types group via merge precedence).",
       "groupName": "nodemailer",
       "matchPackageNames": ["nodemailer", "@types/nodemailer"]
-    },
-    {
-      "description": "FontAwesome icon packs + React component must match major.",
-      "groupName": "fortawesome",
-      "matchPackageNames": ["@fortawesome/**"]
-    },
-    {
-      "description": "xterm.js core + addons.",
-      "groupName": "xterm",
-      "matchPackageNames": ["@xterm/**"]
     },
     {
       "description": "Sandpack React + themes.",

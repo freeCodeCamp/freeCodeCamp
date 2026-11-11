@@ -58,7 +58,7 @@ async function setupPyodide() {
   // pyodide modifies self while loading.
   Object.freeze(self);
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  // oxlint-disable-next-line typescript/no-unsafe-call, typescript/no-unsafe-member-access
   pyodide.FS.writeFile('/home/pyodide/format_exception.py', formatException, {
     encoding: 'utf8'
   });
@@ -76,7 +76,7 @@ void setupPyodide();
 
 function initRunPython() {
   if (!pyodide) throw new Error('pyodide not loaded');
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  // oxlint-disable-next-line typescript/no-unsafe-call
   const str = pyodide.globals.get('str') as (x: unknown) => string;
 
   function print(...args: unknown[]) {
@@ -117,11 +117,11 @@ function initRunPython() {
     __interruptExecution
   });
   // Create fresh globals each time user code is run.
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  // oxlint-disable-next-line typescript/no-unsafe-call
   const globals = pyodide.globals.get('dict')() as PyProxy;
   // Some tests rely on __name__ being set to __main__ and we new dicts do not
   // have this set by default.
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  // oxlint-disable-next-line typescript/no-unsafe-call
   globals.set('__name__', '__main__');
 
   // The runPython helper is a shortcut for running python code with our
@@ -170,11 +170,11 @@ def print_exception():
     formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>", new_filename="main.py")
     print(formatted)
 `);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  // oxlint-disable-next-line typescript/no-unsafe-call
   const printException = globals.get('print_exception') as PyProxy &
     (() => string);
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  // oxlint-disable-next-line typescript/no-unsafe-call
   const getResetId = globals.get('__get_reset_id') as PyProxy & (() => string);
   return { runPython, getResetId, globals, printException };
 }

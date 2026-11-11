@@ -55,7 +55,7 @@ buffer = io.StringIO()
 with contextlib.redirect_stdout(buffer):
     exec(_code)
 
-match = re.search(r"Each person pays: ([0-9]+(?:\\.[0-9]+)?)", buffer.getvalue())
+match = re.search(r"Each person pays: ([0-9]+(?:\\.[0-9]+)?)\\s*(?:\\n|$)", buffer.getvalue())
 
 assert match
 assert abs(float(match.group(1)) - 62.13) < 1e-6

@@ -13,7 +13,7 @@ async function createBrowser() {
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage'
     ],
-    headless: 'new'
+    headless: 'shell'
   });
 }
 

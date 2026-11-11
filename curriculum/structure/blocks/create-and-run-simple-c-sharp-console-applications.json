@@ -8,28 +8,20 @@
       "title": "Install and Configure Visual Studio Code"
     },
     {
-      "id": "647e21c48acb466c97ccbee7",
-      "title": "Call Methods From the .NET Class Library Using C#"
+      "id": "6ac3f7679fd5ceb2af42aa67",
+      "title": "Repeat Actions with Loops in C#"
     },
     {
-      "id": "647e21ba8acb466c97ccbee6",
-      "title": "Add Decision Logic to Your Code Using if, else, and else if statements in C#"
+      "id": "6ac3f76d9fd5ceb2af42aa68",
+      "title": "Organize Data with Arrays and Lists in C#"
     },
     {
-      "id": "647e22058acb466c97ccbeec",
-      "title": "Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#"
+      "id": "6ac3f7739fd5ceb2af42aa69",
+      "title": "Write Reusable Code in C#"
     },
     {
-      "id": "647e21df8acb466c97ccbee9",
-      "title": "Create Readable Code with Conventions, Whitespace, and Comments in C#"
-    },
-    {
-      "id": "647e21eb8acb466c97ccbeea",
-      "title": "Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#"
-    },
-    {
-      "id": "647e21d08acb466c97ccbee8",
-      "title": "Challenge Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#"
+      "id": "6ac3f77a9fd5ceb2af42aa6a",
+      "title": "Read and Write Files in C#"
     },
     {
       "id": "647f87dc07d29547b3bee1bf",

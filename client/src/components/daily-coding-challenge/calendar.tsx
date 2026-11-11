@@ -169,7 +169,7 @@ function DailyCodingChallengeCalendar({
 
   useEffect(() => {
     void fetchChallenges();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const nextMonth = () => setMonthOffset(offset => offset + 1);
@@ -241,9 +241,7 @@ function DailyCodingChallengeCalendar({
       {!isSignedIn && (
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer size='m' />
-          <div className='completion-modal-login-btn'>
-            <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-          </div>
+          <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
         </Col>
       )}
     </>
