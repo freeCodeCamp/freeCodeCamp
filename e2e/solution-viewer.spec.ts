@@ -1,9 +1,11 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Solution Viewer component', () => {
-  test('renders the modal correctly', async ({ page }) => {
+  test('renders the modal correctly', async ({ page, isolatedUser }) => {
     await page.goto(
-      '/certification/certifieduser/javascript-algorithms-and-data-structures'
+      `/certification/${isolatedUser.username}/javascript-algorithms-and-data-structures`
     );
 
     await page.getByRole('button', { name: /view/i }).first().click();
@@ -31,9 +33,12 @@ test.describe('Solution Viewer component', () => {
     await expect(projectSolutionViewerModal).toBeHidden();
   });
 
-  test('renders external project links correctly', async ({ page }) => {
+  test('renders external project links correctly', async ({
+    page,
+    isolatedUser
+  }) => {
     await page.goto(
-      '/certification/certifieduser/front-end-development-libraries'
+      `/certification/${isolatedUser.username}/front-end-development-libraries`
     );
 
     const projectLink = page.getByRole('link', { name: 'View' }).first();
@@ -46,9 +51,12 @@ test.describe('Solution Viewer component', () => {
   });
 
   test('render projects with multiple solutions correctly', async ({
-    page
+    page,
+    isolatedUser
   }) => {
-    await page.goto('/certification/certifieduser/quality-assurance-v7');
+    await page.goto(
+      `/certification/${isolatedUser.username}/quality-assurance-v7`
+    );
 
     const dropdownButton = page.getByRole('button', { name: 'View' }).first();
     await dropdownButton.click();

@@ -1,6 +1,8 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { focusEditor } from './utils/editor';
+
+test.use({ userPreset: 'certified' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto(

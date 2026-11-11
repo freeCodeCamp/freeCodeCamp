@@ -1,6 +1,6 @@
-/* eslint-disable filenames-simple/naming-convention */
+/* oxlint-disable filenames-simple/naming-convention */
 import path from 'node:path';
-import { createLintStagedConfig } from '@freecodecamp/eslint-config/lintstaged';
+import { createLintStagedConfig } from '@freecodecamp/oxlint-config/lintstaged';
 
 const linterConfigPath = path.resolve(
   import.meta.dirname,

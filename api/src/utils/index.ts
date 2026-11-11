@@ -49,7 +49,6 @@ export type UpdateReplyType<Schema extends FastifySchema> = FastifyReply<
   TypeBoxTypeProvider
 >;
 
-/* eslint-disable jsdoc/require-description-complete-sentence */
 /**
  * Wrapper around a promise to catch errors and return them as part of the promise.
  *

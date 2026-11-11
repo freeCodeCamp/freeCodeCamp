@@ -1,7 +1,11 @@
-import { test as base, type APIRequestContext } from '@playwright/test';
+import {
+  test as base,
+  type APIRequestContext,
+  type Page
+} from '@playwright/test';
 
 import {
-  seedIsolatedUser,
+  updateIsolatedUser,
   type UserPreset
 } from '@freecodecamp/scripts-seed/seed-isolated-user';
 
@@ -14,34 +18,27 @@ type IsolatedUser = {
 };
 
 type IsolatedUserFixtures = {
+  /**
+   * Creates an additional account, cleaned up after the test, without switching
+   * the page's session. Uses its own arguments, independently of test.use().
+   */
+  createUser: (
+    preset?: UserPreset,
+    overrides?: Record<string, boolean>
+  ) => Promise<IsolatedUser>;
+  /** Routes sign-in to isolatedUser; preserves the page's initial signed-in or guest state. */
+  isolatedPage: Page;
+  /** The account used to authenticate the built-in page, context and request by default. */
   isolatedUser: IsolatedUser;
+  /** Fields applied to isolatedUser after its preset. */
   userOverrides: Record<string, boolean>;
+  /** Data applied to isolatedUser, such as completed challenges and certifications. */
   userPreset: UserPreset;
 };
 
 const apiLocation = process.env.API_LOCATION ?? 'http://localhost:3000';
 
 const getApiUrl = (path: string) => new URL(path, apiLocation).toString();
-
-async function getUsername(request: APIRequestContext) {
-  const response = await request.get(getApiUrl('/user/session-user'));
-
-  if (response.status() !== 200) {
-    throw new Error(
-      `Could not get the isolated user: /user/session-user returned ${response.status()}.`
-    );
-  }
-
-  const body = (await response.json()) as { result?: unknown };
-
-  if (typeof body.result !== 'string') {
-    throw new Error(
-      'Could not get the isolated user: /user/session-user did not return a username.'
-    );
-  }
-
-  return body.result;
-}
 
 const getCsrfToken = async (request: APIRequestContext) =>
   (await request.storageState()).cookies.find(
@@ -70,23 +67,54 @@ async function deleteAccount(request: APIRequestContext) {
   }
 }
 
+async function cleanupUsers(cleanups: (() => Promise<void>)[]) {
+  // Attempt every cleanup even if another account could not be deleted.
+  const results = await Promise.allSettled(cleanups.map(cleanup => cleanup()));
+  for (const result of results) {
+    if (result.status === 'rejected') throw result.reason;
+  }
+}
+
+/**
+ * Tests start signed in as their own account, which is deleted after each test.
+ * The built-in page, context and request receive its cookies through storageState.
+ *
+ * Choose account data with test.use({ userPreset: 'certified' }). The default
+ * 'new' preset leaves the freshly created account's data unchanged; it still
+ * provides a signed-in session.
+ *
+ * For guest tests, use test.use({ storageState: { cookies: [], origins: [] } }).
+ * If a guest test needs to sign in through the UI, request isolatedPage so the
+ * sign-in flow selects isolatedUser instead of the shared development account.
+ */
 export const test = base.extend<IsolatedUserFixtures>({
+  // Default account data; configurable per file or describe block with test.use().
   userPreset: ['new', { option: true }],
   userOverrides: [{}, { option: true }],
 
-  isolatedUser: async (
-    { playwright, userOverrides, userPreset },
-    use,
-    testInfo
-  ) => {
-    // Tests in a worker run sequentially and delete the account after each test.
-    const email = `test-user-${testInfo.workerIndex}@example.com`;
-    const request = await playwright.request.newContext({
-      storageState: { cookies: [], origins: [] }
-    });
-    let signedIn = false;
+  createUser: async ({ playwright }, use, testInfo) => {
+    const cleanups: (() => Promise<void>)[] = [];
+    let userIndex = 0;
 
-    try {
+    // Tests in a worker run sequentially and delete the account after each test.
+    const createUser: IsolatedUserFixtures['createUser'] = async (
+      preset = 'new',
+      overrides = {}
+    ) => {
+      const email = `test-user-${testInfo.workerIndex}-${userIndex++}@example.com`;
+      const request = await playwright.request.newContext({
+        storageState: { cookies: [], origins: [] }
+      });
+      let signedIn = false;
+
+      cleanups.push(async () => {
+        try {
+          if (signedIn) await deleteAccount(request);
+        } finally {
+          await request.dispose();
+        }
+      });
+
       const signInUrl = new URL('/signin', apiLocation);
       signInUrl.searchParams.set('email', email);
 
@@ -110,19 +138,40 @@ export const test = base.extend<IsolatedUserFixtures>({
         );
       }
 
-      await seedIsolatedUser(email, userPreset, userOverrides);
-      const username = await getUsername(request);
+      const username = await updateIsolatedUser(email, preset, overrides);
 
-      await use({ email, storageState, username });
+      return { email, storageState, username };
+    };
+
+    try {
+      await use(createUser);
     } finally {
-      try {
-        if (signedIn) await deleteAccount(request);
-      } finally {
-        await request.dispose();
-      }
+      await cleanupUsers(cleanups);
     }
   },
 
+  isolatedUser: async ({ createUser, userOverrides, userPreset }, use) => {
+    await use(await createUser(userPreset, userOverrides));
+  },
+
+  isolatedPage: async ({ page, isolatedUser }, use) => {
+    const signInUrl = new URL('/signin', apiLocation);
+
+    // Keep the real sign-in flow while selecting this test's account in dev auth.
+    await page.route(
+      url =>
+        url.origin === signInUrl.origin && url.pathname === signInUrl.pathname,
+      async route => {
+        const url = new URL(route.request().url());
+        url.searchParams.set('email', isolatedUser.email);
+        await route.continue({ url: url.toString() });
+      }
+    );
+
+    await use(page);
+  },
+
+  // Playwright uses this implicitly for the built-in page, context and request fixtures.
   storageState: async ({ isolatedUser }, use) => {
     await use(isolatedUser.storageState);
   }

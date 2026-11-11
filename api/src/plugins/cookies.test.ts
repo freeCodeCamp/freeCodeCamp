@@ -27,7 +27,7 @@ describe('cookies', () => {
   });
 
   test('should prefix signed cookies with "s:" (url-encoded)', async () => {
-    fastify.get('/test', async (req, reply) => {
+    fastify.get('/test', (req, reply) => {
       void reply.setCookie('test', 'value', { signed: true });
       return { ok: true };
     });
@@ -79,7 +79,7 @@ describe('cookies', () => {
   });
 
   test('should have reasonable defaults', async () => {
-    fastify.get('/test', async (req, reply) => {
+    fastify.get('/test', (req, reply) => {
       void reply.setCookie('test', 'value');
       return { ok: true };
     });
@@ -99,7 +99,7 @@ describe('cookies', () => {
       sameSite: 'Lax',
       secure: true,
       // sign by default:
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      // oxlint-disable-next-line typescript/no-unsafe-assignment
       value: expect.stringMatching(/s:value\.\w*/)
     });
   });
@@ -107,7 +107,7 @@ describe('cookies', () => {
   // TODO(Post-MVP): Clear all cookies rather than just three specific ones?
   // Then it should be called something like clearAllCookies.
   test('clearOurCookies should clear cookies that we set', async () => {
-    fastify.get('/test', async (req, reply) => {
+    fastify.get('/test', (req, reply) => {
       void reply.clearOurCookies();
       return { ok: true };
     });

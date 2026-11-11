@@ -1,0 +1,21 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-regular-expressions-python",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6aea028b345b1e19cc5947cd",
+      "title": "What Are Regular Expressions, and How Do You Use Them in Python?"
+    },
+    {
+      "id": "6aea028bc8c72aa0ce26d2e0",
+      "title": "How Do Special Sequences and Quantifiers Work in Regular Expressions?"
+    },
+    {
+      "id": "6aea2a0d9c0714d2347fa60e",
+      "title": "What Are Some Useful Functions in the re Module?"
+    }
+  ],
+  "helpCategory": "Python"
+}

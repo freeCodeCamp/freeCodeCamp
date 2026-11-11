@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-regex",
+  "challengeOrder": [
+    {
+      "id": "6733aad43b3ebff588a26fb5",
+      "title": "What Are Regular Expressions, and What Are Some Common Methods?"
+    },
+    {
+      "id": "6733c5c549775c4be710237c",
+      "title": "How Can You Match and Replace All Occurrences in a String?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

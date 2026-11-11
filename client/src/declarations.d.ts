@@ -3,6 +3,7 @@ declare module '@freecodecamp/strip-comments';
 declare module '@types/react-redux';
 declare module '@types/validator';
 declare module '@types/lodash-es';
+declare module '*.css';
 declare module '*.svg' {
   const content: string;
   export default content;
@@ -22,7 +23,7 @@ declare module 'sha-1' {
 }
 
 // This has to be declared as var, not let or const, to be added to globalThis
-// eslint-disable-next-line no-var
+// oxlint-disable-next-line no-var
 declare var MathJax: {
   Hub: {
     Config: (attributes: {

@@ -1,4 +1,6 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Editor scrollbar width on mobile', () => {
   test.use({

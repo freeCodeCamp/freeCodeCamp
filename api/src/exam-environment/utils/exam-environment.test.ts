@@ -324,7 +324,7 @@ describe('Exam Environment Schema', () => {
       await fastifyTestInstance.prisma.examEnvironmentExam.deleteMany({});
     });
 
-    // eslint-disable-next-line vitest/expect-expect
+    // oxlint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       const configQuestionSets = [
         {
@@ -393,7 +393,7 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
-    // eslint-disable-next-line vitest/expect-expect
+    // oxlint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
         data: {
@@ -412,7 +412,7 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
-    // eslint-disable-next-line vitest/expect-expect
+    // oxlint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
         data: {
