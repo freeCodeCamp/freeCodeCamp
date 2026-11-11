@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
 import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 
@@ -83,7 +82,7 @@ export function superRequest(
  * Factory function for 'superRequest' allows for the creation of a concise
  * request function with the desired method and setCookies baked in.
  *
- * @param config
+ * @param config - configuration
  * @param config.method - HTTP method.
  * @param config.setCookies - Cookies to be set in the request.
  * @returns A superRequest function with the desired method and setCookies.

@@ -32,10 +32,9 @@ function getCode(id) {
 
 function getLegacyCode(legacy) {
   const key = legacy + legacyPostfix;
-  let code = null;
   const maybeCode = store.get(key);
   if (maybeCode) {
-    code = '' + maybeCode;
+    const code = '' + maybeCode;
     store.remove(key);
     return code;
   }
@@ -171,12 +170,12 @@ function loadCodeEpic(action$, state$) {
         return of(noStoredCodeFound());
       } else if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
-          let foundChallengeFile = {};
+          let foundChallengeFile;
           // TODO: after sufficient time, say 6 months from this commit, we can
           // assume that the majority of users have revisited any pages with old
           // stored code. At this point we can remove everything related to
           // indexjsCode.
-          let indexjsCode = null;
+          let indexjsCode;
           if (Array.isArray(codeFound)) {
             foundChallengeFile = codeFound.find(
               x => x.fileKey === challengeFile.fileKey

@@ -344,7 +344,7 @@ describe('certificate routes', () => {
         };
 
         const response = await superRequest(
-          '/certificate/showCert/foobar/not-a-valid-cert-slug',
+          '/certificate/showCert/foobar/isPrototypeOf',
           {
             method: 'GET'
           }
@@ -354,7 +354,7 @@ describe('certificate routes', () => {
             {
               type: 'info',
               message: 'flash.cert-not-found',
-              variables: { certSlug: 'not-a-valid-cert-slug' }
+              variables: { certSlug: 'isPrototypeOf' }
             }
           ]
         });

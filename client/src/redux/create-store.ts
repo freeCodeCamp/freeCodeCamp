@@ -51,9 +51,9 @@ export const createStore = (preloadedState = {}) => {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./root-reducer', () => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-require-imports
+      // oxlint-disable-next-line typescript/no-unsafe-assignment, typescript/no-require-imports
       const nextRootReducer = require('./root-reducer');
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      // oxlint-disable-next-line typescript/no-unsafe-argument
       store.replaceReducer(nextRootReducer);
     });
   }

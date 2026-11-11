@@ -1,6 +1,6 @@
 // All tests use expectSaga which the eslint-plugin-vitest plugin does not
 // recognize
-/* eslint-disable vitest/expect-expect */
+/* oxlint-disable vitest/expect-expect */
 // @vitest-environment jsdom
 import { expectSaga } from 'redux-saga-test-plan';
 import { describe, it, vi } from 'vitest';

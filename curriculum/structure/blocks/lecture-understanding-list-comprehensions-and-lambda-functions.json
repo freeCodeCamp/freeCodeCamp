@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-list-comprehensions-and-lambda-functions",
+  "challengeOrder": [
+    {
+      "id": "6839e4d62ae09d1661e4cf9b",
+      "title": "What Are List Comprehensions and What Are Some Useful Functions to Work with Lists?"
+    },
+    {
+      "id": "6839e4ef24827717b838f54d",
+      "title": "What Are Lambda Functions and How Do They Work?"
+    }
+  ],
+  "helpCategory": "Python"
+}

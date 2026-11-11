@@ -181,7 +181,7 @@ function ShowCodeAlly({
     // and Gatsby doesn't interfere with the focus.
     requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const handleSubmit = ({

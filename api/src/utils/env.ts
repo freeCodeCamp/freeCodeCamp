@@ -302,8 +302,8 @@ function parseWith<T>(
     return parserFunction(str);
   } catch (e) {
     if (e instanceof Error) {
-      throw new Error(`Failed to parse ${name}: ${e}`);
+      throw new Error(`Failed to parse ${name}`, { cause: e });
     }
-    throw new Error(`Unhandled error parsing '${name}'`);
+    throw new Error(`Unhandled error parsing '${name}'`, { cause: e });
   }
 }
