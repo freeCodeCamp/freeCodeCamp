@@ -1273,8 +1273,8 @@ importers:
         specifier: 16.6.1
         version: 16.6.1
       mongodb:
-        specifier: 6.21.0
-        version: 6.21.0
+        specifier: 6.22.0
+        version: 6.22.0
       tsx:
         specifier: 4.23.15
         version: 4.23.15
@@ -1297,8 +1297,8 @@ importers:
         specifier: 4.18.1
         version: 4.18.1
       mongodb:
-        specifier: 6.21.0
-        version: 6.21.0
+        specifier: 6.22.0
+        version: 6.22.0
 
   tools/scripts/seed-exams:
     devDependencies:
@@ -1321,8 +1321,8 @@ importers:
         specifier: 4.3.2
         version: 4.3.2
       mongodb:
-        specifier: 6.21.0
-        version: 6.21.0
+        specifier: 6.22.0
+        version: 6.22.0
       nanoid:
         specifier: 4.0.2
         version: 4.0.2
@@ -9182,8 +9182,8 @@ packages:
   mongodb-connection-string-url@3.0.2:
     resolution: {integrity: sha512-rMO7CGo/9BFwyZABcKAWL8UJwH/Kc2x0g72uhDWzG48URRax5TCIcJ7Rc3RZqffZzO/Gwff/jyKwCU9TN8gehA==}
 
-  mongodb@6.21.0:
-    resolution: {integrity: sha512-URyb/VXMjJ4da46OeSXg+puO39XH9DeQpWCslifrRn9JWugy0D+DvvBvkm2WxmHe61O/H19JM66p1z7RHVkZ6A==}
+  mongodb@6.22.0:
+    resolution: {integrity: sha512-k9YPpPXZEVyT4kjglCen99LCDToxzM+R89x3cMp8kSWb1gnXDvrsEJQh3FQ4t4jS9+ZA4yBOojHNS1oAB5qwQg==}
     engines: {node: '>=16.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
@@ -22137,7 +22137,7 @@ snapshots:
       '@types/whatwg-url': 11.0.5
       whatwg-url: 14.2.0
 
-  mongodb@6.21.0:
+  mongodb@6.22.0:
     dependencies:
       '@mongodb-js/saslprep': 1.6.0
       bson: 6.10.4
