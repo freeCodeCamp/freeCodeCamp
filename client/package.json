@@ -158,7 +158,7 @@
     "@types/react-redux": "7.1.34",
     "@types/react-scroll": "1.8.10",
     "@types/react-spinkit": "3.0.10",
-    "@types/react-test-renderer": "16.9.12",
+    "@types/react-test-renderer": "16.9.13",
     "@types/react-transition-group": "4.4.12",
     "@types/redux-actions": "2.6.5",
     "@types/sanitize-html": "^2.8.0",

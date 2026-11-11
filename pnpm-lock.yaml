@@ -751,8 +751,8 @@ importers:
         specifier: 3.0.10
         version: 3.0.10
       '@types/react-test-renderer':
-        specifier: 16.9.12
-        version: 16.9.12
+        specifier: 16.9.13
+        version: 16.9.13
       '@types/react-transition-group':
         specifier: 4.4.12
         version: 4.4.12(@types/react@18.3.31)
@@ -4491,8 +4491,8 @@ packages:
   '@types/react-spinkit@3.0.10':
     resolution: {integrity: sha512-grNfPdesm/xVJPyohfW752bM8N9kuJUx2yFo0I41mZwF3BuXt4+IV4TwaCPcBtA1V3C5r2NUPyqfEUpNTtWbvA==}
 
-  '@types/react-test-renderer@16.9.12':
-    resolution: {integrity: sha512-RJ4jeg32v2h1izOZ3gES/zQhQOwi6BEnZW890pmAuf3yVSfDm0wOR42YiWFiuSJJRyRykNaXEzis74+y3Ac9HQ==}
+  '@types/react-test-renderer@16.9.13':
+    resolution: {integrity: sha512-pt/dYc7nQS1Ayq3Bmp4QGeNUubX08nHhW2GDDJR/0Rhzufi1zNtCIuC8VL5qtEjUyJMs9xQgOLH2alRuDdLSww==}
 
   '@types/react-transition-group@4.4.12':
     resolution: {integrity: sha512-8TV6R3h2j7a91c+1DXdJi3Syo69zzIZbz7Lg5tORM5LEJG7X/E6a1V3drRyBRZq7/utz7A+c4OgYLiLcYGHG6w==}
@@ -15880,7 +15880,7 @@ snapshots:
     dependencies:
       '@types/react': 18.3.31
 
-  '@types/react-test-renderer@16.9.12':
+  '@types/react-test-renderer@16.9.13':
     dependencies:
       '@types/react': 16.14.70
 
