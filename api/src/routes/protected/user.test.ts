@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* oxlint-disable typescript/no-unsafe-member-access */
+/* oxlint-disable typescript/no-unsafe-argument */
+/* oxlint-disable typescript/no-unsafe-assignment */
 import {
   describe,
   test,
@@ -26,7 +26,8 @@ import {
   superRequest,
   createSuperRequest,
   defaultUsername,
-  resetDefaultUser
+  resetDefaultUser,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import { JWT_SECRET } from '../../utils/env.js';
 import {
@@ -516,7 +517,7 @@ describe('userRoutes', () => {
       test("POST deletes all the user's cookies", async () => {
         const res = await superPost('/account/delete');
 
-        const setCookie = res.headers['set-cookie'] as string[];
+        const setCookie = getSetCookies(res);
         expect(setCookie).toEqual(
           expect.arrayContaining([
             expect.stringMatching(
@@ -706,7 +707,7 @@ describe('userRoutes', () => {
       test("DELETE deletes all the user's cookies", async () => {
         const res = await superDelete(`/users/${defaultUserId}`);
 
-        const setCookie = res.headers['set-cookie'] as string[];
+        const setCookie = getSetCookies(res);
         expect(setCookie).toEqual(
           expect.arrayContaining([
             expect.stringMatching(
@@ -1064,9 +1065,7 @@ describe('userRoutes', () => {
         });
 
         expect(user?.completedChallenges).toHaveLength(2);
-        const challengeIds = (
-          user?.completedChallenges as { id: string }[]
-        ).map(c => c.id);
+        const challengeIds = user?.completedChallenges.map(c => c.id);
         expect(challengeIds).toContain('block-two-challenge-1');
         expect(challengeIds).toContain('block-two-challenge-2');
         expect(challengeIds).not.toContain('block-one-challenge-1');
@@ -1518,7 +1517,7 @@ describe('userRoutes', () => {
 
         // devLogin must not be used here since it overrides the user
         const res = await superRequest('/signin', { method: 'GET' });
-        const setCookies = res.get('Set-Cookie');
+        const setCookies = getSetCookies(res);
 
         const publicUser = {
           ...omit(minimalUserData, ['externalId', 'unsubscribeId']),
@@ -2397,7 +2396,7 @@ Thanks and regards,
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     const endpoints: { path: string; method: 'GET' | 'POST' | 'DELETE' }[] = [

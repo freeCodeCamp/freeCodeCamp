@@ -1,12 +1,12 @@
 import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
 
-// eslint-disable-next-line import/no-duplicates
+// oxlint-disable-next-line import/no-duplicates
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api.js';
 import type {
   IRange,
   editor
-  // eslint-disable-next-line import/no-duplicates
+  // oxlint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api.js';
 import type {
   json as monacoJsonApi,
@@ -318,7 +318,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const detachUpperJawEventsRef = useRef<(() => void) | null>(null);
   const player = useRef<{
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // oxlint-disable-next-line typescript/no-explicit-any
     sampler: any;
     noteIndex: number;
     shouldPlay: boolean | undefined;
@@ -582,7 +582,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     // Removes keybind for intellisense
     // Private method - hopefully changes with future version
     // ref: https://github.com/microsoft/monaco-editor/issues/102
-    /* eslint-disable */
+    /* oxlint-disable */
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.triggerSuggest',
@@ -623,7 +623,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         setTabTrapped(!isTabTrapped());
       }
     );
-    /* eslint-enable */
+    /* oxlint-enable */
     editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -936,11 +936,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       ? [coveringRange.startLineNumber - 1, coveringRange.endLineNumber + 1]
       : [];
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    // oxlint-disable-next-line typescript/no-unsafe-member-access
     if (player.current.sampler?.loaded && player.current.shouldPlay) {
       void import('tone').then(tone => {
         if (tone.context.state !== 'running') void tone.context.resume();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+        // oxlint-disable-next-line typescript/no-unsafe-member-access, typescript/no-unsafe-call
         player.current.sampler?.triggerAttack(
           editorNotes[player.current.noteIndex]
         );
@@ -1239,7 +1239,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // We need to set initialize the tests, but only once
   useEffect(() => {
     initTests(props.initialTests);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   // runs every update to the editor and when the challenge is reset
@@ -1270,7 +1270,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         resetMarginDecorations();
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [props.challengeFiles, props.isResetting]);
 
   useEffect(() => {
@@ -1281,7 +1281,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       )?.[0];
       description?.classList.add('description-highlighter');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [props.previewOpen]);
 
   useEffect(() => {

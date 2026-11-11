@@ -79,6 +79,38 @@ describe('current challenge activity', () => {
     expect(recordClientActivity).not.toHaveBeenCalled();
   });
 
+  test('finishes without waiting for an unresolved analytics request', async () => {
+    let finishRecording;
+    vi.mocked(recordClientActivity).mockReturnValueOnce(
+      new Promise(resolve => {
+        finishRecording = resolve;
+      })
+    );
+    const dispatched = [];
+    const task = runSaga(
+      {
+        getState: () => createState(),
+        dispatch: action => dispatched.push(action)
+      },
+      updateActivityOnSubmitSaga,
+      {
+        payload: {
+          challengeId: 'submitted-challenge',
+          nextChallengePath: '/learn/next-challenge'
+        }
+      }
+    );
+
+    try {
+      await expect(task.toPromise()).resolves.toBeUndefined();
+      expect(dispatched).toHaveLength(0);
+    } finally {
+      finishRecording({ recorded: true });
+    }
+    await Promise.resolve();
+    expect(dispatched).toContainEqual(updateResumeUrl('/learn/next-challenge'));
+  });
+
   test('does not fail completion or update state when recording fails', async () => {
     vi.mocked(recordClientActivity).mockRejectedValueOnce(
       new Error('Activity API unavailable')

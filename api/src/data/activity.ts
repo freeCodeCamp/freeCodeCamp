@@ -75,13 +75,16 @@ export async function insertActivityEvent(
   fastify: FastifyInstance,
   event: ActivityEvent
 ): Promise<string> {
+  const clickhouse = fastify.clickhouse;
+  if (!clickhouse) throw new Error('Activity tracking is not configured');
+
   const trackingId = await getActivityTrackingId(fastify, event.userId);
   const occurredAt = event.occurredAt ?? new Date();
   const timezone = isValidTimeZone(event.timezone) ? event.timezone : 'UTC';
   const insertStart = performance.now();
 
   try {
-    await fastify.clickhouse.insert({
+    await clickhouse.insert({
       table: 'activity_events',
       format: 'JSONEachRow',
       values: [
@@ -132,10 +135,13 @@ export async function getResumeUrl(
   fastify: FastifyInstance,
   trackingId: string
 ): Promise<string | undefined> {
-  const result = await fastify.clickhouse.query({
+  const clickhouse = fastify.clickhouse;
+  if (!clickhouse) return;
+
+  const result = await clickhouse.query({
     query: `
       SELECT url
-      FROM activity_events
+      FROM activity_events FINAL
       WHERE tracking_id = {trackingId: String}
         AND event_type = 'challenge_submit'
         AND url IS NOT NULL

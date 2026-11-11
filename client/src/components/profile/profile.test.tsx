@@ -2,6 +2,7 @@ import { beforeEach, describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
+import { certSlugTypeMap } from '@freecodecamp/shared/config/certification-settings';
 import { Provider } from 'react-redux';
 import { UserThemes } from '../../redux/types';
 import { initialState as appInitialState } from '../../redux';
@@ -218,6 +219,34 @@ describe('<Profile/>', () => {
       '/certification/certifieduser/full-stack'
     ]);
   });
+
+  it.each([true, false])(
+    'renders the backend v9 certificate only when earned (%s)',
+    isBackEndDevApisCertV9 => {
+      const user = {
+        ...certifiedUser,
+        ...Object.fromEntries(
+          Object.values(certSlugTypeMap).map(flag => [flag, false])
+        ),
+        isBackEndDevApisCertV9
+      };
+
+      renderWithRedux(<Profile {...notMyProfileProps} user={user} />);
+
+      const certHrefs = screen
+        .queryAllByRole('link', { name: 'buttons.view-cert-title' })
+        .map(link => link.getAttribute('href'));
+
+      expect(certHrefs).toEqual(
+        isBackEndDevApisCertV9
+          ? ['/certification/certifieduser/back-end-development-and-apis-v9']
+          : []
+      );
+      expect(screen.queryByText('profile.no-certs') === null).toBe(
+        isBackEndDevApisCertV9
+      );
+    }
+  );
 
   it('renders the edit profile modal with default personal settings', async () => {
     const user = userEvent.setup();

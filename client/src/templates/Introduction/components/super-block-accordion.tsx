@@ -58,7 +58,6 @@ interface Challenge {
   dashedName: string;
   challengeType: number;
   blockLayout: BlockLayouts;
-  superBlock: SuperBlocks;
 }
 
 interface PopulatedBlock {

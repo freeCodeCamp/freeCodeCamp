@@ -27,6 +27,10 @@ const serverErrorKeyMap = {
   'socrates-invalid-request': 'learn.socrates-invalid-request'
 };
 
+function hasContent(value) {
+  return typeof value === 'string' && /\S/.test(value);
+}
+
 function translateServerError(errorKey) {
   const translationKey = serverErrorKeyMap[errorKey];
   return translationKey ? i18next.t(translationKey) : errorKey;
@@ -76,7 +80,7 @@ export function* askSocratesSaga() {
     const seed = build;
     const userInput = sources?.editableContents;
 
-    if (!seed) {
+    if (!hasContent(seed)) {
       yield put(
         askSocratesError({
           error: i18next.t('learn.socrates-write-code-first')
@@ -99,7 +103,7 @@ export function* askSocratesSaga() {
       hints
     };
 
-    if (userInput) {
+    if (hasContent(userInput)) {
       optimizedPayload.userInput = userInput;
     }
 

@@ -60,7 +60,9 @@ const composeFunctions = (...fns: ApplyFunctionProps[]) =>
 // HTML or CSS, so AST checks fail.
 const joinWithFileBoundaries = (contents: string[]) => contents.join('\n');
 
-function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
+export function buildSourceMap(
+  challengeFiles: { source?: string; editableContents?: string }[]
+): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const index = joinWithFileBoundaries(
     challengeFiles.map(challengeFile => challengeFile.source ?? '')

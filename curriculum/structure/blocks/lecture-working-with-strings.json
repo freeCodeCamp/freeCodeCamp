@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-strings",
+  "challengeOrder": [
+    {
+      "id": "673263d58da27ea7809963bf",
+      "title": "What Are Template Literals, and What Is String Interpolation?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

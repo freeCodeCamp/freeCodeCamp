@@ -927,7 +927,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       } = rest;
 
       let resumeUrl: string | undefined;
-      if (activityTrackingId) {
+      if (activityTrackingId && fastify.clickhouse) {
         const queryStart = performance.now();
         try {
           resumeUrl = await getResumeUrl(fastify, activityTrackingId);

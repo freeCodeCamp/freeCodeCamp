@@ -1,4 +1,4 @@
-import { call, put, select, takeEvery } from 'redux-saga/effects';
+import { call, put, select, spawn, takeEvery } from 'redux-saga/effects';
 import store from 'store';
 
 import { randomCompliment } from '../../../utils/get-words';
@@ -38,6 +38,10 @@ export function* updateActivityOnSubmitSaga({ payload = {} }) {
   const isSignedIn = yield select(isSignedInSelector);
   if (!isSignedIn || !challengeId || !nextChallengePath) return;
 
+  yield spawn(recordResumeActivity, challengeId, nextChallengePath);
+}
+
+function* recordResumeActivity(challengeId, nextChallengePath) {
   try {
     const result = yield call(
       recordClientActivity,

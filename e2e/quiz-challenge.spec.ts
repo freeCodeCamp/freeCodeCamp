@@ -1,7 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import { allowTrailingSlash } from './utils/url';
+
+test.use({ userPreset: 'certified' });
 
 interface QuizQuestion {
   distractors: string[];

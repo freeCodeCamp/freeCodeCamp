@@ -1,4 +1,7 @@
-import { test, expect, type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+
+test.use({ userPreset: 'certified' });
 
 const upperJawSelector = '.editor-upper-jaw';
 const challengeWithExampleUrl =

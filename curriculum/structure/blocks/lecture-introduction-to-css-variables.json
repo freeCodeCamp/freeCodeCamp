@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-css-variables",
+  "challengeOrder": [
+    {
+      "id": "672aa8985acb7361e656f94c",
+      "title": "What Are CSS Custom Properties, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

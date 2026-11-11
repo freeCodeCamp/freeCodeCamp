@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { Prisma } from '@prisma/client';
 import { describe, test, expect, vi } from 'vitest';
 import { setupServer, superRequest } from '../../../vitest.utils.js';

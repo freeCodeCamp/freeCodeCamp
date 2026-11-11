@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
 import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 
@@ -6,6 +5,11 @@ import { build, buildOptions } from './src/app.js';
 import { createUserInput } from './src/utils/create-user.js';
 import { examJson } from './__fixtures__/exam.js';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
+import {
+  createClickHouseTestDatabase,
+  dropClickHouseTestDatabase,
+  getClickHouseTestConfiguration
+} from './clickhouse.test-utils.js';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -83,7 +87,7 @@ export function superRequest(
  * Factory function for 'superRequest' allows for the creation of a concise
  * request function with the desired method and setCookies baked in.
  *
- * @param config
+ * @param config - configuration
  * @param config.method - HTTP method.
  * @param config.setCookies - Cookies to be set in the request.
  * @returns A superRequest function with the desired method and setCookies.
@@ -118,6 +122,17 @@ const indexData: IndexData[] = [
     collection: 'Donation',
     indexes: [
       { key: { email: 1 }, name: 'email_1' },
+      { key: { userId: 1 }, name: 'userId_1' }
+    ]
+  },
+  {
+    collection: 'DonationClaim',
+    indexes: [
+      {
+        key: { provider: 1, reference: 1 },
+        name: 'provider_1_reference_1',
+        unique: true
+      },
       { key: { userId: 1 }, name: 'userId_1' }
     ]
   },
@@ -180,49 +195,70 @@ export async function checkCanConnectToDb(
   await Promise.race([countP, delayedRejection]);
 }
 
-export function setupServer(): void {
+export function setupServer({
+  clickhouse = false
+}: { clickhouse?: boolean } = {}): void {
   let fastify: FastifyTestInstance;
+  let clickhouseDatabaseCreated = false;
   beforeAll(async () => {
-    if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
-      delete buildOptions.loggerInstance;
+    try {
+      if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
+        delete buildOptions.loggerInstance;
+      }
+      if (clickhouse) {
+        await createClickHouseTestDatabase();
+        clickhouseDatabaseCreated = true;
+      }
+      fastify = await build(buildOptions, {
+        clickhouse: clickhouse ? getClickHouseTestConfiguration() : false
+      });
+      await fastify.ready();
+      // Supertest does not handle multiple concurrent requests gracefully
+      // https://github.com/forwardemail/supertest/issues/709
+      // it calls `server.close` and can end up killing live connections.
+      // By listening to 0, we keep the ephemeral port generation, but the fact
+      // it is listening means supertest will not attempt to close it.
+      fastify.server.listen(0);
+
+      await checkCanConnectToDb(fastify.prisma);
+
+      // Prisma does not support TTL indexes in the schema yet, so, to avoid
+      // conflicts with the TTL index in the sessions collection, we need to
+      // create it manually (before interacting with the db in any way). Also,
+      // to save time, we create all other indexes so we don't need to invoke
+      // `prisma db push` (which is relatively slow).
+
+      await Promise.all(
+        indexData.map(async ({ collection, indexes }) => {
+          await fastify.prisma.$runCommandRaw({
+            createIndexes: collection,
+            indexes
+          });
+        })
+      );
+
+      global.fastifyTestInstance = fastify;
+      // allow a little time to setup the db
+    } catch (error) {
+      throw new Error(
+        'fastifyTestInstance was not created. Check the beforeAll setup failure and database connectivity.',
+        { cause: error }
+      );
     }
-    fastify = await build(buildOptions);
-    await fastify.ready();
-    // Supertest does not handle multiple concurrent requests gracefully
-    // https://github.com/forwardemail/supertest/issues/709
-    // it calls `server.close` and can end up killing live connections.
-    // By listening to 0, we keep the ephemeral port generation, but the fact
-    // it is listening means supertest will not attempt to close it.
-    fastify.server.listen(0);
-
-    await checkCanConnectToDb(fastify.prisma);
-
-    // Prisma does not support TTL indexes in the schema yet, so, to avoid
-    // conflicts with the TTL index in the sessions collection, we need to
-    // create it manually (before interacting with the db in any way). Also,
-    // to save time, we create all other indexes so we don't need to invoke
-    // `prisma db push` (which is relatively slow).
-
-    await Promise.all(
-      indexData.map(async ({ collection, indexes }) => {
-        await fastify.prisma.$runCommandRaw({
-          createIndexes: collection,
-          indexes
-        });
-      })
-    );
-
-    global.fastifyTestInstance = fastify;
-    // allow a little time to setup the db
   }, 10000);
 
   afterAll(async () => {
-    if (!global.fastifyTestInstance)
-      throw Error(`fastifyTestInstance was not created. Typically this means that something went wrong when building the fastify instance.
-If you are seeing this error, the root cause is likely an error thrown in the beforeAll hook.`);
-    await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
-
-    await fastifyTestInstance.close();
+    try {
+      if (fastify?.prisma) {
+        await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
+      }
+    } finally {
+      try {
+        if (fastify) await fastify.close();
+      } finally {
+        if (clickhouseDatabaseCreated) await dropClickHouseTestDatabase();
+      }
+    }
   });
 }
 
@@ -249,7 +285,13 @@ export async function devLogin(): Promise<string[]> {
   await resetDefaultUser();
   const res = await superRequest('/signin', { method: 'GET' });
   expect(res.status).toBe(302);
-  return res.get('Set-Cookie');
+  return getSetCookies(res);
+}
+
+export function getSetCookies(res: request.Response): string[] {
+  const setCookies = res.get('Set-Cookie');
+  if (!setCookies) throw new Error('The response has no Set-Cookie header');
+  return setCookies;
 }
 
 export async function seedExam(): Promise<void> {

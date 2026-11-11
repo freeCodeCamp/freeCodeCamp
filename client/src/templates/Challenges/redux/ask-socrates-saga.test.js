@@ -1,4 +1,4 @@
-/* eslint-disable vitest/expect-expect */
+/* oxlint-disable vitest/expect-expect */
 import { expectSaga } from 'redux-saga-test-plan';
 import * as matchers from 'redux-saga-test-plan/matchers';
 import { throwError } from 'redux-saga-test-plan/providers';
@@ -124,6 +124,27 @@ describe('askSocratesSaga', () => {
         type: 'challenge.askSocratesError',
         payload: {
           error: 'learn.socrates-code-passes'
+        }
+      })
+      .silentRun();
+  });
+
+  it('dispatches error when buildChallenge returns a blank seed', async () => {
+    const { buildChallenge } =
+      await import('@freecodecamp/challenge-builder/build');
+
+    return expectSaga(askSocratesSaga)
+      .withReducer(reducer)
+      .provide([
+        [
+          matchers.call.fn(buildChallenge),
+          { sources: { editableContents: 'Hello world' }, build: '  \n ' }
+        ]
+      ])
+      .put({
+        type: 'challenge.askSocratesError',
+        payload: {
+          error: 'learn.socrates-write-code-first'
         }
       })
       .silentRun();

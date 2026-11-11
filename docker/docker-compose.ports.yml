@@ -2,6 +2,10 @@
 # this file, because a service sharing the db network namespace cannot
 # publish a port.
 services:
+  clickhouse:
+    ports:
+      - '8123:8123'
+
   db:
     ports:
       - 27017:27017

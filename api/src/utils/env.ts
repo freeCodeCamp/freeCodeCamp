@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
 import { parseBool, parseInt } from './validation.js';
+import { readClickHouseConfiguration } from './clickhouse-config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
@@ -55,6 +56,10 @@ If so, ensure that the environment variable VITEST_WORKER_ID is set.`
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(isAllowedEnv(_FREECODECAMP_NODE_ENV));
 assert.ok(process.env.DEPLOYMENT_ENV);
+// Donations cannot be created without these, so fail at boot rather than at
+// the first donation.
+assert.ok(process.env.PAYPAL_CLIENT_ID);
+assert.ok(process.env.PAYPAL_CLIENT_SECRET);
 assert.ok(isAllowedProvider(_EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
@@ -66,9 +71,6 @@ assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
 assert.ok(process.env.SOCRATES_API_KEY);
 assert.ok(process.env.SOCRATES_ENDPOINT);
-assert.ok(process.env.CLICKHOUSE_URL);
-assert.ok(process.env.CLICKHOUSE_USERNAME);
-assert.ok(process.env.CLICKHOUSE_DATABASE);
 
 const LOG_LEVELS: LogLevel[] = [
   'fatal',
@@ -194,10 +196,7 @@ export const MONGOHQ_URL =
         process.env.VITEST_WORKER_ID
       )
     : process.env.MONGOHQ_URL;
-export const CLICKHOUSE_URL = process.env.CLICKHOUSE_URL;
-export const CLICKHOUSE_USERNAME = process.env.CLICKHOUSE_USERNAME;
-export const CLICKHOUSE_PASSWORD = process.env.CLICKHOUSE_PASSWORD ?? '';
-export const CLICKHOUSE_DATABASE = process.env.CLICKHOUSE_DATABASE;
+export const CLICKHOUSE_CONFIG = readClickHouseConfiguration(process.env);
 
 export const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
@@ -273,6 +272,10 @@ export const SES_SMTP_HOST =
   process.env.SES_SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com';
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
+export const PAYPAL_API_URL =
+  process.env.PAYPAL_API_URL ?? 'https://api-m.paypal.com';
+export const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID;
+export const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET;
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 export const GROWTHBOOK_FASTIFY_API_HOST =
   process.env.GROWTHBOOK_FASTIFY_API_HOST;
@@ -301,8 +304,8 @@ function parseWith<T>(
     return parserFunction(str);
   } catch (e) {
     if (e instanceof Error) {
-      throw new Error(`Failed to parse ${name}: ${e}`);
+      throw new Error(`Failed to parse ${name}`, { cause: e });
     }
-    throw new Error(`Unhandled error parsing '${name}'`);
+    throw new Error(`Unhandled error parsing '${name}'`, { cause: e });
   }
 }

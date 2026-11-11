@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/unbound-method */
+/* oxlint-disable typescript/no-unsafe-member-access */
+/* oxlint-disable typescript/no-unsafe-call */
+/* oxlint-disable typescript/no-explicit-any */
+/* oxlint-disable typescript/unbound-method */
 import React from 'react';
 import { ConnectedProps, connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -37,7 +37,7 @@ type Props = PropsFromRedux & {
 
 class Header extends React.Component<Props, { displayMenu: boolean }> {
   menuButtonRef: React.RefObject<HTMLButtonElement>;
-  searchBarRef: React.RefObject<any>;
+  searchBarRef: React.RefObject<HTMLDivElement>;
   static displayName: string;
   constructor(props: Props) {
     super(props);
