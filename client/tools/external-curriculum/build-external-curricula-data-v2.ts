@@ -440,6 +440,22 @@ export const superBlockDashedNames = (() => {
 
 export const catalogDashedNames = catalog.map(({ superBlock }) => superBlock);
 
+function withChallengeTitles(
+  meta: Record<string, unknown>,
+  challenges: ChallengeNode['challenge'][]
+): Record<string, unknown> {
+  const titles = new Map(challenges.map(({ id, title }) => [id, title]));
+  const challengeOrder = meta.challengeOrder as { id: string }[];
+
+  return {
+    ...meta,
+    challengeOrder: challengeOrder.map(({ id }) => ({
+      id,
+      title: titles.get(id)
+    }))
+  };
+}
+
 export function buildExtCurriculumDataV2(
   curriculum: Curriculum<CurriculumProps>,
   options: BuildOptions = {}
@@ -518,7 +534,13 @@ export function buildExtCurriculumDataV2(
                       // Keep `meta.name` for backward compatibility with
                       // consumers that have not migrated to intro-based titles.
                       meta: {
-                        ...omit(blockData.meta, ['chapter', 'module']),
+                        ...omit(
+                          withChallengeTitles(
+                            blockData.meta,
+                            blockData.challenges
+                          ),
+                          ['chapter', 'module']
+                        ),
                         name: blockIntro.title
                       }
                     };
@@ -546,7 +568,10 @@ export function buildExtCurriculumDataV2(
         intro: blockIntro.intro,
         // Keep `meta.name` for backward compatibility with
         // consumers that have not migrated to intro-based titles.
-        meta: { ...blockData.meta, name: blockIntro.title }
+        meta: {
+          ...withChallengeTitles(blockData.meta, blockData.challenges),
+          name: blockIntro.title
+        }
       };
     });
 
