@@ -31,6 +31,41 @@ test.describe('Editor Component', () => {
     const text = page.getByText('<h2>FreeCodeCamp</h2>');
     await expect(text).toBeVisible();
   });
+
+  test('should copy and cut selected text with keyboard shortcuts', async ({
+    page,
+    browserName,
+    isMobile
+  }) => {
+    test.skip(
+      browserName !== 'chromium' || isMobile,
+      'Clipboard permissions are only supported in Chromium desktop.'
+    );
+
+    await page
+      .context()
+      .grantPermissions(['clipboard-read', 'clipboard-write']);
+    await page.goto(testPage);
+
+    const editor = getEditors(page);
+    await focusEditor({ page, isMobile });
+    await editor.fill('Copy selected code');
+    await page.keyboard.press('Control+a');
+    await page.keyboard.press('Control+c');
+
+    await expect
+      .poll(() => page.evaluate(() => navigator.clipboard.readText()))
+      .toBe('Copy selected code');
+
+    await page.keyboard.press('Control+x');
+
+    await expect
+      .poll(() => page.evaluate(() => navigator.clipboard.readText()))
+      .toBe('Copy selected code');
+    await expect(page.locator('.monaco-editor .view-lines')).not.toContainText(
+      'Copy selected code'
+    );
+  });
 });
 
 test.describe('Python Terminal', () => {
