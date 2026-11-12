@@ -1,0 +1,10 @@
+{
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-recursion-python",
+  "challengeOrder": [
+    { "id": "d634ed1a5f5e63b409d41ff5", "title": "Recursion Review" }
+  ],
+  "helpCategory": "Python"
+}

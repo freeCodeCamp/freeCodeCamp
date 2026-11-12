@@ -2,7 +2,7 @@ name: CD - Docker - DOCR Cleanup Container Images
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 0 * * 3,6' # 12:05 UTC on Wednesdays and Saturdays (6 hour maintenance window)
+    - cron: '5 0 * * 3,6'
 
 jobs:
   remove:

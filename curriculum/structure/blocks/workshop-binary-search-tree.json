@@ -1,0 +1,127 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-binary-search-tree",
+  "helpCategory": "Python",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockLayout": "challenge-grid",
+  "blockLabel": "workshop",
+  "challengeOrder": [
+    {
+      "id": "6ad9de2e14f8d281432dec89",
+      "title": "Step 1"
+    },
+    {
+      "id": "6ad9de2f4dfa5c094205f723",
+      "title": "Step 2"
+    },
+    {
+      "id": "6ad9de30adb00f22049405ea",
+      "title": "Step 3"
+    },
+    {
+      "id": "6ad9de312580e82c61eb8eeb",
+      "title": "Step 4"
+    },
+    {
+      "id": "6ad9de32ab4b703d428e9eb8",
+      "title": "Step 5"
+    },
+    {
+      "id": "6ad9de339abadcbe48e5ef62",
+      "title": "Step 6"
+    },
+    {
+      "id": "6ad9de3483cf942668090e64",
+      "title": "Step 7"
+    },
+    {
+      "id": "6ad9de3590cd47e8c6b8fb99",
+      "title": "Step 8"
+    },
+    {
+      "id": "6ad9de36da9189e6ca69a1d0",
+      "title": "Step 9"
+    },
+    {
+      "id": "6ad9de3756ac0f0a48f4b037",
+      "title": "Step 10"
+    },
+    {
+      "id": "6ad9de386ea99e61aeebd99c",
+      "title": "Step 11"
+    },
+    {
+      "id": "6ad9de392d3cb0762234a2d2",
+      "title": "Step 12"
+    },
+    {
+      "id": "6ad9de3a72712d6f1d475e95",
+      "title": "Step 13"
+    },
+    {
+      "id": "6ad9de3b1623523284f3ee2a",
+      "title": "Step 14"
+    },
+    {
+      "id": "6ad9de3ca14e1e84e8e19d32",
+      "title": "Step 15"
+    },
+    {
+      "id": "6ad9de3d2c1292e7d311c710",
+      "title": "Step 16"
+    },
+    {
+      "id": "6ad9de3e882bb1ec1890d5e5",
+      "title": "Step 17"
+    },
+    {
+      "id": "6ad9de3f70eefadf878d68a0",
+      "title": "Step 18"
+    },
+    {
+      "id": "6ad9de40bfb758e143f298c6",
+      "title": "Step 19"
+    },
+    {
+      "id": "6ad9de417b601f434bc80e3c",
+      "title": "Step 20"
+    },
+    {
+      "id": "6ad9de42ee94578df9644ebb",
+      "title": "Step 21"
+    },
+    {
+      "id": "6ad9de43c7431d2b461984fb",
+      "title": "Step 22"
+    },
+    {
+      "id": "6ad9de44726f046dd2e0034f",
+      "title": "Step 23"
+    },
+    {
+      "id": "6ad9de45702799db731d86d8",
+      "title": "Step 24"
+    },
+    {
+      "id": "6ad9de46ad5049fbc53b0b62",
+      "title": "Step 25"
+    },
+    {
+      "id": "6ad9de478df68d2bb9a67da2",
+      "title": "Step 26"
+    },
+    {
+      "id": "6ad9de486ae48de226f826e5",
+      "title": "Step 27"
+    },
+    {
+      "id": "6ad9de49910b09089fcf466f",
+      "title": "Step 28"
+    },
+    {
+      "id": "6ad9de4a2aedbecb3c32d116",
+      "title": "Step 29"
+    }
+  ]
+}

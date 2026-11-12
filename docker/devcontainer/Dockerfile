@@ -26,7 +26,7 @@ RUN --mount=type=bind,source=package.json,target=/tmp/package.json \
     npm install -g "pnpm@$(node -p 'require("/tmp/package.json").packageManager.split("@")[1]')"
 
 ENV PLAYWRIGHT_BROWSERS_PATH=/home/node/.cache/ms-playwright
-ENV npm_config_store_dir=/home/node/.local/share/pnpm/store
+ENV pnpm_config_store_dir=/home/node/.local/share/pnpm/store
 
 # =============================================================================
 # BUILDER - Install dependencies and build to populate caches (disposable)
@@ -53,7 +53,7 @@ COPY --chown=node:node tools/scripts/seed-exams/package.json tools/scripts/seed-
 
 COPY --chown=node:node packages/challenge-builder/package.json packages/challenge-builder/
 COPY --chown=node:node packages/challenge-linter/package.json packages/challenge-linter/
-COPY --chown=node:node packages/eslint-config/package.json packages/eslint-config/
+COPY --chown=node:node packages/oxlint-config/package.json packages/oxlint-config/
 COPY --chown=node:node packages/shared/package.json packages/shared/
 
 # Prisma schema needed for api postinstall script (prisma generate)

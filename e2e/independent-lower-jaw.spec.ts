@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 
 const workshopChallengeUrl =
@@ -20,6 +20,7 @@ const workshopPassingSolution = `<!DOCTYPE html>
 </html>`;
 
 test.use({
+  userPreset: 'certified',
   viewport: { width: 1080, height: 720 }
 });
 
@@ -129,8 +130,6 @@ test.describe('Unauthenticated user', () => {
 });
 
 test.describe('Authenticated user', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('Focuses on the submit button when authenticated user completes a step', async ({
     page,
     browserName

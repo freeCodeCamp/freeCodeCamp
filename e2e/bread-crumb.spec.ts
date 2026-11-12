@@ -1,4 +1,6 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+
+test.use({ userPreset: 'certified' });
 
 test.beforeEach(async ({ page }) => {
   // Prevent the mobile app modal from appearing and interfering with the test

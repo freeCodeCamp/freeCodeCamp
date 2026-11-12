@@ -1,3 +1,6 @@
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { describe, it, beforeAll, expect, vi } from 'vitest';
 
 import jsdom from 'jsdom';
@@ -33,7 +36,10 @@ vi.mock(
     // ts and tsvfs must match the versions used in the typescript-worker.
     const tsvfs = await import('@typescript/vfs-1.6.1');
     const ts = await import('typescript-5.9.2');
-    // use the same TS compiler as the challenge-builder
+    // Load libraries from the same pinned version as the compiler.
+    const tsLibDirectory = dirname(
+      fileURLToPath(import.meta.resolve('typescript-5.9.2'))
+    );
     const tsCompiler =
       await import('@freecodecamp/browser-scripts/ts-compiler');
     const compiler = new tsCompiler.Compiler(ts, tsvfs);
@@ -48,7 +54,7 @@ vi.mock(
       ...actual,
       setupTSCompiler: tsconfig => {
         if (mustSetup(tsconfig)) {
-          compiler.setup({ useNodeModules: true, tsconfig });
+          compiler.setup({ useNodeModules: true, tsLibDirectory, tsconfig });
           previousTsconfig = lodash.cloneDeep(tsconfig);
           hasConfiguredCompiler = true;
         }

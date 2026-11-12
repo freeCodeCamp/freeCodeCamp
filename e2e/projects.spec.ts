@@ -1,5 +1,5 @@
-import { execSync } from 'child_process';
-import { test, expect, Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import translations from '../client/i18n/locales/english/translations.json';
 import tributePage from './fixtures/tribute-page.json';
@@ -71,15 +71,7 @@ const pasteContent = async (page: Page) => {
   }
 };
 
-test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-test.beforeAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user');
-});
-
-test.afterAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-});
+test.use({ userPreset: 'development' });
 
 test.describe('Projects', () => {
   test('Should be possible to submit Python projects', async ({ page }) => {
@@ -113,7 +105,8 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     browserName,
     isMobile,
     request,
-    context
+    context,
+    isolatedUser
   }) => {
     test.setTimeout(40000);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
@@ -229,7 +222,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
     await alertToBeVisible(
       page,
-      '@developmentuser, you have successfully claimed the Legacy JavaScript Algorithms and Data Structures V7 Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+      `@${isolatedUser.username}, you have successfully claimed the Legacy JavaScript Algorithms and Data Structures V7 Certification! Congratulations on behalf of the freeCodeCamp.org team!`
     );
 
     const showCertLink = page.getByRole('link', {
@@ -238,29 +231,17 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     await expect(showCertLink).toBeVisible();
     await expect(showCertLink).toHaveAttribute(
       'href',
-      '/certification/developmentuser/javascript-algorithms-and-data-structures'
+      `/certification/${isolatedUser.username}/javascript-algorithms-and-data-structures`
     );
   });
 });
 
 test.describe('Submit button should be shown after submitting a project', () => {
-  test.skip(
-    ({ browserName }) => browserName !== 'chromium',
-    'Only chromium allows us to use the clipboard API.'
-  );
-
   test('Ctrl + enter triggers the submit button on multifile projects', async ({
     page,
-    context,
     isMobile
   }) => {
     test.skip(isMobile);
-    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-
-    const tributeContent = [
-      tributePage.htmlFile.contents,
-      tributePage.cssFile.contents
-    ];
 
     await page.goto(
       '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
@@ -268,15 +249,10 @@ test.describe('Submit button should be shown after submitting a project', () => 
     const editors = getEditors(page);
     await page.getByRole('button', { name: 'styles.css' }).click();
 
-    for (let i = 0; i < 2; i++) {
-      await page.evaluate(
-        async contents => await navigator.clipboard.writeText(contents),
-        tributeContent[i]
-      );
-
-      await editors.nth(i).focus();
-      await pasteContent(page);
-    }
+    await editors.nth(0).focus();
+    await page.keyboard.insertText(tributePage.htmlFile.contents);
+    await editors.nth(1).focus();
+    await page.keyboard.insertText(tributePage.cssFile.contents);
 
     await page.keyboard.press('Control+Enter');
     await page

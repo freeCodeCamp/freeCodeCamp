@@ -8,7 +8,7 @@
 
 - `_id`: This should match the `id` in the exam challenge markdown file,
 - `title`: This should match the `title` in the exam challenge markdown file,
-- `numberOfQuestionsInExam`: This is how many questions will be given to campers who take the exam. It must be less than or equal to the length of the `questions` array.
+- `numberOfQuestionsInExam`: This is how many questions will be given to campers who take the exam. It must be less than or equal to the number of non-deprecated questions in the `questions` array.
 - `passingPercent`: Percent of questions needed to get correct to pass the exam
 - `prerequisites`: Array of challenges that are required to complete before being able to take the exam. Each should have an `id` and `title` that match what's in their challenge markdown file
 - `questions`: Array of exam questions

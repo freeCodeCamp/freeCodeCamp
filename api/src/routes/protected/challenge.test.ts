@@ -33,8 +33,8 @@ vi.mock('../../utils/exam.js', async () => {
   };
 });
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* oxlint-disable typescript/no-unsafe-member-access */
+/* oxlint-disable typescript/no-unsafe-assignment */
 import { omit } from 'lodash-es';
 import { Static } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
@@ -49,7 +49,8 @@ import {
   seedExam,
   defaultUserEmail,
   createSuperRequest,
-  defaultUsername
+  defaultUsername,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import {
   completedExamChallengeOneCorrect,
@@ -1324,7 +1325,7 @@ describe('challengeRoutes', () => {
           expect(
             resUpdate.body.savedChallenges[0].lastSavedDate
           ).toBeGreaterThan(
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            // oxlint-disable-next-line typescript/no-unsafe-argument
             resOriginal.body.savedChallenges[0].lastSavedDate
           );
 
@@ -1539,7 +1540,7 @@ describe('challengeRoutes', () => {
         });
 
         expect(resUpdate.body.savedChallenges[0].lastSavedDate).toBeGreaterThan(
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          // oxlint-disable-next-line typescript/no-unsafe-argument
           resOriginal.body.savedChallenges[0].lastSavedDate
         );
 
@@ -1577,7 +1578,7 @@ describe('challengeRoutes', () => {
         });
 
         test('POST rejects requests without an id', async () => {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          // oxlint-disable-next-line no-unused-vars
           const { id, ...noIdReqBody } = dailyCodingChallengeBody;
           const response = await superPost(
             '/daily-coding-challenge-completed'
@@ -1590,7 +1591,7 @@ describe('challengeRoutes', () => {
         });
 
         test('POST rejects requests without a language', async () => {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          // oxlint-disable-next-line no-unused-vars
           const { language, ...noLanguageReqBody } = dailyCodingChallengeBody;
           const response = await superPost(
             '/daily-coding-challenge-completed'
@@ -2655,6 +2656,35 @@ describe('challengeRoutes', () => {
           });
         };
 
+        test('POST rejects exams with duplicate question ids', async () => {
+          const [firstQuestion] = examWithAllCorrect.userExamQuestions;
+          const response = await submitExam({
+            ...examWithAllCorrect,
+            userExamQuestions: [firstQuestion!, firstQuestion!, firstQuestion!]
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred validating the submitted exam.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects exams with question ids not in the exam', async () => {
+          const [, ...otherQuestions] = examWithAllCorrect.userExamQuestions;
+          const response = await submitExam({
+            ...examWithAllCorrect,
+            userExamQuestions: [
+              { ...otherQuestions[0]!, id: 'zzzzzzzzzz' },
+              ...otherQuestions
+            ]
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred validating the submitted exam.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
         test('POST handles submitting a failing exam', async () => {
           const now = Date.now();
           const count = vi.fn();
@@ -3024,7 +3054,7 @@ describe('challengeRoutes', () => {
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     const endpoints: { path: string; method: 'POST' | 'GET' }[] = [

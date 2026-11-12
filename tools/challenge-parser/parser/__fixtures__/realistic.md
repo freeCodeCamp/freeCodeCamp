@@ -17,7 +17,7 @@ Do something with the `code`.
 
 To test that adjacent tags are handled correctly:
 
-a bit of <code>code</code> <tag>with more after a space</tag> and another pair of <strong>elements</strong> <em>with a space</em>
+a bit of <code>code</code> <span>with more after a space</span> and another pair of <strong>elements</strong> <em>with a space</em>
 
 # --hints--
 

@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lab-build-a-stack",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6ac200f06b568b700b78fb5d",
+      "title": "Build a Stack"
+    }
+  ],
+  "blockLabel": "lab"
+}

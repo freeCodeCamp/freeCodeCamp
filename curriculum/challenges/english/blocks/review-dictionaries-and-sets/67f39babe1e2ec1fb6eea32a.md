@@ -9,7 +9,7 @@ dashedName: review-dictionaries-and-sets
 
 ## Dictionaries
 
-- **Dictionaries**: Dictionaries are built-in data structures that store collections of key-value pairs. Keys need to be immutable data types. This is the general syntax of a Python dictionary:
+- **Dictionaries**: Dictionaries are built-in data structures that store collections of key-value pairs. Keys must be unique. Numbers, strings, and tuples of numbers and strings can be used as keys, but a tuple that contains a list can't. Values can be repeated and can be any data type. Dictionaries also keep the order in which items were added. This is the general syntax of a Python dictionary:
 
 ```python
 dictionary = {
@@ -28,6 +28,40 @@ pizza = dict([('name', 'Margherita Pizza'), ('price', 8.9), ('calories_per_slice
 
 ```python
 dictionary[key]
+```
+
+- **Bracket Assignment**: You can add a new key-value pair or update the value of an existing key with bracket notation. If the key doesn't exist, it's added. If it already exists, its value is replaced.
+
+```python
+dictionary[key] = value
+```
+
+- **Updating Values While Looping**: You can update the values of existing keys inside a loop over `items()` by assigning to each key.
+
+```python
+products = {'apple': 10, 'pear': 20}
+
+for product, price in products.items():
+    products[product] = round(price * 0.8)
+
+print(products)  # {'apple': 8, 'pear': 16}
+```
+
+- **Dictionary Unpacking with `**`**: The `**` operator unpacks a dictionary into keyword arguments, where each key is used as a parameter name.
+
+```python
+def greet(name, age):
+    print(f'{name} is {age}')
+
+data = {'name': 'Jessica', 'age': 30}
+greet(**data)  # Jessica is 30
+```
+
+- **The `all()` Function**: The `all()` function returns `True` if every element in an iterable is truthy. It also returns `True` for an empty iterable.
+
+```python
+print(all([1, 'a', True]))  # True
+print(all([1, 0, True]))    # False
 ```
 
 ## Common Dictionary Methods
@@ -200,7 +234,7 @@ Output:
 
 ## Sets
 
-- **Sets**: Sets are built-in data structures in Python that do not allow duplicate values. Sets are mutable and unordered, which means that their elements are not stored in any specific order, so you cannot use indices or keys to access them. Also, sets can only contain values of immutable data types, like numbers, strings, and tuples.
+- **Sets**: Sets are built-in data structures in Python that do not allow duplicate values. Sets are mutable and unordered, which means that their elements are not stored in any specific order, so you cannot use indices or keys to access them. Numbers, strings, and tuples of numbers and strings can be set elements, but a tuple that contains a list can't.
 
 - **Defining a Set**: To define a set, you need to write its elements within curly brackets and separate them with commas.
 
@@ -213,6 +247,15 @@ my_set = {1, 2, 3, 4, 5}
 ```python
 set() # Set
 {}    # Dictionary
+```
+
+- **Creating a Set from an Iterable**: The `set()` constructor accepts an iterable, such as a list, a string, or a dictionary (which gives its keys), provided its elements can be stored in a set. For example, a list of numbers is valid, but a list containing other lists is not. This is useful for comparing the keys you expect with the keys you actually have.
+
+```python
+expected_keys = {'name', 'age'}
+data = {'name': 'Jessica', 'age': 30}
+
+print(set(data) == expected_keys)  # True
 ```
 
 ## Common Set Methods
@@ -275,7 +318,7 @@ your_set = {2, 3, 4, 6}
 my_set & your_set # {2, 3, 4}
 ```
 
-- **Difference Operator (`-`)**: The difference operator `-` returns a new set with the elements of the first set that are not in the other sets.
+- **Difference Operator (`-`)**: The difference operator `-` returns a new set with the elements of the first set that are not in the other set.
 
 ```python
 my_set = {1, 2, 3, 4, 5}
@@ -291,6 +334,17 @@ my_set = {1, 2, 3, 4, 5}
 your_set = {2, 3, 4, 6}
 
 my_set ^ your_set # {1, 5, 6}
+```
+
+- **Compound Set Operators**: The operators `|=`, `&=`, `-=`, and `^=` perform the union, intersection, difference, and symmetric difference operations, but they update the existing set instead of creating a new one.
+
+```python
+my_set = {1, 2, 3}
+
+my_set |= {3, 4}          # {1, 2, 3, 4}
+my_set &= {2, 3, 4, 5}    # {2, 3, 4}
+my_set -= {4}             # {2, 3}
+my_set ^= {3, 5}          # {2, 5}
 ```
 
 - **`in` Operator**: You can check if an element is in a set or not with the `in` operator.
@@ -374,7 +428,7 @@ If you need to assign aliases to these names, you can do so as well, using the 
 from module_name import name1 as alias1, name2 as alias2
 ```
 
-- **Import Statement with Asterisk (`*`)**: The asterisk tells Python that you want to import everything in that module, but you want to import it so that you don't need to use the name of the module as a prefix.
+- **Import Statement with Asterisk (`*`)**: The asterisk tells Python that you want to import the module's public names so that you don't need to use the name of the module as a prefix. If the module defines `__all__`, that list controls which names are imported. Otherwise, names that start with an underscore are excluded.
 
 ```python
 from module_name import *
@@ -393,11 +447,61 @@ However, this is generally discouraged because it can lead to namespace collisio
 
 - **`__name__` Variable**: `__name__` is a special built-in variable in Python. When a Python file is executed directly, Python sets the value of this variable to the string `"__main__"`. But if the Python file is imported as a module into another Python script, the value of the `__name__` variable is set to the name of that module.
 
-This is why you'll often find this conditional in Python scripts. It contains the code that you only want to run **only** if the Python script is running as the main program.
+This is why you'll often find this conditional in Python scripts. It contains the code that you want to run **only** if the Python script is running as the main program.
 
 ```python
 if __name__ == '__main__': 
     # Code
+```
+
+## Regular Expressions
+
+- **Regular Expressions**: A regular expression, or regex, is a pattern used to match a sequence of characters in text. To use them in Python, you need to import the `re` module.
+
+- **`re.search()` Function**: The `search()` function looks for a pattern anywhere in a string. It returns a match object if it finds it, and `None` otherwise. The `group()` and `span()` methods of a match object return the matched text and its start and end indices.
+
+```python
+import re
+
+result = re.search('cat', 'The cat sat on the mat.')
+print(result)         # <re.Match object; span=(4, 7), match='cat'>
+print(result.group()) # cat
+print(result.span())  # (4, 7)
+```
+
+- **Flags**: Regex matching is case sensitive by default. The `re.IGNORECASE` flag makes it case insensitive, as in `re.search('Cat', 'The cat sat', re.IGNORECASE)`.
+
+- **Raw Strings**: A raw string, created by adding `r` before the opening quote, treats backslashes as literal characters instead of escape sequences. It's good practice to always write regex patterns as raw strings, like `r'\d'`.
+
+- **Special Sequences**: `\d` matches any digit, `\w` matches any word character (letters, digits, and the underscore), and `\s` matches any whitespace character. `\D`, `\W`, and `\S` match the opposite.
+
+- **Quantifiers**: Quantifiers specify how many times the preceding character can be repeated: `+` one or more times, `*` zero or more times, `?` zero or one time, `{n}` exactly `n` times, and `{n,m}` from `n` to `m` times.
+
+```python
+import re
+
+print(re.search(r'\d+', 'Room 42B'))    # <re.Match object; span=(5, 7), match='42'>
+print(re.search(r'colou?r', 'color'))   # <re.Match object; span=(0, 5), match='color'>
+print(re.search(r'\d{4}', 'Room 1987')) # <re.Match object; span=(5, 9), match='1987'>
+```
+
+## Useful Functions in the `re` Module
+
+- **`re.match()` Function**: Like `search()`, but it only looks for the pattern at the beginning of the string.
+
+- **`re.fullmatch()` Function**: Returns a match object only when the pattern matches the entire string. This makes it useful for validating data.
+
+- **`re.findall()` Function**: Returns a list of strings with all the matches, or an empty list if there are none.
+
+- **`re.sub()` Function**: Replaces every match of a pattern with another string and returns the new string. Its optional `count` and `flags` parameters should always be passed as keyword arguments.
+
+```python
+import re
+
+print(re.match(r'\d+', 'apples: 42'))             # None
+print(re.fullmatch(r'\d+:\d+', '10:30pm'))        # None
+print(re.findall(r'\d+', 'Rooms 12, 7, and 105')) # ['12', '7', '105']
+print(re.sub(r'\d', '*', '555 0123', count=3))    # *** 0123
 ```
 
 # --assignment--

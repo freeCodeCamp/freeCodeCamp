@@ -63,7 +63,6 @@ interface ChallengeInfo {
   dashedName: string;
   challengeType: number;
   blockLayout: BlockLayouts;
-  superBlock: SuperBlocks;
 }
 
 interface BlockProps {

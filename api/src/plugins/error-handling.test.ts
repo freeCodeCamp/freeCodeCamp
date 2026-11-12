@@ -21,7 +21,7 @@ vi.mock('../utils/env.js', async importOriginal => {
   };
 });
 
-import '../instrument';
+import '../instrument.js';
 import errorHandling, { isExpectedClientError } from './error-handling.js';
 import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
 
@@ -36,24 +36,24 @@ describe('errorHandling', () => {
     await fastify.register(accepts);
     await fastify.register(errorHandling);
 
-    fastify.get('/test', async (_req, _reply) => {
+    fastify.get('/test', (_req, _reply) => {
       const error = Error('a very bad thing happened') as FastifyError;
       error.statusCode = 500;
       throw error;
     });
-    fastify.get('/test-bad-request', async (_req, _reply) => {
+    fastify.get('/test-bad-request', (_req, _reply) => {
       const error = Error('a very bad thing happened') as FastifyError;
       error.statusCode = 400;
       throw error;
     });
-    fastify.get('/test-csrf-token', async (_req, _reply) => {
+    fastify.get('/test-csrf-token', (_req, _reply) => {
       const error = Error() as FastifyError;
       error.code = 'FST_CSRF_INVALID_TOKEN';
       error.statusCode = 403;
       throw error;
     });
 
-    fastify.get('/test-csrf-secret', async (_req, _reply) => {
+    fastify.get('/test-csrf-secret', (_req, _reply) => {
       const error = Error() as FastifyError;
       error.code = 'FST_CSRF_MISSING_SECRET';
       error.statusCode = 403;
