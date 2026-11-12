@@ -95,6 +95,7 @@ jobs:
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
       TS_MACHINE_NAME: ${{ secrets.TS_MACHINE_NAME }}
+      TS_MACHINE_NAME_2: ${{ secrets.TS_MACHINE_NAME_2 }}
     permissions:
       deployments: write
     environment:
@@ -178,9 +179,24 @@ jobs:
             return 1
           }
 
-          echo -e "\nLOG:Validating connection to $TS_MACHINE_NAME..."
-          if ! validate_connection "$TS_MACHINE_NAME"; then
-            echo "Error: Failed to establish reliable connection to $TS_MACHINE_NAME"
+          if [[ -z "$TS_MACHINE_NAME" ]]; then
+            echo "::error::TS_MACHINE_NAME is not set"
+            exit 1
+          fi
+          TARGETS=("$TS_MACHINE_NAME")
+          if [[ -n "$TS_MACHINE_NAME_2" ]]; then
+            TARGETS+=("$TS_MACHINE_NAME_2")
+          fi
+
+          FAILED=()
+          for i in "${!TARGETS[@]}"; do
+            echo -e "\nLOG:Validating connection to target $((i + 1)) of ${#TARGETS[@]}..."
+            if ! validate_connection "${TARGETS[$i]}"; then
+              FAILED+=("$((i + 1))")
+            fi
+          done
+          if [[ ${#FAILED[@]} -gt 0 ]]; then
+            echo "::error::No connection to target(s) ${FAILED[*]} (1 = TS_MACHINE_NAME, 2 = TS_MACHINE_NAME_2)"
             exit 1
           fi
 
@@ -223,7 +239,7 @@ jobs:
           REMOTE_SCRIPT="
             set -e
             trap 'rm -f .env age.key secrets.age.asc .env.tmp' EXIT
-            echo -e '\nLOG:Deploying API to $TS_MACHINE_NAME...'
+            echo -e '\nLOG:Deploying API...'
             cd /home/$TS_USERNAME/docker-swarm-config/stacks/api
 
             echo -e '\nLOG:Checking if age is installed...'
@@ -334,9 +350,22 @@ jobs:
 
             echo -e '\nLOG:Finished deployment.'
           "
-          MACHINE_IP=$(tailscale ip -4 "$TS_MACHINE_NAME")
-          # shellcheck disable=SC2029 # client-side expansion of REMOTE_SCRIPT is intended
-          ssh "$TS_USERNAME@$MACHINE_IP" "$REMOTE_SCRIPT"
+          TARGETS=("$TS_MACHINE_NAME")
+          if [[ -n "$TS_MACHINE_NAME_2" ]]; then
+            TARGETS+=("$TS_MACHINE_NAME_2")
+          fi
+          FAILED=()
+          for i in "${!TARGETS[@]}"; do
+            echo -e "\nLOG:Deploying to target $((i + 1)) of ${#TARGETS[@]}..."
+            # shellcheck disable=SC2029 # client-side expansion of REMOTE_SCRIPT is intended
+            if ! { MACHINE_IP=$(tailscale ip -4 "${TARGETS[$i]}") && ssh "$TS_USERNAME@$MACHINE_IP" "$REMOTE_SCRIPT"; }; then
+              FAILED+=("$((i + 1))")
+            fi
+          done
+          if [[ ${#FAILED[@]} -gt 0 ]]; then
+            echo "::error::Deploy failed on target(s) ${FAILED[*]} (1 = TS_MACHINE_NAME, 2 = TS_MACHINE_NAME_2)"
+            exit 1
+          fi
 
       # TODO(o11y): Sentry release finalize disabled pending a follow-up PR with
       # a stable release-id scheme (source-map upload in docker-docr.yml is

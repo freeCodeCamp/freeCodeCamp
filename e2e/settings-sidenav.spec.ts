@@ -1,15 +1,18 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
+test.use({ userPreset: 'certified' });
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page, isolatedUser }) => {
   // Set viewport to desktop size to ensure sideNav is visible
   await page.setViewportSize({ width: 1280, height: 720 });
   await page.goto('/settings');
 
   // Wait for the main heading to appear
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Settings for certifieduser' })
+    page.getByRole('heading', {
+      level: 1,
+      name: `Settings for ${isolatedUser.username}`
+    })
   ).toBeVisible();
 });
 

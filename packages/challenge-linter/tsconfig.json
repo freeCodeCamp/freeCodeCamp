@@ -2,9 +2,12 @@
   "include": ["src"],
   "extends": "../../tsconfig-base.json",
   "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "declaration": true,
     "declarationMap": true,
     "outDir": "dist",
+    "rootDir": "src",
     "noEmit": false
   }
 }

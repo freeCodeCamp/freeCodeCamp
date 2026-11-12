@@ -28,7 +28,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --max-warnings 0",
+    "lint": "oxlint --deny-warnings",
     "build": "pnpm copy-scripts && pnpm bundle",
     "bundle": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs --env production",
     "copy-scripts": "tsx ./copy-scripts.ts"
@@ -40,15 +40,14 @@
     "@babel/plugin-transform-runtime": "7.29.7",
     "@babel/preset-env": "7.29.7",
     "@babel/preset-typescript": "7.29.7",
-    "@freecodecamp/eslint-config": "workspace:*",
-    "@typescript/vfs": "1.6.5",
+    "@freecodecamp/oxlint-config": "workspace:*",
+    "@typescript/vfs": "1.6.6",
     "babel-loader": "8.4.1",
-    "eslint": "9.39.5",
     "process": "0.11.10",
     "tsx": "^4.21.0",
     "typescript": "5.9.3",
     "util": "0.12.5",
-    "webpack": "5.112.0",
+    "webpack": "5.112.2",
     "webpack-cli": "4.10.0"
   },
   "dependencies": {

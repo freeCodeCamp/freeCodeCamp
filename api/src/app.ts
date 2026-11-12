@@ -148,7 +148,7 @@ export const build = async (
             .find(str => str.includes('csrf_token'));
           const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
 
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          // oxlint-disable-next-line typescript/no-unsafe-member-access
           if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
           return req;
         }
@@ -171,7 +171,7 @@ export const build = async (
       // TODO: bounce unauthed requests before checking CSRF token. This will
       // mean moving csrfProtection into custom plugin and testing separately,
       // because it's a pain to mess around with other cookies/hook order.
-      // eslint-disable-next-line @typescript-eslint/unbound-method
+      // oxlint-disable-next-line typescript/unbound-method
       fastify.addHook('onRequest', fastify.csrfProtection);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
 
@@ -208,7 +208,7 @@ export const build = async (
     // authorize adds .user if the request is authenticated, but does not block
     // the request
     fastify.addHook('onRequest', fastify.authorize);
-    // eslint-disable-next-line @typescript-eslint/unbound-method
+    // oxlint-disable-next-line typescript/unbound-method
     fastify.addHook('onRequest', fastify.csrfProtection);
 
     await fastify.register(publicRoutes.paypalSubscriptionRoute);

@@ -1,0 +1,14 @@
+{
+  "blockLabel": "cert-project",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-proofreading-tool-v2",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "69dd63d1dcdeccb7b39ba4c3",
+      "title": "Build a Proofreading Tool"
+    }
+  ]
+}

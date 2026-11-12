@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-lists",
+  "challengeOrder": [
+    {
+      "id": "67fe8399c41a212871025f96",
+      "title": "What Are Lists and How Do They Work?"
+    },
+    {
+      "id": "6839e38cdf93ee5a00c79676",
+      "title": "What Are Some Common Methods Used for Lists?"
+    },
+    {
+      "id": "6aeaec9c8f05dde6a77e511f",
+      "title": "How Do Shared Lists Behave in Python?"
+    }
+  ],
+  "helpCategory": "Python"
+}

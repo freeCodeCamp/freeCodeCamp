@@ -249,7 +249,7 @@ describe('<CompletionModal />', () => {
       mockCurrentBlockIdsSelector.mockReturnValue(blockIds);
       mockCompletedChallengesIdsSelector.mockReturnValue(['step1', 'step2']);
       // Curriculum data is initialized in beforeEach
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // oxlint-disable-next-line typescript/ban-ts-comment
       // @ts-ignore
       await runSaga(store, executeChallengeSaga, { payload }).done;
       expect(mockFireConfetti).toHaveBeenCalledTimes(1);
@@ -278,7 +278,7 @@ describe('<CompletionModal />', () => {
         challengeNodes: [],
         superBlockStructures: {}
       });
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // oxlint-disable-next-line typescript/ban-ts-comment
       // @ts-ignore
       await runSaga(store, executeChallengeSaga, { payload }).done;
       expect(mockFireConfetti).toHaveBeenCalledTimes(0);
@@ -295,7 +295,7 @@ describe('<CompletionModal />', () => {
         }
       });
       mockIsBlockNewlyCompletedSelector.mockReturnValue(false);
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // oxlint-disable-next-line typescript/ban-ts-comment
       // @ts-ignore
       await runSaga(store, executeChallengeSaga, { payload }).done;
       expect(mockFireConfetti).toHaveBeenCalledTimes(0);

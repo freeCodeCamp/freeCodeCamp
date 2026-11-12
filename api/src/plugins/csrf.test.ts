@@ -18,7 +18,7 @@ async function setupServer() {
   const fastify = Fastify({ logger: true, disableRequestLogging: true });
   await fastify.register(cookies);
   await fastify.register(csrf);
-  // eslint-disable-next-line @typescript-eslint/unbound-method
+  // oxlint-disable-next-line typescript/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
 
   fastify.get('/', (_req, reply) => {

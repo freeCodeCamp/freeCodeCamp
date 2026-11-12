@@ -7,5 +7,4 @@ client/public
 docker/**/Dockerfile
 **/*docker-compose*
 **/node_modules
-.eslintcache
 

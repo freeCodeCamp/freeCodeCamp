@@ -12,6 +12,7 @@
             "workshop-binary-search",
             "lab-bubble-sort",
             "lab-selection-sort",
+            "lab-insertion-sort-py",
             "review-python-algorithms",
             "quiz-python-algorithms"
           ]
@@ -26,6 +27,8 @@
           "blocks": [
             "lecture-working-with-common-data-structures-v2",
             "workshop-linked-list-class",
+            "lab-linked-list-operations-python",
+            "lab-doubly-linked-list",
             "lab-build-a-stack",
             "lab-queue-python",
             "review-linear-data-structures",
@@ -63,10 +66,12 @@
             "lab-hash-table",
             "lecture-understanding-graphs",
             "lab-adjacency-list-to-matrix-converter",
+            "lab-incidence-matrix",
             "lab-depth-first-search",
             "workshop-shortest-path-algorithm",
             "lab-n-queens-problem",
             "lecture-understanding-trees-and-tries",
+            "workshop-binary-search-tree",
             "lecture-understanding-priority-queues-and-heaps",
             "review-non-linear-data-structures",
             "quiz-non-linear-data-structures"

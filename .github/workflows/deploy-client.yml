@@ -178,6 +178,7 @@ jobs:
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
       TS_MACHINE_NAME_PREFIX: ${{ secrets.TS_MACHINE_NAME_PREFIX }}
+      TS_MACHINE_NAME_PREFIX_2: ${{ secrets.TS_MACHINE_NAME_PREFIX_2 }}
 
     steps:
       - name: Checkout
@@ -317,77 +318,107 @@ jobs:
             return 1
           }
 
+          if [[ -z "$TS_MACHINE_NAME_PREFIX" ]]; then
+            echo "::error::TS_MACHINE_NAME_PREFIX is not set"
+            exit 1
+          fi
+          PREFIXES=("$TS_MACHINE_NAME_PREFIX")
+          if [[ -n "$TS_MACHINE_NAME_PREFIX_2" ]]; then
+            PREFIXES+=("$TS_MACHINE_NAME_PREFIX_2")
+          fi
+
           echo -e "\nLOG:Validating connections to all machines..."
-          for i in {0..1}; do
-            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
-            echo "Validating connection to $TS_MACHINE_NAME"
-            if ! validate_connection "$TS_MACHINE_NAME"; then
-              echo "Error: Failed to establish reliable connection to $TS_MACHINE_NAME"
-              exit 1
-            fi
+          FAILED=()
+          for p in "${!PREFIXES[@]}"; do
+            for i in {0..1}; do
+              TS_MACHINE_NAME=${PREFIXES[$p]}-${{ matrix.lang-name-short }}-${i}
+              echo "Validating connection to target $((p + 1)) of ${#PREFIXES[@]}, machine ${i}"
+              if ! validate_connection "$TS_MACHINE_NAME"; then
+                FAILED+=("$((p + 1))/${i}")
+              fi
+            done
           done
+          if [[ ${#FAILED[@]} -gt 0 ]]; then
+            echo "::error::No connection to target/machine ${FAILED[*]} (target 1 = TS_MACHINE_NAME_PREFIX, 2 = TS_MACHINE_NAME_PREFIX_2)"
+            exit 1
+          fi
           echo "All machine connections validated successfully"
 
       - name: Upload and Deploy
         run: |
-          for i in {0..1}; do
-            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
-            CURRENT_DATE=$(date +%Y%m%d)
-            CLIENT_SRC=client-${{ matrix.lang-name-short }}.tar
-            CLIENT_DST=/tmp/client-${{ matrix.lang-name-short }}-${CURRENT_DATE}-${{ github.run_id }}.tar
-            CLIENT_BINARIES=${{needs.setup-jobs.outputs.tgt_env_short}}-release-$CURRENT_DATE-${{ github.run_id }}
+          PREFIXES=("$TS_MACHINE_NAME_PREFIX")
+          if [[ -n "$TS_MACHINE_NAME_PREFIX_2" ]]; then
+            PREFIXES+=("$TS_MACHINE_NAME_PREFIX_2")
+          fi
+          CURRENT_DATE=$(date +%Y%m%d)
+          FAILED=()
+          for p in "${!PREFIXES[@]}"; do
+            for i in {0..1}; do
+              TS_MACHINE_NAME=${PREFIXES[$p]}-${{ matrix.lang-name-short }}-${i}
+              CLIENT_SRC=client-${{ matrix.lang-name-short }}.tar
+              CLIENT_DST=/tmp/client-${{ matrix.lang-name-short }}-${CURRENT_DATE}-${{ github.run_id }}.tar
+              CLIENT_BINARIES=${{needs.setup-jobs.outputs.tgt_env_short}}-release-$CURRENT_DATE-${{ github.run_id }}
 
-            echo -e "\nLOG:Uploading client archive to $TS_MACHINE_NAME..."
-            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
-            scp $CLIENT_SRC $TS_USERNAME@$MACHINE_IP:$CLIENT_DST
+              echo -e "\nLOG:Uploading client archive to target $((p + 1)) of ${#PREFIXES[@]}, machine ${i}..."
+              if ! { MACHINE_IP=$(tailscale ip -4 "$TS_MACHINE_NAME") && scp "$CLIENT_SRC" "$TS_USERNAME@$MACHINE_IP:$CLIENT_DST"; }; then
+                FAILED+=("$((p + 1))/${i}")
+                continue
+              fi
 
-            REMOTE_SCRIPT="
-              set -e
-              echo -e '\nLOG: Deploying client - $CLIENT_BINARIES to $TS_MACHINE_NAME...'
+              REMOTE_SCRIPT="
+                set -e
+                echo -e '\nLOG: Deploying client - $CLIENT_BINARIES to $TS_MACHINE_NAME...'
 
-              echo -e '\nLOG:Extracting client archive...'
-              mkdir -p /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
-              tar -xzf $CLIENT_DST -C /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES --strip-components=2
+                echo -e '\nLOG:Extracting client archive...'
+                mkdir -p /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
+                tar -xzf $CLIENT_DST -C /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES --strip-components=2
 
-              echo -e '\nLOG:Cleaning up client archive...'
-              rm $CLIENT_DST
+                echo -e '\nLOG:Cleaning up client archive...'
+                rm $CLIENT_DST
 
-              echo -e '\nLOG:Checking client archive size...'
-              du -sh /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
+                echo -e '\nLOG:Checking client archive size...'
+                du -sh /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
 
-              echo -e '\nLOG:Environment setup...'
-              cd /home/$TS_USERNAME/client
-              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh"
-              echo -e '\nLOG:Checking available Node.js versions...'
-              nvm ls | grep 'default'
-              echo -e '\nLOG:Checking Node.js version...'
-              node --version
+                echo -e '\nLOG:Environment setup...'
+                cd /home/$TS_USERNAME/client
+                export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh"
+                echo -e '\nLOG:Checking available Node.js versions...'
+                nvm ls | grep 'default'
+                echo -e '\nLOG:Checking Node.js version...'
+                node --version
 
-              echo -e '\nLOG:Installing serve...'
-              npm install -g serve@13
+                echo -e '\nLOG:Installing serve...'
+                npm install -g serve@13
 
-              echo -e '\nLOG:Primary client setup...'
-              rm -f client-start-primary.sh
-              echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 50505\" >> client-start-primary.sh
-              chmod +x client-start-primary.sh
-              pm2 delete client-primary || true
-              pm2 start ./client-start-primary.sh --name client-primary
-              echo -e '\nLOG:Primary client setup completed.'
+                echo -e '\nLOG:Primary client setup...'
+                rm -f client-start-primary.sh
+                echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 50505\" >> client-start-primary.sh
+                chmod +x client-start-primary.sh
+                pm2 delete client-primary || true
+                pm2 start ./client-start-primary.sh --name client-primary
+                echo -e '\nLOG:Primary client setup completed.'
 
-              pm2 ls
+                pm2 ls
 
-              echo -e '\nLOG:Secondary client setup...'
-              rm -f client-start-secondary.sh
-              echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 52525\" >> client-start-secondary.sh
-              chmod +x client-start-secondary.sh
-              pm2 delete client-secondary || true
-              pm2 start ./client-start-secondary.sh --name client-secondary
-              echo -e '\nLOG:Secondary client setup completed.'
+                echo -e '\nLOG:Secondary client setup...'
+                rm -f client-start-secondary.sh
+                echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 52525\" >> client-start-secondary.sh
+                chmod +x client-start-secondary.sh
+                pm2 delete client-secondary || true
+                pm2 start ./client-start-secondary.sh --name client-secondary
+                echo -e '\nLOG:Secondary client setup completed.'
 
-              pm2 ls
-              pm2 save
+                pm2 ls
+                pm2 save
 
-              echo -e '\nLOG:Finished deployment.'
-            "
-            ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
+                echo -e '\nLOG:Finished deployment.'
+              "
+              if ! ssh "$TS_USERNAME@$MACHINE_IP" "$REMOTE_SCRIPT"; then
+                FAILED+=("$((p + 1))/${i}")
+              fi
+            done
           done
+          if [[ ${#FAILED[@]} -gt 0 ]]; then
+            echo "::error::Deploy failed on target/machine ${FAILED[*]} (target 1 = TS_MACHINE_NAME_PREFIX, 2 = TS_MACHINE_NAME_PREFIX_2)"
+            exit 1
+          fi

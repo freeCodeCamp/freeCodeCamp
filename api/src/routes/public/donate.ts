@@ -210,7 +210,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         const subscription =
           await stripe.subscriptions.retrieve(subscriptionId);
         const isSubscriptionActive = subscription.status === 'active';
-        // eslint-disable-next-line @typescript-eslint/no-base-to-string
+        // oxlint-disable-next-line typescript/no-base-to-string
         const productId = subscription.items.data[0]?.plan.product?.toString();
         // Tighter than the authenticated routes: this one takes no session, so
         // the window is also how long a subscription id is worth stealing.
