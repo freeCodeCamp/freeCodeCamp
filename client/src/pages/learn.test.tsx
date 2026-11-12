@@ -46,6 +46,7 @@ vi.mock('../analytics/call-ga', () => ({
 vi.mock('../utils/get-words');
 
 const pageData = {
+  allChallengeNode: { nodes: [] },
   challengeNode: {
     challenge: {
       fields: {
@@ -130,5 +131,73 @@ describe('LearnPage', () => {
     expect(
       screen.queryByRole('link', { name: signedOutCta })
     ).not.toBeInTheDocument();
+  });
+
+  it('shows resume progress using curriculum data', () => {
+    const resumeUrl = '/learn/javascript/basic-javascript/step-2';
+    const data = {
+      ...pageData,
+      allChallengeNode: {
+        nodes: [
+          {
+            challenge: {
+              id: 'a',
+              superBlock: 'javascript',
+              fields: { slug: '/learn/javascript/basic-javascript/step-1' }
+            }
+          },
+          {
+            challenge: {
+              id: 'b',
+              superBlock: 'javascript',
+              fields: { slug: resumeUrl }
+            }
+          }
+        ]
+      }
+    };
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          ...initialState.user,
+          sessionUser: {
+            name: 'Full Stack User',
+            username: 'FullStackUser',
+            completedChallengeCount: 1,
+            completedChallenges: [{ id: 'a' }],
+            sendQuincyEmail: null,
+            isDonating: false,
+            resumeUrl
+          }
+        },
+        userFetchState: {
+          pending: false,
+          complete: true,
+          errored: false,
+          error: null
+        }
+      }
+    });
+
+    render(
+      <Provider store={store}>
+        <GrowthBookProvider growthbook={new GrowthBook()}>
+          <I18nextProvider i18n={i18nTestConfig}>
+            <LearnPage data={data} state={{}} />
+          </I18nextProvider>
+        </GrowthBookProvider>
+      </Provider>
+    );
+
+    expect(screen.getByRole('progressbar')).toHaveAttribute(
+      'aria-valuenow',
+      '50'
+    );
+    expect(
+      screen.getByRole('link', {
+        name: translations.buttons['resume-progress']
+      })
+    ).toHaveAttribute('href', resumeUrl);
   });
 });
