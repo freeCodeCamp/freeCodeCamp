@@ -57,8 +57,8 @@ vi.mock('../../../config/growthbook-features-default.json', () => ({
 }));
 
 let currentInitImpl: () =>
-  | Promise<{ success: boolean; source?: string }>
-  | Promise<never> = () => Promise.resolve({ success: true });
+  Promise<{ success: boolean; source?: string }> | Promise<never> = () =>
+  Promise.resolve({ success: true });
 
 const mockInit = vi.fn(() => currentInitImpl());
 const mockSetPayload = vi.fn((_arg: Record<string, unknown>) =>

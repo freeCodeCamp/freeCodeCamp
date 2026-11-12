@@ -27,8 +27,7 @@ import {
 } from '../../src/templates/Challenges/components/scene/scene-assets.js';
 
 export type CurriculumIntros =
-  | BlockBasedCurriculumIntros
-  | ChapterBasedCurriculumIntros;
+  BlockBasedCurriculumIntros | ChapterBasedCurriculumIntros;
 
 type BlockBasedCurriculumIntros = {
   [keyValue in SuperBlocks]: {
@@ -69,8 +68,7 @@ interface Block<T> {
 }
 
 export type GeneratedCurriculumProps =
-  | GeneratedBlockBasedCurriculumProps
-  | GeneratedChapterBasedCurriculumProps;
+  GeneratedBlockBasedCurriculumProps | GeneratedChapterBasedCurriculumProps;
 
 export interface GeneratedBlockBasedCurriculumProps {
   intro: string[];

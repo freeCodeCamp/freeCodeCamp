@@ -23,12 +23,7 @@ function getPythonWorker(): Worker {
 type PythonWorkerEvent = {
   data: {
     type:
-      | 'print'
-      | 'input'
-      | 'contentLoaded'
-      | 'reset'
-      | 'stopped'
-      | 'is-alive';
+      'print' | 'input' | 'contentLoaded' | 'reset' | 'stopped' | 'is-alive';
     text?: string;
   };
 };
