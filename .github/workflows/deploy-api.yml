@@ -333,8 +333,37 @@ jobs:
             fi
             docker stack config -c stack-api.yml > \$CONFIG_OUTPUT
 
+            echo -e '\nLOG:Recording service versions before deploy...'
+            declare -A BEFORE=()
+            for svc in \$(docker stack services --format '{{.Name}}' $STACK_NAME); do
+              BEFORE[\$svc]=\$(docker service inspect --format '{{.Version.Index}}' \"\$svc\")
+            done
+
             echo -e '\nLOG:Deploying stack...'
             docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false $STACK_NAME
+
+            echo -e '\nLOG:Checking service update state...'
+            BAD=0
+            SVCS_AFTER=\$(docker stack services --format '{{.Name}}' $STACK_NAME)
+            if [[ -z \"\$SVCS_AFTER\" ]]; then echo 'ERROR: no stack services after deploy'; exit 1; fi
+            for svc in \$SVCS_AFTER; do
+              after=\$(docker service inspect --format '{{.Version.Index}}' \"\$svc\")
+              state=\$(docker service inspect --format '{{if .UpdateStatus}}{{.UpdateStatus.State}}{{end}}' \"\$svc\")
+              if [[ \"\${BEFORE[\$svc]:-}\" == \"\$after\" ]]; then
+                echo \"\$svc: not changed by this deploy (version \$after, state \${state:-none}), skipped\"
+                continue
+              fi
+              echo \"\$svc: update state \${state:-none}\"
+              case \"\$state\" in
+                rollback_*|paused)
+                  echo \"ERROR: \$svc ended in update state \$state\"
+                  BAD=1
+                  ;;
+              esac
+            done
+            if [[ \$BAD -ne 0 ]]; then
+              exit 1
+            fi
 
             echo -e '\nLOG:Finished deployment.'
           "
