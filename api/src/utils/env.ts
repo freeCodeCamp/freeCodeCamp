@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
 import { parseBool, parseInt } from './validation.js';
+import { readClickHouseConfiguration } from './clickhouse-config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
@@ -195,6 +196,7 @@ export const MONGOHQ_URL =
         process.env.VITEST_WORKER_ID
       )
     : process.env.MONGOHQ_URL;
+export const CLICKHOUSE_CONFIG = readClickHouseConfiguration(process.env);
 
 export const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
