@@ -1224,8 +1224,8 @@ importers:
         specifier: workspace:*
         version: link:../../../packages/oxlint-config
       '@typescript/vfs':
-        specifier: 1.6.5
-        version: 1.6.5(supports-color@8.1.1)(typescript@5.9.3)
+        specifier: 1.6.6
+        version: 1.6.6(supports-color@8.1.1)(typescript@5.9.3)
       babel-loader:
         specifier: 8.4.1
         version: 8.4.1(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.112.2)
@@ -4797,6 +4797,11 @@ packages:
 
   '@typescript/vfs@1.6.5':
     resolution: {integrity: sha512-gobLHQLmvQGJInFk31NvgMd1uYzRXsd8qgnOssyLD055R2QPnw1ubRbBQ4+T+5qC7IQVuYXdvNDE2G7tMDVHgw==}
+    peerDependencies:
+      typescript: '*'
+
+  '@typescript/vfs@1.6.6':
+    resolution: {integrity: sha512-gXw0+tpchiQUjTcbnNIPnyLFIhbwJ7M1VaxLQ1vXhjQxtTBK3sdDLY1ih0jxCu1I5K3V0dDxq8CkVZtIMspC3A==}
     peerDependencies:
       typescript: '*'
 
@@ -16176,17 +16181,17 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@typescript/vfs@1.6.5(supports-color@8.1.1)(typescript@5.9.3)':
-    dependencies:
-      debug: 4.4.3(supports-color@8.1.1)
-      typescript: 5.9.3
-    transitivePeerDependencies:
-      - supports-color
-
   '@typescript/vfs@1.6.5(supports-color@8.1.1)(typescript@7.0.2)':
     dependencies:
       debug: 4.4.3(supports-color@8.1.1)
       typescript: 7.0.2
+    transitivePeerDependencies:
+      - supports-color
+
+  '@typescript/vfs@1.6.6(supports-color@8.1.1)(typescript@5.9.3)':
+    dependencies:
+      debug: 4.4.3(supports-color@8.1.1)
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
