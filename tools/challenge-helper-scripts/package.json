@@ -37,7 +37,7 @@
     "@inquirer/prompts": "^7.8.3",
     "@total-typescript/ts-reset": "^0.6.1",
     "@vitest/ui": "4.1.12",
-    "bson": "^7.2.0",
+    "bson": "^7.3.3",
     "gray-matter": "4.0.3",
     "prettier": "3.9.10",
     "typescript": "7.0.2",
