@@ -36,6 +36,7 @@
           "blocks": [
             "lecture-working-with-lists",
             "lecture-working-with-tuples",
+            "workshop-version-checker",
             "lecture-working-with-loops-python",
             "lecture-understanding-list-comprehensions-and-lambda-functions",
             "workshop-pin-extractor",

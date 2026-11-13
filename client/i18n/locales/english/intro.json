@@ -10611,6 +10611,12 @@
         "title": "Working with Tuples",
         "intro": ["Learn about working with tuples in these lessons."]
       },
+      "workshop-version-checker": {
+        "title": "Build a Version Checker",
+        "intro": [
+          "In this workshop, you'll practice working with tuples by building a program that checks if an app needs an update."
+        ]
+      },
       "lecture-working-with-loops-python": {
         "title": "Working with Loops",
         "intro": ["Learn about working with loops in these lessons."]
