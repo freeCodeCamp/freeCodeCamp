@@ -106,7 +106,7 @@ jobs:
         working-directory: ${{ runner.temp }}/digests
         env:
           SHA: ${{ github.sha }}
-          LATEST: ${{ github.ref_name == 'main' }}
+          LATEST: ${{ github.ref == 'refs/heads/main' }}
         run: |
           tags=(-t "$IMAGE:$SHA")
           if [ "$LATEST" = 'true' ]; then
