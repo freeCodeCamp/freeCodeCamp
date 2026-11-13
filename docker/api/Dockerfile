@@ -1,4 +1,4 @@
-FROM node:26-bookworm AS builder
+FROM node:26.13.1-bookworm@sha256:b7087bc4d973034b30854b378ba107f9fab622b47514cb7e2592e41b8bab8d49 AS builder
 RUN apt-get update && apt-get install -y jq
 # global installs need root permissions, so have to happen before we switch to
 # the node user
@@ -38,7 +38,7 @@ RUN pnpm turbo -F=@freecodecamp/api build
 # TODO(o11y): re-enable in the source-maps follow-up PR
 # RUN sentry-cli sourcemaps inject api/dist
 
-FROM node:26-bookworm AS deps
+FROM node:26.13.1-bookworm@sha256:b7087bc4d973034b30854b378ba107f9fab622b47514cb7e2592e41b8bab8d49 AS deps
 RUN apt-get update && apt-get install -y jq
 
 WORKDIR /home/node/build
@@ -55,7 +55,7 @@ RUN pnpm config set --location=project dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=api -F=packages/shared --frozen-lockfile
 RUN cd api && pnpm dlx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
-FROM node:26-bookworm
+FROM node:26.13.1-bookworm@sha256:b7087bc4d973034b30854b378ba107f9fab622b47514cb7e2592e41b8bab8d49
 USER node
 WORKDIR /home/node/fcc
 COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./

@@ -11,23 +11,36 @@ on:
       - 'docker/devcontainer/**'
       - '.github/workflows/docker-ghcr.yml'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: read
   packages: write
 
+env:
+  IMAGE: ghcr.io/freecodecamp/devcontainer
+
 jobs:
-  build-and-push:
-    name: Build and Push Images
-    runs-on: ubuntu-26.04
+  build:
+    name: Build (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-26.04
+            cache-scope: buildkit
+          - arch: arm64
+            runner: ubuntu-26.04-arm
+            cache-scope: devcontainer-arm64
 
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           submodules: 'recursive'
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@99012661954931238ded8c8b007157a8430204e1 # v4
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4
@@ -39,12 +52,69 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push images
+      - name: Build and push by digest
+        id: bake
         uses: docker/bake-action@018cb6412ab401ebaa809aa5f85966b74628600f # v7
         with:
           files: docker/devcontainer/docker-bake.hcl
           targets: devcontainer
-          push: true
+          set: |
+            devcontainer.platform=linux/${{ matrix.arch }}
+            devcontainer.tags=
+            devcontainer.output=type=image,name=${{ env.IMAGE }},push-by-digest=true,name-canonical=true,push=true
+            devcontainer.cache-from=type=gha,scope=${{ matrix.cache-scope }}
+            devcontainer.cache-to=type=gha,mode=max,scope=${{ matrix.cache-scope }}
+
+      - name: Save the digest
         env:
-          TAG: ${{ github.sha }}
-          TAG_LATEST: ${{ github.ref_name == 'main' }}
+          DIGEST: ${{ fromJSON(steps.bake.outputs.metadata).devcontainer['containerimage.digest'] }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/digests"
+          touch "$RUNNER_TEMP/digests/${DIGEST#sha256:}"
+
+      - name: Upload the digest
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: digest-${{ matrix.arch }}
+          path: ${{ runner.temp }}/digests/*
+          if-no-files-found: error
+
+  merge:
+    name: Push the multi-arch tags
+    needs: build
+    runs-on: ubuntu-26.04
+
+    steps:
+      - name: Download the digests
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          path: ${{ runner.temp }}/digests
+          pattern: digest-*
+          merge-multiple: true
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create the tags
+        working-directory: ${{ runner.temp }}/digests
+        env:
+          SHA: ${{ github.sha }}
+          LATEST: ${{ github.ref_name == 'main' }}
+        run: |
+          tags=(-t "$IMAGE:$SHA")
+          if [ "$LATEST" = 'true' ]; then
+            tags+=(-t "$IMAGE:latest")
+          fi
+          sources=()
+          for digest in *; do
+            sources+=("$IMAGE@sha256:$digest")
+          done
+          docker buildx imagetools create "${tags[@]}" "${sources[@]}"
+          docker buildx imagetools inspect "$IMAGE:$SHA"
