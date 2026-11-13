@@ -123,5 +123,4 @@ export function syncMapErr<T>(fn: () => T): Result<T> {
 }
 
 export type Result<T> =
-  | { hasError: false; data: T }
-  | { hasError: true; error: unknown };
+  { hasError: false; data: T } | { hasError: true; error: unknown };

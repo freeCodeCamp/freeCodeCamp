@@ -172,8 +172,7 @@ const createHeader = (id = mainPreviewId) =>
 `;
 
 type TestResult =
-  | { pass: boolean }
-  | { err: { message: string; stack?: string } };
+  { pass: boolean } | { err: { message: string; stack?: string } };
 
 function getContentDocument<T extends Document = FrameDocument>(
   document: Document,

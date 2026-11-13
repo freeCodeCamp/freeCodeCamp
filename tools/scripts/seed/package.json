@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=24",
+    "node": ">=26",
     "pnpm": ">=12"
   },
   "scripts": {
@@ -26,6 +26,6 @@
     "debug": "4.4.3",
     "dotenv": "16.6.1",
     "lodash": "4.18.1",
-    "mongodb": "6.21.0"
+    "mongodb": "6.22.0"
   }
 }

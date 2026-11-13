@@ -18,9 +18,10 @@ type LanguagePair = [string, string];
 const store = createStore();
 
 // Create a nested array for languages
-const languages = Object.keys(i18nextCodes).map(
-  (key): LanguagePair => [i18nextCodes[key as Language], key]
-);
+const languages = Object.keys(i18nextCodes).map((key): LanguagePair => [
+  i18nextCodes[key as Language],
+  key
+]);
 
 describe('AppMountNotifier', () => {
   const setup = (lang: string) => {
