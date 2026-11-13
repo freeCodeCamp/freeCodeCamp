@@ -1,0 +1,83 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-concert-program-planner",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "6af5ed01b222b65fbd1f3e8d",
+      "title": "Step 1"
+    },
+    {
+      "id": "6af5ed02373bd296105c7bbf",
+      "title": "Step 2"
+    },
+    {
+      "id": "6af5ed038fdec5839f483182",
+      "title": "Step 3"
+    },
+    {
+      "id": "6af5ed0412fa6eb264bf3da5",
+      "title": "Step 4"
+    },
+    {
+      "id": "6af5ed0588b6497dfddeeeb8",
+      "title": "Step 5"
+    },
+    {
+      "id": "6af5ed06d60f7325800643ee",
+      "title": "Step 6"
+    },
+    {
+      "id": "6af5ed07ca44b6bf65eea4ef",
+      "title": "Step 7"
+    },
+    {
+      "id": "6af5ed086736a7bfb0bc31c0",
+      "title": "Step 8"
+    },
+    {
+      "id": "6af5ed09698ca1dd27d81b1a",
+      "title": "Step 9"
+    },
+    {
+      "id": "6af5ed0a4cff454a5badb566",
+      "title": "Step 10"
+    },
+    {
+      "id": "6af6c883b42eb6700099ed72",
+      "title": "Step 11"
+    },
+    {
+      "id": "6af5ed0beae849400fb2f9fb",
+      "title": "Step 12"
+    },
+    {
+      "id": "6af5ed0c38c3cbe193109fd7",
+      "title": "Step 13"
+    },
+    {
+      "id": "6af5ed0deabc7b8ea909f1f6",
+      "title": "Step 14"
+    },
+    {
+      "id": "6af5ed0ea9a8c291464cf7f7",
+      "title": "Step 15"
+    },
+    {
+      "id": "6af5ed0f7b9a01a04dd9b34b",
+      "title": "Step 16"
+    },
+    {
+      "id": "6af5ed10c490e24c96595398",
+      "title": "Step 17"
+    },
+    {
+      "id": "6af5ed126356b1485a1e47aa",
+      "title": "Step 18"
+    }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
