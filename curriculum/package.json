@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=24",
+    "node": ">=26",
     "pnpm": ">=12"
   },
   "exports": {
@@ -56,8 +56,8 @@
     "test-content": "pnpm test-gen && pnpm test --project test"
   },
   "devDependencies": {
-    "@babel/core": "7.29.7",
-    "@babel/register": "7.29.7",
+    "@babel/core": "7.29.13",
+    "@babel/register": "7.29.13",
     "@freecodecamp/browser-scripts": "workspace:*",
     "@freecodecamp/challenge-builder": "workspace:*",
     "@freecodecamp/challenge-linter": "workspace:*",
@@ -70,7 +70,7 @@
     "@typescript/vfs-1.6.1": "npm:@typescript/vfs@1.6.6",
     "@vitest/ui": "4.1.12",
     "eslint": "9.39.5",
-    "glob": "13.0.6",
+    "glob": "13.0.7",
     "joi": "17.13.9",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.3.2",
@@ -87,6 +87,6 @@
     "vitest": "4.1.12"
   },
   "dependencies": {
-    "@types/node": "24.12.2"
+    "@types/node": "26.6.6"
   }
 }

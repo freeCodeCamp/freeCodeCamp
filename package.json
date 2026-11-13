@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=24",
+    "node": ">=26",
     "pnpm": ">=12"
   },
   "repository": {
@@ -78,11 +78,11 @@
   "devDependencies": {
     "@freecodecamp/oxlint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
-    "@playwright/test": "1.64.1",
+    "@playwright/test": "1.65.0",
     "@testing-library/dom": "10.4.2",
     "@testing-library/jest-dom": "6.9.1",
     "@types/lodash": "4.17.24",
-    "@types/node": "^24.10.8",
+    "@types/node": "26.6.6",
     "debug": "4.4.3",
     "husky": "9.1.7",
     "identity-obj-proxy": "^3.0.0",
@@ -91,8 +91,8 @@
     "lodash": "4.18.1",
     "npm-run-all2": "5.0.2",
     "oxlint": "1.91.0",
-    "oxlint-tsgolint": "7.0.2005",
-    "prettier": "3.8.2",
+    "oxlint-tsgolint": "7.0.2006",
+    "prettier": "3.9.10",
     "stylelint": "16.26.1",
     "tsx": "4.23.15",
     "turbo": "2.11.7",
@@ -100,5 +100,5 @@
     "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@12.15.0"
+  "packageManager": "pnpm@12.18.0"
 }

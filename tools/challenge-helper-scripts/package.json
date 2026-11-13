@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=24",
+    "node": ">=26",
     "pnpm": ">=12"
   },
   "repository": {
@@ -37,9 +37,9 @@
     "@inquirer/prompts": "^7.8.3",
     "@total-typescript/ts-reset": "^0.6.1",
     "@vitest/ui": "4.1.12",
-    "bson": "^7.2.0",
+    "bson": "^7.3.3",
     "gray-matter": "4.0.3",
-    "prettier": "3.8.2",
+    "prettier": "3.9.10",
     "typescript": "7.0.2",
     "vitest": "4.1.12"
   }

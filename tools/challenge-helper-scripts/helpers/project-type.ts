@@ -3,12 +3,7 @@ import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { getBaseMeta, type Meta } from './get-base-meta.js';
 
 export type ProjectMetaType =
-  | 'Lab'
-  | 'Workshop'
-  | 'Lecture'
-  | 'Review'
-  | 'Quiz'
-  | 'FullStack';
+  'Lab' | 'Workshop' | 'Lecture' | 'Review' | 'Quiz' | 'FullStack';
 
 export const labChallengeTypes = [
   challengeTypes.lab,

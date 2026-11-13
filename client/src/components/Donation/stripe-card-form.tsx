@@ -61,8 +61,7 @@ export default function StripeCardForm({
 
   function handleInputChange(
     event:
-      | StripeCardNumberElementChangeEvent
-      | StripeCardExpiryElementChangeEvent
+      StripeCardNumberElementChangeEvent | StripeCardExpiryElementChangeEvent
   ) {
     const { elementType, error, complete } = event;
     setPaymentValidity(
