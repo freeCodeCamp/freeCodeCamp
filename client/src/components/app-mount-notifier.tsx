@@ -12,7 +12,10 @@ import {
   userSelector
 } from '../redux/selectors';
 import { postActivityStreak } from '../utils/ajax';
-import { subscribeToMeaningfulActivity } from '../utils/activity';
+import {
+  clearClientActivityQueue,
+  subscribeToMeaningfulActivity
+} from '../utils/activity';
 
 interface AppMountNotifierProps {
   children: React.ReactNode;
@@ -20,6 +23,7 @@ interface AppMountNotifierProps {
   activityStreak?: ActivityStreak;
   isSignedIn: boolean;
   userFetchComplete: boolean;
+  userId?: string;
   updateActivityStreak: (activityStreak: ActivityStreak) => void;
 }
 
@@ -38,7 +42,7 @@ const ONE_DAY = 24 * 60 * 60 * 1000;
 
 const mapStateToProps = (state: unknown) => {
   const user = userSelector(state) as
-    | { activityStreak?: ActivityStreak }
+    | { id?: string; activityStreak?: ActivityStreak }
     | undefined;
   const userFetchState = userFetchStateSelector(state) as {
     complete: boolean;
@@ -46,6 +50,7 @@ const mapStateToProps = (state: unknown) => {
   return {
     activityStreak: user?.activityStreak,
     isSignedIn: isSignedInSelector(state),
+    userId: user?.id,
     userFetchComplete: userFetchState.complete
   };
 };
@@ -59,12 +64,22 @@ export const AppMountNotifier = ({
   activityStreak,
   isSignedIn,
   userFetchComplete,
+  userId,
   updateActivityStreak
 }: AppMountNotifierProps): JSX.Element => {
   const timerState = useRef<StoredActivityTimer>();
   const qualificationInFlight = useRef(false);
   const isCounting = useRef(false);
   const activityStreakRef = useRef(activityStreak);
+
+  useEffect(() => {
+    clearClientActivityQueue();
+    window.addEventListener('offline', clearClientActivityQueue);
+    return () => {
+      window.removeEventListener('offline', clearClientActivityQueue);
+      clearClientActivityQueue();
+    };
+  }, [isSignedIn, userId]);
 
   useEffect(() => {
     activityStreakRef.current = activityStreak;

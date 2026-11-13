@@ -90,6 +90,73 @@ describe('current challenge activity', () => {
     expect(signalMeaningfulActivity).not.toHaveBeenCalled();
   });
 
+  test('does not wait for delivery and updates resume only after acknowledgement', async () => {
+    let finishRecording;
+    vi.mocked(recordClientActivity).mockReturnValueOnce(
+      new Promise(resolve => {
+        finishRecording = resolve;
+      })
+    );
+    const dispatched = [];
+    const task = runSaga(
+      {
+        getState: () => createState(),
+        dispatch: action => dispatched.push(action)
+      },
+      updateActivityOnSubmitSaga,
+      {
+        payload: {
+          challengeId: 'challenge-id',
+          nextChallengePath: '/learn/next'
+        }
+      }
+    );
+
+    try {
+      await expect(task.toPromise()).resolves.toBeUndefined();
+      expect(dispatched).toHaveLength(0);
+    } finally {
+      finishRecording({ recorded: true });
+    }
+    await Promise.resolve();
+    expect(dispatched).toContainEqual(updateResumeUrl('/learn/next'));
+  });
+
+  test('enqueues resume tracking without waiting for module tracking', async () => {
+    let finishModule;
+    vi.mocked(recordClientActivity).mockReturnValueOnce(
+      new Promise(resolve => {
+        finishModule = resolve;
+      })
+    );
+    try {
+      await runSaga(
+        { getState: () => createState(), dispatch: () => {} },
+        updateActivityOnSubmitSaga,
+        {
+          payload: {
+            challengeId: 'challenge-id',
+            nextChallengePath: '/learn/next',
+            moduleCompleted: true
+          }
+        }
+      ).toPromise();
+
+      expect(recordClientActivity).toHaveBeenNthCalledWith(
+        1,
+        'module_completed',
+        { subjectId: 'challenge-id' }
+      );
+      expect(recordClientActivity).toHaveBeenNthCalledWith(
+        2,
+        'challenge_submit',
+        { subjectId: 'challenge-id', url: '/learn/next' }
+      );
+    } finally {
+      finishModule({ recorded: true });
+    }
+  });
+
   test('does not fail completion or update state when recording fails', async () => {
     vi.mocked(recordClientActivity).mockRejectedValueOnce(
       new Error('Activity API unavailable')

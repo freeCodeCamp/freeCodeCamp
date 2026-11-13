@@ -1,4 +1,11 @@
-import { call, put, select, takeEvery, throttle } from 'redux-saga/effects';
+import {
+  call,
+  put,
+  select,
+  spawn,
+  takeEvery,
+  throttle
+} from 'redux-saga/effects';
 import store from 'store';
 
 import { randomCompliment } from '../../../utils/get-words';
@@ -41,7 +48,7 @@ function* recordChallengeWorkSaga() {
   const isSignedIn = yield select(isSignedInSelector);
   if (!isSignedIn) return;
   const { id } = yield select(challengeMetaSelector);
-  yield call(recordClientActivity, 'challenge_work', { subjectId: id });
+  yield spawn(recordClientActivity, 'challenge_work', { subjectId: id });
 }
 
 export function* updateActivityOnSubmitSaga({ payload = {} }) {
@@ -52,13 +59,17 @@ export function* updateActivityOnSubmitSaga({ payload = {} }) {
   yield call(signalMeaningfulActivity);
 
   if (moduleCompleted) {
-    yield call(recordClientActivity, 'module_completed', {
+    yield spawn(recordClientActivity, 'module_completed', {
       subjectId: challengeId
     });
   }
 
   if (!nextChallengePath) return;
 
+  yield spawn(recordResumeActivity, challengeId, nextChallengePath);
+}
+
+function* recordResumeActivity(challengeId, nextChallengePath) {
   try {
     const result = yield call(recordClientActivity, 'challenge_submit', {
       subjectId: challengeId,

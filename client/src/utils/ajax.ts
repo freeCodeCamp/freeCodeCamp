@@ -98,7 +98,8 @@ function deleteRequest<T = void>(
 async function request<T>(
   method: 'POST' | 'PUT' | 'DELETE',
   path: string,
-  body: unknown
+  body: unknown,
+  signal?: AbortSignal
 ): Promise<ResponseWithData<T>> {
   const options: RequestInit = {
     ...defaultOptions,
@@ -107,7 +108,8 @@ async function request<T>(
       ...getRequestHeaders(),
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
+    ...(signal ? { signal } : {})
   };
 
   const response = await fetch(`${base}${path}`, options);
@@ -403,18 +405,21 @@ export function postSubmitSurvey(body: {
   return post('/user/submit-survey', body);
 }
 
-export function postActivity(body: {
-  eventId: string;
-  eventType:
-    | 'challenge_work'
-    | 'test_run'
-    | 'daily_challenge_attempted'
-    | 'module_completed'
-    | 'challenge_submit';
-  subjectId?: string;
-  url?: string;
-}): Promise<ResponseWithData<void>> {
-  return post('/activity', body);
+export function postActivity(
+  body: {
+    eventId: string;
+    eventType:
+      | 'challenge_work'
+      | 'test_run'
+      | 'daily_challenge_attempted'
+      | 'module_completed'
+      | 'challenge_submit';
+    subjectId?: string;
+    url?: string;
+  },
+  signal?: AbortSignal
+): Promise<ResponseWithData<void>> {
+  return request('POST', '/activity', body, signal);
 }
 
 export function postActivityStreak(): Promise<

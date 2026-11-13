@@ -18,31 +18,118 @@ const meaningfulClientActivityEventTypes = new Set<ClientActivityEventType>([
 ]);
 const meaningfulActivityListeners = new Set<MeaningfulActivityListener>();
 
+type PendingActivity = {
+  body: Parameters<typeof postActivity>[0];
+  resolve: (result: ClientActivityResult | undefined) => void;
+};
+
+type InFlightActivity = {
+  activity: PendingActivity;
+  controller: AbortController;
+  timeout: ReturnType<typeof setTimeout>;
+};
+
+const MAX_PENDING_ACTIVITIES = 100;
+const REQUEST_TIMEOUT_MS = 10_000;
+const pendingActivities: PendingActivity[] = [];
+let inFlightActivity: InFlightActivity | undefined;
+
 /**
- * Records a client activity event while online. Events are neither suppressed
- * nor queued, so each successful call represents one raw activity fact.
+ * Queues an online activity in memory, starting delivery immediately when idle.
+ * The returned promise acknowledges delivery, not just admission to the queue.
+ * Callers must keep this work detached from camper-facing challenge workflows.
  */
-export async function recordClientActivity(
+export function recordClientActivity(
   eventType: ClientActivityEventType,
   details: { subjectId?: string; url?: string } = {}
 ): Promise<ClientActivityResult | undefined> {
-  if (typeof navigator === 'undefined' || !navigator.onLine) return;
+  if (typeof navigator === 'undefined' || !navigator.onLine) {
+    clearClientActivityQueue();
+    return Promise.resolve(undefined);
+  }
 
-  try {
-    const { response } = await postActivity({
-      eventId: crypto.randomUUID(),
-      eventType,
-      ...details
+  // Drop new events rather than grow memory indefinitely during an outage.
+  if (pendingActivities.length >= MAX_PENDING_ACTIVITIES) {
+    return Promise.resolve(undefined);
+  }
+
+  return new Promise(resolve => {
+    pendingActivities.push({
+      body: { eventId: crypto.randomUUID(), eventType, ...details },
+      resolve
     });
-    if (!response.ok) return { recorded: false };
+    processActivityQueue();
+  });
+}
 
-    if (meaningfulClientActivityEventTypes.has(eventType)) {
-      signalMeaningfulActivity();
-    }
-    return { recorded: true };
-  } catch {
+/** Discards unsent events and cancels delivery on disconnect or account change. */
+export function clearClientActivityQueue(): void {
+  for (const activity of pendingActivities.splice(0))
+    activity.resolve(undefined);
+
+  const request = inFlightActivity;
+  if (!request) return;
+  inFlightActivity = undefined;
+  clearTimeout(request.timeout);
+  request.controller.abort();
+  request.activity.resolve(undefined);
+}
+
+function processActivityQueue(): void {
+  if (inFlightActivity) return;
+  if (typeof navigator === 'undefined' || !navigator.onLine) {
+    clearClientActivityQueue();
     return;
   }
+
+  const activity = pendingActivities.shift();
+  if (!activity) return;
+
+  const request: InFlightActivity = {
+    activity,
+    controller: new AbortController(),
+    timeout: setTimeout(() => {
+      request.controller.abort();
+      finishActivity(request);
+    }, REQUEST_TIMEOUT_MS)
+  };
+  inFlightActivity = request;
+  void deliverActivity(request);
+}
+
+async function deliverActivity(request: InFlightActivity): Promise<void> {
+  let result: ClientActivityResult | undefined;
+  try {
+    const { response } = await postActivity(
+      request.activity.body,
+      request.controller.signal
+    );
+    // An old account's response must not update the new account's timer/resume.
+    if (inFlightActivity !== request) return;
+    result = { recorded: response.ok };
+
+    if (
+      response.ok &&
+      meaningfulClientActivityEventTypes.has(request.activity.body.eventType)
+    ) {
+      signalMeaningfulActivity();
+    }
+  } catch {
+    // Best effort only: failed events are discarded, never retried or persisted.
+  } finally {
+    finishActivity(request, result);
+  }
+}
+
+function finishActivity(
+  request: InFlightActivity,
+  result?: ClientActivityResult
+): void {
+  if (inFlightActivity !== request) return;
+  clearTimeout(request.timeout);
+  inFlightActivity = undefined;
+  request.activity.resolve(result);
+  processActivityQueue();
 }
 
 export function signalMeaningfulActivity(): void {

@@ -8,8 +8,11 @@ import { i18nextCodes } from '@freecodecamp/shared/config/i18n';
 import i18nTestConfig from '../../i18n/config-for-tests';
 import { createStore } from '../redux/create-store';
 import type { ActivityStreak } from '../redux/prop-types';
-import { postActivityStreak } from '../utils/ajax';
-import { signalMeaningfulActivity } from '../utils/activity';
+import { postActivity, postActivityStreak } from '../utils/ajax';
+import {
+  recordClientActivity,
+  signalMeaningfulActivity
+} from '../utils/activity';
 import AppMountNotifier, {
   AppMountNotifier as UnconnectedAppMountNotifier
 } from './app-mount-notifier';
@@ -18,7 +21,7 @@ vi.unmock('react-i18next');
 vi.mock('../utils/get-words');
 vi.mock('../utils/ajax', async importOriginal => {
   const actual = await importOriginal<typeof import('../utils/ajax')>();
-  return { ...actual, postActivityStreak: vi.fn() };
+  return { ...actual, postActivity: vi.fn(), postActivityStreak: vi.fn() };
 });
 
 type Language = keyof typeof i18nextCodes;
@@ -66,32 +69,37 @@ describe('activity streak timer', () => {
   const appMount = vi.fn();
   const updateActivityStreak = vi.fn();
 
-  const renderTimer = (
+  const timer = (
     activityStreak: ActivityStreak = {
       current: 0,
       longest: 0,
       activeSession: false
     },
     isSignedIn = true,
-    userFetchComplete = true
-  ) =>
-    render(
-      <I18nextProvider i18n={i18nTestConfig}>
-        <UnconnectedAppMountNotifier
-          appMount={appMount}
-          activityStreak={activityStreak}
-          isSignedIn={isSignedIn}
-          updateActivityStreak={updateActivityStreak}
-          userFetchComplete={userFetchComplete}
-        >
-          <p>App content</p>
-        </UnconnectedAppMountNotifier>
-      </I18nextProvider>
-    );
+    userFetchComplete = true,
+    userId = 'user-id'
+  ) => (
+    <I18nextProvider i18n={i18nTestConfig}>
+      <UnconnectedAppMountNotifier
+        appMount={appMount}
+        activityStreak={activityStreak}
+        isSignedIn={isSignedIn}
+        updateActivityStreak={updateActivityStreak}
+        userFetchComplete={userFetchComplete}
+        userId={userId}
+      >
+        <p>App content</p>
+      </UnconnectedAppMountNotifier>
+    </I18nextProvider>
+  );
+
+  const renderTimer = (...args: Parameters<typeof timer>) =>
+    render(timer(...args));
 
   beforeEach(() => {
     window.sessionStorage.clear();
     vi.useFakeTimers();
+    vi.mocked(postActivity).mockReset();
     vi.mocked(postActivityStreak).mockReset();
     vi.mocked(postActivityStreak).mockResolvedValue({
       response: { ok: true } as Response,
@@ -119,6 +127,40 @@ describe('activity streak timer', () => {
   });
 
   afterEach(() => vi.useRealTimers());
+
+  test.each(['disconnect', 'signout', 'account change', 'unmount'])(
+    'discards queued analytics on %s',
+    async change => {
+      const view = renderTimer();
+      vi.mocked(postActivity).mockReturnValueOnce(new Promise(() => {}));
+      const first = recordClientActivity('test_run');
+      const pending = recordClientActivity('challenge_work');
+      const signal = vi.mocked(postActivity).mock.calls[0]?.[1];
+
+      act(() => {
+        if (change === 'disconnect') {
+          Object.defineProperty(navigator, 'onLine', {
+            configurable: true,
+            value: false
+          });
+          window.dispatchEvent(new Event('offline'));
+        } else if (change === 'signout') {
+          view.rerender(timer(undefined, false));
+        } else if (change === 'account change') {
+          view.rerender(timer(undefined, true, true, 'other-user'));
+        } else {
+          view.unmount();
+        }
+      });
+
+      await expect(Promise.all([first, pending])).resolves.toEqual([
+        undefined,
+        undefined
+      ]);
+      expect(signal?.aborted).toBe(true);
+      expect(postActivity).toHaveBeenCalledOnce();
+    }
+  );
 
   test('qualifies after five visible, online minutes', async () => {
     renderTimer();
