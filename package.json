@@ -90,7 +90,7 @@
     "lint-staged": "^16.4.0",
     "lodash": "4.18.1",
     "npm-run-all2": "5.0.2",
-    "oxlint": "1.91.0",
+    "oxlint": "1.92.0",
     "oxlint-tsgolint": "7.0.2006",
     "prettier": "3.9.10",
     "stylelint": "16.26.1",
