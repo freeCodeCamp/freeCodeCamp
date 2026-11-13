@@ -23,6 +23,26 @@ permissions:
   contents: read
 
 jobs:
+  build-arm64:
+    name: Build arm64 image
+    runs-on: ubuntu-26.04-arm
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4
+
+      - name: Build the devcontainer image from this branch
+        uses: docker/bake-action@018cb6412ab401ebaa809aa5f85966b74628600f # v7
+        with:
+          files: docker/devcontainer/docker-bake.hcl
+          targets: local-devcontainer
+          set: |
+            local-devcontainer.cache-from=type=gha,scope=devcontainer-arm64
+            local-devcontainer.output=type=cacheonly
+
   validate:
     name: Validate
     runs-on: ubuntu-26.04
