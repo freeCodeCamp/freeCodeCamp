@@ -271,7 +271,9 @@
 
   .qr-code,
   .ribbon {
-    display: none;
+    display: block;
+    position: static;
+    margin: 20px auto;
   }
 }
 
