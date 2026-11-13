@@ -49,7 +49,6 @@
           "blocks": [
             "lecture-working-with-dictionaries-and-sets",
             "lecture-working-with-modules",
-            "lecture-copying-nested-collections",
             "lecture-working-with-regular-expressions-python",
             "workshop-medical-data-validator",
             "review-dictionaries-and-sets",
