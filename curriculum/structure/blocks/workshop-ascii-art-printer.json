@@ -13,7 +13,17 @@
     { "id": "6aeb6e9f1e28db96abd46541", "title": "Step 7" },
     { "id": "6aeb6e9f1e28db96abd46542", "title": "Step 8" },
     { "id": "6aeb6e9f1e28db96abd46543", "title": "Step 9" },
-    { "id": "6aeb6e9f1e28db96abd46544", "title": "Step 10" }
+    { "id": "6aeb6e9f1e28db96abd46544", "title": "Step 10" },
+    { "id": "6af73e8f953be096d743e359", "title": "Step 11" },
+    { "id": "6af73e8f953be096d743e35a", "title": "Step 12" },
+    { "id": "6af73e8f953be096d743e35b", "title": "Step 13" },
+    { "id": "6af73e8f953be096d743e35c", "title": "Step 14" },
+    { "id": "6af73e8f953be096d743e35d", "title": "Step 15" },
+    { "id": "6af73e8f953be096d743e35e", "title": "Step 16" },
+    { "id": "6af73e8f953be096d743e35f", "title": "Step 17" },
+    { "id": "6af73e8f953be096d743e360", "title": "Step 18" },
+    { "id": "6af73e8f953be096d743e361", "title": "Step 19" },
+    { "id": "6af73e8f953be096d743e362", "title": "Step 20" }
   ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
