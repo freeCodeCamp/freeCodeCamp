@@ -49,7 +49,6 @@ export type UpdateReplyType<Schema extends FastifySchema> = FastifyReply<
   TypeBoxTypeProvider
 >;
 
-/* eslint-disable jsdoc/require-description-complete-sentence */
 /**
  * Wrapper around a promise to catch errors and return them as part of the promise.
  *
@@ -124,5 +123,4 @@ export function syncMapErr<T>(fn: () => T): Result<T> {
 }
 
 export type Result<T> =
-  | { hasError: false; data: T }
-  | { hasError: true; error: unknown };
+  { hasError: false; data: T } | { hasError: true; error: unknown };

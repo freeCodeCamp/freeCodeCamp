@@ -178,9 +178,13 @@ jobs:
             return 1
           }
 
-          echo -e "\nLOG:Validating connection to $TS_MACHINE_NAME..."
+          if [[ -z "$TS_MACHINE_NAME" ]]; then
+            echo "::error::TS_MACHINE_NAME is not set"
+            exit 1
+          fi
+          echo -e "\nLOG:Validating connection to the target..."
           if ! validate_connection "$TS_MACHINE_NAME"; then
-            echo "Error: Failed to establish reliable connection to $TS_MACHINE_NAME"
+            echo "::error::No connection to TS_MACHINE_NAME"
             exit 1
           fi
 
@@ -223,7 +227,7 @@ jobs:
           REMOTE_SCRIPT="
             set -e
             trap 'rm -f .env age.key secrets.age.asc .env.tmp' EXIT
-            echo -e '\nLOG:Deploying API to $TS_MACHINE_NAME...'
+            echo -e '\nLOG:Deploying API...'
             cd /home/$TS_USERNAME/docker-swarm-config/stacks/api
 
             echo -e '\nLOG:Checking if age is installed...'
@@ -329,14 +333,45 @@ jobs:
             fi
             docker stack config -c stack-api.yml > \$CONFIG_OUTPUT
 
+            echo -e '\nLOG:Recording service versions before deploy...'
+            declare -A BEFORE=()
+            for svc in \$(docker stack services --format '{{.Name}}' $STACK_NAME); do
+              BEFORE[\$svc]=\$(docker service inspect --format '{{.Version.Index}}' \"\$svc\")
+            done
+
             echo -e '\nLOG:Deploying stack...'
             docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false $STACK_NAME
 
+            echo -e '\nLOG:Checking service update state...'
+            BAD=0
+            SVCS_AFTER=\$(docker stack services --format '{{.Name}}' $STACK_NAME)
+            if [[ -z \"\$SVCS_AFTER\" ]]; then echo 'ERROR: no stack services after deploy'; exit 1; fi
+            for svc in \$SVCS_AFTER; do
+              after=\$(docker service inspect --format '{{.Version.Index}}' \"\$svc\")
+              state=\$(docker service inspect --format '{{if .UpdateStatus}}{{.UpdateStatus.State}}{{end}}' \"\$svc\")
+              if [[ \"\${BEFORE[\$svc]:-}\" == \"\$after\" ]]; then
+                echo \"\$svc: not changed by this deploy (version \$after, state \${state:-none}), skipped\"
+                continue
+              fi
+              echo \"\$svc: update state \${state:-none}\"
+              case \"\$state\" in
+                rollback_*|paused)
+                  echo \"ERROR: \$svc ended in update state \$state\"
+                  BAD=1
+                  ;;
+              esac
+            done
+            if [[ \$BAD -ne 0 ]]; then
+              exit 1
+            fi
+
             echo -e '\nLOG:Finished deployment.'
           "
-          MACHINE_IP=$(tailscale ip -4 "$TS_MACHINE_NAME")
           # shellcheck disable=SC2029 # client-side expansion of REMOTE_SCRIPT is intended
-          ssh "$TS_USERNAME@$MACHINE_IP" "$REMOTE_SCRIPT"
+          if ! { MACHINE_IP=$(tailscale ip -4 "$TS_MACHINE_NAME") && ssh "$TS_USERNAME@$MACHINE_IP" "$REMOTE_SCRIPT"; }; then
+            echo "::error::Deploy failed on TS_MACHINE_NAME"
+            exit 1
+          fi
 
       # TODO(o11y): Sentry release finalize disabled pending a follow-up PR with
       # a stable release-id scheme (source-map upload in docker-docr.yml is

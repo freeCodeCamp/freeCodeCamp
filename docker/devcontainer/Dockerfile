@@ -1,7 +1,7 @@
 # =============================================================================
 # BASE - System dependencies, pnpm, mongosh
 # =============================================================================
-FROM node:24-bookworm AS base
+FROM node:26-bookworm AS base
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
@@ -53,7 +53,7 @@ COPY --chown=node:node tools/scripts/seed-exams/package.json tools/scripts/seed-
 
 COPY --chown=node:node packages/challenge-builder/package.json packages/challenge-builder/
 COPY --chown=node:node packages/challenge-linter/package.json packages/challenge-linter/
-COPY --chown=node:node packages/eslint-config/package.json packages/eslint-config/
+COPY --chown=node:node packages/oxlint-config/package.json packages/oxlint-config/
 COPY --chown=node:node packages/shared/package.json packages/shared/
 
 # Prisma schema needed for api postinstall script (prisma generate)

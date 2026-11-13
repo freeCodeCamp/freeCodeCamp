@@ -1,0 +1,8 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css",
+  "challengeOrder": [{ "id": "6ad632c0e4517c413b39e95f", "title": "CSS Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

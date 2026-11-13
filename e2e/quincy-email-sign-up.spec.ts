@@ -10,7 +10,7 @@ const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
 test.describe('Email sign-up page when user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ isolatedPage: page }) => {
     await page.goto('/email-sign-up');
   });
 

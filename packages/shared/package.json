@@ -6,14 +6,14 @@
   "description": "Config and utils used in multiple workspaces",
   "private": false,
   "engines": {
-    "node": ">=24",
+    "node": ">=26",
     "pnpm": ">=12"
   },
   "scripts": {
     "build": "tsdown --log-level warn --no-clean --format cjs --format esm",
     "clean": "rm -rf dist",
     "develop": "tsdown --log-level warn --no-clean --watch src --format cjs --format esm",
-    "lint": "eslint --max-warnings 0",
+    "lint": "oxlint --deny-warnings",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
@@ -92,9 +92,8 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/oxlint-config": "workspace:*",
     "@vitest/ui": "4.1.12",
-    "eslint": "9.39.5",
     "tsdown": "^0.21.0",
     "vitest": "4.1.12"
   }

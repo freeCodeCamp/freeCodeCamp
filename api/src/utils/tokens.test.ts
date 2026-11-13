@@ -1,7 +1,7 @@
 import { describe, test, expect, vi } from 'vitest';
 
 vi.useFakeTimers();
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* oxlint-disable typescript/no-unsafe-assignment */
 import { createAccessToken, createAuthToken, isExpired } from './tokens.js';
 
 describe('createAccessToken', () => {

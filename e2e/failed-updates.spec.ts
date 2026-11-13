@@ -74,14 +74,14 @@ test.describe('failed update flushing', () => {
     const updatedCompletedChallenges = (await updatedUserRes.json()).user[
       isolatedUser.username
     ].completedChallenges;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    // oxlint-disable-next-line typescript/no-unsafe-argument
     const completedIds = getCompletedIds(updatedCompletedChallenges);
 
     for (const { payload } of failedUpdates) {
       expect(completedIds).toContain(payload.id);
     }
     const storedFailedUpdates = await page.evaluate(storeKey => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      // oxlint-disable-next-line typescript/no-unsafe-return
       return JSON.parse(localStorage.getItem(storeKey) ?? '');
     }, storeKey);
     expect(storedFailedUpdates).toEqual([]);

@@ -2,7 +2,7 @@
   "name": "@freecodecamp/e2e",
   "version": "1.0.0",
   "scripts": {
-    "lint": "eslint --max-warnings 0",
+    "lint": "oxlint --deny-warnings",
     "playwright:watch": "turbo setup && playwright test --ui-port=0",
     "playwright:run": "turbo setup && playwright test",
     "type-check": "tsc --noEmit"
@@ -10,10 +10,9 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/oxlint-config": "workspace:*",
     "@freecodecamp/scripts-seed": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
-    "eslint": "9.39.5",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   }
 }

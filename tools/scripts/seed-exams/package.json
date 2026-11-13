@@ -5,11 +5,11 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=24",
+    "node": ">=26",
     "pnpm": ">=12"
   },
   "scripts": {
-    "lint": "eslint --max-warnings 0"
+    "lint": "oxlint --deny-warnings"
   },
   "repository": {
     "type": "git",
@@ -22,14 +22,13 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/oxlint-config": "workspace:*",
     "debug": "4.4.3",
     "dotenv": "16.6.1",
-    "eslint": "9.39.5",
-    "joi": "17.13.8",
+    "joi": "17.13.9",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.3.2",
-    "mongodb": "6.21.0",
+    "mongodb": "6.22.0",
     "nanoid": "4.0.2"
   },
   "type": "module"

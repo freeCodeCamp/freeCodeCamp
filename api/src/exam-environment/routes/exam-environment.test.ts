@@ -57,9 +57,9 @@ describe('/exam-environment/', () => {
           `Expected exam environment token request to return 201, got ${res.status}`
         );
       }
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      // oxlint-disable-next-line typescript/no-unsafe-assignment
       examEnvironmentAuthorizationToken =
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        // oxlint-disable-next-line typescript/no-unsafe-member-access
         res.body.examEnvironmentAuthorizationToken;
 
       await fastifyTestInstance.prisma.user.update({
@@ -100,7 +100,7 @@ describe('/exam-environment/', () => {
           // NOTE: message may not necessarily be a part of the api compatability guarantee.
           //       That is, it could be changed without requiring a major version bump, because it is just
           //       a human-readable/debug message.
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(404);
@@ -132,7 +132,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(404);
@@ -170,7 +170,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(403);
@@ -208,7 +208,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_ENOENT_EXAM_ENVIRONMENT_GENERATED_EXAM',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(404);
@@ -242,7 +242,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(400);
@@ -314,7 +314,7 @@ describe('/exam-environment/', () => {
 
         expect(secondRes.body).toStrictEqual({
           code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(secondRes.status).toBe(400);
@@ -385,7 +385,7 @@ describe('/exam-environment/', () => {
             {}
           );
         // Verifies cascading cleanup of moderation records when attempt data is removed in teardown.
-        // eslint-disable-next-line vitest/no-standalone-expect
+        // oxlint-disable-next-line vitest/no-standalone-expect
         expect(a).toHaveLength(0);
       });
 
@@ -402,7 +402,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(404);
@@ -419,7 +419,7 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(400);
         expect(res.body).toMatchObject({
           code: 'FST_ERR_VALIDATION',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
       }, 10000);
@@ -444,7 +444,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(403);
@@ -607,7 +607,7 @@ describe('/exam-environment/', () => {
           status: 200,
           body: {
             examAttempt: {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              // oxlint-disable-next-line typescript/no-unsafe-assignment
               id: expect.not.stringMatching(mock.examAttempt.id)
             }
           }
@@ -673,7 +673,7 @@ describe('/exam-environment/', () => {
 
         // Finish attempt
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+          // oxlint-disable-next-line typescript/no-unsafe-assignment, typescript/no-unsafe-member-access
           where: { id: res.body.examAttempt.id },
           data: {
             startTime: new Date(
@@ -709,7 +709,7 @@ describe('/exam-environment/', () => {
 
         // Finish attempt
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+          // oxlint-disable-next-line typescript/no-unsafe-assignment, typescript/no-unsafe-member-access
           where: { id: res2.body.examAttempt.id },
           data: {
             startTime: new Date(
@@ -778,16 +778,16 @@ describe('/exam-environment/', () => {
           );
 
         expect(examAttempt).toEqual({
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           id: expect.any(String),
           userId: defaultUserId,
           examId: mock.examId,
           generatedExamId: generatedExam!.id,
           examModerationId: null,
           questionSets: [],
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           startTime: expect.any(Date),
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number)
         });
 
@@ -1150,7 +1150,7 @@ describe('/exam-environment/', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
           );
-        // eslint-disable-next-line vitest/no-standalone-expect
+        // oxlint-disable-next-line vitest/no-standalone-expect
         expect(moderationRecords).toHaveLength(0);
       });
 
@@ -1165,7 +1165,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(404);
@@ -1184,7 +1184,7 @@ describe('/exam-environment/', () => {
         );
 
         expect(res.body).toStrictEqual({
-          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT', // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT', // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(404);
@@ -1219,7 +1219,7 @@ describe('/exam-environment/', () => {
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
           status: ExamAttemptStatus.PendingModeration,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number)
         };
 
@@ -1267,7 +1267,7 @@ describe('/exam-environment/', () => {
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
           status: ExamAttemptStatus.PendingModeration,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number)
         };
 
@@ -1309,7 +1309,7 @@ describe('/exam-environment/', () => {
           },
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number),
           status: ExamAttemptStatus.Approved
         };
@@ -1327,7 +1327,7 @@ describe('/exam-environment/', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
           );
-        // eslint-disable-next-line vitest/no-standalone-expect
+        // oxlint-disable-next-line vitest/no-standalone-expect
         expect(moderationRecords).toHaveLength(0);
       });
 
@@ -1339,7 +1339,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           message: expect.any(String)
         });
         expect(res.status).toBe(404);
@@ -1371,7 +1371,7 @@ describe('/exam-environment/', () => {
           result: null,
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number),
           status: ExamAttemptStatus.PendingModeration
         };
@@ -1407,7 +1407,7 @@ describe('/exam-environment/', () => {
           result: null,
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number),
           status: ExamAttemptStatus.PendingModeration
         };
@@ -1445,7 +1445,7 @@ describe('/exam-environment/', () => {
           result: null,
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number),
           status: ExamAttemptStatus.AwaitingChallenges
         };
@@ -1486,7 +1486,7 @@ describe('/exam-environment/', () => {
           },
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number),
           status: ExamAttemptStatus.Approved
         };
@@ -1539,7 +1539,7 @@ describe('/exam-environment/', () => {
           result: null,
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           version: expect.any(Number),
           status: ExamAttemptStatus.InProgress
         };
@@ -1624,7 +1624,7 @@ describe('/exam-environment/', () => {
         expect(captureException).toHaveBeenCalledWith(
           'No user found in request.'
         );
-        // eslint-disable-next-line @typescript-eslint/unbound-method
+        // oxlint-disable-next-line typescript/unbound-method
         expect(reply.code).toHaveBeenCalledWith(500);
         expect(send).toHaveBeenCalledOnce();
       });

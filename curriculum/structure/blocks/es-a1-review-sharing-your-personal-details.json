@@ -4,8 +4,8 @@
   "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "6967d8fd5874a8e4c9119d55", "title": "Task 1" },
-    { "id": "6967db9498d2ab347fc7c920", "title": "Task 2" }
+    { "id": "6967d8fd5874a8e4c9119d55", "title": "Grammar Highlights" },
+    { "id": "6967db9498d2ab347fc7c920", "title": "Glossary" }
   ],
   "blockLabel": "review"
 }

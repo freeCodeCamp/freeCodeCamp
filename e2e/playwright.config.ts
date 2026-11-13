@@ -13,7 +13,7 @@ dotenvConfig({ path: envPath });
  */
 export default defineConfig({
   testDir: '.',
-  /* Run tests in files in parallel */
+  /* Run files in parallel; keep tests within each file sequential. */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -21,8 +21,9 @@ export default defineConfig({
   maxFailures: process.env.CI ? 6 : undefined,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: 1,
+  /* Use 3 workers since CI typically runs on a 4 core machine and using all 
+     cores hurts performance */
+  workers: 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', { outputFolder: 'playwright/reporter' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -34,7 +35,6 @@ export default defineConfig({
     baseURL: process.env.HOME_LOCATION || 'http://127.0.0.1:8000',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    storageState: 'playwright/.auth/certified-user.json',
     /* Use custom test attribute */
     testIdAttribute: 'data-playwright-test-label',
     screenshot: 'only-on-failure'
@@ -43,38 +43,28 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'setup',
-      testMatch: 'global-setup.ts'
-    },
-
-    {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-      dependencies: ['setup']
+      use: { ...devices['Desktop Chrome'] }
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-      dependencies: ['setup']
+      use: { ...devices['Desktop Firefox'] }
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-      dependencies: ['setup']
+      use: { ...devices['Desktop Safari'] }
     },
 
     /* Test against mobile viewports. */
     {
       name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-      dependencies: ['setup']
+      use: { ...devices['Pixel 5'] }
     },
     {
       name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-      dependencies: ['setup']
+      use: { ...devices['iPhone 12'] }
     }
     /* Uncomment the blocks out if you want to enable the mentioned features */
     /* ====================================================== */

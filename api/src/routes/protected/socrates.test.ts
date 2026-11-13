@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* oxlint-disable typescript/no-unsafe-member-access */
 import {
   describe,
   test,

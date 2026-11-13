@@ -165,7 +165,7 @@ describe('<UniversalNav />', () => {
   const selectPlacementElement = (container: HTMLElement, selector: string) => {
     // The placement contract is class-based: desktop search lives in the
     // exposed left nav slot, while smaller widths render it with the menu.
-    // eslint-disable-next-line testing-library/no-node-access
+    // oxlint-disable-next-line testing-library/no-node-access
     return container.querySelector(selector);
   };
 
@@ -237,7 +237,7 @@ describe('<NavLinks />', () => {
       { name: 'Forum', href: 'https://forum.freecodecamp.org/' },
       { name: 'News', href: 'https://freecodecamp.org/news/' },
       { name: 'Radio', href: 'https://coderadio.freecodecamp.org' },
-      { name: 'Contribute', href: 'https://contribute.freecodecamp.org/#/' },
+      { name: 'Contribute', href: 'https://contribute.freecodecamp.org/' },
       { name: 'Podcast', href: 'https://freecodecamp.libsyn.com/' }
     ];
 

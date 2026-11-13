@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=24",
+    "node": ">=26",
     "pnpm": ">=12"
   },
   "exports": {
@@ -41,7 +41,7 @@
     "delete-step": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "delete-challenge": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
     "delete-task": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/delete-task",
-    "lint": "eslint --max-warnings 0 && pnpm lint-challenges",
+    "lint": "oxlint --deny-warnings && pnpm lint-challenges",
     "lint-challenges": "tsx src/lint-localized",
     "fix-seed-semicolons": "tsx src/fix-seed-semicolons.ts",
     "check-seed-semicolons": "tsx src/fix-seed-semicolons.ts --check",
@@ -56,22 +56,22 @@
     "test-content": "pnpm test-gen && pnpm test --project test"
   },
   "devDependencies": {
-    "@babel/core": "7.29.7",
-    "@babel/register": "7.29.7",
+    "@babel/core": "7.29.13",
+    "@babel/register": "7.29.13",
     "@freecodecamp/browser-scripts": "workspace:*",
     "@freecodecamp/challenge-builder": "workspace:*",
     "@freecodecamp/challenge-linter": "workspace:*",
-    "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/oxlint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
     "@total-typescript/ts-reset": "0.6.1",
     "@types/debug": "4.1.13",
     "@types/js-yaml": "4.0.9",
     "@types/polka": "0.5.8",
-    "@typescript/vfs-1.6.1": "npm:@typescript/vfs@1.6.5",
+    "@typescript/vfs-1.6.1": "npm:@typescript/vfs@1.6.6",
     "@vitest/ui": "4.1.12",
     "eslint": "9.39.5",
-    "glob": "13.0.6",
-    "joi": "17.13.8",
+    "glob": "13.0.7",
+    "joi": "17.13.9",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.3.2",
     "jsdom": "16.7.0",
@@ -80,12 +80,13 @@
     "mock-require": "3.0.3",
     "ora": "5.4.1",
     "polka": "0.5.2",
-    "puppeteer": "25.14.0",
+    "puppeteer": "25.16.0",
     "sirv": "3.0.2",
+    "typescript": "7.0.2",
     "typescript-5.9.2": "npm:typescript@5.9.2",
     "vitest": "4.1.12"
   },
   "dependencies": {
-    "@types/node": "24.12.2"
+    "@types/node": "26.6.6"
   }
 }

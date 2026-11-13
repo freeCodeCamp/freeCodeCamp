@@ -5,7 +5,7 @@ labels: ['status: waiting triage']
 body:
   - type: markdown
     attributes:
-      value: If you're reporting a security issue, don't create a GitHub issue. Instead, visit https://contribute.freecodecamp.org/#/security.
+      value: If you're reporting a security issue, don't create a GitHub issue. Instead, visit https://contribute.freecodecamp.org/security/.
   - type: textarea
     attributes:
       label: Describe the Issue

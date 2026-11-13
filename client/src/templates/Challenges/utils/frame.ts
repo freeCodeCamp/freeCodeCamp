@@ -172,8 +172,7 @@ const createHeader = (id = mainPreviewId) =>
 `;
 
 type TestResult =
-  | { pass: boolean }
-  | { err: { message: string; stack?: string } };
+  { pass: boolean } | { err: { message: string; stack?: string } };
 
 function getContentDocument<T extends Document = FrameDocument>(
   document: Document,
@@ -434,7 +433,7 @@ const initProjectPreviewFrame =
 const waitForFrame = (frameContext: Context) => {
   return new Promise<void>((resolve, reject) => {
     const rejectId = setTimeout(() => {
-      // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
+      // oxlint-disable-next-line typescript/prefer-promise-reject-errors
       reject(DOCUMENT_NOT_FOUND_ERROR);
     }, 10000);
 

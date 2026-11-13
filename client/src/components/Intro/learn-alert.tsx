@@ -19,7 +19,7 @@ const LearnAlert = ({
   const { t } = useTranslation();
   const seasonalAlertFlag = useFeature('seasonal-alert');
   const progressAlertFlag2024 = useFeature('progress-alert-2024');
-  const createUniversityFlag = useFeature('university-alert');
+  const newCurriculumAB = useFeature('new-curriculum-alert-ab');
   const progressAlertDefault = (text: string, value?: number) => (
     <div className='learn-alert annual-donation-alert'>
       {value && (
@@ -78,12 +78,12 @@ const LearnAlert = ({
     Number(progressAlertFlag2024.value)
   );
 
-  const universityAlert = (
+  const newCurriculumAlert = (
     <div className='learn-alert university-alert'>
       <p>
-        <b>{t('learn.building-a-university')}</b>
+        <b>{t('learn.building-a-curriculum')}</b>
       </p>
-      <p>{t('learn.if-help-university')}</p>
+      <p>{t('learn.if-help-curriculum')}</p>
       <Spacer size='m' />
       <p className='btn-container text-center'>
         <Link
@@ -100,7 +100,7 @@ const LearnAlert = ({
   );
 
   if (!isDonating) {
-    if (createUniversityFlag.on) return universityAlert;
+    if (newCurriculumAB.on) return newCurriculumAlert;
     if (progressAlertFlag2024.on) return progressAlert2024;
     if (seasonalAlertFlag.on) return seasonalAlertFlagAlert;
   }
