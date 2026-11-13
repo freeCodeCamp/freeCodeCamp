@@ -875,8 +875,8 @@ importers:
         specifier: 9.39.5
         version: 9.39.5(jiti@2.7.0)(supports-color@8.1.1)
       glob:
-        specifier: 13.0.6
-        version: 13.0.6
+        specifier: 13.0.7
+        version: 13.0.7
       joi:
         specifier: 17.13.9
         version: 17.13.9
@@ -7589,8 +7589,8 @@ packages:
   glob-to-regexp@0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
 
-  glob@13.0.6:
-    resolution: {integrity: sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw==}
+  glob@13.0.7:
+    resolution: {integrity: sha512-wfsFgXQ8A3SEI9XGf7Nl3Y9l7ffSrGh7SUCT7vU/2CzYPep9kjxAn1S40F9OPKxAMGCVl7HtNlJhrCJUeUq83g==}
     engines: {node: 18 || 20 || >=22}
 
   glob@7.2.3:
@@ -14016,7 +14016,7 @@ snapshots:
       content-disposition: 1.1.0
       fastify-plugin: 6.0.1
       fastq: 1.20.3
-      glob: 13.0.6
+      glob: 13.0.7
 
   '@fastify/swagger-ui@5.2.6':
     dependencies:
@@ -20305,7 +20305,7 @@ snapshots:
 
   glob-to-regexp@0.4.1: {}
 
-  glob@13.0.6:
+  glob@13.0.7:
     dependencies:
       minimatch: 10.2.6
       minipass: 7.1.3
