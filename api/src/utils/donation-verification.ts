@@ -38,8 +38,7 @@ type VerificationFailure = {
 };
 
 export type DonationVerificationResult =
-  | ({ ok: true } & VerificationSuccess)
-  | ({ ok: false } & VerificationFailure);
+  ({ ok: true } & VerificationSuccess) | ({ ok: false } & VerificationFailure);
 
 const donationPlans = () =>
   paypalConfigTypes[DEPLOYMENT_ENV === 'production' ? 'production' : 'staging']

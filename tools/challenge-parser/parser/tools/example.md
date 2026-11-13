@@ -47,7 +47,7 @@ if(let x of xs) {
 </html>
 ```
 
-![key-for-css]()
+![key-for-css](<>)
 
 ```css
 body {
@@ -55,7 +55,7 @@ body {
 }
 ```
 
-![key-for-js]()
+![key-for-js](<>)
 
 ```js
 var x = 'y';
@@ -63,7 +63,7 @@ var x = 'y';
 
 # --solutions--
 
-![html-key]()
+![html-key](<>)
 
 ```html
 <html>
