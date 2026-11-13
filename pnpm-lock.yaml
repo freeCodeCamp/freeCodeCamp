@@ -287,8 +287,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(ajv@8.20.0)
       bson:
-        specifier: 7.3.3
-        version: 7.3.3
+        specifier: 7.3.4
+        version: 7.3.4
       date-fns:
         specifier: 4.4.0
         version: 4.4.0
@@ -1072,7 +1072,7 @@ importers:
         specifier: 4.1.12
         version: 4.1.12(vitest@4.1.12)
       bson:
-        specifier: ^7.2.0
+        specifier: ^7.3.3
         version: 7.3.3
       gray-matter:
         specifier: 4.0.3
@@ -5678,6 +5678,10 @@ packages:
 
   bson@7.3.3:
     resolution: {integrity: sha512-oz3LwE3qGEhTCSyhzQRLY3Bj1NLOsjFMf6tcmY5J8M+3R7EVcmoBfSHWvjUK3yXCLDUsGpIuB3aQL4nDZ1EV/g==}
+    engines: {node: '>=20.19.0'}
+
+  bson@7.3.4:
+    resolution: {integrity: sha512-eb33j2Ha6xgygjJ8bhI3sYaI9cLAbSaopZLRJQ5/rxk32XyBSoVVcbeHIzVGJx1SyQpyyoElkoEZgQrg+RVVoA==}
     engines: {node: '>=20.19.0'}
 
   buffer-equal-constant-time@1.0.1:
@@ -17268,6 +17272,8 @@ snapshots:
   bson@6.10.4: {}
 
   bson@7.3.3: {}
+
+  bson@7.3.4: {}
 
   buffer-equal-constant-time@1.0.1: {}
 
