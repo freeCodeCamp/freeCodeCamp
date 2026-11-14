@@ -26,6 +26,8 @@ import {
   executeChallenge,
   initConsole,
   initTests,
+  openModal,
+  closeModal,
   updateChallengeMeta,
   updateSolutionFormValues
 } from '../../redux/actions';
@@ -39,6 +41,8 @@ import { getGuideUrl } from '../../utils';
 import { getChallengePaths } from '../../utils/challenge-paths';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
+import ExitProjectModal from '../exit-project-modal';
+import { useUnsavedSolutionWarning } from '../use-unsaved-solution-warning';
 
 import '../../components/test-frame.css';
 
@@ -67,7 +71,9 @@ const mapDispatchToActions = {
   initConsole,
   initTests,
   updateChallengeMeta,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  openExitProjectModal: () => openModal('exitProject'),
+  closeExitProjectModal: () => closeModal('exitProject')
 };
 
 // Types
@@ -82,6 +88,8 @@ interface BackEndProps {
   initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
+  openExitProjectModal: () => void;
+  closeExitProjectModal: () => void;
   output: string;
   pageContext: {
     challengeMeta: ChallengeMeta;
@@ -103,6 +111,11 @@ const ShowBackEnd = (props: BackEndProps) => {
   }) => {
     props.executeChallenge({ showCompletionModal });
   };
+
+  const { onUnsavedChanges, confirmExit } = useUnsavedSolutionWarning({
+    openExitProjectModal: props.openExitProjectModal,
+    closeExitProjectModal: props.closeExitProjectModal
+  });
 
   useEffect(() => {
     const {
@@ -191,6 +204,7 @@ const ShowBackEnd = (props: BackEndProps) => {
               <SolutionForm
                 challengeType={challengeType}
                 onSubmit={handleSubmit}
+                onUnsavedChanges={onUnsavedChanges}
                 updateSolutionForm={updateSolutionFormValues}
               />
               <ProjectToolPanel
@@ -215,6 +229,7 @@ const ShowBackEnd = (props: BackEndProps) => {
               <Spacer size='m' />
             </Col>
             <CompletionModal />
+            <ExitProjectModal onExit={confirmExit} />
             <HelpModal
               challengeTitle={title}
               challengeBlock={block}
