@@ -1,4 +1,5 @@
 import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { render, screen, waitFor } from '@testing-library/react';
 import i18next from 'i18next';
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -10,11 +11,8 @@ vi.mock('react-redux', () => ({
   useSelector: () => ({})
 }));
 
-vi.mock('react-helmet', () => ({
-  __esModule: true,
-  default: ({ children }: { children?: React.ReactNode }) => (
-    <div>{children}</div>
-  )
+vi.mock('../../components/page-head', () => ({
+  default: ({ title }: { title: string }) => <title>{title}</title>
 }));
 
 vi.mock('@growthbook/growthbook-react', () => ({
@@ -90,6 +88,12 @@ const translationMap: Record<string, unknown> = {
 
 const mockT = vi.fn((key: string, options?: { returnObjects?: boolean }) => {
   const value = translationMap[key];
+  if (key.endsWith('.title')) {
+    const entry = translationMap[key.slice(0, -'.title'.length)];
+    if (entry && typeof entry === 'object' && 'title' in entry) {
+      return entry.title;
+    }
+  }
 
   if (options?.returnObjects && typeof value === 'object') {
     return value;
@@ -110,7 +114,7 @@ vi.mock('react-i18next', () => ({
 
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
-import SuperBlockIntroductionPage from './super-block-intro';
+import SuperBlockIntroductionPage, { Head } from './super-block-intro';
 
 type ChallengeNode = {
   challenge: {
@@ -384,8 +388,10 @@ describe('SuperBlockIntroductionPage', () => {
     render(<SuperBlockIntroductionPage {...props} />);
 
     expect(
-      screen.getByText('Coding Interview Prep | freeCodeCamp.org')
-    ).toBeInTheDocument();
+      renderToStaticMarkup(
+        <Head {...(props as unknown as Parameters<typeof Head>[0])} />
+      )
+    ).toContain('<title>Coding Interview Prep | freeCodeCamp.org</title>');
     expect(
       await screen.findByText(
         "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
@@ -400,8 +406,12 @@ describe('SuperBlockIntroductionPage', () => {
 
     render(<SuperBlockIntroductionPage {...props} />);
 
-    expect(document.title).toBe(
-      'Legacy Responsive Web Design V8 | freeCodeCamp.org'
+    expect(
+      renderToStaticMarkup(
+        <Head {...(props as unknown as Parameters<typeof Head>[0])} />
+      )
+    ).toContain(
+      '<title>Legacy Responsive Web Design V8 | freeCodeCamp.org</title>'
     );
     expect(
       await screen.findByText(

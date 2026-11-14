@@ -1,7 +1,6 @@
 // Package Utilities
-import { graphql } from 'gatsby';
+import { graphql, type HeadFC } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
-import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -16,6 +15,9 @@ import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 // Local Utilities
 import ShortcutsModal from '../components/shortcuts-modal';
 import MobileAppModal from '../components/mobile-app-modal';
+import ChallengeHead, {
+  type ChallengeHeadData
+} from '../components/challenge-head';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
@@ -251,10 +253,6 @@ const ShowFillInTheBlank = ({
     sceneSubject.notify('play');
   };
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
-
   const sceneSubject = new SceneSubject();
 
   return (
@@ -264,9 +262,6 @@ const ShowFillInTheBlank = ({
       playScene={handlePlayScene}
     >
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
         <Container>
           <Row>
             <Spacer size='m' />
@@ -366,6 +361,10 @@ const ShowFillInTheBlank = ({
 };
 
 ShowFillInTheBlank.displayName = 'ShowFillInTheBlank';
+
+export const Head: HeadFC<ChallengeHeadData> = ({ data }) => (
+  <ChallengeHead challenge={data.challengeNode.challenge} includeLearn />
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowFillInTheBlank);
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGrowthBook } from '@growthbook/growthbook-react';
 import SEO from '../components/seo';
+import PageHead from '../components/page-head';
 import { Loader } from '../components/helpers';
 import LandingTop from '../components/landing/components/landing-top';
 import Testimonials from '../components/landing/components/testimonials';
@@ -29,28 +30,26 @@ const Landing = () => (
 );
 
 function IndexPage(): JSX.Element {
-  const { t } = useTranslation();
   const growthbook = useGrowthBook();
   useClaimableCertsNotification();
 
   if (growthbook && growthbook.ready) {
     growthbook.getFeatureValue('landing-aa-test', false);
-    return (
-      <>
-        <SEO title={t('metaTags:title')} />
-        <Landing />
-      </>
-    );
+    return <Landing />;
   } else {
-    return (
-      <>
-        <SEO title={t('metaTags:title')} />
-        <Loader fullScreen={true} />
-      </>
-    );
+    return <Loader fullScreen={true} />;
   }
 }
 
 IndexPage.displayName = 'IndexPage';
 
 export default IndexPage;
+
+export function Head() {
+  const { t } = useTranslation();
+  return (
+    <PageHead>
+      <SEO title={t('metaTags:title')} />
+    </PageHead>
+  );
+}

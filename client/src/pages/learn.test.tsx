@@ -1,7 +1,7 @@
 import React from 'react';
+import { renderToStaticMarkup as toHtml } from 'react-dom/server';
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 import { render, screen } from '@testing-library/react';
-import Helmet from 'react-helmet';
 import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -13,7 +13,7 @@ import translations from '../../i18n/locales/english/translations.json';
 import { createStore } from '../redux/create-store';
 import { initialState } from '../redux';
 import { randomQuote } from '../utils/get-words';
-import LearnPage from './learn';
+import LearnPage, { Head } from './learn';
 
 vi.unmock('react-i18next');
 
@@ -76,6 +76,7 @@ function renderLearnPage(sessionUser: Record<string, unknown> | null) {
     <Provider store={store}>
       <GrowthBookProvider growthbook={new GrowthBook()}>
         <I18nextProvider i18n={i18nTestConfig}>
+          <Head />
           <LearnPage data={pageData} state={{}} />
         </I18nextProvider>
       </GrowthBookProvider>
@@ -84,6 +85,17 @@ function renderLearnPage(sessionUser: Record<string, unknown> | null) {
 }
 
 describe('LearnPage', () => {
+  it('keeps the curriculum page out of search indexes', () => {
+    const markup = toHtml(
+      <Provider store={createStore()}>
+        <I18nextProvider i18n={i18nTestConfig}>
+          <Head />
+        </I18nextProvider>
+      </Provider>
+    );
+    expect(markup).toContain('name="robots" content="noindex"');
+  });
+
   beforeEach(() => {
     vi.mocked(randomQuote).mockReturnValue({
       quote: 'Test quote',
@@ -94,7 +106,7 @@ describe('LearnPage', () => {
   it('renders the signed-out learn page', () => {
     renderLearnPage(null);
 
-    expect(Helmet.peek().title).toBe(pageTitle);
+    expect(document.title).toBe(pageTitle);
     expect(
       screen.getByRole('heading', {
         level: 1,
@@ -118,7 +130,7 @@ describe('LearnPage', () => {
       isDonating: false
     });
 
-    expect(Helmet.peek().title).toBe(pageTitle);
+    expect(document.title).toBe(pageTitle);
     expect(
       screen.getByRole('heading', {
         level: 1,

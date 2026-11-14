@@ -166,3 +166,5 @@ const CatalogPage = () => {
 };
 
 export default CatalogPage;
+
+export { default as Head } from '../components/page-head';

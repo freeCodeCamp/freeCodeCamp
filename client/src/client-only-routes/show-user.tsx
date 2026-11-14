@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -94,9 +93,6 @@ export function ShowUser({
 
   return (
     <>
-      <Helmet>
-        <title>{t('report.portfolio')} | freeCodeCamp.org</title>
-      </Helmet>
       <Spacer size='l' />
       <Row className='text-center overflow-fix'>
         <Col sm={8} smOffset={2} xs={12}>

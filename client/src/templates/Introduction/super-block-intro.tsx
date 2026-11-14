@@ -1,9 +1,7 @@
-import i18next from 'i18next';
 import { WindowLocation } from '@gatsbyjs/reach-router';
-import { graphql } from 'gatsby';
+import { graphql, type HeadFC } from 'gatsby';
 import { isEmpty, last } from 'lodash-es';
 import React, { useEffect, memo, useMemo } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { scroller } from 'react-scroll';
@@ -17,6 +15,7 @@ import {
   certificationCollectionSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
 import callGA from '../../analytics/call-ga';
+import PageHead from '../../components/page-head';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -175,8 +174,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     [superBlockChallenges, user?.completedChallenges]
   );
 
-  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
-
   const currentSuperBlockStructure = allSuperBlockStructure.nodes[0];
 
   const showCertification = liveCerts.some(
@@ -275,9 +272,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
   return (
     <>
-      <Helmet>
-        <title>{i18nTitle} | freeCodeCamp.org</title>
-      </Helmet>
       <Container>
         <main>
           <Row className='super-block-intro-page'>
@@ -339,6 +333,16 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 };
 
 SuperBlockIntroductionPage.displayName = 'SuperBlockIntroductionPage';
+
+export const Head: HeadFC<
+  SuperBlockProps['data'],
+  SuperBlockProps['pageContext']
+> = ({ pageContext: { superBlock } }) => {
+  const { t } = useTranslation();
+  return (
+    <PageHead title={`${t(`intro:${superBlock}.title`)} | freeCodeCamp.org`} />
+  );
+};
 
 export default connect(
   mapStateToProps,

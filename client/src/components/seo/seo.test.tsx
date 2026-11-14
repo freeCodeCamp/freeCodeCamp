@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import Helmet from 'react-helmet';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
@@ -37,39 +36,27 @@ describe('<SEO />', () => {
   });
 
   it('renders', () => {
-    render(<SEO />);
+    const view = renderToStaticMarkup(<SEO />);
 
-    const helmet = Helmet.peek();
-
-    expect(helmet.title).toBe('freeCodeCamp');
+    expect(view).toContain('<title id="page-title">freeCodeCamp</title>');
   });
 
   it('renders structure data script tag', () => {
-    render(<SEO />);
+    const view = renderToStaticMarkup(<SEO />);
+    const head = new DOMParser().parseFromString(view, 'text/html').head;
 
-    const helmet = Helmet.peek();
-    const structuredDataScript = helmet.scriptTags.find(
-      ({ type, innerHTML }) => {
-        return (
-          type === 'application/ld+json' &&
-          innerHTML.includes('https://schema.org')
-        );
-      }
-    );
-
-    expect(structuredDataScript).toBeTruthy();
+    expect(
+      head.querySelector('script[type="application/ld+json"]')?.textContent
+    ).toContain('https://schema.org');
   });
 
   it('injects valid JSON-LD with one ItemList entry per superblock', () => {
-    render(<SEO />);
-
-    const helmet = Helmet.peek();
-    const script = helmet.scriptTags.find(
-      ({ type }) => type === 'application/ld+json'
-    );
+    const view = renderToStaticMarkup(<SEO />);
+    const head = new DOMParser().parseFromString(view, 'text/html').head;
+    const script = head.querySelector('script[type="application/ld+json"]');
     expect(script).toBeTruthy();
 
-    const data = JSON.parse(script!.innerHTML) as {
+    const data = JSON.parse(script!.textContent) as {
       '@context': string;
       '@type': string;
       itemListElement: ListItem[];

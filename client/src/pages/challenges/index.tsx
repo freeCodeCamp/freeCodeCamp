@@ -13,3 +13,5 @@ const Challenges = () => {
 };
 
 export default Challenges;
+
+export { default as Head } from '../../components/page-head';

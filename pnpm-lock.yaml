@@ -521,9 +521,6 @@ importers:
       gatsby-plugin-postcss:
         specifier: 6.16.0
         version: 6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@7.32.0(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.32))(csso@4.2.0)(esbuild@0.28.2)(eslint-import-resolver-typescript@3.10.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@7.0.2)(webpack-cli@4.10.0))(postcss@8.5.32)(typescript@7.0.2)(webpack@5.112.2)
-      gatsby-plugin-react-helmet:
-        specifier: 6.16.0
-        version: 6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@7.32.0(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.32))(csso@4.2.0)(esbuild@0.28.2)(eslint-import-resolver-typescript@3.10.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@7.0.2)(webpack-cli@4.10.0))(react-helmet@6.1.0(react@18.3.1))
       gatsby-plugin-remove-serviceworker:
         specifier: 1.0.0
         version: 1.0.0
@@ -596,9 +593,6 @@ importers:
       react-gtm-module:
         specifier: 2.0.11
         version: 2.0.11
-      react-helmet:
-        specifier: 6.1.0
-        version: 6.1.0(react@18.3.1)
       react-hotkeys:
         specifier: 2.0.0
         version: 2.0.0(react@18.3.1)
@@ -738,9 +732,6 @@ importers:
       '@types/react-gtm-module':
         specifier: 2.0.4
         version: 2.0.4
-      '@types/react-helmet':
-        specifier: 6.1.11
-        version: 6.1.11
       '@types/react-redux':
         specifier: 7.1.34
         version: 7.1.34
@@ -4508,9 +4499,6 @@ packages:
   '@types/react-gtm-module@2.0.4':
     resolution: {integrity: sha512-5wPMWsUE5AI6O0B0K1/zbs0rFHBKu+7NWXQwDXhqvA12ooLD6W1AYiWZqR4UiOd7ixZDV1H5Ys301zEsqyIfNg==}
 
-  '@types/react-helmet@6.1.11':
-    resolution: {integrity: sha512-0QcdGLddTERotCXo3VFlUSWO3ztraw8nZ6e3zJSgG7apwV5xt+pJUS8ewPBqT4NYB1optGLprNQzFleIY84u/g==}
-
   '@types/react-redux@7.1.34':
     resolution: {integrity: sha512-GdFaVjEbYv4Fthm2ZLvj1VSCedV7TqE5y1kNwnjSdBOTXuRSgowux6J8TAct15T3CKBr63UMk+2CO7ilRhyrAQ==}
 
@@ -7438,13 +7426,6 @@ packages:
       gatsby: ^5.0.0-next
       postcss: ^8.0.5
 
-  gatsby-plugin-react-helmet@6.16.0:
-    resolution: {integrity: sha512-0iXshdRoPaeJ8xCTsBYTT6G7Txp9PcXDgotbzigdVGY6bXvFUSbEMFSVub7xtNKPX4LYnZkQxsjcOu0MXVFLuA==}
-    engines: {node: '>=18.0.0 <26'}
-    peerDependencies:
-      gatsby: ^5.0.0-next
-      react-helmet: ^5.1.3 || ^6.0.0
-
   gatsby-plugin-remove-serviceworker@1.0.0:
     resolution: {integrity: sha512-8uQ/6PiM718BTZAgmQeEO6ULrJgLugmDVAkUGv5xxF0luBNrbboDgpsG0z1fbsotSDTzLWyULR0zzGNfWZaY7w==}
 
@@ -10318,9 +10299,6 @@ packages:
   react-error-overlay@6.1.0:
     resolution: {integrity: sha512-SN/U6Ytxf1QGkw/9ve5Y+NxBbZM6Ht95tuXNMKs8EJyFa/Vy/+Co3stop3KBHARfn/giv+Lj1uUnTfOJ3moFEQ==}
 
-  react-fast-compare@3.2.2:
-    resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
-
   react-final-form@6.5.9:
     resolution: {integrity: sha512-x3XYvozolECp3nIjly+4QqxdjSSWfcnpGEL5K8OBT6xmGrq5kBqbA6+/tOqoom9NwqIPPbxPNsOViFlbKgowbA==}
     peerDependencies:
@@ -10329,11 +10307,6 @@ packages:
 
   react-gtm-module@2.0.11:
     resolution: {integrity: sha512-8gyj4TTxeP7eEyc2QKawEuQoAZdjKvMY4pgWfycGmqGByhs17fR+zEBs0JUDq4US/l+vbTl+6zvUIx27iDo/Vw==}
-
-  react-helmet@6.1.0:
-    resolution: {integrity: sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==}
-    peerDependencies:
-      react: '>=16.3.0'
 
   react-hotkeys@2.0.0:
     resolution: {integrity: sha512-3n3OU8vLX/pfcJrR3xJ1zlww6KS1kEJt0Whxc4FiGV+MJrQ1mYSYI3qS/11d2MJDFm8IhOXMTFQirfu6AVOF6Q==}
@@ -10447,11 +10420,6 @@ packages:
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
-
-  react-side-effect@2.1.2:
-    resolution: {integrity: sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==}
-    peerDependencies:
-      react: ^16.3.0 || ^17.0.0 || ^18.0.0
 
   react-speech-recognition@4.0.1:
     resolution: {integrity: sha512-0fIqzLtfY8vuYA6AmJVK7qiabZx0oFKOO+rbiBgFI3COWVGREy0A+gdU16hWXmFebeyrI8JsOLYsWk6WaHUXRw==}
@@ -15941,10 +15909,6 @@ snapshots:
 
   '@types/react-gtm-module@2.0.4': {}
 
-  '@types/react-helmet@6.1.11':
-    dependencies:
-      '@types/react': 18.3.31
-
   '@types/react-redux@7.1.34':
     dependencies:
       '@types/hoist-non-react-statics': 3.3.7(@types/react@18.3.31)
@@ -19661,12 +19625,6 @@ snapshots:
     transitivePeerDependencies:
       - typescript
       - webpack
-
-  gatsby-plugin-react-helmet@6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@7.32.0(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.32))(csso@4.2.0)(esbuild@0.28.2)(eslint-import-resolver-typescript@3.10.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@7.0.2)(webpack-cli@4.10.0))(react-helmet@6.1.0(react@18.3.1)):
-    dependencies:
-      '@babel/runtime': 7.29.10
-      gatsby: 5.16.1(babel-eslint@10.1.0(eslint@7.32.0(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.32))(csso@4.2.0)(esbuild@0.28.2)(eslint-import-resolver-typescript@3.10.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@7.0.2)(webpack-cli@4.10.0)
-      react-helmet: 6.1.0(react@18.3.1)
 
   gatsby-plugin-remove-serviceworker@1.0.0: {}
 
@@ -23394,8 +23352,6 @@ snapshots:
 
   react-error-overlay@6.1.0: {}
 
-  react-fast-compare@3.2.2: {}
-
   react-final-form@6.5.9(final-form@4.20.10)(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.29.10
@@ -23403,14 +23359,6 @@ snapshots:
       react: 18.3.1
 
   react-gtm-module@2.0.11: {}
-
-  react-helmet@6.1.0(react@18.3.1):
-    dependencies:
-      object-assign: 4.1.1
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-fast-compare: 3.2.2
-      react-side-effect: 2.1.2(react@18.3.1)
 
   react-hotkeys@2.0.0(react@18.3.1):
     dependencies:
@@ -23528,10 +23476,6 @@ snapshots:
       object-assign: 4.1.1
       react: 18.3.1
       react-is: 18.3.1
-
-  react-side-effect@2.1.2(react@18.3.1):
-    dependencies:
-      react: 18.3.1
 
   react-speech-recognition@4.0.1(react@18.3.1):
     dependencies:

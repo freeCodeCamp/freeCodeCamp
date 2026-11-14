@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Helmet from 'react-helmet';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -178,137 +177,134 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const sound = (store.get('fcc-sound') as boolean) ?? false;
   const editorLayout = (store.get('challenge-layout') as boolean) ?? false;
   return (
-    <>
-      <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <div className='settings-container' id='settings-container'>
-        <SettingsSidebarNav userToken={userToken} />
-        <main className='settings-main'>
+    <div className='settings-container' id='settings-container'>
+      <SettingsSidebarNav userToken={userToken} />
+      <main className='settings-main'>
+        <Spacer size='l' />
+        <FullWidthRow>
+          <ScrollElement name='username'>
+            <h1
+              id='content-start'
+              className='text-center'
+              style={{ overflowWrap: 'break-word' }}
+              data-playwright-test-label='settings-heading'
+            >
+              {t('settings.for', { username: username })}
+            </h1>
+            <Trans
+              i18nKey='settings.profile-note'
+              parent='p'
+              className='text-center'
+            >
+              <a href={`/${username}`}>your profile</a>
+            </Trans>
+          </ScrollElement>
+        </FullWidthRow>
+        <Spacer size='l' />
+        <ScrollElement name='personal'>
+          <About
+            user={user}
+            setIsEditing={() => {}}
+            sectionTitle={t('settings.headings.personal')}
+          />
+        </ScrollElement>
+        <Spacer size='l' />
+        <ScrollElement name='account'>
+          <Account
+            keyboardShortcuts={keyboardShortcuts}
+            sound={sound}
+            editorLayout={editorLayout}
+            resetEditorLayout={resetEditorLayout}
+            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+            toggleSoundMode={toggleSoundMode}
+            socrates={socrates}
+          />
+        </ScrollElement>
+        <Spacer size='l' />
+        <ScrollElement name='privacy'>
+          <Privacy />
+        </ScrollElement>
+        <Spacer size='l' />
+        <ScrollElement name='email'>
+          <Email
+            email={email}
+            isEmailVerified={isEmailVerified}
+            sendQuincyEmail={sendQuincyEmail}
+            updateQuincyEmail={updateQuincyEmail}
+          />
+        </ScrollElement>
+        <Spacer size='l' />
+        <ScrollElement name='honesty'>
+          <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+        </ScrollElement>
+        <ScrollElement name='classroom-mode'>
+          <IfFeatureEnabled feature='classroom-mode'>
+            <Spacer size='m' />
+            <ClassroomMode
+              isClassroomAccount={isClassroomAccount}
+              updateIsClassroomAccount={updateIsClassroomAccount}
+            />
+          </IfFeatureEnabled>
+        </ScrollElement>
+        <Spacer size='l' />
+        <ScrollElement name='exam-token'>
+          <ExamToken email={email} />
+        </ScrollElement>
+        <Spacer size='l' />
+        <ScrollElement name='certifications'>
+          <Certification
+            completedChallenges={completedChallenges}
+            createFlashMessage={createFlashMessage}
+            is2018DataVisCert={is2018DataVisCert}
+            isA2EnglishCert={isA2EnglishCert}
+            isApisMicroservicesCert={isApisMicroservicesCert}
+            isBackEndCert={isBackEndCert}
+            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
+            isDataVisCert={isDataVisCert}
+            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
+            isFrontEndCert={isFrontEndCert}
+            isFrontEndLibsCert={isFrontEndLibsCert}
+            isFullStackCert={isFullStackCert}
+            isJavascriptCertV9={isJavascriptCertV9}
+            isHonest={isHonest}
+            isInfosecCertV7={isInfosecCertV7}
+            isInfosecQaCert={isInfosecQaCert}
+            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+            isPythonCertV9={isPythonCertV9}
+            isQaCertV7={isQaCertV7}
+            isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+            isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
+            isRespWebDesignCert={isRespWebDesignCert}
+            isRespWebDesignCertV9={isRespWebDesignCertV9}
+            isSciCompPyCertV7={isSciCompPyCertV7}
+            isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+            isFrontEndLibsCertV9={isFrontEndLibsCertV9}
+            isBackEndDevApisCertV9={isBackEndDevApisCertV9}
+            isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
+            isB1EnglishCert={isB1EnglishCert}
+            isA2SpanishCert={isA2SpanishCert}
+            isA2ChineseCert={isA2ChineseCert}
+            isA1ChineseCert={isA1ChineseCert}
+            username={username}
+            verifyCert={verifyCert}
+          />
           <Spacer size='l' />
-          <FullWidthRow>
-            <ScrollElement name='username'>
-              <h1
-                id='content-start'
-                className='text-center'
-                style={{ overflowWrap: 'break-word' }}
-                data-playwright-test-label='settings-heading'
-              >
-                {t('settings.for', { username: username })}
-              </h1>
-              <Trans
-                i18nKey='settings.profile-note'
-                parent='p'
-                className='text-center'
-              >
-                <a href={`/${username}`}>your profile</a>
-              </Trans>
+        </ScrollElement>
+        {userToken && (
+          <>
+            <ScrollElement name='user-token'>
+              <UserToken />
             </ScrollElement>
-          </FullWidthRow>
-          <Spacer size='l' />
-          <ScrollElement name='personal'>
-            <About
-              user={user}
-              setIsEditing={() => {}}
-              sectionTitle={t('settings.headings.personal')}
-            />
-          </ScrollElement>
-          <Spacer size='l' />
-          <ScrollElement name='account'>
-            <Account
-              keyboardShortcuts={keyboardShortcuts}
-              sound={sound}
-              editorLayout={editorLayout}
-              resetEditorLayout={resetEditorLayout}
-              toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-              toggleSoundMode={toggleSoundMode}
-              socrates={socrates}
-            />
-          </ScrollElement>
-          <Spacer size='l' />
-          <ScrollElement name='privacy'>
-            <Privacy />
-          </ScrollElement>
-          <Spacer size='l' />
-          <ScrollElement name='email'>
-            <Email
-              email={email}
-              isEmailVerified={isEmailVerified}
-              sendQuincyEmail={sendQuincyEmail}
-              updateQuincyEmail={updateQuincyEmail}
-            />
-          </ScrollElement>
-          <Spacer size='l' />
-          <ScrollElement name='honesty'>
-            <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          </ScrollElement>
-          <ScrollElement name='classroom-mode'>
-            <IfFeatureEnabled feature='classroom-mode'>
-              <Spacer size='m' />
-              <ClassroomMode
-                isClassroomAccount={isClassroomAccount}
-                updateIsClassroomAccount={updateIsClassroomAccount}
-              />
-            </IfFeatureEnabled>
-          </ScrollElement>
-          <Spacer size='l' />
-          <ScrollElement name='exam-token'>
-            <ExamToken email={email} />
-          </ScrollElement>
-          <Spacer size='l' />
-          <ScrollElement name='certifications'>
-            <Certification
-              completedChallenges={completedChallenges}
-              createFlashMessage={createFlashMessage}
-              is2018DataVisCert={is2018DataVisCert}
-              isA2EnglishCert={isA2EnglishCert}
-              isApisMicroservicesCert={isApisMicroservicesCert}
-              isBackEndCert={isBackEndCert}
-              isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
-              isDataVisCert={isDataVisCert}
-              isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
-              isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
-              isFrontEndCert={isFrontEndCert}
-              isFrontEndLibsCert={isFrontEndLibsCert}
-              isFullStackCert={isFullStackCert}
-              isJavascriptCertV9={isJavascriptCertV9}
-              isHonest={isHonest}
-              isInfosecCertV7={isInfosecCertV7}
-              isInfosecQaCert={isInfosecQaCert}
-              isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-              isMachineLearningPyCertV7={isMachineLearningPyCertV7}
-              isPythonCertV9={isPythonCertV9}
-              isQaCertV7={isQaCertV7}
-              isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
-              isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
-              isRespWebDesignCert={isRespWebDesignCert}
-              isRespWebDesignCertV9={isRespWebDesignCertV9}
-              isSciCompPyCertV7={isSciCompPyCertV7}
-              isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
-              isFrontEndLibsCertV9={isFrontEndLibsCertV9}
-              isBackEndDevApisCertV9={isBackEndDevApisCertV9}
-              isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
-              isB1EnglishCert={isB1EnglishCert}
-              isA2SpanishCert={isA2SpanishCert}
-              isA2ChineseCert={isA2ChineseCert}
-              isA1ChineseCert={isA1ChineseCert}
-              username={username}
-              verifyCert={verifyCert}
-            />
             <Spacer size='l' />
-          </ScrollElement>
-          {userToken && (
-            <>
-              <ScrollElement name='user-token'>
-                <UserToken />
-              </ScrollElement>
-              <Spacer size='l' />
-            </>
-          )}
-          <ScrollElement name='danger-zone'>
-            <DangerZone />
-          </ScrollElement>
-        </main>
-      </div>
-    </>
+          </>
+        )}
+        <ScrollElement name='danger-zone'>
+          <DangerZone />
+        </ScrollElement>
+      </main>
+    </div>
   );
 }
 
