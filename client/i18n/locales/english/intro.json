@@ -10613,6 +10613,12 @@
         "title": "Working with Lists",
         "intro": ["Learn about working with lists in these lessons."]
       },
+      "workshop-concert-program-planner": {
+        "title": "Build a Concert Program Planner",
+        "intro": [
+          "In this workshop, you'll practice working with lists by planning the program of an orchestra concert."
+        ]
+      },
       "lecture-working-with-tuples": {
         "title": "Working with Tuples",
         "intro": ["Learn about working with tuples in these lessons."]
