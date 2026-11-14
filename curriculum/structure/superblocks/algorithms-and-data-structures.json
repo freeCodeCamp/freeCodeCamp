@@ -87,6 +87,7 @@
           "dashedName": "python-dynamic-programming",
           "blocks": [
             "lecture-understanding-dynamic-programming",
+            "workshop-grid-path-counter",
             "lab-nth-fibonacci-number",
             "review-dynamic-programming",
             "quiz-dynamic-programming"
