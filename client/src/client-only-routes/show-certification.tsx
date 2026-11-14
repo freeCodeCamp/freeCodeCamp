@@ -431,7 +431,7 @@ export function CertificateDisplay({
             </>
           )}
           <Row>
-            <p className='verify'>
+            <p className='verify break-all' >
               {t('certification.verify')}
               <br />
               {certURL}
