@@ -11028,6 +11028,12 @@
           "In this lab you will implement the quicksort algorithm to sort a list of integers."
         ]
       },
+      "lecture-understanding-backtracking": {
+        "title": "Understanding Backtracking",
+        "intro": [
+          "In this lesson, you will learn about the backtracking algorithm and how it differs from the brute force approach."
+        ]
+      },
       "review-recursion-python-v2": {
         "title": "Review Recursion",
         "intro": [
@@ -11177,11 +11183,7 @@
     "chapters": {
       "front-end-development": "Front-End Web Development with HTML, CSS, and JavaScript"
     },
-    "modules": {
-      "html": "HTML",
-      "css": "CSS",
-      "javascript": "JavaScript"
-    },
+    "modules": { "html": "HTML", "css": "CSS", "javascript": "JavaScript" },
     "blocks": {
       "workshop-curriculum-outline": {
         "title": "Build a Curriculum Outline",
