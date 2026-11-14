@@ -3,7 +3,7 @@ import type {
   ChallengeFile,
   SavedChallengeFile
 } from '../../../redux/prop-types';
-import { mergeChallengeFiles } from './saved-challenges';
+import { mergeChallengeFiles, hasUnsavedChanges } from './saved-challenges';
 
 const jsChallenge = {
   contents: 'js contents',
@@ -139,5 +139,76 @@ describe('mergeChallengeFiles', () => {
 
     expect(files).toEqual(filesCopy);
     expect(savedChallengeFiles).toEqual(savedFilesCopy);
+  });
+});
+
+describe('hasUnsavedChanges', () => {
+  it('should return false if challengeFiles is null or undefined', () => {
+    expect(hasUnsavedChanges(null, [[jsChallenge]])).toBe(false);
+    expect(hasUnsavedChanges(undefined, [[jsChallenge]])).toBe(false);
+  });
+
+  it('should return false if all file contents match a baseline', () => {
+    const files: ChallengeFile[] = [jsChallenge, cssChallenge];
+    const baseline = [{ ...cssChallenge }, { ...jsChallenge }];
+
+    expect(hasUnsavedChanges(files, [baseline])).toBe(false);
+  });
+
+  it('should return true if any file contents differ from the baseline', () => {
+    const files: ChallengeFile[] = [
+      { ...jsChallenge, contents: 'edited js contents' },
+      cssChallenge
+    ];
+
+    expect(hasUnsavedChanges(files, [[jsChallenge, cssChallenge]])).toBe(true);
+  });
+
+  it('should return true if a file is missing from the baseline', () => {
+    const files: ChallengeFile[] = [jsChallenge, cssChallenge];
+
+    expect(hasUnsavedChanges(files, [[jsChallenge]])).toBe(true);
+  });
+
+  it('should return false if the contents match any one of the baselines', () => {
+    const editedJs = { ...jsChallenge, contents: 'edited js contents' };
+    const files: ChallengeFile[] = [editedJs, cssChallenge];
+    const dbBaseline = [jsChallenge, cssChallenge];
+    const localStorageBaseline = [
+      { fileKey: editedJs.fileKey, contents: editedJs.contents },
+      { fileKey: cssChallenge.fileKey, contents: cssChallenge.contents }
+    ];
+
+    expect(hasUnsavedChanges(files, [dbBaseline, localStorageBaseline])).toBe(
+      false
+    );
+  });
+
+  it('should return true only when the contents differ from every baseline', () => {
+    const files: ChallengeFile[] = [
+      { ...jsChallenge, contents: 'brand new contents' },
+      cssChallenge
+    ];
+    const dbBaseline = [jsChallenge, cssChallenge];
+    const localStorageBaseline = [
+      { fileKey: jsChallenge.fileKey, contents: 'older stored contents' },
+      { fileKey: cssChallenge.fileKey, contents: cssChallenge.contents }
+    ];
+
+    expect(hasUnsavedChanges(files, [dbBaseline, localStorageBaseline])).toBe(
+      true
+    );
+  });
+
+  it('should treat an empty baseline as unable to recover the work', () => {
+    const files: ChallengeFile[] = [jsChallenge];
+
+    expect(hasUnsavedChanges(files, [[jsChallenge], []])).toBe(false);
+    expect(
+      hasUnsavedChanges(files, [
+        [{ ...jsChallenge, contents: 'other contents' }],
+        []
+      ])
+    ).toBe(true);
   });
 });
