@@ -100,7 +100,9 @@ const mockSubRetrieveObj = {
     data: [
       {
         plan: {
-          product: 'prod_GD1GGbJsqQaupl'
+          product: 'prod_GD1GGbJsqQaupl',
+          // Matches the amount used in the charge-stripe requests (in cents).
+          amount: 500
         }
       }
     ]
