@@ -2,10 +2,8 @@ import { type Page } from '@playwright/test';
 import { test, expect } from './fixtures/isolated-user';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
-import { clearEditor, focusEditor } from './utils/editor';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { allowTrailingSlash } from './utils/url';
-
-const slowExpect = expect.configure({ timeout: 25000 });
 
 test.use({ userPreset: 'certified' });
 
@@ -99,6 +97,8 @@ const completeChallenges = async ({
   for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(allowTrailingSlash(challenge.url));
     await focusEditor({ page, isMobile });
+    const currentEditor = await getEditors(page).elementHandle();
+    if (!currentEditor) throw new Error('The challenge editor was not found');
     await clearEditor({ page, browserName });
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),
@@ -107,6 +107,8 @@ const completeChallenges = async ({
     await page.keyboard.press('ControlOrMeta+V');
     await page.getByRole('button', { name: 'Check Your Code' }).click();
     await page.getByRole('button', { name: 'Submit and continue' }).click();
+    // The URL changes before the old editor is replaced during navigation.
+    await currentEditor.waitForElementState('hidden');
   }
 };
 
@@ -128,6 +130,7 @@ test.describe('Donation modal display', () => {
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     test.setTimeout(40000);
+    await page.clock.install();
 
     await completeChallenges({ page, browserName, isMobile, number: 3 });
 
@@ -151,13 +154,17 @@ test.describe('Donation modal display', () => {
       donationModal.getByText('Help millions of people learn')
     ).toBeVisible();
 
+    await expect(
+      donationModal.getByRole('button', { name: 'Ask me later' })
+    ).toBeHidden();
+
     // Ensure that the modal cannot be closed by pressing the Escape key
     await page.keyboard.press('Escape');
     await expect(donationModal).toBeVisible();
 
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
+    // Run every countdown tick without waiting 20 seconds of real time.
+    await page.clock.runFor(20_000);
+    await expect(
       donationModal.getByRole('img', {
         name: 'Illustration of an adorable teddy bear wearing a graduation cap and flying with a Supporter badge.'
       })
@@ -228,6 +235,7 @@ test.describe('Donation modal appearance logic - New user', () => {
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     test.setTimeout(50000);
+    await page.clock.install();
 
     await completeChallenges({ page, isMobile, browserName, number: 10 });
 
@@ -241,9 +249,9 @@ test.describe('Donation modal appearance logic - New user', () => {
       )
     ).toBeVisible();
 
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
+    // Run every countdown tick without waiting 20 seconds of real time.
+    await page.clock.runFor(20_000);
+    await expect(
       donationModal.getByRole('heading', { name: 'Support us' })
     ).toBeVisible();
     await donationModal.getByRole('button', { name: 'Ask me later' }).click();
@@ -275,6 +283,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     test.setTimeout(40000);
+    await page.clock.install();
 
     await completeFrontEndCert(page, 1);
 
@@ -288,9 +297,9 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
       )
     ).toBeVisible();
 
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
+    // Run every countdown tick without waiting 20 seconds of real time.
+    await page.clock.runFor(20_000);
+    await expect(
       donationModal.getByText(
         'Nicely done. You just completed Front-End Development Libraries Projects.'
       )
@@ -341,6 +350,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
     page
   }) => {
     test.setTimeout(40000);
+    await page.clock.install();
 
     // Go to the last lecture of the Code Editors block.
     // This lecture is not added to the seed data, so it is not completed.
@@ -376,9 +386,9 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
       )
     ).toBeVisible();
 
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
+    // Run every countdown tick without waiting 20 seconds of real time.
+    await page.clock.runFor(20_000);
+    await expect(
       donationModal.getByText('Nicely done. You just completed Code Editors.')
     ).toBeVisible();
   });
@@ -397,6 +407,7 @@ test.describe('Donation modal appearance logic - Certified user', () => {
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     test.setTimeout(40000);
+    await page.clock.install();
 
     // Certified user already has more than 10 completed challenges, we are just completing 3 more.
     await completeChallenges({ page, isMobile, browserName, number: 3 });
@@ -412,9 +423,9 @@ test.describe('Donation modal appearance logic - Certified user', () => {
       )
     ).toBeVisible();
 
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
+    // Run every countdown tick without waiting 20 seconds of real time.
+    await page.clock.runFor(20_000);
+    await expect(
       donationModal.getByRole('heading', { name: 'Support us' })
     ).toBeVisible();
     await donationModal.getByRole('button', { name: 'Ask me later' }).click();
