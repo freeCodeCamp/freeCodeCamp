@@ -25,6 +25,7 @@ import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
+import { createSolutionZip } from '../utils/solution-zip';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -71,12 +72,6 @@ interface CompletionModalProps extends StateProps {
   t: TFunction;
 }
 
-interface DownloadableChallengeFile {
-  name: string;
-  ext: string;
-  contents: string;
-}
-
 export function CompletionModal({
   challengeFiles,
   close,
@@ -97,8 +92,8 @@ export function CompletionModal({
     // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], { type: 'text/json' });
+      const zip = createSolutionZip(challengeFiles);
+      const blob = new Blob([zip], { type: 'application/zip' });
       setDownloadURL(URL.createObjectURL(blob));
     }
     // oxlint-disable-next-line react/exhaustive-deps
@@ -194,7 +189,7 @@ export function CompletionModal({
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.txt`}
+            download={`${dashedName}.zip`}
             href={downloadURL}
           >
             {t('learn.download-solution')}
@@ -211,18 +206,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(CompletionModal));
-
-export function combineFileData(challengeFiles: DownloadableChallengeFile[]) {
-  return challengeFiles.reduce<string>(function (
-    allFiles: string,
-    currentFile: DownloadableChallengeFile
-  ) {
-    const beforeText = `** start of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    const afterText = `\n\n** end of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    allFiles +=
-      challengeFiles.length > 0
-        ? `${beforeText}${currentFile.contents}${afterText}`
-        : currentFile.contents;
-    return allFiles;
-  }, '');
-}
