@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-tree-traversal",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6ae118150b9d8c4481af968c",
+      "title": "Implement Tree Traversal Algorithms"
+    }
+  ],
+  "usesMultifileEditor": true
+}

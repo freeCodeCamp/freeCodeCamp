@@ -11107,6 +11107,12 @@
           "In this workshop, you'll build a binary search tree, learn how to insert, search for, and delete values, and traverse it with inorder traversal."
         ]
       },
+      "lab-tree-traversal": {
+        "title": "Implement Tree Traversal Algorithms",
+        "intro": [
+          "In this lab, you will add preorder, postorder, and level-order traversal methods to a binary search tree."
+        ]
+      },
       "lecture-understanding-priority-queues-and-heaps": {
         "title": "Understanding Priority Queues and Heaps",
         "intro": [
