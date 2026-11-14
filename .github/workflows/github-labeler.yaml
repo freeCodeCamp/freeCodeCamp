@@ -21,4 +21,9 @@ jobs:
       - uses: actions/labeler@bf12e9b00b37c5c0ca2b87b79b2daf7891dbda13 # v7
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
-          sync-labels: true
+          # Add-only: never replace the PR's full label set. The PR
+          # Contribution Guidelines workflow adds/removes its own labels
+          # (e.g. `deprioritized`) concurrently, and sync-labels: true
+          # would wipe labels added between labeler's read and write.
+          # https://github.com/freeCodeCamp/freeCodeCamp/issues/70526
+          sync-labels: false
