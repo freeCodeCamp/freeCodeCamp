@@ -63,6 +63,10 @@
   margin-top: var(--header-height);
 }
 
+.certificate-links {
+  width: 100%;
+}
+
 .certificate-outer-wrapper .donation-section hr {
   border: 1px solid var(--gray-10);
 }
