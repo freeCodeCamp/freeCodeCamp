@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-copying-nested-collections",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6af6e0a94652b11d19ce9c0b",
+      "title": "How Do Shallow and Deep Copies Differ?"
+    }
+  ],
+  "helpCategory": "Python"
+}

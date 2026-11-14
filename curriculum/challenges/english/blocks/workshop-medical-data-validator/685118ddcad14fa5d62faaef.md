@@ -7,7 +7,7 @@ dashedName: step-33
 
 # --description--
 
-The `is` and `is not` operators check whether two values refer to the same object. This is called an identity comparison. You can use `is None` to check whether a value is the `None` object, and `is not None` to check whether it is not the `None` object.
+Recall that `is` and `is not` compare object identity. Here, `None` represents the absence of a diagnosis, so use `diagnosis is None` to check for that specific object. A general falsiness check would also match values such as `0` and `False`, which are not valid diagnoses.
 
 Now add a key `diagnosis` to the `constraints` dictionary. For its value, write an expression that checks that `diagnosis` is either an instance of `str` or is `None`.
 
