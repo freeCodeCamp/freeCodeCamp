@@ -455,9 +455,6 @@ importers:
       '@paypal/react-paypal-js':
         specifier: 10.6.1
         version: 10.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@redux-devtools/extension':
-        specifier: 3.3.0
-        version: 3.3.0(redux@4.2.1)
       '@redux-saga/core':
         specifier: ^1.4.2
         version: 1.5.1
@@ -3856,11 +3853,6 @@ packages:
     resolution: {integrity: sha512-IwEphTD75liO8g+6taS+4oqz+nnroocNfWVHWz7j+N+ZO2vYrc6PV1q7GQhuahL0IOR7JccFTsFKQ/mb6iZWAg==}
     peerDependencies:
       react: '>=16.8'
-
-  '@redux-devtools/extension@3.3.0':
-    resolution: {integrity: sha512-X34S/rC8S/M1BIrkYD1mJ5f8vlH0BDqxXrs96cvxSBo4FhMdbhU+GUGsmNYov1xjSyLMHgo8NYrUG8bNX7525g==}
-    peerDependencies:
-      redux: ^3.1.0 || ^4.0.0 || ^5.0.0
 
   '@redux-saga/core@1.5.1':
     resolution: {integrity: sha512-Yh/eO0YBawlK5qAVXh9vSS0BDMWyFe6qIcVcKa8JtPOo3IFwRly33ZYBrsCwxu7jdSQT9QUJHChAU8fil5dRZQ==}
@@ -7953,9 +7945,6 @@ packages:
   immutable@3.7.6:
     resolution: {integrity: sha512-AizQPcaofEtO11RZhPPHBOJRdo/20MKQF9mBLnVkBoyHi1/zXK8fzVdnEpSV9gxqtnh6Qomfp3F0xT5qP/vThw==}
     engines: {node: '>=0.8.0'}
-
-  immutable@4.3.9:
-    resolution: {integrity: sha512-ObHy4YN7ycwZOUCLI1/6svfyAFu7vL8RhAvVu/bh/RZW9EPlOyDaQ9jDQWCtdqzaXUjgXZCW1migtHE7YI7UGQ==}
 
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
@@ -15369,12 +15358,6 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  '@redux-devtools/extension@3.3.0(redux@4.2.1)':
-    dependencies:
-      '@babel/runtime': 7.29.10
-      immutable: 4.3.9
-      redux: 4.2.1
-
   '@redux-saga/core@1.5.1':
     dependencies:
       '@babel/runtime': 7.29.10
@@ -20735,8 +20718,6 @@ snapshots:
   immer@9.0.21: {}
 
   immutable@3.7.6: {}
-
-  immutable@4.3.9: {}
 
   import-fresh@3.3.1:
     dependencies:
