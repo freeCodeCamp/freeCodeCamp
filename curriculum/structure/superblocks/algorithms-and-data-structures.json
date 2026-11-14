@@ -7,6 +7,7 @@
           "dashedName": "python-algorithms",
           "blocks": [
             "lecture-understanding-algorithms-and-big-o",
+            "workshop-luhn-algorithm",
             "lab-stock-profit-calculator",
             "lecture-searching-and-sorting-algorithms-v2",
             "workshop-binary-search",
