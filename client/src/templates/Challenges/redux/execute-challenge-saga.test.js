@@ -81,4 +81,19 @@ describe('executeTests generator', () => {
       ])
       .run();
   });
+
+  it('escapes HTML in console logs so entities are shown literally', () => {
+    const mockTestRunner = () => [
+      { pass: true, logs: [{ msg: 'Dolce &amp; Gabbana <b>bold</b>' }] }
+    ];
+
+    const tests = [{ testString: 'assert(true);', text: 'Test 1' }];
+
+    return expectSaga(executeTests, mockTestRunner, tests)
+      .put({
+        type: 'challenge.updateLogs',
+        payload: 'Dolce &amp;amp; Gabbana &lt;b&gt;bold&lt;/b&gt;'
+      })
+      .run();
+  });
 });
