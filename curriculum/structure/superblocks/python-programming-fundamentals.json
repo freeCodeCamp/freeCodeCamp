@@ -47,7 +47,8 @@
         {
           "dashedName": "python-dictionaries-and-sets",
           "blocks": [
-            "lecture-working-with-dictionaries-and-sets",
+            "lecture-working-with-dictionaries",
+            "lecture-working-with-sets",
             "lecture-working-with-modules",
             "lecture-copying-nested-collections",
             "lecture-working-with-regular-expressions-python",

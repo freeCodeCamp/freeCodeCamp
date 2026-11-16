@@ -10644,11 +10644,13 @@
           "Test what you've learned about loops and sequences in Python with this quiz."
         ]
       },
-      "lecture-working-with-dictionaries-and-sets": {
-        "title": "Working with Dictionaries and Sets",
-        "intro": [
-          "Learn about working with dictionaries and sets in these lessons."
-        ]
+      "lecture-working-with-dictionaries": {
+        "title": "Working with Dictionaries",
+        "intro": ["Learn about working with dictionaries in these lessons."]
+      },
+      "lecture-working-with-sets": {
+        "title": "Working with Sets",
+        "intro": ["Learn about working with sets in this lesson."]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
