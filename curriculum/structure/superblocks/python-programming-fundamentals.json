@@ -35,6 +35,7 @@
           "dashedName": "python-loops-and-sequences",
           "blocks": [
             "lecture-working-with-lists",
+            "workshop-concert-program-planner",
             "lecture-working-with-tuples",
             "lecture-working-with-loops-python",
             "lecture-understanding-list-comprehensions-and-lambda-functions",
