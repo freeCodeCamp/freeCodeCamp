@@ -22,7 +22,7 @@ const fullStackCertificateIds = [
  * @returns True if the certification slug is known, otherwise false.
  */
 export function isKnownCertSlug(certSlug: string): certSlug is Certification {
-  return certSlug in certSlugTypeMap;
+  return Object.hasOwn(certSlugTypeMap, certSlug);
 }
 
 /**

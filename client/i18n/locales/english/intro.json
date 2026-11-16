@@ -1655,6 +1655,12 @@
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
       },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
+      },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
         "intro": [
@@ -2566,6 +2572,12 @@
         "title": "Build a Profile Lookup",
         "intro": [
           "In this lab, you'll create a function that looks up profile information."
+        ]
+      },
+      "lab-data-sanitizer-sweep": {
+        "title": "Implement the Data Sanitizer Sweep Process",
+        "intro": [
+          "In this lab, you will practice using string manipulation and loops to replace characters in log strings and entire log files."
         ]
       },
       "workshop-space-mission-roster": {
@@ -6654,6 +6666,12 @@
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
       },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
+      },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
         "intro": [
@@ -10591,10 +10609,22 @@
           "In this lab you will practice basic Python by building an RPG character."
         ]
       },
-      "lecture-working-with-loops-and-sequences": {
-        "title": "Working with Loops and Sequences",
+      "lecture-working-with-lists": {
+        "title": "Working with Lists",
+        "intro": ["Learn about working with lists in these lessons."]
+      },
+      "lecture-working-with-tuples": {
+        "title": "Working with Tuples",
+        "intro": ["Learn about working with tuples in these lessons."]
+      },
+      "lecture-working-with-loops-python": {
+        "title": "Working with Loops",
+        "intro": ["Learn about working with loops in these lessons."]
+      },
+      "lecture-understanding-list-comprehensions-and-lambda-functions": {
+        "title": "Understanding List Comprehensions and Lambda Functions",
         "intro": [
-          "Learn about working with loops and sequences in these lessons."
+          "Learn about list comprehensions and lambda functions in these lessons."
         ]
       },
       "workshop-pin-extractor": {
@@ -10607,7 +10637,7 @@
         "title": "Build a Number Pattern Generator",
         "intro": ["In this lab you will build a number pattern generator."]
       },
-      "review-loops-and-sequences": {
+      "review-loops-and-sequences-v2": {
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
@@ -10629,6 +10659,12 @@
       "lecture-working-with-modules": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
+      },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
       },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
