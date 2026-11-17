@@ -1,8 +1,7 @@
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
-import type { TFunction } from 'i18next';
+import PageHead from '../components/page-head';
 import React, { useEffect } from 'react';
-import Helmet from 'react-helmet';
-import { withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -29,7 +28,6 @@ import type { User } from '../redux/prop-types';
 interface DonatePageProps {
   isDonating?: boolean;
   showLoading: boolean;
-  t: TFunction;
   donationFormState: DonateFormState;
 }
 
@@ -51,7 +49,6 @@ const mapStateToProps = createSelector(
 function DonatePage({
   isDonating = false,
   showLoading,
-  t,
   donationFormState
 }: DonatePageProps) {
   useEffect(() => {
@@ -65,7 +62,6 @@ function DonatePage({
     <Loader fullScreen={true} />
   ) : (
     <>
-      <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Container fluid={true} className='gradient-container'>
         <Container className='donate-supporter-page-section'>
           <main>
@@ -138,4 +134,9 @@ function DonatePage({
 
 DonatePage.displayName = 'DonatePage';
 
-export default connect(mapStateToProps)(withTranslation()(DonatePage));
+export default connect(mapStateToProps)(DonatePage);
+
+export function Head() {
+  const { t } = useTranslation();
+  return <PageHead title={`${t('donate.title')} | freeCodeCamp.org`} />;
+}

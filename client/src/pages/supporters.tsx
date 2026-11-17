@@ -1,5 +1,5 @@
+import PageHead from '../components/page-head';
 import React from 'react';
-import Helmet from 'react-helmet';
 import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -101,13 +101,8 @@ function ConditionalContent({
 }
 
 function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
-  const { t } = useTranslation();
-
   return (
     <>
-      <Helmet>
-        <title>{t('misc.supporters-page-title')} | freeCodeCamp.org</title>
-      </Helmet>
       <Container
         fluid={true}
         className={`${isDonating && 'supporters-background'} `}
@@ -149,3 +144,10 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(SupportersPage));
+
+export function Head() {
+  const { t } = useTranslation();
+  return (
+    <PageHead title={`${t('misc.supporters-page-title')} | freeCodeCamp.org`} />
+  );
+}

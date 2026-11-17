@@ -1,4 +1,5 @@
 /* oxlint-disable filenames-simple/naming-convention */
+import PageHead from '../../../components/page-head';
 import React from 'react';
 import ShowCertification from '../../../client-only-routes/show-certification';
 import '../certification.css';
@@ -27,3 +28,7 @@ const CertificationPage = ({ params, location }: CertificationPageProps) => {
 };
 
 export default CertificationPage;
+
+export function Head() {
+  return <PageHead certification={true} />;
+}

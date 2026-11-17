@@ -24,3 +24,5 @@ const ChallengesRedirect = ({ params }: ChallengesRedirectProps) => {
 };
 
 export default ChallengesRedirect;
+
+export { default as Head } from '../../components/page-head';

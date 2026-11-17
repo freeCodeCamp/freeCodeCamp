@@ -1,7 +1,8 @@
 import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useStaticQuery } from 'gatsby';
 import { I18nextProvider } from 'react-i18next';
@@ -18,7 +19,16 @@ import type {
   GeneratedExamQuestion
 } from '../../../redux/prop-types';
 import { getGenerateExam } from '../../../utils/ajax';
-import ShowExam from './show';
+import ShowExam, { Head } from './show';
+
+vi.mock('../../../components/page-head', () => ({
+  default: ({ title, noindex }: { title: string; noindex?: boolean }) => (
+    <>
+      <title>{title}</title>
+      {noindex && <meta name='robots' content='noindex' />}
+    </>
+  )
+}));
 
 vi.unmock('react-i18next');
 
@@ -129,6 +139,16 @@ const pageContext: { challengeMeta: ChallengeMeta } = {
   }
 };
 
+function expectPageHead() {
+  const view = renderToStaticMarkup(
+    <I18nextProvider i18n={i18nTestConfig}>
+      <Head {...({ data } as Parameters<typeof Head>[0])} />
+    </I18nextProvider>
+  );
+  expect(view).toContain(`<title>${windowTitle}</title>`);
+  expect(view).toContain('name="robots" content="noindex"');
+}
+
 function renderShowExam({
   completedChallenges = [],
   completedSurveys = []
@@ -211,8 +231,8 @@ async function startExam() {
   return user;
 }
 
-async function expectExamLandingPage() {
-  await waitFor(() => expect(document.title).toBe(windowTitle));
+function expectExamLandingPage() {
+  expectPageHead();
   expect(
     screen.getByRole('heading', { level: 1, name: examTitle })
   ).toBeInTheDocument();
@@ -243,7 +263,7 @@ function expectBlockedExamLandingPage() {
 }
 
 function expectStartedExamHeader() {
-  expect(document.title).toBe(windowTitle);
+  expectPageHead();
   expect(screen.getByText(examTitle)).toBeInTheDocument();
   expect(
     screen.getByText(t('learn.exam.time', { t: '0:00' }))
@@ -283,21 +303,21 @@ async function answerCurrentQuestionAndGoNext(
 }
 
 describe('<ShowExam /> non-qualified state', () => {
-  it('renders the non-qualified exam page with a disabled start button', async () => {
+  it('renders the non-qualified exam page with a disabled start button', () => {
     expect.hasAssertions();
     renderShowExam();
 
-    await expectExamLandingPage();
+    expectExamLandingPage();
     expectBlockedExamLandingPage();
   });
 });
 
 describe('<ShowExam /> qualified state', () => {
-  it('renders the qualified exam page with an enabled start button', async () => {
+  it('renders the qualified exam page with an enabled start button', () => {
     expect.hasAssertions();
     renderShowExam(completedExamRequirements);
 
-    await expectExamLandingPage();
+    expectExamLandingPage();
     expectQualifiedExamLandingPage();
   });
 });

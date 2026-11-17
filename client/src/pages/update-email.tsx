@@ -1,5 +1,7 @@
+import { useTranslation } from 'react-i18next';
 import { Router } from '@gatsbyjs/reach-router';
 import { withPrefix } from 'gatsby';
+import PageHead from '../components/page-head';
 import React from 'react';
 
 import ShowUpdateEmail from '../client-only-routes/show-update-email';
@@ -18,3 +20,8 @@ function UpdateEmail(): JSX.Element {
 UpdateEmail.displayName = 'UpdateEmail';
 
 export default UpdateEmail;
+
+export function Head() {
+  const { t } = useTranslation();
+  return <PageHead title={`${t('misc.update-email-1')} | freeCodeCamp.org`} />;
+}

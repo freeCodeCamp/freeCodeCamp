@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
+import { graphql, type HeadFC } from 'gatsby';
 import {
   Button,
   Callout,
@@ -16,6 +15,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
 import LearnLayout from '../../../components/layouts/learn';
+import PageHead from '../../../components/page-head';
 import ChallengeTitle from '../components/challenge-title';
 import useDetectOS, { type UserOSState } from '../utils/use-detect-os';
 import type {
@@ -326,11 +326,6 @@ function ShowExamDownload({
 
   return (
     <LearnLayout>
-      <Helmet>
-        <title>
-          {title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
-        </title>
-      </Helmet>
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -470,6 +465,16 @@ function getLatest(releases: GitProps[]): GitProps {
       );
   }
 }
+
+export const Head: HeadFC<ShowExamDownloadProps['data']> = ({ data }) => {
+  const { title } = data.challengeNode.challenge;
+  return (
+    <PageHead
+      title={title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
+      noindex
+    />
+  );
+};
 
 export default connect(mapStateToProps)(withTranslation()(ShowExamDownload));
 

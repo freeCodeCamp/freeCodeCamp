@@ -5,3 +5,5 @@ import RedirectHome from '../../components/redirect-home';
 const User = () => <RedirectHome />;
 
 export default User;
+
+export { default as Head } from '../../components/page-head';
