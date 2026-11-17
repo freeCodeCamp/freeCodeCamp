@@ -38,9 +38,10 @@
             "workshop-concert-program-planner",
             "lecture-working-with-tuples",
             "lecture-working-with-loops-python",
-            "lecture-understanding-list-comprehensions-and-lambda-functions",
             "workshop-pin-extractor",
             "lab-number-pattern-generator",
+            "lecture-understanding-list-comprehensions-and-lambda-functions",
+            "workshop-sensor-data-cleaner",
             "review-loops-and-sequences-v2",
             "quiz-loops-and-sequences"
           ]
