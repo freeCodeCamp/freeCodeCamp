@@ -1,0 +1,21 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-modules-v2",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "683ec7b778993c6971b56c83",
+      "title": "How Do You Import Python Modules?"
+    },
+    {
+      "id": "56b190c7be1f4738b7cfb5f8",
+      "title": "How Do You Create and Use Local Modules?"
+    },
+    {
+      "id": "a8a2a460fbdae082887a2eeb",
+      "title": "How Do You Find and Use Standard-Library Modules?"
+    }
+  ],
+  "helpCategory": "Python"
+}
