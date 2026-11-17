@@ -83,7 +83,7 @@ function ProgressInner({
       setLastShownPercent(completedPercent);
       animateProgressInner(completedPercent);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [isProgressInViewport]);
 
   // Cleanup interval on unmount

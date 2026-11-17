@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/unbound-method */
+/* oxlint-disable typescript/unbound-method */
 import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';

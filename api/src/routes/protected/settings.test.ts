@@ -703,9 +703,9 @@ Please wait 5 minutes to resend an authentication link.`
 
         expect(token).toEqual({
           ttl: 15 * 60 * 1000,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           created: expect.any(Date),
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           id: expect.any(String),
           userId: defaultUserId
         });

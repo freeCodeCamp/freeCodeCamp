@@ -46,10 +46,13 @@ async function openProjectPreview(page: Page) {
 }
 
 test.describe('Project preview isolation', () => {
-  // The author owns the project; the shared viewer only reads its public profile.
+  // The author and viewer have separate accounts to exercise cross-user isolation.
   test.use({
     userPreset: 'development',
-    storageState: 'playwright/.auth/certified-user.json'
+    storageState: async ({ createUser }, use) => {
+      const viewer = await createUser('certified');
+      await use(viewer.storageState);
+    }
   });
 
   test.beforeEach(async ({ isolatedUser, playwright }) => {

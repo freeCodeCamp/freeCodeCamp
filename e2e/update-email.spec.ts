@@ -76,7 +76,7 @@ test.describe('The update-email page when the user is signed in', () => {
 test.describe('The update-email page when the user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ isolatedPage: page }) => {
     await page.goto('/update-email');
   });
 

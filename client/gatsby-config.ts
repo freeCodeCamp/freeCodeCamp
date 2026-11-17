@@ -31,7 +31,7 @@ const config: GatsbyConfig = {
         // is concerned. It doesn't affect any tasks in any way, so we can
         // ignore it.
 
-        // eslint-disable-next-line turbo/no-undeclared-env-vars
+        // oxlint-disable-next-line turbo/no-undeclared-env-vars
         generateStatsFile: process.env.CI
       }
     },
