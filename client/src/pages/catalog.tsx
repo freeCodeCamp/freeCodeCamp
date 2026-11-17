@@ -1,16 +1,38 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Spacer, Dropdown, MenuItem, Alert } from '@freecodecamp/ui';
 import { catalog } from '@freecodecamp/shared/config/catalog';
 import CatalogItem from '../components/catalog-item';
 
 import './catalog.css';
+import { navigate, PageProps } from 'gatsby';
 
-const CatalogPage = () => {
+interface DataProps {
+  search: string;
+}
+
+const CatalogPage = ({ location }: PageProps<DataProps>) => {
   const { t } = useTranslation();
 
-  const [selectedLevels, setSelectedLevels] = useState<string[]>(['all']);
-  const [selectedTopics, setSelectedTopics] = useState<string[]>(['all']);
+  //get search params and save
+  const searchParams = new URLSearchParams(location.search);
+  const oldSelectedLevels = searchParams.get('selectedLevels')?.split(',');
+  const oldSelectedTopics = searchParams.get('selectedTopics')?.split(',');
+
+  const [selectedLevels, setSelectedLevels] = useState<string[]>(
+    oldSelectedLevels || ['all']
+  );
+  const [selectedTopics, setSelectedTopics] = useState<string[]>(
+    oldSelectedTopics || ['all']
+  );
+
+  //set search params if user change the filter
+  useEffect(() => {
+    navigate(
+      `?selectedLevels=${selectedLevels.join(',')}&selectedTopics=${selectedTopics.join(',')}`,
+      { replace: true, state: {} }
+    );
+  }, [selectedLevels, selectedTopics]);
 
   // Extract unique levels and topics from catalog
   const uniqueLevels = useMemo(() => {
