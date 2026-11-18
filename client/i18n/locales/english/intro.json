@@ -10537,7 +10537,7 @@
       "workshop-python-photo-gallery": {
         "title": "Build a Python Photo Gallery",
         "intro": [
-          "In this workshop, you will practice working with strings, variables, and the print function that displays a photo gallery in the terminal using Python."
+          "In this workshop, you will practice working with strings, variables, and the print function to display a photo gallery in the terminal using Python."
         ]
       },
       "lecture-understanding-variables-and-data-types-v2": {
