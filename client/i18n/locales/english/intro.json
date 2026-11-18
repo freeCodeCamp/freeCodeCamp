@@ -10662,15 +10662,23 @@
           "Test what you've learned about loops and sequences in Python with this quiz."
         ]
       },
-      "lecture-working-with-dictionaries-and-sets": {
-        "title": "Working with Dictionaries and Sets",
-        "intro": [
-          "Learn about working with dictionaries and sets in these lessons."
-        ]
+      "lecture-working-with-dictionaries": {
+        "title": "Working with Dictionaries",
+        "intro": ["Learn about working with dictionaries in these lessons."]
+      },
+      "lecture-working-with-sets": {
+        "title": "Working with Sets",
+        "intro": ["Learn about working with sets in this lesson."]
       },
       "lecture-working-with-modules-v2": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
+      },
+      "lecture-copying-nested-collections": {
+        "title": "Copying Nested Collections",
+        "intro": [
+          "Learn how assignment, shallow copying, and deep copying affect nested dictionaries and lists."
+        ]
       },
       "lecture-working-with-regular-expressions-python": {
         "title": "Working with Regular Expressions",
