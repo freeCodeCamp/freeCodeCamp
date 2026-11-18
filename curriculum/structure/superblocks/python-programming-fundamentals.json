@@ -51,12 +51,16 @@
           "blocks": [
             "lecture-working-with-dictionaries",
             "lecture-working-with-sets",
+            "review-dictionaries-and-sets-v2"
+          ]
+        },
+        {
+          "dashedName": "python-modules-and-standard-library",
+          "blocks": [
             "lecture-working-with-modules-v2",
             "lecture-copying-nested-collections",
             "lecture-working-with-regular-expressions-python",
-            "workshop-medical-data-validator",
-            "review-dictionaries-and-sets-v2",
-            "quiz-dictionaries-and-sets"
+            "workshop-medical-data-validator"
           ]
         },
         {

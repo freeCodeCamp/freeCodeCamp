@@ -10487,6 +10487,7 @@
       "lab-rpg-character": "Build an RPG Character",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-modules-and-standard-library": "Modules and Standard Library",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Error Handling",
       "python-classes-and-objects": "Classes and Objects",
@@ -10670,6 +10671,13 @@
         "title": "Working with Sets",
         "intro": ["Learn about working with sets in this lesson."]
       },
+      "review-dictionaries-and-sets-v2": {
+        "title": "Dictionaries and Sets Review",
+        "intro": [
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
+        ]
+      },
       "lecture-working-with-modules-v2": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
@@ -10690,19 +10698,6 @@
         "title": "Build a Medical Data Validator",
         "intro": [
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
-        ]
-      },
-      "review-dictionaries-and-sets-v2": {
-        "title": "Dictionaries and Sets Review",
-        "intro": [
-          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
-        ]
-      },
-      "quiz-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Quiz",
-        "intro": [
-          "Test what you've learned about dictionaries and sets in Python with this quiz."
         ]
       },
       "lab-user-configuration-manager": {
