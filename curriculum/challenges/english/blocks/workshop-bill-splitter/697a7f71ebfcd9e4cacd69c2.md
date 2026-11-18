@@ -7,7 +7,7 @@ dashedName: step-9
 
 # --description--
 
-The f-strings you've been using only change how numbers are displayed. The values themselves still have all their decimal places. To get a number that is actually rounded and can be used in further calculations, you can use the `round()` function.
+The :.2f format specifier you've been using only changes how numbers are displayed. The values themselves still have all their decimal places. To get a number that is actually rounded and can be used in further calculations, you can use the `round()` function.
 
 In an earlier lesson, you learned that the `round()` function takes two arguments: the number you want to round and the number of decimal places to keep. Here's an example:
 
@@ -18,7 +18,7 @@ round(num, 3) # 4.815
 
 Use the `round()` function to round `final_bill` to two decimal places and assign the result to a new variable named `each_pays`.
 
-Then, use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable. Don't use an f-string this time.
+Then, use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable. Don't format the number this time.
 
 # --hints--
 
