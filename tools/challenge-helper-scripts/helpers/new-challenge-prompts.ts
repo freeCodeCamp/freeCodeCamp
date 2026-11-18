@@ -2,15 +2,13 @@ import { input, select } from '@inquirer/prompts';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { getLastStep } from './get-last-step-file-number.js';
 
-// These types cannot be created with these scripts: quizzes have their
-// own block and are created with create-quiz, and exam, examDownload
-// and invalid are not regular challenges. Offering them here only leads
-// to a broken template (see #70987).
+// Quizzes and exams use separate workflows; invalid and step aren't supported.
 const excludedChallengeTypes = new Set([
   challengeTypes.quiz,
   challengeTypes.exam,
   challengeTypes.examDownload,
-  challengeTypes.invalid
+  challengeTypes.invalid,
+  challengeTypes.step
 ]);
 
 export const getChallengeTypeChoices = () =>

@@ -3,14 +3,15 @@ import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { getChallengeTypeChoices } from './new-challenge-prompts.js';
 
 describe('getChallengeTypeChoices', () => {
-  it('excludes quiz, exam, examDownload and invalid', () => {
+  it('excludes quiz, exam, examDownload, invalid and step', () => {
     const values = getChallengeTypeChoices().map(({ value }) => value);
 
     for (const excluded of [
       challengeTypes.quiz,
       challengeTypes.exam,
       challengeTypes.examDownload,
-      challengeTypes.invalid
+      challengeTypes.invalid,
+      challengeTypes.step
     ]) {
       expect(values).not.toContain(excluded.toString());
     }
@@ -23,7 +24,6 @@ describe('getChallengeTypeChoices', () => {
       challengeTypes.html,
       challengeTypes.js,
       challengeTypes.modern,
-      challengeTypes.step,
       challengeTypes.lab
     ]) {
       expect(values).toContain(offered.toString());
