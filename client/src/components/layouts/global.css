@@ -503,7 +503,7 @@ kbd {
 }
 
 :not(pre) > code,
-:not(pre) > kbd {
+kbd {
   border: 1px solid var(--gray-45);
 }
 
