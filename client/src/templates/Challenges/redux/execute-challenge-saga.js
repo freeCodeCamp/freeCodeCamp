@@ -247,7 +247,7 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
     try {
       const { pass, err, logs = [] } = rawResults[i] || {};
 
-      const logString = logs.map(log => log.msg).join('\n');
+      const logString = logs.map(log => escape(log.msg)).join('\n');
       if (firstTest && logString) {
         yield put(updateLogs(logString));
       }
@@ -369,7 +369,7 @@ function* previewChallengeSaga() {
           const logs = results[0].logs?.filter(
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
-          const output = logs?.map(log => log.msg).join('\n');
+          const output = logs?.map(log => escape(log.msg)).join('\n');
 
           yield put(updateConsole(output));
         }
