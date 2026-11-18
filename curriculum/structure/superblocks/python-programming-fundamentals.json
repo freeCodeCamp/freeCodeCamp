@@ -39,9 +39,10 @@
             "lecture-working-with-tuples",
             "workshop-version-checker",
             "lecture-working-with-loops-python",
-            "lecture-understanding-list-comprehensions-and-lambda-functions",
             "workshop-pin-extractor",
+            "workshop-elevator-simulator",
             "lab-number-pattern-generator",
+            "lecture-understanding-list-comprehensions-and-lambda-functions",
             "review-loops-and-sequences-v2",
             "quiz-loops-and-sequences"
           ]

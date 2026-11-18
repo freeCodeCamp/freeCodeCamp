@@ -10634,21 +10634,27 @@
         "title": "Working with Loops",
         "intro": ["Learn about working with loops in these lessons."]
       },
-      "lecture-understanding-list-comprehensions-and-lambda-functions": {
-        "title": "Understanding List Comprehensions and Lambda Functions",
-        "intro": [
-          "Learn about list comprehensions and lambda functions in these lessons."
-        ]
-      },
       "workshop-pin-extractor": {
         "title": "Build a PIN Extractor",
         "intro": [
           "In this workshop you will build a function to extract secret PINs hidden in poems."
         ]
       },
+      "workshop-elevator-simulator": {
+        "title": "Build an Elevator Simulator",
+        "intro": [
+          "In this workshop, you'll practice working with while loops by building a function that simulates an elevator moving between floors."
+        ]
+      },
       "lab-number-pattern-generator": {
         "title": "Build a Number Pattern Generator",
         "intro": ["In this lab you will build a number pattern generator."]
+      },
+      "lecture-understanding-list-comprehensions-and-lambda-functions": {
+        "title": "Understanding List Comprehensions and Lambda Functions",
+        "intro": [
+          "Learn about list comprehensions and lambda functions in these lessons."
+        ]
       },
       "review-loops-and-sequences-v2": {
         "title": "Loops and Sequences Review",
