@@ -10487,8 +10487,10 @@
       "lab-rpg-character": "Build an RPG Character",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-modules-and-standard-library": "Modules and Standard Library",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Error Handling",
+      "lab-order-processor": "Build an Order Processor",
       "python-classes-and-objects": "Classes and Objects",
       "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
@@ -10623,6 +10625,12 @@
         "title": "Working with Tuples",
         "intro": ["Learn about working with tuples in these lessons."]
       },
+      "workshop-version-checker": {
+        "title": "Build a Version Checker",
+        "intro": [
+          "In this workshop, you'll practice working with tuples by building a program that checks if an app needs an update."
+        ]
+      },
       "lecture-working-with-loops-python": {
         "title": "Working with Loops",
         "intro": ["Learn about working with loops in these lessons."]
@@ -10631,6 +10639,12 @@
         "title": "Build a PIN Extractor",
         "intro": [
           "In this workshop you will build a function to extract secret PINs hidden in poems."
+        ]
+      },
+      "workshop-elevator-simulator": {
+        "title": "Build an Elevator Simulator",
+        "intro": [
+          "In this workshop, you'll practice working with while loops by building a function that simulates an elevator moving between floors."
         ]
       },
       "lab-number-pattern-generator": {
@@ -10662,15 +10676,30 @@
           "Test what you've learned about loops and sequences in Python with this quiz."
         ]
       },
-      "lecture-working-with-dictionaries-and-sets": {
-        "title": "Working with Dictionaries and Sets",
+      "lecture-working-with-dictionaries": {
+        "title": "Working with Dictionaries",
+        "intro": ["Learn about working with dictionaries in these lessons."]
+      },
+      "lecture-working-with-sets": {
+        "title": "Working with Sets",
+        "intro": ["Learn about working with sets in this lesson."]
+      },
+      "review-dictionaries-and-sets-v2": {
+        "title": "Dictionaries and Sets Review",
         "intro": [
-          "Learn about working with dictionaries and sets in these lessons."
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
         ]
       },
       "lecture-working-with-modules-v2": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
+      },
+      "lecture-copying-nested-collections": {
+        "title": "Copying Nested Collections",
+        "intro": [
+          "Learn how assignment, shallow copying, and deep copying affect nested dictionaries and lists."
+        ]
       },
       "lecture-working-with-regular-expressions-python": {
         "title": "Working with Regular Expressions",
@@ -10682,19 +10711,6 @@
         "title": "Build a Medical Data Validator",
         "intro": [
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
-        ]
-      },
-      "review-dictionaries-and-sets-v2": {
-        "title": "Dictionaries and Sets Review",
-        "intro": [
-          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
-        ]
-      },
-      "quiz-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Quiz",
-        "intro": [
-          "Test what you've learned about dictionaries and sets in Python with this quiz."
         ]
       },
       "lab-user-configuration-manager": {
@@ -10725,6 +10741,12 @@
         "title": "Error Handling Quiz",
         "intro": [
           "Test what you've learned about error handling in Python with this quiz."
+        ]
+      },
+      "lab-order-processor": {
+        "title": "Build an Order Processor",
+        "intro": [
+          "In this lab, you will practice handling errors in Python by processing e-commerce orders."
         ]
       },
       "lecture-classes-and-objects": {
@@ -10892,6 +10914,12 @@
         "title": "Understanding Algorithms and Big O Notation",
         "intro": [
           "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
+        ]
+      },
+      "workshop-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this workshop, you will build a validator using numerical computations and string manipulation."
         ]
       },
       "lab-stock-profit-calculator": {
