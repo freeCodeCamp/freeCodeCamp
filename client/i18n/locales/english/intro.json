@@ -2574,6 +2574,12 @@
           "In this lab, you'll create a function that looks up profile information."
         ]
       },
+      "lab-data-sanitizer-sweep": {
+        "title": "Implement the Data Sanitizer Sweep Process",
+        "intro": [
+          "In this lab, you will practice using string manipulation and loops to replace characters in log strings and entire log files."
+        ]
+      },
       "workshop-space-mission-roster": {
         "title": "Build a Space Mission Roster",
         "intro": [
@@ -10607,9 +10613,21 @@
         "title": "Working with Lists",
         "intro": ["Learn about working with lists in these lessons."]
       },
+      "workshop-concert-program-planner": {
+        "title": "Build a Concert Program Planner",
+        "intro": [
+          "In this workshop, you'll practice working with lists by planning the program of an orchestra concert."
+        ]
+      },
       "lecture-working-with-tuples": {
         "title": "Working with Tuples",
         "intro": ["Learn about working with tuples in these lessons."]
+      },
+      "workshop-version-checker": {
+        "title": "Build a Version Checker",
+        "intro": [
+          "In this workshop, you'll practice working with tuples by building a program that checks if an app needs an update."
+        ]
       },
       "lecture-working-with-loops-python": {
         "title": "Working with Loops",
@@ -10652,7 +10670,7 @@
         "title": "Working with Sets",
         "intro": ["Learn about working with sets in this lesson."]
       },
-      "lecture-working-with-modules": {
+      "lecture-working-with-modules-v2": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
       },
@@ -10674,7 +10692,7 @@
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
         ]
       },
-      "review-dictionaries-and-sets": {
+      "review-dictionaries-and-sets-v2": {
         "title": "Dictionaries and Sets Review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
@@ -10882,6 +10900,12 @@
         "title": "Understanding Algorithms and Big O Notation",
         "intro": [
           "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
+        ]
+      },
+      "workshop-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this workshop, you will build a validator using numerical computations and string manipulation."
         ]
       },
       "lab-stock-profit-calculator": {
