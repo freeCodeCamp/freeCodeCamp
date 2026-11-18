@@ -10657,6 +10657,12 @@
           "Learn about list comprehensions and lambda functions in these lessons."
         ]
       },
+      "workshop-sensor-data-cleaner": {
+        "title": "Build a Sensor Data Cleaner",
+        "intro": [
+          "In this workshop, you'll practice list comprehensions and lambda functions by cleaning the readings of a temperature sensor."
+        ]
+      },
       "review-loops-and-sequences-v2": {
         "title": "Loops and Sequences Review",
         "intro": [
