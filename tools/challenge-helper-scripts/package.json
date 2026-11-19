@@ -39,7 +39,7 @@
     "@vitest/ui": "4.1.12",
     "bson": "^7.3.3",
     "gray-matter": "4.0.3",
-    "prettier": "3.10.0",
+    "prettier": "3.10.1",
     "typescript": "7.0.2",
     "vitest": "4.1.12"
   }
