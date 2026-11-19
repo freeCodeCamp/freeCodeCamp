@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-formatting-python-output",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6af312fcd140f15b3a10ad1d",
+      "title": "How Do You Align and Pad Text in an F-String?"
+    }
+  ],
+  "blockLabel": "lecture"
+}
