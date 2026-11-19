@@ -570,8 +570,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       pinyin-tone:
-        specifier: 2.4.1
-        version: 2.4.1
+        specifier: 2.5.2
+        version: 2.5.2
       postcss:
         specifier: 8.5.32
         version: 8.5.32
@@ -9894,8 +9894,9 @@ packages:
     resolution: {integrity: sha512-8OEwKp5juEvb/MjpIc4hjqfgCNysrS94RIOMXYvpYCdm/jglrKEiAYmiumbmGhCvs+IcInsphYDFwqrjr7398w==}
     hasBin: true
 
-  pinyin-tone@2.4.1:
-    resolution: {integrity: sha512-vC1grZuLy//cUEh4S1VOkJXF+RRjPqo50SW3H4C6qW7zidEMaPGTrci1YJQVSxCA5wh8mOJzUYYxXZF+4+MldQ==}
+  pinyin-tone@2.5.2:
+    resolution: {integrity: sha512-khBslfpnlaoHfTpb+uAzGw7gZgAi4Mm+jmWWxMPnLLjRSaxW2xLfpcwc1ej7DMm21z98MLhw4ZYiEO78OhmNvg==}
+    engines: {node: '>=14'}
 
   pirates@4.0.7:
     resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
@@ -23090,7 +23091,7 @@ snapshots:
       sonic-boom: 4.2.1
       thread-stream: 3.2.0
 
-  pinyin-tone@2.4.1: {}
+  pinyin-tone@2.5.2: {}
 
   pirates@4.0.7: {}
 
