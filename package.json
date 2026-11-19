@@ -91,7 +91,7 @@
     "lodash": "4.18.1",
     "npm-run-all2": "5.0.2",
     "oxlint": "1.93.0",
-    "oxlint-tsgolint": "7.0.2006",
+    "oxlint-tsgolint": "7.0.2007",
     "prettier": "3.10.1",
     "stylelint": "16.26.1",
     "tsx": "4.23.15",
