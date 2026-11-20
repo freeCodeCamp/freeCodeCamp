@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2022",
+    "types": ["node"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "lib": ["WebWorker", "DOM"],

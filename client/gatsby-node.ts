@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-require-imports, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access */
+/* oxlint-disable typescript/no-explicit-any, typescript/no-require-imports, typescript/no-unsafe-assignment, typescript/no-unsafe-call, typescript/no-unsafe-member-access */
 
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 

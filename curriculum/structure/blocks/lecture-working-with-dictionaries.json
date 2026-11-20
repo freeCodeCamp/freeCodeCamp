@@ -1,0 +1,21 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-dictionaries",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "683ec7a722bc7b67c1132bd3",
+      "title": "What Are Dictionaries, and How Do They Work?"
+    },
+    {
+      "id": "77d298efd28ebd60ac8c2b20",
+      "title": "How Do Dictionary Methods, Copies, and Mutations Work?"
+    },
+    {
+      "id": "683ec8e8a2389f713380fca8",
+      "title": "What Are Some Common Techniques to Loop Over a Dictionary?"
+    }
+  ],
+  "helpCategory": "Python"
+}

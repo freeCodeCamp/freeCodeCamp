@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { format } from './format';
 
 function simpleFun() {
-  // eslint-disable-next-line no-var, @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line no-var, no-unused-vars
   var x = 'y';
 }
 

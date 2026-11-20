@@ -1,0 +1,63 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-sensor-data-cleaner",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "6afc7278e5c0372ca0330116",
+      "title": "Step 1"
+    },
+    {
+      "id": "6afc727952d0ab651dec5bfa",
+      "title": "Step 2"
+    },
+    {
+      "id": "6afc727ad7f472590ed7b3f9",
+      "title": "Step 3"
+    },
+    {
+      "id": "6afcbb5196786fa25dcb4972",
+      "title": "Step 4"
+    },
+    {
+      "id": "6afc727b0eb94be3a7c8f764",
+      "title": "Step 5"
+    },
+    {
+      "id": "6afc727cd3733785408667dc",
+      "title": "Step 6"
+    },
+    {
+      "id": "6afc727d02dd34fc6803b960",
+      "title": "Step 7"
+    },
+    {
+      "id": "6afc727e4751489625398a8c",
+      "title": "Step 8"
+    },
+    {
+      "id": "6afc727f12a7e6a557784b94",
+      "title": "Step 9"
+    },
+    {
+      "id": "6afc72809f9d584ebdf3e078",
+      "title": "Step 10"
+    },
+    {
+      "id": "6afc7281b2b473af87d4fd3c",
+      "title": "Step 11"
+    },
+    {
+      "id": "6afc7282a7558c855cc43879",
+      "title": "Step 12"
+    },
+    {
+      "id": "6afc728363bff78df69a409f",
+      "title": "Step 13"
+    }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

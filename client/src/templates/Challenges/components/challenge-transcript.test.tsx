@@ -71,7 +71,7 @@ describe('<ChallengeTranscript />', () => {
       />
     );
 
-    /* eslint-disable testing-library/no-node-access */
+    /* oxlint-disable testing-library/no-node-access */
     const aliceB = screen.getByText('Alice');
     expect(aliceB).toBeVisible();
     expect(aliceB.tagName).toBe('B');
@@ -87,7 +87,7 @@ describe('<ChallengeTranscript />', () => {
     const bobP = bobB.parentElement;
     expect(bobP?.tagName).toBe('P');
     expect(bobP?.textContent).toBe('Bob: World');
-    /* eslint-enable testing-library/no-node-access */
+    /* oxlint-enable testing-library/no-node-access */
   });
 
   it('should render the transcript with PrismFormatted when isDialogue is false', () => {
@@ -106,7 +106,7 @@ describe('<ChallengeTranscript />', () => {
     expect(preElement).toBeVisible();
     expect(preElement.tagName).toBe('PRE');
 
-    // eslint-disable-next-line testing-library/no-node-access
+    // oxlint-disable-next-line testing-library/no-node-access
     const codeElement = preElement.querySelector('code');
     expect(codeElement).toBeInTheDocument();
     expect(preElement).toHaveTextContent('console.log("hi")');
