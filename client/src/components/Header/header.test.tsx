@@ -237,7 +237,7 @@ describe('<NavLinks />', () => {
       { name: 'Forum', href: 'https://forum.freecodecamp.org/' },
       { name: 'News', href: 'https://freecodecamp.org/news/' },
       { name: 'Radio', href: 'https://coderadio.freecodecamp.org' },
-      { name: 'Contribute', href: 'https://contribute.freecodecamp.org/#/' },
+      { name: 'Contribute', href: 'https://contribute.freecodecamp.org/' },
       { name: 'Podcast', href: 'https://freecodecamp.libsyn.com/' }
     ];
 

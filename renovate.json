@@ -152,6 +152,11 @@
         "webpack-bundle-analyzer",
         "babel-loader"
       ]
+    },
+    {
+      "description": "Docker updates wait for a person: no required check builds them.",
+      "matchManagers": ["dockerfile", "docker-compose", "devcontainer"],
+      "automerge": false
     }
   ]
 }
