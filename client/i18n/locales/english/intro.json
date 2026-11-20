@@ -10522,22 +10522,16 @@
       "review-python-programming-fundamentals": "Python Review"
     },
     "blocks": {
-      "workshop-first-python-program": {
-        "title": "Build Your First Python Program",
+      "workshop-python-photo-gallery": {
+        "title": "Build a Python Photo Gallery",
         "intro": [
-          "For this workshop, you'll build your first program in Python."
+          "In this workshop, you will practice working with strings, variables, and the print function to display a photo gallery in the terminal using Python."
         ]
       },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
           "In these lessons, you will learn what Python is and common uses in the industry."
-        ]
-      },
-      "workshop-python-photo-gallery": {
-        "title": "Build a Python Photo Gallery",
-        "intro": [
-          "In this workshop, you will practice working with strings, variables, and the print function to display a photo gallery in the terminal using Python."
         ]
       },
       "lecture-understanding-variables-and-data-types-v2": {
