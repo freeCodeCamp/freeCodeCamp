@@ -6,7 +6,7 @@ export const shuffleArray = <T>(arrToShuffle: Array<T>) => {
     const j = Math.floor(Math.random() * (i + 1));
 
     // We know that i and j are within the bounds of the array, TS doesn't
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+    // oxlint-disable-next-line typescript/no-unnecessary-type-assertion
     [arr[i], arr[j]] = [arr[j]!, arr[i]!];
   }
 
