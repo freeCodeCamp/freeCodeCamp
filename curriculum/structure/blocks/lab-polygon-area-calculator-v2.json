@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-polygon-area-calculator-v2",
+  "challengeOrder": [
+    {
+      "id": "6afece0acf43c38cd39ad715",
+      "title": "Build a Polygon Area Calculator"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}

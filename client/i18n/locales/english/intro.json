@@ -10880,7 +10880,7 @@
           "Test what you've learned about object-oriented programming in Python with this quiz."
         ]
       },
-      "lab-polygon-area-calculator": {
+      "lab-polygon-area-calculator-v2": {
         "title": "Build a Polygon Area Calculator",
         "intro": [
           "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
