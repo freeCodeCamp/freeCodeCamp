@@ -130,7 +130,7 @@ function buildFixtureCurriculum(): Curriculum<CurriculumProps> {
           order: 0,
           superBlock: BLOCK_BASED_SB,
           blockLayout: 'challenge-list',
-          challengeOrder: [{ id: 'challenge-1', title: 'Test Challenge' }]
+          challengeOrder: [{ id: 'challenge-1', title: 'Structure Title' }]
         }
       }
     }
@@ -155,7 +155,7 @@ function buildFixtureCurriculum(): Curriculum<CurriculumProps> {
           chapter: 'test-chapter',
           module: 'test-module',
           challengeOrder: [
-            { id: 'chapter-challenge-1', title: 'Chapter Challenge' }
+            { id: 'chapter-challenge-1', title: 'Chapter Structure Title' }
           ]
         }
       }
@@ -337,6 +337,31 @@ describe('buildExtCurriculumDataV2', () => {
       expect(result.error?.details).toBeUndefined();
       expect(result.error).toBeFalsy();
     }
+  });
+
+  test('block-based challengeOrder should use the challenge titles', () => {
+    const filePath = path.join(tmpDir, VERSION, `${BLOCK_BASED_SB}.json`);
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Record<
+      string,
+      GeneratedBlockBasedCurriculumProps
+    >;
+
+    expect(data[BLOCK_BASED_SB].blocks[0].meta.challengeOrder).toEqual([
+      { id: 'challenge-1', title: 'Test Challenge' }
+    ]);
+  });
+
+  test('chapter-based challengeOrder should use the challenge titles', () => {
+    const filePath = path.join(tmpDir, VERSION, `${CHAPTER_BASED_SB}.json`);
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Record<
+      string,
+      GeneratedChapterBasedCurriculumProps
+    >;
+
+    expect(
+      data[CHAPTER_BASED_SB].chapters[0].modules[0].blocks[0].meta
+        .challengeOrder
+    ).toEqual([{ id: 'chapter-challenge-1', title: 'Chapter Challenge' }]);
   });
 
   test('block-based superblock file has correct intro and meta.name', () => {
