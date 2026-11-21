@@ -1,0 +1,75 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-breadth-first-search-py",
+  "helpCategory": "Python",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockLayout": "challenge-grid",
+  "blockLabel": "workshop",
+  "challengeOrder": [
+    {
+      "id": "6ae36d9414197b8d9789f3da",
+      "title": "Step 1"
+    },
+    {
+      "id": "6ae36d957e02fb92d9091d46",
+      "title": "Step 2"
+    },
+    {
+      "id": "6ae36d963e0e8bc4f09b4a4f",
+      "title": "Step 3"
+    },
+    {
+      "id": "6ae36d973ddc55e4d7c7f207",
+      "title": "Step 4"
+    },
+    {
+      "id": "6ae36d985ad84860c9789da7",
+      "title": "Step 5"
+    },
+    {
+      "id": "6ae36d9911182bb034dfe55f",
+      "title": "Step 6"
+    },
+    {
+      "id": "6ae36d9a8a2f01a0f6b913d5",
+      "title": "Step 7"
+    },
+    {
+      "id": "6ae36d9b6b26a985c8d41759",
+      "title": "Step 8"
+    },
+    {
+      "id": "6ae36d9cf4a2e6de82f4ebc1",
+      "title": "Step 9"
+    },
+    {
+      "id": "6ae36d9d57ddbc0d31dafcc8",
+      "title": "Step 10"
+    },
+    {
+      "id": "6ae36d9ef4b57e29a3b63c77",
+      "title": "Step 11"
+    },
+    {
+      "id": "6ae36d9f25f24e4ccfebf88c",
+      "title": "Step 12"
+    },
+    {
+      "id": "6ae36da044d047235e4ba571",
+      "title": "Step 13"
+    },
+    {
+      "id": "6ae36da14731c61df3127105",
+      "title": "Step 14"
+    },
+    {
+      "id": "6ae36da283aba7f75ed3bd43",
+      "title": "Step 15"
+    },
+    {
+      "id": "6ae36da304de40b9814a3aff",
+      "title": "Step 16"
+    }
+  ]
+}
