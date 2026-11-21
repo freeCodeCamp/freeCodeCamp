@@ -579,7 +579,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           ''
         )}
         <Spacer size='l' />
-        <ShowProjectLinks certSlug={certSlug} name={displayName} user={user} />
+        <Col xs={12}>
+          <ShowProjectLinks
+            certSlug={certSlug}
+            name={displayName}
+            user={user}
+          />
+        </Col>
         <Spacer size='l' />
       </div>
     </Container>
