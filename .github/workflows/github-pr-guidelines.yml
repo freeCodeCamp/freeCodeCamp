@@ -4,6 +4,15 @@ on:
   pull_request_target:
     types: [opened, reopened, edited]
 
+concurrency:
+  # Shared with the "GitHub - Label PRs" workflow so both label-updating
+  # workflows run one at a time per PR. This keeps labels added here (e.g.
+  # "deprioritized") from being dropped by a concurrent path-based label
+  # update that replaces the PR's label set.
+  # See https://github.com/freeCodeCamp/freeCodeCamp/issues/70526
+  group: 'pr-labels-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}'
+  cancel-in-progress: false
+
 jobs:
   # Ensures PR commits were not added via the GitHub Web UI, which typically indicates
   # the contributor hasn't tested their changes in a local development environment.
