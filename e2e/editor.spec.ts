@@ -41,6 +41,18 @@ test.describe('Python Terminal', () => {
   }) => {
     await page.goto('/learn/python-v9/workshop-caesar-cipher/step-2');
 
+    // Wait for Python to initialize before checking output from subsequent edits.
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName, isMobile });
+    await getEditors(page).fill('print("ready")');
+
+    if (isMobile) await page.getByRole('tab', { name: 'Preview' }).click();
+
+    const terminal = page.getByTestId('xterm-terminal');
+    await terminal.getByText('ready', { exact: true }).first().waitFor();
+
+    if (isMobile) await page.getByRole('tab', { name: 'Code' }).click();
+
     // First enter code that does not generate output
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName, isMobile });
@@ -48,7 +60,6 @@ test.describe('Python Terminal', () => {
 
     if (isMobile) await page.getByRole('tab', { name: 'Preview' }).click();
 
-    const terminal = page.getByTestId('xterm-terminal');
     // Ensure there is no output
     await expect(async () => {
       const text = await terminal.innerText();
