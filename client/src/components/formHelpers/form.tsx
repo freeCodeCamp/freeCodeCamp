@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form } from 'react-final-form';
+import { FORM_ERROR } from 'final-form';
 import normalizeUrl from 'normalize-url';
 
 import BlockSaveButton from '../helpers/form/block-save-button';
@@ -97,12 +98,29 @@ function validateFormValues(
   return validatedValues;
 }
 
+// Reports upwards from an effect rather than during render, so that parents can
+// hold the flag in state without React complaining about a render-phase update.
+const UnsavedChangesReporter = ({
+  hasUnsavedChanges,
+  onUnsavedChanges
+}: {
+  hasUnsavedChanges: boolean;
+  onUnsavedChanges: (hasUnsavedChanges: boolean) => void;
+}): null => {
+  React.useEffect(() => {
+    onUnsavedChanges(hasUnsavedChanges);
+  }, [hasUnsavedChanges, onUnsavedChanges]);
+
+  return null;
+};
+
 export type StrictSolutionFormProps = {
   buttonText?: string;
   enableSubmit?: boolean;
   formFields: { name: string; label: string }[];
   id: string;
   initialValues?: Record<string, unknown>;
+  onUnsavedChanges?: (hasUnsavedChanges: boolean) => void;
   options: FormOptions;
   submit: (values: ValidatedValues) => void;
 };
@@ -111,6 +129,7 @@ export const StrictSolutionForm = ({
   id,
   formFields,
   initialValues,
+  onUnsavedChanges,
   options,
   submit,
   buttonText,
@@ -120,10 +139,23 @@ export const StrictSolutionForm = ({
     <Form
       initialValues={initialValues}
       onSubmit={(values: FormValues) => {
-        submit(validateFormValues(values, options));
+        const validatedValues = validateFormValues(values, options);
+        submit(validatedValues);
+        // Values that fail to normalize are never persisted, so report the
+        // submission as failed to keep them flagged as unsaved.
+        if (validatedValues.errors.length > 0) {
+          return { [FORM_ERROR]: 'unnormalizable-values' };
+        }
       }}
     >
-      {({ handleSubmit, pristine, error }) => (
+      {({
+        handleSubmit,
+        pristine,
+        error,
+        dirty,
+        submitSucceeded,
+        dirtySinceLastSubmit
+      }) => (
         <form
           id={`dynamic-${id}`}
           onSubmit={event => {
@@ -132,6 +164,14 @@ export const StrictSolutionForm = ({
           style={{ width: '100%' }}
           data-playwright-test-label='form-helper-form'
         >
+          {onUnsavedChanges && (
+            <UnsavedChangesReporter
+              hasUnsavedChanges={
+                dirty && (!submitSucceeded || dirtySinceLastSubmit)
+              }
+              onUnsavedChanges={onUnsavedChanges}
+            />
+          )}
           <FormFields formFields={formFields} options={options} />
           <BlockSaveButton
             disabled={(pristine && !enableSubmit) || Boolean(error)}
