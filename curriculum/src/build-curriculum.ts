@@ -27,29 +27,27 @@ import {
   type BlockStructure
 } from './file-handler.js';
 import { SHOW_UPCOMING_CHANGES } from './config.js';
+import type { Parser } from './generate/parser-pool.js';
 const log = debug('fcc:build-curriculum');
 
 /**
  * Creates a BlockCreator instance for a specific language with appropriate configuration
  * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
  * @param {boolean} [skipValidation=false] - Whether to skip validation of challenges
- * @param {Object} [opts] - Optional configuration object
- * @param {string} [opts.baseDir] - Base directory for curriculum content
- * @param {string} [opts.i18nBaseDir] - Base directory for i18n curriculum content
- * @param {string} [opts.structureDir] - Directory containing curriculum structure
+ * @param {Function} [parser] - Optional parser for challenge markdown
  * @returns {BlockCreator} A configured BlockCreator instance
  */
 export const getBlockCreator = (
   lang: string,
   skipValidation?: boolean,
-  opts?: { baseDir: string; i18nBaseDir: string; structureDir: string }
+  parser?: Parser
 ) => {
   const {
     blockContentDir,
     i18nBlockContentDir,
     dictionariesDir,
     i18nDictionariesDir
-  } = getLanguageConfig(lang, opts);
+  } = getLanguageConfig(lang);
 
   const targetDictionariesDir =
     lang === 'english' ? dictionariesDir : i18nDictionariesDir;
@@ -62,7 +60,8 @@ export const getBlockCreator = (
       dictionariesDir,
       targetDictionariesDir
     ),
-    skipValidation: skipValidation ?? false
+    skipValidation: skipValidation ?? false,
+    parser
   });
 };
 
@@ -417,14 +416,18 @@ export async function parseCurriculumStructure(filter?: Filter) {
   };
 }
 
-export async function buildCurriculum(lang: string, filters?: Filter) {
+export async function buildCurriculum(
+  lang: string,
+  filters?: Filter,
+  parser?: Parser
+) {
   // Block validation assumes the entire block is being built, if that's not the
   // case, skip validation
   const skipBlockValidation = filters?.challengeId !== undefined;
   const contentDir = getContentDir(lang);
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, skipBlockValidation)
+    getBlockCreator(lang, skipBlockValidation, parser)
   );
 
   const { fullSuperblockList, certifications } =
@@ -447,10 +450,13 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     return !isUndefined(superOrder);
   });
 
-  for (const superblock of liveSuperblocks) {
-    const processedSuperblock = await builder.processSuperblock(superblock);
-    fullCurriculum[superblock.name] = processedSuperblock;
-  }
+  const processedSuperblocks = await Promise.all(
+    liveSuperblocks.map(superblock => builder.processSuperblock(superblock))
+  );
+
+  liveSuperblocks.forEach((superblock, i) => {
+    fullCurriculum[superblock.name] = processedSuperblocks[i];
+  });
 
   for (const cert of certifications) {
     const certPath = resolve(contentDir, 'certifications', `${cert}.yml`);
