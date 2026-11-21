@@ -2,30 +2,43 @@ import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.use({ userPreset: 'certified' });
+const challengeURL =
+  '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code';
+const nextChallengeURL =
+  '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/store-and-retrieve-data-using-literal-and-variable-values-in-c-sharp';
+
+test.use({ userPreset: 'development' });
 
 test.describe('Template Challenges Show', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto(
-      '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code'
-    );
+    await page.goto(challengeURL);
   });
 
   test.afterEach(async ({ page }) => {
     await page.close();
   });
 
-  test('should display a success dialog when the user submits the form, and they have completed the quiz and the assignments correctly', async ({
+  test('saves completion after the user completes the assignment and answers the quiz correctly', async ({
     page
   }) => {
+    const completedIcon = page
+      .locator('.challenge-title')
+      .getByLabel(translations.icons.passed, { exact: true });
+    await expect(
+      page.getByRole('heading', {
+        name: 'Write Your First C# Code',
+        exact: true
+      })
+    ).toBeVisible();
+    await expect(completedIcon).not.toBeVisible();
+
     // Tick the assignment box
     await page.getByRole('checkbox').check();
 
     // Find and click the third quiz option, which is the correct answer.
     // Set `force: true` to bypass Playwright's check
     // as the radio is visually hidden and the click event is intercepted by the `span` element.
-    const quizOptions = await page.getByRole('radio').all();
-    await quizOptions[2].check({ force: true });
+    await page.getByRole('radio').nth(2).check({ force: true });
 
     await page
       .getByRole('button', { name: translations.buttons['check-answer'] })
@@ -43,12 +56,19 @@ test.describe('Template Challenges Show', () => {
       page.getByText(translations.learn['wrong-answer'])
     ).not.toBeVisible();
 
-    // There are two elements with the `dialog` role in the DOM.
-    // This appears to be semantically incorrect and should be resolved
-    // once we have migrated the component to use Dialog from the `ui-components` library.
-    expect(page.getByRole('dialog').all()).toBeTruthy();
-    await expect(
-      page.getByRole('button', { name: translations.buttons['go-to-next'] })
-    ).toBeVisible();
+    const completionDialog = page.getByRole('dialog').filter({
+      has: page.getByTestId('completion-success-icon')
+    });
+    await expect(completionDialog).toBeVisible();
+    await completionDialog
+      .getByRole('button', {
+        name: translations.buttons['submit-and-go']
+      })
+      .click();
+    await expect(page).toHaveURL(nextChallengeURL);
+
+    // A full page load must restore the saved completion from the server.
+    await page.goto(challengeURL);
+    await expect(completedIcon).toBeVisible();
   });
 });
