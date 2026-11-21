@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { createStore } from '../../redux/create-store';
-import type { GeneratedExamResults } from '../../redux/prop-types';
+import type { ExamResults, GeneratedExamResults } from '../../redux/prop-types';
 import { openModal } from '../../templates/Challenges/redux/actions';
 import ExamResultsModal from './exam-results-modal';
 
@@ -30,6 +30,10 @@ vi.mock('react-i18next', () => ({
           return `Percent correct: ${options?.n}%`;
         case 'learn.exam.time':
           return `Time: ${options?.t}`;
+        case 'learn.exam.passed':
+          return 'Passed';
+        case 'learn.exam.not-passed':
+          return 'Not Passed';
         case 'buttons.close':
           return 'Close';
         default:
@@ -82,7 +86,7 @@ function renderExamResultsModal({
   results = examResults,
   isOpen = true
 }: {
-  results?: GeneratedExamResults | null;
+  results?: ExamResults | null;
   isOpen?: boolean;
 } = {}) {
   const store = createTestStore(isOpen);
@@ -108,6 +112,14 @@ describe('<ExamResultsModal />', () => {
     expect(screen.getByText('Percent correct: 87.5%')).toBeInTheDocument();
     expect(screen.getByText('Time: 36:35')).toBeInTheDocument();
     expect(screen.getAllByRole('button', { name: 'Close' })).toHaveLength(2);
+  });
+
+  it('renders only the pass/fail status when detailed results are unavailable', () => {
+    renderExamResultsModal({ results: { passed: false } });
+
+    expect(screen.getByText('Not Passed')).toBeInTheDocument();
+    expect(screen.queryByText(/Number of questions/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Correct answers/)).not.toBeInTheDocument();
   });
 
   it('does not render when there are no exam results', () => {

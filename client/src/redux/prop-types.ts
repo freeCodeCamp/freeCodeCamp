@@ -504,7 +504,7 @@ export interface CompletedChallenge {
   completedDate: number;
   challengeFiles:
     Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[] | null;
-  examResults?: GeneratedExamResults;
+  examResults?: ExamResults;
 }
 
 export interface ChallengeData extends CompletedChallenge {
@@ -617,6 +617,13 @@ export interface GeneratedExamResults {
   passed: boolean;
   examTimeInSeconds: number;
 }
+
+// Public profiles only expose whether the exam was passed.
+export interface PublicExamResults {
+  passed: boolean;
+}
+
+export type ExamResults = GeneratedExamResults | PublicExamResults;
 
 // Survey related types
 export interface SurveyResponse {

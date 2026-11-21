@@ -53,6 +53,27 @@ type RawUser = {
   profileUI: ProfileUI;
 };
 
+type PublicExamResults = {
+  passed: boolean;
+};
+
+/**
+ * Removes the detailed statistics from an exam result, leaving only whether
+ * the exam was passed. Public profiles must not expose scores, answers or
+ * timings.
+ */
+const hideExamResultDetails = <
+  T extends { examResults?: { passed: boolean } | null }
+>(
+  entry: T
+): Omit<T, 'examResults'> & { examResults?: PublicExamResults } => {
+  const { examResults, ...rest } = entry;
+
+  return examResults
+    ? { ...rest, examResults: { passed: examResults.passed } }
+    : rest;
+};
+
 /**
  * Creates an object with the properties that are shared with the public.
  * @param user The raw user object.
@@ -72,16 +93,20 @@ export const replacePrivateData = (user: RawUser) => {
     showTimeLine
   } = user.profileUI;
 
-  return {
-    about: showAbout ? user.about : '',
-    calendar: showHeatMap ? user.calendar : {},
-    completedChallenges: showTimeLine
+  const completedChallenges = (
+    showTimeLine
       ? showCerts
         ? user.completedChallenges
         : user.completedChallenges.filter(
             c => c.challengeType !== challengeTypes.step
           )
-      : [],
+      : []
+  ).map(hideExamResultDetails);
+
+  return {
+    about: showAbout ? user.about : '',
+    calendar: showHeatMap ? user.calendar : {},
+    completedChallenges,
     isDonating: showDonation ? user.isDonating : null,
     joinDate: showAbout ? user.joinDate : '',
     location: showLocation ? user.location : '',
@@ -196,7 +221,15 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         });
 
         const returnedUser = {
-          ...removeNulls(publicUser),
+          ...removeNulls({
+            ...publicUser,
+            completedExams: publicUser.completedExams.map(
+              ({ examResults, ...exam }) => ({
+                ...exam,
+                examResults: { passed: examResults.passed }
+              })
+            )
+          }),
           ...normalizeFlags(flags),
           ...sharedUser,
           picture: user.picture ?? '',

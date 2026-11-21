@@ -65,6 +65,10 @@ export const examResults = Type.Object({
   examTimeInSeconds: Type.Number()
 });
 
+export const publicExamResults = Type.Object({
+  passed: Type.Boolean()
+});
+
 export const surveyTitles = Type.Union([
   Type.Literal('Foundational C# with Microsoft Survey')
 ]);

@@ -104,4 +104,18 @@ describe('<SolutionDisplayWidget />', () => {
     );
     expect(sourceLink).toHaveAttribute('target', '_blank');
   });
+
+  it('shows only the pass/fail status when exam details are unavailable', () => {
+    renderWidget({
+      completedChallenge: {
+        id: '647e22d18acb466c97ccbef8',
+        completedDate: 1655158158000,
+        challengeFiles: null,
+        examResults: { passed: true }
+      }
+    });
+
+    expect(screen.getByText('learn.exam.passed')).toBeInTheDocument();
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
+  });
 });

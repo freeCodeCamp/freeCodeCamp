@@ -3,14 +3,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Row, Button, Modal, Spacer } from '@freecodecamp/ui';
 
-import type { GeneratedExamResults } from '../../redux/prop-types';
+import type { ExamResults } from '../../redux/prop-types';
 import { closeModal } from '../../templates/Challenges/redux/actions';
 import { isExamResultsModalOpenSelector } from '../../templates/Challenges/redux/selectors';
 import { formatSecondsToTime } from '../../utils/format-seconds';
 
 type ExamResultsModalProps = {
   projectTitle: string;
-  examResults: GeneratedExamResults | null | undefined;
+  examResults: ExamResults | null | undefined;
   closeModal: (arg: string) => void;
   isOpen: boolean;
 };
@@ -40,12 +40,7 @@ const ExamResultsModal = ({
 
   if (!examResults) return null;
 
-  const {
-    numberOfCorrectAnswers,
-    examTimeInSeconds,
-    numberOfQuestionsInExam,
-    percentCorrect
-  } = examResults;
+  const hasDetailedResults = 'numberOfCorrectAnswers' in examResults;
 
   return (
     <Modal
@@ -61,23 +56,41 @@ const ExamResultsModal = ({
       <Modal.Body alignment='start'>
         <Spacer size='m' />
         <div style={{ paddingLeft: '30px' }}>
-          <Row>
-            {t('learn.exam.number-of-questions', {
-              n: numberOfQuestionsInExam
-            })}
-          </Row>{' '}
-          <Spacer size='m' />
-          <Row>
-            {t('learn.exam.correct-answers', { n: numberOfCorrectAnswers })}
-          </Row>{' '}
-          <Spacer size='m' />
-          <Row>{t('learn.exam.percent-correct', { n: percentCorrect })}</Row>
-          <Spacer size='m' />{' '}
-          <Row>
-            {t('learn.exam.time', {
-              t: formatSecondsToTime(examTimeInSeconds)
-            })}
-          </Row>
+          {hasDetailedResults ? (
+            <>
+              <Row>
+                {t('learn.exam.number-of-questions', {
+                  n: examResults.numberOfQuestionsInExam
+                })}
+              </Row>{' '}
+              <Spacer size='m' />
+              <Row>
+                {t('learn.exam.correct-answers', {
+                  n: examResults.numberOfCorrectAnswers
+                })}
+              </Row>{' '}
+              <Spacer size='m' />
+              <Row>
+                {t('learn.exam.percent-correct', {
+                  n: examResults.percentCorrect
+                })}
+              </Row>
+              <Spacer size='m' />{' '}
+              <Row>
+                {t('learn.exam.time', {
+                  t: formatSecondsToTime(examResults.examTimeInSeconds)
+                })}
+              </Row>
+            </>
+          ) : (
+            <Row>
+              {t(
+                examResults.passed
+                  ? 'learn.exam.passed'
+                  : 'learn.exam.not-passed'
+              )}
+            </Row>
+          )}
         </div>
         <Spacer size='m' />
       </Modal.Body>

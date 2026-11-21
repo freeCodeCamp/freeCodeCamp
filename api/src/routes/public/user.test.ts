@@ -184,12 +184,7 @@ const publicUserData = {
       challengeType: 5,
       files: [],
       examResults: {
-        numberOfCorrectAnswers: 0,
-        numberOfQuestionsInExam: 0,
-        percentCorrect: 0,
-        passingPercent: 0,
-        passed: false,
-        examTimeInSeconds: 0
+        passed: false
       }
     }
   ],
@@ -570,6 +565,38 @@ describe('get-public-profile helpers', () => {
       expect(replacePrivateData(userWithoutCerts)).toMatchObject({
         completedChallenges: [{ id: '123', completedDate: 123, files: [] }]
       });
+    });
+
+    test('only exposes whether an exam was passed', () => {
+      const userWithExamResults = {
+        ...user,
+        completedChallenges: [
+          {
+            id: '123',
+            completedDate: 123,
+            files: [],
+            examResults: {
+              numberOfCorrectAnswers: 7,
+              numberOfQuestionsInExam: 10,
+              percentCorrect: 70,
+              passingPercent: 70,
+              passed: true,
+              examTimeInSeconds: 600
+            }
+          }
+        ]
+      };
+
+      expect(
+        replacePrivateData(userWithExamResults).completedChallenges
+      ).toStrictEqual([
+        {
+          id: '123',
+          completedDate: 123,
+          files: [],
+          examResults: { passed: true }
+        }
+      ]);
     });
 
     test('returns null for isDonating if showDonation is not true', () => {

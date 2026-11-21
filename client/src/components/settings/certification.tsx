@@ -28,7 +28,7 @@ import env from '../../../config/env.json';
 import type {
   ChallengeData,
   CompletedChallenge,
-  GeneratedExamResults,
+  ExamResults,
   User
 } from '../../redux/prop-types';
 import { createFlashMessage } from '../Flash/redux';
@@ -165,7 +165,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     null
   );
   const [solution, setSolution] = useState<string | null>();
-  const [examResults, setExamResults] = useState<GeneratedExamResults | null>();
+  const [examResults, setExamResults] = useState<ExamResults | null>();
   const [isOpen, setIsOpen] = useState(false);
   function initialiseState() {
     setProjectTitle('');

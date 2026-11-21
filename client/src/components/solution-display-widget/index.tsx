@@ -181,14 +181,19 @@ export function SolutionDisplayWidget({
       <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
-  const ShowExamResults = (
+  const examResults = completedChallenge.examResults;
+  const hasDetailedExamResults =
+    examResults !== undefined && 'numberOfCorrectAnswers' in examResults;
+  const ShowExamResults = hasDetailedExamResults ? (
     <Button block={true} variant='primary' onClick={showExamResults}>
       {viewText}{' '}
       <span className='sr-only'>
         {t('settings.labels.results-for', { projectTitle })}
       </span>
     </Button>
-  );
+  ) : examResults ? (
+    <>{t(examResults.passed ? 'learn.exam.passed' : 'learn.exam.not-passed')}</>
+  ) : null;
   const MissingSolutionComponent =
     displayContext === 'settings' ? (
       <>{t('certification.project.no-solution')}</>
