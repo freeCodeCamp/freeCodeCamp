@@ -67,7 +67,7 @@
     "@xterm/addon-fit": "0.11.0",
     "@xterm/xterm": "6.0.0",
     "algoliasearch": "4.27.0",
-    "assert": "2.0.0",
+    "assert": "2.1.0",
     "babel-plugin-preval": "5.1.0",
     "babel-plugin-prismjs": "2.1.0",
     "bezier-easing": "2.1.0",
