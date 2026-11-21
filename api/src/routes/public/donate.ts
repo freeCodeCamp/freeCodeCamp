@@ -274,6 +274,22 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             error: 'Donation failed due to a server error.'
           } as const;
         }
+        // The amount we record must be the amount Stripe actually charges, not
+        // whatever the client claims. Both are in cents.
+        if (subscription.items.data[0]?.plan.amount !== amount) {
+          req.log.warn(
+            { amount, planAmount: subscription.items.data[0]?.plan.amount },
+            'Donation amount does not match subscription plan'
+          );
+          fastify.Sentry?.captureException(
+            new Error('Donation amount does not match subscription plan'),
+            { extra: { subscriptionId } }
+          );
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
+        }
 
         const user = await findOrCreateUser(fastify, email);
         req.log.debug({ userId: user.id }, 'Found or created user');
