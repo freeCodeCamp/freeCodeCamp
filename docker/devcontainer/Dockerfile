@@ -29,7 +29,7 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/home/node/.cache/ms-playwright
 ENV pnpm_config_store_dir=/home/node/.local/share/pnpm/store
 
 # =============================================================================
-# BUILDER - Install dependencies and build to populate caches (disposable)
+# BUILDER - Install dependencies to populate the pnpm store (disposable)
 # =============================================================================
 FROM base AS builder
 
@@ -64,18 +64,6 @@ COPY --chown=node:node api/prisma.config.ts api/
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 RUN pnpm install --frozen-lockfile
 
-# Source files for builds
-COPY --chown=node:node packages/ packages/
-COPY --chown=node:node tools/ tools/
-COPY --chown=node:node curriculum/ curriculum/
-
-# Build shared packages and curriculum (populates Turbo cache)
-# Source .env so turbo hashes env vars (e.g. FCC_*) identically to runtime
-COPY --chown=node:node sample.env .env
-RUN set -a && . ./.env && set +a && \
-    pnpm turbo build --filter=@freecodecamp/shared && \
-    pnpm turbo build --filter=@freecodecamp/curriculum
-
 # =============================================================================
 # DEVCONTAINER - Clean image with only pre-populated caches
 # Used by: GitHub Codespaces, local VS Code devcontainers
@@ -91,9 +79,7 @@ USER node
 # Copy pre-populated pnpm store (for fast pnpm install --prefer-offline)
 COPY --from=builder --chown=node:node /home/node/.local/share/pnpm/store /home/node/.local/share/pnpm/store
 
-# Copy turbo cache only (preserving directory structure for rsync at runtime)
-WORKDIR /home/node/.cache/fcc
-RUN --mount=type=bind,from=builder,source=/home/node/.cache/fcc,target=/tmp/fcc-build \
-    rsync -a --include='*/' --include='.turbo/***' --exclude='*' /tmp/fcc-build/ ./
+# Older post-create.sh copies rsync from this folder; keep it, empty
+RUN mkdir -p /home/node/.cache/fcc
 
 WORKDIR /workspaces/freeCodeCamp
