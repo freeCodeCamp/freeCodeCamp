@@ -52,6 +52,7 @@
           "dashedName": "python-dictionaries-and-sets",
           "blocks": [
             "lecture-working-with-dictionaries",
+            "workshop-contact-book",
             "lecture-working-with-sets",
             "review-dictionaries-and-sets-v2"
           ]
