@@ -20,7 +20,6 @@
   "main": "none",
   "scripts": {
     "audit-challenges": "cd curriculum && pnpm audit-challenges",
-    "analyze-bundle": "webpack-bundle-analyzer",
     "build": "turbo build",
     "build:client": "turbo -F=@freecodecamp/client build",
     "build:curriculum": "turbo -F=@freecodecamp/curriculum build",
@@ -97,7 +96,6 @@
     "tsx": "4.23.15",
     "turbo": "2.11.7",
     "typescript": "7.0.2",
-    "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
   "packageManager": "pnpm@12.21.0"
