@@ -119,13 +119,16 @@ export async function insertActivityEvent(
   fastify: FastifyInstance,
   event: ActivityEvent
 ): Promise<string> {
+  const clickhouse = fastify.clickhouse;
+  if (!clickhouse) throw new Error('Activity tracking is not configured');
+
   const trackingId = await getActivityTrackingId(fastify, event.userId);
   const occurredAt = event.occurredAt ?? new Date();
   const timezone = isValidTimeZone(event.timezone) ? event.timezone : 'UTC';
   const insertStart = performance.now();
 
   try {
-    await fastify.clickhouse.insert({
+    await clickhouse.insert({
       table: 'activity_events',
       format: 'JSONEachRow',
       values: [
@@ -194,10 +197,13 @@ export async function getResumeUrl(
   fastify: FastifyInstance,
   trackingId: string
 ): Promise<string | undefined> {
-  const result = await fastify.clickhouse.query({
+  const clickhouse = fastify.clickhouse;
+  if (!clickhouse) return;
+
+  const result = await clickhouse.query({
     query: `
       SELECT url
-      FROM activity_events
+      FROM activity_events FINAL
       WHERE tracking_id = {trackingId: String}
         AND event_type = 'challenge_submit'
         AND url IS NOT NULL
@@ -263,11 +269,12 @@ export async function getActivityStreak(
   fastify: FastifyInstance,
   trackingId: string | null | undefined
 ): Promise<ActivityStreak> {
-  if (!trackingId) {
+  const clickhouse = fastify.clickhouse;
+  if (!trackingId || !clickhouse) {
     return { current: 0, longest: 0, activeSession: false };
   }
 
-  const result = await fastify.clickhouse.query({
+  const result = await clickhouse.query({
     query: `
       SELECT
         toString(toUnixTimestamp64Milli(occurred_at))
@@ -294,8 +301,10 @@ export async function qualifyActivityStreak(
   userId: string,
   timezone: string
 ): Promise<StreakQualificationResult> {
+  const clickhouse = fastify.clickhouse;
+  if (!clickhouse) throw new Error('Activity tracking is not configured');
   const trackingId = await getActivityTrackingId(fastify, userId);
-  const result = await fastify.clickhouse.query({
+  const result = await clickhouse.query({
     query: `
       SELECT count() AS eligible_count
       FROM activity_events

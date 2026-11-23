@@ -17,7 +17,8 @@ import {
   updateUserChallengeData,
   type CompletedChallenge,
   saveUserChallengeData,
-  msTrophyChallenges
+  msTrophyChallenges,
+  retryIfWriteConflict
 } from '../../utils/common-challenge-functions.js';
 import { JWT_SECRET } from '../../utils/env.js';
 import {
@@ -236,8 +237,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         select: userChallengeSelect
       });
       const progressTimestamps = user.progressTimestamps as
-        | ProgressTimestamp[]
-        | null;
+        ProgressTimestamp[] | null;
       const points = getPoints(progressTimestamps);
 
       const completedChallenge = {
@@ -778,7 +778,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
         }
 
-        const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
+        const { prerequisites, numberOfQuestionsInExam, questions, title } =
+          examFromDb;
 
         const prerequisiteIds = prerequisites.map(p => p.id);
         const completedPrerequisites = completedChallenges.filter(c =>
@@ -798,7 +799,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const validUserCompletedExam = validateUserCompletedExamSchema(
           userCompletedExam,
-          numberOfQuestionsInExam
+          numberOfQuestionsInExam,
+          questions
         );
         if ('error' in validUserCompletedExam) {
           req.log.warn(
@@ -880,20 +882,24 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
               // TODO(Post-MVP): Try to DRY the updates.
               // updateUserChallengeData, for all its faults, handles the
               // update/insert logic well.
-              await fastify.prisma.user.update({
-                where: { id: userId },
-                data: {
-                  completedExams: newCompletedExams,
-                  completedChallenges: newCompletedChallenges
-                }
-              });
+              const update = async () =>
+                await fastify.prisma.user.update({
+                  where: { id: userId },
+                  data: {
+                    completedExams: newCompletedExams,
+                    completedChallenges: newCompletedChallenges
+                  }
+                });
+              await retryIfWriteConflict(update);
             } else {
-              await fastify.prisma.user.update({
-                where: { id: userId },
-                data: {
-                  completedExams: newCompletedExams
-                }
-              });
+              const update = async () =>
+                await fastify.prisma.user.update({
+                  where: { id: userId },
+                  data: {
+                    completedExams: newCompletedExams
+                  }
+                });
+              await retryIfWriteConflict(update);
             }
 
             // not already completed, push to completedChallenges
@@ -901,18 +907,19 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             addPoint = true;
             newCompletedChallenges.push(newCompletedChallenge);
 
-            await fastify.prisma.user.update({
-              where: { id: userId },
-              data: {
-                completedExams: newCompletedExams,
-                completedChallenges: newCompletedChallenges,
-                progressTimestamps: [
-                  ...newProgressTimeStamps,
-                  newCompletedChallenge.completedDate
-                ]
-              }
-            });
-
+            const update = async () =>
+              await fastify.prisma.user.update({
+                where: { id: userId },
+                data: {
+                  completedExams: newCompletedExams,
+                  completedChallenges: newCompletedChallenges,
+                  progressTimestamps: [
+                    ...newProgressTimeStamps,
+                    newCompletedChallenge.completedDate
+                  ]
+                }
+              });
+            await retryIfWriteConflict(update);
             await insertActivityEventSafely(fastify, req, {
               userId: req.user!.id,
               eventType: 'exam_completed',
@@ -922,12 +929,14 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
           // exam not passed
         } else {
-          await fastify.prisma.user.update({
-            where: { id: userId },
-            data: {
-              completedExams: newCompletedExams
-            }
-          });
+          const update = async () =>
+            await fastify.prisma.user.update({
+              where: { id: userId },
+              data: {
+                completedExams: newCompletedExams
+              }
+            });
+          await retryIfWriteConflict(update);
         }
 
         const points = getPoints(newProgressTimeStamps);
@@ -999,16 +1008,18 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         timestamp: Date.now()
       };
 
-      await fastify.prisma.user.update({
-        where: { id: user.id },
-        data: {
-          quizAttempts: existingAttempt
-            ? {
-                updateMany: { where: { challengeId }, data: newAttempt }
-              }
-            : { push: newAttempt }
-        }
-      });
+      const update = async () =>
+        await fastify.prisma.user.update({
+          where: { id: user.id },
+          data: {
+            quizAttempts: existingAttempt
+              ? {
+                  updateMany: { where: { challengeId }, data: newAttempt }
+                }
+              : { push: newAttempt }
+          }
+        });
+      await retryIfWriteConflict(update);
 
       fastify.Sentry?.metrics?.count('quiz.attempt_submitted', 1, {
         attributes: { result: existingAttempt ? 'updated' : 'created' }
@@ -1170,15 +1181,18 @@ async function postCoderoadChallengeCompleted(
         completedDate
       };
 
-      await this.prisma.user.update({
-        where: { id: userId },
-        data: {
-          partiallyCompletedChallenges: uniqBy(
-            [finalChallenge, ...partiallyCompletedChallenges],
-            'id'
-          )
-        }
-      });
+      const update = async () =>
+        await this.prisma.user.update({
+          where: { id: userId },
+          data: {
+            partiallyCompletedChallenges: uniqBy(
+              [finalChallenge, ...partiallyCompletedChallenges],
+              'id'
+            )
+          }
+        });
+
+      await retryIfWriteConflict(update);
 
       this.Sentry?.metrics?.count('coderoad.challenge_completed', 1, {
         attributes: { result: 'partial' }
@@ -1258,22 +1272,25 @@ async function postDailyCodingChallengeCompleted(
       });
     } else {
       // alreadyCompleted && !languageAlreadyCompleted, add the language to the record
-      const { completedDailyCodingChallenges } = await this.prisma.user.update({
-        where: { id: req.user?.id },
-        select: {
-          completedDailyCodingChallenges: true
-        },
-        data: {
-          completedDailyCodingChallenges: {
-            updateMany: {
-              where: { id },
-              data: {
-                languages: [...new Set([...languages, language])]
+      const update = async () =>
+        await this.prisma.user.update({
+          where: { id: req.user?.id },
+          select: {
+            completedDailyCodingChallenges: true
+          },
+          data: {
+            completedDailyCodingChallenges: {
+              updateMany: {
+                where: { id },
+                data: {
+                  languages: [...new Set([...languages, language])]
+                }
               }
             }
           }
-        }
-      });
+        });
+      const { completedDailyCodingChallenges } =
+        await retryIfWriteConflict(update);
       return reply.send({
         alreadyCompleted,
         points,
@@ -1300,13 +1317,15 @@ async function postDailyCodingChallengeCompleted(
       ? [...progressTimestamps, newCompletedDate]
       : [newCompletedDate];
 
-    await this.prisma.user.update({
-      where: { id: req.user?.id },
-      data: {
-        completedDailyCodingChallenges: newCompletedChallenges,
-        progressTimestamps: newProgressTimestamps
-      }
-    });
+    const update = async () =>
+      await this.prisma.user.update({
+        where: { id: req.user?.id },
+        data: {
+          completedDailyCodingChallenges: newCompletedChallenges,
+          progressTimestamps: newProgressTimestamps
+        }
+      });
+    await retryIfWriteConflict(update);
     await insertActivityEventSafely(this, req, {
       userId: req.user!.id,
       eventType: 'daily_challenge_completed',
@@ -1365,12 +1384,14 @@ async function postSaveChallenge(
     challenge
   );
 
-  await fastify.prisma.user.update({
-    where: { id: user.id },
-    data: {
-      savedChallenges: userSavedChallenges
-    }
-  });
+  const update = async () =>
+    await fastify.prisma.user.update({
+      where: { id: user.id },
+      data: {
+        savedChallenges: userSavedChallenges
+      }
+    });
+  await retryIfWriteConflict(update);
 
   fastify.Sentry?.metrics?.count('challenge.saved', 1, {
     attributes: { result: 'saved' }
@@ -1398,8 +1419,7 @@ async function postModernChallengeCompleted(
     select: userChallengeSelect
   });
   const RawProgressTimestamp = user.progressTimestamps as
-    | ProgressTimestamp[]
-    | null;
+    ProgressTimestamp[] | null;
   const points = getPoints(RawProgressTimestamp);
 
   const completedChallenge: CompletedChallenge = {

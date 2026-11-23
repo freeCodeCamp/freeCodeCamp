@@ -42,8 +42,7 @@ const ONE_DAY = 24 * 60 * 60 * 1000;
 
 const mapStateToProps = (state: unknown) => {
   const user = userSelector(state) as
-    | { id?: string; activityStreak?: ActivityStreak }
-    | undefined;
+    { id?: string; activityStreak?: ActivityStreak } | undefined;
   const userFetchState = userFetchStateSelector(state) as {
     complete: boolean;
   };
@@ -98,7 +97,7 @@ export const AppMountNotifier = ({
 
   useEffect(() => {
     appMount();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const attemptQualification = useCallback(async () => {

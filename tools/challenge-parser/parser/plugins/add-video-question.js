@@ -104,7 +104,9 @@ function plugin() {
         if (solution < 1) throw Error('Not positive number');
       } catch (e) {
         console.log(e);
-        throw Error('A video solution should be a positive integer');
+        throw Error('A video solution should be a positive integer', {
+          cause: e
+        });
       }
 
       return solution;

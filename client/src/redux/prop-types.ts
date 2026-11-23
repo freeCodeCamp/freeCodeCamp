@@ -386,8 +386,7 @@ export type BlockBasedSuperBlockStructure = {
 };
 
 export type SuperBlockStructure =
-  | ChapterBasedSuperBlockStructure
-  | BlockBasedSuperBlockStructure;
+  ChapterBasedSuperBlockStructure | BlockBasedSuperBlockStructure;
 
 export type AllChallengeNode = {
   edges: [
@@ -515,8 +514,7 @@ export interface CompletedChallenge {
   challengeType?: number;
   completedDate: number;
   challengeFiles:
-    | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
-    | null;
+    Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[] | null;
   examResults?: GeneratedExamResults;
 }
 

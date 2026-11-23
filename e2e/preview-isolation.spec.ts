@@ -1,5 +1,3 @@
-import { execSync } from 'node:child_process';
-
 import { expect, type Page } from '@playwright/test';
 
 import { test } from './fixtures/isolated-user';
@@ -48,11 +46,18 @@ async function openProjectPreview(page: Page) {
 }
 
 test.describe('Project preview isolation', () => {
-  test.beforeEach(async ({ playwright }) => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
+  // The author and viewer have separate accounts to exercise cross-user isolation.
+  test.use({
+    userPreset: 'development',
+    storageState: async ({ createUser }, use) => {
+      const viewer = await createUser('certified');
+      await use(viewer.storageState);
+    }
+  });
 
+  test.beforeEach(async ({ isolatedUser, playwright }) => {
     const author = await playwright.request.newContext({
-      storageState: 'playwright/.auth/development-user.json'
+      storageState: isolatedUser.storageState
     });
 
     try {
@@ -79,15 +84,16 @@ test.describe('Project preview isolation', () => {
   });
 
   test('a stored project cannot reach the viewer document', async ({
-    page
+    page,
+    isolatedUser
   }) => {
     const pageErrors: string[] = [];
     page.on('pageerror', error => pageErrors.push(error.message));
 
-    await page.goto('/developmentuser');
+    await page.goto(`/${isolatedUser.username}`);
 
     await expect(
-      page.getByRole('heading', { name: '@developmentuser' })
+      page.getByRole('heading', { name: `@${isolatedUser.username}` })
     ).toBeVisible();
 
     await openProjectPreview(page);

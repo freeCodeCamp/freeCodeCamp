@@ -1,7 +1,9 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import solution from './fixtures/build-a-personal-portfolio-webpage.json';
 import { clearEditor, focusEditor } from './utils/editor';
 import { isMacOS } from './utils/user-agent';
+
+test.use({ userPreset: 'certified' });
 
 // middle of block
 const challenge1 = {
@@ -79,6 +81,9 @@ test.describe('Should take you to the next superblock (with editor solution)', (
       await page.keyboard.press('Control+v');
     }
 
+    await expect(
+      page.frameLocator('.challenge-preview-frame').locator('#welcome-section')
+    ).toBeAttached();
     await page.keyboard.press('Control+Enter');
 
     const submitButton = page.locator(

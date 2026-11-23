@@ -134,7 +134,10 @@ export const validateGeneratedExamSchema = (
 
 // User Completed Exam Schema
 const UserCompletedQuestionJoi = Joi.object().keys({
-  id: Joi.string().regex(nanoIdRE).required(),
+  id: Joi.string()
+    .regex(nanoIdRE)
+    .valid(Joi.in('$validQuestionIds'))
+    .required(),
   question: Joi.string().required(),
   answer: Joi.object().keys({
     id: Joi.string().regex(nanoIdRE).required(),
@@ -146,6 +149,7 @@ const userCompletedExamSchema = Joi.object().keys({
   userExamQuestions: Joi.array()
     .items(UserCompletedQuestionJoi)
     .min(1)
+    .unique('id')
     .required(),
   examTimeInSeconds: Joi.number().min(0)
 });
@@ -155,11 +159,13 @@ const userCompletedExamSchema = Joi.object().keys({
  *
  * @param exam The exam the camper completed.
  * @param numberOfQuestionsInExam The number of questions in the exam.
+ * @param examQuestions The questions of the exam from the database.
  * @returns JOI Validation object.
  */
 export const validateUserCompletedExamSchema = (
   exam: UserExam,
-  numberOfQuestionsInExam: number
+  numberOfQuestionsInExam: number,
+  examQuestions: Question[]
 ) => {
   // TODO: Validate that the properties exist
   if (exam.userExamQuestions.length !== numberOfQuestionsInExam) {
@@ -168,7 +174,11 @@ export const validateUserCompletedExamSchema = (
     );
   }
 
-  return userCompletedExamSchema.validate(exam);
+  const validQuestionIds = examQuestions.map(question => question.id);
+
+  return userCompletedExamSchema.validate(exam, {
+    context: { validQuestionIds }
+  });
 };
 
 // Exam Results Schema

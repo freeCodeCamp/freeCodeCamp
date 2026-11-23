@@ -1,7 +1,9 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('when reloading the page', () => {
   test.beforeEach(async ({ page }) => {

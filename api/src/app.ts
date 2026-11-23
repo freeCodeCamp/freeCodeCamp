@@ -15,6 +15,7 @@ import { Ajv } from 'ajv';
 import addFormats from 'ajv-formats';
 
 import clickhousePlugin from './db/clickhouse.js';
+import type { ClickHouseConfiguration } from './utils/clickhouse-config.js';
 import prismaPlugin from './db/prisma.js';
 import cookies from './plugins/cookies.js';
 import cors from './plugins/cors.js';
@@ -98,10 +99,12 @@ export const buildOptions: FastifyHttpOptions<
  * routes should be mounted.
  *
  * @param options The options to pass to the Fastify constructor.
+ * @param integrations Optional integration configuration, disabled by default in tests.
  * @returns The instantiated Fastify server, with TypeBox.
  */
 export const build = async (
-  options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {}
+  options: FastifyHttpOptions<RawServerDefault, FastifyBaseLogger> = {},
+  integrations: { clickhouse?: ClickHouseConfiguration | false } = {}
 ): Promise<FastifyInstanceWithTypeProvider> => {
   // TODO: Old API returns 403s for failed validation. We now return 400 (default) from AJV.
   // Watch when implementing in client
@@ -149,7 +152,7 @@ export const build = async (
             .find(str => str.includes('csrf_token'));
           const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
 
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          // oxlint-disable-next-line typescript/no-unsafe-member-access
           if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
           return req;
         }
@@ -160,7 +163,11 @@ export const build = async (
 
   void fastify.register(auth);
   void fastify.register(notFound);
-  void fastify.register(clickhousePlugin);
+  void fastify.register(clickhousePlugin, {
+    configuration:
+      integrations.clickhouse ??
+      (process.env.NODE_ENV === 'test' ? false : undefined)
+  });
   void fastify.register(prismaPlugin);
   void fastify.register(bouncer);
   await fastify.register(serviceBearerAuth);
@@ -173,7 +180,7 @@ export const build = async (
       // TODO: bounce unauthed requests before checking CSRF token. This will
       // mean moving csrfProtection into custom plugin and testing separately,
       // because it's a pain to mess around with other cookies/hook order.
-      // eslint-disable-next-line @typescript-eslint/unbound-method
+      // oxlint-disable-next-line typescript/unbound-method
       fastify.addHook('onRequest', fastify.csrfProtection);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
 
@@ -203,6 +210,18 @@ export const build = async (
     fastify.addHook('onRequest', fastify.authorize);
 
     await fastify.register(protectedRoutes.userGetRoutes);
+  });
+
+  // CSRF protection enabled:
+  // Routes that work for unauthenticated users, but make use of .user if present
+  void fastify.register(async function (fastify) {
+    // authorize adds .user if the request is authenticated, but does not block
+    // the request
+    fastify.addHook('onRequest', fastify.authorize);
+    // oxlint-disable-next-line typescript/unbound-method
+    fastify.addHook('onRequest', fastify.csrfProtection);
+
+    await fastify.register(publicRoutes.paypalSubscriptionRoute);
   });
 
   // Routes for signed out users:

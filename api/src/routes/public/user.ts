@@ -183,8 +183,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         });
       } else {
         const progressTimestamps = user.progressTimestamps as
-          | ProgressTimestamp[]
-          | null;
+          ProgressTimestamp[] | null;
         const sharedUser = replacePrivateData({
           ...user,
           calendar: getCalendar(progressTimestamps),

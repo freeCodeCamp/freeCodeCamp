@@ -1,6 +1,5 @@
-// The eslint-plugin-vitest plugin does not recognize assertions made through
-// expectSaga.
-/* eslint-disable vitest/expect-expect */
+// The assertion rule does not recognize assertions made through expectSaga.
+/* oxlint-disable vitest/expect-expect */
 import { runSaga } from 'redux-saga';
 import { expectSaga } from 'redux-saga-test-plan';
 import { beforeEach, describe, expect, it, vi } from 'vitest';

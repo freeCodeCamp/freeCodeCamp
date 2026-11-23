@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-priority-queues-and-heaps",
+  "challengeOrder": [
+    {
+      "id": "68baa5e4f0e07f079245ca0b",
+      "title": "How Do Priority Queues and Heaps Work?"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list"
+}

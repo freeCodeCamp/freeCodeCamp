@@ -1,40 +1,33 @@
-import fs from 'node:fs/promises';
+import { createClient } from '@clickhouse/client';
+import assert from 'node:assert';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { config } from 'dotenv';
 
-import { createClient } from '@clickhouse/client';
+import { applyMigrations } from './migrations.js';
 
-import {
-  CLICKHOUSE_DATABASE,
-  CLICKHOUSE_PASSWORD,
-  CLICKHOUSE_URL,
-  CLICKHOUSE_USERNAME
-} from '../../src/utils/env.js';
+import { readClickHouseConfiguration } from '../../src/utils/clickhouse-config.js';
 
-const directory = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  '../../clickhouse/migrations'
-);
-const client = createClient({
-  url: CLICKHOUSE_URL,
-  username: CLICKHOUSE_USERNAME,
-  password: CLICKHOUSE_PASSWORD,
-  database: CLICKHOUSE_DATABASE
+config({
+  path: path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    '../../../.env'
+  )
 });
+const configuration = readClickHouseConfiguration(process.env);
+assert.ok(
+  configuration,
+  'CLICKHOUSE_URL is required to run ClickHouse migrations.'
+);
+const client = createClient(configuration);
 
 try {
-  const migrations = (await fs.readdir(directory))
-    .filter(file => file.endsWith('.sql'))
-    .sort();
-
+  const migrations = await applyMigrations(client);
   for (const migration of migrations) {
-    const query = await fs.readFile(path.join(directory, migration), 'utf8');
-    await client.command({
-      query,
-      clickhouse_settings: { wait_end_of_query: 1 }
-    });
     console.info(`Applied ClickHouse migration: ${migration}`);
   }
+  if (migrations.length === 0)
+    console.info('No pending ClickHouse migrations.');
 } finally {
   await client.close();
 }

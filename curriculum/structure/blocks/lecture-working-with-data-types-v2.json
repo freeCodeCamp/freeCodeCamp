@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-data-types-v2",
+  "challengeOrder": [
+    {
+      "id": "672d496eca926b5df8176a67",
+      "title": "What Is a Data Type, and What Are the Different Data Types in JavaScript?"
+    },
+    {
+      "id": "6732518a8627876f4fcd18a4",
+      "title": "How Does the typeof Operator Work, and What Is the typeof null Bug in JavaScript?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

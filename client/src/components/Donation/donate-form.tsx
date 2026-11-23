@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/unbound-method */
+/* oxlint-disable typescript/unbound-method */
 import type { Token } from '@stripe/stripe-js';
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
@@ -302,17 +302,18 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
   render() {
     const {
-      donationFormState: { processing, success, error, redirecting },
+      donationFormState: { processing, success, error, redirecting, pending },
       isMinimalForm,
       isSignedIn
     } = this.props;
 
-    if (success || error) {
+    if (success || error || pending) {
       return (
         <DonateCompletion
           processing={processing}
           redirecting={redirecting}
           success={success}
+          pending={pending}
           error={error}
           isSignedIn={isSignedIn}
           reset={this.resetDonation}

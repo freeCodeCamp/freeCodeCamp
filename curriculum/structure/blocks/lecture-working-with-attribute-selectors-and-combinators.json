@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-attribute-selectors-and-combinators",
+  "challengeOrder": [
+    {
+      "id": "672aa840de72b3607bba4bed",
+      "title": "What Is the Attribute Selector, and How Can It Be Used to Target Links with the href and title Attributes?"
+    },
+    {
+      "id": "672acc100d59d24da7b4e09c",
+      "title": "What Are the Different Types of CSS Combinators?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

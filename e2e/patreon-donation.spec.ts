@@ -1,6 +1,9 @@
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
+
+test.use({ userPreset: 'certified' });
 
 // Unlike PayPal and Stripe, Patreon isn't a third-party SDK integration - it's
 // a plain link built from static config, so it can't crash the page the way

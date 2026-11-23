@@ -1,4 +1,6 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+
+test.use({ userPreset: 'certified' });
 
 const challenges = {
   responsiveWebDesign:

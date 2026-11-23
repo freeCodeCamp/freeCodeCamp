@@ -1,6 +1,7 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
+
+test.use({ userPreset: 'certified' });
 
 const settingsPageElement = {
   internetPresenceForm: 'internet-presence'
@@ -8,11 +9,8 @@ const settingsPageElement = {
 
 const githubUrl = 'https://github.com/certified-user';
 
-test.beforeEach(async ({ page }) => {
-  // Reset input values
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-
-  await page.goto('/certifieduser');
+test.beforeEach(async ({ page, isolatedUser }) => {
+  await page.goto(`/${isolatedUser.username}`);
 
   await page.getByRole('button', { name: 'Edit my profile' }).click();
 });

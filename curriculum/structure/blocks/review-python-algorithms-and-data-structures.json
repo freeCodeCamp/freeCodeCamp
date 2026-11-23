@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "review-python-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "67f39e391c9b373069def02c",
+      "title": "Algorithms and Data Structures Review"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLabel": "review",
+  "blockLayout": "link"
+}
