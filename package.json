@@ -20,7 +20,6 @@
   "main": "none",
   "scripts": {
     "audit-challenges": "cd curriculum && pnpm audit-challenges",
-    "analyze-bundle": "webpack-bundle-analyzer",
     "build": "turbo build",
     "build:client": "turbo -F=@freecodecamp/client build",
     "build:curriculum": "turbo -F=@freecodecamp/curriculum build",
@@ -78,7 +77,7 @@
   "devDependencies": {
     "@freecodecamp/oxlint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
-    "@playwright/test": "1.65.0",
+    "@playwright/test": "1.65.1",
     "@testing-library/dom": "10.4.2",
     "@testing-library/jest-dom": "6.9.1",
     "@types/lodash": "4.17.24",
@@ -90,15 +89,14 @@
     "lint-staged": "^16.4.0",
     "lodash": "4.18.1",
     "npm-run-all2": "5.0.2",
-    "oxlint": "1.91.0",
-    "oxlint-tsgolint": "7.0.2006",
-    "prettier": "3.9.10",
+    "oxlint": "1.93.0",
+    "oxlint-tsgolint": "7.0.2007",
+    "prettier": "3.10.1",
     "stylelint": "16.26.1",
     "tsx": "4.23.15",
     "turbo": "2.11.7",
     "typescript": "7.0.2",
-    "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@12.18.0"
+  "packageManager": "pnpm@12.21.0"
 }

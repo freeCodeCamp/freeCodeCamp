@@ -1,7 +1,7 @@
 # =============================================================================
 # BASE - System dependencies, pnpm, mongosh
 # =============================================================================
-FROM node:26-bookworm AS base
+FROM node:26.13.1-bookworm@sha256:b7087bc4d973034b30854b378ba107f9fab622b47514cb7e2592e41b8bab8d49 AS base
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
