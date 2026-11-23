@@ -72,8 +72,14 @@ jobs:
           targets: local-devcontainer
           load: true
 
+      - name: Give the workspace to the image user
+        run: |
+          uid=$(docker run --rm ghcr.io/freecodecamp/devcontainer:latest id -u)
+          gid=$(docker run --rm ghcr.io/freecodecamp/devcontainer:latest id -g)
+          sudo chown -R "$uid:$gid" .
+
       - name: Start devcontainer
-        run: devcontainer up --workspace-folder .
+        run: devcontainer up --workspace-folder . --update-remote-user-uid-default off
 
       - name: Validate required tools
         run: |
@@ -137,3 +143,9 @@ jobs:
             .devcontainer/codespace-env.sh
           devcontainer exec --workspace-folder . grep -q '^HOME_LOCATION=https://ci-probe-8000.app.github.dev$' .env
           devcontainer exec --workspace-folder . grep -q '^API_LOCATION=https://ci-probe-3000.app.github.dev$' .env
+
+      - name: Give the workspace back to the runner user
+        if: always()
+        run: |
+          docker compose --project-name freecodecamp-devcontainer -f docker/docker-compose.yml -f .devcontainer/docker-compose.yml down
+          sudo chown -R "$(id -u):$(id -g)" .
