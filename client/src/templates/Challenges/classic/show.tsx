@@ -331,7 +331,7 @@ function ShowClassic({
       cancelTests();
       window.removeEventListener('resize', setHtmlHeight);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [dailyCodingChallengeLanguage]);
 
   const initializeComponent = (title: string): void => {

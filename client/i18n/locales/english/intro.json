@@ -599,7 +599,9 @@
     "chapters": {
       "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
     },
-    "modules": { "introduction-to-d3": "Introduction to D3" },
+    "modules": {
+      "introduction-to-d3": "Introduction to D3"
+    },
     "module-intros": {
       "introduction-to-d3": {
         "note": "Coming Late 2026",
@@ -1587,7 +1589,7 @@
         "title": "Python Basics Review",
         "intro": [
           "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          "In this review page, you will review working with strings, functions, comparison operators and more."
+          "In this review page, you will review working with strings, functions, comparison operators, and more."
         ]
       },
       "quiz-python-basics": {
@@ -1626,7 +1628,7 @@
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+          "Open up this page to review concepts around loops, lists, tuples, and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
@@ -1654,6 +1656,12 @@
       "lecture-working-with-modules": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
+      },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
       },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
@@ -1832,9 +1840,9 @@
         ]
       },
       "review-object-oriented-programming": {
-        "title": "Object Oriented Programming Review",
+        "title": "Object-Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
+          "Before you're quizzed on object-oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -2568,6 +2576,12 @@
           "In this lab, you'll create a function that looks up profile information."
         ]
       },
+      "lab-data-sanitizer-sweep": {
+        "title": "Implement the Data Sanitizer Sweep Process",
+        "intro": [
+          "In this lab, you will practice using string manipulation and loops to replace characters in log strings and entire log files."
+        ]
+      },
       "workshop-space-mission-roster": {
         "title": "Build a Space Mission Roster",
         "intro": [
@@ -2610,6 +2624,12 @@
         "title": "Build a Traffic Light Sequencer",
         "intro": [
           "In this lab, you will use JavaScript loops to build a traffic light sequencer."
+        ]
+      },
+      "workshop-campus-directory-normalizer": {
+        "title": "Build a Campus Directory Normalizer",
+        "intro": [
+          "In this workshop, you will normalize nested data into independent, easy-to-use lookup tables."
         ]
       },
       "lab-proofreading-tool": {
@@ -5030,6 +5050,12 @@
           "In this lab, you'll create a function that looks up profile information."
         ]
       },
+      "lab-data-sanitizer-sweep": {
+        "title": "Implement the Data Sanitizer Sweep Process",
+        "intro": [
+          "In this lab, you will practice using string manipulation and loops to replace characters in log strings and entire log files."
+        ]
+      },
       "workshop-space-mission-roster": {
         "title": "Build a Space Mission Roster",
         "intro": [
@@ -6576,7 +6602,7 @@
         "title": "Python Basics Review",
         "intro": [
           "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          "In this review page, you will review working with strings, functions, comparison operators and more."
+          "In this review page, you will review working with strings, functions, comparison operators, and more."
         ]
       },
       "quiz-python-basics": {
@@ -6623,7 +6649,7 @@
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+          "Open up this page to review concepts around loops, lists, tuples, and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
@@ -6642,6 +6668,12 @@
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
       },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
+      },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
         "intro": [
@@ -6649,7 +6681,7 @@
         ]
       },
       "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets review",
+        "title": "Dictionaries and Sets Review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
           "Open up this page to review concepts around dictionaries, sets, and how to import modules."
@@ -6781,9 +6813,9 @@
         ]
       },
       "review-object-oriented-programming": {
-        "title": "Object Oriented Programming Review",
+        "title": "Object-Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
+          "Before you're quizzed on object-oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -7726,7 +7758,10 @@
         "title": "Certification Introduction",
         "intro": ["", ""]
       },
-      "es-a1-learn-vowels": { "title": "Vowels", "intro": ["", ""] },
+      "es-a1-learn-vowels": {
+        "title": "Vowels",
+        "intro": ["", ""]
+      },
       "es-a1-learn-consonants-and-special-characters": {
         "title": "Consonants and Special Characters",
         "intro": ["", ""]
@@ -7747,7 +7782,10 @@
         "title": "Alphabet and Accents",
         "intro": ["", ""]
       },
-      "es-a1-learn-punctuation": { "title": "Punctuation", "intro": ["", ""] },
+      "es-a1-learn-punctuation": {
+        "title": "Punctuation",
+        "intro": ["", ""]
+      },
       "es-a1-review-spanish-fundamentals": {
         "title": "Spanish Fundamentals Review",
         "intro": ["", ""]
@@ -7780,8 +7818,14 @@
         "title": "Introducing Yourself Basics",
         "intro": ["", ""]
       },
-      "es-a1-learn-meet-luna": { "title": "Meet Luna", "intro": ["", ""] },
-      "es-a1-learn-meet-mateo": { "title": "Meet Mateo", "intro": ["", ""] },
+      "es-a1-learn-meet-luna": {
+        "title": "Meet Luna",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-meet-mateo": {
+        "title": "Meet Mateo",
+        "intro": ["", ""]
+      },
       "es-a1-learn-meet-julieta": {
         "title": "Meet Julieta",
         "intro": ["", ""]
@@ -9083,7 +9127,10 @@
         "title": "Simple Finals",
         "intro": ["", ""]
       },
-      "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
+      "zh-a1-learn-initials": {
+        "title": "Initials",
+        "intro": ["", ""]
+      },
       "zh-a1-learn-compound-finals": {
         "title": "Compound Finals",
         "intro": ["", ""]
@@ -9140,7 +9187,10 @@
         "title": "A New Colleague",
         "intro": ["", ""]
       },
-      "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
+      "zh-a1-learn-my-family": {
+        "title": "My Family",
+        "intro": ["", ""]
+      },
       "zh-a1-practice-introducing-others": {
         "title": "Introducing Others Practice",
         "intro": ["", ""]
@@ -10406,7 +10456,9 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": { "basic-html": "Basic HTML" },
+    "modules": {
+      "basic-html": "Basic HTML"
+    },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
@@ -10419,7 +10471,9 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
+      "daily-coding-challenge": {
+        "title": "Daily Coding Challenge"
+      }
     }
   },
   "misc-text": {
@@ -10454,11 +10508,13 @@
     },
     "modules": {
       "python-basics": "Python Basics",
-      "python-installation": "Install Python",
+      "lab-rpg-character": "Build an RPG Character",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-modules-and-standard-library": "Modules and Standard Library",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Error Handling",
+      "lab-order-processor": "Build an Order Processor",
       "python-classes-and-objects": "Classes and Objects",
       "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
@@ -10560,17 +10616,11 @@
           "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
         ]
       },
-      "lab-rpg-character": {
-        "title": "Build an RPG Character",
-        "intro": [
-          "In this lab you will practice basic Python by building an RPG character."
-        ]
-      },
       "review-python-basics": {
         "title": "Python Basics Review",
         "intro": [
           "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          "In this review page, you will review working with strings, functions, comparison operators and more."
+          "In this review page, you will review working with strings, functions, comparison operators, and more."
         ]
       },
       "quiz-python-basics": {
@@ -10579,29 +10629,35 @@
           "Test what you've learned about Python basics with this quiz."
         ]
       },
-      "lecture-python-installation": {
-        "title": "Installing Python and Running Code Locally",
+      "lab-rpg-character": {
+        "title": "Build an RPG Character",
         "intro": [
-          "In these lessons, you will learn how to install Python on your local device and run code locally."
+          "In this lab you will practice basic Python by building an RPG character."
         ]
       },
-      "review-python-installation": {
-        "title": "Python Installation Review",
+      "lecture-working-with-lists": {
+        "title": "Working with Lists",
+        "intro": ["Learn about working with lists in these lessons."]
+      },
+      "workshop-concert-program-planner": {
+        "title": "Build a Concert Program Planner",
         "intro": [
-          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
+          "In this workshop, you'll practice working with lists by planning the program of an orchestra concert."
         ]
       },
-      "quiz-python-installation": {
-        "title": "Python Installation Quiz",
+      "lecture-working-with-tuples": {
+        "title": "Working with Tuples",
+        "intro": ["Learn about working with tuples in these lessons."]
+      },
+      "workshop-version-checker": {
+        "title": "Build a Version Checker",
         "intro": [
-          "Test what you've learned about installing Python locally with this quiz."
+          "In this workshop, you'll practice working with tuples by building a program that checks if an app needs an update."
         ]
       },
-      "lecture-working-with-loops-and-sequences": {
-        "title": "Working with Loops and Sequences",
-        "intro": [
-          "Learn about working with loops and sequences in these lessons."
-        ]
+      "lecture-working-with-loops-python": {
+        "title": "Working with Loops",
+        "intro": ["Learn about working with loops in these lessons."]
       },
       "workshop-pin-extractor": {
         "title": "Build a PIN Extractor",
@@ -10609,15 +10665,33 @@
           "In this workshop you will build a function to extract secret PINs hidden in poems."
         ]
       },
+      "workshop-elevator-simulator": {
+        "title": "Build an Elevator Simulator",
+        "intro": [
+          "In this workshop, you'll practice working with while loops by building a function that simulates an elevator moving between floors."
+        ]
+      },
       "lab-number-pattern-generator": {
         "title": "Build a Number Pattern Generator",
         "intro": ["In this lab you will build a number pattern generator."]
       },
-      "review-loops-and-sequences": {
+      "lecture-understanding-list-comprehensions-and-lambda-functions": {
+        "title": "Understanding List Comprehensions and Lambda Functions",
+        "intro": [
+          "Learn about list comprehensions and lambda functions in these lessons."
+        ]
+      },
+      "workshop-sensor-data-cleaner": {
+        "title": "Build a Sensor Data Cleaner",
+        "intro": [
+          "In this workshop, you'll practice list comprehensions and lambda functions by cleaning the readings of a temperature sensor."
+        ]
+      },
+      "review-loops-and-sequences-v2": {
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+          "Open up this page to review concepts around loops, lists, tuples, and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
@@ -10626,33 +10700,41 @@
           "Test what you've learned about loops and sequences in Python with this quiz."
         ]
       },
-      "lecture-working-with-dictionaries-and-sets": {
-        "title": "Working with Dictionaries and Sets",
-        "intro": [
-          "Learn about working with dictionaries and sets in these lessons."
-        ]
+      "lecture-working-with-dictionaries": {
+        "title": "Working with Dictionaries",
+        "intro": ["Learn about working with dictionaries in these lessons."]
       },
-      "lecture-working-with-modules": {
-        "title": "Working with Modules",
-        "intro": ["Learn about working with modules in these lessons."]
+      "lecture-working-with-sets": {
+        "title": "Working with Sets",
+        "intro": ["Learn about working with sets in this lesson."]
       },
-      "workshop-medical-data-validator": {
-        "title": "Build a Medical Data Validator",
-        "intro": [
-          "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
-        ]
-      },
-      "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets review",
+      "review-dictionaries-and-sets-v2": {
+        "title": "Dictionaries and Sets Review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
           "Open up this page to review concepts around dictionaries, sets, and how to import modules."
         ]
       },
-      "quiz-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Quiz",
+      "lecture-working-with-modules-v2": {
+        "title": "Working with Modules",
+        "intro": ["Learn about working with modules in these lessons."]
+      },
+      "lecture-copying-nested-collections": {
+        "title": "Copying Nested Collections",
         "intro": [
-          "Test what you've learned about dictionaries and sets in Python with this quiz."
+          "Learn how assignment, shallow copying, and deep copying affect nested dictionaries and lists."
+        ]
+      },
+      "lecture-working-with-regular-expressions-python": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "Learn about working with regular expressions in Python in these lessons."
+        ]
+      },
+      "workshop-medical-data-validator": {
+        "title": "Build a Medical Data Validator",
+        "intro": [
+          "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
         ]
       },
       "lab-user-configuration-manager": {
@@ -10685,6 +10767,12 @@
           "Test what you've learned about error handling in Python with this quiz."
         ]
       },
+      "lab-order-processor": {
+        "title": "Build an Order Processor",
+        "intro": [
+          "In this lab, you will practice handling errors in Python by processing e-commerce orders."
+        ]
+      },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
         "intro": ["Learn about classes and objects in these lessons."]
@@ -10699,6 +10787,12 @@
         "title": "Build a Planet Class",
         "intro": [
           "In this lab you will create a class that represents a planet."
+        ]
+      },
+      "lecture-formatting-python-output": {
+        "title": "Formatting Python Output",
+        "intro": [
+          "In this lesson, you'll learn how to align and pad text in f-strings, so you can display values in neat, readable columns."
         ]
       },
       "workshop-email-simulator": {
@@ -10775,9 +10869,9 @@
         ]
       },
       "review-object-oriented-programming": {
-        "title": "Object Oriented Programming Review",
+        "title": "Object-Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
+          "Before you're quizzed on object-oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -10844,6 +10938,12 @@
         "title": "Understanding Algorithms and Big O Notation",
         "intro": [
           "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
+        ]
+      },
+      "workshop-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this workshop, you will build a validator using numerical computations and string manipulation."
         ]
       },
       "lab-stock-profit-calculator": {
@@ -10990,6 +11090,12 @@
         "title": "Implement the Quicksort Algorithm",
         "intro": [
           "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
+      },
+      "workshop-sudoku-solver": {
+        "title": "Build a Sudoku Solver",
+        "intro": [
+          "In this workshop, you'll use recursion and backtracking to build a program that solves Sudoku puzzles."
         ]
       },
       "review-recursion-python-v2": {
@@ -11143,7 +11249,8 @@
     },
     "modules": {
       "html": "HTML",
-      "css": "CSS"
+      "css": "CSS",
+      "javascript": "JavaScript"
     },
     "blocks": {
       "workshop-curriculum-outline": {
@@ -11458,6 +11565,322 @@
         "title": "CSS Quiz",
         "intro": [
           "The following quiz will test your knowledge of the CSS concepts you have learned so far."
+        ]
+      },
+      "lecture-introduction-to-javascript-v2": {
+        "title": "Introduction to JavaScript",
+        "intro": [
+          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+        ]
+      },
+      "workshop-greeting-bot": {
+        "title": "Build a Greeting Bot",
+        "intro": [
+          "In this workshop, you will learn JavaScript fundamentals by building a greeting bot.",
+          "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
+        ]
+      },
+      "lecture-working-with-strings": {
+        "title": "Working with Strings",
+        "intro": [
+          "In this lecture, you will learn how to use template literals, interpolate variables and expressions, and create multiline strings in JavaScript."
+        ]
+      },
+      "workshop-teacher-chatbot": {
+        "title": "Build a Teacher Chatbot",
+        "intro": [
+          "In this workshop, you will continue to learn more about JavaScript strings by building a chatbot.",
+          "You will learn how to work with template literals, and the <code>indexOf</code> method."
+        ]
+      },
+      "lecture-working-with-data-types-v2": {
+        "title": "Working with Data Types",
+        "intro": [
+          "In the following lectures, you will learn data types in JavaScript and the <code>typeof</code> operator."
+        ]
+      },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+        ]
+      },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code>."
+        ]
+      },
+      "workshop-string-transformer": {
+        "title": "Build a String Transformer",
+        "intro": [
+          "In this workshop, you will practice working with the <code>replace()</code>, <code>replaceAll()</code> and <code>repeat()</code> methods."
+        ]
+      },
+      "lecture-working-with-conditional-logic": {
+        "title": "Working with Conditional Logic",
+        "intro": [
+          "In these lectures, you will learn about conditional statements, binary logical operators, and the <code>switch</code> statement."
+        ]
+      },
+      "workshop-logic-checker-app": {
+        "title": "Build a Logic Checker App",
+        "intro": [
+          "In this workshop, you'll practice working with conditional statements and comparison operators by building a logic checker app."
+        ]
+      },
+      "lecture-working-with-the-math-object": {
+        "title": "Working with the Math Object",
+        "intro": [
+          "In these lectures, you will learn how to work with the Math object in JavaScript. You will learn about the different Math object methods and how to use them."
+        ]
+      },
+      "workshop-mathbot": {
+        "title": "Build a Mathbot",
+        "intro": [
+          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+        ]
+      },
+      "lab-fortune-teller": {
+        "title": "Build a Fortune Teller",
+        "intro": [
+          "In this lab, you'll build a fortune teller by randomly selecting a fortune from the available fortunes.",
+          "You'll practice how to work with the <code>Math.random()</code> method and the <code>Math.floor()</code> method to generate random numbers."
+        ]
+      },
+      "lecture-working-with-numbers-and-common-number-methods": {
+        "title": "Working with Numbers and Common Number Methods",
+        "intro": [
+          "In these lectures, you will learn about numbers and common number methods. These include <code>isNaN()</code>, <code>parseInt()</code>, <code>parseFloat()</code>, and <code>toFixed()</code>."
+        ]
+      },
+      "lecture-working-with-functions": {
+        "title": "Working with Functions",
+        "intro": [
+          "In these lectures, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and how scope works in programming. "
+        ]
+      },
+      "workshop-calculator": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review your knowledge of functions by building a calculator."
+        ]
+      },
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it.",
+          "You'll practice string slicing, concatenation, and using functions."
+        ]
+      },
+      "lecture-working-with-arrays-and-common-array-methods": {
+        "title": "Working with Arrays and Common Array Methods",
+        "intro": [
+          "In these lectures, you will learn how to work with JavaScript arrays. You will learn about what makes an array, how to access and update the elements in an array, and much more."
+        ]
+      },
+      "workshop-shopping-list": {
+        "title": "Build a Shopping List",
+        "intro": [
+          "In this workshop, you will practice how to work with arrays by building a shopping list.",
+          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
+        ]
+      },
+      "lab-lunch-picker-program": {
+        "title": "Build a Lunch Picker Program",
+        "intro": [
+          "In this lab, you'll review working with arrays and random numbers by building a lunch picker program."
+        ]
+      },
+      "lecture-working-with-objects": {
+        "title": "Introduction to JavaScript Objects and Their Properties",
+        "intro": [
+          "In these lectures, you will learn the fundamentals of JavaScript objects and how to access their properties."
+        ]
+      },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
+      "lecture-working-with-json": {
+        "title": "Working with JSON",
+        "intro": [
+          "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
+        ]
+      },
+      "lecture-working-with-optional-chaining-and-object-destructuring": {
+        "title": "Working with Optional Chaining and Object Destructuring",
+        "intro": [
+          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
+        ]
+      },
+      "workshop-recipe-tracker": {
+        "title": "Build a Recipe Tracker",
+        "intro": [
+          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+        ]
+      },
+      "lab-quiz-game": {
+        "title": "Build a Quiz Game",
+        "intro": [
+          "In this lab, you'll build a quiz game using JavaScript arrays and objects.",
+          "You'll also practice using functions to randomly select a question and an answer from an array and compare them."
+        ]
+      },
+      "lecture-working-with-loops": {
+        "title": "Working with Loops",
+        "intro": [
+          "Loops are an essential part of JavaScript. That's why the following lectures have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
+        ]
+      },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information."
+        ]
+      },
+      "workshop-campus-directory-normalizer": {
+        "title": "Build a Campus Directory Normalizer",
+        "intro": [
+          "In this workshop, you will normalize nested data into independent, easy-to-use lookup tables."
+        ]
+      },
+      "lab-proofreading-tool-v2": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this certification project, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
+        ]
+      },
+      "lecture-working-with-higher-order-functions-and-callbacks": {
+        "title": "Working with Higher Order Functions and Callbacks",
+        "intro": [
+          "In these lectures, you will learn how to work with higher order functions and callbacks. The higher order functions you will learn include <code>map()</code>, <code>filter()</code>, <code>reduce()</code>, <code>sort()</code>, <code>every()</code>, and <code>some()</code>. You will also learn how to chain these methods together to achieve your desired results."
+        ]
+      },
+      "workshop-library-manager": {
+        "title": "Build a Library Manager",
+        "intro": [
+          "In this workshop, you will learn higher order array methods by building a library manager."
+        ]
+      },
+      "lab-book-organizer": {
+        "title": "Build a Book Organizer",
+        "intro": [
+          "In this lab, you'll build a book organizer using higher order functions in JavaScript."
+        ]
+      },
+      "lecture-introduction-to-the-dom": {
+        "title": "Introduction to the DOM",
+        "intro": [
+          "In these lectures, you will learn about the Document Object Model (DOM) and how to interact with it using JavaScript."
+        ]
+      },
+      "workshop-storytelling-app": {
+        "title": "Build a Storytelling App",
+        "intro": [
+          "In this workshop, you will build a storytelling app that will allow you to list different stories based on genre."
+        ]
+      },
+      "workshop-emoji-reactor": {
+        "title": "Build an Emoji Reactor",
+        "intro": [
+          "In this workshop, you will build an emoji reactor to practice <code>querySelector</code> and <code>querySelectorAll</code>."
+        ]
+      },
+      "lab-favorite-icon-toggler": {
+        "title": "Build a Favorite Icon Toggler",
+        "intro": [
+          "In this lab, you'll build a favorite icon toggler by utilizing JavaScript click events."
+        ]
+      },
+      "workshop-music-instrument-filter": {
+        "title": "Build a Music Instrument Filter",
+        "intro": [
+          "In this workshop, you will build a music instrument filter with JavaScript."
+        ]
+      },
+      "lab-real-time-counter": {
+        "title": "Build a Real Time Counter",
+        "intro": [
+          "In this lab, you'll build a real-time character counter",
+          "You'll practice how to work with the <code>input</code> event when the user types in the input field."
+        ]
+      },
+      "lab-lightbox-viewer": {
+        "title": "Build a Lightbox Viewer",
+        "intro": [
+          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
+          "You'll practice click events and toggling classes."
+        ]
+      },
+      "workshop-library-search": {
+        "title": "Build a Library Book Search",
+        "intro": [
+          "In this workshop, you will practice handling errors gracefully in JavaScript.",
+          "You will build a Library Book Search application and use <code>try...catch...finally</code> blocks, along with the <code>throw</code> statement, to catch and manage custom errors."
+        ]
+      },
+      "lecture-working-with-regex": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "In these lectures, you will learn about regular expressions in JavaScript, and the methods for working with them."
+        ]
+      },
+      "workshop-spam-filter": {
+        "title": "Build a Spam Filter",
+        "intro": [
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
+          "In this workshop, you'll use capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+        ]
+      },
+      "lecture-working-with-client-side-storage-and-crud-operations-v2": {
+        "title": "Working with Client-Side Storage and CRUD Operations",
+        "intro": [
+          "In these lectures, you will learn about CRUD operations and how to store, retrieve, and remove data using <code>localStorage</code> and <code>sessionStorage</code>."
+        ]
+      },
+      "workshop-todo-app": {
+        "title": "Build a Todo App using Local Storage",
+        "intro": [
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this workshop, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+        ]
+      },
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": [
+          "For this lab, you'll build a bookmark manager app.",
+          "You'll utilize local storage to store bookmarks, and practice how to add, remove, and display bookmarks."
+        ]
+      },
+      "lecture-understanding-asynchronous-programming-v2": {
+        "title": "Understanding Asynchronous Programming",
+        "intro": [
+          "In these lectures, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, and much more."
+        ]
+      },
+      "workshop-fcc-authors-page": {
+        "title": "Build an fCC Authors Page",
+        "intro": [
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
+        ]
+      },
+      "lab-weather-app-v2": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this certification project, you'll build a Weather App using an API.",
+          "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       }
     }

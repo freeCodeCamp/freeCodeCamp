@@ -86,7 +86,7 @@ function InstantSearchRoot({
   const prevLocationRef = useRef<InstantSearchRootProps['location']>();
   useEffect(() => {
     prevLocationRef.current = location;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const prevLocation = prevLocationRef.current;
@@ -98,7 +98,7 @@ function InstantSearchRoot({
     if (location !== prevLocation) {
       updateSearchQuery('');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const propsQuery = query;

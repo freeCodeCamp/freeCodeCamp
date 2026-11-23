@@ -22,37 +22,47 @@
             "workshop-kitchen-inventory-tracker",
             "lab-discount-calculator",
             "workshop-caesar-cipher",
-            "lab-rpg-character",
             "review-python-basics",
             "quiz-python-basics"
           ]
         },
         {
-          "dashedName": "python-installation",
-          "blocks": [
-            "lecture-python-installation",
-            "review-python-installation",
-            "quiz-python-installation"
-          ]
+          "moduleType": "cert-project",
+          "dashedName": "lab-rpg-character",
+          "blocks": ["lab-rpg-character"]
         },
         {
           "dashedName": "python-loops-and-sequences",
           "blocks": [
-            "lecture-working-with-loops-and-sequences",
+            "lecture-working-with-lists",
+            "workshop-concert-program-planner",
+            "lecture-working-with-tuples",
+            "workshop-version-checker",
+            "lecture-working-with-loops-python",
             "workshop-pin-extractor",
+            "workshop-elevator-simulator",
             "lab-number-pattern-generator",
-            "review-loops-and-sequences",
+            "lecture-understanding-list-comprehensions-and-lambda-functions",
+            "workshop-sensor-data-cleaner",
+            "review-loops-and-sequences-v2",
             "quiz-loops-and-sequences"
           ]
         },
         {
           "dashedName": "python-dictionaries-and-sets",
           "blocks": [
-            "lecture-working-with-dictionaries-and-sets",
-            "lecture-working-with-modules",
-            "workshop-medical-data-validator",
-            "review-dictionaries-and-sets",
-            "quiz-dictionaries-and-sets"
+            "lecture-working-with-dictionaries",
+            "lecture-working-with-sets",
+            "review-dictionaries-and-sets-v2"
+          ]
+        },
+        {
+          "dashedName": "python-modules-and-standard-library",
+          "blocks": [
+            "lecture-working-with-modules-v2",
+            "lecture-copying-nested-collections",
+            "lecture-working-with-regular-expressions-python",
+            "workshop-medical-data-validator"
           ]
         },
         {
@@ -70,11 +80,17 @@
           ]
         },
         {
+          "moduleType": "cert-project",
+          "dashedName": "lab-order-processor",
+          "blocks": ["lab-order-processor"]
+        },
+        {
           "dashedName": "python-classes-and-objects",
           "blocks": [
             "lecture-classes-and-objects",
             "workshop-musical-instrument-inventory",
             "lab-planet-class",
+            "lecture-formatting-python-output",
             "workshop-email-simulator",
             "review-classes-and-objects",
             "quiz-classes-and-objects"

@@ -9,7 +9,6 @@ const settingsObject = {
   usernameUpdateToUpperCase: 'Mrugesh',
   usernameAvailable: 'Sem',
   usernameAvailablePressingEnter: 'Oliver',
-  usernameNotAvailable: 'Twaha',
   usernameInvalid: 'user!',
   usernameTooShort: 'us',
   testUser: 'testuser',
@@ -58,14 +57,19 @@ test.describe('Username Settings Validation', () => {
     ).toBeVisible();
   });
 
-  test('Should handle Unavailable Username Error', async ({ page }) => {
+  test('Should handle Unavailable Username Error', async ({
+    page,
+    createUser
+  }) => {
+    const otherUser = await createUser();
+    const unavailableUsername = otherUser.username.toUpperCase();
     const inputLabel = page.getByLabel(translations.settings.labels.username);
-    await inputLabel.fill(settingsObject.usernameNotAvailable);
+    await inputLabel.fill(unavailableUsername);
     await expect(
       page.getByText(
         translations.settings.username['unavailable'].replace(
           settingsObject.usernamePlaceholder,
-          settingsObject.usernameNotAvailable
+          unavailableUsername
         )
       )
     ).toBeVisible();

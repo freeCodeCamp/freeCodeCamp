@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-objects",
+  "challengeOrder": [
+    {
+      "id": "67329f737126b75bcb949e13",
+      "title": "What Is an Object in JavaScript, and How Can You Access Properties from an Object?"
+    },
+    {
+      "id": "6732b73d25cc01251b778043",
+      "title": "What Is the Difference Between Primitive and Non-Primitive Data Types?"
+    },
+    {
+      "id": "6732b749b8aad125523dcda5",
+      "title": "What Is the Difference Between Functions and Object Methods?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
