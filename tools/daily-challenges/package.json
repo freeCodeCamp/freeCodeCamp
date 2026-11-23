@@ -13,7 +13,7 @@
   "devDependencies": {
     "@freecodecamp/oxlint-config": "workspace:*",
     "dotenv": "16.6.1",
-    "mongodb": "6.21.0",
+    "mongodb": "6.22.0",
     "tsx": "4.23.15",
     "typescript": "7.0.2"
   },
