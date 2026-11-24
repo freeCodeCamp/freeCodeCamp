@@ -20,7 +20,9 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
-  test('should redirect to /learn after sign in', async ({ page }) => {
+  test('should redirect to /learn after sign in', async ({
+    isolatedPage: page
+  }) => {
     await page
       .getByRole('link', { name: translations.learn['sign-in-save'] })
       .click();

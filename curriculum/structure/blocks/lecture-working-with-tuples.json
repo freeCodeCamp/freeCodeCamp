@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-tuples",
+  "challengeOrder": [
+    {
+      "id": "6839e3a99ba37f09b9d0059b",
+      "title": "What Are Tuples and How Do They Work?"
+    },
+    {
+      "id": "683d6a3fe8c1060ffb1f9b78",
+      "title": "What Are Some Common Methods for Tuples?"
+    }
+  ],
+  "helpCategory": "Python"
+}

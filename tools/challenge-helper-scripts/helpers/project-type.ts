@@ -3,12 +3,7 @@ import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { getBaseMeta, type Meta } from './get-base-meta.js';
 
 export type ProjectMetaType =
-  | 'Lab'
-  | 'Workshop'
-  | 'Lecture'
-  | 'Review'
-  | 'Quiz'
-  | 'FullStack';
+  'Lab' | 'Workshop' | 'Lecture' | 'Review' | 'Quiz' | 'FullStack';
 
 export const labChallengeTypes = [
   challengeTypes.lab,
@@ -48,10 +43,20 @@ export function getChallengeOrderTitle(
   title: string
 ): string {
   return blockLabel === BlockLabel.lab ||
+    blockLabel === BlockLabel.lecture ||
     blockLabel === BlockLabel.review ||
     blockLabel === BlockLabel.quiz
     ? title
     : 'Step 1';
+}
+
+export function titleToDashedName(title: string): string {
+  return title
+    .trim()
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 type BuildProjectMetaArgs = {
@@ -63,6 +68,7 @@ type BuildProjectMetaArgs = {
   order?: number;
   blockLabel?: BlockLabel;
   blockLayout?: BlockLayouts;
+  challengeTitle?: string;
 };
 
 export function buildProjectMeta({
@@ -73,7 +79,8 @@ export function buildProjectMeta({
   challengeId,
   order,
   blockLabel,
-  blockLayout
+  blockLayout,
+  challengeTitle
 }: BuildProjectMetaArgs): Meta {
   if (isChapterBased && (!blockLabel || !blockLayout)) {
     throw new Error(
@@ -94,7 +101,7 @@ export function buildProjectMeta({
     challengeOrder: [
       {
         id: challengeId,
-        title: getChallengeOrderTitle(blockLabel, title)
+        title: getChallengeOrderTitle(blockLabel, challengeTitle ?? title)
       }
     ]
   };

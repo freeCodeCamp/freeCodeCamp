@@ -1,4 +1,4 @@
-/* eslint-disable filenames-simple/naming-convention */
+/* oxlint-disable filenames-simple/naming-convention */
 require('dotenv').config({ path: '../.env' });
 const config = {
   presets: [

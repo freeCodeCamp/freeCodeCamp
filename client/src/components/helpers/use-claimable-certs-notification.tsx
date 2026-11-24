@@ -12,7 +12,7 @@ export function useClaimableCertsNotification() {
   const claimableCerts = useSelector<unknown, { certTitle: string }[]>(
     claimableCertsSelector
   );
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   const { complete } = useSelector(userFetchStateSelector);
   const hasShownNotification = useRef(false);
 

@@ -66,7 +66,7 @@ function ShowProfileOrFourOhFour({
     if (isEmpty(requestedUser) && maybeUser) {
       fetchProfileForUser(maybeUser);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   if (!isBrowser()) {

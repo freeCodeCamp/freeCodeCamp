@@ -1,24 +1,12 @@
-import { exec } from 'child_process';
-import { promisify } from 'util';
-
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
-const execP = promisify(exec);
+test.use({ userPreset: 'certified' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
-
-test.afterAll(
-  async () =>
-    await Promise.all([
-      execP('node ../tools/scripts/seed/seed-demo-user --certified-user'),
-      execP('node ../tools/scripts/seed/seed-surveys'),
-      execP('node ../tools/scripts/seed/seed-ms-username')
-    ])
-);
 
 test.describe('Delete Modal component', () => {
   test('should close the modal and sign the user out after they fill in the verify input text and click delete', async ({

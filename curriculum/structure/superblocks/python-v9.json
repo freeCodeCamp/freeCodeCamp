@@ -11,6 +11,7 @@
             "workshop-report-card-printer",
             "lecture-introduction-to-python-strings",
             "workshop-employee-profile-generator",
+            "workshop-employee-profile-validator",
             "lecture-numbers-and-mathematical-operations",
             "workshop-bill-splitter",
             "lecture-booleans-and-conditionals",
@@ -48,6 +49,7 @@
           "blocks": [
             "lecture-working-with-dictionaries-and-sets",
             "lecture-working-with-modules",
+            "lecture-working-with-regular-expressions-python",
             "workshop-medical-data-validator",
             "review-dictionaries-and-sets",
             "quiz-dictionaries-and-sets"

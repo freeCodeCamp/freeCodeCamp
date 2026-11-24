@@ -82,7 +82,8 @@ const iconMap = {
   [SuperBlocks.JsV9]: JavaScriptIcon,
   [SuperBlocks.FrontEndDevLibsV9]: ReactIcon,
   [SuperBlocks.PythonV9]: PythonIcon,
-  [SuperBlocks.AlgorithmsAndDataStructure]: Algorithm,
+  [SuperBlocks.PythonProgrammingFundamentals]: PythonIcon,
+  [SuperBlocks.AlgorithmsAndDataStructures]: Algorithm,
   [SuperBlocks.RelationalDbV9]: DatabaseIcon,
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
   [SuperBlocks.FullStackDeveloperV9]: Code,
@@ -125,7 +126,8 @@ const iconMap = {
   [SuperBlocks.IntroductionToLinearDataStructuresInPython]: PythonIcon,
   [SuperBlocks.LearnAlgorithmsInPython]: PythonIcon,
   [SuperBlocks.LearnGraphsAndTreesInPython]: PythonIcon,
-  [SuperBlocks.LearnDynamicProgrammingInPython]: PythonIcon
+  [SuperBlocks.LearnDynamicProgrammingInPython]: PythonIcon,
+  [SuperBlocks.FrontEndDevelopment]: ResponsiveDesign
 };
 
 type SuperBlockIconProps = {

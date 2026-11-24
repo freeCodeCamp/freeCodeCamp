@@ -11,7 +11,7 @@ Conditional statements, or conditionals, let you control the flow of your progra
 
 But before we get into all that, let's go over the basic building blocks of conditional statements, starting with comparison operators. Comparison operators are operators that let you compare two or more values, and return a boolean value.
 
-In a previous lesson, you learned that booleans are one of the data types in Python, and can only be `True` or `False`.
+In a previous lesson, you learned that booleans are one of the data types in Python and can only be `True` or `False`.
 
 ## Using Comparison Operators
 
@@ -51,13 +51,13 @@ if condition:
 
 * `if` statements start with the `if` keyword.
     
-* `condition` is an expression that evaluates to `True` or `False`, followed by a colon (`:`).
+* `condition` is an expression followed by a colon (`:`).
 
 * The body of the `if` statement constitutes a <dfn>code block</dfn>, which is a group of statements that belong together. Spaces at the beginning of a line are called indentation. In Python, indentation determines which statements belong to a code block.
     
 In the example above, the body of the `if` statement contains a `pass` statement. When a `pass` statement is executed, nothing happens. This is a special keyword that can be used as a placeholder for future code and it is useful when empty code blocks are not allowed.
 
-The code within the body of the `if` statement runs only when the condition evaluates to `True`. For example:
+The code within the body of the `if` statement runs only when Python treats the condition as true. The comparisons shown here return `True` or `False`. In the next lesson, you will learn how Python treats other values in conditions. For example:
 
 ```python
 age = 18
@@ -92,13 +92,13 @@ if age >= 18:
 
 ## Adding an `else` Clause
 
-But what if you also want to print something if `age` is less than `18`? That's where the `else` clause comes in. The `else` clause runs when the `if` condition is false. Here's the syntax for an `if…else` statement:
+But what if you also want to print something if `age` is less than `18`? That's where the `else` clause comes in. The `else` clause runs when the `if` condition is false. Here's the syntax for an `if...else` statement:
 
 ```python
 if condition:
-   pass # Code to execute if condition is True
+    pass # Code to execute if condition is True
 else:
-   pass # Code to execute if condition is False
+    pass # Code to execute if condition is False
 ```
 
 For example:
@@ -132,11 +132,11 @@ Here's the syntax:
 
 ```python
 if condition1:
-   pass # Code to execute if condition1 is True
+    pass # Code to execute if condition1 is True
 elif condition2:
-   pass # Code to execute if condition1 is False and condition2 is True
+    pass # Code to execute if condition1 is False and condition2 is True
 else:
-   pass # Code to execute if all conditions are False
+    pass # Code to execute if all conditions are False
 ```
 
 For example:
@@ -171,7 +171,7 @@ else:
     print('You are a toddler or an infant') # You are a toddler or an infant
 ```
 
-Now that you understand how comparison operators and conditional statements work in Python, you can start writing programs that make decisions based on logic and input. Whether you're comparing values or branching through multiple conditions, these tools are the foundation to writing flexible, responsive code.
+Now that you understand how comparison operators and conditional statements work in Python, you can start writing programs that make decisions based on logic and input. Whether you're comparing values or branching through multiple conditions, these tools are the foundation for writing flexible, responsive code.
 
 # --questions--
 
@@ -181,7 +181,7 @@ What do comparison operators do?
 
 ## --answers--
 
-Perform mathematical calculations with boolean values
+Perform mathematical calculations with boolean values.
 
 ### --feedback--
 
