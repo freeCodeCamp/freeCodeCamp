@@ -447,9 +447,9 @@ jobs:
           DOCR_NAME: ${{ secrets.DOCR_NAME }}
           SITE_TLD: ${{ needs.setup-jobs.outputs.site_tld }}
           LANG_SHORT: ${{ matrix.lang-name-short }}
-          CLIENT_CONFIG_COMMIT: b1ed468633f878a87ad3f0f27951e6ad1c926277
         run: |
           df -h /
+          CLIENT_CONFIG_COMMIT="$(git -C client-config rev-parse HEAD)"
           doctl registry login --expiry-seconds 1200
           rm -f "client-$LANG_SHORT.tar"
           CONTEXT="$RUNNER_TEMP/client-image"
