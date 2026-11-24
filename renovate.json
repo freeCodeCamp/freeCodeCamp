@@ -16,7 +16,8 @@
     "**/__fixtures__/**",
     "**/.mise/locks/**",
     "**/.config/mise/locks/**",
-    "docker/client/**"
+    "docker/client/package.json",
+    "docker/client/pnpm-lock.yaml"
   ],
   "packageRules": [
     {
