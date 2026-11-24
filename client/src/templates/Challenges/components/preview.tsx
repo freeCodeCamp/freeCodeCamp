@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { mainPreviewId, scrollManager } from '../utils/frame';
+import { mainPreviewId, previewSandbox, scrollManager } from '../utils/frame';
 
 import './preview.css';
 
@@ -43,6 +43,7 @@ function Preview({
         className={'challenge-preview-frame'}
         id={id}
         title={t('learn.chal-preview')}
+        sandbox={previewSandbox}
       />
     </div>
   );

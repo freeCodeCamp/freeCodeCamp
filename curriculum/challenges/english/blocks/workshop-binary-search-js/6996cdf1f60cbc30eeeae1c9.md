@@ -25,13 +25,13 @@ assert.match(__helpers.removeJSComments(String(binarySearch)), /low\s*=\s*mid\s*
 
 ```js
 function binarySearch(searchList, value) {
-  let pathToTarget = [];
+  const pathToTarget = [];
   let low = 0;
   let high = searchList.length - 1;
   
   while (low <= high) {
-    let mid = Math.floor((low + high) / 2);
-    let valueAtMiddle = searchList[mid];
+    const mid = Math.floor((low + high) / 2);
+    const valueAtMiddle = searchList[mid];
     pathToTarget.push(valueAtMiddle);
     
     if (value === valueAtMiddle) {

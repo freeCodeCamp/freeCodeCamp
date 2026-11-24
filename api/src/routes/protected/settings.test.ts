@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import {
   describe,
   test,
@@ -15,7 +14,8 @@ import {
   superRequest,
   createSuperRequest,
   defaultUserId,
-  defaultUserEmail
+  defaultUserEmail,
+  getSetCookies
 } from '../../../vitest.utils.js';
 import { formatMessage } from '../../plugins/redirect-with-message.js';
 import { createUserInput } from '../../utils/create-user.js';
@@ -116,6 +116,8 @@ describe('settingRoutes', () => {
       const expiredToken =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGE';
 
+      const ttl = 10000;
+
       const tokens = [
         validToken,
         tokenWithMissingUser,
@@ -137,7 +139,7 @@ describe('settingRoutes', () => {
           data: {
             created: new Date(),
             id: validToken,
-            ttl: 1000,
+            ttl,
             userId: defaultUserId
           }
         });
@@ -146,7 +148,7 @@ describe('settingRoutes', () => {
           data: {
             created: new Date(),
             id: tokenWithMissingUser,
-            ttl: 1000,
+            ttl,
             // Random ObjectId
             userId: '6650ac23ccc46c0349a86dee'
           }
@@ -156,16 +158,16 @@ describe('settingRoutes', () => {
           data: {
             created: new Date(),
             id: tokenWithDifferentUser,
-            ttl: 1000,
+            ttl,
             userId: otherUser.id
           }
         });
 
         await fastifyTestInstance.prisma.authToken.create({
           data: {
-            created: new Date(Date.now() - 1000),
+            created: new Date(Date.now() - ttl),
             id: expiredToken,
-            ttl: 1000,
+            ttl,
             userId: defaultUserId
           }
         });
@@ -703,9 +705,9 @@ Please wait 5 minutes to resend an authentication link.`
 
         expect(token).toEqual({
           ttl: 15 * 60 * 1000,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           created: expect.any(Date),
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // oxlint-disable-next-line typescript/no-unsafe-assignment
           id: expect.any(String),
           userId: defaultUserId
         });
@@ -1894,7 +1896,7 @@ Happy coding!
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+      setCookies = getSetCookies(res);
     });
 
     describe('/confirm-email', () => {
@@ -1913,6 +1915,7 @@ Happy coding!
     const endpoints: { path: string; method: 'PUT' }[] = [
       { path: '/update-my-profileui', method: 'PUT' },
       { path: '/update-my-theme', method: 'PUT' },
+      { path: '/update-my-email', method: 'PUT' },
       { path: '/update-my-username', method: 'PUT' },
       { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
       { path: '/update-my-socials', method: 'PUT' },
@@ -1921,7 +1924,9 @@ Happy coding!
       { path: '/update-my-honesty', method: 'PUT' },
       { path: '/update-privacy-terms', method: 'PUT' },
       { path: '/update-my-portfolio', method: 'PUT' },
-      { path: '/update-my-experience', method: 'PUT' }
+      { path: '/update-my-experience', method: 'PUT' },
+      { path: '/update-socrates', method: 'PUT' },
+      { path: '/update-my-classroom-mode', method: 'PUT' }
     ];
 
     endpoints.forEach(({ path, method }) => {

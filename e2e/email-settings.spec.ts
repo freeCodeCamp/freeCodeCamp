@@ -1,8 +1,8 @@
-import { execSync } from 'child_process';
-
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
+
+test.use({ userPreset: 'certified' });
 
 const settingsPageElement = {
   emailVerificationAlert: 'email-verification-alert',
@@ -13,7 +13,6 @@ const settingsPageElement = {
 const newEmail = 'foo-update@bar.com';
 
 test.beforeEach(async ({ page }) => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   await page.goto('/settings');
 });
 

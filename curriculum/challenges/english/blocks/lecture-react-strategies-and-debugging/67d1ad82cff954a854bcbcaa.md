@@ -11,11 +11,15 @@ Prop drilling is the most basic approach to state management in React applicatio
 
 Let's look at what prop drilling is, why it's a problem, and a good replacement for it as an application grows.
 
+## What Is Prop Drilling?
+
 Prop drilling is the process of passing props from a parent component to deeply nested child components, even when some of the child components don't need the props.
 
 For example, say you have three components named `Parent`, `Child`, and `Grandchild`. If you want to use some data in the `Grandchild` component, but it's in the `Parent` component, you'd need to pass it from the `Parent` to the `Child` component, then from the `Child` to the `Grandchild` component.
 
 Or if the data is even further up the chain, the data might have to be passed to the `Parent` component, too.
+
+## Example of Prop Drilling
 
 Here, the data I want to display is the string `Hello, Prop Drilling!`. It's assigned to the `greeting` variable in the root `App` component:
 
@@ -70,6 +74,8 @@ In the browser, you'll see a page with a single `h1` element that has the text `
 
 At first, prop drilling might not seem like such a big deal. But as your app grows, it gets harder to understand, debug, and maintain.
 
+## Keeping Props in a Single Parent Component
+
 If you need to pass props around, try to keep them all in a single parent component. This approach of centralizing all necessary data is called the "single source of truth".
 
 For instance, say you want to add a new `response` to go with your `greeting`, and that you want to use both of them in the `Grandchild` component. Since `greeting` is already in the `App` component, it makes sense to put `response` there, too, and pass both of them down the chain:
@@ -103,6 +109,8 @@ export default App;
 ```
 
 In the browser, you'll see a page with an `h1` element that has the text `Hello, Prop Drilling!` and an `h2` element that has the text `I'm not here to play!`.
+
+## Alternatives to Prop Drilling
 
 To avoid prop drilling, especially in large, complex applications, consider using the Context API or state management libraries like Redux and Redux Toolkit, Zustand, Recoil, and others.
 

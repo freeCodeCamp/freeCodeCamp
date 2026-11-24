@@ -135,7 +135,6 @@ assert.deepEqual(entryDropdown, document.getElementById('entry-dropdown'));
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -292,7 +291,7 @@ button:hover {
 ```
 
 ```js
-const budgetForm = document.getElementById('budget-form');
+const budgetForm = document.getElementById("budget-form");
 --fcc-editable-region--
 
 --fcc-editable-region--

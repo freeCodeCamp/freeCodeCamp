@@ -1,16 +1,15 @@
-import { execSync } from 'child_process';
+import type { Page } from '@playwright/test';
+import { getUnsubscribeId } from '@freecodecamp/scripts-seed/seed-isolated-user';
 
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
 import { allowTrailingSlash } from './utils/url';
 
 const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
-const unsubscribeId = 'tBX8stC5jiustPBteF2mV';
 
-const seedCertifiedUser = () =>
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
+test.use({ userPreset: 'certified' });
 
 const expectNewsletterPreference = async (page: Page, enabled: boolean) => {
   await page.goto('/settings');
@@ -27,10 +26,6 @@ const expectNewsletterPreference = async (page: Page, enabled: boolean) => {
 };
 
 test.describe('Newsletter preference flow', () => {
-  test.beforeEach(seedCertifiedUser);
-
-  test.afterAll(seedCertifiedUser);
-
   test('persists a learn-page opt-out after reload', async ({ page }) => {
     await page.goto('/learn');
 
@@ -69,8 +64,10 @@ test.describe('Newsletter preference flow', () => {
   });
 
   test('resubscribes from an unsubscribe link and persists the preference', async ({
-    page
+    page,
+    isolatedUser
   }) => {
+    const unsubscribeId = await getUnsubscribeId(isolatedUser.email);
     await page.goto(`${apiLocation}/ue/${unsubscribeId}`);
 
     await expect(page).toHaveURL(new RegExp(`/unsubscribed/${unsubscribeId}`));
@@ -95,12 +92,8 @@ test.describe('Newsletter preference flow', () => {
 test.describe('Newsletter sign-up for signed-out campers', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
-  test.beforeEach(seedCertifiedUser);
-
-  test.afterAll(seedCertifiedUser);
-
   test('signs in without selecting a newsletter preference', async ({
-    page
+    isolatedPage: page
   }) => {
     await page.goto('/email-sign-up');
 

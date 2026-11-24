@@ -1,0 +1,217 @@
+---
+id: 6a86f8da7ddbb5463cb7fcb0
+title: Step 50
+challengeType: 1
+dashedName: step-50
+---
+
+# --description--
+
+Inside the loop, check if `programValues[i].room === null`. If `true`, increment `programsWithoutRooms` by 1.
+
+# --hints--
+
+Your `if` statement should check `programValues[i].room === null`.
+
+```js
+assert.match(
+  __helpers.removeJSComments(code),
+  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)/,
+);
+```
+
+Inside the `if` block, you should increment `programsWithoutRooms`.
+
+```js
+assert.match(
+  __helpers.removeJSComments(code),
+  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)\s*(?:\{\s*)?(?:\+\+\s*programsWithoutRooms\b|programsWithoutRooms\s*(?:\+\+|\+=\s*1(?=\s*[;}]|\s*$)|=\s*programsWithoutRooms\s*\+\s*1(?=\s*[;}]|\s*$)|=\s*1\s*\+\s*programsWithoutRooms\b))/m,
+);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+const rawData = {
+  "Computer Science": {
+    Dept_code: "CSE",
+    programs: [
+      {
+        id: "CSE101",
+        name: "Database Management System",
+        room: "405",
+        instructors: [
+          { id: "INS001", name: "Alejandro", email: "alejandro@example.com", officeHours: "Sun-Tue 10AM-12PM" },
+          { id: "INS002", name: "Kenji", officeHours: null },
+        ],
+      },
+      {
+        id: "CSE102",
+        name: "Data Structures",
+        room: null,
+        instructors: [
+          { id: "INS003", name: "Fatima", email: "fatima@example.com", officeHours: "Mon-Wed 10AM-2PM" },
+        ],
+      },
+      {
+        id: "CSE103",
+        name: "Operating Systems",
+        room: "401",
+        instructors: [
+          { id: "INS005", name: "Wei", email: "wei@example.com", officeHours: "Thu 1PM-3PM" },
+        ],
+      },
+    ],
+  },
+  "Business Administration": {
+    Dept_code: "BBA",
+    programs: [
+      {
+        id: "BBA101",
+        name: "Financial Accounting",
+        room: "201",
+        instructors: [{ id: "INS004", name: "Sofia", email: "sofia@example.com" }],
+      },
+      {
+        id: "BBA102",
+        name: "Marketing Management",
+        room: "204",
+        instructors: [
+          { id: "INS006", name: "Robin", email: "robin@example.com", officeHours: "Tue-Thu 9AM-11AM" },
+        ],
+      },
+      {
+        id: "BBA103",
+        name: "Business Law",
+        room: "203",
+        instructors: [
+          { id: "INS007", name: "Priya", email: "priya@example.com", officeHours: "Mon 2PM-4PM" },
+        ],
+      },
+    ],
+  },
+};
+
+
+function normalizeDirectory(rawData) {
+  const departmentsById = {};
+  const programsById = {};
+  const instructorsById = {};
+  const instructorsByEmail = {};
+
+  const departmentEntries = Object.entries(rawData);
+
+  for (let i = 0; i < departmentEntries.length; i++) {
+
+    const [departmentName, departmentData] = departmentEntries[i];
+
+    const departmentId = departmentData.Dept_code || `dept-${i + 1}`;
+
+    departmentsById[departmentId] = {
+      id: departmentId,
+      code: departmentData.Dept_code,
+      name: departmentName,
+      programIds: [],
+    };
+
+    for (let j = 0; j < departmentData.programs.length; j++) {
+      const program = departmentData.programs[j];
+
+      programsById[program.id] = {
+        ...program,
+        departmentId,
+      };
+
+      departmentsById[departmentId].programIds.push(program.id);
+      for (let k = 0; k < program.instructors.length; k++) {
+        const instructor = program.instructors[k];
+
+        instructorsById[instructor.id] = {
+          ...instructor,
+          programId: program.id,
+          departmentId,
+        };
+
+        if (instructor.email) {
+          instructorsByEmail[instructor.email] = instructor.id;
+        }
+      }
+    }
+  }
+
+  return {
+    departmentsById,
+    programsById,
+    instructorsById,
+    instructorsByEmail,
+  };
+}
+
+const normalizedData = normalizeDirectory(rawData);
+
+
+function getInstructorByEmail(email, normalizedData) {
+  const instructorId = normalizedData.instructorsByEmail[email];
+
+  if (!instructorId) {
+    return "Instructor not found";
+  }
+
+  const instructor = normalizedData.instructorsById[instructorId];
+  const department = normalizedData.departmentsById[instructor.departmentId];
+
+  return {
+    name: instructor.name ?? "Unknown Instructor",
+    officeHours: instructor.officeHours ?? "Not Available",
+    department: department.name ?? "Unknown Department",
+  };
+}
+
+
+function listRoomsByBuilding(buildingCode, normalizedData) {
+
+  const programValues = Object.values(normalizedData.programsById);
+  const rooms = [];
+
+  for (let i = 0; i < programValues.length; i++) {
+    const program = programValues[i];
+    const department = normalizedData.departmentsById[program.departmentId];
+
+    if (department.code === buildingCode && program.room != null) {
+      rooms.push(program.room);
+    }
+  }
+
+  rooms.sort();
+  return rooms;
+}
+
+
+function renderDirectorySummary(normalizedData) {
+  const departments = Object.keys(normalizedData.departmentsById).length;
+  const programs = Object.keys(normalizedData.programsById).length;
+  const instructors = Object.keys(normalizedData.instructorsById).length;
+
+  const instructorValues = Object.values(normalizedData.instructorsById);
+  let missingOfficeHours = 0;
+
+  for (let i = 0; i < instructorValues.length; i++) {
+    if (instructorValues[i].officeHours == null) {
+      missingOfficeHours++;
+    }
+  }
+
+  const programValues = Object.values(normalizedData.programsById);
+  let programsWithoutRooms = 0;
+
+  for (let i = 0; i < programValues.length; i++) {
+    --fcc-editable-region--
+    
+    --fcc-editable-region--
+  }
+
+}
+
+```

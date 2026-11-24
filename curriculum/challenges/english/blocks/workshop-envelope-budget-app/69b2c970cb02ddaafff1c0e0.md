@@ -62,9 +62,9 @@ assert.equal(document.querySelector('form input').hasAttribute('required'), true
       <div class="container">
         <form id="budget-form">
           <label for="income">Total Monthly Income</label>
-          --fcc-editable-region--
+--fcc-editable-region--
           <input id="income" />
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </div>
     </main>

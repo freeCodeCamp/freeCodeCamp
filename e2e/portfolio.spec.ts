@@ -1,22 +1,14 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
-test.beforeAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-});
-
-test.afterAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-});
+test.use({ userPreset: 'certified' });
 
 test.describe('Portfolio item management', () => {
   test('It should be possible to add and remove a portfolio item', async ({
-    page
+    page,
+    isolatedUser
   }) => {
-    await page.goto('/certifieduser');
+    await page.goto(`/${isolatedUser.username}`);
 
     await page
       .getByRole('button', { name: translations.aria['add-portfolio'] })

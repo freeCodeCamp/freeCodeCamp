@@ -101,7 +101,6 @@ assert.equal(budgetForm, document.getElementById('budget-form'));
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

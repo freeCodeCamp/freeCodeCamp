@@ -113,17 +113,18 @@ The function should print each row of the matrix.
         import io
         import sys
         
+        old_stdout = sys.stdout
         captured_output = io.StringIO()
         sys.stdout = captured_output
-        
-        adj_list = {0: [1], 1: []}
-        adjacency_list_to_matrix(adj_list)
-        
-        sys.stdout = sys.__stdout__
+        try:
+            adj_list = {0: [1], 1: []}
+            adjacency_list_to_matrix(adj_list)
+        finally:
+            sys.stdout = old_stdout
+            
         output = captured_output.getvalue()
         
-        assert "[0, 1]" in output
-        assert "[0, 0]" in output
+        assert output.splitlines() == ["[0, 1]", "[0, 0]"]
     `) 
 })
 ```

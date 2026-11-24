@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-semantic-html",
+  "challengeOrder": [
+    {
+      "id": "67298243760ae980de5266db",
+      "title": "Why Should You Care About Semantic HTML?"
+    },
+    {
+      "id": "672985445d7da807c6b4f406",
+      "title": "Why Is It Important to Have Good Structural Hierarchy?"
+    },
+    {
+      "id": "672995c9e6f69436dbcccc79",
+      "title": "How Do Block and Inline Quotes Work in HTML?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

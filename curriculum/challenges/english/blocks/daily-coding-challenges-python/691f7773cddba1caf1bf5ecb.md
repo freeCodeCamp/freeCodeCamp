@@ -50,7 +50,7 @@ TestCase().assertEqual(purge_most_frequent([5, 5, 5, 5]), [])`)
 }})
 ```
 
-`purgeMostFrequent([10, 12, 7, 3, 7, 7, 12, 12])` should return `[10, 3]`.
+`purge_most_frequent([10, 12, 7, 3, 7, 7, 12, 12])` should return `[10, 3]`.
 
 ```js
 ({test: () => { runPython(`

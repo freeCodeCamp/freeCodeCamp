@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* oxlint-disable typescript/ban-ts-comment */
 import { describe, it, expect } from 'vitest';
 import React from 'react';
 import { create } from 'react-test-renderer';
@@ -15,13 +15,13 @@ describe('<Link />', () => {
 
   it('sets target for external links', () => {
     // @ts-ignore
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    // oxlint-disable-next-line typescript/no-unsafe-member-access
     expect(externalLink.props.target).toEqual('_blank');
   });
 
   it('does not specify target in gatsbyLink', () => {
     // @ts-ignore
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    // oxlint-disable-next-line typescript/no-unsafe-member-access
     expect(gatsbyLink.props.target).toBeFalsy();
   });
 });
