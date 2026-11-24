@@ -14,7 +14,7 @@ const easing = BezierEasing(0.2, 0.5, 0.4, 1);
 const intervalLength = 10;
 let percent = 0;
 
-function useIsInViewport(ref: React.RefObject<HTMLDivElement | null>) {
+function useIsInViewport(ref: React.RefObject<HTMLDivElement>) {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   const observer = useMemo(
@@ -83,7 +83,7 @@ function ProgressInner({
       setLastShownPercent(completedPercent);
       animateProgressInner(completedPercent);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [isProgressInViewport]);
 
   // Cleanup interval on unmount

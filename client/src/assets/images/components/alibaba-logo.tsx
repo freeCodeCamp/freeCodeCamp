@@ -1,6 +1,8 @@
 import React from 'react';
 
-const AlibabaLogo = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
+const AlibabaLogo = (
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element => (
   <svg
     id='alibaba-logo'
     version='1.1'

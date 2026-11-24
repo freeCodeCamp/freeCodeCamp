@@ -119,7 +119,9 @@ function UpdateStripeCard({
 
   return (
     <>
-      <Helmet title={`${t('misc.update-your-card')} | freeCodeCamp.org`} />
+      <Helmet>
+        <title>{t('misc.update-your-card')} | freeCodeCamp.org</title>
+      </Helmet>
       <Container className='page-wrapper-80'>
         <Row>
           <Col sm={6} smOffset={3}>

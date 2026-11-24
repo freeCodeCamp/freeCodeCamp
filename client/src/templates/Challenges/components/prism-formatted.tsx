@@ -7,13 +7,17 @@ interface PrismFormattedProps {
   text: string;
   useSpan?: boolean;
   noAria?: boolean;
+  dir?: 'auto' | 'ltr' | 'rtl';
+  lang?: string;
 }
 
 function PrismFormatted({
   className,
   text,
   useSpan,
-  noAria
+  noAria,
+  dir,
+  lang
 }: PrismFormattedProps): JSX.Element {
   const instructionsRef = useRef<HTMLDivElement>(null);
   const ElementName = useSpan ? 'span' : 'div';
@@ -43,6 +47,8 @@ function PrismFormatted({
     <ElementName
       className={className}
       dangerouslySetInnerHTML={{ __html: text }}
+      dir={dir}
+      lang={lang}
       ref={instructionsRef}
     />
   );

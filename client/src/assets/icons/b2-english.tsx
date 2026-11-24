@@ -1,6 +1,8 @@
 import React from 'react';
 
-function B2EnglishIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function B2EnglishIcon(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       aria-hidden='true'

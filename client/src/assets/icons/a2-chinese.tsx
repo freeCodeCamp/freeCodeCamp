@@ -1,6 +1,8 @@
 import React from 'react';
 
-function A2ChineseIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function A2ChineseIcon(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       aria-hidden='true'

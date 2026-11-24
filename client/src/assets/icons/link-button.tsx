@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function LinkButton(
-  props: React.SVGProps<SVGSVGElement>
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
     <svg

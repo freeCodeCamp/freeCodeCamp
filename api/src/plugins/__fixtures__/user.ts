@@ -7,7 +7,6 @@ const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
 const mongodbIdRe = /^[a-f0-9]{24}$/;
 
-// eslint-disable-next-line jsdoc/require-jsdoc
 export const newUser = (email: string) => ({
   about: '',
   acceptedPrivacyTerms: false,
@@ -22,10 +21,10 @@ export const newUser = (email: string) => ({
   emailVerified: true,
   emailVerifyTTL: null,
   experience: [],
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   externalId: expect.stringMatching(uuidRe),
   githubProfile: null,
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   id: expect.stringMatching(mongodbIdRe),
   is2018DataVisCert: false,
   is2018FullStackCert: false,
@@ -70,7 +69,7 @@ export const newUser = (email: string) => ({
   name: '',
   needsModeration: false,
   newEmail: null,
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   unsubscribeId: expect.stringMatching(unsubscribeIdRe),
   partiallyCompletedChallenges: [],
   password: null,
@@ -99,9 +98,9 @@ export const newUser = (email: string) => ({
   twitter: null,
   bluesky: null,
   updateCount: 0, // see extendClient in prisma.ts
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   username: expect.stringMatching(fccUuidRe),
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   usernameDisplay: expect.stringMatching(fccUuidRe),
   verificationToken: null,
   website: null,

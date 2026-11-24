@@ -52,7 +52,7 @@
 }
 
 .super-block-accordion .chapter-button-toggle {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .super-block-accordion .chapter-link {
@@ -134,7 +134,7 @@ button .block-header-button-text {
 }
 
 .super-block-accordion .module-button-toggle {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .super-block-accordion .block-header {
@@ -215,6 +215,10 @@ button .block-header-button-text {
   padding-block: 10px;
 }
 
+.super-block-accordion .module-panel .accordion-block-expanded .tags-wrapper {
+  padding-inline: 64px 10px;
+}
+
 .super-block-accordion
   .module-panel
   .accordion-block-expanded
@@ -263,7 +267,7 @@ button .block-header-button-text {
 }
 .super-block-accordion .module-panel::before {
   position: absolute;
-  left: 16px;
+  inset-inline-start: 16px;
   width: 1px;
   height: 100%;
   content: '';
@@ -272,7 +276,7 @@ button .block-header-button-text {
 
 .super-block-accordion .accordion-block-expanded::before {
   position: absolute;
-  left: 32px;
+  inset-inline-start: 32px;
   width: 1px;
   height: 100%;
   top: 0;
@@ -328,6 +332,25 @@ button .block-header-button-text {
   .block-header[aria-expanded='false']
   .dropdown-icon {
   transform: rotate(90deg);
+}
+
+[dir='rtl']
+  .super-block-accordion
+  .chapter-panel
+  .chapter-button[aria-expanded='false']
+  .dropdown-icon,
+[dir='rtl']
+  .super-block-accordion
+  .chapter-panel
+  .module-button[aria-expanded='false']
+  .dropdown-icon,
+[dir='rtl']
+  .super-block-accordion
+  .chapter-panel
+  .block-grid
+  .block-header[aria-expanded='false']
+  .dropdown-icon {
+  transform: rotate(-90deg);
 }
 
 .super-block-accordion

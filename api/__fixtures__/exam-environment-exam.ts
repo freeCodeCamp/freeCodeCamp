@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
 import { Static } from '@fastify/type-provider-typebox';
 import {
   ExamEnvironmentConfig,

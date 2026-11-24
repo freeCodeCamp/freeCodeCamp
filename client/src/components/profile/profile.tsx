@@ -194,7 +194,9 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
 
   return (
     <>
-      <Helmet title={`${t('buttons.profile')} | freeCodeCamp.org`} />
+      <Helmet>
+        <title>{t('buttons.profile')} | freeCodeCamp.org</title>
+      </Helmet>
       <Spacer size='m' />
       <Container>
         <Spacer size='m' />

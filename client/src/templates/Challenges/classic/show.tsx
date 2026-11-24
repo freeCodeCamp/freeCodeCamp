@@ -237,7 +237,7 @@ function ShowClassic({
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
-  const editorRef = useRef<editor.IStandaloneCodeEditor>(undefined);
+  const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
   const xtermFitRef = useRef<FitAddon | null>(null);
   const isMobile = useMediaQuery({
@@ -331,7 +331,7 @@ function ShowClassic({
       cancelTests();
       window.removeEventListener('resize', setHtmlHeight);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [dailyCodingChallengeLanguage]);
 
   const initializeComponent = (title: string): void => {

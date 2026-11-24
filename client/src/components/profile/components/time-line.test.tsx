@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* oxlint-disable typescript/ban-ts-comment */
+/* oxlint-disable typescript/no-unsafe-call */
 import { useStaticQuery } from 'gatsby';
 import React from 'react';
 import { beforeEach, describe, it, expect, vi } from 'vitest';
@@ -89,6 +89,7 @@ beforeEach(() => {
 
 describe('<TimeLine />', () => {
   it('Render button when only solution is present', () => {
+    // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
     const showViewButton = screen.getByRole('link', {
       name: 'buttons.view settings.labels.solution-for (aria.opens-new-window)'
@@ -100,6 +101,7 @@ describe('<TimeLine />', () => {
   });
 
   it('rendering the correct button when files is present', () => {
+    // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
 
     const viewButtons = screen.getAllByRole('button', {
@@ -111,6 +113,7 @@ describe('<TimeLine />', () => {
   });
 
   it('does not prepend block when title matches block', () => {
+    // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
     expect(
       screen.getByRole('link', {
@@ -120,6 +123,7 @@ describe('<TimeLine />', () => {
   });
 
   it('prepends block name to step challenge title', () => {
+    // @ts-expect-error
     render(<TimeLine {...propsForOnlySolution} />, store);
     expect(
       screen.getByRole('link', {

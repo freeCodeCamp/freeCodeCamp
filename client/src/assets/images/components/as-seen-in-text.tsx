@@ -1,6 +1,8 @@
 import React from 'react';
 
-const AsSeenInText = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
+const AsSeenInText = (
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element => {
   const fill = props.fill === 'dark' ? 'var(--gray-75)' : 'var(--gray-15)';
   return (
     <svg

@@ -3,9 +3,8 @@
  */
 
 import { describe, expect, it, vi } from 'vitest';
-import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import type { ChallengeFile } from '@freecodecamp/shared/utils/polyvinyl';
-import { buildChallenge, getTSConfig } from './build';
+import { buildSourceMap, getTSConfig } from './build';
 
 vi.mock('./typescript-worker-handler.js', () => ({
   compileTypeScriptCode: () => Promise.resolve('const compiled = true;'),
@@ -45,50 +44,22 @@ describe('getTSConfig', () => {
   });
 });
 
-describe('buildChallenge', () => {
-  it('separates source files when building the test runner source map', async () => {
+describe('buildSourceMap', () => {
+  it('joins source files with newlines', () => {
     const challengeFiles = [
       {
-        name: 'index',
-        ext: 'html',
-        contents:
-          '<!doctype html><html><head><link rel="stylesheet" href="styles.css"></head><body><script src="index.ts"></script></body></html>',
-        fileKey: 'indexhtml',
-        history: ['index.html']
+        source: 'html'
       },
       {
-        name: 'styles',
-        ext: 'css',
-        contents: '',
-        fileKey: 'stylescss',
-        history: ['styles.css']
+        source: 'css'
       },
       {
-        name: 'index',
-        ext: 'ts',
-        contents: 'interface FlashCard {}',
-        fileKey: 'indexts',
-        history: ['index.ts']
+        source: 'ts'
       }
-    ] as ChallengeFile[];
+    ];
 
-    const result = await buildChallenge(
-      {
-        challengeType: challengeTypes.lab,
-        challengeFiles,
-        required: [],
-        template: '',
-        url: ''
-      },
-      {
-        preview: false,
-        disableLoopProtectTests: true,
-        disableLoopProtectPreview: true
-      }
-    );
+    const sourceContents = buildSourceMap(challengeFiles)?.contents;
 
-    expect(result.sources?.contents).toContain(
-      '</html>\n\ninterface FlashCard {}'
-    );
+    expect(sourceContents).toEqual('html\ncss\nts');
   });
 });

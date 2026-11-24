@@ -1,7 +1,7 @@
-import { version } from '@freecodecamp/browser-scripts/package.json';
+import browserScripts from '@freecodecamp/browser-scripts/package.json';
 
 // TODO: This might be cleaner as a class.
-const pythonWorkerSrc = `/js/workers/${version}/python-worker.js`;
+const pythonWorkerSrc = `/js/workers/${browserScripts.version}/python-worker.js`;
 
 let worker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;
@@ -23,12 +23,7 @@ function getPythonWorker(): Worker {
 type PythonWorkerEvent = {
   data: {
     type:
-      | 'print'
-      | 'input'
-      | 'contentLoaded'
-      | 'reset'
-      | 'stopped'
-      | 'is-alive';
+      'print' | 'input' | 'contentLoaded' | 'reset' | 'stopped' | 'is-alive';
     text?: string;
   };
 };

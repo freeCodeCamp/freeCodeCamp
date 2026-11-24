@@ -1,5 +1,6 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
+import { waitFor } from '@testing-library/react';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { createStore } from '../../../redux/create-store';
@@ -86,7 +87,10 @@ describe('<ResetModal />', () => {
 
     await user.click(screen.getByText('Close'));
 
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
     expect(reduxStore.getState().challenge.modal.reset).toBe(false);
   });
 
@@ -102,7 +106,10 @@ describe('<ResetModal />', () => {
     expect(state.challenge.challengeFiles[0].contents).toBe(seedContents);
     expect(state.challenge.isResetting).toBe(true);
     expect(state.challenge.modal.reset).toBe(false);
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
   });
 
   it('renders the saved-code revert content for DB-backed projects', () => {

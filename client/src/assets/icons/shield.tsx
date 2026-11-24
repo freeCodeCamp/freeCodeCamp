@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Shield(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function Shield(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       aria-hidden='true'

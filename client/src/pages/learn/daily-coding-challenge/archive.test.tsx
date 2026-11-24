@@ -1,5 +1,13 @@
 import React from 'react';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import {
+  afterAll,
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi
+} from 'vitest';
 
 import { createStore } from '../../../redux/create-store';
 import { initialState } from '../../../redux';
@@ -24,15 +32,18 @@ vi.mock('../../../utils/get-words', () => ({
   randomQuote: () => ({ quote: 'Test quote', author: 'Test author' })
 }));
 
+vi.useFakeTimers({ toFake: ['Date'] });
+vi.setSystemTime(new Date('2026-09-15T12:00:00.000Z'));
+
 const todayUsCentral = getTodayUsCentral();
 const [year, month, day] = todayUsCentral.split('-').map(Number);
 const todayMidnight = `${todayUsCentral}T00:00:00.000Z`;
-const adjacentDate = formatDate({
-  year,
-  month,
-  day: day === 1 ? day + 1 : day - 1
-});
+const previousDate = formatDate({ year, month, day: day - 1 });
 const daysInMonth = new Date(year, month, 0).getDate();
+
+afterAll(() => {
+  vi.useRealTimers();
+});
 
 function renderArchive() {
   const store = createStore({
@@ -76,9 +87,9 @@ describe('<DailyCodingChallengeArchive />', () => {
         },
         {
           id: 'not-completed-challenge-id',
-          date: `${adjacentDate}T00:00:00.000Z`,
+          date: `${previousDate}T00:00:00.000Z`,
           challengeNumber: 2,
-          title: 'Adjacent challenge'
+          title: 'Previous challenge'
         }
       ])
     } as unknown as Response);

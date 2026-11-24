@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-pseudo-classes-and-pseudo-elements",
+  "challengeOrder": [
+    {
+      "id": "672aa74f761c065c9828a95e",
+      "title": "What Are Pseudo-classes, and How Do They Work?"
+    },
+    {
+      "id": "672bbed37c6f51aa3a15e78c",
+      "title": "What Are Pseudo-elements, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

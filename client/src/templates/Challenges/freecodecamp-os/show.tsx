@@ -49,7 +49,6 @@ import RdbStep1Instructions from '../codeally/rdb-step-1-instructions';
 import RdbStep2Instructions from '../codeally/rdb-step-2-instructions';
 import { isCodeAllyProjectCompleted } from '../codeally/project-submit';
 import { LocalInstructions } from './local-instructions';
-import { OnaInstructions } from './ona-instructions';
 import { CodespacesInstructions } from './codespaces-instructions';
 
 import '../codeally/codeally.css';
@@ -178,7 +177,7 @@ function ShowFreeCodeCampOs({
     // and Gatsby doesn't interfere with the focus.
     requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const handleSubmit = ({
@@ -245,10 +244,6 @@ function ShowFreeCodeCampOs({
     {
       name: t('learn.local.summary'),
       component: LocalInstructions
-    },
-    {
-      name: t('learn.ona.summary'),
-      component: OnaInstructions
     }
   ];
 

@@ -25,6 +25,8 @@ Here is a list of tree-structural pseudo-classes:
 
 Let's take a closer look at each of the tree-structural pseudo-classes, accompanied by examples.
 
+## The `:root` Pseudo-class
+
 ​​The `:root` pseudo-class is usually the root `html` element. It helps you target the highest level in the document so you can apply a common style to the entire document.     
 
 :::interactive_editor
@@ -55,6 +57,8 @@ The `:root` pseudo-class is also commonly used in setting CSS variables:
 ```
 
 With CSS variables, you get to store values and reuse them in your stylesheet. You will learn more about these later on.
+
+## The `:empty` Pseudo-class
 
 Empty elements, that is, elements with no children other than white space, are also included in the document tree. That's why there's an `:empty` pseudo-class to target empty elements. For example, this HTML code has two empty list items. With the `:empty` pseudo-class, you can style the empty list items differently:
 
@@ -102,6 +106,8 @@ The most practical thing to do with the empty list items is probably not display
 
 :::
 
+## The `:nth-child(n)` and `:nth-last-child(n)` Pseudo-classes
+
 `:nth-child(n)` allows you to select elements based on their position within a parent, while `:nth-last-child(n)` enables you to select elements by counting from the end. The `n` can be a specific number or a keyword like `odd` or `even`. This is incredibly useful in styling table cells based on position: even and odd.
 
 Here's an HTML example of a fruit price list table. The CSS is using the `:nth-child` pseudo-class to target the table cells based on odd and even positions:
@@ -147,6 +153,8 @@ tr:nth-child(odd) {
 ```
 
 :::
+
+## The `:first-child`, `:last-child`, and `:only-child` Pseudo-classes
 
 The `:first-child`, `:last-child`, and `:only-child` pseudo-classes all act on items within a parent container or the entire document.
 
@@ -207,6 +215,8 @@ To show you how the `:only-child` pseudo-class works, here's an HTML example wit
 
 :::
 
+## The `:first-of-type` and `:last-of-type` Pseudo-classes
+
 The `:first-of-type` and `:last-of-type` pseudo-classes select the first and last occurrence of a specific element type within its parent. They are useful for applying unique styles to the first or last instance of that element type among its siblings.
 
 In the example below, `:first-of-type` and `:last-of-type` applies to the first element and last element within the `section` element:
@@ -240,6 +250,8 @@ section p:last-of-type {
 
 :::
 
+## The `:nth-of-type(n)` Pseudo-class
+
 `:nth-of-type(n)` allows you to select a specific element within its parent based on its position among siblings of the same type. For instance, in the HTML below, `:nth-of-type(2)` targets the second element in the container:
 
 :::interactive_editor
@@ -262,6 +274,8 @@ p:nth-of-type(2) {
 ```
 
 :::
+
+## The `:only-of-type` Pseudo-class
 
 `:only-of-type` selects an element if it's the only one of its type within its parent. This can be useful for emphasizing single items or ensuring that they are styled differently when they’re not part of a group.
 

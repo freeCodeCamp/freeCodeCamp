@@ -22,6 +22,8 @@ import growthBook from './growth-book.js';
 
 import { newUser } from './__fixtures__/user.js';
 
+const requestedUserEmail = 'isolated-e2e-user@example.com';
+
 describe('dev login', () => {
   let fastify: FastifyInstance;
 
@@ -41,13 +43,13 @@ describe('dev login', () => {
 
   beforeEach(async () => {
     await fastify.prisma.user.deleteMany({
-      where: { email: defaultUserEmail }
+      where: { email: { in: [defaultUserEmail, requestedUserEmail] } }
     });
   });
 
   afterAll(async () => {
     await fastify.prisma.user.deleteMany({
-      where: { email: defaultUserEmail }
+      where: { email: { in: [defaultUserEmail, requestedUserEmail] } }
     });
     await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
     await fastify.close();
@@ -79,6 +81,28 @@ describe('dev login', () => {
 
       expect(user).toEqual(newUser(defaultUserEmail));
       expect(user.username).toBe(user.usernameDisplay);
+    });
+
+    test('should sign in with the requested email', async () => {
+      await fastify.inject({
+        method: 'GET',
+        url: `/signin?email=${requestedUserEmail}`
+      });
+
+      const user = await fastify.prisma.user.findFirstOrThrow({
+        where: { email: requestedUserEmail }
+      });
+
+      expect(user).toEqual(newUser(requestedUserEmail));
+    });
+
+    test('should reject an invalid requested email', async () => {
+      const response = await fastify.inject({
+        method: 'GET',
+        url: '/signin?email=not-an-email'
+      });
+
+      expect(response.statusCode).toBe(400);
     });
 
     test('should set the jwt_access_token cookie', async () => {

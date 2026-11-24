@@ -1,6 +1,8 @@
 import React from 'react';
 
-function ToggleCheck(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function ToggleCheck(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       className='tick'

@@ -51,6 +51,11 @@
   max-height: 60px;
 }
 
+/* Transport controls track time, not text, so they keep their LTR order. */
+[dir='rtl'] .scene-controls {
+  flex-direction: row-reverse;
+}
+
 .scene-btn,
 .scene-btn:hover,
 .scene-btn:focus,

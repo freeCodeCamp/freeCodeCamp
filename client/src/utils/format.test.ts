@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { format } from './format';
 
 function simpleFun() {
-  // eslint-disable-next-line no-var, @typescript-eslint/no-unused-vars
+  // oxlint-disable-next-line no-var, no-unused-vars
   var x = 'y';
 }
 
@@ -42,5 +42,20 @@ describe('format', () => {
   });
   it(`outputs NaN as 'NaN'`, () => {
     expect(format(NaN)).toBe('NaN');
+  });
+  it('formats Sets', () => {
+    expect(format(new Set())).toBe('Set(0) {}');
+    expect(format(new Set([1, 2]))).toBe('Set(2) {1, 2}');
+  });
+  it('formats Maps', () => {
+    expect(format(new Map())).toBe('Map(0) {}');
+    expect(
+      format(
+        new Map([
+          ['a', 1],
+          ['b', 2]
+        ])
+      )
+    ).toBe('Map(2) {a => 1, b => 2}');
   });
 });

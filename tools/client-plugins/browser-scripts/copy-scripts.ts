@@ -1,8 +1,8 @@
 import { cpSync, mkdirSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-import { version as workerVersion } from '@freecodecamp/browser-scripts/package.json';
-import { version as helperVersion } from '@freecodecamp/curriculum-helpers/package.json';
+import browserScripts from '@freecodecamp/browser-scripts/package.json';
+import curriculumHelpers from '@freecodecamp/curriculum-helpers/package.json';
 
 const __dirname = import.meta.dirname;
 
@@ -15,13 +15,13 @@ mkdirSync(destJsDir, { recursive: true });
 
 cpSync(
   resolve(__dirname, './node_modules/sass.js/dist/sass.sync.js'),
-  resolve(destJsDir, 'workers', workerVersion, 'sass.sync.js')
+  resolve(destJsDir, 'workers', browserScripts.version, 'sass.sync.js')
 );
 cpSync(
   resolve(
     __dirname,
     './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner'
   ),
-  resolve(destJsDir, `test-runner/${helperVersion}/`),
+  resolve(destJsDir, `test-runner/${curriculumHelpers.version}/`),
   { recursive: true }
 );
