@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-sets",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "683ec8fd8b21827317388a45",
+      "title": "What Are Sets, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "Python"
+}

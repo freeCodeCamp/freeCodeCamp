@@ -228,8 +228,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         select: userChallengeSelect
       });
       const progressTimestamps = user.progressTimestamps as
-        | ProgressTimestamp[]
-        | null;
+        ProgressTimestamp[] | null;
       const points = getPoints(progressTimestamps);
 
       const completedChallenge = {
@@ -1370,8 +1369,7 @@ async function postModernChallengeCompleted(
     select: userChallengeSelect
   });
   const RawProgressTimestamp = user.progressTimestamps as
-    | ProgressTimestamp[]
-    | null;
+    ProgressTimestamp[] | null;
   const points = getPoints(RawProgressTimestamp);
 
   const completedChallenge: CompletedChallenge = {
