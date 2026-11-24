@@ -11213,6 +11213,12 @@
           "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
         ]
       },
+      "workshop-grid-path-counter": {
+        "title": "Build a Grid Path Counter",
+        "intro": [
+          "In this workshop, you'll build a grid path counter using both top-down memoization and bottom-up tabulation."
+        ]
+      },
       "lab-nth-fibonacci-number": {
         "title": "Build an Nth Fibonacci Number Calculator",
         "intro": [
