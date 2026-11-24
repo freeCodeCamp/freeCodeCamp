@@ -10528,12 +10528,6 @@
           "In this workshop, you will practice working with strings, variables, and the print function to display a photo gallery in the terminal using Python."
         ]
       },
-      "lecture-introduction-to-python": {
-        "title": "Introduction to Python",
-        "intro": [
-          "In these lessons, you will learn what Python is and common uses in the industry."
-        ]
-      },
       "lecture-understanding-variables-and-data-types-v2": {
         "title": "Understanding Variables and Data Types",
         "intro": [

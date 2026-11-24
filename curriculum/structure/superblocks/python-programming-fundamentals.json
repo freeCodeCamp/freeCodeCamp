@@ -7,7 +7,6 @@
           "dashedName": "python-basics",
           "blocks": [
             "workshop-python-photo-gallery",
-            "lecture-introduction-to-python",
             "lecture-understanding-variables-and-data-types-v2",
             "workshop-report-card-printer",
             "lecture-introduction-to-python-strings",
