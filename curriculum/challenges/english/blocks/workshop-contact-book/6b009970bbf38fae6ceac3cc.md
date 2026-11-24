@@ -36,7 +36,6 @@ contact = {
     'email': 'maria@example.com',
     'group': 'work'
 }
-
 --fcc-editable-region--
 
 --fcc-editable-region--
