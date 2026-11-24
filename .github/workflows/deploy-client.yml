@@ -422,3 +422,45 @@ jobs:
             echo "::error::Deploy failed on target/machine ${FAILED[*]} (target 1 = TS_MACHINE_NAME_PREFIX, 2 = TS_MACHINE_NAME_PREFIX_2)"
             exit 1
           fi
+
+      - name: Checkout client-config for the client image
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        continue-on-error: true
+        timeout-minutes: 3
+        with:
+          repository: freeCodeCamp/client-config
+          ref: b1ed468633f878a87ad3f0f27951e6ad1c926277
+          path: client-config
+          persist-credentials: false
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@3cb3953159719656269e044e0e24ca16dd2a690f # v2.5.2
+        continue-on-error: true
+        timeout-minutes: 3
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Build and push the client image
+        continue-on-error: true
+        timeout-minutes: 14
+        env:
+          DOCR_NAME: ${{ secrets.DOCR_NAME }}
+          SITE_TLD: ${{ needs.setup-jobs.outputs.site_tld }}
+          LANG_SHORT: ${{ matrix.lang-name-short }}
+          CLIENT_CONFIG_COMMIT: b1ed468633f878a87ad3f0f27951e6ad1c926277
+        run: |
+          df -h /
+          doctl registry login --expiry-seconds 1200
+          rm -f "client-$LANG_SHORT.tar"
+          CONTEXT="$RUNNER_TEMP/client-image"
+          mkdir -p "$CONTEXT"
+          cp docker/client/Dockerfile docker/client/package.json docker/client/pnpm-lock.yaml client-config/serve.json "$CONTEXT/"
+          mv client/public "$CONTEXT/tree"
+          IMAGE="registry.digitalocean.com/$DOCR_NAME/$SITE_TLD/learn-client-$LANG_SHORT:$DEPLOYMENT_VERSION"
+          docker build \
+            --build-arg TREE=tree \
+            --build-arg CLIENT_CONFIG_COMMIT="$CLIENT_CONFIG_COMMIT" \
+            --build-arg CLIENT_RUN_ID=${{ github.run_id }} \
+            -t "$IMAGE" "$CONTEXT"
+          docker push "$IMAGE"
+          docker image inspect --format '{{index .RepoDigests 0}}' "$IMAGE"
