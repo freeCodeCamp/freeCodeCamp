@@ -116,6 +116,8 @@ describe('settingRoutes', () => {
       const expiredToken =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGE';
 
+      const ttl = 10000;
+
       const tokens = [
         validToken,
         tokenWithMissingUser,
@@ -137,7 +139,7 @@ describe('settingRoutes', () => {
           data: {
             created: new Date(),
             id: validToken,
-            ttl: 1000,
+            ttl,
             userId: defaultUserId
           }
         });
@@ -146,7 +148,7 @@ describe('settingRoutes', () => {
           data: {
             created: new Date(),
             id: tokenWithMissingUser,
-            ttl: 1000,
+            ttl,
             // Random ObjectId
             userId: '6650ac23ccc46c0349a86dee'
           }
@@ -156,16 +158,16 @@ describe('settingRoutes', () => {
           data: {
             created: new Date(),
             id: tokenWithDifferentUser,
-            ttl: 1000,
+            ttl,
             userId: otherUser.id
           }
         });
 
         await fastifyTestInstance.prisma.authToken.create({
           data: {
-            created: new Date(Date.now() - 1000),
+            created: new Date(Date.now() - ttl),
             id: expiredToken,
-            ttl: 1000,
+            ttl,
             userId: defaultUserId
           }
         });

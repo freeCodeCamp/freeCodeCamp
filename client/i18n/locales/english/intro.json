@@ -599,7 +599,9 @@
     "chapters": {
       "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
     },
-    "modules": { "introduction-to-d3": "Introduction to D3" },
+    "modules": {
+      "introduction-to-d3": "Introduction to D3"
+    },
     "module-intros": {
       "introduction-to-d3": {
         "note": "Coming Late 2026",
@@ -2572,6 +2574,12 @@
         "title": "Build a Profile Lookup",
         "intro": [
           "In this lab, you'll create a function that looks up profile information."
+        ]
+      },
+      "lab-data-sanitizer-sweep": {
+        "title": "Implement the Data Sanitizer Sweep Process",
+        "intro": [
+          "In this lab, you will practice using string manipulation and loops to replace characters in log strings and entire log files."
         ]
       },
       "workshop-space-mission-roster": {
@@ -5477,6 +5485,12 @@
           "You will build a Library Book Search application and use <code>try...catch...finally</code> blocks, along with the <code>throw</code> statement, to catch and manage custom errors."
         ]
       },
+      "workshop-debugging-registration-form": {
+        "title": "Debugging a Registration Form",
+        "intro": [
+          "In this workshop, you will explore the browser console to debug a user registration form."
+        ]
+      },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
@@ -7750,7 +7764,10 @@
         "title": "Certification Introduction",
         "intro": ["", ""]
       },
-      "es-a1-learn-vowels": { "title": "Vowels", "intro": ["", ""] },
+      "es-a1-learn-vowels": {
+        "title": "Vowels",
+        "intro": ["", ""]
+      },
       "es-a1-learn-consonants-and-special-characters": {
         "title": "Consonants and Special Characters",
         "intro": ["", ""]
@@ -7771,7 +7788,10 @@
         "title": "Alphabet and Accents",
         "intro": ["", ""]
       },
-      "es-a1-learn-punctuation": { "title": "Punctuation", "intro": ["", ""] },
+      "es-a1-learn-punctuation": {
+        "title": "Punctuation",
+        "intro": ["", ""]
+      },
       "es-a1-review-spanish-fundamentals": {
         "title": "Spanish Fundamentals Review",
         "intro": ["", ""]
@@ -7804,8 +7824,14 @@
         "title": "Introducing Yourself Basics",
         "intro": ["", ""]
       },
-      "es-a1-learn-meet-luna": { "title": "Meet Luna", "intro": ["", ""] },
-      "es-a1-learn-meet-mateo": { "title": "Meet Mateo", "intro": ["", ""] },
+      "es-a1-learn-meet-luna": {
+        "title": "Meet Luna",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-meet-mateo": {
+        "title": "Meet Mateo",
+        "intro": ["", ""]
+      },
       "es-a1-learn-meet-julieta": {
         "title": "Meet Julieta",
         "intro": ["", ""]
@@ -9107,7 +9133,10 @@
         "title": "Simple Finals",
         "intro": ["", ""]
       },
-      "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
+      "zh-a1-learn-initials": {
+        "title": "Initials",
+        "intro": ["", ""]
+      },
       "zh-a1-learn-compound-finals": {
         "title": "Compound Finals",
         "intro": ["", ""]
@@ -9164,7 +9193,10 @@
         "title": "A New Colleague",
         "intro": ["", ""]
       },
-      "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
+      "zh-a1-learn-my-family": {
+        "title": "My Family",
+        "intro": ["", ""]
+      },
       "zh-a1-practice-introducing-others": {
         "title": "Introducing Others Practice",
         "intro": ["", ""]
@@ -10430,7 +10462,9 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": { "basic-html": "Basic HTML" },
+    "modules": {
+      "basic-html": "Basic HTML"
+    },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
@@ -10443,7 +10477,9 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
+      "daily-coding-challenge": {
+        "title": "Daily Coding Challenge"
+      }
     }
   },
   "misc-text": {
@@ -10481,8 +10517,10 @@
       "lab-rpg-character": "Build an RPG Character",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-modules-and-standard-library": "Modules and Standard Library",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Error Handling",
+      "lab-order-processor": "Build an Order Processor",
       "python-classes-and-objects": "Classes and Objects",
       "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
@@ -10607,19 +10645,25 @@
         "title": "Working with Lists",
         "intro": ["Learn about working with lists in these lessons."]
       },
+      "workshop-concert-program-planner": {
+        "title": "Build a Concert Program Planner",
+        "intro": [
+          "In this workshop, you'll practice working with lists by planning the program of an orchestra concert."
+        ]
+      },
       "lecture-working-with-tuples": {
         "title": "Working with Tuples",
         "intro": ["Learn about working with tuples in these lessons."]
       },
+      "workshop-version-checker": {
+        "title": "Build a Version Checker",
+        "intro": [
+          "In this workshop, you'll practice working with tuples by building a program that checks if an app needs an update."
+        ]
+      },
       "lecture-working-with-loops-python": {
         "title": "Working with Loops",
         "intro": ["Learn about working with loops in these lessons."]
-      },
-      "lecture-understanding-list-comprehensions-and-lambda-functions": {
-        "title": "Understanding List Comprehensions and Lambda Functions",
-        "intro": [
-          "Learn about list comprehensions and lambda functions in these lessons."
-        ]
       },
       "workshop-pin-extractor": {
         "title": "Build a PIN Extractor",
@@ -10627,9 +10671,27 @@
           "In this workshop you will build a function to extract secret PINs hidden in poems."
         ]
       },
+      "workshop-elevator-simulator": {
+        "title": "Build an Elevator Simulator",
+        "intro": [
+          "In this workshop, you'll practice working with while loops by building a function that simulates an elevator moving between floors."
+        ]
+      },
       "lab-number-pattern-generator": {
         "title": "Build a Number Pattern Generator",
         "intro": ["In this lab you will build a number pattern generator."]
+      },
+      "lecture-understanding-list-comprehensions-and-lambda-functions": {
+        "title": "Understanding List Comprehensions and Lambda Functions",
+        "intro": [
+          "Learn about list comprehensions and lambda functions in these lessons."
+        ]
+      },
+      "workshop-sensor-data-cleaner": {
+        "title": "Build a Sensor Data Cleaner",
+        "intro": [
+          "In this workshop, you'll practice list comprehensions and lambda functions by cleaning the readings of a temperature sensor."
+        ]
       },
       "review-loops-and-sequences-v2": {
         "title": "Loops and Sequences Review",
@@ -10644,15 +10706,30 @@
           "Test what you've learned about loops and sequences in Python with this quiz."
         ]
       },
-      "lecture-working-with-dictionaries-and-sets": {
-        "title": "Working with Dictionaries and Sets",
+      "lecture-working-with-dictionaries": {
+        "title": "Working with Dictionaries",
+        "intro": ["Learn about working with dictionaries in these lessons."]
+      },
+      "lecture-working-with-sets": {
+        "title": "Working with Sets",
+        "intro": ["Learn about working with sets in this lesson."]
+      },
+      "review-dictionaries-and-sets-v2": {
+        "title": "Dictionaries and Sets Review",
         "intro": [
-          "Learn about working with dictionaries and sets in these lessons."
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
         ]
       },
-      "lecture-working-with-modules": {
+      "lecture-working-with-modules-v2": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
+      },
+      "lecture-copying-nested-collections": {
+        "title": "Copying Nested Collections",
+        "intro": [
+          "Learn how assignment, shallow copying, and deep copying affect nested dictionaries and lists."
+        ]
       },
       "lecture-working-with-regular-expressions-python": {
         "title": "Working with Regular Expressions",
@@ -10664,19 +10741,6 @@
         "title": "Build a Medical Data Validator",
         "intro": [
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
-        ]
-      },
-      "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Review",
-        "intro": [
-          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
-        ]
-      },
-      "quiz-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Quiz",
-        "intro": [
-          "Test what you've learned about dictionaries and sets in Python with this quiz."
         ]
       },
       "lab-user-configuration-manager": {
@@ -10709,6 +10773,12 @@
           "Test what you've learned about error handling in Python with this quiz."
         ]
       },
+      "lab-order-processor": {
+        "title": "Build an Order Processor",
+        "intro": [
+          "In this lab, you will practice handling errors in Python by processing e-commerce orders."
+        ]
+      },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
         "intro": ["Learn about classes and objects in these lessons."]
@@ -10723,6 +10793,12 @@
         "title": "Build a Planet Class",
         "intro": [
           "In this lab you will create a class that represents a planet."
+        ]
+      },
+      "lecture-formatting-python-output": {
+        "title": "Formatting Python Output",
+        "intro": [
+          "In this lesson, you'll learn how to align and pad text in f-strings, so you can display values in neat, readable columns."
         ]
       },
       "workshop-email-simulator": {
@@ -10845,12 +10921,6 @@
       "review-python-algorithms-and-data-structures": "Algorithms and Data Structures Review"
     },
     "module-intros": {
-      "lab-circular-queue": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this lab, you will build a circular queue, a fixed-size queue that wraps around to reuse empty slots."
-        ]
-      },
       "python-recursion": {
         "intro": [
           "In this module, you will learn how recursion and the call stack work in Python."
@@ -10874,6 +10944,12 @@
         "title": "Understanding Algorithms and Big O Notation",
         "intro": [
           "In these lessons, you will learn what algorithms are, how to analyze them with Big O notation, and good techniques for approaching algorithmic problems."
+        ]
+      },
+      "workshop-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this workshop, you will build a validator using numerical computations and string manipulation."
         ]
       },
       "lab-stock-profit-calculator": {
@@ -11022,6 +11098,12 @@
           "In this lab you will implement the quicksort algorithm to sort a list of integers."
         ]
       },
+      "workshop-sudoku-solver": {
+        "title": "Build a Sudoku Solver",
+        "intro": [
+          "In this workshop, you'll use recursion and backtracking to build a program that solves Sudoku puzzles."
+        ]
+      },
       "review-recursion-python-v2": {
         "title": "Review Recursion",
         "intro": [
@@ -11129,6 +11211,12 @@
         "title": "Understanding Dynamic Programming",
         "intro": [
           "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "workshop-grid-path-counter": {
+        "title": "Build a Grid Path Counter",
+        "intro": [
+          "In this workshop, you'll build a grid path counter using both top-down memoization and bottom-up tabulation."
         ]
       },
       "lab-nth-fibonacci-number": {

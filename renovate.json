@@ -144,14 +144,9 @@
       ]
     },
     {
-      "description": "Build toolchain: webpack core + CLI + analyzer + babel-loader. Keeps a single bundler PR per cycle.",
+      "description": "Build toolchain: webpack core + CLI + babel-loader. Keeps a single bundler PR per cycle.",
       "groupName": "webpack",
-      "matchPackageNames": [
-        "webpack",
-        "webpack-cli",
-        "webpack-bundle-analyzer",
-        "babel-loader"
-      ]
+      "matchPackageNames": ["webpack", "webpack-cli", "babel-loader"]
     },
     {
       "description": "Docker updates wait for a person: no required check builds them.",
