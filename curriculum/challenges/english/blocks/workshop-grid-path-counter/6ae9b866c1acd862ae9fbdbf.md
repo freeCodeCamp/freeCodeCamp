@@ -28,7 +28,7 @@ You should have a variable named `warehouse`.
 })
 ```
 
-`warehouse` should be an empty list.
+Your `warehouse` variable should be an empty list.
 
 ```js
 ({

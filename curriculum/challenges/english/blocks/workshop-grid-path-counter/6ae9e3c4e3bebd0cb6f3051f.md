@@ -7,7 +7,7 @@ dashedName: step-24
 
 # --description--
 
-Now you should fill `table`.
+Now it's time to fill `table`.
 
 Between the `table` assignment and the `return` statement, add a `for` loop that uses `r` to loop over `range(row + 1)`. Add `pass` to its body for now.
 
@@ -24,7 +24,7 @@ You should have a `for` loop with `r` as the loop variable.
 })
 ```
 
-Your `for` loop should iterate through `range(row + 1)`.
+Your `for` loop should iterate over `range(row + 1)`.
 
 ```js
 ({

@@ -7,7 +7,7 @@ dashedName: step-30
 
 # --description--
 
-Now, store the total for the current square by assigning `from_above + from_left` to `table[r][c]`.
+Inside the `else` clause, below `from_left`, store the total for the current square by assigning `from_above + from_left` to `table[r][c]`.
 
 # --hints--
 

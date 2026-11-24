@@ -24,7 +24,7 @@ You should have a variable named `open_floor`.
 })
 ```
 
-`open_floor` should have four rows of four `0` values each.
+Your `open_floor` variable should have four rows of four `0` values each.
 
 ```js
 ({
@@ -36,7 +36,7 @@ You should have a variable named `open_floor`.
 })
 ```
 
-Every value in `open_floor` should be `0`.
+Your `open_floor` variable should contain only `0` values.
 
 ```js
 ({
