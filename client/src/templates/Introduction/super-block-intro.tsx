@@ -141,7 +141,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const disabledBlocksFeature = useFeatureValue<string[]>(

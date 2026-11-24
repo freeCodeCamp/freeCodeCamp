@@ -18,17 +18,6 @@
       "extends": ["schedule:weekly"]
     },
     {
-      "description": "ESLint core, plugins, and TS-ESLint move together because plugin/parser versions are tightly bound to the ESLint major.",
-      "groupName": "eslint",
-      "matchPackageNames": [
-        "eslint",
-        "eslint-**",
-        "@eslint/**",
-        "@typescript-eslint/**",
-        "typescript-eslint"
-      ]
-    },
-    {
       "description": "Gatsby core + plugins + scoped @gatsbyjs/* packages are version-coupled.",
       "groupName": "gatsby",
       "matchPackageNames": ["gatsby", "gatsby-**", "@gatsbyjs/**"]
@@ -155,14 +144,14 @@
       ]
     },
     {
-      "description": "Build toolchain: webpack core + CLI + analyzer + babel-loader. Keeps a single bundler PR per cycle.",
+      "description": "Build toolchain: webpack core + CLI + babel-loader. Keeps a single bundler PR per cycle.",
       "groupName": "webpack",
-      "matchPackageNames": [
-        "webpack",
-        "webpack-cli",
-        "webpack-bundle-analyzer",
-        "babel-loader"
-      ]
+      "matchPackageNames": ["webpack", "webpack-cli", "babel-loader"]
+    },
+    {
+      "description": "Docker updates wait for a person: no required check builds them.",
+      "matchManagers": ["dockerfile", "docker-compose", "devcontainer"],
+      "automerge": false
     }
   ]
 }

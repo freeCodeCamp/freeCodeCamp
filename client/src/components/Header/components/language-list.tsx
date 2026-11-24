@@ -45,7 +45,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [showList]);
 
   // the accessibility tree just needs a little more time to pick up the change.

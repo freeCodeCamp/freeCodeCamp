@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-loops-python",
+  "challengeOrder": [
+    {
+      "id": "6839e3ea328b630cf5fca9ac",
+      "title": "How Do Loops Work?"
+    },
+    {
+      "id": "6839e41fe8dac60f11f583db",
+      "title": "What Are Ranges and How Can You Use Them in a Loop?"
+    },
+    {
+      "id": "6839e4b003571c149bcda122",
+      "title": "What Are the enumerate() and zip() Functions and How Do They Work?"
+    }
+  ],
+  "helpCategory": "Python"
+}

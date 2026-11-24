@@ -1,4 +1,5 @@
 {
+  "exclude": ["oxlint.config.ts"],
   "extends": "../../tsconfig-base.json",
   "include": ["**/*.ts"],
   "compilerOptions": {
