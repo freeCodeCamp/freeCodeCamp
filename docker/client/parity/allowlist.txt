@@ -1,0 +1,4 @@
+# One URL path per line. A difference on a listed path is counted as
+# allowlisted, not as a diff.
+# The image drops the webpack stats file; the VMs still serve it.
+/stats.json

@@ -5,6 +5,19 @@
     "github>freecodecamp/renovate-config:automerge",
     ":pinAllExceptPeerDependencies"
   ],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/examples/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**",
+    "**/__fixtures__/**",
+    "**/.mise/locks/**",
+    "**/.config/mise/locks/**",
+    "docker/client/**"
+  ],
   "packageRules": [
     {
       "description": "Keep .nvmrc on a major-only Node version instead of an exact pin.",
