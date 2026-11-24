@@ -43,10 +43,13 @@ jobs:
         env:
           REPOSITORY: ${{ matrix.variants }}/${{ matrix.repos }}
         run: |
-          if doctl registry repository list-tags "$REPOSITORY" --output json >/dev/null; then
+          if tags=$(doctl registry repository list-tags "$REPOSITORY" --output json); then
             echo "found=true" >> "$GITHUB_OUTPUT"
-          else
+          elif jq -e 'any(.errors[]?; .status == 404)' <<<"$tags" >/dev/null 2>&1; then
             echo "::notice::No repository $REPOSITORY in DOCR, cleanup skipped"
+          else
+            echo "::error::Could not list the tags of $REPOSITORY"
+            exit 1
           fi
 
       - name: Delete Images
