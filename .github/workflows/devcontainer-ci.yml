@@ -33,10 +33,13 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4
+        with:
+          cleanup: false
 
       - name: Build the devcontainer image from this branch
         uses: docker/bake-action@018cb6412ab401ebaa809aa5f85966b74628600f # v7
         with:
+          source: .
           files: docker/devcontainer/docker-bake.hcl
           targets: local-devcontainer
           set: |
@@ -53,6 +56,9 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4
+        with:
+          driver: docker
+          cleanup: false
 
       - name: Install devcontainer CLI
         # renovate: datasource=npm depName=@devcontainers/cli
@@ -61,12 +67,19 @@ jobs:
       - name: Build the devcontainer image from this branch
         uses: docker/bake-action@018cb6412ab401ebaa809aa5f85966b74628600f # v7
         with:
+          source: .
           files: docker/devcontainer/docker-bake.hcl
           targets: local-devcontainer
           load: true
 
+      - name: Give the workspace to the image user
+        run: |
+          uid=$(docker run --rm ghcr.io/freecodecamp/devcontainer:latest id -u)
+          gid=$(docker run --rm ghcr.io/freecodecamp/devcontainer:latest id -g)
+          sudo chown -R "$uid:$gid" .
+
       - name: Start devcontainer
-        run: devcontainer up --workspace-folder .
+        run: devcontainer up --workspace-folder . --update-remote-user-uid-default off
 
       - name: Validate required tools
         run: |
@@ -130,3 +143,11 @@ jobs:
             .devcontainer/codespace-env.sh
           devcontainer exec --workspace-folder . grep -q '^HOME_LOCATION=https://ci-probe-8000.app.github.dev$' .env
           devcontainer exec --workspace-folder . grep -q '^API_LOCATION=https://ci-probe-3000.app.github.dev$' .env
+
+      - name: Stop the devcontainer
+        if: always()
+        run: docker compose --project-name freecodecamp-devcontainer -f docker/docker-compose.yml -f .devcontainer/docker-compose.yml down --timeout 0
+
+      - name: Give the workspace back to the runner user
+        if: always()
+        run: sudo chown -R "$(id -u):$(id -g)" .
