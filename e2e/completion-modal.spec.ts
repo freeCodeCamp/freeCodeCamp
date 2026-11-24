@@ -1,6 +1,4 @@
-import { execSync } from 'node:child_process';
-
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { allowTrailingSlash } from './utils/url';
@@ -8,9 +6,7 @@ import { allowTrailingSlash } from './utils/url';
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
 
-test.beforeAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-});
+test.use({ userPreset: 'certified' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
@@ -24,7 +20,9 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
-  test('should redirect to /learn after sign in', async ({ page }) => {
+  test('should redirect to /learn after sign in', async ({
+    isolatedPage: page
+  }) => {
     await page
       .getByRole('link', { name: translations.learn['sign-in-save'] })
       .click();

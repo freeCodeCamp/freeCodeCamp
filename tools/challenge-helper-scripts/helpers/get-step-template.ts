@@ -1,5 +1,6 @@
 import { ObjectId } from 'bson';
 import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { insertErms } from './insert-erms.js';
 
 // Builds a block
@@ -60,13 +61,17 @@ function getStepTemplate({
   const demoString = isFirstChallenge
     ? `
 # demoType can either be 'onClick' or 'onLoad'. If the project or lab doesn't have a preview, delete the property
-demoType: onClick`
+demoType: onLoad`
     : '';
 
   const langString = challengeLang
     ? `
 lang: ${challengeLang}`
     : '';
+  const hintCode =
+    challengeType === challengeTypes.python
+      ? '({ test: () => assert(runPython(`<python expression that returns truthy>`)) });'
+      : '';
 
   return (
     `---
@@ -84,7 +89,7 @@ ${stepDescription}
 
 Test 1
 
-${getCodeBlock('js')}
+${getCodeBlock('js', hintCode)}
 # --seed--` + seedChallengeSection
   );
 }

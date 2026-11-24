@@ -34,7 +34,7 @@ const TwoButtonCTA = ({ isSignedIn }: TwoButtonCTAProps): JSX.Element => {
       <a
         className='signup-btn btn btn-sm btn-block google-btn'
         data-test-label='landing-google-cta'
-        data-playwright-test-label='landing-google-cta'
+        data-testid='landing-google-cta'
         href={googleHref}
         onClick={handleGoogleClick}
       >
@@ -77,7 +77,7 @@ const TwoButtonCTA = ({ isSignedIn }: TwoButtonCTAProps): JSX.Element => {
       <a
         className='signup-btn btn btn-sm btn-block more-ways-btn'
         data-test-label='landing-more-ways-cta'
-        data-playwright-test-label='landing-more-ways-cta'
+        data-testid='landing-more-ways-cta'
         href={moreWaysHref}
         onClick={handleMoreWaysClick}
       >

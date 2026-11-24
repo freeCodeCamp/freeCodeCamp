@@ -111,18 +111,6 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
 
         const sourceDate = getSourceDate(monthDay);
 
-        // TEMPORARY: blocks days for not yet released challenges
-        // Safe to delete after 2026-08-10 (all challenges released)
-        if (sourceDate > getUtcMidnight(getNowUsCentral())) {
-          req.log.warn({ day }, 'Challenge not found for day');
-          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
-            attributes: { route: '/daily-coding-challenge/day/:day' }
-          });
-          return reply
-            .status(404)
-            .send({ type: 'error', message: 'Challenge not found.' });
-        }
-
         const challenge = await fastify.prisma.dailyCodingChallenges.findFirst({
           where: {
             date: sourceDate

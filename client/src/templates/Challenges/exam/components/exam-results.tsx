@@ -48,7 +48,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
     return () => {
       URL.revokeObjectURL(downloadURL);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const examResultsMessage = passed

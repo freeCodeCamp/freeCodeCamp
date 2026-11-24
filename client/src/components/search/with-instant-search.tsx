@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
 import { Configure, InstantSearch } from 'react-instantsearch';
-import { algoliaAppId, algoliaAPIKey } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import { newsIndex } from '../../utils/algolia-locale-setup';
 
 import {
@@ -17,6 +17,8 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
+
+const { algoliaAppId, algoliaAPIKey } = envData;
 
 const mockSearchClient = {
   // When Algolia is not configured, the client will still render,
@@ -84,7 +86,7 @@ function InstantSearchRoot({
   const prevLocationRef = useRef<InstantSearchRootProps['location']>();
   useEffect(() => {
     prevLocationRef.current = location;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const prevLocation = prevLocationRef.current;
@@ -96,7 +98,7 @@ function InstantSearchRoot({
     if (location !== prevLocation) {
       updateSearchQuery('');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   const propsQuery = query;

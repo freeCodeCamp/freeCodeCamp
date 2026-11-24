@@ -1,0 +1,12 @@
+# Host ports for the setup without a container. The dev container omits
+# this file, because a service sharing the db network namespace cannot
+# publish a port.
+services:
+  db:
+    ports:
+      - 27017:27017
+
+  mailpit:
+    ports:
+      - '1025:1025'
+      - '8025:8025'

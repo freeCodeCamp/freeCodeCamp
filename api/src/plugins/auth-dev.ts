@@ -1,4 +1,7 @@
-import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import {
+  Type,
+  type FastifyPluginCallbackTypebox
+} from '@fastify/type-provider-typebox';
 import type { FastifyReply, FastifyRequest } from 'fastify';
 import {
   getRedirectParams,
@@ -10,6 +13,12 @@ import { createAccessToken } from '../utils/tokens.js';
 
 const trimTrailingSlash = (str: string) =>
   str.endsWith('/') ? str.slice(0, -1) : str;
+
+const signInSchema = {
+  querystring: Type.Object({
+    email: Type.Optional(Type.String({ format: 'email', maxLength: 1024 }))
+  })
+};
 
 async function handleRedirects(req: FastifyRequest, reply: FastifyReply) {
   const params = getRedirectParams(req);
@@ -34,8 +43,8 @@ export const devAuth: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.get('/signin', async (req, reply) => {
-    const email = 'foo@bar.com';
+  fastify.get('/signin', { schema: signInSchema }, async (req, reply) => {
+    const email = req.query.email ?? 'foo@bar.com';
 
     const { id } = await findOrCreateUser(fastify, email);
 

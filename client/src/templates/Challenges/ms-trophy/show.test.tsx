@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { I18nextProvider } from 'react-i18next';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
@@ -162,8 +162,11 @@ describe('MsTrophy', () => {
       })
     );
 
+    const dialog = await screen.findByRole('dialog');
+    expect(dialog).toBeInTheDocument();
+
     expect(
-      screen.getByRole('heading', {
+      within(dialog).getByRole('heading', {
         name: translations.buttons['get-help']
       })
     ).toBeInTheDocument();

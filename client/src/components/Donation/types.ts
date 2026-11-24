@@ -20,6 +20,7 @@ export interface PostPayment {
 }
 
 export interface DonationApprovalData {
+  subscriptionID?: string;
   redirecting: boolean;
   processing: boolean;
   success: boolean;

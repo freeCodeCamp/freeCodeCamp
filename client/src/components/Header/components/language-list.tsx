@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
-import { clientLocale } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import {
   availableLangs,
   LangNames,
@@ -12,6 +12,8 @@ import {
 import { hardGoTo as navigate } from '../../../redux/actions';
 import createLanguageRedirect from '../../create-language-redirect';
 import LanguageGlobe from '../../../assets/icons/language-globe';
+
+const { clientLocale } = envData;
 
 const locales = availableLangs.client.filter(
   lang => !hiddenLangs.includes(lang)
@@ -43,7 +45,7 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [showList]);
 
   // the accessibility tree just needs a little more time to pick up the change.
@@ -131,7 +133,6 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
   return (
     <>
       <button
-        data-playwright-test-label='header-toggle-lang-button'
         id='toggle-lang-button'
         className='lang-button-nav'
         title={t('buttons.change-language')}
@@ -145,7 +146,6 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
         <LanguageGlobe />
       </button>
       <ul
-        data-playwright-test-label='header-lang-list'
         id='nav-lang-list'
         className='nav-list'
         aria-labelledby='toggle-lang-button'
@@ -153,7 +153,6 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
         {locales.map((lang, index) => (
           <li key={'lang-' + lang}>
             <button
-              data-playwright-test-label='header-lang-list-option'
               className='nav-link nav-lang-list-option'
               data-value={lang}
               onClick={handleLanguageChange}

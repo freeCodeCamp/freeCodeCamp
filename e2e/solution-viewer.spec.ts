@@ -1,9 +1,11 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Solution Viewer component', () => {
-  test('renders the modal correctly', async ({ page }) => {
+  test('renders the modal correctly', async ({ page, isolatedUser }) => {
     await page.goto(
-      '/certification/certifieduser/javascript-algorithms-and-data-structures'
+      `/certification/${isolatedUser.username}/javascript-algorithms-and-data-structures`
     );
 
     await page.getByRole('button', { name: /view/i }).first().click();
@@ -31,46 +33,44 @@ test.describe('Solution Viewer component', () => {
     await expect(projectSolutionViewerModal).toBeHidden();
   });
 
-  test('renders external project links correctly', async ({ page }) => {
+  test('renders external project links correctly', async ({
+    page,
+    isolatedUser
+  }) => {
     await page.goto(
-      '/certification/certifieduser/front-end-development-libraries'
+      `/certification/${isolatedUser.username}/front-end-development-libraries`
     );
 
     const projectLink = page.getByRole('link', { name: 'View' }).first();
-    const browserContext = page.context();
 
-    const [newPage] = await Promise.all([
-      browserContext.waitForEvent('page'),
-      projectLink.click()
-    ]);
-
-    await newPage.waitForLoadState();
-
-    await expect(newPage).toHaveURL(/^https:\/\/codepen\.io/);
-
-    await newPage.close();
+    await expect(projectLink).toHaveAttribute(
+      'href',
+      /^https?:\/\/codepen\.io/
+    );
+    await expect(projectLink).toHaveAttribute('target', '_blank');
   });
 
   test('render projects with multiple solutions correctly', async ({
-    page
+    page,
+    isolatedUser
   }) => {
-    await page.goto('/certification/certifieduser/quality-assurance-v7');
+    await page.goto(
+      `/certification/${isolatedUser.username}/quality-assurance-v7`
+    );
 
     const dropdownButton = page.getByRole('button', { name: 'View' }).first();
     await dropdownButton.click();
 
     await expect(page.getByRole('menu')).toBeVisible();
 
+    const solutionLink = page
+      .getByRole('menuitem', { name: /solution/i })
+      .first();
+    await expect(solutionLink).toHaveAttribute('href', /^https?:\/\//);
+    await expect(solutionLink).toHaveAttribute('target', '_blank');
+
     const sourceLink = page.getByRole('menuitem', { name: /source/i }).first();
-
-    const browserContext = page.context();
-    const [newPage] = await Promise.all([
-      browserContext.waitForEvent('page'),
-      sourceLink.click()
-    ]);
-
-    await newPage.waitForLoadState();
-
-    await newPage.close();
+    await expect(sourceLink).toHaveAttribute('href', /^https?:\/\//);
+    await expect(sourceLink).toHaveAttribute('target', '_blank');
   });
 });

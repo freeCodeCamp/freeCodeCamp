@@ -21,6 +21,7 @@ For this lab, you will use conditional statements to determine whether commuting
    * `has_ride_share_app` (a boolean representing if the user has an app that allows them to request a ride)
 1. You should use conditional statements to determine whether commuting is possible based on the values of these variables.
 1. You should use `if`, `elif`, and `else` statements to evaluate the distance categories in ascending order.
+1. You should use at least one boolean operator (`and`, `or`, or `not`) in your code.
 1. If `distance_mi` is a falsy value:
    * You should print `False`.
 1. If the distance is **less than or equal to 1 mile**:
@@ -44,7 +45,7 @@ You should have a variable named `distance_mi`.
 You should assign a number to your `distance_mi` variable.
 
 ```js
-({ test: () => runPython(`assert isinstance(distance_mi, (int, float))`) })
+({ test: () => runPython(`assert isinstance(distance_mi, (int, float)) and not isinstance(distance_mi, bool)`) })
 ```
 
 You should have a variable named `is_raining`.
@@ -135,7 +136,8 @@ tree = ast.parse(_code)
 
 bool_ops = [
     node for node in ast.walk(tree)
-    if isinstance(node, (ast.BoolOp, ast.UnaryOp))
+    if isinstance(node, ast.BoolOp)
+    or (isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Not))
 ]
 
 assert len(bool_ops) >= 1
@@ -533,6 +535,54 @@ run_case(
 `) })
 ```
 
+When the distance is between `1` mile (excluded) and `6` miles (included), a bike is available, and it is raining, the program should print `False`.
+
+```js
+({ test: () => runPython(`
+import ast, io, contextlib
+
+VARIABLES = {
+    "distance_mi",
+    "is_raining",
+    "has_bike",
+    "has_car",
+    "has_ride_share_app"
+}
+
+def run_case(env, expected):
+    tree = ast.parse(_code)
+
+    tree.body = [
+        node for node in tree.body
+        if not (
+            isinstance(node, ast.Assign)
+            and isinstance(node.targets[0], ast.Name)
+            and node.targets[0].id in VARIABLES
+        )
+    ]
+
+    clean_code = compile(tree, "<ast>", "exec")
+
+    buffer = io.StringIO()
+    with contextlib.redirect_stdout(buffer):
+        exec(clean_code, env)
+
+    assert buffer.getvalue().strip() == expected
+
+
+run_case(
+    {
+        "distance_mi": 2,
+        "is_raining": True,
+        "has_bike": True,
+        "has_car": False,
+        "has_ride_share_app": False
+    },
+    "False"
+)
+`) })
+```
+
 When the distance is greater than `6` miles and a ride share app is available, the program should print `True`.
 
 ```js
@@ -572,6 +622,17 @@ run_case(
     {
         "distance_mi": 12,
         "is_raining": False,
+        "has_bike": False,
+        "has_car": False,
+        "has_ride_share_app": True
+    },
+    "True"
+)
+
+run_case(
+    {
+        "distance_mi": 12,
+        "is_raining": True,
         "has_bike": False,
         "has_car": False,
         "has_ride_share_app": True
@@ -626,10 +687,21 @@ run_case(
     },
     "True"
 )
+
+run_case(
+    {
+        "distance_mi": 12,
+        "is_raining": True,
+        "has_bike": False,
+        "has_car": True,
+        "has_ride_share_app": False
+    },
+    "True"
+)
 `) })
 ```
 
-When the distance is greater than `6` miles and no car nor a ride share app is available, the program should print `False`.
+When the distance is greater than `6` miles and neither a car nor a ride-share app is available, the program should print `False`.
 
 ```js
 ({ test: () => runPython(`

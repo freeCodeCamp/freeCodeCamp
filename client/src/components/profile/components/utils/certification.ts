@@ -5,6 +5,7 @@ export const getCertifications = (user: User) => {
   const {
     isA2EnglishCert,
     isB1EnglishCert,
+    isBackEndDevApisCertV9,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
     is2018DataVisCert,
@@ -40,7 +41,8 @@ export const getCertifications = (user: User) => {
       isFrontEndLibsCertV9 ||
       isFoundationalCSharpCertV8 ||
       isPythonCertV9 ||
-      isRelationalDatabaseCertV9,
+      isRelationalDatabaseCertV9 ||
+      isBackEndDevApisCertV9,
     hasLegacyCert:
       isFrontEndCert ||
       isJsAlgoDataStructCert ||
@@ -101,6 +103,11 @@ export const getCertifications = (user: User) => {
         show: isRelationalDatabaseCertV9,
         title: 'Relational Database Certification',
         certSlug: Certification.RelationalDbV9
+      },
+      {
+        show: isBackEndDevApisCertV9,
+        title: 'Back-End Development and APIs Certification',
+        certSlug: Certification.BackEndDevApisV9
       }
     ],
     legacyCerts: [

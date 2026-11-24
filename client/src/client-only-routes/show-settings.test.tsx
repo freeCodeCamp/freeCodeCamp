@@ -9,6 +9,25 @@ import { initialState } from '../redux';
 
 const testUsername = 'testuser';
 
+const baseUser = {
+  username: testUsername,
+  email: 'test@example.com',
+  completedChallenges: [],
+  profileUI: {
+    isLocked: false,
+    showAbout: true,
+    showCerts: true,
+    showDonation: true,
+    showHeatMap: true,
+    showLocation: true,
+    showName: true,
+    showPoints: true,
+    showPortfolio: true,
+    showExperience: true,
+    showTimeLine: true
+  }
+};
+
 vi.mock('../analytics');
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeature: () => ({ on: false }),
@@ -83,7 +102,7 @@ describe('<ShowSettings />', () => {
     );
 
     // Trans component renders the interpolated link - find it by href
-    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    // oxlint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const profileLink = container.querySelector(`a[href="/${testUsername}"]`);
     expect(profileLink).toBeInTheDocument();
   });
@@ -111,7 +130,7 @@ describe('<ShowSettings />', () => {
 
     // classroom-mode is gated behind IfFeatureEnabled('classroom-mode'), and the
     // flag defaults to off, so the section must be fully absent from the DOM.
-    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    // oxlint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const classroomSection = container.querySelector('#classroom-mode-policy');
     expect(classroomSection).not.toBeInTheDocument();
   });
@@ -165,8 +184,65 @@ describe('<ShowSettings />', () => {
     );
 
     // SettingsSidebarNav renders a ScrollLink with href="#personal"
-    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    // oxlint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const personalLink = container.querySelector('a[href="#personal"]');
     expect(personalLink).toBeInTheDocument();
+  });
+
+  it('renders all 11 privacy toggle labels', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: { sessionUser: baseUser },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    const labels = [
+      'settings.labels.my-profile',
+      'settings.labels.my-name',
+      'settings.labels.my-location',
+      'settings.labels.my-about',
+      'settings.labels.my-points',
+      'settings.labels.my-heatmap',
+      'settings.labels.my-certs',
+      'settings.labels.my-portfolio',
+      'settings.labels.my-experience',
+      'settings.labels.my-timeline',
+      'settings.labels.my-donations'
+    ];
+
+    for (const label of labels) {
+      expect(screen.getAllByText(label).length).toBeGreaterThan(0);
+    }
+  });
+
+  it('renders the Danger Zone section with reset and delete buttons', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: { sessionUser: baseUser },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'settings.danger.reset' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'settings.danger.delete' })
+    ).toBeInTheDocument();
   });
 });

@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-insertion-sort-py",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6ad85454a5ab4020066a0c03",
+      "title": "Implement the Insertion Sort Algorithm"
+    }
+  ],
+  "blockLabel": "lab"
+}

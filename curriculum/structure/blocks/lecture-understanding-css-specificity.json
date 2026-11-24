@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-css-specificity",
+  "challengeOrder": [
+    {
+      "id": "672aa62178d5ff57fe4f98e0",
+      "title": "What Is CSS Specificity, and the Specificity for Inline, Internal, and External CSS?"
+    },
+    {
+      "id": "672b8f1399cabc2406c3227f",
+      "title": "What Is the important Keyword, and What Are the Best Practices for Using It?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

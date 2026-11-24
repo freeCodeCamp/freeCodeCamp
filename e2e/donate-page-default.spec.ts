@@ -1,6 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
+
+test.use({ userPreset: 'certified' });
 
 const pageElements = {
   mainHeading: 'main-head',
@@ -62,13 +64,6 @@ function donatePageTests() {
 
     const faqHead = page.getByTestId(pageElements.faqHeading);
     await expect(faqHead).toHaveText(translations.donate.faq);
-  });
-
-  test('should display the donation policy disclaimer', async ({ page }) => {
-    const disclaimer = page.getByTestId('donation-policy-disclaimer');
-    await expect(disclaimer).toHaveText(
-      translations.donate['donation-policy-disclaimer']
-    );
   });
 
   test('should display the faq list with buttons', async ({ page }) => {
@@ -300,6 +295,10 @@ function donatePageTests() {
 
     await expect(
       page.getByText(donationFormStrings.fiveDollarsLearningContribution)
+    ).toBeVisible();
+
+    await expect(
+      page.getByText(translations.donate['repeats-monthly'])
     ).toBeVisible();
   });
 

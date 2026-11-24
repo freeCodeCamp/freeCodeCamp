@@ -1,0 +1,17 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-algorithms-and-big-o",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68420c314cdf5c6863ca8330",
+      "title": "What Is an Algorithm and How Does Big O Notation Work?"
+    },
+    {
+      "id": "6895d06b5968736797c408e3",
+      "title": "What Are Good Problem-Solving Techniques and Ways to Approach Algorithmic Challenges?"
+    }
+  ],
+  "helpCategory": "Python"
+}

@@ -2,6 +2,23 @@ import { input, select } from '@inquirer/prompts';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { getLastStep } from './get-last-step-file-number.js';
 
+// Quizzes and exams use separate workflows; invalid and step aren't supported.
+const excludedChallengeTypes = new Set([
+  challengeTypes.quiz,
+  challengeTypes.exam,
+  challengeTypes.examDownload,
+  challengeTypes.invalid,
+  challengeTypes.step
+]);
+
+export const getChallengeTypeChoices = () =>
+  Object.entries(challengeTypes)
+    .filter(([, value]) => !excludedChallengeTypes.has(value))
+    .map(([key, value]) => ({
+      name: key,
+      value: value.toString()
+    }));
+
 export const newChallengePrompts = async (): Promise<{
   title: string;
   dashedName: string;
@@ -9,10 +26,7 @@ export const newChallengePrompts = async (): Promise<{
 }> => {
   const challengeType = await select<string>({
     message: 'What type of challenge is this?',
-    choices: Object.entries(challengeTypes).map(([key, value]) => ({
-      name: key,
-      value: value.toString()
-    }))
+    choices: getChallengeTypeChoices()
   });
 
   const lastStep = getLastStep().stepNum;

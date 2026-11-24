@@ -1,5 +1,5 @@
 # Docker Compose override for E2E testing
-# Usage: docker compose -f docker/docker-compose.yml -f docker/docker-compose.e2e.yml up -d
+# Usage: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml -f docker/docker-compose.e2e.yml up -d
 services:
   api:
     restart: unless-stopped

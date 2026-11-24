@@ -1,0 +1,10 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-html",
+  "challengeOrder": [
+    { "id": "6ac9128276d48a42413c38b9", "title": "HTML Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

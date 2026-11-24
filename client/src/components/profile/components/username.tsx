@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/unbound-method */
+/* oxlint-disable typescript/unbound-method */
 import { FormControl, Alert, FormGroup, ControlLabel } from '@freecodecamp/ui';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';

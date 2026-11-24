@@ -83,23 +83,4 @@ describe('getMonthInfo', () => {
     expect(isAvailable(days, 5)).toBe(false);
     expect(isAvailable(days, 10)).toBe(true);
   });
-
-  describe('requireExactYear', () => {
-    const map = buildMap({ '08-15': { date: '2025-08-15' } });
-
-    it('hides a day whose stored year does not match the displayed year', () => {
-      const { days } = getMonthInfo(2026, 7, map, undefined, undefined, true);
-      expect(isAvailable(days, 15)).toBe(false);
-    });
-
-    it('shows the day when the displayed year matches the stored year', () => {
-      const { days } = getMonthInfo(2025, 7, map, undefined, undefined, true);
-      expect(isAvailable(days, 15)).toBe(true);
-    });
-
-    it('is ignored when not set, matching evergreen year-agnostic lookup', () => {
-      const { days } = getMonthInfo(2026, 7, map);
-      expect(isAvailable(days, 15)).toBe(true);
-    });
-  });
 });

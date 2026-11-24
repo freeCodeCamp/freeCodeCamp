@@ -1,4 +1,4 @@
-/* eslint-disable filenames-simple/naming-convention */
+/* oxlint-disable filenames-simple/naming-convention */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';

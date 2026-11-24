@@ -1,5 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import { focusEditor } from './utils/editor';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Editor Shortcuts', () => {
   test('Should add a new line if the user presses Alt+Enter', async ({

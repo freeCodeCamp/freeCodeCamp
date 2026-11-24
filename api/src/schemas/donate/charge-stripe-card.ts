@@ -17,7 +17,8 @@ export const chargeStripeCard = {
         message: Type.String(),
         type: Type.Union([
           Type.Literal('MethodRestrictionError'),
-          Type.Literal('EmailRequiredError')
+          Type.Literal('EmailRequiredError'),
+          Type.Literal('InvalidDonationError')
         ])
       })
     }),
