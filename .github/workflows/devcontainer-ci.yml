@@ -144,8 +144,10 @@ jobs:
           devcontainer exec --workspace-folder . grep -q '^HOME_LOCATION=https://ci-probe-8000.app.github.dev$' .env
           devcontainer exec --workspace-folder . grep -q '^API_LOCATION=https://ci-probe-3000.app.github.dev$' .env
 
+      - name: Stop the devcontainer
+        if: always()
+        run: docker compose --project-name freecodecamp-devcontainer -f docker/docker-compose.yml -f .devcontainer/docker-compose.yml down --timeout 0
+
       - name: Give the workspace back to the runner user
         if: always()
-        run: |
-          docker compose --project-name freecodecamp-devcontainer -f docker/docker-compose.yml -f .devcontainer/docker-compose.yml down
-          sudo chown -R "$(id -u):$(id -g)" .
+        run: sudo chown -R "$(id -u):$(id -g)" .
