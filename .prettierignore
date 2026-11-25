@@ -13,7 +13,6 @@
 /curriculum/src/test/stubs
 /docker/client/parity/fixture
 /docker/client/parity/serve.json
-/docker/client/pnpm-lock.yaml
 /e2e/playwright
 /pnpm-lock.yaml
 /tools/challenge-editor

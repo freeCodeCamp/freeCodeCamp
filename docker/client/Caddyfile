@@ -1,0 +1,297 @@
+{
+	admin off
+	auto_https off
+	persist_config off
+}
+
+(gzip) {
+	encode gzip {
+		minimum_length 1024
+	}
+}
+
+(headers) {
+	@h0 path_regexp h0 (\.html|/app-data\.json|/page-data\.json)$
+	header @h0 Cache-Control "public, max-age=0, must-revalidate"
+	@h1 path_regexp h1 ^(/js/.*\.js|(/.*)?/[^/]*-([^/]{32}|[^/]{20})\.(js|woff|ttf|svg|png))$
+	header @h1 Cache-Control "public, max-age=172800, immutable"
+	@h2 path_regexp h2 ^/styles\.[^/]{20}\.css$
+	header @h2 Cache-Control "public, max-age=172800, immutable"
+	@h3 path_regexp h3 ^(/misc/[^/]*\.js|/sw\.js|/python-input-sw\.js)$
+	header @h3 Cache-Control "public, max-age=0, must-revalidate"
+	@h4 path /manifest.webmanifest
+	header @h4 Cache-Control "public, max-age=86400, stale-while-revalidate=86400, must-revalidate"
+	@js path *.js
+	header @js Content-Type "application/javascript; charset=utf-8"
+	@json path *.json
+	header @json Content-Type "application/json; charset=utf-8"
+	@wm path *.webmanifest
+	header @wm Content-Type "application/manifest+json; charset=utf-8"
+}
+
+:8080 {
+	root * /cache/{$CLIENT_RELEASE}
+	import gzip
+
+	route {
+		@cleanroot path /index
+		redir @cleanroot / 301
+		@clean path_regexp clean ^(.+?)(\.html|/index)$
+		redir @clean {re.clean.1} 301
+
+		@trail path_regexp trail ^(.+)/$
+		redir @trail {re.trail.1} 301
+
+		@r0 path_regexp r0 (?i)^/challenges(?P<superblock>/[^/]+)?(?P<block>/[^/]+)?(?P<challenge>/[^/]+)?$
+		redir @r0 /learn{re.r0.superblock}{re.r0.block}{re.r0.challenge} 301
+		@r1 path_regexp r1 (?i)^/learn/apis-and-microservices/apis-and-microservices-projects$
+		redir @r1 /learn/back-end-development-and-apis/back-end-development-and-apis-projects 301
+		@r2 path_regexp r2 (?i)^/learn/apis-and-microservices/apis-and-microservices-projects(?P<challenge>/[^/]+)$
+		redir @r2 /learn/back-end-development-and-apis/back-end-development-and-apis-projects{re.r2.challenge} 301
+		@r3 path_regexp r3 (?i)^/learn/apis-and-microservices(?P<block>/[^/]+)?(?P<challenge>/[^/]+)?$
+		redir @r3 /learn/back-end-development-and-apis{re.r3.block}{re.r3.challenge} 301
+		@r4 path_regexp r4 (?i)^/certification(?P<username>/[^/]+)/apis-and-microservices$
+		redir @r4 /certification{re.r4.username}/back-end-development-and-apis 301
+		@r5 path_regexp r5 (?i)^/learn/front-end-libraries/front-end-libraries-projects$
+		redir @r5 /learn/front-end-development-libraries/front-end-development-libraries-projects 301
+		@r6 path_regexp r6 (?i)^/learn/front-end-libraries/front-end-libraries-projects(?P<challenge>/[^/]+)$
+		redir @r6 /learn/front-end-development-libraries/front-end-development-libraries-projects{re.r6.challenge} 301
+		@r7 path_regexp r7 (?i)^/learn/front-end-libraries(?P<block>/[^/]+)?(?P<challenge>/[^/]+)?$
+		redir @r7 /learn/front-end-development-libraries{re.r7.block}{re.r7.challenge} 301
+		@r8 path_regexp r8 (?i)^/certification(?P<username>/[^/]+)/front-end-libraries$
+		redir @r8 /certification{re.r8.username}/front-end-development-libraries 301
+		@r9 path_regexp r9 (?i)^/learn/javascript-algorithms-and-data-structures/es6/explore-differences-between-the-var-and-let-keywords$
+		redir @r9 /learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords 301
+		@r10 path_regexp r10 (?i)^/learn/javascript-algorithms-and-data-structures/es6/declare-a-read-only-variable-with-the-const-keyword$
+		redir @r10 /learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword 301
+		@r11 path_regexp r11 (?i)^/learn/responsive-web-design/applied-visual-design/adjust-the-size-of-a-header-versus-a-paragraph-tag$
+		redir @r11 /learn/responsive-web-design/applied-visual-design/adjust-the-size-of-a-heading-element-versus-a-paragraph-element 301
+		@r12 path_regexp r12 (?i)^/learn/project-euler/project-euler-problems-1-to-100/problem-1-multiples-of-3-and-5$
+		redir @r12 /learn/project-euler/project-euler-problems-1-to-100/problem-1-multiples-of-3-or-5 301
+		@r13 path_regexp r13 (?i)^/learn/coding-interview-prep/take-home-projects/build-a-simon-game$
+		redir @r13 /learn/coding-interview-prep/take-home-projects/build-a-memory-light-game 301
+		@r14 path_regexp r14 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-are-best-practices-for-tables-and-accessibility$
+		redir @r14 /learn/full-stack-developer/lecture-accessible-tables-forms/what-are-best-practices-for-tables-and-accessibility 301
+		@r15 path_regexp r15 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/why-is-it-important-for-inputs-to-have-an-associated-label$
+		redir @r15 /learn/full-stack-developer/lecture-accessible-tables-forms/why-is-it-important-for-inputs-to-have-an-associated-label 301
+		@r16 path_regexp r16 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-is-the-purpose-of-wai-aria$
+		redir @r16 /learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-purpose-of-wai-aria 301
+		@r17 path_regexp r17 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-are-aria-roles$
+		redir @r17 /learn/full-stack-developer/lecture-introduction-to-aria/what-are-aria-roles 301
+		@r18 path_regexp r18 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-are-the-roles-of-the-aria-label-and-aria-labelledby-attributes$
+		redir @r18 /learn/full-stack-developer/lecture-introduction-to-aria/what-are-the-roles-of-the-aria-label-and-aria-labelledby-attributes 301
+		@r19 path_regexp r19 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-is-the-aria-hidden-attribute$
+		redir @r19 /learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-hidden-attribute 301
+		@r20 path_regexp r20 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-is-the-aria-expanded-attribute$
+		redir @r20 /learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-expanded-attribute 301
+		@r21 path_regexp r21 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-is-the-aria-live-attribute$
+		redir @r21 /learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-live-attribute 301
+		@r22 path_regexp r22 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-are-some-common-aria-states-used-on-custom-control-elements$
+		redir @r22 /learn/full-stack-developer/lecture-introduction-to-aria/what-are-some-common-aria-states-used-on-custom-control-elements 301
+		@r23 path_regexp r23 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-is-the-aria-controls-attribute$
+		redir @r23 /learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-controls-attribute 301
+		@r24 path_regexp r24 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-is-the-aria-describedby-attribute$
+		redir @r24 /learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-describedby-attribute 301
+		@r25 path_regexp r25 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/when-is-the-alt-attribute-needed$
+		redir @r25 /learn/full-stack-developer/lecture-accessible-media-elements/when-is-the-alt-attribute-needed 301
+		@r26 path_regexp r26 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-are-the-accessibility-benefits-for-good-link-text$
+		redir @r26 /learn/full-stack-developer/lecture-accessible-media-elements/what-are-the-accessibility-benefits-for-good-link-text 301
+		@r27 path_regexp r27 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-are-good-ways-to-make-audio-and-video-content-accessible$
+		redir @r27 /learn/full-stack-developer/lecture-accessible-media-elements/what-are-good-ways-to-make-audio-and-video-content-accessible 301
+		@r28 path_regexp r28 (?i)^/learn/full-stack-developer/lecture-importance-of-accessibility-and-good-html-structure/what-are-some-ways-to-make-web-applications-keyboard-accessible$
+		redir @r28 /learn/full-stack-developer/lecture-accessible-media-elements/what-are-some-ways-to-make-web-applications-keyboard-accessible 301
+		@r29 path_regexp r29 (?i)^/learn/relational-database/learn-relational-databases-by-building-a-mario-database/build-a-mario-database$
+		redir @r29 /learn/relational-database/learn-relational-databases-by-building-a-database-of-video-game-characters/build-a-database-of-video-game-characters 301
+		@r30 path_regexp r30 (?i)^/learn/javascript-algorithms-and-data-structures-v8/build-a-pokemon-search-app-project/build-a-pokemon-search-app$
+		redir @r30 /learn/javascript-algorithms-and-data-structures-v8/build-an-rpg-creature-search-app-project/build-an-rpg-creature-search-app 301
+		@r31 path_regexp r31 (?i)^/learn/full-stack-developer/lecture-working-with-media/what-are-common-ways-to-optimize-media-assets$
+		redir @r31 /learn/full-stack-developer/lecture-working-with-images-and-svgs/what-are-common-ways-to-optimize-media-assets 301
+		@r32 path_regexp r32 (?i)^/learn/full-stack-developer/lecture-working-with-media/what-are-the-different-types-of-image-licenses$
+		redir @r32 /learn/full-stack-developer/lecture-working-with-images-and-svgs/what-are-the-different-types-of-image-licenses 301
+		@r33 path_regexp r33 (?i)^/learn/full-stack-developer/lecture-working-with-media/what-are-svgs$
+		redir @r33 /learn/full-stack-developer/lecture-working-with-images-and-svgs/what-are-svgs 301
+		@r34 path_regexp r34 (?i)^/learn/full-stack-developer/lecture-working-with-media/what-are-the-roles-of-the-html-audio-and-video-elements$
+		redir @r34 /learn/full-stack-developer/lecture-working-with-audio-and-video-elements/what-are-the-roles-of-the-html-audio-and-video-elements 301
+		@r35 path_regexp r35 (?i)^/learn/full-stack-developer/lecture-what-is-html/what-is-html$
+		redir @r35 /learn/full-stack-developer/lecture-understanding-html-attributes/what-is-html 301
+		@r36 path_regexp r36 (?i)^/learn/full-stack-developer/lecture-what-is-html/what-are-attributes$
+		redir @r36 /learn/full-stack-developer/lecture-understanding-html-attributes/what-are-attributes 301
+		@r37 path_regexp r37 (?i)^/learn/full-stack-developer/lecture-what-is-html/what-is-the-role-of-the-link-element-in-html$
+		redir @r37 /learn/full-stack-developer/lecture-understanding-the-html-boilerplate/what-is-the-role-of-the-link-element-in-html 301
+		@r38 path_regexp r38 (?i)^/learn/full-stack-developer/lecture-what-is-html/what-is-an-html-boilerplate$
+		redir @r38 /learn/full-stack-developer/lecture-understanding-the-html-boilerplate/what-is-an-html-boilerplate 301
+		@r39 path_regexp r39 (?i)^/learn/full-stack-developer/lecture-what-is-html/what-is-utf-8-character-encoding$
+		redir @r39 /learn/full-stack-developer/lecture-understanding-the-html-boilerplate/what-is-utf-8-character-encoding 301
+		@r40 path_regexp r40 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/when-should-you-use-the-emphasis-element-over-the-idiomatic-text-element$
+		redir @r40 /learn/full-stack-developer/lecture-understanding-nuanced-semantic-elements/when-should-you-use-the-emphasis-element-over-the-idiomatic-text-element 301
+		@r41 path_regexp r41 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/when-should-you-use-the-strong-element-over-the-bring-attention-to-element$
+		redir @r41 /learn/full-stack-developer/lecture-understanding-nuanced-semantic-elements/when-should-you-use-the-strong-element-over-the-bring-attention-to-element 301
+		@r42 path_regexp r42 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/what-are-description-lists$
+		redir @r42 /learn/full-stack-developer/lecture-understanding-nuanced-semantic-elements/what-are-description-lists 301
+		@r43 path_regexp r43 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-block-and-inline-quotes-work-in-html$
+		redir @r43 /learn/full-stack-developer/lecture-working-with-text-and-time-semantic-elements/how-do-block-and-inline-quotes-work-in-html 301
+		@r44 path_regexp r44 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-display-abbreviations-and-acronyms-in-html$
+		redir @r44 /learn/full-stack-developer/lecture-working-with-text-and-time-semantic-elements/how-do-you-display-abbreviations-and-acronyms-in-html 301
+		@r45 path_regexp r45 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-display-addresses-in-html$
+		redir @r45 /learn/full-stack-developer/lecture-working-with-text-and-time-semantic-elements/how-do-you-display-addresses-in-html 301
+		@r46 path_regexp r46 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-display-times-and-dates-in-html$
+		redir @r46 /learn/full-stack-developer/lecture-working-with-text-and-time-semantic-elements/how-do-you-display-times-and-dates-in-html 301
+		@r47 path_regexp r47 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-display-mathematical-equations-and-chemical-formulas-in-html$
+		redir @r47 /learn/full-stack-developer/lecture-working-with-specialized-semantic-elements/how-do-you-display-mathematical-equations-and-chemical-formulas-in-html 301
+		@r48 path_regexp r48 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-represent-computer-code-in-html$
+		redir @r48 /learn/full-stack-developer/lecture-working-with-specialized-semantic-elements/how-do-you-represent-computer-code-in-html 301
+		@r49 path_regexp r49 (?i)^/learn/full-stack-developer/lecture-importance-of-semantic-html/what-are-the-u-s-and-ruby-elements-used-for$
+		redir @r49 /learn/full-stack-developer/lecture-working-with-specialized-semantic-elements/what-are-the-u-s-and-ruby-elements-used-for 301
+		@r50 path_regexp r50 (?i)^/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-is-a-string-object-and-how-does-it-differ-from-string-primitive$
+		redir @r50 /learn/full-stack-developer/lecture-working-with-types-and-objects/what-is-a-string-object-and-how-does-it-differ-from-string-primitive 301
+		@r51 path_regexp r51 (?i)^/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-is-the-tostring-method-and-how-does-it-work$
+		redir @r51 /learn/full-stack-developer/lecture-working-with-types-and-objects/what-is-the-tostring-method-and-how-does-it-work 301
+		@r52 path_regexp r52 (?i)^/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-is-the-number-constructor-and-how-does-it-work-for-type-coercion$
+		redir @r52 /learn/full-stack-developer/lecture-working-with-types-and-objects/what-is-the-number-constructor-and-how-does-it-work-for-type-coercion 301
+		@r53 path_regexp r53 (?i)^/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-are-some-common-practices-for-naming-variables-and-functions$
+		redir @r53 /learn/full-stack-developer/lecture-working-with-arrays-variables-and-naming-practices/what-are-some-common-practices-for-naming-variables-and-functions 301
+		@r54 path_regexp r54 (?i)^/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/how-do-you-get-the-length-for-an-array-and-how-can-you-create-an-empty-array-of-fixed-length$
+		redir @r54 /learn/full-stack-developer/lecture-working-with-arrays-variables-and-naming-practices/how-do-you-get-the-length-for-an-array-and-how-can-you-create-an-empty-array-of-fixed-length 301
+		@r55 path_regexp r55 (?i)^/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-are-linters-and-formatters-and-how-can-they-help-you-with-code-consistency$
+		redir @r55 /learn/full-stack-developer/lecture-working-with-code-quality-and-execution-concepts/what-are-linters-and-formatters-and-how-can-they-help-you-with-code-consistency 301
+		@r56 path_regexp r56 (?i)^/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-is-memory-management-and-how-does-it-work-in-javascript$
+		redir @r56 /learn/full-stack-developer/lecture-working-with-code-quality-and-execution-concepts/what-is-memory-management-and-how-does-it-work-in-javascript 301
+		@r57 path_regexp r57 (?i)^/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-are-closures-and-how-do-they-work$
+		redir @r57 /learn/full-stack-developer/lecture-working-with-code-quality-and-execution-concepts/what-are-closures-and-how-do-they-work 301
+		@r58 path_regexp r58 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-is-the-number-type-in-javascript-and-what-are-the-different-types-of-numbers-available$
+		redir @r58 /learn/full-stack-developer/lecture-working-with-numbers-and-arithmetic-operators/what-is-the-number-type-in-javascript-and-what-are-the-different-types-of-numbers-available 301
+		@r59 path_regexp r59 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-the-different-arithmetic-operators-in-javascript$
+		redir @r59 /learn/full-stack-developer/lecture-working-with-numbers-and-arithmetic-operators/what-are-the-different-arithmetic-operators-in-javascript 301
+		@r60 path_regexp r60 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-happens-when-you-try-to-do-calculations-with-numbers-and-strings$
+		redir @r60 /learn/full-stack-developer/lecture-working-with-numbers-and-arithmetic-operators/what-happens-when-you-try-to-do-calculations-with-numbers-and-strings 301
+		@r61 path_regexp r61 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/how-does-operator-precedence-work$
+		redir @r61 /learn/full-stack-developer/lecture-working-with-operator-behavior/how-does-operator-precedence-work 301
+		@r62 path_regexp r62 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/how-do-the-increment-and-decrement-operators-work$
+		redir @r62 /learn/full-stack-developer/lecture-working-with-operator-behavior/how-do-the-increment-and-decrement-operators-work 301
+		@r63 path_regexp r63 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-compound-assignment-operators-in-javascript-and-how-do-they-work$
+		redir @r63 /learn/full-stack-developer/lecture-working-with-operator-behavior/what-are-compound-assignment-operators-in-javascript-and-how-do-they-work 301
+		@r64 path_regexp r64 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-booleans-and-how-do-they-work-with-equality-and-inequality-operators$
+		redir @r64 /learn/full-stack-developer/lecture-working-with-comparison-and-boolean-operators/what-are-booleans-and-how-do-they-work-with-equality-and-inequality-operators 301
+		@r65 path_regexp r65 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-comparison-operators-and-how-do-they-work$
+		redir @r65 /learn/full-stack-developer/lecture-working-with-comparison-and-boolean-operators/what-are-comparison-operators-and-how-do-they-work 301
+		@r66 path_regexp r66 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-unary-operators-and-how-do-they-work$
+		redir @r66 /learn/full-stack-developer/lecture-working-with-unary-and-bitwise-operators/what-are-unary-operators-and-how-do-they-work 301
+		@r67 path_regexp r67 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-bitwise-operators-and-how-do-they-work$
+		redir @r67 /learn/full-stack-developer/lecture-working-with-unary-and-bitwise-operators/what-are-bitwise-operators-and-how-do-they-work 301
+		@r68 path_regexp r68 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-conditional-statements-and-how-do-if-else-if-else-statements-work$
+		redir @r68 /learn/full-stack-developer/lecture-working-with-conditional-logic-and-math-methods/what-are-conditional-statements-and-how-do-if-else-if-else-statements-work 301
+		@r69 path_regexp r69 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-binary-logical-operators-and-how-do-they-work$
+		redir @r69 /learn/full-stack-developer/lecture-working-with-conditional-logic-and-math-methods/what-are-binary-logical-operators-and-how-do-they-work 301
+		@r70 path_regexp r70 (?i)^/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-is-the-math-object-in-javascript-and-what-are-some-common-methods$
+		redir @r70 /learn/full-stack-developer/lecture-working-with-conditional-logic-and-math-methods/what-is-the-math-object-in-javascript-and-what-are-some-common-methods 301
+		@r71 path_regexp r71 (?i)^/learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-expanded-attribute$
+		redir @r71 /learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-is-the-aria-expanded-attribute 301
+		@r72 path_regexp r72 (?i)^/learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-live-attribute$
+		redir @r72 /learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-is-the-aria-live-attribute 301
+		@r73 path_regexp r73 (?i)^/learn/full-stack-developer/lecture-introduction-to-aria/what-are-some-common-aria-states-used-on-custom-control-elements$
+		redir @r73 /learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-are-some-common-aria-states-used-on-custom-control-elements 301
+		@r74 path_regexp r74 (?i)^/learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-controls-attribute$
+		redir @r74 /learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-is-the-aria-controls-attribute 301
+		@r75 path_regexp r75 (?i)^/learn/full-stack-developer/lecture-working-with-common-string-methods/what-is-ascii-and-how-does-it-work-with-charcodeat-and-fromcharcode$
+		redir @r75 /learn/full-stack-developer/lecture-working-with-string-character-methods/what-is-ascii-and-how-does-it-work-with-charcodeat-and-fromcharcode 301
+		@r76 path_regexp r76 (?i)^/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-test-if-a-string-contains-a-substring$
+		redir @r76 /learn/full-stack-developer/lecture-working-with-string-search-and-slice-methods/how-can-you-test-if-a-string-contains-a-substring 301
+		@r77 path_regexp r77 (?i)^/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-extract-a-substring-from-a-string$
+		redir @r77 /learn/full-stack-developer/lecture-working-with-string-search-and-slice-methods/how-can-you-extract-a-substring-from-a-string 301
+		@r78 path_regexp r78 (?i)^/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-change-the-casing-for-a-string$
+		redir @r78 /learn/full-stack-developer/lecture-working-with-string-formatting-methods/how-can-you-change-the-casing-for-a-string 301
+		@r79 path_regexp r79 (?i)^/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-trim-whitespace-from-a-string$
+		redir @r79 /learn/full-stack-developer/lecture-working-with-string-formatting-methods/how-can-you-trim-whitespace-from-a-string 301
+		@r80 path_regexp r80 (?i)^/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-replace-parts-of-a-string-with-another$
+		redir @r80 /learn/full-stack-developer/lecture-working-with-string-modification-methods/how-can-you-replace-parts-of-a-string-with-another 301
+		@r81 path_regexp r81 (?i)^/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-repeat-a-string-x-number-of-times$
+		redir @r81 /learn/full-stack-developer/lecture-working-with-string-modification-methods/how-can-you-repeat-a-string-x-number-of-times 301
+		@r82 path_regexp r82 (?i)^/learn/full-stack-developer/lab-magazine-layout/design-a-magazine-layout$
+		redir @r82 /learn/full-stack-developer/lab-newspaper-layout/design-a-newspaper-layout 301
+		@r83 path_regexp r83 (?i)^/learn/full-stack-developer/lecture-introduction-to-javascript/what-is-a-string$
+		redir @r83 /learn/full-stack-developer/lecture-introduction-to-strings/what-is-a-string 301
+		@r84 path_regexp r84 (?i)^/learn/full-stack-developer/lecture-introduction-to-javascript/what-is-string-concatenation$
+		redir @r84 /learn/full-stack-developer/lecture-introduction-to-strings/what-is-string-concatenation 301
+		@r85 path_regexp r85 (?i)^/learn/full-stack-developer/lecture-introduction-to-javascript/what-is-console-log$
+		redir @r85 /learn/full-stack-developer/lecture-introduction-to-strings/what-is-console-log 301
+		@r86 path_regexp r86 (?i)^/learn/full-stack-developer/lecture-introduction-to-javascript/what-is-the-role-of-semicolons$
+		redir @r86 /learn/full-stack-developer/lecture-understanding-code-clarity/what-is-the-role-of-semicolons 301
+		@r87 path_regexp r87 (?i)^/learn/full-stack-developer/lecture-introduction-to-javascript/what-are-comments-in-javascript$
+		redir @r87 /learn/full-stack-developer/lecture-understanding-code-clarity/what-are-comments-in-javascript 301
+		@r88 path_regexp r88 (?i)^/learn/full-stack-developer/lecture-working-with-objects/what-is-an-object-in-javascript-and-how-can-you-access-properties-from-an-object$
+		redir @r88 /learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/what-is-an-object-in-javascript-and-how-can-you-access-properties-from-an-object 301
+		@r89 path_regexp r89 (?i)^/learn/full-stack-developer/lecture-working-with-objects/how-can-you-remove-properties-from-an-object$
+		redir @r89 /learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/how-can-you-remove-properties-from-an-object 301
+		@r90 path_regexp r90 (?i)^/learn/full-stack-developer/lecture-working-with-objects/how-to-check-if-an-object-has-a-property$
+		redir @r90 /learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/how-to-check-if-an-object-has-a-property 301
+		@r91 path_regexp r91 (?i)^/learn/full-stack-developer/lecture-working-with-objects/how-do-you-work-with-accessing-properties-from-nested-objects-and-arrays-in-objects$
+		redir @r91 /learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/how-do-you-work-with-accessing-properties-from-nested-objects-and-arrays-in-objects 301
+		@r92 path_regexp r92 (?i)^/learn/full-stack-developer/lecture-working-with-objects/what-is-the-difference-between-primitive-and-non-primitive-data-types$
+		redir @r92 /learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/what-is-the-difference-between-primitive-and-non-primitive-data-types 301
+		@r93 path_regexp r93 (?i)^/learn/full-stack-developer/lecture-working-with-objects/what-is-the-difference-between-functions-and-object-methods$
+		redir @r93 /learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/what-is-the-difference-between-functions-and-object-methods 301
+		@r94 path_regexp r94 (?i)^/learn/full-stack-developer/lecture-working-with-objects/what-is-the-object-constructor-and-when-should-you-use-it$
+		redir @r94 /learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/what-is-the-object-constructor-and-when-should-you-use-it 301
+		@r95 path_regexp r95 (?i)^/learn/full-stack-developer/lecture-working-with-objects/what-is-the-optional-chaining-operator-and-how-does-it-work$
+		redir @r95 /learn/full-stack-developer/lecture-working-with-optional-chaining-and-object-destructuring/what-is-the-optional-chaining-operator-and-how-does-it-work 301
+		@r96 path_regexp r96 (?i)^/learn/full-stack-developer/lecture-working-with-objects/what-is-object-destructuring-and-how-does-it-work$
+		redir @r96 /learn/full-stack-developer/lecture-working-with-optional-chaining-and-object-destructuring/what-is-object-destructuring-and-how-does-it-work 301
+		@r97 path_regexp r97 (?i)^/learn/full-stack-developer/lecture-working-with-objects/what-is-json-and-how-do-you-access-values-using-bracket-and-dot-notation$
+		redir @r97 /learn/full-stack-developer/lecture-working-with-json/what-is-json-and-how-do-you-access-values-using-bracket-and-dot-notation 301
+		@r98 path_regexp r98 (?i)^/learn/full-stack-developer/lecture-working-with-objects/how-do-json-parse-and-json-stringify-work$
+		redir @r98 /learn/full-stack-developer/lecture-working-with-json/how-do-json-parse-and-json-stringify-work 301
+		@r99 path_regexp r99 (?i)^/learn/full-stack-developer/lecture-html-fundamentals/what-is-the-role-of-the-meta-description$
+		redir @r99 /learn/full-stack-developer/lecture-understanding-how-html-affects-seo/what-is-the-role-of-the-meta-description 301
+		@r100 path_regexp r100 (?i)^/learn/full-stack-developer/lecture-html-fundamentals/what-is-the-role-of-open-graph-tags$
+		redir @r100 /learn/full-stack-developer/lecture-understanding-how-html-affects-seo/what-is-the-role-of-open-graph-tags 301
+		@r101 path_regexp r101 (?i)^/learn/full-stack-developer/lab-sum-all-primes-calculator/build-a-sum-all-primes-calculator$
+		redir @r101 /learn/full-stack-developer/lab-prime-number-sum-calculator/build-a-prime-number-sum-calculator 301
+		@r102 path_regexp r102 (?i)^/learn/full-stack-developer$
+		redir @r102 /learn/full-stack-developer-v9 301
+		@r103 path_regexp r103 (?i)^/learn/python-v9/lab-n-queens-problem/step-1$
+		redir @r103 /learn/python-v9/lab-n-queens-problem/implement-the-n-queens-algorithm 301
+		@r104 path_regexp r104 (?i)^/learn/python-v9/lecture-introduction-to-python/how-do-you-install-configure-and-use-python-in-your-local-environment$
+		redir @r104 /learn/python-v9/lecture-python-installation/how-do-you-install-configure-and-use-python-in-your-local-environment 301
+		@r105 path_regexp r105 (?i)^/learn/python-v9/lecture-understanding-variables-and-data-types/what-are-common-data-types-in-python-and-how-do-you-get-the-type-of-a-variable$
+		redir @r105 /learn/python-v9/lecture-understanding-variables-and-data-types/what-are-common-data-types-in-python 301
+		@r106 path_regexp r106 (?i)^/learn/foundational-c-sharp-with-microsoft/create-and-run-simple-c-sharp-console-applications/add-decision-logic-to-your-code-using-if-else-and-else-if-statements-in-c-sharp$
+		redir @r106 /learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/add-decision-logic-to-your-code-using-if-else-and-else-if-statements-in-c-sharp 301
+		@r107 path_regexp r107 (?i)^/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/perform-basic-string-formatting-in-c-sharp$
+		redir @r107 /learn/foundational-c-sharp-with-microsoft 301
+		@r108 path_regexp r108 (?i)^/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/guided-project-calculate-and-print-student-grades$
+		redir @r108 /learn/foundational-c-sharp-with-microsoft 301
+		@r109 path_regexp r109 (?i)^/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/guided-project-calculate-final-gpa$
+		redir @r109 /learn/foundational-c-sharp-with-microsoft 301
+		@r110 path_regexp r110 (?i)^/learn/foundational-c-sharp-with-microsoft/create-and-run-simple-c-sharp-console-applications/call-methods-from-the-dot-net-class-library-using-c-sharp$
+		redir @r110 /learn/foundational-c-sharp-with-microsoft 301
+		@r111 path_regexp r111 (?i)^/learn/foundational-c-sharp-with-microsoft/create-and-run-simple-c-sharp-console-applications/store-and-iterate-through-sequences-of-data-using-arrays-and-the-foreach-statement-in-c-sharp$
+		redir @r111 /learn/foundational-c-sharp-with-microsoft 301
+		@r112 path_regexp r112 (?i)^/learn/foundational-c-sharp-with-microsoft/create-and-run-simple-c-sharp-console-applications/create-readable-code-with-conventions-whitespace-and-comments-in-c-sharp$
+		redir @r112 /learn/foundational-c-sharp-with-microsoft 301
+		@r113 path_regexp r113 (?i)^/learn/foundational-c-sharp-with-microsoft/create-and-run-simple-c-sharp-console-applications/guided-project-develop-foreach-and-if-elseif-else-structures-to-process-array-data-in-c-sharp$
+		redir @r113 /learn/foundational-c-sharp-with-microsoft 301
+		@r114 path_regexp r114 (?i)^/learn/foundational-c-sharp-with-microsoft/create-and-run-simple-c-sharp-console-applications/challenge-project-develop-foreach-and-if-elseif-else-structures-to-process-array-data-in-c-sharp$
+		redir @r114 /learn/foundational-c-sharp-with-microsoft 301
+
+		@cert {
+			path /certification/*
+			not file
+		}
+		rewrite @cert /certification/index.html
+
+		try_files {path} {path}/index.html {path}.html
+
+		import headers
+		file_server
+	}
+
+	handle_errors 404 {
+		import gzip
+		rewrite * /404.html
+		route {
+			header Content-Type "text/html; charset=utf-8"
+			import headers
+			file_server
+		}
+	}
+}

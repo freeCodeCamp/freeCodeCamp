@@ -1,7 +1,0 @@
-{
-  "name": "client-image",
-  "private": true,
-  "dependencies": {
-    "serve": "13.0.4"
-  }
-}
