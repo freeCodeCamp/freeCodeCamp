@@ -13,18 +13,7 @@ jobs:
       matrix:
         repos:
           - learn-api
-          - learn-client-ara
-          - learn-client-chn
-          - learn-client-cnt
-          - learn-client-eng
-          - learn-client-esp
-          - learn-client-ger
-          - learn-client-ita
-          - learn-client-jpn
-          - learn-client-kor
-          - learn-client-por
-          - learn-client-swa
-          - learn-client-ukr
+          - learn-client
         variants:
           - dev
           - org
