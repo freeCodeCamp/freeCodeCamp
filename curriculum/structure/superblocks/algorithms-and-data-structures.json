@@ -39,7 +39,6 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-circular-queue",
-          "comingSoon": true,
           "blocks": ["lab-circular-queue"]
         },
         {
@@ -52,6 +51,7 @@
             "workshop-merge-sort",
             "lab-quicksort",
             "lecture-understanding-backtracking",
+            "workshop-sudoku-solver",
             "review-recursion-python-v2",
             "quiz-recursion-python-v2"
           ]
@@ -89,6 +89,7 @@
           "dashedName": "python-dynamic-programming",
           "blocks": [
             "lecture-understanding-dynamic-programming",
+            "workshop-grid-path-counter",
             "lab-nth-fibonacci-number",
             "review-dynamic-programming",
             "quiz-dynamic-programming"

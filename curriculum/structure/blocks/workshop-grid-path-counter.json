@@ -1,0 +1,143 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "workshop-grid-path-counter",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "6ae9b866c1acd862ae9fbdbf",
+      "title": "Step 1"
+    },
+    {
+      "id": "6ae9baf828ad3ce2bff73370",
+      "title": "Step 2"
+    },
+    {
+      "id": "6ae9bcb9163d60eb656fb717",
+      "title": "Step 3"
+    },
+    {
+      "id": "6ae9bdbb27ebb2d2250ed1bb",
+      "title": "Step 4"
+    },
+    {
+      "id": "6ae9beefa9c96f1b5d4d9de5",
+      "title": "Step 5"
+    },
+    {
+      "id": "6ae9c1817ff4ae151c578bea",
+      "title": "Step 6"
+    },
+    {
+      "id": "6ae9c2669ce599a4ae03b411",
+      "title": "Step 7"
+    },
+    {
+      "id": "6ae9c385853e07e2a391aa77",
+      "title": "Step 8"
+    },
+    {
+      "id": "6ae9c48452f245b8e387f005",
+      "title": "Step 9"
+    },
+    {
+      "id": "6ae9c500647da1d3cc0f9c33",
+      "title": "Step 10"
+    },
+    {
+      "id": "6ae9c7b09d2ff33a97ac44e6",
+      "title": "Step 11"
+    },
+    {
+      "id": "6ae9c8be77bf23c49c7582c3",
+      "title": "Step 12"
+    },
+    {
+      "id": "6ae9c9613a780c896a732b90",
+      "title": "Step 13"
+    },
+    {
+      "id": "6ae9cacde260754bf8be90bc",
+      "title": "Step 14"
+    },
+    {
+      "id": "6ae9cb45b9f93030ea014819",
+      "title": "Step 15"
+    },
+    {
+      "id": "6ae9cbcc3b67f1c147078d1f",
+      "title": "Step 16"
+    },
+    {
+      "id": "6ae9d05c3df9a0dde0a76357",
+      "title": "Step 17"
+    },
+    {
+      "id": "6ae9d2364beebd27f78f8b1d",
+      "title": "Step 18"
+    },
+    {
+      "id": "6ae9d3cfe67383b880edd7c5",
+      "title": "Step 19"
+    },
+    {
+      "id": "6ae9d57604d8a4d199875ac2",
+      "title": "Step 20"
+    },
+    {
+      "id": "6ae9e172cd5dcc2e3b660665",
+      "title": "Step 21"
+    },
+    {
+      "id": "6ae9e247d2426c59ab17199b",
+      "title": "Step 22"
+    },
+    {
+      "id": "6ae9e349cc85a0ffc0e11b08",
+      "title": "Step 23"
+    },
+    {
+      "id": "6ae9e3c4e3bebd0cb6f3051f",
+      "title": "Step 24"
+    },
+    {
+      "id": "6ae9e4247a9de830abf54de9",
+      "title": "Step 25"
+    },
+    {
+      "id": "6ae9e4ec87f65834b0f6a709",
+      "title": "Step 26"
+    },
+    {
+      "id": "6ae9e597ae9eb7a33160d0bf",
+      "title": "Step 27"
+    },
+    {
+      "id": "6ae9ea6e06be3c8cf87bd070",
+      "title": "Step 28"
+    },
+    {
+      "id": "6ae9ec01ff42c7626f6842e0",
+      "title": "Step 29"
+    },
+    {
+      "id": "6ae9ed17085b9b5bae7bdec9",
+      "title": "Step 30"
+    },
+    {
+      "id": "6ae9edc71b3caca10ba38b7c",
+      "title": "Step 31"
+    },
+    {
+      "id": "6aea36bbabf32f1176b287ea",
+      "title": "Step 32"
+    },
+    {
+      "id": "6aea3846ae3b3940172bba2a",
+      "title": "Step 33"
+    }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
