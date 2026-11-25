@@ -87,7 +87,11 @@ const fixed = [
   '/no-such-path-parity',
   `/${'a'.repeat(255)}`,
   '//example.com/',
-  '/%2F%2Fexample.com/'
+  '/%2F%2Fexample.com/',
+  '/%5Cexample.com/',
+  '/%5Cexample.com/index',
+  '/%5Cexample.com.html',
+  '/%09/example.com/'
 ];
 
 const redirects = (config.redirects || []).flatMap(r => expandSource(r.source));

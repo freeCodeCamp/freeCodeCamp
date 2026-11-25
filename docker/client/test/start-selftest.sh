@@ -91,6 +91,27 @@ expect_fixture_learn_page() {
     die "$1: /learn is not the fixture's learn/index.html"
 }
 
+expect_no_offsite_redirect() {
+  local address path location
+  address="$(docker port "$prefix-$1" 8080/tcp | head -n 1)"
+  location="$(curl -s -o /dev/null --path-as-is -w '%header{location}' \
+    "http://$address/learn/")"
+  [[ "$location" == /learn ]] ||
+    die "$1: /learn/ redirects to '$location', expected /learn"
+  for path in '//example.com/' '/%2F%2Fexample.com/' '/%5Cexample.com/' \
+    '/%5Cexample.com/index' '/%5Cexample.com.html' '/%09/example.com/' \
+    '/%0A/example.com/' '/%0D/example.com/' '/%09%5Cexample.com/' \
+    '/%2F%5Cexample.com/' '/%5Cexample.com/404.html/' \
+    '/%09/example.com/404.html/'; do
+    location="$(curl -s -o /dev/null --path-as-is -w '%header{location}' \
+      "http://$address$path")"
+    location="${location//[$'\t\r\n']/}"
+    location="${location//\\//}"
+    [[ "$location" != //* ]] ||
+      die "$1: $path redirects off the site to '$location'"
+  done
+}
+
 expect_failed_start() {
   local name="$1" reason="$2" got
   got="$(serving_or_exit_code "$name")"
@@ -132,6 +153,7 @@ zeros="$(printf '0%.0s' {1..64})"
 
 start good r1 "$r1"
 expect_fixture_learn_page good
+expect_no_offsite_redirect good
 stop good
 expect_cache_entries ".sha256 .sha256/r1 r1 "
 

@@ -7,3 +7,12 @@
 # redirects off the site.
 //example.com/
 /%2F%2Fexample.com/
+# A path that starts with a backslash or a control character: serve
+# redirects to the escaped path (/%5Cexample.com); Caddy answers the 404
+# page, because its redirect would put /\example.com in Location, which
+# browsers follow off the site. start-selftest checks no path redirects off
+# the site.
+/%5Cexample.com/
+/%5Cexample.com/index
+/%5Cexample.com.html
+/%09/example.com/

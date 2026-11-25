@@ -34,6 +34,9 @@
 	import gzip
 
 	route {
+		@offsite path_regexp offsite ^/[\\\x00-\x20\x7f]
+		error @offsite 404
+
 		@cleanroot path /index
 		redir @cleanroot / 301
 		@clean path_regexp clean ^(.+?)(\.html|/index)$
@@ -282,7 +285,9 @@
 		try_files {path} {path}/index.html {path}.html
 
 		import headers
-		file_server
+		file_server {
+			disable_canonical_uris
+		}
 	}
 
 	handle_errors 404 {
@@ -291,7 +296,9 @@
 		route {
 			header Content-Type "text/html; charset=utf-8"
 			import headers
-			file_server
+			file_server {
+				disable_canonical_uris
+			}
 		}
 	}
 }
