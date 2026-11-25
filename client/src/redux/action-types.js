@@ -34,6 +34,7 @@ export const actionTypes = createTypes(
     'updateComplete',
     'updateFailed',
     'updateDonationFormState',
+    'updateResumeUrl',
     'removeModuleChallenges',
     'updateUserToken',
     'postChargeProcessing',
