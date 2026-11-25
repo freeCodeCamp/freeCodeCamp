@@ -211,25 +211,26 @@ async function startExam() {
   return user;
 }
 
-async function expectExamLandingPage(qualification: 'qualified' | 'blocked') {
+async function expectExamLandingPage() {
   await waitFor(() => expect(document.title).toBe(windowTitle));
   expect(
     screen.getByRole('heading', { level: 1, name: examTitle })
   ).toBeInTheDocument();
   expect(screen.getByText(examDescription)).toBeInTheDocument();
+}
 
-  if (qualification === 'qualified') {
-    expect(screen.getByText(t('learn.exam.qualified'))).toBeInTheDocument();
-    expect(
-      screen.queryByText(t('learn.exam.not-qualified'))
-    ).not.toBeInTheDocument();
-    expect(getButton('buttons.click-start-exam')).not.toHaveAttribute(
-      'aria-disabled',
-      'true'
-    );
-    return;
-  }
+function expectQualifiedExamLandingPage() {
+  expect(screen.getByText(t('learn.exam.qualified'))).toBeInTheDocument();
+  expect(
+    screen.queryByText(t('learn.exam.not-qualified'))
+  ).not.toBeInTheDocument();
+  expect(getButton('buttons.click-start-exam')).not.toHaveAttribute(
+    'aria-disabled',
+    'true'
+  );
+}
 
+function expectBlockedExamLandingPage() {
   expect(screen.queryByText(t('learn.exam.qualified'))).not.toBeInTheDocument();
   expect(screen.getByText(t('learn.exam.not-qualified'))).toBeInTheDocument();
   expect(
@@ -286,7 +287,8 @@ describe('<ShowExam /> non-qualified state', () => {
     expect.hasAssertions();
     renderShowExam();
 
-    await expectExamLandingPage('blocked');
+    await expectExamLandingPage();
+    expectBlockedExamLandingPage();
   });
 });
 
@@ -295,7 +297,8 @@ describe('<ShowExam /> qualified state', () => {
     expect.hasAssertions();
     renderShowExam(completedExamRequirements);
 
-    await expectExamLandingPage('qualified');
+    await expectExamLandingPage();
+    expectQualifiedExamLandingPage();
   });
 });
 

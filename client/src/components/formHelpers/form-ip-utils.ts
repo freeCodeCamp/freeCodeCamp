@@ -100,7 +100,7 @@ function normalizeToLong(addr: string) {
 
   if (parts.some(isNaN)) return -1; // Indicate error with -1
 
-  let val = 0;
+  let val: number;
   const n = parts.length;
 
   switch (n) {

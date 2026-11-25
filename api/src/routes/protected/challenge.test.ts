@@ -33,8 +33,8 @@ vi.mock('../../utils/exam.js', async () => {
   };
 });
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* oxlint-disable typescript/no-unsafe-member-access */
+/* oxlint-disable typescript/no-unsafe-assignment */
 import { omit } from 'lodash-es';
 import { Static } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
@@ -1325,7 +1325,7 @@ describe('challengeRoutes', () => {
           expect(
             resUpdate.body.savedChallenges[0].lastSavedDate
           ).toBeGreaterThan(
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            // oxlint-disable-next-line typescript/no-unsafe-argument
             resOriginal.body.savedChallenges[0].lastSavedDate
           );
 
@@ -1540,7 +1540,7 @@ describe('challengeRoutes', () => {
         });
 
         expect(resUpdate.body.savedChallenges[0].lastSavedDate).toBeGreaterThan(
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          // oxlint-disable-next-line typescript/no-unsafe-argument
           resOriginal.body.savedChallenges[0].lastSavedDate
         );
 
@@ -1578,7 +1578,7 @@ describe('challengeRoutes', () => {
         });
 
         test('POST rejects requests without an id', async () => {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          // oxlint-disable-next-line no-unused-vars
           const { id, ...noIdReqBody } = dailyCodingChallengeBody;
           const response = await superPost(
             '/daily-coding-challenge-completed'
@@ -1591,7 +1591,7 @@ describe('challengeRoutes', () => {
         });
 
         test('POST rejects requests without a language', async () => {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          // oxlint-disable-next-line no-unused-vars
           const { language, ...noLanguageReqBody } = dailyCodingChallengeBody;
           const response = await superPost(
             '/daily-coding-challenge-completed'

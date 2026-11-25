@@ -993,7 +993,6 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
-      // TODO(Post-MVP): clean up expired auth tokens.
       if (isExpired(authToken)) {
         req.log.warn('Token expired');
         fastify.Sentry?.metrics?.count('settings.email_confirm_rejected', 1, {
