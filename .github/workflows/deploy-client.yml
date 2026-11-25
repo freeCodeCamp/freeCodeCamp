@@ -423,44 +423,43 @@ jobs:
             exit 1
           fi
 
-      - name: Checkout client-config for the client image
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Upload the release to R2
+        id: r2
         continue-on-error: true
-        timeout-minutes: 3
-        with:
-          repository: freeCodeCamp/client-config
-          ref: b1ed468633f878a87ad3f0f27951e6ad1c926277
-          path: client-config
-          persist-credentials: false
-
-      - name: Install doctl
-        uses: digitalocean/action-doctl@3cb3953159719656269e044e0e24ca16dd2a690f # v2.5.2
-        continue-on-error: true
-        timeout-minutes: 3
-        with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
-      - name: Build and push the client image
-        continue-on-error: true
-        timeout-minutes: 14
+        timeout-minutes: 10
         env:
-          DOCR_NAME: ${{ secrets.DOCR_NAME }}
-          SITE_TLD: ${{ needs.setup-jobs.outputs.site_tld }}
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ENDPOINT: ${{ secrets.CLIENT_R2_ENDPOINT }}
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.CLIENT_R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.CLIENT_R2_SECRET_ACCESS_KEY }}
+          BUCKET: ${{ vars.CLIENT_R2_BUCKET }}
+          TGT_ENV_SHORT: ${{ needs.setup-jobs.outputs.tgt_env_short }}
           LANG_SHORT: ${{ matrix.lang-name-short }}
         run: |
-          df -h /
-          CLIENT_CONFIG_COMMIT="$(git -C client-config rev-parse HEAD)"
-          doctl registry login --expiry-seconds 1200
-          rm -f "client-$LANG_SHORT.tar"
-          CONTEXT="$RUNNER_TEMP/client-image"
-          mkdir -p "$CONTEXT"
-          cp docker/client/Dockerfile docker/client/package.json docker/client/pnpm-lock.yaml client-config/serve.json "$CONTEXT/"
-          mv client/public "$CONTEXT/tree"
-          IMAGE="registry.digitalocean.com/$DOCR_NAME/$SITE_TLD/learn-client-$LANG_SHORT:$DEPLOYMENT_VERSION"
-          docker build \
-            --build-arg TREE=tree \
-            --build-arg CLIENT_CONFIG_COMMIT="$CLIENT_CONFIG_COMMIT" \
-            --build-arg CLIENT_RUN_ID=${{ github.run_id }} \
-            -t "$IMAGE" "$CONTEXT"
-          docker push "$IMAGE"
-          docker image inspect --format '{{index .RepoDigests 0}}' "$IMAGE"
+          if [[ -z "$BUCKET" ]]; then
+            echo "::error::CLIENT_R2_BUCKET is not set for this environment"
+            exit 1
+          fi
+          RELEASE="$TGT_ENV_SHORT-release-${{ github.run_id }}-${{ github.run_attempt }}"
+          ARCHIVE="$RELEASE.tar.gz"
+          SHA256="$(sha256sum "client-$LANG_SHORT.tar" | cut -d ' ' -f 1)"
+          SUMS="$RUNNER_TEMP/r2"
+          mkdir -p "$SUMS"
+          echo "$SHA256  $ARCHIVE" > "$SUMS/$ARCHIVE.sha256"
+          RCLONE=(docker run --rm
+            -e RCLONE_CONFIG_R2_TYPE -e RCLONE_CONFIG_R2_PROVIDER
+            -e RCLONE_CONFIG_R2_ENDPOINT -e RCLONE_CONFIG_R2_ACCESS_KEY_ID
+            -e RCLONE_CONFIG_R2_SECRET_ACCESS_KEY
+            -v "$PWD:/workspace:ro" -v "$SUMS:/sums:ro"
+            rclone/rclone:1.76.0@sha256:7cbeec24a44f206067597c0368be4de90ae19a64d5113c7d1938bd737a81e466
+            copyto --immutable --s3-no-check-bucket)
+          "${RCLONE[@]}" "/workspace/client-$LANG_SHORT.tar" "r2:$BUCKET/$LANG_SHORT/$ARCHIVE"
+          "${RCLONE[@]}" "/sums/$ARCHIVE.sha256" "r2:$BUCKET/$LANG_SHORT/$ARCHIVE.sha256"
+          echo "release=$RELEASE" >> "$GITHUB_OUTPUT"
+          echo "sha256=$SHA256" >> "$GITHUB_OUTPUT"
+          {
+            echo "### R2 release ($LANG_SHORT)"
+            echo "- object: \`$BUCKET/$LANG_SHORT/$ARCHIVE\`"
+            echo "- sha256: \`$SHA256\`"
+          } >> "$GITHUB_STEP_SUMMARY"
