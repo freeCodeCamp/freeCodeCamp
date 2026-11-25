@@ -88,11 +88,10 @@ Recent Contributions:
 
 Copyright © 2014 freeCodeCamp.org
 
-The content of this repository is bound by the following licenses:
+The contents of this repository are subject to the following terms:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
-
+- The learning resources in the [`/curriculum`](/curriculum) directory and its subdirectories are copyrighted © 2014 freeCodeCamp.org.
 ---
 
 ### Sponsors
