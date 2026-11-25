@@ -13,6 +13,7 @@ dotenvConfig({ path: envPath });
  */
 export default defineConfig({
   testDir: '.',
+  globalSetup: './clickhouse-setup.ts',
   /* Run files in parallel; keep tests within each file sequential. */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
