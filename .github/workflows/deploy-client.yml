@@ -71,6 +71,17 @@ jobs:
               ;;
           esac
 
+  client-image:
+    name: Client image - Build & Push
+    needs: setup-jobs
+    uses: ./.github/workflows/docker-docr.yml
+    with:
+      site_tld: ${{ needs.setup-jobs.outputs.site_tld }}
+      app: client
+    secrets:
+      DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      DOCR_NAME: ${{ secrets.DOCR_NAME }}
+
   setup-matrix:
     name: Setup Matrix
     runs-on: ubuntu-26.04
