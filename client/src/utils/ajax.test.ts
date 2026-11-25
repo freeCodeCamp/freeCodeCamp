@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { postDeleteAccount } from './ajax';
+import { postActivity, postDeleteAccount } from './ajax';
 
 vi.mock('../../config/env.json', () => ({
   default: {
@@ -41,5 +41,26 @@ describe('ajax utils', () => {
 
     expect(result.data).toBeUndefined();
     expect(result.response.status).toBe(200);
+  });
+
+  it('passes activity cancellation through to fetch', async () => {
+    const fetch = vi.fn().mockResolvedValue(new Response('', { status: 200 }));
+    vi.stubGlobal('fetch', fetch);
+    const controller = new AbortController();
+    const body = {
+      eventId: crypto.randomUUID(),
+      eventType: 'test_run' as const
+    };
+
+    await postActivity(body, controller.signal);
+
+    expect(fetch).toHaveBeenCalledWith(
+      'https://api.example.com/activity',
+      expect.objectContaining({
+        method: 'POST',
+        body: JSON.stringify(body),
+        signal: controller.signal
+      })
+    );
   });
 });

@@ -10,6 +10,7 @@ import MenuButton from './menu-button';
 import NavLinks from './nav-links';
 import AuthOrProfile from './auth-or-profile';
 import LanguageList from './language-list';
+import type { ActivityStreak } from '../../../redux/prop-types';
 
 import './universal-nav.css';
 
@@ -28,6 +29,7 @@ type UniversalNavProps = {
     username: string;
     picture: string;
     yearsTopContributor: string[];
+    activityStreak?: ActivityStreak;
   };
   fetchState: { pending: boolean };
   searchBarRef: React.RefObject<HTMLDivElement>;

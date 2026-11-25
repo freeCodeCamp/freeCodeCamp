@@ -11,7 +11,8 @@ import type {
   SavedChallenge,
   SavedChallengeFile,
   SurveyResults,
-  User
+  User,
+  ActivityStreak
 } from '../redux/prop-types';
 import { DonationDuration } from '@freecodecamp/shared/config/donation-settings';
 
@@ -22,6 +23,14 @@ const base = apiLocation;
 const defaultOptions: RequestInit = {
   credentials: 'include'
 };
+
+const getTimezone = () =>
+  Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+
+const getRequestHeaders = () => ({
+  'CSRF-Token': getCSRFToken(),
+  'X-FCC-Timezone': getTimezone()
+});
 
 // csrf_token is passed to the client as a cookie. The client must send
 // this back as a header.
@@ -44,7 +53,7 @@ async function get<T>(
 ): Promise<ResponseWithData<T>> {
   const response = await fetch(`${base}${path}`, {
     ...defaultOptions,
-    headers: { 'CSRF-Token': getCSRFToken() },
+    headers: getRequestHeaders(),
     signal
   });
 
@@ -89,16 +98,18 @@ function deleteRequest<T = void>(
 async function request<T>(
   method: 'POST' | 'PUT' | 'DELETE',
   path: string,
-  body: unknown
+  body: unknown,
+  signal?: AbortSignal
 ): Promise<ResponseWithData<T>> {
   const options: RequestInit = {
     ...defaultOptions,
     method,
     headers: {
-      'CSRF-Token': getCSRFToken(),
+      ...getRequestHeaders(),
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
+    ...(signal ? { signal } : {})
   };
 
   const response = await fetch(`${base}${path}`, options);
@@ -398,6 +409,29 @@ export function postSubmitSurvey(body: {
   surveyResults: SurveyResults;
 }): Promise<ResponseWithData<void>> {
   return post('/user/submit-survey', body);
+}
+
+export function postActivity(
+  body: {
+    eventId: string;
+    eventType:
+      | 'challenge_work'
+      | 'test_run'
+      | 'daily_challenge_attempted'
+      | 'module_completed'
+      | 'challenge_submit';
+    subjectId?: string;
+    url?: string;
+  },
+  signal?: AbortSignal
+): Promise<ResponseWithData<void>> {
+  return request('POST', '/activity', body, signal);
+}
+
+export function postActivityStreak(): Promise<
+  ResponseWithData<{ activityStreak: ActivityStreak }>
+> {
+  return post('/activity/streak', {});
 }
 
 /** PUT **/

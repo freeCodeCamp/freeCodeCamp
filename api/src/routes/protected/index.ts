@@ -1,3 +1,4 @@
+export * from './activity.js';
 export * from './certificate.js';
 export * from './challenge.js';
 export * from './donate.js';

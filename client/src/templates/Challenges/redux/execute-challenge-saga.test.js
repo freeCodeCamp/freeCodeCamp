@@ -1,16 +1,24 @@
-// All tests use expectSaga which the eslint-plugin-vitest plugin does not
-// recognize
+// The assertion rule does not recognize assertions made through expectSaga.
 /* oxlint-disable vitest/expect-expect */
+import { runSaga } from 'redux-saga';
 import { expectSaga } from 'redux-saga-test-plan';
-import { describe, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { executeTests, updatePreviewSaga } from './execute-challenge-saga';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+
+import { recordClientActivity } from '../../../utils/activity';
+import {
+  executeTests,
+  recordTestRunActivitySaga,
+  updatePreviewSaga
+} from './execute-challenge-saga';
 
 vi.mock('i18next', async () => ({
   default: {
     t: key => key
   }
 }));
+vi.mock('../../../utils/activity', () => ({ recordClientActivity: vi.fn() }));
 
 const initialState = {
   challenge: { isBuildEnabled: true, isExecuting: false, challengeMeta: {} }
@@ -20,6 +28,10 @@ const initialState = {
 function reducer(state = initialState) {
   return state;
 }
+
+const createState = (sessionUser = { id: 'user-id' }) => ({
+  app: { user: { sessionUser } }
+});
 
 const challengeMounted = { type: 'challenge.challengeMounted' };
 const previewMounted = { type: 'challenge.previewMounted' };
@@ -80,5 +92,61 @@ describe('executeTests generator', () => {
         }
       ])
       .run();
+  });
+});
+
+describe('recordTestRunActivitySaga', () => {
+  beforeEach(() => {
+    vi.mocked(recordClientActivity).mockReset();
+    vi.mocked(recordClientActivity).mockResolvedValue({ recorded: true });
+  });
+
+  it.each([
+    [challengeTypes.js, 'test_run'],
+    [challengeTypes.dailyChallengeJs, 'daily_challenge_attempted'],
+    [challengeTypes.dailyChallengePy, 'daily_challenge_attempted']
+  ])('records challenge type %s as %s', async (challengeType, eventType) => {
+    await runSaga(
+      { getState: () => createState() },
+      recordTestRunActivitySaga,
+      { id: 'challenge-id', challengeType }
+    ).toPromise();
+
+    expect(recordClientActivity).toHaveBeenCalledWith(eventType, {
+      subjectId: 'challenge-id'
+    });
+  });
+
+  it('does not record activity for a signed-out camper', async () => {
+    await runSaga(
+      { getState: () => createState(null) },
+      recordTestRunActivitySaga,
+      { id: 'challenge-id', challengeType: challengeTypes.js }
+    ).toPromise();
+
+    expect(recordClientActivity).not.toHaveBeenCalled();
+  });
+
+  it('does not wait for an unresolved activity request', async () => {
+    let resolveActivity;
+    vi.mocked(recordClientActivity).mockReturnValueOnce(
+      new Promise(resolve => {
+        resolveActivity = resolve;
+      })
+    );
+
+    const task = runSaga(
+      { getState: () => createState() },
+      recordTestRunActivitySaga,
+      { id: 'challenge-id', challengeType: challengeTypes.js }
+    );
+    const completion = await Promise.race([
+      task.toPromise().then(() => 'completed'),
+      new Promise(resolve => setTimeout(() => resolve('blocked'), 50))
+    ]);
+
+    expect(completion).toBe('completed');
+    expect(recordClientActivity).toHaveBeenCalledOnce();
+    resolveActivity({ recorded: true });
   });
 });
