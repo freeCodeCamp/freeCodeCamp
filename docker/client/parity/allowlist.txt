@@ -1,4 +1,9 @@
 # One URL path per line. A difference on a listed path is counted as
 # allowlisted, not as a diff.
-# The image drops the webpack stats file; the VMs still serve it.
-/stats.json
+# serve answers 500 on a 255-character segment; Caddy answers the 404 page.
+/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+# serve collapses the slashes, then strips the trailing slash, in two 301s
+# (/example.com/); Caddy does both in one 301 (/example.com). Neither
+# redirects off the site.
+//example.com/
+/%2F%2Fexample.com/

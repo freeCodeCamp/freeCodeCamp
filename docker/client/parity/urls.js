@@ -85,7 +85,9 @@ const fixed = [
   '/settings/x',
   '/certification/x/y',
   '/no-such-path-parity',
-  `/${'a'.repeat(255)}`
+  `/${'a'.repeat(255)}`,
+  '//example.com/',
+  '/%2F%2Fexample.com/'
 ];
 
 const redirects = (config.redirects || []).flatMap(r => expandSource(r.source));

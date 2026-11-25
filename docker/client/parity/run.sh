@@ -5,7 +5,6 @@ shopt -s inherit_errexit
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 image_dir="$(dirname "$here")"
 self="$here/run.sh"
-serve_json_client_config_commit=b1ed468633f878a87ad3f0f27951e6ad1c926277
 sep=$'\x1f'
 fields=(status location cache-control content-type content-encoding body-sha256)
 modes=("" "gzip, br")
@@ -20,7 +19,7 @@ die() {
 usage() {
   cat >&2 <<'EOF'
 usage:
-  run.sh urls <image> [sample]
+  run.sh urls <tree-dir> [sample]
   run.sh compare <url-a> <url-b> <url-list> <out.json>
   run.sh selftest
 EOF
@@ -32,6 +31,7 @@ on_exit() {
   for item in "${cleanup[@]}"; do
     case "$item" in
     container:*) docker rm -f "${item#container:}" >/dev/null 2>&1 || true ;;
+    volume:*) docker volume rm -f "${item#volume:}" >/dev/null 2>&1 || true ;;
     dir:*) rm -rf "${item#dir:}" ;;
     esac
   done
@@ -39,10 +39,13 @@ on_exit() {
 trap on_exit EXIT
 
 urls() {
-  local image="$1" sample="${2:-200}"
-  docker run --rm --entrypoint node -v "$here:/parity:ro" "$image" \
-    /parity/urls.js /srv/client/serve.json /srv/client/releases/current \
-    "$sample"
+  local tree sample="${2:-200}"
+  tree="$(cd "$1" && pwd)" || die "no tree at $1"
+  docker run --rm -v "$here:/parity:ro" -v "$tree:/tree:ro" \
+    "$vm_node_image" sh -c '
+      npm install --prefix /opt/serve --ignore-scripts --no-audit --no-fund \
+        serve@13.0.4 >/dev/null &&
+      exec node /parity/urls.js /parity/serve.json /tree "$1"' sh "$sample"
 }
 
 parse_head() {
@@ -157,32 +160,48 @@ wait_ready() {
 
 selftest() {
   local tag=parity-selftest:latest image=parity-selftest-image
-  local reference=parity-selftest-reference node_image work context
+  local reference=parity-selftest-reference volume=parity-selftest-cache
+  local bucket=client-releases-selftest repo work sha256 server
   local image_url good_url bad_url
-  node_image="$vm_node_image"
+  repo="$(cd "$image_dir/../.." && pwd)"
   work="$(mktemp -d)"
-  cleanup+=("dir:$work" "container:$image" "container:$reference")
-
-  context="$work/context"
-  mkdir "$context"
-  cp "$image_dir/Dockerfile" "$image_dir/package.json" \
-    "$image_dir/pnpm-lock.yaml" "$here/serve.json" "$context/"
-  cp -R "$here/fixture" "$context/tree"
+  cleanup+=("dir:$work" "container:$image" "container:$reference"
+    "volume:$volume")
 
   docker rm -f "$image" "$reference" >/dev/null 2>&1 || true
-  docker build -q --build-arg TREE=tree \
-    --build-arg CLIENT_CONFIG_COMMIT="$serve_json_client_config_commit" \
-    -t "$tag" "$context" >/dev/null
-  docker run -d --read-only --name "$image" -p 127.0.0.1::8080 "$tag" \
-    >/dev/null
+  docker volume rm -f "$volume" >/dev/null 2>&1 || true
+  docker build -q -f "$image_dir/Dockerfile" -t "$tag" "$repo" >/dev/null
+
+  mkdir -p "$work/bucket/eng"
+  chmod -R a+rX "$work"
+  sha256="$(docker run --rm --user "$(id -u):$(id -g)" --entrypoint sh \
+    -v "$here/fixture:/fixture:ro" -v "$work/bucket/eng:/out" "$tag" -c '
+      set -eu
+      src="$(mktemp -d)"
+      mkdir "$src/client"
+      cp -R /fixture "$src/client/public"
+      tar -czf /out/fixture.tar.gz -C "$src" client/public
+      chmod a+r /out/fixture.tar.gz
+      sha256sum /out/fixture.tar.gz | cut -d " " -f 1')"
+
+  docker volume create "$volume" >/dev/null
+  docker run -d --read-only --name "$image" \
+    --tmpfs /data --tmpfs /config \
+    -v "$volume:/cache" -v "$work/bucket:/srv/$bucket:ro" -w /srv \
+    -e CLIENT_LANG=eng -e CLIENT_RELEASE=fixture \
+    -e CLIENT_RELEASE_SHA256="$sha256" -e CLIENT_BUCKET="$bucket" \
+    -e RCLONE_CONFIG_R2_TYPE=local \
+    -p 127.0.0.1::8080 "$tag" >/dev/null
   docker run -d --name "$reference" -e NO_UPDATE_CHECK=1 \
     -v "$here/serve.json:/home/node/client/serve.json:ro" \
     -v "$here/fixture:/home/node/client/releases/fixture:ro" \
     -w /home/node/client -p 127.0.0.1::50505 -p 127.0.0.1::50506 \
-    "$node_image" sh -c '
-      npm install -g --ignore-scripts --no-audit --no-fund serve@13.0.4 >/dev/null &&
-      { serve releases/fixture -p 50506 & } &&
-      exec serve -c ../../serve.json releases/fixture -p 50505' >/dev/null
+    "$vm_node_image" sh -c '
+      npm install --prefix /opt/serve --ignore-scripts --no-audit --no-fund \
+        serve@13.0.4 >/dev/null &&
+      { /opt/serve/node_modules/.bin/serve releases/fixture -p 50506 & } &&
+      exec /opt/serve/node_modules/.bin/serve -c ../../serve.json \
+        releases/fixture -p 50505' >/dev/null
 
   image_url="$(host_url "$image" 8080)"
   good_url="$(host_url "$reference" 50505)"
@@ -191,20 +210,24 @@ selftest() {
   wait_ready "$good_url"
   wait_ready "$bad_url"
 
-  urls "$tag" >"$work/urls.txt"
+  urls "$here/fixture" >"$work/urls.txt"
   echo "selftest: $(wc -l <"$work/urls.txt" | tr -d ' ') urls"
 
   "$self" compare "$image_url" "$good_url" "$work/urls.txt" \
     "$work/good.json" || true
-  jq -e '.diffs == 0 and .allowlisted >= 1' "$work/good.json" >/dev/null ||
-    die "image differs from serve@13.0.4: $work/good.json"
+  jq -e '.diffs == 0 and .allowlisted >= 1' "$work/good.json" >/dev/null || {
+    jq -c '.differences[] | select(.allowlisted | not)' "$work/good.json" >&2
+    die "image differs from serve@13.0.4"
+  }
 
   "$self" compare "$image_url" "$bad_url" "$work/urls.txt" \
     "$work/bad.json" || true
   jq -e '.diffs > 0' "$work/bad.json" >/dev/null ||
     die "compare missed a reference without serve.json"
 
-  echo "selftest: pass"
+  server="$(curl -sS -o /dev/null -D - "$image_url/" | tr -d '\r' |
+    awk -F': ' 'tolower($1) == "server" { print $2 }')"
+  echo "selftest: pass ($server)"
 }
 
 case "${1:-}" in
