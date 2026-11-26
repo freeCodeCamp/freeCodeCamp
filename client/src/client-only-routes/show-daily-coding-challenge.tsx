@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import store from 'store';
+import { useTranslation } from 'react-i18next';
 import ShowClassic from '../templates/Challenges/classic/show';
 import { Loader } from '../components/helpers';
 import {
@@ -142,6 +143,7 @@ function formatChallengeData({
 }
 
 function ShowDailyCodingChallenge({ date }: { date: string }): JSX.Element {
+  const { t } = useTranslation();
   const initLanguage =
     (store.get(
       'dailyCodingChallengeLanguage'
@@ -154,52 +156,68 @@ function ShowDailyCodingChallenge({ date }: { date: string }): JSX.Element {
   const [dailyCodingChallengeLanguage, setDailyCodingChallengeLanguage] =
     useState<DailyCodingChallengeLanguages>(initLanguage);
 
-  const fetchChallenge = async (date: string) => {
-    try {
-      const monthDay = toMonthDay(date);
-      const response = await fetch(
-        `${apiLocation}/daily-coding-challenge/day/${monthDay}`
-      );
-      const challengeData = await response.json();
-
-      if (challengeData) {
-        const validDailyCodingChallenge = validateDailyCodingChallengeSchema(
-          challengeData as DailyCodingChallengeFromDb
-        );
-
-        if ('error' in validDailyCodingChallenge) {
-          throw new Error(
-            `Challenge data validation failed: ${validDailyCodingChallenge.error?.message || 'Unknown validation error'}`
-          );
-        }
-
-        const formattedChallengeData = formatChallengeData(
-          challengeData as DailyCodingChallengeFromDb
-        ) as DailyCodingChallengeDataFormatted;
-
-        setChallengeProps(formattedChallengeData);
-        setChallengeFound(true);
-      } else {
-        setChallengeFound(false);
-      }
-    } catch (error) {
-      setChallengeFound(false);
-      console.error('Error fetching data:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   useEffect(() => {
-    // If date is invalid, stop loading/fetching and show the not found page
+    let cancelled = false;
+    setIsLoading(true);
+    setChallengeFound(false);
+    setChallengeProps(null);
+
+    const fetchChallenge = async () => {
+      try {
+        const monthDay = toMonthDay(date);
+        const response = await fetch(
+          `${apiLocation}/daily-coding-challenge/day/${monthDay}`
+        );
+        const challengeData = await response.json();
+
+        if (challengeData) {
+          const validDailyCodingChallenge = validateDailyCodingChallengeSchema(
+            challengeData as DailyCodingChallengeFromDb
+          );
+
+          if ('error' in validDailyCodingChallenge) {
+            throw new Error(
+              `Challenge data validation failed: ${validDailyCodingChallenge.error?.message || 'Unknown validation error'}`
+            );
+          }
+
+          if (!cancelled) {
+            setChallengeProps(
+              formatChallengeData(
+                challengeData as DailyCodingChallengeFromDb
+              ) as DailyCodingChallengeDataFormatted
+            );
+            setChallengeFound(true);
+          }
+        }
+      } catch (error) {
+        if (!cancelled) console.error('Error fetching data:', error);
+      } finally {
+        if (!cancelled) setIsLoading(false);
+      }
+    };
+
     if (!date || !isValidDateOrMonthDayString(date)) {
       setIsLoading(false);
-      setChallengeFound(false);
-      return;
+    } else {
+      void fetchChallenge();
     }
 
-    void fetchChallenge(date);
+    return () => {
+      cancelled = true;
+    };
   }, [date]);
+
+  // Gatsby Head owns the initial metadata. This challenge is fetched only in
+  // the browser, so update its title when the request resolves or fails.
+  useEffect(() => {
+    if (isLoading) return;
+    const challenge = challengeProps?.javascript.data.challengeNode.challenge;
+    document.title =
+      challengeFound && challenge
+        ? `${t('intro:daily-coding-challenge.blocks.daily-coding-challenge.title')}: ${challenge.title} | freeCodeCamp.org`
+        : `${t('404.page-not-found')} | freeCodeCamp.org`;
+  }, [challengeFound, challengeProps, isLoading, t]);
 
   if (isLoading) return <Loader />;
 

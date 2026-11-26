@@ -35,3 +35,5 @@ function Archive(): JSX.Element {
 Archive.displayName = 'Archive';
 
 export default Archive;
+
+export { default as Head } from '../../../components/page-head';

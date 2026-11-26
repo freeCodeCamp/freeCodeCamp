@@ -1,9 +1,12 @@
 import React from 'react';
+import { renderToStaticMarkup as toHtml } from 'react-dom/server';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, test, vi } from 'vitest';
 import { archivedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
-import ArchivePage from './archive';
+import ArchivePage, { Head } from './archive';
 
 vi.mock('gatsby', () => ({
   graphql: vi.fn(),
@@ -37,6 +40,18 @@ vi.mock('../../components/layouts/learn', () => ({
 }));
 
 describe('ArchivePage', () => {
+  test('keeps the archived curriculum out of search indexes', () => {
+    const store = configureStore({
+      reducer: () => ({ app: { theme: 'light' } })
+    });
+    const markup = toHtml(
+      <Provider store={store}>
+        <Head />
+      </Provider>
+    );
+    expect(markup).toContain('name="robots" content="noindex"');
+  });
+
   test('renders the archive page heading and current curriculum link', () => {
     render(<ArchivePage />);
 

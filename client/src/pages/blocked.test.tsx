@@ -1,15 +1,24 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Helmet from 'react-helmet';
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
-import BlockedPage from './blocked';
+import BlockedPage, { Head } from './blocked';
+
+vi.mock('../components/page-head', () => ({
+  default: ({ title }: { title: string }) => <title>{title}</title>
+}));
 
 describe('BlockedPage', () => {
+  test('exports the access denied page title', () => {
+    render(<Head />);
+    expect(
+      screen.getByText('Access Denied | freeCodeCamp.org')
+    ).toBeInTheDocument();
+  });
+
   test('renders the access denied page', () => {
     render(<BlockedPage />);
 
-    expect(Helmet.peek().title).toBe('Access Denied | freeCodeCamp.org');
     expect(
       screen.getByRole('heading', { name: "We can't log you in." })
     ).toBeInTheDocument();

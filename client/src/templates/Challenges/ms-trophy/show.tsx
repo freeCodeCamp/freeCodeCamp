@@ -1,14 +1,14 @@
-import { graphql } from 'gatsby';
+import { graphql, type HeadFC } from 'gatsby';
 import React, { useEffect, useRef } from 'react';
-import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import ChallengeHead, {
+  type ChallengeHeadData
+} from '../components/challenge-head';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -78,7 +78,6 @@ interface MsTrophyProps {
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
-  t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
 
@@ -149,20 +148,12 @@ function MsTrophy(props: MsTrophyProps) {
     isChallengeCompleted,
     isProcessing,
     msUsername,
-    openHelpModal,
-    t
+    openHelpModal
   } = props;
-
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
 
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
         <Container>
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -203,10 +194,11 @@ function MsTrophy(props: MsTrophyProps) {
   );
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(MsTrophy));
+export const Head: HeadFC<ChallengeHeadData> = ({ data }) => (
+  <ChallengeHead challenge={data.challengeNode.challenge} includeLearn />
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(MsTrophy);
 
 export const query = graphql`
   query MsTrophyChallenge($id: String!) {

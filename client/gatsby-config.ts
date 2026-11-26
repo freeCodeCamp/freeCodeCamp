@@ -23,7 +23,6 @@ const config: GatsbyConfig = {
   pathPrefix: pathPrefix,
   plugins: [
     'gatsby-plugin-pnpm-gatsby-5',
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-postcss',
       options: {

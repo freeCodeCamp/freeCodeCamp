@@ -22,16 +22,16 @@ const store = createStore();
 export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => {
   return (
     <Provider store={store}>
-      <I18nextProvider i18n={i18n}>
-        <GrowthBookProvider>
-          <Elements stripe={stripe}>{element}</Elements>
-        </GrowthBookProvider>
-      </I18nextProvider>
+      <I18nextProvider i18n={i18n}>{element}</I18nextProvider>
     </Provider>
   );
 };
 
-export const wrapPageElement: GatsbySSR['wrapPageElement'] = layoutSelector;
+export const wrapPageElement: GatsbySSR['wrapPageElement'] = args => (
+  <GrowthBookProvider>
+    <Elements stripe={stripe}>{layoutSelector(args)}</Elements>
+  </GrowthBookProvider>
+);
 
 export const onRenderBody: GatsbySSR['onRenderBody'] = ({
   pathname,

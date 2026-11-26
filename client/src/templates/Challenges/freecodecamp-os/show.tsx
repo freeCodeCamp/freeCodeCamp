@@ -1,7 +1,6 @@
 // Package Utilities
-import { graphql } from 'gatsby';
+import { graphql, type HeadFC } from 'gatsby';
 import React, { Fragment, useEffect, useRef } from 'react';
-import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -11,6 +10,9 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 // Local Utilities
+import ChallengeHead, {
+  type ChallengeHeadData
+} from '../components/challenge-head';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
@@ -146,11 +148,6 @@ function ShowFreeCodeCampOs({
       }
     }
   } = data;
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
-  const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-
   const isPartiallyCompleted = partiallyCompletedChallenges.some(
     challenge => challenge.id === challengeId
   );
@@ -250,7 +247,6 @@ function ShowFreeCodeCampOs({
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
-        <Helmet title={windowTitle} />
         <Container>
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -333,6 +329,10 @@ function ShowFreeCodeCampOs({
     </Hotkeys>
   );
 }
+
+export const Head: HeadFC<ChallengeHeadData> = ({ data }) => (
+  <ChallengeHead challenge={data.challengeNode.challenge} />
+);
 
 export default connect(
   mapStateToProps,

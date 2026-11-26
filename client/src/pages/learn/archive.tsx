@@ -1,7 +1,7 @@
+import PageHead from '../../components/page-head';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Container, Row, Col, Spacer } from '@freecodecamp/ui';
-import Helmet from 'react-helmet';
 import LearnLayout from '../../components/layouts/learn';
 
 import { ArchiveMap } from '../../components/Map';
@@ -13,7 +13,6 @@ const ArchivePage = () => {
 
   return (
     <LearnLayout>
-      <Helmet title={t('metaTags:title')} />
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -37,3 +36,7 @@ const ArchivePage = () => {
 };
 
 export default ArchivePage;
+
+export function Head() {
+  return <PageHead noindex={true} />;
+}

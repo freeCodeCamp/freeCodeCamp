@@ -1,6 +1,5 @@
-import { graphql, navigate } from 'gatsby';
+import { graphql, navigate, type HeadFC } from 'gatsby';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -19,6 +18,9 @@ import {
 
 // Local Utilities
 import { shuffleArray } from '@freecodecamp/shared/utils/shuffle-array';
+import ChallengeHead, {
+  type ChallengeHeadData
+} from '../components/challenge-head';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -133,10 +135,6 @@ const ShowQuiz = ({
   const exitConfirmed = useRef(false);
 
   const [exitPathname, setExitPathname] = useState(blockHashSlug);
-
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
 
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
   const quiz = quizzes[quizId].questions;
@@ -345,9 +343,6 @@ const ShowQuiz = ({
       containerRef={container}
     >
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
         <Container className='quiz-challenge-container'>
           <Row>
             <Spacer size='m' />
@@ -411,6 +406,10 @@ const ShowQuiz = ({
 };
 
 ShowQuiz.displayName = 'ShowQuiz';
+
+export const Head: HeadFC<ChallengeHeadData> = ({ data }) => (
+  <ChallengeHead challenge={data.challengeNode.challenge} includeLearn />
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowQuiz);
 

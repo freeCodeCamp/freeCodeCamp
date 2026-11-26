@@ -1,3 +1,4 @@
+import PageHead from '../../components/page-head';
 import React from 'react';
 import RedirectHome from '../../components/redirect-home';
 
@@ -5,3 +6,7 @@ import RedirectHome from '../../components/redirect-home';
 const Certification = () => <RedirectHome />;
 
 export default Certification;
+
+export function Head() {
+  return <PageHead certification={true} />;
+}

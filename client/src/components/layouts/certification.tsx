@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
 import { createSelector } from 'reselect';
@@ -22,21 +21,18 @@ const mapDispatchToProps = { fetchUser };
 class CertificationLayout extends Component<CertificationProps> {
   static displayName = 'CertificationLayout';
   componentDidMount() {
+    document.body.classList.remove('dark-palette');
+    document.body.classList.add('light-palette');
     const { isSignedIn, fetchUser } = this.props;
     if (!isSignedIn) {
       fetchUser();
     }
   }
 
-  render(): JSX.Element {
+  render(): React.ReactNode {
     const { children } = this.props;
 
-    return (
-      <>
-        <Helmet bodyAttributes={{ class: 'light-palette' }} />
-        {children}
-      </>
-    );
+    return children;
   }
 }
 

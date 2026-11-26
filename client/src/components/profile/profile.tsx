@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Callout, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
@@ -194,9 +193,6 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
 
   return (
     <>
-      <Helmet>
-        <title>{t('buttons.profile')} | freeCodeCamp.org</title>
-      </Helmet>
       <Spacer size='m' />
       <Container>
         <Spacer size='m' />
