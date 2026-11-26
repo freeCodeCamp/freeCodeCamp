@@ -213,7 +213,7 @@ export const mockResultsAllCorrect = {
 const completedExamChallenge = {
   id: examChallengeId,
   challengeType: 17,
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   completedDate: expect.any(Number)
 };
 

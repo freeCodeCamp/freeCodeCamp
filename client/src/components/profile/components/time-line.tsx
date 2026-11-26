@@ -167,7 +167,7 @@ function TimelineInner({
   const challengeData: ChallengeData | null = completedChallenge
     ? {
         ...completedChallenge,
-        // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        // // oxlint-disable-next-line typescript/no-unsafe-argument
         challengeFiles:
           completedChallenge?.challengeFiles?.map(
             regenerateMissingProperties
@@ -252,7 +252,7 @@ function TimelineInner({
   );
 }
 
-/* eslint-disable @typescript-eslint/no-unsafe-assignment,  @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
+/* oxlint-disable typescript/no-unsafe-assignment,  typescript/no-unsafe-return, typescript/no-unsafe-member-access, typescript/no-unsafe-call*/
 function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const {
     allChallengeNode: { edges }
@@ -313,7 +313,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
     }
   );
   return idToNameMap;
-  /* eslint-enable */
+  /* oxlint-enable */
 }
 
 const Timeline = (props: TimelineProps): JSX.Element => {

@@ -491,16 +491,8 @@ input:focus {
   font-size: 90%;
 }
 
+code,
 kbd {
-  background-color: var(--background-tertiary);
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 2px;
-  margin: 2px 0;
-  display: inline-block;
-}
-
-code {
   padding: 1px 4px;
   background-color: var(--tertiary-background);
   color: var(--tertiary-color);
@@ -510,7 +502,8 @@ code {
   font-size: 90%;
 }
 
-:not(pre) > code {
+:not(pre) > code,
+kbd {
   border: 1px solid var(--gray-45);
 }
 

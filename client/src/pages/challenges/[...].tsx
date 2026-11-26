@@ -1,4 +1,4 @@
-/* eslint-disable filenames-simple/naming-convention */
+/* oxlint-disable filenames-simple/naming-convention */
 // This exists purely to redirect legacy challenge paths to /learn
 
 import { navigate } from 'gatsby';

@@ -102,7 +102,7 @@ describe('<ShowSettings />', () => {
     );
 
     // Trans component renders the interpolated link - find it by href
-    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    // oxlint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const profileLink = container.querySelector(`a[href="/${testUsername}"]`);
     expect(profileLink).toBeInTheDocument();
   });
@@ -130,7 +130,7 @@ describe('<ShowSettings />', () => {
 
     // classroom-mode is gated behind IfFeatureEnabled('classroom-mode'), and the
     // flag defaults to off, so the section must be fully absent from the DOM.
-    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    // oxlint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const classroomSection = container.querySelector('#classroom-mode-policy');
     expect(classroomSection).not.toBeInTheDocument();
   });
@@ -184,7 +184,7 @@ describe('<ShowSettings />', () => {
     );
 
     // SettingsSidebarNav renders a ScrollLink with href="#personal"
-    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    // oxlint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const personalLink = container.querySelector('a[href="#personal"]');
     expect(personalLink).toBeInTheDocument();
   });

@@ -174,7 +174,7 @@ export const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const challengeData: ChallengeData | null = completedChallenge
     ? {
         ...completedChallenge,
-        // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        // // oxlint-disable-next-line typescript/no-unsafe-argument
         challengeFiles:
           completedChallenge?.challengeFiles?.map(
             regenerateMissingProperties

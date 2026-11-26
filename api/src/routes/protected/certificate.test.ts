@@ -222,7 +222,7 @@ describe('certificate routes', () => {
 
         fastifyTestInstance.Sentry = originalSentry;
 
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        // oxlint-disable-next-line typescript/no-unsafe-member-access
         expect(response.body.response).toStrictEqual({
           type: 'info',
           message: 'flash.already-claimed',
@@ -270,7 +270,7 @@ describe('certificate routes', () => {
 
         fastifyTestInstance.Sentry = originalSentry;
 
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        // oxlint-disable-next-line typescript/no-unsafe-member-access
         expect(response.body.response).toStrictEqual({
           message: 'flash.incomplete-steps',
           type: 'info',
@@ -456,7 +456,7 @@ describe('certificate routes', () => {
             {
               challengeType: 7,
               // TODO: use matcher for date near now
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              // oxlint-disable-next-line typescript/no-unsafe-assignment
               completedDate: expect.any(Number),
               files: [],
               id: '561add10cb82ac38a17513bc'

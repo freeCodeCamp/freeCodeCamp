@@ -82,13 +82,13 @@ Sarah: "I see. Let's open an issue, then."
 
 Sarah's response to Bob includes a specific phrase that shows she understands the problem he's facing. Recognizing such phrases is important in understanding communication cues in conversations.
 
-# --question--
+# --questions--
 
 ## --text--
 
 Which part of Sarah's sentence shows that she understands the problem?
 
-## --answers–
+## --answers--
 
 I see
 

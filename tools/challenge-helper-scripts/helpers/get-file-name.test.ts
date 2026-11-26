@@ -1,4 +1,4 @@
-/* eslint-disable turbo/no-undeclared-env-vars */
+/* oxlint-disable turbo/no-undeclared-env-vars */
 import fs from 'fs';
 import { join } from 'path';
 

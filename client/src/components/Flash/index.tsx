@@ -1,9 +1,15 @@
-import { Alert, CloseButton, type AlertProps } from '@freecodecamp/ui';
+import {
+  Alert,
+  CloseButton,
+  Container,
+  Col,
+  Row,
+  type AlertProps
+} from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FlashState } from '../../redux/types';
 import { removeFlashMessage } from './redux';
-import { Container, Col, Row } from '@freecodecamp/ui';
 
 import './flash.css';
 
