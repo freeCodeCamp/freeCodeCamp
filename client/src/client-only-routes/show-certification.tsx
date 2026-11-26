@@ -453,7 +453,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     if (isValidCert) {
       showCert({ username, certSlug });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -480,7 +480,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         action: 'Displayed Certificate Donation'
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [
     isDonationDisplayed,
     props.userFetchState,

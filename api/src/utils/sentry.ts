@@ -208,7 +208,6 @@ const scrubIssueBody = (data: unknown): unknown => {
   );
 };
 
-// eslint-disable-next-line jsdoc/require-jsdoc
 export const scrubRequestPii = (event: ErrorEvent): ErrorEvent => {
   const out: ErrorEvent = { ...event };
   const { request } = event;
@@ -311,7 +310,6 @@ const scrubMongoLiterals = (text: string): string =>
     .replace(MONGO_ISO_DATE_PATTERN, 'ISODate("?")');
 
 // workaround: getsentry/sentry#40650 — prismaIntegration sets the DB span description to raw query text, so a literal ObjectId splits the N+1 fingerprint into one issue group per user
-// eslint-disable-next-line jsdoc/require-jsdoc
 export const scrubSpanDescriptions = <E extends Event>(event: E): E => {
   for (const span of event.spans ?? []) {
     if (typeof span.description === 'string') {

@@ -11,8 +11,8 @@ function render(ui: ReactElement, store: Store) {
 }
 
 // re-export everything
-// eslint-disable-next-line import/export
+// oxlint-disable-next-line import/export
 export * from '@testing-library/react';
 // override render method
-// eslint-disable-next-line import/export
+// oxlint-disable-next-line import/export
 export { render };

@@ -27,7 +27,7 @@ export const unsubscribeDeprecated: FastifyPluginCallbackTypebox = (
     fastify.route({
       method,
       url: endpoint,
-      handler: async (req, reply) => {
+      handler: (req, reply) => {
         const { origin } = getRedirectParams(req);
         void reply.redirectWithMessage(origin, {
           type: 'info',

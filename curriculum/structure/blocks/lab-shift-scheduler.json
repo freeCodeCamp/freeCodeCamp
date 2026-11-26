@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-shift-scheduler",
+  "challengeOrder": [
+    {
+      "id": "6ae86e026ca3513ca0036857",
+      "title": "Build a Shift Scheduler"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}
