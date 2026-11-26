@@ -66,6 +66,12 @@
   white-space: pre;
 }
 
+.trending-guides-articles a {
+  display: block;
+  padding-block: 0;
+  text-align: start;
+}
+
 @media (max-width: 1400px) {
   .trending-guides-articles {
     grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));

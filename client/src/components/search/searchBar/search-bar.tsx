@@ -108,7 +108,9 @@ export function SearchBar({
       return window.location.assign(selectedHit.url);
     } else if (!query) {
       // Set query to value in search bar if enter is pressed
-      query = (e.currentTarget?.children?.[0] as HTMLInputElement).value;
+      query =
+        (e.currentTarget.children[0] as HTMLInputElement | undefined)?.value ??
+        '';
     }
 
     //clear input value

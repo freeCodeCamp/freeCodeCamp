@@ -49,6 +49,8 @@ export interface DonateFormState {
   processing: boolean;
   redirecting: boolean;
   success: boolean;
+  // Paid, but not confirmed as active yet.
+  pending: boolean;
   error: string;
   loading: {
     stripe: boolean;

@@ -16,7 +16,11 @@ export class Compiler {
     this.tsvfs = tsvfs;
   }
 
-  async setup(opts?: { useNodeModules?: boolean; tsconfig?: string }) {
+  async setup(opts?: {
+    useNodeModules?: boolean;
+    tsLibDirectory?: string;
+    tsconfig?: string;
+  }) {
     const ts = this.ts;
     const tsvfs = this.tsvfs;
 
@@ -50,7 +54,11 @@ export class Compiler {
     };
 
     const fsMap = opts?.useNodeModules
-      ? tsvfs.createDefaultMapFromNodeModules(compilerOptions, ts)
+      ? tsvfs.createDefaultMapFromNodeModules(
+          compilerOptions,
+          ts,
+          opts.tsLibDirectory
+        )
       : await tsvfs.createDefaultMapFromCDN(
           compilerOptions,
           ts.version,

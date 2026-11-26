@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* oxlint-disable typescript/ban-ts-comment */
+/* oxlint-disable typescript/no-unsafe-call */
 import { useStaticQuery } from 'gatsby';
 import React from 'react';
 import { beforeEach, describe, it, expect, vi } from 'vitest';

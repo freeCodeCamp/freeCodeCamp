@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
-import { inLastFiveMinutes } from './validate-donation.js';
+import { isWithinMinutes } from './validate-donation.js';
 
-describe('inLastFiveMinutes', () => {
+describe('isWithinMinutes', () => {
   beforeAll(() => {
     vi.useFakeTimers();
   });
@@ -10,21 +10,27 @@ describe('inLastFiveMinutes', () => {
     vi.useRealTimers();
   });
 
-  it('should return true if the timestamp is within the last five minutes', () => {
+  it('should return true if the timestamp is within the window', () => {
     const currentTimestamp = Math.floor(Date.now() / 1000);
     const recentTimestamp = currentTimestamp - 100;
-    expect(inLastFiveMinutes(recentTimestamp)).toBe(true);
+    expect(isWithinMinutes(recentTimestamp, 5)).toBe(true);
   });
 
-  it('should return false if the timestamp is more than five minutes ago', () => {
+  it('should return false if the timestamp is outside the window', () => {
     const currentTimestamp = Math.floor(Date.now() / 1000);
     const oldTimestamp = currentTimestamp - 400;
-    expect(inLastFiveMinutes(oldTimestamp)).toBe(false);
+    expect(isWithinMinutes(oldTimestamp, 5)).toBe(false);
   });
 
-  it('should return true if the timestamp is exactly five minutes ago', () => {
+  it('should return true if the timestamp is exactly at the window edge', () => {
     const currentTimestamp = Math.floor(Date.now() / 1000);
     const exactTimestamp = currentTimestamp - 300;
-    expect(inLastFiveMinutes(exactTimestamp)).toBe(true);
+    expect(isWithinMinutes(exactTimestamp, 5)).toBe(true);
+  });
+
+  it('should respect a wider window', () => {
+    const currentTimestamp = Math.floor(Date.now() / 1000);
+    const timestamp = currentTimestamp - 400;
+    expect(isWithinMinutes(timestamp, 10)).toBe(true);
   });
 });
