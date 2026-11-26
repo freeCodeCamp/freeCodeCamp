@@ -203,17 +203,13 @@ function renderDirectorySummary(normalizedData) {
     }
   }
 
-  const programValues = Object.values(normalizedData.programsById);
+    const programValues = Object.values(normalizedData.programsById);
   let programsWithoutRooms = 0;
 
   for (let i = 0; i < programValues.length; i++) {
-    if (programValues[i].room == null) {
-  programsWithoutRooms++;
-}
-  --fcc-editable-region--
-  --fcc-editable-region--
+    --fcc-editable-region--
+    --fcc-editable-region--
   }
-
 }
 
 ```
