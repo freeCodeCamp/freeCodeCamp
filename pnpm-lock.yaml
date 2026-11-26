@@ -784,8 +784,8 @@ importers:
         specifier: 4.16.0
         version: 4.16.0(gatsby@5.16.1(@typescript-eslint/parser@5.62.0(eslint@7.32.0(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2))(babel-eslint@10.1.0(eslint@7.32.0(supports-color@8.1.1))(supports-color@8.1.1))(cssnano@5.1.15(postcss@8.5.33))(csso@4.2.0)(esbuild@0.28.2)(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-import@2.32.0)(eslint@7.32.0(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)(type-fest@0.21.3)(typescript@7.0.2)(webpack-cli@4.10.0))
       i18next-fs-backend:
-        specifier: 2.6.12
-        version: 2.6.12
+        specifier: 2.7.0
+        version: 2.7.0
       joi:
         specifier: 18.3.2
         version: 18.3.2
@@ -7920,8 +7920,8 @@ packages:
   hyphenate-style-name@1.1.0:
     resolution: {integrity: sha512-WDC/ui2VVRrz3jOVi+XtjqkDjiVjTtFaAGiW37k6b+ohyQ5wYDOGkvCZa8+H0nx3gyvv0+BST9xuOgIyGQ00gw==}
 
-  i18next-fs-backend@2.6.12:
-    resolution: {integrity: sha512-dg2SfnepHuzqrmnGCbGM6fUlb/NTkObJqR2a8ih3OEzAnEKtREfn/X9iaimdRaCnD00dXf7xgMPMvcF4fbwxVQ==}
+  i18next-fs-backend@2.7.0:
+    resolution: {integrity: sha512-CUfthmimGMcpLujpZXrVl3aF2Ra/cdYhoA0Ep+PckOk0N8jhwGGDNsrB2WM5CR4i66nYQPJoWR8YzsUrohuqKw==}
 
   i18next@25.10.10:
     resolution: {integrity: sha512-cqUW2Z3EkRx7NqSyywjkgCLK7KLCL6IFVFcONG7nVYIJ3ekZ1/N5jUsihHV6Bq37NfhgtczxJcxduELtjTwkuQ==}
@@ -20717,7 +20717,7 @@ snapshots:
 
   hyphenate-style-name@1.1.0: {}
 
-  i18next-fs-backend@2.6.12: {}
+  i18next-fs-backend@2.7.0: {}
 
   i18next@25.10.10(typescript@7.0.2):
     dependencies:
