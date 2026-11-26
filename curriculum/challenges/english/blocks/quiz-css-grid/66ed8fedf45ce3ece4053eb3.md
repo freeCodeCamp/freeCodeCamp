@@ -165,7 +165,7 @@ Implicit grids use the `grid-template-columns` or `grid-template-rows` propertie
 
 #### --answer--
 
-Explicit grids use the `grid-template-columns` or `grid-template-rows` properties to create columns while rows and columns are automatically created in implicit grids.
+Explicit grids use the `grid-template-columns` or `grid-template-rows` properties to create columns and rows while rows and columns are automatically created in implicit grids.
 
 ### --question--
 
