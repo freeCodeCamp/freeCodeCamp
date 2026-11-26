@@ -4,6 +4,8 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     setupFiles: 'vitest-setup.js',
+    // workaround: vitest-dev/vitest#10867
+    execArgv: ['--no-experimental-webstorage'],
     projects: [
       {
         extends: true,

@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// oxlint-disable-next-line typescript/ban-ts-comment
 // @ts-ignore
 import CalendarHeatMap from 'react-calendar-heatmap';
 
@@ -106,15 +106,15 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
           <Spacer size='m' />
 
           <CalendarHeatMap
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // oxlint-disable-next-line typescript/no-explicit-any
             classForValue={(value: any) => {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              // oxlint-disable-next-line typescript/no-unsafe-member-access
               if (!value || value.count < 1) return 'color-empty';
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              // oxlint-disable-next-line typescript/no-unsafe-member-access
               if (value.count < 4) return 'color-scale-1';
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              // oxlint-disable-next-line typescript/no-unsafe-member-access
               if (value.count < 8) return 'color-scale-2';
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              // oxlint-disable-next-line typescript/no-unsafe-member-access
               if (value.count >= 8) return 'color-scale-a-lot';
               return 'color-empty';
             }}
@@ -147,7 +147,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
             <button
               className='heatmap-nav-btn'
               disabled={!pages[this.state.pageIndex - 1]}
-              // eslint-disable-next-line @typescript-eslint/unbound-method
+              // oxlint-disable-next-line typescript/unbound-method
               onClick={this.prevPage}
               style={{
                 visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
@@ -160,7 +160,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
             <button
               className='heatmap-nav-btn'
               disabled={!pages[this.state.pageIndex + 1]}
-              // eslint-disable-next-line @typescript-eslint/unbound-method
+              // oxlint-disable-next-line typescript/unbound-method
               onClick={this.nextPage}
               style={{
                 visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'

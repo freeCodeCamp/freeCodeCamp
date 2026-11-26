@@ -41,12 +41,7 @@ interface ValidationResult {
 }
 
 type ExperienceField =
-  | 'title'
-  | 'company'
-  | 'location'
-  | 'startDate'
-  | 'endDate'
-  | 'description';
+  'title' | 'company' | 'location' | 'startDate' | 'endDate' | 'description';
 
 type ExperienceItemProps = {
   data: ExperienceData;

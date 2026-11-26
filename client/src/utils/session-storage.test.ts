@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-/* eslint-disable @typescript-eslint/unbound-method */
+/* oxlint-disable typescript/unbound-method */
 import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import {
   CURRENT_COUNT_KEY,

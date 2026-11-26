@@ -200,7 +200,7 @@ export function handleDownloadLink(
   const items = downloadLinks.map(link => {
     const urlEnd = link.split('/').pop() ?? '';
     const name = urlEnd;
-    let ext = '';
+    let ext: string;
     if (name.endsWith('.app.tar.gz')) ext = '.app.tar.gz';
     else if (name.endsWith('.tar.gz')) ext = '.tar.gz';
     else if (name.endsWith('.AppImage')) ext = '.AppImage';

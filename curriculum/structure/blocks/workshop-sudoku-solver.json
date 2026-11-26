@@ -1,0 +1,115 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-sudoku-solver",
+  "helpCategory": "Python",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockLayout": "challenge-grid",
+  "blockLabel": "workshop",
+  "challengeOrder": [
+    {
+      "id": "6ae8a447338a5919e9f17678",
+      "title": "Step 1"
+    },
+    {
+      "id": "6ae8a448ba29c2fcfc5238af",
+      "title": "Step 2"
+    },
+    {
+      "id": "6ae8a449798b9643ea94d778",
+      "title": "Step 3"
+    },
+    {
+      "id": "6ae8a44a29fdf8067122ef98",
+      "title": "Step 4"
+    },
+    {
+      "id": "6ae8a44b8903cf046ee63fee",
+      "title": "Step 5"
+    },
+    {
+      "id": "6ae8a44cf6692a7732a064d8",
+      "title": "Step 6"
+    },
+    {
+      "id": "6ae8a44de4253971fe7c8f7b",
+      "title": "Step 7"
+    },
+    {
+      "id": "6ae8a44ea93b4d645665ac4a",
+      "title": "Step 8"
+    },
+    {
+      "id": "6ae8a44f6bba235d1fc5ad4d",
+      "title": "Step 9"
+    },
+    {
+      "id": "6ae8a4507bcaf6338384c61f",
+      "title": "Step 10"
+    },
+    {
+      "id": "6ae8a451d62d8dd5d9e73992",
+      "title": "Step 11"
+    },
+    {
+      "id": "6ae8a452ea32d62673ce5ae8",
+      "title": "Step 12"
+    },
+    {
+      "id": "6ae8a453e1e27da927b73d32",
+      "title": "Step 13"
+    },
+    {
+      "id": "6ae8a454a4afdd748fa99538",
+      "title": "Step 14"
+    },
+    {
+      "id": "6ae8a455f12be68c15739aa2",
+      "title": "Step 15"
+    },
+    {
+      "id": "6ae8a4568a65a9aa6cb7cb43",
+      "title": "Step 16"
+    },
+    {
+      "id": "6ae8a45712fd06e3f7492a49",
+      "title": "Step 17"
+    },
+    {
+      "id": "6ae8a458346d64d8a9d62c41",
+      "title": "Step 18"
+    },
+    {
+      "id": "6ae8a459dda99d20943dd8ad",
+      "title": "Step 19"
+    },
+    {
+      "id": "6ae8a45a5155d96e3d2b173f",
+      "title": "Step 20"
+    },
+    {
+      "id": "6ae8a45b0ec17f193517e3d6",
+      "title": "Step 21"
+    },
+    {
+      "id": "6ae8a45cd186b5b2503d7100",
+      "title": "Step 22"
+    },
+    {
+      "id": "6ae8a45d60ec975acaf996bf",
+      "title": "Step 23"
+    },
+    {
+      "id": "6ae8a45e838dda8dda8ebb5a",
+      "title": "Step 24"
+    },
+    {
+      "id": "6ae8a45f9f6ab3ad8894f295",
+      "title": "Step 25"
+    },
+    {
+      "id": "6ae8a460cbb4c7d80039eb38",
+      "title": "Step 26"
+    }
+  ]
+}
