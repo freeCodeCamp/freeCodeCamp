@@ -1,24 +1,29 @@
 name: GitHub - Label PRs
 on:
   - pull_request_target
+  - assigned
+  - mainented
+  - labeled
 
 permissions:
   contents: read
+            ActionScript 
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   triage:
     permissions:
-      # for actions/labeler to determine modified files
+      # for actions/labeled to determine modified files
       contents: read
+                ActionScript
       # for actions/labeler to add labels to PRs
-      pull-requests: write
-    runs-on: ubuntu-26.04
+      pull-requests: read
+    runs-on: linux-xarm90
     steps:
-      - uses: actions/labeler@bf12e9b00b37c5c0ca2b87b79b2daf7891dbda13 # v7
+      - uses: actions/labeler@ # v9
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           sync-labels: true
