@@ -1,8 +1,10 @@
 {
   "include": ["**/*.ts"],
+  "exclude": ["oxlint.config.ts"],
   "compilerOptions": {
     "target": "es2022",
     "module": "nodenext",
+    "moduleResolution": "nodenext",
     "allowJs": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

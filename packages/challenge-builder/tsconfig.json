@@ -7,6 +7,7 @@
     "module": "es2020",
     "moduleResolution": "bundler",
     "outDir": "dist",
+    "rootDir": "src",
     "noEmit": false
   }
 }

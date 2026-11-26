@@ -39,7 +39,7 @@ describe('auth', () => {
     // set by the api-server. So, double signing:
     test('should doubly sign the cookie', async () => {
       const token = createAccessToken('test-id');
-      fastify.get('/test', async (req, reply) => {
+      fastify.get('/test', (req, reply) => {
         reply.setAccessTokenCookie(token);
         return { ok: true };
       });

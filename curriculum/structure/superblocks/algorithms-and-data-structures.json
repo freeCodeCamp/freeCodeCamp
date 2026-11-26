@@ -7,6 +7,7 @@
           "dashedName": "python-algorithms",
           "blocks": [
             "lecture-understanding-algorithms-and-big-o",
+            "workshop-luhn-algorithm",
             "lab-stock-profit-calculator",
             "lecture-searching-and-sorting-algorithms-v2",
             "workshop-binary-search",
@@ -38,7 +39,6 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-circular-queue",
-          "comingSoon": true,
           "blocks": ["lab-circular-queue"]
         },
         {
@@ -50,6 +50,7 @@
             "lecture-understanding-divide-and-conquer",
             "workshop-merge-sort",
             "lab-quicksort",
+            "workshop-sudoku-solver",
             "review-recursion-python-v2",
             "quiz-recursion-python-v2"
           ]
@@ -87,7 +88,9 @@
           "dashedName": "python-dynamic-programming",
           "blocks": [
             "lecture-understanding-dynamic-programming",
+            "workshop-grid-path-counter",
             "lab-nth-fibonacci-number",
+            "lab-shift-scheduler",
             "review-dynamic-programming",
             "quiz-dynamic-programming"
           ]

@@ -72,7 +72,7 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 
 We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
 
-> #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
+> #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/security/).
 
 ### Contributing
 

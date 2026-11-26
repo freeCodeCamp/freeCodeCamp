@@ -13,8 +13,6 @@ wait_for_primary() {
   return 1
 }
 
-rsync -a --include='*/' --include='.turbo/***' --exclude='*' /home/node/.cache/fcc/ ./
-
 .devcontainer/codespace-env.sh
 
 if ! wait_for_primary; then

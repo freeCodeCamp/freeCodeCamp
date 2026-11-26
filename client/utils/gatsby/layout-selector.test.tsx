@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* oxlint-disable typescript/no-unsafe-member-access */
 import React from 'react';
 import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';
@@ -47,9 +47,9 @@ function getComponentNameAndProps(
   const view = utils.getRenderOutput();
   return {
     props: view.props.children.props as Record<string, unknown>,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // oxlint-disable-next-line typescript/ban-ts-comment
     // @ts-ignore
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // oxlint-disable-next-line typescript/no-unsafe-assignment
     name: view.props.children.type.WrappedComponent.displayName
     // TODO: Revisit this when react-test-renderer is replaced with
     // react-testing-library

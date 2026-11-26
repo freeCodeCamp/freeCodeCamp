@@ -33,7 +33,7 @@ function useStickyScrollOffset(
     window.addEventListener('resize', compute);
     return () => window.removeEventListener('resize', compute);
     // varNamesKey is the stable primitive representation of cssVarNames.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [varNamesKey, additionalOffset]);
 
   return offset;

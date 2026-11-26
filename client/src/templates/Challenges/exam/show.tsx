@@ -329,7 +329,7 @@ function ExamIntroduction({
                 variant='primary'
                 disabled={!qualifiedForExam}
                 // `runExam` being an async callback is acceptable
-                //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                //oxlint-disable-next-line typescript/no-misused-promises
                 onClick={runExam}
               >
                 {t('buttons.click-start-exam')}
@@ -422,7 +422,7 @@ function ShowExam(props: ShowExamProps) {
       cleanUp();
       props.stopExam();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, []);
 
   // Normally you would clear listeners in a useEffect cleanup function, but we
