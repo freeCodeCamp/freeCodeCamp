@@ -41,14 +41,14 @@ test.describe('The Document Metadata', () => {
       await expect(
         page.locator('head meta[name="twitter:description"]')
       ).toHaveAttribute('content', social.description);
-      await expect(page.locator(scripts.mathjax.selector)).not.toBeVisible();
+      await expect(page.locator(scripts.mathjax.selector)).toHaveCount(0);
     });
   });
 
   test.describe('responsive web design challenges', () => {
     test('should not have mathjax body script', async ({ page }) => {
       await page.goto(challenges.responsiveWebDesign);
-      await expect(page.locator(scripts.mathjax.selector)).not.toBeVisible();
+      await expect(page.locator(scripts.mathjax.selector)).toHaveCount(0);
     });
   });
 
