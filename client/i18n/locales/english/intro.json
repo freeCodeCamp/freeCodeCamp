@@ -10528,19 +10528,13 @@
       "review-python-programming-fundamentals": "Python Review"
     },
     "blocks": {
-      "workshop-first-python-program": {
-        "title": "Build Your First Python Program",
+      "workshop-python-photo-gallery": {
+        "title": "Build a Python Photo Gallery",
         "intro": [
-          "For this workshop, you'll build your first program in Python."
+          "In this workshop, you will practice working with strings, variables, and the print function to display a photo gallery in the terminal using Python."
         ]
       },
-      "lecture-introduction-to-python": {
-        "title": "Introduction to Python",
-        "intro": [
-          "In these lessons, you will learn what Python is and common uses in the industry."
-        ]
-      },
-      "lecture-understanding-variables-and-data-types": {
+      "lecture-understanding-variables-and-data-types-v2": {
         "title": "Understanding Variables and Data Types",
         "intro": [
           "In these lessons, you will learn about variables and data types in Python."
@@ -11223,6 +11217,12 @@
         "title": "Build an Nth Fibonacci Number Calculator",
         "intro": [
           "In this lab you will implement a Fibonacci sequence calculator using a dynamic programming approach."
+        ]
+      },
+      "lab-shift-scheduler": {
+        "title": "Build a Shift Scheduler",
+        "intro": [
+          "In this lab, you will plan which shifts to work to earn the most pay, using dynamic programming."
         ]
       },
       "review-dynamic-programming": {

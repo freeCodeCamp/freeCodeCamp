@@ -15,7 +15,7 @@
     "eslint-plugin-filenames-simple": "0.9.0",
     "eslint-plugin-no-only-tests": "3.4.0",
     "eslint-plugin-testing-library": "7.16.2",
-    "eslint-plugin-turbo": "2.11.10",
+    "eslint-plugin-turbo": "2.11.13",
     "oxlint": "1.94.0",
     "oxlint-config-presets": "0.1.21"
   },

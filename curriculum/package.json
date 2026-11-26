@@ -26,7 +26,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
-    "audit-challenges": "pnpm turbo setup && tsx ./src/challenge-auditor/index.ts",
+    "audit-challenges": "pnpm turbo run setup && tsx ./src/challenge-auditor/index.ts",
     "build": "node ./dist/generate/build-curriculum",
     "type-check": "tsc --noEmit",
     "create-empty-steps": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
@@ -80,7 +80,7 @@
     "mock-require": "3.0.3",
     "ora": "5.4.1",
     "polka": "0.5.2",
-    "puppeteer": "25.17.0",
+    "puppeteer": "25.18.1",
     "sirv": "3.0.2",
     "typescript": "7.0.2",
     "typescript-5.9.2": "npm:typescript@5.9.2",
