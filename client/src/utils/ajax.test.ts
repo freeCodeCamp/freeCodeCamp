@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { postDeleteAccount } from './ajax';
+import { deleteMyAccount } from './ajax';
 
 vi.mock('../../config/env.json', () => ({
   default: {
@@ -19,7 +19,7 @@ describe('ajax utils', () => {
       .mockResolvedValue(new Response(null, { status: 204 }));
     vi.stubGlobal('fetch', fetch);
 
-    const result = await postDeleteAccount('abc123');
+    const result = await deleteMyAccount('abc123');
 
     expect(result.data).toBeUndefined();
     expect(result.response.status).toBe(204);
@@ -37,7 +37,7 @@ describe('ajax utils', () => {
     const fetch = vi.fn().mockResolvedValue(new Response('', { status: 200 }));
     vi.stubGlobal('fetch', fetch);
 
-    const result = await postDeleteAccount('abc123');
+    const result = await deleteMyAccount('abc123');
 
     expect(result.data).toBeUndefined();
     expect(result.response.status).toBe(200);

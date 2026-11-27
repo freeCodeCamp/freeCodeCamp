@@ -82,55 +82,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.post(
-    '/account/delete',
-    {
-      schema: schemas.deleteMyAccount
-    },
-    async (req, reply) => {
-      req.log.info({ audit: true }, 'User requested account deletion');
-      await fastify.prisma.userToken.deleteMany({
-        where: { userId: req.user!.id }
-      });
-      await fastify.prisma.msUsername.deleteMany({
-        where: { userId: req.user!.id }
-      });
-      await fastify.prisma.survey.deleteMany({
-        where: { userId: req.user!.id }
-      });
-      try {
-        const userBeforeDelete = await fastify.prisma.user.findUnique({
-          where: { id: req.user!.id },
-          select: { isDonating: true }
-        });
-        if (userBeforeDelete?.isDonating) {
-          fastify.Sentry?.metrics?.count('account.deleted_while_donating', 1, {
-            attributes: { endpoint: '/account/delete' }
-          });
-        }
-        await fastify.prisma.user.delete({
-          where: { id: req.user!.id }
-        });
-        fastify.Sentry?.metrics?.count('account.deleted', 1, {
-          attributes: { endpoint: '/account/delete' }
-        });
-      } catch (err) {
-        if (
-          err instanceof PrismaClientKnownRequestError &&
-          err.code === 'P2025'
-        ) {
-          req.log.warn('User not found for deletion');
-        } else {
-          req.log.error(err, 'Error deleting user account');
-          throw err;
-        }
-      }
-      reply.clearOurCookies();
-
-      return {};
-    }
-  );
-
   fastify.delete(
     '/users/:userId',
     {

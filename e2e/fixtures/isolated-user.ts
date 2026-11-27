@@ -46,6 +46,24 @@ const getCsrfToken = async (request: APIRequestContext) =>
   )?.value;
 
 async function deleteAccount(request: APIRequestContext) {
+  const sessionResponse = await request.get(getApiUrl('/user/session-user'));
+  if (!sessionResponse.ok()) {
+    throw new Error(
+      `Could not clean up the isolated user: /user/session-user returned ${sessionResponse.status()}.`
+    );
+  }
+
+  const session = (await sessionResponse.json()) as {
+    result: string;
+    user: Record<string, { id: string }>;
+  };
+  // The session is empty when the test has already deleted its account.
+  if (!session.result) return;
+  const userId = session.user[session.result]?.id;
+  if (!userId) {
+    throw new Error('Could not clean up the isolated user: user ID missing.');
+  }
+
   const csrfToken = await getCsrfToken(request);
   if (!csrfToken) {
     throw new Error(
@@ -53,16 +71,16 @@ async function deleteAccount(request: APIRequestContext) {
     );
   }
 
-  const response = await request.post(getApiUrl('/account/delete'), {
+  const response = await request.delete(getApiUrl(`/users/${userId}`), {
     data: {},
     headers: { 'csrf-token': csrfToken }
   });
 
   // Cleanup returns 401 when the test has already deleted its account.
-  if (response.status() !== 200 && response.status() !== 401) {
+  if (response.status() !== 204 && response.status() !== 401) {
     const body = await response.text();
     throw new Error(
-      `Could not clean up the isolated user: /account/delete returned ${response.status()}: ${body}`
+      `Could not clean up the isolated user: /users/${userId} returned ${response.status()}: ${body}`
     );
   }
 }

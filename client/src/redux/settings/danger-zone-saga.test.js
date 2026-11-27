@@ -7,7 +7,7 @@ vi.mock('nanoid', () => ({
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
-import { postDeleteAccount } from '../../utils/ajax';
+import { deleteMyAccount } from '../../utils/ajax';
 import { hardGoTo } from '../actions';
 import { userIdSelector } from '../selectors';
 import { deleteAccountSaga } from './danger-zone-saga';
@@ -21,7 +21,7 @@ describe('deleteAccountSaga', () => {
         .next()
         .select(userIdSelector)
         .next(userId)
-        .call(postDeleteAccount, userId)
+        .call(deleteMyAccount, userId)
         .next()
         .put(
           createFlashMessage({
