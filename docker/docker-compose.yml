@@ -2,7 +2,7 @@ name: freecodecamp-local
 
 services:
   db:
-    image: mongo:8.2
+    image: mongo:8.3
     command: mongod --replSet rs0
     restart: unless-stopped
     hostname: mongodb
@@ -15,7 +15,7 @@ services:
       start_period: 10s
 
   setup:
-    image: mongo:8.2
+    image: mongo:8.3
     depends_on:
       db:
         condition: service_healthy
