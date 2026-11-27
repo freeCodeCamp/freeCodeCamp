@@ -4,11 +4,10 @@ import { ofType } from 'redux-observable';
 import { empty, of } from 'rxjs';
 import {
   catchError,
-  concat,
+  mergeMap,
   retry,
   switchMap,
-  tap,
-  mergeMap
+  toArray
 } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
@@ -53,20 +52,34 @@ import {
   isModuleNewlyCompletedSelector
 } from './selectors';
 
+const hasSubmissionFailed = actions =>
+  actions.some(
+    action =>
+      action.type === actionTypes.submitChallengeError ||
+      action.type === submitActionTypes.updateFailed
+  );
+
 function postChallenge(update) {
   const {
     payload: { challengeType }
   } = update;
   const saveChallenge = postUpdate$(update).pipe(
+    switchMap(res => {
+      if (res?.response && res.response.status >= 500) {
+        throw new Error(`Request failed with status ${res.response.status}`);
+      }
+      return of(res);
+    }),
     retry(3),
-    switchMap(({ data }) => {
+    switchMap(res => {
+      const { response, data } = res ?? {};
       const {
         type,
         completedDailyCodingChallenges,
         savedChallenges,
         message,
         examResults
-      } = data;
+      } = data ?? {};
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -78,6 +91,8 @@ function postChallenge(update) {
           })
         );
       }
+
+      const isResponseError = Boolean(response && !response.ok);
 
       let actions = [
         submitComplete({
@@ -91,21 +106,27 @@ function postChallenge(update) {
       ];
 
       if (
+        isResponseError ||
         type === 'error' ||
         (message && challengeType === challengeTypes.msTrophy)
       ) {
-        actions = [];
-        if (message) {
-          actions.push(createFlashMessage(data));
-        }
-        actions.push(submitChallengeError());
+        actions = [
+          createFlashMessage(message ? data : standardErrorMessage),
+          submitChallengeError()
+        ];
       } else if (challengeType === challengeTypes.msTrophy) {
         actions.push(createFlashMessage(msTrophyVerified));
       }
 
       return of(...actions);
     }),
-    catchError(() => of(updateFailed(update), submitChallengeError()))
+    catchError(() =>
+      of(
+        createFlashMessage(standardErrorMessage),
+        updateFailed(update),
+        submitChallengeError()
+      )
+    )
   );
   return saveChallenge;
 }
@@ -178,7 +199,12 @@ function submitProject(type, state) {
     payload: challengeInfo
   };
   return postChallenge(update, username).pipe(
-    concat(of(updateSolutionFormValues({})))
+    toArray(),
+    mergeMap(actions =>
+      hasSubmissionFailed(actions)
+        ? of(...actions)
+        : of(...actions, updateSolutionFormValues({}))
+    )
   );
 }
 
@@ -304,24 +330,31 @@ export default function completionEpic(action$, state$) {
       };
 
       return submitter(type, state).pipe(
-        concat(
-          of(setIsAdvancing(!isLastChallengeInBlock), setIsProcessing(false))
-        ),
-        mergeMap(x => {
-          const donationAction = canAllowDonationRequest(state, x);
-          return donationAction ? of(x, donationAction) : of(x);
-        }),
-        mergeMap(x => of(x, setRenderStartTime(Date.now()))),
-        tap(res => {
-          if (res.type !== submitActionTypes.updateFailed) {
-            if (challengeType !== challengeTypes.exam) {
-              navigate(pathToNavigateTo);
-            }
-          } else {
-            createFlashMessage(standardErrorMessage);
+        toArray(),
+        mergeMap(submitActions => {
+          if (hasSubmissionFailed(submitActions)) {
+            return of(...submitActions, setIsProcessing(false));
           }
-        }),
-        concat(of(closeModal('completion')))
+
+          const expandedActions = [
+            ...submitActions,
+            setIsAdvancing(!isLastChallengeInBlock),
+            setIsProcessing(false)
+          ].flatMap(x => {
+            const donationAction = canAllowDonationRequest(state, x);
+            return donationAction ? [x, donationAction] : [x];
+          });
+
+          if (challengeType !== challengeTypes.exam) {
+            navigate(pathToNavigateTo);
+          }
+
+          return of(
+            ...expandedActions,
+            setRenderStartTime(Date.now()),
+            closeModal('completion')
+          );
+        })
       );
     })
   );

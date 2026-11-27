@@ -1,4 +1,4 @@
-import { from, Observable } from 'rxjs';
+import { defer, from, Observable } from 'rxjs';
 import { post } from '../../../utils/ajax';
 import type { ResponseWithData } from '../../../utils/ajax';
 
@@ -11,5 +11,5 @@ export default function postUpdate$({
   endpoint,
   payload
 }: PostData): Observable<ResponseWithData<void>> {
-  return from(post(endpoint, payload));
+  return defer(() => from(post(endpoint, payload)));
 }
