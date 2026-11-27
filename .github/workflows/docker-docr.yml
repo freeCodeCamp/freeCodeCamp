@@ -93,8 +93,8 @@ jobs:
           tags: |
             registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:${{ env.tagname }}
             registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=${{ inputs.app }}
+          cache-to: type=gha,mode=max,scope=${{ inputs.app }}
 
       # TODO(o11y): source-map upload + release marking disabled pending a
       # follow-up PR with a stable release-id scheme. Also fix the upload path

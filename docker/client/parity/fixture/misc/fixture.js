@@ -1,0 +1,1 @@
+globalThis.fixtureMisc = 'misc';

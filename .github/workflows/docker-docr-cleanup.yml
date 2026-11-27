@@ -13,6 +13,7 @@ jobs:
       matrix:
         repos:
           - learn-api
+          - learn-client
         variants:
           - dev
           - org
@@ -26,7 +27,22 @@ jobs:
       - name: Log in to DigitalOcean Container Registry with short-lived credentials
         run: doctl registry login --expiry-seconds 1200
 
+      - name: Check the repository exists
+        id: repo
+        env:
+          REPOSITORY: ${{ matrix.variants }}/${{ matrix.repos }}
+        run: |
+          if tags=$(doctl registry repository list-tags "$REPOSITORY" --output json); then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          elif jq -e 'any(.errors[]?; .status == 404)' <<<"$tags" >/dev/null 2>&1; then
+            echo "::notice::No repository $REPOSITORY in DOCR, cleanup skipped"
+          else
+            echo "::error::Could not list the tags of $REPOSITORY"
+            exit 1
+          fi
+
       - name: Delete Images
+        if: steps.repo.outputs.found == 'true'
         uses: raisedadead/action-docr-cleanup@1c7d87369bccfdf5da03a9ae3b00eacc3f2a9b51 # v1
         with:
           repository_name: '${{ matrix.variants }}/${{ matrix.repos }}'
