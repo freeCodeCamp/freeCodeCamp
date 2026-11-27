@@ -10704,6 +10704,12 @@
         "title": "Working with Dictionaries",
         "intro": ["Learn about working with dictionaries in these lessons."]
       },
+      "workshop-contact-book": {
+        "title": "Build a Contact Book",
+        "intro": [
+          "In this workshop, you'll practice working with dictionaries by building a contact book that can save, display, rename, search, and count contacts."
+        ]
+      },
       "lecture-working-with-sets": {
         "title": "Working with Sets",
         "intro": ["Learn about working with sets in this lesson."]
