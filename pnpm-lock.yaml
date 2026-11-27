@@ -798,6 +798,9 @@ importers:
       monaco-editor-webpack-plugin:
         specifier: 7.1.1
         version: 7.1.1(monaco-editor@0.55.1)(webpack@5.112.2)
+      msw:
+        specifier: ^2.14.2
+        version: 2.15.0(@types/node@26.6.6)(typescript@7.0.2)
       react-test-renderer:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)

@@ -172,6 +172,7 @@
     "js-yaml": "4.3.2",
     "jsdom": "26.1.0",
     "monaco-editor-webpack-plugin": "7.1.1",
+    "msw": "^2.14.2",
     "react-test-renderer": "18.3.1",
     "readdirp": "3.6.0",
     "redux-saga-test-plan": "4.0.6",
