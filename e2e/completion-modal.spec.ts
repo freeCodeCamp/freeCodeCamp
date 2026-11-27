@@ -1,6 +1,5 @@
 import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
-import { authedRequest } from './utils/request';
 import { allowTrailingSlash } from './utils/url';
 
 const nextChallengeURL =
@@ -38,39 +37,22 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
 });
 
 test.describe('Challenge Completion Modal Tests (Signed In)', () => {
-  test('should close the modal after user presses escape while having keyboard shortcuts disabled', async ({
-    page,
-    request
-  }) => {
-    await authedRequest({
-      request,
-      endpoint: 'update-my-keyboard-shortcuts',
-      method: 'put',
-      data: {
-        keyboardShortcuts: false
-      }
-    });
-    await expect(page.getByRole('dialog')).toBeVisible();
-    await page.keyboard.press('Escape');
-    await expect(page.getByRole('dialog')).not.toBeVisible();
-  });
+  for (const keyboardShortcuts of [false, true]) {
+    test.describe(`Keyboard shortcuts ${keyboardShortcuts ? 'enabled' : 'disabled'}`, () => {
+      test.use({ userOverrides: { keyboardShortcuts } });
 
-  test('should close the modal after user presses escape while having keyboard shortcuts enabled', async ({
-    page,
-    request
-  }) => {
-    await authedRequest({
-      request,
-      endpoint: 'update-my-keyboard-shortcuts',
-      method: 'put',
-      data: {
-        keyboardShortcuts: true
-      }
+      test('should close the modal when Escape is pressed', async ({
+        page
+      }) => {
+        const completionDialog = page.getByRole('dialog').filter({
+          has: page.getByTestId('completion-success-icon')
+        });
+        await expect(completionDialog).toBeVisible();
+        await page.keyboard.press('Escape');
+        await expect(completionDialog).toBeHidden();
+      });
     });
-    await expect(page.getByRole('dialog')).toBeVisible();
-    await page.keyboard.press('Escape');
-    await expect(page.getByRole('dialog')).toBeVisible();
-  });
+  }
 
   test('should submit and go to the next challenge when the user clicks the submit button', async ({
     page
