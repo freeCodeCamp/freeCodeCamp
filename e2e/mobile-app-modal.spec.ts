@@ -75,37 +75,60 @@ test.describe('Mobile App Modal', () => {
   });
 
   test('clicking the store link hides the modal but shows again on next page load', async ({
-    page
+    page,
+    context
   }) => {
+    // Keep the external store page out of this test while still opening the tab.
+    await context.route(
+      /^https:\/\/(?:apps\.apple\.com|play\.google\.com)\//,
+      route => route.fulfill({ contentType: 'text/html', body: '' })
+    );
     await page.goto(challengePath);
-    await page.getByRole('link').click();
-    await expect(
-      page.getByRole('dialog', { name: mobileAppModal.heading })
-    ).not.toBeVisible();
+    const modal = page.getByRole('dialog', { name: mobileAppModal.heading });
+    await expect(modal).toBeVisible();
+
+    const storePagePromise = page.waitForEvent('popup');
+    await modal.getByRole('link').click();
+    const storePage = await storePagePromise;
+    await storePage.close();
+    await expect(modal).toBeHidden();
 
     const stored = await page.evaluate(
       key => localStorage.getItem(key),
       STORE_KEY
     );
     expect(stored).toBeNull();
+
+    await page.reload();
+    await expect(modal).toBeVisible();
   });
 
-  test('"do not show me again" hides modal and stores a timestamp', async ({
+  test('"do not show me again" keeps the modal hidden after a reload', async ({
     page
   }) => {
     await page.goto(challengePath);
-    await page
+    const modal = page.getByRole('dialog', { name: mobileAppModal.heading });
+    await expect(modal).toBeVisible();
+    await modal
       .getByRole('button', { name: mobileAppModal['do-not-show'] })
       .click();
-    await expect(
-      page.getByRole('dialog', { name: mobileAppModal.heading })
-    ).not.toBeVisible();
+    await expect(modal).toBeHidden();
 
     const stored = await page.evaluate(
       key => localStorage.getItem(key),
       STORE_KEY
     );
     expect(stored).not.toBeNull();
+
+    await page.reload();
+    // Confirm the challenge is interactive before checking that no modal opened.
+    const consoleTab = page.getByRole('tab', {
+      name: translations.learn['editor-tabs'].console,
+      exact: true
+    });
+    await consoleTab.click();
+    await expect(consoleTab).toHaveAttribute('aria-selected', 'true');
+    await expect(modal).toBeHidden();
   });
 
   test('does not show after "do not show" dismissal until 30 days pass', async ({
