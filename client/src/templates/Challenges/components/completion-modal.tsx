@@ -67,6 +67,7 @@ const mapDispatchToProps = {
 type StateProps = ReturnType<typeof mapStateToProps>;
 
 interface CompletionModalProps extends StateProps {
+  children?: React.ReactNode;
   close: () => void;
   t: TFunction;
 }
@@ -79,6 +80,7 @@ interface DownloadableChallengeFile {
 
 export function CompletionModal({
   challengeFiles,
+  children,
   close,
   dashedName,
   isOpen,
@@ -168,6 +170,7 @@ export function CompletionModal({
           data-testid='fcc-completion-success-icon'
           data-playwright-test-label='completion-success-icon'
         />
+        {children}
         <div className='completion-block-details'>
           <Progress />
         </div>
