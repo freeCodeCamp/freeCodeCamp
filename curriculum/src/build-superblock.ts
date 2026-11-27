@@ -280,25 +280,29 @@ export class BlockCreator {
   lang: string;
   commentTranslations: CommentDictionary;
   skipValidation: boolean | undefined;
+  parser: typeof parseMD;
 
   constructor({
     blockContentDir,
     i18nBlockContentDir,
     lang,
     commentTranslations,
-    skipValidation
+    skipValidation,
+    parser
   }: {
     blockContentDir: string;
     i18nBlockContentDir: string;
     lang: string;
     commentTranslations: CommentDictionary;
     skipValidation?: boolean;
+    parser?: typeof parseMD;
   }) {
     this.blockContentDir = blockContentDir;
     this.i18nBlockContentDir = i18nBlockContentDir;
     this.lang = lang;
     this.commentTranslations = commentTranslations;
     this.skipValidation = skipValidation;
+    this.parser = parser ?? parseMD;
   }
 
   /**
@@ -318,7 +322,7 @@ export class BlockCreator {
       meta,
       isAudited
     }: { filename: string; block: string; meta: Meta; isAudited: boolean },
-    parser = parseMD
+    parser = this.parser
   ) {
     log(
       `Creating challenge from file: ${filename} in block: ${block}, using lang: ${this.lang}`
@@ -441,18 +445,21 @@ export class SuperblockCreator {
     blocks: BlockStructure[];
     name: SuperBlocks;
   }) {
-    const superBlock: { blocks: Record<string, unknown> } = { blocks: {} };
+    const blockEntries = await Promise.all(
+      blocks.map(async (block, i) => [
+        block.dashedName,
+        await this.blockCreator.processBlock(block, {
+          superBlock: name,
+          order: i
+        })
+      ])
+    );
 
-    for (let i = 0; i < blocks.length; i++) {
-      const block: BlockStructure = blocks[i]!;
-      const blockResult = await this.blockCreator.processBlock(block, {
-        superBlock: name,
-        order: i
-      });
-      if (blockResult) {
-        superBlock.blocks[block.dashedName] = blockResult;
-      }
-    }
+    const superBlock: { blocks: Record<string, unknown> } = {
+      blocks: Object.fromEntries(
+        blockEntries.filter(([, blockResult]) => blockResult)
+      )
+    };
 
     log(
       `Completed parsing superblock. Total blocks: ${Object.keys(superBlock.blocks).length}`
