@@ -118,7 +118,7 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-polygon-area-calculator",
-          "blocks": ["lab-polygon-area-calculator"]
+          "blocks": ["lab-polygon-area-calculator-v2"]
         },
         {
           "moduleType": "review",
