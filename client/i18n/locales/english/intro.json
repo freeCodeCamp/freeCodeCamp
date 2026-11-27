@@ -10715,6 +10715,12 @@
           "Open up this page to review concepts around dictionaries, sets, and how to import modules."
         ]
       },
+      "quiz-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Quiz",
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
+      },
       "lecture-working-with-modules-v2": {
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lessons."]
