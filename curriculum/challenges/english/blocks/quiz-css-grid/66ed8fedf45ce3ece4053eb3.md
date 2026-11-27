@@ -153,19 +153,19 @@ What is the difference between an implicit and explicit grid?
 
 #### --distractors--
 
-Implicit grids use the `grid-template-columns` property while explicit grids use the `grid-template-rows` property.
+Implicit grids use the `grid-template-columns` property, while explicit grids use the `grid-template-rows` property.
 
 ---
 
-Explicit grids use the `grid-template-columns` property while implicit grids use the `grid-template-rows` property.
+Explicit grids use the `grid-template-columns` property, while implicit grids use the `grid-template-rows` property.
 
 ---
 
-Implicit grids use the `grid-template-columns` or `grid-template-rows` properties to create columns while rows and columns are automatically created in explicit grids.
+Implicit grids use the `grid-template-columns` or `grid-template-rows` properties to create columns and rows, while additional columns and rows are automatically created in explicit grids.
 
 #### --answer--
 
-Explicit grids use the `grid-template-columns` or `grid-template-rows` properties to create columns while rows and columns are automatically created in implicit grids.
+Explicit grids use the `grid-template-columns` or `grid-template-rows` properties to create columns and rows, while additional columns and rows are automatically created in implicit grids.
 
 ### --question--
 
