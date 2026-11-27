@@ -700,8 +700,8 @@ importers:
         specifier: 14.3.1
         version: 14.3.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
-        specifier: 14.6.12
-        version: 14.6.12(@testing-library/dom@10.4.2)
+        specifier: 14.6.13
+        version: 14.6.13(@testing-library/dom@10.4.2)
       '@total-typescript/ts-reset':
         specifier: ^0.5.0
         version: 0.5.1
@@ -4331,8 +4331,8 @@ packages:
       react: ^18.0.0
       react-dom: ^18.0.0
 
-  '@testing-library/user-event@14.6.12':
-    resolution: {integrity: sha512-8yQV8v+eToBhsUO4oYrZY7fzhpTEMZx4IDx0/iuER/x0Xuy0NdqQOhsaaUNlvXE03N7vQ+4RCXUieKC0NJty9w==}
+  '@testing-library/user-event@14.6.13':
+    resolution: {integrity: sha512-2LVZGptuB5un1Cu/u31o9adkCwbsUTMp4B4p04xupI7uobvTIpgKidSdShqZiReo/mQmvR9xjgdgTgge4oAbYA==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
@@ -15772,7 +15772,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@testing-library/user-event@14.6.12(@testing-library/dom@10.4.2)':
+  '@testing-library/user-event@14.6.13(@testing-library/dom@10.4.2)':
     dependencies:
       '@testing-library/dom': 10.4.2
 
