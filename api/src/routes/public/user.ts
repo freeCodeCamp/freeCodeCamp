@@ -211,7 +211,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         };
         return reply.send({
           // TODO(Post-MVP): just return a user object (i.e. returnedUser) and
-          // isLocked: false. The there should be no need for Type.Union in the
+          // isLocked: false. There should be no need for Type.Union in the
           // schema. Alternatively, have the user object be nullable and don't
           // bother with isLocked.
           entities: {
