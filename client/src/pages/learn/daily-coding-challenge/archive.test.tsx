@@ -78,6 +78,7 @@ describe('<DailyCodingChallengeArchive />', () => {
 
   it('renders the calendar from the daily coding challenge API', async () => {
     vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      ok: true,
       json: vi.fn().mockResolvedValue([
         {
           id: 'completed-challenge-id',
@@ -122,8 +123,24 @@ describe('<DailyCodingChallengeArchive />', () => {
     expect(screen.getAllByTestId('calendar-day-not-completed')).toHaveLength(1);
   });
 
+  it('renders the not found page when the API response is not ok', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      ok: false,
+      status: 500
+    } as unknown as Response);
+
+    renderArchive();
+
+    expect(
+      await screen.findByRole('heading', {
+        name: 'daily-coding-challenges.not-found'
+      })
+    ).toBeInTheDocument();
+  });
+
   it('renders the not found page when the API response is invalid', async () => {
     vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      ok: true,
       json: vi.fn().mockResolvedValue({ invalid: 'data structure' })
     } as unknown as Response);
 
@@ -138,6 +155,7 @@ describe('<DailyCodingChallengeArchive />', () => {
 
   it('renders the not found page when there are no challenges', async () => {
     vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      ok: true,
       json: vi.fn().mockResolvedValue([])
     } as unknown as Response);
 
