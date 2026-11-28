@@ -136,6 +136,11 @@ function DailyCodingChallengeCalendar({
   const fetchChallenges = async () => {
     try {
       const response = await fetch(`${apiLocation}/daily-coding-challenge/all`);
+      if (!response.ok) {
+        setError(true);
+        return;
+      }
+
       const challenges = (await response.json()) as AllDailyChallengeFromDb[];
 
       if (Array.isArray(challenges) && challenges.length > 0) {

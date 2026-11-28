@@ -64,17 +64,22 @@ function DailyCodingChallengeCalendarDay({
       to={`/learn/daily-coding-challenge/${toMonthDay(date)}`}
       className='calendar-day available'
       data-playwright-test-label='calendar-day'
-      aria-label={formatDisplayDate(date)}
     >
+      <span className='sr-only'>{formatDisplayDate(date)} </span>
       <span className='calendar-day-number' aria-hidden='true'>
         {dayNumber}
       </span>
 
-      <span className='dc-number'>#{challengeNumber}</span>
+      <span className='dc-number'>
+        {challengeNumber !== undefined ? `#${challengeNumber} ` : ''}
+      </span>
 
       <div className='dc-info'>
         <div className='dc-title-wrap'>
-          <div className='dc-title'>{truncate(title)}</div>
+          <div className='dc-title' aria-hidden='true'>
+            {truncate(title)}
+          </div>
+          {title ? <span className='sr-only'>{title} </span> : null}
         </div>
 
         <Checkmark isCompleted={completed} />
@@ -83,7 +88,7 @@ function DailyCodingChallengeCalendarDay({
           {completedLanguages.includes('javascript') && (
             <div className='dc-language-icon'>
               <JavaScriptIcon />
-              <span className='sr-only'>JavaScript</span>
+              <span className='sr-only'>JavaScript </span>
             </div>
           )}
           {completedLanguages.includes('python') && (
